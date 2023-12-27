@@ -25,7 +25,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
@@ -69,6 +69,13 @@
     <Link>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\CodeLibraries\CppQtFluentUi888\3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>FramelessHelperCore64d.lib;FramelessHelperQuick64d.lib;FramelessHelperWidgets64d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\CodeLibraries\CppQtFluentUi888\3rdparty\framelesshelper\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -95,6 +102,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <QtMoc Include="FluPushButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FluFlowLayout.cpp" />
+    <ClCompile Include="FluFrameLessWidget.cpp" />
+    <ClCompile Include="FluNavigationView.cpp" />
+    <ClCompile Include="FluPushButton.cpp" />
+    <ClCompile Include="FluTabWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluDef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluNavigationView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluTabWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FluFlowLayout.h" />
+    <QtMoc Include="FluFrameLessWidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

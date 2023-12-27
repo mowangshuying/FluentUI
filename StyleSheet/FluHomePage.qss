@@ -1,0 +1,7 @@
+FluHomePage {
+    background-color: rgb(249, 249, 249);
+    border-radius: 8px;
+    /* margin: 10px; */
+    margin-bottom: 10px;
+    margin-right: 10px;
+}

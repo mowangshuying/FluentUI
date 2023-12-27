@@ -10,6 +10,12 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluWinGallery", "FluWinGallery\FluWinGallery.vcxproj", "{DA86B902-EA95-4CD5-9CFD-C07B569EEA6C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluExamples", "FluExamples\FluExamples.vcxproj", "{269E77F9-E25B-4A1C-B623-41F8AF7490E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{530D608E-548B-4111-A379-5792243B78E0} = {530D608E-548B-4111-A379-5792243B78E0}
+		{D788355C-BBD1-48F8-A411-43D28D3E1658} = {D788355C-BBD1-48F8-A411-43D28D3E1658}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluIconTool", "FluIconTool\FluIconTool.vcxproj", "{EE103911-EFE4-4C38-9693-0316A4E55449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,10 @@ Global
 		{269E77F9-E25B-4A1C-B623-41F8AF7490E0}.Debug|x64.Build.0 = Debug|x64
 		{269E77F9-E25B-4A1C-B623-41F8AF7490E0}.Release|x64.ActiveCfg = Release|x64
 		{269E77F9-E25B-4A1C-B623-41F8AF7490E0}.Release|x64.Build.0 = Release|x64
+		{EE103911-EFE4-4C38-9693-0316A4E55449}.Debug|x64.ActiveCfg = Debug|x64
+		{EE103911-EFE4-4C38-9693-0316A4E55449}.Debug|x64.Build.0 = Debug|x64
+		{EE103911-EFE4-4C38-9693-0316A4E55449}.Release|x64.ActiveCfg = Release|x64
+		{EE103911-EFE4-4C38-9693-0316A4E55449}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -69,6 +69,10 @@
     <ClCompile>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FluUtils.lib;FluControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -95,23 +99,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtMoc Include="FluChangeBackgroundWidget.h" />
+    <QtMoc Include="FluChangeBgDemo.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FluChangeBackgroundWidget.cpp" />
-    <ClCompile Include="FluColorExampleWidget.cpp" />
-    <ClCompile Include="FluExampleTabWidget.cpp" />
-    <ClCompile Include="FluShowAllGlobalColorWidget.cpp" />
+    <ClCompile Include="FluButtonDemo.cpp" />
+    <ClCompile Include="FluChangeBgDemo.cpp" />
+    <ClCompile Include="FluColorDemo.cpp" />
+    <ClCompile Include="FluTabDemo.cpp" />
+    <ClCompile Include="FluExpandDemo.cpp" />
+    <ClCompile Include="FluNavigationDemo.cpp" />
+    <ClCompile Include="FluAllGlobalColorDemo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="FluExampleTabWidget.h" />
+    <QtMoc Include="FluTabDemo.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="FluShowAllGlobalColorWidget.h" />
+    <QtMoc Include="FluAllGlobalColorDemo.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="FluColorExampleWidget.h" />
+    <QtMoc Include="FluColorDemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluButtonDemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluExpandDemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluNavigationDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

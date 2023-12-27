@@ -23,33 +23,51 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FluChangeBackgroundWidget.cpp">
+    <ClCompile Include="FluChangeBgDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluExampleTabWidget.cpp">
+    <ClCompile Include="FluTabDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluShowAllGlobalColorWidget.cpp">
+    <ClCompile Include="FluAllGlobalColorDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluColorExampleWidget.cpp">
+    <ClCompile Include="FluColorDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluButtonDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluExpandDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="FluChangeBackgroundWidget.h">
+    <QtMoc Include="FluChangeBgDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluExampleTabWidget.h">
+    <QtMoc Include="FluTabDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluShowAllGlobalColorWidget.h">
+    <QtMoc Include="FluAllGlobalColorDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluColorExampleWidget.h">
+    <QtMoc Include="FluColorDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluButtonDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluExpandDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

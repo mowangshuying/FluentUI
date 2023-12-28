@@ -8,6 +8,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluUtils", "FluUtils\FluUtils.vcxproj", "{530D608E-548B-4111-A379-5792243B78E0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluWinGallery", "FluWinGallery\FluWinGallery.vcxproj", "{DA86B902-EA95-4CD5-9CFD-C07B569EEA6C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{530D608E-548B-4111-A379-5792243B78E0} = {530D608E-548B-4111-A379-5792243B78E0}
+		{D788355C-BBD1-48F8-A411-43D28D3E1658} = {D788355C-BBD1-48F8-A411-43D28D3E1658}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FluExamples", "FluExamples\FluExamples.vcxproj", "{269E77F9-E25B-4A1C-B623-41F8AF7490E0}"
 	ProjectSection(ProjectDependencies) = postProject

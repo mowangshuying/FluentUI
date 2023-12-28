@@ -56,7 +56,6 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     makeMenuToolBarsNavItem();
 
     // navigation
-
     makeNavigationNavItem();
 
     // srolling

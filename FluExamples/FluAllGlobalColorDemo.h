@@ -2,15 +2,10 @@
 
 #include <QWidget>
 
-class FluAllGlobalColorDemo : public QWidget
-{
-	Q_OBJECT
+class FluAllGlobalColorDemo : public QWidget {
+  Q_OBJECT
 public:
-	FluAllGlobalColorDemo(QWidget* parent = nullptr) : QWidget(parent)
-	{
-
-	}
+  FluAllGlobalColorDemo(QWidget *parent = nullptr) : QWidget(parent) {}
 
 private:
 };
-

@@ -1,30 +1,29 @@
 #pragma once
 
-#include <QWidget>
-#include <QPaintEvent>
-#include <QEvent>
-#include <QPainter>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
 #include <QDebug>
+#include <QEvent>
+#include <QHBoxLayout>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QVBoxLayout>
+#include <QWidget>
 
-class FluChangeBgDemo : public QWidget
-{
-	Q_OBJECT
+class FluChangeBgDemo : public QWidget {
+  Q_OBJECT
 public:
-	FluChangeBgDemo(QWidget* parent = nullptr);
+  FluChangeBgDemo(QWidget *parent = nullptr);
 
-	~FluChangeBgDemo();
+  ~FluChangeBgDemo();
 
 protected:
-	void enterEvent(QEnterEvent* event);
+  void enterEvent(QEnterEvent *event);
 
-	void leaveEvent(QEvent* event);
+  void leaveEvent(QEvent *event);
 
-	void paintEvent(QPaintEvent* event);
+  void paintEvent(QPaintEvent *event);
+
 private:
-	bool   m_bHover;
-	QColor m_normalBgColor;
-	QColor m_hoverBgColor;
+  bool m_bHover;
+  QColor m_normalBgColor;
+  QColor m_hoverBgColor;
 };
-

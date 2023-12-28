@@ -1,17 +1,15 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluPushButton.h"
 #include <QPaintEvent>
 #include <QStyleOption>
-#include "../FluControls/FluPushButton.h"
+#include <QWidget>
 
-class FluButtonDemo : public QWidget
-{
-	Q_OBJECT
+class FluButtonDemo : public QWidget {
+  Q_OBJECT
 public:
-	FluButtonDemo(QWidget* parent = nullptr);
+  FluButtonDemo(QWidget *parent = nullptr);
 
 protected:
-	void paintEvent(QPaintEvent* paintEvent);
+  void paintEvent(QPaintEvent *paintEvent);
 };
-

@@ -1,24 +1,23 @@
 #pragma once
 
-#include <QWidget>
 #include <QTabWidget>
+#include <QWidget>
 
-#include "FluColorDemo.h"
-#include "FluChangeBgDemo.h"
-#include "FluButtonDemo.h"
 #include "../FluControls/FluTabWidget.h"
+#include "FluButtonDemo.h"
+#include "FluChangeBgDemo.h"
+#include "FluColorDemo.h"
 
-class FluTabDemo : public FluTabWidget
-{
-	Q_OBJECT
+class FluTabDemo : public FluTabWidget {
+  Q_OBJECT
 public:
-	FluTabDemo(QWidget* parent = nullptr);
+  FluTabDemo(QWidget *parent = nullptr);
 
-	void addColorExampleWidget();
+  void addColorExampleWidget();
 
-	void addChangeBackgrondWidget();
+  void addChangeBackgrondWidget();
 
-	void addButtonExmapleWidget();
+  void addButtonExmapleWidget();
+
 private:
 };
-

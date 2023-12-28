@@ -8,11 +8,12 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-int main(int argc, char **argv) {
-  QApplication app(argc, argv);
+int main(int argc, char **argv)
+{
+    QApplication app(argc, argv);
 
-  FluIconToolWidget w;
-  w.show();
+    FluIconToolWidget w;
+    w.show();
 
-  return app.exec();
+    return app.exec();
 }

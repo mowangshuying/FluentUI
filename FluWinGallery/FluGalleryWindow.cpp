@@ -7,71 +7,69 @@
 
 FRAMELESSHELPER_USE_NAMESPACE
 
-FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/)
-    : FluFrameLessWidget(parent) {
-  setWindowTitle("WinUi 3 Gallery Dev");
-  setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
+{
+    setWindowTitle("WinUi 3 Gallery Dev");
+    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
-  m_titleBar->setStyleSheet("background-color: transparent;");
-  m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(
-      Qt::transparent);
-  m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(
-      Qt::transparent);
-  m_titleBar->setFixedHeight(40);
+    m_titleBar->setStyleSheet("background-color: transparent;");
+    m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
+    m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
+    m_titleBar->setFixedHeight(40);
 
-  m_navView = new FluNavigationView(this);
-  m_sLayout = new QStackedLayout(this);
-  m_contentLayout->addWidget(m_navView);
-  m_contentLayout->addLayout(m_sLayout, 1);
+    m_navView = new FluNavigationView(this);
+    m_sLayout = new QStackedLayout(this);
+    m_contentLayout->addWidget(m_navView);
+    m_contentLayout->addLayout(m_sLayout, 1);
 
-  auto homePage = new FluHomePage(this);
-  m_sLayout->addWidget(homePage);
+    auto homePage = new FluHomePage(this);
+    m_sLayout->addWidget(homePage);
 
-  // home
-  makeHomeNavItem();
+    // home
+    makeHomeNavItem();
 
-  // design guidance
-  makeDesignGuidanceNavItem();
+    // design guidance
+    makeDesignGuidanceNavItem();
 
-  // samples
-  makeSamplesNavItem();
+    // samples
+    makeSamplesNavItem();
 
-  // basic input
-  makeBasicInputNavItem();
+    // basic input
+    makeBasicInputNavItem();
 
-  // collections
-  makeCollectionsNavItem();
+    // collections
+    makeCollectionsNavItem();
 
-  // date & time
-  makDateTimeNavItem();
+    // date & time
+    makDateTimeNavItem();
 
-  // dialogs & flyouts
-  makeDialogsFlyouts();
+    // dialogs & flyouts
+    makeDialogsFlyouts();
 
-  // layout
-  makeLayoutNavItem();
+    // layout
+    makeLayoutNavItem();
 
-  // media
-  makeMediaNavItem();
+    // media
+    makeMediaNavItem();
 
-  // menus & toolbars
-  makeMenuToolBarsNavItem();
+    // menus & toolbars
+    makeMenuToolBarsNavItem();
 
-  // navigation
+    // navigation
 
-  makeNavigationNavItem();
+    makeNavigationNavItem();
 
-  // srolling
+    // srolling
 
-  makeScrollingNavItem();
+    makeScrollingNavItem();
 
-  // status & info
+    // status & info
 
-  makeStatusInfoNavItem();
+    makeStatusInfoNavItem();
 
-  // text
-  makeTextNavItem();
+    // text
+    makeTextNavItem();
 
-  // settings
-  makeSettingsNavItem();
+    // settings
+    makeSettingsNavItem();
 }

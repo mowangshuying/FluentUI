@@ -8,22 +8,23 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-class FluChangeBgDemo : public QWidget {
-  Q_OBJECT
-public:
-  FluChangeBgDemo(QWidget *parent = nullptr);
+class FluChangeBgDemo : public QWidget
+{
+    Q_OBJECT
+  public:
+    FluChangeBgDemo(QWidget *parent = nullptr);
 
-  ~FluChangeBgDemo();
+    ~FluChangeBgDemo();
 
-protected:
-  void enterEvent(QEnterEvent *event);
+  protected:
+    void enterEvent(QEnterEvent *event);
 
-  void leaveEvent(QEvent *event);
+    void leaveEvent(QEvent *event);
 
-  void paintEvent(QPaintEvent *event);
+    void paintEvent(QPaintEvent *event);
 
-private:
-  bool m_bHover;
-  QColor m_normalBgColor;
-  QColor m_hoverBgColor;
+  private:
+    bool m_bHover;
+    QColor m_normalBgColor;
+    QColor m_hoverBgColor;
 };

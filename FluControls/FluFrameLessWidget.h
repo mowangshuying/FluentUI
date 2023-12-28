@@ -12,29 +12,29 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class StandardTitleBar;
 FRAMELESSHELPER_END_NAMESPACE
 
-class FluFrameLessWidget
-    : public FRAMELESSHELPER_PREPEND_NAMESPACE(FramelessWidget) {
-  Q_OBJECT
-  Q_DISABLE_COPY_MOVE(FluFrameLessWidget)
+class FluFrameLessWidget : public FRAMELESSHELPER_PREPEND_NAMESPACE(FramelessWidget)
+{
+    Q_OBJECT
+    Q_DISABLE_COPY_MOVE(FluFrameLessWidget)
 
-public:
-  explicit FluFrameLessWidget(QWidget *parent = nullptr);
-  ~FluFrameLessWidget() override;
+  public:
+    explicit FluFrameLessWidget(QWidget *parent = nullptr);
+    ~FluFrameLessWidget() override;
 
-  virtual void waitReady();
-  virtual void initialize();
+    virtual void waitReady();
+    virtual void initialize();
 
-protected:
-  void closeEvent(QCloseEvent *event) override;
+  protected:
+    void closeEvent(QCloseEvent *event) override;
 
-  // private:
-  // void initialize();
+    // private:
+    // void initialize();
 
-public slots:
-  void updateStyleSheet();
+  public slots:
+    void updateStyleSheet();
 
-protected:
-  FRAMELESSHELPER_PREPEND_NAMESPACE(StandardTitleBar) *m_titleBar = nullptr;
-  // QWidget *m_centerWidget;
-  QHBoxLayout *m_contentLayout;
+  protected:
+    FRAMELESSHELPER_PREPEND_NAMESPACE(StandardTitleBar) *m_titleBar = nullptr;
+    // QWidget *m_centerWidget;
+    QHBoxLayout *m_contentLayout;
 };

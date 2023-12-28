@@ -16,221 +16,238 @@
 #include <QWidget>
 
 class FluNavigationView;
-class FluNavigationItem : public QWidget {
-  Q_OBJECT
-public:
-  FluNavigationItem(QWidget *parent = nullptr);
+class FluNavigationItem : public QWidget
+{
+    Q_OBJECT
+  public:
+    FluNavigationItem(QWidget *parent = nullptr);
 
-  FluNavigationItem(QIcon icon, QString text, QWidget *parent = nullptr);
+    FluNavigationItem(QIcon icon, QString text, QWidget *parent = nullptr);
 
-  FluNavigationItem(QString text, QWidget *parent = nullptr);
+    FluNavigationItem(QString text, QWidget *parent = nullptr);
 
-  QList<FluNavigationItem *> getChildItems();
+    QList<FluNavigationItem *> getChildItems();
 
-  void setParentView(FluNavigationView *view);
+    void setParentView(FluNavigationView *view);
 
-  FluNavigationView *getParentView();
+    FluNavigationView *getParentView();
 
-  void addChildItem(FluNavigationItem *item);
+    void addChildItem(FluNavigationItem *item);
 
-  int calcItemW2Height(FluNavigationItem *item);
+    int calcItemW2Height(FluNavigationItem *item);
 
-  void adjustItemHeight(FluNavigationItem *item);
+    void adjustItemHeight(FluNavigationItem *item);
 
-  int getDepth();
+    int getDepth();
 
-  // 获取到根节点
-  FluNavigationItem *getRootItem();
+    // 获取到根节点
+    FluNavigationItem *getRootItem();
 
-  // 更新整个树的选择状态
-  void clearAllItemsSelectState() {
-    FluNavigationItem *rootItem = getRootItem();
-    clearItemsSelectState(rootItem);
-  }
+    // 更新整个树的选择状态
+    void clearAllItemsSelectState()
+    {
+        FluNavigationItem *rootItem = getRootItem();
+        clearItemsSelectState(rootItem);
+    }
 
-  void clearItemsSelectState(FluNavigationItem *item);
+    void clearItemsSelectState(FluNavigationItem *item);
 
-  void updateAllItemsStyleSheet() {
-    FluNavigationItem *rootItem = getRootItem();
-    updateItemsStyleSheet(rootItem);
-  }
+    void updateAllItemsStyleSheet()
+    {
+        FluNavigationItem *rootItem = getRootItem();
+        updateItemsStyleSheet(rootItem);
+    }
 
-  void updateItemsStyleSheet(FluNavigationItem *item);
+    void updateItemsStyleSheet(FluNavigationItem *item);
 
-  void updateSelected(bool b);
+    void updateSelected(bool b);
 
-  void mouseReleaseEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
-  void paintEvent(QPaintEvent *event) {
-    QStyleOption opt;
-    opt.initFrom(this);
-    QPainter painter(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-  }
-signals:
-  void itemClicked();
+    void paintEvent(QPaintEvent *event)
+    {
+        QStyleOption opt;
+        opt.initFrom(this);
+        QPainter painter(this);
+        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    }
+  signals:
+    void itemClicked();
 
-protected:
-  QWidget *m_wrapTopW;
-  QWidget *m_wrapBottomW;
+  protected:
+    QWidget *m_wrapTopW;
+    QWidget *m_wrapBottomW;
 
-  QWidget *m_emptyWidget;
+    QWidget *m_emptyWidget;
 
-  QWidget *m_indicator;
-  QPushButton *m_icon;
-  QLabel *m_label;
-  QPushButton *m_arrow;
-  QHBoxLayout *m_hTopLayout;
-  QList<FluNavigationItem *> m_items;
+    QWidget *m_indicator;
+    QPushButton *m_icon;
+    QLabel *m_label;
+    QPushButton *m_arrow;
+    QHBoxLayout *m_hTopLayout;
+    QList<FluNavigationItem *> m_items;
 
-  QVBoxLayout *m_vMainLayout;
-  QVBoxLayout *m_vBottomLayout;
+    QVBoxLayout *m_vMainLayout;
+    QVBoxLayout *m_vBottomLayout;
 
-  // int m_currentWidth;
+    // int m_currentWidth;
 
-  FluNavigationItem *m_parentItem;
-  FluNavigationView *m_parentView;
-  bool m_bDown;
-  bool m_bLong;
-  bool m_bSelected;
+    FluNavigationItem *m_parentItem;
+    FluNavigationView *m_parentView;
+    bool m_bDown;
+    bool m_bLong;
+    bool m_bSelected;
 };
 
-class FluNavigationMenuItem : public QWidget {
-  Q_OBJECT
-public:
-  FluNavigationMenuItem(QWidget *parent = nullptr) : QWidget(parent) {
-    m_hLayout = new QHBoxLayout(this);
+class FluNavigationMenuItem : public QWidget
+{
+    Q_OBJECT
+  public:
+    FluNavigationMenuItem(QWidget *parent = nullptr) : QWidget(parent)
+    {
+        m_hLayout = new QHBoxLayout(this);
 
-    m_menuButton = new QPushButton(this);
-    m_menuButton->setIcon(
-        FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton));
-    m_menuButton->setIconSize(QSize(30, 30));
-    m_menuButton->setFixedSize(30, 30);
-    m_hLayout->setContentsMargins(10, 0, 0, 0);
+        m_menuButton = new QPushButton(this);
+        m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton));
+        m_menuButton->setIconSize(QSize(30, 30));
+        m_menuButton->setFixedSize(30, 30);
+        m_hLayout->setContentsMargins(10, 0, 0, 0);
 
-    setFixedHeight(40);
+        setFixedHeight(40);
 
-    m_hLayout->addWidget(m_menuButton);
-    m_hLayout->addStretch(1);
-    m_menuButton->setObjectName("menuButton");
-    QString qss = FluStyleSheetUitls::getQssByFileName(
-        "../StyleSheet/FluNavigationMenuItem.qss");
-    setStyleSheet(qss);
+        m_hLayout->addWidget(m_menuButton);
+        m_hLayout->addStretch(1);
+        m_menuButton->setObjectName("menuButton");
+        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/FluNavigationMenuItem.qss");
+        setStyleSheet(qss);
 
-    connect(m_menuButton, &QPushButton::clicked,
-            [=](bool b) { emit menuClicked(); });
-  }
-signals:
-  void menuClicked();
+        connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuClicked(); });
+    }
+  signals:
+    void menuClicked();
 
-protected:
-  QPushButton *m_menuButton;
-  QHBoxLayout *m_hLayout;
+  protected:
+    QPushButton *m_menuButton;
+    QHBoxLayout *m_hLayout;
 };
 
-class FluNavigationSearchItem : public QWidget {};
+class FluNavigationSearchItem : public QWidget
+{
+};
 
-class FluNavigationView : public QWidget {
-  Q_OBJECT
-public:
-  FluNavigationView(QWidget *parent = nullptr) : QWidget(parent) {
-    m_vLayout = new QVBoxLayout(this);
-    m_vLayout->setContentsMargins(0, 0, 0, 0);
-    m_widget1 = new QWidget(this);
-    m_widget2 = new QWidget(this);
-    m_widget3 = new QWidget(this);
+class FluNavigationView : public QWidget
+{
+    Q_OBJECT
+  public:
+    FluNavigationView(QWidget *parent = nullptr) : QWidget(parent)
+    {
+        m_vLayout = new QVBoxLayout(this);
+        m_vLayout->setContentsMargins(0, 0, 0, 0);
+        m_widget1 = new QWidget(this);
+        m_widget2 = new QWidget(this);
+        m_widget3 = new QWidget(this);
 
-    m_vLayout1 = new QVBoxLayout(m_widget1);
-    m_vLayout2 = new QVBoxLayout(m_widget2);
-    m_vLayout3 = new QVBoxLayout(m_widget3);
+        m_vLayout1 = new QVBoxLayout(m_widget1);
+        m_vLayout2 = new QVBoxLayout(m_widget2);
+        m_vLayout3 = new QVBoxLayout(m_widget3);
 
-    m_vLayout1->setContentsMargins(0, 0, 0, 0);
-    m_vLayout2->setContentsMargins(0, 0, 0, 0);
-    m_vLayout3->setContentsMargins(0, 0, 0, 0);
+        m_vLayout1->setContentsMargins(0, 0, 0, 0);
+        m_vLayout2->setContentsMargins(0, 0, 0, 0);
+        m_vLayout3->setContentsMargins(0, 0, 0, 0);
 
-    m_vLayout1->setSpacing(0);
-    m_vLayout2->setSpacing(0);
-    m_vLayout3->setSpacing(0);
+        m_vLayout1->setSpacing(0);
+        m_vLayout2->setSpacing(0);
+        m_vLayout3->setSpacing(0);
 
-    m_vLayout1->setAlignment(Qt::AlignTop);
-    m_vLayout2->setAlignment(Qt::AlignTop);
-    m_vLayout3->setAlignment(Qt::AlignTop);
+        m_vLayout1->setAlignment(Qt::AlignTop);
+        m_vLayout2->setAlignment(Qt::AlignTop);
+        m_vLayout3->setAlignment(Qt::AlignTop);
 
-    auto srollArea = new QScrollArea(this);
-    srollArea->setWidgetResizable(true);
-    srollArea->setWidget(m_widget2);
+        auto srollArea = new QScrollArea(this);
+        srollArea->setWidgetResizable(true);
+        srollArea->setWidget(m_widget2);
 
-    srollArea->setObjectName("srollArea");
-    srollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        srollArea->setObjectName("srollArea");
+        srollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    m_vLayout->addWidget(m_widget1);
-    m_vLayout->addWidget(srollArea, 1);
-    m_vLayout->addWidget(m_widget3);
+        m_vLayout->addWidget(m_widget1);
+        m_vLayout->addWidget(srollArea, 1);
+        m_vLayout->addWidget(m_widget3);
 
-    auto menuButtonItem = new FluNavigationMenuItem(this);
-    m_vLayout1->addWidget(menuButtonItem);
+        auto menuButtonItem = new FluNavigationMenuItem(this);
+        m_vLayout1->addWidget(menuButtonItem);
 
-    QString qss = FluStyleSheetUitls::getQssByFileName(
-        "../StyleSheet/FluNavigationView.qss");
-    setStyleSheet(qss);
+        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/FluNavigationView.qss");
+        setStyleSheet(qss);
 
-    m_bLong = true;
-    setFixedWidth(320 + 10);
-    connect(menuButtonItem, &FluNavigationMenuItem::menuClicked, [=]() {
-      if (m_bLong) {
-        setFixedWidth(48);
-        m_bLong = false;
-      } else {
-        setFixedWidth(320);
         m_bLong = true;
-      }
-    });
-  }
-
-  void addNavigationItemTop(FluNavigationItem *item) {
-    m_vLayout1->addWidget(item, Qt::AlignTop);
-  }
-
-  void addNavigationItemMid(FluNavigationItem *item) {
-    m_vLayout2->addWidget(item, Qt::AlignTop);
-    item->setParentView(this);
-  }
-
-  void clearAllItemsSelectState() {
-    for (int i = 0; i < m_vLayout2->count(); i++) {
-      auto curItem = (FluNavigationItem *)m_vLayout2->itemAt(i)->widget();
-      curItem->clearAllItemsSelectState();
+        setFixedWidth(320 + 10);
+        connect(menuButtonItem, &FluNavigationMenuItem::menuClicked, [=]() {
+            if (m_bLong)
+            {
+                setFixedWidth(48);
+                m_bLong = false;
+            }
+            else
+            {
+                setFixedWidth(320);
+                m_bLong = true;
+            }
+        });
     }
-  }
 
-  void updateAllItemsStyleSheet() {
-    for (int i = 0; i < m_vLayout2->count(); i++) {
-      auto curItem = (FluNavigationItem *)m_vLayout2->itemAt(i)->widget();
-      curItem->updateAllItemsStyleSheet();
+    void addNavigationItemTop(FluNavigationItem *item)
+    {
+        m_vLayout1->addWidget(item, Qt::AlignTop);
     }
-  }
 
-  void addNavigationItemButtom(FluNavigationItem *item) {
-    m_vLayout3->addWidget(item);
-  }
+    void addNavigationItemMid(FluNavigationItem *item)
+    {
+        m_vLayout2->addWidget(item, Qt::AlignTop);
+        item->setParentView(this);
+    }
 
-  void paintEvent(QPaintEvent *event) {
-    QStyleOption opt;
-    opt.initFrom(this);
-    QPainter painter(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-  }
+    void clearAllItemsSelectState()
+    {
+        for (int i = 0; i < m_vLayout2->count(); i++)
+        {
+            auto curItem = (FluNavigationItem *)m_vLayout2->itemAt(i)->widget();
+            curItem->clearAllItemsSelectState();
+        }
+    }
 
-public:
-  QVBoxLayout *m_vLayout;
+    void updateAllItemsStyleSheet()
+    {
+        for (int i = 0; i < m_vLayout2->count(); i++)
+        {
+            auto curItem = (FluNavigationItem *)m_vLayout2->itemAt(i)->widget();
+            curItem->updateAllItemsStyleSheet();
+        }
+    }
 
-  QWidget *m_widget1;
-  QWidget *m_widget2;
-  QWidget *m_widget3;
+    void addNavigationItemButtom(FluNavigationItem *item)
+    {
+        m_vLayout3->addWidget(item);
+    }
 
-  QVBoxLayout *m_vLayout1;
-  QVBoxLayout *m_vLayout2;
-  QVBoxLayout *m_vLayout3;
+    void paintEvent(QPaintEvent *event)
+    {
+        QStyleOption opt;
+        opt.initFrom(this);
+        QPainter painter(this);
+        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    }
 
-  bool m_bLong;
+  public:
+    QVBoxLayout *m_vLayout;
+
+    QWidget *m_widget1;
+    QWidget *m_widget2;
+    QWidget *m_widget3;
+
+    QVBoxLayout *m_vLayout1;
+    QVBoxLayout *m_vLayout2;
+    QVBoxLayout *m_vLayout3;
+
+    bool m_bLong;
 };

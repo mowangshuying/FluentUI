@@ -8,16 +8,17 @@
 #include "FluChangeBgDemo.h"
 #include "FluColorDemo.h"
 
-class FluTabDemo : public FluTabWidget {
-  Q_OBJECT
-public:
-  FluTabDemo(QWidget *parent = nullptr);
+class FluTabDemo : public FluTabWidget
+{
+    Q_OBJECT
+  public:
+    FluTabDemo(QWidget *parent = nullptr);
 
-  void addColorExampleWidget();
+    void addColorExampleWidget();
 
-  void addChangeBackgrondWidget();
+    void addChangeBackgrondWidget();
 
-  void addButtonExmapleWidget();
+    void addButtonExmapleWidget();
 
-private:
+  private:
 };

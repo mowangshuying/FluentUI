@@ -9,7 +9,7 @@ FRAMELESSHELPER_USE_NAMESPACE
 
 FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
-    setWindowTitle("WinUi 3 Gallery Dev");
+    setWindowTitle("WinUi 3 Gallery - Cpp");
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
     //m_titleBar->setStyleSheet("background-color: transparent;");

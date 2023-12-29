@@ -40,10 +40,8 @@ class FluNavigationItem : public QWidget
 
     int getDepth();
 
-    // 获取到根节点
     FluNavigationItem *getRootItem();
 
-    // 更新整个树的选择状态
     void clearAllItemsSelectState()
     {
         FluNavigationItem *rootItem = getRootItem();
@@ -114,11 +112,12 @@ class FluNavigationMenuItem : public QWidget
         m_hLayout->setContentsMargins(10, 0, 0, 0);
 
         setFixedHeight(40);
+        setFixedWidth(320);
 
         m_hLayout->addWidget(m_menuButton);
         m_hLayout->addStretch(1);
         m_menuButton->setObjectName("menuButton");
-        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/FluNavigationMenuItem.qss");
+        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss");
         setStyleSheet(qss);
 
         connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuClicked(); });
@@ -174,10 +173,15 @@ class FluNavigationView : public QWidget
         m_vLayout->addWidget(srollArea, 1);
         m_vLayout->addWidget(m_widget3);
 
+        m_widget1->setObjectName("widget1");
+        m_widget2->setObjectName("widget2");
+        m_widget3->setObjectName("widget3");
+
+
         auto menuButtonItem = new FluNavigationMenuItem(this);
         m_vLayout1->addWidget(menuButtonItem);
 
-        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/FluNavigationView.qss");
+        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationView.qss");
         setStyleSheet(qss);
 
         m_bLong = true;

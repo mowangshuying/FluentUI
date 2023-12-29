@@ -1,0 +1,13 @@
+FluVCard {
+    border-radius: 8px;
+    background-color: rgba(249, 249, 249, 0.95);
+}
+
+#titleLabel {
+    font-size: 16px;
+}
+
+#contextLabel {
+    font-size: 12px;
+    color: rgb(112, 112, 112);
+}

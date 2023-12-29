@@ -1,0 +1,13 @@
+FluNavigationMenuItem {
+    background-color: rgb(32, 32, 32);
+}
+
+#menuButton {
+    border: none;
+    background-color: transparent;
+}
+
+#menuButton:hover {
+    background-color: rgb(45, 45, 45);
+    border-radius: 4px;
+}

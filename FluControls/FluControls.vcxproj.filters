@@ -38,6 +38,9 @@
     <ClCompile Include="FluFrameLessWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluVCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -53,6 +56,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluFrameLessWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluVCard.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -110,6 +110,7 @@
     <ClCompile Include="FluNavigationView.cpp" />
     <ClCompile Include="FluPushButton.cpp" />
     <ClCompile Include="FluTabWidget.cpp" />
+    <ClCompile Include="FluVCard.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDef.h" />
@@ -122,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h" />
+    <QtMoc Include="FluVCard.h" />
     <QtMoc Include="FluFrameLessWidget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

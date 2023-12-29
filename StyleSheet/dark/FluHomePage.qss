@@ -1,7 +1,8 @@
 FluHomePage {
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(39, 39, 39);
     border-radius: 8px;
     /* margin: 10px; */
     margin-bottom: 10px;
     margin-right: 10px;
+    margin-left: 10px;
 }

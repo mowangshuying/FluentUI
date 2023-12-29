@@ -66,7 +66,7 @@ FluNavigationItem::FluNavigationItem(QWidget *parent /*= nullptr*/) : QWidget(pa
     m_bLong = true;
     m_arrow->hide();
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/FluNavigationItem.qss");
+    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationItem.qss");
     setStyleSheet(qss);
 
     // m_currentWidth  = 320;

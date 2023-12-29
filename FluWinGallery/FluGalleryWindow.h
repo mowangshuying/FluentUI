@@ -113,6 +113,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addChildItem(item4);
         m_navView->addNavigationItemMid(item);
     }
+    
     void makeDialogsFlyouts()
     {
         FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Comment), "Dialogs & flyouts", this);
@@ -207,6 +208,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addChildItem(item10);
         m_navView->addNavigationItemMid(item);
     }
+   
     void makeNavigationNavItem()
     {
         FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton), "Navigation", this);

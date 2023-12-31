@@ -87,7 +87,6 @@ void FluNavigationView::addItemToLayout3(FluNavigationIconTextItem *item)
     m_vLayout3->addWidget(item);
 }
 
-
 void FluNavigationView::clearAllItemsSelectState()
 {
     for (int i = 0; i < m_vLayout2->count(); i++)

@@ -22,8 +22,8 @@ class FluFlowLayoutDemo : public FluVScrollView
         flowLayout->addWidget(btn3);
         flowLayout->addWidget(btn4);
         flowLayout->addWidget(btn5);
-       // setLayout(flowLayout);
-        
+        // setLayout(flowLayout);
+
         m_vMainLayout->addLayout(flowLayout);
         setWindowTitle(tr("Flow Layout"));
     }

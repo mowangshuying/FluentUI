@@ -2,7 +2,7 @@
 
 #include "FluNavigationItem.h"
 
-class FluNavigationSearchItem : public FluNavigationItem  
+class FluNavigationSearchItem : public FluNavigationItem
 {
     Q_OBJECT
   public:

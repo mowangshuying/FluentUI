@@ -20,7 +20,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeDesignGuidanceNavItem()
     {
-        FluNavigationIconTextItem *item =  new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Design), "Design guidance", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Design), "Design guidance", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::FontSize), "Typography", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::EmojiTabSymbols), "Icons", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Color), "Colors", item);

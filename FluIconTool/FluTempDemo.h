@@ -8,6 +8,5 @@ class FluTempDemo : public QWidget
   public:
     FluTempDemo(QWidget* parent = nullptr) : QWidget(parent)
     {
-
     }
 };

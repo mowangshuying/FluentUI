@@ -172,7 +172,7 @@ void FluNavigationIconTextItem::addItem(FluNavigationIconTextItem *item)
     item->show();
 
     m_vLayout1->addWidget(item);
-   // m_vLayout1->addSpacing(15);
+    // m_vLayout1->addSpacing(15);
     m_arrow->show();
 }
 

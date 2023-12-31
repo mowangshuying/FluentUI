@@ -17,9 +17,9 @@
 
 class FluNavigationIconTextItem;
 
-//class FluNavigationSearchItem : public QWidget
+// class FluNavigationSearchItem : public QWidget
 //{
-//};
+// };
 
 class FluNavigationView : public QWidget
 {
@@ -32,7 +32,7 @@ class FluNavigationView : public QWidget
     void addItemToLayout2(FluNavigationIconTextItem *item);
 
     void addItemToLayout3(FluNavigationIconTextItem *item);
-    
+
     void clearAllItemsSelectState();
 
     void updateAllItemsStyleSheet();

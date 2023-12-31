@@ -5,7 +5,7 @@
 #include <QWidget>
 
 // use it only contains widgets
-// when use it, please just use addWidget , removeWidget 
+// when use it, please just use addWidget , removeWidget
 // can't support insertWidget and other add widget methods.
 class FluStackedLayout : public QStackedLayout
 {
@@ -15,7 +15,7 @@ class FluStackedLayout : public QStackedLayout
     FluStackedLayout(QWidget *parent);
     FluStackedLayout(QLayout *parentLayout);
 
-    void addWidget(QString str, QWidget* w);
+    void addWidget(QString str, QWidget *w);
 
     void removeWidget(QString str, QWidget *w);
 

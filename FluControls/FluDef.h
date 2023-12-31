@@ -7,41 +7,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#define FluSetObjectName(objectName) setObjectName(#objectName);
-#define FluSetStyleSheet(objectName) setStyleSheet("../StyleSheet/" #objectName ".qss");
-
-#define FluSetNameAndStypeSheet(objectName) \
-    FluSetObjectName(objectName);           \
-    FluSetStyleSheet(objectName);
-
-#define FluSetPropertyN(type, name) \
-  private:                          \
-    type m_##name;                  \
-                                    \
-  public:                           \
-    inline void set##name(type v)   \
-    {                               \
-        m_##name = v;               \
-    }                               \
-    inline type get##name()         \
-    {                               \
-        return m_##name;            \
-    }
-
-#define FluSetPropertyP(type, name) \
-  private:                          \
-    type *m_##name;                 \
-                                    \
-  public:                           \
-    inline void set##name(type *v)  \
-    {                               \
-        m_##name = v;               \
-    }                               \
-    inline type *get##name()        \
-    {                               \
-        return m_##name;            \
-    }
-
 template <typename EnumType>
 static EnumType QStringToEnum(QString str)
 {

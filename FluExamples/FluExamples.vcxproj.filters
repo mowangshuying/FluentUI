@@ -53,6 +53,9 @@
     <ClCompile Include="FluLineEditDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -77,6 +80,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluLineEditDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

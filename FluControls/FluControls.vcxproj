@@ -122,6 +122,7 @@
     <ClCompile Include="FluNavigationSearchItem.cpp" />
     <ClCompile Include="FluNavigationView.cpp" />
     <ClCompile Include="FluPushButton.cpp" />
+    <ClCompile Include="FluStackedLayout.cpp" />
     <ClCompile Include="FluVScrollView.cpp" />
     <ClCompile Include="FluTabWidget.cpp" />
     <ClCompile Include="FluVCard.cpp" />
@@ -137,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h" />
+    <QtMoc Include="FluStackedLayout.h" />
     <QtMoc Include="FluNavigationSearchItem.h" />
     <QtMoc Include="FluNavigationIconTextItem.h" />
     <QtMoc Include="FluNavigationItem.h" />

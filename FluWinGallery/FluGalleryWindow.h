@@ -2,6 +2,7 @@
 
 #include "../FluControls/FluFrameLessWidget.h"
 #include "../FluControls/FluNavigationView.h"
+#include "../FluControls/FluNavigationIconTextItem.h"
 #include "FluHomePage.h"
 #include <QStackedLayout>
 
@@ -13,270 +14,270 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeHomeNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Home), "Home", this);
-        m_navView->addNavigationItemMid(item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Home), "Home", this);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeDesignGuidanceNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Design), "Design guidance", this);
-        FluNavigationItem *item1 = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::FontSize), "Typography", item);
-        FluNavigationItem *item2 = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::EmojiTabSymbols), "Icons", item);
-        FluNavigationItem *item3 = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Color), "Colors", item);
+        FluNavigationIconTextItem *item =  new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Design), "Design guidance", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::FontSize), "Typography", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::EmojiTabSymbols), "Icons", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Color), "Colors", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeSamplesNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::AllApps), "All samples", this);
-        m_navView->addNavigationItemMid(item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::AllApps), "All samples", this);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeBasicInputNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::CheckboxComposite), "Basic input", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::CheckboxComposite), "Basic input", this);
 
-        FluNavigationItem *item1 = new FluNavigationItem("InputValidation", item);
-        FluNavigationItem *item2 = new FluNavigationItem("Button", item);
-        FluNavigationItem *item3 = new FluNavigationItem("DropDownButton", item);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InputValidation", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Button", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DropDownButton", item);
 
-        FluNavigationItem *item4 = new FluNavigationItem("HyperLinkButton", item);
-        FluNavigationItem *item5 = new FluNavigationItem("RepeatButton", item);
-        FluNavigationItem *item6 = new FluNavigationItem("ToggleButton", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("HyperLinkButton", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RepeatButton", item);
+        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("ToggleButton", item);
 
-        FluNavigationItem *item7 = new FluNavigationItem("SplitButton", item);
-        FluNavigationItem *item8 = new FluNavigationItem("ToggleSplitButton", item);
-        FluNavigationItem *item9 = new FluNavigationItem("CheckBox", item);
+        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("SplitButton", item);
+        FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("ToggleSplitButton", item);
+        FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("CheckBox", item);
 
-        FluNavigationItem *item10 = new FluNavigationItem("CheckBox", item);
-        FluNavigationItem *item11 = new FluNavigationItem("ComboBox", item);
-        FluNavigationItem *item12 = new FluNavigationItem("RadioButton", item);
+        FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("CheckBox", item);
+        FluNavigationIconTextItem *item11 = new FluNavigationIconTextItem("ComboBox", item);
+        FluNavigationIconTextItem *item12 = new FluNavigationIconTextItem("RadioButton", item);
 
-        FluNavigationItem *item13 = new FluNavigationItem("RatingControl", item);
-        FluNavigationItem *item14 = new FluNavigationItem("Slider", item);
-        FluNavigationItem *item15 = new FluNavigationItem("ToggleSwith", item);
+        FluNavigationIconTextItem *item13 = new FluNavigationIconTextItem("RatingControl", item);
+        FluNavigationIconTextItem *item14 = new FluNavigationIconTextItem("Slider", item);
+        FluNavigationIconTextItem *item15 = new FluNavigationIconTextItem("ToggleSwith", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        item->addChildItem(item6);
-        item->addChildItem(item7);
-        item->addChildItem(item8);
-        item->addChildItem(item9);
-        item->addChildItem(item10);
-        item->addChildItem(item11);
-        item->addChildItem(item12);
-        item->addChildItem(item13);
-        item->addChildItem(item14);
-        item->addChildItem(item15);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        item->addItem(item6);
+        item->addItem(item7);
+        item->addItem(item8);
+        item->addItem(item9);
+        item->addItem(item10);
+        item->addItem(item11);
+        item->addItem(item12);
+        item->addItem(item13);
+        item->addItem(item14);
+        item->addItem(item15);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeCollectionsNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::TiltDown), "Connections", this);
-        FluNavigationItem *item1 = new FluNavigationItem("FlipView", item);
-        FluNavigationItem *item2 = new FluNavigationItem("GridView", item);
-        FluNavigationItem *item3 = new FluNavigationItem("ItemsView", item);
-        FluNavigationItem *item4 = new FluNavigationItem("ListBox", item);
-        FluNavigationItem *item5 = new FluNavigationItem("ListView", item);
-        FluNavigationItem *item6 = new FluNavigationItem("PullToRefresh", item);
-        FluNavigationItem *item7 = new FluNavigationItem("TreeView", item);
-        FluNavigationItem *item8 = new FluNavigationItem("DataGrid", item);
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        item->addChildItem(item6);
-        item->addChildItem(item7);
-        item->addChildItem(item8);
-        m_navView->addNavigationItemMid(item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::TiltDown), "Connections", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("FlipView", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ListView", item);
+        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
+        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TreeView", item);
+        FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("DataGrid", item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        item->addItem(item6);
+        item->addItem(item7);
+        item->addItem(item8);
+        m_navView->addItemToLayout2(item);
     }
 
     void makDateTimeNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Date & time", this);
-        FluNavigationItem *item1 = new FluNavigationItem("CalendarDatePicker", item);
-        FluNavigationItem *item2 = new FluNavigationItem("CalendarView", item);
-        FluNavigationItem *item3 = new FluNavigationItem("DatePicker", item);
-        FluNavigationItem *item4 = new FluNavigationItem("TimePicker", item);
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        m_navView->addNavigationItemMid(item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Date & time", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("CalendarDatePicker", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("CalendarView", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DatePicker", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("TimePicker", item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        m_navView->addItemToLayout2(item);
     }
-    
+
     void makeDialogsFlyouts()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Comment), "Dialogs & flyouts", this);
-        FluNavigationItem *item1 = new FluNavigationItem("ContentDialog", item);
-        FluNavigationItem *item2 = new FluNavigationItem("Flyout", item);
-        FluNavigationItem *item3 = new FluNavigationItem("TeachingTip", item);
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        m_navView->addNavigationItemMid(item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Comment), "Dialogs & flyouts", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("ContentDialog", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Flyout", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("TeachingTip", item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeLayoutNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::PreviewLink), "Layout", this);
-        FluNavigationItem *item1 = new FluNavigationItem("Border", item);
-        FluNavigationItem *item2 = new FluNavigationItem("Canvas", item);
-        FluNavigationItem *item3 = new FluNavigationItem("Expander", item);
-        FluNavigationItem *item4 = new FluNavigationItem("ItemsRepeater", item);
-        FluNavigationItem *item5 = new FluNavigationItem("Grid", item);
-        FluNavigationItem *item6 = new FluNavigationItem("RadioButtons", item);
-        FluNavigationItem *item7 = new FluNavigationItem("RelativePanel", item);
-        FluNavigationItem *item8 = new FluNavigationItem("SplitView", item);
-        FluNavigationItem *item9 = new FluNavigationItem("StackPanel", item);
-        FluNavigationItem *item10 = new FluNavigationItem("VariableSizedWrapGrid", item);
-        FluNavigationItem *item11 = new FluNavigationItem("ViewBox", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::PreviewLink), "Layout", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("Border", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Canvas", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Expander", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ItemsRepeater", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("Grid", item);
+        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("RadioButtons", item);
+        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("RelativePanel", item);
+        FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("SplitView", item);
+        FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("StackPanel", item);
+        FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("VariableSizedWrapGrid", item);
+        FluNavigationIconTextItem *item11 = new FluNavigationIconTextItem("ViewBox", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        item->addChildItem(item6);
-        item->addChildItem(item7);
-        item->addChildItem(item8);
-        item->addChildItem(item9);
-        item->addChildItem(item10);
-        item->addChildItem(item11);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        item->addItem(item6);
+        item->addItem(item7);
+        item->addItem(item8);
+        item->addItem(item9);
+        item->addItem(item10);
+        item->addItem(item11);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeMediaNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Media", this);
-        FluNavigationItem *item1 = new FluNavigationItem("AnimatedVisualPlayer", item);
-        FluNavigationItem *item2 = new FluNavigationItem("Capture Element / Camera Preview", item);
-        FluNavigationItem *item3 = new FluNavigationItem("Image", item);
-        FluNavigationItem *item4 = new FluNavigationItem("mediaPalyerElement", item);
-        FluNavigationItem *item5 = new FluNavigationItem("PersonPicture", item);
-        FluNavigationItem *item6 = new FluNavigationItem("Sound", item);
-        FluNavigationItem *item7 = new FluNavigationItem("WebView2", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Media", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AnimatedVisualPlayer", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Capture Element / Camera Preview", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Image", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("mediaPalyerElement", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("PersonPicture", item);
+        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("Sound", item);
+        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("WebView2", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        item->addChildItem(item6);
-        item->addChildItem(item7);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        item->addItem(item6);
+        item->addItem(item7);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeSettingsNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Settings), "Setting", this);
-        m_navView->addNavigationItemButtom(item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Settings), "Setting", this);
+        m_navView->addItemToLayout3(item);
     }
 
     void makeMenuToolBarsNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Save), "Menus & toolbars", this);
-        FluNavigationItem *item1 = new FluNavigationItem("XamlUICommand", item);
-        FluNavigationItem *item2 = new FluNavigationItem("StandardUICommand", item);
-        FluNavigationItem *item3 = new FluNavigationItem("AppBarButton", item);
-        FluNavigationItem *item4 = new FluNavigationItem("AppBarSeparator", item);
-        FluNavigationItem *item5 = new FluNavigationItem("AppBarToggleButton", item);
-        FluNavigationItem *item6 = new FluNavigationItem("CommandBar", item);
-        FluNavigationItem *item7 = new FluNavigationItem("MenuBar", item);
-        FluNavigationItem *item8 = new FluNavigationItem("CommandBarFlyout", item);
-        FluNavigationItem *item9 = new FluNavigationItem("MenuFlyout", item);
-        FluNavigationItem *item10 = new FluNavigationItem("SwipeControl", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Save), "Menus & toolbars", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("XamlUICommand", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("StandardUICommand", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("AppBarButton", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("AppBarSeparator", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("AppBarToggleButton", item);
+        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("CommandBar", item);
+        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("MenuBar", item);
+        FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("CommandBarFlyout", item);
+        FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("MenuFlyout", item);
+        FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("SwipeControl", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        item->addChildItem(item6);
-        item->addChildItem(item7);
-        item->addChildItem(item8);
-        item->addChildItem(item9);
-        item->addChildItem(item10);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        item->addItem(item6);
+        item->addItem(item7);
+        item->addItem(item8);
+        item->addItem(item9);
+        item->addItem(item10);
+        m_navView->addItemToLayout2(item);
     }
-   
+
     void makeNavigationNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton), "Navigation", this);
-        FluNavigationItem *item1 = new FluNavigationItem("BreadcrumbBar", item);
-        FluNavigationItem *item2 = new FluNavigationItem("NavigationView", item);
-        FluNavigationItem *item3 = new FluNavigationItem("Pivot", item);
-        FluNavigationItem *item4 = new FluNavigationItem("TabView", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::BookmarksMirrored), "Navigation", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("BreadcrumbBar", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NavigationView", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Pivot", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("TabView", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeScrollingNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Scrolling", this);
-        FluNavigationItem *item1 = new FluNavigationItem("AnnotatedScrollBar", item);
-        FluNavigationItem *item2 = new FluNavigationItem("PipsPager", item);
-        FluNavigationItem *item3 = new FluNavigationItem("ScrollView", item);
-        FluNavigationItem *item4 = new FluNavigationItem("ScrollViewer", item);
-        FluNavigationItem *item5 = new FluNavigationItem("SemanticZoom", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Sort), "Scrolling", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AnnotatedScrollBar", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("PipsPager", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ScrollView", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ScrollViewer", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("SemanticZoom", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeStatusInfoNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Status & info", this);
-        FluNavigationItem *item1 = new FluNavigationItem("InfoBadge", item);
-        FluNavigationItem *item2 = new FluNavigationItem("InfoBar", item);
-        FluNavigationItem *item3 = new FluNavigationItem("progressBar", item);
-        FluNavigationItem *item4 = new FluNavigationItem("progressRing", item);
-        FluNavigationItem *item5 = new FluNavigationItem("ToolTip", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Reminder), "Status & info", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("progressRing", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ToolTip", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        m_navView->addItemToLayout2(item);
     }
 
     void makeTextNavItem()
     {
-        FluNavigationItem *item = new FluNavigationItem(FluIconUtils::getFluentIcon(FluAwesomeType::Font), "Text", this);
-        FluNavigationItem *item1 = new FluNavigationItem("AutoSuggestBox", item);
-        FluNavigationItem *item2 = new FluNavigationItem("NumberBox", item);
-        FluNavigationItem *item3 = new FluNavigationItem("PassWordBox", item);
-        FluNavigationItem *item4 = new FluNavigationItem("RichEditBox", item);
-        FluNavigationItem *item5 = new FluNavigationItem("RichTextBlock", item);
-        FluNavigationItem *item6 = new FluNavigationItem("TextBlock", item);
-        FluNavigationItem *item7 = new FluNavigationItem("TextBox", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Font), "Text", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NumberBox", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("PassWordBox", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("RichEditBox", item);
+        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RichTextBlock", item);
+        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("TextBlock", item);
+        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TextBox", item);
 
-        item->addChildItem(item1);
-        item->addChildItem(item2);
-        item->addChildItem(item3);
-        item->addChildItem(item4);
-        item->addChildItem(item5);
-        item->addChildItem(item6);
-        item->addChildItem(item7);
-        m_navView->addNavigationItemMid(item);
+        item->addItem(item1);
+        item->addItem(item2);
+        item->addItem(item3);
+        item->addItem(item4);
+        item->addItem(item5);
+        item->addItem(item6);
+        item->addItem(item7);
+        m_navView->addItemToLayout2(item);
     }
 
   protected:

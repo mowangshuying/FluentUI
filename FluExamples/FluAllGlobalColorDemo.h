@@ -9,6 +9,4 @@ class FluAllGlobalColorDemo : public QWidget
     FluAllGlobalColorDemo(QWidget *parent = nullptr) : QWidget(parent)
     {
     }
-
-  private:
 };

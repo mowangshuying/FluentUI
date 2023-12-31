@@ -26,12 +26,18 @@
     <QtMoc Include="FluIconToolWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluTempDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluIconToolWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluTempDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

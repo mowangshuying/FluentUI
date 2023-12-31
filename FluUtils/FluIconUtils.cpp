@@ -22,14 +22,14 @@ FluIconUtils *FluIconUtils::getInstance()
 
 QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType)
 {
-  //  return getFluentIconPixmap(nType, QColor(255, 255, 255));
-  return getFluentIconPixmap(nType, QColor(8, 8, 8));
+    //  return getFluentIconPixmap(nType, QColor(255, 255, 255));
+    return getFluentIconPixmap(nType, QColor(8, 8, 8));
 }
 
 QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor)
 {
     QFont tmpFont = getInstance()->m_fluentFont;
-    tmpFont.setPixelSize(20);
+    tmpFont.setPixelSize(15);
 
     QPixmap tmpPixMap(30, 30);
     tmpPixMap.fill(Qt::transparent);

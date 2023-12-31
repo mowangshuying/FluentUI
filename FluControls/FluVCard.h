@@ -27,7 +27,6 @@ class FluVCard : public QWidget
 
         vMainLaout->addWidget(m_iconLabel);
 
-
         m_titleLabel = new QLabel(this);
         m_titleLabel->setText("Getting started");
         m_titleLabel->setObjectName("titleLabel");
@@ -40,7 +39,6 @@ class FluVCard : public QWidget
         m_contextLabel->setObjectName("contextLabel");
         m_contextLabel->setWordWrap(true);
         vMainLaout->addWidget(m_contextLabel);
-
 
         setFixedSize(200, 220);
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
@@ -63,8 +61,8 @@ class FluVCard : public QWidget
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
 
-    protected:
-        QLabel* m_iconLabel;
-        QLabel* m_titleLabel;
-        QLabel* m_contextLabel;
+  protected:
+    QLabel* m_iconLabel;
+    QLabel* m_titleLabel;
+    QLabel* m_contextLabel;
 };

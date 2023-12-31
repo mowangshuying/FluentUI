@@ -41,6 +41,24 @@
     <ClCompile Include="FluVCard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluHCard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluVScrollView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationIconTextItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationMenuItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationSearchItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -59,6 +77,24 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluVCard.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHCard.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluVScrollView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationIconTextItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationMenuItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationSearchItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

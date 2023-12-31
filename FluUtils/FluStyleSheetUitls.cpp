@@ -13,6 +13,15 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
     return "";
 }
 
+void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget)
+{
+    QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
+    if (widget != nullptr)
+    {
+        widget->setStyleSheet(qss);
+    }
+}
+
 QString FluStyleSheetUitls::getQssByFileName(const QString &jsonVars, const QString &fileName)
 {
     QString styleSheet = getQssByFileName(fileName);
@@ -20,11 +29,29 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &jsonVars, const QStr
     return styleSheet;
 }
 
+void FluStyleSheetUitls::setQssByFileName(const QString &jsonVar, const QString &fileName, QWidget *widget)
+{
+    QString qss = FluStyleSheetUitls::getQssByFileName(jsonVar, fileName);
+    if (widget != nullptr)
+    {
+        widget->setStyleSheet(qss);
+    }
+}
+
 QString FluStyleSheetUitls::getQssByFileName(const QMap<QString, QString> &kvMap, const QString &fileName)
 {
     QString styleSheet = getQssByFileName(fileName);
     replaceVar(kvMap, styleSheet);
     return styleSheet;
+}
+
+void FluStyleSheetUitls::setQssByFileName(const QMap<QString, QString> &kvMap, const QString &fileName, QWidget *widget)
+{
+    QString qss = FluStyleSheetUitls::getQssByFileName(kvMap, fileName);
+    if (widget != nullptr)
+    {
+        widget->setStyleSheet(qss);
+    }
 }
 
 void FluStyleSheetUitls::replaceVar(const QString &jsonVars, QString &styleSheet)

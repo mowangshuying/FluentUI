@@ -9,6 +9,7 @@
 
 #define FluSetObjectName(objectName) setObjectName(#objectName);
 #define FluSetStyleSheet(objectName) setStyleSheet("../StyleSheet/" #objectName ".qss");
+
 #define FluSetNameAndStypeSheet(objectName) \
     FluSetObjectName(objectName);           \
     FluSetStyleSheet(objectName);

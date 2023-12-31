@@ -4,6 +4,7 @@
 #include "FluNavigationDemo.h"
 #include "FluTabDemo.h"
 #include <QApplication>
+#include "FluFlowLayoutDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -18,7 +19,10 @@ int main(int argc, char **argv)
     // FluButtonExampleWidget demo;
     // demo.show();
 
-    FluNavigationDemo demo;
+    //  FluNavigationDemo demo;
+    //  demo.show();
+
+    FluFlowLayoutDemo demo;
     demo.show();
 
     return app.exec();

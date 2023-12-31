@@ -13,6 +13,12 @@ class FluFlowLayout : public QLayout
     ~FluFlowLayout();
 
     void addItem(QLayoutItem *item) override;
+    void setSpacing(int hSpace, int vSpace)
+    {
+        m_hSpace = hSpace;
+        m_vSpace = vSpace;
+    }
+
     int horizontalSpacing() const;
     int verticalSpacing() const;
     Qt::Orientations expandingDirections() const override;

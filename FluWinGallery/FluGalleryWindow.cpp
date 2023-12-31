@@ -12,8 +12,9 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     setWindowTitle("WinUi 3 Gallery - Cpp");
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
-    //m_titleBar->setStyleSheet("background-color: transparent;");
-    //m_titleBar->setObjectName("titleBar");
+    // resize
+    resize(1000, 750);
+
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
     m_titleBar->setFixedHeight(40);
@@ -24,6 +25,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     m_navView = new FluNavigationView(this);
     m_sLayout = new QStackedLayout(this);
     m_contentLayout->addWidget(m_navView);
+    m_contentLayout->addSpacing(20);
     m_contentLayout->addLayout(m_sLayout, 1);
 
     auto homePage = new FluHomePage(this);

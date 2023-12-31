@@ -5,6 +5,7 @@
 #include "../FluControls/FluNavigationIconTextItem.h"
 #include "FluHomePage.h"
 #include <QStackedLayout>
+#include "../FluControls/FluStackedLayout.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -282,5 +283,5 @@ class FluGalleryWindow : public FluFrameLessWidget
 
   protected:
     FluNavigationView *m_navView;
-    QStackedLayout *m_sLayout;
+    FluStackedLayout *m_sLayout;
 };

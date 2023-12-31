@@ -17,6 +17,8 @@ class FluStackedLayout : public QStackedLayout
 
     void addWidget(QString str, QWidget *w);
 
+    int addWidget(QWidget *w);
+
     void removeWidget(QString str, QWidget *w);
 
     void setCurrentWidget(QString str);

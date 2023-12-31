@@ -106,6 +106,7 @@
     <ClCompile Include="FluChangeBgDemo.cpp" />
     <ClCompile Include="FluColorDemo.cpp" />
     <ClCompile Include="FluFlowLayoutDemo.cpp" />
+    <ClCompile Include="FluLineEditDemo.cpp" />
     <ClCompile Include="FluTabDemo.cpp" />
     <ClCompile Include="FluExpandDemo.cpp" />
     <ClCompile Include="FluNavigationDemo.cpp" />
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayoutDemo.h" />
+    <QtMoc Include="FluLineEditDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

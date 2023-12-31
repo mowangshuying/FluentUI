@@ -18,6 +18,11 @@ void FluStackedLayout::addWidget(QString str, QWidget *w)
     QStackedLayout::addWidget(w);
 }
 
+int FluStackedLayout::addWidget(QWidget *w)
+{
+    return QStackedLayout::addWidget(w);
+}
+
 void FluStackedLayout::removeWidget(QString str, QWidget *w)
 {
     auto itf = m_widgetMap.find(str);

@@ -1,5 +1,5 @@
 #include "FluGalleryWindow.h"
-
+#include "FluAEmptyPage.h"
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 #include <FramelessHelper/Widgets/standardsystembutton.h>
@@ -23,13 +23,16 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     setStyleSheet(qss);
 
     m_navView = new FluNavigationView(this);
-    m_sLayout = new QStackedLayout(this);
+    m_sLayout = new FluStackedLayout(this);
     m_contentLayout->addWidget(m_navView);
     m_contentLayout->addSpacing(20);
     m_contentLayout->addLayout(m_sLayout, 1);
 
-    auto homePage = new FluHomePage(this);
-    m_sLayout->addWidget(homePage);
+  //  auto homePage = new FluHomePage(this);
+  //  m_sLayout->addWidget(homePage);
+
+    auto aEmptyPage = new FluAEmptyPage(this);
+    m_sLayout->addWidget(aEmptyPage);
 
     // home
     makeHomeNavItem();

@@ -1,0 +1,10 @@
+FluAEmptyPage {
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+}
+
+#titleLabel {
+    font-size: 26px;
+    font-weight: bold;
+    /* text-decoration: underline; */
+}

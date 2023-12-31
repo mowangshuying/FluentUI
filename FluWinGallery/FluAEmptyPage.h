@@ -9,4 +9,6 @@ class FluAEmptyPage : public QWidget
     Q_OBJECT
   public:
     FluAEmptyPage(QWidget* parent = nullptr);
+
+    void paintEvent(QPaintEvent* event);
 };

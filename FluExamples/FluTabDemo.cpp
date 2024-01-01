@@ -5,7 +5,7 @@ FluTabDemo::FluTabDemo(QWidget *parent /*= nullptr*/) : FluTabWidget(parent)
     resize(800, 600);
     // set attr
     setVisible(true);
-    setTabsClosable(true); 
+    setTabsClosable(true);
 
     addColorExampleWidget();
     addChangeBackgrondWidget();

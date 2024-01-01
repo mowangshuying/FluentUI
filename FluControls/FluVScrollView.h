@@ -17,8 +17,14 @@ class FluVScrollView : public QScrollArea
         m_contextWidget = new QWidget(this);
         setWidget(m_contextWidget);
         m_vMainLayout = new QVBoxLayout(m_contextWidget);
+        m_contextWidget->setObjectName("contextWidget");
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVScrollView.qss");
         setStyleSheet(qss);
+    }
+
+    QVBoxLayout* getMainLayout()
+    {
+        return m_vMainLayout;
     }
 
   protected:

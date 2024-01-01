@@ -1,0 +1,81 @@
+FluTypeographyPage {
+    background-color: rgb(249, 249, 249);
+    border-radius: 8px;
+    border: 1px solid rgb(229, 229, 229);
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#titleLabel {
+    font-size: 26px;
+    /* font-weight: bold; */
+    /* text-decoration: underline; */
+}
+
+#infoLabel {
+    font-size: 12px;
+    color: rgb(26, 26, 26);
+}
+
+#typeRampLabel {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#typeRampWrap {
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
+    border: 1px solid rgb(234, 234, 234);
+}
+
+#labelsWrap {
+    background-color: rgb(251, 251, 251);
+}
+
+
+/*The scroll view qss*/
+
+#contextWidget {
+    background-color: transparent;
+}
+
+QScrollArea {
+    background-color: transparent;
+    border: none;
+}
+
+QScrollBar:vertical {
+    width: 4px;
+    background: transparent;
+    margin: 0px, 0px, 0px, 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+/* QScrollBar:vertical:hover {
+    width: 4px;
+} */
+
+QScrollBar::handle:vertical {
+    width: 4px;
+    background: rgb(138, 138, 138);
+    border-radius: 2px;
+    min-height: 15;
+}
+
+
+/* QScrollBar::handle:vertical:hover {
+    width: 2px;
+    background: rgb(138, 138, 138);
+    border-radius: 1px;
+    min-height: 15;
+} */
+
+QScrollBar::add-line:vertical {
+    background-color: transparent;
+}
+
+QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}

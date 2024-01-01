@@ -6,6 +6,7 @@
 #include "FluHomePage.h"
 #include <QStackedLayout>
 #include "../FluControls/FluStackedLayout.h"
+#include "FluTypeographyPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -21,7 +22,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         auto homePage = new FluHomePage;
         m_sLayout->addWidget("HomePage", homePage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("HomePage"); });
-        //connect(item, )
     }
 
     void makeDesignGuidanceNavItem()
@@ -35,6 +35,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item2);
         item->addItem(item3);
         m_navView->addItemToLayout2(item);
+
+        auto typographyPage = new FluTypeographyPage;
+        m_sLayout->addWidget("TypographyPage", typographyPage);
+        connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TypographyPage");
+            });
     }
 
     void makeSamplesNavItem()

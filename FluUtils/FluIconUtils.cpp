@@ -26,12 +26,13 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType)
     return getFluentIconPixmap(nType, QColor(8, 8, 8));
 }
 
-QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor)
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h)
 {
+    //return QPixmap();
     QFont tmpFont = getInstance()->m_fluentFont;
     tmpFont.setPixelSize(15);
 
-    QPixmap tmpPixMap(30, 30);
+    QPixmap tmpPixMap(w, h);
     tmpPixMap.fill(Qt::transparent);
     QPainter painter;
     painter.begin(&tmpPixMap);
@@ -43,6 +44,11 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor)
     painter.end();
     // tmpPixMap.save("tmp.png");
     return tmpPixMap;
+}
+
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor)
+{
+    return getFluentIconPixmap(nType, penColor, 30, 30);
 }
 
 QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType)

@@ -9,6 +9,9 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent
 
     auto btn2 = new FluIconButton(FluAwesomeType::Wifi, this);
     addDemo(btn2);
+
+    auto btn3 = new FluIconButton(FluAwesomeType::Wifi, FluAwesomeType::Accept, this);
+    addDemo(btn3);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

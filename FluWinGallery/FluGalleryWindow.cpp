@@ -35,8 +35,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
   //  auto homePage = new FluHomePage(this);
   //  m_sLayout->addWidget(homePage);
 
-    auto aEmptyPage = new FluAEmptyPage(this);
-    m_sLayout->addWidget(aEmptyPage);
+  //  auto aEmptyPage = new FluAEmptyPage(this);
+  //  m_sLayout->addWidget(aEmptyPage);
 
     // home
     makeHomeNavItem();

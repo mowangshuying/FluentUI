@@ -11,4 +11,8 @@ class FluAEmptyPage : public QWidget
     FluAEmptyPage(QWidget* parent = nullptr);
 
     void paintEvent(QPaintEvent* event);
+
+  protected:
+    QLabel* m_titleLabel;
+    QVBoxLayout *m_mainLayout;
 };

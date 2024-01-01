@@ -2,32 +2,49 @@
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
+#include "../FluControls/FluPushButton.h"
+#include "../FluControls/FluIconButton.h"
 
 FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
-    auto mainLayout = new QVBoxLayout;
-    mainLayout->setAlignment(Qt::AlignTop);
-    setLayout(mainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setAlignment(Qt::AlignTop);
+    setLayout(m_mainLayout);
 
-    mainLayout->setContentsMargins(35, 35, 35, 35);
+    m_mainLayout->setContentsMargins(35, 35, 35, 35);
 
-    auto titleLabel = new QLabel;
-    titleLabel->setObjectName("titleLabel");
-    titleLabel->setText("EmptyPage - Tilte");
-    mainLayout->addWidget(titleLabel);
+    auto titleWrap = new QWidget;
+    titleWrap->setObjectName("titleWrap");
+    m_mainLayout->addWidget(titleWrap);
 
-    auto infoLabel = new QLabel;
-    infoLabel->setObjectName("infoLabel");
-    infoLabel->setText("EmptyPage - info");
-    infoLabel->setWordWrap(true);
-    mainLayout->addWidget(infoLabel);
+    m_titleLabel = new QLabel;
+    m_titleLabel->setObjectName("titleLabel");
+    m_titleLabel->setText("A Temp Title Label");
+    m_mainLayout->addWidget(m_titleLabel);
 
+    auto tileWraHLayout = new QHBoxLayout;
+    m_mainLayout->addLayout(tileWraHLayout);
 
-  //  auto textLabel = new QLabel;
- //   textLabel->setObjectName("textLabel");
- //   textLabel->setText("A Empty Page!");
+    auto documentationBtn = new FluPushButton;
+    documentationBtn->setText("Documentation");
+    documentationBtn->setFixedWidth(160);
+    tileWraHLayout->addWidget(documentationBtn, Qt::AlignLeft);
 
-  //  mainLayout->addWidget(textLabel);
+     auto sourceBtn = new FluPushButton;
+    sourceBtn->setText("Source");
+     sourceBtn->setFixedWidth(120);
+    tileWraHLayout->addWidget(sourceBtn, Qt::AlignLeft);
+
+    auto themeBtn = new FluIconButton(FluAwesomeType::Light);
+    auto copyLinkBtn = new FluIconButton(FluAwesomeType::Link);
+    auto sendFeedBackBtn = new FluIconButton(FluAwesomeType::Feedback);
+
+    tileWraHLayout->addStretch();
+
+    tileWraHLayout->addWidget(themeBtn, Qt::AlignRight);
+    tileWraHLayout->addWidget(copyLinkBtn, Qt::AlignRight);
+    tileWraHLayout->addWidget(sendFeedBackBtn, Qt::AlignRight);
+
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", this);
 }

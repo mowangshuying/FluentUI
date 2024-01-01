@@ -27,20 +27,20 @@ class FluIconButton : public QPushButton
         // please ensure type1 will in FluAwesomeType, if can't suitable may crash.
         
         QPixmap  pixmap = FluIconUtils::getFluentIconPixmap(type1);
-        pixmap = pixmap.scaled(20, 20);
+        pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         setIcon(QIcon(pixmap));
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
     }
 
-    FluIconButton(FluAwesomeType type1, FluAwesomeType type2, QWidget* parent = nullptr) : QPushButton(parent)
+    FluIconButton(FluAwesomeType type1, FluAwesomeType type2, QWidget* parent = nullptr) : QPushButton(parent), m_type1(type1), m_type2(type2)
     {
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
         // please ensure type1 will in FluAwesomeType, if can't suitable may crash.
 
         QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type1);
-        pixmap = pixmap.scaled(20, 20);
+        pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         setIcon(QIcon(pixmap));
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
@@ -51,7 +51,7 @@ class FluIconButton : public QPushButton
         connect(m_timer, &QTimer::timeout, [=]() {
             // change type2 to type1
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type1);
-            pixmap = pixmap.scaled(20, 20);
+            pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             setIcon(QIcon(pixmap));
         });
 
@@ -59,8 +59,10 @@ class FluIconButton : public QPushButton
 
             // change to type2
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type2);
-            pixmap = pixmap.scaled(20, 20);
+            pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             setIcon(QIcon(pixmap));
+
+            m_timer->start();
 
         });
     }

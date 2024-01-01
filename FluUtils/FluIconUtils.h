@@ -20,6 +20,7 @@ class FluIconUtils
     static QPixmap getFluentIconPixmap(FluAwesomeType nType);
     static QIcon getFluentIcon(FluAwesomeType nType);
 
+    static QPixmap getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h);
     static QPixmap getFluentIconPixmap(FluAwesomeType nType, QColor penColor);
     static QIcon getFluentIcon(FluAwesomeType nType, QColor penColor);
 

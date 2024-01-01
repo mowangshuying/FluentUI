@@ -16,6 +16,13 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     titleLabel->setText("EmptyPage - Tilte");
     mainLayout->addWidget(titleLabel);
 
+    auto infoLabel = new QLabel;
+    infoLabel->setObjectName("infoLabel");
+    infoLabel->setText("EmptyPage - info");
+    infoLabel->setWordWrap(true);
+    mainLayout->addWidget(infoLabel);
+
+
   //  auto textLabel = new QLabel;
  //   textLabel->setObjectName("textLabel");
  //   textLabel->setText("A Empty Page!");

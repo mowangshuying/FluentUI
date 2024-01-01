@@ -11,3 +11,11 @@ FluAEmptyPage {
     font-weight: bold;
     /* text-decoration: underline; */
 }
+
+#infoLabel {
+    font-size: 18px;
+    color: rgb(113, 113, 113);
+    /* text-decoration: underline; */
+    /* border: 1px solid rgb(209, 209, 209); */
+    border-radius: 4px;
+}

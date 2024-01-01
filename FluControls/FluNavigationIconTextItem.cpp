@@ -240,6 +240,10 @@ void FluNavigationIconTextItem::mouseReleaseEvent(QMouseEvent *event)
 
 void FluNavigationIconTextItem::onItemClicked()
 {
+    // enableThisItem equal false just return it.
+    if (!m_bEnableThisItem)
+        return;
+
     if (m_bDown)
     {
         //       LOG_DEBUG << "click down.";

@@ -1,11 +1,14 @@
 #include "FluButtonDemo.h"
+#include "../FluControls/FluIconButton.h"
 
-FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : QWidget(parent)
+FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent)
 {
     auto btn1 = new FluPushButton(this);
     btn1->setText("Standard XAML button");
-    btn1->move(50, 50);
-    setStyleSheet("background-color:rgb(243,243,243);");
+    addDemo(btn1);
+
+    auto btn2 = new FluIconButton(FluAwesomeType::Wifi, this);
+    addDemo(btn2);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

@@ -5,7 +5,9 @@
 #include <QStyleOption>
 #include <QWidget>
 
-class FluButtonDemo : public QWidget
+#include "FluDisplay9.h"
+
+class FluButtonDemo : public FluDisplay9
 {
     Q_OBJECT
   public:

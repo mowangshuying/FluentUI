@@ -65,6 +65,12 @@
     <ClCompile Include="FluLineEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluLabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluIconButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -107,6 +113,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluLineEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluLabel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluIconButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -58,6 +58,8 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     void updateSelected(bool b);
 
+    void enableThisItem(bool b);
+
     bool isDown()
     {
         return m_bDown;
@@ -103,4 +105,5 @@ class FluNavigationIconTextItem : public FluNavigationItem
     bool m_bDown;
     bool m_bLong;
     bool m_bSelected;
+    bool m_bEnableThisItem;
 };

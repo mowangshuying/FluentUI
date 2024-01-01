@@ -20,7 +20,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         auto homePage = new FluHomePage;
         m_sLayout->addWidget("HomePage", homePage);
-
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("HomePage"); });
         //connect(item, )
     }
 
@@ -48,6 +48,8 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::CheckboxComposite), "Basic input", this);
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InputValidation", item);
+        item1->enableThisItem(false);
+
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Button", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DropDownButton", item);
 

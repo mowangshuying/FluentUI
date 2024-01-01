@@ -11,13 +11,18 @@ FluNavigationItem {
     /* border-radius: 0px; */
 }
 
-#wrapWidget1[selected=true] {
+#wrapWidget1[selected=true][enableThisItem=true] {
     /* background-color: aquamarine; */
     background-color: rgb(234, 234, 234);
     border-radius: 4px;
 }
 
-#wrapWidget1:hover {
+
+/* #wrapWidget1[enableThisItem=false] {
+    background-color: rgb(243, 243, 243);
+} */
+
+#wrapWidget1:hover[enableThisItem=true] {
     /* background-color: aquamarine; */
     background-color: rgb(234, 234, 234);
     border-radius: 4px;
@@ -33,6 +38,11 @@ FluNavigationItem {
     border-radius: 2px;
 }
 
+#indicator[enableThisItem=false] {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
 #icon {
     border: none;
     background-color: transparent;
@@ -41,6 +51,10 @@ FluNavigationItem {
 #label {
     background-color: transparent;
     font-size: 12px;
+}
+
+#label[enableThisItem=false] {
+    color: rgb(178, 178, 178);
 }
 
 #arrow {

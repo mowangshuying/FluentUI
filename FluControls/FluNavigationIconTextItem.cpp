@@ -217,6 +217,16 @@ void FluNavigationIconTextItem::updateSelected(bool b)
     setProperty("selected", b);
     m_wrapWidget1->setProperty("selected", b);
     m_indicator->setProperty("selected", b);
+    m_label->setProperty("selected", b);
+}
+
+void FluNavigationIconTextItem::enableThisItem(bool b)
+{
+    m_bEnableThisItem = b;
+    setProperty("enableThisItem", b);
+    m_wrapWidget1->setProperty("enableThisItem", b);
+    m_indicator->setProperty("enableThisItem", b);
+    m_label->setProperty("enableThisItem", b);
 }
 
 void FluNavigationIconTextItem::mouseReleaseEvent(QMouseEvent *event)

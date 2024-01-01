@@ -71,6 +71,9 @@
     <ClCompile Include="FluIconButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluExpander.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -124,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluExpander.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

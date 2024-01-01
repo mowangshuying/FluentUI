@@ -77,60 +77,12 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     m_parentItem = nullptr;
     m_parentView = nullptr;
     connect(m_arrow, &QPushButton::clicked, [=](bool b) {
-        if (m_bDown)
-        {
-            LOG_DEBUG << "click down.";
-            // LOG_DEBUG << "before height:" << height();
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
-            // display chid
-            if (m_items.size() > 0)
-            {
-                int nH = 0;
-                for (int i = 0; i < m_vLayout1->count(); i++)
-                {
-                    auto item = (FluNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
-                    nH += item->height() + 5;
-                }
-
-                m_wrapWidget2->setFixedHeight(nH);
-                m_wrapWidget2->show();
-                // set all item height;
-                setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height() + 5);
-            }
-
-            adjustItemHeight(m_parentItem);
-            m_wrapWidget2->show();
-            // show();
-            // adjustItemHeight();
-            m_bDown = false;
-            // LOG_DEBUG << "end height:" << height();
-        }
-        else
-        {
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
-            setFixedHeight(40);
-            m_wrapWidget2->hide();
-            adjustItemHeight(m_parentItem);
-            m_bDown = true;
-        }
+        emit itemClicked();
     });
 
-    connect(m_icon, &QPushButton::clicked, [=](bool b) {
-        //	if (m_bLong)
-        //	{
-        //		m_bLong = false;
-        //		m_label->hide();
-        //		m_arrow->hide();
-        //		setFixedWidth(48);
-        //	}
-        //	else
-        //	{
-        //		m_bLong = true;
-        //		m_label->show();
-        //		m_arrow->show();
-        //		setFixedWidth(320);
-        //	}
-    });
+    connect(m_icon, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
+    connect(this, &FluNavigationIconTextItem::itemClicked, [=]() { onItemClicked();
+        });
 }
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QIcon icon, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
@@ -182,8 +134,9 @@ int FluNavigationIconTextItem::calcItemW2Height(FluNavigationIconTextItem *item)
     for (int i = 0; i < item->m_vLayout1->count(); i++)
     {
         auto tmpItem = (FluNavigationIconTextItem *)item->m_vLayout1->itemAt(i)->widget();
-        nH += tmpItem->height();
+        nH += tmpItem->height() + 5;
     }
+    nH = nH + 5;
     return nH;
 }
 
@@ -271,6 +224,55 @@ void FluNavigationIconTextItem::mouseReleaseEvent(QMouseEvent *event)
     QPoint pos = event->pos();
     if (!m_wrapWidget1->rect().contains(pos))
         return;
+
+    emit itemClicked();
+}
+
+void FluNavigationIconTextItem::onItemClicked()
+{
+    if (m_bDown)
+    {
+        //       LOG_DEBUG << "click down.";
+        // LOG_DEBUG << "before height:" << height();
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
+        // display chid
+        if (m_items.size() > 0)
+        {
+            int nH = 0;
+            for (int i = 0; i < m_vLayout1->count(); i++)
+            {
+                auto item = (FluNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
+                nH += item->height() + 5;
+              //  if (i != m_vLayout1->count() - 1)
+              //  {
+              //      nH += 5;
+              //  }
+            }
+
+            m_wrapWidget2->setFixedHeight(nH);
+            m_wrapWidget2->show();
+            // set all item height;
+            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height() + 5);
+        }
+
+        adjustItemHeight(m_parentItem);
+        m_wrapWidget2->show();
+        // show();
+        // adjustItemHeight();
+        m_bDown = false;
+        // LOG_DEBUG << "end height:" << height();
+    }
+    else
+    {
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
+        setFixedHeight(40);
+        if (m_items.size() > 0)
+        {
+            m_wrapWidget2->hide();
+            adjustItemHeight(m_parentItem);
+        }
+        m_bDown = true;
+    }
 
     // get root item
     auto rootItem = getRootItem();

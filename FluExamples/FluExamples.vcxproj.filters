@@ -53,7 +53,7 @@
     <ClCompile Include="FluLineEditDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluDemo.cpp">
+    <ClCompile Include="FluDisplay9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -82,7 +82,7 @@
     <QtMoc Include="FluLineEditDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluDemo.h">
+    <QtMoc Include="FluDisplay9.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

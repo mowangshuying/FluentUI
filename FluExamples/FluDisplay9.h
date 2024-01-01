@@ -22,7 +22,7 @@ class FluDisplay9 : public QWidget
         if (gridLayout->count() >= 9)
             return;
 
-        int count = gridLayout->count() + 1;
+        int count = gridLayout->count();
         int row = count / 3;
         int col = count % 3;
 

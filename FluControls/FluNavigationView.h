@@ -39,6 +39,8 @@ class FluNavigationView : public QWidget
 
     void paintEvent(QPaintEvent *event) override;
 
+  public slots:
+    void onMenuItemClicked();
   public:
     QVBoxLayout *m_vLayout;
 

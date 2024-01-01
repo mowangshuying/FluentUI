@@ -49,25 +49,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
 
     m_bLong = true;
     setFixedWidth(320 + 10);
-    connect(menuButtonItem, &FluNavigationMenuItem::menuClicked, [=]() {
-        if (m_bLong)
-        {
-            setFixedWidth(48);
-            m_bLong = false;
-
-            // close all item in vLayout
-            for (int i = 0; i < m_vLayout2->count(); i++)
-            {
-                auto item = (FluNavigationIconTextItem *)(m_vLayout2->itemAt(i)->widget());
-                if (item == nullptr)
-                    continue;
-            }
-        }
-        else
-        {
-            setFixedWidth(320);
-            m_bLong = true;
-        }
+    connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked();
     });
 }
 
@@ -111,4 +93,31 @@ void FluNavigationView::paintEvent(QPaintEvent *event)
     opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluNavigationView::onMenuItemClicked()
+{
+    if (m_bLong)
+    {
+        // close all item in vLayout
+        for (int i = 0; i < m_vLayout2->count(); i++)
+        {
+            auto item = (FluNavigationIconTextItem *)(m_vLayout2->itemAt(i)->widget());
+            if (item == nullptr)
+                continue;
+
+            if (!item->isDown())
+            {
+                item->onItemClicked();
+            }
+        }
+
+        setFixedWidth(48);
+        m_bLong = false;
+    }
+    else
+    {
+        setFixedWidth(320);
+        m_bLong = true;
+    }
 }

@@ -13,19 +13,23 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
     // resize
-    resize(1000, 750);
+    resize(1200, 800);
 
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
-    m_titleBar->setFixedHeight(40);
+    m_titleBar->setFixedHeight(48);
 
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
     setStyleSheet(qss);
 
     m_navView = new FluNavigationView(this);
     m_sLayout = new FluStackedLayout(this);
+
+    // if nav long will be short, short will be long after clicked it.
+   // m_navView->onMenuItemClicked();
+
     m_contentLayout->addWidget(m_navView);
-    m_contentLayout->addSpacing(20);
+  //  m_contentLayout->addSpacing(20);
     m_contentLayout->addLayout(m_sLayout, 1);
 
   //  auto homePage = new FluHomePage(this);

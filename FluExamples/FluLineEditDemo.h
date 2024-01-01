@@ -3,18 +3,16 @@
 #include <QLineEdit>
 
 #include "../FluControls/FluLineEdit.h"
+#include "FluDisplay9.h"
 
-class FluLineEditDemo : public QWidget
+class FluLineEditDemo : public FluDisplay9
 {
     Q_OBJECT
   public:
-      FluLineEditDemo(QWidget* parent = nullptr) : QWidget(parent)
-      {
-          auto lineEdit = new FluLineEdit(this);
-          lineEdit->setFixedSize(120, 30);
-          lineEdit->move(50, 50);
-
-          setStyleSheet("background-color:rgb(249, 249, 249)");
-          resize(800, 600);
-      }
+    FluLineEditDemo(QWidget* parent = nullptr) : FluDisplay9(parent)
+    {
+        auto lineEdit = new FluLineEdit(this);
+        lineEdit->setFixedSize(120, 30);
+        addDemo(lineEdit);
+    }
 };

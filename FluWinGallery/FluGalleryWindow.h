@@ -17,6 +17,11 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Home), "Home", this);
         m_navView->addItemToLayout2(item);
+
+        auto homePage = new FluHomePage;
+        m_sLayout->addWidget("HomePage", homePage);
+
+        //connect(item, )
     }
 
     void makeDesignGuidanceNavItem()

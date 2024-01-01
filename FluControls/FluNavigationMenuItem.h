@@ -12,7 +12,7 @@ class FluNavigationMenuItem : public FluNavigationItem
   public:
     FluNavigationMenuItem(QWidget *parent = nullptr);
   signals:
-    void menuClicked();
+    void menuItemClicked();
 
   protected:
     QPushButton *m_menuButton;

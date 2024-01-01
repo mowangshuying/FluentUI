@@ -19,5 +19,5 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
     m_menuButton->setObjectName("menuButton");
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss");
     setStyleSheet(qss);
-    connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuClicked(); });
+    connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
 }

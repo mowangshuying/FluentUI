@@ -9,6 +9,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     mainLayout->setAlignment(Qt::AlignTop);
     setLayout(mainLayout);
 
+    mainLayout->setContentsMargins(35, 35, 35, 35);
 
     auto titleLabel = new QLabel;
     titleLabel->setObjectName("titleLabel");

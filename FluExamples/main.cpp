@@ -26,20 +26,20 @@ int main(int argc, char **argv)
     //  FluNavigationDemo demo;
     //  demo.show();
 
-  //  FluFlowLayoutDemo demo;
-  //  demo.show();
+    //  FluFlowLayoutDemo demo;
+    //  demo.show();
 
- //   FluLineEditDemo demo;
- //   demo.show();
+    //   FluLineEditDemo demo;
+    //   demo.show();
 
-  //  FluButtonDemo demo;
-  //  demo.show();
+    //  FluButtonDemo demo;
+    //  demo.show();
 
-   // FluMultiLineTextDemo demo;
-   // demo.show();
+    // FluMultiLineTextDemo demo;
+    // demo.show();
 
-   // FluTextAreaDemo demo;
-   // demo.setText("Custom TextAreannLine 2nLine 3nLine 4");
+    // FluTextAreaDemo demo;
+    // demo.setText("Custom TextAreannLine 2nLine 3nLine 4");
 
     FluExpandDemo demo;
     demo.show();

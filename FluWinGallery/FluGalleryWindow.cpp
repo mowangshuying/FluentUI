@@ -26,17 +26,17 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     m_sLayout = new FluStackedLayout(this);
 
     // if nav long will be short, short will be long after clicked it.
-   // m_navView->onMenuItemClicked();
+    // m_navView->onMenuItemClicked();
 
     m_contentLayout->addWidget(m_navView);
-  //  m_contentLayout->addSpacing(20);
+    //  m_contentLayout->addSpacing(20);
     m_contentLayout->addLayout(m_sLayout, 1);
 
-  //  auto homePage = new FluHomePage(this);
-  //  m_sLayout->addWidget(homePage);
+    //  auto homePage = new FluHomePage(this);
+    //  m_sLayout->addWidget(homePage);
 
-  //  auto aEmptyPage = new FluAEmptyPage(this);
-  //  m_sLayout->addWidget(aEmptyPage);
+    //  auto aEmptyPage = new FluAEmptyPage(this);
+    //  m_sLayout->addWidget(aEmptyPage);
 
     // home
     makeHomeNavItem();

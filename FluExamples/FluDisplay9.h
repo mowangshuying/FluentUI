@@ -16,7 +16,6 @@ class FluDisplay9 : public QWidget
         resize(600, 400);
     }
 
-
     void addDemo(QWidget* widget)
     {
         if (gridLayout->count() >= 9)

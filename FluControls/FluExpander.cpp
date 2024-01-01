@@ -13,11 +13,10 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_hWrap1Layout = new QHBoxLayout;
     m_wrap1->setLayout(m_hWrap1Layout);
     m_hWrap1Layout->setContentsMargins(5, 5, 5, 5);
-    // m_wrap1->setContentsMargins(5, 5, 5, 5);
 
     auto btn = new FluIconButton(FluAwesomeType::ChevronDown, m_wrap1);
     btn->setObjectName("downOrUpButton");
-    // btn->move(width() - btn->width() - 5, 5);
+
     m_hWrap1Layout->addStretch();
     m_hWrap1Layout->addWidget(btn, Qt::AlignHCenter);
 
@@ -28,9 +27,6 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_mainLayout->addWidget(m_wrap1);
     m_mainLayout->addSpacing(1);
     m_mainLayout->addWidget(m_wrap2);
-
-    // widget1->setStyleSheet("background-color:pink;");
-    // widget2->setStyleSheet("background-color:yellow;");
 
     m_bDown = true;
     auto expandAni = new QPropertyAnimation(m_wrap2, "geometry");
@@ -53,7 +49,6 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     });
 
     connect(expandAni, &QPropertyAnimation::valueChanged, [=](const QVariant& value) {
-        // setFixedHeight(widget1->height() + widget2->height());
         QRect tmp = value.toRect();
         m_wrap2->setFixedHeight(tmp.height());
         setFixedHeight(m_wrap1->height() + m_wrap2->height());

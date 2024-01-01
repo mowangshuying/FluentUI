@@ -76,13 +76,10 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     // m_currentWidth  = 320;
     m_parentItem = nullptr;
     m_parentView = nullptr;
-    connect(m_arrow, &QPushButton::clicked, [=](bool b) {
-        emit itemClicked();
-    });
+    connect(m_arrow, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
 
     connect(m_icon, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
-    connect(this, &FluNavigationIconTextItem::itemClicked, [=]() { onItemClicked();
-        });
+    connect(this, &FluNavigationIconTextItem::itemClicked, [=]() { onItemClicked(); });
 }
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QIcon icon, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
@@ -257,10 +254,10 @@ void FluNavigationIconTextItem::onItemClicked()
             {
                 auto item = (FluNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
                 nH += item->height() + 5;
-              //  if (i != m_vLayout1->count() - 1)
-              //  {
-              //      nH += 5;
-              //  }
+                //  if (i != m_vLayout1->count() - 1)
+                //  {
+                //      nH += 5;
+                //  }
             }
 
             m_wrapWidget2->setFixedHeight(nH);

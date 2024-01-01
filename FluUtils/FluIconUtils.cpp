@@ -28,7 +28,7 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType)
 
 QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h)
 {
-    //return QPixmap();
+    // return QPixmap();
     QFont tmpFont = getInstance()->m_fluentFont;
     tmpFont.setPixelSize(15);
 

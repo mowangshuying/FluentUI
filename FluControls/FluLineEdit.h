@@ -1,8 +1,6 @@
 #pragma once
 
-
-
-#include <QLineEdit> 
+#include <QLineEdit>
 #include "FluDef.h"
 #include "../FluUtils/FluUtils.h"
 

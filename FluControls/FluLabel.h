@@ -29,7 +29,7 @@ class FluLabel : public QLabel
     {
         // style£º
         // reference WinUi3 Gallary Typeography page.
-       // setProperty("style", m_style);
+        // setProperty("style", m_style);
         setStyle(style);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
     }
@@ -71,6 +71,6 @@ class FluLabel : public QLabel
         setProperty("labelStyle", styleString);
     }
 
-    protected:
+  protected:
     FluLabelStyle m_style;
 };

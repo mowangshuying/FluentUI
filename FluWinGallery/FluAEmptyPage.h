@@ -14,5 +14,5 @@ class FluAEmptyPage : public QWidget
 
   protected:
     QLabel* m_titleLabel;
-    QVBoxLayout *m_mainLayout;
+    QVBoxLayout* m_mainLayout;
 };

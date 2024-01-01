@@ -41,6 +41,7 @@ class FluNavigationView : public QWidget
 
   public slots:
     void onMenuItemClicked();
+
   public:
     QVBoxLayout *m_vLayout;
 

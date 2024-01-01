@@ -30,9 +30,9 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     documentationBtn->setFixedWidth(160);
     tileWraHLayout->addWidget(documentationBtn, Qt::AlignLeft);
 
-     auto sourceBtn = new FluPushButton;
+    auto sourceBtn = new FluPushButton;
     sourceBtn->setText("Source");
-     sourceBtn->setFixedWidth(120);
+    sourceBtn->setFixedWidth(120);
     tileWraHLayout->addWidget(sourceBtn, Qt::AlignLeft);
 
     auto themeBtn = new FluIconButton(FluAwesomeType::Light);
@@ -44,7 +44,6 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     tileWraHLayout->addWidget(themeBtn, Qt::AlignRight);
     tileWraHLayout->addWidget(copyLinkBtn, Qt::AlignRight);
     tileWraHLayout->addWidget(sendFeedBackBtn, Qt::AlignRight);
-
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", this);
 }

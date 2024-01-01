@@ -49,8 +49,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
 
     m_bLong = true;
     setFixedWidth(320 + 10);
-    connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked();
-    });
+    connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
 }
 
 void FluNavigationView::addItemToLayout1(FluNavigationIconTextItem *item)

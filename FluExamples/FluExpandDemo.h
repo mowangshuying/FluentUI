@@ -14,7 +14,7 @@ class FluExpandDemo : public QWidget
 {
     Q_OBJECT
   public:
-    FluExpandDemo(QWidget *parent = nullptr) : QWidget(parent)
+    FluExpandDemo(QWidget* parent = nullptr) : QWidget(parent)
     {
         resize(600, 400);
 

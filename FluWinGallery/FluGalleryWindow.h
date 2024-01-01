@@ -38,8 +38,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         auto typographyPage = new FluTypeographyPage;
         m_sLayout->addWidget("TypographyPage", typographyPage);
-        connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TypographyPage");
-            });
+        connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TypographyPage"); });
     }
 
     void makeSamplesNavItem()

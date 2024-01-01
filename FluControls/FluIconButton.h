@@ -5,28 +5,27 @@
 #include "../FluUtils/FluUtils.h"
 #include <QTimer>
 
-// to display fluent icon use fluent font 
+// to display fluent icon use fluent font
 class FluIconButton : public QPushButton
 {
     Q_OBJECT
   public:
     FluIconButton(QWidget* parent = nullptr) : QPushButton(parent)
-    {   
-        //set fixed size 
+    {
+        // set fixed size
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
     }
 
-    FluIconButton(FluAwesomeType type1, QWidget* parent = nullptr)
-        : QPushButton(parent)
+    FluIconButton(FluAwesomeType type1, QWidget* parent = nullptr) : QPushButton(parent)
     {
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
         // please ensure type1 will in FluAwesomeType, if can't suitable may crash.
-        
-        QPixmap  pixmap = FluIconUtils::getFluentIconPixmap(type1);
+
+        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type1);
         pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         setIcon(QIcon(pixmap));
 
@@ -56,17 +55,14 @@ class FluIconButton : public QPushButton
         });
 
         connect(this, &FluIconButton::clicked, [=](bool b) {
-
             // change to type2
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type2);
             pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             setIcon(QIcon(pixmap));
 
             m_timer->start();
-
         });
     }
-
 
   protected:
     FluAwesomeType m_type1;

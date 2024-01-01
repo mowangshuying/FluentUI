@@ -65,7 +65,6 @@ class FluNavigationIconTextItem : public FluNavigationItem
         return m_bDown;
     }
 
-
     void mouseReleaseEvent(QMouseEvent *event) override;
 
     // to enable qss
@@ -81,6 +80,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
     void itemClicked();
   public slots:
     void onItemClicked();
+
   protected:
     QWidget *m_wrapWidget1;
     QWidget *m_wrapWidget2;

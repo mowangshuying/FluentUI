@@ -11,21 +11,24 @@ FluNavigationItem {
     /* border-radius: 0px; */
 }
 
-#wrapWidget1[selected=true][enableThisItem=true] {
+#wrapWidget1[selected=true] {
     /* background-color: aquamarine; */
     background-color: rgb(234, 234, 234);
     border-radius: 4px;
 }
 
-
-/* #wrapWidget1[enableThisItem=false] {
+#wrapWidget1[enableThisItem=false] {
     background-color: rgb(243, 243, 243);
-} */
+}
 
-#wrapWidget1:hover[enableThisItem=true] {
+#wrapWidget1:hover {
     /* background-color: aquamarine; */
     background-color: rgb(234, 234, 234);
     border-radius: 4px;
+}
+
+#wrapWidget1[enableThisItem=false]:hover {
+    background-color: rgb(243, 243, 243);
 }
 
 #indicator {

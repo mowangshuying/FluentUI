@@ -124,12 +124,12 @@
     <QtMoc Include="FluIconButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluExpander.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluExpander.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -56,6 +56,12 @@
     <ClCompile Include="FluDisplay9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluMultiLineTextDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluTextAreaDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -85,9 +91,15 @@
     <QtMoc Include="FluDisplay9.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluTextAreaDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayoutDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluMultiLineTextDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

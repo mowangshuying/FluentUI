@@ -27,7 +27,6 @@ class FluLabel : public QLabel
 
     FluLabel(FluLabelStyle style, QWidget* parent = nullptr) : QLabel(parent), m_style(style)
     {
-        // style£º
         // reference WinUi3 Gallary Typeography page.
         // setProperty("style", m_style);
         setStyle(style);

@@ -15,7 +15,7 @@ void FluLogUtils::__init()
         gFileLog = nullptr;
         return;
     }
-    // 初始化自定义日志处理函数myMessageOutput
+
     gDefaultHandler = qInstallMessageHandler(myMessageOutput);
 }
 

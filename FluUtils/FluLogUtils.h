@@ -7,8 +7,8 @@
 #include <QTime>
 #include <qlogging.h>
 
-// 日志格式统一规范
-// [时间] [等级] [文件名] [函数名] [行数] [内容]
+// log format
+// [time] [level] [file] [func] [line] [context]
 class FluLogUtils
 {
   public:

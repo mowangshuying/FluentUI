@@ -11,18 +11,13 @@ class FluTextAreaDemo : public QPlainTextEdit
   public:
     explicit FluTextAreaDemo(QWidget *parent = nullptr) : QPlainTextEdit(parent)
     {
-        setReadOnly(true);  // 设置为只读，禁止编辑
-
-        // 设置默认样式
+        setReadOnly(true);
         setStyleSheet("background-color: white; color: black;");
-
-        // 设置一些默认属性
         setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     }
 
     QSize sizeHint() const override
     {
-        // 自动适应高度
         QSize size = QPlainTextEdit::sizeHint();
         QFontMetrics fm(font());
         int lineSpacing = fm.lineSpacing();
@@ -47,7 +42,6 @@ class FluTextAreaDemo : public QPlainTextEdit
 
     void updateSize()
     {
-        // 调整尺寸
         adjustSize();
     }
 };

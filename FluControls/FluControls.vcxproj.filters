@@ -74,6 +74,12 @@
     <ClCompile Include="FluExpander.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCodeExpander.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluToggleButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -125,6 +131,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluExpander.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluCodeExpander.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluToggleButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

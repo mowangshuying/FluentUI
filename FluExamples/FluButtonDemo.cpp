@@ -1,5 +1,6 @@
 #include "FluButtonDemo.h"
 #include "../FluControls/FluIconButton.h"
+#include "../FluControls/FluToggleButton.h"
 
 FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent)
 {
@@ -12,6 +13,10 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent
 
     auto btn3 = new FluIconButton(FluAwesomeType::Wifi, FluAwesomeType::Accept, this);
     addDemo(btn3);
+
+    auto btn4 = new FluToggleButton;
+    btn4->setText("ToggleButton");
+    addDemo(btn4);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

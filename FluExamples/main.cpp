@@ -9,6 +9,7 @@
 #include "FluMultiLineTextDemo.h"
 #include "FluTextAreaDemo.h"
 #include "FluExpandDemo.h"
+#include "FluDisplayCodeDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -41,7 +42,13 @@ int main(int argc, char **argv)
     // FluTextAreaDemo demo;
     // demo.setText("Custom TextAreannLine 2nLine 3nLine 4");
 
-    FluExpandDemo demo;
+   // FluExpandDemo demo;
+   // demo.show();
+
+   // FluDisplayCodeDemo demo;
+   // demo.show();
+
+    FluButtonDemo demo;
     demo.show();
     return app.exec();
 }

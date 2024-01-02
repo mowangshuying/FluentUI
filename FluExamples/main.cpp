@@ -45,10 +45,14 @@ int main(int argc, char **argv)
    // FluExpandDemo demo;
    // demo.show();
 
-   // FluDisplayCodeDemo demo;
+    //FluDisplayCodeDemo demo;
+    //demo.show();
+
+   // FluButtonDemo demo;
    // demo.show();
 
-    FluButtonDemo demo;
+    FluDisplayCodeDemo demo;
     demo.show();
+
     return app.exec();
 }

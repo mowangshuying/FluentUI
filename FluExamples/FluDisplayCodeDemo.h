@@ -5,6 +5,8 @@
 #include <QRegularExpression>
 #include <QTextCharFormat>
 
+#include "../FluUtils/FluUtils.h"
+
 class FluCppSyntaxHightLighterRule
 {
   public:
@@ -50,19 +52,26 @@ class FluCppSyntaxHightLighter : public QSyntaxHighlighter
       QList<FluCppSyntaxHightLighterRule> m_highlightingRules;
 };
 
-class FluDisplayCodeDemo : public QPlainTextEdit
+class FluDisplayCodeDemo : public QWidget
 {
     Q_OBJECT
   public:
-      FluDisplayCodeDemo(QWidget* parent = nullptr) : QPlainTextEdit(parent)
+      FluDisplayCodeDemo(QWidget* parent = nullptr) : QWidget(parent)
       {
-          QString code = "std::cout << \"hello, world\" << std::endl; // this just a text";
-          auto highlighter = new FluCppSyntaxHightLighter(document());
 
-          setPlainText(code);
-          setReadOnly(true);
-          setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
-          setContextMenuPolicy(Qt::NoContextMenu);
+          auto display = new QPlainTextEdit(this);
+          display->setFixedSize(300, 50);
+          display->move(50, 50);
+
+          QString code = "std::cout << \"hello, world\" << std::endl; // this just a text";
+          auto highlighter = new FluCppSyntaxHightLighter(display->document());
+
+          display->setPlainText(code);
+          display->setReadOnly(true);
+          display->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
+          display->setContextMenuPolicy(Qt::NoContextMenu);
+
+          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayCodeDemo.qss", this);
       }
 
 };

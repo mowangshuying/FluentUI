@@ -36,6 +36,5 @@ FluToggleButton[toggled=false]:pressed {
 
 FluToggleButton[toggled=true]:pressed {
     border: 1px solid rgb(49, 121, 175);
-    /* border-bottom: 1px solid rgb(229, 229, 229); */
     background-color: rgb(49, 121, 175);
 }

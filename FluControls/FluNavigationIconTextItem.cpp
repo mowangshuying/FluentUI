@@ -70,6 +70,7 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     m_bLong = true;
     m_arrow->hide();
 
+    m_bEnableThisItem = true;
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
     setStyleSheet(qss);
 
@@ -237,20 +238,23 @@ void FluNavigationIconTextItem::mouseReleaseEvent(QMouseEvent *event)
 
 void FluNavigationIconTextItem::onItemClicked()
 {
+    LOG_DEBUG << "called";
     // enableThisItem equal false just return it.
     if (!m_bEnableThisItem)
         return;
 
+    LOG_DEBUG << "enable this item.";
     // get root item
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
         return;
 
+    LOG_DEBUG << "get root item.";
     auto navView = rootItem->getParentView();
     if (navView == nullptr)
         return;
 
-
+    LOG_DEBUG << "bDown:" << m_bDown << "nav long:" << navView->isLong();
     if (m_bDown && navView->isLong())
     {
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));

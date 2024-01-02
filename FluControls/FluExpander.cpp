@@ -14,11 +14,11 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_wrap1->setLayout(m_hWrap1Layout);
     m_hWrap1Layout->setContentsMargins(5, 5, 5, 5);
 
-    auto btn = new FluIconButton(FluAwesomeType::ChevronDown, m_wrap1);
-    btn->setObjectName("downOrUpButton");
+    auto btn1 = new FluIconButton(FluAwesomeType::ChevronDown, m_wrap1);
+    btn1->setObjectName("downOrUpButton");
 
     m_hWrap1Layout->addStretch();
-    m_hWrap1Layout->addWidget(btn, Qt::AlignHCenter);
+    m_hWrap1Layout->addWidget(btn1, Qt::AlignHCenter);
 
     m_wrap2 = new QWidget(this);
     m_wrap2->setObjectName("wrap2");
@@ -31,7 +31,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_bDown = true;
     auto expandAni = new QPropertyAnimation(m_wrap2, "geometry");
     expandAni->setDuration(600);
-    connect(btn, &QPushButton::clicked, [=](bool b) {
+    connect(btn1, &QPushButton::clicked, [=](bool b) {
         if (m_bDown)
         {
             expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
@@ -55,5 +55,5 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     });
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", btn);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", btn1);
 }

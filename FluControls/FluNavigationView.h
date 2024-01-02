@@ -34,8 +34,17 @@ class FluNavigationView : public QWidget
     void addItemToLayout3(FluNavigationIconTextItem *item);
 
     void clearAllItemsSelectState();
-
     void updateAllItemsStyleSheet();
+
+    void setLong(bool b)
+    {
+        m_bLong = b;
+    }
+
+    bool isLong()
+    {
+        return m_bLong;
+    }
 
     void paintEvent(QPaintEvent *event) override;
 

@@ -241,10 +241,18 @@ void FluNavigationIconTextItem::onItemClicked()
     if (!m_bEnableThisItem)
         return;
 
-    if (m_bDown)
+    // get root item
+    auto rootItem = getRootItem();
+    if (rootItem == nullptr)
+        return;
+
+    auto navView = rootItem->getParentView();
+    if (navView == nullptr)
+        return;
+
+
+    if (m_bDown && navView->isLong())
     {
-        //       LOG_DEBUG << "click down.";
-        // LOG_DEBUG << "before height:" << height();
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
         // display chid
         if (m_items.size() > 0)
@@ -254,10 +262,6 @@ void FluNavigationIconTextItem::onItemClicked()
             {
                 auto item = (FluNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
                 nH += item->height() + 5;
-                //  if (i != m_vLayout1->count() - 1)
-                //  {
-                //      nH += 5;
-                //  }
             }
 
             m_wrapWidget2->setFixedHeight(nH);
@@ -268,12 +272,9 @@ void FluNavigationIconTextItem::onItemClicked()
 
         adjustItemHeight(m_parentItem);
         m_wrapWidget2->show();
-        // show();
-        // adjustItemHeight();
-        m_bDown = false;
-        // LOG_DEBUG << "end height:" << height();
     }
-    else
+    
+    if (!m_bDown && navView->isLong())
     {
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
         setFixedHeight(40);
@@ -282,18 +283,9 @@ void FluNavigationIconTextItem::onItemClicked()
             m_wrapWidget2->hide();
             adjustItemHeight(m_parentItem);
         }
-        m_bDown = true;
     }
 
-    // get root item
-    auto rootItem = getRootItem();
-    if (rootItem == nullptr)
-        return;
-
-    auto navView = rootItem->getParentView();
-    if (navView == nullptr)
-        return;
-
+    m_bDown = !m_bDown;
     navView->clearAllItemsSelectState();  // clear state
     updateSelected(true);
     navView->updateAllItemsStyleSheet();  // update state

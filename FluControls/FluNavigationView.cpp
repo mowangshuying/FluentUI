@@ -83,6 +83,7 @@ void FluNavigationView::updateAllItemsStyleSheet()
     {
         auto curItem = (FluNavigationIconTextItem *)m_vLayout2->itemAt(i)->widget();
         curItem->updateAllItemsStyleSheet();
+        curItem->update();
     }
 }
 

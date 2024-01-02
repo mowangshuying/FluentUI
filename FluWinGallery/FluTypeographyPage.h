@@ -4,6 +4,7 @@
 #include "FluAEmptyPage.h"
 #include "../FluControls/FluVScrollView.h"
 #include "../FluControls/FluLabel.h"
+#include "../FluControls/FluExpander.h"
 
 // a page to display label demo
 class FluTypeographyPage : public FluAEmptyPage
@@ -79,6 +80,9 @@ class FluTypeographyPage : public FluAEmptyPage
 
         auto row8 = addARow(FluLabelStyle::DisplayTextBlockStyle, "Display", "Display, SemiBold", "12/16 epx", "DisplayTextBlockStyle", 100);
         typeRampWrapLayout->addWidget(row8, Qt::AlignTop);
+
+        auto expander = new FluExpander;
+        vScrollView->getMainLayout()->addWidget(expander);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
     }

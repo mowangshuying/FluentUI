@@ -30,7 +30,9 @@ git clone https://github.com/mowangshuying/CppQtFluentUi888.git
 + Build
 
 >1.open CppQtFluentUi888.sln with Vs2022.
+>
 >2.build it!
+>
 >3.set start up project to FluWinGallery and run it!
 
 ##  Documentations

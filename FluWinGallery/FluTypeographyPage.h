@@ -100,7 +100,6 @@ class FluTypeographyPage : public FluAEmptyPage
         auto label2 = new FluLabel;
         auto label3 = new FluLabel;
         auto label4 = new FluLabel;
-        //  auto label5 = new FluLabel;
 
         label1->setStyle(labelStyle);
 
@@ -125,7 +124,6 @@ class FluTypeographyPage : public FluAEmptyPage
         labelsWrapLayout->addWidget(label2);
         labelsWrapLayout->addWidget(label3);
         labelsWrapLayout->addWidget(label4);
-        //    labelsWrapLayout->addWidget(label5);
 
         return labelsWrap;
     }

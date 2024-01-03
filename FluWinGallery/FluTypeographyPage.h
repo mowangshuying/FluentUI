@@ -51,7 +51,7 @@ class FluTypeographyPage : public FluAEmptyPage
         imgLabel->setObjectName("imgLabel");
         imgLabel->setFixedSize(740, 450);
         QPixmap pixmap = QPixmap("../res/Typography.light.png");
-        pixmap = pixmap.scaled(740, 450);
+        pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         imgLabel->setPixmap(pixmap);
 
         auto imgLabelLayout = new QHBoxLayout;
@@ -83,6 +83,8 @@ class FluTypeographyPage : public FluAEmptyPage
         typeRampWrapLayout->addWidget(row8, Qt::AlignTop);
 
         auto expander = new FluCodeExpander;
+        expander->setWrap2Height(60);
+    //    expander->setFixedHeight(50);
         QString code;
         code += "auto label = new FluLabel;\n";
         code += "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);\n";

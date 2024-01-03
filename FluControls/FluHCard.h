@@ -27,7 +27,7 @@ class FluHCard : public QWidget
         m_iconLabel = new QLabel(this);
         m_iconLabel->setFixedSize(50, 50);
         QPixmap pixmap = QPixmap("../res/ControlImages/Placeholder.png");
-        pixmap = pixmap.scaled(50, 50);
+        pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_iconLabel->setPixmap(pixmap);
 
         m_titleLabel = new QLabel("this");
@@ -56,7 +56,7 @@ class FluHCard : public QWidget
 
     FluHCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluHCard(parent)
     {
-        QPixmap pixmap = icon.scaled(50, 50);
+        QPixmap pixmap = icon.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_iconLabel->setPixmap(pixmap);
         m_titleLabel->setText(titleText);
         m_contextLabel->setText(contextText);

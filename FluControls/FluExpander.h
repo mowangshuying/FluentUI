@@ -14,6 +14,11 @@ class FluExpander : public QWidget
   public:
     FluExpander(QWidget* parent = nullptr);
 
+    void setWrap2Height(int h)
+    {
+        m_wrap2Height = h;
+    }
+
   protected:
     QVBoxLayout* m_mainLayout;
     QHBoxLayout* m_hWrap1Layout;

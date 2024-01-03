@@ -58,7 +58,7 @@ class FluHomePageTitle : public QWidget
 
         QPixmap pixmap("../res/GalleryHeaderImage.png");
         pixmap.copy(0, 0, pixmap.width(), pixmap.height() / 4);
-        pixmap = pixmap.scaled(rect().width(), rect().height());
+        pixmap = pixmap.scaled(rect().width(), rect().height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         painter.drawPixmap(rect(), pixmap);
     }
 

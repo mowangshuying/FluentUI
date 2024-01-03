@@ -292,6 +292,21 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_navView->addItemToLayout2(item);
     }
 
+    void resizeEvent(QResizeEvent* event)
+    {
+        if (width() > 1000)
+        {
+            // check it
+            if (!m_navView->isLong())
+                m_navView->onMenuItemClicked();
+        }
+        else
+        {
+            if (m_navView->isLong())
+                m_navView->onMenuItemClicked();
+        }
+    }
+
   protected:
     FluNavigationView *m_navView;
     FluStackedLayout *m_sLayout;

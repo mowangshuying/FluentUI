@@ -7,7 +7,7 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
 
     m_menuButton = new QPushButton(this);
     m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton));
-    m_menuButton->setIconSize(QSize(15, 15));
+    m_menuButton->setIconSize(QSize(24, 24));
     m_menuButton->setFixedSize(30, 30);
     m_hLayout->setContentsMargins(10, 0, 0, 0);
 

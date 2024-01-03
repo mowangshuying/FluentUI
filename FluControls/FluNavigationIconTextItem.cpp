@@ -61,7 +61,7 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
 
-    m_icon->setIconSize(QSize(18, 18));
+    m_icon->setIconSize(QSize(24, 24));
     m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home));
 
     m_arrow->setIconSize(QSize(18, 18));

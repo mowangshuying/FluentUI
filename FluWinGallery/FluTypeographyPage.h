@@ -85,7 +85,7 @@ class FluTypeographyPage : public FluAEmptyPage
         auto expander = new FluCodeExpander;
         QString code;
         code += "auto label = new FluLabel;\n";
-        code +=  "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);\n";
+        code += "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);\n";
         expander->setCode(code);
         vScrollView->getMainLayout()->addWidget(expander);
 

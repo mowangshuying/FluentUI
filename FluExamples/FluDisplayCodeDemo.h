@@ -13,16 +13,14 @@ class FluDisplayCodeDemo : public QWidget
 {
     Q_OBJECT
   public:
-      FluDisplayCodeDemo(QWidget* parent = nullptr) : QWidget(parent)
-      {
+    FluDisplayCodeDemo(QWidget* parent = nullptr) : QWidget(parent)
+    {
+        auto display = new FluDisplayCodeBox(this);
+        display->setFixedSize(300, 50);
+        display->move(50, 50);
 
-          auto display = new FluDisplayCodeBox(this);
-          display->setFixedSize(300, 50);
-          display->move(50, 50);
-
-          QString code = "std::cout << \"hello, world\" << std::endl; // this just a text";
-          display->setCode(code);
-          setStyleSheet("background-color:rgb(249, 249, 249);");
-      }
-
+        QString code = "std::cout << \"hello, world\" << std::endl; // this just a text";
+        display->setCode(code);
+        setStyleSheet("background-color:rgb(249, 249, 249);");
+    }
 };

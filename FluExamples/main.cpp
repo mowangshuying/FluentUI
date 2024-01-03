@@ -42,14 +42,14 @@ int main(int argc, char **argv)
     // FluTextAreaDemo demo;
     // demo.setText("Custom TextAreannLine 2nLine 3nLine 4");
 
-   // FluExpandDemo demo;
-   // demo.show();
+    // FluExpandDemo demo;
+    // demo.show();
 
-    //FluDisplayCodeDemo demo;
-    //demo.show();
+    // FluDisplayCodeDemo demo;
+    // demo.show();
 
-   // FluButtonDemo demo;
-   // demo.show();
+    // FluButtonDemo demo;
+    // demo.show();
 
     FluDisplayCodeDemo demo;
     demo.show();

@@ -20,6 +20,6 @@ class FluExpander : public QWidget
     QVBoxLayout* m_vWrap2Layout;
     QWidget* m_wrap1;
     QWidget* m_wrap2;
-    int m_wrap2Height;// The height is wrap2 expand height.
+    int m_wrap2Height;  // The height is wrap2 expand height.
     bool m_bDown;
 };

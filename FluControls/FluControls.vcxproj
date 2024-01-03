@@ -113,6 +113,7 @@
     <QtMoc Include="FluPushButton.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FluDisplayCodeBox.cpp" />
     <ClCompile Include="FluCodeExpander.cpp" />
     <ClCompile Include="FluExpander.cpp" />
     <ClCompile Include="FluFlowLayout.cpp" />
@@ -146,6 +147,7 @@
     <QtMoc Include="FluToggleButton.h" />
     <QtMoc Include="FluExpander.h" />
     <QtMoc Include="FluCodeExpander.h" />
+    <QtMoc Include="FluDisplayCodeBox.h" />
     <ClInclude Include="FluFlowLayout.h" />
     <QtMoc Include="FluIconButton.h" />
     <QtMoc Include="FluLabel.h" />

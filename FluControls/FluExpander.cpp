@@ -24,6 +24,9 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_wrap2->setObjectName("wrap2");
     m_wrap2->setFixedHeight(0);
 
+    m_vWrap2Layout = new QVBoxLayout;
+    m_wrap2->setLayout(m_vWrap2Layout);
+
     m_mainLayout->addWidget(m_wrap1);
     m_mainLayout->addSpacing(1);
     m_mainLayout->addWidget(m_wrap2);
@@ -31,17 +34,19 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_bDown = true;
     auto expandAni = new QPropertyAnimation(m_wrap2, "geometry");
     expandAni->setDuration(600);
+
+    m_wrap2Height = 128;
     connect(btn1, &QPushButton::clicked, [=](bool b) {
         if (m_bDown)
         {
             expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
-            expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 128));
+            expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2Height));
             expandAni->start();
             m_bDown = false;
         }
         else
         {
-            expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 128));
+            expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2Height));
             expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
             expandAni->start();
             m_bDown = true;

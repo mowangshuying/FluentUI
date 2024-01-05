@@ -18,7 +18,7 @@ class FluNavigationItem : public QWidget
     FluNavigationItem(QWidget* parent = nullptr);
 
     void setParentView(FluNavigationView* view);
-     FluNavigationView* getParentView();
+    FluNavigationView* getParentView();
 
     FluNavigationItemType getItemType();
 

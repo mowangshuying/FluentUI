@@ -84,7 +84,7 @@ class FluTypeographyPage : public FluAEmptyPage
 
         auto expander = new FluCodeExpander;
         expander->setWrap2Height(60);
-    //    expander->setFixedHeight(50);
+        //    expander->setFixedHeight(50);
         QString code;
         code += "auto label = new FluLabel;\n";
         code += "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);\n";

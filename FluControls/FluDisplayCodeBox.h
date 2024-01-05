@@ -64,7 +64,7 @@ class FluDisplayCodeBox : public QPlainTextEdit
         setReadOnly(true);
         setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
         setContextMenuPolicy(Qt::NoContextMenu);
-        //setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        // setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setFocusPolicy(Qt::FocusPolicy::NoFocus);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayCodeBox.qss", this);
     }

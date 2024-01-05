@@ -25,10 +25,10 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     QList<FluNavigationIconTextItem *> getChildItems();
 
-   // void setParentView(FluNavigationView *view);
+    // void setParentView(FluNavigationView *view);
 
     // get navigation view
-   // FluNavigationView *getParentView();
+    // FluNavigationView *getParentView();
 
     void addItem(FluNavigationIconTextItem *item);
 
@@ -98,7 +98,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
     QVBoxLayout *m_vLayout1;
 
     FluNavigationIconTextItem *m_parentItem;
-  //  FluNavigationView *m_parentView;
+    //  FluNavigationView *m_parentView;
 
     //     int m_vSpacing;
     bool m_bDown;

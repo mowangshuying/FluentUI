@@ -51,11 +51,11 @@ int main(int argc, char **argv)
     // FluButtonDemo demo;
     // demo.show();
 
-  //  FluDisplayCodeDemo demo;
-  //  demo.show();
+    //  FluDisplayCodeDemo demo;
+    //  demo.show();
 
     FluButtonDemo demo;
     demo.show();
-    
+
     return app.exec();
 }

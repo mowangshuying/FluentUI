@@ -293,10 +293,10 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_navView->addItemToLayout2(item);
     }
 
-    void resizeEvent(QResizeEvent* event)
+    void resizeEvent(QResizeEvent *event)
     {
-       // if (event->size().width() == width())
-       //     return;
+        // if (event->size().width() == width())
+        //     return;
 
         if (width() > 1000)
         {

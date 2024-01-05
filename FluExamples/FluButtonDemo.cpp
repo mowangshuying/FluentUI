@@ -20,10 +20,9 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent
     btn4->setText("ToggleButton");
     addDemo(btn4);
 
-
     auto btn5 = new FluRotationButton;
     btn5->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Settings));
-    btn5->setIconSize(QSize(22,22));
+    btn5->setIconSize(QSize(22, 22));
     btn5->setFixedSize(30, 30);
     btn5->setRotation(true);
     addDemo(btn5);

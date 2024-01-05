@@ -12,8 +12,7 @@ class FluCodeExpander : public FluExpander
     {
         m_displayCodeBox = new FluDisplayCodeBox;
         m_displayCodeBox->setProperty("transparent", true);
-        //m_displayCodeBox->setFixedHeight(50);
-
+        m_displayCodeBox->setFixedHeight(100);
         m_wrap2->layout()->setContentsMargins(4, 4, 4, 4);
         m_wrap2->layout()->setSpacing(0);
         m_wrap2->layout()->addWidget(m_displayCodeBox);

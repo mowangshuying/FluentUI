@@ -27,11 +27,11 @@ class FluNavigationView : public QWidget
   public:
     FluNavigationView(QWidget *parent = nullptr);
 
-    void addItemToLayout1(FluNavigationIconTextItem *item);
+    void addItemToLayout1(QWidget *item);
 
-    void addItemToLayout2(FluNavigationIconTextItem *item);
+    void addItemToLayout2(QWidget *item);
 
-    void addItemToLayout3(FluNavigationIconTextItem *item);
+    void addItemToLayout3(QWidget *item);
 
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();

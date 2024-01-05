@@ -52,20 +52,24 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
 }
 
-void FluNavigationView::addItemToLayout1(FluNavigationIconTextItem *item)
+void FluNavigationView::addItemToLayout1(QWidget *item)
 {
     m_vLayout1->addWidget(item, Qt::AlignTop);
 }
 
-void FluNavigationView::addItemToLayout2(FluNavigationIconTextItem *item)
+void FluNavigationView::addItemToLayout2(QWidget *item)
 {
     m_vLayout2->addWidget(item, Qt::AlignTop);
-    item->setParentView(this);
+
+    auto iconTextItem = (FluNavigationIconTextItem *)item;
+    iconTextItem->setParentView(this);
 }
 
-void FluNavigationView::addItemToLayout3(FluNavigationIconTextItem *item)
+void FluNavigationView::addItemToLayout3(QWidget *item)
 {
     m_vLayout3->addWidget(item);
+    auto tmpItem = (FluNavigationItem *)item;
+    tmpItem->setParentView(this);
 }
 
 void FluNavigationView::clearAllItemsSelectState()
@@ -73,6 +77,12 @@ void FluNavigationView::clearAllItemsSelectState()
     for (int i = 0; i < m_vLayout2->count(); i++)
     {
         auto curItem = (FluNavigationIconTextItem *)m_vLayout2->itemAt(i)->widget();
+        curItem->clearAllItemsSelectState();
+    }
+
+    for (int i = 0; i < m_vLayout3->count(); i++)
+    {
+        auto curItem = (FluNavigationItem *)m_vLayout3->itemAt(i)->widget();
         curItem->clearAllItemsSelectState();
     }
 }
@@ -84,6 +94,12 @@ void FluNavigationView::updateAllItemsStyleSheet()
         auto curItem = (FluNavigationIconTextItem *)m_vLayout2->itemAt(i)->widget();
         curItem->updateAllItemsStyleSheet();
         curItem->update();
+    }
+
+    for (int i = 0; i < m_vLayout3->count(); i++)
+    {
+        auto curItem = (FluNavigationItem *)m_vLayout3->itemAt(i)->widget();
+        curItem->updateAllItemsStyleSheet();
     }
 }
 

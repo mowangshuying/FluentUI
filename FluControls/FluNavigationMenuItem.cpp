@@ -1,5 +1,6 @@
 #include "FluNavigationMenuItem.h"
 #include "../FluUtils/FluUtils.h"
+#include <QPropertyAnimation>
 
 FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
 {
@@ -17,7 +18,8 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
     m_hLayout->addWidget(m_menuButton);
     m_hLayout->addStretch(1);
     m_menuButton->setObjectName("menuButton");
+
+    connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss");
     setStyleSheet(qss);
-    connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
 }

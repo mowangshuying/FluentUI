@@ -126,8 +126,10 @@
     <ClCompile Include="FluNavigationItem.cpp" />
     <ClCompile Include="FluNavigationMenuItem.cpp" />
     <ClCompile Include="FluNavigationSearchItem.cpp" />
+    <ClCompile Include="FluNavigationSettingsItem.cpp" />
     <ClCompile Include="FluNavigationView.cpp" />
     <ClCompile Include="FluPushButton.cpp" />
+    <ClCompile Include="FluRotationButton.cpp" />
     <ClCompile Include="FluStackedLayout.cpp" />
     <ClCompile Include="FluToggleButton.cpp" />
     <ClCompile Include="FluVScrollView.cpp" />
@@ -144,6 +146,8 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluNavigationSettingsItem.h" />
+    <QtMoc Include="FluRotationButton.h" />
     <QtMoc Include="FluToggleButton.h" />
     <QtMoc Include="FluExpander.h" />
     <QtMoc Include="FluCodeExpander.h" />

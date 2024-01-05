@@ -7,6 +7,7 @@
 #include <QStackedLayout>
 #include "../FluControls/FluStackedLayout.h"
 #include "FluTypeographyPage.h"
+#include "../FluControls/FluNavigationSettingsItem.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -191,7 +192,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeSettingsNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Settings), "Setting", this);
+        FluNavigationSettingsItem *item = new FluNavigationSettingsItem(FluIconUtils::getFluentIcon(FluAwesomeType::Settings), "Setting", this);
         m_navView->addItemToLayout3(item);
     }
 
@@ -294,6 +295,9 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void resizeEvent(QResizeEvent* event)
     {
+       // if (event->size().width() == width())
+       //     return;
+
         if (width() > 1000)
         {
             // check it

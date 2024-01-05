@@ -101,15 +101,15 @@ QList<FluNavigationIconTextItem *> FluNavigationIconTextItem::getChildItems()
     return m_items;
 }
 
-void FluNavigationIconTextItem::setParentView(FluNavigationView *view)
-{
-    m_parentView = view;
-}
-
-FluNavigationView *FluNavigationIconTextItem::getParentView()
-{
-    return m_parentView;
-}
+//void FluNavigationIconTextItem::setParentView(FluNavigationView *view)
+//{
+//    m_parentView = view;
+//}
+//
+//FluNavigationView *FluNavigationIconTextItem::getParentView()
+//{
+//    return m_parentView;
+//}
 
 void FluNavigationIconTextItem::addItem(FluNavigationIconTextItem *item)
 {

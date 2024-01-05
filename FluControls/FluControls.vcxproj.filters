@@ -83,6 +83,12 @@
     <ClCompile Include="FluDisplayCodeBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluRotationButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationSettingsItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -143,6 +149,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDisplayCodeBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluRotationButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluNavigationSettingsItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

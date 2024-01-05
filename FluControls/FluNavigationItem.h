@@ -2,6 +2,7 @@
 
 #include <QWidget>
 
+class FluNavigationView;
 enum class FluNavigationItemType
 {
     Menu,
@@ -16,12 +17,19 @@ class FluNavigationItem : public QWidget
   public:
     FluNavigationItem(QWidget* parent = nullptr);
 
+    void setParentView(FluNavigationView* view);
+     FluNavigationView* getParentView();
+
     FluNavigationItemType getItemType();
 
     void setItemType(FluNavigationItemType itemType);
+
+    virtual void clearAllItemsSelectState(){};
+    virtual void updateAllItemsStyleSheet(){};
 
     virtual int getItemHeight();  // to easy get item height
 
   protected:
     FluNavigationItemType m_itemType;
+    FluNavigationView* m_parentView;
 };

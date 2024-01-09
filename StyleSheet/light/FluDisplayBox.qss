@@ -1,0 +1,15 @@
+FluDisplayBox {
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 8px;
+}
+
+#titleLabel {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#bodyWidget {
+    background-color: rgb(243, 243, 243);
+    border: 1px solid rgb(249, 249, 249);
+    border-radius: 4px;
+}

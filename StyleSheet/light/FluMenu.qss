@@ -1,0 +1,61 @@
+#textLabel {
+    color: rgb(26, 26, 26);
+    font-size: 12px;
+}
+
+#shortcutKeysLabel {
+    color: rgb(95, 95, 95);
+    font-size: 9px;
+}
+
+FluMenuDemoItem {
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgb(249, 249, 249);
+}
+
+FluMenuDemoItem:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+QMenu {
+    background-color: rgb(249, 249, 249);
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+QMenu::title {
+    /* color: rgb(26, 26, 26); */
+    color: blue;
+    font-size: 12px;
+}
+
+QMenu::item {
+    background-color: rgb(249, 249, 249);
+    /* color: rgb(99, 189, 15); */
+    color: blue;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 4px;
+    padding-left: 36px;
+}
+
+QMenu::item:selected {
+    background-color: rgb(240, 240, 240);
+    height: 30px;
+    border-radius: 4px;
+}
+
+QMenu::right-arrow {
+    width: 18px;
+    height: 18px;
+    image: url(../res/ChevronRight.png);
+}
+
+QMenu::separator {
+    height: 1px;
+    margin: 4px 0px;
+    background: rgb(234, 234, 234);
+}

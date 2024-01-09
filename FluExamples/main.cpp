@@ -38,8 +38,8 @@ int main(int argc, char **argv)
     //  FluButtonDemo demo;
     //  demo.show();
 
-    // FluMultiLineTextDemo demo;
-    // demo.show();
+     FluMultiLineTextDemo demo;
+     demo.show();
 
     // FluTextAreaDemo demo;
     // demo.setText("Custom TextAreannLine 2nLine 3nLine 4");
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
    // demo.show();
 
 
-    FluDisplayBoxDemo demo;
-    demo.show();
+    //FluDisplayBoxDemo demo;
+    //demo.show();
     return app.exec();
 }

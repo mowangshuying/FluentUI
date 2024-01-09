@@ -17,31 +17,31 @@ class FluTypeographyPage : public FluAEmptyPage
         m_titleLabel->setText("Typography");
         m_mainLayout->setAlignment(Qt::AlignTop);
 
-        auto vScrollView = new FluVScrollView;
-        vScrollView->setObjectName("vScrollView");
-        m_mainLayout->addWidget(vScrollView);
+        //auto vScrollView = new FluVScrollView;
+        //vScrollView->setObjectName("vScrollView");
+        //m_mainLayout->addWidget(vScrollView);
 
-        vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
+        //vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
 
-        auto infoLabel = new QLabel;
-        infoLabel->setWordWrap(true);
-        infoLabel->setText(
-            "Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
-            "Semibold.");
-        infoLabel->setObjectName("infoLabel");
-        vScrollView->getMainLayout()->addWidget(infoLabel);
+        //auto infoLabel = new QLabel;
+        //infoLabel->setWordWrap(true);
+        //infoLabel->setText(
+        //    "Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
+        //    "Semibold.");
+        //infoLabel->setObjectName("infoLabel");
+        //vScrollView->getMainLayout()->addWidget(infoLabel);
 
-        vScrollView->getMainLayout()->addSpacing(20);
+        //vScrollView->getMainLayout()->addSpacing(20);
 
         auto typeRampLabel = new QLabel;
         typeRampLabel->setText("Type ramp");
         typeRampLabel->setWordWrap(true);
         typeRampLabel->setObjectName("typeRampLabel");
-        vScrollView->getMainLayout()->addWidget(typeRampLabel);
+        m_vScrollView->getMainLayout()->addWidget(typeRampLabel);
 
         auto typeRampWrap = new QWidget;
         typeRampWrap->setObjectName("typeRampWrap");
-        vScrollView->getMainLayout()->addWidget(typeRampWrap);
+        m_vScrollView->getMainLayout()->addWidget(typeRampWrap);
 
         auto typeRampWrapLayout = new QVBoxLayout;
         typeRampWrapLayout->setAlignment(Qt::AlignTop);
@@ -89,7 +89,7 @@ class FluTypeographyPage : public FluAEmptyPage
         code += "auto label = new FluLabel;\n";
         code += "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);\n";
         expander->setCode(code);
-        vScrollView->getMainLayout()->addWidget(expander);
+        m_vScrollView->getMainLayout()->addWidget(expander);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
     }

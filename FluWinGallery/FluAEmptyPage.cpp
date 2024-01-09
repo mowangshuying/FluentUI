@@ -4,6 +4,7 @@
 #include <QPainter>
 #include "../FluControls/FluPushButton.h"
 #include "../FluControls/FluIconButton.h"
+#include "../FluControls/FluVScrollView.h"
 
 FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
@@ -22,28 +23,20 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_titleLabel->setText("A Temp Title Label");
     m_mainLayout->addWidget(m_titleLabel);
 
-    auto tileWraHLayout = new QHBoxLayout;
-    m_mainLayout->addLayout(tileWraHLayout);
+     m_vScrollView = new FluVScrollView;
+    m_vScrollView->setObjectName("vScrollView");
+     m_mainLayout->addWidget(m_vScrollView);
 
-    auto documentationBtn = new FluPushButton;
-    documentationBtn->setText("Documentation");
-    documentationBtn->setFixedWidth(160);
-    tileWraHLayout->addWidget(documentationBtn, Qt::AlignLeft);
+     m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
 
-    auto sourceBtn = new FluPushButton;
-    sourceBtn->setText("Source");
-    sourceBtn->setFixedWidth(120);
-    tileWraHLayout->addWidget(sourceBtn, Qt::AlignLeft);
-
-    auto themeBtn = new FluIconButton(FluAwesomeType::Light);
-    auto copyLinkBtn = new FluIconButton(FluAwesomeType::Link);
-    auto sendFeedBackBtn = new FluIconButton(FluAwesomeType::Feedback);
-
-    tileWraHLayout->addStretch();
-
-    tileWraHLayout->addWidget(themeBtn, Qt::AlignRight);
-    tileWraHLayout->addWidget(copyLinkBtn, Qt::AlignRight);
-    tileWraHLayout->addWidget(sendFeedBackBtn, Qt::AlignRight);
+     m_infoLabel = new QLabel;
+     m_infoLabel->setWordWrap(true);
+     m_infoLabel->setText(
+         "Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
+         "Semibold.");
+     m_infoLabel->setObjectName("infoLabel");
+     m_vScrollView->getMainLayout()->addWidget(m_infoLabel);
+     m_vScrollView->getMainLayout()->addSpacing(20);
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", this);
 }

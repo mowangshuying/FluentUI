@@ -4,6 +4,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
+class FluVScrollView;
 class FluAEmptyPage : public QWidget
 {
     Q_OBJECT
@@ -15,4 +16,6 @@ class FluAEmptyPage : public QWidget
   protected:
     QLabel* m_titleLabel;
     QVBoxLayout* m_mainLayout;
+    FluVScrollView* m_vScrollView;
+    QLabel* m_infoLabel;
 };

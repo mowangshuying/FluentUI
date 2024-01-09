@@ -42,6 +42,8 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
             expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
             expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2Height));
             expandAni->start();
+
+            btn1->setType1(FluAwesomeType::ChevronUp);
             m_bDown = false;
         }
         else
@@ -49,6 +51,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
             expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2Height));
             expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
             expandAni->start();
+            btn1->setType1(FluAwesomeType::ChevronDown);
             m_bDown = true;
         }
     });

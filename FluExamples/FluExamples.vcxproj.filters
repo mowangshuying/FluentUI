@@ -65,6 +65,12 @@
     <ClCompile Include="FluDisplayCodeDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluMenuDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluDisplayBoxDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -98,6 +104,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDisplayCodeDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluMenuDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDisplayBoxDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

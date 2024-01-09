@@ -16,11 +16,6 @@
 #include <QWidget>
 
 class FluNavigationIconTextItem;
-
-// class FluNavigationSearchItem : public QWidget
-//{
-// };
-
 class FluNavigationView : public QWidget
 {
     Q_OBJECT

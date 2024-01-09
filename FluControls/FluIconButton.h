@@ -64,6 +64,13 @@ class FluIconButton : public QPushButton
         });
     }
 
+    void setType1(FluAwesomeType type1)
+    {
+        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type1);
+        pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        setIcon(QIcon(pixmap));
+    }
+
   protected:
     FluAwesomeType m_type1;
     FluAwesomeType m_type2;

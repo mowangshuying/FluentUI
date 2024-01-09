@@ -19,6 +19,8 @@ class FluExpander : public QWidget
         m_wrap2Height = h;
     }
 
+  //signals:
+  //  void windowSizeChanged();
   protected:
     QVBoxLayout* m_mainLayout;
     QHBoxLayout* m_hWrap1Layout;

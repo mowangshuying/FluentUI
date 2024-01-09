@@ -111,9 +111,11 @@
     <ClCompile Include="FluChangeBgDemo.cpp" />
     <ClCompile Include="FluColorDemo.cpp" />
     <ClCompile Include="FluDisplay9.cpp" />
+    <ClCompile Include="FluDisplayBoxDemo.cpp" />
     <ClCompile Include="FluDisplayCodeDemo.cpp" />
     <ClCompile Include="FluFlowLayoutDemo.cpp" />
     <ClCompile Include="FluLineEditDemo.cpp" />
+    <ClCompile Include="FluMenuDemo.cpp" />
     <ClCompile Include="FluMultiLineTextDemo.cpp" />
     <ClCompile Include="FluTabDemo.cpp" />
     <ClCompile Include="FluExpandDemo.cpp" />
@@ -142,6 +144,8 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDisplayCodeDemo.h" />
+    <QtMoc Include="FluMenuDemo.h" />
+    <QtMoc Include="FluDisplayBoxDemo.h" />
     <ClInclude Include="FluMultiLineTextDemo.h" />
     <QtMoc Include="FluTextAreaDemo.h" />
     <QtMoc Include="FluDisplay9.h" />

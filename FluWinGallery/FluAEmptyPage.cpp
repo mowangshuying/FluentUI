@@ -23,7 +23,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_titleLabel->setText("A Temp Title Label");
     m_mainLayout->addWidget(m_titleLabel);
 
-     m_vScrollView = new FluVScrollView;
+     m_vScrollView = new FluVScrollView(this);
     m_vScrollView->setObjectName("vScrollView");
      m_mainLayout->addWidget(m_vScrollView);
 
@@ -39,6 +39,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
      m_vScrollView->getMainLayout()->addSpacing(20);
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", this);
+    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", m_vScrollView);
 }
 
 void FluAEmptyPage::paintEvent(QPaintEvent* event)

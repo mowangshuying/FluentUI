@@ -8,6 +8,7 @@
 #include "../FluControls/FluStackedLayout.h"
 #include "FluTypeographyPage.h"
 #include "../FluControls/FluNavigationSettingsItem.h"
+#include "FluIconsPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -40,6 +41,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         auto typographyPage = new FluTypeographyPage;
         m_sLayout->addWidget("TypographyPage", typographyPage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TypographyPage"); });
+
+        auto iconsPage = new FluIconsPage;
+        m_sLayout->addWidget("IconsPage", iconsPage);
+        connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("IconsPage"); });
+
     }
 
     void makeSamplesNavItem()

@@ -17,22 +17,6 @@ class FluTypeographyPage : public FluAEmptyPage
         m_titleLabel->setText("Typography");
         m_mainLayout->setAlignment(Qt::AlignTop);
 
-        //auto vScrollView = new FluVScrollView;
-        //vScrollView->setObjectName("vScrollView");
-        //m_mainLayout->addWidget(vScrollView);
-
-        //vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
-
-        //auto infoLabel = new QLabel;
-        //infoLabel->setWordWrap(true);
-        //infoLabel->setText(
-        //    "Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
-        //    "Semibold.");
-        //infoLabel->setObjectName("infoLabel");
-        //vScrollView->getMainLayout()->addWidget(infoLabel);
-
-        //vScrollView->getMainLayout()->addSpacing(20);
-
         auto typeRampLabel = new QLabel;
         typeRampLabel->setText("Type ramp");
         typeRampLabel->setWordWrap(true);
@@ -64,22 +48,22 @@ class FluTypeographyPage : public FluAEmptyPage
         auto row2 = addARow(FluLabelStyle::CaptionTextBlockSylte, "Caption", "Text,Regular", "12/16 epx", "CaptionTextBlockSylte", 60);
         typeRampWrapLayout->addWidget(row2, Qt::AlignTop);
 
-        auto row3 = addARow(FluLabelStyle::BodyStrongTextBlockStyle, "Body", "Text,SemiBold", "12/16 epx", "BodyStrongTextBlockStyle", 60);
+        auto row3 = addARow(FluLabelStyle::BodyStrongTextBlockStyle, "Body", "Text,SemiBold", "14/20 epx", "BodyStrongTextBlockStyle", 60);
         typeRampWrapLayout->addWidget(row3, Qt::AlignTop);
 
-        auto row4 = addARow(FluLabelStyle::BodyStrongTextBlockStyle, "Body Strong", "Text, SemiBold", "12/16 epx", "BodyStrongTextBlockStyle", 60);
+        auto row4 = addARow(FluLabelStyle::BodyStrongTextBlockStyle, "Body Strong", "Text, SemiBold", "14/20 epx", "BodyStrongTextBlockStyle", 60);
         typeRampWrapLayout->addWidget(row4, Qt::AlignTop);
 
-        auto row5 = addARow(FluLabelStyle::SubTitleTextBlockStyle, "Subtitle", "Display, SemiBold", "12/16 epx", "SubtitleTextBlockStyle", 60);
+        auto row5 = addARow(FluLabelStyle::SubTitleTextBlockStyle, "Subtitle", "Display, SemiBold", "20/28 epx", "SubtitleTextBlockStyle", 60);
         typeRampWrapLayout->addWidget(row5, Qt::AlignTop);
 
-        auto row6 = addARow(FluLabelStyle::TitleTextBlockStyle, "Title", "Display, SemiBold", "12/16 epx", "TitleTextBlockStyle", 60);
+        auto row6 = addARow(FluLabelStyle::TitleTextBlockStyle, "Title", "Display, SemiBold", "28/36 epx", "TitleTextBlockStyle", 60);
         typeRampWrapLayout->addWidget(row6, Qt::AlignTop);
 
-        auto row7 = addARow(FluLabelStyle::TitleLargeTextBlockStyle, "Title Large", "Display, SemiBold", "12/16 epx", "TitleLargeTextBlockStyle", 80);
+        auto row7 = addARow(FluLabelStyle::TitleLargeTextBlockStyle, "Title Large", "Display, SemiBold", "40/52 epx", "TitleLargeTextBlockStyle", 80);
         typeRampWrapLayout->addWidget(row7, Qt::AlignTop);
 
-        auto row8 = addARow(FluLabelStyle::DisplayTextBlockStyle, "Display", "Display, SemiBold", "12/16 epx", "DisplayTextBlockStyle", 100);
+        auto row8 = addARow(FluLabelStyle::DisplayTextBlockStyle, "Display", "Display, SemiBold", "68/92 epx", "DisplayTextBlockStyle", 100);
         typeRampWrapLayout->addWidget(row8, Qt::AlignTop);
 
         auto expander = new FluCodeExpander;

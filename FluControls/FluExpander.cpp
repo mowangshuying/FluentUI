@@ -8,7 +8,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
     m_wrap1 = new QWidget(this);
     m_wrap1->setObjectName("wrap1");
-    m_wrap1->setFixedHeight(48);
+    m_wrap1->setFixedHeight(48); // the wrap1 set fixed height 48.
 
     m_hWrap1Layout = new QHBoxLayout;
     m_wrap1->setLayout(m_hWrap1Layout);
@@ -35,12 +35,12 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     auto expandAni = new QPropertyAnimation(m_wrap2, "geometry");
     expandAni->setDuration(600);
 
-    m_wrap2Height = 128;
+    //m_wrap2Height = 128;
     connect(btn1, &QPushButton::clicked, [=](bool b) {
         if (m_bDown)
         {
             expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
-            expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2Height));
+            expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
             expandAni->start();
 
             btn1->setType1(FluAwesomeType::ChevronUp);
@@ -48,7 +48,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
         }
         else
         {
-            expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2Height));
+            expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
             expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
             expandAni->start();
             btn1->setType1(FluAwesomeType::ChevronDown);
@@ -60,6 +60,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
         QRect tmp = value.toRect();
         m_wrap2->setFixedHeight(tmp.height());
         setFixedHeight(m_wrap1->height() + m_wrap2->height());
+        update();
     });
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);

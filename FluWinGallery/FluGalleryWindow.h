@@ -9,6 +9,7 @@
 #include "FluTypeographyPage.h"
 #include "../FluControls/FluNavigationSettingsItem.h"
 #include "FluIconsPage.h"
+#include "FluButtonPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -62,6 +63,10 @@ class FluGalleryWindow : public FluFrameLessWidget
         item1->enableThisItem(false);
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Button", item);
+        auto buttonPage = new FluButtonPage;
+        m_sLayout->addWidget("ButtonPage", buttonPage);
+        connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ButtonPage"); });
+
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DropDownButton", item);
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("HyperLinkButton", item);

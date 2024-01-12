@@ -25,7 +25,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
      m_vScrollView = new FluVScrollView(this);
     m_vScrollView->setObjectName("vScrollView");
-     m_mainLayout->addWidget(m_vScrollView);
+     m_mainLayout->addWidget(m_vScrollView, 1);
 
      m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
 
@@ -35,7 +35,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
          "Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
          "Semibold.");
      m_infoLabel->setObjectName("infoLabel");
-     m_vScrollView->getMainLayout()->addWidget(m_infoLabel);
+     m_vScrollView->getMainLayout()->addWidget(m_infoLabel, 0, Qt::AlignTop);
      m_vScrollView->getMainLayout()->addSpacing(20);
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", this);

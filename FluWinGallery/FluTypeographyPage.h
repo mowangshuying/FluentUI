@@ -67,11 +67,11 @@ class FluTypeographyPage : public FluAEmptyPage
         typeRampWrapLayout->addWidget(row8, Qt::AlignTop);
 
         auto expander = new FluCodeExpander;
-        expander->setWrap2Height(60);
+        //expander->setWrap2Height(60);
         //    expander->setFixedHeight(50);
         QString code;
         code += "auto label = new FluLabel;\n";
-        code += "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);\n";
+        code += "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);";
         expander->setCode(code);
         m_vScrollView->getMainLayout()->addWidget(expander);
 

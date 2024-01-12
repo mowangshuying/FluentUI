@@ -54,11 +54,11 @@ class FluCppSyntaxHightLighter : public QSyntaxHighlighter
     QList<FluCppSHLRule> m_highlightingRules;
 };
 
-class FluDisplayCodeBox : public QPlainTextEdit
+class FluDisplayCodeBox : public QTextEdit
 {
     Q_OBJECT
   public:
-    FluDisplayCodeBox(QWidget* parent = nullptr) : QPlainTextEdit(parent)
+    FluDisplayCodeBox(QWidget* parent = nullptr) : QTextEdit(parent)
     {
         auto hightLigher = new FluCppSyntaxHightLighter(document());
         setReadOnly(true);
@@ -73,5 +73,32 @@ class FluDisplayCodeBox : public QPlainTextEdit
     void setCode(QString code)
     {
         setPlainText(code);
+        // print height
+        //LOG_DEBUG << "height:" << height() << "doc height:" << document()->height();
+      //  setWordWrapMode(QTextOption::WrapMode::WordWrap);
+     //   LOG_DEBUG << "1 - height:" << height();
+     //   LOG_DEBUG << "line count" << document()->lineCount();
+
+        //auto doc = document();
+      //  document()->setTextWidth(viewport()->width());
+     //   int newHeight = document()->size().height() + document()->documentMargin();
+     //   setFixedHeight(newHeight);
+
+       // LOG_DEBUG << "2 - height:" << height();
+
     }
+
+    void resizeEvent(QResizeEvent*)
+    {
+       // LOG_DEBUG << "viewport width:" << viewport()->width();
+        document()->setTextWidth(viewport()->width());
+        int newHeight = document()->size().height() + document()->documentMargin();
+        setFixedHeight(newHeight);
+       // LOG_DEBUG << "height:" << height();
+       // emit sizeChanged();
+       // ((QWidget*)(parent()))->setFixedHeight(newHeight + 8);
+    }
+
+signals:
+    void sizeChanged();
 };

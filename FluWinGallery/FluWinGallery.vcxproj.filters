@@ -73,10 +73,8 @@
     <QtMoc Include="FluIconsPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="FluButtonPage.h">
+    <QtMoc Include="FluButtonPage.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
   </ItemGroup>
 </Project>

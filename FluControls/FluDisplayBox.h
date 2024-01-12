@@ -16,6 +16,20 @@ class FluDisplayBox : public QWidget
   public:
     FluDisplayBox(QWidget* parent = nullptr);
 
+    void setTitle(QString title)
+    {
+        m_titleLabel->setText(title);
+    }
+
+    QVBoxLayout* getBodyLayout()
+    {
+        return m_vBodyLayout;
+    }
+
+    void setBodyWidgetFixedHeight(int nHeight)
+    {
+        m_bodyWidget->setFixedHeight(nHeight);
+    }
 
     void paintEvent(QPaintEvent* event)
     {

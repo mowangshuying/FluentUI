@@ -17,11 +17,11 @@ class FluIconsPage : public FluAEmptyPage
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
       }
 
-      void paintEvent(QPaintEvent* event)
-      {
-          QStyleOption opt;
-          opt.initFrom(this);
-          QPainter painter(this);
-          style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-      }
+    //  void paintEvent(QPaintEvent* event)
+   //   {
+    //      QStyleOption opt;
+          //opt.initFrom(this);
+    //      QPainter painter(this);
+     //     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    //  }
 };

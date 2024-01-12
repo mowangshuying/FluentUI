@@ -11,13 +11,10 @@ class FluDisplayBoxDemo : public QWidget
       FluDisplayBoxDemo(QWidget* parent = nullptr) : QWidget(parent)
       {
           resize(600, 400);
-
           auto mainLayout = new QVBoxLayout;
           setLayout(mainLayout);
-
           auto displayBox1 = new FluDisplayBox(this);
           mainLayout->addWidget(displayBox1);
-
           mainLayout->addStretch();
           setStyleSheet("background-color:rgb(249,249,249);");
       }

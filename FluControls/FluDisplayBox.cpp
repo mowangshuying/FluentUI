@@ -6,6 +6,7 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_mainLayout = new QVBoxLayout;
     setLayout(m_mainLayout);
     m_mainLayout->setContentsMargins(8, 8, 8, 8);
+    m_mainLayout->setSpacing(0);
 
     m_titleLabel = new QLabel;
     m_titleLabel->setFixedHeight(30);

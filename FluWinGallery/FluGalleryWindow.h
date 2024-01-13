@@ -10,6 +10,7 @@
 #include "../FluControls/FluNavigationSettingsItem.h"
 #include "FluIconsPage.h"
 #include "FluButtonPage.h"
+#include "FluToggleButtonPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -71,7 +72,13 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("HyperLinkButton", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RepeatButton", item);
+
+
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("ToggleButton", item);
+        auto toggleButtonPage = new FluToggleButtonPage;
+        m_sLayout->addWidget("ToggleButtonPage", toggleButtonPage);
+        connect(item6, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ToggleButtonPage"); });
+
 
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("SplitButton", item);
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("ToggleSplitButton", item);

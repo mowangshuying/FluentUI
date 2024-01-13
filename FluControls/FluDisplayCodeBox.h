@@ -19,10 +19,30 @@ class FluCppSyntaxHightLighter : public QSyntaxHighlighter
         newARuleToRules(QColor(87, 166, 74), "//[^n]*");
         newARuleToRules(QColor(86, 156, 214), "\\bauto\\b");
         newARuleToRules(QColor(86, 156, 214), "\\bnew\\b");
+
+        newARuleToRules(QColor(255, 215, 0), "\\bQPixmap\\b");
         newARuleToRules(QColor(255, 215, 0), "\\bFluLabel\\b");
         newARuleToRules(QColor(255, 215, 0), "\\bFluLabelStyle\\b");
+        newARuleToRules(QColor(255, 215, 0), "\\bFluPushButton\\b");
+        newARuleToRules(QColor(255, 215, 0), "\\bFluGraphicalButton\\b");
+        newARuleToRules(QColor(255, 215, 0), "\\bFluStyleButton\\b");
+
+
         newARuleToRules(QColor(185, 119, 30), "\\bCaptionTextBlockSylte\\b");
+
+        //129,146,74
+
         newARuleToRules(QColor(255, 128, 0), "\\bsetStyle\\b");
+        newARuleToRules(QColor(255, 128, 0), "\\bsetText\\b");
+        newARuleToRules(QColor(255, 128, 0), "\\bsetIcon\\b");
+
+      
+        newARuleToRules(QColor(129, 146, 74), "\\bbtn1\\b");
+        newARuleToRules(QColor(129, 146, 74), "\\bbtn2\\b");
+        newARuleToRules(QColor(129, 146, 74), "\\bbtn3\\b");
+
+
+
         // newARuleToRules(Qt::blue, "\\bendl\\b");
     }
 

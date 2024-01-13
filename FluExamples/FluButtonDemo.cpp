@@ -3,6 +3,7 @@
 #include "../FluControls/FluToggleButton.h"
 #include "../FluControls/FluRotationButton.h"
 #include "../FluUtils/FluIconUtils.h"
+#include "../FluControls/FluRadioButton.h"
 
 FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent)
 {
@@ -26,6 +27,9 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent
   //  btn5->setFixedSize(30, 30);
   //  btn5->setRotation(true);
   //  addDemo(btn5);
+
+    auto btn6 = new FluRadioButton;
+    addDemo(btn6);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

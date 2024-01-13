@@ -26,6 +26,11 @@ class FluDisplayBox : public QWidget
         return m_vBodyLayout;
     }
 
+    FluCodeExpander* getCodeExpander()
+    {
+        return m_codeExpander;
+    }
+
     void setBodyWidgetFixedHeight(int nHeight)
     {
         m_bodyWidget->setFixedHeight(nHeight);

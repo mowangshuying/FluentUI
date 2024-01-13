@@ -35,6 +35,20 @@ class FluCodeExpander : public FluExpander
         m_displayCodeBox->setCode(code);
     }
 
+    void setCodeByPath(QString fileName)
+    {
+        QString code;
+
+        QFile file(fileName);
+        if (file.open(QIODevice::ReadOnly))
+        {
+            code = file.readAll();
+            file.close();
+        }
+
+        setCode(code);
+    }
+
 
     void resizeEvent(QResizeEvent*)
     {

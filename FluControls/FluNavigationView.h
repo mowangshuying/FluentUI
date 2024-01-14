@@ -14,6 +14,7 @@
 #include <QTransform>
 #include <QVBoxLayout>
 #include <QWidget>
+#include "FluVScrollView.h"
 
 class FluNavigationIconTextItem;
 class FluNavigationView : public QWidget
@@ -50,11 +51,11 @@ class FluNavigationView : public QWidget
     QVBoxLayout *m_vLayout;
 
     QWidget *m_widget1;
-    QWidget *m_widget2;
+    FluVScrollView *m_widget2;
     QWidget *m_widget3;
 
     QVBoxLayout *m_vLayout1;
-    QVBoxLayout *m_vLayout2;
+  //  QVBoxLayout *m_vLayout2;
     QVBoxLayout *m_vLayout3;
 
     bool m_bLong;

@@ -10,37 +10,50 @@ QScrollArea {
 }
 
 QScrollBar:vertical {
-    width: 4px;
-    background: transparent;
-    margin: 0px, 0px, 0px, 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    width: 16px;
+    border-left: 1px solid rgba(229, 229, 229, 1);
+    border-right: 1px solid rgba(229, 229, 229, 1);
+    background: rgba(255, 255, 255, 1);
+    padding: 0px 5px 0 5px;
+    margin: 16px 0px 16px 0px;
 }
 
-
-/* QScrollBar:vertical:hover {
-    width: 4px;
-} */
+QScrollBar:vertical:hover {
+    padding: 0px 4px 0px 4px;
+}
 
 QScrollBar::handle:vertical {
-    width: 4px;
-    background: rgb(138, 138, 138);
-    border-radius: 2px;
-    min-height: 15;
+    width: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 25px;
 }
 
-
-/* QScrollBar::handle:vertical:hover {
-    width: 2px;
-    background: rgb(138, 138, 138);
-    border-radius: 1px;
-    min-height: 15;
-} */
+QScrollBar::handle:vertical:hover {
+    width: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 25px;
+}
 
 QScrollBar::add-line:vertical {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.98);
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid rgba(229, 229, 229, 1);
+    border-top: 1px solid transparent;
+    height: 14px;
+    image: url(../res/ScrollBottom.png);
 }
 
 QScrollBar::sub-line:vertical {
-    background-color: transparent;
+    background-color: rgb(255, 255, 255, 0.98);
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid rgba(229, 229, 229, 1);
+    border-bottom: 1px solid transparent;
+    height: 14px;
+    image: url(../res/ScrollTop.png);
 }

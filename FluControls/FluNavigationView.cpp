@@ -7,34 +7,34 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     m_vLayout = new QVBoxLayout(this);
     m_vLayout->setContentsMargins(0, 0, 0, 0);
     m_widget1 = new QWidget(this);
-    m_widget2 = new QWidget(this);
+    m_widget2 = new FluVScrollView(this);
     m_widget3 = new QWidget(this);
 
     m_vLayout1 = new QVBoxLayout(m_widget1);
-    m_vLayout2 = new QVBoxLayout(m_widget2);
+   // m_vLayout2 = new QVBoxLayout(m_widget2);
     m_vLayout3 = new QVBoxLayout(m_widget3);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
-    m_vLayout2->setContentsMargins(0, 0, 0, 0);
+   // m_vLayout2->setContentsMargins(0, 0, 0, 0);
     m_vLayout3->setContentsMargins(0, 0, 0, 0);
 
     m_vLayout1->setSpacing(5);
-    m_vLayout2->setSpacing(5);
+    //m_vLayout2->setSpacing(5);
     m_vLayout3->setSpacing(5);
 
     m_vLayout1->setAlignment(Qt::AlignTop);
-    m_vLayout2->setAlignment(Qt::AlignTop);
+  //  m_vLayout2->setAlignment(Qt::AlignTop);
     m_vLayout3->setAlignment(Qt::AlignTop);
 
-    auto srollArea = new QScrollArea(this);
-    srollArea->setWidgetResizable(true);
-    srollArea->setWidget(m_widget2);
+  //  auto srollArea = new QScrollArea(this);
+  //  srollArea->setWidgetResizable(true);
+  //  srollArea->setWidget(m_widget2);
 
-    srollArea->setObjectName("srollArea");
-    srollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+ //   srollArea->setObjectName("srollArea");
+ //   srollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     m_vLayout->addWidget(m_widget1);
-    m_vLayout->addWidget(srollArea, 1);
+    m_vLayout->addWidget(m_widget2, 1);
     m_vLayout->addWidget(m_widget3);
 
     m_widget1->setObjectName("widget1");
@@ -59,7 +59,7 @@ void FluNavigationView::addItemToLayout1(QWidget *item)
 
 void FluNavigationView::addItemToLayout2(QWidget *item)
 {
-    m_vLayout2->addWidget(item, Qt::AlignTop);
+    m_widget2->getMainLayout()->addWidget(item, Qt::AlignTop);
 
     auto iconTextItem = (FluNavigationIconTextItem *)item;
     iconTextItem->setParentView(this);
@@ -74,9 +74,9 @@ void FluNavigationView::addItemToLayout3(QWidget *item)
 
 void FluNavigationView::clearAllItemsSelectState()
 {
-    for (int i = 0; i < m_vLayout2->count(); i++)
+    for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
     {
-        auto curItem = (FluNavigationIconTextItem *)m_vLayout2->itemAt(i)->widget();
+        auto curItem = (FluNavigationIconTextItem *)m_widget2->getMainLayout()->itemAt(i)->widget();
         curItem->clearAllItemsSelectState();
     }
 
@@ -89,9 +89,9 @@ void FluNavigationView::clearAllItemsSelectState()
 
 void FluNavigationView::updateAllItemsStyleSheet()
 {
-    for (int i = 0; i < m_vLayout2->count(); i++)
+    for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
     {
-        auto curItem = (FluNavigationIconTextItem *)m_vLayout2->itemAt(i)->widget();
+        auto curItem = (FluNavigationIconTextItem *)m_widget2->getMainLayout()->itemAt(i)->widget();
         curItem->updateAllItemsStyleSheet();
         curItem->update();
     }
@@ -116,9 +116,9 @@ void FluNavigationView::onMenuItemClicked()
     if (m_bLong)
     {
         // close all item in vLayout
-        for (int i = 0; i < m_vLayout2->count(); i++)
+        for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
         {
-            auto item = (FluNavigationIconTextItem *)(m_vLayout2->itemAt(i)->widget());
+            auto item = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
             if (item == nullptr)
                 continue;
 

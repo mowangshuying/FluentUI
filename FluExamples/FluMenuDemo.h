@@ -32,6 +32,7 @@ class FluMenuDemoItem : public QFrame
           QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cut);
           pixmap = pixmap.scaled(18, 18, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
           m_iconLabel->setPixmap(pixmap);
+          m_iconLabel->setObjectName("iconLabel");
 
           m_hMainLayout->addWidget(m_iconLabel);
           m_hMainLayout->addSpacing(10);
@@ -152,14 +153,14 @@ class FluMenuDemo : public QWidget
            connect(m_menu, &QMenu::aboutToShow, [=]() { m_animation->start();
                });
 
-           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuDemo.qss", m_menu);
+           setStyleSheet("background-color:white;");
         }
 
         void contextMenuEvent(QContextMenuEvent* event)
         {
-           m_animation->setStartValue(QRect(event->globalPos(), QSize(m_menu->sizeHint().width(), 0)));
-           m_animation->setEndValue(QRect(event->globalPos(), QSize(m_menu->sizeHint())));
-           m_animation->start();
+          // m_animation->setStartValue(QRect(event->globalPos(), QSize(m_menu->sizeHint().width(), 0)));
+          // m_animation->setEndValue(QRect(event->globalPos(), QSize(m_menu->sizeHint())));
+          // m_animation->start();
            m_menu->exec(event->globalPos());
         //   m_animation->start();
         }

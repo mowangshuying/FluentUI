@@ -35,8 +35,8 @@ int main(int argc, char **argv)
     //   FluLineEditDemo demo;
     //   demo.show();
 
-      FluButtonDemo demo;
-      demo.show();
+    //  FluButtonDemo demo;
+    //  demo.show();
 
     // FluMultiLineTextDemo demo;
     // demo.show();
@@ -59,8 +59,8 @@ int main(int argc, char **argv)
    // FluButtonDemo demo;
    // demo.show();
 
-   // FluMenuDemo demo;
-   // demo.show();
+    FluMenuDemo demo;
+    demo.show();
 
 
   //  FluDisplayBoxDemo demo;

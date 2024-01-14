@@ -16,6 +16,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
    // m_vLayout2->setContentsMargins(0, 0, 0, 0);
+    m_widget2->getMainLayout()->setContentsMargins(0, 0, 0, 0);
     m_vLayout3->setContentsMargins(0, 0, 0, 0);
 
     m_vLayout1->setSpacing(5);
@@ -24,6 +25,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
 
     m_vLayout1->setAlignment(Qt::AlignTop);
   //  m_vLayout2->setAlignment(Qt::AlignTop);
+    m_widget2->getMainLayout()->setAlignment(Qt::AlignTop);
     m_vLayout3->setAlignment(Qt::AlignTop);
 
   //  auto srollArea = new QScrollArea(this);
@@ -48,7 +50,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     setStyleSheet(qss);
 
     m_bLong = true;
-    setFixedWidth(320 + 10);
+    setFixedWidth(320 + 20);
     connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
 }
 
@@ -130,10 +132,12 @@ void FluNavigationView::onMenuItemClicked()
 
         setFixedWidth(48);
         m_bLong = false;
+        m_widget2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     }
     else
     {
-        setFixedWidth(320);
+        m_widget2->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        setFixedWidth(320 + 20);
         m_bLong = true;
     }
 }

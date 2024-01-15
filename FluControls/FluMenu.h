@@ -6,8 +6,7 @@ class FluMenu : public QMenu
 {
     Q_OBJECT
   public:
-      
-      FluMenu(QWidget* parent = nullptr);
+    FluMenu(QWidget* parent = nullptr);
 
-      void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
 };

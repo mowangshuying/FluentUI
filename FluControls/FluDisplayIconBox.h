@@ -48,6 +48,11 @@ class FluDisplayIconBox : public QWidget
         update();
     }
 
+    FluAwesomeType getAwesomeType()
+    {
+        return m_type;
+    }
+
     void mouseReleaseEvent(QMouseEvent* event)
     {
         QWidget::mouseReleaseEvent(event);
@@ -63,6 +68,7 @@ class FluDisplayIconBox : public QWidget
     }
   signals:
     void clicked();
+
   protected:
     FluAwesomeType m_type;
     QLabel* m_iconLabel;

@@ -18,7 +18,7 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
     m_bodyWidget = new QWidget;
     m_bodyWidget->setObjectName("bodyWidget");
-  //  m_bodyWidget->setFixedHeight(80);
+    //  m_bodyWidget->setFixedHeight(80);
     m_mainLayout->addWidget(m_bodyWidget, 1);
 
     m_vBodyLayout = new QVBoxLayout;

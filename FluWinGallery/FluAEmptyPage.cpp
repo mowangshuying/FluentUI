@@ -23,23 +23,23 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_titleLabel->setText("A Temp Title Label");
     m_mainLayout->addWidget(m_titleLabel);
 
-     m_vScrollView = new FluVScrollView(this);
+    m_vScrollView = new FluVScrollView(this);
     m_vScrollView->setObjectName("vScrollView");
-     m_mainLayout->addWidget(m_vScrollView, 1);
+    m_mainLayout->addWidget(m_vScrollView, 1);
 
-     m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
+    m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
 
-     m_infoLabel = new QLabel;
-     m_infoLabel->setWordWrap(true);
-     m_infoLabel->setText(
-         "Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
-         "Semibold.");
-     m_infoLabel->setObjectName("infoLabel");
-     m_vScrollView->getMainLayout()->addWidget(m_infoLabel, 0, Qt::AlignTop);
-     m_vScrollView->getMainLayout()->addSpacing(20);
+    m_infoLabel = new QLabel;
+    m_infoLabel->setWordWrap(true);
+    m_infoLabel->setText(
+        "Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
+        "Semibold.");
+    m_infoLabel->setObjectName("infoLabel");
+    m_vScrollView->getMainLayout()->addWidget(m_infoLabel, 0, Qt::AlignTop);
+    m_vScrollView->getMainLayout()->addSpacing(20);
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", this);
-    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", m_vScrollView);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", m_vScrollView);
 }
 
 void FluAEmptyPage::paintEvent(QPaintEvent* event)

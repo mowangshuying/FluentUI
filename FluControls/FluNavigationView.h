@@ -55,7 +55,7 @@ class FluNavigationView : public QWidget
     QWidget *m_widget3;
 
     QVBoxLayout *m_vLayout1;
-  //  QVBoxLayout *m_vLayout2;
+    //  QVBoxLayout *m_vLayout2;
     QVBoxLayout *m_vLayout3;
 
     bool m_bLong;

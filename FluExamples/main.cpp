@@ -54,18 +54,17 @@ int main(int argc, char **argv)
     // FluButtonDemo demo;
     // demo.show();
 
-     // FluDisplayCodeDemo demo;
-     // demo.show();
+    // FluDisplayCodeDemo demo;
+    // demo.show();
 
-   // FluButtonDemo demo;
-   // demo.show();
+    // FluButtonDemo demo;
+    // demo.show();
 
-    //FluMenuDemo demo;
-    //demo.show();
+    // FluMenuDemo demo;
+    // demo.show();
 
-
-  //  FluDisplayBoxDemo demo;
-  //  demo.show();
+    //  FluDisplayBoxDemo demo;
+    //  demo.show();
 
     FluDisplayIconBoxDemo demo;
     demo.show();

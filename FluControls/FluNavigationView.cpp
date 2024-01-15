@@ -11,29 +11,29 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     m_widget3 = new QWidget(this);
 
     m_vLayout1 = new QVBoxLayout(m_widget1);
-   // m_vLayout2 = new QVBoxLayout(m_widget2);
+    // m_vLayout2 = new QVBoxLayout(m_widget2);
     m_vLayout3 = new QVBoxLayout(m_widget3);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
-   // m_vLayout2->setContentsMargins(0, 0, 0, 0);
+    // m_vLayout2->setContentsMargins(0, 0, 0, 0);
     m_widget2->getMainLayout()->setContentsMargins(0, 0, 0, 0);
     m_vLayout3->setContentsMargins(0, 0, 0, 0);
 
     m_vLayout1->setSpacing(5);
-    //m_vLayout2->setSpacing(5);
+    // m_vLayout2->setSpacing(5);
     m_vLayout3->setSpacing(5);
 
     m_vLayout1->setAlignment(Qt::AlignTop);
-  //  m_vLayout2->setAlignment(Qt::AlignTop);
+    //  m_vLayout2->setAlignment(Qt::AlignTop);
     m_widget2->getMainLayout()->setAlignment(Qt::AlignTop);
     m_vLayout3->setAlignment(Qt::AlignTop);
 
-  //  auto srollArea = new QScrollArea(this);
-  //  srollArea->setWidgetResizable(true);
-  //  srollArea->setWidget(m_widget2);
+    //  auto srollArea = new QScrollArea(this);
+    //  srollArea->setWidgetResizable(true);
+    //  srollArea->setWidget(m_widget2);
 
- //   srollArea->setObjectName("srollArea");
- //   srollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    //   srollArea->setObjectName("srollArea");
+    //   srollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     m_vLayout->addWidget(m_widget1);
     m_vLayout->addWidget(m_widget2, 1);

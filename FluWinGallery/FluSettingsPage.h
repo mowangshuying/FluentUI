@@ -6,13 +6,11 @@ class FluSettingsPage : public QWidget
 {
     Q_OBJECT
   public:
-      FluSettingsPage(QWidget* parent = nullptr) : QWidget(parent)
-      {
+    FluSettingsPage(QWidget* parent = nullptr) : QWidget(parent)
+    {
+    }
 
-      }
-
-      void paintEvent(QPaintEvent* event)
-      {
-
-      }
+    void paintEvent(QPaintEvent* event)
+    {
+    }
 };

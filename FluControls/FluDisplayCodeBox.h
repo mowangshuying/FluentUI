@@ -27,21 +27,17 @@ class FluCppSyntaxHightLighter : public QSyntaxHighlighter
         newARuleToRules(QColor(255, 215, 0), "\\bFluGraphicalButton\\b");
         newARuleToRules(QColor(255, 215, 0), "\\bFluStyleButton\\b");
 
-
         newARuleToRules(QColor(185, 119, 30), "\\bCaptionTextBlockSylte\\b");
 
-        //129,146,74
+        // 129,146,74
 
         newARuleToRules(QColor(255, 128, 0), "\\bsetStyle\\b");
         newARuleToRules(QColor(255, 128, 0), "\\bsetText\\b");
         newARuleToRules(QColor(255, 128, 0), "\\bsetIcon\\b");
 
-      
         newARuleToRules(QColor(129, 146, 74), "\\bbtn1\\b");
         newARuleToRules(QColor(129, 146, 74), "\\bbtn2\\b");
         newARuleToRules(QColor(129, 146, 74), "\\bbtn3\\b");
-
-
 
         // newARuleToRules(Qt::blue, "\\bendl\\b");
     }
@@ -94,31 +90,30 @@ class FluDisplayCodeBox : public QTextEdit
     {
         setPlainText(code);
         // print height
-        //LOG_DEBUG << "height:" << height() << "doc height:" << document()->height();
-      //  setWordWrapMode(QTextOption::WrapMode::WordWrap);
-     //   LOG_DEBUG << "1 - height:" << height();
-     //   LOG_DEBUG << "line count" << document()->lineCount();
+        // LOG_DEBUG << "height:" << height() << "doc height:" << document()->height();
+        //  setWordWrapMode(QTextOption::WrapMode::WordWrap);
+        //   LOG_DEBUG << "1 - height:" << height();
+        //   LOG_DEBUG << "line count" << document()->lineCount();
 
-        //auto doc = document();
-      //  document()->setTextWidth(viewport()->width());
-     //   int newHeight = document()->size().height() + document()->documentMargin();
-     //   setFixedHeight(newHeight);
+        // auto doc = document();
+        //  document()->setTextWidth(viewport()->width());
+        //   int newHeight = document()->size().height() + document()->documentMargin();
+        //   setFixedHeight(newHeight);
 
-       // LOG_DEBUG << "2 - height:" << height();
-
+        // LOG_DEBUG << "2 - height:" << height();
     }
 
     void resizeEvent(QResizeEvent*)
     {
-       // LOG_DEBUG << "viewport width:" << viewport()->width();
+        // LOG_DEBUG << "viewport width:" << viewport()->width();
         document()->setTextWidth(viewport()->width());
         int newHeight = document()->size().height() + document()->documentMargin();
         setFixedHeight(newHeight);
-       // LOG_DEBUG << "height:" << height();
-       // emit sizeChanged();
-       // ((QWidget*)(parent()))->setFixedHeight(newHeight + 8);
+        // LOG_DEBUG << "height:" << height();
+        // emit sizeChanged();
+        // ((QWidget*)(parent()))->setFixedHeight(newHeight + 8);
     }
 
-signals:
+  signals:
     void sizeChanged();
 };

@@ -15,7 +15,7 @@ class FluMultiLineTextDemo : public QWidget
         resize(600, 400);
 
         auto textEdit = new QTextEdit(this);
-        //textEdit->resize(120, 30);
+        // textEdit->resize(120, 30);
         textEdit->setFixedWidth(120);
         textEdit->setLineWrapMode(QTextEdit::WidgetWidth);
         textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -31,11 +31,11 @@ class FluMultiLineTextDemo : public QWidget
             textEdit->setMinimumHeight(newHeight);
         });
 
-     //   {
-     //       QTextDocument* doc = textEdit->document();
-     //       doc->setTextWidth(textEdit->viewport()->width());
-     //       int newHeight = doc->size().height() + textEdit->document()->documentMargin();
-    //        textEdit->setMinimumHeight(newHeight);
-    //    }
+        //   {
+        //       QTextDocument* doc = textEdit->document();
+        //       doc->setTextWidth(textEdit->viewport()->width());
+        //       int newHeight = doc->size().height() + textEdit->document()->documentMargin();
+        //        textEdit->setMinimumHeight(newHeight);
+        //    }
     }
 };

@@ -43,11 +43,11 @@ class FluDisplayBox : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-  protected:
-      QVBoxLayout* m_mainLayout;
-      QLabel* m_titleLabel;
-      QWidget* m_bodyWidget;
-      QVBoxLayout* m_vBodyLayout;
-      FluCodeExpander* m_codeExpander;
 
+  protected:
+    QVBoxLayout* m_mainLayout;
+    QLabel* m_titleLabel;
+    QWidget* m_bodyWidget;
+    QVBoxLayout* m_vBodyLayout;
+    FluCodeExpander* m_codeExpander;
 };

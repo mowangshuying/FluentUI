@@ -10,8 +10,8 @@ class FluRadioButton : public QRadioButton
 {
     Q_OBJECT
   public:
-      FluRadioButton(QWidget* parent = nullptr) : QRadioButton(parent)
-      {
+    FluRadioButton(QWidget* parent = nullptr) : QRadioButton(parent)
+    {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
-      }
+    }
 };

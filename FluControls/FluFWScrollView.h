@@ -1,0 +1,33 @@
+#pragma once
+
+#include <QWidget>
+#include <QScrollArea>
+#include "FluFlowLayout.h"
+#include "../FluUtils/FluUtils.h"
+
+class FluFWScrollView : public QScrollArea
+{
+    Q_OBJECT
+  public:
+    FluFWScrollView(QWidget* parent = nullptr) : QScrollArea(parent)
+    {
+        setWidgetResizable(true);
+        setMinimumSize(0, 0);
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        m_contextWidget = new QWidget(this);
+        setWidget(m_contextWidget);
+        m_vMainLayout = new FluFlowLayout(m_contextWidget);
+        m_contextWidget->setObjectName("contextWidget");
+        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluFWScrollView.qss");
+        setStyleSheet(qss);
+    }
+
+    FluFlowLayout* getMainLayout()
+    {
+        return m_vMainLayout;
+    }
+
+  protected:
+    QWidget* m_contextWidget;
+    FluFlowLayout* m_vMainLayout;
+};

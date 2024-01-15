@@ -104,6 +104,12 @@
     <ClCompile Include="FluRadioButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDisplayIconBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluFWScrollView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -185,6 +191,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluRadioButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDisplayIconBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluFWScrollView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

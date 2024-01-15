@@ -12,6 +12,7 @@
 #include "FluDisplayCodeDemo.h"
 #include "FluMenuDemo.h"
 #include "FluDisplayBoxDemo.h"
+#include "FluDisplayIconBoxDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -59,11 +60,14 @@ int main(int argc, char **argv)
    // FluButtonDemo demo;
    // demo.show();
 
-    FluMenuDemo demo;
-    demo.show();
+    //FluMenuDemo demo;
+    //demo.show();
 
 
   //  FluDisplayBoxDemo demo;
   //  demo.show();
+
+    FluDisplayIconBoxDemo demo;
+    demo.show();
     return app.exec();
 }

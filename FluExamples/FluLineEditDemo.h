@@ -4,6 +4,12 @@
 
 #include "../FluControls/FluLineEdit.h"
 #include "FluDisplay9.h"
+#include "../FluControls/FluSearchLineEdit.h"
+
+
+#include <QPaintEvent>
+#include <QStyleOption>
+#include <QPainter>
 
 class FluLineEditDemo : public FluDisplay9
 {
@@ -14,5 +20,20 @@ class FluLineEditDemo : public FluDisplay9
         auto lineEdit = new FluLineEdit(this);
         lineEdit->setFixedSize(120, 30);
         addDemo(lineEdit);
+
+        auto sLineEdit = new FluSearchLineEdit;
+      //  sLineEdit->setFixedSize(120, 30);
+        sLineEdit->setFixedSize(180, 30);
+        addDemo(sLineEdit);
+    }
+
+    void paintEvent(QPaintEvent* paintEvent)
+    {
+        QWidget::paintEvent(paintEvent);
+        QStyleOption opt;
+        // opt.init(this);
+        opt.initFrom(this);
+        QPainter p(this);
+        style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
     }
 };

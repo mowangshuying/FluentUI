@@ -136,6 +136,7 @@
     <ClCompile Include="FluPushButton.cpp" />
     <ClCompile Include="FluRadioButton.cpp" />
     <ClCompile Include="FluRotationButton.cpp" />
+    <ClCompile Include="FluSearchLineEdit.cpp" />
     <ClCompile Include="FluStackedLayout.cpp" />
     <ClCompile Include="FluStyleButton.cpp" />
     <ClCompile Include="FluToggleButton.cpp" />
@@ -153,6 +154,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluSearchLineEdit.h" />
     <QtMoc Include="FluFWScrollView.h" />
     <QtMoc Include="FluRadioButton.h" />
     <QtMoc Include="FluStyleButton.h" />

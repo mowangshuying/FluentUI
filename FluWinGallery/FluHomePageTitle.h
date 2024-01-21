@@ -6,7 +6,7 @@
 #include <QLabel>
 #include <QPainter>
 #include <QPainterPath>
-
+#include <QGraphicsOpacityEffect>
 #include "../FluUtils/FluStyleSheetUitls.h"
 #include "../FluControls/FluVCard.h"
 
@@ -49,17 +49,24 @@ class FluHomePageTitle : public QWidget
         path.addRoundedRect(rect(), 8, 8);
         painter.setClipPath(path);
 
-        QLinearGradient gradient(0, 0, width(), height());
-        gradient.setColorAt(0, QColor(206, 216, 228));
-        gradient.setColorAt(1, QColor(249, 249, 249));
+        QLinearGradient gradient1(rect().topLeft(), QPoint(rect().topLeft().x(), rect().topLeft().y() + rect().height() / 2));
+        gradient1.setColorAt(0.5, QColor(206, 216, 228));
+        gradient1.setColorAt(1, Qt::transparent);
         painter.setPen(Qt::NoPen);
-        painter.setBrush(gradient);
+        painter.setBrush(gradient1);
         painter.drawRect(rect());
 
-        QPixmap pixmap("../res/GalleryHeaderImage.png");
-        pixmap.copy(0, 0, pixmap.width(), pixmap.height() / 4);
-        pixmap = pixmap.scaled(rect().width(), rect().height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        painter.drawPixmap(rect(), pixmap);
+         QPixmap pixmap("../res/GalleryHeaderImage.png");
+         pixmap.copy(0, 0, pixmap.width(), pixmap.height() / 4);
+         pixmap = pixmap.scaled(rect().width(), rect().height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+         painter.drawPixmap(rect(), pixmap);
+
+         QLinearGradient gradient(QPoint(rect().topLeft().x() , rect().topLeft().y() + rect().height() / 2), rect().bottomLeft());
+         gradient.setColorAt(0.5, Qt::transparent);
+         gradient.setColorAt(1, QColor(223, 231, 240));
+         painter.setPen(Qt::NoPen);
+         painter.setBrush(gradient);
+         painter.drawRect(rect());
     }
 
   private:

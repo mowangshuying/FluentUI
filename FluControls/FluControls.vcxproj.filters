@@ -50,9 +50,6 @@
     <ClCompile Include="FluNavigationItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationIconTextItem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FluNavigationMenuItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -108,6 +105,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluFWScrollView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluNavigationIconTextItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluSearchLineEdit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -197,6 +200,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluFWScrollView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluSearchLineEdit.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

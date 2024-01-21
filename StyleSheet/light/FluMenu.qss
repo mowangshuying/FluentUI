@@ -1,37 +1,10 @@
-#iconLabel {
-    background-color: transparent;
-}
-
-#textLabel {
-    color: rgb(26, 26, 26);
-    background-color: transparent;
-    font-size: 12px;
-}
-
-#shortcutKeysLabel {
-    color: rgb(95, 95, 95);
-    background-color: transparent;
-    font-size: 9px;
-}
-
-FluMenuDemoItem {
-    font-size: 12px;
-    /* border-radius: 4px; */
-    background-color: rgb(249, 249, 249);
-}
-
-FluMenuDemoItem:hover {
-    background-color: rgb(240, 240, 240);
-    border-radius: 4px;
-}
-
 QMenu {
-    /* background-color: rgb(249, 249, 249); */
-    /* border: 1px solid rgb(223, 223, 223); */
-    background-color: rgb(249, 249, 0);
-    border: 1px solid rgb(223, 223, 0);
-    border-radius: 4px;
-    padding: 8px;
+    background-color: rgb(249, 249, 249);
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 8px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 QMenu::title {
@@ -42,12 +15,12 @@ QMenu::title {
 
 QMenu::item {
     background-color: rgb(249, 249, 249);
-    /* color: rgb(99, 189, 15); */
-    color: blue;
+    color: black;
     height: 30px;
+    min-width: 96px;
     font-size: 12px;
     border-radius: 4px;
-    padding-left: 36px;
+    /* padding-left: 36px; */
 }
 
 QMenu::item:selected {

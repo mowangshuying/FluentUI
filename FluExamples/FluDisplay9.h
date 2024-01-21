@@ -12,7 +12,7 @@ class FluDisplay9 : public QWidget
     {
         gridLayout = new QGridLayout;
         setLayout(gridLayout);
-        setStyleSheet("background-color:rbg(249, 249, 249");
+        setStyleSheet("background-color:rgb(249, 249, 249");
         resize(600, 400);
     }
 

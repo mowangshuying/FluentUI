@@ -33,7 +33,7 @@ class FluIconsPage : public FluAEmptyPage
 
         auto wrapWidget2 = new QWidget;
         wrapWidget2->setObjectName("wrapWidget2");
-        wrapWidget2->setFixedWidth(300);
+        wrapWidget2->setFixedWidth(256);
 
         auto wrapWidget2Layout = new QVBoxLayout;
         wrapWidget2Layout->setSpacing(0);

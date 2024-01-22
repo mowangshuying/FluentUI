@@ -1,0 +1,43 @@
+QComboBox {
+    min-width: 120px;
+    height: 30px;
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 4px;
+    background-color: rgb(251, 251, 251);
+}
+
+QComboBox::drop-down {
+    margin-right: 8px;
+    margin-top: 8px;
+    height: 15px;
+    width: 15px;
+    /* background-color: greenyellow; */
+    /* image: url("../../res/ChevronDown.png"); */
+    border: none;
+}
+
+QComboBox::down-arrow {
+    height: 15px;
+    width: 15px;
+    image: url("../res/ChevronDown.png");
+}
+
+QComboBox QAbstractItemView {
+    outline: 0px solid gray;
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 4px;
+    background-color: rgb(249, 249, 249);
+    padding: 2px;
+    margin-top: 2px;
+}
+
+QComboBox QAbstractItemView::item {
+    border-radius: 4px;
+    height: 30px;
+    color: rgb(57, 57, 57);
+}
+
+QComboBox QAbstractItemView::item:selected {
+    color: rgb(57, 57, 57);
+    background-color: rgb(240, 240, 240);
+}

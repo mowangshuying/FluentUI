@@ -12,7 +12,7 @@
 #include <QHBoxLayout>
 #include "FluComboBoxTextItem.h"
 
-class FluComboBox :public QComboBox
+class FluComboBox : public QComboBox
 {
   public:
     FluComboBox(QWidget* parent = nullptr) : QComboBox(parent)
@@ -24,5 +24,5 @@ class FluComboBox :public QComboBox
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBox.qss", this);
     }
 
- protected:
+  protected:
 };

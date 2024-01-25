@@ -2,7 +2,7 @@
 
 #include "../FluUtils/FluUtils.h"
 #include "../FluControls/FluMenu.h"
-//#include "../FluControls/FluMenuIconTextItem.h"
+// #include "../FluControls/FluMenuIconTextItem.h"
 
 #include <QWidget>
 #include <QVBoxLayout>
@@ -14,9 +14,8 @@
 #include <QWidgetAction>
 #include <QContextMenuEvent>
 #include <QPropertyAnimation>
-//#include "../FluControls/FluMenuIconTextAction.h"
+// #include "../FluControls/FluMenuIconTextAction.h"
 #include <QWidgetAction>
-
 
 class FluMenuDemo : public QWidget
 {
@@ -37,7 +36,6 @@ class FluMenuDemo : public QWidget
         auto action3 = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Delete), "Delete");
         action3->setShortcut(QKeySequence::Delete);
         m_menu->addAction(action3);
-        
 
         m_menu->addSeparator();
 
@@ -57,7 +55,6 @@ class FluMenuDemo : public QWidget
         auto action7 = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Delete), "Delete");
         action7->setShortcut(QKeySequence::Delete);
         subMenu->addAction(action7);
-
 
         setStyleSheet("background-color:white;");
     }

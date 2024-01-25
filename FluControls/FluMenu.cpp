@@ -8,9 +8,8 @@
 #include <QStyleOption>
 #include <QWidgetAction>
 #include <QMoveEvent>
-//#include "../FluControls/FluMenuIconTextItem.h"
-//#include "FluMenuIconTextAction.h"
-
+// #include "../FluControls/FluMenuIconTextItem.h"
+// #include "FluMenuIconTextAction.h"
 
 FluMenu::FluMenu(QWidget* parent /*= nullptr*/) : QMenu(parent)
 {
@@ -34,39 +33,39 @@ void FluMenu::mouseMoveEvent(QMouseEvent* e)
 {
     QMenu::mouseMoveEvent(e);
     // hit action
-   // QAction* action = actionAt(e->position().toPoint());
-   // if (!action)
-   // {
-   //     return;
-   // }
+    // QAction* action = actionAt(e->position().toPoint());
+    // if (!action)
+    // {
+    //     return;
+    // }
 
-   // FluMenuIconTextAction* defaultAction = (FluMenuIconTextAction*)action;
-   // if (action == nullptr)
-   //     return;
+    // FluMenuIconTextAction* defaultAction = (FluMenuIconTextAction*)action;
+    // if (action == nullptr)
+    //     return;
 
-   // auto defaultWidget = (FluMenuIconTextItem*)defaultAction->defaultWidget();
-   // if (defaultWidget == nullptr)
-   //     return;
+    // auto defaultWidget = (FluMenuIconTextItem*)defaultAction->defaultWidget();
+    // if (defaultWidget == nullptr)
+    //     return;
 
-   //LOG_DEBUG << defaultWidget->getTextLabel()->text();
-   //// has sub menu display.
-   // if (defaultAction == nullptr)
-   //     return;
-   // 
-   // auto innerMenu = defaultAction->getInnerMenu();
-   // if (innerMenu == nullptr)
-   //     return;
+    // LOG_DEBUG << defaultWidget->getTextLabel()->text();
+    //// has sub menu display.
+    // if (defaultAction == nullptr)
+    //     return;
+    //
+    // auto innerMenu = defaultAction->getInnerMenu();
+    // if (innerMenu == nullptr)
+    //     return;
 
-   // QPoint gPoint = QPoint(defaultWidget->x() + defaultWidget->width(), defaultWidget->y());
-   // gPoint = mapToGlobal(gPoint);
-  //  innerMenu->exec(gPoint);
+    // QPoint gPoint = QPoint(defaultWidget->x() + defaultWidget->width(), defaultWidget->y());
+    // gPoint = mapToGlobal(gPoint);
+    //  innerMenu->exec(gPoint);
 }
 
 void FluMenu::paintEvent(QPaintEvent* event)
 {
     QMenu::paintEvent(event);
-  //  QStyleOption opt;
-  //  opt.initFrom(this);
-  //  QPainter painter(this);
-  //  style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    //  QStyleOption opt;
+    //  opt.initFrom(this);
+    //  QPainter painter(this);
+    //  style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }

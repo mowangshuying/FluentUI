@@ -5,7 +5,6 @@
 #include <QPushButton>
 #include <QHBoxLayout>
 
-
 #include "../FluUtils/FluUtils.h"
 #include <QPaintEvent>
 #include <QStyleOption>
@@ -29,14 +28,14 @@ class FluSearchLineEdit : public QWidget
         m_btn->setIconSize(QSize(18, 18));
         m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search));
 
-      //  m_edit->setFixedWidth(120);
+        //  m_edit->setFixedWidth(120);
         m_edit->setFixedHeight(30);
 
         m_hLayout->addWidget(m_edit, 1, Qt::AlignLeft);
         m_hLayout->addWidget(m_btn, 0, Qt::AlignRight);
         m_hLayout->addSpacing(4);
 
-       // setFixedWidth(155);
+        // setFixedWidth(155);
         setFixedHeight(32);
 
         m_edit->installEventFilter(this);
@@ -69,7 +68,7 @@ class FluSearchLineEdit : public QWidget
     {
         m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
     }
-    
+
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;
@@ -77,7 +76,6 @@ class FluSearchLineEdit : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
 
   protected:
     QLineEdit* m_edit;

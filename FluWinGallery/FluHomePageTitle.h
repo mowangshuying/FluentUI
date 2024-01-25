@@ -56,17 +56,17 @@ class FluHomePageTitle : public QWidget
         painter.setBrush(gradient1);
         painter.drawRect(rect());
 
-         QPixmap pixmap("../res/GalleryHeaderImage.png");
-         pixmap.copy(0, 0, pixmap.width(), pixmap.height() / 4);
-         pixmap = pixmap.scaled(rect().width(), rect().height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-         painter.drawPixmap(rect(), pixmap);
+        QPixmap pixmap("../res/GalleryHeaderImage.png");
+        pixmap.copy(0, 0, pixmap.width(), pixmap.height() / 4);
+        pixmap = pixmap.scaled(rect().width(), rect().height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+        painter.drawPixmap(rect(), pixmap);
 
-         QLinearGradient gradient(QPoint(rect().topLeft().x() , rect().topLeft().y() + rect().height() / 2), rect().bottomLeft());
-         gradient.setColorAt(0.5, Qt::transparent);
-         gradient.setColorAt(1, QColor(223, 231, 240));
-         painter.setPen(Qt::NoPen);
-         painter.setBrush(gradient);
-         painter.drawRect(rect());
+        QLinearGradient gradient(QPoint(rect().topLeft().x(), rect().topLeft().y() + rect().height() / 2), rect().bottomLeft());
+        gradient.setColorAt(0.5, Qt::transparent);
+        gradient.setColorAt(1, QColor(223, 231, 240));
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(gradient);
+        painter.drawRect(rect());
     }
 
   private:

@@ -43,7 +43,6 @@ class FluIconsPage : public FluAEmptyPage
         auto titleLabel = new QLabel;
         auto iconLabel = new QLabel;
 
-
         iconLabel->setFixedSize(50, 50);
 
         auto awesomeTypeKeyLabel = new QLabel;
@@ -67,7 +66,6 @@ class FluIconsPage : public FluAEmptyPage
         awesomeTypeKeyLabel->setText("awesometype key Label");
         awesomeTypeValueLabel->setText("awesometype value Label");
 
-
         wrapWidget2->setLayout(wrapWidget2Layout);
         wrapLayout->addWidget(wrapWidget2);
 
@@ -86,8 +84,8 @@ class FluIconsPage : public FluAEmptyPage
         for (int i = 0; i < metaEnum.keyCount(); i++)
         {
 #ifdef _DEBUG
-                  if (i >= 256)
-                      continue;
+            if (i >= 256)
+                continue;
 #endif
             // addIcon((FluAwesomeType)metaEnum.value(i));
             auto displayIconBox = new FluDisplayIconBox((FluAwesomeType)metaEnum.value(i));
@@ -95,7 +93,6 @@ class FluIconsPage : public FluAEmptyPage
             {
                 m_sDisplayIconBox = displayIconBox;
             }
-
 
             // flowLayout->addWidget(displayIconBox);
             wrapWidget1->getMainLayout()->addWidget(displayIconBox);
@@ -111,7 +108,7 @@ class FluIconsPage : public FluAEmptyPage
                 displayIconBox->style()->polish(displayIconBox);
 
                 titleLabel->setText(EnumTypeToQString(displayIconBox->getAwesomeType()));
-                QPixmap pixmap = FluIconUtils::getFluentIconPixmap(displayIconBox->getAwesomeType(), QColor(8,8,8), 30, 30);
+                QPixmap pixmap = FluIconUtils::getFluentIconPixmap(displayIconBox->getAwesomeType(), QColor(8, 8, 8), 30, 30);
                 pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
                 iconLabel->setPixmap(pixmap);
 

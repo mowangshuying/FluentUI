@@ -6,7 +6,6 @@
 #include "FluDisplay9.h"
 #include "../FluControls/FluSearchLineEdit.h"
 
-
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QPainter>
@@ -22,7 +21,7 @@ class FluLineEditDemo : public FluDisplay9
         addDemo(lineEdit);
 
         auto sLineEdit = new FluSearchLineEdit;
-      //  sLineEdit->setFixedSize(120, 30);
+        //  sLineEdit->setFixedSize(120, 30);
         sLineEdit->setFixedSize(180, 30);
         addDemo(sLineEdit);
     }

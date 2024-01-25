@@ -72,8 +72,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         auto dropDownPage = new FluDropDownButtonPage;
         m_sLayout->addWidget("DropDownButtonPage", dropDownPage);
         connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DropDownButtonPage"); });
-        
-
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("HyperLinkButton", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RepeatButton", item);

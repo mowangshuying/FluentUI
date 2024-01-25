@@ -74,7 +74,10 @@ int main(int argc, char **argv)
     //    FluComboBoxDemo demo;
     //    demo.show();
 
-    FluDropDownButtonDemo demo;
+ //   FluDropDownButtonDemo demo;
+ //   demo.show();
+
+    FluButtonDemo demo;
     demo.show();
 
     return app.exec();

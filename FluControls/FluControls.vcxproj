@@ -126,6 +126,7 @@
     <ClCompile Include="FluFWScrollView.cpp" />
     <ClCompile Include="FluGraphicalButton.cpp" />
     <ClCompile Include="FluHCard.cpp" />
+    <ClCompile Include="FluHyperLinkButton.cpp" />
     <ClCompile Include="FluIconButton.cpp" />
     <ClCompile Include="FluLabel.cpp" />
     <ClCompile Include="FluLineEdit.cpp" />
@@ -157,6 +158,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluHyperLinkButton.h" />
     <QtMoc Include="FluSearchLineEdit.h" />
     <QtMoc Include="FluFWScrollView.h" />
     <QtMoc Include="FluRadioButton.h" />

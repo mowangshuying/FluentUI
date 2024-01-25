@@ -122,6 +122,9 @@
     <ClCompile Include="FluDropDownButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluHyperLinkButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -218,6 +221,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDropDownButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHyperLinkButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

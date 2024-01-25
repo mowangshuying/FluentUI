@@ -1,0 +1,25 @@
+FluDropDownButton {
+    background-color: rgb(251, 251, 251);
+    border: 1px solid rgb(229, 229, 229);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+}
+
+FluDropDownButton:hover {
+    border: 1px solid rgb(229, 229, 229);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    background-color: rgb(246, 246, 246);
+}
+
+FluDropDownButton:pressed {
+    background-color: rgb(245, 0, 0);
+    /* border: 1px solid rgb(229, 229, 229); */
+}
+
+#textBtn {
+    background-color: transparent;
+}
+
+#iconBtn {
+    background-color: transparent;
+}

@@ -11,6 +11,7 @@
 #include "FluIconsPage.h"
 #include "FluButtonPage.h"
 #include "FluToggleButtonPage.h"
+#include "FluDropDownButtonPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -68,6 +69,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ButtonPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DropDownButton", item);
+        auto dropDownPage = new FluDropDownButtonPage;
+        m_sLayout->addWidget("DropDownButtonPage", dropDownPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DropDownButtonPage"); });
+        
+
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("HyperLinkButton", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RepeatButton", item);

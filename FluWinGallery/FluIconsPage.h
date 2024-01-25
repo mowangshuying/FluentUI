@@ -86,8 +86,8 @@ class FluIconsPage : public FluAEmptyPage
         for (int i = 0; i < metaEnum.keyCount(); i++)
         {
 #ifdef _DEBUG
-            //      if (i >= 256)
-            //          return;
+                  if (i >= 256)
+                      continue;
 #endif
             // addIcon((FluAwesomeType)metaEnum.value(i));
             auto displayIconBox = new FluDisplayIconBox((FluAwesomeType)metaEnum.value(i));

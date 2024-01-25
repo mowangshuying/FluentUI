@@ -114,10 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluComboBox.cpp" />
+    <ClCompile Include="FluComboBoxTextItem.cpp" />
     <ClCompile Include="FluDisplayBox.cpp" />
     <ClCompile Include="FluDisplayCodeBox.cpp" />
     <ClCompile Include="FluCodeExpander.cpp" />
     <ClCompile Include="FluDisplayIconBox.cpp" />
+    <ClCompile Include="FluDropDownButton.cpp" />
     <ClCompile Include="FluExpander.cpp" />
     <ClCompile Include="FluFlowLayout.cpp" />
     <ClCompile Include="FluFrameLessWidget.cpp" />
@@ -170,6 +172,8 @@
     <QtMoc Include="FluDisplayBox.h" />
     <QtMoc Include="FluDisplayIconBox.h" />
     <ClInclude Include="FluComboBox.h" />
+    <QtMoc Include="FluComboBoxTextItem.h" />
+    <QtMoc Include="FluDropDownButton.h" />
     <ClInclude Include="FluFlowLayout.h" />
     <QtMoc Include="FluIconButton.h" />
     <QtMoc Include="FluLabel.h" />

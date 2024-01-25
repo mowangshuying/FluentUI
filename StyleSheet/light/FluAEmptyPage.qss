@@ -13,9 +13,6 @@ FluAEmptyPage {
 }
 
 #infoLabel {
-    font-size: 18px;
-    color: rgb(113, 113, 113);
-    /* text-decoration: underline; */
-    /* border: 1px solid rgb(209, 209, 209); */
-    border-radius: 4px;
+    font-size: 12px;
+    color: rgb(26, 26, 26);
 }

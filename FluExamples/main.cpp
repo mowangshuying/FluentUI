@@ -14,6 +14,7 @@
 #include "FluDisplayBoxDemo.h"
 #include "FluDisplayIconBoxDemo.h"
 #include "FluComboBoxDemo.h"
+#include "FluDropDownButtonDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -61,8 +62,8 @@ int main(int argc, char **argv)
     // FluButtonDemo demo;
     // demo.show();
 
-   //  FluMenuDemo demo;
-    // demo.show();
+  //   FluMenuDemo demo;
+  //   demo.show();
 
     //  FluDisplayBoxDemo demo;
     //  demo.show();
@@ -71,7 +72,11 @@ int main(int argc, char **argv)
 //    demo.show();
 
 
-    FluComboBoxDemo demo;
+//    FluComboBoxDemo demo;
+//    demo.show();
+
+    FluDropDownButtonDemo demo;
     demo.show();
+
     return app.exec();
 }

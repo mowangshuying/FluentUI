@@ -53,6 +53,9 @@
     <ClCompile Include="FluToggleButtonPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDropDownButtonPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -80,6 +83,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluToggleButtonPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDropDownButtonPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

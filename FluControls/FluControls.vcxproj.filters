@@ -116,6 +116,12 @@
     <ClCompile Include="FluComboBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluComboBoxTextItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluDropDownButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -206,6 +212,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluSearchLineEdit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluComboBoxTextItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDropDownButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

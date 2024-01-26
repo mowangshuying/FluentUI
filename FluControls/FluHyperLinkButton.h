@@ -9,10 +9,11 @@ class FluHyperLinkButton : public QPushButton
    Q_OBJECT
   public:
     FluHyperLinkButton(QString linkUrl, QWidget* parent = nullptr);
-      void setLinkUrl(QString linkUrl)
-      {
-          m_linkUrl = linkUrl;
-      }
+    
+    void setLinkUrl(QString linkUrl)
+    {
+        m_linkUrl = linkUrl;
+    }
 
     protected:
       QString m_linkUrl;

@@ -25,6 +25,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_wrap2->setFixedHeight(0);
 
     m_vWrap2Layout = new QVBoxLayout;
+    m_vWrap2Layout->setContentsMargins(5, 5, 5, 5);
     m_wrap2->setLayout(m_vWrap2Layout);
 
     m_mainLayout->addWidget(m_wrap1);

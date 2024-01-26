@@ -3,6 +3,8 @@
 #include "FluExpander.h"
 #include <QWidget>
 #include "FluDisplayCodeBox.h"
+#include <QStyleOption>
+#include <QPainter>
 
 class FluCodeExpander : public FluExpander
 {
@@ -53,6 +55,14 @@ class FluCodeExpander : public FluExpander
         // m_wrap2->setFixedHeight(m_displayCodeBox->height());
         // setWrap2Height();
         //  setWrap2Height(m_wrap2->sizeHint().height());
+    }
+
+     void paintEvent(QPaintEvent* event)
+    {
+        QStyleOption opt;
+        opt.initFrom(this);
+        QPainter painter(this);
+        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
 
   protected:

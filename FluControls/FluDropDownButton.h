@@ -64,6 +64,12 @@ class FluDropDownButton : public QWidget
         return m_iconBtn;
     }
 
+    void setIcon(QIcon icon)
+    {
+        m_textBtn->setIconSize(QSize(18, 18));
+        m_textBtn->setIcon(icon);
+    }
+
     void setText(QString text)
     {
         m_textBtn->setText(text);

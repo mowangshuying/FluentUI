@@ -20,7 +20,7 @@ class FluDropDownButtonPage : public FluAEmptyPage
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("Simple DropDownButton");
         displayBox1->getCodeExpander()->setCodeByPath("../code/DropDownButtonCode1");
-        displayBox1->setBodyWidgetFixedHeight(96);
+        displayBox1->setBodyWidgetFixedHeight(56);
 
         auto dropDownButton1 = new FluDropDownButton(this);
         dropDownButton1->setFixedWidth(78);
@@ -31,5 +31,20 @@ class FluDropDownButtonPage : public FluAEmptyPage
 
         displayBox1->getBodyLayout()->addWidget(dropDownButton1);
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+
+        auto displayBox2 = new FluDisplayBox;
+        displayBox2->setTitle("DropDownButton with Icons");
+        displayBox2->getCodeExpander()->setCodeByPath("../code/DropDownButtonCode2");
+        displayBox2->setBodyWidgetFixedHeight(56);
+
+        auto dropDownButton2 = new FluDropDownButton(this);
+        dropDownButton2->setFixedWidth(78);
+        dropDownButton2->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Mail)));
+        dropDownButton2->addIconTextItem(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Send)), "Send");
+        dropDownButton2->addIconTextItem(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::MailReply)), "Reply");
+        dropDownButton2->addIconTextItem(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::MailReplyAll)), "Reply All");
+
+        displayBox2->getBodyLayout()->addWidget(dropDownButton2);
+        m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
     }
 };

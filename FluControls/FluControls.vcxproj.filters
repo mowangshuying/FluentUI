@@ -125,6 +125,9 @@
     <ClCompile Include="FluHyperLinkButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluFlipView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -224,6 +227,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluHyperLinkButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluFlipView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -57,7 +57,7 @@ class FluCodeExpander : public FluExpander
         //  setWrap2Height(m_wrap2->sizeHint().height());
     }
 
-     void paintEvent(QPaintEvent* event)
+    void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;
         opt.initFrom(this);

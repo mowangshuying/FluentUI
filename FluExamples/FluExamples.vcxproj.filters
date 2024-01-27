@@ -80,6 +80,9 @@
     <ClCompile Include="FluDropDownButtonDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluSlideWindowDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -128,6 +131,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDropDownButtonDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluSlideWindowDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -34,7 +34,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
     m_bDown = true;
     auto expandAni = new QPropertyAnimation(m_wrap2, "geometry");
-    expandAni->setDuration(600);
+    expandAni->setDuration(200);
 
     // m_wrap2Height = 128;
     connect(btn1, &QPushButton::clicked, [=](bool b) {

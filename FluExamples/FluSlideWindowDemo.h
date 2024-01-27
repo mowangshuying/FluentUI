@@ -13,7 +13,7 @@ class FluSlideWindowDemo : public QWidget
   public:
     FluSlideWindowDemo(QWidget* parent = nullptr) : QWidget(parent)
     {
-        //m_sLayout = new QStackedLayout;
+        // m_sLayout = new QStackedLayout;
         setFixedSize(600, 400);
         m_hLayout = new QHBoxLayout;
         setLayout(m_hLayout);
@@ -38,7 +38,6 @@ class FluSlideWindowDemo : public QWidget
         m_page2->setLayout(layout2);
         layout2->addWidget(label2);
 
-
         m_page3 = new QWidget(this);
         m_page3->move(0, 2 * 600);
         m_page3->setFixedSize(600, 400);
@@ -49,9 +48,9 @@ class FluSlideWindowDemo : public QWidget
         m_page3->setLayout(layout3);
         layout3->addWidget(label3);
 
-       // m_hLayout->addWidget(m_page1);
-       // m_hLayout->addWidget(m_page2);
-       // m_hLayout->addWidget(m_page3);
+        // m_hLayout->addWidget(m_page1);
+        // m_hLayout->addWidget(m_page2);
+        // m_hLayout->addWidget(m_page3);
     }
 
     void slideIt()
@@ -63,8 +62,8 @@ class FluSlideWindowDemo : public QWidget
         curAnimation->setEndValue(QPoint(-width(), 0));
         curAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 
-        //m_hLayout->setCurrentWidget(nextWidget);
-        
+        // m_hLayout->setCurrentWidget(nextWidget);
+
         // next widget
         QPropertyAnimation* nextAnimation = new QPropertyAnimation(m_page2, "pos");
         nextAnimation->setDuration(500);
@@ -72,22 +71,22 @@ class FluSlideWindowDemo : public QWidget
         nextAnimation->setEndValue(QPoint(0, 0));
         nextAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 
-        //m_sLayout->setCurrentWidget(nextWidget);
+        // m_sLayout->setCurrentWidget(nextWidget);
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
     {
         QWidget::mouseReleaseEvent(event);
-       // emit clicked();
+        // emit clicked();
         slideIt();
     }
 
-//signals:
-//    void clicked();
+    // signals:
+    //     void clicked();
   protected:
     QWidget* m_page1;
     QWidget* m_page2;
     QWidget* m_page3;
-    //QStackedLayout* m_sLayout;
+    // QStackedLayout* m_sLayout;
     QHBoxLayout* m_hLayout;
 };

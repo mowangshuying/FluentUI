@@ -13,6 +13,7 @@
 #include "FluToggleButtonPage.h"
 #include "FluDropDownButtonPage.h"
 #include "FluHyperLinkButtonPage.h"
+#include "FluSettingPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -218,6 +219,10 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationSettingsItem *item = new FluNavigationSettingsItem(FluIconUtils::getFluentIcon(FluAwesomeType::Settings), "Setting", this);
         m_navView->addItemToLayout3(item);
+
+        auto settingsPage = new FluSettingPage;
+        m_sLayout->addWidget("SettingPage", settingsPage);
+        connect(item, &FluNavigationSettingsItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("SettingPage"); });
     }
 
     void makeMenuToolBarsNavItem()

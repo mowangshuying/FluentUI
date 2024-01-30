@@ -27,6 +27,7 @@ class FluFWScrollView : public QScrollArea
         return m_vMainLayout;
     }
 
+
   protected:
     QWidget* m_contextWidget;
     FluFlowLayout* m_vMainLayout;

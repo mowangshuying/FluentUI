@@ -13,9 +13,19 @@ class FluSettingsSelectBox : public QWidget
   public:
       FluSettingsSelectBox(QWidget* parent = nullptr);
 
+      FluComboBox* getComboBox()
+      {
+          return m_comboBox;
+      }
+
       void setIcon(QIcon icon);
 
       void setTitleInfo(QString title, QString info);
+
+      void hideInfoLabel()
+      {
+          m_infoLabel->hide();
+      }
 
       void paintEvent(QPaintEvent* event);
 

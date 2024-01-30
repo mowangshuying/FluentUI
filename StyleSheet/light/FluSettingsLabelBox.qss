@@ -1,0 +1,19 @@
+FluSettingsLabelBox {
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 4px;
+    background-color: rgb(253, 253, 253);
+}
+
+#titleLabel {
+    font-size: 15px;
+}
+
+#infoLabel {
+    font-size: 12px;
+    color: rgb(140, 140, 140);
+}
+
+#versionLabel {
+    font-size: 15px;
+    color: rgb(140, 140, 140);
+}

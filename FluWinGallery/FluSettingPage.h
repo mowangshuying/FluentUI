@@ -8,6 +8,7 @@
 
 #include "../FluUtils/FluUtils.h"
 #include "../FluControls/FluVScrollView.h"
+#include "../FluControls/FluSettingsSelectBox.h"
 
 class FluSettingPage : public QWidget
 {
@@ -36,6 +37,9 @@ class FluSettingPage : public QWidget
               m_appBehaviorLabel->setObjectName("appBehaviorLabel");
               m_appBehaviorLabel->setText("Appearance & behavior");
               m_vScrollView->getMainLayout()->addWidget(m_appBehaviorLabel);
+
+              auto appThemeSelectBox = new FluSettingsSelectBox;
+              m_vScrollView->getMainLayout()->addWidget(appThemeSelectBox);
 
               m_aboutLabel = new QLabel;
               m_aboutLabel->setObjectName("aboutLabel");

@@ -117,7 +117,6 @@
     <ClCompile Include="FluHyperLinkButtonPage.cpp" />
     <ClCompile Include="FluIconsPage.cpp" />
     <ClCompile Include="FluSettingPage.cpp" />
-    <ClCompile Include="FluSettingsPage.cpp" />
     <ClCompile Include="FluToggleButtonPage.cpp" />
     <ClCompile Include="FluTypeographyPage.cpp" />
     <ClCompile Include="main.cpp" />
@@ -136,9 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluTypeographyPage.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="FluSettingsPage.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluButtonPage.h" />

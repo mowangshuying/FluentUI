@@ -41,9 +41,6 @@
     <ClCompile Include="FluTypeographyPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluSettingsPage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FluButtonPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -77,9 +74,6 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTypeographyPage.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="FluSettingsPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluIconsPage.h">

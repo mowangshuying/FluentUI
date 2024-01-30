@@ -39,6 +39,8 @@ class FluSettingPage : public QWidget
               m_vScrollView->getMainLayout()->addWidget(m_appBehaviorLabel);
 
               auto appThemeSelectBox = new FluSettingsSelectBox;
+              appThemeSelectBox->setTitleInfo("App theme", "Select which app theme to display.");
+              appThemeSelectBox->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Color));
               m_vScrollView->getMainLayout()->addWidget(appThemeSelectBox);
 
               m_aboutLabel = new QLabel;

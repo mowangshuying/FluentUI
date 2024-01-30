@@ -23,7 +23,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     setStyleSheet(qss);
 
     m_navView = new FluNavigationView(this);
-    m_sLayout = new FluStackedLayout(this);
+    m_sLayout = new FluStackedLayout;
 
     // if nav long will be short, short will be long after clicked it.
     // m_navView->onMenuItemClicked();

@@ -30,7 +30,7 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
 
     m_hLayout1 = new QHBoxLayout(m_wrapWidget1);
     m_wrapWidget1->setFixedSize(320, 40);
-    m_vMainLayout->addLayout(m_vMainLayout);
+  //  m_vMainLayout->addWidget(m_wrapWidget1);
 
     m_vLayout1 = new QVBoxLayout(m_wrapWidget2);
     m_hLayout1->setContentsMargins(0, 4, 0, 4);

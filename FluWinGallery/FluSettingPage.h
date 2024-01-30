@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include <QLabel>
@@ -65,7 +65,7 @@ class FluSettingPage : public QWidget
               m_vScrollView->getMainLayout()->addWidget(m_aboutLabel);
 
               auto aboutLabelBox = new FluSettingsLabelBox;
-              aboutLabelBox->setTitleInfo("CppQtFluent888 Gallery", "^-^");
+              aboutLabelBox->setTitleInfo("CppQtFluent888 Gallery", "© 2024 CppQtFluentUi888. All rights reserved.");
               aboutLabelBox->setIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
               aboutLabelBox->setVersion("0.0.1");
               m_vScrollView->getMainLayout()->addWidget(aboutLabelBox);

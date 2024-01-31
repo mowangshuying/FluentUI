@@ -12,11 +12,9 @@
 
 class FluStyleSheetUitls : public QObject
 {
-
- private:
+  private:
     FluStyleSheetUitls(QObject *object = nullptr) : QObject(object)
     {
-
     }
 
   public:
@@ -32,8 +30,7 @@ class FluStyleSheetUitls : public QObject
     static void replaceVar(const QString &jsonVars, QString &styleSheet);
     static void replaceVar(const QMap<QString, QString> &kvMap, QString &styleSheet);
 
-
-    static FluStyleSheetUitls* getUtils()
+    static FluStyleSheetUitls *getUtils()
     {
         if (m_styleSheetUtils == nullptr)
             m_styleSheetUtils = new FluStyleSheetUitls;
@@ -53,9 +50,9 @@ class FluStyleSheetUitls : public QObject
         m_styleSheetUtils = nullptr;
     }
 
- protected:
+  protected:
     QString m_styleSheetDir;
 
- private:
+  private:
     static FluStyleSheetUitls *m_styleSheetUtils;
 };

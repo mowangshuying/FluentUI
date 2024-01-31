@@ -9,25 +9,25 @@
 
 class FluSettingsSelectBox : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-      FluSettingsSelectBox(QWidget* parent = nullptr);
+    FluSettingsSelectBox(QWidget* parent = nullptr);
 
-      FluComboBox* getComboBox()
-      {
-          return m_comboBox;
-      }
+    FluComboBox* getComboBox()
+    {
+        return m_comboBox;
+    }
 
-      void setIcon(QIcon icon);
+    void setIcon(QIcon icon);
 
-      void setTitleInfo(QString title, QString info);
+    void setTitleInfo(QString title, QString info);
 
-      void hideInfoLabel()
-      {
-          m_infoLabel->hide();
-      }
+    void hideInfoLabel()
+    {
+        m_infoLabel->hide();
+    }
 
-      void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
 
   protected:
     QHBoxLayout* m_mainLayout;

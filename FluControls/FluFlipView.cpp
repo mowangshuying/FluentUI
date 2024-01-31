@@ -9,18 +9,18 @@ FluFlipView::FluFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     setFixedSize(400, 268);
-   // resize(400, 268);
+    // resize(400, 268);
     setContentsMargins(0, 0, 0, 0);
 
-    //LOG_DEBUG << "size:" << size();
+    // LOG_DEBUG << "size:" << size();
     m_contextWidget = new QWidget(this);
     setWidget(m_contextWidget);
 
-    //m_contextWidget->setFixedSize(size());
-    //LOG_DEBUG << "contextWidget size:" << m_contextWidget->size();
+    // m_contextWidget->setFixedSize(size());
+    // LOG_DEBUG << "contextWidget size:" << m_contextWidget->size();
 
     m_hLayout = new QHBoxLayout;
-  //  m_hLayout->insertSpacing(0, -11);
+    //  m_hLayout->insertSpacing(0, -11);
     m_contextWidget->setLayout(m_hLayout);
     m_hLayout->setSpacing(0);
     m_hLayout->setContentsMargins(0, 0, 0, 0);
@@ -46,7 +46,7 @@ FluFlipView::FluFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
     m_rBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::FlickLeft)));
     m_nImgBoxIndex = 0;
 
-    connect(m_rBtn, &QPushButton::clicked, [=](bool bClicked) { 
+    connect(m_rBtn, &QPushButton::clicked, [=](bool bClicked) {
         // horizontalScrollBar()->setValue(width());
         if (m_nImgBoxIndex <= m_hLayout->count())
         {
@@ -57,13 +57,12 @@ FluFlipView::FluFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
         }
     });
 
-    connect(m_lBtn, &QPushButton::clicked, [=](bool bClicked) { 
+    connect(m_lBtn, &QPushButton::clicked, [=](bool bClicked) {
         if (m_nImgBoxIndex > 0)
         {
-            
             m_nImgBoxIndex -= 1;
-            
-            //m_lBtn->show();
+
+            // m_lBtn->show();
             m_rBtn->show();
 
             hideOrShowRLBtn(true);
@@ -78,7 +77,7 @@ FluFlipView::FluFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
 
 void FluFlipView::addPixmap(QPixmap pixmap)
 {
-    //LOG_DEBUG << "context widget margins:" << m_contextWidget->contentsMargins();
+    // LOG_DEBUG << "context widget margins:" << m_contextWidget->contentsMargins();
     auto imageBox = new FluImageBox(pixmap, m_contextWidget);
     imageBox->setFixedSize(size());
     m_hLayout->addWidget(imageBox, 0, Qt::AlignHCenter);

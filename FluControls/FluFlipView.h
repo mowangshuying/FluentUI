@@ -16,7 +16,6 @@ class FluFlipView : public QScrollArea
 
     void hideOrShowRLBtn(bool bEnter)
     {
-
         if (bEnter)
         {
             m_lBtn->show();

@@ -47,6 +47,12 @@ class FluNavigationView : public QWidget
   public slots:
     void onMenuItemClicked();
 
+    void onThemeChanged()
+    {
+        // 1.get theme 
+        // 2.replace it
+        // 3.make it valid 
+    }
   public:
     QVBoxLayout *m_vLayout;
 

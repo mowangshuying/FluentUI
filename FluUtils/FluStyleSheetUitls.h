@@ -13,9 +13,7 @@
 class FluStyleSheetUitls : public QObject
 {
   private:
-    FluStyleSheetUitls(QObject *object = nullptr) : QObject(object)
-    {
-    }
+    FluStyleSheetUitls(QObject *object = nullptr);
 
   public:
     static QString getQssByFileName(const QString &fileName);
@@ -40,6 +38,7 @@ class FluStyleSheetUitls : public QObject
     static void __init()
     {
         getUtils();
+        FluStyleSheetUitls::getUtils()->setStyleSheetDir("../StyleSheet/light/");
     }
 
     static void __deInit()
@@ -48,6 +47,16 @@ class FluStyleSheetUitls : public QObject
             return;
         delete m_styleSheetUtils;
         m_styleSheetUtils = nullptr;
+    }
+
+    void setStyleSheetDir(QString styleSheetDir)
+    {
+        m_styleSheetDir = styleSheetDir;
+    }
+
+    QString getStyleSheetDir()
+    {
+        return m_styleSheetDir;
     }
 
   protected:

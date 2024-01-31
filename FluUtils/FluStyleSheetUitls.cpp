@@ -1,5 +1,10 @@
 #include "FluStyleSheetUitls.h"
 
+FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
+ FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
+{
+}
+
 QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
 {
     QFile file(fileName);

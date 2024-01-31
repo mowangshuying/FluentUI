@@ -78,6 +78,8 @@ class FluSettingPage : public QWidget
         aboutLabelBox->setVersion("0.0.1");
         m_vScrollView->getMainLayout()->addWidget(aboutLabelBox);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
     }
 
     void paintEvent(QPaintEvent* event)
@@ -87,7 +89,18 @@ class FluSettingPage : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingPage.qss", this);
+        }
+    }
   protected:
     QVBoxLayout* m_mainLayout;
 

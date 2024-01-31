@@ -11,13 +11,13 @@ class FluNavigationDemo : public QWidget
   public:
     FluNavigationDemo(QWidget *parent = nullptr) : QWidget(parent)
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Design), "Design guidance", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
         item->move(50, 50);
 
-        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::FontSize), "Typography", item);
-        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::EmojiTabSymbols), "Icons", item);
-        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Color), "Colors", item);
-        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::SetHistoryStatus2), "Accessibility", item);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
+        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem(FluAwesomeType::SetHistoryStatus2, "Accessibility", item);
 
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("Screen reader support", item4);
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("Keyboard support", item4);

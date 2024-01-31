@@ -20,6 +20,8 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
     m_menuButton->setObjectName("menuButton");
 
     connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss");
     setStyleSheet(qss);
 }

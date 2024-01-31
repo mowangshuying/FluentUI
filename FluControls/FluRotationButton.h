@@ -6,6 +6,7 @@
 #include <qmatrix4x4.h>
 #include <QPixmap>
 #include "../FluUtils/FluIconUtils.h"
+#include "../FluUtils/FluUtils.h"
 
 class FluRotationButton : public QPushButton
 {
@@ -22,6 +23,18 @@ class FluRotationButton : public QPushButton
         // connect(this, &FluRotationButton::clicked, [=](bool b) {
         //     m_nReserveAngle = 16;
         // });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+    FluRotationButton(FluAwesomeType awesomeType, QWidget* parent = nullptr)
+        : FluRotationButton(parent)
+    {
+        m_awesomeType = awesomeType;
+    }
+
+    void setAwesomeType(FluAwesomeType awesomeType)
+    {
+        m_awesomeType = awesomeType;
     }
 
     void setRotation(bool b)
@@ -49,7 +62,7 @@ class FluRotationButton : public QPushButton
         QTransform transform;
         transform.rotate(m_nAngle);
 
-        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::Settings);
+        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
         pixmap = pixmap.transformed(transform);
         QIcon icon(pixmap);
         setIcon(icon);
@@ -58,8 +71,26 @@ class FluRotationButton : public QPushButton
         m_nAngle += 90;
     }
 
+     void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            m_penColor = QColor(8, 8, 8);
+            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+            setIcon(QIcon(pixmap));
+        }
+        else
+        {
+            m_penColor = QColor(239, 239, 239);
+            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+            setIcon(QIcon(pixmap));
+        }
+    }
+
   protected:
+    FluAwesomeType m_awesomeType;
     QTimer* m_timer;
+    QColor m_penColor;
     int m_nAngle;
     int m_nReserveAngle;
     bool m_bRotation;

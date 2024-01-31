@@ -22,6 +22,8 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluNavigationIconTextItem(QIcon icon, QString text, QWidget *parent = nullptr);
 
+    FluNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent = nullptr);
+
     FluNavigationIconTextItem(QString text, QWidget *parent = nullptr);
 
     QList<FluNavigationIconTextItem *> getChildItems();
@@ -79,13 +81,17 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     void onThemeChanged()
     {
-        LOG_DEBUG << "called";
+        //LOG_DEBUG << "called";
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
+            m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
+            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(8, 8, 8)));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss", this);
         }
         else
         {
+            m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(239, 239, 239)));
+            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(239, 239, 239)));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationIconTextItem.qss", this);
         }
     }
@@ -107,6 +113,8 @@ class FluNavigationIconTextItem : public FluNavigationItem
     QVBoxLayout *m_vLayout1;
 
     FluNavigationIconTextItem *m_parentItem;
+
+    FluAwesomeType m_awesomeType; // the icon display which 
 
     bool m_bDown;
     bool m_bLong;

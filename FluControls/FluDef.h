@@ -26,6 +26,7 @@ namespace FluAwesomeTypeNameSpace
 Q_NAMESPACE
 enum class FluAwesomeType
 {
+    None = 0x0000,
     GlobalNavButton = 0xe700,
     Wifi = 0xe701,
     Bluetooth = 0xe702,

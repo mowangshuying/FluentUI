@@ -23,7 +23,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeHomeNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Home), "Home", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Home, "Home", this);
         m_navView->addItemToLayout2(item);
 
         auto homePage = new FluHomePage;
@@ -33,10 +33,10 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeDesignGuidanceNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Design), "Design guidance", this);
-        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::FontSize), "Typography", item);
-        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::EmojiTabSymbols), "Icons", item);
-        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Color), "Colors", item);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
 
         item->addItem(item1);
         item->addItem(item2);
@@ -54,13 +54,13 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeSamplesNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::AllApps), "All samples", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::AllApps, "All samples", this);
         m_navView->addItemToLayout2(item);
     }
 
     void makeBasicInputNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::CheckboxComposite), "Basic input", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::CheckboxComposite, "Basic input", this);
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InputValidation", item);
         item1->enableThisItem(false);
@@ -119,7 +119,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeCollectionsNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::TiltDown), "Connections", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("FlipView", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
@@ -141,7 +141,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makDateTimeNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Date & time", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Calendar, "Date & time", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("CalendarDatePicker", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("CalendarView", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DatePicker", item);
@@ -155,7 +155,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeDialogsFlyouts()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Comment), "Dialogs & flyouts", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("ContentDialog", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Flyout", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("TeachingTip", item);
@@ -167,7 +167,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeLayoutNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::PreviewLink), "Layout", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("Border", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Canvas", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Expander", item);
@@ -196,7 +196,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeMediaNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar), "Media", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Calendar, "Media", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AnimatedVisualPlayer", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Capture Element / Camera Preview", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Image", item);
@@ -217,7 +217,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeSettingsNavItem()
     {
-        FluNavigationSettingsItem *item = new FluNavigationSettingsItem(FluIconUtils::getFluentIcon(FluAwesomeType::Settings), "Setting", this);
+        FluNavigationSettingsItem *item = new FluNavigationSettingsItem(FluAwesomeType::Settings, "Setting", this);
         m_navView->addItemToLayout3(item);
 
         auto settingsPage = new FluSettingPage;
@@ -227,7 +227,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeMenuToolBarsNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Save), "Menus & toolbars", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Save, "Menus & toolbars", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("XamlUICommand", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("StandardUICommand", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("AppBarButton", item);
@@ -254,7 +254,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeNavigationNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::BookmarksMirrored), "Navigation", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("BreadcrumbBar", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NavigationView", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Pivot", item);
@@ -269,7 +269,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeScrollingNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Sort), "Scrolling", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Sort, "Scrolling", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AnnotatedScrollBar", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("PipsPager", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ScrollView", item);
@@ -286,7 +286,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeStatusInfoNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Reminder), "Status & info", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
@@ -303,7 +303,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeTextNavItem()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluIconUtils::getFluentIcon(FluAwesomeType::Font), "Text", this);
+        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Font, "Text", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NumberBox", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("PassWordBox", item);

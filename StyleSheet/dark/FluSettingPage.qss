@@ -1,0 +1,24 @@
+FluSettingPage {
+    background-color: rgb(39, 39, 39);
+    border-radius: 8px;
+    border: 1px solid rgb(29, 29, 29);
+    /* margin-right: 5px; */
+    /* margin-bottom: 5px; */
+}
+
+#titleLabel {
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+}
+
+#appBehaviorLabel {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+#aboutLabel {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}

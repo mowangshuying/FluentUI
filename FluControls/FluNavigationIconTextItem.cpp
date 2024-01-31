@@ -71,6 +71,7 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     m_arrow->hide();
 
     m_bEnableThisItem = true;
+    m_awesomeType = FluAwesomeType::None;
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
     setStyleSheet(qss);
 
@@ -96,6 +97,13 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QString text, QWidget *pare
     // m_icon->setIcon(QIcon());
     m_label->setText(text);
 }
+
+ FluNavigationIconTextItem::FluNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
+{
+    m_awesomeType = awesomeType;
+    m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType));
+    m_label->setText(text);
+ }
 
 QList<FluNavigationIconTextItem *> FluNavigationIconTextItem::getChildItems()
 {

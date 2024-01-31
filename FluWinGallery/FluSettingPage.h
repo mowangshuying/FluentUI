@@ -46,6 +46,15 @@ class FluSettingPage : public QWidget
               appThemeSelectBox->getComboBox()->addItem("Light");
               appThemeSelectBox->getComboBox()->addItem("Dark");
 
+              connect(appThemeSelectBox->getComboBox(), &FluComboBox::currentIndexChanged, [=](int index) { 
+                  if (index == 0)
+                      FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
+                  else
+                      FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
+
+                 // LOG_DEBUG << FluThemeUtils::getUtils()->getTheme();
+              });
+
               m_vScrollView->getMainLayout()->addWidget(appThemeSelectBox);
 
 

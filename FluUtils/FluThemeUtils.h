@@ -10,12 +10,11 @@ enum class FluTheme
 
 class FluThemeUtils : public QObject
 {
-  public:
-      FluThemeUtils(QObject* object = nullptr) : QObject(object)
-      {
-          m_theme = FluTheme::Light;
-      }
-
+    Q_OBJECT
+  private:
+      FluThemeUtils(QObject* object = nullptr);
+  
+public:
       FluTheme getTheme()
       {
           return m_theme;
@@ -27,9 +26,33 @@ class FluThemeUtils : public QObject
           emit themeChanged(m_theme);
       }
 
+
+      static FluThemeUtils* getUtils()
+      {
+          if (m_themeUtils == nullptr)
+              m_themeUtils = new FluThemeUtils();
+          return m_themeUtils;
+      }
+
+      static void __init()
+      {
+          getUtils();
+      }
+
+      static void __deInit()
+      {
+          if (m_themeUtils == nullptr)
+              return;
+          delete m_themeUtils;
+          m_themeUtils = nullptr;
+      }
+
 signals:
       void themeChanged(FluTheme theme);
 
 protected:
       FluTheme m_theme;
+
+private:
+      static FluThemeUtils* m_themeUtils;
 };

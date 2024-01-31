@@ -5,7 +5,7 @@
 FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
     m_vLayout = new QVBoxLayout(this);
-    m_vLayout->setContentsMargins(8, 8, 8, 8);
+    m_vLayout->setContentsMargins(0, 8, 0, 8);
     m_widget1 = new QWidget(this);
     m_widget2 = new FluVScrollView(this);
     m_widget3 = new QWidget(this);

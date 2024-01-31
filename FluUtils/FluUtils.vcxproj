@@ -94,15 +94,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FluConfigUtils.h" />
     <ClInclude Include="FluIconUtils.h" />
     <ClInclude Include="FluLogUtils.h" />
     <ClInclude Include="FluStyleSheetUitls.h" />
+    <QtMoc Include="FluThemeUtils.h" />
     <ClInclude Include="FluUtils.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FluConfigUtils.cpp" />
     <ClCompile Include="FluIconUtils.cpp" />
     <ClCompile Include="FluLogUtils.cpp" />
     <ClCompile Include="FluStyleSheetUitls.cpp" />
+    <ClCompile Include="FluThemeUtils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

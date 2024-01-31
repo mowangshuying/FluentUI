@@ -35,6 +35,9 @@
     <ClInclude Include="FluUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluConfigUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluIconUtils.cpp">
@@ -46,5 +49,16 @@
     <ClCompile Include="FluStyleSheetUitls.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluThemeUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluConfigUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluThemeUtils.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

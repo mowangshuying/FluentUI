@@ -10,13 +10,16 @@
 #include <map>
 #include <QWidget>
 
-class FluStyleSheetUitls
+class FluStyleSheetUitls : public QObject
 {
-  public:
-    FluStyleSheetUitls()
+
+ private:
+    FluStyleSheetUitls(QObject *object = nullptr) : QObject(object)
     {
+
     }
 
+  public:
     static QString getQssByFileName(const QString &fileName);
     static void setQssByFileName(const QString &fileName, QWidget *widget);
 
@@ -28,4 +31,31 @@ class FluStyleSheetUitls
 
     static void replaceVar(const QString &jsonVars, QString &styleSheet);
     static void replaceVar(const QMap<QString, QString> &kvMap, QString &styleSheet);
+
+
+    static FluStyleSheetUitls* getUtils()
+    {
+        if (m_styleSheetUtils == nullptr)
+            m_styleSheetUtils = new FluStyleSheetUitls;
+        return m_styleSheetUtils;
+    }
+
+    static void __init()
+    {
+        getUtils();
+    }
+
+    static void __deInit()
+    {
+        if (m_styleSheetUtils == nullptr)
+            return;
+        delete m_styleSheetUtils;
+        m_styleSheetUtils = nullptr;
+    }
+
+ protected:
+    QString m_styleSheetDir;
+
+ private:
+    static FluStyleSheetUitls *m_styleSheetUtils;
 };

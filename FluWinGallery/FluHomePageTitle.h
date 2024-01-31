@@ -36,8 +36,11 @@ class FluHomePageTitle : public QWidget
         m_vMainLayout->addSpacing(10);
         m_vMainLayout->addWidget(m_titleLabel2);
 
+         m_color1 = QColor(206, 216, 228);
+        m_color2 = QColor(223, 231, 240);
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHomePageTitle.qss");
         setStyleSheet(qss);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void paintEvent(QPaintEvent* event)
@@ -50,7 +53,7 @@ class FluHomePageTitle : public QWidget
         painter.setClipPath(path);
 
         QLinearGradient gradient1(rect().topLeft(), QPoint(rect().topLeft().x(), rect().topLeft().y() + rect().height() / 2));
-        gradient1.setColorAt(0.5, QColor(206, 216, 228));
+        gradient1.setColorAt(0.5, m_color1);
         gradient1.setColorAt(1, Qt::transparent);
         painter.setPen(Qt::NoPen);
         painter.setBrush(gradient1);
@@ -63,15 +66,36 @@ class FluHomePageTitle : public QWidget
 
         QLinearGradient gradient(QPoint(rect().topLeft().x(), rect().topLeft().y() + rect().height() / 2), rect().bottomLeft());
         gradient.setColorAt(0.5, Qt::transparent);
-        gradient.setColorAt(1, QColor(223, 231, 240));
+        gradient.setColorAt(1, m_color2);
         painter.setPen(Qt::NoPen);
         painter.setBrush(gradient);
         painter.drawRect(rect());
     }
 
-  private:
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            m_color1 = QColor(206, 216, 228);
+            m_color2 = QColor(223, 231, 240);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePageTitle.qss", this);
+            update();
+        }
+        else
+        {
+            m_color1 = QColor(0, 0, 0);
+            m_color2 = QColor(39, 39, 39);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePageTitle.qss", this);
+            update();
+        }
+    }
+  protected:
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hLayout;
     QLabel* m_titleLabel1;
     QLabel* m_titleLabel2;
+
+    QColor m_color1;
+    QColor m_color2;
 };

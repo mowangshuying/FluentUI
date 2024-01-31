@@ -4,6 +4,7 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 #include "../FluUtils/FluStyleSheetUitls.h"
+#include "../FluUtils/FluUtils.h"
 
 class FluVScrollView : public QScrollArea
 {
@@ -20,11 +21,25 @@ class FluVScrollView : public QScrollArea
         m_contextWidget->setObjectName("contextWidget");
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVScrollView.qss");
         setStyleSheet(qss);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     QVBoxLayout* getMainLayout()
     {
         return m_vMainLayout;
+    }
+
+public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVScrollView.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVScrollView.qss", this);
+        }
     }
 
   protected:

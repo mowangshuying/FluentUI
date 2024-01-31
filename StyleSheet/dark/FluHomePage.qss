@@ -1,8 +1,86 @@
 FluHomePage {
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(249, 249, 249);
     border-radius: 8px;
-    /* margin: 10px; */
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+    /* margin-left: 20px; */
+}
+
+
+/* set height cann't work*/
+
+#titleWidget {
+    /* height: 450px; */
+    /* background-color: aqua; */
+    /* background-image: "../../res/GalleryHeaderImage.png"; */
+}
+
+#recentlyAddedSamplesLabel,
+#recentlyUpdatedSamplesLabel {
+    font-size: 18px;
+    margin-left: 35px;
+    /* font-weight: bold; */
+    color: white;
+}
+
+
+/*The scroll view qss*/
+
+#contextWidget {
+    background-color: transparent;
+}
+
+
+/*The scroll view qss*/
+
+#contextWidget {
+    background-color: transparent;
+}
+
+QScrollArea {
+    background-color: transparent;
+    border: none;
+}
+
+QScrollBar:vertical {
+    width: 12px;
+    background: rgb(44, 44, 44);
+    padding: 0px 3px 0 3px;
+    margin: 16px 0px 16px 0px;
+}
+
+QScrollBar:vertical:hover {
+    padding: 0px 2px 0px 2px;
+}
+
+QScrollBar::handle:vertical {
+    width: 2px;
+    background: rgb(159, 159, 159);
+    min-height: 25px;
+}
+
+QScrollBar::handle:vertical:hover {
+    width: 4px;
+    background: rgb(159, 159, 159);
+    min-height: 25px;
+}
+
+QScrollBar::add-line:vertical {
+    background-color: transparent;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top: 1px solid transparent;
+    height: 14px;
+    image: url(../res/ScrollBottom.png);
+}
+
+QScrollBar::sub-line:vertical {
+    background-color: transparent;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid transparent;
+    height: 14px;
+    image: url(../res/ScrollTop.png);
 }

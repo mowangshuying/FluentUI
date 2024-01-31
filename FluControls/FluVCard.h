@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QIcon>
+#include "../FluUtils/FluUtils.h"
 
 class FluVCard : public QWidget
 {
@@ -43,6 +44,7 @@ class FluVCard : public QWidget
         setFixedSize(200, 220);
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
         setStyleSheet(qss);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluVCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluVCard(parent)
@@ -60,7 +62,18 @@ class FluVCard : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVCard.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVCard.qss", this);
+        }
+    }
   protected:
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;

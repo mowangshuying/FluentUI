@@ -8,6 +8,7 @@
 
 #include <QStyleOption>
 #include <QPainter>
+#include "../FluUtils/FluUtils.h"
 
 #include "../FluUtils/FluStyleSheetUitls.h"
 class FluHCard : public QWidget
@@ -52,6 +53,9 @@ class FluHCard : public QWidget
 
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHCard.qss");
         setStyleSheet(qss);
+
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
     }
 
     FluHCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluHCard(parent)
@@ -69,7 +73,18 @@ class FluHCard : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHCard.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHCard.qss", this);
+        }
+    }
   protected:
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;

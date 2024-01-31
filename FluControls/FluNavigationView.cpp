@@ -1,6 +1,7 @@
 #include "FluNavigationView.h"
 #include "FluNavigationIconTextItem.h"
 #include "FluNavigationMenuItem.h"
+#include "../FluUtils/FluUtils.h"
 
 FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
@@ -52,6 +53,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     m_bLong = true;
     setFixedWidth(320 + 20);
     connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged();});
 }
 
 void FluNavigationView::addItemToLayout1(QWidget *item)

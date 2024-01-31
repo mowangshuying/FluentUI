@@ -2,6 +2,7 @@
 
 #include "../FluUtils/FluIconUtils.h"
 #include "../FluUtils/FluLogUtils.h"
+#include "../FluUtils/FluUtils.h"
 #include "../FluUtils/FluStyleSheetUitls.h"
 #include "FluDef.h"
 #include <QHBoxLayout>
@@ -49,9 +50,15 @@ class FluNavigationView : public QWidget
 
     void onThemeChanged()
     {
-        // 1.get theme 
-        // 2.replace it
-        // 3.make it valid 
+        LOG_DEBUG << "called";
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationView.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationView.qss", this);
+        }
     }
   public:
     QVBoxLayout *m_vLayout;

@@ -11,6 +11,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "FluNavigationItem.h"
+#include "../FluUtils/FluUtils.h"
 
 class FluNavigationView;
 class FluNavigationIconTextItem : public FluNavigationItem
@@ -75,6 +76,19 @@ class FluNavigationIconTextItem : public FluNavigationItem
     void itemClicked();
   public slots:
     void onItemClicked();
+
+    void onThemeChanged()
+    {
+        LOG_DEBUG << "called";
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationIconTextItem.qss", this);
+        }
+    }
 
   protected:
     QWidget *m_wrapWidget1;

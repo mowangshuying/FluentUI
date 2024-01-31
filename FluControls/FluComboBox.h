@@ -22,6 +22,20 @@ class FluComboBox : public QComboBox
         view()->window()->setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         view()->window()->setAttribute(Qt::WA_TranslucentBackground);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBox.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBox.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBox.qss", this);
+        }
     }
 
   protected:

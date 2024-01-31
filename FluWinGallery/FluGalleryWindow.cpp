@@ -17,6 +17,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
+    m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
+    m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
     m_titleBar->setFixedHeight(48);
 
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
@@ -84,4 +86,26 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 
     // settings
     makeSettingsNavItem();
+
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+}
+
+void FluGalleryWindow::onThemeChanged()
+{
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    {
+        m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
+        m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
+        m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
+        m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
+    }
+    else
+    {
+        m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
+        m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
+        m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::white);
+        m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::white);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
+    }
 }

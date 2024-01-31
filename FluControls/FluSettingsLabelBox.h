@@ -40,6 +40,7 @@ class FluSettingsLabelBox : public QWidget
 
         setFixedHeight(70);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setIcon(QIcon icon)
@@ -65,7 +66,18 @@ class FluSettingsLabelBox : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsLabelBox.qss", this);
+        }
+    }
   protected:
     QHBoxLayout* m_mainLayout;
     QVBoxLayout* m_vLayout;

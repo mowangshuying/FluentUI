@@ -1,0 +1,17 @@
+FluSettingsSelectBox {
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 4px;
+    background-color: rgb(50, 50, 50);
+}
+
+#titleLabel {
+    font-size: 15px;
+    color: rgb(210, 210, 210);
+    background-color: transparent;
+}
+
+#infoLabel {
+    font-size: 12px;
+    color: rgb(196, 196, 196);
+    background-color: transparent;
+}

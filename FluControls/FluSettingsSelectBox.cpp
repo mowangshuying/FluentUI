@@ -26,6 +26,7 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : QWid
 
     setFixedHeight(70);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluSettingsSelectBox::setIcon(QIcon icon)

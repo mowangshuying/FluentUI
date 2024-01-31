@@ -47,7 +47,7 @@ QScrollBar::add-line:vertical {
 }
 
 QScrollBar::sub-line:vertical {
-    background-color: rgb(255, 255, 255, 0.98);
+    background-color: rgba(255, 255, 255, 0.98);
     subcontrol-position: top;
     subcontrol-origin: margin;
     border-top-left-radius: 6px;

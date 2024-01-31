@@ -28,7 +28,18 @@ class FluSettingsSelectBox : public QWidget
     }
 
     void paintEvent(QPaintEvent* event);
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsSelectBox.qss", this);
+        }
+    }
   protected:
     QHBoxLayout* m_mainLayout;
     QVBoxLayout* m_vLayout;

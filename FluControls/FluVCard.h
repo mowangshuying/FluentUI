@@ -55,6 +55,12 @@ class FluVCard : public QWidget
         m_contextLabel->setText(contextText);
     }
 
+    void setIcon(QPixmap icon)
+    {
+        QPixmap pixmap = icon.scaled(60, 60);
+        m_iconLabel->setPixmap(pixmap);
+    }
+
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;

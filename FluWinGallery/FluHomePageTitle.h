@@ -25,8 +25,8 @@ class FluHomePageTitle : public QWidget
         m_titleLabel1 = new QLabel("FluentUi Gallery");
         m_titleLabel2 = new QLabel("Qt & Cpp");
 
-        auto githubCard = new FluVCard(QPixmap("../res/HomeHeaderTiles/github-mark.png"), "GitHub", "The latest Windows native controls and styles for your applications", this);
-        githubCard->move(40, 120);
+        m_githubCard = new FluVCard(QPixmap("../res/HomeHeaderTiles/github-mark.png"), "GitHub", "The latest Windows native controls and styles for your applications", this);
+        m_githubCard->move(40, 120);
 
         m_titleLabel1->setObjectName("titleLabel1");
         m_titleLabel2->setObjectName("titleLabel2");
@@ -77,6 +77,7 @@ class FluHomePageTitle : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
+            m_githubCard->setIcon(QPixmap("../res/HomeHeaderTiles/github-mark.png"));
             m_color1 = QColor(206, 216, 228);
             m_color2 = QColor(223, 231, 240);
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePageTitle.qss", this);
@@ -84,6 +85,7 @@ class FluHomePageTitle : public QWidget
         }
         else
         {
+            m_githubCard->setIcon(QPixmap("../res/HomeHeaderTiles/github-mark-white.png"));
             m_color1 = QColor(0, 0, 0);
             m_color2 = QColor(39, 39, 39);
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePageTitle.qss", this);
@@ -93,6 +95,7 @@ class FluHomePageTitle : public QWidget
   protected:
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hLayout;
+    FluVCard* m_githubCard;
     QLabel* m_titleLabel1;
     QLabel* m_titleLabel2;
 

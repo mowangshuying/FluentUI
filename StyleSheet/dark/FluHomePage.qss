@@ -42,7 +42,7 @@ QScrollArea {
 
 QScrollBar:vertical {
     width: 12px;
-    background: rgb(44, 44, 44);
+    background: rgba(44, 44, 44, 1);
     padding: 0px 3px 0 3px;
     margin: 16px 0px 16px 0px;
 }
@@ -53,13 +53,13 @@ QScrollBar:vertical:hover {
 
 QScrollBar::handle:vertical {
     width: 2px;
-    background: rgb(159, 159, 159);
+    background: rgba(159, 159, 159, 1);
     min-height: 25px;
 }
 
 QScrollBar::handle:vertical:hover {
     width: 4px;
-    background: rgb(159, 159, 159);
+    background: rgba(159, 159, 159, 1);
     min-height: 25px;
 }
 

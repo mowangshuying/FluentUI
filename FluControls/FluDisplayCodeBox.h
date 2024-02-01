@@ -84,6 +84,7 @@ class FluDisplayCodeBox : public QTextEdit
         setFocusPolicy(Qt::FocusPolicy::NoFocus);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayCodeBox.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setCode(QString code)
@@ -116,4 +117,18 @@ class FluDisplayCodeBox : public QTextEdit
 
   signals:
     void sizeChanged();
+
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayCodeBox.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayCodeBox.qss", this);
+        }
+    }
+
 };

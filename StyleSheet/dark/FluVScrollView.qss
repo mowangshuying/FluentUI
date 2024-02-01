@@ -4,6 +4,13 @@
     background-color: transparent;
 }
 
+
+/*The scroll view qss*/
+
+#contextWidget {
+    background-color: transparent;
+}
+
 QScrollArea {
     background-color: transparent;
     border: none;
@@ -11,7 +18,7 @@ QScrollArea {
 
 QScrollBar:vertical {
     width: 12px;
-    background: rgb(44, 44, 44);
+    background: rgba(44, 44, 44, 1);
     padding: 0px 3px 0 3px;
     margin: 16px 0px 16px 0px;
 }
@@ -22,13 +29,13 @@ QScrollBar:vertical:hover {
 
 QScrollBar::handle:vertical {
     width: 2px;
-    background: rgb(159, 159, 159);
+    background: rgba(159, 159, 159, 1);
     min-height: 25px;
 }
 
 QScrollBar::handle:vertical:hover {
     width: 4px;
-    background: rgb(159, 159, 159);
+    background: rgba(159, 159, 159, 1);
     min-height: 25px;
 }
 
@@ -52,4 +59,11 @@ QScrollBar::sub-line:vertical {
     border-bottom: 1px solid transparent;
     height: 14px;
     image: url(../res/ScrollTop.png);
+}
+
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical {
+    /* background: none; */
+    /* background-color: red; */
+    background-color: transparent;
 }

@@ -76,6 +76,7 @@ class FluTypeographyPage : public FluAEmptyPage
         m_vScrollView->getMainLayout()->addWidget(expander);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     QWidget* addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int nHeight)
@@ -110,5 +111,17 @@ class FluTypeographyPage : public FluAEmptyPage
         labelsWrapLayout->addWidget(label4);
 
         return labelsWrap;
+    }
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTypeographyPage.qss", this);
+        }
     }
 };

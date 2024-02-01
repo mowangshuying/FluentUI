@@ -3,6 +3,7 @@
 #include <QLabel>
 
 #include "../FluUtils/FluStyleSheetUitls.h"
+#include "../FluUtils/FluUtils.h"
 
 enum class FluLabelStyle
 {
@@ -23,6 +24,7 @@ class FluLabel : public QLabel
     {
         m_style = FluLabelStyle::CaptionTextBlockSylte;
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluLabel(FluLabelStyle style, QWidget* parent = nullptr) : QLabel(parent), m_style(style)
@@ -31,6 +33,7 @@ class FluLabel : public QLabel
         // setProperty("style", m_style);
         setStyle(style);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setStyle(FluLabelStyle style)
@@ -69,7 +72,18 @@ class FluLabel : public QLabel
         }
         setProperty("labelStyle", styleString);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
+        }
+    }
   protected:
     FluLabelStyle m_style;
 };

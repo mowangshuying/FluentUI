@@ -32,6 +32,7 @@ class FluDisplayIconBox : public QWidget
         m_iconLabel->setObjectName("iconLabel");
         m_textLable->setObjectName("textLabel");
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluDisplayIconBox(FluAwesomeType type, QWidget* parent = nullptr) : FluDisplayIconBox(parent)
@@ -68,7 +69,18 @@ class FluDisplayIconBox : public QWidget
     }
   signals:
     void clicked();
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayIconBox.qss", this);
+        }
+    }
   protected:
     FluAwesomeType m_type;
     QLabel* m_iconLabel;

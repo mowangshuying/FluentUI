@@ -119,6 +119,7 @@ class FluIconsPage : public FluAEmptyPage
 
         emit m_sDisplayIconBox->clicked();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     //  void paintEvent(QPaintEvent* event)
@@ -128,6 +129,18 @@ class FluIconsPage : public FluAEmptyPage
     //      QPainter painter(this);
     //     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     //  }
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconsPage.qss", this);
+        }
+    }
 
   protected:
     FluDisplayIconBox* m_sDisplayIconBox;

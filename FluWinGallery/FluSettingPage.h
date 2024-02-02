@@ -41,7 +41,7 @@ class FluSettingPage : public QWidget
 
         auto appThemeSelectBox = new FluSettingsSelectBox;
         appThemeSelectBox->setTitleInfo("App theme", "Select which app theme to display.");
-        appThemeSelectBox->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Color));
+        appThemeSelectBox->setIcon(FluAwesomeType::Color);
 
         appThemeSelectBox->getComboBox()->addItem("Light");
         appThemeSelectBox->getComboBox()->addItem("Dark");
@@ -60,7 +60,7 @@ class FluSettingPage : public QWidget
         auto navStyleSelectBox = new FluSettingsSelectBox;
         navStyleSelectBox->hideInfoLabel();
         navStyleSelectBox->setTitleInfo("Navigation style", "");
-        navStyleSelectBox->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::HolePunchLandscapeLeft));
+        navStyleSelectBox->setIcon(FluAwesomeType::HolePunchLandscapeLeft);
         navStyleSelectBox->getComboBox()->addItem("Left");
         navStyleSelectBox->getComboBox()->addItem("Top");
         m_vScrollView->getMainLayout()->addWidget(navStyleSelectBox);

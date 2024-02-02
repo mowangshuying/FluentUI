@@ -25,13 +25,32 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : QWid
     m_mainLayout->addWidget(m_comboBox);
 
     setFixedHeight(70);
+
+    m_iconAwesomeType = FluAwesomeType::None;
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+}
+
+ FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluSettingsSelectBox(parent)
+{
+    m_iconAwesomeType = awesomeType;
+    setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType));
+ }
+
+FluComboBox* FluSettingsSelectBox::getComboBox()
+{
+    return m_comboBox;
 }
 
 void FluSettingsSelectBox::setIcon(QIcon icon)
 {
     m_iconLabel->setPixmap(icon.pixmap(40, 40));
+}
+
+void FluSettingsSelectBox::setIcon(FluAwesomeType awesomeType)
+{
+    m_iconAwesomeType = awesomeType;
+    setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType));
 }
 
 void FluSettingsSelectBox::setTitleInfo(QString title, QString info)
@@ -40,10 +59,30 @@ void FluSettingsSelectBox::setTitleInfo(QString title, QString info)
     m_infoLabel->setText(info);
 }
 
+void FluSettingsSelectBox::hideInfoLabel()
+{
+    m_infoLabel->hide();
+}
+
 void FluSettingsSelectBox::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
     opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluSettingsSelectBox::onThemeChanged()
+{
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    {
+        //m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap())
+        setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(8, 8, 8)));
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
+    }
+    else
+    {
+        setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(239, 239, 239)));
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsSelectBox.qss", this);
+    }
 }

@@ -13,36 +13,26 @@ class FluSettingsSelectBox : public QWidget
   public:
     FluSettingsSelectBox(QWidget* parent = nullptr);
 
-    FluComboBox* getComboBox()
-    {
-        return m_comboBox;
-    }
+    FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent = nullptr);
+
+    FluComboBox* getComboBox();
 
     void setIcon(QIcon icon);
 
+    void setIcon(FluAwesomeType awesomeType);
+
     void setTitleInfo(QString title, QString info);
 
-    void hideInfoLabel()
-    {
-        m_infoLabel->hide();
-    }
+    void hideInfoLabel();
 
     void paintEvent(QPaintEvent* event);
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsSelectBox.qss", this);
-        }
-    }
+    void onThemeChanged();
   protected:
     QHBoxLayout* m_mainLayout;
     QVBoxLayout* m_vLayout;
+
+    FluAwesomeType m_iconAwesomeType;
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;
     QLabel* m_infoLabel;

@@ -1,4 +1,4 @@
-FluNavigationItem {
+FluNavigationIconTextItem {
     /* background-color: blueviolet; */
     background-color: rgb(243, 243, 243);
     border-radius: 4px;

@@ -3,6 +3,7 @@
 
  FluNavigationSettingsItem::FluNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluNavigationItem(parent)
 {
+    m_itemType = FluNavigationItemType::Setting;
     setFixedSize(320, 40);
     m_hMainLayout = new QHBoxLayout;
     setLayout(m_hMainLayout);

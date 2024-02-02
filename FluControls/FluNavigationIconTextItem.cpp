@@ -6,6 +6,7 @@
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
 {
+    m_itemType = FluNavigationItemType::IconText;
     setFixedSize(320, 40);
     m_wrapWidget1 = new QWidget(this);
     m_wrapWidget2 = new QWidget(this);

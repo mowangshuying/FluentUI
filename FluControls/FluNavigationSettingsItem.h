@@ -18,6 +18,16 @@ class FluNavigationSettingsItem : public FluNavigationItem
 
     FluNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent);
 
+    void hideLabel()
+    {
+        m_label->hide();
+    }
+
+    void showLabel()
+    {
+        m_label->show();
+    }
+
     void updateAllItemsStyleSheet()
     {
         updateItemsStyleSheet();

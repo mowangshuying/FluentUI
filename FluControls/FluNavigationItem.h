@@ -10,6 +10,7 @@ enum class FluNavigationItemType
     IconText,
     Split,
     Search,
+    Setting,
 };
 
 class FluNavigationItem : public QWidget

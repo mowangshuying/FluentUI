@@ -2,6 +2,7 @@
 #include "FluNavigationIconTextItem.h"
 #include "FluNavigationMenuItem.h"
 #include "../FluUtils/FluUtils.h"
+#include "FluNavigationSettingsItem.h"
 
 FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
@@ -117,30 +118,54 @@ void FluNavigationView::paintEvent(QPaintEvent *event)
 
 void FluNavigationView::onMenuItemClicked()
 {
+    QVector<QWidget*> itemVct;
+    for (int i = 0; i < m_widget1->layout()->count(); i++)
+    {
+        itemVct.push_back(m_widget1->layout()->itemAt(i)->widget());
+    }
+
+     for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+    {
+        itemVct.push_back(m_widget2->getMainLayout()->itemAt(i)->widget());
+    }
+
+    for (int i = 0; i < m_widget3->layout()->count(); i++)
+    {
+        itemVct.push_back(m_widget3->layout()->itemAt(i)->widget());
+    }
+
     if (m_bLong)
     {
         // close all item in vLayout
-        for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+        for (auto itemW : itemVct)
         {
-            
-            auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            if (iconTextItem != nullptr)
+            auto item = (FluNavigationItem *)(itemW);
+            if (item != nullptr)
             {
+                item->setLong(false);
+                // item->setFixedWidth(40);
+            }
+
+            if (item->getItemType() == FluNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluNavigationIconTextItem *)(item); 
                 if (!iconTextItem->isDown())
                 {
                     iconTextItem->onItemClicked();
                 }
-
                 iconTextItem->setFixedWidth(40);
                 iconTextItem->getWrapWidget1()->setFixedWidth(40);
                 iconTextItem->hideLabelArrow();
             }
 
-            auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            if (item != nullptr)
+            if (item->getItemType() == FluNavigationItemType::Setting)
             {
-                item->setLong(false);
-                //item->setFixedWidth(40);
+                auto settingsItem = (FluNavigationSettingsItem *)(item);
+                if (settingsItem != nullptr)
+                {
+                    settingsItem->setFixedWidth(40);
+                    settingsItem->hideLabel();
+                }
             }
         }
 
@@ -150,21 +175,53 @@ void FluNavigationView::onMenuItemClicked()
     }
     else
     {
-        for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+        for (auto itemW : itemVct)
         {
-            auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            if (iconTextItem != nullptr)
+            auto item = (FluNavigationItem *)(itemW);
+            if (item != nullptr)
             {
+                item->setLong(true);
+                // item->setFixedWidth(40);
+            }
+
+             if (item->getItemType() == FluNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
                 iconTextItem->setFixedWidth(320);
                 iconTextItem->getWrapWidget1()->setFixedWidth(320);
                 iconTextItem->showLabelArrow();
             }
 
-            auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            if (item != nullptr)
+            if (item->getItemType() == FluNavigationItemType::Setting)
             {
-                item->setLong(true);
+                auto settingsItem = (FluNavigationSettingsItem *)(item);
+                if (settingsItem != nullptr)
+                {
+                    settingsItem->setFixedWidth(320);
+                    settingsItem->showLabel();
+                }
             }
+
+           // auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+           // if (iconTextItem != nullptr)
+           // {
+           //     iconTextItem->setFixedWidth(320);
+           //     iconTextItem->getWrapWidget1()->setFixedWidth(320);
+           //     iconTextItem->showLabelArrow();
+           // }
+
+           // auto settingsItem = (FluNavigationSettingsItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+           // if (settingsItem != nullptr)
+           // {
+           //     settingsItem->setFixedWidth(320);
+           //     settingsItem->showLabel();
+           // }
+
+           // auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+          //  if (item != nullptr)
+          //  {
+          //      item->setLong(true);
+          //  }
         }
 
         m_widget2->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);

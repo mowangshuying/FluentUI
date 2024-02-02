@@ -4,6 +4,7 @@
 
 FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
 {
+    m_itemType = FluNavigationItemType::Menu;
     m_hLayout = new QHBoxLayout(this);
 
     m_menuButton = new QPushButton(this);

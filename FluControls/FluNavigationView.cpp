@@ -6,7 +6,7 @@
 FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
     m_vLayout = new QVBoxLayout(this);
-    m_vLayout->setContentsMargins(0, 8, 0, 8);
+    m_vLayout->setContentsMargins(4, 8, 4, 8);
     m_widget1 = new QWidget(this);
     m_widget2 = new FluVScrollView(this);
     m_widget3 = new QWidget(this);
@@ -130,12 +130,17 @@ void FluNavigationView::onMenuItemClicked()
                 {
                     iconTextItem->onItemClicked();
                 }
+
+                iconTextItem->setFixedWidth(40);
+                iconTextItem->getWrapWidget1()->setFixedWidth(40);
+                iconTextItem->hideLabelArrow();
             }
 
             auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
             if (item != nullptr)
             {
                 item->setLong(false);
+                //item->setFixedWidth(40);
             }
         }
 
@@ -147,6 +152,14 @@ void FluNavigationView::onMenuItemClicked()
     {
         for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
         {
+            auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+            if (iconTextItem != nullptr)
+            {
+                iconTextItem->setFixedWidth(320);
+                iconTextItem->getWrapWidget1()->setFixedWidth(320);
+                iconTextItem->showLabelArrow();
+            }
+
             auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
             if (item != nullptr)
             {

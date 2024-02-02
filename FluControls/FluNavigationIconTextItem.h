@@ -26,6 +26,29 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluNavigationIconTextItem(QString text, QWidget *parent = nullptr);
 
+    QWidget* getWrapWidget1()
+    {
+        return m_wrapWidget1;
+    }
+
+    QWidget* getWrapWidget2()
+    {
+        return m_wrapWidget2;
+    }
+
+    void hideLabelArrow()
+    {
+        m_label->hide();
+        m_arrow->hide();
+    }
+
+     void showLabelArrow()
+    {
+        m_label->show();
+        if (!m_items.isEmpty())
+            m_arrow->show();
+    }
+
     QList<FluNavigationIconTextItem *> getChildItems();
 
     void addItem(FluNavigationIconTextItem *item);

@@ -18,7 +18,6 @@ class FluIconButton : public QPushButton
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     FluIconButton(FluAwesomeType type1, QWidget* parent = nullptr) : QPushButton(parent)
@@ -31,7 +30,6 @@ class FluIconButton : public QPushButton
         setType(type1);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     FluIconButton(FluAwesomeType type1, FluAwesomeType type2, QWidget* parent = nullptr) : QPushButton(parent), m_type1(type1), m_type2(type2)
@@ -60,7 +58,6 @@ class FluIconButton : public QPushButton
             m_timer->start();
         });
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     void setType(FluAwesomeType type)
@@ -83,7 +80,7 @@ class FluIconButton : public QPushButton
         setType(m_type2);
     }
 
-public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

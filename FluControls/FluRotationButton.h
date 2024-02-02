@@ -26,8 +26,7 @@ class FluRotationButton : public QPushButton
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-    FluRotationButton(FluAwesomeType awesomeType, QWidget* parent = nullptr)
-        : FluRotationButton(parent)
+    FluRotationButton(FluAwesomeType awesomeType, QWidget* parent = nullptr) : FluRotationButton(parent)
     {
         m_awesomeType = awesomeType;
     }
@@ -71,7 +70,7 @@ class FluRotationButton : public QPushButton
         m_nAngle += 90;
     }
 
-     void onThemeChanged()
+    void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {

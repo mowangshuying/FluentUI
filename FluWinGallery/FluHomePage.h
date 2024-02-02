@@ -19,8 +19,8 @@ class FluHomePage : public FluVScrollView
     Q_OBJECT
   public:
     FluHomePage(QWidget *parent = nullptr);
-  
-public slots:
+
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
@@ -32,5 +32,6 @@ public slots:
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePage.qss", this);
         }
     }
+
   protected:
 };

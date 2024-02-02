@@ -60,6 +60,7 @@ class FluNavigationView : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationView.qss", this);
         }
     }
+
   public:
     QVBoxLayout *m_vLayout;
 

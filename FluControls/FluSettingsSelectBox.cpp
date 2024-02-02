@@ -31,11 +31,11 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : QWid
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
- FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluSettingsSelectBox(parent)
+FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluSettingsSelectBox(parent)
 {
     m_iconAwesomeType = awesomeType;
     setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType));
- }
+}
 
 FluComboBox* FluSettingsSelectBox::getComboBox()
 {
@@ -76,7 +76,7 @@ void FluSettingsSelectBox::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        //m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap())
+        // m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap())
         setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(8, 8, 8)));
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
     }

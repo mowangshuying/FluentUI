@@ -25,6 +25,7 @@ class FluExpander : public QWidget
 
   public slots:
     void onThemeChanged();
+
   protected:
     QVBoxLayout* m_mainLayout;
     QHBoxLayout* m_hWrap1Layout;

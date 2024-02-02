@@ -81,7 +81,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     void onThemeChanged()
     {
-        //LOG_DEBUG << "called";
+        // LOG_DEBUG << "called";
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
@@ -114,7 +114,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluNavigationIconTextItem *m_parentItem;
 
-    FluAwesomeType m_awesomeType; // the icon display which 
+    FluAwesomeType m_awesomeType;  // the icon display which
 
     bool m_bDown;
     bool m_bLong;

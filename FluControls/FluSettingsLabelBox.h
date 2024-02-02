@@ -78,6 +78,7 @@ class FluSettingsLabelBox : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsLabelBox.qss", this);
         }
     }
+
   protected:
     QHBoxLayout* m_mainLayout;
     QVBoxLayout* m_vLayout;

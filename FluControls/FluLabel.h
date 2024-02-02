@@ -84,6 +84,7 @@ class FluLabel : public QLabel
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
         }
     }
+
   protected:
     FluLabelStyle m_style;
 };

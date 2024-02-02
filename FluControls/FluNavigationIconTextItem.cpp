@@ -98,12 +98,12 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QString text, QWidget *pare
     m_label->setText(text);
 }
 
- FluNavigationIconTextItem::FluNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
+FluNavigationIconTextItem::FluNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
 {
     m_awesomeType = awesomeType;
     m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType));
     m_label->setText(text);
- }
+}
 
 QList<FluNavigationIconTextItem *> FluNavigationIconTextItem::getChildItems()
 {

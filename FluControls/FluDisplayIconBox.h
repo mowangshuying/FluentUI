@@ -74,7 +74,7 @@ class FluDisplayIconBox : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_type, QColor(8,8,8)));
+            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_type, QColor(8, 8, 8)));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
         }
         else
@@ -83,6 +83,7 @@ class FluDisplayIconBox : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayIconBox.qss", this);
         }
     }
+
   protected:
     FluAwesomeType m_type;
     QLabel* m_iconLabel;

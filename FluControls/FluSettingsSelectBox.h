@@ -28,6 +28,7 @@ class FluSettingsSelectBox : public QWidget
     void paintEvent(QPaintEvent* event);
   public slots:
     void onThemeChanged();
+
   protected:
     QHBoxLayout* m_mainLayout;
     QVBoxLayout* m_vLayout;

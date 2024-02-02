@@ -1,7 +1,7 @@
 #include "FluStyleSheetUitls.h"
 
 FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
- FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
+FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
 {
 }
 

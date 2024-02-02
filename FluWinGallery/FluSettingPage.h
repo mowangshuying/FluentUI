@@ -79,7 +79,6 @@ class FluSettingPage : public QWidget
         m_vScrollView->getMainLayout()->addWidget(aboutLabelBox);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     void paintEvent(QPaintEvent* event)
@@ -101,6 +100,7 @@ class FluSettingPage : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingPage.qss", this);
         }
     }
+
   protected:
     QVBoxLayout* m_mainLayout;
 

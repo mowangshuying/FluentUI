@@ -36,7 +36,7 @@ class FluHomePageTitle : public QWidget
         m_vMainLayout->addSpacing(10);
         m_vMainLayout->addWidget(m_titleLabel2);
 
-         m_color1 = QColor(206, 216, 228);
+        m_color1 = QColor(206, 216, 228);
         m_color2 = QColor(223, 231, 240);
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHomePageTitle.qss");
         setStyleSheet(qss);
@@ -92,6 +92,7 @@ class FluHomePageTitle : public QWidget
             update();
         }
     }
+
   protected:
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hLayout;

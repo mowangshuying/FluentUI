@@ -29,7 +29,7 @@ class FluVScrollView : public QScrollArea
         return m_vMainLayout;
     }
 
-public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

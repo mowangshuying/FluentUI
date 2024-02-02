@@ -55,7 +55,6 @@ class FluHCard : public QWidget
         setStyleSheet(qss);
 
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     FluHCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluHCard(parent)
@@ -85,6 +84,7 @@ class FluHCard : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHCard.qss", this);
         }
     }
+
   protected:
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;

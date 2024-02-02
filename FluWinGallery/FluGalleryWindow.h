@@ -341,6 +341,7 @@ class FluGalleryWindow : public FluFrameLessWidget
     }
   public slots:
     void onThemeChanged();
+
   protected:
     FluNavigationView *m_navView;
     FluStackedLayout *m_sLayout;

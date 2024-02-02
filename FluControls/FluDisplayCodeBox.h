@@ -130,5 +130,4 @@ class FluDisplayCodeBox : public QTextEdit
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayCodeBox.qss", this);
         }
     }
-
 };

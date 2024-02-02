@@ -139,7 +139,7 @@ class FluIconsPage : public FluAEmptyPage
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), m_penColor);
             pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             m_iconLabel->setPixmap(pixmap);
-            
+
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
         }
         else

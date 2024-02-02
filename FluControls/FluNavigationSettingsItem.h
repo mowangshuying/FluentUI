@@ -50,7 +50,6 @@ class FluNavigationSettingsItem : public FluNavigationItem
         connect(m_icon, &FluRotationButton::clicked, [=](bool b) { emit itemClicked(); });
         connect(this, &FluNavigationSettingsItem::itemClicked, this, &FluNavigationSettingsItem::onItemClicked);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     FluNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent) : FluNavigationSettingsItem(QIcon(), text, parent)
@@ -108,15 +107,16 @@ class FluNavigationSettingsItem : public FluNavigationItem
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            //m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Settings, QColor(8, 8, 8)));
+            // m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Settings, QColor(8, 8, 8)));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationSettingsItem.qss", this);
         }
         else
         {
-            //m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Settings, QColor(239, 239, 239)));
+            // m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Settings, QColor(239, 239, 239)));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationSettingsItem.qss", this);
         }
     }
+
   protected:
     QHBoxLayout* m_hMainLayout;
     QWidget* m_indicator;

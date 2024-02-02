@@ -80,6 +80,7 @@ class FluVCard : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVCard.qss", this);
         }
     }
+
   protected:
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;

@@ -41,9 +41,9 @@ class FluIconsPage : public FluAEmptyPage
         //   auto wrapWidget2AwesomeTypeLayout = new QHBoxLayout;
 
         auto titleLabel = new QLabel;
-        auto iconLabel = new QLabel;
+        m_iconLabel = new QLabel;
 
-        iconLabel->setFixedSize(50, 50);
+        m_iconLabel->setFixedSize(50, 50);
 
         auto awesomeTypeKeyLabel = new QLabel;
         auto awesomeTypeValueLabel = new QLabel;
@@ -51,14 +51,14 @@ class FluIconsPage : public FluAEmptyPage
 
         wrapWidget2Layout->addWidget(titleLabel, 0, Qt::AlignTop);
         wrapWidget2Layout->addSpacing(20);
-        wrapWidget2Layout->addWidget(iconLabel, 0, Qt::AlignTop);
+        wrapWidget2Layout->addWidget(m_iconLabel, 0, Qt::AlignTop);
         wrapWidget2Layout->addSpacing(20);
         wrapWidget2Layout->addWidget(awesomeTypeKeyLabel, 0, Qt::AlignTop);
         wrapWidget2Layout->addSpacing(5);
         wrapWidget2Layout->addWidget(awesomeTypeValueLabel, 0, Qt::AlignTop);
 
         titleLabel->setObjectName("wTitleLabel");
-        iconLabel->setObjectName("wIconLabel");
+        m_iconLabel->setObjectName("wIconLabel");
         awesomeTypeKeyLabel->setObjectName("wAwesomeTypeKeyLabel");
         awesomeTypeValueLabel->setObjectName("wAwesomeTypeValueLabel");
 
@@ -79,6 +79,7 @@ class FluIconsPage : public FluAEmptyPage
 
         m_sDisplayIconBox = nullptr;
 
+        m_penColor = QColor(8, 8, 8);
         // add icons to display it!
         QMetaEnum metaEnum = QMetaEnum::fromType<FluAwesomeType>();
         for (int i = 0; i < metaEnum.keyCount(); i++)
@@ -108,9 +109,9 @@ class FluIconsPage : public FluAEmptyPage
                 displayIconBox->style()->polish(displayIconBox);
 
                 titleLabel->setText(EnumTypeToQString(displayIconBox->getAwesomeType()));
-                QPixmap pixmap = FluIconUtils::getFluentIconPixmap(displayIconBox->getAwesomeType(), QColor(8, 8, 8), 30, 30);
+                QPixmap pixmap = FluIconUtils::getFluentIconPixmap(displayIconBox->getAwesomeType(), m_penColor);
                 pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-                iconLabel->setPixmap(pixmap);
+                m_iconLabel->setPixmap(pixmap);
 
                 awesomeTypeKeyLabel->setText("Enum:");
                 awesomeTypeValueLabel->setText("FluAwesomeType::" + EnumTypeToQString(displayIconBox->getAwesomeType()));
@@ -134,14 +135,26 @@ class FluIconsPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
+            m_penColor = QColor(8, 8, 8);
+            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), m_penColor);
+            pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            m_iconLabel->setPixmap(pixmap);
+            
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
         }
         else
         {
+            m_penColor = QColor(239, 239, 239);
+            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), m_penColor);
+            pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            m_iconLabel->setPixmap(pixmap);
+
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconsPage.qss", this);
         }
     }
 
   protected:
+    QColor m_penColor;
+    QLabel* m_iconLabel;
     FluDisplayIconBox* m_sDisplayIconBox;
 };

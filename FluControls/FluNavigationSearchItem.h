@@ -8,5 +8,7 @@ class FluNavigationSearchItem : public FluNavigationItem
   public:
     FluNavigationSearchItem(QWidget* parent = nullptr) : FluNavigationItem(parent)
     {
+        // long is search edit
+        // short is search button
     }
 };

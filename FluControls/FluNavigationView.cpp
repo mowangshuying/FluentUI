@@ -122,13 +122,20 @@ void FluNavigationView::onMenuItemClicked()
         // close all item in vLayout
         for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
         {
-            auto item = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            if (item == nullptr)
-                continue;
-
-            if (!item->isDown())
+            
+            auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+            if (iconTextItem != nullptr)
             {
-                item->onItemClicked();
+                if (!iconTextItem->isDown())
+                {
+                    iconTextItem->onItemClicked();
+                }
+            }
+
+            auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+            if (item != nullptr)
+            {
+                item->setLong(false);
             }
         }
 
@@ -138,6 +145,15 @@ void FluNavigationView::onMenuItemClicked()
     }
     else
     {
+        for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+        {
+            auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+            if (item != nullptr)
+            {
+                item->setLong(true);
+            }
+        }
+
         m_widget2->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         setFixedWidth(320 + 20);
         m_bLong = true;

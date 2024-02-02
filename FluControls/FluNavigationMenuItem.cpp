@@ -21,7 +21,19 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
 
     connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss", this);
+}
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss");
-    setStyleSheet(qss);
+void FluNavigationMenuItem::onThemeChanged()
+{
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    {
+        m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(8, 8, 8)));
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss", this);
+    }
+    else
+    {
+        m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(239, 239, 239)));
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationMenuItem.qss", this);
+    }
 }

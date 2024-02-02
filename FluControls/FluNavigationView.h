@@ -47,7 +47,6 @@ class FluNavigationView : public QWidget
 
   public slots:
     void onMenuItemClicked();
-
     void onThemeChanged()
     {
         LOG_DEBUG << "called";

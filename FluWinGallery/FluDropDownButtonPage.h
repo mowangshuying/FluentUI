@@ -47,10 +47,9 @@ class FluDropDownButtonPage : public FluAEmptyPage
         displayBox2->getBodyLayout()->addWidget(dropDownButton2);
         m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
-public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

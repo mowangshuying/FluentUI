@@ -17,7 +17,6 @@ class FluToggleButtonPage : public FluAEmptyPage
         m_infoLabel->setText("ToggleButton demos.");
 
         auto displayBox1 = new FluDisplayBox;
-        //  displayBox1->setFixedHeight(140);
         displayBox1->setTitle("A simple toggle button with text content.");
         displayBox1->getCodeExpander()->setCodeByPath("../code/ToggleButtonPageCode1");
         auto btn1 = new FluToggleButton(this);

@@ -118,13 +118,13 @@ void FluNavigationView::paintEvent(QPaintEvent *event)
 
 void FluNavigationView::onMenuItemClicked()
 {
-    QVector<QWidget*> itemVct;
+    QVector<QWidget *> itemVct;
     for (int i = 0; i < m_widget1->layout()->count(); i++)
     {
         itemVct.push_back(m_widget1->layout()->itemAt(i)->widget());
     }
 
-     for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+    for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
     {
         itemVct.push_back(m_widget2->getMainLayout()->itemAt(i)->widget());
     }
@@ -148,7 +148,7 @@ void FluNavigationView::onMenuItemClicked()
 
             if (item->getItemType() == FluNavigationItemType::IconText)
             {
-                auto iconTextItem = (FluNavigationIconTextItem *)(item); 
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
                 if (!iconTextItem->isDown())
                 {
                     iconTextItem->onItemClicked();
@@ -184,7 +184,7 @@ void FluNavigationView::onMenuItemClicked()
                 // item->setFixedWidth(40);
             }
 
-             if (item->getItemType() == FluNavigationItemType::IconText)
+            if (item->getItemType() == FluNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluNavigationIconTextItem *)(item);
                 iconTextItem->setFixedWidth(320);
@@ -202,26 +202,26 @@ void FluNavigationView::onMenuItemClicked()
                 }
             }
 
-           // auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-           // if (iconTextItem != nullptr)
-           // {
-           //     iconTextItem->setFixedWidth(320);
-           //     iconTextItem->getWrapWidget1()->setFixedWidth(320);
-           //     iconTextItem->showLabelArrow();
-           // }
+            // auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+            // if (iconTextItem != nullptr)
+            // {
+            //     iconTextItem->setFixedWidth(320);
+            //     iconTextItem->getWrapWidget1()->setFixedWidth(320);
+            //     iconTextItem->showLabelArrow();
+            // }
 
-           // auto settingsItem = (FluNavigationSettingsItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-           // if (settingsItem != nullptr)
-           // {
-           //     settingsItem->setFixedWidth(320);
-           //     settingsItem->showLabel();
-           // }
+            // auto settingsItem = (FluNavigationSettingsItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+            // if (settingsItem != nullptr)
+            // {
+            //     settingsItem->setFixedWidth(320);
+            //     settingsItem->showLabel();
+            // }
 
-           // auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-          //  if (item != nullptr)
-          //  {
-          //      item->setLong(true);
-          //  }
+            // auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
+            //  if (item != nullptr)
+            //  {
+            //      item->setLong(true);
+            //  }
         }
 
         m_widget2->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);

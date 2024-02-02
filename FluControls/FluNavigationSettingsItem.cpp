@@ -1,7 +1,7 @@
 #include "FluNavigationSettingsItem.h"
 #include "FluNavigationView.h"
 
- FluNavigationSettingsItem::FluNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluNavigationItem(parent)
+FluNavigationSettingsItem::FluNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluNavigationItem(parent)
 {
     m_itemType = FluNavigationItemType::Setting;
     setFixedSize(320, 40);
@@ -40,7 +40,7 @@
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
- FluNavigationSettingsItem::FluNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent) : FluNavigationSettingsItem(QIcon(), text, parent)
+FluNavigationSettingsItem::FluNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent) : FluNavigationSettingsItem(QIcon(), text, parent)
 {
     m_icon->setIcon(FluIconUtils::getFluentIcon(awesomeType));
     m_icon->setAwesomeType(awesomeType);

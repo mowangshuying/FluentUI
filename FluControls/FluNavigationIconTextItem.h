@@ -26,12 +26,12 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluNavigationIconTextItem(QString text, QWidget *parent = nullptr);
 
-    QWidget* getWrapWidget1()
+    QWidget *getWrapWidget1()
     {
         return m_wrapWidget1;
     }
 
-    QWidget* getWrapWidget2()
+    QWidget *getWrapWidget2()
     {
         return m_wrapWidget2;
     }
@@ -42,7 +42,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
         m_arrow->hide();
     }
 
-     void showLabelArrow()
+    void showLabelArrow()
     {
         m_label->show();
         if (!m_items.isEmpty())

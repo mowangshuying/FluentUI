@@ -45,6 +45,7 @@ class FluNavigationItem : public QWidget
     {
         return m_bLong;
     }
+
   protected:
     FluNavigationItemType m_itemType;
     FluNavigationView* m_parentView;

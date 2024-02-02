@@ -44,6 +44,19 @@ class FluDisplayBox : public QWidget
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
 
+    public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBox.qss", this);
+
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayBox.qss", this);
+        }
+    }
   protected:
     QVBoxLayout* m_mainLayout;
     QLabel* m_titleLabel;

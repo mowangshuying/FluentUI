@@ -1,0 +1,23 @@
+FluDisplayIconBox {
+    border: 1px solid rgb(49, 49, 49);
+    border-radius: 4px;
+    background-color: rgb(43, 43, 43);
+}
+
+FluDisplayIconBox[selected=true] {
+    border: 2px solid rgb(0, 90, 158);
+}
+
+FluDisplayIconBox:hover {
+    background-color: rgb(43, 43, 43);
+}
+
+#iconLabel {
+    background-color: transparent;
+}
+
+#textLabel {
+    background-color: transparent;
+    font-size: 8px;
+    color: white;
+}

@@ -10,6 +10,11 @@ FRAMELESSHELPER_USE_NAMESPACE
 FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
     setWindowTitle("CppQt WinUI3 Gallery Dev");
+
+#ifndef _DEBUG
+    setWindowTitle("CppQt WinUI3 Gallery");
+#endif
+
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
     // resize

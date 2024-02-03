@@ -109,6 +109,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FluAEmptyPage.cpp" />
+    <ClCompile Include="FluAllSamplesPage.cpp" />
     <ClCompile Include="FluButtonPage.cpp" />
     <ClCompile Include="FluDropDownButtonPage.cpp" />
     <ClCompile Include="FluGalleryWindow.cpp" />
@@ -151,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluSettingPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluAllSamplesPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

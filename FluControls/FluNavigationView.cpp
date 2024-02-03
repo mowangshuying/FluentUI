@@ -3,50 +3,44 @@
 #include "FluNavigationMenuItem.h"
 #include "../FluUtils/FluUtils.h"
 #include "FluNavigationSettingsItem.h"
+#include "FluNavigationSearchItem.h"
 
 FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
     m_vLayout = new QVBoxLayout(this);
     m_vLayout->setContentsMargins(4, 8, 4, 8);
-    m_widget1 = new QWidget(this);
-    m_widget2 = new FluVScrollView(this);
-    m_widget3 = new QWidget(this);
+    m_topWrapWidget = new QWidget(this);
+    m_midVScrollView = new FluVScrollView(this);
+    m_bottomWrapWidget = new QWidget(this);
 
-    m_vLayout1 = new QVBoxLayout(m_widget1);
-    // m_vLayout2 = new QVBoxLayout(m_widget2);
-    m_vLayout3 = new QVBoxLayout(m_widget3);
+    m_vTopWrapLayout = new QVBoxLayout(m_topWrapWidget);
+    m_vBottomLayout = new QVBoxLayout(m_bottomWrapWidget);
 
-    m_vLayout1->setContentsMargins(0, 0, 0, 0);
-    // m_vLayout2->setContentsMargins(0, 0, 0, 0);
-    m_widget2->getMainLayout()->setContentsMargins(0, 0, 0, 0);
-    m_vLayout3->setContentsMargins(0, 0, 0, 0);
+    m_vTopWrapLayout->setContentsMargins(0, 0, 0, 0);
+    m_midVScrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
+    m_vBottomLayout->setContentsMargins(0, 0, 0, 0);
 
-    m_vLayout1->setSpacing(5);
-    // m_vLayout2->setSpacing(5);
-    m_vLayout3->setSpacing(5);
+    m_vTopWrapLayout->setSpacing(5);
+    m_vBottomLayout->setSpacing(5);
 
-    m_vLayout1->setAlignment(Qt::AlignTop);
-    //  m_vLayout2->setAlignment(Qt::AlignTop);
-    m_widget2->getMainLayout()->setAlignment(Qt::AlignTop);
-    m_vLayout3->setAlignment(Qt::AlignTop);
+    m_vTopWrapLayout->setAlignment(Qt::AlignTop);
+    m_midVScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
+    m_vBottomLayout->setAlignment(Qt::AlignTop);
 
-    //  auto srollArea = new QScrollArea(this);
-    //  srollArea->setWidgetResizable(true);
-    //  srollArea->setWidget(m_widget2);
 
-    //   srollArea->setObjectName("srollArea");
-    //   srollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_vLayout->addWidget(m_topWrapWidget);
+    m_vLayout->addWidget(m_midVScrollView, 1);
+    m_vLayout->addWidget(m_bottomWrapWidget);
 
-    m_vLayout->addWidget(m_widget1);
-    m_vLayout->addWidget(m_widget2, 1);
-    m_vLayout->addWidget(m_widget3);
-
-    m_widget1->setObjectName("widget1");
-    m_widget2->setObjectName("widget2");
-    m_widget3->setObjectName("widget3");
+    m_topWrapWidget->setObjectName("widget1");
+    m_midVScrollView->setObjectName("widget2");
+    m_bottomWrapWidget->setObjectName("widget3");
 
     auto menuButtonItem = new FluNavigationMenuItem(this);
-    m_vLayout1->addWidget(menuButtonItem);
+    m_vTopWrapLayout->addWidget(menuButtonItem);
+
+    auto searchItem = new FluNavigationSearchItem;
+    m_vTopWrapLayout->addWidget(searchItem);
 
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationView.qss");
     setStyleSheet(qss);
@@ -54,56 +48,58 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     m_bLong = true;
     setFixedWidth(320 + 20);
     connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
+    connect(searchItem, &FluNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
+
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
-void FluNavigationView::addItemToLayout1(QWidget *item)
+void FluNavigationView::addItemToTopLayout(QWidget *item)
 {
-    m_vLayout1->addWidget(item, Qt::AlignTop);
+    m_vTopWrapLayout->addWidget(item, Qt::AlignTop);
 }
 
-void FluNavigationView::addItemToLayout2(QWidget *item)
+void FluNavigationView::addItemToMidLayout(QWidget *item)
 {
-    m_widget2->getMainLayout()->addWidget(item, Qt::AlignTop);
+    m_midVScrollView->getMainLayout()->addWidget(item, Qt::AlignTop);
 
     auto iconTextItem = (FluNavigationIconTextItem *)item;
     iconTextItem->setParentView(this);
 }
 
-void FluNavigationView::addItemToLayout3(QWidget *item)
+void FluNavigationView::addItemToBottomLayout(QWidget *item)
 {
-    m_vLayout3->addWidget(item);
+    m_vBottomLayout->addWidget(item);
     auto tmpItem = (FluNavigationItem *)item;
     tmpItem->setParentView(this);
 }
 
 void FluNavigationView::clearAllItemsSelectState()
 {
-    for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+    for (int i = 0; i < m_midVScrollView->getMainLayout()->count(); i++)
     {
-        auto curItem = (FluNavigationIconTextItem *)m_widget2->getMainLayout()->itemAt(i)->widget();
+        auto curItem = (FluNavigationIconTextItem *)m_midVScrollView->getMainLayout()->itemAt(i)->widget();
         curItem->clearAllItemsSelectState();
     }
 
-    for (int i = 0; i < m_vLayout3->count(); i++)
+    for (int i = 0; i < m_vBottomLayout->count(); i++)
     {
-        auto curItem = (FluNavigationItem *)m_vLayout3->itemAt(i)->widget();
+        auto curItem = (FluNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
         curItem->clearAllItemsSelectState();
     }
 }
 
 void FluNavigationView::updateAllItemsStyleSheet()
 {
-    for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+    for (int i = 0; i < m_midVScrollView->getMainLayout()->count(); i++)
     {
-        auto curItem = (FluNavigationIconTextItem *)m_widget2->getMainLayout()->itemAt(i)->widget();
+        auto curItem = (FluNavigationIconTextItem *)m_midVScrollView->getMainLayout()->itemAt(i)->widget();
         curItem->updateAllItemsStyleSheet();
         curItem->update();
     }
 
-    for (int i = 0; i < m_vLayout3->count(); i++)
+    for (int i = 0; i < m_vBottomLayout->count(); i++)
     {
-        auto curItem = (FluNavigationItem *)m_vLayout3->itemAt(i)->widget();
+        auto curItem = (FluNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
         curItem->updateAllItemsStyleSheet();
     }
 }
@@ -119,19 +115,19 @@ void FluNavigationView::paintEvent(QPaintEvent *event)
 void FluNavigationView::onMenuItemClicked()
 {
     QVector<QWidget *> itemVct;
-    for (int i = 0; i < m_widget1->layout()->count(); i++)
+    for (int i = 0; i < m_topWrapWidget->layout()->count(); i++)
     {
-        itemVct.push_back(m_widget1->layout()->itemAt(i)->widget());
+        itemVct.push_back(m_topWrapWidget->layout()->itemAt(i)->widget());
     }
 
-    for (int i = 0; i < m_widget2->getMainLayout()->count(); i++)
+    for (int i = 0; i < m_midVScrollView->getMainLayout()->count(); i++)
     {
-        itemVct.push_back(m_widget2->getMainLayout()->itemAt(i)->widget());
+        itemVct.push_back(m_midVScrollView->getMainLayout()->itemAt(i)->widget());
     }
 
-    for (int i = 0; i < m_widget3->layout()->count(); i++)
+    for (int i = 0; i < m_bottomWrapWidget->layout()->count(); i++)
     {
-        itemVct.push_back(m_widget3->layout()->itemAt(i)->widget());
+        itemVct.push_back(m_bottomWrapWidget->layout()->itemAt(i)->widget());
     }
 
     if (m_bLong)
@@ -167,11 +163,22 @@ void FluNavigationView::onMenuItemClicked()
                     settingsItem->hideLabel();
                 }
             }
+
+            if (item->getItemType() == FluNavigationItemType::Search)
+            {
+                auto searchItem = (FluNavigationSearchItem *)(item);
+                if (searchItem != nullptr)
+                {
+                    searchItem->setFixedWidth(40);
+                    searchItem->hideSearchEdit();
+                }
+            }
         }
 
         setFixedWidth(48);
         m_bLong = false;
-        m_widget2->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        m_midVScrollView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        
     }
     else
     {
@@ -202,29 +209,18 @@ void FluNavigationView::onMenuItemClicked()
                 }
             }
 
-            // auto iconTextItem = (FluNavigationIconTextItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            // if (iconTextItem != nullptr)
-            // {
-            //     iconTextItem->setFixedWidth(320);
-            //     iconTextItem->getWrapWidget1()->setFixedWidth(320);
-            //     iconTextItem->showLabelArrow();
-            // }
-
-            // auto settingsItem = (FluNavigationSettingsItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            // if (settingsItem != nullptr)
-            // {
-            //     settingsItem->setFixedWidth(320);
-            //     settingsItem->showLabel();
-            // }
-
-            // auto item = (FluNavigationItem *)(m_widget2->getMainLayout()->itemAt(i)->widget());
-            //  if (item != nullptr)
-            //  {
-            //      item->setLong(true);
-            //  }
+             if (item->getItemType() == FluNavigationItemType::Search)
+            {
+                auto searchItem = (FluNavigationSearchItem *)(item);
+                if (searchItem != nullptr)
+                {
+                    searchItem->setFixedWidth(320);
+                    searchItem->hideSearchButton();
+                }
+            }
         }
 
-        m_widget2->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        m_midVScrollView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         setFixedWidth(320 + 20);
         m_bLong = true;
     }

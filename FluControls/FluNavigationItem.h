@@ -36,7 +36,7 @@ class FluNavigationItem : public QWidget
 
     void setLong(bool bLong)
     {
-        setProperty("long", bLong);
+        setProperty("isLong", bLong);
         m_bLong = bLong;
         style()->polish(this);
     }

@@ -24,11 +24,11 @@ class FluNavigationView : public QWidget
   public:
     FluNavigationView(QWidget *parent = nullptr);
 
-    void addItemToLayout1(QWidget *item);
+    void addItemToTopLayout(QWidget *item);
 
-    void addItemToLayout2(QWidget *item);
+    void addItemToMidLayout(QWidget *item);
 
-    void addItemToLayout3(QWidget *item);
+    void addItemToBottomLayout(QWidget *item);
 
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
@@ -63,13 +63,12 @@ class FluNavigationView : public QWidget
   public:
     QVBoxLayout *m_vLayout;
 
-    QWidget *m_widget1;
-    FluVScrollView *m_widget2;
-    QWidget *m_widget3;
+    QWidget *m_topWrapWidget;
+    FluVScrollView *m_midVScrollView;
+    QWidget *m_bottomWrapWidget;
 
-    QVBoxLayout *m_vLayout1;
-    //  QVBoxLayout *m_vLayout2;
-    QVBoxLayout *m_vLayout3;
+    QVBoxLayout *m_vTopWrapLayout;
+    QVBoxLayout *m_vBottomLayout;
 
     bool m_bLong;
 };

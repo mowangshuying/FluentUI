@@ -24,7 +24,7 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeHomeNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Home, "Home", this);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
 
         auto homePage = new FluHomePage;
         m_sLayout->addWidget("HomePage", homePage);
@@ -41,7 +41,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item1);
         item->addItem(item2);
         item->addItem(item3);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
 
         auto typographyPage = new FluTypeographyPage;
         m_sLayout->addWidget("TypographyPage", typographyPage);
@@ -55,7 +55,7 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeSamplesNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::AllApps, "All samples", this);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeBasicInputNavItem()
@@ -114,7 +114,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item13);
         item->addItem(item14);
         item->addItem(item15);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeCollectionsNavItem()
@@ -136,7 +136,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item6);
         item->addItem(item7);
         item->addItem(item8);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makDateTimeNavItem()
@@ -150,7 +150,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item2);
         item->addItem(item3);
         item->addItem(item4);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeDialogsFlyouts()
@@ -162,7 +162,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item1);
         item->addItem(item2);
         item->addItem(item3);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeLayoutNavItem()
@@ -191,7 +191,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item9);
         item->addItem(item10);
         item->addItem(item11);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeMediaNavItem()
@@ -212,13 +212,13 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item5);
         item->addItem(item6);
         item->addItem(item7);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeSettingsNavItem()
     {
         FluNavigationSettingsItem *item = new FluNavigationSettingsItem(FluAwesomeType::Settings, "Setting", this);
-        m_navView->addItemToLayout3(item);
+        m_navView->addItemToBottomLayout(item);
 
         auto settingsPage = new FluSettingPage;
         m_sLayout->addWidget("SettingPage", settingsPage);
@@ -249,7 +249,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item8);
         item->addItem(item9);
         item->addItem(item10);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeNavigationNavItem()
@@ -264,7 +264,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item2);
         item->addItem(item3);
         item->addItem(item4);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeScrollingNavItem()
@@ -281,7 +281,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item3);
         item->addItem(item4);
         item->addItem(item5);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeStatusInfoNavItem()
@@ -298,7 +298,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item3);
         item->addItem(item4);
         item->addItem(item5);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void makeTextNavItem()
@@ -319,7 +319,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item5);
         item->addItem(item6);
         item->addItem(item7);
-        m_navView->addItemToLayout2(item);
+        m_navView->addItemToMidLayout(item);
     }
 
     void resizeEvent(QResizeEvent *event)

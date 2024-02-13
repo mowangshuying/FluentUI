@@ -173,6 +173,15 @@ void FluNavigationView::onMenuItemClicked()
                     searchItem->hideSearchEdit();
                 }
             }
+
+            if (item->getItemType() == FluNavigationItemType::Menu)
+            {
+                auto menuItem = (FluNavigationMenuItem *)(item);
+                if (menuItem != nullptr)
+                {
+                    menuItem->setFixedWidth(40);
+                }
+            }
         }
 
         setFixedWidth(48);

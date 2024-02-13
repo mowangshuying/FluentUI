@@ -34,7 +34,7 @@ class FluNavigationItem : public QWidget
 
     virtual int getItemHeight();  // to easy get item height
 
-    void setLong(bool bLong)
+    virtual void setLong(bool bLong)
     {
         setProperty("isLong", bLong);
         m_bLong = bLong;

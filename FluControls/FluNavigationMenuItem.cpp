@@ -11,7 +11,8 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
     m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton));
     m_menuButton->setIconSize(QSize(24, 24));
     m_menuButton->setFixedSize(30, 30);
-    m_hLayout->setContentsMargins(10, 0, 0, 0);
+    //m_menuButton->setFixedSize(40, 40);
+    m_hLayout->setContentsMargins(0, 4, 0, 4);
 
     setFixedHeight(40);
     setFixedWidth(320);

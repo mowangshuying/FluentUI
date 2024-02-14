@@ -5,6 +5,7 @@
 #include "../FluUtils/FluIconUtils.h"
 #include "../FluControls/FluRadioButton.h"
 #include "../FluControls/FluHyperLinkButton.h"
+#include "../FluControls/FluRepeatButton.h"
 
 FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent)
 {
@@ -35,6 +36,10 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent
     auto btn7 = new FluHyperLinkButton("https://github.com/mowangshuying/CppQtFluentUi888");
     btn7->setText("CppQtFluentUi888 Repo Home Page");
     addDemo(btn7);
+
+    auto btn8 = new FluRepeatButton;
+    btn8->setText("Click and Holder");
+    addDemo(btn8);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

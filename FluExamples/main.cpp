@@ -85,7 +85,11 @@ int main(int argc, char **argv)
     //  FluSlideWindowDemo demo;
     //  demo.show();
 
-    FluFlipViewDemo demo;
+    // FluFlipViewDemo demo;
+    // demo.show();
+
+
+    FluButtonDemo demo;
     demo.show();
 
     return app.exec();

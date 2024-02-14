@@ -2,12 +2,20 @@ FluNavigationMenuItem {
     background-color: rgb(243, 243, 243);
 }
 
-#menuButton {
-    border: none;
+#wrapWidget1 {
+    background-color: rgb(243, 243, 243);
+}
+
+#wrapWidget1:hover {
+    background-color: rgb(234, 234, 234);
+    border-radius: 4px;
+}
+
+#wrapWidget2 {
     background-color: transparent;
 }
 
-#menuButton:hover {
-    background-color: rgb(234, 234, 234);
-    border-radius: 4px;
+#menuButton {
+    border: none;
+    background-color: transparent;
 }

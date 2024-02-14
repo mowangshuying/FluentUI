@@ -30,4 +30,8 @@ class FluNavigationMenuItem : public FluNavigationItem
   protected:
     QPushButton *m_menuButton;
     QHBoxLayout *m_hLayout;
+
+    QWidget *m_wrapWidget1;
+    QHBoxLayout *m_hWrapWidgetLayout1;
+    QWidget *m_wrapWidget2;
 };

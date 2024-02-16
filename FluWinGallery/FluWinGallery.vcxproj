@@ -162,7 +162,7 @@
     <QtMoc Include="FluRepeatButtonPage.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FluRadioButtonPage.h" />
+    <QtMoc Include="FluRadioButtonPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

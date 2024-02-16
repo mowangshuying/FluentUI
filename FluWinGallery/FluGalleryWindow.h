@@ -15,6 +15,7 @@
 #include "FluHyperLinkButtonPage.h"
 #include "FluSettingPage.h"
 #include "FluRepeatButtonPage.h"
+#include "FluRadioButtonPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -97,7 +98,13 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("ColorPicker", item);
         FluNavigationIconTextItem *item11 = new FluNavigationIconTextItem("ComboBox", item);
+
+
         FluNavigationIconTextItem *item12 = new FluNavigationIconTextItem("RadioButton", item);
+        auto radioButtonPage = new FluRadioButtonPage;
+        m_sLayout->addWidget("RadioButtonPage", radioButtonPage);
+        connect(item12, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RadioButtonPage"); });
+
 
         FluNavigationIconTextItem *item13 = new FluNavigationIconTextItem("RatingControl", item);
         FluNavigationIconTextItem *item14 = new FluNavigationIconTextItem("Slider", item);

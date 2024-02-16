@@ -109,10 +109,8 @@
     <QtMoc Include="FluRepeatButtonPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="FluRadioButtonPage.h">
+    <QtMoc Include="FluRadioButtonPage.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
   </ItemGroup>
 </Project>

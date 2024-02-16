@@ -143,6 +143,9 @@
     <ClCompile Include="FluCheckBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluVRadioGroupBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -260,6 +263,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluCheckBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluVRadioGroupBox.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -17,6 +17,7 @@
 #include "FluDropDownButtonDemo.h"
 #include "FluSlideWindowDemo.h"
 #include "FluFlipViewDemo.h"
+#include "FluRadioButtonDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -89,8 +90,10 @@ int main(int argc, char **argv)
     // demo.show();
 
 
-    FluButtonDemo demo;
-    demo.show();
+  //  FluButtonDemo demo;
+  //  demo.show();
 
+    FluRadioButtonDemo demo;
+    demo.show();
     return app.exec();
 }

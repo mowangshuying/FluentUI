@@ -19,7 +19,8 @@ QRadioButton::indicator:hover {
 QRadioButton::indicator:pressed {
     background-color: rgb(220, 220, 220);
     border: 2px solid rgb(185, 185, 185);
-    /* image: url(); */
+    /*when pressed it set png*/
+    image: url("../res/ControlResImages/RadioButton-White.png");
 }
 
 QRadioButton::indicator:checked {
@@ -28,15 +29,16 @@ QRadioButton::indicator:checked {
     width: 20px;
     height: 20px;
     border-radius: 12px;
-    image: url();
+    /*when checked it set png*/
+    image: url("../res/ControlResImages/RadioButton-White.png");
 }
 
 QRadioButton::indicator:checked:hover {
-    image: url();
+    image: url("../res/ControlResImages/RadioButtonHover-White.png");
 }
 
 QRadioButton::indicator:checked:pressed {
-    image: url();
+    image: url("../res/ControlResImages/RadioButtonPressed-White.png");
 }
 
 QRadioButton:disabled {

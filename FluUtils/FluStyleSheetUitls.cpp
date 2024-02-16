@@ -3,6 +3,10 @@
 FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
 FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
 {
+//#ifdef _DEBUG
+    m_timer = new QTimer;
+    m_timer->start(5000);
+//#endif
 }
 
 QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
@@ -24,6 +28,12 @@ void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widg
     if (widget != nullptr)
     {
         widget->setStyleSheet(qss);
+        
+        // just change file
+        connect(FluStyleSheetUitls::getTimer(), &QTimer::timeout, [=]() {
+            QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
+            widget->setStyleSheet(qss);
+        });
     }
 }
 

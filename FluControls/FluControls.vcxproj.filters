@@ -140,6 +140,9 @@
     <ClCompile Include="FluRepeatButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCheckBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -254,6 +257,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluRepeatButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluCheckBox.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

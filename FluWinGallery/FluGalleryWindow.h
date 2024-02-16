@@ -95,7 +95,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("ToggleSplitButton", item);
         FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("CheckBox", item);
 
-        FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("CheckBox", item);
+        FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("ColorPicker", item);
         FluNavigationIconTextItem *item11 = new FluNavigationIconTextItem("ComboBox", item);
         FluNavigationIconTextItem *item12 = new FluNavigationIconTextItem("RadioButton", item);
 

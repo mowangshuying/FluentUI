@@ -14,7 +14,7 @@ class FluAllSamplesPageTitle : public QWidget
   public:
 	  FluAllSamplesPageTitle(QWidget* parent = nullptr) : QWidget(parent)
 	  {
-              setFixedHeight(200);
+		  setFixedHeight(200);
 	  }
 
 	  void paintEvent(QPaintEvent* event)

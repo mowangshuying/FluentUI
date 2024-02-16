@@ -17,6 +17,8 @@ FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
     m_titleLabel->setText("A Temp Title Label");
     m_vMainLayout->addWidget(m_titleLabel);
 
+    m_vMainLayout->addSpacing(20);
+
     m_vScrollView = new FluVScrollView(this);
     m_vScrollView->setObjectName("vScrollView");
     m_vMainLayout->addWidget(m_vScrollView, 1);

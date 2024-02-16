@@ -5,15 +5,15 @@
 
 class FluCheckBox : public QCheckBox
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-      explicit FluCheckBox(QWidget* parent = nullptr) : QCheckBox(parent)
-      {
-          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
-      }
+    explicit FluCheckBox(QWidget* parent = nullptr) : QCheckBox(parent)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
+    }
 
-      explicit FluCheckBox(const QString& text, QWidget* parent = nullptr) : QCheckBox(parent)
-      {
-          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
-      }
+    explicit FluCheckBox(const QString& text, QWidget* parent = nullptr) : QCheckBox(parent)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
+    }
 };

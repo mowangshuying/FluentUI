@@ -7,7 +7,7 @@ FluNavigationSearchItem::FluNavigationSearchItem(QWidget* parent /*= nullptr*/) 
     // short is search button
 
     m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(0,4,0,4);
+    m_hMainLayout->setContentsMargins(0, 4, 0, 4);
     setLayout(m_hMainLayout);
 
     m_searchLineEdit = new FluSearchLineEdit;
@@ -24,11 +24,10 @@ FluNavigationSearchItem::FluNavigationSearchItem(QWidget* parent /*= nullptr*/) 
     hideSearchButton();
 
     setFixedHeight(40);
-   // m_searchLineEdit->setFixedWidth(300);
+    // m_searchLineEdit->setFixedWidth(300);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationSearchItem.qss", this);
-    //connect(this, &FluNavigationSearchItem::itemClicked, this, &FluNavigationSearchItem::onItemClicked);
-    connect(m_searchButton, &QPushButton::clicked, [=]() { emit itemClicked();
-    });
+    // connect(this, &FluNavigationSearchItem::itemClicked, this, &FluNavigationSearchItem::onItemClicked);
+    connect(m_searchButton, &QPushButton::clicked, [=]() { emit itemClicked(); });
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 

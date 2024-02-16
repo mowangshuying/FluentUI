@@ -1,6 +1,6 @@
 #include "FluRepeatButton.h"
 
- FluRepeatButton::FluRepeatButton(QWidget* parent /*= nullptr*/) : QPushButton(parent)
+FluRepeatButton::FluRepeatButton(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
     m_nClickedCount = 0;
     setFixedSize(200, 30);

@@ -5,19 +5,20 @@
 
 class FluRepeatButton : public QPushButton
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluRepeatButton(QWidget* parent = nullptr);
+    FluRepeatButton(QWidget* parent = nullptr);
 
-	  void setClickCount(int nCount);
+    void setClickCount(int nCount);
 
-	  int getClickCount();
+    int getClickCount();
 
   signals:
-     void clickedCountChanged(int nClickCount);
+    void clickedCountChanged(int nClickCount);
 
   public slots:
     void onThemeChanged();
+
   private:
-     int m_nClickedCount;
+    int m_nClickedCount;
 };

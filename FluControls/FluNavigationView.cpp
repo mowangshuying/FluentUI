@@ -27,7 +27,6 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     m_midVScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
     m_vBottomLayout->setAlignment(Qt::AlignTop);
 
-
     m_vLayout->addWidget(m_topWrapWidget);
     m_vLayout->addWidget(m_midVScrollView, 1);
     m_vLayout->addWidget(m_bottomWrapWidget);
@@ -187,7 +186,6 @@ void FluNavigationView::onMenuItemClicked()
         setFixedWidth(48);
         m_bLong = false;
         m_midVScrollView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        
     }
     else
     {
@@ -218,7 +216,7 @@ void FluNavigationView::onMenuItemClicked()
                 }
             }
 
-             if (item->getItemType() == FluNavigationItemType::Search)
+            if (item->getItemType() == FluNavigationItemType::Search)
             {
                 auto searchItem = (FluNavigationSearchItem *)(item);
                 if (searchItem != nullptr)

@@ -13,7 +13,6 @@ class FluNavigationSearchItem : public FluNavigationItem
   public:
     FluNavigationSearchItem(QWidget* parent = nullptr);
 
-
     void hideSearchButton()
     {
         m_searchButton->hide();
@@ -32,7 +31,7 @@ class FluNavigationSearchItem : public FluNavigationItem
         emit itemClicked();
     }
 
-     // to enable qss
+    // to enable qss
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;
@@ -43,10 +42,11 @@ class FluNavigationSearchItem : public FluNavigationItem
 
   signals:
     void itemClicked();
-public slots:
+  public slots:
     void onItemClicked();
 
-  void onThemeChanged();
+    void onThemeChanged();
+
   protected:
     QHBoxLayout* m_hMainLayout;
     FluSearchLineEdit* m_searchLineEdit;

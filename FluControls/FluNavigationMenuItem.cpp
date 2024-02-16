@@ -22,14 +22,14 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
     m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton));
     m_menuButton->setIconSize(QSize(24, 24));
     m_menuButton->setFixedSize(44, 32);
-    
+
     m_hWrapWidgetLayout1->addWidget(m_menuButton);
-    
+
     m_hLayout->setSpacing(0);
     m_hLayout->addWidget(m_wrapWidget1);
     m_hLayout->addWidget(m_wrapWidget2, 1);
-    //m_hLayout->setSpacing(0);
-   // m_hLayout->setContentsMargins(0, 4, 0, 4);
+    // m_hLayout->setSpacing(0);
+    // m_hLayout->setContentsMargins(0, 4, 0, 4);
     m_hLayout->setContentsMargins(0, 0, 0, 0);
 
     m_wrapWidget1->setFixedHeight(40);

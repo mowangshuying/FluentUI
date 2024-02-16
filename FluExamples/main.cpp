@@ -89,9 +89,8 @@ int main(int argc, char **argv)
     // FluFlipViewDemo demo;
     // demo.show();
 
-
-  //  FluButtonDemo demo;
-  //  demo.show();
+    //  FluButtonDemo demo;
+    //  demo.show();
 
     FluRadioButtonDemo demo;
     demo.show();

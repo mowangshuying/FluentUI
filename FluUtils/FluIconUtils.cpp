@@ -60,8 +60,8 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, FluTheme theme)
 {
     if (theme == FluTheme::Light)
         return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8));
-    
-    if (theme == FluTheme::Dark)    
+
+    if (theme == FluTheme::Dark)
         return FluIconUtils::getFluentIconPixmap(nType, QColor(239, 239, 239));
 
     return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8));

@@ -12,7 +12,7 @@ class FluCheckBox : public QCheckBox
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
     }
 
-    explicit FluCheckBox(const QString& text, QWidget* parent = nullptr) : QCheckBox(parent)
+    explicit FluCheckBox(const QString& text, QWidget* parent = nullptr) : QCheckBox(text, parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
     }

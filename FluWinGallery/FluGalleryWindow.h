@@ -62,7 +62,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         auto allSamplesPage = new FluAllSamplesPage;
         m_sLayout->addWidget("AllSamplesPage", allSamplesPage);
-        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AllSamplesPage"); });     
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AllSamplesPage"); });
     }
 
     void makeBasicInputNavItem()

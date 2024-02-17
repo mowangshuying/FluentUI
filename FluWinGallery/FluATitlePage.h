@@ -7,19 +7,19 @@
 class FluFWScrollView;
 class FluATitlePage : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-        FluATitlePage(QWidget* parent = nullptr);
+    FluATitlePage(QWidget* parent = nullptr);
 
-        FluFWScrollView* getFWScrollView()
-        {
-            return m_vScrollView;
-        }
+    FluFWScrollView* getFWScrollView()
+    {
+        return m_vScrollView;
+    }
 
-		void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
 
   protected:
-        QLabel* m_titleLabel;
-        QVBoxLayout* m_vMainLayout;
-        FluFWScrollView* m_vScrollView;
+    QLabel* m_titleLabel;
+    QVBoxLayout* m_vMainLayout;
+    FluFWScrollView* m_vScrollView;
 };

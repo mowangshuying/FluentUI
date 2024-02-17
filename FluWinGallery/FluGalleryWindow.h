@@ -17,6 +17,7 @@
 #include "FluRepeatButtonPage.h"
 #include "FluRadioButtonPage.h"
 #include "FluAllSamplesPage.h"
+#include "FluCheckBoxPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -99,7 +100,13 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("SplitButton", item);
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("ToggleSplitButton", item);
+
+
         FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("CheckBox", item);
+        auto checkBoxPage = new FluCheckBoxPage;
+        m_sLayout->addWidget("CheckBoxPage", checkBoxPage);
+        connect(item9, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CheckBoxPage"); });
+
 
         FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("ColorPicker", item);
         FluNavigationIconTextItem *item11 = new FluNavigationIconTextItem("ComboBox", item);

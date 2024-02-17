@@ -19,6 +19,7 @@ class FluRotationButton : public QPushButton
         m_timer->setInterval(1000 / 60);
         m_bRotation = false;
         m_nAngle = 0;
+        m_nReserveAngle = 0;
         connect(m_timer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
         // connect(this, &FluRotationButton::clicked, [=](bool b) {
         //     m_nReserveAngle = 16;

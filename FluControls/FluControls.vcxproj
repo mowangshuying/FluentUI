@@ -113,7 +113,6 @@
     <QtMoc Include="FluPushButton.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FluATitlePage.cpp" />
     <ClCompile Include="FluVRadioGroupBox.cpp" />
     <ClCompile Include="FluCheckBox.cpp" />
     <ClCompile Include="FluComboBox.cpp" />
@@ -187,7 +186,6 @@
     <QtMoc Include="FluDisplayIconBox.h" />
     <QtMoc Include="FluCheckBox.h" />
     <QtMoc Include="FluVRadioGroupBox.h" />
-    <QtMoc Include="FluATitlePage.h" />
     <ClInclude Include="FluComboBox.h" />
     <QtMoc Include="FluComboBoxTextItem.h" />
     <QtMoc Include="FluDropDownButton.h" />

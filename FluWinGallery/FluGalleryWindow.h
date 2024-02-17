@@ -16,6 +16,7 @@
 #include "FluSettingPage.h"
 #include "FluRepeatButtonPage.h"
 #include "FluRadioButtonPage.h"
+#include "FluAllSamplesPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -58,6 +59,10 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::AllApps, "All samples", this);
         m_navView->addItemToMidLayout(item);
+
+        auto allSamplesPage = new FluAllSamplesPage;
+        m_sLayout->addWidget("AllSamplesPage", allSamplesPage);
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AllSamplesPage"); });     
     }
 
     void makeBasicInputNavItem()

@@ -1,7 +1,7 @@
 FluHCard {
     background-color: rgba(253, 253, 253, 0.95);
     border-radius: 8px;
-    border: 0px;
+    border: 1px solid rgb(234, 234, 234);
 }
 
 FluHCard:hover {

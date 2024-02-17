@@ -4,17 +4,22 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
-class FluVScrollView;
+class FluFWScrollView;
 class FluATitlePage : public QWidget
 {
 	Q_OBJECT
   public:
         FluATitlePage(QWidget* parent = nullptr);
 
+        FluFWScrollView* getFWScrollView()
+        {
+            return m_vScrollView;
+        }
+
 		void paintEvent(QPaintEvent* event);
 
   protected:
         QLabel* m_titleLabel;
         QVBoxLayout* m_vMainLayout;
-        FluVScrollView* m_vScrollView;
+        FluFWScrollView* m_vScrollView;
 };

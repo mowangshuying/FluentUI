@@ -68,6 +68,9 @@
     <ClCompile Include="FluRadioButtonPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluATitlePage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -110,6 +113,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluRadioButtonPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluATitlePage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -3,6 +3,7 @@
 #include <QStyleOption>
 
 #include "../FluControls/FluVScrollView.h"
+#include "../FluControls/FluFWScrollView.h"
 
 FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
 {
@@ -19,7 +20,7 @@ FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
 
     m_vMainLayout->addSpacing(20);
 
-    m_vScrollView = new FluVScrollView(this);
+    m_vScrollView = new FluFWScrollView(this);
     m_vScrollView->setObjectName("vScrollView");
     m_vMainLayout->addWidget(m_vScrollView, 1);
 

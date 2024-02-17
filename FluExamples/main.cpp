@@ -93,11 +93,11 @@ int main(int argc, char **argv)
     //  FluButtonDemo demo;
     //  demo.show();
 
-    //FluRadioButtonDemo demo;
-    //demo.show();
+    // FluRadioButtonDemo demo;
+    // demo.show();
 
-   // FluButtonDemo demo;
-   // demo.show();
+    // FluButtonDemo demo;
+    // demo.show();
 
     FluCheckBoxDemo demo;
     demo.show();

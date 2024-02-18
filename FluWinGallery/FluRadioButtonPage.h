@@ -37,4 +37,6 @@ class FluRadioButtonPage : public FluAEmptyPage
         displayBox->getBodyLayout()->addWidget(groupBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     }
+
+
 };

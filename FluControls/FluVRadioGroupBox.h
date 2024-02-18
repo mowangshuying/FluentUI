@@ -17,6 +17,8 @@ class FluVRadioGroupBox : public QGroupBox
         setLayout(m_vMainLayout);
         m_vMainLayout->addSpacing(15);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
     }
 
     FluVRadioGroupBox(QString title, QWidget* parent = nullptr) : QGroupBox(title, parent)
@@ -27,6 +29,8 @@ class FluVRadioGroupBox : public QGroupBox
         setLayout(m_vMainLayout);
         m_vMainLayout->addSpacing(15);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
     }
 
     void addRadioButton(FluRadioButton* radioButton)
@@ -34,6 +38,18 @@ class FluVRadioGroupBox : public QGroupBox
         m_vMainLayout->addWidget(radioButton);
     }
 
+     public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVRadioGroupBox.qss", this);
+        }
+    }
   protected:
     QVBoxLayout* m_vMainLayout;
 };

@@ -1,4 +1,5 @@
 QRadioButton {
+    color: white;
     min-height: 28px;
     max-height: 28px;
 }
@@ -8,6 +9,7 @@ QRadioButton::indicator {
     height: 20px;
     border-radius: 11px;
     border: 1px solid rgb(147, 147, 147);
+    color: white;
     background-color: rgb(29, 29, 29);
     margin-left: 5px;
 }

@@ -4,6 +4,7 @@ QGroupBox {
 }
 
 QGroupBox::title {
+    color: white;
     subcontrol-origin: margin;
     subcontrol-position: top left;
 }

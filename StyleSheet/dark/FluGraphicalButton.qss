@@ -1,0 +1,15 @@
+FluGraphicalButton {
+    background-color: rgb(251, 251, 251);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+FluGraphicalButton:hover {
+    background-color: rgb(246, 246, 246);
+}
+
+FluGraphicalButton:pressed {
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(229, 229, 229);
+}

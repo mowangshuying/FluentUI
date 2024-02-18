@@ -1,0 +1,19 @@
+#textLabel {
+    color: rgb(26, 26, 26);
+    font-size: 12px;
+}
+
+#shortcutKeysLabel {
+    color: rgb(95, 95, 95);
+    font-size: 9px;
+}
+
+FluMenuDemoItem {
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgb(249, 249, 249);
+}
+
+FluMenuDemoItem:hover {
+    background-color: rgb(240, 240, 240);
+}

@@ -1,0 +1,13 @@
+FluHyperLinkButton {
+    border: none;
+    border-radius: 4px;
+    color: rgb(0, 66, 117);
+    font-size: 12px;
+    background-color: transparent;
+    padding: 8px 8px 8px 8px;
+}
+
+FluHyperLinkButton:hover {
+    background-color: rgb(234, 234, 234);
+    color: rgb(29, 62, 87);
+}

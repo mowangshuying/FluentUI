@@ -1,0 +1,31 @@
+FluSearchLineEdit {
+    background-color: rgb(45, 45, 45);
+    border-radius: 4px;
+    border: 1px solid rgb(48, 48, 48);
+    border-bottom: 1px solid rgb(154, 154, 154);
+    padding: 2px;
+}
+
+FluSearchLineEdit:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+FluSearchLineEdit[isFocused=true] {
+    border-bottom: 2px solid rgb(0, 90, 158);
+}
+
+QLineEdit {
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton {
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: rgb(63, 63, 63);
+    border-radius: 4px;
+    border: none;
+}

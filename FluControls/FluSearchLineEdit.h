@@ -41,6 +41,7 @@ class FluSearchLineEdit : public QWidget
         m_edit->installEventFilter(this);
         m_edit->setFocusPolicy(Qt::ClickFocus);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     bool eventFilter(QObject* watched, QEvent* event)
@@ -76,6 +77,21 @@ class FluSearchLineEdit : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
+
+  public slots:
+      void onThemeChanged()
+      {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
+        }
+        else
+        {
+            m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSearchLineEdit.qss", this);
+        }
+      }
 
   protected:
     QLineEdit* m_edit;

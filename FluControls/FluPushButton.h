@@ -4,7 +4,7 @@
 #include <QPainter>
 #include <QPushButton>
 
-#include "../FluUtils/FluStyleSheetUitls.h"
+#include "../FluUtils/FluUtils.h"
 
 class FluPushButton : public QPushButton
 {
@@ -14,7 +14,19 @@ class FluPushButton : public QPushButton
     {
         setFixedSize(200, 30);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
+        }
+    }
   protected:
 };

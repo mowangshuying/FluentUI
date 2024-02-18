@@ -15,6 +15,18 @@ class FluHyperLinkButton : public QPushButton
         m_linkUrl = linkUrl;
     }
 
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButton.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHyperLinkButton.qss", this);
+        }
+    }
   protected:
     QString m_linkUrl;
 };

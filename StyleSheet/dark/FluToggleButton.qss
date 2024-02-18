@@ -1,40 +1,40 @@
 FluToggleButton[toggled=false] {
-    color: black;
-    border: 1px solid rgb(229, 229, 229);
+    color: white;
+    border: 1px solid rgb(32, 32, 32);
     border-radius: 4px;
-    border-bottom: 1px solid rgb(204, 204, 204);
-    background-color: rgb(251, 251, 251);
+    border-bottom: 1px solid rgb(48, 48, 48);
+    background-color: rgb(45, 45, 45);
     font-size: 15px;
 }
 
 FluToggleButton[toggled=true] {
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(20, 103, 166);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(129, 190, 238);
     border-radius: 4px;
-    border-bottom: 1px solid rgb(0, 54, 95);
-    background-color: rgb(0, 90, 158);
+    border-bottom: 1px solid rgb(102, 160, 204);
+    background-color: rgb(118, 185, 237);
     font-size: 15px;
 }
 
 FluToggleButton[toggled=false]:hover {
-    border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(204, 204, 204);
-    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(32, 32, 32);
+    border-bottom: 1px solid rgb(48, 48, 48);
+    background-color: rgb(50, 50, 50);
 }
 
 FluToggleButton[toggled=true]:hover {
-    border: 1px solid rgb(20, 103, 166);
-    border-bottom: 1px solid rgb(0, 54, 95);
-    background-color: rgb(25, 106, 167);
+    border: 1px solid rgb(120, 176, 219);
+    border-bottom: 1px solid rgb(94, 146, 186);
+    background-color: rgb(109, 169, 216);
 }
 
 FluToggleButton[toggled=false]:pressed {
-    border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(229, 229, 229);
-    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(32, 32, 32);
+    border-bottom: 1px solid rgb(32, 32, 32);
+    background-color: rgb(39, 39, 39);
 }
 
 FluToggleButton[toggled=true]:pressed {
-    border: 1px solid rgb(49, 121, 175);
-    background-color: rgb(49, 121, 175);
+    border: 1px solid rgb(100, 154, 195);
+    background-color: rgb(100, 154, 195);
 }

@@ -1,6 +1,7 @@
 QCheckBox {
     min-height: 30px;
     max-height: 30px;
+    color: white;
 }
 
 QCheckBox::indicator {

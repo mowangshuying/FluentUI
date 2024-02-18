@@ -52,6 +52,7 @@ class FluDropDownButton : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     QPushButton* getTextBtn()
@@ -109,6 +110,18 @@ class FluDropDownButton : public QWidget
     }
   signals:
     void clicked();
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButton.qss", this);
+        }
+    }
 
   protected:
     QPushButton* m_textBtn;

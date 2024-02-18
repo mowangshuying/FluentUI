@@ -14,4 +14,7 @@ class FluMenu : public QMenu
     void mouseMoveEvent(QMouseEvent* e);
 
     void paintEvent(QPaintEvent* event);
+
+  public slots:
+    void onThemeChanged();
 };

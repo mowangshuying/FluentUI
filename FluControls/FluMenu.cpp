@@ -17,6 +17,7 @@ FluMenu::FluMenu(QWidget* parent /*= nullptr*/) : QMenu(parent)
     setAttribute(Qt::WA_TranslucentBackground, true);
     setMouseTracking(true);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluMenu::addAction(QAction* action)
@@ -68,4 +69,16 @@ void FluMenu::paintEvent(QPaintEvent* event)
     //  opt.initFrom(this);
     //  QPainter painter(this);
     //  style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluMenu::onThemeChanged()
+{
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenu.qss", this);
+    }
 }

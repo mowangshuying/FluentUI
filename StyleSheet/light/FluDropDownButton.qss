@@ -16,8 +16,10 @@ FluDropDownButton:pressed {
     /* border: 1px solid rgb(229, 229, 229); */
 }
 
-#textBtn {
-    background-color: transparent;
+#textBtn 
+{    
+	color:black;
+	background-color: transparent;
 }
 
 #iconBtn {

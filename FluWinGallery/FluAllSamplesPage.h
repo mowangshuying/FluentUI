@@ -61,6 +61,22 @@ class FluAllSamplesPage : public FluATitlePage
 
         auto toggleSwitchCard = new FluHCard(QPixmap("../res/ControlImages/ToggleSwitch.png"), "ToggleSwitch", "A switch that can be toggled between 2 states.");
         getFWScrollView()->getMainLayout()->addWidget(toggleSwitchCard);
+
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAllSamplesPage.qss", this);
+        }
     }
 
   protected:

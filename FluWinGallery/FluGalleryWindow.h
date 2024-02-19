@@ -18,6 +18,7 @@
 #include "FluRadioButtonPage.h"
 #include "FluAllSamplesPage.h"
 #include "FluCheckBoxPage.h"
+#include "FluSliderPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -117,7 +118,13 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item12, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RadioButtonPage"); });
 
         FluNavigationIconTextItem *item13 = new FluNavigationIconTextItem("RatingControl", item);
+        
         FluNavigationIconTextItem *item14 = new FluNavigationIconTextItem("Slider", item);
+        auto sliderPage = new FluSliderPage;
+        m_sLayout->addWidget("SliderPage", sliderPage);
+        connect(item14, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("SliderPage"); });
+
+
         FluNavigationIconTextItem *item15 = new FluNavigationIconTextItem("ToggleSwith", item);
 
         item->addItem(item1);

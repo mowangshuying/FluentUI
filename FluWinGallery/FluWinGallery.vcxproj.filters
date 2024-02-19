@@ -77,6 +77,9 @@
     <ClCompile Include="FluCheckBoxPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluSliderPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -128,6 +131,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluCheckBoxPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluSliderPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

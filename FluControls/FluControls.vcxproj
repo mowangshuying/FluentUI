@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluSlider.cpp" />
+    <ClCompile Include="FluToggleSwitch.cpp" />
     <ClCompile Include="FluVRadioGroupBox.cpp" />
     <ClCompile Include="FluCheckBox.cpp" />
     <ClCompile Include="FluComboBox.cpp" />
@@ -166,6 +167,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluToggleSwitch.h" />
     <QtMoc Include="FluSlider.h" />
     <QtMoc Include="FluRepeatButton.h" />
     <QtMoc Include="FluSettingsLabelBox.h" />

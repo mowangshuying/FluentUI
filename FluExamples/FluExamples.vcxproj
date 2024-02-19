@@ -130,6 +130,7 @@
     <ClCompile Include="FluNavigationDemo.cpp" />
     <ClCompile Include="FluAllGlobalColorDemo.cpp" />
     <ClCompile Include="FluTextAreaDemo.cpp" />
+    <ClCompile Include="FluToggleSwitchDemo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluSliderDemo.h" />
+    <QtMoc Include="FluToggleSwitchDemo.h" />
     <QtMoc Include="FluCheckBoxDemo.h" />
     <ClInclude Include="FluRadioButtonDemo.h" />
     <QtMoc Include="FluSlideWindowDemo.h" />

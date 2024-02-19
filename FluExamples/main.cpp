@@ -20,6 +20,7 @@
 #include "FluRadioButtonDemo.h"
 #include "FluCheckBoxDemo.h"
 #include "FluSliderDemo.h"
+#include "FluToggleSwitchDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -103,7 +104,10 @@ int main(int argc, char **argv)
     // FluCheckBoxDemo demo;
     // demo.show();
 
-    FluSliderDemo demo;
+    //FluSliderDemo demo;
+    //demo.show();
+
+    FluToggleSwitchDemo demo;
     demo.show();
 
     return app.exec();

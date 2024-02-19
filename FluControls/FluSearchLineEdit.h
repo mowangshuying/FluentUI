@@ -79,8 +79,8 @@ class FluSearchLineEdit : public QWidget
     }
 
   public slots:
-      void onThemeChanged()
-      {
+    void onThemeChanged()
+    {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
@@ -91,7 +91,7 @@ class FluSearchLineEdit : public QWidget
             m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSearchLineEdit.qss", this);
         }
-      }
+    }
 
   protected:
     QLineEdit* m_edit;

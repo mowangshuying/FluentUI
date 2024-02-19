@@ -28,5 +28,6 @@ class FluPushButton : public QPushButton
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
         }
     }
+
   protected:
 };

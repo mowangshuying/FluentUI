@@ -14,7 +14,6 @@ class FluRadioButton : public QRadioButton
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     explicit FluRadioButton(const QString& text, QWidget* parent = nullptr) : QRadioButton(text, parent)
@@ -23,7 +22,7 @@ class FluRadioButton : public QRadioButton
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-    public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
@@ -35,5 +34,4 @@ class FluRadioButton : public QRadioButton
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButton.qss", this);
         }
     }
-
 };

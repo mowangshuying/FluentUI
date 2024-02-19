@@ -27,6 +27,7 @@ class FluHyperLinkButton : public QPushButton
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHyperLinkButton.qss", this);
         }
     }
+
   protected:
     QString m_linkUrl;
 };

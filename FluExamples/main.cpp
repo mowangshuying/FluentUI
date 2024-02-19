@@ -100,8 +100,8 @@ int main(int argc, char **argv)
     // FluButtonDemo demo;
     // demo.show();
 
-   // FluCheckBoxDemo demo;
-   // demo.show();
+    // FluCheckBoxDemo demo;
+    // demo.show();
 
     FluSliderDemo demo;
     demo.show();

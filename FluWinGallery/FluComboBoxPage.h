@@ -4,7 +4,6 @@
 
 class FluComboBoxPage : public FluAEmptyPage
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-
 };

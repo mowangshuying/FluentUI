@@ -11,7 +11,6 @@ class FluCheckBox : public QCheckBox
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     explicit FluCheckBox(const QString& text, QWidget* parent = nullptr) : QCheckBox(text, parent)

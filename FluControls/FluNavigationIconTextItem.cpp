@@ -257,9 +257,8 @@ void FluNavigationIconTextItem::onItemClicked()
     // LOG_DEBUG << "bDown:" << m_bDown << "nav long:" << navView->isLong();
     if (m_bDown && navView->isLong())
     {
-       // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
+        // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp, FluThemeUtils::getUtils()->getTheme()));
-
 
         // display chid
         if (m_items.size() > 0)
@@ -283,7 +282,7 @@ void FluNavigationIconTextItem::onItemClicked()
 
     if (!m_bDown && navView->isLong())
     {
-       // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
+        // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
 
         setFixedHeight(40);

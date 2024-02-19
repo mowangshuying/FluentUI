@@ -6,25 +6,23 @@
 
 class FluSlider : public QSlider
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-      FluSlider(QWidget* parent = nullptr) : QSlider(parent)
+    FluSlider(QWidget* parent = nullptr) : QSlider(parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
 
-      }
-
-      FluSlider(Qt::Orientation orientation, QWidget* parent = nullptr) : QSlider(orientation, parent)
-      {
+    FluSlider(Qt::Orientation orientation, QWidget* parent = nullptr) : QSlider(orientation, parent)
+    {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
-      }
+    }
 
   public slots:
-      void onThemeChanged()
-      {
+    void onThemeChanged()
+    {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
@@ -33,5 +31,5 @@ class FluSlider : public QSlider
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSlider.qss", this);
         }
-      }
+    }
 };

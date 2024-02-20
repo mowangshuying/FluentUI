@@ -6,45 +6,62 @@
 
 class FluToggleSwitch : public QCheckBox
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluToggleSwitch(QWidget* parent = nullptr) : QCheckBox(parent)
-      {
-          m_onText = "On";
-          m_offText = "Off";
+    FluToggleSwitch(QWidget* parent = nullptr) : QCheckBox(parent)
+    {
+        m_onText = "On";
+        m_offText = "Off";
 
-		  FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
-          connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) { 
-			  if (bChecked)
-                 setText(m_onText);
-              else
-                 setText(m_offText);
-          });
-	  }
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
+        connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
+            if (bChecked)
+                setText(m_onText);
+            else
+                setText(m_offText);
+        });
 
-	  FluToggleSwitch(QString text, QWidget* parent = nullptr)
-		  : QCheckBox(text, parent)
-	  {
-          m_onText = "On";
-          m_offText = "Off";
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 
-		  FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
-          connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
-              if (bChecked)
-                  setText(m_onText);
-              else
-                  setText(m_offText);
-          });
-	  }
+    }
 
+    FluToggleSwitch(QString text, QWidget* parent = nullptr) : QCheckBox(text, parent)
+    {
+        m_onText = "On";
+        m_offText = "Off";
 
-	  void setOnOffText(QString onText, QString offText)
-	  {
-          m_onText = onText;
-          m_offText = offText;
-	  }
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
+        connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
+            if (bChecked)
+                setText(m_onText);
+            else
+                setText(m_offText);
+        });
+
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
+    }
+
+    void setOnOffText(QString onText, QString offText)
+    {
+        m_onText = onText;
+        m_offText = offText;
+    }
+
+    public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitch.qss", this);
+        }
+    }
 
   protected:
-	  QString m_onText;
-	  QString m_offText;
+    QString m_onText;
+    QString m_offText;
 };

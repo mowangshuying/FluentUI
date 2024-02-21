@@ -80,6 +80,9 @@
     <ClCompile Include="FluSliderPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluProgressRingPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -134,6 +137,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluSliderPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluProgressRingPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

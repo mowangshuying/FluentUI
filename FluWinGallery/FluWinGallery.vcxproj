@@ -120,6 +120,7 @@
     <ClCompile Include="FluHomePageTitle.cpp" />
     <ClCompile Include="FluHyperLinkButtonPage.cpp" />
     <ClCompile Include="FluIconsPage.cpp" />
+    <ClCompile Include="FluProgressRingPage.cpp" />
     <ClCompile Include="FluRadioButtonPage.cpp" />
     <ClCompile Include="FluRepeatButtonPage.cpp" />
     <ClCompile Include="FluSettingPage.cpp" />
@@ -179,6 +180,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluSliderPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluProgressRingPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

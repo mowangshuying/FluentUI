@@ -113,6 +113,7 @@
     <QtMoc Include="FluPushButton.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FluProgressBar.cpp" />
     <ClCompile Include="FluProgressRing.cpp" />
     <ClCompile Include="FluSlider.cpp" />
     <ClCompile Include="FluToggleSwitch.cpp" />
@@ -168,6 +169,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluProgressBar.h" />
     <QtMoc Include="FluProgressRing.h" />
     <QtMoc Include="FluToggleSwitch.h" />
     <QtMoc Include="FluSlider.h" />

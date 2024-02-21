@@ -155,6 +155,9 @@
     <ClCompile Include="FluProgressRing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluProgressBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -284,6 +287,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluProgressRing.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluProgressBar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

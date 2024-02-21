@@ -21,6 +21,7 @@
 #include "FluCheckBoxDemo.h"
 #include "FluSliderDemo.h"
 #include "FluToggleSwitchDemo.h"
+#include "FluProgressRingDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -107,7 +108,11 @@ int main(int argc, char **argv)
     // FluSliderDemo demo;
     // demo.show();
 
-    FluToggleSwitchDemo demo;
+  //  FluToggleSwitchDemo demo;
+  //  demo.show();
+
+
+    FluProgressRingDemo demo;
     demo.show();
 
     return app.exec();

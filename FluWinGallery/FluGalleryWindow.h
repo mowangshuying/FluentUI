@@ -316,13 +316,12 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
-        
+
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("progressRing", item);
 
         auto progressRingPage = new FluProgressRingPage;
         m_sLayout->addWidget("ProgressRingPage", progressRingPage);
         connect(item4, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ProgressRingPage"); });
-
 
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ToolTip", item);
 

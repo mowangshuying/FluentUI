@@ -108,9 +108,8 @@ int main(int argc, char **argv)
     // FluSliderDemo demo;
     // demo.show();
 
-  //  FluToggleSwitchDemo demo;
-  //  demo.show();
-
+    //  FluToggleSwitchDemo demo;
+    //  demo.show();
 
     FluProgressRingDemo demo;
     demo.show();

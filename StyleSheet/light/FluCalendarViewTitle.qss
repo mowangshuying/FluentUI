@@ -1,0 +1,30 @@
+/*FluCalendarViewTitle qss*/
+
+FluCalendarViewTitle {
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+#yearMonthBtn {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#yearMonthBtn:hover {
+    background-color: rgb(246, 246, 246);
+}
+
+#preBtn,
+#nextBtn {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#preBtn:hover,
+#nextBtn:hover {
+    background-color: rgb(246, 246, 246);
+}

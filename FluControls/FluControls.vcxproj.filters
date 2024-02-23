@@ -158,6 +158,9 @@
     <ClCompile Include="FluProgressBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCalendarView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -292,12 +295,18 @@
     <QtMoc Include="FluProgressBar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluCalendarView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluComboBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCalendarData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

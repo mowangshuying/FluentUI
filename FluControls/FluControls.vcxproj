@@ -113,6 +113,7 @@
     <QtMoc Include="FluPushButton.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FluCalendarView.cpp" />
     <ClCompile Include="FluProgressBar.cpp" />
     <ClCompile Include="FluProgressRing.cpp" />
     <ClCompile Include="FluSlider.cpp" />
@@ -194,6 +195,8 @@
     <QtMoc Include="FluDisplayIconBox.h" />
     <QtMoc Include="FluCheckBox.h" />
     <QtMoc Include="FluVRadioGroupBox.h" />
+    <QtMoc Include="FluCalendarView.h" />
+    <ClInclude Include="FluCalendarData.h" />
     <ClInclude Include="FluComboBox.h" />
     <QtMoc Include="FluComboBoxTextItem.h" />
     <QtMoc Include="FluDropDownButton.h" />

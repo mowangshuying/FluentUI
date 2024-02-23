@@ -36,10 +36,12 @@ class FluStyleSheetUitls : public QObject
         return m_styleSheetUtils;
     }
 
-    // static QTimer* getTimer()
-    //{
-    //     return FluStyleSheetUitls::getUtils()->m_timer;
-    // }
+#ifdef _DEBUG_QSS
+    static QTimer *getTimer()
+    {
+        return FluStyleSheetUitls::getUtils()->m_timer;
+    }
+#endif
 
     static void __init()
     {
@@ -67,10 +69,10 @@ class FluStyleSheetUitls : public QObject
 
   protected:
     QString m_styleSheetDir;
-    // #ifdef _DEBUG
+#ifdef _DEBUG_QSS
     //  update stylesheet by timer
-    //  QTimer *m_timer;
-    // #endif
+      QTimer *m_timer;
+#endif
   private:
     static FluStyleSheetUitls *m_styleSheetUtils;
 };

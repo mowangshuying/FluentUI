@@ -8,10 +8,10 @@
 
 using FluDay = QDate;
 using FluMonth = QList<FluDay>;
-using FluYear = QList<FluMonth>;
-using FluCalendar = QList<FluYear>;
+using FluYear =  QList<FluMonth>;
+//using FluCalendar = QMap<int, FluYear>;
 
-class FluCalendarD
+class FluCalendar
 {
   public:
       void init()
@@ -56,8 +56,10 @@ class FluCalendarD
 
               if (day.year() != nLastYear)
               {
+                  years[nLastYear] = year;
                   nLastYear = day.year();
-                  calendar.append(year);
+                  //calendar.append(year);
+
 
                 //  LOG_DEBUG << "======================append year======================";
                 //  LOG_DEBUG << year;
@@ -72,5 +74,5 @@ class FluCalendarD
           }
       }
   public:
-      FluCalendar calendar;
+      QMap<int, FluYear> years;
 };

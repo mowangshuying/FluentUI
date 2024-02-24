@@ -116,11 +116,12 @@ int main(int argc, char **argv)
     //FluProgressRingDemo demo;
     //demo.show();
 
-   // FluProgressBarDemo demo;
-   // demo.show();
+    //FluProgressBarDemo demo;
+    //demo.show();
 
 
     FluCalendarViewDemo demo;
     demo.show();
+    
     return app.exec();
 }

@@ -7,12 +7,11 @@ class FluProgressBar : public QProgressBar
 {
     Q_OBJECT
   public:
-      FluProgressBar(QWidget* parent = nullptr) : QProgressBar(parent)
-      {
-          setTextVisible(true);
-          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBar.qss", this);
-      }
+    FluProgressBar(QWidget* parent = nullptr) : QProgressBar(parent)
+    {
+        setTextVisible(true);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBar.qss", this);
+    }
 
   protected:
-
 };

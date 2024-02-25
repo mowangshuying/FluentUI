@@ -161,6 +161,18 @@
     <ClCompile Include="FluCalendarView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCalendarSelectDayView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCalendarSelectMonthView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCalendarSelectYearView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCalendarItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -298,6 +310,12 @@
     <QtMoc Include="FluCalendarView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluCalendarSelectDayView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluCalendarItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -306,7 +324,13 @@
     <ClInclude Include="FluComboBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FluCalendarData.h">
+    <ClInclude Include="FluCalendarDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCalendarSelectMonthView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCalendarSelectYearView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

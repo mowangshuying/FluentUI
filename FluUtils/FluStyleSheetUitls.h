@@ -71,7 +71,7 @@ class FluStyleSheetUitls : public QObject
     QString m_styleSheetDir;
 #ifdef _DEBUG_QSS
     //  update stylesheet by timer
-      QTimer *m_timer;
+    QTimer *m_timer;
 #endif
   private:
     static FluStyleSheetUitls *m_styleSheetUtils;

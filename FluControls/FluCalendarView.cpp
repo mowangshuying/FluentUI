@@ -12,7 +12,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
 
     setLayout(m_vMainLayout);
 
-    m_title = new FluCalendarViewTitle;
+    m_title = new FluCalendarViewTitle(this);
     m_vMainLayout->addWidget(m_title);
 
     m_sLayout = new QStackedLayout;
@@ -51,8 +51,13 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
         {
             // m_selectDayView
             m_selectDayView->gotoPreMonth();
-            QDate date = m_selectDayView->getCurMonth();
-            m_title->setYearMonth(date.year(), date.month());
+            m_title->setYearMonth(m_curDate.year(), m_curDate.month());
+        }
+
+        if (m_viewState == FluCVS_SelectMonthView)
+        {
+            m_selectMonthView->gotoPreYear();
+            m_title->setYearMonth(m_curDate.year(), m_curDate.month());
         }
     });
 
@@ -63,6 +68,12 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
             m_selectDayView->gotoNextMonth();
             QDate date = m_selectDayView->getCurMonth();
             m_title->setYearMonth(date.year(), date.month());
+        }
+
+        if (m_viewState == FluCVS_SelectMonthView)
+        {
+            m_selectMonthView->gotoNextYear();
+            m_title->setYearMonth(m_curDate.year(), m_curDate.month());
         }
     });
 
@@ -89,16 +100,20 @@ void FluCalendarView::switchSelectViewState(FluCalendarViewState state)
 
 void FluCalendarView::switchSelectDayView()
 {
+    m_viewState = FluCVS_SelectDayView;
     m_sLayout->setCurrentWidget(m_selectDayView);
 }
 
 void FluCalendarView::switchSelectMonthView()
 {
+    m_viewState = FluCVS_SelectMonthView;
     m_sLayout->setCurrentWidget(m_selectMonthView);
+    m_selectMonthView->setYearMonth(m_curDate.year(), m_curDate.month());
 }
 
 void FluCalendarView::switchSelectYearView()
 {
+    m_viewState = FluCVS_SelectYearView;
     m_sLayout->setCurrentWidget(m_selectYearView);
 }
 
@@ -115,4 +130,47 @@ FluCalendarSelectMonthView* FluCalendarView::getSelectMonthView()
 FluCalendarSelectYearView* FluCalendarView::getSelectYearView()
 {
     return m_selectYearView;
+}
+
+FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : QWidget(parent)
+{
+    m_parentView = (FluCalendarView*)parent;
+    m_hMainLayout = new QHBoxLayout;
+    setLayout(m_hMainLayout);
+
+    m_yearMonthBtn = new FluPushButton;
+    m_yearMonthBtn->setText("January 2000");
+    m_hMainLayout->addWidget(m_yearMonthBtn);
+
+    m_preBtn = new FluIconButton(FluAwesomeType::CaretSolidUp);
+    m_nextBtn = new FluIconButton(FluAwesomeType::CaretSolidDown);
+
+    m_hMainLayout->addWidget(m_preBtn);
+    m_hMainLayout->addWidget(m_nextBtn);
+
+    m_yearMonthBtn->setObjectName("yearMonthBtn");
+    m_preBtn->setObjectName("preBtn");
+    m_nextBtn->setObjectName("nextBtn");
+
+    setFixedHeight(50);
+
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_yearMonthBtn);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_preBtn);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", this);
+}
+
+void FluCalendarViewTitle::setYearMonth(int nYear, int nMonth)
+{
+    const QList<QString> monthTexts = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    if (m_parentView->getViewState() == FluCVS_SelectDayView)
+    {
+        QString yearMonthText = QString::asprintf("%s %d", monthTexts.at(nMonth - 1).toStdString().data(), nYear);
+        m_yearMonthBtn->setText(yearMonthText);
+    }
+    else if (m_parentView->getViewState() == FluCVS_SelectMonthView)
+    {
+        QString yearMonthText = QString::asprintf("%d", nYear);
+        m_yearMonthBtn->setText(yearMonthText);
+    }
 }

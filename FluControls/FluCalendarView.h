@@ -17,36 +17,12 @@
 #include <QScrollBar>
 #include <QStackedLayout>
 
+class FluCalendarView;
 class FluCalendarViewTitle : public QWidget
 {
     Q_OBJECT
   public:
-    FluCalendarViewTitle(QWidget* parent = nullptr) : QWidget(parent)
-    {
-        m_hMainLayout = new QHBoxLayout;
-        setLayout(m_hMainLayout);
-
-        m_yearMonthBtn = new FluPushButton;
-        m_yearMonthBtn->setText("January 2000");
-        m_hMainLayout->addWidget(m_yearMonthBtn);
-
-        m_preBtn = new FluIconButton(FluAwesomeType::CaretSolidUp);
-        m_nextBtn = new FluIconButton(FluAwesomeType::CaretSolidDown);
-
-        m_hMainLayout->addWidget(m_preBtn);
-        m_hMainLayout->addWidget(m_nextBtn);
-
-        m_yearMonthBtn->setObjectName("yearMonthBtn");
-        m_preBtn->setObjectName("preBtn");
-        m_nextBtn->setObjectName("nextBtn");
-
-        setFixedHeight(50);
-
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_yearMonthBtn);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_preBtn);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", this);
-    }
+    FluCalendarViewTitle(QWidget* parent = nullptr);
 
     FluPushButton* getYearMonthBtn()
     {
@@ -63,12 +39,7 @@ class FluCalendarViewTitle : public QWidget
         return m_preBtn;
     }
 
-    void setYearMonth(int nYear, int nMonth)
-    {
-        const QList<QString> monthTexts = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        QString yearMonthText = QString::asprintf("%s %d", monthTexts.at(nMonth - 1).toStdString().data(), nYear);
-        m_yearMonthBtn->setText(yearMonthText);
-    }
+    void setYearMonth(int nYear, int nMonth);
 
     void paintEvent(QPaintEvent* event)
     {
@@ -84,6 +55,8 @@ class FluCalendarViewTitle : public QWidget
     FluIconButton* m_nextBtn;
 
     QHBoxLayout* m_hMainLayout;
+
+    FluCalendarView* m_parentView;
 };
 
 class FluCalendarSelectDayView;
@@ -123,6 +96,16 @@ class FluCalendarView : public QWidget
     void setCurDate(QDate date)
     {
         m_curDate = date;
+    }
+
+    FluCalendarViewState getViewState()
+    {
+        return m_viewState;
+    }
+
+    void setViewState(FluCalendarViewState viewState)
+    {
+        m_viewState = viewState;
     }
 
     void paintEvent(QPaintEvent* event)

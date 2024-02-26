@@ -110,10 +110,10 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
         return;
     }
 
-    if (nYear == 2024 && nMonth == 12)
-    {
-        return;
-    }
+  //  if (nYear == 2024 && nMonth == 12)
+  //  {
+  //      return;
+  //  }
 
     // QDate date(1900, 12, 24);
 

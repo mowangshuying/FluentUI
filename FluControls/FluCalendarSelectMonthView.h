@@ -6,45 +6,28 @@
 #include "../FluUtils/FluUtils.h"
 #include "FluCalendarItem.h"
 
+class FluCalendarView;
 class FluCalendarSelectMonthView : public QWidget
 {
   public:
-    FluCalendarSelectMonthView(QWidget* parent = nullptr) : QWidget(parent)
-    {
-        m_gMainLayout = new QGridLayout;
-        m_gMainLayout->setContentsMargins(10, 0, 10, 0);
-        m_gMainLayout->setSpacing(0);
-        m_gMainLayout->setVerticalSpacing(5);
-        setLayout(m_gMainLayout);
+    FluCalendarSelectMonthView(QWidget* parent = nullptr);
 
-        QList<QString> monthTexts = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 4; j++)
-            {
-                FluCalendarItem* label = new FluCalendarItem;
-                label->setObjectName("label");
-                label->setFixedSize(50, 50);
+    void setYearMonth(int nYear, int nMonth);
 
-                label->setText(monthTexts.at((i * 4 + j) % 12));
-                label->setAlignment(Qt::AlignCenter);
-                label->setProperty("today", false);
+    QDate getPreYear();
 
-                m_labelList.append(label);
-                m_gMainLayout->addWidget(label, i, j);
-            }
-        }
+    QDate getNextYear();
 
-        setFixedHeight(300);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectMonthView.qss", this);
-    }
 
-    void setYearMonth(int nYear, int nMonth)
-    {
-    }
+    void gotoPreYear();
+
+    void gotoNextYear();
+
+    FluCalendarItem* getItem(int nIndex);
 
   protected:
     QGridLayout* m_gMainLayout;
-    QList<QLabel*> m_labelList;
+    QList<FluCalendarItem*> m_labelList;
     // QDate m_curYear;
+    FluCalendarView* m_parentView;
 };

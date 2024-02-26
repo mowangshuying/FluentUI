@@ -35,11 +35,32 @@ class FluCalendarSelectYearView : public QWidget
             }
         }
 
+        // 1930 - 1939
+        // 1940 - 1949
+        // 1950 - 1959
+        // 1960 - 1969
+        // 1970 - 1979
+        // 1980 - 1989
+        // 1990 - 1999
+
+        // 2000 - 2009
+        // 2010 - 2019
+        // 2020 - 2029
+        // 2030 - 2039
+        // 2040 - 2049
+        // 2050 - 2059
+        // 2060 - 2069
+        // 2070 - 2079
+        // 2080 - 2089
+        // 2090 - 2099
+        
+        // 2100 - 2109
+
         setFixedHeight(300);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
     }
 
-    FluCalendarItem* getLabel(int nIndex)
+    FluCalendarItem* getItem(int nIndex)
     {
         if (nIndex < 0 || nIndex >= m_labelList.size())
             return nullptr;

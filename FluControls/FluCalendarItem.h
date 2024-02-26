@@ -15,6 +15,40 @@ class FluCalendarItem : public QLabel
         m_infoText = QString("");
     }
 
+    void setInfoText(QString infoText)
+    {
+        m_infoText = infoText;
+        update();
+    }
+
+    void setViewState(FluCalendarViewState viewState)
+    {
+        m_viewState = viewState;
+    }
+
+    FluCalendarViewState getViewState()
+    {
+        return m_viewState;
+    }
+
+
+    QDate getCurDate()
+    {
+        return m_curDate;
+    }
+
+    void setCurDate(QDate curDate)
+    {
+        m_curDate = curDate;
+    }
+
+    void mouseReleaseEvent(QMouseEvent* ev)
+    {
+        QLabel::mouseReleaseEvent(ev);
+        LOG_DEBUG << "called";
+        emit clicked();
+    }
+
     void paintEvent(QPaintEvent* event)
     {
         QLabel::paintEvent(event);
@@ -32,38 +66,13 @@ class FluCalendarItem : public QLabel
         QFont font;
         font.setPointSize(6);
         painter.setFont(font);
-        QRect textRect(15, 6, 16, 10);
+        QRect textRect(15, 6, 20, 10);
         painter.drawText(textRect, m_infoText);
     }
-
-    void setInfoText(QString infoText)
-    {
-        m_infoText = infoText;
-    }
-
-    void setViewState(FluCalendarViewState viewState)
-    {
-        m_viewState = viewState;
-        // setProperty("viewState", viewState);
-    }
-
-    FluCalendarViewState getViewState()
-    {
-        return m_viewState;
-    }
-
-    // void setDate(QDate date)
-    //{
-    // m_date = date;
-    //}
-
-    // QDate getDate()
-    //{
-    // return m_date;
-    //}
-
+  signals:
+    void clicked();
   protected:
     QString m_infoText;
     FluCalendarViewState m_viewState;
-    // QDate m_date;
+    QDate m_curDate;
 };

@@ -83,6 +83,7 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
     if (nMonth < 0 || nMonth > 12)
         return;
 
+    // updateStyleSheet();
     if (nYear == 1924 && nMonth == 1)
     {
         QDate date(1924, 1, 1);
@@ -107,20 +108,14 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
             date = date.addDays(1);
         }
 
+        updateStyleSheet();
         return;
     }
-
-  //  if (nYear == 2024 && nMonth == 12)
-  //  {
-  //      return;
-  //  }
-
-    // QDate date(1900, 12, 24);
 
     QDate date(nYear, nMonth, 1);
     int day = date.dayOfWeek();
 
-    for (int i = day; i > 0; i--)
+    for (int i = day; i > 0 && day != 7; i--)
     {
         date = date.addDays(-1);
         QString dayText = QString::asprintf("%d", date.day());
@@ -132,7 +127,10 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
     date = QDate(nYear, nMonth, 1);
     for (int i = 0; i < 42; i++)
     {
-        int j = i + day;
+        int j = i;
+        if (day != 7)
+            j += day;
+
         if (j >= 42)
             break;
 
@@ -163,6 +161,17 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
 
         date = date.addDays(1);
     }
+
+    updateStyleSheet();
+}
+
+void FluCalendarMonthView::updateStyleSheet()
+{
+    for (int i = 0; i < m_labelList.size(); i++)
+    {
+        auto label = m_labelList.at(i);
+        label->style()->polish(label);
+    }
 }
 
 QDate FluCalendarMonthView::getCurMonth()
@@ -184,7 +193,7 @@ void FluCalendarMonthView::gotoNextMonth()
 {
     QDate date = getNextMonth();
     m_calendarView->setCurDate(date);
-    setYearMonth(date.year(), date.month());
+    setYearMonth(date.year(), date.month());  //
 }
 
 void FluCalendarMonthView::gotoPreMonth()

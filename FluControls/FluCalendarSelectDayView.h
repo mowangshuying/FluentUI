@@ -39,10 +39,12 @@ class FluCalendarMonthView : public QWidget
 
     void setYearMonth(int nYear, int nMonth);
 
-    void setCurMonth(int nYear, int nMonth)
-    {
-        // m_curMonth = QDate(nYear, nMonth, 1);
-    }
+    void updateStyleSheet();
+
+    //  void setCurMonth(int nYear, int nMonth)
+    //  {
+    // m_curMonth = QDate(nYear, nMonth, 1);
+    //  }
 
     QDate getCurMonth();
 

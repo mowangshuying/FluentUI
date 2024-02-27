@@ -31,7 +31,6 @@ class FluCalendarItem : public QLabel
         return m_viewState;
     }
 
-
     QDate getCurDate()
     {
         return m_curDate;
@@ -71,6 +70,7 @@ class FluCalendarItem : public QLabel
     }
   signals:
     void clicked();
+
   protected:
     QString m_infoText;
     FluCalendarViewState m_viewState;

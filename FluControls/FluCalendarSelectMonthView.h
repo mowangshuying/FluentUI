@@ -18,7 +18,6 @@ class FluCalendarSelectMonthView : public QWidget
 
     QDate getNextYear();
 
-
     void gotoPreYear();
 
     void gotoNextYear();

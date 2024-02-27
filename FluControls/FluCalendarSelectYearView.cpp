@@ -45,6 +45,7 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : QWidget(
     }
 
     QDate curDate = m_parentView->getCurDate();
+    LOG_DEBUG << curDate;
     setYears(curDate.year(), curDate.month());
 
     setFixedHeight(300);
@@ -72,8 +73,15 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
         {
             getItem(i)->setText(QString::asprintf("%d", 1924 + i));
             getItem(i)->setCurDate(QDate(1924 + i, 1, 1));
+            
+            getItem(i)->setProperty("outRange", false);
+            if ((1924 + i < 1930) || (1924 + i > 1939))
+            {
+                getItem(i)->setProperty("outRange", true);
+            }
         }
 
+        updateStyleSheet();
         return;
     }
 
@@ -87,7 +95,6 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
 
     // the first year;
     int nTheFirstYear = nStartYear - (nStartYear - 1924) % 4;
-
     for (int i = 0; i < 16; i++)
     {
         if (nTheFirstYear + i > 2124)
@@ -95,6 +102,23 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
 
         getItem(i)->setText(QString::asprintf("%d", nTheFirstYear + i));
         getItem(i)->setCurDate(QDate(nTheFirstYear + i, 1, 1));
+
+        getItem(i)->setProperty("outRange", false);
+        if ((nTheFirstYear + i < nStartYear) || (nTheFirstYear + i > nEndYear))
+        {
+            getItem(i)->setProperty("outRange", true);
+        }
+    }
+
+    updateStyleSheet();
+}
+
+void FluCalendarSelectYearView::updateStyleSheet()
+{
+    for (int i = 0; i < m_labelList.size(); i++)
+    {
+        auto label = m_labelList.at(i);
+        label->style()->polish(label);
     }
 }
 

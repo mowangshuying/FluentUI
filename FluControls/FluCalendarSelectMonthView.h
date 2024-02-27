@@ -14,6 +14,8 @@ class FluCalendarSelectMonthView : public QWidget
 
     void setYearMonth(int nYear, int nMonth);
 
+    void updateStyleSheet();
+
     QDate getPreYear();
 
     QDate getNextYear();

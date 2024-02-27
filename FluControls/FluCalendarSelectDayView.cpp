@@ -219,6 +219,7 @@ FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/
     m_vMainLayout->addWidget(m_monthView);
 
     QDate curDate = m_parentView->getCurDate();
+    LOG_DEBUG << curDate;
     m_monthView->setYearMonth(curDate.year(), curDate.month());
     m_parentView->getViewTitle()->setYearMonth(curDate.year(), curDate.month());
 }

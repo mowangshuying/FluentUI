@@ -10,7 +10,7 @@ FluCalendarSelectMonthView {
     border-radius: 25px;
 }
 
-#label[curMonth=false] {
+#label[outRange=true] {
     color: rgb(97, 97, 97);
 }
 

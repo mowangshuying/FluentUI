@@ -23,6 +23,8 @@ class FluCalendarSelectYearView : public QWidget
 
     void setYears(int nYear, int nMonth);
 
+    void updateStyleSheet();
+
     void gotoPreYears();
 
     void gotoNextYears();

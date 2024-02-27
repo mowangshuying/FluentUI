@@ -73,9 +73,26 @@ void FluCalendarSelectMonthView::setYearMonth(int nYear, int nMonth)
             getItem(i)->setInfoText(infoText);
         }
 
+        getItem(i)->setProperty("outRange", false);
+        if (i >= 12)
+        {
+            getItem(i)->setProperty("outRange", true);
+        }
+
         getItem(i)->setCurDate(date);
         //  LOG_DEBUG << "date:" << date;
         date = date.addMonths(1);
+    }
+
+    updateStyleSheet();
+}
+
+void FluCalendarSelectMonthView::updateStyleSheet()
+{
+    for (int i = 0; i < m_labelList.size(); i++)
+    {
+        auto label = m_labelList.at(i);
+        label->style()->polish(label);
     }
 }
 

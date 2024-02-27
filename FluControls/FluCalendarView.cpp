@@ -6,6 +6,7 @@
 FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
     m_curDate = QDate::currentDate();
+    LOG_DEBUG << m_curDate;
     m_vMainLayout = new QVBoxLayout;
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
     m_vMainLayout->setSpacing(0);
@@ -30,6 +31,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
     m_viewState = FluCVS_SelectDayView;
 
     LOG_DEBUG << m_curDate;
+    m_curDate = QDate::currentDate();
     m_title->setYearMonth(m_curDate.year(), m_curDate.month());
     connect(m_title->getYearMonthBtn(), &FluPushButton::clicked, [=](bool bClicked) {
         switch (m_viewState)

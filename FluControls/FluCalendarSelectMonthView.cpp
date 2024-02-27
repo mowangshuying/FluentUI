@@ -80,6 +80,13 @@ void FluCalendarSelectMonthView::setYearMonth(int nYear, int nMonth)
         }
 
         getItem(i)->setCurDate(date);
+
+        getItem(i)->setProperty("today", false);
+        if (getItem(i)->getCurDate().year() == QDate::currentDate().year() && getItem(i)->getCurDate().month() == QDate::currentDate().month())
+        {
+            getItem(i)->setProperty("today", true);
+        }
+
         //  LOG_DEBUG << "date:" << date;
         date = date.addMonths(1);
     }

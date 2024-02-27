@@ -73,8 +73,15 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
         {
             getItem(i)->setText(QString::asprintf("%d", 1924 + i));
             getItem(i)->setCurDate(QDate(1924 + i, 1, 1));
-            
+
+            getItem(i)->setProperty("today", false);
+            if (getItem(i)->getCurDate().year() == QDate::currentDate().year())
+            {
+                getItem(i)->setProperty("today", true);
+            }
+
             getItem(i)->setProperty("outRange", false);
+
             if ((1924 + i < 1930) || (1924 + i > 1939))
             {
                 getItem(i)->setProperty("outRange", true);
@@ -102,6 +109,12 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
 
         getItem(i)->setText(QString::asprintf("%d", nTheFirstYear + i));
         getItem(i)->setCurDate(QDate(nTheFirstYear + i, 1, 1));
+
+        getItem(i)->setProperty("today", false);
+        if (getItem(i)->getCurDate().year() == QDate::currentDate().year())
+        {
+            getItem(i)->setProperty("today", true);
+        }
 
         getItem(i)->setProperty("outRange", false);
         if ((nTheFirstYear + i < nStartYear) || (nTheFirstYear + i > nEndYear))

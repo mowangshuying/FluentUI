@@ -154,6 +154,7 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
             getItem(j)->setInfoText("");
         }
 
+        getItem(j)->setProperty("today", false);
         if (date == today)
         {
             getItem(j)->setProperty("today", true);

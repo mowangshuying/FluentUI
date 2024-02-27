@@ -78,35 +78,17 @@ class FluCalendarSelectDayView : public QWidget
   public:
     FluCalendarSelectDayView(QWidget* parent = nullptr);
 
-    void gotoNextMonth()
-    {
-        m_monthView->gotoNextMonth();
-    }
+    void gotoNextMonth();
 
-    void gotoPreMonth()
-    {
-        m_monthView->gotoPreMonth();
-    }
+    void gotoPreMonth();
 
-    QDate getCurMonth()
-    {
-        return m_monthView->getCurMonth();
-    }
+    QDate getCurMonth();
 
-    void setParentView(FluCalendarView* view)
-    {
-        m_parentView = view;
-    }
+    void setParentView(FluCalendarView* view);
 
-    FluCalendarViewWeakTitle* getWeekTitle()
-    {
-        return m_weekTitle;
-    }
+    FluCalendarViewWeakTitle* getWeekTitle();
 
-    FluCalendarMonthView* getMonthView()
-    {
-        return m_monthView;
-    }
+    FluCalendarMonthView* getMonthView();
 
   protected:
     QVBoxLayout* m_vMainLayout;

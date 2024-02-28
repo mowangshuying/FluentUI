@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluButtonDemo.cpp" />
+    <ClCompile Include="FluCalendarDatePickerDemo.cpp" />
     <ClCompile Include="FluCalendarViewDemo.cpp" />
     <ClCompile Include="FluChangeBgDemo.cpp" />
     <ClCompile Include="FluCheckBoxDemo.cpp" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <QtMoc Include="FluProgressBarDemo.h" />
     <QtMoc Include="FluCalendarViewDemo.h" />
+    <QtMoc Include="FluCalendarDatePickerDemo.h" />
     <ClInclude Include="FluProgressRingDemo.h" />
     <ClInclude Include="FluSliderDemo.h" />
     <QtMoc Include="FluToggleSwitchDemo.h" />

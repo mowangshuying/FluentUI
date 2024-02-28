@@ -5,6 +5,9 @@
 
 FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
+    setWindowFlags(/* Qt::Popup | */ Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
+    setAttribute(Qt::WA_TranslucentBackground);
+
     m_curDate = QDate::currentDate();
     LOG_DEBUG << m_curDate;
     m_vMainLayout = new QVBoxLayout;
@@ -105,6 +108,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
         }
     });
 
+    setFixedWidth(300);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
 }
 

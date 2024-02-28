@@ -50,7 +50,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
     tileWraHLayout->addWidget(themeBtn, Qt::AlignRight);
     tileWraHLayout->addWidget(copyLinkBtn, Qt::AlignRight);
     tileWraHLayout->addWidget(sendFeedBackBtn, Qt::AlignRight);
-    tileWraHLayout->addSpacing(30);
+    tileWraHLayout->addSpacing(15);
 
     m_vScrollView = new FluVScrollView(this);
     m_vScrollView->setObjectName("vScrollView");

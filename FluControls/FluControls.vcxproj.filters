@@ -173,6 +173,9 @@
     <ClCompile Include="FluCalendarItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCalendarDatePicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -314,6 +317,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluCalendarItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluCalendarDatePicker.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -73,6 +73,10 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : QWid
                 label->setProperty("selected", true); 
                 label->style()->polish(label);
                // m_calendarView->setCurDate(label->getCurDate());
+
+                LOG_DEBUG << label->getCurDate();
+
+                m_calendarView->setCurDate(label->getCurDate());
                 });
         }
     }
@@ -123,6 +127,7 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
             }
 
             getItem(j)->setProperty("selected", false);
+            getItem(j)->setCurDate(date);
 
             date = date.addDays(1);
         }
@@ -141,6 +146,8 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
         getItem(i - 1)->setText(dayText);
         getItem(i - 1)->setInfoText("");
         getItem(i - 1)->setProperty("curMonth", false);
+        getItem(i - 1)->setCurDate(date);
+
     }
 
     date = QDate(nYear, nMonth, 1);
@@ -182,6 +189,7 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
 
         getItem(j)->setProperty("selected", false);
 
+        getItem(j)->setCurDate(date);
         date = date.addDays(1);
     }
 

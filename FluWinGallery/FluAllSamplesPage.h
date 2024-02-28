@@ -18,6 +18,7 @@ class FluAllSamplesPage : public FluATitlePage
     FluAllSamplesPage(QWidget* parent = nullptr) : FluATitlePage(parent)
     {
         m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+        
         m_titleLabel->setText("All Samples");
 
         auto buttonCard = new FluHCard(QPixmap("../res/ControlImages/Button.png"), "Button", "A control that responds to user input and raises a Click event.");

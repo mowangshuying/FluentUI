@@ -14,6 +14,8 @@ class FluProgressRingPage : public FluAEmptyPage
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("ProgressRingPage");
+        m_subTitleLabel->setText("CppQtFluentUi888::FluProgressRing");
+
         m_infoLabel->setText("The ProgressRing has two different visual representations.\nIndeterminate - shows that a task is ongoing.but blocks user interaction.\nDeterminate - shows how much progress has been made on a known amount of work.");
 
         auto displayBox1 = new FluDisplayBox;

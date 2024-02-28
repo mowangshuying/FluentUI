@@ -17,6 +17,7 @@ class FluIconsPage : public FluAEmptyPage
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("IconsPage");
+        m_subTitleLabel->setText("CppQtFluentUi888::FluIcons");
         m_infoLabel->setText("Segoe FluentIcons instructions.");
 
         auto wrapWidget = new QWidget;

@@ -12,6 +12,12 @@ FluHyperLinkButtonPage {
     /* text-decoration: underline; */
 }
 
+#subTitleLabel {
+    margin-left: 5px;
+    font-size: 12px;
+    color: rgb(98, 98, 98);
+}
+
 #infoLabel {
     font-size: 12px;
     color: rgb(26, 26, 26);

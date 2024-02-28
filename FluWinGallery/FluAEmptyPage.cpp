@@ -14,14 +14,43 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
     m_mainLayout->setContentsMargins(35, 35, 35, 35);
 
-    auto titleWrap = new QWidget;
-    titleWrap->setObjectName("titleWrap");
-    m_mainLayout->addWidget(titleWrap);
-
     m_titleLabel = new QLabel;
     m_titleLabel->setObjectName("titleLabel");
     m_titleLabel->setText("A Temp Title Label");
     m_mainLayout->addWidget(m_titleLabel);
+
+    m_mainLayout->addSpacing(12);
+
+    m_subTitleLabel = new QLabel;
+    m_subTitleLabel->setObjectName("subTitleLabel");
+    m_subTitleLabel->setText("");
+    m_mainLayout->addWidget(m_subTitleLabel);
+
+    m_mainLayout->addSpacing(12);
+
+    auto tileWraHLayout = new QHBoxLayout;
+    m_mainLayout->addLayout(tileWraHLayout);
+
+    auto documentationBtn = new FluPushButton;
+    documentationBtn->setText("Documentation");
+    documentationBtn->setFixedWidth(160);
+    tileWraHLayout->addWidget(documentationBtn, Qt::AlignLeft);
+
+    auto sourceBtn = new FluPushButton;
+    sourceBtn->setText("Source");
+    sourceBtn->setFixedWidth(120);
+    tileWraHLayout->addWidget(sourceBtn, Qt::AlignLeft);
+
+    auto themeBtn = new FluIconButton(FluAwesomeType::Light);
+    auto copyLinkBtn = new FluIconButton(FluAwesomeType::Link);
+    auto sendFeedBackBtn = new FluIconButton(FluAwesomeType::Feedback);
+
+    tileWraHLayout->addStretch();
+
+    tileWraHLayout->addWidget(themeBtn, Qt::AlignRight);
+    tileWraHLayout->addWidget(copyLinkBtn, Qt::AlignRight);
+    tileWraHLayout->addWidget(sendFeedBackBtn, Qt::AlignRight);
+    tileWraHLayout->addSpacing(30);
 
     m_vScrollView = new FluVScrollView(this);
     m_vScrollView->setObjectName("vScrollView");

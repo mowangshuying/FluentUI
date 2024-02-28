@@ -5,7 +5,7 @@
 #include "../FluControls/FluDisplayBox.h"
 #include "../FluControls/FluVScrollView.h"
 
-class FluCalendarViewPage : public FluAEmptyPage 
+class FluCalendarViewPage : public FluAEmptyPage
 {
     Q_OBJECT
   public:
@@ -13,7 +13,7 @@ class FluCalendarViewPage : public FluAEmptyPage
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("CalendarViewPage");
-        //m_subTitleLabel->setText("CppQtFluentUi888.FluControls.FluCalendarView");
+        // m_subTitleLabel->setText("CppQtFluentUi888.FluControls.FluCalendarView");
         m_infoLabel->setText("CalendarView shows a larger view for showing and selecting dates. DatePicker by contrast has a compact view with inline selection.");
 
         auto displayBox = new FluDisplayBox;
@@ -26,6 +26,5 @@ class FluCalendarViewPage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewPage.qss", this);
-
     }
 };

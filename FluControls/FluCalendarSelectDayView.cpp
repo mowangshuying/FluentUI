@@ -58,27 +58,25 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : QWid
             m_labelList.append(label);
             m_gMainLayout->addWidget(label, i, j);
 
-           label->setProperty("selected", false); 
-            connect(label, &FluCalendarItem::clicked, [=]() { 
-                
+            label->setProperty("selected", false);
+            connect(label, &FluCalendarItem::clicked, [=]() {
                 // clear item state;
                 for (int i = 0; i < 42; i++)
                 {
-                    getItem(i)->setProperty("selected", false); 
+                    getItem(i)->setProperty("selected", false);
                     getItem(i)->style()->polish(getItem(i));
                 }
-                    
-                
+
                 LOG_DEBUG << "item Clicked!";
-                label->setProperty("selected", true); 
+                label->setProperty("selected", true);
                 label->style()->polish(label);
-               // m_calendarView->setCurDate(label->getCurDate());
+                // m_calendarView->setCurDate(label->getCurDate());
 
                 LOG_DEBUG << label->getCurDate();
 
                 m_calendarView->setCurDate(label->getCurDate());
                 emit m_calendarView->selectedDate(label->getCurDate());
-                });
+            });
         }
     }
 
@@ -148,7 +146,6 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
         getItem(i - 1)->setInfoText("");
         getItem(i - 1)->setProperty("curMonth", false);
         getItem(i - 1)->setCurDate(date);
-
     }
 
     date = QDate(nYear, nMonth, 1);
@@ -186,7 +183,6 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
         {
             getItem(j)->setProperty("today", true);
         }
-
 
         getItem(j)->setProperty("selected", false);
 

@@ -13,8 +13,8 @@ class FluCheckBoxPage : public FluAEmptyPage
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("CheckBox");
-        
-     //   m_subTitleLabel->setText("CppQtFluentUi888::FluCheckBox");
+
+        //   m_subTitleLabel->setText("CppQtFluentUi888::FluCheckBox");
 
         m_infoLabel->setText(
             "CheckBox controls let the user select a combination of binary options.In contrast, RadioButton controls allow the user to select from mutually exclusive options.The indeterminate state is used to indicate that an option is set for "

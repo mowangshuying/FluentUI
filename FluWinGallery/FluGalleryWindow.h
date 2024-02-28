@@ -43,11 +43,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item);
-        //FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
+        // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
 
         item->addItem(item1);
         item->addItem(item2);
-        //item->addItem(item3);
+        // item->addItem(item3);
         m_navView->addItemToMidLayout(item);
 
         auto typographyPage = new FluTypeographyPage;
@@ -148,21 +148,21 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("FlipView", item);
-       // FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
-       // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
-       // FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
+        // FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
+        // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
+        // FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ListView", item);
-       // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
+        // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TreeView", item);
-       // FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("DataGrid", item);
+        // FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("DataGrid", item);
         item->addItem(item1);
-       // item->addItem(item2);
-       // item->addItem(item3);
-       // item->addItem(item4);
+        // item->addItem(item2);
+        // item->addItem(item3);
+        // item->addItem(item4);
         item->addItem(item5);
-       // item->addItem(item6);
+        // item->addItem(item6);
         item->addItem(item7);
-      //  item->addItem(item8);
+        //  item->addItem(item8);
         m_navView->addItemToMidLayout(item);
     }
 
@@ -170,8 +170,7 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Calendar, "Date & time", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("CalendarDatePicker", item);
-        
-        
+
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("CalendarView", item);
         auto calendarViewPage = new FluCalendarViewPage;
         m_sLayout->addWidget("CalendarViewPage", calendarViewPage);

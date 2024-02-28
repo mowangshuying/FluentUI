@@ -38,7 +38,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
                 m_parentView->getSelectDayView()->getMonthView()->setYearMonth(itemDate.year(), itemDate.month());
                 m_parentView->getSelectMonthView()->setYearMonth(itemDate.year(), itemDate.month());
                 m_parentView->getViewTitle()->setYearMonth(itemDate.year(), itemDate.month());
-             //   emit m_parentView->selectedDate(itemDate);
+                //   emit m_parentView->selectedDate(itemDate);
                 LOG_DEBUG << "item Clicked!";
             });
         }

@@ -120,8 +120,8 @@ int main(int argc, char **argv)
     // FluProgressBarDemo demo;
     // demo.show();
 
-   // FluCalendarViewDemo demo;
-   // demo.show();
+    // FluCalendarViewDemo demo;
+    // demo.show();
 
     FluCalendarDatePickerDemo demo;
     demo.show();

@@ -15,8 +15,7 @@ class FluToggleButtonPage : public FluAEmptyPage
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("ToggleButton");
 
-        //m_subTitleLabel->setText("CppQtFluentUi888::FluToggleButton");
-
+        // m_subTitleLabel->setText("CppQtFluentUi888::FluToggleButton");
 
         m_infoLabel->setText("ToggleButton demos.");
 

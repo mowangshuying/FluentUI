@@ -116,7 +116,8 @@ class FluCalendarView : public QWidget
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
   signals:
-    void selectedDate(QDate date); 
+    void selectedDate(QDate date);
+
   protected:
     QDate m_curDate;
     FluCalendarViewState m_viewState;

@@ -112,6 +112,7 @@
     <ClCompile Include="FluAllSamplesPage.cpp" />
     <ClCompile Include="FluATitlePage.cpp" />
     <ClCompile Include="FluButtonPage.cpp" />
+    <ClCompile Include="FluCalendarViewPage.cpp" />
     <ClCompile Include="FluCheckBoxPage.cpp" />
     <ClCompile Include="FluComboBoxPage.cpp" />
     <ClCompile Include="FluDropDownButtonPage.cpp" />
@@ -183,6 +184,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluProgressRingPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluCalendarViewPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

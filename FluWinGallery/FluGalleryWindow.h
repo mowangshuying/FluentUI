@@ -20,6 +20,7 @@
 #include "FluCheckBoxPage.h"
 #include "FluSliderPage.h"
 #include "FluProgressRingPage.h"
+#include "FluCalendarViewPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -169,7 +170,13 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Calendar, "Date & time", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("CalendarDatePicker", item);
+        
+        
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("CalendarView", item);
+        auto calendarViewPage = new FluCalendarViewPage;
+        m_sLayout->addWidget("CalendarViewPage", calendarViewPage);
+        connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CalendarViewPage"); });
+
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DatePicker", item);
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("TimePicker", item);
         item->addItem(item1);

@@ -108,7 +108,8 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
         }
     });
 
-    setFixedWidth(300);
+    //setFixedWidth(300);
+    setFixedSize(300, 360);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
 }
 

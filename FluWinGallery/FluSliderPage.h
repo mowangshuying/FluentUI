@@ -15,7 +15,7 @@ class FluSliderPage : public FluAEmptyPage
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("Slider");
 
-        m_subTitleLabel->setText("CppQtFluentUi888::FluSlider");
+        //m_subTitleLabel->setText("CppQtFluentUi888::FluSlider");
 
 
         m_infoLabel->setText("Use a Slider when your want your users to be able to set defined, contiguous values(such as volume or brightness) or a range of discrete values(such as screen resolution settings).");

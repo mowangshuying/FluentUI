@@ -21,12 +21,12 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
     m_mainLayout->addSpacing(12);
 
-    m_subTitleLabel = new QLabel;
-    m_subTitleLabel->setObjectName("subTitleLabel");
-    m_subTitleLabel->setText("");
-    m_mainLayout->addWidget(m_subTitleLabel);
+  //  m_subTitleLabel = new QLabel;
+ //   m_subTitleLabel->setObjectName("subTitleLabel");
+ //  m_subTitleLabel->setText("");
+ //   m_mainLayout->addWidget(m_subTitleLabel);
 
-    m_mainLayout->addSpacing(12);
+//    m_mainLayout->addSpacing(12);
 
     auto tileWraHLayout = new QHBoxLayout;
     m_mainLayout->addLayout(tileWraHLayout);

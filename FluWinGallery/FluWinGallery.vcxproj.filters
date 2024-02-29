@@ -86,6 +86,9 @@
     <ClCompile Include="FluCalendarViewPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluProgressBarPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -146,6 +149,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluCalendarViewPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluProgressBarPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

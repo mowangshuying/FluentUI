@@ -21,6 +21,7 @@
 #include "FluSliderPage.h"
 #include "FluProgressRingPage.h"
 #include "FluCalendarViewPage.h"
+#include "FluProgressBarPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -321,7 +322,12 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
+ 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
+        auto progressBarPage = new FluProgressBarPage;
+        m_sLayout->addWidget("FluProgressBarPage", progressBarPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FluProgressBarPage"); });
+
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("progressRing", item);
 

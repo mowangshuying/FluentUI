@@ -6,11 +6,11 @@
 #include <QPushButton>
 #include "../FluUtils/FluUtils.h"
 
-class FluFlipView : public QScrollArea
+class FluHFlipView : public QScrollArea
 {
     Q_OBJECT
   public:
-    FluFlipView(QWidget* parent = nullptr);
+    FluHFlipView(QWidget* parent = nullptr);
 
     void addPixmap(QPixmap pixmap);
 

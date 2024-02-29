@@ -93,8 +93,8 @@ int main(int argc, char **argv)
     //  FluSlideWindowDemo demo;
     //  demo.show();
 
-    // FluFlipViewDemo demo;
-    // demo.show();
+     FluFlipViewDemo demo;
+     demo.show();
 
     //  FluButtonDemo demo;
     //  demo.show();
@@ -123,8 +123,8 @@ int main(int argc, char **argv)
     // FluCalendarViewDemo demo;
     // demo.show();
 
-    FluCalendarDatePickerDemo demo;
-    demo.show();
+    // FluCalendarDatePickerDemo demo;
+    // demo.show();
 
     return app.exec();
 }

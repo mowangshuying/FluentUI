@@ -123,6 +123,7 @@
     <ClCompile Include="FluProgressRing.cpp" />
     <ClCompile Include="FluSlider.cpp" />
     <ClCompile Include="FluToggleSwitch.cpp" />
+    <ClCompile Include="FluVFlipView.cpp" />
     <ClCompile Include="FluVRadioGroupBox.cpp" />
     <ClCompile Include="FluCheckBox.cpp" />
     <ClCompile Include="FluComboBox.cpp" />
@@ -133,7 +134,7 @@
     <ClCompile Include="FluDisplayIconBox.cpp" />
     <ClCompile Include="FluDropDownButton.cpp" />
     <ClCompile Include="FluExpander.cpp" />
-    <ClCompile Include="FluFlipView.cpp" />
+    <ClCompile Include="FluHFlipView.cpp" />
     <ClCompile Include="FluFlowLayout.cpp" />
     <ClCompile Include="FluFrameLessWidget.cpp" />
     <ClCompile Include="FluFWScrollView.cpp" />
@@ -175,6 +176,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluVFlipView.h" />
     <QtMoc Include="FluProgressBar.h" />
     <QtMoc Include="FluProgressRing.h" />
     <QtMoc Include="FluToggleSwitch.h" />
@@ -210,7 +212,7 @@
     <ClInclude Include="FluComboBox.h" />
     <QtMoc Include="FluComboBoxTextItem.h" />
     <QtMoc Include="FluDropDownButton.h" />
-    <QtMoc Include="FluFlipView.h" />
+    <QtMoc Include="FluHFlipView.h" />
     <ClInclude Include="FluFlowLayout.h" />
     <QtMoc Include="FluIconButton.h" />
     <QtMoc Include="FluLabel.h" />

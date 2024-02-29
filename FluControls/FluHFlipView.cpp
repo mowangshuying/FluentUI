@@ -1,8 +1,8 @@
-#include "FluFlipView.h"
+#include "FluHFlipView.h"
 #include "FluImageBox.h"
 #include <QScrollBar>
 
-FluFlipView::FluFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
+FluHFlipView::FluHFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
 {
     setWidgetResizable(true);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -40,12 +40,14 @@ FluFlipView::FluFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
     m_rBtn->setObjectName("rBtn");
 
     m_lBtn->setIconSize(QSize(15, 15));
-    m_lBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::FlickRight)));
+    m_lBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidLeft)));
 
     m_rBtn->setIconSize(QSize(15, 15));
-    m_rBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::FlickLeft)));
+    m_rBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidRight)));
     m_nImgBoxIndex = 0;
 
+    m_rBtn->hide();
+    m_lBtn->hide();
     connect(m_rBtn, &QPushButton::clicked, [=](bool bClicked) {
         // horizontalScrollBar()->setValue(width());
         if (m_nImgBoxIndex <= m_hLayout->count())
@@ -71,11 +73,11 @@ FluFlipView::FluFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
         }
     });
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluFlipView.qss");
+    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHFlipView.qss");
     setStyleSheet(qss);
 }
 
-void FluFlipView::addPixmap(QPixmap pixmap)
+void FluHFlipView::addPixmap(QPixmap pixmap)
 {
     // LOG_DEBUG << "context widget margins:" << m_contextWidget->contentsMargins();
     auto imageBox = new FluImageBox(pixmap, m_contextWidget);

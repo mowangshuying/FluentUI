@@ -1,4 +1,4 @@
-FluFlipView {
+FluVFlipView {
     /* border: 1px solid rgb(229, 229, 229); */
     background-color: transparent;
     border-radius: 4px;
@@ -9,14 +9,14 @@ FluFlipView {
     background-color: transparent;
 }
 
-#lBtn {
-    margin-left: 5px;
+#tBtn {
+    margin-top: 5px;
     background-color: rgb(249, 249, 249);
     border-radius: 4px;
 }
 
-#rBtn {
-    margin-right: 5px;
+#bBtn {
+    margin-bottom: 5px;
     background-color: rgb(249, 249, 249);
     border-radius: 4px;
 }

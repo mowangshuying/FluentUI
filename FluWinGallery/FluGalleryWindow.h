@@ -22,6 +22,7 @@
 #include "FluProgressRingPage.h"
 #include "FluCalendarViewPage.h"
 #include "FluProgressBarPage.h"
+#include "FluFlipViewPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -148,7 +149,13 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeCollectionsNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections", this);
+        
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("FlipView", item);
+        auto flipViewPage = new FluFlipViewPage;
+        m_sLayout->addWidget("FlipViewPage", flipViewPage);
+        connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FlipViewPage"); });
+
+
         // FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
         // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
         // FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
@@ -325,8 +332,8 @@ class FluGalleryWindow : public FluFrameLessWidget
  
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
         auto progressBarPage = new FluProgressBarPage;
-        m_sLayout->addWidget("FluProgressBarPage", progressBarPage);
-        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FluProgressBarPage"); });
+        m_sLayout->addWidget("ProgressBarPage", progressBarPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ProgressBarPage"); });
 
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("progressRing", item);

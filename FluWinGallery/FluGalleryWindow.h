@@ -23,6 +23,7 @@
 #include "FluCalendarViewPage.h"
 #include "FluProgressBarPage.h"
 #include "FluFlipViewPage.h"
+#include "FluListViewPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -159,7 +160,14 @@ class FluGalleryWindow : public FluFrameLessWidget
         // FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
         // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
         // FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
+        
+        
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ListView", item);
+        auto listViewPage = new FluListViewPage;
+        m_sLayout->addWidget("ListViewPage", listViewPage);
+        connect(item5, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ListViewPage"); });
+
+
         // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TreeView", item);
         // FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("DataGrid", item);

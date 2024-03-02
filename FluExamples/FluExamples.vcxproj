@@ -123,6 +123,7 @@
     <ClCompile Include="FluFlipViewDemo.cpp" />
     <ClCompile Include="FluFlowLayoutDemo.cpp" />
     <ClCompile Include="FluLineEditDemo.cpp" />
+    <ClCompile Include="FluListViewDemo.cpp" />
     <ClCompile Include="FluMenuDemo.cpp" />
     <ClCompile Include="FluMultiLineTextDemo.cpp" />
     <ClCompile Include="FluProgressBarDemo.cpp" />
@@ -160,6 +161,7 @@
     <QtMoc Include="FluProgressBarDemo.h" />
     <QtMoc Include="FluCalendarViewDemo.h" />
     <QtMoc Include="FluCalendarDatePickerDemo.h" />
+    <QtMoc Include="FluListViewDemo.h" />
     <ClInclude Include="FluProgressRingDemo.h" />
     <ClInclude Include="FluSliderDemo.h" />
     <QtMoc Include="FluToggleSwitchDemo.h" />

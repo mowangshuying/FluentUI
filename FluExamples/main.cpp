@@ -25,6 +25,7 @@
 #include "FluProgressBarDemo.h"
 #include "FluCalendarViewDemo.h"
 #include "FluCalendarDatePickerDemo.h"
+#include "FluListViewDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -75,8 +76,8 @@ int main(int argc, char **argv)
     //  FluMenuDemo demo;
     //  demo.show();
 
-      FluDisplayBoxDemo demo;
-      demo.show();
+   //   FluDisplayBoxDemo demo;
+   //   demo.show();
 
     //  FluDisplayIconBoxDemo demo;
     //  demo.show();
@@ -125,6 +126,9 @@ int main(int argc, char **argv)
 
     // FluCalendarDatePickerDemo demo;
     // demo.show();
+
+    FluListViewDemo demo;
+    demo.show();
 
     return app.exec();
 }

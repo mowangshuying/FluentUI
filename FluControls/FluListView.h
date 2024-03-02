@@ -8,11 +8,11 @@
 
 class FluListView : public QListWidget
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluListView(QWidget* parent = nullptr) : QListWidget(parent)
-	  {
-              setItemDelegate(new FluListViewItemDelegate);
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
-	  }
+    FluListView(QWidget* parent = nullptr) : QListWidget(parent)
+    {
+        setItemDelegate(new FluListViewItemDelegate);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+    }
 };

@@ -150,23 +150,20 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeCollectionsNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections", this);
-        
+
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("FlipView", item);
         auto flipViewPage = new FluFlipViewPage;
         m_sLayout->addWidget("FlipViewPage", flipViewPage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FlipViewPage"); });
 
-
         // FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
         // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
         // FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
-        
-        
+
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ListView", item);
         auto listViewPage = new FluListViewPage;
         m_sLayout->addWidget("ListViewPage", listViewPage);
         connect(item5, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ListViewPage"); });
-
 
         // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TreeView", item);
@@ -337,12 +334,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
- 
+
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
         auto progressBarPage = new FluProgressBarPage;
         m_sLayout->addWidget("ProgressBarPage", progressBarPage);
         connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ProgressBarPage"); });
-
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("progressRing", item);
 

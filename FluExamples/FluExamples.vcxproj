@@ -122,6 +122,7 @@
     <ClCompile Include="FluDropDownButtonDemo.cpp" />
     <ClCompile Include="FluFlipViewDemo.cpp" />
     <ClCompile Include="FluFlowLayoutDemo.cpp" />
+    <ClCompile Include="FluInfoBadgeDemo.cpp" />
     <ClCompile Include="FluLineEditDemo.cpp" />
     <ClCompile Include="FluListViewDemo.cpp" />
     <ClCompile Include="FluMenuDemo.cpp" />
@@ -162,6 +163,7 @@
     <QtMoc Include="FluCalendarViewDemo.h" />
     <QtMoc Include="FluCalendarDatePickerDemo.h" />
     <QtMoc Include="FluListViewDemo.h" />
+    <ClInclude Include="FluInfoBadgeDemo.h" />
     <ClInclude Include="FluProgressRingDemo.h" />
     <ClInclude Include="FluSliderDemo.h" />
     <QtMoc Include="FluToggleSwitchDemo.h" />

@@ -185,6 +185,9 @@
     <ClCompile Include="FluListViewItemDelegate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluInfoBadge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -338,6 +341,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluListViewItemDelegate.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluInfoBadge.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -119,6 +119,7 @@
     <ClCompile Include="FluCalendarSelectMonthView.cpp" />
     <ClCompile Include="FluCalendarSelectYearView.cpp" />
     <ClCompile Include="FluCalendarView.cpp" />
+    <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluListView.cpp" />
     <ClCompile Include="FluListViewItemDelegate.cpp" />
     <ClCompile Include="FluProgressBar.cpp" />
@@ -178,6 +179,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluInfoBadge.h" />
     <QtMoc Include="FluListViewItemDelegate.h" />
     <QtMoc Include="FluListView.h" />
     <QtMoc Include="FluVFlipView.h" />

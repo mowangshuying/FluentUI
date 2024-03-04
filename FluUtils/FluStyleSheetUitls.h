@@ -18,7 +18,7 @@ class FluStyleSheetUitls : public QObject
 
   public:
     static QString getQssByFileName(const QString &fileName);
-    static void setQssByFileName(const QString &fileName, QWidget *widget);
+    static void setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss = false);
 
     static QString getQssByFileName(const QString &jsonVars, const QString &fileName);
     static void setQssByFileName(const QString &jsonVar, const QString &fileName, QWidget *widget);
@@ -36,12 +36,12 @@ class FluStyleSheetUitls : public QObject
         return m_styleSheetUtils;
     }
 
-#ifdef _DEBUG_QSS
+    // #ifdef _DEBUG_QSS
     static QTimer *getTimer()
     {
         return FluStyleSheetUitls::getUtils()->m_timer;
     }
-#endif
+    // #endif
 
     static void __init()
     {
@@ -69,10 +69,10 @@ class FluStyleSheetUitls : public QObject
 
   protected:
     QString m_styleSheetDir;
-#ifdef _DEBUG_QSS
-    //  update stylesheet by timer
+    // #ifdef _DEBUG_QSS
+    //   update stylesheet by timer
     QTimer *m_timer;
-#endif
+    // #endif
   private:
     static FluStyleSheetUitls *m_styleSheetUtils;
 };

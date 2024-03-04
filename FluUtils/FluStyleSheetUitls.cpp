@@ -3,10 +3,10 @@
 FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
 FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
 {
-#ifdef _DEBUG_QSS
+    // #ifdef _DEBUG_QSS
     m_timer = new QTimer;
     m_timer->start(5000);
-#endif
+    // #endif
 }
 
 QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
@@ -22,20 +22,21 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
     return "";
 }
 
-void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget)
+void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
 {
     QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
     if (widget != nullptr)
     {
         widget->setStyleSheet(qss);
 
-#ifdef _DEBUG_QSS
-        // just change file
-        connect(FluStyleSheetUitls::getTimer(), &QTimer::timeout, [=]() {
-            QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
-            widget->setStyleSheet(qss);
-        });
-#endif
+        if (bDebugQss)
+        {
+            // just change file
+            connect(FluStyleSheetUitls::getTimer(), &QTimer::timeout, [=]() {
+                QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
+                widget->setStyleSheet(qss);
+            });
+        }
     }
 }
 

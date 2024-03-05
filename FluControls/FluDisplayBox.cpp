@@ -23,6 +23,7 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
     m_vBodyLayout = new QVBoxLayout;
     m_bodyWidget->setLayout(m_vBodyLayout);
+    m_vBodyLayout->setAlignment(Qt::AlignTop);
 
     m_codeExpander = new FluCodeExpander;
     m_mainLayout->addWidget(m_codeExpander);

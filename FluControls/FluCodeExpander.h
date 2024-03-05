@@ -49,13 +49,13 @@ class FluCodeExpander : public FluExpander
         setCode(code);
     }
 
-    void resizeEvent(QResizeEvent*)
-    {
-        // setFixedHeight(m_wrap1->height() + m_wrap2->height());
-        // m_wrap2->setFixedHeight(m_displayCodeBox->height());
-        // setWrap2Height();
-        //  setWrap2Height(m_wrap2->sizeHint().height());
-    }
+    // void resizeEvent(QResizeEvent*)
+    // {
+    // setFixedHeight(m_wrap1->height() + m_wrap2->height());
+    // m_wrap2->setFixedHeight(m_displayCodeBox->height());
+    // setWrap2Height();
+    //  setWrap2Height(m_wrap2->sizeHint().height());
+    // }
 
     void paintEvent(QPaintEvent* event)
     {

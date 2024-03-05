@@ -87,7 +87,6 @@ class FluExpandDemo : public QWidget
         layout()->addWidget(expander);
     }
 
-
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;

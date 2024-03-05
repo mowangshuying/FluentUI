@@ -6,6 +6,8 @@
 #include <QPropertyAnimation>
 #include "FluIconButton.h"
 #include "../FluUtils/FluStyleSheetUitls.h"
+#include <QStyleOption>
+#include <QPainter>
 
 class FluIconButton;
 // a expander to display more informations.
@@ -33,6 +35,15 @@ class FluExpander : public QWidget
     }
 
     void resizeEvent(QResizeEvent* event);
+
+    void paintEvent(QPaintEvent* event)
+    {
+        QStyleOption opt;
+        opt.initFrom(this);
+        QPainter painter(this);
+        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    }
+
   public slots:
     void onThemeChanged();
 

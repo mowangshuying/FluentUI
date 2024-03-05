@@ -131,8 +131,8 @@ int main(int argc, char **argv)
     // FluListViewDemo demo;
     // demo.show();
 
-   // FluInfoBadgeDemo demo;
-   // demo.show();
+    // FluInfoBadgeDemo demo;
+    // demo.show();
 
     FluExpandDemo demo;
     demo.show();

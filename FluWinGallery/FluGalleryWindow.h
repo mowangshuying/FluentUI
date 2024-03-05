@@ -24,6 +24,7 @@
 #include "FluProgressBarPage.h"
 #include "FluFlipViewPage.h"
 #include "FluListViewPage.h"
+#include "FluExpanderPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -215,7 +216,12 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("Border", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Canvas", item);
+
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Expander", item);
+        auto expanderPage = new FluExpanderPage;
+        m_sLayout->addWidget("ExpanderPage", expanderPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ExpanderPage"); });
+
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ItemsRepeater", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("Grid", item);
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("RadioButtons", item);

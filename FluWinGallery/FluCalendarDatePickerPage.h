@@ -8,24 +8,24 @@
 
 class FluCalendarDatePickerPage : public FluAEmptyPage
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluCalendarDatePickerPage(QWidget* parent = nullptr)
-	  {
-              m_mainLayout->setAlignment(Qt::AlignTop);
+    FluCalendarDatePickerPage(QWidget* parent = nullptr)
+    {
+        m_mainLayout->setAlignment(Qt::AlignTop);
 
-              m_titleLabel->setText("CalendarDatePickerPage");
-              m_infoLabel->setText("A control that lets users pick a date value using a calendar.");
+        m_titleLabel->setText("CalendarDatePickerPage");
+        m_infoLabel->setText("A control that lets users pick a date value using a calendar.");
 
-              auto displayBox = new FluDisplayBox;
-              displayBox->setTitle("CalendarDatePicker with a header ad placeholder text.");
-              displayBox->getCodeExpander()->setCodeByPath("../code/CalendarDatePickerPageCode1");
-               displayBox->setBodyWidgetFixedHeight(60);
+        auto displayBox = new FluDisplayBox;
+        displayBox->setTitle("CalendarDatePicker with a header ad placeholder text.");
+        displayBox->getCodeExpander()->setCodeByPath("../code/CalendarDatePickerPageCode1");
+        displayBox->setBodyWidgetFixedHeight(60);
 
-              auto calendarView = new FluCalendarDatePicker(displayBox);
-              calendarView->move(50, 50);
+        auto calendarView = new FluCalendarDatePicker(displayBox);
+        calendarView->move(50, 50);
 
-              m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePickerPage.qss", this);
-	  }
+        m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePickerPage.qss", this);
+    }
 };

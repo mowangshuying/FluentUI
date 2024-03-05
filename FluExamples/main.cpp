@@ -131,7 +131,10 @@ int main(int argc, char **argv)
     // FluListViewDemo demo;
     // demo.show();
 
-    FluInfoBadgeDemo demo;
+   // FluInfoBadgeDemo demo;
+   // demo.show();
+
+    FluExpandDemo demo;
     demo.show();
     return app.exec();
 }

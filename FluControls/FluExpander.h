@@ -22,7 +22,17 @@ class FluExpander : public QWidget
 
     // signals:
     //   void windowSizeChanged();
+    QHBoxLayout* getWrap1Layout()
+    {
+        return m_hWrap1Layout;
+    }
 
+    QVBoxLayout* getWrap2Layout()
+    {
+        return m_vWrap2Layout;
+    }
+
+    void resizeEvent(QResizeEvent* event);
   public slots:
     void onThemeChanged();
 

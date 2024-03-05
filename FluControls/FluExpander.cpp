@@ -17,12 +17,13 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_downOrUpButton = new FluIconButton(FluAwesomeType::ChevronDown, m_wrap1);
     m_downOrUpButton->setObjectName("downOrUpButton");
 
-    m_hWrap1Layout->addStretch();
-    m_hWrap1Layout->addWidget(m_downOrUpButton, Qt::AlignHCenter);
+ //   m_hWrap1Layout->addStretch();
+ //   m_hWrap1Layout->addWidget(m_downOrUpButton, Qt::AlignHCenter);
 
     m_wrap2 = new QWidget(this);
     m_wrap2->setObjectName("wrap2");
     m_wrap2->setFixedHeight(0);
+    //m_wrap2->setMinimumHeight(50);
 
     m_vWrap2Layout = new QVBoxLayout;
     m_vWrap2Layout->setContentsMargins(5, 5, 5, 5);
@@ -68,6 +69,13 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);
+}
+
+void FluExpander::resizeEvent(QResizeEvent* event)
+{
+    int nX = m_wrap1->width() - m_downOrUpButton->height() - 5;
+    int nY = (m_wrap1->height() -  m_downOrUpButton->height() ) / 2;
+    m_downOrUpButton->move(nX, nY);
 }
 
 void FluExpander::onThemeChanged()

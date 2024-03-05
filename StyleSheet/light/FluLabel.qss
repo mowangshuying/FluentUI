@@ -1,6 +1,7 @@
 FluLabel {
     font-size: 12px;
     color: rgb(27, 27, 27);
+    background-color: transparent;
 }
 
 FluLabel[labelStyle="CaptionTextBlockSylte"] {

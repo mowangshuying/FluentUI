@@ -26,6 +26,7 @@
 #include "FluListViewPage.h"
 #include "FluExpanderPage.h"
 #include "FluCalendarDatePickerPage.h"
+#include "FluCollectionsPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -152,6 +153,9 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeCollectionsNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections", this);
+        auto collectionsPage = new FluCollectionsPage;
+        m_sLayout->addWidget("CollectionsPage", collectionsPage);
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CollectionsPage"); });
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("FlipView", item);
         auto flipViewPage = new FluFlipViewPage;

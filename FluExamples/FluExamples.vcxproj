@@ -133,6 +133,7 @@
     <ClCompile Include="FluRadioButtonDemo.cpp" />
     <ClCompile Include="FluSliderDemo.cpp" />
     <ClCompile Include="FluSlideWindowDemo.cpp" />
+    <ClCompile Include="FluSpinBoxDemo.cpp" />
     <ClCompile Include="FluTabDemo.cpp" />
     <ClCompile Include="FluExpandDemo.cpp" />
     <ClCompile Include="FluNavigationDemo.cpp" />
@@ -160,6 +161,7 @@
     <QtMoc Include="FluNavigationDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluSpinBoxDemo.h" />
     <QtMoc Include="FluProgressBarDemo.h" />
     <QtMoc Include="FluCalendarViewDemo.h" />
     <QtMoc Include="FluCalendarDatePickerDemo.h" />

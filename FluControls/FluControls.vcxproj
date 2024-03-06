@@ -126,6 +126,7 @@
     <ClCompile Include="FluProgressBar.cpp" />
     <ClCompile Include="FluProgressRing.cpp" />
     <ClCompile Include="FluSlider.cpp" />
+    <ClCompile Include="FluSpinBox.cpp" />
     <ClCompile Include="FluToggleSwitch.cpp" />
     <ClCompile Include="FluVFlipView.cpp" />
     <ClCompile Include="FluVRadioGroupBox.cpp" />
@@ -180,6 +181,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluSpinBox.h" />
     <QtMoc Include="FluPasswordBox.h" />
     <QtMoc Include="FluInfoBadge.h" />
     <QtMoc Include="FluListViewItemDelegate.h" />

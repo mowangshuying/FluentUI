@@ -27,6 +27,7 @@
 #include "FluCalendarDatePickerDemo.h"
 #include "FluListViewDemo.h"
 #include "FluInfoBadgeDemo.h"
+#include "FluPasswordBoxDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -134,7 +135,11 @@ int main(int argc, char **argv)
     // FluInfoBadgeDemo demo;
     // demo.show();
 
-    FluExpandDemo demo;
+   // FluExpandDemo demo;
+   // demo.show();
+
+    FluPasswordBoxDemo demo;
     demo.show();
+    
     return app.exec();
 }

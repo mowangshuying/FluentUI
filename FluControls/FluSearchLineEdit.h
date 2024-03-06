@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QLineEdit>
-#include <QLineEdit>
 #include <QPushButton>
 #include <QHBoxLayout>
 

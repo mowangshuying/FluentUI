@@ -27,6 +27,7 @@
 #include "FluExpanderPage.h"
 #include "FluCalendarDatePickerPage.h"
 #include "FluCollectionsPage.h"
+#include "FluPasswordBoxPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -376,7 +377,12 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Font, "Text", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NumberBox", item);
+        
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("PassWordBox", item);
+        auto passwordBoxPage = new FluPasswordBoxPage;
+        m_sLayout->addWidget("PasswordBoxPage", passwordBoxPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("PasswordBoxPage"); });
+
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("RichEditBox", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RichTextBlock", item);
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("TextBlock", item);

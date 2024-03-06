@@ -5,10 +5,10 @@
 
 class FluSpinBox : public QSpinBox
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluSpinBox(QWidget* parent) : QSpinBox(parent)
-	  {
-          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSpinBox.qss", this);
-	  }
+    FluSpinBox(QWidget* parent) : QSpinBox(parent)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSpinBox.qss", this);
+    }
 };

@@ -5,11 +5,11 @@
 
 class FluSpinBoxDemo : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluSpinBoxDemo(QWidget* parent = nullptr) : QWidget(parent)
-	  {
-              auto spinBox = new FluSpinBox(this);
-              spinBox->move(50, 50);
-	  }
+    FluSpinBoxDemo(QWidget* parent = nullptr) : QWidget(parent)
+    {
+        auto spinBox = new FluSpinBox(this);
+        spinBox->move(50, 50);
+    }
 };

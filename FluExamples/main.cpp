@@ -136,12 +136,12 @@ int main(int argc, char **argv)
     // FluInfoBadgeDemo demo;
     // demo.show();
 
-   // FluExpandDemo demo;
-   // demo.show();
+    // FluExpandDemo demo;
+    // demo.show();
 
-   // FluPasswordBoxDemo demo;
-   // demo.show();
-    
+    // FluPasswordBoxDemo demo;
+    // demo.show();
+
     FluSpinBoxDemo demo;
     demo.show();
 

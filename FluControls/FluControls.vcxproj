@@ -73,7 +73,7 @@
     </ClCompile>
     <Lib>
       <AdditionalDependencies>FramelessHelperCore64d.lib;FramelessHelperQuick64d.lib;FramelessHelperWidgets64d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\framelesshelper\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\framelesshelper\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -82,7 +82,7 @@
     </ClCompile>
     <Lib>
       <AdditionalDependencies>FramelessHelperCore64.lib;FramelessHelperQuick64.lib;FramelessHelperWidgets64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\CodeLibraries\CppQtFluentUi888\3rdparty\framelesshelper\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\framelesshelper\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">

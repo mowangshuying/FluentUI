@@ -28,6 +28,7 @@
 #include "FluCalendarDatePickerPage.h"
 #include "FluCollectionsPage.h"
 #include "FluPasswordBoxPage.h"
+#include "../FluControls/FluMessageBox.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -413,6 +414,21 @@ class FluGalleryWindow : public FluFrameLessWidget
         {
             if (m_navView->isLong())
                 m_navView->onMenuItemClicked();
+        }
+    }
+
+    void closeEvent(QCloseEvent* event)
+    {
+        
+        FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
+        int nExec = messageBox.exec();
+        if (nExec == QDialog::Rejected)
+        {
+            event->ignore();
+        }
+        else if(nExec == QDialog::Accepted)
+        {
+            event->accept();
         }
     }
   public slots:

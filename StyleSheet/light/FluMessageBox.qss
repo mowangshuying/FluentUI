@@ -1,0 +1,24 @@
+QDialog {
+    background-color: transparent;
+}
+
+#windowMask {
+    background-color: rgba(25, 25, 25, 0.8);
+}
+
+#centerWidget {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+#titleLabel {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+#infoLabel {
+    font-size: 14px;
+    color: rgb(91, 91, 91);
+    background-color: transparent;
+}

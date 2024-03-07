@@ -4,6 +4,7 @@
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 #include <FramelessHelper/Widgets/standardsystembutton.h>
 #include <FramelessHelper/Widgets/standardtitlebar.h>
+#include "../FluControls/FluMessageBox.h"
 
 FRAMELESSHELPER_USE_NAMESPACE
 
@@ -93,6 +94,10 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     makeSettingsNavItem();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
+   ///* connect(m_titleBar->closeButton(), &QPushButton::clicked, [=]() { FluMessageBox messageBox;
+   //     messageBox.exec();
+   // });*/
 }
 
 void FluGalleryWindow::onThemeChanged()

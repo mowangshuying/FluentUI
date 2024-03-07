@@ -3,6 +3,7 @@
 #include <QWidget>
 
 #include "../FluControls/FluDisplayBox.h"
+#include "../FluControls/FluDisplayBoxEx.h"
 
 class FluDisplayBoxDemo : public QWidget
 {
@@ -15,7 +16,12 @@ class FluDisplayBoxDemo : public QWidget
         setLayout(mainLayout);
         auto displayBox1 = new FluDisplayBox(this);
         mainLayout->addWidget(displayBox1);
-        mainLayout->addStretch();
+        //mainLayout->addStretch()
+
+        auto displayBox2 = new FluDisplayBoxEx(this);
+        mainLayout->addWidget(displayBox2);
+
         setStyleSheet("background-color:rgb(249,249,249);");
+        mainLayout->addStretch();
     }
 };

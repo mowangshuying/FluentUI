@@ -194,6 +194,9 @@
     <ClCompile Include="FluSpinBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDisplayBoxEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -356,6 +359,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluSpinBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDisplayBoxEx.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

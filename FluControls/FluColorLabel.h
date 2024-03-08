@@ -5,10 +5,10 @@
 
 class FluColorLabel : public QLabel
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluColorLabel(QWidget* parent = nullptr) : QLabel(parent)
-	  {
-           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorLabel.qss", this);
-	  }
+    FluColorLabel(QWidget* parent = nullptr) : QLabel(parent)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorLabel.qss", this);
+    }
 };

@@ -108,7 +108,7 @@ class FluMessageBox : public QDialog
         {
             QResizeEvent* resizeEvent = (QResizeEvent*)event;
             m_windowMask->resize(resizeEvent->size());
-           // return true;
+            // return true;
         }
 
         return QDialog::eventFilter(obj, event);

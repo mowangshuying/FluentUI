@@ -105,17 +105,17 @@ void FluGalleryWindow::closeEvent(QCloseEvent *event)
     FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
     messageBox.exec();
 
-   // int nExec = messageBox.exec();
-   // if (nExec == QDialog::Rejected)
-   // {
-        // m_titleBar->show();
-        // event->ignore(); // can't run it! has some bug.
-        // return;
-  //  }
-  //  else if (nExec == QDialog::Accepted)
-  //  {
-   //     event->accept();
-   // }
+    // int nExec = messageBox.exec();
+    // if (nExec == QDialog::Rejected)
+    // {
+    // m_titleBar->show();
+    // event->ignore(); // can't run it! has some bug.
+    // return;
+    //  }
+    //  else if (nExec == QDialog::Accepted)
+    //  {
+    //     event->accept();
+    // }
 }
 
 void FluGalleryWindow::onThemeChanged()

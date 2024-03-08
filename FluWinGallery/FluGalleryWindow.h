@@ -44,12 +44,12 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         auto homePage = new FluHomePage;
         m_sLayout->addWidget("HomePage", homePage);
-        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { 
-            m_sLayout->setCurrentWidget("HomePage"); 
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() {
+            m_sLayout->setCurrentWidget("HomePage");
 
             FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
             int nExec = messageBox.exec();
-            });
+        });
     }
 
     void makeDesignGuidanceNavItem()
@@ -125,12 +125,10 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("ColorPicker", item);
 
-
         FluNavigationIconTextItem *item11 = new FluNavigationIconTextItem("ComboBox", item);
         auto comboBoxPage = new FluComboBoxPage;
         m_sLayout->addWidget("ComboBoxPage", comboBoxPage);
         connect(item11, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ComboBoxPage"); });
-        
 
         FluNavigationIconTextItem *item12 = new FluNavigationIconTextItem("RadioButton", item);
         auto radioButtonPage = new FluRadioButtonPage;

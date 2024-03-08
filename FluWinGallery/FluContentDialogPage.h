@@ -4,10 +4,9 @@
 
 class FluContentDialogPage : public FluAEmptyPage
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluContentDialogPage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
-	  {
-
-	  }
+    FluContentDialogPage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
+    {
+    }
 };

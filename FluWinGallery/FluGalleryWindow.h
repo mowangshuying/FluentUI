@@ -30,6 +30,7 @@
 #include "FluPasswordBoxPage.h"
 #include "../FluControls/FluMessageBox.h"
 #include "FluComboBoxPage.h"
+#include "FluContentDialogPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -224,6 +225,12 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("ContentDialog", item);
+        
+        auto contentDialogPage = new FluContentDialogPage;
+        m_sLayout->addWidget("ContentDialogPage", contentDialogPage);
+        connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ContentDialogPage"); });
+
+
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Flyout", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("TeachingTip", item);
         item->addItem(item1);

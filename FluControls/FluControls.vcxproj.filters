@@ -200,6 +200,9 @@
     <ClCompile Include="FluMessageBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluColorLabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -368,6 +371,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluMessageBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluColorLabel.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

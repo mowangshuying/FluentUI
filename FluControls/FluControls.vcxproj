@@ -119,6 +119,7 @@
     <ClCompile Include="FluCalendarSelectMonthView.cpp" />
     <ClCompile Include="FluCalendarSelectYearView.cpp" />
     <ClCompile Include="FluCalendarView.cpp" />
+    <ClCompile Include="FluColorLabel.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluListView.cpp" />
@@ -222,6 +223,7 @@
     <QtMoc Include="FluCalendarItem.h" />
     <ClInclude Include="FluCalendarSelectMonthView.h" />
     <ClInclude Include="FluCalendarSelectYearView.h" />
+    <QtMoc Include="FluColorLabel.h" />
     <ClInclude Include="FluComboBox.h" />
     <QtMoc Include="FluComboBoxTextItem.h" />
     <QtMoc Include="FluDropDownButton.h" />

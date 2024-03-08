@@ -3,7 +3,7 @@ FluMessageBox {
 }
 
 #windowMask {
-    background-color: rgba(25, 25, 25, 0.8);
+    background-color: rgba(75, 75, 75, 0.8);
 }
 
 #centerWidget {

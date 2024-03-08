@@ -1,4 +1,4 @@
-QDialog {
+FluMessageBox {
     background-color: transparent;
 }
 

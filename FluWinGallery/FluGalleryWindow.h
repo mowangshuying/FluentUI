@@ -417,16 +417,15 @@ class FluGalleryWindow : public FluFrameLessWidget
         }
     }
 
-    void closeEvent(QCloseEvent* event)
+    void closeEvent(QCloseEvent *event)
     {
-        
         FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
         int nExec = messageBox.exec();
         if (nExec == QDialog::Rejected)
         {
             event->ignore();
         }
-        else if(nExec == QDialog::Accepted)
+        else if (nExec == QDialog::Accepted)
         {
             event->accept();
         }

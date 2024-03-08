@@ -16,122 +16,116 @@
 // can use window()
 class FluMessageBox : public QDialog
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluMessageBox(QString title, QString info, QWidget* parent) : QDialog(parent)
-	  {
-              
-              m_parentWidget = parent;
+    FluMessageBox(QString title, QString info, QWidget* parent) : QDialog(parent)
+    {
+        m_parentWidget = parent;
 
-              m_hBoxLayout = new QHBoxLayout(this);
-              m_windowMask = new QWidget(this);
-              m_windowMask->setObjectName("windowMask");
+        m_hBoxLayout = new QHBoxLayout(this);
+        m_windowMask = new QWidget(this);
+        m_windowMask->setObjectName("windowMask");
 
-              m_widget = new QFrame(this);
-              m_widget->setObjectName("centerWidget");
-              m_widget->setFixedSize(318, 218);
-              m_hBoxLayout->addWidget(m_widget, 1, Qt::AlignCenter);
+        m_widget = new QFrame(this);
+        m_widget->setObjectName("centerWidget");
+        m_widget->setFixedSize(318, 218);
+        m_hBoxLayout->addWidget(m_widget, 1, Qt::AlignCenter);
 
-              m_vWidgetLayout = new QVBoxLayout;
-              m_vWidgetLayout->setAlignment(Qt::AlignTop);
-              m_widget->setLayout(m_vWidgetLayout);
+        m_vWidgetLayout = new QVBoxLayout;
+        m_vWidgetLayout->setAlignment(Qt::AlignTop);
+        m_widget->setLayout(m_vWidgetLayout);
 
-              m_titleLabel = new QLabel;
-              m_infoLabel = new QLabel;
-              m_okBtn = new FluStyleButton;
-              m_cancelBtn = new FluPushButton;
+        m_titleLabel = new QLabel;
+        m_infoLabel = new QLabel;
+        m_okBtn = new FluStyleButton;
+        m_cancelBtn = new FluPushButton;
 
-              m_okBtn->setText("OK");
-              m_cancelBtn->setText("Cancel");
+        m_okBtn->setText("OK");
+        m_cancelBtn->setText("Cancel");
 
-              m_titleLabel->setText(title);
-              m_infoLabel->setText(info);
+        m_titleLabel->setText(title);
+        m_infoLabel->setText(info);
 
+        m_titleLabel->setWordWrap(true);
+        m_infoLabel->setWordWrap(true);
 
-              m_titleLabel->setWordWrap(true);
-              m_infoLabel->setWordWrap(true);
+        m_okBtn->setFixedWidth(130);
+        m_cancelBtn->setFixedWidth(130);
 
-              m_okBtn->setFixedWidth(130);
-              m_cancelBtn->setFixedWidth(130);
+        m_titleLabel->setObjectName("titleLabel");
+        m_infoLabel->setObjectName("infoLabel");
 
-              m_titleLabel->setObjectName("titleLabel");
-              m_infoLabel->setObjectName("infoLabel");
+        // m_titleLabel->setText("This is a Title");
+        // m_infoLabel->setText("This is a Content.");
 
-             // m_titleLabel->setText("This is a Title");
-             // m_infoLabel->setText("This is a Content.");
+        m_vWidgetLayout->setContentsMargins(24, 35, 24, 24);
+        m_vWidgetLayout->addWidget(m_titleLabel);
+        m_vWidgetLayout->addWidget(m_infoLabel, 1);
 
-              m_vWidgetLayout->setContentsMargins(24, 35, 24, 24);
-              m_vWidgetLayout->addWidget(m_titleLabel);
-              m_vWidgetLayout->addWidget(m_infoLabel, 1);
+        // m_vWidgetLayout->addStretch();
 
-             // m_vWidgetLayout->addStretch();
+        m_hBtnLayout = new QHBoxLayout;
+        m_hBtnLayout->setSpacing(10);
+        m_hBtnLayout->addWidget(m_okBtn);
+        m_hBtnLayout->addWidget(m_cancelBtn);
 
-              m_hBtnLayout = new QHBoxLayout;
-              m_hBtnLayout->setSpacing(10);
-              m_hBtnLayout->addWidget(m_okBtn);
-              m_hBtnLayout->addWidget(m_cancelBtn);
+        m_vWidgetLayout->addLayout(m_hBtnLayout);
 
-              m_vWidgetLayout->addLayout(m_hBtnLayout);
+        setWindowFlags(Qt::FramelessWindowHint);
+        setAttribute(Qt::WA_TranslucentBackground);
 
+        LOG_DEBUG << m_parentWidget->size();
+        setGeometry(0, 0, m_parentWidget->width(), m_parentWidget->height());
+        m_windowMask->resize(m_parentWidget->size());
 
-              setWindowFlags(Qt::FramelessWindowHint);
-              setAttribute(Qt::WA_TranslucentBackground);
+        connect(m_okBtn, &FluStyleButton::clicked, [=]() { accept(); });
 
-              LOG_DEBUG << m_parentWidget->size();
-              setGeometry(0, 0, m_parentWidget->width(), m_parentWidget->height());
-              m_windowMask->resize(m_parentWidget->size());
+        connect(m_cancelBtn, &QPushButton::clicked, [=]() { reject(); });
 
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMessageBox.qss", this);
+        m_parentWidget->installEventFilter(this);
+    }
 
-              connect(m_okBtn, &FluStyleButton::clicked, [=]() { accept();
-              });
+    void showEvent(QShowEvent* event)
+    {
+        QDialog::showEvent(event);
+    }
 
-              connect(m_cancelBtn, &QPushButton::clicked, [=]() { reject(); });
+    void closeEvent(QCloseEvent* event)
+    {
+        QDialog::closeEvent(event);
+    }
 
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMessageBox.qss", this);
-              m_parentWidget->installEventFilter(this);
-	  }
+    void resizeEvent(QResizeEvent* event)
+    {
+        QDialog::resizeEvent(event);
+        m_windowMask->resize(size());
+    }
 
-      void showEvent(QShowEvent* event)
-      {
-              QDialog::showEvent(event);
+    bool eventFilter(QObject* obj, QEvent* event)
+    {
+        if (obj == m_parentWidget && event->type() == QEvent::Resize)
+        {
+            QResizeEvent* resizeEvent = (QResizeEvent*)event;
+            m_windowMask->resize(resizeEvent->size());
+            return true;
+        }
 
-      }
-
-      void closeEvent(QCloseEvent* event)
-      {
-              QDialog::closeEvent(event);
-      }
-
-      void resizeEvent(QResizeEvent* event)
-      {
-              QDialog::resizeEvent(event);
-              m_windowMask->resize(size());
-      }
-
-      bool eventFilter(QObject* obj, QEvent* event)
-      {
-              if (obj == m_parentWidget && event->type() == QEvent::Resize)
-          {
-              QResizeEvent* resizeEvent = (QResizeEvent*)event;
-              m_windowMask->resize(resizeEvent->size());
-              return true;
-          }
-
-          return QDialog::eventFilter(obj, event);
-      }
+        return QDialog::eventFilter(obj, event);
+    }
 
   protected:
-          QWidget* m_parentWidget;
+    QWidget* m_parentWidget;
 
-          QHBoxLayout* m_hBoxLayout;
-          QWidget* m_windowMask;
-          
-          QFrame* m_widget;
-          QVBoxLayout* m_vWidgetLayout;
-          QLabel* m_titleLabel;
-          QLabel* m_infoLabel;
+    QHBoxLayout* m_hBoxLayout;
+    QWidget* m_windowMask;
 
-          QHBoxLayout* m_hBtnLayout;
-          FluPushButton* m_cancelBtn;
-          FluStyleButton* m_okBtn;
+    QFrame* m_widget;
+    QVBoxLayout* m_vWidgetLayout;
+    QLabel* m_titleLabel;
+    QLabel* m_infoLabel;
+
+    QHBoxLayout* m_hBtnLayout;
+    FluPushButton* m_cancelBtn;
+    FluStyleButton* m_okBtn;
 };

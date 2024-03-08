@@ -16,7 +16,7 @@ class FluDisplayBoxDemo : public QWidget
         setLayout(mainLayout);
         auto displayBox1 = new FluDisplayBox(this);
         mainLayout->addWidget(displayBox1);
-        //mainLayout->addStretch()
+        // mainLayout->addStretch()
 
         auto displayBox2 = new FluDisplayBoxEx(this);
         mainLayout->addWidget(displayBox2);

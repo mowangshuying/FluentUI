@@ -69,6 +69,6 @@ class FluDisplayBoxEx : public QWidget
 
     QVBoxLayout* m_vBodyContentLayout;
     QVBoxLayout* m_vBodyRightLayout;
-    
+
     FluCodeExpander* m_codeExpander;
 };

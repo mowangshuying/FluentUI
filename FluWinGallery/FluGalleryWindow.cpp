@@ -95,9 +95,9 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 
-   ///* connect(m_titleBar->closeButton(), &QPushButton::clicked, [=]() { FluMessageBox messageBox;
-   //     messageBox.exec();
-   // });*/
+    ///* connect(m_titleBar->closeButton(), &QPushButton::clicked, [=]() { FluMessageBox messageBox;
+    //     messageBox.exec();
+    // });*/
 }
 
 void FluGalleryWindow::onThemeChanged()

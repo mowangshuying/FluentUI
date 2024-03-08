@@ -22,7 +22,7 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_hBodyLayout = new QHBoxLayout;
     m_bodyWidget->setLayout(m_hBodyLayout);
     m_hBodyLayout->setContentsMargins(0, 0, 0, 0);
-    //m_hBodyLayout->setAlignment(Qt::AlignTop);
+    // m_hBodyLayout->setAlignment(Qt::AlignTop);
 
     m_bodyContentWidget = new QWidget;
     m_hBodyLayout->addWidget(m_bodyContentWidget, 1);

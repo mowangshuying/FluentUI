@@ -73,9 +73,9 @@ class FluSettingPage : public QWidget
         m_vScrollView->getMainLayout()->addWidget(m_aboutLabel);
 
         auto aboutLabelBox = new FluSettingsLabelBox;
-        aboutLabelBox->setTitleInfo("CppQtFluent888 Gallery", "© 2024 CppQtFluentUi888. All rights reserved.");
+        aboutLabelBox->setTitleInfo("CppQtFluent888 Gallery", "©2023-2024 FluentUI For Qt & Cpp. All rights reserved.");
         aboutLabelBox->setIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
-        aboutLabelBox->setVersion("Version:0.0.9");
+        aboutLabelBox->setVersion("");  // empty it!;
         m_vScrollView->getMainLayout()->addWidget(aboutLabelBox);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });

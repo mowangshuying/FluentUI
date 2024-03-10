@@ -203,6 +203,12 @@
     <ClCompile Include="FluColorLabel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluMenuBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluMenuBarItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -374,6 +380,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluColorLabel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluMenuBar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluMenuBarItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

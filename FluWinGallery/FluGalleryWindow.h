@@ -31,6 +31,9 @@
 #include "../FluControls/FluMessageBox.h"
 #include "FluComboBoxPage.h"
 #include "FluContentDialogPage.h"
+#include <QPainter>
+#include <QStyleOption>
+#include "FluMenuBarPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -48,8 +51,8 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() {
             m_sLayout->setCurrentWidget("HomePage");
 
-            FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
-            int nExec = messageBox.exec();
+          //  FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
+           // int nExec = messageBox.exec();
         });
     }
 
@@ -307,19 +310,27 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeMenuToolBarsNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Save, "Menus & toolbars", this);
-        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("XamlUICommand", item);
-        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("StandardUICommand", item);
+      //  FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("XamlUICommand", item);
+      //  FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("StandardUICommand", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("AppBarButton", item);
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("AppBarSeparator", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("AppBarToggleButton", item);
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("CommandBar", item);
+        
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("MenuBar", item);
+        auto menuBarPage = new FluMenuBarPage;
+        m_sLayout->addWidget("MenuBarPage", menuBarPage);
+        connect(item7, &FluNavigationIconTextItem::itemClicked, [=]() {
+            m_sLayout->setCurrentWidget("MenuBarPage");
+        });
+
+
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("CommandBarFlyout", item);
         FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("MenuFlyout", item);
         FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("SwipeControl", item);
 
-        item->addItem(item1);
-        item->addItem(item2);
+       // item->addItem(item1);
+      //  item->addItem(item2);
         item->addItem(item3);
         item->addItem(item4);
         item->addItem(item5);
@@ -435,6 +446,15 @@ class FluGalleryWindow : public FluFrameLessWidget
     }
 
     void closeEvent(QCloseEvent *event);
+
+    ///*void paintEvent(QPaintEvent* event)
+    //{
+    //    QStyleOption opt;
+    //    opt.initFrom(this);
+    //    QPainter painter(this);
+    //    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    //}*/
+
   public slots:
     void onThemeChanged();
 

@@ -125,6 +125,7 @@
     <ClCompile Include="FluInfoBadgeDemo.cpp" />
     <ClCompile Include="FluLineEditDemo.cpp" />
     <ClCompile Include="FluListViewDemo.cpp" />
+    <ClCompile Include="FluMenuBarDemo.cpp" />
     <ClCompile Include="FluMenuDemo.cpp" />
     <ClCompile Include="FluMultiLineTextDemo.cpp" />
     <ClCompile Include="FluPasswordBoxDemo.cpp" />
@@ -168,6 +169,7 @@
     <QtMoc Include="FluListViewDemo.h" />
     <ClInclude Include="FluInfoBadgeDemo.h" />
     <QtMoc Include="FluPasswordBoxDemo.h" />
+    <QtMoc Include="FluMenuBarDemo.h" />
     <ClInclude Include="FluProgressRingDemo.h" />
     <ClInclude Include="FluSliderDemo.h" />
     <QtMoc Include="FluToggleSwitchDemo.h" />

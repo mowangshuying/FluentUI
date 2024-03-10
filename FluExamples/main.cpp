@@ -29,6 +29,8 @@
 #include "FluInfoBadgeDemo.h"
 #include "FluPasswordBoxDemo.h"
 #include "FluSpinBoxDemo.h"
+#include "FluMenuDemo.h"
+#include "FluMenuBarDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -79,8 +81,8 @@ int main(int argc, char **argv)
     //  FluMenuDemo demo;
     //  demo.show();
 
-    FluDisplayBoxDemo demo;
-    demo.show();
+    //FluDisplayBoxDemo demo;
+    //demo.show();
 
     //  FluDisplayIconBoxDemo demo;
     //  demo.show();
@@ -145,5 +147,7 @@ int main(int argc, char **argv)
     // FluSpinBoxDemo demo;
     // demo.show();
 
+    FluMenuBarDemo demo;
+    demo.show();
     return app.exec();
 }

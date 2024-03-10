@@ -124,6 +124,8 @@
     <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluListView.cpp" />
     <ClCompile Include="FluListViewItemDelegate.cpp" />
+    <ClCompile Include="FluMenuBar.cpp" />
+    <ClCompile Include="FluMenuBarItem.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
     <ClCompile Include="FluPasswordBox.cpp" />
     <ClCompile Include="FluProgressBar.cpp" />
@@ -184,6 +186,8 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluMenuBarItem.h" />
+    <QtMoc Include="FluMenuBar.h" />
     <QtMoc Include="FluMessageBox.h" />
     <QtMoc Include="FluSpinBox.h" />
     <QtMoc Include="FluPasswordBox.h" />

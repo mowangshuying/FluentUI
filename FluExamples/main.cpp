@@ -31,6 +31,7 @@
 #include "FluSpinBoxDemo.h"
 #include "FluMenuDemo.h"
 #include "FluMenuBarDemo.h"
+#include "FluInfoBarDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -147,7 +148,11 @@ int main(int argc, char **argv)
     // FluSpinBoxDemo demo;
     // demo.show();
 
-    FluMenuBarDemo demo;
+   // FluMenuBarDemo demo;
+   // demo.show();
+
+    FluInfoBarDemo demo;
     demo.show();
+
     return app.exec();
 }

@@ -5,10 +5,10 @@
 
 class FluDoubleSpinBox : public QDoubleSpinBox
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluDoubleSpinBox(QWidget* parent = nullptr) : QDoubleSpinBox(parent)
-	  {
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDoubleSpinBox.qss", this);
-	  }
+    FluDoubleSpinBox(QWidget* parent = nullptr) : QDoubleSpinBox(parent)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDoubleSpinBox.qss", this);
+    }
 };

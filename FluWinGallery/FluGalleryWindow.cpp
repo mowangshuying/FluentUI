@@ -102,8 +102,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)
 {
-    FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
-    messageBox.exec();
+    // FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
+    // messageBox.exec();
 
     // int nExec = messageBox.exec();
     // if (nExec == QDialog::Rejected)

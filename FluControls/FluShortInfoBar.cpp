@@ -10,7 +10,7 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     m_iconLabel = new QLabel;
     m_iconLabel->setFixedSize(18, 18);
     m_iconLabel->setObjectName("iconLabel");
-    m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, QColor(239,239,239),18, 18));
+    m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, QColor(239, 239, 239), 18, 18));
     m_hMainLayout->addWidget(m_iconLabel);
 
     m_infoLabel = new QLabel;

@@ -34,6 +34,7 @@
 #include <QPainter>
 #include <QStyleOption>
 #include "FluMenuBarPage.h"
+#include "FluNumberBoxPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -401,7 +402,11 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Font, "Text", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
+
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NumberBox", item);
+        auto numberBoxPage = new FluNumberBoxPage;
+        m_sLayout->addWidget("NumberBoxPage", numberBoxPage);
+        connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("NumberBoxPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("PassWordBox", item);
         auto passwordBoxPage = new FluPasswordBoxPage;

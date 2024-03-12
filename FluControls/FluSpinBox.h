@@ -7,7 +7,7 @@ class FluSpinBox : public QSpinBox
 {
     Q_OBJECT
   public:
-    FluSpinBox(QWidget* parent) : QSpinBox(parent)
+    FluSpinBox(QWidget* parent = nullptr) : QSpinBox(parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSpinBox.qss", this);
     }

@@ -46,16 +46,16 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar)
     if (parentWidget == nullptr || infoBar == nullptr)
         return;
 
-  //  long key = (long)(parentWidget);
-  //  auto itf = m_infoBarMap.find(key);
+    //  long key = (long)(parentWidget);
+    //  auto itf = m_infoBarMap.find(key);
 
     auto itf = m_infoBarMap.begin();
-    for (;itf != m_infoBarMap.end(); itf++)
+    for (; itf != m_infoBarMap.end(); itf++)
     {
         if (itf->parentWidget == parentWidget)
             break;
 
-        //itf++;
+        // itf++;
     }
 
     if (itf == m_infoBarMap.end())
@@ -67,8 +67,8 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar)
         infoBar->move(nX, nY);
         std::list<FluShortInfoBar*> infoBarList;
         infoBarList.push_back(infoBar);
-       // m_infoBarMap[key] = infoBarList;
-        
+        // m_infoBarMap[key] = infoBarList;
+
         FluInfoBarList list;
         list.parentWidget = parentWidget;
         list.infoBarList = infoBarList;

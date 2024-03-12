@@ -1,6 +1,6 @@
 #pragma once
 
-//#include "FluShortInfoBar.h"
+// #include "FluShortInfoBar.h"
 #include <map>
 #include <list>
 #include <QTimer>
@@ -17,21 +17,21 @@ class FluInfoBarList
 
 class FluInfoBarMgr : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-      FluInfoBarMgr(QObject* parent = nullptr);
+    FluInfoBarMgr(QObject* parent = nullptr);
 
-      static FluInfoBarMgr* getInstance()
-      {
-          FluInfoBarMgr mgr;
-          return &mgr;
-      }
+    static FluInfoBarMgr* getInstance()
+    {
+        FluInfoBarMgr mgr;
+        return &mgr;
+    }
 
-      void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar);
+    void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar);
 
-      void removeInfoBar(FluShortInfoBar* infoBar);
+    void removeInfoBar(FluShortInfoBar* infoBar);
 
   protected:
-      std::list<FluInfoBarList> m_infoBarMap;
-      QTimer* m_timer;
+    std::list<FluInfoBarList> m_infoBarMap;
+    QTimer* m_timer;
 };

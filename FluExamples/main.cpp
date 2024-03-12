@@ -146,17 +146,17 @@ int main(int argc, char **argv)
     // FluPasswordBoxDemo demo;
     // demo.show();
 
-     FluSpinBoxDemo demo;
-     demo.show();
+    FluSpinBoxDemo demo;
+    demo.show();
 
-   // FluMenuBarDemo demo;
-   // demo.show();
+    // FluMenuBarDemo demo;
+    // demo.show();
 
-  //  FluInfoBarDemo demo;
-  //  demo.show();
+    //  FluInfoBarDemo demo;
+    //  demo.show();
 
-    //FluThreadDemo demo;
-    //demo.show();
+    // FluThreadDemo demo;
+    // demo.show();
 
     return app.exec();
 }

@@ -25,10 +25,14 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     // m_hBodyLayout->setAlignment(Qt::AlignTop);
 
     m_bodyContentWidget = new QWidget;
+    m_vBodyContentLayout = new QVBoxLayout;
+    m_bodyContentWidget->setLayout(m_vBodyContentLayout);
     m_hBodyLayout->addWidget(m_bodyContentWidget, 1);
     m_bodyContentWidget->setObjectName("bodyContentWidget");
 
     m_bodyRightWidget = new QWidget;
+    m_vBodyRightLayout = new QVBoxLayout;
+    m_bodyRightWidget->setLayout(m_vBodyRightLayout);
     m_bodyRightWidget->setFixedWidth(160);
     m_hBodyLayout->addWidget(m_bodyRightWidget);
     m_bodyRightWidget->setObjectName("bodyRightWidget");

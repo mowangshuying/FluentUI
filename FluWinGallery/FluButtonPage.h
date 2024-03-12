@@ -9,6 +9,8 @@
 #include "../FluControls/FluPushButton.h"
 #include "../FluControls/FluGraphicalButton.h"
 #include "../FluControls/FluStyleButton.h"
+#include "../FluControls/FluDisplayBoxEx.h"
+#include "../FluControls/FluCheckBox.h"
 
 class FluButtonPage : public FluAEmptyPage
 {
@@ -22,14 +24,19 @@ class FluButtonPage : public FluAEmptyPage
         m_infoLabel->setText("This Page display Button examples.");
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluButtonPage.qss", this);
 
-        auto displayBox1 = new FluDisplayBox;
+        auto displayBox1 = new FluDisplayBoxEx;
         //  displayBox1->setFixedHeight(140);
         displayBox1->setTitle("A simple button with text content.");
         displayBox1->getCodeExpander()->setCodeByPath("../code/ButtonPageCode1");
         auto btn1 = new FluPushButton(this);
         btn1->setText("Standard XAML button");
         displayBox1->setBodyWidgetFixedHeight(96);
-        displayBox1->getBodyLayout()->addWidget(btn1);
+        displayBox1->getBodyContentLayout()->addWidget(btn1);
+
+        auto checkBox = new FluCheckBox("Disable Button");
+     //   displayBox1->getBodyRightLayout()->setAlignment(Qt::AlignTop);
+        displayBox1->getBodyRightLayout()->addWidget(checkBox);
+
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
         auto displayBox2 = new FluDisplayBox;

@@ -26,6 +26,16 @@ class FluDisplayBoxEx : public QWidget
         return m_hBodyLayout;
     }
 
+    QVBoxLayout* getBodyContentLayout()
+    {
+        return m_vBodyContentLayout;
+    }
+
+    QVBoxLayout* getBodyRightLayout()
+    {
+        return m_vBodyRightLayout;
+    }
+
     FluCodeExpander* getCodeExpander()
     {
         return m_codeExpander;

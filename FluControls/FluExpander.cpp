@@ -61,7 +61,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     connect(expandAni, &QPropertyAnimation::valueChanged, [=](const QVariant& value) {
         QRect tmp = value.toRect();
         m_wrap2->setFixedHeight(tmp.height());
-        setFixedHeight(m_wrap1->height() + m_wrap2->height());
+        setFixedHeight(m_wrap1->height() + m_wrap2->height() + 1);
         update();
     });
 

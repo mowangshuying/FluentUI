@@ -126,6 +126,7 @@
     <ClCompile Include="FluHomePageTitle.cpp" />
     <ClCompile Include="FluHyperLinkButtonPage.cpp" />
     <ClCompile Include="FluIconsPage.cpp" />
+    <ClCompile Include="FluInfoBadgePage.cpp" />
     <ClCompile Include="FluListViewPage.cpp" />
     <ClCompile Include="FluMenuBarPage.cpp" />
     <ClCompile Include="FluNumberBoxPage.cpp" />
@@ -227,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluNumberBoxPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluInfoBadgePage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

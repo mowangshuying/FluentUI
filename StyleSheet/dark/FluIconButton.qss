@@ -1,10 +1,10 @@
 FluIconButton {
-    background-color: rgb(251, 251, 251);
+    background-color: rgb(52, 52, 52);
     border-radius: 4px;
-    border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(204, 204, 204);
+    border: 1px solid rgb(59, 59, 59);
+    border-bottom: 1px solid rgb(55, 55, 55);
 }
 
 FluIconButton:hover {
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(58, 58, 58);
 }

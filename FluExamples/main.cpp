@@ -33,6 +33,7 @@
 #include "FluMenuBarDemo.h"
 #include "FluInfoBarDemo.h"
 #include "FluThreadDemo.h"
+#include "FluTextEditDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -146,8 +147,8 @@ int main(int argc, char **argv)
     // FluPasswordBoxDemo demo;
     // demo.show();
 
-    FluSpinBoxDemo demo;
-    demo.show();
+   // FluSpinBoxDemo demo;
+   // demo.show();
 
     // FluMenuBarDemo demo;
     // demo.show();
@@ -157,6 +158,9 @@ int main(int argc, char **argv)
 
     // FluThreadDemo demo;
     // demo.show();
+
+    FluTextEditDemo demo;
+    demo.show();
 
     return app.exec();
 }

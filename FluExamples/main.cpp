@@ -147,8 +147,8 @@ int main(int argc, char **argv)
     // FluPasswordBoxDemo demo;
     // demo.show();
 
-   // FluSpinBoxDemo demo;
-   // demo.show();
+    // FluSpinBoxDemo demo;
+    // demo.show();
 
     // FluMenuBarDemo demo;
     // demo.show();

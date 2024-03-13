@@ -375,12 +375,11 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeStatusInfoNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info", this);
-        
+
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
         auto infoBadgePage = new FluInfoBadgePage;
         m_sLayout->addWidget("InfoBadgePage", infoBadgePage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("InfoBadgePage"); });
-
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
 

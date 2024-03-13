@@ -34,7 +34,7 @@ class FluButtonPage : public FluAEmptyPage
         displayBox1->getBodyContentLayout()->addWidget(btn1);
 
         auto checkBox = new FluCheckBox("Disable Button");
-     //   displayBox1->getBodyRightLayout()->setAlignment(Qt::AlignTop);
+        //   displayBox1->getBodyRightLayout()->setAlignment(Qt::AlignTop);
         displayBox1->getBodyRightLayout()->addWidget(checkBox);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);

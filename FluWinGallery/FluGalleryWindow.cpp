@@ -127,11 +127,11 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
-       // m_titleBar->update();
+        // m_titleBar->update();
         m_titleBar->show();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
-        //repaint();
-        //QApplication::processEvents();
+        // repaint();
+        // QApplication::processEvents();
     }
     else
     {
@@ -139,11 +139,11 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::white);
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::white);
-        
-       // m_titleBar->update();
+
+        // m_titleBar->update();
         m_titleBar->show();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
-       // repaint();
-        //QApplication::processEvents();
+        // repaint();
+        // QApplication::processEvents();
     }
 }

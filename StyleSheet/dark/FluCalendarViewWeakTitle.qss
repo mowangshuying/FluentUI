@@ -1,0 +1,9 @@
+FluCalendarViewWeakTitle {
+    /* background-color: aqua; */
+    background-color: transparent;
+}
+
+#label {
+    /* background-color: blueviolet; */
+    background-color: transparent;
+}

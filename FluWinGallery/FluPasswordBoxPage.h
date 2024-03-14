@@ -26,5 +26,23 @@ class FluPasswordBoxPage : public FluAEmptyPage
         displayBox1->setBodyWidgetFixedHeight(96);
         displayBox1->getBodyLayout()->addWidget(passwordBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBoxPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
+
+    }
+
+ public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBoxPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPasswordBoxPage.qss", this);
+        }
     }
 };

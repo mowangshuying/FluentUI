@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>
+#include "../FluUtils/FluUtils.h"
 
 class FluProgressRing : public QWidget
 {
@@ -65,7 +66,10 @@ class FluProgressRing : public QWidget
         {
             // drawText
             pen.setWidth(1);
-            pen.setColor(QColor(0, 0, 0));
+            pen.setColor(Qt::black);
+            if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+                pen.setColor(Qt::white);
+
             painter.setPen(pen);
 
             QString curPersent = QString::asprintf("%d%", m_curValue * 100 / (m_maxValue - m_minValue));

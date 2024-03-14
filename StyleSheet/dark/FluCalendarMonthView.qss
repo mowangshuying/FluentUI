@@ -1,0 +1,38 @@
+FluCalendarMonthView {
+    background-color: rgb(255, 255, 255);
+}
+
+#label {
+    color: black;
+    width: 40px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+#label[curMonth=false] {
+    color: rgb(97, 97, 97);
+}
+
+#label[today=true] {
+    color: white;
+    background-color: rgb(0, 90, 158);
+}
+
+#label:hover {
+    background-color: rgb(246, 246, 246);
+}
+
+#label:hover[today=true] {
+    color: white;
+    background-color: rgb(0, 90, 158);
+}
+
+#label[selected=false] {
+    /* background-color: rgb(0, 90, 0); */
+    border: 1px solid transparent;
+}
+
+#label[selected=true] {
+    border: 1px solid rgb(0, 90, 158);
+}

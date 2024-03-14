@@ -1,0 +1,83 @@
+FluShortInfoBar[infoBarType="Info"] {
+    border: 1px solid rgb(29, 29, 29);
+    background-color: rgb(39, 39, 39);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Info"] {
+    background-color: rgb(118, 185, 237);
+    border-radius: 9px;
+}
+
+#closeBtn[infoBarType="Info"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Info"] {
+    background-color: rgb(52, 52, 52);
+}
+
+FluShortInfoBar[infoBarType="Suc"] {
+    border: 1px solid rgb(29, 29, 29);
+    background-color: rgb(57, 61, 27);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Suc"] {
+    background-color: rgb(108, 203, 95);
+    border-radius: 9px;
+}
+
+#closeBtn[infoBarType="Suc"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Suc"] {
+    background-color: rgb(69, 72, 40);
+}
+
+FluShortInfoBar[infoBarType="Warn"] {
+    border: 1px solid rgb(29, 29, 29);
+    background-color: rgb(67, 53, 25);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Warn"] {
+    background-color: rgb(252, 225, 0);
+    border-radius: 9px;
+}
+
+#closeBtn[infoBarType="Warn"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Warn"] {
+    background-color: rgb(78, 65, 39);
+}
+
+FluShortInfoBar[infoBarType="Error"] {
+    border: 1px solid rgb(29, 29, 29);
+    background-color: rgb(68, 39, 38);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Error"] {
+    background-color: rgb(255, 153, 164);
+    border-radius: 9px;
+}
+
+#closeBtn[infoBarType="Error"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Error"] {
+    background-color: rgb(79, 52, 51);
+}

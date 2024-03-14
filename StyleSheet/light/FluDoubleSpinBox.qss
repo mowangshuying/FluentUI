@@ -12,16 +12,16 @@ QDoubleSpinBox {
 }
 
 QDoubleSpinBox:hover {
-	background-color: rgb(246, 246, 246);
+    background-color: rgb(246, 246, 246);
 }
 
-QDoubleSpinBox::focus {
-	color: black;
+QDoubleSpinBox:focus {
+    color: black;
     border-bottom: 2px solid rgb(0, 90, 158);
 }
 
 QDoubleSpinBox::up-button {
-	image: url("../res/ControlResImages/SpinBoxUp-Light.png");
+    image: url("../res/ControlResImages/SpinBoxUp-Light.png");
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -34,11 +34,11 @@ QDoubleSpinBox::up-button {
 }
 
 QDoubleSpinBox::up-button:hover {
-	background-color: rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
 }
 
 QDoubleSpinBox::up-button:pressed {
-	background-color: rgb(243, 243, 243);
+    background-color: rgb(243, 243, 243);
 }
 
 QDoubleSpinBox::down-button {
@@ -55,15 +55,15 @@ QDoubleSpinBox::down-button {
 }
 
 QDoubleSpinBox::down-button:hover {
-	background-color: rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
 }
 
 QDoubleSpinBox::down-button:pressed {
-	background-color: rgb(243, 243, 243);
+    background-color: rgb(243, 243, 243);
 }
 
 QDoubleSpinBox::drop-down {
-	background-color: transparent;
+    background-color: transparent;
     width: 50px;
 }
 

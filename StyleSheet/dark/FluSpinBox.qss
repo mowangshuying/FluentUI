@@ -1,0 +1,85 @@
+/*FluSpinBox*/
+
+QSpinBox {
+    background-color: rgb(45, 45, 45);
+    border: 1px solid rgb(48, 48, 48);
+    border-radius: 4px;
+    padding-left: 10px;
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 100px;
+    border-bottom: 1px solid rgb(154, 154, 154);
+    selection-color: white;
+    selection-background-color: rgb(0, 120, 215);
+    color: white;
+}
+
+QSpinBox:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+QSpinBox:focus {
+    color: white;
+    border-bottom: 2px solid rgb(0, 90, 158);
+}
+
+QSpinBox::up-button {
+    image: url("../res/ControlResImages/SpinBoxUp-Dark.png");
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 2px;
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 15px;
+}
+
+QSpinBox::up-button:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+QSpinBox::up-button:pressed {
+    background-color: rgb(56, 56, 56);
+}
+
+QSpinBox::down-button {
+    image: url("../res/ControlResImages/SpinBoxDown-Dark.png");
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 2px;
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 15px;
+}
+
+QSpinBox::down-button:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+QSpinBox::down-button:pressed {
+    background-color: rgb(56, 56, 56);
+}
+
+QSpinBox::drop-down {
+    background-color: transparent;
+    width: 50px;
+}
+
+QSpinBox:disabled {
+    color: rgb(120, 120, 120);
+    background-color: rgb(42, 42, 42);
+    border: 1px solid rgb(48, 48, 48);
+}
+
+QSpinBox::up-button:disabled {
+    image: url("../res/ControlResImages/SpinBoxUpDisabled-Dark.png");
+}
+
+QSpinBox::down-button:disabled {
+    image: url("../res/ControlResImages/SpinBoxDownDisabled-Dark.png");
+}

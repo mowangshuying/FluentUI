@@ -73,7 +73,7 @@ class FluListViewItemDelegate : public QStyledItemDelegate
         painter->setPen(Qt::black);
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
-            painter->setPen(Qt::white);     
+            painter->setPen(Qt::white);
         }
         painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
 

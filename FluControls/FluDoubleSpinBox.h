@@ -13,7 +13,7 @@ class FluDoubleSpinBox : public QDoubleSpinBox
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-      public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

@@ -29,7 +29,6 @@ class FluCollectionsPage : public FluATitlePage
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-
   public slots:
     void onThemeChanged()
     {
@@ -42,5 +41,4 @@ class FluCollectionsPage : public FluATitlePage
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCollectionsPage.qss", this);
         }
     }
-
 };

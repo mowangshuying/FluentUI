@@ -120,7 +120,7 @@ class FluMessageBox : public QDialog
         return QDialog::eventFilter(obj, event);
     }
 
-    public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

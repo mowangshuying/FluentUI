@@ -14,7 +14,7 @@ class FluInfoBadge : public QLabel
         setAlignment(Qt::AlignCenter);
         setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadge.qss", this, true);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadge.qss", this);
         m_parent = nullptr;
         m_target = nullptr;
     }

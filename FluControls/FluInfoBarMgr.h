@@ -8,12 +8,12 @@
 
 class FluShortInfoBar;
 
-class FluInfoBarList
-{
-  public:
-    QWidget* parentWidget;
-    std::list<FluShortInfoBar*> infoBarList;
-};
+//class FluInfoBarList
+//{
+//  public:
+//    QWidget* parentWidget;
+//    std::list<FluShortInfoBar*> infoBarList;
+//};
 
 class FluInfoBarMgr : public QObject
 {
@@ -23,15 +23,15 @@ class FluInfoBarMgr : public QObject
 
     static FluInfoBarMgr* getInstance()
     {
-        FluInfoBarMgr mgr;
+        static FluInfoBarMgr mgr;
         return &mgr;
     }
 
-    void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar);
+    void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int nDisappearDuration = 800);
 
     void removeInfoBar(FluShortInfoBar* infoBar);
 
   protected:
-    std::list<FluInfoBarList> m_infoBarMap;
+    std::map<QWidget*, std::list<FluShortInfoBar*>> m_infoBarMap;
     QTimer* m_timer;
 };

@@ -153,14 +153,14 @@ int main(int argc, char **argv)
     // FluMenuBarDemo demo;
     // demo.show();
 
-    //  FluInfoBarDemo demo;
-    //  demo.show();
+      FluInfoBarDemo demo;
+      demo.show();
 
     // FluThreadDemo demo;
     // demo.show();
 
-    FluTextEditDemo demo;
-    demo.show();
+   // FluTextEditDemo demo;
+   // demo.show();
 
     return app.exec();
 }

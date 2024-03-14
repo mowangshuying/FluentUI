@@ -7,6 +7,8 @@
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
+#include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
 
 enum class FluShortInfoBarType
 {
@@ -22,54 +24,25 @@ class FluShortInfoBar : public QWidget
   public:
     FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent = nullptr);
 
-    void setInfoBarTypeProperty(QString infoBarType)
-    {
-        setProperty("infoBarType", infoBarType);
-        m_iconLabel->setProperty("infoBarType", infoBarType);
-        m_infoLabel->setProperty("infoBarType", infoBarType);
-        m_closeBtn->setProperty("infoBarType", infoBarType);
-        style()->polish(this);
-        m_iconLabel->style()->polish(this);
-        m_infoLabel->style()->polish(this);
-        m_closeBtn->style()->polish(this);
-    }
+    void setInfoBarTypeProperty(QString infoBarType);
 
-    void updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
-    {
-        switch (infoBarType)
-        {
-            case FluShortInfoBarType::Info:
-                setInfoBarTypeProperty("Info");
-                m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Info, QColor(239, 239, 239), 18, 18));
-                break;
-            case FluShortInfoBarType::Suc:
-                setInfoBarTypeProperty("Suc");
-                m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, QColor(239, 239, 239), 18, 18));
-                break;
-            case FluShortInfoBarType::Warn:
-                setInfoBarTypeProperty("Warn");
-                m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Info, QColor(239, 239, 239), 18, 18));
-                break;
-            case FluShortInfoBarType::Error:
-                setInfoBarTypeProperty("Error");
-                m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, QColor(239, 239, 239), 18, 18));
-                break;
-            default:
-                break;
-        }
-    }
+    void updateInfoBarTypeProperty(FluShortInfoBarType infoBarType);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void disappear();
+
+    void setDisappearDurartion(int disappearDuration);
+
+    void paintEvent(QPaintEvent* event);
 
   protected:
     QHBoxLayout* m_hMainLayout;
     QLabel* m_iconLabel;
     QLabel* m_infoLabel;
     QPushButton* m_closeBtn;
+
+    QGraphicsOpacityEffect* m_opacityEffect;
+    QPropertyAnimation* m_opacityAni;
+
+    int m_nDisappearDuration;
+    bool m_bDisappearing;
 };

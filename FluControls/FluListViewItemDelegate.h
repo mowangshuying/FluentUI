@@ -37,6 +37,11 @@ class FluListViewItemDelegate : public QStyledItemDelegate
 
         QRect backgroundRect = option.rect;
         painter->setBrush(QColor(243, 243, 243));
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            painter->setBrush(QColor(32, 32, 32));
+        }
+
         painter->drawRect(backgroundRect);
 
         QRect hoverSelectedRect(backgroundRect.x() + 2, backgroundRect.y() + 2, backgroundRect.width() - 4, backgroundRect.height() - 4);
@@ -44,6 +49,11 @@ class FluListViewItemDelegate : public QStyledItemDelegate
         {
             //   LOG_DEBUG << "hoverSelectedRect:" << hoverSelectedRect;
             painter->setBrush(QColor(234, 234, 234));
+            if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+            {
+                painter->setBrush(QColor(45, 45, 45));
+            }
+
             painter->drawRoundedRect(hoverSelectedRect, 4, 4);
         }
 
@@ -51,11 +61,20 @@ class FluListViewItemDelegate : public QStyledItemDelegate
         {
             QRect indicatorRect(hoverSelectedRect.x(), hoverSelectedRect.y() + 9, 3, 18);
             painter->setBrush(QColor(0, 90, 158));
+            if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+            {
+                painter->setBrush(QColor(118, 185, 237));
+            }
+
             painter->drawRoundedRect(indicatorRect, 2, 2);
         }
 
         QRect textRect(backgroundRect.x() + 12, backgroundRect.y() + 2, backgroundRect.width() - 12, backgroundRect.height() - 4);
         painter->setPen(Qt::black);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            painter->setPen(Qt::white);     
+        }
         painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
 
         painter->restore();

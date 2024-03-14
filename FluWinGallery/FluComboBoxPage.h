@@ -42,5 +42,19 @@ class FluComboBoxPage : public FluAEmptyPage
             colorLabel->style()->polish(colorLabel);
         });
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBoxPage.qss", this);
+        }
     }
 };

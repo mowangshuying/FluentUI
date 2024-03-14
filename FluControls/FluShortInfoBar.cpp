@@ -84,7 +84,7 @@ void FluShortInfoBar::disappear()
     {
         m_bDisappearing = true;
         QTimer::singleShot(m_nDisappearDuration, [=]() {
-            m_opacityAni->setDuration(200);
+            m_opacityAni->setDuration(500);
             m_opacityAni->setStartValue(1);
             m_opacityAni->setEndValue(0);
             connect(m_opacityAni, &QPropertyAnimation::finished, [=]() { m_closeBtn->clicked(); });

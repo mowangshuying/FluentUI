@@ -14,5 +14,23 @@ class FluListView : public QListWidget
     {
         setItemDelegate(new FluListViewItemDelegate);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+    public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+          //  style()->polish(this);
+        //    setItemDelegate(new FluListViewItemDelegate);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListView.qss", this);
+          //  style()->polish(this);
+          //  setItemDelegate(new FluListViewItemDelegate);
+        }
     }
 };

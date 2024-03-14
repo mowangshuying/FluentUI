@@ -24,5 +24,23 @@ class FluCollectionsPage : public FluATitlePage
 
         auto treeViewCard = new FluHCard(QPixmap("../res/ControlImages/TreeView.png"), "TreeView", "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.");
         getFWScrollView()->getMainLayout()->addWidget(treeViewCard);
+
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCollectionsPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
+
+
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCollectionsPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCollectionsPage.qss", this);
+        }
+    }
+
 };

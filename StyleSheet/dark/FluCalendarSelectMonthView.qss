@@ -1,5 +1,5 @@
 FluCalendarSelectMonthView {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(31, 31, 31);
 }
 
 #label {
@@ -11,19 +11,19 @@ FluCalendarSelectMonthView {
 }
 
 #label[outRange=true] {
-    color: rgb(97, 97, 97);
+    color: rgb(151, 151, 151);
 }
 
 #label[today=true] {
-    color: white;
+    color: black;
     background-color: rgb(0, 90, 158);
 }
 
 #label:hover {
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(44, 44, 44);
 }
 
 #label:hover[today=true] {
-    color: white;
+    color: black;
     background-color: rgb(0, 90, 158);
 }

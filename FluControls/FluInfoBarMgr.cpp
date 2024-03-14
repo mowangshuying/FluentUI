@@ -13,8 +13,8 @@ FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
         // the spcing fix 15
         // move infobar.
 
-     //   if (m_infoBarMap.empty())
-     //       m_timer->stop();
+        //   if (m_infoBarMap.empty())
+        //       m_timer->stop();
 
         for (auto itMap = m_infoBarMap.begin(); itMap != m_infoBarMap.end(); itMap++)
         {
@@ -39,9 +39,9 @@ FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
                 auto itPrevList = itList;
                 itPrevList--;
 
-              //  LOG_DEBUG << "Y1:" << (*itList)->y();
-              //  LOG_DEBUG << "Y2:" << (*itPrevList)->y(); 
-              //  LOG_DEBUG << "H:" << (*itPrevList)->height(); 
+                //  LOG_DEBUG << "Y1:" << (*itList)->y();
+                //  LOG_DEBUG << "Y2:" << (*itPrevList)->y();
+                //  LOG_DEBUG << "H:" << (*itPrevList)->height();
 
                 if ((*itList)->y() - ((*itPrevList)->y() + (*itPrevList)->height()) > 15)
                 {
@@ -52,7 +52,7 @@ FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
     });
 
     // to start timer.
-    //m_timer->start();
+    // m_timer->start();
     m_timer->start();
     m_infoBarMap.clear();
 }
@@ -65,8 +65,8 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, 
     //  long key = (long)(parentWidget);
     //  auto itf = m_infoBarMap.find(key);
 
-    //infoBar->show();
-    //infoBar->hide();
+    // infoBar->show();
+    // infoBar->hide();
 
     infoBar->setDisappearDurartion(nDisappearDuration);
     auto itf = m_infoBarMap.find(parentWidget);
@@ -74,7 +74,7 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, 
     {
         // set infoBar pos
         int nX = parentWidget->width() / 2 - infoBar->sizeHint().width() / 2;
-       // LOG_DEBUG << "parentWidget Width:" << parentWidget->width() << ", infoBar width:" << infoBar->width();
+        // LOG_DEBUG << "parentWidget Width:" << parentWidget->width() << ", infoBar width:" << infoBar->width();
         int nY = 75;
 
         infoBar->move(nX, nY);
@@ -102,7 +102,7 @@ void FluInfoBarMgr::removeInfoBar(FluShortInfoBar* infoBar)
         if (itf != itMap->second.end())
         {
             itMap->second.erase(itf);
-          //  m_timer->start();
+            //  m_timer->start();
             break;
         }
     }

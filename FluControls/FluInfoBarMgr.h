@@ -8,12 +8,12 @@
 
 class FluShortInfoBar;
 
-//class FluInfoBarList
+// class FluInfoBarList
 //{
-//  public:
-//    QWidget* parentWidget;
-//    std::list<FluShortInfoBar*> infoBarList;
-//};
+//   public:
+//     QWidget* parentWidget;
+//     std::list<FluShortInfoBar*> infoBarList;
+// };
 
 class FluInfoBarMgr : public QObject
 {

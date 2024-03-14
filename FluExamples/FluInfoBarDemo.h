@@ -73,6 +73,6 @@ class FluInfoBarDemo : public QWidget
         }
 
         resize(600, 400);
-       // clickBtn->move(300 - clickBtn->width() / 2, 200 - clickBtn->height() / 2);
+        // clickBtn->move(300 - clickBtn->width() / 2, 200 - clickBtn->height() / 2);
     }
 };

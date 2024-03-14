@@ -83,7 +83,13 @@ class FluMessageBox : public QDialog
         connect(m_cancelBtn, &QPushButton::clicked, [=]() { reject(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMessageBox.qss", this);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMessageBox.qss", this);
+        }
+
         m_parentWidget->installEventFilter(this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void showEvent(QShowEvent* event)
@@ -112,6 +118,19 @@ class FluMessageBox : public QDialog
         }
 
         return QDialog::eventFilter(obj, event);
+    }
+
+    public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMessageBox.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMessageBox.qss", this);
+        }
     }
 
   protected:

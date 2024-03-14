@@ -14,6 +14,11 @@ class FluPushButton : public QPushButton
     {
         setFixedSize(200, 30);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
+        }
+
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
   public slots:

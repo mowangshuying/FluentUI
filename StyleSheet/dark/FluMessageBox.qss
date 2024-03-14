@@ -1,0 +1,26 @@
+FluMessageBox {
+    background-color: transparent;
+}
+
+#windowMask {
+    background-color: rgba(75, 75, 75, 0.8);
+}
+
+#centerWidget {
+    background-color: rgb(43, 43, 43);
+    border-radius: 8px;
+}
+
+#titleLabel {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+}
+
+#infoLabel {
+    font-size: 14px;
+    color: rgb(91, 91, 91);
+    color: white;
+    background-color: transparent;
+}

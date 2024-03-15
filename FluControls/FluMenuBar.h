@@ -15,5 +15,19 @@ class FluMenuBar : public QMenuBar
     {
         setMouseTracking(true);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+   public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuBar.qss", this);
+        }
     }
 };

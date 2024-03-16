@@ -35,10 +35,13 @@ class FluInfoBarPage : public FluAEmptyPage
               comboBox->addItem("Error");
 
               connect(comboBox, &FluComboBox::currentIndexChanged, [=](int index) mutable {
-                  LOG_DEBUG << "index:" << index;
-                  displayBox->getBodyContentLayout()->removeWidget(sInfoBar);
-                  delete sInfoBar;
-                  sInfoBar = nullptr;
+               //   LOG_DEBUG << displayBox->getBodyContentLayout()->count();
+                  if (!displayBox->getBodyContentLayout()->isEmpty())
+                  {
+                      displayBox->getBodyContentLayout()->removeWidget(sInfoBar);
+                      delete sInfoBar;
+                      sInfoBar = nullptr;
+                  }
 
                   switch (index)
                   {

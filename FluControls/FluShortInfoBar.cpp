@@ -62,7 +62,7 @@ void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
             break;
         case FluShortInfoBarType::Suc:
             setInfoBarTypeProperty("Suc");
-            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, QColor(239, 239, 239), 18, 18));
+            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::StatusCircleCheckmark, QColor(239, 239, 239), 18, 18));
             break;
         case FluShortInfoBarType::Warn:
             setInfoBarTypeProperty("Warn");
@@ -70,9 +70,7 @@ void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
             break;
         case FluShortInfoBarType::Error:
             setInfoBarTypeProperty("Error");
-            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, QColor(239, 239, 239), 18, 18));
-            break;
-        default:
+            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Error, QColor(239, 239, 239), 18, 18));
             break;
     }
 }

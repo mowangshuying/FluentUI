@@ -21,19 +21,35 @@ English | <a href="README_zh_CN.md">简体中文</a>
 
 ## Get started
 
-+ Clone the repository.
+### Build with Vs2022
 
-```SHELL
-git clone https://github.com/mowangshuying/CppQtFluentUi888.git
-```
+* Clone the repository.
 
-+ Build
+  ```SHELL
+  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  ```
 
->1.open CppQtFluentUi888.sln with Vs2022.
->
->2.build it!
->
->3.set start up project to FluWinGallery and run it!
+* Build
+
+  >1.open CppQtFluentUi888.sln with Vs2022.
+  >
+  >2.build it!
+  >
+  >3.set start up project to FluWinGallery and run it!
+
+### Build With Qt Creator
+
+* Clone the repository
+
+  ```shell
+  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  ```
+
+* Build
+
+  > 1.Open CMakeLists.txt with Qt Creator.
+  >
+  > 2.build it!
 
 ##  Documentations
 

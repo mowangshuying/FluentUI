@@ -21,19 +21,35 @@
 
 ## 开始
 
-+ 克隆仓库.
+### Vs2022构建方式
 
-```SHELL
-git clone https://github.com/mowangshuying/CppQtFluentUi888.git
-```
+* 克隆仓库.
 
-+ Build
+  ```SHELL
+  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  ```
 
->1.用Vs2022打开CppQt.
->
->2.编译!
->
->3.设置为启动项目并且启动!
+* Build
+
+  >1.用Vs2022打开CppQtFluentUi888.sln
+  >
+  >2.编译!
+  >
+  >3.设置为启动项目并且启动!
+
+### Qt Creator 构建方式
+
+* 克隆仓库
+
+  ``` SHELL
+  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  ```
+
+* Build
+
+  >1.用Qt Creator打开CMakeLists.txt.
+  >
+  >2.编译.
 
 ##  文档
 

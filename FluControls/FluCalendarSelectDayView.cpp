@@ -1,6 +1,7 @@
 #include "FluCalendarSelectDayView.h"
 #include <QLabel>
 #include "FluCalendarView.h"
+#include "FluCalendarViewTitle.h"
 
 FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
@@ -84,6 +85,7 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : QWid
 
     setFixedHeight(270);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 FluCalendarItem* FluCalendarMonthView::getItem(int nIndex)
@@ -93,9 +95,6 @@ FluCalendarItem* FluCalendarMonthView::getItem(int nIndex)
 
 void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
 {
-    // QDate date = QDate::currentDate();
-    // m_curMonth = QDate(nYear, nMonth, 1);
-
     QDate today = QDate::currentDate();
     if (nYear < 1924 || nYear > 2124)
         return;

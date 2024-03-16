@@ -17,48 +17,7 @@
 #include <QScrollBar>
 #include <QStackedLayout>
 
-class FluCalendarView;
-class FluCalendarViewTitle : public QWidget
-{
-    Q_OBJECT
-  public:
-    FluCalendarViewTitle(QWidget* parent = nullptr);
-
-    FluPushButton* getYearMonthBtn()
-    {
-        return m_yearMonthBtn;
-    }
-
-    FluIconButton* getNextBtn()
-    {
-        return m_nextBtn;
-    }
-
-    FluIconButton* getPreBtn()
-    {
-        return m_preBtn;
-    }
-
-    void setYearMonth(int nYear, int nMonth);
-
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
-
-  protected:
-    FluPushButton* m_yearMonthBtn;
-    FluIconButton* m_preBtn;
-    FluIconButton* m_nextBtn;
-
-    QHBoxLayout* m_hMainLayout;
-
-    FluCalendarView* m_parentView;
-};
-
+class FluCalendarViewTitle;
 class FluCalendarSelectDayView;
 class FluCalendarSelectMonthView;
 class FluCalendarSelectYearView;
@@ -118,6 +77,8 @@ class FluCalendarView : public QWidget
   signals:
     void selectedDate(QDate date);
 
+  public slots:
+    void onThemeChanged();
   protected:
     QDate m_curDate;
     FluCalendarViewState m_viewState;

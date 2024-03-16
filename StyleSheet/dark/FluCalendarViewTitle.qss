@@ -1,7 +1,8 @@
 /*FluCalendarViewTitle qss*/
 
 FluCalendarViewTitle {
-    border-bottom: 1px solid rgb(47, 47, 47);
+    background-color: rgb(31, 31, 31);
+    /* border-bottom: 1px solid rgb(47, 47, 47); */
 }
 
 #yearMonthBtn {
@@ -11,6 +12,7 @@ FluCalendarViewTitle {
     border: 1px solid transparent;
     border-radius: 4px;
     background-color: transparent;
+    color: white;
 }
 
 #yearMonthBtn:hover {

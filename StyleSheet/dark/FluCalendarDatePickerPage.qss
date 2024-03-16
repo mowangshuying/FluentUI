@@ -1,13 +1,14 @@
  FluCalendarDatePickerPage {
-     background-color: rgb(249, 249, 249);
+     background-color: rgb(39, 39, 39);
      border-radius: 8px;
-     border: 1px solid rgb(229, 229, 229);
+     border: 1px solid rgb(29, 29, 29);
      margin-right: 5px;
      margin-bottom: 5px;
  }
  
  #titleLabel {
      font-size: 26px;
+     color: white;
      /* font-weight: bold; */
      /* text-decoration: underline; */
  }
@@ -15,10 +16,10 @@
  #subTitleLabel {
      margin-left: 5px;
      font-size: 12px;
-     color: rgb(98, 98, 98);
+     color: white;
  }
  
  #infoLabel {
      font-size: 12px;
-     color: rgb(26, 26, 26);
+     color: white;
  }

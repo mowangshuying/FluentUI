@@ -41,19 +41,7 @@ class FluCalendarMonthView : public QWidget
 
     void updateStyleSheet();
 
-    //  void setCurMonth(int nYear, int nMonth)
-    //  {
-    // m_curMonth = QDate(nYear, nMonth, 1);
-    //  }
-
     QDate getCurMonth();
-
-    // void setCurMonth(QDate curMonth)
-    //{
-    //     LOG_DEBUG << "setCurMonth:" << curMonth;
-    //     m_curMonth = curMonth;
-    //     emit curMonthChanged();
-    // }
 
     QDate getNextMonth();
 
@@ -65,7 +53,18 @@ class FluCalendarMonthView : public QWidget
 
   signals:
     void curMonthChanged();
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarMonthView.qss", this);
+        }
+    }
   protected:
     QGridLayout* m_gMainLayout;
     QList<FluCalendarItem*> m_labelList;
@@ -108,6 +107,18 @@ class FluCalendarSelectDayView : public QWidget
         return m_monthView;
     }
 
+   public slots:
+   //void onThemeChanged()
+   // {
+   //     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+   //     {
+   //         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectDayView.qss", this);
+   //     }
+   //     else
+   //     {
+   //         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectDayView.qss", this);
+   //     }
+   // }
   protected:
     QVBoxLayout* m_vMainLayout;
 

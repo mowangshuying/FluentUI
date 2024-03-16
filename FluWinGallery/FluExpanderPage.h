@@ -24,6 +24,7 @@ class FluExpanderPage : public FluAEmptyPage
         addExpanderDemo3();
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpanderPage.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void addExpanderDemo1()
@@ -98,5 +99,18 @@ class FluExpanderPage : public FluAEmptyPage
 
         displayBox->getBodyLayout()->addWidget(expander);
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    }
+
+    public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNumberBoxPage.qss", this);
+        }
     }
 };

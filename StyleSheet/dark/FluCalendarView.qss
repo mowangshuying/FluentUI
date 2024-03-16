@@ -2,6 +2,6 @@
 
 FluCalendarView {
     background-color: rgb(31, 31, 31);
-    border: 1px solid rgb(47, 47, 47);
+    border: 1px solid rgb(48, 48, 48);
     border-radius: 4px;
 }

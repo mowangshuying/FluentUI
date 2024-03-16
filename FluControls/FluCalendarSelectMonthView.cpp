@@ -2,6 +2,7 @@
 #include "FluCalendarView.h"
 #include <QDate>
 #include "FluCalendarSelectDayView.h"
+#include "FluCalendarViewTitle.h"
 
 FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {

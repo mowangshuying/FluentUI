@@ -221,6 +221,9 @@
     <ClCompile Include="FluDoubleSpinBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCalendarViewTitle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -410,6 +413,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDoubleSpinBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluCalendarViewTitle.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

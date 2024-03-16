@@ -51,6 +51,7 @@ class FluCalendarDatePicker : public QPushButton
         connect(m_iconButton, &QPushButton::clicked, [=]() { onClicked(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:
@@ -73,6 +74,20 @@ class FluCalendarDatePicker : public QPushButton
         LOG_DEBUG << gPoint;
         m_calendarView->move(gPoint.x() - m_calendarView->width() / 2, gPoint.y());
         m_calendarView->show();
+    }
+
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
+        }
+        else
+        {
+            m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar, FluTheme::Dark));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarDatePicker.qss", this);
+        }
     }
 
   protected:

@@ -119,6 +119,9 @@
     <ClCompile Include="FluInfoBadgePage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluInfoBarPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -212,6 +215,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluInfoBadgePage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluInfoBarPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

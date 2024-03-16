@@ -36,6 +36,7 @@
 #include "FluMenuBarPage.h"
 #include "FluNumberBoxPage.h"
 #include "FluInfoBadgePage.h"
+#include "FluInfoBarPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -382,6 +383,9 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("InfoBadgePage"); });
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
+        auto infoBarPage = new FluInfoBarPage;
+        m_sLayout->addWidget("InfoBarPage", infoBarPage);
+        connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("InfoBarPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
         auto progressBarPage = new FluProgressBarPage;

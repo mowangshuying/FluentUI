@@ -145,5 +145,6 @@ class FluMenuBarPage : public FluAEmptyPage
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuBarPage.qss", this);
         }
     }
+
   protected:
 };

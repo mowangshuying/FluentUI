@@ -20,7 +20,7 @@ QComboBox::drop-down {
 QComboBox::down-arrow {
     height: 15px;
     width: 15px;
-    image: url("../res/ControlResImages/ChevronDown-black.png");
+    image: url("../res/ControlResImages/ChevronDown-Light.png");
 }
 
 QComboBox QAbstractItemView {

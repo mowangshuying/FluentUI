@@ -77,8 +77,8 @@ QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType, QColor penColor)
     return QIcon(getFluentIconPixmap(nType, penColor));
 }
 
-void FluIconUtils::saveFluentPng(FluAwesomeType nType, QString filename)
+void FluIconUtils::saveFluentPng(FluAwesomeType nType, FluTheme theme, QString filename)
 {
-    auto pixmap = getFluentIconPixmap(nType);
+    auto pixmap = getFluentIconPixmap(nType, theme);
     pixmap.save(filename);
 }

@@ -10,9 +10,9 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
     setAttribute(Qt::WA_TranslucentBackground);
 
     m_curDate = QDate::currentDate();
-    //LOG_DEBUG << m_curDate;
+    // LOG_DEBUG << m_curDate;
     m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
+    m_vMainLayout->setContentsMargins(1, 1, 1, 1);
     m_vMainLayout->setSpacing(0);
 
     setLayout(m_vMainLayout);
@@ -183,6 +183,6 @@ void FluCalendarView::onThemeChanged()
     else
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarView.qss", this);
-        style()->polish(this);
+        //   style()->polish(this);
     }
 }

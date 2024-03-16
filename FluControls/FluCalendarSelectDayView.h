@@ -15,10 +15,14 @@
 class FluCalendarView;
 class FluCalendarViewWeakTitle : public QWidget
 {
+    Q_OBJECT
   public:
     FluCalendarViewWeakTitle(QWidget* parent = nullptr);
 
     void paintEvent(QPaintEvent* event);
+
+  public slots:
+    void onThemeChanged();
 
   protected:
     QHBoxLayout* m_hMainLayout;
@@ -65,6 +69,7 @@ class FluCalendarMonthView : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarMonthView.qss", this);
         }
     }
+
   protected:
     QGridLayout* m_gMainLayout;
     QList<FluCalendarItem*> m_labelList;
@@ -107,18 +112,18 @@ class FluCalendarSelectDayView : public QWidget
         return m_monthView;
     }
 
-   public slots:
-   //void onThemeChanged()
-   // {
-   //     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
-   //     {
-   //         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectDayView.qss", this);
-   //     }
-   //     else
-   //     {
-   //         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectDayView.qss", this);
-   //     }
-   // }
+  public slots:
+    // void onThemeChanged()
+    //  {
+    //      if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    //      {
+    //          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectDayView.qss", this);
+    //      }
+    //      else
+    //      {
+    //          FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectDayView.qss", this);
+    //      }
+    //  }
   protected:
     QVBoxLayout* m_vMainLayout;
 

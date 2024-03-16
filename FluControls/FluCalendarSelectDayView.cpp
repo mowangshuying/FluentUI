@@ -36,6 +36,18 @@ void FluCalendarViewWeakTitle::paintEvent(QPaintEvent* event)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
+void FluCalendarViewWeakTitle::onThemeChanged()
+{
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewWeakTitle.qss", this);
+    }
+}
+
 FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
     m_gMainLayout = new QGridLayout;

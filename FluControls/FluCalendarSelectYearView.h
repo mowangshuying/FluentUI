@@ -31,6 +31,19 @@ class FluCalendarSelectYearView : public QWidget
 
     void getRange(int nYear, int& nStartYear, int& nEndYear);
 
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectYearView.qss", this);
+        }
+    }
+
   protected:
     QGridLayout* m_gMainLayout;
     QList<FluCalendarItem*> m_labelList;

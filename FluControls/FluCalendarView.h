@@ -79,6 +79,7 @@ class FluCalendarView : public QWidget
 
   public slots:
     void onThemeChanged();
+
   protected:
     QDate m_curDate;
     FluCalendarViewState m_viewState;

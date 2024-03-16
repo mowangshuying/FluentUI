@@ -32,7 +32,7 @@ class FluIconToolWidget : public QWidget
         // FluIconUtils::saveFluentPng((FluAwesomeType)lineEdit1->text().toInt(),
         // "tmp");
 
-        connect(btn1, &QPushButton::clicked, [=](bool bClicked) { FluIconUtils::saveFluentPng(QStringToEnum<FluAwesomeType>(lineEdit1->text()), "tmp.png"); });
+        connect(btn1, &QPushButton::clicked, [=](bool bClicked) { FluIconUtils::saveFluentPng(QStringToEnum<FluAwesomeType>(lineEdit1->text()), FluTheme::Dark, "tmp.png"); });
         resize(280, 80);
     }
 };

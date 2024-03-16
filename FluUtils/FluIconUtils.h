@@ -28,7 +28,7 @@ class FluIconUtils
     static QPixmap getFluentIconPixmap(FluAwesomeType nType, QColor penColor);
     static QIcon getFluentIcon(FluAwesomeType nType, QColor penColor);
 
-    static void saveFluentPng(FluAwesomeType nType, QString filename);
+    static void saveFluentPng(FluAwesomeType nType, FluTheme theme, QString filename);
 
   private:
     QFont m_fluentFont;

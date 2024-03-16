@@ -26,3 +26,22 @@ target_link_libraries(${TGT}
     FluControls
     Qt6::Widgets
 )
+
+set_target_properties(${TGT} PROPERTIES
+    WIN32_EXECUTABLE ON
+    MACOSX_BUNDLE ON
+)
+
+include(GNUInstallDirs)
+install(TARGETS ${TGT}
+  BUNDLE DESTINATION bin
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+qt_generate_deploy_app_script(
+     TARGET ${TGT}
+     OUTPUT_SCRIPT deploy_script
+     NO_UNSUPPORTED_PLATFORM_ERROR
+ )
+ install(SCRIPT ${deploy_script})

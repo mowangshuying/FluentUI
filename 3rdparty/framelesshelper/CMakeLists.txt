@@ -34,3 +34,17 @@ target_link_libraries(${TGT}
     ${TGT}_Core
     ${TGT}_Widgets
 )
+
+install(PROGRAMS
+    "bin/debug/FramelessHelperCore64d.dll"
+    "bin/debug/FramelessHelperWidgets64d.dll"
+    DESTINATION bin
+    CONFIGURATIONS DEBUG
+)
+
+install(PROGRAMS
+    "bin/release/FramelessHelperCore64.dll"
+    "bin/release/FramelessHelperWidgets64.dll"
+    DESTINATION bin
+    CONFIGURATIONS RELEASE
+)

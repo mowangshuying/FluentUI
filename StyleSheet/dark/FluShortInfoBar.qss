@@ -1,3 +1,8 @@
+#infoLabel {
+    background-color: transparent;
+    color: white;
+}
+
 FluShortInfoBar[infoBarType="Info"] {
     border: 1px solid rgb(29, 29, 29);
     background-color: rgb(39, 39, 39);

@@ -24,6 +24,8 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     m_closeBtn->setFixedSize(30, 30);
     m_closeBtn->setIconSize(QSize(15, 15));
     m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose));
+
+
     m_closeBtn->setObjectName("closeBtn");
     m_hMainLayout->addWidget(m_closeBtn);
 
@@ -39,6 +41,14 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     m_nDisappearDuration = -1;
     m_bDisappearing = false;
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
+
+
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+    {
+        m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
+    }
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)

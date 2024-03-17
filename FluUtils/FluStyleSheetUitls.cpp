@@ -29,14 +29,14 @@ void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widg
     {
         widget->setStyleSheet(qss);
 
-        //if (bDebugQss)
+        // if (bDebugQss)
         //{
-        //    // just change file
-        //    connect(FluStyleSheetUitls::getTimer(), &QTimer::timeout, [=]() {
-        //        QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
-        //        widget->setStyleSheet(qss);
-        //    });
-        //}
+        //     // just change file
+        //     connect(FluStyleSheetUitls::getTimer(), &QTimer::timeout, [=]() {
+        //         QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
+        //         widget->setStyleSheet(qss);
+        //     });
+        // }
     }
 }
 

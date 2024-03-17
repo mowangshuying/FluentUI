@@ -81,7 +81,6 @@ class FluInfoBarPage : public FluAEmptyPage
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     }
 
-
     void addDynamicInfoBar()
     {
         FluDisplayBox* displayBox = new FluDisplayBox;
@@ -104,36 +103,34 @@ class FluInfoBarPage : public FluAEmptyPage
         warnBtn->setFixedWidth(120);
         errorBtn->setFixedWidth(120);
 
-
-          connect(infoBtn, &FluPushButton::clicked, [=]() {
+        connect(infoBtn, &FluPushButton::clicked, [=]() {
             FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info, window());
             sInfoBar->setFixedWidth(270);
             FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
         });
 
-            connect(sucBtn, &FluPushButton::clicked, [=]() {
-              FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Suc, window());
-              sInfoBar->setFixedWidth(270);
-              FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
-          });
+        connect(sucBtn, &FluPushButton::clicked, [=]() {
+            FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Suc, window());
+            sInfoBar->setFixedWidth(270);
+            FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
+        });
 
-              connect(warnBtn, &FluPushButton::clicked, [=]() {
-                FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Warn, window());
-                sInfoBar->setFixedWidth(270);
-                FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
-            });
+        connect(warnBtn, &FluPushButton::clicked, [=]() {
+            FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Warn, window());
+            sInfoBar->setFixedWidth(270);
+            FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
+        });
 
-                connect(errorBtn, &FluPushButton::clicked, [=]() {
-                  FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Error, window());
-                  sInfoBar->setFixedWidth(270);
-                  FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
-              });
+        connect(errorBtn, &FluPushButton::clicked, [=]() {
+            FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Error, window());
+            sInfoBar->setFixedWidth(270);
+            FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
+        });
 
-
-                        displayBox->getBodyLayout()->addWidget(infoBtn);
-                displayBox->getBodyLayout()->addWidget(sucBtn);
-                displayBox->getBodyLayout()->addWidget(warnBtn);
-                displayBox->getBodyLayout()->addWidget(errorBtn);
+        displayBox->getBodyLayout()->addWidget(infoBtn);
+        displayBox->getBodyLayout()->addWidget(sucBtn);
+        displayBox->getBodyLayout()->addWidget(warnBtn);
+        displayBox->getBodyLayout()->addWidget(errorBtn);
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     }
   public slots:

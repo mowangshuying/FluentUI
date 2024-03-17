@@ -15,6 +15,7 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     m_hMainLayout->addWidget(m_iconLabel);
 
     m_infoLabel = new QLabel;
+    m_infoLabel->setWordWrap(true);
     m_infoLabel->setText("A Short Essential app Message.");
     m_infoLabel->setObjectName("infoLabel");
     m_hMainLayout->addWidget(m_infoLabel, 1);

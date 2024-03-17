@@ -124,6 +124,7 @@
     <ClCompile Include="FluColorLabel.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
+    <ClCompile Include="FluHRadioGroupBox.cpp" />
     <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluInfoBarMgr.cpp" />
     <ClCompile Include="FluListView.cpp" />
@@ -192,6 +193,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluHRadioGroupBox.h" />
     <QtMoc Include="FluTextEdit.h" />
     <QtMoc Include="FluInfoBarMgr.h" />
     <QtMoc Include="FluThread.h" />

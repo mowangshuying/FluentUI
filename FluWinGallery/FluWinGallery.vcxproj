@@ -136,6 +136,7 @@
     <ClCompile Include="FluProgressBarPage.cpp" />
     <ClCompile Include="FluProgressRingPage.cpp" />
     <ClCompile Include="FluRadioButtonPage.cpp" />
+    <ClCompile Include="FluRadioButtonsPage.cpp" />
     <ClCompile Include="FluRepeatButtonPage.cpp" />
     <ClCompile Include="FluSettingPage.cpp" />
     <ClCompile Include="FluSliderPage.cpp" />
@@ -242,6 +243,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluBorderPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluRadioButtonsPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -53,7 +53,7 @@ class FluInfoBarPage : public FluAEmptyPage
                 displayBox->getBodyContentLayout()->removeWidget(sInfoBar);
                 sInfoBar->deleteLater();
                 // delete sInfoBar;
-               // sInfoBar = nullptr;
+                // sInfoBar = nullptr;
                 sInfoBar = nullptr;
             }
 

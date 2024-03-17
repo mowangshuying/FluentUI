@@ -34,7 +34,7 @@ class FluShortInfoBar : public QWidget
 
     void paintEvent(QPaintEvent* event);
 
-    public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
@@ -48,6 +48,7 @@ class FluShortInfoBar : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
         }
     }
+
   protected:
     QHBoxLayout* m_hMainLayout;
     QLabel* m_iconLabel;

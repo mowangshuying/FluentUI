@@ -24,7 +24,7 @@ class FluStyleSheetUitls : public QObject
     static void setQssByFileName(const QString &jsonVar, const QString &fileName, QWidget *widget);
 
     static QString getQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName);
-    static void setQssByFileName(const std::map<QString, QString> & kvMap, const QString &fileName, QWidget *widget);
+    static void setQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName, QWidget *widget);
 
     static void replaceVar(const QString &jsonVars, QString &styleSheet);
     static void replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet);

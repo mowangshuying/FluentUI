@@ -38,6 +38,7 @@
 #include "FluInfoBadgePage.h"
 #include "FluInfoBarPage.h"
 #include "FluBorderPage.h"
+#include "FluRadioButtonsPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -248,7 +249,7 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeLayoutNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout", this);
-        
+
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("Border", item);
         auto borderPage = new FluBorderPage;
         m_sLayout->addWidget("BorderPage", borderPage);
@@ -263,7 +264,13 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ItemsRepeater", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("Grid", item);
+
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("RadioButtons", item);
+        auto radioButtonsPage = new FluRadioButtonsPage;
+        m_sLayout->addWidget("RadioButtonsPage", radioButtonsPage);
+        connect(item6, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RadioButtonsPage"); });
+
+
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("RelativePanel", item);
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("SplitView", item);
         FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("StackPanel", item);

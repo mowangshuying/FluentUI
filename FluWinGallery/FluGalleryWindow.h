@@ -37,6 +37,7 @@
 #include "FluNumberBoxPage.h"
 #include "FluInfoBadgePage.h"
 #include "FluInfoBarPage.h"
+#include "FluBorderPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -247,7 +248,12 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeLayoutNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout", this);
+        
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("Border", item);
+        auto borderPage = new FluBorderPage;
+        m_sLayout->addWidget("BorderPage", borderPage);
+        connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("BorderPage"); });
+
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Canvas", item);
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Expander", item);

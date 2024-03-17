@@ -56,14 +56,14 @@ void FluStyleSheetUitls::setQssByFileName(const QString &jsonVar, const QString 
     }
 }
 
-QString FluStyleSheetUitls::getQssByFileName(const QMap<QString, QString> &kvMap, const QString &fileName)
+QString FluStyleSheetUitls::getQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName)
 {
     QString styleSheet = getQssByFileName(fileName);
     replaceVar(kvMap, styleSheet);
     return styleSheet;
 }
 
-void FluStyleSheetUitls::setQssByFileName(const QMap<QString, QString> &kvMap, const QString &fileName, QWidget *widget)
+void FluStyleSheetUitls::setQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName, QWidget *widget)
 {
     QString qss = FluStyleSheetUitls::getQssByFileName(kvMap, fileName);
     if (widget != nullptr)
@@ -84,7 +84,7 @@ void FluStyleSheetUitls::replaceVar(const QString &jsonVars, QString &styleSheet
         return;
     }
     //[{key:k1,value:v1},{key:k2,value:v2}]
-    QMap<QString, QString> KVMap;
+    std::map<QString, QString> KVMap;
     QJsonArray jsonArray = jsonDoc.array();
     for (int i = 0; i < jsonArray.size(); i++)
     {
@@ -104,12 +104,12 @@ void FluStyleSheetUitls::replaceVar(const QString &jsonVars, QString &styleSheet
     replaceVar(KVMap, styleSheet);
 }
 
-void FluStyleSheetUitls::replaceVar(const QMap<QString, QString> &kvMap, QString &styleSheet)
+void FluStyleSheetUitls::replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet)
 {
     for (auto itMap = kvMap.begin(); itMap != kvMap.end(); itMap++)
     {
-        QString key = "[[" + itMap.key() + "]]";
-        QString value = itMap.value();
+        QString key = "[[" + itMap->first + "]]";
+        QString value = itMap->second;
         styleSheet.replace(key, value);
     }
 }

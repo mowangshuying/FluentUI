@@ -49,6 +49,8 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
     }
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    setWindowFlags(Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint | Qt::Window);
+    setAttribute(Qt::WA_TranslucentBackground);
 }
 
 void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)

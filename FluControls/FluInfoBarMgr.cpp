@@ -35,7 +35,10 @@ FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
                     continue;
                 }
 
+                //(*itList)->show();
                 // other.
+
+              //  LOG_DEBUG << "Runing";
                 auto itPrevList = itList;
                 itPrevList--;
 

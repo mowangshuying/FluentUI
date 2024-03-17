@@ -51,7 +51,9 @@ class FluInfoBarPage : public FluAEmptyPage
             if (!displayBox->getBodyContentLayout()->isEmpty())
             {
                 displayBox->getBodyContentLayout()->removeWidget(sInfoBar);
-                delete sInfoBar;
+                sInfoBar->deleteLater();
+                // delete sInfoBar;
+               // sInfoBar = nullptr;
                 sInfoBar = nullptr;
             }
 

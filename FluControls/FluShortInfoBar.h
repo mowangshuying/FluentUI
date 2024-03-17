@@ -39,10 +39,12 @@ class FluShortInfoBar : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
+            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
         }
         else
         {
+            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
         }
     }

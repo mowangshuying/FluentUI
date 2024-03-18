@@ -230,6 +230,15 @@
     <ClCompile Include="FluHRadioGroupBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluPivot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluPivotTitleBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluPivotTitleBarItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -430,6 +439,9 @@
     <QtMoc Include="FluHRadioGroupBox.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluPivotTitleBarItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -445,6 +457,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluCalendarSelectYearView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluPivot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluPivotTitleBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

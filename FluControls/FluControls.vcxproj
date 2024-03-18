@@ -132,6 +132,9 @@
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
     <ClCompile Include="FluPasswordBox.cpp" />
+    <ClCompile Include="FluPivot.cpp" />
+    <ClCompile Include="FluPivotTitleBar.cpp" />
+    <ClCompile Include="FluPivotTitleBarItem.cpp" />
     <ClCompile Include="FluProgressBar.cpp" />
     <ClCompile Include="FluProgressRing.cpp" />
     <ClCompile Include="FluShortInfoBar.cpp" />
@@ -193,6 +196,9 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FluPivot.h" />
+    <ClInclude Include="FluPivotTitleBar.h" />
+    <QtMoc Include="FluPivotTitleBarItem.h" />
     <QtMoc Include="FluHRadioGroupBox.h" />
     <QtMoc Include="FluTextEdit.h" />
     <QtMoc Include="FluInfoBarMgr.h" />

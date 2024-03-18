@@ -75,6 +75,8 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, 
     auto itf = m_infoBarMap.find(parentWidget);
     if (itf == m_infoBarMap.end())
     {
+        parentWidget->installEventFilter(this);
+
         // set infoBar pos
         int nX = parentWidget->width() / 2 - infoBar->sizeHint().width() / 2;
         // LOG_DEBUG << "parentWidget Width:" << parentWidget->width() << ", infoBar width:" << infoBar->width();
@@ -119,4 +121,21 @@ void FluInfoBarMgr::removeInfoBar(FluShortInfoBar* infoBar)
         }
         itMap++;
     }
+}
+
+bool FluInfoBarMgr::eventFilter(QObject* watched, QEvent* event)
+{
+    auto itf = m_infoBarMap.find((QWidget*)watched);
+    if (itf == m_infoBarMap.end())
+        return QObject::eventFilter(watched, event);
+
+    for (auto itList = itf->second.begin(); itList != itf->second.end(); itList++)
+    {
+        QWidget* parentWidget = (QWidget*)watched;
+        int nX = parentWidget->width() / 2 - (*itList)->sizeHint().width() / 2;
+        int nY = (*itList)->y();
+        (*itList)->move(nX, nY);
+    }
+
+    return QObject::eventFilter(watched, event);
 }

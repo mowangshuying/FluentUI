@@ -31,6 +31,7 @@ class FluInfoBarMgr : public QObject
 
     void removeInfoBar(FluShortInfoBar* infoBar);
 
+    bool eventFilter(QObject* watched, QEvent* event);
   protected:
     std::map<QWidget*, std::list<FluShortInfoBar*>> m_infoBarMap;
     QTimer* m_timer;

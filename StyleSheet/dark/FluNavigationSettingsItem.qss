@@ -15,7 +15,7 @@ FluNavigationSettingsItem:hover {
 }
 
 #indicator[selected=true] {
-    background-color: rgb(0, 90, 158);
+    background-color: rgb(118, 185, 237);
     border-radius: 2px;
 }
 

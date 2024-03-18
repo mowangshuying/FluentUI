@@ -45,7 +45,7 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : QWidget(
     }
 
     QDate curDate = m_parentView->getCurDate();
-   // LOG_DEBUG << curDate;
+    // LOG_DEBUG << curDate;
     setYears(curDate.year(), curDate.month());
 
     setFixedHeight(300);

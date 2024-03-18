@@ -271,7 +271,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("RadioButtonsPage", radioButtonsPage);
         connect(item6, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RadioButtonsPage"); });
 
-
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("RelativePanel", item);
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("SplitView", item);
         FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("StackPanel", item);
@@ -360,7 +359,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("BreadcrumbBar", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NavigationView", item);
-        
+
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Pivot", item);
         auto pivotPage = new FluPivotPage;
         m_sLayout->addWidget("PivotPage", pivotPage);

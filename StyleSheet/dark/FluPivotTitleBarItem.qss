@@ -1,0 +1,14 @@
+FluPivotTitleBarItem {
+    background-color: transparent;
+    border: 4px solid transparent;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(166, 166, 166);
+    /* border-bottom: 4px solid rgb(0, 90, 158); */
+}
+
+FluPivotTitleBarItem[selected=true] {
+    border-bottom: 4px solid rgb(118, 185, 237);
+    color: rgb(255, 255, 255);
+}

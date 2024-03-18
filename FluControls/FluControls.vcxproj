@@ -196,8 +196,8 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FluPivot.h" />
-    <ClInclude Include="FluPivotTitleBar.h" />
+    <QtMoc Include="FluPivot.h" />
+    <QtMoc Include="FluPivotTitleBar.h" />
     <QtMoc Include="FluPivotTitleBarItem.h" />
     <QtMoc Include="FluHRadioGroupBox.h" />
     <QtMoc Include="FluTextEdit.h" />

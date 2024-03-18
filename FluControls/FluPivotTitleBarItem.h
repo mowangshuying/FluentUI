@@ -24,6 +24,7 @@ class FluPivotTitleBarItem : public QPushButton
       void setKey(QString key)
       {
               m_key = key;
+              setText(key);
       }
 
       QString getKey()

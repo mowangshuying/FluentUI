@@ -442,6 +442,12 @@
     <QtMoc Include="FluPivotTitleBarItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluPivotTitleBar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluPivot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -457,12 +463,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluCalendarSelectYearView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluPivot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluPivotTitleBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

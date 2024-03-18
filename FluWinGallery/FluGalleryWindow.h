@@ -39,6 +39,7 @@
 #include "FluInfoBarPage.h"
 #include "FluBorderPage.h"
 #include "FluRadioButtonsPage.h"
+#include "FluPivotPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -359,7 +360,12 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("BreadcrumbBar", item);
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NavigationView", item);
+        
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Pivot", item);
+        auto pivotPage = new FluPivotPage;
+        m_sLayout->addWidget("PivotPage", pivotPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("PivotPage"); });
+
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("TabView", item);
 
         item->addItem(item1);

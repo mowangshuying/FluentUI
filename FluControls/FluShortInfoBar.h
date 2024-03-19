@@ -24,6 +24,8 @@ class FluShortInfoBar : public QWidget
   public:
     FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent = nullptr);
 
+    ~FluShortInfoBar();
+
     void setInfoBarTypeProperty(QString infoBarType);
 
     void updateInfoBarTypeProperty(FluShortInfoBarType infoBarType);
@@ -39,12 +41,18 @@ class FluShortInfoBar : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
+           // if (m_closeBtn != nullptr)
+           // {
+                m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
+           // }
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
         }
         else
         {
-            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
+           // if (m_closeBtn != nullptr)
+           // {
+                m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
+           // }          
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
         }
     }
@@ -60,4 +68,6 @@ class FluShortInfoBar : public QWidget
 
     int m_nDisappearDuration;
     bool m_bDisappearing;
+
+    static int m_count;
 };

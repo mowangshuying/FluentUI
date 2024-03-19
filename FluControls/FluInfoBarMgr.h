@@ -21,6 +21,8 @@ class FluInfoBarMgr : public QObject
   public:
     FluInfoBarMgr(QObject* parent = nullptr);
 
+    ~FluInfoBarMgr();
+
     static FluInfoBarMgr* getInstance()
     {
         static FluInfoBarMgr mgr;
@@ -30,6 +32,11 @@ class FluInfoBarMgr : public QObject
     void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int nDisappearDuration = 800);
 
     void removeInfoBar(FluShortInfoBar* infoBar);
+
+   // void stopTimer()
+   // {
+   //     m_timer->stop();
+  //  }
 
     bool eventFilter(QObject* watched, QEvent* event);
   protected:

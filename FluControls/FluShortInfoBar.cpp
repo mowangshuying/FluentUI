@@ -1,8 +1,11 @@
 #include "FluShortInfoBar.h"
 #include "FluInfoBarMgr.h"
 
+int FluShortInfoBar::m_count = 0;
 FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
+    m_count++;
+    LOG_DEBUG << "Count = " << m_count;
     setFixedHeight(50);
 
     m_hMainLayout = new QHBoxLayout;
@@ -33,6 +36,7 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
 
     connect(m_closeBtn, &QPushButton::clicked, [=]() {
         FluInfoBarMgr::getInstance()->removeInfoBar(this);
+        close();
         deleteLater();
     });
 
@@ -46,10 +50,18 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
         m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
     }
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
   //  setWindowFlags(Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint | Qt::Window);
   //  setAttribute(Qt::WA_TranslucentBackground);
 }
+
+ FluShortInfoBar::~FluShortInfoBar()
+{
+    m_count--;
+    LOG_DEBUG << "Count = " << m_count;
+   // disconnect();
+   // FluInfoBarMgr::getInstance()->removeInfoBar(this);
+ }
 
 void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)
 {

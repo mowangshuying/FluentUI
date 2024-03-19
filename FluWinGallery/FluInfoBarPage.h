@@ -54,7 +54,7 @@ class FluInfoBarPage : public FluAEmptyPage
                 sInfoBar->deleteLater();
                 // delete sInfoBar;
                 // sInfoBar = nullptr;
-                sInfoBar = nullptr;
+                // sInfoBar = nullptr;
             }
 
             switch (index)

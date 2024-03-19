@@ -185,6 +185,7 @@
     <ClCompile Include="FluVScrollView.cpp" />
     <ClCompile Include="FluTabWidget.cpp" />
     <ClCompile Include="FluVCard.cpp" />
+    <ClCompile Include="FluFlyout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDef.h" />
@@ -196,6 +197,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluFlyout.h" />
     <QtMoc Include="FluPivot.h" />
     <QtMoc Include="FluPivotTitleBar.h" />
     <QtMoc Include="FluPivotTitleBarItem.h" />

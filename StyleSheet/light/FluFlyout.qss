@@ -1,0 +1,5 @@
+FluFlyout {
+    background-color: rgb(249, 249, 249);
+    /* background-color: aquamarine; */
+    border-radius: 8px;
+}

@@ -239,6 +239,9 @@
     <ClCompile Include="FluPivotTitleBarItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluFlyout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -446,6 +449,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluPivot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluFlyout.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

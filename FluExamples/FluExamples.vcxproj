@@ -144,6 +144,7 @@
     <ClCompile Include="FluTextEditDemo.cpp" />
     <ClCompile Include="FluThreadDemo.cpp" />
     <ClCompile Include="FluToggleSwitchDemo.cpp" />
+    <ClCompile Include="FluFlyoutDemo.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,7 @@
     <QtMoc Include="FluNavigationDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluFlyoutDemo.h" />
     <QtMoc Include="FluTextEditDemo.h" />
     <QtMoc Include="FluThreadDemo.h" />
     <QtMoc Include="FluSpinBoxDemo.h" />

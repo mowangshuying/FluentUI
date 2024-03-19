@@ -1,5 +1,6 @@
 #include "FluInfoBarMgr.h"
 #include "FluShortInfoBar.h"
+#include <QEvent>
 
 FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
 {
@@ -136,12 +137,15 @@ bool FluInfoBarMgr::eventFilter(QObject* watched, QEvent* event)
     if (itf == m_infoBarMap.end())
         return QObject::eventFilter(watched, event);
 
-    for (auto itList = itf->second.begin(); itList != itf->second.end(); itList++)
+    if (event->type() == QEvent::Resize)
     {
-        QWidget* parentWidget = (QWidget*)watched;
-        int nX = parentWidget->width() / 2 - (*itList)->sizeHint().width() / 2;
-        int nY = (*itList)->y();
-        (*itList)->move(nX, nY);
+        for (auto itList = itf->second.begin(); itList != itf->second.end(); itList++)
+        {
+            QWidget* parentWidget = (QWidget*)watched;
+            int nX = parentWidget->width() / 2 - (*itList)->sizeHint().width() / 2;
+            int nY = (*itList)->y();
+            (*itList)->move(nX, nY);
+        }
     }
 
     return QObject::eventFilter(watched, event);

@@ -34,6 +34,7 @@
 #include "FluInfoBarDemo.h"
 #include "FluThreadDemo.h"
 #include "FluTextEditDemo.h"
+#include "FluFlyoutDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -153,14 +154,17 @@ int main(int argc, char **argv)
     // FluMenuBarDemo demo;
     // demo.show();
 
-    FluInfoBarDemo demo;
-    demo.show();
+    //FluInfoBarDemo demo;
+    //demo.show();
 
     // FluThreadDemo demo;
     // demo.show();
 
     // FluTextEditDemo demo;
     // demo.show();
+
+    FluFlyoutDemo demo;
+    demo.show();
 
     return app.exec();
 }

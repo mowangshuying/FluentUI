@@ -239,7 +239,10 @@
     <ClCompile Include="FluPivotTitleBarItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluFlyout.cpp">
+    <ClCompile Include="FluVFlyout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluConfirmFlyout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -451,7 +454,10 @@
     <QtMoc Include="FluPivot.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluFlyout.h">
+    <QtMoc Include="FluVFlyout.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluConfirmFlyout.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

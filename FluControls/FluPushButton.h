@@ -13,6 +13,7 @@ class FluPushButton : public QPushButton
     FluPushButton(QWidget *parent = nullptr) : QPushButton(parent)
     {
         setFixedSize(200, 30);
+       // setFixedHeight(30);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {

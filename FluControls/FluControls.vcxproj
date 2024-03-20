@@ -122,6 +122,7 @@
     <ClCompile Include="FluCalendarView.cpp" />
     <ClCompile Include="FluCalendarViewTitle.cpp" />
     <ClCompile Include="FluColorLabel.cpp" />
+    <ClCompile Include="FluConfirmFlyout.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
     <ClCompile Include="FluHRadioGroupBox.cpp" />
@@ -185,7 +186,7 @@
     <ClCompile Include="FluVScrollView.cpp" />
     <ClCompile Include="FluTabWidget.cpp" />
     <ClCompile Include="FluVCard.cpp" />
-    <ClCompile Include="FluFlyout.cpp" />
+    <ClCompile Include="FluVFlyout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDef.h" />
@@ -197,7 +198,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="FluFlyout.h" />
+    <QtMoc Include="FluVFlyout.h" />
     <QtMoc Include="FluPivot.h" />
     <QtMoc Include="FluPivotTitleBar.h" />
     <QtMoc Include="FluPivotTitleBarItem.h" />
@@ -255,6 +256,7 @@
     <QtMoc Include="FluHFlipView.h" />
     <QtMoc Include="FluDisplayBoxEx.h" />
     <QtMoc Include="FluDoubleSpinBox.h" />
+    <QtMoc Include="FluConfirmFlyout.h" />
     <ClInclude Include="FluFlowLayout.h" />
     <QtMoc Include="FluIconButton.h" />
     <QtMoc Include="FluLabel.h" />

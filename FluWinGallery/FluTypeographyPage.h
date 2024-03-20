@@ -50,7 +50,7 @@ class FluTypeographyPage : public FluAEmptyPage
         auto row2 = addARow(FluLabelStyle::CaptionTextBlockSylte, "Caption", "Text,Regular", "12/16 epx", "CaptionTextBlockSylte", 60);
         typeRampWrapLayout->addWidget(row2, Qt::AlignTop);
 
-        auto row3 = addARow(FluLabelStyle::BodyStrongTextBlockStyle, "Body", "Text,SemiBold", "14/20 epx", "BodyStrongTextBlockStyle", 60);
+        auto row3 = addARow(FluLabelStyle::BodyTextBlockStyle, "Body", "Text,SemiBold", "14/20 epx", "BodyStrongTextBlockStyle", 60);
         typeRampWrapLayout->addWidget(row3, Qt::AlignTop);
 
         auto row4 = addARow(FluLabelStyle::BodyStrongTextBlockStyle, "Body Strong", "Text, SemiBold", "14/20 epx", "BodyStrongTextBlockStyle", 60);
@@ -88,7 +88,7 @@ class FluTypeographyPage : public FluAEmptyPage
         auto label3 = new FluLabel;
         auto label4 = new FluLabel;
 
-        label1->setStyle(labelStyle);
+        label1->setLabelStyle(labelStyle);
 
         label1->setText(text1);
         label2->setText(text2);

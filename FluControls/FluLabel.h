@@ -31,12 +31,12 @@ class FluLabel : public QLabel
     {
         // reference WinUi3 Gallary Typeography page.
         // setProperty("style", m_style);
-        setStyle(style);
+        setLabelStyle(style);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-    void setStyle(FluLabelStyle style)
+    void setLabelStyle(FluLabelStyle style)
     {
         m_style = style;
         QString styleString;

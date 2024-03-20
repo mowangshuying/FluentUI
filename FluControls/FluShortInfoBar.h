@@ -41,18 +41,18 @@ class FluShortInfoBar : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-           // if (m_closeBtn != nullptr)
-           // {
-                m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
-           // }
+            // if (m_closeBtn != nullptr)
+            // {
+            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
+            // }
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
         }
         else
         {
-           // if (m_closeBtn != nullptr)
-           // {
-                m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
-           // }          
+            // if (m_closeBtn != nullptr)
+            // {
+            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
+            // }
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
         }
     }

@@ -51,17 +51,17 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
     }
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-  //  setWindowFlags(Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint | Qt::Window);
-  //  setAttribute(Qt::WA_TranslucentBackground);
+    //  setWindowFlags(Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint | Qt::Window);
+    //  setAttribute(Qt::WA_TranslucentBackground);
 }
 
- FluShortInfoBar::~FluShortInfoBar()
+FluShortInfoBar::~FluShortInfoBar()
 {
     m_count--;
     LOG_DEBUG << "Count = " << m_count;
-   // disconnect();
-   // FluInfoBarMgr::getInstance()->removeInfoBar(this);
- }
+    // disconnect();
+    // FluInfoBarMgr::getInstance()->removeInfoBar(this);
+}
 
 void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)
 {

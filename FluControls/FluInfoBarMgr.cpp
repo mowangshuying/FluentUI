@@ -61,10 +61,10 @@ FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
     m_infoBarMap.clear();
 }
 
- FluInfoBarMgr::~FluInfoBarMgr()
+FluInfoBarMgr::~FluInfoBarMgr()
 {
-    //m_timer->stop();
- }
+    // m_timer->stop();
+}
 
 void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int nDisappearDuration /* = 2000*/)
 {
@@ -124,7 +124,7 @@ void FluInfoBarMgr::removeInfoBar(FluShortInfoBar* infoBar)
         {
             itMap->first->removeEventFilter(this);
             itMap = m_infoBarMap.erase(itMap);
-            //itMap->first->removeEventFilter(this);
+            // itMap->first->removeEventFilter(this);
             continue;
         }
         itMap++;

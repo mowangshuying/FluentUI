@@ -32,7 +32,12 @@ class FluVFlyout : public QWidget
         
         setAttribute(Qt::WA_TranslucentBackground);
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlyout.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
+        }
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void showEvent(QShowEvent* event)
@@ -87,7 +92,18 @@ class FluVFlyout : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
+        }
+    }
   protected:
     QVBoxLayout* m_vMainLayout;
     QWidget* m_targetWidget;

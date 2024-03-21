@@ -24,6 +24,10 @@ class FluLabel : public QLabel
     {
         m_style = FluLabelStyle::CaptionTextBlockSylte;
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
+        }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -33,6 +37,10 @@ class FluLabel : public QLabel
         // setProperty("style", m_style);
         setLabelStyle(style);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
+        }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 

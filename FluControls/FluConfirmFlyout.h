@@ -46,6 +46,11 @@ class FluConfirmFlyout : public FluVFlyout
          connect(m_cancelBtn, &FluPushButton::clicked, [=]() { close(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
+        }
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setTitle(QString title)
@@ -75,7 +80,18 @@ class FluConfirmFlyout : public FluVFlyout
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
+        }
+    }
   protected:
     FluLabel* m_titleLabel;
     FluLabel* m_infoLabel;

@@ -122,6 +122,7 @@
     <ClCompile Include="FluCheckBoxPage.cpp" />
     <ClCompile Include="FluComboBoxPage.cpp" />
     <ClCompile Include="FluDropDownButtonPage.cpp" />
+    <ClCompile Include="FluFlyoutPage.cpp" />
     <ClCompile Include="FluGalleryWindow.cpp" />
     <ClCompile Include="FluHomePage.cpp" />
     <ClCompile Include="FluHomePageTitle.cpp" />
@@ -250,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPivotPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluFlyoutPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

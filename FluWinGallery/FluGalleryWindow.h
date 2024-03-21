@@ -40,6 +40,7 @@
 #include "FluBorderPage.h"
 #include "FluRadioButtonsPage.h"
 #include "FluPivotPage.h"
+#include "FluFlyoutPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -240,6 +241,10 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ContentDialogPage"); });
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Flyout", item);
+        auto flyoutPage = new FluFlyoutPage;
+        m_sLayout->addWidget("FlyoutPage", flyoutPage);
+        connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FlyoutPage"); });
+
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("TeachingTip", item);
         item->addItem(item1);
         item->addItem(item2);

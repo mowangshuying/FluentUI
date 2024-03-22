@@ -143,6 +143,7 @@
     <ClCompile Include="FluSettingPage.cpp" />
     <ClCompile Include="FluSliderPage.cpp" />
     <ClCompile Include="FluToggleButtonPage.cpp" />
+    <ClCompile Include="FluToggleSwitchPage.cpp" />
     <ClCompile Include="FluTypeographyPage.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -254,6 +255,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluFlyoutPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluToggleSwitchPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

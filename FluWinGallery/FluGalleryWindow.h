@@ -41,6 +41,7 @@
 #include "FluRadioButtonsPage.h"
 #include "FluPivotPage.h"
 #include "FluFlyoutPage.h"
+#include "FluToggleSwitchPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -153,7 +154,10 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("SliderPage", sliderPage);
         connect(item14, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("SliderPage"); });
 
-        FluNavigationIconTextItem *item15 = new FluNavigationIconTextItem("ToggleSwith", item);
+        FluNavigationIconTextItem *item15 = new FluNavigationIconTextItem("ToggleSwitch", item);
+        auto toggleSwitchPage = new FluToggleSwitchPage;
+        m_sLayout->addWidget("ToggleSwitchPage", toggleSwitchPage);
+        connect(item15, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ToggleSwitchPage"); });
 
         item->addItem(item1);
         item->addItem(item2);

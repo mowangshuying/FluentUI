@@ -134,6 +134,9 @@
     <ClCompile Include="FluFlyoutPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluToggleSwitchPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -242,6 +245,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluFlyoutPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluToggleSwitchPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -19,7 +19,7 @@ class FluPushButton : public QPushButton
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
         }
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
   public slots:
     void onThemeChanged()

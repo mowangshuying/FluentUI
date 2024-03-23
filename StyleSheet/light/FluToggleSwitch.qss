@@ -2,7 +2,7 @@
 
 FluToggleSwitch {
     color: rgb(0, 0, 0);
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 400;
 }
 

@@ -142,6 +142,7 @@
     <ClCompile Include="FluShortInfoBar.cpp" />
     <ClCompile Include="FluSlider.cpp" />
     <ClCompile Include="FluSpinBox.cpp" />
+    <ClCompile Include="FluSplitButton.cpp" />
     <ClCompile Include="FluTextEdit.cpp" />
     <ClCompile Include="FluThread.cpp" />
     <ClCompile Include="FluToggleSwitch.cpp" />
@@ -199,6 +200,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluSplitButton.h" />
     <QtMoc Include="FluVFlyout.h" />
     <QtMoc Include="FluPivot.h" />
     <QtMoc Include="FluPivotTitleBar.h" />

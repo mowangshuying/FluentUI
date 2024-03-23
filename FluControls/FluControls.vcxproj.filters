@@ -248,6 +248,9 @@
     <ClCompile Include="FluAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluSplitButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -464,6 +467,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluAction.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluSplitButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

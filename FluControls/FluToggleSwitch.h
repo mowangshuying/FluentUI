@@ -13,6 +13,7 @@ class FluToggleSwitch : public QCheckBox
         m_onText = "On";
         m_offText = "Off";
 
+        setText(m_offText);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
             if (bChecked)
@@ -29,6 +30,7 @@ class FluToggleSwitch : public QCheckBox
         m_onText = "On";
         m_offText = "Off";
 
+        setText(m_offText);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
             if (bChecked)

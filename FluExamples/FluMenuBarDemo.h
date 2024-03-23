@@ -23,10 +23,10 @@ class FluMenuBarDemo : public QWidget
         auto menuBar = new FluMenuBar;
         //  menuBar->move(50, 50);
 
-        auto newFileAction = new QAction("new");
-        auto openFileAction = new QAction("Open");
-        auto saveFileAction = new QAction("Save");
-        auto exitFileAction = new QAction("Exit");
+        auto newFileAction = new FluAction("new");
+        auto openFileAction = new FluAction("Open");
+        auto saveFileAction = new FluAction("Save");
+        auto exitFileAction = new FluAction("Exit");
 
         auto fileMenu = new FluMenu(menuBar);
         fileMenu->setTitle("File");
@@ -38,10 +38,10 @@ class FluMenuBarDemo : public QWidget
         menuBar->addAction(fileMenu->menuAction());
 
         // undo cut copy paste
-        auto undoEditAction = new QAction("Undo");
-        auto cutEditAction = new QAction("Cut");
-        auto copyEditAction = new QAction("Copy");
-        auto pasteEditAction = new QAction("Paste");
+        auto undoEditAction = new FluAction("Undo");
+        auto cutEditAction = new FluAction("Cut");
+        auto copyEditAction = new FluAction("Copy");
+        auto pasteEditAction = new FluAction("Paste");
 
         auto editMenu = new FluMenu(menuBar);
         editMenu->setTitle("Edit");
@@ -53,7 +53,7 @@ class FluMenuBarDemo : public QWidget
         menuBar->addAction(editMenu->menuAction());
 
         // Help
-        auto aboutAction = new QAction("About");
+        auto aboutAction = new FluAction("About");
         auto helpMenu = new FluMenu(menuBar);
         helpMenu->setTitle("Help");
         helpMenu->addAction(aboutAction);

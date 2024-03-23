@@ -15,6 +15,7 @@ class FluDropDownButton : public QWidget
   public:
     FluDropDownButton(QWidget* parent = nullptr) : QWidget(parent)
     {
+        m_textAwesomeType = FluAwesomeType::None;
         m_hMainLayout = new QHBoxLayout;
         m_hMainLayout->setContentsMargins(3, 3, 3, 3);
         m_hMainLayout->setSpacing(0);
@@ -65,10 +66,11 @@ class FluDropDownButton : public QWidget
         return m_iconBtn;
     }
 
-    void setIcon(QIcon icon)
+    void setIcon(FluAwesomeType type)
     {
+        m_textAwesomeType = type;
         m_textBtn->setIconSize(QSize(18, 18));
-        m_textBtn->setIcon(icon);
+        m_textBtn->setIcon(FluIconUtils::getFluentIconPixmap(type, FluThemeUtils::getUtils()->getTheme()));
     }
 
     void setText(QString text)
@@ -78,12 +80,12 @@ class FluDropDownButton : public QWidget
 
     void addTextItem(QString text)
     {
-        m_menu->addAction(new QAction(text));
+        m_menu->addAction(new FluAction(text));
     }
 
-    void addIconTextItem(QIcon icon, QString text)
+    void addIconTextItem(FluAwesomeType type, QString text)
     {
-        m_menu->addAction(new QAction(icon, text));
+        m_menu->addAction(new FluAction(type, text));
     }
 
     //  void mousePressedEvent(QMouseEvent* event)
@@ -115,10 +117,16 @@ class FluDropDownButton : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
+            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
+            if (m_textAwesomeType != FluAwesomeType::None)
+                m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Light));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
         }
         else
         {
+            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
+            if (m_textAwesomeType != FluAwesomeType::None)
+                m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Dark));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButton.qss", this);
         }
     }
@@ -126,6 +134,10 @@ class FluDropDownButton : public QWidget
   protected:
     QPushButton* m_textBtn;
     QPushButton* m_iconBtn;  // dropdown button;
+
+    FluAwesomeType m_textAwesomeType;
+  //  FluAwesomeType* m_iconAwesomeType;
+
     QHBoxLayout* m_hMainLayout;
     FluMenu* m_menu;
 };

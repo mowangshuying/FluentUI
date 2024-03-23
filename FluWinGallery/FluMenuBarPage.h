@@ -35,10 +35,10 @@ class FluMenuBarPage : public FluAEmptyPage
         auto menuBar = new FluMenuBar;
         // menuBar->move(50, 50);
 
-        auto newFileAction = new QAction("new");
-        auto openFileAction = new QAction("Open");
-        auto saveFileAction = new QAction("Save");
-        auto exitFileAction = new QAction("Exit");
+        auto newFileAction = new FluAction("new");
+        auto openFileAction = new FluAction("Open");
+        auto saveFileAction = new FluAction("Save");
+        auto exitFileAction = new FluAction("Exit");
 
         auto fileMenu = new FluMenu(menuBar);
         fileMenu->setTitle("File");
@@ -49,10 +49,10 @@ class FluMenuBarPage : public FluAEmptyPage
         menuBar->addMenu(fileMenu);
 
         // undo cut copy paste
-        auto undoEditAction = new QAction("Undo");
-        auto cutEditAction = new QAction("Cut");
-        auto copyEditAction = new QAction("Copy");
-        auto pasteEditAction = new QAction("Paste");
+        auto undoEditAction = new FluAction("Undo");
+        auto cutEditAction = new FluAction("Cut");
+        auto copyEditAction = new FluAction("Copy");
+        auto pasteEditAction = new FluAction("Paste");
 
         auto editMenu = new FluMenu(menuBar);
         editMenu->setTitle("Edit");
@@ -63,7 +63,7 @@ class FluMenuBarPage : public FluAEmptyPage
         menuBar->addMenu(editMenu);
 
         // Help
-        auto aboutAction = new QAction("About");
+        auto aboutAction = new FluAction("About");
         auto helpMenu = new FluMenu(menuBar);
         helpMenu->setTitle("Help");
         helpMenu->addAction(aboutAction);
@@ -83,10 +83,10 @@ class FluMenuBarPage : public FluAEmptyPage
         auto menuBar = new FluMenuBar;
         // menuBar->move(50, 50);
 
-        auto newFileAction = new QAction("New");
-        auto openFileAction = new QAction("Open");
-        auto saveFileAction = new QAction("Save");
-        auto exitFileAction = new QAction("Exit");
+        auto newFileAction = new FluAction("New");
+        auto openFileAction = new FluAction("Open");
+        auto saveFileAction = new FluAction("Save");
+        auto exitFileAction = new FluAction("Exit");
 
         newFileAction->setShortcut(QKeySequence::New);
         openFileAction->setShortcut(QKeySequence::Open);
@@ -102,10 +102,10 @@ class FluMenuBarPage : public FluAEmptyPage
         menuBar->addMenu(fileMenu);
 
         // undo cut copy paste
-        auto undoEditAction = new QAction("Undo");
-        auto cutEditAction = new QAction("Cut");
-        auto copyEditAction = new QAction("Copy");
-        auto pasteEditAction = new QAction("Paste");
+        auto undoEditAction = new FluAction("Undo");
+        auto cutEditAction = new FluAction("Cut");
+        auto copyEditAction = new FluAction("Copy");
+        auto pasteEditAction = new FluAction("Paste");
 
         undoEditAction->setShortcut(QKeySequence::Undo);
         cutEditAction->setShortcut(QKeySequence::Cut);
@@ -121,7 +121,7 @@ class FluMenuBarPage : public FluAEmptyPage
         menuBar->addMenu(editMenu);
 
         // Help
-        auto aboutAction = new QAction("About");
+        auto aboutAction = new FluAction("About");
         aboutAction->setShortcut(QKeySequence("Ctrl+L"));
 
         auto helpMenu = new FluMenu(menuBar);

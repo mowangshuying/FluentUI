@@ -2,6 +2,7 @@
 
 #include <QMenu>
 #include "../FluUtils/FluUtils.h"
+#include "FluAction.h"
 
 class FluMenu : public QMenu
 {
@@ -9,7 +10,7 @@ class FluMenu : public QMenu
   public:
     FluMenu(QWidget* parent = nullptr);
 
-    void addAction(QAction* action);
+    void addAction(FluAction* action);
 
     void mouseMoveEvent(QMouseEvent* e);
 

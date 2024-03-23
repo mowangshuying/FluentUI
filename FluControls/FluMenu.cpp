@@ -20,7 +20,7 @@ FluMenu::FluMenu(QWidget* parent /*= nullptr*/) : QMenu(parent)
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
-void FluMenu::addAction(QAction* action)
+void FluMenu::addAction(FluAction* action)
 {
     QMenu::addAction(action);
     connect(action, &QAction::hovered, [=]() { LOG_DEBUG << "hovered"; });
@@ -80,5 +80,15 @@ void FluMenu::onThemeChanged()
     else
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenu.qss", this);
+    }
+
+    //auto actions = findChildren<FluAction*>();
+    for (auto action : actions())
+    {
+        auto fluAction = (FluAction*)action;
+        if (fluAction->getAwesomeType() == FluAwesomeType::None)
+            continue;
+
+        fluAction->setIcon(FluIconUtils::getFluentIcon(fluAction->getAwesomeType(), FluThemeUtils::getUtils()->getTheme()));
     }
 }

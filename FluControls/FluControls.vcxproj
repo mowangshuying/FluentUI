@@ -113,6 +113,7 @@
     <QtMoc Include="FluPushButton.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FluAction.cpp" />
     <ClCompile Include="FluBorder.cpp" />
     <ClCompile Include="FluCalendarDatePicker.cpp" />
     <ClCompile Include="FluCalendarItem.cpp" />
@@ -243,6 +244,7 @@
     <QtMoc Include="FluCalendarView.h" />
     <QtMoc Include="FluCalendarDatePicker.h" />
     <QtMoc Include="FluBorder.h" />
+    <QtMoc Include="FluAction.h" />
     <ClInclude Include="FluCalendarDef.h" />
     <QtMoc Include="FluCalendarSelectDayView.h" />
     <QtMoc Include="FluCalendarItem.h" />

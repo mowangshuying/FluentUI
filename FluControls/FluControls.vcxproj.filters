@@ -245,6 +245,9 @@
     <ClCompile Include="FluConfirmFlyout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -458,6 +461,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluConfirmFlyout.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluAction.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

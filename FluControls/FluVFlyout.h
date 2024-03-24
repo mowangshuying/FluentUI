@@ -81,7 +81,7 @@ class FluVFlyout : public QWidget
 
     void closeEvent(QCloseEvent* event)
     {
-        LOG_DEBUG << "close it!";
+      //  LOG_DEBUG << "close it!";
         deleteLater();
     }
 

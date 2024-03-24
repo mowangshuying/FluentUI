@@ -122,6 +122,7 @@
     <ClCompile Include="FluCalendarSelectYearView.cpp" />
     <ClCompile Include="FluCalendarView.cpp" />
     <ClCompile Include="FluCalendarViewTitle.cpp" />
+    <ClCompile Include="FluColorButton.cpp" />
     <ClCompile Include="FluColorLabel.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
@@ -189,6 +190,7 @@
     <ClCompile Include="FluTabWidget.cpp" />
     <ClCompile Include="FluVCard.cpp" />
     <ClCompile Include="FluVFlyout.cpp" />
+    <ClCompile Include="FluColorFlyout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDef.h" />
@@ -200,6 +202,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluColorFlyout.h" />
     <QtMoc Include="FluSplitButton.h" />
     <QtMoc Include="FluVFlyout.h" />
     <QtMoc Include="FluPivot.h" />
@@ -254,6 +257,7 @@
     <ClInclude Include="FluCalendarSelectYearView.h" />
     <QtMoc Include="FluColorLabel.h" />
     <QtMoc Include="FluCalendarViewTitle.h" />
+    <QtMoc Include="FluColorButton.h" />
     <ClInclude Include="FluComboBox.h" />
     <QtMoc Include="FluComboBoxTextItem.h" />
     <QtMoc Include="FluDropDownButton.h" />

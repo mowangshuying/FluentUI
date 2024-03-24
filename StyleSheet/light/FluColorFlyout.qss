@@ -1,0 +1,4 @@
+FluColorFlyout {
+    background-color: rgb(249, 249, 249);
+    border-radius: 8px;
+}

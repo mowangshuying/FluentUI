@@ -31,6 +31,7 @@ set_target_properties(${TGT} PROPERTIES
     WIN32_EXECUTABLE ON
     MACOSX_BUNDLE ON
 )
+add_dependencies(${TGT} resource_copy)
 
 include(GNUInstallDirs)
 install(TARGETS ${TGT}

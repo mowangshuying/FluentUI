@@ -4,6 +4,7 @@
 #include "../FluControls/FluSplitButton.h"
 #include "../FluControls/FluColorFlyout.h"
 #include "../FluControls/FluColorButton.h"
+#include "../FluUtils/FluUtils.h"
 
 class FluSplitButtonDemo : public QWidget
 {
@@ -39,6 +40,7 @@ class FluSplitButtonDemo : public QWidget
               colorLayout->addColorButton(colorBtn20, 2, 0);
 
               connect(colorLayout, &FluColorFlyout::colorChanged, [=](QColor color) {
+                  LOG_DEBUG << "color: rgb(" << color.red() << "," << color.green() << "," << color.blue() << ").";
 
               });
               colorLayout->show();

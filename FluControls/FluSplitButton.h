@@ -21,7 +21,7 @@ class FluSplitButton : public QWidget
           m_textBtn = new QPushButton;
 
           m_dropDownBtn->setObjectName("dropDownBtn");
-          m_dropDownBtn->setIconSize(QSize(30, 30));
+          m_dropDownBtn->setIconSize(QSize(20, 20));
           m_textBtn->setObjectName("textBtn");
 
           m_hMainLayout->setContentsMargins(0, 0, 0, 0);
@@ -35,6 +35,7 @@ class FluSplitButton : public QWidget
           connect(m_dropDownBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
 
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);
+          m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
           if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
           {
               FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);

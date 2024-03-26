@@ -161,14 +161,14 @@ int main(int argc, char **argv)
     // FluThreadDemo demo;
     // demo.show();
 
-    // FluTextEditDemo demo;
-    // demo.show();
+     FluTextEditDemo demo;
+     demo.show();
 
     //FluFlyoutDemo demo;
     //demo.show();
 
-     FluSplitButtonDemo demo;
-     demo.show();
+    // FluSplitButtonDemo demo;
+    // demo.show();
 
      return app.exec();
 }

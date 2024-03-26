@@ -61,3 +61,8 @@ looking it at ./docs
 + [zhiyiYo/PyQt-Fluent-Widgets: A fluent design widgets library based on C++ Qt/PyQt/PySide. Make Qt Great Again. (github.com)](https://github.com/zhiyiYo/PyQt-Fluent-Widgets)
 + [Sepera-okeq/QtFluentWin11: Implementation of Fluent design for Qt! Support for Windows 11! In С++ (github.com)](https://github.com/Sepera-okeq/QtFluentWin11)
 + [zhuzichu520/FluentUI: FluentUI for QML (github.com)](https://github.com/zhuzichu520/FluentUI)
+
+## Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/CppQtFluentUi888&type=Date)
+

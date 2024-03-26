@@ -12,11 +12,7 @@ class FluTextEditDemo : public QWidget
         auto textEdit = new FluTextEdit(this);
         textEdit->setFixedWidth(300);
         textEdit->move(50, 50);
-
-        connect(textEdit->document(), &QTextDocument::contentsChanged, this, [=]() { 
-            QTextDocument* document = textEdit->document();
-            textEdit->setFixedHeight(document->size().height() + 4);
-        });
+        textEdit->setAutoAdjustSize(true);
         resize(600, 400);
     }
 };

@@ -32,6 +32,7 @@ class FluConfigUtils : public QObject
 
     void setTheme(FluTheme theme)
     {
+        // config/theme
         m_settings->beginGroup("config");
 
         if (theme == FluTheme::Light)

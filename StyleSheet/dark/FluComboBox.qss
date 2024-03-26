@@ -4,7 +4,7 @@ QComboBox {
     border: 1px solid rgb(35, 35, 35);
     border-radius: 4px;
     border-bottom: 1px solid rgb(65, 65, 65);
-    background-color: rgb(62, 62, 62);
+    selection-background-color: rgb(0, 120, 215);
     color: white;
 }
 

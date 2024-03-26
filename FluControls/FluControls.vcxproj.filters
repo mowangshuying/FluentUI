@@ -257,6 +257,9 @@
     <ClCompile Include="FluColorFlyout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCppSyntaxHightLighter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -499,6 +502,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluCalendarSelectYearView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCppSHLRule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCppSyntaxHightLighter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

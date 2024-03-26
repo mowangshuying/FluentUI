@@ -71,8 +71,8 @@ int main(int argc, char **argv)
     // FluExpandDemo demo;
     // demo.show();
 
-    // FluDisplayCodeDemo demo;
-    // demo.show();
+     FluDisplayCodeDemo demo;
+     demo.show();
 
     // FluButtonDemo demo;
     // demo.show();
@@ -161,8 +161,8 @@ int main(int argc, char **argv)
     // FluThreadDemo demo;
     // demo.show();
 
-     FluTextEditDemo demo;
-     demo.show();
+  //  FluTextEditDemo demo;
+  //   demo.show();
 
     //FluFlyoutDemo demo;
     //demo.show();

@@ -1,7 +1,8 @@
 FluDisplayCodeBox {
     background-color: rgb(247, 247, 247);
     border: 1px solid rgb(234, 234, 234);
-    /* border: 1px solid rgb(1, 234, 234); */
+    selection-background-color: rgb(0, 120, 215);
+    selection-color: rgb(255, 255, 255);
     font-size: 14px;
     border-radius: 4px;
 }

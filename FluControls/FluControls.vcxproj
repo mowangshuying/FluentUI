@@ -125,6 +125,7 @@
     <ClCompile Include="FluColorButton.cpp" />
     <ClCompile Include="FluColorLabel.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
+    <ClCompile Include="FluCppFormats.cpp" />
     <ClCompile Include="FluCppSyntaxHightLighter.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
@@ -266,6 +267,7 @@
     <QtMoc Include="FluDisplayBoxEx.h" />
     <QtMoc Include="FluDoubleSpinBox.h" />
     <QtMoc Include="FluConfirmFlyout.h" />
+    <ClInclude Include="FluCppFormats.h" />
     <ClInclude Include="FluCppSHLRule.h" />
     <ClInclude Include="FluCppSyntaxHightLighter.h" />
     <ClInclude Include="FluFlowLayout.h" />

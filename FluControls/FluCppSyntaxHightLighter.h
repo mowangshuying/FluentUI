@@ -53,15 +53,7 @@
    protected:
      void highlightBlock(const QString& text) override
      {
-         //for (auto rule : m_highlightingRules)
-         //{
-         //      auto iter = rule.getPattern().globalMatch(text);
-         //      while (iter.hasNext())
-         //      {
-         //          auto match = iter.next();
-         //          setFormat(match.capturedStart(), match.capturedLength(), rule.getFormat());
-         //      }
-         //}
+         
      }
 
    protected:

@@ -8,12 +8,10 @@
 class FluCppSHLRule
 {
   public:
-    FluCppSHLRule(QColor color, QString pattern)
+    FluCppSHLRule(QString key, QString pattern)
     {
-        QTextCharFormat commentFormat;
-        commentFormat.setForeground(color);
+        m_key = key;
         m_pattern = QRegularExpression(pattern);
-        m_format = commentFormat;
     }
 
     QRegularExpression getPattern()
@@ -21,12 +19,18 @@ class FluCppSHLRule
         return m_pattern;
     }
 
-    QTextCharFormat getFormat()
+    void setPattern(QRegularExpression pattern)
     {
-        return m_format;
+        m_pattern = pattern;
+    }
+
+    void setKey(QString key)
+    {
+        m_key = key;
     }
 
   protected:
+    QString m_key;
     QRegularExpression m_pattern;
-    QTextCharFormat m_format;
+  // QTextCharFormat m_format;
 };

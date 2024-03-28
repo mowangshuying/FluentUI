@@ -2,6 +2,7 @@ FluDisplayBox {
     /* border: 1px solid rgb(234, 234, 234); */
     padding: 8px;
     border-radius: 8px;
+    color: white;
 }
 
 #titleLabel {

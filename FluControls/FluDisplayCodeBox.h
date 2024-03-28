@@ -9,6 +9,7 @@
 #include "FluCppSyntaxHightLighter.h"
 #include <vector>
 #include "FluCppSyntaxStyle.h"
+#include <utility>
 
 class FluDisplayCodeBox : public QTextEdit
 {
@@ -18,17 +19,16 @@ class FluDisplayCodeBox : public QTextEdit
     {
         auto hightLigher = new FluCppSyntaxHightLighter(document());
         setReadOnly(true);
+
+        loadStyle("../config/drakula.xml");
+        hightLigher->setCppSyntaxStyle(m_styles[0].second);
+
         setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
         setContextMenuPolicy(Qt::NoContextMenu);
         setFocusPolicy(Qt::FocusPolicy::NoFocus);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayCodeBox.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-    }
-
-    void setCode(QString code)
-    {
-        setPlainText(code);
     }
 
     void loadStyle(QString path)
@@ -47,7 +47,13 @@ class FluDisplayCodeBox : public QTextEdit
             return;
         }
 
-       // m_styles.push_back(std::make_pair(style->getName(), style));
+        std::pair<QString, FluCppSyntaxStyle*> pair(style->getName(), style);
+        m_styles.push_back(pair);
+    }
+
+    void setCodeText(QString code)
+    {
+        setPlainText(code);
     }
 
     void resizeEvent(QResizeEvent*)
@@ -74,5 +80,5 @@ class FluDisplayCodeBox : public QTextEdit
     }
 
   protected:
-   // std::vector<std::pair<QString, FluCppSyntaxStyle>> m_styles;
+    std::vector<std::pair<QString, FluCppSyntaxStyle*>> m_styles;
 };

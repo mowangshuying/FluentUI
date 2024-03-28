@@ -32,7 +32,7 @@ class FluCodeExpander : public FluExpander
 
     void setCode(QString code)
     {
-        m_displayCodeBox->setCode(code);
+        m_displayCodeBox->setCodeText(code);
     }
 
     void setCodeByPath(QString fileName)

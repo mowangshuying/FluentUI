@@ -40,7 +40,7 @@
            QString name;
            std::map<QString, std::vector<QString>> listMap;
 
-           QXmlStreamReader reader;
+           QXmlStreamReader reader(&file);
            while (!reader.atEnd() && !reader.hasError())
            {
                auto tokenType = reader.readNext();

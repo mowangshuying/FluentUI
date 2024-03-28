@@ -20,7 +20,7 @@ class FluDisplayCodeDemo : public QWidget
         display->move(50, 50);
 
         QString code = "std::cout << \"hello, world\" << std::endl; // this just a text";
-        display->setCode(code);
+        display->setCodeText(code);
         setStyleSheet("background-color:rgb(249, 249, 249);");
     }
 };

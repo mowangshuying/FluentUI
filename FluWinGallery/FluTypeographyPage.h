@@ -74,7 +74,7 @@ class FluTypeographyPage : public FluAEmptyPage
         QString code;
         code += "auto label = new FluLabel;\n";
         code += "label->setStyle(FluLabelStyle::CaptionTextBlockSylte);";
-        expander->setCode(code);
+        expander->setCodeText(code);
         m_vScrollView->getMainLayout()->addWidget(expander);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);

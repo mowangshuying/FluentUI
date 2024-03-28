@@ -1,4 +1,5 @@
 #include "FluExpander.h"
+#include <QEvent>
 
 FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
@@ -7,6 +8,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
     m_mainLayout->setSpacing(0);
 
     m_wrap1 = new QWidget(this);
+    m_wrap1->installEventFilter(this);
     m_wrap1->setObjectName("wrap1");
     m_wrap1->setFixedHeight(48);  // the wrap1 set fixed height 48.
 
@@ -76,6 +78,15 @@ void FluExpander::resizeEvent(QResizeEvent* event)
     int nX = m_wrap1->width() - m_downOrUpButton->height() - 5;
     int nY = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
     m_downOrUpButton->move(nX, nY);
+}
+
+bool FluExpander::eventFilter(QObject* watched, QEvent* event)
+{
+    if (watched == m_wrap1 && event->type() == QEvent::MouseButtonRelease)
+    {
+        m_downOrUpButton->clicked();
+    }
+    return QWidget::eventFilter(watched, event);
 }
 
 void FluExpander::onThemeChanged()

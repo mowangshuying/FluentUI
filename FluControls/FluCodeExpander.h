@@ -14,23 +14,10 @@ class FluCodeExpander : public FluExpander
     {
         m_displayCodeBox = new FluCodeBox;
         m_displayCodeBox->setProperty("transparent", true);
-        //  m_wrap2->layout()->setContentsMargins(5, 5, 5, 5);
-        //   m_wrap2->layout()->setSpacing(0);
         m_wrap2->layout()->addWidget(m_displayCodeBox);
-        //  setWrap2Height(m_displayCodeBox->s);
-        // setWrap2Height(66);
-        // m_wrap2->setFixedHeight(66);
-        // connect(m_displayCodeBox, &FluDisplayCodeBox::resize)
-        // connect(m_displayCodeBox, &FluDisplayCodeBox::sizeChanged, [=]() {
-        //  if (m_bDown)
-        //  {
-        //      return;
-        //  }
-        //     m_wrap2->setFixedHeight(8 + m_displayCodeBox->height());
-        //  });
     }
 
-    void setCode(QString code)
+    void setCodeText(QString code)
     {
         m_displayCodeBox->setCodeText(code);
     }
@@ -46,16 +33,8 @@ class FluCodeExpander : public FluExpander
             file.close();
         }
 
-        setCode(code);
+        setCodeText(code);
     }
-
-    // void resizeEvent(QResizeEvent*)
-    // {
-    // setFixedHeight(m_wrap1->height() + m_wrap2->height());
-    // m_wrap2->setFixedHeight(m_displayCodeBox->height());
-    // setWrap2Height();
-    //  setWrap2Height(m_wrap2->sizeHint().height());
-    // }
 
     void paintEvent(QPaintEvent* event)
     {

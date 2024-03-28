@@ -36,6 +36,8 @@ class FluExpander : public QWidget
 
     void resizeEvent(QResizeEvent* event);
 
+    bool eventFilter(QObject* watched, QEvent* event);
+
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;

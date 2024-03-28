@@ -18,7 +18,7 @@ class FluComboBoxPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A ComboBox with items defined inline and its width set.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/FluComboBoxPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(96);
 
         auto comboBox = new FluComboBox(displayBox);

@@ -1,5 +1,5 @@
 ```cpp
-auto vSlider = new FluSlider(displayBox2);
+auto vSlider = new FluSlider;
 vSlider->setOrientation(Qt::Vertical);
 vSlider->setMinimum(0);
 vSlider->setMaximum(100);

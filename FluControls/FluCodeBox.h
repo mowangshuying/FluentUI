@@ -17,12 +17,7 @@ class FluCodeBox : public QTextEdit
   public:
     FluCodeBox(QWidget* parent = nullptr) : QTextEdit(parent)
     {
-        auto hightLigher = new FluCppSyntaxHightLighter(document());
         setReadOnly(true);
-
-        loadStyle("../config/onedark.xml");
-        hightLigher->setCppSyntaxStyle(m_styles[0].second);
-
         setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
         setContextMenuPolicy(Qt::NoContextMenu);
         setFocusPolicy(Qt::FocusPolicy::NoFocus);
@@ -31,29 +26,9 @@ class FluCodeBox : public QTextEdit
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-    void loadStyle(QString path)
-    {
-        QFile file(path);
-        if (!file.open(QIODevice::ReadOnly))
-        {
-            LOG_DEBUG << "open file failed! path:" << path;
-            return;
-        }
-
-        auto style = new FluCppSyntaxStyle(this);
-        if (!style->loadXml(file.readAll()))
-        {
-            delete style;
-            return;
-        }
-
-        std::pair<QString, FluCppSyntaxStyle*> pair(style->getName(), style);
-        m_styles.push_back(pair);
-    }
-
     void setCodeText(QString code)
     {
-        setPlainText(code);
+        setMarkdown(code);
     }
 
     void resizeEvent(QResizeEvent*)
@@ -80,5 +55,4 @@ class FluCodeBox : public QTextEdit
     }
 
   protected:
-    std::vector<std::pair<QString, FluCppSyntaxStyle*>> m_styles;
 };

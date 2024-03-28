@@ -30,7 +30,7 @@ class FluNumberBoxPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A spin box");
-        displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(90);
 
         auto spinBox = new FluSpinBox(this);
@@ -43,7 +43,7 @@ class FluNumberBoxPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A double spin box");
-        displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode2");
+        displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode2.md");
         displayBox->setBodyWidgetFixedHeight(90);
 
         auto doubleSpinBox = new FluDoubleSpinBox(this);

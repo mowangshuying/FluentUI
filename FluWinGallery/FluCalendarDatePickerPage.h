@@ -19,7 +19,7 @@ class FluCalendarDatePickerPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("CalendarDatePicker with a header ad placeholder text.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/CalendarDatePickerPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/CalendarDatePickerPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(60);
 
         auto calendarView = new FluCalendarDatePicker(displayBox);

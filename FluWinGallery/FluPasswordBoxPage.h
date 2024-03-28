@@ -19,7 +19,7 @@ class FluPasswordBoxPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A simple PasswordBox.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/PasswordBoxPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/PasswordBoxPageCode1.md");
 
         auto passwordBox = new FluPasswordBox(this);
         passwordBox->setFixedWidth(240);

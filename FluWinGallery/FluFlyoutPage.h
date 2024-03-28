@@ -18,7 +18,7 @@ class FluFlyoutPage : public FluAEmptyPage
 
            auto displayBox = new FluDisplayBox;
           displayBox->setTitle("A button with a flyout.");
-          displayBox->getCodeExpander()->setCodeByPath("../code/FlyoutPageCode1");
+          displayBox->getCodeExpander()->setCodeByPath("../code/FlyoutPageCode1.md");
           displayBox->setBodyWidgetFixedHeight(96);
 
           auto emptyCartBtn = new FluPushButton;

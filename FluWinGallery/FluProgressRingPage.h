@@ -20,7 +20,7 @@ class FluProgressRingPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("An indeterminate progress ring.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/FluProgressRingPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/FluProgressRingPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto progressRing1 = new FluProgressRing(displayBox1);
@@ -31,7 +31,7 @@ class FluProgressRingPage : public FluAEmptyPage
 
         auto displayBox2 = new FluDisplayBox;
         displayBox2->setTitle("An indeterminate ring.");
-        displayBox2->getCodeExpander()->setCodeByPath("../code/FluProgressRingPageCode2");
+        displayBox2->getCodeExpander()->setCodeByPath("../code/FluProgressRingPageCode2.md");
         displayBox2->setBodyWidgetFixedHeight(96);
 
         auto progressRing2 = new FluProgressRing(displayBox2);

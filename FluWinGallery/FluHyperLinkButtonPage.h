@@ -21,7 +21,7 @@ class FluHyperLinkButtonPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A hyperlink button with a Url.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/HyperLinkButtonPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/HyperLinkButtonPageCode1.md");
 
         auto btn1 = new FluHyperLinkButton("https://github.com/mowangshuying/CppQtFluentUi888");
         btn1->setText("CppQtFluentUi888 Repo Url");

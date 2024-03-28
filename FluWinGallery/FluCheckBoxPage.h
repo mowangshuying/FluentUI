@@ -22,7 +22,7 @@ class FluCheckBoxPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A 2-state CheckBox");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/FluCheckBoxPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/FluCheckBoxPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(56);
 
         auto checkBox = new FluCheckBox("Two-State CheckBox", this);

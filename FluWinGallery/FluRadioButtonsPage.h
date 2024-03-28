@@ -18,7 +18,7 @@ class FluRadioButtonsPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("Two RadioButtons controls with strings as options.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonsPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonsPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(360);
 
         auto border = new FluBorder;

@@ -29,7 +29,7 @@ class FluMenuBarPage : public FluAEmptyPage
     {
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A Simple MenuBar");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto menuBar = new FluMenuBar;
@@ -77,7 +77,7 @@ class FluMenuBarPage : public FluAEmptyPage
     {
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("MenuBar with keyboard accelerators");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode2");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode2.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto menuBar = new FluMenuBar;

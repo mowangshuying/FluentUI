@@ -21,7 +21,7 @@ class FluRepeatButtonPage : public FluAEmptyPage
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A simple RepeatButton with text context.");
 
-        displayBox->getCodeExpander()->setCodeByPath("../code/RepeatButtonPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/RepeatButtonPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(64);
 
         auto repeatButton = new FluRepeatButton;

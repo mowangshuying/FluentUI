@@ -16,7 +16,7 @@ class FluListViewPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("Basic ListView with Simple DateTemplate");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/ListViewPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/ListViewPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(480);
 
         FluListView* listView = new FluListView(displayBox1);

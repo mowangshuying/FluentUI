@@ -33,7 +33,7 @@ class FluInfoBarPage : public FluAEmptyPage
     {
         FluDisplayBoxEx* displayBox = new FluDisplayBoxEx;
         displayBox->setTitle("A closabel InforBar with options to change its severity.");
-        displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(120);
 
         FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info);
@@ -87,7 +87,7 @@ class FluInfoBarPage : public FluAEmptyPage
     {
         FluDisplayBox* displayBox = new FluDisplayBox;
         displayBox->setTitle("A dynamic InforBar.");
-        displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode2");
+        displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode2.md");
         displayBox->setBodyWidgetFixedHeight(256);
 
         auto infoBtn = new FluPushButton;

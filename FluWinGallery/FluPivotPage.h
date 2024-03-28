@@ -18,7 +18,7 @@ class FluPivotPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A basic pivot.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/PivotPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/PivotPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(360);
 
         auto pivot = new FluPivot;

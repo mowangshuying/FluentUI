@@ -21,7 +21,7 @@ class FluSliderPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A simple Slider.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/FluSliderPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/FluSliderPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto hSlider = new FluSlider(displayBox1);
@@ -37,7 +37,7 @@ class FluSliderPage : public FluAEmptyPage
 
         auto displayBox2 = new FluDisplayBox;
         displayBox2->setTitle("A vertical slider.");
-        displayBox2->getCodeExpander()->setCodeByPath("../code/FluSliderPageCode2");
+        displayBox2->getCodeExpander()->setCodeByPath("../code/FluSliderPageCode2.md");
         displayBox2->setBodyWidgetFixedHeight(180);
 
         auto vSlider = new FluSlider(displayBox2);

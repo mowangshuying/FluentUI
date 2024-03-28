@@ -20,7 +20,7 @@ class FluDropDownButtonPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("Simple DropDownButton");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode1");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(56);
 
         auto dropDownButton1 = new FluDropDownButton(this);
@@ -35,7 +35,7 @@ class FluDropDownButtonPage : public FluAEmptyPage
 
         auto displayBox2 = new FluDisplayBox;
         displayBox2->setTitle("DropDownButton with Icons");
-        displayBox2->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode2");
+        displayBox2->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode2.md");
         displayBox2->setBodyWidgetFixedHeight(56);
 
         auto dropDownButton2 = new FluDropDownButton(this);

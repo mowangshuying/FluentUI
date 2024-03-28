@@ -18,7 +18,7 @@ class FluToggleSwitchPage : public FluAEmptyPage
 
           auto displayBox = new FluDisplayBox;
           displayBox->setTitle("A simple ToggleSwitch.");
-          displayBox->getCodeExpander()->setCodeByPath("../code/ToggleSwitchPageCode1");
+          displayBox->getCodeExpander()->setCodeByPath("../code/ToggleSwitchPageCode1.md");
           displayBox->setBodyWidgetFixedHeight(70);
 
           auto toggleSwitch = new FluToggleSwitch(displayBox);

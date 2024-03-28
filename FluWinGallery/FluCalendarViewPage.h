@@ -18,7 +18,7 @@ class FluCalendarViewPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A basic calendar view.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/FluCalendarViewPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/FluCalendarViewPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(400);
 
         auto calendarView = new FluCalendarView(displayBox);

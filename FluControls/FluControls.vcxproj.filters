@@ -257,12 +257,6 @@
     <ClCompile Include="FluColorFlyout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluCppSyntaxHightLighter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FluCppSyntaxStyle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -490,9 +484,6 @@
     <QtMoc Include="FluColorFlyout.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluCppSyntaxStyle.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -508,12 +499,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluCalendarSelectYearView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluCppSHLRule.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluCppSyntaxHightLighter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

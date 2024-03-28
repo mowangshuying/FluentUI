@@ -22,7 +22,7 @@ class FluRadioButtonPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A group of RadioButton controls in RadioButtons group.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(160);
 
         FluVRadioGroupBox* groupBox = new FluVRadioGroupBox("Options");

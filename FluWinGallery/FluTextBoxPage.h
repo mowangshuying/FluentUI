@@ -19,7 +19,7 @@ class FluTextBoxPage : public FluAEmptyPage
 
           auto displayBox1 = new FluDisplayBox;
           displayBox1->setTitle("A multi-line TextBox");
-          displayBox1->getCodeExpander()->setCodeByPath("../code/TextBoxPageCode1");
+          displayBox1->getCodeExpander()->setCodeByPath("../code/TextBoxPageCode1.md");
         //  displayBox1->setBodyWidgetFixedHeight(56);
 
           auto textEdit = new FluTextEdit;

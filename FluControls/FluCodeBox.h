@@ -5,10 +5,7 @@
 #include <QSyntaxHighlighter>
 #include <QFile>
 #include <QSettings>
-#include "FluCppSHLRule.h"
-#include "FluCppSyntaxHightLighter.h"
 #include <vector>
-#include "FluCppSyntaxStyle.h"
 #include <utility>
 
 class FluCodeBox : public QTextEdit

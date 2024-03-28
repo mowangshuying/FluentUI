@@ -18,7 +18,7 @@ class FluInfoBadgePage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("InfoBadge with Different Value.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode1.md");
         displayBox->setBodyWidgetFixedHeight(96);
 
         auto targetWidget1 = new QWidget(displayBox->getBodyWidget());

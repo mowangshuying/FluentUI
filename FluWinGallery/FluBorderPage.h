@@ -19,7 +19,7 @@ class FluBorderPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBoxEx;
         displayBox->setTitle("A Border around a TextBlock.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/BorderPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/BorderPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(120);
 
         auto boder = new FluBorder;

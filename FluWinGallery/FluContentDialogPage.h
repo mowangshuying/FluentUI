@@ -19,7 +19,7 @@ class FluContentDialogPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A basic content dialog with content.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/ContentDialogPageCode1");
+        displayBox->getCodeExpander()->setCodeByPath("../code/ContentDialogPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(56);
 
         auto showDlgBtn = new FluPushButton;

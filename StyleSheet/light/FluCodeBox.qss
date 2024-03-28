@@ -1,4 +1,4 @@
-FluDisplayCodeBox {
+FluCodeBox {
     background-color: rgb(247, 247, 247);
     border: 1px solid rgb(234, 234, 234);
     selection-background-color: rgb(0, 120, 215);
@@ -7,7 +7,7 @@ FluDisplayCodeBox {
     border-radius: 4px;
 }
 
-FluDisplayCodeBox[transparent=true] {
+FluCodeBox[transparent=true] {
     background-color: transparent;
     font-size: 14px;
     border: none;

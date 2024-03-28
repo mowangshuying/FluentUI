@@ -155,7 +155,7 @@
     <ClCompile Include="FluComboBox.cpp" />
     <ClCompile Include="FluComboBoxTextItem.cpp" />
     <ClCompile Include="FluDisplayBox.cpp" />
-    <ClCompile Include="FluDisplayCodeBox.cpp" />
+    <ClCompile Include="FluCodeBox.cpp" />
     <ClCompile Include="FluCodeExpander.cpp" />
     <ClCompile Include="FluDisplayIconBox.cpp" />
     <ClCompile Include="FluDropDownButton.cpp" />
@@ -243,7 +243,7 @@
     <QtMoc Include="FluToggleButton.h" />
     <QtMoc Include="FluExpander.h" />
     <QtMoc Include="FluCodeExpander.h" />
-    <QtMoc Include="FluDisplayCodeBox.h" />
+    <QtMoc Include="FluCodeBox.h" />
     <QtMoc Include="FluDisplayBox.h" />
     <QtMoc Include="FluDisplayIconBox.h" />
     <QtMoc Include="FluCheckBox.h" />

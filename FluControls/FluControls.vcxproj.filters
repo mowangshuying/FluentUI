@@ -77,7 +77,7 @@
     <ClCompile Include="FluToggleButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluDisplayCodeBox.cpp">
+    <ClCompile Include="FluCodeBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluRotationButton.cpp">
@@ -322,7 +322,7 @@
     <QtMoc Include="FluToggleButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluDisplayCodeBox.h">
+    <QtMoc Include="FluCodeBox.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluRotationButton.h">

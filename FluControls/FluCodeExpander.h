@@ -2,7 +2,7 @@
 
 #include "FluExpander.h"
 #include <QWidget>
-#include "FluDisplayCodeBox.h"
+#include "FluCodeBox.h"
 #include <QStyleOption>
 #include <QPainter>
 
@@ -12,7 +12,7 @@ class FluCodeExpander : public FluExpander
   public:
     FluCodeExpander(QWidget* parent = nullptr) : FluExpander(parent)
     {
-        m_displayCodeBox = new FluDisplayCodeBox;
+        m_displayCodeBox = new FluCodeBox;
         m_displayCodeBox->setProperty("transparent", true);
         //  m_wrap2->layout()->setContentsMargins(5, 5, 5, 5);
         //   m_wrap2->layout()->setSpacing(0);
@@ -66,5 +66,5 @@ class FluCodeExpander : public FluExpander
     }
 
   protected:
-    FluDisplayCodeBox* m_displayCodeBox;
+    FluCodeBox* m_displayCodeBox;
 };

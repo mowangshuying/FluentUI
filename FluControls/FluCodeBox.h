@@ -11,23 +11,23 @@
 #include "FluCppSyntaxStyle.h"
 #include <utility>
 
-class FluDisplayCodeBox : public QTextEdit
+class FluCodeBox : public QTextEdit
 {
     Q_OBJECT
   public:
-    FluDisplayCodeBox(QWidget* parent = nullptr) : QTextEdit(parent)
+    FluCodeBox(QWidget* parent = nullptr) : QTextEdit(parent)
     {
         auto hightLigher = new FluCppSyntaxHightLighter(document());
         setReadOnly(true);
 
-        loadStyle("../config/drakula.xml");
+        loadStyle("../config/onedark.xml");
         hightLigher->setCppSyntaxStyle(m_styles[0].second);
 
         setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
         setContextMenuPolicy(Qt::NoContextMenu);
         setFocusPolicy(Qt::FocusPolicy::NoFocus);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayCodeBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCodeBox.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -71,11 +71,11 @@ class FluDisplayCodeBox : public QTextEdit
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayCodeBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCodeBox.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayCodeBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCodeBox.qss", this);
         }
     }
 

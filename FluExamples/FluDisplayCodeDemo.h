@@ -7,7 +7,7 @@
 
 #include "../FluUtils/FluUtils.h"
 #include "../FluControls/FluCodeExpander.h"
-#include "../FluControls/FluDisplayCodeBox.h"
+#include "../FluControls/FluCodeBox.h"
 
 class FluDisplayCodeDemo : public QWidget
 {
@@ -15,7 +15,7 @@ class FluDisplayCodeDemo : public QWidget
   public:
     FluDisplayCodeDemo(QWidget* parent = nullptr) : QWidget(parent)
     {
-        auto display = new FluDisplayCodeBox(this);
+        auto display = new FluCodeBox(this);
         display->setFixedSize(300, 50);
         display->move(50, 50);
 

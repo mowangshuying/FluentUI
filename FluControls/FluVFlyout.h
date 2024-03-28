@@ -20,8 +20,7 @@ class FluVFlyout : public QWidget
 {
     Q_OBJECT
   public:
-    FluVFlyout(QWidget* target, FluFlyoutPosition position = FluFlyoutPosition::Top) 
-        : QWidget(nullptr), m_targetWidget(target), m_position(position)
+    FluVFlyout(QWidget* target, FluFlyoutPosition position = FluFlyoutPosition::Top) : QWidget(nullptr), m_targetWidget(target), m_position(position)
     {
         m_vMainLayout = new QVBoxLayout;
         setLayout(m_vMainLayout);
@@ -29,7 +28,7 @@ class FluVFlyout : public QWidget
 
         setFixedWidth(360);
         setMinimumHeight(96);
-        
+
         setAttribute(Qt::WA_TranslucentBackground);
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
@@ -81,7 +80,7 @@ class FluVFlyout : public QWidget
 
     void closeEvent(QCloseEvent* event)
     {
-      //  LOG_DEBUG << "close it!";
+        //  LOG_DEBUG << "close it!";
         deleteLater();
     }
 
@@ -104,6 +103,7 @@ class FluVFlyout : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
         }
     }
+
   protected:
     QVBoxLayout* m_vMainLayout;
     QWidget* m_targetWidget;

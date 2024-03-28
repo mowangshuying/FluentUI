@@ -6,8 +6,7 @@ class FluRatingControl : public QWidget
 {
     Q_OBJECT
   public:
-      FluRatingControl(QWidget* parent = nullptr) : QWidget(parent)
-      {
-
-      }
+    FluRatingControl(QWidget* parent = nullptr) : QWidget(parent)
+    {
+    }
 };

@@ -40,10 +40,9 @@ class FluConfirmFlyout : public FluVFlyout
         m_okBtn->setText("Ok");
         m_cancelBtn->setText("Cancel");
 
-        connect(m_okBtn, &FluStyleButton::clicked, [=]() { close();
-        });
+        connect(m_okBtn, &FluStyleButton::clicked, [=]() { close(); });
 
-         connect(m_cancelBtn, &FluPushButton::clicked, [=]() { close(); });
+        connect(m_cancelBtn, &FluPushButton::clicked, [=]() { close(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
@@ -92,6 +91,7 @@ class FluConfirmFlyout : public FluVFlyout
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
         }
     }
+
   protected:
     FluLabel* m_titleLabel;
     FluLabel* m_infoLabel;

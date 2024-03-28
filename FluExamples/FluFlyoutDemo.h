@@ -18,9 +18,9 @@ class FluFlyoutDemo : public QWidget
         btn->move(200, 200);
 
         connect(btn, &FluPushButton::clicked, [=]() {
-           auto flyout = new  FluConfirmFlyout(btn, FluFlyoutPosition::Top);
+            auto flyout = new FluConfirmFlyout(btn, FluFlyoutPosition::Top);
             flyout->setTitle("Empty your cart?");
-           flyout->setInfo("All item will be remove. Do your want to continue?");
+            flyout->setInfo("All item will be remove. Do your want to continue?");
             flyout->show();
         });
 

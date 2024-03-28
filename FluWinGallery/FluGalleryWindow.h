@@ -454,12 +454,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("RichEditBox", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RichTextBlock", item);
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("TextBlock", item);
-        
+
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TextBox", item);
         auto textBoxPage = new FluTextBoxPage;
         m_sLayout->addWidget("TextBoxPage", textBoxPage);
         connect(item7, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextBoxPage"); });
-        
 
         item->addItem(item1);
         item->addItem(item2);

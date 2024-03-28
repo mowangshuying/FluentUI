@@ -82,7 +82,7 @@ void FluMenu::onThemeChanged()
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenu.qss", this);
     }
 
-    //auto actions = findChildren<FluAction*>();
+    // auto actions = findChildren<FluAction*>();
     for (auto action : actions())
     {
         auto fluAction = (FluAction*)action;

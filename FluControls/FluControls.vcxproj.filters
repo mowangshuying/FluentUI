@@ -260,9 +260,6 @@
     <ClCompile Include="FluCppSyntaxHightLighter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluCppFormats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">

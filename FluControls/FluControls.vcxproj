@@ -125,7 +125,6 @@
     <ClCompile Include="FluColorButton.cpp" />
     <ClCompile Include="FluColorLabel.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
-    <ClCompile Include="FluCppFormats.cpp" />
     <ClCompile Include="FluCppSyntaxHightLighter.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />

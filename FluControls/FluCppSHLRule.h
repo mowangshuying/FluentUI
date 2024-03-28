@@ -24,6 +24,11 @@ class FluCppSHLRule
         m_pattern = pattern;
     }
 
+    QString getKey()
+    {
+        return m_key;
+    }
+
     void setKey(QString key)
     {
         m_key = key;

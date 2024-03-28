@@ -7,6 +7,8 @@
 #include <QSettings>
 #include "FluCppSHLRule.h"
 #include "FluCppSyntaxHightLighter.h"
+#include <vector>
+#include "FluCppSyntaxStyle.h"
 
 class FluDisplayCodeBox : public QTextEdit
 {
@@ -27,6 +29,25 @@ class FluDisplayCodeBox : public QTextEdit
     void setCode(QString code)
     {
         setPlainText(code);
+    }
+
+    void loadStyle(QString path)
+    {
+        QFile file(path);
+        if (!file.open(QIODevice::ReadOnly))
+        {
+            LOG_DEBUG << "open file failed! path:" << path;
+            return;
+        }
+
+        auto style = new FluCppSyntaxStyle(this);
+        if (!style->loadXml(file.readAll()))
+        {
+            delete style;
+            return;
+        }
+
+        m_styles.push_back({style->getName(), style});
     }
 
     void resizeEvent(QResizeEvent*)
@@ -51,4 +72,7 @@ class FluDisplayCodeBox : public QTextEdit
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayCodeBox.qss", this);
         }
     }
+
+  protected:
+    std::vector<std::pair<QString, FluCppSyntaxStyle>> m_styles;
 };

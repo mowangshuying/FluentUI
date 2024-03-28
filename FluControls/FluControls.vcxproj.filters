@@ -257,6 +257,12 @@
     <ClCompile Include="FluColorFlyout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluRatingControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluStar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -482,6 +488,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluColorFlyout.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluRatingControl.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluStar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

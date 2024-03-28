@@ -140,10 +140,12 @@
     <ClCompile Include="FluPivotTitleBarItem.cpp" />
     <ClCompile Include="FluProgressBar.cpp" />
     <ClCompile Include="FluProgressRing.cpp" />
+    <ClCompile Include="FluRatingControl.cpp" />
     <ClCompile Include="FluShortInfoBar.cpp" />
     <ClCompile Include="FluSlider.cpp" />
     <ClCompile Include="FluSpinBox.cpp" />
     <ClCompile Include="FluSplitButton.cpp" />
+    <ClCompile Include="FluStar.cpp" />
     <ClCompile Include="FluTextEdit.cpp" />
     <ClCompile Include="FluThread.cpp" />
     <ClCompile Include="FluToggleSwitch.cpp" />
@@ -202,6 +204,8 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluStar.h" />
+    <QtMoc Include="FluRatingControl.h" />
     <QtMoc Include="FluColorFlyout.h" />
     <QtMoc Include="FluSplitButton.h" />
     <QtMoc Include="FluVFlyout.h" />

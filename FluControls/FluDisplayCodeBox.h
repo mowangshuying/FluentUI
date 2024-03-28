@@ -47,7 +47,7 @@ class FluDisplayCodeBox : public QTextEdit
             return;
         }
 
-        m_styles.push_back({style->getName(), style});
+       // m_styles.push_back(std::make_pair(style->getName(), style));
     }
 
     void resizeEvent(QResizeEvent*)
@@ -74,5 +74,5 @@ class FluDisplayCodeBox : public QTextEdit
     }
 
   protected:
-    std::vector<std::pair<QString, FluCppSyntaxStyle>> m_styles;
+   // std::vector<std::pair<QString, FluCppSyntaxStyle>> m_styles;
 };

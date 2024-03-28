@@ -7,6 +7,7 @@
 #include "FluCppSHLRule.h"
 #include "../FluUtils/FluUtils.h"
 #include <QXmlStreamReader>
+#include "FluCppSyntaxStyle.h"
 
 // ref:QCodeEdit can find it at github.
  class FluCppSyntaxHightLighter : public QSyntaxHighlighter

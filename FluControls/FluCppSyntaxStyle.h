@@ -4,6 +4,8 @@
 #include <QXmlStreamReader>
 #include <QTextCharFormat>
 #include "../FluUtils/FluUtils.h"
+#include <map>
+#include <vector>
 
 // ref:QSyntaxStyle
 class FluCppSyntaxStyle : public QObject

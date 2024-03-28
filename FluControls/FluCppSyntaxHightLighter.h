@@ -23,6 +23,7 @@
             appendHLRule("String", R"("[^\n"]*")");
             appendHLRule("Preprocessor", R"(#[a-zA-Z_]+)");
             appendHLRule("Comment", R"(//[^\n]*)");
+            appendHLRule("Type", R"(Flu[a-zA-Z_:]+)");
      }
 
 

@@ -19,7 +19,7 @@ class FluProgressBarPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("An indeterminate progress ring.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/FluProgressBarPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/ProgressBarPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto progressBar1 = new FluProgressBar(displayBox1);

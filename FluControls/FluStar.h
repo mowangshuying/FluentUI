@@ -10,6 +10,12 @@ class FluStar : public QLabel
   public:
     FluStar(QWidget* parent = nullptr) : QLabel(parent)
     {
+   //     if (testAttribute(Qt::WA_Hover))
+   //         LOG_DEBUG << "has hover attr.";
+   //     else
+   //         LOG_DEBUG << "not has hover attr.";
+
+        setAttribute(Qt::WA_Hover);
         setFixedSize(25, 25);
         setEmptyStar();
     }

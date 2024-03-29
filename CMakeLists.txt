@@ -30,6 +30,9 @@ add_custom_target(resource_copy
     COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
     ${CMAKE_CURRENT_SOURCE_DIR}/StyleSheet
     ${PROJECT_BINARY_DIR}/StyleSheet
+    COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
+    ${CMAKE_CURRENT_SOURCE_DIR}/code
+    ${PROJECT_BINARY_DIR}/code
 )
 
 install(DIRECTORY res
@@ -37,6 +40,10 @@ install(DIRECTORY res
 )
 
 install(DIRECTORY StyleSheet
+    DESTINATION .
+)
+
+install(DIRECTORY code
     DESTINATION .
 )
 

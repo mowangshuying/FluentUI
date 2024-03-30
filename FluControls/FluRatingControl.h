@@ -20,6 +20,11 @@ class FluRatingControl : public QWidget
         addStar();
         setFixedSize(170, 45);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
+        }
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void addStar()
@@ -71,6 +76,18 @@ class FluRatingControl : public QWidget
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
 
+    public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
+        }
+    }
   protected:
     int m_nNum;
     std::vector<FluStar*> m_stars;

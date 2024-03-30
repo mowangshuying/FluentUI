@@ -43,6 +43,7 @@
 #include "FluFlyoutPage.h"
 #include "FluToggleSwitchPage.h"
 #include "FluTextBoxPage.h"
+#include "FluRatingControlPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -149,6 +150,10 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item12, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RadioButtonPage"); });
 
         FluNavigationIconTextItem *item13 = new FluNavigationIconTextItem("RatingControl", item);
+        auto ratingControlPage = new FluRatingControlPage;
+        m_sLayout->addWidget("RatingControlPage", ratingControlPage);
+        connect(item13, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RatingControlPage"); });
+
 
         FluNavigationIconTextItem *item14 = new FluNavigationIconTextItem("Slider", item);
         auto sliderPage = new FluSliderPage;

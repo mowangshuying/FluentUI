@@ -18,19 +18,51 @@ class FluStar : public QLabel
         setAttribute(Qt::WA_Hover);
         setFixedSize(25, 25);
         setEmptyStar();
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setEmptyStar()
     {
+        m_bSolid = false;
         setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStar, FluThemeUtils::getUtils()->getTheme()));
     }
 
     void setSolidStar()
     {
+        m_bSolid = true;
         setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(0, 90, 158)));
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
             setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(118, 185, 237)));
         }
     }
+
+     public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            if (m_bSolid)
+            {
+                setSolidStar();
+            }
+            else
+            {
+                setEmptyStar();
+            }
+        }
+        else
+        {
+            if (m_bSolid)
+            {
+                setSolidStar();
+            }
+            else
+            {
+                setEmptyStar();
+            } 
+        }
+    }
+  protected:
+    bool m_bSolid;
 };

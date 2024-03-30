@@ -42,7 +42,7 @@ class FluRatingControl : public QWidget
     {
         for (int i = 0; i < 5; i++)
         {
-            if (m_stars[i] == watched  && event->type() == QEvent::HoverEnter)
+            if (m_stars[i] == watched && event->type() == QEvent::HoverEnter)
             {
                 // LOG_DEBUG << i << "," <<event;
                 for (int j = 0; j < 5; j++)
@@ -60,7 +60,7 @@ class FluRatingControl : public QWidget
             }
         }
 
-        return QWidget::eventFilter(watched, event); 
+        return QWidget::eventFilter(watched, event);
     }
 
     void paintEvent(QPaintEvent* event)

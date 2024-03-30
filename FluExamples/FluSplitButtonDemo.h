@@ -39,9 +39,7 @@ class FluSplitButtonDemo : public QWidget
             auto colorBtn20 = new FluColorButton(QColor(128, 128, 128));
             colorLayout->addColorButton(colorBtn20, 2, 0);
 
-            connect(colorLayout, &FluColorFlyout::colorChanged, [=](QColor color) {
-                LOG_DEBUG << "color: rgb(" << color.red() << "," << color.green() << "," << color.blue() << ").";
-            });
+            connect(colorLayout, &FluColorFlyout::colorChanged, [=](QColor color) { LOG_DEBUG << "color: rgb(" << color.red() << "," << color.green() << "," << color.blue() << ")."; });
             colorLayout->show();
         });
         resize(600, 400);

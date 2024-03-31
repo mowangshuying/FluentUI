@@ -21,10 +21,7 @@ qt_add_executable(${TGT}
 
 target_link_libraries(${TGT}
     PRIVATE
-    framelesshelper
-    FluUtils
     FluControls
-    Qt6::Widgets
 )
 
 set_target_properties(${TGT} PROPERTIES

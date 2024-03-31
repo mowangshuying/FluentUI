@@ -1,6 +1,7 @@
 FluNavigationSearchItem {
     background-color: rgb(243, 243, 243);
     border-radius: 4px;
+    border:1px solid transparent;
 }
 
 FluNavigationSearchItem[isLong=false]:hover {
@@ -10,4 +11,5 @@ FluNavigationSearchItem[isLong=false]:hover {
 
 #searchButton {
     background-color: transparent;
+    border:1px solid transparent;
 }

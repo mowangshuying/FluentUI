@@ -298,7 +298,7 @@ xcb_get_property_unchecked(
 #ifndef FRAMELESSHELPER_HAS_GTK
 
 #define GTKSETTINGS_IMPL(Type, ...) \
-    Type gtkSettings(const gchar *property) \
+template<> Type gtkSettings<Type>(const gchar *property) \
     { \
         Q_ASSERT(property); \
         Q_ASSERT(*property != '\0'); \
@@ -473,10 +473,17 @@ g_clear_object(
     API_CALL_FUNCTION(libgtk, g_clear_object, object_ptr);
 }
 
+FRAMELESSHELPER_BEGIN_NAMESPACE
 GTKSETTINGS_IMPL(bool, const bool result = g_value_get_boolean(&value);)
 GTKSETTINGS_IMPL(QString, const QString result = QUtf8String(g_value_get_string(&value));)
+QString gtkSettings(const gchar *property)
+{
+    return gtkSettings<QString>(property);
+}
 
-#endif // FRAMELESSHELPER_HAS_GTK
+FRAMELESSHELPER_END_NAMESPACE
+
+#else // FRAMELESSHELPER_HAS_GTK
 
 FRAMELESSHELPER_BEGIN_NAMESPACE
 template<typename T>
@@ -511,5 +518,5 @@ QString gtkSettings(const gchar *property)
     return result;
 }
 FRAMELESSHELPER_END_NAMESPACE
-
+#endif // FRAMELESSHELPER_HAS_GTK
 #endif // __linux__

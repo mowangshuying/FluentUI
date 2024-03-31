@@ -21,6 +21,6 @@ qt_add_library(${TGT}
 )
 
 target_link_libraries(${TGT}
-    PRIVATE
+    PUBLIC
     Qt6::Widgets
 )

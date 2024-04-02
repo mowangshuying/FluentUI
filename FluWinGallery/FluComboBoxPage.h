@@ -2,7 +2,7 @@
 
 #include "FluAEmptyPage.h"
 #include "../FluControls/FluDisplayBox.h"
-#include "../FluControls/FluComboBox.h"
+#include "../FluControls/FluComboBoxEx.h"
 #include "../FluControls/FluVScrollView.h"
 #include "../FluControls/FluColorLabel.h"
 
@@ -21,7 +21,7 @@ class FluComboBoxPage : public FluAEmptyPage
         displayBox->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(96);
 
-        auto comboBox = new FluComboBox(displayBox);
+        auto comboBox = new FluComboBoxEx(displayBox);
         comboBox->setFixedWidth(200);
         comboBox->move(50, 50);
         comboBox->addItem("Blue");
@@ -37,7 +37,7 @@ class FluComboBoxPage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-        connect(comboBox, &FluComboBox::currentTextChanged, [=](const QString& text) {
+        connect(comboBox, &FluComboBoxEx::currentTextChanged, [=](const QString& text) {
             colorLabel->setProperty("color", text);
             colorLabel->style()->polish(colorLabel);
         });

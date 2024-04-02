@@ -263,6 +263,9 @@
     <ClCompile Include="FluStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluComboBoxEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -494,6 +497,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluStar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluComboBoxEx.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

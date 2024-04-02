@@ -1,0 +1,28 @@
+FluComboBoxEx {
+    background-color: rgb(45, 45, 45);
+    border: 1px solid rgb(32, 32, 32);
+    border-bottom: 1px solid rgb(48, 48, 48);
+    border-radius: 4px;
+}
+
+FluComboBoxEx:hover {
+    border: 1px solid rgb(32, 32, 32);
+    border-bottom: 1px solid rgb(48, 48, 48);
+    background-color: rgb(50, 50, 50);
+}
+
+FluComboBoxEx:pressed {
+    background-color: rgb(39, 39, 39);
+    /* border: 1px solid rgb(32, 32, 32); */
+}
+
+#textBtn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+#iconBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+}

@@ -5,7 +5,7 @@
 #include "../FluControls/FluShortInfoBar.h"
 #include "../FluControls/FluVScrollView.h"
 #include "../FluControls/FluDisplayBoxEx.h"
-#include "../FluControls/FluComboBox.h"
+#include "../FluControls/FluComboBoxEx.h"
 #include "../FluControls/FluPushButton.h"
 #include "../FluControls/FluInfoBarMgr.h"
 
@@ -40,13 +40,13 @@ class FluInfoBarPage : public FluAEmptyPage
         sInfoBar->setFixedWidth(270);
         displayBox->getBodyContentLayout()->addWidget(sInfoBar);
 
-        auto comboBox = new FluComboBox;
+        auto comboBox = new FluComboBoxEx;
         comboBox->addItem("Informational");
         comboBox->addItem("Success");
         comboBox->addItem("Warning");
         comboBox->addItem("Error");
 
-        connect(comboBox, &FluComboBox::currentIndexChanged, [=](int index) mutable {
+        connect(comboBox, &FluComboBoxEx::currentIndexChanged, [=](int index) mutable {
             //   LOG_DEBUG << displayBox->getBodyContentLayout()->count();
             if (!displayBox->getBodyContentLayout()->isEmpty())
             {

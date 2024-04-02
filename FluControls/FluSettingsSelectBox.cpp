@@ -20,9 +20,9 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : QWid
     m_vLayout->addWidget(m_infoLabel);
 
     m_mainLayout->addLayout(m_vLayout, 1);
-    m_comboBox = new FluComboBox;
-    m_comboBox->setFixedWidth(120);
-    m_mainLayout->addWidget(m_comboBox);
+    m_comboBoxEx = new FluComboBoxEx;
+    m_comboBoxEx->setFixedWidth(120);
+    m_mainLayout->addWidget(m_comboBoxEx);
 
     setFixedHeight(70);
 
@@ -37,9 +37,9 @@ FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* 
     setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType));
 }
 
-FluComboBox* FluSettingsSelectBox::getComboBox()
+FluComboBoxEx* FluSettingsSelectBox::getComboBox()
 {
-    return m_comboBox;
+    return m_comboBoxEx;
 }
 
 void FluSettingsSelectBox::setIcon(QIcon icon)

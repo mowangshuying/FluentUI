@@ -124,6 +124,7 @@
     <ClCompile Include="FluCalendarViewTitle.cpp" />
     <ClCompile Include="FluColorButton.cpp" />
     <ClCompile Include="FluColorLabel.cpp" />
+    <ClCompile Include="FluComboBoxEx.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
@@ -269,6 +270,7 @@
     <QtMoc Include="FluDisplayBoxEx.h" />
     <QtMoc Include="FluDoubleSpinBox.h" />
     <QtMoc Include="FluConfirmFlyout.h" />
+    <QtMoc Include="FluComboBoxEx.h" />
     <ClInclude Include="FluFlowLayout.h" />
     <QtMoc Include="FluIconButton.h" />
     <QtMoc Include="FluLabel.h" />

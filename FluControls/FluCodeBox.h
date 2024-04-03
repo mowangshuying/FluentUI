@@ -19,6 +19,7 @@ class FluCodeBox : public QTextEdit
         setContextMenuPolicy(Qt::NoContextMenu);
         setFocusPolicy(Qt::FocusPolicy::NoFocus);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCodeBox.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }

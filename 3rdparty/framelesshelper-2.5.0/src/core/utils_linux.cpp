@@ -610,7 +610,7 @@ xcb_atom_t Utils::internAtom(const char *name)
         return XCB_NONE;
     }
     xcb_connection_t * const connection = x11_connection();
-    Q_ASSERT(connection);
+  //  Q_ASSERT(connection);
     if (!connection) {
         return XCB_NONE;
     }

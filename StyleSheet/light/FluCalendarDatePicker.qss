@@ -17,8 +17,10 @@ FluCalendarDatePicker:pressed {
 #textButton {
     color: rgb(94, 94, 94);
     background-color: transparent;
+    border: 1px solid transparent;
 }
 
 #iconButton {
     background-color: transparent;
+    border: 1px solid transparent;
 }

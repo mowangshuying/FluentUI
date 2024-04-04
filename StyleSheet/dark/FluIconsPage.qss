@@ -24,6 +24,12 @@ FluFWScrollView {
     color: white;
 }
 
+#searchLabel {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+}
+
 #wrapWidget {
     /* background-color: aqua; */
     border-radius: 4px;

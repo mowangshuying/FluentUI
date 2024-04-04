@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QVBoxLayout>
+#include "../FluControls/FluSearchLineEdit.h"
 
 class FluVScrollView;
 class FluAEmptyPage : public QWidget
@@ -16,6 +17,7 @@ class FluAEmptyPage : public QWidget
   protected:
     QLabel* m_titleLabel;
     //  QLabel* m_subTitleLabel;
+
     QVBoxLayout* m_mainLayout;
     FluVScrollView* m_vScrollView;
     QLabel* m_infoLabel;

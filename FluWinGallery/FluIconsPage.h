@@ -18,7 +18,17 @@ class FluIconsPage : public FluAEmptyPage
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("IconsPage");
         // m_subTitleLabel->setText("CppQtFluentUi888::FluIcons");
-        m_infoLabel->setText("Segoe FluentIcons instructions.");
+        m_infoLabel->setText("With the release of Windows 11, Segoe Fluent Icons is the remmended icon font.");
+
+        // 
+        m_searchLabel = new QLabel;
+        m_searchLabel->setObjectName("searchLabel");
+        m_searchLabel->setText("Fluent Icons Library.");
+        m_vScrollView->getMainLayout()->addWidget(m_searchLabel);
+
+        m_searchEdit = new FluSearchLineEdit;
+        m_searchEdit->setFixedWidth(300);
+        m_vScrollView->getMainLayout()->addWidget(m_searchEdit);
 
         auto wrapWidget = new QWidget;
         wrapWidget->setObjectName("wrapWidget");
@@ -157,5 +167,9 @@ class FluIconsPage : public FluAEmptyPage
   protected:
     QColor m_penColor;
     QLabel* m_iconLabel;
+    
+    QLabel* m_searchLabel;
+    FluSearchLineEdit* m_searchEdit;
+
     FluDisplayIconBox* m_sDisplayIconBox;
 };

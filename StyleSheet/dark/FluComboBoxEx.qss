@@ -18,6 +18,7 @@ FluComboBoxEx:pressed {
 
 #textBtn {
     color: white;
+    text-align: left;
     background-color: transparent;
     border: 1px solid transparent;
 }

@@ -20,13 +20,25 @@ class FluFWScrollView : public QScrollArea
         m_contextWidget->setObjectName("contextWidget");
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluFWScrollView.qss");
         setStyleSheet(qss);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluFlowLayout* getMainLayout()
     {
         return m_vMainLayout;
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFWScrollView.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluFWScrollView.qss", this);
+        }
+    }
   protected:
     QWidget* m_contextWidget;
     FluFlowLayout* m_vMainLayout;

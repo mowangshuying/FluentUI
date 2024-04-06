@@ -4,6 +4,7 @@
 #include "../FluUtils/FluUtils.h"
 #include <QWheelEvent>
 #include <QPushButton>
+#include <QListWidgetItem>
 
 class FluLoopView : public QListWidget
 {
@@ -35,10 +36,29 @@ class FluLoopView : public QListWidget
           connect(m_scrollDownBtn, &QPushButton::clicked, [=]() { scrollDown();
               });
 
+
+          connect(this, &FluLoopView::itemClicked, [=](QListWidgetItem* item) { 
+              int nIndex = item->data(Qt::UserRole).toInt();
+            //  scrollToItem(this->item(nIndex));
+              if (nIndex < 0 || nIndex >= m_nTotalVisibleCount)
+                  return;
+
+              while (nIndex != m_nVisibleMidIndex)
+              {
+                  if (nIndex > m_nVisibleMidIndex)
+                      scrollDown();
+                  else
+                      scrollUp();
+              }
+
+              });
+
           setMaxVisibleNum(9);
           m_nVisibleMidIndex = 0;
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
       }
+
+      
 
       void setAllItems(const std::vector<QString>& datas)
       {
@@ -50,15 +70,19 @@ class FluLoopView : public QListWidget
               item->setSizeHint(QSize(80, 40));
               item->setText(datas[datas.size() - nMid + i]);
               item->setTextAlignment(Qt::AlignCenter);
+
+              item->setData(Qt::UserRole, datas.size() - nMid + i);
               addItem(item);
           }
 
-          for (auto str : datas)
+          for (int i = 0; i < datas.size() ; i++)
           {
               auto item = new QListWidgetItem;
               item->setSizeHint(QSize(80, 40));
-              item->setText(str);
+              item->setText(datas[i]);
               item->setTextAlignment(Qt::AlignCenter);
+
+              item->setData(Qt::UserRole, i);
               addItem(item);
           }
 
@@ -68,6 +92,8 @@ class FluLoopView : public QListWidget
               item->setSizeHint(QSize(80, 40));
               item->setText(datas[i]);
               item->setTextAlignment(Qt::AlignCenter);
+
+              item->setData(Qt::UserRole, i);
               addItem(item);
           }
           

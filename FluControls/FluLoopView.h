@@ -1,0 +1,182 @@
+#pragma once
+
+#include <QListWidget>
+#include "../FluUtils/FluUtils.h"
+#include <QWheelEvent>
+#include <QPushButton>
+
+class FluLoopView : public QListWidget
+{
+    Q_OBJECT
+  public:
+      FluLoopView(QWidget* parent = nullptr) : QListWidget(parent)
+      {
+          setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+          setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+          setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);//fix bottom empty.
+
+          m_scrollDownBtn = new QPushButton(this);
+          m_scrollDownBtn->setFixedSize(80, 40);
+          m_scrollUpBtn = new QPushButton(this);
+          m_scrollUpBtn->setFixedSize(80, 40);
+          
+          m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp)));
+          m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown)));
+
+          m_scrollDownBtn->setObjectName("scrollDownBtn");
+          m_scrollUpBtn->setObjectName("scrollUpBtn");
+
+          m_scrollUpBtn->hide();
+          m_scrollDownBtn->hide();
+
+          connect(m_scrollUpBtn, &QPushButton::clicked, [=]() { scrollUp();
+          });
+
+          connect(m_scrollDownBtn, &QPushButton::clicked, [=]() { scrollDown();
+              });
+
+          setMaxVisibleNum(9);
+          m_nVisibleMidIndex = 0;
+          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+      }
+
+      void setAllItems(const std::vector<QString>& datas)
+      {
+          // the top;
+          int nMid = m_nMaxVisibleNum / 2;
+          for (int i = 0; i < nMid; i++)
+          {
+              auto item = new QListWidgetItem;
+              item->setSizeHint(QSize(80, 40));
+              item->setText(datas[datas.size() - nMid + i]);
+              item->setTextAlignment(Qt::AlignCenter);
+              addItem(item);
+          }
+
+          for (auto str : datas)
+          {
+              auto item = new QListWidgetItem;
+              item->setSizeHint(QSize(80, 40));
+              item->setText(str);
+              item->setTextAlignment(Qt::AlignCenter);
+              addItem(item);
+          }
+
+           for (int i = 0; i < nMid; i++)
+          {
+              auto item = new QListWidgetItem;
+              item->setSizeHint(QSize(80, 40));
+              item->setText(datas[i]);
+              item->setTextAlignment(Qt::AlignCenter);
+              addItem(item);
+          }
+          
+        //  m_nItemCount = count();
+          setFixedHeight(40 * getMaxVisibleNum());
+          setFixedWidth(80);
+
+          m_nTotalVisibleCount = datas.size();
+          m_nTotalItemCount = count();
+      }
+
+      int getMaxVisibleNum()
+      {
+          return m_nMaxVisibleNum;
+      }
+
+      void setMaxVisibleNum(int nNum)
+      {
+          m_nMaxVisibleNum = nNum;
+      }
+
+      void setVisibaleMidIndex(int nMidIndex)
+      {
+          if (nMidIndex < 0 || nMidIndex >= m_nTotalVisibleCount)
+              return;
+
+          int nItemIndex = nMidIndex + m_nMaxVisibleNum / 2;
+          m_nVisibleMidIndex = nMidIndex;
+
+          setCurrentItem(item(nItemIndex));
+          LOG_DEBUG << "Item Index:" << nItemIndex << ", Visible Index:" << m_nVisibleMidIndex;
+          scrollToItem(item(nItemIndex), QAbstractItemView::PositionAtCenter);
+      }
+
+      void scrollDown()
+      {
+          int nNextIndex = m_nVisibleMidIndex + 1;
+          if (nNextIndex >= m_nTotalVisibleCount)
+              nNextIndex = 0;
+
+          LOG_DEBUG << "scroll down next index:" << nNextIndex;
+          setVisibaleMidIndex(nNextIndex);
+      }
+
+      void scrollUp()
+      {
+          int nNextIndex = m_nVisibleMidIndex - 1;
+          if (nNextIndex < 0)
+              nNextIndex = m_nTotalVisibleCount - 1;
+          LOG_DEBUG << "scroll up next index:" << nNextIndex;
+          setVisibaleMidIndex(nNextIndex);
+      }
+
+      void enterEvent(QEnterEvent* event)
+      {
+          m_scrollUpBtn->move(0, 0);
+          m_scrollDownBtn->move(0, height() - m_scrollDownBtn->height());
+          m_scrollUpBtn->show();
+          m_scrollDownBtn->show();
+      }
+
+      void leaveEvent(QEvent* event)
+      {
+          m_scrollUpBtn->move(0, 0);
+          m_scrollDownBtn->move(0, height() - m_scrollDownBtn->height());
+          m_scrollUpBtn->hide();
+          m_scrollDownBtn->hide();
+      }
+
+      void wheelEvent(QWheelEvent* e)
+      {
+          if (e->angleDelta().y() < 0)
+          {
+              scrollDown();
+          }
+          else
+          {
+              scrollUp();
+          }
+      }
+
+      void keyPressEvent(QKeyEvent* event)
+      {
+          if (event->key() == Qt::Key_Down)
+          {
+              scrollDown();
+              return;
+          }
+
+          if (event->key() == Qt::Key_Up)
+          {
+              scrollUp();
+              return;
+          }
+      }
+
+  protected:
+    //int m_nItemHeight;
+
+    int m_nMaxVisibleNum;
+    
+    int m_nTotalItemCount; // the total item count;
+    int m_nTotalVisibleCount;
+    
+    int m_nVisibleMidIndex;
+    
+    int m_nTopIndex;
+    std::vector<QString> m_datas;
+
+    QPushButton* m_scrollDownBtn;
+    QPushButton* m_scrollUpBtn;
+};

@@ -16,6 +16,7 @@ class FluTimePicker24HView : public QWidget
       FluTimePicker24HView(QWidget* parent = nullptr) : QWidget(parent)
       {
           m_vMainLayout = new QVBoxLayout;
+          m_vMainLayout->setContentsMargins(0, 0, 0, 0);
           setLayout(m_vMainLayout);
 
           m_hViewLayout = new QHBoxLayout;
@@ -49,6 +50,8 @@ class FluTimePicker24HView : public QWidget
 
 
           m_hBtnLayout = new QHBoxLayout;
+          m_hBtnLayout->setContentsMargins(5, 5, 5, 5);
+
           m_okBtn = new QPushButton;
           m_cancelBtn = new QPushButton;
 

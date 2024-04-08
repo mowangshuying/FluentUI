@@ -150,6 +150,7 @@
     <ClCompile Include="FluStar.cpp" />
     <ClCompile Include="FluTextEdit.cpp" />
     <ClCompile Include="FluThread.cpp" />
+    <ClCompile Include="FluTimePicker24HView.cpp" />
     <ClCompile Include="FluToggleSwitch.cpp" />
     <ClCompile Include="FluVFlipView.cpp" />
     <ClCompile Include="FluVRadioGroupBox.cpp" />
@@ -206,6 +207,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluTimePicker24HView.h" />
     <QtMoc Include="FluLoopView.h" />
     <QtMoc Include="FluStar.h" />
     <QtMoc Include="FluRatingControl.h" />

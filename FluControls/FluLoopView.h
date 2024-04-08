@@ -5,6 +5,7 @@
 #include <QWheelEvent>
 #include <QPushButton>
 #include <QListWidgetItem>
+#include <QThread>
 
 class FluLoopView : public QListWidget
 {
@@ -45,6 +46,7 @@ class FluLoopView : public QListWidget
 
               while (nIndex != m_nVisibleMidIndex)
               {
+               //   QThread::msleep(500);
                   if (nIndex > m_nVisibleMidIndex)
                       scrollDown();
                   else

@@ -2,6 +2,8 @@
 
 #include <QWidget>
 #include "../FluControls/FluLoopView.h"
+#include "../FluControls/FluTimePicker24HView.h"
+
 
 class FluLoopViewDemo : public QWidget
 {
@@ -9,17 +11,9 @@ class FluLoopViewDemo : public QWidget
   public:
       FluLoopViewDemo(QWidget* parent = nullptr) : QWidget(parent)
       {
-          auto loopView = new FluLoopView(this);
-          loopView->move(50, 50);
-          std::vector<QString> datas;
-          for (int i = 0; i < 12; i++)
-          {
-              QString str = QString::asprintf("%02d", i);
-              datas.push_back(str);
-          }
+          auto timePicker24HView = new FluTimePicker24HView(this);
+          timePicker24HView->move(50, 50);
 
-          loopView->setAllItems(datas);
-
-          resize(600, 400);
+          resize(800, 800);
       }
 };

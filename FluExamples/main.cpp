@@ -38,6 +38,7 @@
 #include "FluSplitButtonDemo.h"
 #include "FluRatingControlDemo.h"
 #include "FluLoopViewDemo.h"
+#include "FluTimePickerDemo.h"
 
 
 int main(int argc, char **argv)
@@ -176,7 +177,10 @@ int main(int argc, char **argv)
     //FluRatingControlDemo demo;
     //demo.show();
 
-    FluLoopViewDemo demo;
+  //  FluLoopViewDemo demo;
+  //  demo.show();
+
+    FluTimePickerDemo demo;
     demo.show();
 
     return app.exec();

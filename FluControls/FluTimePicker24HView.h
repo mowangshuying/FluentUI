@@ -15,16 +15,20 @@ class FluTimePicker24HView : public QWidget
   public:
       FluTimePicker24HView(QWidget* parent = nullptr) : QWidget(parent)
       {
+          setWindowFlags( Qt::Popup |  Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
+          setAttribute(Qt::WA_TranslucentBackground);
+
           m_vMainLayout = new QVBoxLayout;
           m_vMainLayout->setContentsMargins(0, 0, 0, 0);
+          m_vMainLayout->setSpacing(0);
           setLayout(m_vMainLayout);
 
           m_hViewLayout = new QHBoxLayout;
          // setLayout(m_hViewLayout);
           m_vMainLayout->addLayout(m_hViewLayout);
 
-          m_hourView = new FluLoopView;
-          m_minuteView = new FluLoopView;
+          m_hourView = new FluLoopView(120);
+          m_minuteView = new FluLoopView(120);
 
           // set hour data;
           std::vector<QString> datas;
@@ -58,8 +62,8 @@ class FluTimePicker24HView : public QWidget
           m_okBtn->setObjectName("okBtn");
           m_cancelBtn->setObjectName("cancelBtn");
 
-          m_okBtn->setFixedHeight(30);
-          m_cancelBtn->setFixedHeight(30);
+          m_okBtn->setFixedHeight(40);
+          m_cancelBtn->setFixedHeight(40);
 
 
           m_okBtn->setIconSize(QSize(25, 25));
@@ -72,10 +76,8 @@ class FluTimePicker24HView : public QWidget
           m_hBtnLayout->addWidget(m_cancelBtn);
 
           m_vMainLayout->addLayout(m_hBtnLayout);
-
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
       }
-
 
       void paintEvent(QPaintEvent* event)
       {

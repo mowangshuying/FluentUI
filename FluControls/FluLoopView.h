@@ -11,16 +11,16 @@ class FluLoopView : public QListWidget
 {
     Q_OBJECT
   public:
-      FluLoopView(QWidget* parent = nullptr) : QListWidget(parent)
+      FluLoopView(int nFixedW = 80, QWidget* parent = nullptr) : QListWidget(parent), m_nFixedW(nFixedW)
       {
           setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
           setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
           setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);//fix bottom empty.
 
           m_scrollDownBtn = new QPushButton(this);
-          m_scrollDownBtn->setFixedSize(80, 40);
+          m_scrollDownBtn->setFixedSize(nFixedW, 40);
           m_scrollUpBtn = new QPushButton(this);
-          m_scrollUpBtn->setFixedSize(80, 40);
+          m_scrollUpBtn->setFixedSize(nFixedW, 40);
           
           m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp)));
           m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown)));
@@ -69,7 +69,7 @@ class FluLoopView : public QListWidget
           for (int i = 0; i < nMid; i++)
           {
               auto item = new QListWidgetItem;
-              item->setSizeHint(QSize(80, 40));
+              item->setSizeHint(QSize(m_nFixedW, 40));
               item->setText(datas[datas.size() - nMid + i]);
               item->setTextAlignment(Qt::AlignCenter);
 
@@ -80,7 +80,7 @@ class FluLoopView : public QListWidget
           for (int i = 0; i < datas.size() ; i++)
           {
               auto item = new QListWidgetItem;
-              item->setSizeHint(QSize(80, 40));
+              item->setSizeHint(QSize(m_nFixedW, 40));
               item->setText(datas[i]);
               item->setTextAlignment(Qt::AlignCenter);
 
@@ -91,7 +91,7 @@ class FluLoopView : public QListWidget
            for (int i = 0; i < nMid; i++)
           {
               auto item = new QListWidgetItem;
-              item->setSizeHint(QSize(80, 40));
+              item->setSizeHint(QSize(m_nFixedW, 40));
               item->setText(datas[i]);
               item->setTextAlignment(Qt::AlignCenter);
 
@@ -101,7 +101,7 @@ class FluLoopView : public QListWidget
           
         //  m_nItemCount = count();
           setFixedHeight(40 * getMaxVisibleNum());
-          setFixedWidth(80);
+          setFixedWidth(m_nFixedW);
 
           m_nTotalVisibleCount = datas.size();
           m_nTotalItemCount = count();
@@ -194,7 +194,7 @@ class FluLoopView : public QListWidget
 
   protected:
     //int m_nItemHeight;
-
+    int m_nFixedW;
     int m_nMaxVisibleNum;
     
     int m_nTotalItemCount; // the total item count;

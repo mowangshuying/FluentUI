@@ -146,6 +146,7 @@
     <ClCompile Include="FluTextAreaDemo.cpp" />
     <ClCompile Include="FluTextEditDemo.cpp" />
     <ClCompile Include="FluThreadDemo.cpp" />
+    <ClCompile Include="FluTimePickerDemo.cpp" />
     <ClCompile Include="FluToggleSwitchDemo.cpp" />
     <ClCompile Include="FluFlyoutDemo.cpp" />
     <ClCompile Include="main.cpp" />
@@ -169,6 +170,7 @@
     <QtMoc Include="FluNavigationDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluTimePickerDemo.h" />
     <QtMoc Include="FluSplitButtonDemo.h" />
     <QtMoc Include="FluFlyoutDemo.h" />
     <QtMoc Include="FluTextEditDemo.h" />

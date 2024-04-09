@@ -117,9 +117,17 @@ class FluLoopView : public QListWidget
           m_nMaxVisibleNum = nNum;
       }
 
+      int getVisibleMidIndex()
+      {
+          return m_nVisibleMidIndex;
+      }
+
       void setVisibaleMidIndex(int nMidIndex)
       {
           if (nMidIndex < 0 || nMidIndex >= m_nTotalVisibleCount)
+              return;
+
+          if (nMidIndex == m_nVisibleMidIndex)
               return;
 
           int nItemIndex = nMidIndex + m_nMaxVisibleNum / 2;

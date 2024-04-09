@@ -76,7 +76,50 @@ class FluTimePicker24HView : public QWidget
           m_hBtnLayout->addWidget(m_cancelBtn);
 
           m_vMainLayout->addLayout(m_hBtnLayout);
+          
+          
+          setMinute(0);
+          setHour(0);
+
+          connect(m_okBtn, &QPushButton::clicked, [=]() {
+              updateTime();
+              emit clickedOk();
+              close();
+          });
+          connect(m_cancelBtn, &QPushButton::clicked, [=]() {
+              emit clickedCancel();
+              close();
+          });
+
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
+      }
+
+      int getHour()
+      {
+          return m_hour;
+      }
+
+      int getMinute()
+      {
+          return m_minute;
+      }
+
+      void setHour(int hour)
+      {
+          m_hour = hour;
+          m_hourView->setVisibaleMidIndex(hour);
+      }
+
+      void setMinute(int minute)
+      {
+          m_minute = minute;
+          m_minuteView->setVisibaleMidIndex(minute);
+      }
+
+      void updateTime()
+      {
+          m_hour = m_hourView->getVisibleMidIndex();
+          m_minute = m_minuteView->getVisibleMidIndex();
       }
 
       void paintEvent(QPaintEvent* event)
@@ -86,6 +129,9 @@ class FluTimePicker24HView : public QWidget
           QPainter painter(this);
           style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
       }
+  signals:
+      void clickedOk();
+      void clickedCancel();
   protected:
       QVBoxLayout* m_vMainLayout;
       QHBoxLayout* m_hViewLayout;
@@ -96,4 +142,7 @@ class FluTimePicker24HView : public QWidget
 
       QPushButton* m_okBtn;
       QPushButton* m_cancelBtn;
+
+      int m_hour;
+      int m_minute;
 };

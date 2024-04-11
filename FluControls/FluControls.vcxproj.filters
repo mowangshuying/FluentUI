@@ -275,6 +275,9 @@
     <ClCompile Include="FluTimePicker24H.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluAmPmView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -518,6 +521,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTimePicker24H.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluAmPmView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

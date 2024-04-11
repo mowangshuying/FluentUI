@@ -147,6 +147,10 @@ int FluFlowLayout::doLayout(const QRect &rect, bool testOnly) const
     foreach (item, itemList)
     {
         QWidget *wid = item->widget();
+
+        if (wid->isHidden())
+            continue;
+
         int spaceX = horizontalSpacing();
         if (spaceX == -1)
             spaceX = wid->style()->layoutSpacing(QSizePolicy::PushButton, QSizePolicy::PushButton, Qt::Horizontal);

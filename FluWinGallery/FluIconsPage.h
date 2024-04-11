@@ -96,7 +96,7 @@ class FluIconsPage : public FluAEmptyPage
         for (int i = 0; i < metaEnum.keyCount(); i++)
         {
 #ifdef _DEBUG
-            if (i >= 256)
+            if (i >= 512)
                 continue;
 #endif
             // addIcon((FluAwesomeType)metaEnum.value(i));
@@ -108,6 +108,8 @@ class FluIconsPage : public FluAEmptyPage
 
             // flowLayout->addWidget(displayIconBox);
             wrapWidget1->getMainLayout()->addWidget(displayIconBox);
+            m_iconBoxMap[(FluAwesomeType)metaEnum.value(i)] = displayIconBox;
+
             connect(displayIconBox, &FluDisplayIconBox::clicked, [=]() {
                 if (m_sDisplayIconBox != nullptr)
                 {
@@ -128,6 +130,22 @@ class FluIconsPage : public FluAEmptyPage
                 awesomeTypeValueLabel->setText("FluAwesomeType::" + EnumTypeToQString(displayIconBox->getAwesomeType()));
             });
         }
+
+        connect(m_searchEdit, &FluSearchLineEdit::onSearchBtnClicked, [=]() {
+            QString searchText = m_searchEdit->getText();
+            for (auto itMap = m_iconBoxMap.begin(); itMap != m_iconBoxMap.end(); itMap++)
+            {
+                QString enumString = EnumTypeToQString(itMap->first);
+                if (enumString.contains(searchText))
+                {
+                    itMap->second->show();
+                }
+                else
+                {
+                    itMap->second->hide();
+                }
+            }
+        });
 
         emit m_sDisplayIconBox->clicked();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
@@ -170,6 +188,7 @@ class FluIconsPage : public FluAEmptyPage
     
     QLabel* m_searchLabel;
     FluSearchLineEdit* m_searchEdit;
-
     FluDisplayIconBox* m_sDisplayIconBox;
+
+    std::map<FluAwesomeType, FluDisplayIconBox*> m_iconBoxMap;
 };

@@ -31,6 +31,7 @@ class FluAmPmView : public QWidget
           m_scrollUpBtn->setFixedSize(nFixedW, 40);
 
           m_vMainLayout->addStretch(1);
+          m_vMainLayout->addSpacing(40);
           m_vMainLayout->addWidget(m_apView);
           m_vMainLayout->addStretch(1);
 

@@ -177,11 +177,11 @@ int main(int argc, char **argv)
     //FluRatingControlDemo demo;
     //demo.show();
 
-    FluLoopViewDemo demo;
-    demo.show();
+   // FluLoopViewDemo demo;
+   // demo.show();
 
-  //  FluTimePickerDemo demo;
-  //  demo.show();
+    FluTimePickerDemo demo;
+    demo.show();
 
     return app.exec();
 }

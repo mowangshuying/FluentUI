@@ -69,6 +69,14 @@ class FluSearchLineEdit : public QWidget
                 style()->polish(this);
                 LOG_DEBUG << "focuse out";
             }
+            else if (event->type() == QEvent::KeyRelease)
+            {
+                QKeyEvent* keyEvent = (QKeyEvent*)event;
+                if (keyEvent->key() == Qt::Key_Return)
+                {
+                    emit onSearchBtnClicked();
+                }
+            }
         }
 
         return QWidget::eventFilter(watched, event);

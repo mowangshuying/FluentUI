@@ -148,11 +148,14 @@
     <ClCompile Include="FluSlider.cpp" />
     <ClCompile Include="FluSpinBox.cpp" />
     <ClCompile Include="FluSplitButton.cpp" />
+    <ClCompile Include="FluHSplitLine.cpp" />
     <ClCompile Include="FluStar.cpp" />
     <ClCompile Include="FluTextEdit.cpp" />
     <ClCompile Include="FluThread.cpp" />
     <ClCompile Include="FluTimePicker24H.cpp" />
     <ClCompile Include="FluTimePicker24HView.cpp" />
+    <ClCompile Include="FluTimePickerAP.cpp" />
+    <ClCompile Include="FluTimePickerAPView.cpp" />
     <ClCompile Include="FluToggleSwitch.cpp" />
     <ClCompile Include="FluVFlipView.cpp" />
     <ClCompile Include="FluVRadioGroupBox.cpp" />
@@ -198,6 +201,7 @@
     <ClCompile Include="FluVCard.cpp" />
     <ClCompile Include="FluVFlyout.cpp" />
     <ClCompile Include="FluColorFlyout.cpp" />
+    <ClCompile Include="FluVSplitLine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDef.h" />
@@ -209,6 +213,10 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluVSplitLine.h" />
+    <QtMoc Include="FluHSplitLine.h" />
+    <QtMoc Include="FluTimePickerAPView.h" />
+    <QtMoc Include="FluTimePickerAP.h" />
     <QtMoc Include="FluTimePicker24H.h" />
     <QtMoc Include="FluTimePicker24HView.h" />
     <QtMoc Include="FluLoopView.h" />

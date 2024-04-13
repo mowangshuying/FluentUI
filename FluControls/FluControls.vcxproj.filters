@@ -278,6 +278,18 @@
     <ClCompile Include="FluAmPmView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluTimePickerAP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluTimePickerAPView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluHSplitLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluVSplitLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -524,6 +536,18 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluAmPmView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTimePickerAP.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTimePickerAPView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHSplitLine.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluVSplitLine.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

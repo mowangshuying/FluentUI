@@ -16,7 +16,7 @@ class FluTimePickerAPView : public QWidget
 {
     Q_OBJECT
   public:
-    FluTimePickerAPView(QWidget* parent = nullptr) : QWidget(parent), m_bAm(true), m_hour(0), m_minute(0)
+    FluTimePickerAPView(QWidget* parent = nullptr) : QWidget(parent), m_bAm(true), m_hour(0), m_minute(0), m_bFirstShow(true)
       {
           setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
           setAttribute(Qt::WA_TranslucentBackground);
@@ -93,6 +93,16 @@ class FluTimePickerAPView : public QWidget
           QPainter painter(this);
           style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
       }
+
+      void showEvent(QShowEvent* event)
+      {
+          if (m_bFirstShow)
+          {
+              m_bFirstShow = false;
+              m_hourView->scrollTo(m_hour);
+              m_minuteView->scrollTo(m_minute);
+          }
+      }
   protected:
       QVBoxLayout* m_vMainLayout;
       QHBoxLayout* m_hViewLayout;
@@ -108,4 +118,6 @@ class FluTimePickerAPView : public QWidget
       int m_hour;
       int m_minute;
       bool m_bAm;
+
+      bool m_bFirstShow;
 };

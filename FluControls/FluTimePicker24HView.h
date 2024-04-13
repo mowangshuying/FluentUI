@@ -13,7 +13,7 @@ class FluTimePicker24HView : public QWidget
 {
     Q_OBJECT
   public:
-      FluTimePicker24HView(QWidget* parent = nullptr) : QWidget(parent)
+    FluTimePicker24HView(QWidget* parent = nullptr) : QWidget(parent), m_bFirstShow(true)
       {
           setWindowFlags( Qt::Popup |  Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
           setAttribute(Qt::WA_TranslucentBackground);
@@ -78,8 +78,8 @@ class FluTimePicker24HView : public QWidget
           m_vMainLayout->addLayout(m_hBtnLayout);
           
           
-          setMinute(0);
-          setHour(0);
+           setMinute(0);
+           setHour(0);
 
           connect(m_okBtn, &QPushButton::clicked, [=]() {
               updateTime();
@@ -108,12 +108,14 @@ class FluTimePicker24HView : public QWidget
       {
           m_hour = hour;
           m_hourView->setVisibaleMidIndex(hour);
+          //m_hourView->scrollTo(hour);
       }
 
       void setMinute(int minute)
       {
           m_minute = minute;
           m_minuteView->setVisibaleMidIndex(minute);
+          //m_hourView->scrollTo(minute);
       }
 
       void updateTime()
@@ -128,6 +130,16 @@ class FluTimePicker24HView : public QWidget
           opt.initFrom(this);
           QPainter painter(this);
           style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+      }
+
+      void showEvent(QShowEvent* event)
+      {
+          if (!m_bFirstShow)
+              return;
+
+          m_bFirstShow = false;
+          m_hourView->scrollTo(m_hour);
+          m_minuteView->scrollTo(m_minute);
       }
   signals:
       void clickedOk();
@@ -145,4 +157,6 @@ class FluTimePicker24HView : public QWidget
 
       int m_hour;
       int m_minute;
+
+      bool m_bFirstShow;
 };

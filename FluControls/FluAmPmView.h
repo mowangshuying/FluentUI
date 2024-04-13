@@ -36,6 +36,7 @@ class FluAmPmView : public QWidget
           m_vMainLayout->addStretch(1);
 
           m_apView->setObjectName("apView");
+          m_apView->setFixedHeight(80);
           m_apView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
           m_apView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
           m_apView->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);

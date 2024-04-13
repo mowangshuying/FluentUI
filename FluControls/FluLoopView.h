@@ -144,7 +144,7 @@ class FluLoopView : public QListWidget
           if (nNextIndex >= m_nTotalVisibleCount)
               nNextIndex = 0;
 
-          LOG_DEBUG << "scroll down next index:" << nNextIndex;
+          LOG_DEBUG << "Scroll down next index:" << nNextIndex;
           setVisibaleMidIndex(nNextIndex);
       }
 
@@ -153,8 +153,27 @@ class FluLoopView : public QListWidget
           int nNextIndex = m_nVisibleMidIndex - 1;
           if (nNextIndex < 0)
               nNextIndex = m_nTotalVisibleCount - 1;
-          LOG_DEBUG << "scroll up next index:" << nNextIndex;
+          LOG_DEBUG << "Scroll up next index:" << nNextIndex;
           setVisibaleMidIndex(nNextIndex);
+      }
+
+      void scrollTo(int nIndex)
+      {
+          if (nIndex < 0 || nIndex >= m_nTotalVisibleCount)
+              return;
+
+          if (nIndex == m_nVisibleMidIndex)
+          {
+              scrollDown();
+          }
+
+          while (nIndex != m_nVisibleMidIndex)
+          {
+              if (nIndex > m_nVisibleMidIndex)
+                  scrollDown();
+              else
+                  scrollUp();
+          }
       }
 
       void enterEvent(QEnterEvent* event)

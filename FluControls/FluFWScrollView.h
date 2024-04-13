@@ -39,6 +39,7 @@ class FluFWScrollView : public QScrollArea
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluFWScrollView.qss", this);
         }
     }
+
   protected:
     QWidget* m_contextWidget;
     FluFlowLayout* m_vMainLayout;

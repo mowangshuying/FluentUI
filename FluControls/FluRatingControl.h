@@ -76,7 +76,7 @@ class FluRatingControl : public QWidget
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
 
-    public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
@@ -88,6 +88,7 @@ class FluRatingControl : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
         }
     }
+
   protected:
     int m_nNum;
     std::vector<FluStar*> m_stars;

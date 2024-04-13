@@ -40,7 +40,6 @@
 #include "FluLoopViewDemo.h"
 #include "FluTimePickerDemo.h"
 
-
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
@@ -96,8 +95,8 @@ int main(int argc, char **argv)
     //  FluDisplayIconBoxDemo demo;
     //  demo.show();
 
-     // FluComboBoxDemo demo;
-     // demo.show();
+    // FluComboBoxDemo demo;
+    // demo.show();
 
     // FluDropDownButtonDemo demo;
     // demo.show();
@@ -174,11 +173,11 @@ int main(int argc, char **argv)
     // FluSplitButtonDemo demo;
     // demo.show();
 
-    //FluRatingControlDemo demo;
-    //demo.show();
+    // FluRatingControlDemo demo;
+    // demo.show();
 
-   // FluLoopViewDemo demo;
-   // demo.show();
+    // FluLoopViewDemo demo;
+    // demo.show();
 
     FluTimePickerDemo demo;
     demo.show();

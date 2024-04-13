@@ -18,8 +18,6 @@ class FluComboBoxDemo : public QWidget
         comboBoxEx->addItem("Red");
         comboBoxEx->addItem("Yellow");
 
-        
-
         resize(600, 400);
         setStyleSheet("background-color: rgb(249, 249, 249);");
     }

@@ -40,9 +40,7 @@ class FluSearchLineEdit : public QWidget
         m_edit->installEventFilter(this);
         m_edit->setFocusPolicy(Qt::ClickFocus);
 
-
-        connect(m_btn, &QPushButton::clicked, [=]() { emit onSearchBtnClicked();
-        });
+        connect(m_btn, &QPushButton::clicked, [=]() { emit onSearchBtnClicked(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
@@ -94,7 +92,7 @@ class FluSearchLineEdit : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-signals:
+  signals:
     void onSearchBtnClicked();
   public slots:
     void onThemeChanged()

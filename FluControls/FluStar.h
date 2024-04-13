@@ -37,7 +37,7 @@ class FluStar : public QLabel
         }
     }
 
-     public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
@@ -60,9 +60,10 @@ class FluStar : public QLabel
             else
             {
                 setEmptyStar();
-            } 
+            }
         }
     }
+
   protected:
     bool m_bSolid;
 };

@@ -11,6 +11,7 @@ class FluTimePicker : public QWidget
     {
         setFixedSize(240, 30);
     }
+
   protected:
     QPushButton* m_hourBtn;
     QPushButton* m_minuteBtn;

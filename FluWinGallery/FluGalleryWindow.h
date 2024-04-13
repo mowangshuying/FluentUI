@@ -154,7 +154,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("RatingControlPage", ratingControlPage);
         connect(item13, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RatingControlPage"); });
 
-
         FluNavigationIconTextItem *item14 = new FluNavigationIconTextItem("Slider", item);
         auto sliderPage = new FluSliderPage;
         m_sLayout->addWidget("SliderPage", sliderPage);

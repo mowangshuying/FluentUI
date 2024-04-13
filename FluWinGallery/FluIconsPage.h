@@ -20,7 +20,7 @@ class FluIconsPage : public FluAEmptyPage
         // m_subTitleLabel->setText("CppQtFluentUi888::FluIcons");
         m_infoLabel->setText("With the release of Windows 11, Segoe Fluent Icons is the remmended icon font.");
 
-        // 
+        //
         m_searchLabel = new QLabel;
         m_searchLabel->setObjectName("searchLabel");
         m_searchLabel->setText("Fluent Icons Library.");
@@ -185,7 +185,7 @@ class FluIconsPage : public FluAEmptyPage
   protected:
     QColor m_penColor;
     QLabel* m_iconLabel;
-    
+
     QLabel* m_searchLabel;
     FluSearchLineEdit* m_searchEdit;
     FluDisplayIconBox* m_sDisplayIconBox;

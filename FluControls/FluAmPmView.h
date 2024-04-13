@@ -16,7 +16,7 @@ class FluAmPmView : public QWidget
 {
     Q_OBJECT
   public:
-    FluAmPmView(int nFixedW = 80, QWidget* parent = nullptr) : QWidget(parent), m_nFixedW(nFixedW), m_bAm(true)
+    FluAmPmView(int nFixedW = 80, QWidget* parent = nullptr) : QWidget(parent), m_nFixedW(nFixedW)
     {
         m_vMainLayout = new QVBoxLayout;
         m_vMainLayout->setContentsMargins(0, 0, 0, 0);
@@ -52,11 +52,26 @@ class FluAmPmView : public QWidget
 
         connect(m_scrollUpBtn, &QPushButton::clicked, [=]() { scrollUp(); });
         connect(m_scrollDownBtn, &QPushButton::clicked, [=]() { scrollDown(); });
+        connect(m_apView, &QListWidget::itemClicked, [=](QListWidgetItem* item) { 
+            int nIndex = item->data(Qt::UserRole).toInt();
+            if (nIndex == 1 && !m_bAm)
+            {
+                scrollUp();
+                return;
+            }
+            
+            if (nIndex == 2 && m_bAm)
+            {
+                scrollDown();
+                return;
+            }
+            });
 
         m_apView->setFixedWidth(nFixedW);
         setFixedWidth(nFixedW);
 
         setAmPm("AM", "PM");
+        setAm(true);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
     }
 
@@ -69,18 +84,22 @@ class FluAmPmView : public QWidget
         topEmptyItem->setSizeHint(QSize(m_nFixedW, 40));
         topEmptyItem->setText("");
         topEmptyItem->setTextAlignment(Qt::AlignCenter);
+        topEmptyItem->setData(Qt::UserRole, 0);
+
         m_apView->addItem(topEmptyItem);
 
         auto amItem = new QListWidgetItem;
         amItem->setSizeHint(QSize(m_nFixedW, 40));
         amItem->setText(am);
         amItem->setTextAlignment(Qt::AlignCenter);
+        amItem->setData(Qt::UserRole, 1);
         m_apView->addItem(amItem);
 
         auto pmItem = new QListWidgetItem;
         pmItem->setSizeHint(QSize(m_nFixedW, 40));
         pmItem->setText(pm);
         pmItem->setTextAlignment(Qt::AlignCenter);
+        pmItem->setData(Qt::UserRole, 2);
         m_apView->addItem(pmItem);
 
         auto bottomEmptyItem = new QListWidgetItem;
@@ -88,6 +107,8 @@ class FluAmPmView : public QWidget
         bottomEmptyItem->setSizeHint(QSize(m_nFixedW, 40));
         bottomEmptyItem->setText("");
         bottomEmptyItem->setTextAlignment(Qt::AlignCenter);
+        bottomEmptyItem->setData(Qt::UserRole, 3);
+
         m_apView->addItem(bottomEmptyItem);
 
         m_apView->setFixedHeight(40 * 3 + 4 * 2);
@@ -101,6 +122,17 @@ class FluAmPmView : public QWidget
     void setAm(bool bAm)
     {
         m_bAm = bAm;
+        if (m_bAm)
+        {
+            m_apView->setCurrentItem(m_apView->item(1));
+            m_apView->scrollToItem(m_apView->item(1), QAbstractItemView::PositionAtCenter);
+        }
+        else
+        {
+            m_apView->setCurrentItem(m_apView->item(2));
+            m_apView->scrollToItem(m_apView->item(2), QAbstractItemView::PositionAtCenter);
+        }
+
     }
 
     void scrollUp()

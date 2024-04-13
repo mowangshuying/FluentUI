@@ -61,6 +61,17 @@ class FluTimePickerAP : public QWidget
             m_timerPickerApView->show();
         });
 
+         connect(m_timerPickerApView, &FluTimePickerAPView::clickedOk, [=]() {
+            QString sHour = QString::asprintf("%02d", m_timerPickerApView->getHour());
+            m_hourBtn->setText(sHour);
+
+            QString sMinute = QString::asprintf("%02d", m_timerPickerApView->getMinute());
+            m_minuteBtn->setText(sMinute);
+
+            QString sAmOrPm = m_timerPickerApView->isAm() ? "AM":"PM";
+            m_apBtn->setText(sAmOrPm);
+        });
+
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAP.qss", this);
     }
 

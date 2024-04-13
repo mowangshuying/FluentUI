@@ -82,6 +82,22 @@ class FluTimePickerAPView : public QWidget
 
         m_vMainLayout->addWidget(new FluVSplitLine);
         m_vMainLayout->addLayout(m_hBtnLayout);
+
+        setMinute(0);
+        setHour(0);
+
+        connect(m_okBtn, &QPushButton::clicked, [=]() {
+            updateTime();
+            emit clickedOk();
+            close();
+        });
+        connect(m_cancelBtn, &QPushButton::clicked, [=]() {
+            emit clickedCancel();
+            close();
+        });
+
+
+
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
     }
 
@@ -109,10 +125,21 @@ class FluTimePickerAPView : public QWidget
         // m_hourView->scrollTo(minute);
     }
 
+    bool isAm()
+    {
+        return m_bAm;
+    }
+
+    void setAm(bool bAm)
+    {
+        m_bAm = bAm;
+    }
+
     void updateTime()
     {
         m_hour = m_hourView->getVisibleMidIndex();
         m_minute = m_minuteView->getVisibleMidIndex();
+        m_bAm = m_ampmView->isAm();
     }
 
     void paintEvent(QPaintEvent* event)
@@ -132,7 +159,9 @@ class FluTimePickerAPView : public QWidget
             m_minuteView->scrollTo(m_minute);
         }
     }
-
+  signals:
+    void clickedOk();
+    void clickedCancel();
   protected:
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hViewLayout;

@@ -290,6 +290,12 @@
     <ClCompile Include="FluVSplitLine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDatePicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluDatePickerView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -548,6 +554,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluVSplitLine.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDatePickerView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDatePicker.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

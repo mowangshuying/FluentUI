@@ -127,6 +127,8 @@
     <ClCompile Include="FluColorLabel.cpp" />
     <ClCompile Include="FluComboBoxEx.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
+    <ClCompile Include="FluDatePicker.cpp" />
+    <ClCompile Include="FluDatePickerView.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
     <ClCompile Include="FluHRadioGroupBox.cpp" />
@@ -287,6 +289,8 @@
     <QtMoc Include="FluDoubleSpinBox.h" />
     <QtMoc Include="FluConfirmFlyout.h" />
     <QtMoc Include="FluComboBoxEx.h" />
+    <QtMoc Include="FluDatePicker.h" />
+    <QtMoc Include="FluDatePickerView.h" />
     <ClInclude Include="FluFlowLayout.h" />
     <QtMoc Include="FluIconButton.h" />
     <QtMoc Include="FluLabel.h" />

@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QKeyEvent>
+#include <QListWidgetItem>
 
 #include "../FluUtils/FluUtils.h"
 
@@ -64,6 +65,7 @@ class FluAmPmView : public QWidget
         m_apView->clear();
 
         auto topEmptyItem = new QListWidgetItem;
+        topEmptyItem->setFlags(topEmptyItem->flags() & ~Qt::ItemIsEnabled);
         topEmptyItem->setSizeHint(QSize(m_nFixedW, 40));
         topEmptyItem->setText("");
         topEmptyItem->setTextAlignment(Qt::AlignCenter);
@@ -82,6 +84,7 @@ class FluAmPmView : public QWidget
         m_apView->addItem(pmItem);
 
         auto bottomEmptyItem = new QListWidgetItem;
+        bottomEmptyItem->setFlags(bottomEmptyItem->flags() & ~Qt::ItemIsEnabled);
         bottomEmptyItem->setSizeHint(QSize(m_nFixedW, 40));
         bottomEmptyItem->setText("");
         bottomEmptyItem->setTextAlignment(Qt::AlignCenter);
@@ -106,6 +109,7 @@ class FluAmPmView : public QWidget
             return;
 
         m_bAm = !m_bAm;
+        m_apView->setCurrentItem(m_apView->item(1));
         m_apView->scrollToItem(m_apView->item(1), QAbstractItemView::PositionAtCenter);
     }
 
@@ -115,6 +119,7 @@ class FluAmPmView : public QWidget
             return;
 
         m_bAm = !m_bAm;
+        m_apView->setCurrentItem(m_apView->item(2));
         m_apView->scrollToItem(m_apView->item(2), QAbstractItemView::PositionAtCenter);
     }
 

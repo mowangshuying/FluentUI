@@ -100,6 +100,34 @@ class FluDatePickerView : public QWidget
             close();
         });
 
+        connect(m_monthView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
+            int nDays = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
+            std::vector<QString> datas;
+            for (int i = 0; i < nDays; i++)
+            {
+                QString str = QString::asprintf("%02d", i + 1);
+                datas.push_back(str);
+            }
+
+            m_dayView->clear();
+            m_dayView->setAllItems(datas);
+            m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
+        });
+
+        connect(m_yearView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) {
+            int nDays = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
+            std::vector<QString> datas;
+            for (int i = 0; i < nDays; i++)
+            {
+                QString str = QString::asprintf("%02d", i + 1);
+                datas.push_back(str);
+            }
+
+            m_dayView->clear();
+            m_dayView->setAllItems(datas);
+            m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
+        });
+
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
     }
 
@@ -142,6 +170,24 @@ class FluDatePickerView : public QWidget
     {
         m_month = m_monthView->getVisibleMidIndex();
         m_day = m_dayView->getVisibleMidIndex();
+        m_year = m_yearView->getVisibleMidIndex();
+    }
+
+    int getMonthDays(int year, int month)
+    {
+        // get Month, getYear, output days;
+        QDate date(year, month, 1);
+        int count = 0;
+        while (1)
+        {
+            count++;
+            date = date.addDays(1);
+            if (month != date.month())
+            {
+                break;
+            }
+        }
+        return count;
     }
 
     void paintEvent(QPaintEvent* event)

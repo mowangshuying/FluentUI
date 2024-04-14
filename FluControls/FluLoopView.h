@@ -118,11 +118,12 @@ class FluLoopView : public QListWidget
 
     void setVisibaleMidIndex(int nMidIndex)
     {
-        if (nMidIndex < 0 || nMidIndex >= m_nTotalVisibleCount)
+        nMidIndex = nMidIndex % m_nTotalVisibleCount;
+        if (nMidIndex < 0  || nMidIndex >= m_nTotalVisibleCount)
             return;
 
-        if (nMidIndex == m_nVisibleMidIndex)
-            return;
+       // if (nMidIndex == m_nVisibleMidIndex)
+       //     return;
 
         int nItemIndex = nMidIndex + m_nMaxVisibleNum / 2;
         m_nVisibleMidIndex = nMidIndex;
@@ -130,6 +131,7 @@ class FluLoopView : public QListWidget
         setCurrentItem(item(nItemIndex));
         LOG_DEBUG << "Item Index:" << nItemIndex << ", Visible Index:" << m_nVisibleMidIndex;
         scrollToItem(item(nItemIndex), QAbstractItemView::PositionAtCenter);
+        emit visibaleMidIndexChanged(m_nVisibleMidIndex);
     }
 
     void scrollDown()
@@ -212,7 +214,8 @@ class FluLoopView : public QListWidget
             return;
         }
     }
-
+    signals:
+    void visibaleMidIndexChanged(int nIndex);
   protected:
     // int m_nItemHeight;
     int m_nFixedW;

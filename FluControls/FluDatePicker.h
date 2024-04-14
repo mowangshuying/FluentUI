@@ -62,13 +62,14 @@ class FluDatePicker : public QWidget
         });
 
         connect(m_datePickerView, &FluDatePickerView::clickedOk, [=]() {
-            QString sMonth = QString::asprintf("%02d", m_datePickerView->getMonth());
-            m_monthBtn->setText(sMonth);
-
-            QString sDay = QString::asprintf("%02d", m_datePickerView->getDay());
+            std::vector<QString> sMonths{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+            //QString sMonth = QString::asprintf("%02d", m_datePickerView->getMonth());
+            m_monthBtn->setText(sMonths[m_datePickerView->getMonth()]);
+             
+            QString sDay = QString::asprintf("%02d", m_datePickerView->getDay() + 1);
             m_dayBtn->setText(sDay);
 
-            QString sYear = QString::asprintf("%04d", m_datePickerView->getYear());
+            QString sYear = QString::asprintf("%04d", m_datePickerView->getYear() + 1924);
             m_yearBtn->setText(sYear);
         });
 

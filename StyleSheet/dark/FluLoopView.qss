@@ -1,0 +1,39 @@
+QListWidget {
+    background: rgb(44, 44, 44);
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    /* selection-background-color: pink; */
+    /* alternate-background-color: green; */
+    padding: 4px;
+}
+
+QListWidget::item {
+    color: black;
+    background: rgb(44, 44, 44);
+    /* border: 1px solid blue; */
+    height: 35px;
+    margin-top: 3px;
+    border-radius: 4px;
+}
+
+QListWidget::item:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+QListWidget::item:selected {
+    background-color: rgb(0, 90, 158);
+    color: white;
+}
+
+#scrollDownBtn {
+    background: rgb(44, 44, 44);
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#scrollUpBtn {
+    background: rgb(44, 44, 44);
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

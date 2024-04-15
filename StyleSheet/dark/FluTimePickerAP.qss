@@ -1,0 +1,23 @@
+FluTimePickerAP {
+    border: 1px solid rgb(61, 61, 61);
+    background-color: rgb(44, 44, 44);
+    border-bottom: 1px solid rgb(61, 61, 61);
+    border-radius: 4px;
+}
+
+#hourBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-right: 1px solid rgb(61, 61, 61);
+}
+
+#minuteBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-right: 1px solid rgb(61, 61, 61);
+}
+
+#apBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+}

@@ -1,0 +1,25 @@
+FluTimePicker24HView {
+    background-color: rgb(44, 44, 44);
+    border: 1px solid rgb(61, 61, 61);
+    border-radius: 8px;
+}
+
+#okBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#okBtn:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+#cancelBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#cancelBtn:hover {
+    background-color: rgb(56, 56, 56)
+}

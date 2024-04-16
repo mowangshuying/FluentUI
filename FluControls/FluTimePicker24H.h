@@ -64,6 +64,8 @@ class FluTimePicker24H : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
@@ -80,7 +82,18 @@ class FluTimePicker24H : public QWidget
     }
   signals:
     void clicked();
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePicker24H.qss", this);
+        }
+    }
   protected:
     QHBoxLayout* m_hMainLayout;
     QPushButton* m_hourBtn;

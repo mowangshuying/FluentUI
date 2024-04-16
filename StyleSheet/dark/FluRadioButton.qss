@@ -26,8 +26,8 @@ QRadioButton::indicator:pressed {
 }
 
 QRadioButton::indicator:checked {
-    background-color: rgb(0, 90, 158);
-    border: 1px solid rgb(0, 90, 158);
+    background-color: rgb(118, 185, 237);
+    border: 1px solid rgb(118, 185, 237);
     width: 20px;
     height: 20px;
     border-radius: 11px;

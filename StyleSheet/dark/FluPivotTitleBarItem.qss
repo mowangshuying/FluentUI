@@ -5,7 +5,7 @@ FluPivotTitleBarItem {
     font-size: 20px;
     font-weight: 400;
     color: rgb(166, 166, 166);
-    /* border-bottom: 4px solid rgb(0, 90, 158); */
+    /* border-bottom: 4px solid rgb(118, 185, 237); */
 }
 
 FluPivotTitleBarItem[selected=true] {

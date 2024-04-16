@@ -5,7 +5,7 @@ FluDisplayIconBox {
 }
 
 FluDisplayIconBox[selected=true] {
-    border: 2px solid rgb(0, 90, 158);
+    border: 2px solid rgb(118, 185, 237);
 }
 
 FluDisplayIconBox:hover {

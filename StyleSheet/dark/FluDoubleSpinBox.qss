@@ -18,7 +18,7 @@ QDoubleSpinBox:hover {
 
 QDoubleSpinBox:focus {
     color: white;
-    border-bottom: 2px solid rgb(0, 90, 158);
+    border-bottom: 2px solid rgb(118, 185, 237);
 }
 
 QDoubleSpinBox::up-button {

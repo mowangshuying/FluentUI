@@ -9,7 +9,7 @@ QListWidget {
 }
 
 QListWidget::item {
-    color: black;
+    color: white;
     background: rgb(44, 44, 44);
     /* border: 1px solid blue; */
     height: 35px;
@@ -22,8 +22,8 @@ QListWidget::item:hover {
 }
 
 QListWidget::item:selected {
-    background-color: rgb(0, 90, 158);
-    color: white;
+    background-color: rgb(118, 185, 237);
+    color: black;
 }
 
 #scrollDownBtn {

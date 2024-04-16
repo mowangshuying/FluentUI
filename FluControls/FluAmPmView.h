@@ -73,6 +73,8 @@ class FluAmPmView : public QWidget
         setAmPm("AM", "PM");
         setAm(true);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
     }
 
     void setAmPm(QString am, QString pm)
@@ -205,7 +207,22 @@ class FluAmPmView : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
+            m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
+        }
+        else
+        {
+            m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
+            m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAmPmView.qss", this);
+        }
+    }
   protected:
     QVBoxLayout* m_vMainLayout;
     QListWidget* m_apView;

@@ -296,6 +296,12 @@
     <ClCompile Include="FluDatePickerView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluTabBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluTabBarItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -560,6 +566,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDatePicker.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTabBar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTabBarItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

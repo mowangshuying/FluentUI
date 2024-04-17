@@ -39,6 +39,7 @@
 #include "FluRatingControlDemo.h"
 #include "FluLoopViewDemo.h"
 #include "FluTimePickerDemo.h"
+#include "FluTabBarDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -179,7 +180,10 @@ int main(int argc, char **argv)
     // FluLoopViewDemo demo;
     // demo.show();
 
-    FluTimePickerDemo demo;
+    //FluTimePickerDemo demo;
+    //demo.show();
+
+    FluTabBarDemo demo;
     demo.show();
 
     return app.exec();

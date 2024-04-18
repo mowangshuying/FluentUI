@@ -1,9 +1,10 @@
 #pragma once
 
 #include <QWidget>
-#include "../FluControls/FluTabBar.h"
+#include "../FluControls/FluTabBarContent.h"
 #include <QVBoxLayout>
 #include "../FluControls/FluTabBarItem.h"
+#include "../FluControls/FluTabBar.h"
 
 class FluTabBarDemo : public QWidget
 {
@@ -11,13 +12,12 @@ class FluTabBarDemo : public QWidget
   public:
       FluTabBarDemo(QWidget* parent = nullptr) : QWidget(parent)
       {
-          auto tabBar = new FluTabBar;
-          auto tabBarItem1 = new FluTabBarItem;
-          auto tabBarItem2 = new FluTabBarItem;
-
-
-          tabBar->addBarItem(tabBarItem1);
-          tabBar->addBarItem(tabBarItem2);
+          tabBar = new FluTabBar;
+          for (int i = 0; i < 3; i++)
+          {
+              auto tabBarItem = new FluTabBarItem;
+              tabBar->addBarItem(tabBarItem);
+          }
 
 
           m_vMainLayout = new QVBoxLayout;
@@ -29,6 +29,12 @@ class FluTabBarDemo : public QWidget
           resize(600, 400);
       }
 
+    //void resizeEvent(QResizeEvent* event)
+    //{
+    //      tabBar->setFixedWidth(width());
+    //}
+
   protected:
+      FluTabBar* tabBar;
       QVBoxLayout* m_vMainLayout;
 };

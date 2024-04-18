@@ -39,28 +39,63 @@ class FluTabBarItem : public QWidget
           m_textBtn->setObjectName("textBtn");
           m_closeBtn->setObjectName("closeBtn");
 
-          m_hMainLayout->addWidget(m_iconBtn);
-          m_hMainLayout->addWidget(m_textBtn);
-          m_hMainLayout->addWidget(m_closeBtn);
+          m_hMainLayout->addWidget(m_iconBtn, 0);
+          m_hMainLayout->addWidget(m_textBtn, 1);
+          m_hMainLayout->addWidget(m_closeBtn, 0);
           m_hMainLayout->addSpacing(5);
 
-          setFixedHeight(30);
+          setFixedHeight(35);
           setFixedWidth(240);
 
+
+          connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked();
+          });
+
+          connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
       }
 
-       void paintEvent(QPaintEvent* event)
+      void setSelected(bool bSel)
       {
+          m_bSel = bSel;
+          setProperty("selected", bSel);
+      }
+
+      bool getSelected()
+      {
+          return m_bSel;
+      }
+
+      void setText(QString text)
+      {
+          m_textBtn->setText(text);
+      }
+
+      QString getText()
+      {
+          return m_textBtn->text();
+      }
+
+      void mouseReleaseEvent(QMouseEvent* event)
+      {
+          emit clicked();
+      }
+
+       void paintEvent(QPaintEvent* event)
+       {
           QStyleOption opt;
           opt.initFrom(this);
           QPainter painter(this);
           style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-      }
+       }
 
+signals:
+      void clicked();
    protected:
       QHBoxLayout* m_hMainLayout;
       QPushButton* m_iconBtn;
       QPushButton* m_textBtn;
       QPushButton* m_closeBtn;
+
+      bool m_bSel;
 };

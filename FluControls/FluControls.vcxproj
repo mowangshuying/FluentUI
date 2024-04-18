@@ -153,6 +153,7 @@
     <ClCompile Include="FluHSplitLine.cpp" />
     <ClCompile Include="FluStar.cpp" />
     <ClCompile Include="FluTabBar.cpp" />
+    <ClCompile Include="FluTabBarContent.cpp" />
     <ClCompile Include="FluTabBarItem.cpp" />
     <ClCompile Include="FluTextEdit.cpp" />
     <ClCompile Include="FluThread.cpp" />
@@ -217,8 +218,9 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="FluTabBarItem.h" />
     <QtMoc Include="FluTabBar.h" />
+    <QtMoc Include="FluTabBarItem.h" />
+    <QtMoc Include="FluTabBarContent.h" />
     <QtMoc Include="FluVSplitLine.h" />
     <QtMoc Include="FluHSplitLine.h" />
     <QtMoc Include="FluTimePickerAPView.h" />

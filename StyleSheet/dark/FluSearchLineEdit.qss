@@ -16,6 +16,7 @@ FluSearchLineEdit[isFocused=true] {
 
 QLineEdit {
     background-color: transparent;
+    color: white;
     border: none;
 }
 

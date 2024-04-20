@@ -1,14 +1,23 @@
 FluTabBarItem {
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(118, 185, 237);
     border: 1px solid transparent;
-    border-left: 1px solid rgb(234, 234, 234);
-    border-right: 1px solid rgb(234, 234, 234);
-    border-radius: 8px;
+    /* border-left: 1px solid rgb(234, 234, 234); */
+    /* border-right: 1px solid rgb(234, 234, 234); */
+    /* border-radius: 8px; */
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    max-width: 180px;
+}
+
+FluTabBarItem:hover {
+    background-color: rgb(113, 178, 228);
 }
 
 FluTabBarItem[selected=true] {
     background-color: rgb(249, 249, 249);
     border: 1px solid rgb(234, 234, 234);
+    border-top: 1px solid transparent;
 }
 
 #iconBtn {
@@ -24,7 +33,7 @@ FluTabBarItem[selected=true] {
     background-color: transparent;
 }
 
-#closeBtn:hover {
+#closeBtn[selected=true]:hover {
     background-color: rgb(234, 234, 234);
     border: 1px solid transparent;
     border-radius: 4px;

@@ -144,6 +144,7 @@
     <ClCompile Include="FluExpandDemo.cpp" />
     <ClCompile Include="FluNavigationDemo.cpp" />
     <ClCompile Include="FluAllGlobalColorDemo.cpp" />
+    <ClCompile Include="FluTabViewDemo.cpp" />
     <ClCompile Include="FluTextAreaDemo.cpp" />
     <ClCompile Include="FluTextEditDemo.cpp" />
     <ClCompile Include="FluThreadDemo.cpp" />
@@ -171,6 +172,7 @@
     <QtMoc Include="FluNavigationDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FluTabViewDemo.h" />
     <QtMoc Include="FluTabBarDemo.h" />
     <QtMoc Include="FluTimePickerDemo.h" />
     <QtMoc Include="FluSplitButtonDemo.h" />

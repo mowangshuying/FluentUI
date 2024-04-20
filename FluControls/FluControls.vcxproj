@@ -155,6 +155,7 @@
     <ClCompile Include="FluTabBar.cpp" />
     <ClCompile Include="FluTabBarContent.cpp" />
     <ClCompile Include="FluTabBarItem.cpp" />
+    <ClCompile Include="FluTabView.cpp" />
     <ClCompile Include="FluTextEdit.cpp" />
     <ClCompile Include="FluThread.cpp" />
     <ClCompile Include="FluTimePicker24H.cpp" />
@@ -218,6 +219,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluTabView.h" />
     <QtMoc Include="FluTabBar.h" />
     <QtMoc Include="FluTabBarItem.h" />
     <QtMoc Include="FluTabBarContent.h" />

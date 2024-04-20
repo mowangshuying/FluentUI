@@ -45,7 +45,7 @@ class FluTabBarItem : public QWidget
           m_hMainLayout->addSpacing(5);
 
           setFixedHeight(35);
-          setFixedWidth(240);
+       //   setFixedWidth(240);
 
 
           connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked();
@@ -59,6 +59,8 @@ class FluTabBarItem : public QWidget
       {
           m_bSel = bSel;
           setProperty("selected", bSel);
+          m_closeBtn->setProperty("selected", bSel);
+          m_closeBtn->style()->polish(m_closeBtn);
       }
 
       bool getSelected()
@@ -74,6 +76,16 @@ class FluTabBarItem : public QWidget
       QString getText()
       {
           return m_textBtn->text();
+      }
+
+      void enterEvent(QEnterEvent* event)
+      {
+          //m_closeBtn->setProperty("tabBarItemHover", true);
+      }
+
+      void leaveEvent(QEvent* event)
+      {
+          //m_closeBtn->setProperty("tabBarItemHover", false);
       }
 
       void mouseReleaseEvent(QMouseEvent* event)

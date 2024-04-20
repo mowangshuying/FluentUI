@@ -19,7 +19,6 @@ class FluTabBarDemo : public QWidget
               tabBar->addBarItem(tabBarItem);
           }
 
-
           m_vMainLayout = new QVBoxLayout;
           setLayout(m_vMainLayout);
 

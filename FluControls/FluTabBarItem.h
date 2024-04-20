@@ -52,6 +52,8 @@ class FluTabBarItem : public QWidget
           });
 
           connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
+
+          connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this);});
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
       }
 
@@ -76,6 +78,11 @@ class FluTabBarItem : public QWidget
       QString getText()
       {
           return m_textBtn->text();
+      }
+
+      void resizeEvent(QResizeEvent* event)
+      {
+          emit sizeChanged();
       }
 
       void enterEvent(QEnterEvent* event)
@@ -103,6 +110,8 @@ class FluTabBarItem : public QWidget
 
 signals:
       void clicked();
+      void sizeChanged();
+      void clickedCloseBtn(FluTabBarItem* item);
    protected:
       QHBoxLayout* m_hMainLayout;
       QPushButton* m_iconBtn;

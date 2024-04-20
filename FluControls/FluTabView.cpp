@@ -34,6 +34,10 @@ void FluTabView::addTab(QString tabString, QWidget* tabWidget)
 
     m_sLayout->addWidget(tabString, tabWidget);
     connect(tabBarItem, &FluTabBarItem::clicked, [=]() { m_sLayout->setCurrentWidget(tabString); });
+    connect(tabBarItem, &FluTabBarItem::clickedCloseBtn, [=](FluTabBarItem* item) { 
+        m_tabBar->removeTabBarItem(item);
+        m_sLayout->removeWidget(tabString, tabWidget);
+        });
 }
 
 bool FluTabView::eventFilter(QObject* watched, QEvent* event)

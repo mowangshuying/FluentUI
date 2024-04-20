@@ -29,14 +29,14 @@ class FluTabBarContent : public QScrollArea
           m_hMainWidget->setLayout(m_hMainLayout);
           m_hMainLayout->setContentsMargins(0,4,0,0);
 
-          m_hLeftLayout = new QHBoxLayout;
+      //    m_hLeftLayout = new QHBoxLayout;
           m_hMidLayout = new QHBoxLayout;
-          m_hRightLayout = new QHBoxLayout;
+    //      m_hRightLayout = new QHBoxLayout;
 
           m_hMidLayout->setSpacing(0);
 
           m_hMidLayout->setAlignment(Qt::AlignLeft);
-          m_hRightLayout->setAlignment(Qt::AlignLeft);
+       //   m_hRightLayout->setAlignment(Qt::AlignLeft);
 
           m_hMidLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
 
@@ -46,9 +46,9 @@ class FluTabBarContent : public QScrollArea
           //m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add));
           //m_addTabBtn->setObjectName("addTabBtn");
           //m_hRightLayout->addWidget(m_addTabBtn);
-          m_hMainLayout->addLayout(m_hLeftLayout);
+        //  m_hMainLayout->addLayout(m_hLeftLayout);
           m_hMainLayout->addLayout(m_hMidLayout);
-          m_hMainLayout->addLayout(m_hRightLayout);
+       //   m_hMainLayout->addLayout(m_hRightLayout);
           m_hMainLayout->addStretch();
 
           m_hMainWidget->setFixedHeight(40);
@@ -113,6 +113,7 @@ class FluTabBarContent : public QScrollArea
           {
               m_tabBarItems.erase(itf);
           }
+          item->deleteLater();
       }
 
      // void adjustTabBarItemSize()

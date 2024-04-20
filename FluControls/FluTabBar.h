@@ -6,6 +6,7 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QPushButton>
+#include <QThread>
 
 class FluTabBar : public QWidget
 {
@@ -18,7 +19,7 @@ class FluTabBar : public QWidget
           m_hMainLayout->setAlignment(Qt::AlignLeft);
 
           m_hMainLayout->setSpacing(0);
-          m_hMainLayout->setContentsMargins(10, 0, 10, 0);
+          m_hMainLayout->setContentsMargins(10, 0, 40, 0);
           m_hMainLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
 
           m_tabBarContent = new FluTabBarContent;
@@ -32,9 +33,8 @@ class FluTabBar : public QWidget
           m_addTabBtn->setIconSize(QSize(20, 20));
           m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add));
           m_addTabBtn->setObjectName("addTabBtn");
-          m_hMainLayout->addWidget(m_addTabBtn);
-
-          
+         // m_hMainLayout->addWidget(m_addTabBtn);
+        
 
        //   m_hMainLayout->addStretch(1);
           connect(m_addTabBtn, &QPushButton::clicked, [=]() { emit addTabBtnClicked();
@@ -52,11 +52,19 @@ class FluTabBar : public QWidget
       void addBarItem(FluTabBarItem* item)
       {
           m_tabBarContent->addBarItem(item);
+          connect(item, &FluTabBarItem::sizeChanged, [=]() { adjustAddTabBtnPosition();
+          });
+      }
+
+      void removeTabBarItem(FluTabBarItem* item)
+      {
+          m_tabBarContent->removeTabBarItem(item);
       }
 
       void resizeEvent(QResizeEvent* event)
       {
-          //m_tabBarContent->setMinimumWidth(0);
+          QWidget::resizeEvent(event);
+          adjustAddTabBtnPosition();
       }
 
       void paintEvent(QPaintEvent* event)
@@ -65,7 +73,42 @@ class FluTabBar : public QWidget
           opt.initFrom(this);
           QPainter painter(this);
           style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+
+          adjustAddTabBtnPosition();
       }
+
+      void adjustAddTabBtnPosition()
+      {
+          std::vector<FluTabBarItem*> items = getTabBarItems();
+          if (items.size() == 0)
+          {
+              int nX = 10;
+              int nY = 5;
+              m_addTabBtn->move(nX, nY);
+              return;
+          }
+          else
+          {
+              auto tailItem = items[items.size() - 1];
+
+              int nTmp = 0;
+              for (int i = 0; i < items.size(); i++)
+              {
+                  nTmp += items[i]->width();
+              }
+
+              int nX = nTmp + 20;
+              int nY = 5;
+
+              if (nX + 40 > width())
+              {
+                  nX = width() - 40;
+              }
+              m_addTabBtn->move(nX, nY);
+          }
+      }
+
+
 signals:
       void addTabBtnClicked();
   protected:

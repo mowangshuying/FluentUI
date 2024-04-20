@@ -29,41 +29,16 @@ class FluTabBarContent : public QScrollArea
         m_hMainWidget->setLayout(m_hMainLayout);
         m_hMainLayout->setContentsMargins(0, 4, 0, 0);
 
-        //    m_hLeftLayout = new QHBoxLayout;
         m_hMidLayout = new QHBoxLayout;
-        //      m_hRightLayout = new QHBoxLayout;
-
         m_hMidLayout->setSpacing(0);
 
         m_hMidLayout->setAlignment(Qt::AlignLeft);
-        //   m_hRightLayout->setAlignment(Qt::AlignLeft);
-
         m_hMidLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
-
-        // m_addTabBtn = new QPushButton;
-        // m_addTabBtn->setFixedSize(30, 30);
-        // m_addTabBtn->setIconSize(QSize(20, 20));
-        // m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add));
-        // m_addTabBtn->setObjectName("addTabBtn");
-        // m_hRightLayout->addWidget(m_addTabBtn);
-        //  m_hMainLayout->addLayout(m_hLeftLayout);
         m_hMainLayout->addLayout(m_hMidLayout);
-        //   m_hMainLayout->addLayout(m_hRightLayout);
         m_hMainLayout->addStretch();
 
         m_hMainWidget->setFixedHeight(40);
         setFixedHeight(40);
-
-        /*static int NUM = 0;
-        connect(m_addTabBtn, &QPushButton::clicked, [=]() {
-            auto item = new FluTabBarItem;
-
-            QString tmpS = QString::asprintf("New Item %d", NUM * NUM * NUM);
-            item->setText(tmpS);
-            addBarItem(item);
-
-            NUM++;
-        });*/
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarContent.qss", this);
     }
 
@@ -98,8 +73,6 @@ class FluTabBarContent : public QScrollArea
             item->setSelected(true);
             item->style()->polish(item);
         });
-
-        // adjustTabBarItemSize();
     }
 
     void removeTabBarItem(FluTabBarItem* item)
@@ -112,24 +85,6 @@ class FluTabBarContent : public QScrollArea
         }
         item->deleteLater();
     }
-
-    // void adjustTabBarItemSize()
-    // {
-    //     if (m_tabBarItems.size() * 240 > width())
-    //     {
-    //         for (auto itemIter = m_tabBarItems.begin(); itemIter != m_tabBarItems.end(); itemIter++)
-    //         {
-    //             (*itemIter)->setFixedWidth(120);
-    //         }
-    //     }
-    //     else
-    //     {
-    //         for (auto itemIter = m_tabBarItems.begin(); itemIter != m_tabBarItems.end(); itemIter++)
-    //         {
-    //             (*itemIter)->setFixedWidth(240);
-    //         }
-    //     }
-    // }
 
     int getSelectedTabBarItemIndex()
     {
@@ -179,40 +134,8 @@ class FluTabBarContent : public QScrollArea
         m_nTabBarItemMinWidth = nW;
     }
 
-    void getDrawCenterPoint(QPoint& drawPLL, QPoint& drawPLR, QPoint& drawPRL, QPoint& drawPRR)
-    {
-        auto tabBarItem = getSelectedTabBarItem();
-        if (tabBarItem == nullptr)
-            return;
-
-        QPoint tmpP;
-        tmpP.setX(tabBarItem->x());
-        tmpP.setY(tabBarItem->y() + tabBarItem->height());
-
-        drawPLL.setX(tmpP.x() - 8);
-        drawPLL.setY(tmpP.y() - 8);
-
-        drawPLR.setX(tmpP.x() + 8);
-        drawPLR.setY(tmpP.y() - 8);
-
-        tmpP.setX(tabBarItem->x() + tabBarItem->width());
-        tmpP.setY(tabBarItem->y() + tabBarItem->height());
-
-        drawPRL.setX(tmpP.x() - 8);
-        drawPRL.setY(tmpP.y() - 8);
-
-        drawPRR.setX(tmpP.x() + 8);
-        drawPRR.setY(tmpP.y() - 8);
-
-        LOG_DEBUG << "drawPLL:" << drawPLL;
-        LOG_DEBUG << "drawPLR:" << drawPLR;
-        LOG_DEBUG << "drawPRL:" << drawPRL;
-        LOG_DEBUG << "drawPRR:" << drawPRR;
-    }
-
     void wheelEvent(QWheelEvent* event)
     {
-        // the "H" scroll Event;
         QPointF pos(0, 0);
         QPointF gPos(0, 0);
         QPoint pixelDelta(0, 0);
@@ -223,25 +146,7 @@ class FluTabBarContent : public QScrollArea
 
     void resizeEvent(QResizeEvent* event)
     {
-        // LOG_DEBUG << "width:" << width();
         QScrollArea::resizeEvent(event);
-        // adjustTabBarItemSize();
-    }
-
-    void paintEvent(QPaintEvent* event)
-    {
-        QScrollArea::paintEvent(event);
-
-        QPoint drawPLL;
-        QPoint drawPLR;
-        QPoint drawPRL;
-        QPoint drawPRR;
-        getDrawCenterPoint(drawPLL, drawPLR, drawPRL, drawPRR);
-
-        // QPainter painter(viewport());
-        // painter.setPen(QPen(Qt::blue, 1));
-        // painter.setBrush(Qt::yellow);
-        // painter.drawEllipse(20, 20, 50, 50);
     }
 
   protected:

@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <QWidget>
 #include "FluLoopView.h"
 #include <QHBoxLayout>
@@ -100,7 +99,7 @@ class FluDatePickerView : public QWidget
             close();
         });
 
-        connect(m_monthView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
+        connect(m_monthView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) {
             int nDays = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
             std::vector<QString> datas;
             for (int i = 0; i < nDays; i++)
@@ -220,7 +219,6 @@ class FluDatePickerView : public QWidget
     FluLoopView* m_monthView;
     FluLoopView* m_dayView;
     FluLoopView* m_yearView;
-
 
     QPushButton* m_okBtn;
     QPushButton* m_cancelBtn;

@@ -16,16 +16,17 @@ class FluTabView : public QWidget
 {
     Q_OBJECT
   public:
-      FluTabView(QWidget* parent = nullptr);
+    FluTabView(QWidget* parent = nullptr);
 
-      void addTab(QString tabString, QWidget* tabWidget);
+    void addTab(QString tabString, QWidget* tabWidget);
 
-      bool eventFilter(QObject* watched, QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event);
 
-      void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
 
-signals:
-      void addTabBtnClicked();
+  signals:
+    void addTabBtnClicked();
+
   protected:
     QVBoxLayout* m_vMainLayout;
     FluTabBar* m_tabBar;

@@ -126,8 +126,8 @@ class FluIconsPage : public FluAEmptyPage
                 pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
                 m_iconLabel->setPixmap(pixmap);
 
-               // awesomeTypeKeyLabel->setText("Enum:");
-               // awesomeTypeValueLabel->setText("FluAwesomeType::" + EnumTypeToQString(displayIconBox->getAwesomeType()));
+                // awesomeTypeKeyLabel->setText("Enum:");
+                // awesomeTypeValueLabel->setText("FluAwesomeType::" + EnumTypeToQString(displayIconBox->getAwesomeType()));
                 awesomeTypeValueLabel->setText("");
                 awesomeTypeValueLabel->setText("");
             });

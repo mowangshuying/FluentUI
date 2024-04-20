@@ -65,7 +65,6 @@ class FluTimePicker24H : public QWidget
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
@@ -94,6 +93,7 @@ class FluTimePicker24H : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePicker24H.qss", this);
         }
     }
+
   protected:
     QHBoxLayout* m_hMainLayout;
     QPushButton* m_hourBtn;

@@ -159,6 +159,7 @@ class FluTimePicker24HView : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePicker24HView.qss", this);
         }
     }
+
   protected:
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hViewLayout;

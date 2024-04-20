@@ -52,20 +52,20 @@ class FluAmPmView : public QWidget
 
         connect(m_scrollUpBtn, &QPushButton::clicked, [=]() { scrollUp(); });
         connect(m_scrollDownBtn, &QPushButton::clicked, [=]() { scrollDown(); });
-        connect(m_apView, &QListWidget::itemClicked, [=](QListWidgetItem* item) { 
+        connect(m_apView, &QListWidget::itemClicked, [=](QListWidgetItem* item) {
             int nIndex = item->data(Qt::UserRole).toInt();
             if (nIndex == 1 && !m_bAm)
             {
                 scrollUp();
                 return;
             }
-            
+
             if (nIndex == 2 && m_bAm)
             {
                 scrollDown();
                 return;
             }
-            });
+        });
 
         m_apView->setFixedWidth(nFixedW);
         setFixedWidth(nFixedW);
@@ -74,7 +74,6 @@ class FluAmPmView : public QWidget
         setAm(true);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-
     }
 
     void setAmPm(QString am, QString pm)
@@ -134,7 +133,6 @@ class FluAmPmView : public QWidget
             m_apView->setCurrentItem(m_apView->item(2));
             m_apView->scrollToItem(m_apView->item(2), QAbstractItemView::PositionAtCenter);
         }
-
     }
 
     void scrollUp()
@@ -223,6 +221,7 @@ class FluAmPmView : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAmPmView.qss", this);
         }
     }
+
   protected:
     QVBoxLayout* m_vMainLayout;
     QListWidget* m_apView;

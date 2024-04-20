@@ -10,30 +10,30 @@ class FluTabBarDemo : public QWidget
 {
     Q_OBJECT
   public:
-      FluTabBarDemo(QWidget* parent = nullptr) : QWidget(parent)
-      {
-          tabBar = new FluTabBar;
-          for (int i = 0; i < 3; i++)
-          {
-              auto tabBarItem = new FluTabBarItem;
-              tabBar->addBarItem(tabBarItem);
-          }
+    FluTabBarDemo(QWidget* parent = nullptr) : QWidget(parent)
+    {
+        tabBar = new FluTabBar;
+        for (int i = 0; i < 3; i++)
+        {
+            auto tabBarItem = new FluTabBarItem;
+            tabBar->addBarItem(tabBarItem);
+        }
 
-          m_vMainLayout = new QVBoxLayout;
-          setLayout(m_vMainLayout);
+        m_vMainLayout = new QVBoxLayout;
+        setLayout(m_vMainLayout);
 
-          m_vMainLayout->addWidget(tabBar);
-          m_vMainLayout->addStretch(1);
+        m_vMainLayout->addWidget(tabBar);
+        m_vMainLayout->addStretch(1);
 
-          resize(600, 400);
-      }
+        resize(600, 400);
+    }
 
-    //void resizeEvent(QResizeEvent* event)
+    // void resizeEvent(QResizeEvent* event)
     //{
-    //      tabBar->setFixedWidth(width());
-    //}
+    //       tabBar->setFixedWidth(width());
+    // }
 
   protected:
-      FluTabBar* tabBar;
-      QVBoxLayout* m_vMainLayout;
+    FluTabBar* tabBar;
+    QVBoxLayout* m_vMainLayout;
 };

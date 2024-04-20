@@ -96,8 +96,6 @@ class FluTimePickerAPView : public QWidget
             close();
         });
 
-
-
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
@@ -179,6 +177,7 @@ class FluTimePickerAPView : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerAPView.qss", this);
         }
     }
+
   protected:
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hViewLayout;

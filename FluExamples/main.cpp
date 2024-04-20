@@ -181,12 +181,11 @@ int main(int argc, char **argv)
     // FluLoopViewDemo demo;
     // demo.show();
 
-    //FluTimePickerDemo demo;
-    //demo.show();
+    // FluTimePickerDemo demo;
+    // demo.show();
 
-   // FluTabBarDemo demo;
-   // demo.show();
-
+    // FluTabBarDemo demo;
+    // demo.show();
 
     FluTabViewDemo demo;
     demo.show();

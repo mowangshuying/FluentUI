@@ -61,19 +61,19 @@ class FluTimePickerAP : public QWidget
             m_timerPickerApView->show();
         });
 
-         connect(m_timerPickerApView, &FluTimePickerAPView::clickedOk, [=]() {
+        connect(m_timerPickerApView, &FluTimePickerAPView::clickedOk, [=]() {
             QString sHour = QString::asprintf("%02d", m_timerPickerApView->getHour());
             m_hourBtn->setText(sHour);
 
             QString sMinute = QString::asprintf("%02d", m_timerPickerApView->getMinute());
             m_minuteBtn->setText(sMinute);
 
-            QString sAmOrPm = m_timerPickerApView->isAm() ? "AM":"PM";
+            QString sAmOrPm = m_timerPickerApView->isAm() ? "AM" : "PM";
             m_apBtn->setText(sAmOrPm);
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAP.qss", this);
-         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
@@ -102,6 +102,7 @@ class FluTimePickerAP : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerAP.qss", this);
         }
     }
+
   protected:
     QHBoxLayout* m_hMainLayout;
     QPushButton* m_hourBtn;

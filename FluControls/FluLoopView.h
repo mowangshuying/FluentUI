@@ -120,11 +120,11 @@ class FluLoopView : public QListWidget
     void setVisibaleMidIndex(int nMidIndex)
     {
         nMidIndex = nMidIndex % m_nTotalVisibleCount;
-        if (nMidIndex < 0  || nMidIndex >= m_nTotalVisibleCount)
+        if (nMidIndex < 0 || nMidIndex >= m_nTotalVisibleCount)
             return;
 
-       // if (nMidIndex == m_nVisibleMidIndex)
-       //     return;
+        // if (nMidIndex == m_nVisibleMidIndex)
+        //     return;
 
         int nItemIndex = nMidIndex + m_nMaxVisibleNum / 2;
         m_nVisibleMidIndex = nMidIndex;
@@ -215,24 +215,25 @@ class FluLoopView : public QListWidget
             return;
         }
     }
-    signals:
+  signals:
     void visibaleMidIndexChanged(int nIndex);
-    public slots:
-      void onThemeChanged()
-      {
-          if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
-          {
-              m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Light)));
-              m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Light)));
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
-          }
-          else
-          {
-              m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
-              m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLoopView.qss", this);
-          }
-      }
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Light)));
+            m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Light)));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+        }
+        else
+        {
+            m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
+            m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLoopView.qss", this);
+        }
+    }
+
   protected:
     // int m_nItemHeight;
     int m_nFixedW;

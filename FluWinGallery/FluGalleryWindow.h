@@ -45,6 +45,7 @@
 #include "FluTextBoxPage.h"
 #include "FluRatingControlPage.h"
 #include "FluTimePickerPage.h"
+#include "FluDatePickerPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -233,6 +234,9 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CalendarViewPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DatePicker", item);
+        auto datePickerPage = new FluDatePickerPage;
+        m_sLayout->addWidget("DatePickerPage", datePickerPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DatePickerPage"); });
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("TimePicker", item);
         auto timePickerPage = new FluTimePickerPage;

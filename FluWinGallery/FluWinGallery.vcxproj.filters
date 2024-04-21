@@ -146,6 +146,9 @@
     <ClCompile Include="FluTimePickerPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDatePickerPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -266,6 +269,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTimePickerPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDatePickerPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

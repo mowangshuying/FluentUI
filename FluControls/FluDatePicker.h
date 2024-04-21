@@ -73,6 +73,7 @@ class FluDatePicker : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
@@ -89,6 +90,18 @@ class FluDatePicker : public QWidget
     }
   signals:
     void clicked();
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePicker.qss", this);
+        }
+    }
 
   protected:
     QHBoxLayout* m_hMainLayout;

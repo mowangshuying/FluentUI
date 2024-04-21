@@ -1,0 +1,26 @@
+FluDatePicker {
+    border: 1px solid rgb(53, 53, 53);
+    background-color: rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(48, 48, 48);
+    border-radius: 4px;
+}
+
+#monthBtn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-right: 1px solid rgb(60, 60, 60);
+}
+
+#dayBtn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-right: 1px solid rgb(60, 60, 60);
+}
+
+#yearBtn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid transparent;
+}

@@ -1,0 +1,25 @@
+FluDatePickerView {
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgb(64, 64, 64);
+    border-radius: 8px;
+}
+
+#okBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#okBtn:hover {
+    background-color: rgb(58, 58, 58);
+}
+
+#cancelBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#cancelBtn:hover {
+    background-color: rgb(58, 58, 58)
+}

@@ -189,5 +189,6 @@ int main(int argc, char **argv)
 
     FluTabViewDemo demo;
     demo.show();
+
     return app.exec();
 }

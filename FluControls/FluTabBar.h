@@ -33,9 +33,7 @@ class FluTabBar : public QWidget
         m_addTabBtn->setIconSize(QSize(20, 20));
         m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add));
         m_addTabBtn->setObjectName("addTabBtn");
-        // m_hMainLayout->addWidget(m_addTabBtn);
 
-        //   m_hMainLayout->addStretch(1);
         connect(m_addTabBtn, &QPushButton::clicked, [=]() { emit addTabBtnClicked(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBar.qss", this);

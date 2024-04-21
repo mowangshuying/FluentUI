@@ -21,11 +21,23 @@ class FluPasswordBoxPage : public FluAEmptyPage
         displayBox1->setTitle("A simple PasswordBox.");
         displayBox1->getCodeExpander()->setCodeByPath("../code/PasswordBoxPageCode1.md");
 
-        auto passwordBox = new FluPasswordBox(this);
-        passwordBox->setFixedWidth(240);
+        auto passwordBox1 = new FluPasswordBox(this);
+        passwordBox1->setFixedWidth(240);
         displayBox1->setBodyWidgetFixedHeight(96);
-        displayBox1->getBodyLayout()->addWidget(passwordBox);
+        displayBox1->getBodyLayout()->addWidget(passwordBox1);
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+
+        // maskC
+        auto displayBox2 = new FluDisplayBox;
+        displayBox2->setTitle("A PasswordBox with header, placeholder text and custom character.");
+        displayBox2->getCodeExpander()->setCodeByPath("../code/PasswordBoxPageCode2.md");
+
+        auto passwordBox2 = new FluPasswordBox(this);
+        passwordBox2->setMaskC(0x2a);
+        passwordBox2->setFixedWidth(240);
+        displayBox2->setBodyWidgetFixedHeight(96);
+        displayBox2->getBodyLayout()->addWidget(passwordBox2);
+        m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBoxPage.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });

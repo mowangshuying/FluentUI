@@ -68,7 +68,7 @@ class FluLoopView : public QListWidget
             item->setText(datas[datas.size() - nMid + i]);
             item->setTextAlignment(Qt::AlignCenter);
 
-            item->setData(Qt::UserRole, datas.size() - nMid + i);
+            item->setData(Qt::UserRole, QVariant::fromValue(datas.size() - nMid + i));
             addItem(item);
         }
 

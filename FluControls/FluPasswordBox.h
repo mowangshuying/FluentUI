@@ -48,6 +48,11 @@ class FluPasswordBox : public QWidget
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
+    void setMaskC(unsigned maskC)
+    {
+        m_edit->setProperty("maskC", maskC);
+    }
+
     bool eventFilter(QObject* watched, QEvent* event)
     {
         if (watched == m_edit)
@@ -115,4 +120,6 @@ class FluPasswordBox : public QWidget
     QLineEdit* m_edit;
     QPushButton* m_btn;
     QHBoxLayout* m_hLayout;
+
+    unsigned int m_maskC;
 };

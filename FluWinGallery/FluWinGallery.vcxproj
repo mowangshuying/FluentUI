@@ -112,6 +112,7 @@
     <ClCompile Include="FluCalendarDatePickerPage.cpp" />
     <ClCompile Include="FluCollectionsPage.cpp" />
     <ClCompile Include="FluContentDialogPage.cpp" />
+    <ClCompile Include="FluDateAndTimePage.cpp" />
     <ClCompile Include="FluDatePickerPage.cpp" />
     <ClCompile Include="FluExpanderPage.cpp" />
     <ClCompile Include="FluFlipViewPage.cpp" />
@@ -274,6 +275,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDatePickerPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluDateAndTimePage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

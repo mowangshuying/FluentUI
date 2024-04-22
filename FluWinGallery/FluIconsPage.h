@@ -128,7 +128,7 @@ class FluIconsPage : public FluAEmptyPage
 
                 // awesomeTypeKeyLabel->setText("Enum:");
                 // awesomeTypeValueLabel->setText("FluAwesomeType::" + EnumTypeToQString(displayIconBox->getAwesomeType()));
-                awesomeTypeValueLabel->setText("");
+                awesomeTypeKeyLabel->setText("");
                 awesomeTypeValueLabel->setText("");
             });
         }

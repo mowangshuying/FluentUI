@@ -46,6 +46,7 @@
 #include "FluRatingControlPage.h"
 #include "FluTimePickerPage.h"
 #include "FluDatePickerPage.h"
+#include "FluDateAndTimePage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -222,6 +223,10 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makDateTimeNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Calendar, "Date & time", this);
+        auto dateAndTimePage = new FluDateAndTimePage;
+        m_sLayout->addWidget("DateAndTimePage", dateAndTimePage);
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DateAndTimePage"); });
+
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("CalendarDatePickerPage", item);
         auto calendarDatePickerPage = new FluCalendarDatePickerPage;

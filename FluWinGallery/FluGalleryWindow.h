@@ -227,7 +227,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("DateAndTimePage", dateAndTimePage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DateAndTimePage"); });
 
-
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("CalendarDatePickerPage", item);
         auto calendarDatePickerPage = new FluCalendarDatePickerPage;
         m_sLayout->addWidget("CalendarDatePickerPage", calendarDatePickerPage);
@@ -248,10 +247,41 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("TimePickerPage", timePickerPage);
         connect(item4, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TimePickerPage"); });
 
+        connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, [=](QString key) { 
+            if (key == "CalendarDatePicker")
+            {
+                item1->onItemClickedDirect();
+                m_sLayout->setCurrentWidget("CalendarDatePickerPage");
+            }
+            
+            if (key == "CalendarView")
+            {
+                item2->onItemClickedDirect();
+                m_sLayout->setCurrentWidget("CalendarViewPage");
+            }
+               
+            
+                if (key == "DatePicker")
+                {
+                    item3->onItemClickedDirect();
+                    m_sLayout->setCurrentWidget("DatePickerPage");
+            }
+               
+
+                if (key == "TimePicker")
+                {
+                    item4->onItemClickedDirect();
+                    m_sLayout->setCurrentWidget("TimePickerPage");
+            }
+              
+                
+        });
+
         item->addItem(item1);
         item->addItem(item2);
         item->addItem(item3);
         item->addItem(item4);
+
         m_navView->addItemToMidLayout(item);
     }
 

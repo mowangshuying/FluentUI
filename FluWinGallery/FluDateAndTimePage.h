@@ -22,21 +22,29 @@ class FluDateAndTimePage : public FluATitlePage
 
           auto calendarDatePickerCard = new FluHCard(QPixmap("../res/ControlImages/CalendarDatePicker.png"), "CalendarDatePicker", "A control that lets users pick a date value using a calendar.");
           getFWScrollView()->getMainLayout()->addWidget(calendarDatePickerCard);
+          connect(calendarDatePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-          auto calendarView = new FluHCard(QPixmap("../res/ControlImages/CalendarView.png"), "CalendarView", "A control that presents aa calendar for a user to choose a date from.");
-          getFWScrollView()->getMainLayout()->addWidget(calendarView);
+          auto calendarViewCard = new FluHCard(QPixmap("../res/ControlImages/CalendarView.png"), "CalendarView", "A control that presents aa calendar for a user to choose a date from.");
+          getFWScrollView()->getMainLayout()->addWidget(calendarViewCard);
+          connect(calendarViewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+          
 
           auto datePickerCard = new FluHCard(QPixmap("../res/ControlImages/DatePicker.png"), "DatePicker", "A control that lets a user pick a date value.");
           getFWScrollView()->getMainLayout()->addWidget(datePickerCard);
+          connect(datePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+
 
           auto timePickerCard = new FluHCard(QPixmap("../res/ControlImages/TimePicker.png"), "TimePicker", "A configurable control that lets a user pick a time value.");
           getFWScrollView()->getMainLayout()->addWidget(timePickerCard);
+          connect(timePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDateAndTimePage.qss", this);
           connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
       }
-
-       public slots:
+  
+  signals:
+      void clickedHCard(QString key); 
+  public slots:
       void onThemeChanged()
       {
           if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

@@ -12,6 +12,7 @@
 #include <QWidget>
 #include "FluNavigationItem.h"
 #include "../FluUtils/FluUtils.h"
+#include <stack>
 
 class FluNavigationView;
 class FluNavigationIconTextItem : public FluNavigationItem
@@ -101,6 +102,26 @@ class FluNavigationIconTextItem : public FluNavigationItem
     void itemClicked();
   public slots:
     void onItemClicked();
+
+    void onItemClickedDirect()
+    {
+        std::stack<FluNavigationIconTextItem *> itemStack;
+        FluNavigationIconTextItem *item = this;
+        itemStack.push(item);
+        while (item->m_parentItem != nullptr)
+        {
+            item = item->m_parentItem;
+            itemStack.push(item);
+        }
+
+        while (!itemStack.empty())
+        {
+            auto item = itemStack.top();
+            if (item->m_bDown)
+                item->onItemClicked();
+            itemStack.pop();
+        }
+    }
 
     void onThemeChanged()
     {

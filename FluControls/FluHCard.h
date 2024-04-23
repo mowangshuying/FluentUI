@@ -63,6 +63,12 @@ class FluHCard : public QWidget
         m_iconLabel->setPixmap(pixmap);
         m_titleLabel->setText(titleText);
         m_contextLabel->setText(contextText);
+        m_key = titleText;
+    }
+
+    void mouseReleaseEvent(QMouseEvent* event)
+    {
+        emit clicked(m_key);
     }
 
     void paintEvent(QPaintEvent* event)
@@ -72,6 +78,9 @@ class FluHCard : public QWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
+
+  signals:
+    void clicked(QString key);
   public slots:
     void onThemeChanged()
     {
@@ -86,6 +95,7 @@ class FluHCard : public QWidget
     }
 
   protected:
+    QString m_key;
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;
     QLabel* m_contextLabel;

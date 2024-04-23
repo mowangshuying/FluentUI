@@ -247,34 +247,30 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("TimePickerPage", timePickerPage);
         connect(item4, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TimePickerPage"); });
 
-        connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, [=](QString key) { 
+        connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, [=](QString key) {
             if (key == "CalendarDatePicker")
             {
                 item1->onItemClickedDirect();
                 m_sLayout->setCurrentWidget("CalendarDatePickerPage");
             }
-            
+
             if (key == "CalendarView")
             {
                 item2->onItemClickedDirect();
                 m_sLayout->setCurrentWidget("CalendarViewPage");
             }
-               
-            
-                if (key == "DatePicker")
-                {
-                    item3->onItemClickedDirect();
-                    m_sLayout->setCurrentWidget("DatePickerPage");
-            }
-               
 
-                if (key == "TimePicker")
-                {
-                    item4->onItemClickedDirect();
-                    m_sLayout->setCurrentWidget("TimePickerPage");
+            if (key == "DatePicker")
+            {
+                item3->onItemClickedDirect();
+                m_sLayout->setCurrentWidget("DatePickerPage");
             }
-              
-                
+
+            if (key == "TimePicker")
+            {
+                item4->onItemClickedDirect();
+                m_sLayout->setCurrentWidget("TimePickerPage");
+            }
         });
 
         item->addItem(item1);

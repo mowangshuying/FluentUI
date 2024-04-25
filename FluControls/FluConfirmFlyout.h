@@ -22,11 +22,11 @@ class FluConfirmFlyout : public FluVFlyout
         m_infoLabel->setWordWrap(true);
         m_infoLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
 
-        m_vMainLayout->addWidget(m_titleLabel);
-        m_vMainLayout->addWidget(m_infoLabel);
+        m_vShadowLayout->addWidget(m_titleLabel);
+        m_vShadowLayout->addWidget(m_infoLabel);
 
         m_hBtnLayout = new QHBoxLayout;
-        m_vMainLayout->addLayout(m_hBtnLayout);
+        m_vShadowLayout->addLayout(m_hBtnLayout);
 
         m_okBtn = new FluStyleButton;
         m_cancelBtn = new FluPushButton;
@@ -35,7 +35,7 @@ class FluConfirmFlyout : public FluVFlyout
 
         m_cancelBtn->setFixedWidth(100);
         m_okBtn->setFixedWidth(100);
-        setFixedWidth(240);
+        setFixedWidth(260);
 
         m_okBtn->setText("Ok");
         m_cancelBtn->setText("Cancel");

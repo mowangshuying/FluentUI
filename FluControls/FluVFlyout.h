@@ -7,6 +7,8 @@
 #include <QPainter>
 #include "FluLabel.h"
 #include "FluPushButton.h"
+#include <QGraphicsDropShadowEffect>
+#include <QHBoxLayout>
 
 enum class FluFlyoutPosition
 {
@@ -22,12 +24,31 @@ class FluVFlyout : public QWidget
   public:
     FluVFlyout(QWidget* target, FluFlyoutPosition position = FluFlyoutPosition::Top) : QWidget(nullptr), m_targetWidget(target), m_position(position)
     {
-        m_vMainLayout = new QVBoxLayout;
-        setLayout(m_vMainLayout);
-        setContentsMargins(8, 8, 8, 8);
+        m_hMainLayout = new QHBoxLayout;
+        m_hMainLayout->setSpacing(0);
+        m_hMainLayout->setContentsMargins(10, 10, 10, 10);
+        setLayout(m_hMainLayout);
+
+
+        m_shadowWidget = new QWidget(this);
+        m_shadowWidget->setObjectName("shadowWidget");
+
+        m_hMainLayout->addWidget(m_shadowWidget);
+
+        m_vShadowLayout = new QVBoxLayout;
+        m_shadowWidget->setLayout(m_vShadowLayout);
+        m_vShadowLayout->setContentsMargins(8, 8, 8, 8);
 
         setFixedWidth(360);
         setMinimumHeight(96);
+
+
+        // set shadow;
+        m_shadowEffect = new QGraphicsDropShadowEffect;
+        m_shadowEffect->setBlurRadius(8);
+        m_shadowEffect->setOffset(0, 0);
+        m_shadowEffect->setColor(QColor(0, 0, 0, 30));
+        m_shadowWidget->setGraphicsEffect(m_shadowEffect);
 
         setAttribute(Qt::WA_TranslucentBackground);
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
@@ -38,6 +59,11 @@ class FluVFlyout : public QWidget
         }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
+
+   // void resizeEvent(QResizeEvent* event)
+  //  {
+ //      m_shadowWidget->resize(width(), height());
+ //   }
 
     void showEvent(QShowEvent* event)
     {
@@ -50,24 +76,24 @@ class FluVFlyout : public QWidget
             case FluFlyoutPosition::Top:
             {
                 nX = targetPos.x() + (m_targetWidget->width() - width()) / 2;
-                nY = targetPos.y() - height() - 5;  // 5 is spacing.
+                nY = targetPos.y() - height() + 5;
             }
             break;
             case FluFlyoutPosition::Bottom:
             {
                 nX = targetPos.x() + (m_targetWidget->width() - width()) / 2;
-                nY = targetPos.y() + m_targetWidget->height() + 5;  // 5 is spacing.
+                nY = targetPos.y() + m_targetWidget->height() - 5;
             }
             break;
             case FluFlyoutPosition::Left:
             {
-                nX = targetPos.x() - width() - 5;
+                nX = targetPos.x() - width() + 5;
                 nY = targetPos.y() - (height() - m_targetWidget->height()) / 2;
             }
             break;
             case FluFlyoutPosition::Right:
             {
-                nX = targetPos.x() + m_targetWidget->width() + 5;
+                nX = targetPos.x() + m_targetWidget->width() - 5;
                 nY = targetPos.y() - (height() - m_targetWidget->height()) / 2;
             }
             break;
@@ -105,7 +131,11 @@ class FluVFlyout : public QWidget
     }
 
   protected:
-    QVBoxLayout* m_vMainLayout;
+    QHBoxLayout* m_hMainLayout;
+    QWidget* m_shadowWidget;
+    QGraphicsDropShadowEffect* m_shadowEffect;
+
+    QVBoxLayout* m_vShadowLayout;
     QWidget* m_targetWidget;
     FluFlyoutPosition m_position;
 };

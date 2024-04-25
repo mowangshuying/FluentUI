@@ -29,7 +29,6 @@ class FluVFlyout : public QWidget
         m_hMainLayout->setContentsMargins(10, 10, 10, 10);
         setLayout(m_hMainLayout);
 
-
         m_shadowWidget = new QWidget(this);
         m_shadowWidget->setObjectName("shadowWidget");
 
@@ -41,7 +40,6 @@ class FluVFlyout : public QWidget
 
         setFixedWidth(360);
         setMinimumHeight(96);
-
 
         // set shadow;
         m_shadowEffect = new QGraphicsDropShadowEffect;
@@ -60,10 +58,10 @@ class FluVFlyout : public QWidget
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-   // void resizeEvent(QResizeEvent* event)
-  //  {
- //      m_shadowWidget->resize(width(), height());
- //   }
+    // void resizeEvent(QResizeEvent* event)
+    //  {
+    //      m_shadowWidget->resize(width(), height());
+    //   }
 
     void showEvent(QShowEvent* event)
     {

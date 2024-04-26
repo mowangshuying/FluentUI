@@ -63,7 +63,17 @@ class FluHCard : public QWidget
         m_iconLabel->setPixmap(pixmap);
         m_titleLabel->setText(titleText);
         m_contextLabel->setText(contextText);
-        m_key = titleText;
+        //m_key = titleText;
+    }
+
+    void setKey(QString key)
+    {
+        m_key = key;
+    }
+
+    QString getKey()
+    {
+        return m_key;
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

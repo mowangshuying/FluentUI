@@ -46,8 +46,19 @@ class FluNavigationItem : public QWidget
         return m_bLong;
     }
 
+    QString getKey()
+    {
+        return m_key;
+    }
+
+    void setKey(QString key)
+    {
+        m_key = key;
+    }
+
   protected:
     FluNavigationItemType m_itemType;
     FluNavigationView* m_parentView;
     bool m_bLong;
+    QString m_key;
 };

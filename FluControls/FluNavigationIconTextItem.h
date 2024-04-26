@@ -46,11 +46,20 @@ class FluNavigationIconTextItem : public FluNavigationItem
     void showLabelArrow()
     {
         m_label->show();
-        if (!m_items.isEmpty())
+        if (!m_items.empty())
             m_arrow->show();
     }
 
-    QList<FluNavigationIconTextItem *> getChildItems();
+    std::vector<FluNavigationIconTextItem *> getChildItems();
+    void getAllItems(std::vector<FluNavigationIconTextItem *> &totalItems)
+    {
+        std::vector<FluNavigationIconTextItem*> childItems = getChildItems();
+        for (auto childItem : childItems)
+        {
+            totalItems.push_back(childItem);
+            childItem->getAllItems(totalItems);
+        }
+    }
 
     void addItem(FluNavigationIconTextItem *item);
 
@@ -151,7 +160,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
     QLabel *m_label;
     QPushButton *m_arrow;
     QHBoxLayout *m_hLayout1;
-    QList<FluNavigationIconTextItem *> m_items;
+    std::vector<FluNavigationIconTextItem *> m_items;
 
     QVBoxLayout *m_vMainLayout;
     QVBoxLayout *m_vLayout1;

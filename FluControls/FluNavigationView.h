@@ -17,6 +17,7 @@
 #include <QWidget>
 #include "FluVScrollView.h"
 
+class FluNavigationItem;
 class FluNavigationIconTextItem;
 class FluNavigationView : public QWidget
 {
@@ -42,6 +43,10 @@ class FluNavigationView : public QWidget
     {
         return m_bLong;
     }
+
+    std::vector<FluNavigationItem*> getAllItems();
+
+    FluNavigationItem* getItemByKey(QString key);
 
     void paintEvent(QPaintEvent *event) override;
 

@@ -103,6 +103,60 @@ void FluNavigationView::updateAllItemsStyleSheet()
     }
 }
 
+std::vector<FluNavigationItem *> FluNavigationView::getAllItems()
+{
+    std::vector<FluNavigationItem *> items;
+    for (int i = 0; i < m_topWrapWidget->layout()->count(); i++)
+    {
+        auto item = (FluNavigationItem *)(m_topWrapWidget->layout()->itemAt(i)->widget());
+        items.push_back(item);
+    }
+
+    for (int i = 0; i < m_midVScrollView->getMainLayout()->count(); i++)
+    {
+        auto item = (FluNavigationItem *)(m_midVScrollView->getMainLayout()->itemAt(i)->widget());
+        items.push_back(item);
+    }
+
+    for (int i = 0; i < m_bottomWrapWidget->layout()->count(); i++)
+    {
+        auto item = (FluNavigationItem *)(m_bottomWrapWidget->layout()->itemAt(i)->widget());
+        items.push_back(item);
+    }
+
+
+   std::vector<FluNavigationItem *> allItems;
+    allItems.insert(allItems.end(), items.begin(), items.end());
+    for (auto item : items)
+    {
+        if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+        {
+            auto iconTextItem = (FluNavigationIconTextItem *)item;
+            std::vector<FluNavigationIconTextItem *> totalItems;
+            iconTextItem->getAllItems(totalItems);
+
+            allItems.insert(allItems.end(), totalItems.begin(), totalItems.end());
+        }
+    }
+    return allItems;
+}
+
+FluNavigationItem *FluNavigationView::getItemByKey(QString key)
+{
+    std::vector<FluNavigationItem *> items = getAllItems();
+    FluNavigationItem *item = nullptr;
+    for (auto tmpItem : items)
+    {
+        if (tmpItem->getKey() == key)
+        {
+            item = tmpItem;
+            break;
+        }
+    }
+
+    return item;
+}
+
 void FluNavigationView::paintEvent(QPaintEvent *event)
 {
     QStyleOption opt;

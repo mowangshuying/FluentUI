@@ -106,7 +106,7 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(FluAwesomeType awesomeType,
     m_label->setText(text);
 }
 
-QList<FluNavigationIconTextItem *> FluNavigationIconTextItem::getChildItems()
+std::vector<FluNavigationIconTextItem *> FluNavigationIconTextItem::getChildItems()
 {
     return m_items;
 }
@@ -115,7 +115,7 @@ void FluNavigationIconTextItem::addItem(FluNavigationIconTextItem *item)
 {
     // item->m_currentWidth = m_currentWidth - 36;
     item->m_parentItem = this;
-    m_items.append(item);
+    m_items.push_back(item);
 
     int nDepth = item->getDepth();
     item->m_emptyWidget->setFixedWidth(36 * nDepth);

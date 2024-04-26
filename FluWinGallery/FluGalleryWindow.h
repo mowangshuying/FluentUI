@@ -223,53 +223,43 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makDateTimeNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Calendar, "Date & time", this);
+        item->setKey("DateAndTimePage");
         auto dateAndTimePage = new FluDateAndTimePage;
         m_sLayout->addWidget("DateAndTimePage", dateAndTimePage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DateAndTimePage"); });
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("CalendarDatePickerPage", item);
+        item1->setKey("CalendarDatePickerPage");
         auto calendarDatePickerPage = new FluCalendarDatePickerPage;
         m_sLayout->addWidget("CalendarDatePickerPage", calendarDatePickerPage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CalendarDatePickerPage"); });
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("CalendarView", item);
+        item2->setKey("CalendarViewPage");
         auto calendarViewPage = new FluCalendarViewPage;
         m_sLayout->addWidget("CalendarViewPage", calendarViewPage);
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CalendarViewPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DatePicker", item);
+        item3->setKey("DatePickerPage");
         auto datePickerPage = new FluDatePickerPage;
         m_sLayout->addWidget("DatePickerPage", datePickerPage);
         connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DatePickerPage"); });
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("TimePicker", item);
+        item4->setKey("TimePickerPage");
         auto timePickerPage = new FluTimePickerPage;
         m_sLayout->addWidget("TimePickerPage", timePickerPage);
         connect(item4, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TimePickerPage"); });
 
         connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, [=](QString key) {
-            if (key == "CalendarDatePicker")
+            LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
             {
-                item1->onItemClickedDirect();
-                m_sLayout->setCurrentWidget("CalendarDatePickerPage");
-            }
-
-            if (key == "CalendarView")
-            {
-                item2->onItemClickedDirect();
-                m_sLayout->setCurrentWidget("CalendarViewPage");
-            }
-
-            if (key == "DatePicker")
-            {
-                item3->onItemClickedDirect();
-                m_sLayout->setCurrentWidget("DatePickerPage");
-            }
-
-            if (key == "TimePicker")
-            {
-                item4->onItemClickedDirect();
-                m_sLayout->setCurrentWidget("TimePickerPage");
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
             }
         });
 

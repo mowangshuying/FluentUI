@@ -98,6 +98,17 @@ class FluGalleryWindow : public FluFrameLessWidget
         auto allSamplesPage = new FluAllSamplesPage;
         m_sLayout->addWidget("AllSamplesPage", allSamplesPage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AllSamplesPage"); });
+
+        connect(allSamplesPage, &FluAllSamplesPage::clickedHCard, [=](QString key) {
+            LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
     }
 
     void makeBasicInputNavItem()
@@ -109,25 +120,30 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Button", item);
         auto buttonPage = new FluButtonPage;
+        item2->setKey("ButtonPage");
         m_sLayout->addWidget("ButtonPage", buttonPage);
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ButtonPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("DropDownButton", item);
+        item3->setKey("DropDownButtonPage");
         auto dropDownPage = new FluDropDownButtonPage;
         m_sLayout->addWidget("DropDownButtonPage", dropDownPage);
         connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DropDownButtonPage"); });
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("HyperLinkButton", item);
+        item4->setKey("HyperLinkButtonPage");
         auto hyperLinkButtonPage = new FluHyperLinkButtonPage;
         m_sLayout->addWidget("HyperLinkButtonPage", hyperLinkButtonPage);
         connect(item4, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("HyperLinkButtonPage"); });
 
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RepeatButton", item);
+        item5->setKey("RepeatButtonPage");
         auto repeatButtonPage = new FluRepeatButtonPage;
         m_sLayout->addWidget("RepeatButtonPage", repeatButtonPage);
         connect(item5, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RepeatButtonPage"); });
 
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("ToggleButton", item);
+        item6->setKey("ToggleButtonPage");
         auto toggleButtonPage = new FluToggleButtonPage;
         m_sLayout->addWidget("ToggleButtonPage", toggleButtonPage);
         connect(item6, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ToggleButtonPage"); });
@@ -136,6 +152,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("ToggleSplitButton", item);
 
         FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("CheckBox", item);
+        item9->setKey("CheckBoxPage");
         auto checkBoxPage = new FluCheckBoxPage;
         m_sLayout->addWidget("CheckBoxPage", checkBoxPage);
         connect(item9, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CheckBoxPage"); });
@@ -143,26 +160,31 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item10 = new FluNavigationIconTextItem("ColorPicker", item);
 
         FluNavigationIconTextItem *item11 = new FluNavigationIconTextItem("ComboBox", item);
+        item11->setKey("ComboBoxPage");
         auto comboBoxPage = new FluComboBoxPage;
         m_sLayout->addWidget("ComboBoxPage", comboBoxPage);
         connect(item11, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ComboBoxPage"); });
 
         FluNavigationIconTextItem *item12 = new FluNavigationIconTextItem("RadioButton", item);
+        item12->setKey("RadioButtonPage");
         auto radioButtonPage = new FluRadioButtonPage;
         m_sLayout->addWidget("RadioButtonPage", radioButtonPage);
         connect(item12, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RadioButtonPage"); });
 
         FluNavigationIconTextItem *item13 = new FluNavigationIconTextItem("RatingControl", item);
+        item13->setKey("RatingControlPage");
         auto ratingControlPage = new FluRatingControlPage;
         m_sLayout->addWidget("RatingControlPage", ratingControlPage);
         connect(item13, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RatingControlPage"); });
 
         FluNavigationIconTextItem *item14 = new FluNavigationIconTextItem("Slider", item);
+        item14->setKey("SliderPage");
         auto sliderPage = new FluSliderPage;
         m_sLayout->addWidget("SliderPage", sliderPage);
         connect(item14, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("SliderPage"); });
 
         FluNavigationIconTextItem *item15 = new FluNavigationIconTextItem("ToggleSwitch", item);
+        item15->setKey("ToggleSwitchPage");
         auto toggleSwitchPage = new FluToggleSwitchPage;
         m_sLayout->addWidget("ToggleSwitchPage", toggleSwitchPage);
         connect(item15, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ToggleSwitchPage"); });

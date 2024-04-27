@@ -126,7 +126,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
         while (!itemStack.empty())
         {
             auto item = itemStack.top();
-            if (item->m_bDown)
+            if ( (item->m_bDown && !item->getChildItems().empty()) || item->getChildItems().empty())
                 item->onItemClicked();
             itemStack.pop();
         }

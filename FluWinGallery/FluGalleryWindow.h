@@ -47,6 +47,7 @@
 #include "FluTimePickerPage.h"
 #include "FluDatePickerPage.h"
 #include "FluDateAndTimePage.h"
+#include "FluDialogsAndFlyoutsPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -296,6 +297,11 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeDialogsFlyouts()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts", this);
+        auto dialogAndFlyoutPage = new FluDialogsAndFlyoutsPage;
+        m_sLayout->addWidget("DialogsAndFlyoutsPage", dialogAndFlyoutPage);
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DialogsAndFlyoutsPage"); });
+
+
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("ContentDialog", item);
 
         auto contentDialogPage = new FluContentDialogPage;

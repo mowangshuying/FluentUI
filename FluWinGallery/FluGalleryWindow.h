@@ -48,6 +48,7 @@
 #include "FluDatePickerPage.h"
 #include "FluDateAndTimePage.h"
 #include "FluDialogsAndFlyoutsPage.h"
+#include "FluStatusAndInfoPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -467,29 +468,52 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeStatusInfoNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info", this);
+        item->setKey("StatusAndInfoPage");
+        auto statusAndInfoPage = new FluStatusAndInfoPage;
+        m_sLayout->addWidget("StatusAndInfoPage", statusAndInfoPage);
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("StatusAndInfoPage"); });
+
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
+        item1->setKey("InfoBadgePage");
         auto infoBadgePage = new FluInfoBadgePage;
         m_sLayout->addWidget("InfoBadgePage", infoBadgePage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("InfoBadgePage"); });
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("InfoBar", item);
+        item2->setKey("InfoBarPage");
+
         auto infoBarPage = new FluInfoBarPage;
         m_sLayout->addWidget("InfoBarPage", infoBarPage);
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("InfoBarPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("progressBar", item);
+        item3->setKey("ProgressBarPage");
         auto progressBarPage = new FluProgressBarPage;
         m_sLayout->addWidget("ProgressBarPage", progressBarPage);
         connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ProgressBarPage"); });
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("progressRing", item);
+        item4->setKey("ProgressRingPage");
 
         auto progressRingPage = new FluProgressRingPage;
         m_sLayout->addWidget("ProgressRingPage", progressRingPage);
         connect(item4, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ProgressRingPage"); });
 
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ToolTip", item);
+        item5->setKey("ProgressRingPage");
+
+
+        connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, [=](QString key) {
+            LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
 
         item->addItem(item1);
         item->addItem(item2);

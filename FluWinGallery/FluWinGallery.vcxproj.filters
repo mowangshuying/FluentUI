@@ -155,6 +155,9 @@
     <ClCompile Include="FluDialogsAndFlyoutsPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluStatusAndInfoPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -284,6 +287,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDialogsAndFlyoutsPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluStatusAndInfoPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

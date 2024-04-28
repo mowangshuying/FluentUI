@@ -53,7 +53,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
     std::vector<FluNavigationIconTextItem *> getChildItems();
     void getAllItems(std::vector<FluNavigationIconTextItem *> &totalItems)
     {
-        std::vector<FluNavigationIconTextItem*> childItems = getChildItems();
+        std::vector<FluNavigationIconTextItem *> childItems = getChildItems();
         for (auto childItem : childItems)
         {
             totalItems.push_back(childItem);
@@ -126,7 +126,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
         while (!itemStack.empty())
         {
             auto item = itemStack.top();
-            if ( (item->m_bDown && !item->getChildItems().empty()) || item->getChildItems().empty())
+            if ((item->m_bDown && !item->getChildItems().empty()) || item->getChildItems().empty())
                 item->onItemClicked();
             itemStack.pop();
         }

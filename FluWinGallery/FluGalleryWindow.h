@@ -302,7 +302,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("DialogsAndFlyoutsPage", dialogAndFlyoutPage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DialogsAndFlyoutsPage"); });
 
-
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("ContentDialog", item);
 
         auto contentDialogPage = new FluContentDialogPage;
@@ -473,7 +472,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("StatusAndInfoPage", statusAndInfoPage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("StatusAndInfoPage"); });
 
-
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("InfoBadge", item);
         item1->setKey("InfoBadgePage");
         auto infoBadgePage = new FluInfoBadgePage;
@@ -502,7 +500,6 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ToolTip", item);
         item5->setKey("ProgressRingPage");
-
 
         connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;

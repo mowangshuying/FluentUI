@@ -124,8 +124,7 @@ std::vector<FluNavigationItem *> FluNavigationView::getAllItems()
         items.push_back(item);
     }
 
-
-   std::vector<FluNavigationItem *> allItems;
+    std::vector<FluNavigationItem *> allItems;
     allItems.insert(allItems.end(), items.begin(), items.end());
     for (auto item : items)
     {

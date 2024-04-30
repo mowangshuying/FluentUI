@@ -5,7 +5,7 @@
 #include "../FluControls/FluLineEdit.h"
 #include "FluDisplay9.h"
 #include "../FluControls/FluSearchLineEdit.h"
-
+#include "../FluControls/FluAutoSuggestBox.h"
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QPainter>
@@ -24,6 +24,11 @@ class FluLineEditDemo : public FluDisplay9
         //  sLineEdit->setFixedSize(120, 30);
         sLineEdit->setFixedSize(180, 30);
         addDemo(sLineEdit);
+
+        auto suggestBox = new FluAutoSuggestBox;
+        suggestBox->setKeys({"aa", "ab", "ac"});
+        suggestBox->setFixedSize(180, 30);
+        addDemo(suggestBox);
     }
 
     void paintEvent(QPaintEvent* paintEvent)

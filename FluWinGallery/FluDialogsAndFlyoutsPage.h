@@ -13,7 +13,7 @@ class FluDialogsAndFlyoutsPage : public FluATitlePage
     FluDialogsAndFlyoutsPage(QWidget* parent = nullptr) : FluATitlePage(parent)
     {
         m_vMainLayout->setContentsMargins(35, 35, 0, 35);
-        m_titleLabel->setText("Date & Time");
+        m_titleLabel->setText("Dialogs & flyouts");
 
         auto contentDialogCard = new FluHCard(QPixmap("../res/ControlImages/ContentDialog.png"), "ContentDialog", "A dialog box that can be customized to contain any XAML content.");
         contentDialogCard->setKey("ContentDialogPage");

@@ -1,0 +1,31 @@
+FluAutoSuggestBox {
+    background-color: rgb(253, 253, 253);
+    border-radius: 4px;
+    border: 1px solid rgb(234, 234, 234);
+    border-bottom: 1px solid rgb(138, 138, 138);
+    padding: 2px;
+}
+
+FluAutoSuggestBox:hover {
+    background-color: rgb(249, 249, 249);
+}
+
+FluAutoSuggestBox[isFocused=true] {
+    border-bottom: 2px solid rgb(0, 90, 158);
+}
+
+QLineEdit {
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton {
+    background-color: transparent;
+    border: none;
+}
+
+QPushButton:hover {
+    background-color: rgb(240, 240, 240);
+    border-radius: 4px;
+    border: none;
+}

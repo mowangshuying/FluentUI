@@ -27,16 +27,11 @@ class FluAutoSuggestBox : public QWidget
           m_hMainLayout->setAlignment(Qt::AlignHCenter);
 
           m_lineEdit = new QLineEdit;
-          m_searchBtn = new QPushButton;
-          m_searchBtn->setFixedSize(30, 20);
-          m_searchBtn->setIconSize(QSize(18, 18));
-          m_searchBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Search));
 
           m_lineEdit->setFixedHeight(30);
           m_lineEdit->setFocusPolicy(Qt::FocusPolicy::StrongFocus);
 
           m_hMainLayout->addWidget(m_lineEdit, 1, Qt::AlignLeft);
-          m_hMainLayout->addWidget(m_searchBtn, 0, Qt::AlignRight);
           m_hMainLayout->addSpacing(4);
 
           setFixedHeight(32);
@@ -45,17 +40,23 @@ class FluAutoSuggestBox : public QWidget
 
           m_completerMenu = new FluMenu;
           m_completerMenu->installEventFilter(this);
-          connect(m_searchBtn, &QPushButton::clicked, [=]() { emit searchBtnClicked(); });
 
           connect(m_lineEdit, &QLineEdit::textEdited, [=](QString text) { 
               m_completerMenu->clear();
+              m_completerMenu->hide();
+
               std::vector<QString> keys;
               for (auto key : m_keys)
               {
-                  if (key.contains(text))
+                  if (key.contains(text) && !text.isEmpty())
                   {
                       keys.push_back(key);
                   }
+              }
+
+              if (keys.empty())
+              {
+                  return;
               }
 
               for (auto key : keys)
@@ -111,14 +112,6 @@ class FluAutoSuggestBox : public QWidget
                   setProperty("isFocused", false);
                   style()->polish(this);
               }
-              else if (event->type() == QEvent::KeyRelease)
-              {
-                  QKeyEvent* keyEvent = (QKeyEvent*)event;
-                  if (keyEvent->key() == Qt::Key_Return)
-                  {
-                      emit searchBtnClicked();
-                  }
-              }
           }
           else if (watched == m_completerMenu)
           {
@@ -149,12 +142,10 @@ class FluAutoSuggestBox : public QWidget
       {
           if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
           {
-              m_searchBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
               FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBox.qss", this);
           }
           else
           {
-              m_searchBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
               FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAutoSuggestBox.qss", this);
           }
       }
@@ -162,7 +153,6 @@ class FluAutoSuggestBox : public QWidget
       std::vector<QString> m_keys;
 
       QLineEdit* m_lineEdit;
-      QPushButton* m_searchBtn;
       QHBoxLayout* m_hMainLayout;
 
       FluMenu* m_completerMenu;

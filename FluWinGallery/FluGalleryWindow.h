@@ -49,6 +49,7 @@
 #include "FluDateAndTimePage.h"
 #include "FluDialogsAndFlyoutsPage.h"
 #include "FluStatusAndInfoPage.h"
+#include "FluAutoSuggestBoxPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -524,6 +525,10 @@ class FluGalleryWindow : public FluFrameLessWidget
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Font, "Text", this);
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
+        auto autoSuggestBox = new FluAutoSuggestBoxPage;
+        m_sLayout->addWidget("AutoSuggestBoxPage", autoSuggestBox);
+        connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AutoSuggestBoxPage"); });
+        
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NumberBox", item);
         auto numberBoxPage = new FluNumberBoxPage;

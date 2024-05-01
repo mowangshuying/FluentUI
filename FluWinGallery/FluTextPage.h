@@ -14,7 +14,7 @@ class FluTextPage : public FluATitlePage
         m_titleLabel->setText("Text");
 
         auto autoSuggestBoxCard = new FluHCard(QPixmap("../res/ControlImages/AutoSuggestBox.png"), "AutoSuggestBox", "A control to provide suggestions as a user is typing.");
-        autoSuggestBoxCard->setKey("SuggestBoxPage");
+        autoSuggestBoxCard->setKey("AutoSuggestBoxPage");
         getFWScrollView()->getMainLayout()->addWidget(autoSuggestBoxCard);
         connect(autoSuggestBoxCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 

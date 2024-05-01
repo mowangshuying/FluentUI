@@ -525,33 +525,57 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeTextNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Font, "Text", this);
+        item->setKey("TextPage");
         auto textPage = new FluTextPage;
         m_sLayout->addWidget("TextPage", textPage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextPage"); });
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
+        item1->setKey("AutoSuggestBoxPage");
         auto autoSuggestBoxPage = new FluAutoSuggestBoxPage;
         m_sLayout->addWidget("AutoSuggestBoxPage", autoSuggestBoxPage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AutoSuggestBoxPage"); });
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NumberBox", item);
+        item2->setKey("NumberBoxPage");
         auto numberBoxPage = new FluNumberBoxPage;
         m_sLayout->addWidget("NumberBoxPage", numberBoxPage);
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("NumberBoxPage"); });
 
-        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("PassWordBox", item);
+        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("PasswordBox", item);
+        item3->setKey("PasswordBoxPage");
         auto passwordBoxPage = new FluPasswordBoxPage;
         m_sLayout->addWidget("PasswordBoxPage", passwordBoxPage);
         connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("PasswordBoxPage"); });
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("RichEditBox", item);
+        item4->setKey("RichEditBoxPage");
+        
+
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RichTextBlock", item);
+        item5->setKey("RichTextBlockPage");
+
+
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("TextBlock", item);
+        item6->setKey("TextBlockPage");
+
 
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TextBox", item);
+        item7->setKey("TextBoxPage");
         auto textBoxPage = new FluTextBoxPage;
         m_sLayout->addWidget("TextBoxPage", textBoxPage);
         connect(item7, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextBoxPage"); });
+
+         connect(textPage, &FluTextPage::clickedHCard, [=](QString key) {
+            LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
 
         item->addItem(item1);
         item->addItem(item2);

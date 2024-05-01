@@ -30,8 +30,8 @@ class FluPasswordBox : public QWidget
         //  m_edit->setFixedWidth(120);
         m_edit->setFixedHeight(30);
 
-        m_hLayout->addWidget(m_edit, 1, Qt::AlignLeft);
-        m_hLayout->addWidget(m_btn, 0, Qt::AlignRight);
+        m_hLayout->addWidget(m_edit, 1);
+        m_hLayout->addWidget(m_btn);
         m_hLayout->addSpacing(4);
 
         // setFixedWidth(155);
@@ -90,7 +90,7 @@ class FluPasswordBox : public QWidget
 
     void resizeEvent(QResizeEvent* event)
     {
-        m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
+        //m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
     }
 
     void paintEvent(QPaintEvent* event)

@@ -14,6 +14,7 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
 
     m_iconLabel = new QLabel;
     m_iconLabel->setFixedSize(18, 18);
+    m_iconLabel->setAlignment(Qt::AlignCenter);
     m_iconLabel->setObjectName("iconLabel");
     m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, QColor(239, 239, 239), 18, 18));
     m_hMainLayout->addWidget(m_iconLabel);
@@ -71,9 +72,9 @@ void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)
     m_infoLabel->setProperty("infoBarType", infoBarType);
     m_closeBtn->setProperty("infoBarType", infoBarType);
     style()->polish(this);
-    m_iconLabel->style()->polish(this);
-    m_infoLabel->style()->polish(this);
-    m_closeBtn->style()->polish(this);
+    m_iconLabel->style()->polish(m_iconLabel);
+    m_infoLabel->style()->polish(m_infoLabel);
+    m_closeBtn->style()->polish(m_closeBtn);
 }
 
 void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)

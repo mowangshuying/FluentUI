@@ -214,11 +214,14 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeCollectionsNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections", this);
+        item->setKey("ConnectionsPage");
         auto collectionsPage = new FluCollectionsPage;
         m_sLayout->addWidget("CollectionsPage", collectionsPage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CollectionsPage"); });
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("FlipView", item);
+        item1->setKey("FlipViewPage");
+
         auto flipViewPage = new FluFlipViewPage;
         m_sLayout->addWidget("FlipViewPage", flipViewPage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FlipViewPage"); });
@@ -228,6 +231,8 @@ class FluGalleryWindow : public FluFrameLessWidget
         // FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
 
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("ListView", item);
+        item5->setKey("ListViewPage");
+
         auto listViewPage = new FluListViewPage;
         m_sLayout->addWidget("ListViewPage", listViewPage);
         connect(item5, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ListViewPage"); });
@@ -235,6 +240,18 @@ class FluGalleryWindow : public FluFrameLessWidget
         // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TreeView", item);
         // FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("DataGrid", item);
+
+        connect(collectionsPage, &FluCollectionsPage::clickedHCard, [=](QString key) {
+            LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
+
         item->addItem(item1);
         // item->addItem(item2);
         // item->addItem(item3);
@@ -300,22 +317,39 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeDialogsFlyouts()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts", this);
+        item->setKey("");
         auto dialogAndFlyoutPage = new FluDialogsAndFlyoutsPage;
         m_sLayout->addWidget("DialogsAndFlyoutsPage", dialogAndFlyoutPage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DialogsAndFlyoutsPage"); });
 
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("ContentDialog", item);
+        item1->setKey("ContentDialogPage");
 
         auto contentDialogPage = new FluContentDialogPage;
         m_sLayout->addWidget("ContentDialogPage", contentDialogPage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ContentDialogPage"); });
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Flyout", item);
+        item2->setKey("FlyoutPage");
+        
         auto flyoutPage = new FluFlyoutPage;
         m_sLayout->addWidget("FlyoutPage", flyoutPage);
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FlyoutPage"); });
 
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("TeachingTip", item);
+        item3->setKey("TeachingTipPage");
+
+        connect(dialogAndFlyoutPage, &FluDialogsAndFlyoutsPage::clickedHCard, [=](QString key) {
+            LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
+
         item->addItem(item1);
         item->addItem(item2);
         item->addItem(item3);

@@ -61,8 +61,8 @@ int main(int argc, char **argv)
     //  FluFlowLayoutDemo demo;
     //  demo.show();
 
-    FluLineEditDemo demo;
-    demo.show();
+   // FluLineEditDemo demo;
+   // demo.show();
 
     //  FluButtonDemo demo;
     //  demo.show();
@@ -160,8 +160,8 @@ int main(int argc, char **argv)
     // FluMenuBarDemo demo;
     // demo.show();
 
-    // FluInfoBarDemo demo;
-    // demo.show();
+     FluInfoBarDemo demo;
+     demo.show();
 
     // FluThreadDemo demo;
     // demo.show();

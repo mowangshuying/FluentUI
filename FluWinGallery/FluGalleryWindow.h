@@ -50,6 +50,7 @@
 #include "FluDialogsAndFlyoutsPage.h"
 #include "FluStatusAndInfoPage.h"
 #include "FluAutoSuggestBoxPage.h"
+#include "FluTextPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -524,11 +525,15 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeTextNavItem()
     {
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Font, "Text", this);
+        auto textPage = new FluTextPage;
+        m_sLayout->addWidget("TextPage", textPage);
+        connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextPage"); });
+
+
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
-        auto autoSuggestBox = new FluAutoSuggestBoxPage;
-        m_sLayout->addWidget("AutoSuggestBoxPage", autoSuggestBox);
+        auto autoSuggestBoxPage = new FluAutoSuggestBoxPage;
+        m_sLayout->addWidget("AutoSuggestBoxPage", autoSuggestBoxPage);
         connect(item1, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AutoSuggestBoxPage"); });
-        
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("NumberBox", item);
         auto numberBoxPage = new FluNumberBoxPage;

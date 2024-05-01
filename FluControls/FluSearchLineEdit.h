@@ -59,13 +59,13 @@ class FluSearchLineEdit : public QWidget
             {
                 setProperty("isFocused", true);
                 style()->polish(this);
-                //LOG_DEBUG << "focuse in";
+                // LOG_DEBUG << "focuse in";
             }
             else if (event->type() == QEvent::FocusOut)
             {
                 setProperty("isFocused", false);
                 style()->polish(this);
-                //LOG_DEBUG << "focuse out";
+                // LOG_DEBUG << "focuse out";
             }
             else if (event->type() == QEvent::KeyRelease)
             {

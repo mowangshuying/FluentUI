@@ -149,6 +149,7 @@
     <ClCompile Include="FluSliderPage.cpp" />
     <ClCompile Include="FluStatusAndInfoPage.cpp" />
     <ClCompile Include="FluTextBoxPage.cpp" />
+    <ClCompile Include="FluTextPage.cpp" />
     <ClCompile Include="FluTimePickerPage.cpp" />
     <ClCompile Include="FluToggleButtonPage.cpp" />
     <ClCompile Include="FluToggleSwitchPage.cpp" />
@@ -290,6 +291,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluAutoSuggestBoxPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluTextPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

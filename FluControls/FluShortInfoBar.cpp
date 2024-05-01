@@ -1,5 +1,6 @@
 #include "FluShortInfoBar.h"
 #include "FluInfoBarMgr.h"
+#include <QPointer>
 
 int FluShortInfoBar::m_count = 0;
 FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent /*= nullptr*/) : QWidget(parent)
@@ -101,10 +102,14 @@ void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
 void FluShortInfoBar::disappear()
 {
     // m_nDisappearDuration = duration;
+    QPointer<FluShortInfoBar> ptr(this); 
     if (m_nDisappearDuration > 0 && !m_bDisappearing)
     {
         m_bDisappearing = true;
         QTimer::singleShot(m_nDisappearDuration, [=]() {
+            if (ptr == nullptr)
+                return;
+
             m_opacityAni->setDuration(500);
             m_opacityAni->setStartValue(1);
             m_opacityAni->setEndValue(0);

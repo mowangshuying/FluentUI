@@ -529,7 +529,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("TextPage", textPage);
         connect(item, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextPage"); });
 
-
         FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("AutoSuggestBox", item);
         auto autoSuggestBoxPage = new FluAutoSuggestBoxPage;
         m_sLayout->addWidget("AutoSuggestBoxPage", autoSuggestBoxPage);

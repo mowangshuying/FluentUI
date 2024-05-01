@@ -102,7 +102,7 @@ void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
 void FluShortInfoBar::disappear()
 {
     // m_nDisappearDuration = duration;
-    QPointer<FluShortInfoBar> ptr(this); 
+    QPointer<FluShortInfoBar> ptr(this);
     if (m_nDisappearDuration > 0 && !m_bDisappearing)
     {
         m_bDisappearing = true;

@@ -70,10 +70,13 @@ class FluSplitButton : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
+            m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
+
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);
         }
         else
         {
+            m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);
         }
     }

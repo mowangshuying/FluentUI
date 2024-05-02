@@ -13,6 +13,8 @@ class FluColorFlyout : public QWidget
   public:
     FluColorFlyout(QWidget* targetWidget) : QWidget(nullptr), m_targetWidget(targetWidget)
     {
+        LOG_DEBUG << "called";
+
         m_gridLayout = new QGridLayout;
         setLayout(m_gridLayout);
         setMinimumSize(120, 120);
@@ -28,6 +30,11 @@ class FluColorFlyout : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluColorFlyout.qss", this);
         }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+    ~FluColorFlyout()
+    {
+        LOG_DEBUG << "called";
     }
 
     void addColorButton(FluColorButton* colorBtn, int row, int col)

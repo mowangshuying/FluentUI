@@ -51,6 +51,7 @@
 #include "FluStatusAndInfoPage.h"
 #include "FluAutoSuggestBoxPage.h"
 #include "FluTextPage.h"
+#include "FluSplitButtonPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -153,6 +154,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item6, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ToggleButtonPage"); });
 
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("SplitButton", item);
+        item7->setKey("SplitButtonPage");
+        auto splitButtonPage = new FluSplitButtonPage;
+        m_sLayout->addWidget("SplitButtonPage", splitButtonPage);
+        connect(item7, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("SplitButtonPage"); });
+
         FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("ToggleSplitButton", item);
 
         FluNavigationIconTextItem *item9 = new FluNavigationIconTextItem("CheckBox", item);
@@ -331,7 +337,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Flyout", item);
         item2->setKey("FlyoutPage");
-        
+
         auto flyoutPage = new FluFlyoutPage;
         m_sLayout->addWidget("FlyoutPage", flyoutPage);
         connect(item2, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FlyoutPage"); });
@@ -584,15 +590,12 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("RichEditBox", item);
         item4->setKey("RichEditBoxPage");
-        
 
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("RichTextBlock", item);
         item5->setKey("RichTextBlockPage");
 
-
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("TextBlock", item);
         item6->setKey("TextBlockPage");
-
 
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("TextBox", item);
         item7->setKey("TextBoxPage");
@@ -600,7 +603,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("TextBoxPage", textBoxPage);
         connect(item7, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextBoxPage"); });
 
-         connect(textPage, &FluTextPage::clickedHCard, [=](QString key) {
+        connect(textPage, &FluTextPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
             if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)

@@ -18,6 +18,8 @@ class FluSplitButtonDemo : public QWidget
 
         connect(splitButton, &FluSplitButton::clicked, [=]() {
             FluColorFlyout* colorLayout = new FluColorFlyout(splitButton);
+            colorLayout->setAttribute(Qt::WA_DeleteOnClose);
+
             auto colorBtn00 = new FluColorButton(QColor(255, 0, 0));
             colorLayout->addColorButton(colorBtn00, 0, 0);
 
@@ -41,6 +43,7 @@ class FluSplitButtonDemo : public QWidget
 
             connect(colorLayout, &FluColorFlyout::colorChanged, [=](QColor color) { LOG_DEBUG << "color: rgb(" << color.red() << "," << color.green() << "," << color.blue() << ")."; });
             colorLayout->show();
+            // delete colorLayout;
         });
         resize(600, 400);
     }

@@ -164,6 +164,9 @@
     <ClCompile Include="FluTextPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluSplitButtonPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -302,6 +305,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTextPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluSplitButtonPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

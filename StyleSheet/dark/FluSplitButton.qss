@@ -1,0 +1,28 @@
+FluSplitButton {
+    background-color: rgb(45, 45, 45);
+    border: 1px solid rgb(65, 65, 65);
+    border-bottom: 1px solid rgb(60, 60, 60);
+    border-radius: 4px;
+}
+
+#textBtn {
+    /* background-color: antiquewhite; */
+    background-color: transparent;
+    color: white;
+    height: 30px;
+    padding: 4px;
+    border: 1px solid transparent;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#dropDownBtn {
+    /* background-color: aqua; */
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-left: 1px solid rgb(60, 60, 60);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    width: 30px;
+    height: 30px;
+}

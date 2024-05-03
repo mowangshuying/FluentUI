@@ -41,6 +41,7 @@
 #include "FluTimePickerDemo.h"
 #include "FluTabBarDemo.h"
 #include "FluTabViewDemo.h"
+#include "FluDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -172,8 +173,8 @@ int main(int argc, char **argv)
     // FluFlyoutDemo demo;
     // demo.show();
 
-    FluSplitButtonDemo demo;
-    demo.show();
+    //FluSplitButtonDemo demo;
+    //demo.show();
 
     // FluRatingControlDemo demo;
     // demo.show();
@@ -189,6 +190,9 @@ int main(int argc, char **argv)
 
     // FluTabViewDemo demo;
     // demo.show();
+
+    FluDemo demo;
+    demo.show();
 
     return app.exec();
 }

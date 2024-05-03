@@ -68,6 +68,7 @@
     <ClCompile>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>_DEBUG_QSS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -79,6 +80,9 @@
       <AdditionalDependencies>FluUtils.lib;FluControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -115,6 +119,7 @@
     <ClCompile Include="FluCheckBoxDemo.cpp" />
     <ClCompile Include="FluColorDemo.cpp" />
     <ClCompile Include="FluComboBoxDemo.cpp" />
+    <ClCompile Include="FluDemo.cpp" />
     <ClCompile Include="FluDisplay9.cpp" />
     <ClCompile Include="FluDisplayBoxDemo.cpp" />
     <ClCompile Include="FluDisplayCodeDemo.cpp" />
@@ -172,6 +177,7 @@
     <QtMoc Include="FluNavigationDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluDemo.h" />
     <ClInclude Include="FluTabViewDemo.h" />
     <QtMoc Include="FluTabBarDemo.h" />
     <QtMoc Include="FluTimePickerDemo.h" />

@@ -1,14 +1,14 @@
 QMenuBar {
     background-color: transparent;
     color: black;
-    padding: 8px;
+    padding: 5px;
     font-size: 14px;
     font-weight: 400;
 }
 
 QMenuBar::item {
     background-color: transparent;
-    padding: 8px 8px;
+    padding: 5px 8px;
     margin-left: 4px;
     border-radius: 4px;
 }

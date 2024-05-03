@@ -14,3 +14,12 @@ message("add_library(\${TGT} SHARED")
     message("    \"${f}\"")
     endforeach()
 message(")")
+
+qt_add_executable(${TGT}
+    ${DIR_SRCS}
+)
+
+target_link_libraries(${TGT}
+    PRIVATE
+    FluControls
+)

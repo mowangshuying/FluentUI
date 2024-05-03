@@ -64,6 +64,7 @@ class FluSplitButtonPage : public FluAEmptyPage
         connect(splitButton, &FluSplitButton::clicked, [=]() { colorLayout->show(); });
 
         displayBox->getBodyLayout()->addWidget(splitButton);
+        displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     }
   public slots:

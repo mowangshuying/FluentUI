@@ -21,17 +21,39 @@ class FluAppBarButtonPage : public FluAEmptyPage
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButtonPage.qss", this);
 
-        auto displayBox1 = new FluDisplayBox;
-        displayBox1->setTitle("An AppBarButton with a symbol icon.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode1.md");
-
-        auto appBarButton = new FluAppBarButton(FluAwesomeType::Like);
-        appBarButton->setText("SymbolIcon");
-        displayBox1->getBodyLayout()->addWidget(appBarButton);
-
-        m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+        addSymbolIconAppBarButton();
+        addKeyboardAcceleratorAppBarButton();
+          
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 
+      }
+
+      void addSymbolIconAppBarButton()
+      {
+          auto displayBox = new FluDisplayBox;
+          displayBox->setTitle("An AppBarButton with a symbol icon.");
+          displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode1.md");
+
+          auto appBarButton = new FluAppBarButton(FluAwesomeType::Like);
+          appBarButton->setText("SymbolIcon");
+          displayBox->getBodyLayout()->addWidget(appBarButton);
+          connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
+
+          m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+      }
+
+      void addKeyboardAcceleratorAppBarButton()
+      {
+          auto displayBox = new FluDisplayBox;
+          displayBox->setTitle("An AppBarButton with a KeyboardAccelerator.");
+          displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode2.md");
+
+          auto appBarButton = new FluAppBarButton(FluAwesomeType::Save);
+          appBarButton->setText("Save");
+          displayBox->getBodyLayout()->addWidget(appBarButton);
+          connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
+
+          m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
       }
 
       public slots:

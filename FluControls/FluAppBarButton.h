@@ -31,6 +31,7 @@ class FluAppBarButton : public QWidget
           m_vMainLayout->addWidget(m_iconBtn);
 
           m_textLabel = new QLabel;
+          m_textLabel->setAlignment(Qt::AlignHCenter);
           m_textLabel->setObjectName("textLabel");
           m_vMainLayout->addWidget(m_textLabel);
 

@@ -52,6 +52,7 @@
 #include "FluAutoSuggestBoxPage.h"
 #include "FluTextPage.h"
 #include "FluSplitButtonPage.h"
+#include "FluAppBarButtonPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -443,6 +444,11 @@ class FluGalleryWindow : public FluFrameLessWidget
         //  FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("XamlUICommand", item);
         //  FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("StandardUICommand", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("AppBarButton", item);
+        auto appBarButtonPage = new FluAppBarButtonPage;
+        m_sLayout->addWidget("AppBarButtonPage", appBarButtonPage);
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AppBarButtonPage");
+        });
+
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("AppBarSeparator", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("AppBarToggleButton", item);
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("CommandBar", item);

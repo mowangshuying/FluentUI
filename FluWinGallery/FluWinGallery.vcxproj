@@ -108,6 +108,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FluAppBarButtonPage.cpp" />
     <ClCompile Include="FluAutoSuggestBoxPage.cpp" />
     <ClCompile Include="FluBorderPage.cpp" />
     <ClCompile Include="FluCalendarDatePickerPage.cpp" />
@@ -298,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluSplitButtonPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluAppBarButtonPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

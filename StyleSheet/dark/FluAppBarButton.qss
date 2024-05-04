@@ -1,0 +1,20 @@
+FluAppBarButton {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+FluAppBarButton:hover {
+    background-color: rgb(45, 45, 45);
+}
+
+#iconBtn {
+    background-color: transparent;
+    color: white;
+}
+
+#textLabel {
+    background-color: transparent;
+    color: white;
+    font-size: 8px;
+}

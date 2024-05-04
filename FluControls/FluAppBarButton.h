@@ -6,6 +6,8 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QVBoxLayout>
+#include <QShortcut>
+#include <QKeySequence>
 
 #include "../FluUtils/FluUtils.h"
 
@@ -13,7 +15,7 @@ class FluAppBarButton : public QWidget
 {
     Q_OBJECT
   public:
-    FluAppBarButton(FluAwesomeType awesomeType, QWidget* parent = nullptr) : QWidget(parent), m_awesomeType(awesomeType)
+    FluAppBarButton(FluAwesomeType awesomeType, QWidget* parent = nullptr) : QWidget(parent), m_awesomeType(awesomeType), m_shortCut(nullptr)
       {
           m_vMainLayout = new QVBoxLayout;
           setLayout(m_vMainLayout);
@@ -60,6 +62,20 @@ class FluAppBarButton : public QWidget
           return m_textLabel->text();
       }
 
+      void setShortCut(QKeySequence keySequence)
+      {
+          if (m_shortCut != nullptr)
+              delete m_shortCut;
+
+          m_shortCut = new QShortcut(this);
+          m_shortCut->setKey(keySequence);
+          m_shortCut->setContext(Qt::ApplicationShortcut);
+          connect(m_shortCut, &QShortcut::activated, [=]() { 
+              emit clicked();
+              LOG_DEBUG << "called";
+          });
+      }
+
       void mouseReleaseEvent(QMouseEvent* event)
       {
           QWidget::mouseReleaseEvent(event);
@@ -94,4 +110,6 @@ class FluAppBarButton : public QWidget
       QVBoxLayout* m_vMainLayout;
       QPushButton* m_iconBtn;
       QLabel* m_textLabel;
+
+      QShortcut* m_shortCut;
 };

@@ -50,6 +50,7 @@ class FluAppBarButtonPage : public FluAEmptyPage
 
           auto appBarButton = new FluAppBarButton(FluAwesomeType::Save);
           appBarButton->setText("Save");
+          appBarButton->setShortCut(QKeySequence(Qt::CTRL + Qt::Key_S));
           displayBox->getBodyLayout()->addWidget(appBarButton);
           connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
 

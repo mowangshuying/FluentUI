@@ -7,8 +7,9 @@
 #include "../FluControls/FluHyperLinkButton.h"
 #include "../FluControls/FluRepeatButton.h"
 #include "../FluControls/FluAppBarButton.h"
+#include "../FluControls/FluAppBarToggleButton.h"
 
-FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent)
+FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay16(parent)
 {
     auto btn1 = new FluPushButton(this);
     btn1->setText("Standard XAML button");
@@ -45,6 +46,10 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent
     auto btn9 = new FluAppBarButton(FluAwesomeType::Like);
     btn9->setText("SymbolIcon");
     addDemo(btn9);
+
+    auto btn10 = new FluAppBarToggleButton(FluAwesomeType::Like);
+    btn10->setText("SymbolIcon");
+    addDemo(btn10);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

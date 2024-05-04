@@ -34,7 +34,7 @@ class FluAppBarButton : public QWidget
           m_textLabel->setObjectName("textLabel");
           m_vMainLayout->addWidget(m_textLabel);
 
-          m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType));
+          m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
           FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButton.qss", this);
           connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
       }
@@ -80,7 +80,6 @@ class FluAppBarButton : public QWidget
           if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
           {
               m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-
               FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButton.qss", this);
           }
           else

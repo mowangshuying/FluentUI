@@ -3,27 +3,27 @@
 #include <QWidget>
 #include <QGridLayout>
 
-// to display widget max can display 9 wdigets.
-class FluDisplay9 : public QWidget
+// to display widget max can display 16 wdigets.
+class FluDisplay16 : public QWidget
 {
     Q_OBJECT
   public:
-    FluDisplay9(QWidget* parent = nullptr) : QWidget(parent)
+    FluDisplay16(QWidget* parent = nullptr) : QWidget(parent)
     {
         gridLayout = new QGridLayout;
         setLayout(gridLayout);
         setStyleSheet("background-color:rgb(249, 249, 249");
-        resize(600, 400);
+        setFixedSize(800, 600);
     }
 
     void addDemo(QWidget* widget)
     {
-        if (gridLayout->count() >= 9)
+        if (gridLayout->count() >= 16)
             return;
 
         int count = gridLayout->count();
-        int row = count / 3;
-        int col = count % 3;
+        int row = count / 4;
+        int col = count % 4;
 
         gridLayout->addWidget(widget, row, col);
     }

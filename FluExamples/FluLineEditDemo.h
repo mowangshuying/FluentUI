@@ -3,18 +3,18 @@
 #include <QLineEdit>
 
 #include "../FluControls/FluLineEdit.h"
-#include "FluDisplay9.h"
+#include "FluDisplay16.h"
 #include "../FluControls/FluSearchLineEdit.h"
 #include "../FluControls/FluAutoSuggestBox.h"
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QPainter>
 
-class FluLineEditDemo : public FluDisplay9
+class FluLineEditDemo : public FluDisplay16
 {
     Q_OBJECT
   public:
-    FluLineEditDemo(QWidget* parent = nullptr) : FluDisplay9(parent)
+    FluLineEditDemo(QWidget* parent = nullptr) : FluDisplay16(parent)
     {
         auto lineEdit = new FluLineEdit(this);
         lineEdit->setFixedSize(120, 30);

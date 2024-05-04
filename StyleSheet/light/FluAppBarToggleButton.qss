@@ -1,0 +1,41 @@
+FluAppBarToggleButton[toggled=false] {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+FluAppBarToggleButton[toggled=false]:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+FluAppBarToggleButton[toggled=true] {
+    background-color: rgb(0, 90, 158);
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+FluAppBarToggleButton[toggled=true]:hover {
+    background-color: rgb(25, 106, 167);
+}
+
+#iconBtn[toggled=false] {
+    background-color: transparent;
+    color: black;
+}
+
+#textLabel[toggled=false] {
+    background-color: transparent;
+    color: black;
+    font-size: 8px;
+}
+
+#iconBtn[toggled=true] {
+    background-color: transparent;
+    color: white;
+}
+
+#textLabel[toggled=true] {
+    background-color: transparent;
+    color: white;
+    font-size: 8px;
+}

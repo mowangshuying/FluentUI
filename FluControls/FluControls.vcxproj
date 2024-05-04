@@ -116,6 +116,7 @@
     <ClCompile Include="FluAction.cpp" />
     <ClCompile Include="FluAmPmView.cpp" />
     <ClCompile Include="FluAppBarButton.cpp" />
+    <ClCompile Include="FluAppBarToggleButton.cpp" />
     <ClCompile Include="FluAutoSuggestBox.cpp" />
     <ClCompile Include="FluBorder.cpp" />
     <ClCompile Include="FluCalendarDatePicker.cpp" />
@@ -285,6 +286,7 @@
     <QtMoc Include="FluAmPmView.h" />
     <QtMoc Include="FluAutoSuggestBox.h" />
     <QtMoc Include="FluAppBarButton.h" />
+    <QtMoc Include="FluAppBarToggleButton.h" />
     <ClInclude Include="FluCalendarDef.h" />
     <QtMoc Include="FluCalendarSelectDayView.h" />
     <QtMoc Include="FluCalendarItem.h" />

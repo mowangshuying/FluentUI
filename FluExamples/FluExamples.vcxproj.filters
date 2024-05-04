@@ -50,7 +50,7 @@
     <ClCompile Include="FluLineEditDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluDisplay9.cpp">
+    <ClCompile Include="FluDisplay16.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluMultiLineTextDemo.cpp">
@@ -184,7 +184,7 @@
     <QtMoc Include="FluLineEditDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluDisplay9.h">
+    <QtMoc Include="FluDisplay16.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTextAreaDemo.h">

@@ -6,6 +6,7 @@
 #include "../FluControls/FluRadioButton.h"
 #include "../FluControls/FluHyperLinkButton.h"
 #include "../FluControls/FluRepeatButton.h"
+#include "../FluControls/FluAppBarButton.h"
 
 FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent)
 {
@@ -40,6 +41,10 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay9(parent
     auto btn8 = new FluRepeatButton;
     btn8->setText("Click and Holder");
     addDemo(btn8);
+
+    auto btn9 = new FluAppBarButton(FluAwesomeType::Like);
+    btn9->setText("SymbolIcon");
+    addDemo(btn9);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

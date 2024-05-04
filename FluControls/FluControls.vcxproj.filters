@@ -311,6 +311,9 @@
     <ClCompile Include="FluAutoSuggestBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluAppBarButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -590,6 +593,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluAutoSuggestBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluAppBarButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

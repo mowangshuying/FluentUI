@@ -188,11 +188,14 @@ int main(int argc, char **argv)
     // FluTabBarDemo demo;
     // demo.show();
 
-    // FluTabViewDemo demo;
-    // demo.show();
+   //  FluTabViewDemo demo;
+   //  demo.show();
 
-    FluFrameLessDemo demo;
-    demo.show();
+    //FluFrameLessDemo demo;
+    //demo.show();
 
-    return app.exec();
+     FluButtonDemo demo;
+     demo.show();
+    
+     return app.exec();
 }

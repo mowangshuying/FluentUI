@@ -13,9 +13,14 @@ class FluToggleSwitch : public QCheckBox
         m_onText = "On";
         m_offText = "Off";
 
+        m_bEmptyText = false;
+
         setText(m_offText);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
+            if (m_bEmptyText)
+                return;
+
             if (bChecked)
                 setText(m_onText);
             else
@@ -33,6 +38,9 @@ class FluToggleSwitch : public QCheckBox
         setText(m_offText);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
+            if (m_bEmptyText)
+                return;
+
             if (bChecked)
                 setText(m_onText);
             else
@@ -46,6 +54,11 @@ class FluToggleSwitch : public QCheckBox
     {
         m_onText = onText;
         m_offText = offText;
+    }
+
+    void setEmptyText(bool bEmpty)
+    {
+        m_bEmptyText = bEmpty;
     }
 
   public slots:
@@ -62,6 +75,7 @@ class FluToggleSwitch : public QCheckBox
     }
 
   protected:
+    bool m_bEmptyText;
     QString m_onText;
     QString m_offText;
 };

@@ -155,7 +155,7 @@
     <ClCompile Include="FluTabViewDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluDemo.cpp">
+    <ClCompile Include="FluFrameLessDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -262,7 +262,7 @@
     <QtMoc Include="FluTabBarDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluDemo.h">
+    <QtMoc Include="FluFrameLessDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

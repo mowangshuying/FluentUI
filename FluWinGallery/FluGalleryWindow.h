@@ -53,6 +53,7 @@
 #include "FluTextPage.h"
 #include "FluSplitButtonPage.h"
 #include "FluAppBarButtonPage.h"
+#include "FluAppBarToggleButtonPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -451,6 +452,10 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("AppBarSeparator", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("AppBarToggleButton", item);
+        auto appBarToggleButtonPage = new FluAppBarToggleButtonPage;
+        m_sLayout->addWidget("AppBarToggleButtonPage", appBarToggleButtonPage);
+        connect(item5, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AppBarToggleButtonPage"); });
+
         FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("CommandBar", item);
 
         FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("MenuBar", item);

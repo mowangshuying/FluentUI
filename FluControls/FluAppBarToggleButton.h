@@ -47,6 +47,18 @@ class FluAppBarToggleButton : public QWidget
             m_bToggled = !m_bToggled;
             setToggled(m_bToggled);
 
+            updateIcon();
+            
+
+            update();
+        });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+    void updateIcon()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
             if (m_bToggled)
             {
                 m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
@@ -55,10 +67,18 @@ class FluAppBarToggleButton : public QWidget
             {
                 m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
             }
-
-            update();
-        });
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        }
+        else
+        {
+            if (m_bToggled)
+            {
+                m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
+            }
+            else
+            {
+                m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
+            }
+        }
     }
 
     void setAwesomeType(FluAwesomeType awesomeType)
@@ -118,14 +138,14 @@ class FluAppBarToggleButton : public QWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButton.qss", this);
         }
         else
         {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarToggleButton.qss", this);
         }
+
+        updateIcon();
     }
 
   protected:

@@ -194,8 +194,11 @@ int main(int argc, char **argv)
     //FluFrameLessDemo demo;
     //demo.show();
 
-     FluButtonDemo demo;
-     demo.show();
+     //FluButtonDemo demo;
+     //demo.show();
     
+      FluNavigationDemo demo;
+      demo.show();
+
      return app.exec();
 }

@@ -1,6 +1,7 @@
 FluNavigationIconTextItem {
     /* background-color: blueviolet; */
-    background-color: rgb(243, 243, 243);
+    background-color: transparent;
+    /* background-color: rgb(243, 243, 243); */
     border-radius: 4px;
 }
 
@@ -53,6 +54,7 @@ FluNavigationIconTextItem {
 
 #label {
     background-color: transparent;
+    /* background-color: blueviolet; */
     font-size: 12px;
 }
 
@@ -62,5 +64,10 @@ FluNavigationIconTextItem {
 
 #arrow {
     border: none;
+    background-color: transparent;
+}
+
+#wrapWidget2 {
+    /* background-color: blueviolet; */
     background-color: transparent;
 }

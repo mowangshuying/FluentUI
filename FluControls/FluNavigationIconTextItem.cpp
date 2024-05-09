@@ -251,11 +251,9 @@ void FluNavigationIconTextItem::onItemClicked()
 
     // LOG_DEBUG << "get root item.";
     auto navView = rootItem->getParentView();
-    if (navView == nullptr)
-        return;
-
     // LOG_DEBUG << "bDown:" << m_bDown << "nav long:" << navView->isLong();
-    if (m_bDown && navView->isLong())
+    
+    if ((navView != nullptr && m_bDown && navView->isLong()) || (navView == nullptr && isLong() && m_bDown))
     {
         // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp, FluThemeUtils::getUtils()->getTheme()));
@@ -280,7 +278,7 @@ void FluNavigationIconTextItem::onItemClicked()
         m_wrapWidget2->show();
     }
 
-    if (!m_bDown && navView->isLong())
+    if ((navView != nullptr && !m_bDown && navView->isLong()) || (navView == nullptr && isLong() && !m_bDown))
     {
         // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
@@ -294,7 +292,17 @@ void FluNavigationIconTextItem::onItemClicked()
     }
 
     m_bDown = !m_bDown;
-    navView->clearAllItemsSelectState();  // clear state
-    updateSelected(true);
-    navView->updateAllItemsStyleSheet();  // update state
+    if (navView != nullptr)
+    {
+        navView->clearAllItemsSelectState();  // clear state
+        updateSelected(true);
+        navView->updateAllItemsStyleSheet();  // update state
+    }
+
+    if (navView == nullptr)
+    {
+        rootItem->clearAllItemsSelectState();
+        updateSelected(true);
+        rootItem->updateAllItemsStyleSheet();
+    }
 }

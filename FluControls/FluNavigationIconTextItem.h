@@ -121,6 +121,11 @@ class FluNavigationIconTextItem : public FluNavigationItem
         return m_bDown;
     }
 
+    bool isLeaf()
+    {
+        return m_items.empty();
+    }
+
     void mouseReleaseEvent(QMouseEvent *event) override;
 
     // to enable qss

@@ -34,7 +34,12 @@ void FluNavigationFlyIconTextItem::setIconTextItems(std::vector<FluNavigationIco
         m_items.push_back(newItem);
 
         connect(newItem, &FluNavigationIconTextItem::itemClicked, [=]() { 
-            item->onItemClickedDirect();
+            //item->onItemClickedDirect();
+            if (newItem->isLeaf())
+            {
+                emit item->itemClicked();
+                close();
+            }
         });
     }
 

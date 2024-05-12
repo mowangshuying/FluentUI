@@ -27,6 +27,10 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluNavigationIconTextItem(QString text, QWidget *parent = nullptr);
 
+    FluNavigationIconTextItem(FluNavigationIconTextItem *item);
+
+    void copyItem(FluNavigationIconTextItem* item);
+
     QWidget *getWrapWidget1()
     {
         return m_wrapWidget1;
@@ -35,6 +39,26 @@ class FluNavigationIconTextItem : public FluNavigationItem
     QWidget *getWrapWidget2()
     {
         return m_wrapWidget2;
+    }
+
+    QPushButton* getIconBtn()
+    {
+        return m_iconBtn;
+    }
+
+    QLabel* getLabel()
+    {
+        return m_label;
+    }
+
+    FluAwesomeType getAwesomeType()
+    {
+        return m_awesomeType;
+    }
+
+    bool getHideIcon()
+    {
+        return m_bHideIcon;
     }
 
     void hideLabelArrow()
@@ -63,6 +87,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     void addItem(FluNavigationIconTextItem *item);
 
+    int calcItemW1Width();
     int calcItemW2Height(FluNavigationIconTextItem *item);
 
     void adjustItemHeight(FluNavigationIconTextItem *item);
@@ -137,13 +162,13 @@ class FluNavigationIconTextItem : public FluNavigationItem
         // LOG_DEBUG << "called";
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
+            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
             m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(8, 8, 8)));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss", this);
         }
         else
         {
-            m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(239, 239, 239)));
+            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(239, 239, 239)));
             m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(239, 239, 239)));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationIconTextItem.qss", this);
         }
@@ -156,7 +181,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
     QWidget *m_emptyWidget;
 
     QWidget *m_indicator;
-    QPushButton *m_icon;
+    QPushButton *m_iconBtn;
     QLabel *m_label;
     QPushButton *m_arrow;
     QHBoxLayout *m_hLayout1;
@@ -169,6 +194,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluAwesomeType m_awesomeType;  // the icon display which
 
+    bool m_bHideIcon;
     bool m_bDown;
     bool m_bLong;
     bool m_bSelected;

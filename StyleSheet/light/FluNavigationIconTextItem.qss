@@ -25,6 +25,7 @@ FluNavigationIconTextItem {
 #wrapWidget1:hover {
     /* background-color: aquamarine; */
     background-color: rgb(234, 234, 234);
+    /* background-color: bisque; */
     border-radius: 4px;
 }
 
@@ -50,6 +51,7 @@ FluNavigationIconTextItem {
 #icon {
     border: none;
     background-color: transparent;
+    /* background-color: aquamarine; */
 }
 
 #label {

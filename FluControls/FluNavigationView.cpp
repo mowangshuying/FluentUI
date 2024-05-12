@@ -166,7 +166,8 @@ void FluNavigationView::paintEvent(QPaintEvent *event)
 
 void FluNavigationView::onMenuItemClicked()
 {
-    QVector<QWidget *> itemVct;
+    LOG_DEBUG << "called.";
+    std::vector<QWidget *> itemVct;
     for (int i = 0; i < m_topWrapWidget->layout()->count(); i++)
     {
         itemVct.push_back(m_topWrapWidget->layout()->itemAt(i)->widget());

@@ -3,10 +3,12 @@
 #include <QStyle>
 #include "../FluUtils/FluUtils.h"
 #include "FluNavigationView.h"
+#include "FluNavigationFlyIconTextItem.h"
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
 {
     m_itemType = FluNavigationItemType::IconText;
+    m_bHideIcon = false;
     setFixedSize(320, 40);
     m_wrapWidget1 = new QWidget(this);
     m_wrapWidget2 = new QWidget(this);
@@ -34,39 +36,42 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     //  m_vMainLayout->addWidget(m_wrapWidget1);
 
     m_vLayout1 = new QVBoxLayout(m_wrapWidget2);
-    m_hLayout1->setContentsMargins(0, 4, 0, 4);
+    m_hLayout1->setContentsMargins(4, 4, 4, 4);
     m_indicator = new QWidget(this);
-    m_icon = new QPushButton(this);
+    m_iconBtn = new QPushButton(this);
     m_label = new QLabel("Home");
     m_arrow = new QPushButton(this);
 
-    m_hLayout1->addSpacing(4);
+    m_hLayout1->setSpacing(0);
+   // m_hLayout1->addSpacing(4);
     m_hLayout1->addWidget(m_emptyWidget);
     m_hLayout1->addWidget(m_indicator);
-    m_hLayout1->addWidget(m_icon);
-    m_hLayout1->addSpacing(12);
+    m_hLayout1->addWidget(m_iconBtn);
+    m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_label, 1);
     m_hLayout1->addWidget(m_arrow);
+  //  m_hLayout1->addSpacing(4);
 
-    m_hLayout1->setSpacing(0);
+    //m_hLayout1->setSpacing(0);
 
     m_indicator->setFixedHeight(18);
     m_indicator->setFixedWidth(4);
-    m_icon->setFixedSize(30, 30);
+    m_iconBtn->setFixedSize(30, 30);
     m_label->setWordWrap(true);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
     m_vLayout1->setSpacing(5);
     m_indicator->setObjectName("indicator");
-    m_icon->setObjectName("icon");
+    m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
 
-    m_icon->setIconSize(QSize(24, 24));
-    m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home));
+    m_iconBtn->setIconSize(QSize(24, 24));
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home));
 
     m_arrow->setIconSize(QSize(18, 18));
     m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
+    m_arrow->setFixedWidth(25);
     m_bDown = true;
     m_bLong = true;
     m_arrow->hide();
@@ -81,20 +86,21 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     m_parentView = nullptr;
     connect(m_arrow, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
 
-    connect(m_icon, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
+    connect(m_iconBtn, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
     connect(this, &FluNavigationIconTextItem::itemClicked, [=]() { onItemClicked(); });
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QIcon icon, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
 {
-    m_icon->setIcon(icon);
+    m_iconBtn->setIcon(icon);
     m_label->setText(text);
 }
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
 {
-    m_icon->hide();
+    m_iconBtn->hide();
+    m_bHideIcon = true;
     // m_icon->setIcon(QIcon());
     m_label->setText(text);
 }
@@ -102,8 +108,33 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QString text, QWidget *pare
 FluNavigationIconTextItem::FluNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
 {
     m_awesomeType = awesomeType;
-    m_icon->setIcon(FluIconUtils::getFluentIcon(m_awesomeType));
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType));
     m_label->setText(text);
+}
+
+ FluNavigationIconTextItem::FluNavigationIconTextItem(FluNavigationIconTextItem *item) : FluNavigationIconTextItem()
+{
+    copyItem(item);
+}
+
+void FluNavigationIconTextItem::copyItem(FluNavigationIconTextItem *item)
+{
+    m_iconBtn->setIcon(item->getIconBtn()->icon());
+    m_label->setText(item->getLabel()->text());
+    m_awesomeType = item->getAwesomeType();
+
+    m_bHideIcon = item->getHideIcon();
+
+    if (m_bHideIcon)
+        m_iconBtn->hide();
+
+    std::vector<FluNavigationIconTextItem *> items = item->getChildItems();
+    for (auto tmpItem : items)
+    {
+        auto newItem = new FluNavigationIconTextItem;
+        newItem->copyItem(tmpItem);
+        addItem(newItem);
+    }
 }
 
 std::vector<FluNavigationIconTextItem *> FluNavigationIconTextItem::getChildItems()
@@ -124,6 +155,34 @@ void FluNavigationIconTextItem::addItem(FluNavigationIconTextItem *item)
     m_vLayout1->addWidget(item);
     // m_vLayout1->addSpacing(15);
     m_arrow->show();
+}
+
+int FluNavigationIconTextItem::calcItemW1Width()
+{
+    QMargins margins = m_wrapWidget1->contentsMargins();
+    int nIndicatorWidth = m_indicator->width();
+    
+    int nIconWidth = m_iconBtn->width();
+    if (m_bHideIcon)
+        nIconWidth = 0;
+
+    int nSpacing = 8;
+    int nLabelWidth = m_label->fontMetrics().boundingRect(m_label->text()).width();
+    int nArrowWidth = m_arrow->width();
+    
+    if (m_items.empty())
+        nArrowWidth = 0;
+
+    LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
+    LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
+    LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
+    LOG_DEBUG << "nIconWidth:" << nIconWidth;
+    LOG_DEBUG << "nSpacing:" << nSpacing;
+    LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
+    LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
+    LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
+
+    return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth +nArrowWidth + margins.right() + 20;
 }
 
 int FluNavigationIconTextItem::calcItemW2Height(FluNavigationIconTextItem *item)
@@ -198,7 +257,7 @@ void FluNavigationIconTextItem::updateItemsStyleSheet(FluNavigationIconTextItem 
     item->m_wrapWidget1->style()->polish(item->m_wrapWidget1);
     item->m_wrapWidget2->style()->polish(item->m_wrapWidget2);
     item->m_indicator->style()->polish(item->m_indicator);
-    item->m_icon->style()->polish(item->m_icon);
+    item->m_iconBtn->style()->polish(item->m_iconBtn);
     item->m_label->style()->polish(item->m_label);
     item->m_arrow->style()->polish(item->m_arrow);
 
@@ -288,6 +347,27 @@ void FluNavigationIconTextItem::onItemClicked()
         {
             m_wrapWidget2->hide();
             adjustItemHeight(m_parentItem);
+        }
+    }
+
+    if (navView != nullptr && !navView->isLong() && rootItem == this)
+    {
+        if (!getChildItems().empty())
+        {
+            LOG_DEBUG << "Clicked IconTextItem text:" << m_label->text();
+            // log gemo
+            LOG_DEBUG << "geometry:" << geometry();
+            LOG_DEBUG << "x:" << x() << ","
+                      << "y:" << y();
+            // log global
+            QPoint gPoint = mapToGlobal(QPoint(navView->width(), 0));
+            // show flyout icon text item;
+#ifdef _DEBUG
+            auto flyIconTextItem = new FluNavigationFlyIconTextItem;
+            flyIconTextItem->setIconTextItems(getChildItems());
+            flyIconTextItem->move(gPoint.x(), gPoint.y());
+            flyIconTextItem->show();
+#endif
         }
     }
 

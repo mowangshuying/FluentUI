@@ -34,14 +34,7 @@ class FluSplitButton : public FluWidget
         connect(m_textBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
         connect(m_dropDownBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);
-        m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);
-        }
-
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+         onThemeChanged();
     }
 
     void setText(QString text)

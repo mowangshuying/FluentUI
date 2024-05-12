@@ -25,12 +25,7 @@ class FluColorFlyout : public FluWidget
         setAttribute(Qt::WA_TranslucentBackground);
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorFlyout.qss", this);
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluColorFlyout.qss", this);
-        }
-        
+        onThemeChanged();
     }
 
     ~FluColorFlyout()
@@ -57,6 +52,7 @@ class FluColorFlyout : public FluWidget
 
     void showEvent(QShowEvent* event)
     {
+        FluWidget::showEvent(event);
         if (m_targetWidget == nullptr)
             return;
 

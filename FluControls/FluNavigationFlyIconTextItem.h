@@ -30,6 +30,8 @@ class FluNavigationFlyIconTextItem : public FluWidget
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
 
+  public slots:
+    void onThemeChanged();
   protected:
     QVBoxLayout* m_vMainLayout;
 

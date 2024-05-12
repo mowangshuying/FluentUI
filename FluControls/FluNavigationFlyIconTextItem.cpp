@@ -21,8 +21,9 @@ FluNavigationFlyIconTextItem::FluNavigationFlyIconTextItem(QWidget* parent /*= n
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
+    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
+    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
+    onThemeChanged();
 }
 
 void FluNavigationFlyIconTextItem::setIconTextItems(std::vector<FluNavigationIconTextItem*> items)
@@ -69,4 +70,19 @@ void FluNavigationFlyIconTextItem::adjustItemSize()
 
     // m_widget->setFixedWidth(nMaxWidth + 10);
     setFixedWidth(nMaxWidth + 25);
+}
+
+void FluNavigationFlyIconTextItem::onThemeChanged()
+{
+    // LOG_DEBUG << "called";
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationFlyIconTextItem.qss", m_widget);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationFlyIconTextItem.qss", this);
+    }
 }

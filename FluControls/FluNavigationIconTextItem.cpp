@@ -78,8 +78,8 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
 
     m_bEnableThisItem = true;
     m_awesomeType = FluAwesomeType::None;
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
-    setStyleSheet(qss);
+  //  QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
+  //  setStyleSheet(qss);
 
     // m_currentWidth  = 320;
     m_parentItem = nullptr;
@@ -88,6 +88,8 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
 
     connect(m_iconBtn, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
     connect(this, &FluNavigationIconTextItem::itemClicked, [=]() { onItemClicked(); });
+
+    onThemeChanged();
     
 }
 
@@ -362,12 +364,12 @@ void FluNavigationIconTextItem::onItemClicked()
             // log global
             QPoint gPoint = mapToGlobal(QPoint(navView->width(), 0));
             // show flyout icon text item;
-#ifdef _DEBUG
+//#ifdef _DEBUG
             auto flyIconTextItem = new FluNavigationFlyIconTextItem;
             flyIconTextItem->setIconTextItems(getChildItems());
             flyIconTextItem->move(gPoint.x(), gPoint.y());
             flyIconTextItem->show();
-#endif
+//#endif
         }
     }
 

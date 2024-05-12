@@ -1,12 +1,12 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
-class FluAllGlobalColorDemo : public QWidget
+class FluAllGlobalColorDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAllGlobalColorDemo(QWidget *parent = nullptr) : QWidget(parent)
+    FluAllGlobalColorDemo(QWidget *parent = nullptr) : FluWidget(parent)
     {
     }
 };

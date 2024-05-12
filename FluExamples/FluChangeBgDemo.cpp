@@ -1,6 +1,6 @@
 #include "FluChangeBgDemo.h"
 
-FluChangeBgDemo::FluChangeBgDemo(QWidget *parent /*= nullptr*/) : QWidget(parent)
+FluChangeBgDemo::FluChangeBgDemo(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
     m_normalBgColor = QColor("#1994e1");
     m_hoverBgColor = QColor("#d1eaf9");

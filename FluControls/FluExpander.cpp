@@ -1,7 +1,7 @@
 #include "FluExpander.h"
 #include <QEvent>
 
-FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_mainLayout = new QVBoxLayout(this);
     m_mainLayout->setContentsMargins(0, 0, 0, 0);
@@ -67,7 +67,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : QWidget(parent)
         update();
     });
 
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);

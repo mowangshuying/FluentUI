@@ -5,13 +5,14 @@
 #include <QStyleOption>
 #include <QPainter>
 #include "FluColorButton.h"
+#include "FluWidget.h"
 
 // has 9 color buttons.
-class FluColorFlyout : public QWidget
+class FluColorFlyout : public FluWidget
 {
     Q_OBJECT
   public:
-    FluColorFlyout(QWidget* targetWidget) : QWidget(nullptr), m_targetWidget(targetWidget)
+    FluColorFlyout(QWidget* targetWidget) : FluWidget(nullptr), m_targetWidget(targetWidget)
     {
         LOG_DEBUG << "called";
 
@@ -29,7 +30,7 @@ class FluColorFlyout : public QWidget
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluColorFlyout.qss", this);
         }
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        
     }
 
     ~FluColorFlyout()

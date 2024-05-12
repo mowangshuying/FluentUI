@@ -1,7 +1,7 @@
 #include "FluCalendarSelectYearView.h"
 #include "FluCalendarView.h"
 
-FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : QWidget(parent)
+FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidget(parent)
 {
     m_parentView = (FluCalendarView*)parent;
 
@@ -50,7 +50,7 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : QWidget(
 
     setFixedHeight(300);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 void FluCalendarSelectYearView::setYears(int nYear, int nMonth)

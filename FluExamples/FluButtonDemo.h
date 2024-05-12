@@ -3,7 +3,7 @@
 #include "../FluControls/FluPushButton.h"
 #include <QPaintEvent>
 #include <QStyleOption>
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
 #include "FluDisplay16.h"
 

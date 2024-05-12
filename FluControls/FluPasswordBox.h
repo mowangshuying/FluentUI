@@ -9,11 +9,11 @@
 #include <QStyleOption>
 #include <QPainter>
 
-class FluPasswordBox : public QWidget
+class FluPasswordBox : public FluWidget
 {
     Q_OBJECT
   public:
-    FluPasswordBox(QWidget* parent = nullptr) : QWidget(parent)
+    FluPasswordBox(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hLayout = new QHBoxLayout(this);
         setLayout(m_hLayout);
@@ -45,7 +45,7 @@ class FluPasswordBox : public QWidget
         m_edit->setEchoMode(QLineEdit::Password);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void setMaskC(unsigned maskC)

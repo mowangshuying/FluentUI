@@ -149,9 +149,11 @@ class FluIconsPage : public FluAEmptyPage
             }
         });
 
-        emit m_sDisplayIconBox->clicked();
+        if (m_sDisplayIconBox != nullptr)
+            emit m_sDisplayIconBox->clicked();
+        
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     //  void paintEvent(QPaintEvent* event)
@@ -161,6 +163,18 @@ class FluIconsPage : public FluAEmptyPage
     //      QPainter painter(this);
     //     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     //  }
+
+   // void showEvent(QShowEvent* event)
+   // {
+   //     LOG_DEBUG << "show Event";
+    //    onThemeChanged();
+   // }
+
+  //  void hideEvent(QHideEvent* event)
+  //  {
+   //     LOG_DEBUG << "hide Event";
+   // }
+
   public slots:
     void onThemeChanged()
     {

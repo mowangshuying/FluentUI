@@ -28,7 +28,7 @@ FluNavigationSearchItem::FluNavigationSearchItem(QWidget* parent /*= nullptr*/) 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationSearchItem.qss", this);
     // connect(this, &FluNavigationSearchItem::itemClicked, this, &FluNavigationSearchItem::onItemClicked);
     connect(m_searchButton, &QPushButton::clicked, [=]() { emit itemClicked(); });
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    
 }
 
 void FluNavigationSearchItem::onItemClicked()

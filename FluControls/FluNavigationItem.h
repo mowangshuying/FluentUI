@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QStyle>
 
 class FluNavigationView;
@@ -13,7 +13,7 @@ enum class FluNavigationItemType
     Setting,
 };
 
-class FluNavigationItem : public QWidget
+class FluNavigationItem : public FluWidget
 {
     Q_OBJECT
   public:
@@ -26,8 +26,8 @@ class FluNavigationItem : public QWidget
 
     void setItemType(FluNavigationItemType itemType);
 
-    virtual void clearAllItemsSelectState(){};
-    virtual void updateAllItemsStyleSheet(){};
+    virtual void clearAllItemsSelectState() {};
+    virtual void updateAllItemsStyleSheet() {};
 
     // when nav long set item long
     // when nav short set item short

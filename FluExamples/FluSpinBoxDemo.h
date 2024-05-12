@@ -1,14 +1,14 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluSpinBox.h"
 #include "../FluControls/FluDoubleSpinBox.h"
 
-class FluSpinBoxDemo : public QWidget
+class FluSpinBoxDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluSpinBoxDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluSpinBoxDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto spinBox = new FluSpinBox(this);
         spinBox->move(50, 50);

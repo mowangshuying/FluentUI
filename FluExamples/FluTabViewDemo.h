@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
 #include "../FluControls/FluTabView.h"
 
-class FluTabViewDemo : public QWidget
+class FluTabViewDemo : public FluWidget
 {
   public:
-    FluTabViewDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluTabViewDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto tabView = new FluTabView;
         auto vMainLayout = new QVBoxLayout;

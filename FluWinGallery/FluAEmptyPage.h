@@ -1,12 +1,12 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include "../FluControls/FluSearchLineEdit.h"
 
 class FluVScrollView;
-class FluAEmptyPage : public QWidget
+class FluAEmptyPage : public FluWidget
 {
     Q_OBJECT
   public:

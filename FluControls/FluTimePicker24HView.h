@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluLoopView.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -9,11 +9,11 @@
 #include <QPainter>
 #include <QStyleOption>
 
-class FluTimePicker24HView : public QWidget
+class FluTimePicker24HView : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTimePicker24HView(QWidget* parent = nullptr) : QWidget(parent), m_bFirstShow(true)
+    FluTimePicker24HView(QWidget* parent = nullptr) : FluWidget(parent), m_bFirstShow(true)
     {
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
@@ -89,7 +89,7 @@ class FluTimePicker24HView : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     int getHour()

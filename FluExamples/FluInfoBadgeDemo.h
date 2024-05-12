@@ -1,14 +1,14 @@
 #pragma once
 
 #include "../FluControls/FluInfoBadge.h"
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QHBoxLayout>
 
-class FluInfoBadgeDemo : public QWidget
+class FluInfoBadgeDemo : public FluWidget
 {
     // Q_OBJECT
   public:
-    FluInfoBadgeDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluInfoBadgeDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         QHBoxLayout* hBoxLayout = new QHBoxLayout;
         setLayout(hBoxLayout);

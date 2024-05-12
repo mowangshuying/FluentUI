@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPushButton>
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
@@ -8,11 +8,11 @@
 #include "FluMenu.h"
 #include <QIcon>
 
-class FluComboBoxEx : public QWidget
+class FluComboBoxEx : public FluWidget
 {
     Q_OBJECT
   public:
-    FluComboBoxEx(QWidget* parent = nullptr) : QWidget(parent)
+    FluComboBoxEx(QWidget* parent = nullptr) : FluWidget(parent)
     {
         // m_nMaxTextLen = 0;
         m_textAwesomeType = FluAwesomeType::None;
@@ -55,7 +55,7 @@ class FluComboBoxEx : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
         connect(m_menu, &FluMenu::triggered, [=](QAction* action) {
             m_textBtn->setText(action->text());
             emit currentTextChanged(action->text());

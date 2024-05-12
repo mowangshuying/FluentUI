@@ -1,16 +1,16 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluSplitButton.h"
 #include "../FluControls/FluColorFlyout.h"
 #include "../FluControls/FluColorButton.h"
 #include "../FluUtils/FluUtils.h"
 
-class FluSplitButtonDemo : public QWidget
+class FluSplitButtonDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluSplitButtonDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluSplitButtonDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto splitButton = new FluSplitButton(this);
         splitButton->setText("Choose Color.");

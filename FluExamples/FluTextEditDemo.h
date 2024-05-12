@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluTextEdit.h"
 
-class FluTextEditDemo : public QWidget
+class FluTextEditDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTextEditDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluTextEditDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto textEdit = new FluTextEdit(this);
         textEdit->setFixedWidth(300);

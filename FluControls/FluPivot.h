@@ -1,17 +1,17 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluStackedLayout.h"
 #include <QVBoxLayout>
 #include "FluPivotTitleBar.h"
 #include "FluPivotTitleBarItem.h"
 #include "FluStackedLayout.h"
 
-class FluPivot : public QWidget
+class FluPivot : public FluWidget
 {
     Q_OBJECT
   public:
-    FluPivot(QWidget* parent = nullptr) : QWidget(parent)
+    FluPivot(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_vMainLayout = new QVBoxLayout;
         setLayout(m_vMainLayout);
@@ -26,7 +26,7 @@ class FluPivot : public QWidget
         m_vMainLayout->addLayout(m_sLayout);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivot.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void addPivotItem(QString key, QWidget* widget)

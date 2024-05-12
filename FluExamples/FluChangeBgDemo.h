@@ -6,9 +6,9 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QVBoxLayout>
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
-class FluChangeBgDemo : public QWidget
+class FluChangeBgDemo : public FluWidget
 {
     Q_OBJECT
   public:

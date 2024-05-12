@@ -320,6 +320,9 @@
     <ClCompile Include="FluNavigationFlyIconTextItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -608,6 +611,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluNavigationFlyIconTextItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

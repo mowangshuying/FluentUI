@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QPushButton>
-#include <QWidget>
+#include "FluWidget.h"
 #include <QHBoxLayout>
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
@@ -9,11 +9,11 @@
 #include "FluMenu.h"
 #include <QIcon>
 
-class FluDropDownButton : public QWidget
+class FluDropDownButton : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDropDownButton(QWidget* parent = nullptr) : QWidget(parent)
+    FluDropDownButton(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_textAwesomeType = FluAwesomeType::None;
         m_hMainLayout = new QHBoxLayout;
@@ -53,7 +53,7 @@ class FluDropDownButton : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     QPushButton* getTextBtn()

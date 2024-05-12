@@ -1,13 +1,13 @@
 #pragma once
 
 #include <QPainter>
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
-class FluColorDemo : public QWidget
+class FluColorDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluColorDemo(QWidget *parent = nullptr) : QWidget(parent)
+    FluColorDemo(QWidget *parent = nullptr) : FluWidget(parent)
     {
     }
 

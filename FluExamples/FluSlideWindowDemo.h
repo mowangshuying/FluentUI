@@ -1,17 +1,17 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QStackedLayout>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QPropertyAnimation>
 #include <QHBoxLayout>
 
-class FluSlideWindowDemo : public QWidget
+class FluSlideWindowDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluSlideWindowDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluSlideWindowDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         // m_sLayout = new QStackedLayout;
         setFixedSize(600, 400);

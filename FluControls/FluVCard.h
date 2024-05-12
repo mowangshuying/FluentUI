@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include "../FluUtils/FluStyleSheetUitls.h"
 #include <QStyleOption>
 #include <QPainter>
@@ -10,11 +10,11 @@
 #include <QIcon>
 #include "../FluUtils/FluUtils.h"
 
-class FluVCard : public QWidget
+class FluVCard : public FluWidget
 {
     Q_OBJECT
   public:
-    FluVCard(QWidget* parent = nullptr) : QWidget(parent)
+    FluVCard(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto vMainLaout = new QVBoxLayout(this);
         vMainLaout->setAlignment(Qt::AlignTop);
@@ -44,7 +44,7 @@ class FluVCard : public QWidget
         setFixedSize(200, 220);
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
         setStyleSheet(qss);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     FluVCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluVCard(parent)

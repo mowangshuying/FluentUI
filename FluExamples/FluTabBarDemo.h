@@ -1,16 +1,16 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluTabBarContent.h"
 #include <QVBoxLayout>
 #include "../FluControls/FluTabBarItem.h"
 #include "../FluControls/FluTabBar.h"
 
-class FluTabBarDemo : public QWidget
+class FluTabBarDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTabBarDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluTabBarDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         tabBar = new FluTabBar;
         for (int i = 0; i < 3; i++)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QLabel>
 #include "FluCodeExpander.h"
 #include <QVBoxLayout>
@@ -10,7 +10,7 @@
 
 #include "../FluUtils/FluUtils.h"
 
-class FluDisplayBox : public QWidget
+class FluDisplayBox : public FluWidget
 {
     Q_OBJECT
   public:

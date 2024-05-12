@@ -1,7 +1,7 @@
 #pragma once
 
 // #include "FluCalendarView.h"
-#include <QWidget>
+#include "FluWidget.h"
 #include <QVBoxLayout>
 #include <QDate>
 #include <QPaintEvent>
@@ -11,9 +11,10 @@
 #include "FluCalendarDef.h"
 #include "FluCalendarItem.h"
 #include "FluCalendarView.h"
+#include "FluWidget.h"
 
 class FluCalendarView;
-class FluCalendarViewWeakTitle : public QWidget
+class FluCalendarViewWeakTitle : public FluWidget
 {
     Q_OBJECT
   public:
@@ -28,7 +29,7 @@ class FluCalendarViewWeakTitle : public QWidget
     QHBoxLayout* m_hMainLayout;
 };
 
-class FluCalendarMonthView : public QWidget
+class FluCalendarMonthView : public FluWidget
 {
     Q_OBJECT
   public:
@@ -76,7 +77,7 @@ class FluCalendarMonthView : public QWidget
     FluCalendarView* m_calendarView;
 };
 
-class FluCalendarSelectDayView : public QWidget
+class FluCalendarSelectDayView : public FluWidget
 {
     Q_OBJECT
   public:

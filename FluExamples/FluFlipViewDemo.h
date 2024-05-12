@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluHFlipView.h"
 #include "../FluControls/FluVFlipView.h"
 
-class FluFlipViewDemo : public QWidget
+class FluFlipViewDemo : public FluWidget
 {
   public:
-    FluFlipViewDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluFlipViewDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         setFixedSize(600 * 2, 400);
 

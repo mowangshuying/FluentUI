@@ -24,7 +24,7 @@ class FluAppBarButtonPage : public FluAEmptyPage
         addSymbolIconAppBarButton();
         addKeyboardAcceleratorAppBarButton();
           
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 
       }
 

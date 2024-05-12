@@ -212,6 +212,7 @@
     <ClCompile Include="FluVFlyout.cpp" />
     <ClCompile Include="FluColorFlyout.cpp" />
     <ClCompile Include="FluVSplitLine.cpp" />
+    <ClCompile Include="FluWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDef.h" />
@@ -223,6 +224,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluWidget.h" />
     <QtMoc Include="FluNavigationFlyIconTextItem.h" />
     <QtMoc Include="FluTabView.h" />
     <QtMoc Include="FluTabBar.h" />

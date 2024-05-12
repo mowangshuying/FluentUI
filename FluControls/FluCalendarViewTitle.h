@@ -1,13 +1,13 @@
 #pragma once
 
 #include "FluPushButton.h"
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluIconButton.h"
 #include <QStyleOption>
 #include <QPainter>
 
 class FluCalendarView;
-class FluCalendarViewTitle : public QWidget
+class FluCalendarViewTitle : public FluWidget
 {
     Q_OBJECT
   public:

@@ -2,9 +2,9 @@
 #include "FluNavigationIconTextItem.h"
 #include "../FluUtils/FluStyleSheetUitls.h"
 
- FluNavigationFlyIconTextItem::FluNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluNavigationFlyIconTextItem::FluNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-     m_widget = new FluVScrollView;
+    m_widget = new FluVScrollView;
     m_widget->setObjectName("centerWidget");
     m_vMainLayout = new QVBoxLayout;
     setLayout(m_vMainLayout);
@@ -12,16 +12,16 @@
     m_vMainLayout->addWidget(m_widget);
     m_vMainLayout->setContentsMargins(5, 5, 5, 5);
 
-    //m_vCenterLayout = new QVBoxLayout;
-    //m_vCenterLayout->setContentsMargins(5, 5, 5, 5);
-    //m_widget->setLayout(m_vCenterLayout);
+    // m_vCenterLayout = new QVBoxLayout;
+    // m_vCenterLayout->setContentsMargins(5, 5, 5, 5);
+    // m_widget->setLayout(m_vCenterLayout);
 
     m_widget->getMainLayout()->setContentsMargins(5, 5, 5, 5);
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
-   FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
-   FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
 }
 
 void FluNavigationFlyIconTextItem::setIconTextItems(std::vector<FluNavigationIconTextItem*> items)
@@ -33,8 +33,8 @@ void FluNavigationFlyIconTextItem::setIconTextItems(std::vector<FluNavigationIco
         m_widget->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 
-        connect(newItem, &FluNavigationIconTextItem::itemClicked, [=]() { 
-            //item->onItemClickedDirect();
+        connect(newItem, &FluNavigationIconTextItem::itemClicked, [=]() {
+            // item->onItemClickedDirect();
             if (newItem->isLeaf())
             {
                 emit item->itemClicked();
@@ -66,6 +66,6 @@ void FluNavigationFlyIconTextItem::adjustItemSize()
         item->setFixedWidth(nMaxWidth);
     }
 
-    //m_widget->setFixedWidth(nMaxWidth + 10);
+    // m_widget->setFixedWidth(nMaxWidth + 10);
     setFixedWidth(nMaxWidth + 25);
 }

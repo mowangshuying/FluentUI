@@ -3,7 +3,7 @@
 #include <QPointer>
 
 int FluShortInfoBar::m_count = 0;
-FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_count++;
     LOG_DEBUG << "Count = " << m_count;

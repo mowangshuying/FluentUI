@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluDisplayIconBox.h"
 
-class FluDisplayIconBoxDemo : public QWidget
+class FluDisplayIconBoxDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDisplayIconBoxDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluDisplayIconBoxDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         setStyleSheet("background-color:rgb(243,243,243);");
         resize(600, 400);

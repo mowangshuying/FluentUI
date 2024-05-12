@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QScrollArea>
 #include "FluFlowLayout.h"
 #include "../FluUtils/FluUtils.h"

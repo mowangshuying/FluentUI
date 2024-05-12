@@ -1,7 +1,7 @@
 #include "FluCalendarViewTitle.h"
 #include "FluCalendarView.h"
 
-FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_parentView = (FluCalendarView*)parent;
     m_hMainLayout = new QHBoxLayout;
@@ -28,7 +28,7 @@ FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : QWid
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", this);
 
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 void FluCalendarViewTitle::setYearMonth(int nYear, int nMonth)

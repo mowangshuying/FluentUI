@@ -1,15 +1,15 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
 #include "../FluControls/FluDisplayBox.h"
 #include "../FluControls/FluDisplayBoxEx.h"
 
-class FluDisplayBoxDemo : public QWidget
+class FluDisplayBoxDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDisplayBoxDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluDisplayBoxDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         resize(600, 400);
         auto mainLayout = new QVBoxLayout;

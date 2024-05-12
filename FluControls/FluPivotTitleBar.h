@@ -1,14 +1,14 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QHBoxLayout>
 #include "FluPivotTitleBarItem.h"
 
-class FluPivotTitleBar : public QWidget
+class FluPivotTitleBar : public FluWidget
 {
     Q_OBJECT
   public:
-    FluPivotTitleBar(QWidget* parent = nullptr) : QWidget(parent)
+    FluPivotTitleBar(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hMainLayout = new QHBoxLayout;
         setLayout(m_hMainLayout);
@@ -17,7 +17,7 @@ class FluPivotTitleBar : public QWidget
         m_hMainLayout->setAlignment(Qt::AlignLeft);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBar.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void addTitleBarItem(FluPivotTitleBarItem* item)

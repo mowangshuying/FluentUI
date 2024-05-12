@@ -14,12 +14,12 @@
 #include <QStyleOption>
 #include <QTransform>
 #include <QVBoxLayout>
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluVScrollView.h"
 
 class FluNavigationItem;
 class FluNavigationIconTextItem;
-class FluNavigationView : public QWidget
+class FluNavigationView : public FluWidget
 {
     Q_OBJECT
   public:

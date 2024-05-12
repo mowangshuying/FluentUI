@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QTabWidget>
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
 #include "../FluControls/FluTabWidget.h"
 #include "FluButtonDemo.h"

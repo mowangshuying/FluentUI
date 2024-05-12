@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QStyleOption>
@@ -11,11 +11,11 @@
 #include "../FluControls/FluSettingsSelectBox.h"
 #include "../FluControls/FluSettingsLabelBox.h"
 
-class FluSettingPage : public QWidget
+class FluSettingPage : public FluWidget
 {
     Q_OBJECT
   public:
-    FluSettingPage(QWidget* parent = nullptr) : QWidget(parent)
+    FluSettingPage(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_mainLayout = new QVBoxLayout;
         m_mainLayout->setAlignment(Qt::AlignTop);
@@ -78,7 +78,7 @@ class FluSettingPage : public QWidget
         aboutLabelBox->setVersion("");  // empty it!;
         m_vScrollView->getMainLayout()->addWidget(aboutLabelBox);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 
         // appThemeSelectBox->getComboBox()->setCurrentIndex(1);
     }

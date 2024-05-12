@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPushButton>
 #include <QLabel>
 #include <QHBoxLayout>
@@ -8,7 +8,7 @@
 #include <QStyleOption>
 #include <QPainter>
 
-class FluTabBarItem : public QWidget
+class FluTabBarItem : public FluWidget
 {
     Q_OBJECT
   public:

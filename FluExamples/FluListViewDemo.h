@@ -2,11 +2,11 @@
 
 #include "../FluControls/FluListView.h"
 
-class FluListViewDemo : public QWidget
+class FluListViewDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluListViewDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluListViewDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         FluListView* listView = new FluListView(this);
 

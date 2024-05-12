@@ -1,17 +1,17 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include "../FluUtils/FluUtils.h"
 #include <QListWidget>
 #include <QListWidgetItem>
 
-class FluComboBoxTextItem : public QWidget
+class FluComboBoxTextItem : public FluWidget
 {
     Q_OBJECT
   public:
-    FluComboBoxTextItem(QWidget* parent = nullptr) : QWidget(parent)
+    FluComboBoxTextItem(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hBoxLayout = new QHBoxLayout;
         m_indicatorLabel = new QLabel;

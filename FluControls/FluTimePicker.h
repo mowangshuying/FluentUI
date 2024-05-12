@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPushButton>
 
 class FluTimePicker : public QWidget
 {
     Q_OBJECT
   public:
-    FluTimePicker(QWidget* parent = nullptr) : QWidget(parent)
+    FluTimePicker(QWidget* parent = nullptr) : FluWidget(parent)
     {
         setFixedSize(240, 30);
     }

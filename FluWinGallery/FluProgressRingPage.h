@@ -53,7 +53,7 @@ class FluProgressRingPage : public FluAEmptyPage
         // displayBox1->getBodyLayout()->addWidget(checkBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressRingPage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
   public slots:

@@ -1,6 +1,6 @@
 #include "FluSettingsSelectBox.h"
 
-FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_mainLayout = new QHBoxLayout;
     setLayout(m_mainLayout);
@@ -28,7 +28,7 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : QWid
 
     m_iconAwesomeType = FluAwesomeType::None;
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluSettingsSelectBox(parent)

@@ -3,7 +3,7 @@
 #include "FluCalendarView.h"
 #include "FluCalendarViewTitle.h"
 
-FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     // QLabel* m_label = new QLabel("Su");
     m_hMainLayout = new QHBoxLayout;
@@ -26,7 +26,7 @@ FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/
 
     setFixedHeight(30);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 void FluCalendarViewWeakTitle::paintEvent(QPaintEvent* event)
@@ -49,7 +49,7 @@ void FluCalendarViewWeakTitle::onThemeChanged()
     }
 }
 
-FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_gMainLayout = new QGridLayout;
     m_gMainLayout->setContentsMargins(10, 0, 10, 0);
@@ -98,7 +98,7 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : QWid
 
     setFixedHeight(270);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 FluCalendarItem* FluCalendarMonthView::getItem(int nIndex)
@@ -243,7 +243,7 @@ void FluCalendarMonthView::gotoPreMonth()
     setYearMonth(date.year(), date.month());
 }
 
-FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_parentView = (FluCalendarView*)parent;
     m_vMainLayout = new QVBoxLayout;

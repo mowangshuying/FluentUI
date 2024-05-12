@@ -10,7 +10,7 @@ class FluSpinBox : public QSpinBox
     FluSpinBox(QWidget* parent = nullptr) : QSpinBox(parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSpinBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        
     }
 
   public slots:

@@ -1,16 +1,16 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPaintEvent>
 #include <QPainter>
 #include <QPainterPath>
 #include <QPushButton>
 
-class FluImageBox : public QWidget
+class FluImageBox : public FluWidget
 {
     Q_OBJECT
   public:
-    FluImageBox(QWidget* parent = nullptr) : QWidget(parent)
+    FluImageBox(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_pixmap = QPixmap();
     }

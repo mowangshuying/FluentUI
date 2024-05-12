@@ -5,7 +5,7 @@
 #include <QMetaEnum>
 #include <QMetaObject>
 #include <QVBoxLayout>
-#include <QWidget>
+#include "FluWidget.h"
 
 template <typename EnumType>
 static EnumType QStringToEnum(QString str)

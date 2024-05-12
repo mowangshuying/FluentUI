@@ -21,7 +21,7 @@ class FluAppBarToggleButtonPage : public FluAEmptyPage
 
         addSymbolIconAppBarButton();
 
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
       }
       
       void addSymbolIconAppBarButton()

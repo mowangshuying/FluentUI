@@ -1,7 +1,7 @@
 #pragma once
 
 #include "FluExpander.h"
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluCodeBox.h"
 #include <QStyleOption>
 #include <QPainter>

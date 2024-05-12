@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 
@@ -10,11 +10,11 @@
 #include <QPainter>
 
 // box to display icon
-class FluDisplayIconBox : public QWidget
+class FluDisplayIconBox : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDisplayIconBox(QWidget* parent = nullptr) : QWidget(parent)
+    FluDisplayIconBox(QWidget* parent = nullptr) : FluWidget(parent)
     {
         setFixedSize(48, 48);
         m_vMainLayout = new QVBoxLayout;
@@ -32,7 +32,7 @@ class FluDisplayIconBox : public QWidget
         m_iconLabel->setObjectName("iconLabel");
         m_textLable->setObjectName("textLabel");
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     FluDisplayIconBox(FluAwesomeType type, QWidget* parent = nullptr) : FluDisplayIconBox(parent)

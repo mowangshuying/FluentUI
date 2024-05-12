@@ -3,19 +3,18 @@
 #include "../FluControls/FluNavigationView.h"
 #include "../FluControls/FluNavigationIconTextItem.h"
 #include <QFrame>
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 
-class FluNavigationDemo : public QWidget
+class FluNavigationDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluNavigationDemo(QWidget *parent = nullptr) : QWidget(parent)
+    FluNavigationDemo(QWidget *parent = nullptr) : FluWidget(parent)
     {
         addDesignGuidaceText();
 
         resize(800, 600);
         setStyleSheet("background-color:rgb(255,255,255);");
-        
     }
 
     void addDesignGuidaceIconText()
@@ -46,8 +45,8 @@ class FluNavigationDemo : public QWidget
         FluNavigationIconTextItem *item = new FluNavigationIconTextItem("Design guidance", this);
         item->move(50, 50);
 
-        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem( "Typography", item);
-        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem( "Icons", item);
+        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("Typography", item);
+        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Icons", item);
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Colors", item);
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("Accessibility", item);
 

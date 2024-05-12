@@ -9,11 +9,11 @@
 #include <QStyleOption>
 #include <QPainter>
 
-class FluSearchLineEdit : public QWidget
+class FluSearchLineEdit : public FluWidget
 {
     Q_OBJECT
   public:
-    FluSearchLineEdit(QWidget* parent = nullptr) : QWidget(parent)
+    FluSearchLineEdit(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hLayout = new QHBoxLayout(this);
         setLayout(m_hLayout);
@@ -43,7 +43,7 @@ class FluSearchLineEdit : public QWidget
         connect(m_btn, &QPushButton::clicked, [=]() { emit onSearchBtnClicked(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     QString getText()

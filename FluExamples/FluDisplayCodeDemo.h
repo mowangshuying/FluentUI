@@ -9,11 +9,11 @@
 #include "../FluControls/FluCodeExpander.h"
 #include "../FluControls/FluCodeBox.h"
 
-class FluDisplayCodeDemo : public QWidget
+class FluDisplayCodeDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDisplayCodeDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluDisplayCodeDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto display = new FluCodeBox(this);
         display->setFixedSize(300, 50);

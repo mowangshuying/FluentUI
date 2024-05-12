@@ -49,7 +49,7 @@ class FluConfirmFlyout : public FluVFlyout
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
         }
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        
     }
 
     void setTitle(QString title)

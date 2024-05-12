@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QListWidget>
 #include <QVBoxLayout>
 #include <QPushButton>
@@ -8,15 +8,16 @@
 #include <QListWidgetItem>
 
 #include "../FluUtils/FluUtils.h"
+#include "FluWidget.h"
 
 #include <QStyleOption>
 #include <QPainter>
 
-class FluAmPmView : public QWidget
+class FluAmPmView : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAmPmView(int nFixedW = 80, QWidget* parent = nullptr) : QWidget(parent), m_nFixedW(nFixedW)
+    FluAmPmView(int nFixedW = 80, QWidget* parent = nullptr) : FluWidget(parent), m_nFixedW(nFixedW)
     {
         m_vMainLayout = new QVBoxLayout;
         m_vMainLayout->setContentsMargins(0, 0, 0, 0);
@@ -73,7 +74,6 @@ class FluAmPmView : public QWidget
         setAmPm("AM", "PM");
         setAm(true);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setAmPm(QString am, QString pm)

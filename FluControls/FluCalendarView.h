@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QCalendarWidget>
-#include <QWidget>
+#include "FluWidget.h"
 #include "../FluUtils/FluUtils.h"
 #include <QPainter>
 #include <QStyleOption>
@@ -22,7 +22,7 @@ class FluCalendarSelectDayView;
 class FluCalendarSelectMonthView;
 class FluCalendarSelectYearView;
 
-class FluCalendarView : public QWidget
+class FluCalendarView : public FluWidget
 {
     Q_OBJECT
   public:

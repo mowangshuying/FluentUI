@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QGridLayout>
 #include <QLabel>
 #include "../FluUtils/FluUtils.h"
 #include "FluCalendarItem.h"
 
 class FluCalendarView;
-class FluCalendarSelectMonthView : public QWidget
+class FluCalendarSelectMonthView : public FluWidget
 {
   public:
     FluCalendarSelectMonthView(QWidget* parent = nullptr);

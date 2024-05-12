@@ -1,6 +1,6 @@
 #pragma
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QLabel>
 #include <QPushButton>
 #include <QHBoxLayout>
@@ -18,7 +18,7 @@ enum class FluShortInfoBarType
     Error,
 };
 
-class FluShortInfoBar : public QWidget
+class FluShortInfoBar : public FluWidget
 {
     Q_OBJECT
   public:

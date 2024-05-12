@@ -88,7 +88,7 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
 
     connect(m_iconBtn, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
     connect(this, &FluNavigationIconTextItem::itemClicked, [=]() { onItemClicked(); });
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    
 }
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QIcon icon, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)

@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QLabel>
 #include <QHBoxLayout>
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
 
-class FluSettingsLabelBox : public QWidget
+class FluSettingsLabelBox : public FluWidget
 {
     Q_OBJECT
   public:
@@ -40,7 +40,7 @@ class FluSettingsLabelBox : public QWidget
 
         setFixedHeight(70);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void setIcon(QIcon icon)

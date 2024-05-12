@@ -1,17 +1,17 @@
 #pragma once
 
 #include "../FluControls/FluShortInfoBar.h"
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include "../FluControls/FluPushButton.h"
 #include "../FluControls/FluInfoBarMgr.h"
 
-class FluInfoBarDemo : public QWidget
+class FluInfoBarDemo : public FluWidget
 {
     // Q_OBJECT
   public:
-    FluInfoBarDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluInfoBarDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         // auto vLayout = new QVBoxLayout;
         // setLayout(vLayout);

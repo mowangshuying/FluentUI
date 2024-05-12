@@ -1,8 +1,8 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPushButton>
-#include <QWidget>
+#include "FluWidget.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
@@ -11,11 +11,11 @@
 
 #include "FluDatePickerView.h"
 
-class FluDatePicker : public QWidget
+class FluDatePicker : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDatePicker(QWidget* parent = nullptr) : QWidget(parent)
+    FluDatePicker(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hMainLayout = new QHBoxLayout;
         m_hMainLayout->setContentsMargins(0, 0, 0, 0);
@@ -73,7 +73,7 @@ class FluDatePicker : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

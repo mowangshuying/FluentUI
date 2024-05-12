@@ -5,7 +5,7 @@
 #include "FluNavigationSettingsItem.h"
 #include "FluNavigationSearchItem.h"
 
-FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(parent)
+FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
     m_vLayout = new QVBoxLayout(this);
     m_vLayout->setContentsMargins(4, 8, 4, 8);
@@ -49,7 +49,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : QWidget(pa
     connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
     connect(searchItem, &FluNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
 
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 void FluNavigationView::addItemToTopLayout(QWidget *item)

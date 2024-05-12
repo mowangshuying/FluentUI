@@ -2,7 +2,7 @@
 
 #include <QStackedLayout>
 #include <QMap>
-#include <QWidget>
+#include "FluWidget.h"
 
 // use it only contains widgets
 // when use it, please just use addWidget , removeWidget

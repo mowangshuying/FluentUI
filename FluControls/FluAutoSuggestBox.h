@@ -2,7 +2,7 @@
 
 #include "FluDef.h"
 #include "../FluUtils/FluUtils.h"
-#include <QWidget>
+#include "FluWidget.h"
 
 #include <vector>
 #include "FluMenu.h"
@@ -14,11 +14,11 @@
 #include <QStyleOption>
 #include <QPainter>
 
-class FluAutoSuggestBox : public QWidget
+class FluAutoSuggestBox : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAutoSuggestBox(QWidget* parent = nullptr) : QWidget(parent)
+    FluAutoSuggestBox(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hMainLayout = new QHBoxLayout;
         setLayout(m_hMainLayout);
@@ -89,7 +89,6 @@ class FluAutoSuggestBox : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setKeys(std::vector<QString> keys)

@@ -4,7 +4,7 @@
 #include "FluCalendarSelectYearView.h"
 #include "FluCalendarViewTitle.h"
 
-FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setWindowFlags(/* Qt::Popup | */ Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -111,7 +111,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : QWidget(parent
     // setFixedWidth(300);
     setFixedSize(300, 360);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 void FluCalendarView::switchSelectViewState(FluCalendarViewState state)

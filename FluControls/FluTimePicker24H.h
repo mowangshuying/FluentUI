@@ -2,7 +2,7 @@
 
 #include "../FluUtils/FluUtils.h"
 #include <QPushButton>
-#include <QWidget>
+#include "FluWidget.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
@@ -11,11 +11,11 @@
 
 #include "FluTimePicker24HView.h"
 
-class FluTimePicker24H : public QWidget
+class FluTimePicker24H : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTimePicker24H(QWidget* parent = nullptr) : QWidget(parent)
+    FluTimePicker24H(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hMainLayout = new QHBoxLayout;
         m_hMainLayout->setContentsMargins(0, 0, 0, 0);
@@ -64,7 +64,7 @@ class FluTimePicker24H : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

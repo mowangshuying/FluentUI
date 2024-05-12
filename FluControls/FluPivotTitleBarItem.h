@@ -12,7 +12,7 @@ class FluPivotTitleBarItem : public QPushButton
     {
         setSelected(false);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBarItem.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        
     }
 
     void setSelected(bool bSelected)

@@ -6,7 +6,7 @@
 #include "../FluControls/FluIconButton.h"
 #include "../FluControls/FluVScrollView.h"
 
-FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_mainLayout = new QVBoxLayout;
     m_mainLayout->setAlignment(Qt::AlignTop);

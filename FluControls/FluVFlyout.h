@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QVBoxLayout>
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
@@ -18,11 +18,11 @@ enum class FluFlyoutPosition
     Right,
 };
 
-class FluVFlyout : public QWidget
+class FluVFlyout : public FluWidget
 {
     Q_OBJECT
   public:
-    FluVFlyout(QWidget* target, FluFlyoutPosition position = FluFlyoutPosition::Top) : QWidget(nullptr), m_targetWidget(target), m_position(position)
+    FluVFlyout(QWidget* target, FluFlyoutPosition position = FluFlyoutPosition::Top) : FluWidget(nullptr), m_targetWidget(target), m_position(position)
     {
         m_hMainLayout = new QHBoxLayout;
         m_hMainLayout->setSpacing(0);
@@ -55,7 +55,7 @@ class FluVFlyout : public QWidget
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
         }
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     // void resizeEvent(QResizeEvent* event)

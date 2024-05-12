@@ -1,6 +1,6 @@
 #include "FluTabView.h"
 
-FluTabView::FluTabView(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluTabView::FluTabView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_vMainLayout = new QVBoxLayout;
     m_vMainLayout->setContentsMargins(1, 1, 1, 1);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluLoopView.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -11,11 +11,11 @@
 #include "FluHSplitLine.h"
 #include "FluVSplitLine.h"
 
-class FluDatePickerView : public QWidget
+class FluDatePickerView : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDatePickerView(QWidget* parent = nullptr) : QWidget(parent), m_bFirstShow(true)
+    FluDatePickerView(QWidget* parent = nullptr) : FluWidget(parent), m_bFirstShow(true)
     {
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
@@ -128,7 +128,7 @@ class FluDatePickerView : public QWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     int getMonth()

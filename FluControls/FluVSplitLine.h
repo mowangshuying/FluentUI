@@ -1,19 +1,19 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QStyleOption>
 #include <QPainter>
 #include "../FluUtils/FluUtils.h"
 
-class FluVSplitLine : public QWidget
+class FluVSplitLine : public FluWidget
 {
     Q_OBJECT
   public:
-    FluVSplitLine(QWidget* parent = nullptr) : QWidget(parent)
+    FluVSplitLine(QWidget* parent = nullptr) : FluWidget(parent)
     {
         setFixedHeight(1);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void paintEvent(QPaintEvent* event)

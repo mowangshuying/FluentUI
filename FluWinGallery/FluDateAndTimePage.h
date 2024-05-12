@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QStyleOption>
@@ -41,7 +41,7 @@ class FluDateAndTimePage : public FluATitlePage
         connect(timePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDateAndTimePage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
   signals:

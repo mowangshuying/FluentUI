@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluTabBarContent.h"
 #include <QHBoxLayout>
 #include <QStyleOption>
@@ -8,11 +8,11 @@
 #include <QPushButton>
 #include <QThread>
 
-class FluTabBar : public QWidget
+class FluTabBar : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTabBar(QWidget* parent = nullptr) : QWidget(parent)
+    FluTabBar(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hMainLayout = new QHBoxLayout;
         setLayout(m_hMainLayout);

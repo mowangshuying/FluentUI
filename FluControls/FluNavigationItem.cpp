@@ -1,7 +1,7 @@
 #include "FluNavigationItem.h"
 #include "FluNavigationView.h"
 
-FluNavigationItem::FluNavigationItem(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluNavigationItem::FluNavigationItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
 }
 

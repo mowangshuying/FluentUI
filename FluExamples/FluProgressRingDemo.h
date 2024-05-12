@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluProgressRing.h"
 #include <QTimer>
 
-class FluProgressRingDemo : public QWidget
+class FluProgressRingDemo : public FluWidget
 {
   public:
-    FluProgressRingDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluProgressRingDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto progressRing1 = new FluProgressRing(this);
         progressRing1->move(50, 50);

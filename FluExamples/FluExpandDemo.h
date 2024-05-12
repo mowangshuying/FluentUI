@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QHBoxLayout>
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QPropertyAnimation>
@@ -13,11 +13,11 @@
 #include "../FluControls/FluToggleButton.h"
 #include "../FluControls/FluLabel.h"
 
-class FluExpandDemo : public QWidget
+class FluExpandDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluExpandDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluExpandDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         resize(600, 400);
 

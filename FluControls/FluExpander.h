@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPropertyAnimation>
@@ -11,7 +11,7 @@
 
 class FluIconButton;
 // a expander to display more informations.
-class FluExpander : public QWidget
+class FluExpander : public FluWidget
 {
     Q_OBJECT
   public:

@@ -30,7 +30,7 @@ class FluRepeatButtonPage : public FluAEmptyPage
         displayBox->getBodyLayout()->addWidget(repeatButton);
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
   public slots:

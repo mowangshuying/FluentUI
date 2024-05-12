@@ -1,15 +1,15 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPainter>
 #include <QTimer>
 #include "../FluUtils/FluUtils.h"
 
-class FluProgressRing : public QWidget
+class FluProgressRing : public FluWidget
 {
     Q_OBJECT
   public:
-    FluProgressRing(QWidget* parent = nullptr) : QWidget(parent)
+    FluProgressRing(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_minValue = 0;
         m_maxValue = 100;

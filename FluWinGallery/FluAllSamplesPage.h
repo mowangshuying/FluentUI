@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QStyleOption>
@@ -92,7 +92,7 @@ class FluAllSamplesPage : public FluATitlePage
         connect(toggleSwitchCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
   signals:
     void clickedHCard(QString key);

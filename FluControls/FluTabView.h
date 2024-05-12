@@ -1,18 +1,18 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 
 #include "FluTabBar.h"
-#include <QWidget>
+#include "FluWidget.h"
 #include <QVBoxLayout>
 #include <QStackedLayout>
 #include "../FluUtils/FluUtils.h"
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluStackedLayout.h"
 #include <QStyleOption>
 #include <QPainter>
 
-class FluTabView : public QWidget
+class FluTabView : public FluWidget
 {
     Q_OBJECT
   public:

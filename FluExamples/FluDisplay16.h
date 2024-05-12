@@ -1,14 +1,14 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QGridLayout>
 
 // to display widget max can display 16 wdigets.
-class FluDisplay16 : public QWidget
+class FluDisplay16 : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDisplay16(QWidget* parent = nullptr) : QWidget(parent)
+    FluDisplay16(QWidget* parent = nullptr) : FluWidget(parent)
     {
         gridLayout = new QGridLayout;
         setLayout(gridLayout);

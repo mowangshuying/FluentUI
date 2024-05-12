@@ -8,12 +8,13 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWidget>
-//
-class FluIconToolWidget : public QWidget
+#include "../FluControls/FluWidget.h"
+
+class FluIconToolWidget : public FluWidget
 {
     Q_OBJECT
   public:
-    FluIconToolWidget(QWidget *parent = nullptr) : QWidget(parent)
+    FluIconToolWidget(QWidget *parent = nullptr) : FluWidget(parent)
     {
         auto vBoxLayout = new QVBoxLayout(this);
         auto hLayout1 = new QHBoxLayout(this);

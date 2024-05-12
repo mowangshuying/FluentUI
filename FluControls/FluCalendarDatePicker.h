@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QPainter>
@@ -51,7 +51,10 @@ class FluCalendarDatePicker : public QPushButton
         connect(m_iconButton, &QPushButton::clicked, [=]() { onClicked(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+       connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+      //  {
+       //     onThemeChanged();
+       // });
     }
 
   public slots:

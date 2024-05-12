@@ -1,11 +1,11 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 
 class FluFWScrollView;
-class FluATitlePage : public QWidget
+class FluATitlePage : public FluWidget
 {
     Q_OBJECT
   public:

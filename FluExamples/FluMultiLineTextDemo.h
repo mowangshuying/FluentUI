@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QVBoxLayout>
 #include <QTextEdit>
 
-class FluMultiLineTextDemo : public QWidget
+class FluMultiLineTextDemo : public FluWidget
 {
   public:
-    FluMultiLineTextDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluMultiLineTextDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         // auto mainLayout = new QVBoxLayout;
         // setLayout(mainLayout);

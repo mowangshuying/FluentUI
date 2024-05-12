@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QGridLayout>
 #include <QLabel>
 #include "../FluUtils/FluUtils.h"
@@ -8,7 +8,7 @@
 
 class FluCalendarView;
 
-class FluCalendarSelectYearView : public QWidget
+class FluCalendarSelectYearView : public FluWidget
 {
   public:
     FluCalendarSelectYearView(QWidget* parent = nullptr);

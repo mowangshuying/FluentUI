@@ -1,14 +1,14 @@
 #pragma once
 
 #include "../FluControls/FluThread.h"
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluUtils/FluUtils.h"
 
-class FluThreadDemo : public QWidget
+class FluThreadDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluThreadDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluThreadDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_thread.start([](FluThread* thread) { LOG_DEBUG << "Start..."; },
                        [](FluThread* thread) {

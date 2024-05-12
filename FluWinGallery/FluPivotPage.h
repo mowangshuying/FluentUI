@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "FluAEmptyPage.h"
 #include "../FluControls/FluDisplayBox.h"
 #include "../FluControls/FluVScrollView.h"
@@ -52,7 +52,7 @@ class FluPivotPage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotPage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
   public slots:

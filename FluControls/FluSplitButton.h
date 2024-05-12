@@ -1,17 +1,17 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPushButton>
 #include <QHBoxLayout>
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
 
-class FluSplitButton : public QWidget
+class FluSplitButton : public FluWidget
 {
     Q_OBJECT
   public:
-    FluSplitButton(QWidget* parent = nullptr) : QWidget(parent)
+    FluSplitButton(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hMainLayout = new QHBoxLayout;
         setLayout(m_hMainLayout);
@@ -41,7 +41,7 @@ class FluSplitButton : public QWidget
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);
         }
 
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void setText(QString text)

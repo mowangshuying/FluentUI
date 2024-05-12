@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluProgressBar.h"
 
-class FluProgressBarDemo : public QWidget
+class FluProgressBarDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluProgressBarDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluProgressBarDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto progressBar = new FluProgressBar(this);
         progressBar->move(50, 50);

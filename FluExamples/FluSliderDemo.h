@@ -1,12 +1,12 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluSlider.h"
 
-class FluSliderDemo : public QWidget
+class FluSliderDemo : public FluWidget
 {
   public:
-    FluSliderDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluSliderDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         FluSlider* hSlider = new FluSlider(this);
         hSlider->setOrientation(Qt::Horizontal);

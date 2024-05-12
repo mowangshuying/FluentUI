@@ -4,7 +4,7 @@
 #include "FluCalendarSelectDayView.h"
 #include "FluCalendarViewTitle.h"
 
-FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_parentView = (FluCalendarView*)parent;
 
@@ -47,7 +47,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
 
     setFixedHeight(300);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectMonthView.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
 }
 
 void FluCalendarSelectMonthView::setYearMonth(int nYear, int nMonth)

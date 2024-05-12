@@ -1,17 +1,17 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluTimePicker24H.h"
 
 #include "../FluControls/FluTimePickerAP.h"
 
 #include "../FluControls/FluDatePicker.h"
 
-class FluTimePickerDemo : public QWidget
+class FluTimePickerDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTimePickerDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluTimePickerDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         //   auto timePicker24H = new FluTimePicker24H(this);
         //   timePicker24H->move(300 - timePicker24H->width() / 2, 200 - timePicker24H->height() / 2);

@@ -89,7 +89,7 @@ class FluMessageBox : public QDialog
         }
 
         m_parentWidget->installEventFilter(this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        
     }
 
     void showEvent(QShowEvent* event)

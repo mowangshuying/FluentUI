@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QStyleOption>

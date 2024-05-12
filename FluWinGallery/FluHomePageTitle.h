@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QLabel>
@@ -10,11 +10,11 @@
 #include "../FluUtils/FluStyleSheetUitls.h"
 #include "../FluControls/FluVCard.h"
 
-class FluHomePageTitle : public QWidget
+class FluHomePageTitle : public FluWidget
 {
     Q_OBJECT
   public:
-    FluHomePageTitle(QWidget* parent = nullptr) : QWidget(parent)
+    FluHomePageTitle(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_vMainLayout = new QVBoxLayout(this);
         m_vMainLayout->setAlignment(Qt::AlignTop);
@@ -40,7 +40,7 @@ class FluHomePageTitle : public QWidget
         m_color2 = QColor(223, 231, 240);
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHomePageTitle.qss");
         setStyleSheet(qss);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void paintEvent(QPaintEvent* event)

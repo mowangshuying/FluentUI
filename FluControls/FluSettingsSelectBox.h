@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QLabel>
 #include "FluComboBoxEx.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include "../FluUtils/FluUtils.h"
 
-class FluSettingsSelectBox : public QWidget
+class FluSettingsSelectBox : public FluWidget
 {
     Q_OBJECT
   public:

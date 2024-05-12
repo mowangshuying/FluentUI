@@ -9,7 +9,7 @@
 #include <QStyleOption>
 #include <QTransform>
 #include <QVBoxLayout>
-#include <QWidget>
+#include "FluWidget.h"
 #include "FluNavigationItem.h"
 #include "../FluUtils/FluUtils.h"
 #include <stack>
@@ -29,7 +29,7 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluNavigationIconTextItem(FluNavigationIconTextItem *item);
 
-    void copyItem(FluNavigationIconTextItem* item);
+    void copyItem(FluNavigationIconTextItem *item);
 
     QWidget *getWrapWidget1()
     {
@@ -41,12 +41,12 @@ class FluNavigationIconTextItem : public FluNavigationItem
         return m_wrapWidget2;
     }
 
-    QPushButton* getIconBtn()
+    QPushButton *getIconBtn()
     {
         return m_iconBtn;
     }
 
-    QLabel* getLabel()
+    QLabel *getLabel()
     {
         return m_label;
     }

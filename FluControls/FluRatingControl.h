@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QHBoxLayout>
 #include "FluStar.h"
 #include "../FluUtils/FluUtils.h"
@@ -8,23 +8,27 @@
 #include <QStyleOption>
 #include <QEvent>
 
-class FluRatingControl : public QWidget
+class FluRatingControl : public FluWidget
 {
     Q_OBJECT
   public:
-    FluRatingControl(QWidget* parent = nullptr) : QWidget(parent)
+    FluRatingControl(QWidget* parent = nullptr) : FluWidget(parent)
     {
         m_hMainLayout = new QHBoxLayout;
         setLayout(m_hMainLayout);
 
         addStar();
         setFixedSize(170, 45);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
+
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
         }
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
+        }
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void addStar()

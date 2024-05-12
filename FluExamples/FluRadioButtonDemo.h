@@ -2,13 +2,13 @@
 
 #include "../FluControls/FluRadioButton.h"
 #include "../FluControls/FluVRadioGroupBox.h"
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #
 
-class FluRadioButtonDemo : public QWidget
+class FluRadioButtonDemo : public FluWidget
 {
   public:
-    FluRadioButtonDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluRadioButtonDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         resize(600, 400);
         FluVRadioGroupBox* group = new FluVRadioGroupBox("Options", this);

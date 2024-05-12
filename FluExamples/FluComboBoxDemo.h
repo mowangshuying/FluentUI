@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluComboBox.h"
 #include "../FluControls/FluComboBoxEx.h"
-class FluComboBoxDemo : public QWidget
+class FluComboBoxDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluComboBoxDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluComboBoxDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto comboBoxEx = new FluComboBoxEx(this);
         comboBoxEx->setFixedWidth(120);

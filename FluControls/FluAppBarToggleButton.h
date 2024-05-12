@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "FluWidget.h"
 #include <QPushButton>
 #include <QLabel>
 #include <QStyleOption>
@@ -9,12 +9,11 @@
 
 #include "../FluUtils/FluUtils.h"
 
-
-class FluAppBarToggleButton : public QWidget
+class FluAppBarToggleButton : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAppBarToggleButton(FluAwesomeType awesomeType, QWidget* parent = nullptr) : QWidget(parent), m_awesomeType(awesomeType), m_bToggled(false)
+    FluAppBarToggleButton(FluAwesomeType awesomeType, QWidget* parent = nullptr) : FluWidget(parent), m_awesomeType(awesomeType), m_bToggled(false)
     {
         m_vMainLayout = new QVBoxLayout;
         setLayout(m_vMainLayout);
@@ -38,21 +37,17 @@ class FluAppBarToggleButton : public QWidget
         m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButton.qss", this);
 
-
         setToggled(m_bToggled);
 
-        connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked();
-        });
-        connect(this, &FluAppBarToggleButton::clicked, [=]() { 
+        connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
+        connect(this, &FluAppBarToggleButton::clicked, [=]() {
             m_bToggled = !m_bToggled;
             setToggled(m_bToggled);
 
             updateIcon();
-            
 
             update();
         });
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void updateIcon()

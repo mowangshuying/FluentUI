@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "FluAEmptyPage.h"
 #include "../FluControls/FluVScrollView.h"
 #include "../FluControls/FluLabel.h"
@@ -78,7 +78,7 @@ class FluTypeographyPage : public FluAEmptyPage
         m_vScrollView->getMainLayout()->addWidget(expander);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     QWidget* addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int nHeight)

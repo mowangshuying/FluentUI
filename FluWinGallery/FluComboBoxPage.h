@@ -42,7 +42,7 @@ class FluComboBoxPage : public FluAEmptyPage
             colorLabel->style()->polish(colorLabel);
         });
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
   public slots:

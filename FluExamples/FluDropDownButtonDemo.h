@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QWidget>
+#include "../FluControls/FluWidget.h"
 #include "../FluControls/FluDropDownButton.h"
 
-class FluDropDownButtonDemo : public QWidget
+class FluDropDownButtonDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDropDownButtonDemo(QWidget* parent = nullptr) : QWidget(parent)
+    FluDropDownButtonDemo(QWidget* parent = nullptr) : FluWidget(parent)
     {
         auto dropDownButton = new FluDropDownButton(this);
         dropDownButton->setText("Email");

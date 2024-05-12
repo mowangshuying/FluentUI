@@ -46,14 +46,14 @@ class FluLogUtils
                        << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
 #define LOG_INFO                                                                     \
-    qDebug().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
+    qInfo().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
                        << "["                                                        \
                        << "info"                                                     \
                        << "]"                                                        \
                        << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
 #define LOG_WARN                                                                     \
-    qDebug().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
+    qWarning().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
                        << "["                                                        \
                        << "warn"                                                     \
                        << "]"                                                        \

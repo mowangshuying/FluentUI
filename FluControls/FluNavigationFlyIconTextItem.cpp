@@ -19,6 +19,7 @@ FluNavigationFlyIconTextItem::FluNavigationFlyIconTextItem(QWidget* parent /*= n
     m_widget->getMainLayout()->setContentsMargins(5, 5, 5, 5);
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
+    setAttribute(Qt::WA_DeleteOnClose);
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);

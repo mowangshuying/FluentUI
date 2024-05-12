@@ -371,6 +371,14 @@ void FluNavigationIconTextItem::onItemClicked()
         }
     }
 
+    if (navView != nullptr && !navView->isLong())
+    {
+        navView->clearAllItemsSelectState();
+        rootItem->updateSelected(true);
+        navView->updateAllItemsStyleSheet();
+        return;
+    }
+
     m_bDown = !m_bDown;
     if (navView != nullptr)
     {

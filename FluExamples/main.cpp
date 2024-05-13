@@ -173,8 +173,8 @@ int main(int argc, char **argv)
     // FluFlyoutDemo demo;
     // demo.show();
 
-    //FluSplitButtonDemo demo;
-    //demo.show();
+    // FluSplitButtonDemo demo;
+    // demo.show();
 
     // FluRatingControlDemo demo;
     // demo.show();
@@ -188,17 +188,17 @@ int main(int argc, char **argv)
     // FluTabBarDemo demo;
     // demo.show();
 
-   //  FluTabViewDemo demo;
-   //  demo.show();
+    //  FluTabViewDemo demo;
+    //  demo.show();
 
-    //FluFrameLessDemo demo;
-    //demo.show();
+    // FluFrameLessDemo demo;
+    // demo.show();
 
-     //FluButtonDemo demo;
-     //demo.show();
-    
-      FluNavigationDemo demo;
-      demo.show();
+    // FluButtonDemo demo;
+    // demo.show();
 
-     return app.exec();
+    FluNavigationDemo demo;
+    demo.show();
+
+    return app.exec();
 }

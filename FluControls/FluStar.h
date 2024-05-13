@@ -18,7 +18,7 @@ class FluStar : public QLabel
         setAttribute(Qt::WA_Hover);
         setFixedSize(25, 25);
         setEmptyStar();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); 
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setEmptyStar()

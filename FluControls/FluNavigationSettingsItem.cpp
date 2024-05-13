@@ -37,7 +37,6 @@ FluNavigationSettingsItem::FluNavigationSettingsItem(QIcon icon, QString text, Q
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationSettingsItem.qss", this);
     connect(m_icon, &FluRotationButton::clicked, [=](bool b) { emit itemClicked(); });
     connect(this, &FluNavigationSettingsItem::itemClicked, this, &FluNavigationSettingsItem::onItemClicked);
-    
 }
 
 FluNavigationSettingsItem::FluNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent) : FluNavigationSettingsItem(QIcon(), text, parent)

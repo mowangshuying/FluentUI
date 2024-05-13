@@ -16,7 +16,8 @@ class FluIconButton : public QPushButton
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
+        onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -28,7 +29,8 @@ class FluIconButton : public QPushButton
 
         m_type1 = type1;
         setType(type1);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
+        onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -42,7 +44,8 @@ class FluIconButton : public QPushButton
         pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         setIcon(QIcon(pixmap));
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
+        onThemeChanged();
 
         // can change type1 to type2, type2 auto change to type1
         m_timer = new QTimer;

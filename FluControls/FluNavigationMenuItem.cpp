@@ -40,7 +40,7 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
     m_menuButton->setObjectName("menuButton");
 
     connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
-    
+
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss", this);
 }
 

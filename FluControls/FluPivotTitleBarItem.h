@@ -12,7 +12,6 @@ class FluPivotTitleBarItem : public QPushButton
     {
         setSelected(false);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBarItem.qss", this);
-        
     }
 
     void setSelected(bool bSelected)

@@ -23,7 +23,7 @@ FluMenu::FluMenu(QWidget* parent /*= nullptr*/) : QMenu(parent)
 void FluMenu::addAction(FluAction* action)
 {
     QMenu::addAction(action);
-    //connect(action, &QAction::hovered, [=]() { LOG_DEBUG << "hovered"; });
+    // connect(action, &QAction::hovered, [=]() { LOG_DEBUG << "hovered"; });
 
     // connect(action, &QAction::ho, [=]() {
     //     LOG_DEBUG << "trigger";

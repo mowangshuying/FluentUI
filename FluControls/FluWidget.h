@@ -14,6 +14,7 @@ class FluWidget : public QWidget
     virtual void onThemeChanged()
     {
     }
+
   protected:
     FluTheme m_theme;
 };

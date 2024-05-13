@@ -158,4 +158,5 @@ void FluGalleryWindow::onThemeChanged()
         // repaint();
         // QApplication::processEvents();
     }
-    LOG_DEBUG << "Func End";}
+    LOG_DEBUG << "Func End";
+}

@@ -11,13 +11,11 @@ class FluSlider : public QSlider
     FluSlider(QWidget* parent = nullptr) : QSlider(parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
-        
     }
 
     FluSlider(Qt::Orientation orientation, QWidget* parent = nullptr) : QSlider(orientation, parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
-        
     }
 
   public slots:

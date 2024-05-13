@@ -45,19 +45,19 @@ class FluLogUtils
                        << "]"                                                        \
                        << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
-#define LOG_INFO                                                                     \
+#define LOG_INFO                                                                    \
     qInfo().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
-                       << "["                                                        \
-                       << "info"                                                     \
-                       << "]"                                                        \
-                       << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
+                      << "["                                                        \
+                      << "info"                                                     \
+                      << "]"                                                        \
+                      << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
-#define LOG_WARN                                                                     \
+#define LOG_WARN                                                                       \
     qWarning().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
-                       << "["                                                        \
-                       << "warn"                                                     \
-                       << "]"                                                        \
-                       << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
+                         << "["                                                        \
+                         << "warn"                                                     \
+                         << "]"                                                        \
+                         << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
 #define LOG_ERR                                                                      \
     qDebug().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \

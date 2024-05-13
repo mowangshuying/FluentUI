@@ -67,10 +67,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         update();
     });
 
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
-
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);
+    onThemeChanged();
 }
 
 void FluExpander::resizeEvent(QResizeEvent* event)

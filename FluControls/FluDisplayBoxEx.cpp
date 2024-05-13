@@ -41,5 +41,4 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_mainLayout->addWidget(m_codeExpander);
     m_codeExpander->setObjectName("codeExpander");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBoxEx.qss", this);
-    
 }

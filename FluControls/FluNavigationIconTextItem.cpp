@@ -43,16 +43,16 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     m_arrow = new QPushButton(this);
 
     m_hLayout1->setSpacing(0);
-   // m_hLayout1->addSpacing(4);
+    // m_hLayout1->addSpacing(4);
     m_hLayout1->addWidget(m_emptyWidget);
     m_hLayout1->addWidget(m_indicator);
     m_hLayout1->addWidget(m_iconBtn);
     m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_label, 1);
     m_hLayout1->addWidget(m_arrow);
-  //  m_hLayout1->addSpacing(4);
+    //  m_hLayout1->addSpacing(4);
 
-    //m_hLayout1->setSpacing(0);
+    // m_hLayout1->setSpacing(0);
 
     m_indicator->setFixedHeight(18);
     m_indicator->setFixedWidth(4);
@@ -78,8 +78,8 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
 
     m_bEnableThisItem = true;
     m_awesomeType = FluAwesomeType::None;
-  //  QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
-  //  setStyleSheet(qss);
+    //  QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
+    //  setStyleSheet(qss);
 
     // m_currentWidth  = 320;
     m_parentItem = nullptr;
@@ -90,7 +90,6 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(QWidget *parent /*= nullptr
     connect(this, &FluNavigationIconTextItem::itemClicked, [=]() { onItemClicked(); });
 
     onThemeChanged();
-    
 }
 
 FluNavigationIconTextItem::FluNavigationIconTextItem(QIcon icon, QString text, QWidget *parent /*= nullptr*/) : FluNavigationIconTextItem(parent)
@@ -114,7 +113,7 @@ FluNavigationIconTextItem::FluNavigationIconTextItem(FluAwesomeType awesomeType,
     m_label->setText(text);
 }
 
- FluNavigationIconTextItem::FluNavigationIconTextItem(FluNavigationIconTextItem *item) : FluNavigationIconTextItem()
+FluNavigationIconTextItem::FluNavigationIconTextItem(FluNavigationIconTextItem *item) : FluNavigationIconTextItem()
 {
     copyItem(item);
 }
@@ -163,7 +162,7 @@ int FluNavigationIconTextItem::calcItemW1Width()
 {
     QMargins margins = m_wrapWidget1->contentsMargins();
     int nIndicatorWidth = m_indicator->width();
-    
+
     int nIconWidth = m_iconBtn->width();
     if (m_bHideIcon)
         nIconWidth = 0;
@@ -171,7 +170,7 @@ int FluNavigationIconTextItem::calcItemW1Width()
     int nSpacing = 8;
     int nLabelWidth = m_label->fontMetrics().boundingRect(m_label->text()).width();
     int nArrowWidth = m_arrow->width();
-    
+
     if (m_items.empty())
         nArrowWidth = 0;
 
@@ -184,7 +183,7 @@ int FluNavigationIconTextItem::calcItemW1Width()
     LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
     LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
 
-    return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth +nArrowWidth + margins.right() + 20;
+    return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
 }
 
 int FluNavigationIconTextItem::calcItemW2Height(FluNavigationIconTextItem *item)
@@ -313,7 +312,7 @@ void FluNavigationIconTextItem::onItemClicked()
     // LOG_DEBUG << "get root item.";
     auto navView = rootItem->getParentView();
     // LOG_DEBUG << "bDown:" << m_bDown << "nav long:" << navView->isLong();
-    
+
     if ((navView != nullptr && m_bDown && navView->isLong()) || (navView == nullptr && isLong() && m_bDown))
     {
         // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
@@ -364,12 +363,12 @@ void FluNavigationIconTextItem::onItemClicked()
             // log global
             QPoint gPoint = mapToGlobal(QPoint(navView->width(), 0));
             // show flyout icon text item;
-//#ifdef _DEBUG
+            // #ifdef _DEBUG
             auto flyIconTextItem = new FluNavigationFlyIconTextItem;
             flyIconTextItem->setIconTextItems(getChildItems());
             flyIconTextItem->move(gPoint.x(), gPoint.y());
             flyIconTextItem->show();
-//#endif
+            // #endif
         }
     }
 

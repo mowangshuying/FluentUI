@@ -89,7 +89,6 @@ class FluMessageBox : public QDialog
         }
 
         m_parentWidget->installEventFilter(this);
-        
     }
 
     void showEvent(QShowEvent* event)

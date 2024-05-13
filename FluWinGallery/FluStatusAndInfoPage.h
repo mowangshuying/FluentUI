@@ -40,7 +40,7 @@ class FluStatusAndInfoPage : public FluATitlePage
         connect(toolTipCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStatusAndInfoPage.qss", this);
-        //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
   signals:
     void clickedHCard(QString key);

@@ -32,6 +32,7 @@ class FluNavigationFlyIconTextItem : public FluWidget
 
   public slots:
     void onThemeChanged();
+
   protected:
     QVBoxLayout* m_vMainLayout;
 

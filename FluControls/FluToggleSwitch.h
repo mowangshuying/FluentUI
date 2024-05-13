@@ -27,7 +27,7 @@ class FluToggleSwitch : public QCheckBox
                 setText(m_offText);
         });
 
-         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluToggleSwitch(QString text, QWidget* parent = nullptr) : QCheckBox(text, parent)

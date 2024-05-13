@@ -49,7 +49,6 @@ class FluConfirmFlyout : public FluVFlyout
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
         }
-        
     }
 
     void setTitle(QString title)

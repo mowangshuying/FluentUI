@@ -447,8 +447,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("AppBarButton", item);
         auto appBarButtonPage = new FluAppBarButtonPage;
         m_sLayout->addWidget("AppBarButtonPage", appBarButtonPage);
-        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AppBarButtonPage");
-        });
+        connect(item3, &FluNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AppBarButtonPage"); });
 
         FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("AppBarSeparator", item);
         FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("AppBarToggleButton", item);

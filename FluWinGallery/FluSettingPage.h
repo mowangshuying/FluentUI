@@ -78,9 +78,6 @@ class FluSettingPage : public FluWidget
         aboutLabelBox->setVersion("");  // empty it!;
         m_vScrollView->getMainLayout()->addWidget(aboutLabelBox);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
-
-        // appThemeSelectBox->getComboBox()->setCurrentIndex(1);
     }
 
     void paintEvent(QPaintEvent* event)

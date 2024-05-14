@@ -2,6 +2,7 @@
 #include "../FluControls/FluDef.h"
 #include <QFontDatabase>
 #include <QPainter>
+#include <QtSvg/QSvgRenderer>
 
 FluIconUtils::FluIconUtils()
 {
@@ -81,4 +82,20 @@ void FluIconUtils::saveFluentPng(FluAwesomeType nType, FluTheme theme, QString f
 {
     auto pixmap = getFluentIconPixmap(nType, theme);
     pixmap.save(filename);
+}
+
+QPixmap FluIconUtils::getSvgPixmap(QString svgPath)
+{
+    QPixmap pixmap(QSize(30, 30));
+    pixmap.fill(Qt::transparent);
+    QPainter painter(&pixmap);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
+    QSvgRenderer renderer(svgPath);
+    renderer.render(&painter);
+    return pixmap;
+}
+
+QIcon FluIconUtils::getSvgIcon(QString svgPath)
+{
+    return QIcon(getSvgPixmap(svgPath));
 }

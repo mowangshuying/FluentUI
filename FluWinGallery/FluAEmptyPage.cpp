@@ -5,6 +5,7 @@
 #include "../FluControls/FluPushButton.h"
 #include "../FluControls/FluIconButton.h"
 #include "../FluControls/FluVScrollView.h"
+#include "../FluControls/FluDropDownButton.h"
 
 FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -31,12 +32,15 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     auto tileWraHLayout = new QHBoxLayout;
     m_mainLayout->addLayout(tileWraHLayout);
 
-    auto documentationBtn = new FluPushButton;
+    auto documentationBtn = new FluDropDownButton;
+    documentationBtn->setIcon(FluAwesomeType::Document);
     documentationBtn->setText("Documentation");
     documentationBtn->setFixedWidth(160);
     tileWraHLayout->addWidget(documentationBtn, Qt::AlignLeft);
 
-    auto sourceBtn = new FluPushButton;
+    auto sourceBtn = new FluDropDownButton;
+    sourceBtn->setIcon(FluIconUtils::getSvgIcon("../res/HomeHeaderTiles/github-mark.svg"));
+    sourceBtn->setSvgPath("../res/HomeHeaderTiles/github-mark.svg", "../res/HomeHeaderTiles/github-mark-white.svg");
     sourceBtn->setText("Source");
     sourceBtn->setFixedWidth(120);
     tileWraHLayout->addWidget(sourceBtn, Qt::AlignLeft);

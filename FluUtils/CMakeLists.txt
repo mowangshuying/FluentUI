@@ -23,4 +23,5 @@ qt_add_library(${TGT}
 target_link_libraries(${TGT}
     PUBLIC
     Qt6::Widgets
+    Qt6::Svg
 )

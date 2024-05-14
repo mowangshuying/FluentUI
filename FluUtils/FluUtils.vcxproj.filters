@@ -38,6 +38,9 @@
     <ClInclude Include="FluConfigUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FluObjectPtrUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluIconUtils.cpp">
@@ -53,6 +56,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluConfigUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluObjectPtrUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -20,7 +20,7 @@ class FluFWScrollView : public QScrollArea
         m_contextWidget->setObjectName("contextWidget");
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluFWScrollView.qss");
         setStyleSheet(qss);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluFlowLayout* getMainLayout()

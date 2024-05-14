@@ -51,7 +51,7 @@ class FluCalendarDatePicker : public QPushButton
         connect(m_iconButton, &QPushButton::clicked, [=]() { onClicked(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
         //  {
         //     onThemeChanged();
         // });

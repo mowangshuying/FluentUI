@@ -4,5 +4,5 @@ FluHyperLinkButton::FluHyperLinkButton(QString linkUrl, QWidget* parent /* = nul
 {
     connect(this, &FluHyperLinkButton::clicked, [=](bool bClicked) { QDesktopServices::openUrl(QUrl(m_linkUrl)); });
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButton.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
 }

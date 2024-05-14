@@ -73,7 +73,7 @@ class FluDatePicker : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

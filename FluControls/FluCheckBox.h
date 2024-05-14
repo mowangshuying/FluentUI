@@ -10,13 +10,13 @@ class FluCheckBox : public QCheckBox
     explicit FluCheckBox(QWidget* parent = nullptr) : QCheckBox(parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     explicit FluCheckBox(const QString& text, QWidget* parent = nullptr) : QCheckBox(text, parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

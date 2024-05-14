@@ -55,7 +55,7 @@ class FluComboBoxEx : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
         connect(m_menu, &FluMenu::triggered, [=](QAction* action) {
             m_textBtn->setText(action->text());
             emit currentTextChanged(action->text());

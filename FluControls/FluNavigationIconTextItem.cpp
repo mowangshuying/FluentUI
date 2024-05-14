@@ -365,6 +365,7 @@ void FluNavigationIconTextItem::onItemClicked()
             // show flyout icon text item;
             // #ifdef _DEBUG
             auto flyIconTextItem = new FluNavigationFlyIconTextItem;
+            LOG_DEBUG << flyIconTextItem;
             flyIconTextItem->setIconTextItems(getChildItems());
             flyIconTextItem->move(gPoint.x(), gPoint.y());
             flyIconTextItem->show();

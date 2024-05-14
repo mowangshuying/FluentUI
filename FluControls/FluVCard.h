@@ -44,7 +44,6 @@ class FluVCard : public FluWidget
         setFixedSize(200, 220);
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
         setStyleSheet(qss);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     FluVCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluVCard(parent)

@@ -28,7 +28,7 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluW
 
     m_iconAwesomeType = FluAwesomeType::None;
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+    
 }
 
 FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluSettingsSelectBox(parent)

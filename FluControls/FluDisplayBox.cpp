@@ -29,5 +29,5 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_mainLayout->addWidget(m_codeExpander);
     m_codeExpander->setObjectName("codeExpander");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBox.qss", this);
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+    
 }

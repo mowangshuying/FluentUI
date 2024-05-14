@@ -49,7 +49,7 @@ FluNavigationView::FluNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(
     connect(menuButtonItem, &FluNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
     connect(searchItem, &FluNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
 
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+    
 }
 
 void FluNavigationView::addItemToTopLayout(QWidget *item)

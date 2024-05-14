@@ -29,6 +29,11 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     FluNavigationIconTextItem(FluNavigationIconTextItem *item);
 
+    ~FluNavigationIconTextItem()
+    {
+        //LOG_DEBUG << "called";
+    }
+
     void copyItem(FluNavigationIconTextItem *item);
 
     QWidget *getWrapWidget1()

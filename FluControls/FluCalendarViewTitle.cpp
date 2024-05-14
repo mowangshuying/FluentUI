@@ -28,7 +28,7 @@ FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : FluW
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", this);
 
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+    
 }
 
 void FluCalendarViewTitle::setYearMonth(int nYear, int nMonth)

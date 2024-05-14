@@ -40,7 +40,7 @@ class FluSettingsLabelBox : public FluWidget
 
         setFixedHeight(70);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     void setIcon(QIcon icon)

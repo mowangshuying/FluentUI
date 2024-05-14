@@ -128,7 +128,7 @@ class FluDatePickerView : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     int getMonth()

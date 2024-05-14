@@ -13,7 +13,6 @@ class FluVSplitLine : public FluWidget
     {
         setFixedHeight(1);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
     void paintEvent(QPaintEvent* event)

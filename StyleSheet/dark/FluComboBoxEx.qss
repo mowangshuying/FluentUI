@@ -1,18 +1,18 @@
 FluComboBoxEx {
-    background-color: rgb(45, 45, 45);
-    border: 1px solid rgb(32, 32, 32);
-    border-bottom: 1px solid rgb(48, 48, 48);
+    background-color: rgb(62, 62, 62);
+    border: 1px solid rgb(69, 69, 69);
+    border-bottom: 1px solid rgb(65, 65, 65);
     border-radius: 4px;
 }
 
 FluComboBoxEx:hover {
-    border: 1px solid rgb(32, 32, 32);
-    border-bottom: 1px solid rgb(48, 48, 48);
-    background-color: rgb(50, 50, 50);
+    border: 1px solid rgb(68, 68, 68);
+    border-bottom: 1px solid rgb(68, 68, 68);
+    background-color: rgb(68, 68, 68);
 }
 
 FluComboBoxEx:pressed {
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(57, 57, 57);
     /* border: 1px solid rgb(32, 32, 32); */
 }
 

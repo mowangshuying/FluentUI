@@ -8,6 +8,11 @@ class FluWidget : public QWidget
     Q_OBJECT
   public:
     FluWidget(QWidget* parent = nullptr);
+    
+    virtual ~FluWidget()
+    {
+        
+    }
 
     void showEvent(QShowEvent* event);
   public slots:

@@ -43,7 +43,7 @@ class FluSearchLineEdit : public FluWidget
         connect(m_btn, &QPushButton::clicked, [=]() { emit onSearchBtnClicked(); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     QString getText()

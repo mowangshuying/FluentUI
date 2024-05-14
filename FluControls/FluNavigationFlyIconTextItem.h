@@ -17,6 +17,8 @@ class FluNavigationFlyIconTextItem : public FluWidget
   public:
     FluNavigationFlyIconTextItem(QWidget* parent = nullptr);
 
+    ~FluNavigationFlyIconTextItem();
+
     void setIconTextItems(std::vector<FluNavigationIconTextItem*> items);
 
     void adjustItemSize();

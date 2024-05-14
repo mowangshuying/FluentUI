@@ -15,7 +15,7 @@ class FluGraphicalButton : public QPushButton
         // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGraphicalButton.qss", this);
 
         onThemeChanged();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

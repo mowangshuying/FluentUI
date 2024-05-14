@@ -26,7 +26,7 @@ class FluPivot : public FluWidget
         m_vMainLayout->addLayout(m_sLayout);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivot.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     void addPivotItem(QString key, QWidget* widget)

@@ -55,7 +55,7 @@ class FluVFlyout : public FluWidget
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
         }
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     // void resizeEvent(QResizeEvent* event)

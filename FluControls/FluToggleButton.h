@@ -23,7 +23,7 @@ class FluToggleButton : public QPushButton
             update();
         });
 
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

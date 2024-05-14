@@ -24,7 +24,7 @@ class FluRotationButton : public QPushButton
         // connect(this, &FluRotationButton::clicked, [=](bool b) {
         //     m_nReserveAngle = 16;
         // });
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluRotationButton(FluAwesomeType awesomeType, QWidget* parent = nullptr) : FluRotationButton(parent)

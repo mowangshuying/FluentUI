@@ -26,7 +26,7 @@ FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/
 
     setFixedHeight(30);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+    
 }
 
 void FluCalendarViewWeakTitle::paintEvent(QPaintEvent* event)
@@ -98,7 +98,7 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
 
     setFixedHeight(270);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+    
 }
 
 FluCalendarItem* FluCalendarMonthView::getItem(int nIndex)

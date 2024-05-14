@@ -17,7 +17,7 @@ class FluVRadioGroupBox : public QGroupBox
         setLayout(m_vMainLayout);
         m_vMainLayout->addSpacing(15);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluVRadioGroupBox(QString title, QWidget* parent = nullptr) : QGroupBox(title, parent)
@@ -28,7 +28,7 @@ class FluVRadioGroupBox : public QGroupBox
         setLayout(m_vMainLayout);
         m_vMainLayout->addSpacing(15);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void addRadioButton(FluRadioButton* radioButton)

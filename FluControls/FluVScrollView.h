@@ -21,7 +21,12 @@ class FluVScrollView : public QScrollArea
         m_contextWidget->setObjectName("contextWidget");
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVScrollView.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
+    }
+
+    ~FluVScrollView()
+    {
+      
     }
 
     QVBoxLayout* getMainLayout()

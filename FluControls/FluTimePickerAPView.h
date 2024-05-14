@@ -97,7 +97,7 @@ class FluTimePickerAPView : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     int getHour()

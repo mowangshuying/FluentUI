@@ -45,7 +45,7 @@ class FluPasswordBox : public FluWidget
         m_edit->setEchoMode(QLineEdit::Password);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     void setMaskC(unsigned maskC)

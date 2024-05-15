@@ -134,7 +134,9 @@
     <ClCompile Include="FluDatePickerView.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
+    <ClCompile Include="FluHNavigationView.cpp" />
     <ClCompile Include="FluHRadioGroupBox.cpp" />
+    <ClCompile Include="FluHScrollView.cpp" />
     <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluInfoBarMgr.cpp" />
     <ClCompile Include="FluListView.cpp" />
@@ -224,6 +226,8 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluHScrollView.h" />
+    <QtMoc Include="FluHNavigationView.h" />
     <QtMoc Include="FluWidget.h" />
     <QtMoc Include="FluNavigationFlyIconTextItem.h" />
     <QtMoc Include="FluTabView.h" />

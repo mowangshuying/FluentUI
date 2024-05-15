@@ -1,8 +1,8 @@
 #include "FluVNavigationSearchItem.h"
 
-FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/) : FluNavigationItem(parent)
+FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/) : FluVNavigationItem(parent)
 {
-    m_itemType = FluNavigationItemType::Search;
+    m_itemType = FluVNavigationItemType::Search;
     // long is search edit
     // short is search button
 

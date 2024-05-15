@@ -47,7 +47,7 @@
     <ClCompile Include="FluVScrollView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationItem.cpp">
+    <ClCompile Include="FluVNavigationItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluVNavigationMenuItem.cpp">
@@ -332,6 +332,9 @@
     <ClCompile Include="FluHNavigationIconTextItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluHNavigationItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -367,7 +370,7 @@
     <QtMoc Include="FluVNavigationSearchItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationItem.h">
+    <QtMoc Include="FluVNavigationItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluStackedLayout.h">
@@ -629,6 +632,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluHScrollView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHNavigationItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

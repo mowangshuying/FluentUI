@@ -1,4 +1,12 @@
 #pragma once
-class FluHNavigationIconTextItem
+
+#include "FluHNavigationItem.h"
+
+class FluHNavigationIconTextItem : public FluHNavigationItem
 {
+  public:
+    FluHNavigationIconTextItem(QWidget* parent = nullptr) : FluHNavigationItem(parent)
+    {
+
+    }
 };

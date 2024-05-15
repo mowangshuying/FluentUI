@@ -4,7 +4,7 @@
 #include <QStyle>
 
 class FluVNavigationView;
-enum class FluNavigationItemType
+enum class FluVNavigationItemType
 {
     Menu,
     IconText,
@@ -13,18 +13,18 @@ enum class FluNavigationItemType
     Setting,
 };
 
-class FluNavigationItem : public FluWidget
+class FluVNavigationItem : public FluWidget
 {
     Q_OBJECT
   public:
-    FluNavigationItem(QWidget* parent = nullptr);
+    FluVNavigationItem(QWidget* parent = nullptr);
 
     void setParentView(FluVNavigationView* view);
     FluVNavigationView* getParentView();
 
-    FluNavigationItemType getItemType();
+    FluVNavigationItemType getItemType();
 
-    void setItemType(FluNavigationItemType itemType);
+    void setItemType(FluVNavigationItemType itemType);
 
     virtual void clearAllItemsSelectState(){};
     virtual void updateAllItemsStyleSheet(){};
@@ -57,7 +57,7 @@ class FluNavigationItem : public FluWidget
     }
 
   protected:
-    FluNavigationItemType m_itemType;
+    FluVNavigationItemType m_itemType;
     FluVNavigationView* m_parentView;
     bool m_bLong;
     QString m_key;

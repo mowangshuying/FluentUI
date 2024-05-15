@@ -10,12 +10,12 @@
 #include <QTransform>
 #include <QVBoxLayout>
 #include "FluWidget.h"
-#include "FluNavigationItem.h"
+#include "FluVNavigationItem.h"
 #include "../FluUtils/FluUtils.h"
 #include <stack>
 
 class FluVNavigationView;
-class FluVNavigationIconTextItem : public FluNavigationItem
+class FluVNavigationIconTextItem : public FluVNavigationItem
 {
     Q_OBJECT
   public:

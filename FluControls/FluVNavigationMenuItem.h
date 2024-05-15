@@ -5,10 +5,10 @@
 #include <QHBoxLayout>
 #include <QStyleOption>
 #include <QPainter>
-#include "FluNavigationItem.h"
+#include "FluVNavigationItem.h"
 #include "../FluUtils/FluUtils.h"
 
-class FluVNavigationMenuItem : public FluNavigationItem
+class FluVNavigationMenuItem : public FluVNavigationItem
 {
     Q_OBJECT
   public:

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "FluNavigationItem.h"
+#include "FluVNavigationItem.h"
 #include "FluSearchLineEdit.h"
 #include <QHBoxLayout>
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QStyle>
 
-class FluVNavigationSearchItem : public FluNavigationItem
+class FluVNavigationSearchItem : public FluVNavigationItem
 {
     Q_OBJECT
   public:
@@ -27,7 +27,7 @@ class FluVNavigationSearchItem : public FluNavigationItem
 
     void mouseReleaseEvent(QMouseEvent* event)
     {
-        FluNavigationItem::mouseReleaseEvent(event);
+        FluVNavigationItem::mouseReleaseEvent(event);
         emit itemClicked();
     }
 

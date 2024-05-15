@@ -79,7 +79,7 @@ void FluNavigationFlyIconTextItem::adjustItemSize()
 
 void FluNavigationFlyIconTextItem::onThemeChanged()
 {
-    LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);

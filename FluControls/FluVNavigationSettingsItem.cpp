@@ -1,9 +1,9 @@
 #include "FluVNavigationSettingsItem.h"
 #include "FluVNavigationView.h"
 
-FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluNavigationItem(parent)
+FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluVNavigationItem(parent)
 {
-    m_itemType = FluNavigationItemType::Setting;
+    m_itemType = FluVNavigationItemType::Setting;
     setFixedSize(320, 40);
     m_hMainLayout = new QHBoxLayout;
     setLayout(m_hMainLayout);

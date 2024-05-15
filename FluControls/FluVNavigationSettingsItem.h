@@ -1,6 +1,6 @@
 #pragma once
 
-#include "FluNavigationItem.h"
+#include "FluVNavigationItem.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
@@ -10,7 +10,7 @@
 #include "FluRotationButton.h"
 #include "../FluUtils/FluUtils.h"
 
-class FluVNavigationSettingsItem : public FluNavigationItem
+class FluVNavigationSettingsItem : public FluVNavigationItem
 {
     Q_OBJECT
   public:
@@ -56,7 +56,7 @@ class FluVNavigationSettingsItem : public FluNavigationItem
 
     void mouseReleaseEvent(QMouseEvent* event)
     {
-        FluNavigationItem::mouseReleaseEvent(event);
+        FluVNavigationItem::mouseReleaseEvent(event);
         emit itemClicked();
     }
 

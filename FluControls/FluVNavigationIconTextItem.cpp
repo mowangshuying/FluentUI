@@ -5,9 +5,9 @@
 #include "FluVNavigationView.h"
 #include "FluVNavigationFlyIconTextItem.h"
 
-FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullptr*/) : FluVNavigationItem(parent)
 {
-    m_itemType = FluNavigationItemType::IconText;
+    m_itemType = FluVNavigationItemType::IconText;
     m_bHideIcon = false;
     setFixedSize(320, 40);
     m_wrapWidget1 = new QWidget(this);

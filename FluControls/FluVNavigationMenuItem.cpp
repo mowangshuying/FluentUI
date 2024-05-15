@@ -2,9 +2,9 @@
 #include "../FluUtils/FluUtils.h"
 #include <QPropertyAnimation>
 
-FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
+FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : FluVNavigationItem(parent)
 {
-    m_itemType = FluNavigationItemType::Menu;
+    m_itemType = FluVNavigationItemType::Menu;
 
     m_hLayout = new QHBoxLayout(this);
 

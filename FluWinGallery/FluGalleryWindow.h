@@ -109,7 +109,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(allSamplesPage, &FluAllSamplesPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
-            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 iconTextItem->onItemClickedDirect();
@@ -252,7 +252,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(collectionsPage, &FluCollectionsPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
-            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 iconTextItem->onItemClickedDirect();
@@ -306,7 +306,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
-            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 iconTextItem->onItemClickedDirect();
@@ -350,7 +350,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(dialogAndFlyoutPage, &FluDialogsAndFlyoutsPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
-            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 iconTextItem->onItemClickedDirect();
@@ -556,7 +556,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
-            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 iconTextItem->onItemClickedDirect();
@@ -616,7 +616,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(textPage, &FluTextPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
-            if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 iconTextItem->onItemClickedDirect();

@@ -68,7 +68,7 @@ void FluVNavigationView::addItemToMidLayout(QWidget *item)
 void FluVNavigationView::addItemToBottomLayout(QWidget *item)
 {
     m_vBottomLayout->addWidget(item);
-    auto tmpItem = (FluNavigationItem *)item;
+    auto tmpItem = (FluVNavigationItem *)item;
     tmpItem->setParentView(this);
 }
 
@@ -82,7 +82,7 @@ void FluVNavigationView::clearAllItemsSelectState()
 
     for (int i = 0; i < m_vBottomLayout->count(); i++)
     {
-        auto curItem = (FluNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
+        auto curItem = (FluVNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
         curItem->clearAllItemsSelectState();
     }
 }
@@ -98,37 +98,37 @@ void FluVNavigationView::updateAllItemsStyleSheet()
 
     for (int i = 0; i < m_vBottomLayout->count(); i++)
     {
-        auto curItem = (FluNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
+        auto curItem = (FluVNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
         curItem->updateAllItemsStyleSheet();
     }
 }
 
-std::vector<FluNavigationItem *> FluVNavigationView::getAllItems()
+std::vector<FluVNavigationItem *> FluVNavigationView::getAllItems()
 {
-    std::vector<FluNavigationItem *> items;
+    std::vector<FluVNavigationItem *> items;
     for (int i = 0; i < m_topWrapWidget->layout()->count(); i++)
     {
-        auto item = (FluNavigationItem *)(m_topWrapWidget->layout()->itemAt(i)->widget());
+        auto item = (FluVNavigationItem *)(m_topWrapWidget->layout()->itemAt(i)->widget());
         items.push_back(item);
     }
 
     for (int i = 0; i < m_midVScrollView->getMainLayout()->count(); i++)
     {
-        auto item = (FluNavigationItem *)(m_midVScrollView->getMainLayout()->itemAt(i)->widget());
+        auto item = (FluVNavigationItem *)(m_midVScrollView->getMainLayout()->itemAt(i)->widget());
         items.push_back(item);
     }
 
     for (int i = 0; i < m_bottomWrapWidget->layout()->count(); i++)
     {
-        auto item = (FluNavigationItem *)(m_bottomWrapWidget->layout()->itemAt(i)->widget());
+        auto item = (FluVNavigationItem *)(m_bottomWrapWidget->layout()->itemAt(i)->widget());
         items.push_back(item);
     }
 
-    std::vector<FluNavigationItem *> allItems;
+    std::vector<FluVNavigationItem *> allItems;
     allItems.insert(allItems.end(), items.begin(), items.end());
     for (auto item : items)
     {
-        if (item != nullptr && item->getItemType() == FluNavigationItemType::IconText)
+        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)item;
             std::vector<FluVNavigationIconTextItem *> totalItems;
@@ -140,10 +140,10 @@ std::vector<FluNavigationItem *> FluVNavigationView::getAllItems()
     return allItems;
 }
 
-FluNavigationItem *FluVNavigationView::getItemByKey(QString key)
+FluVNavigationItem *FluVNavigationView::getItemByKey(QString key)
 {
-    std::vector<FluNavigationItem *> items = getAllItems();
-    FluNavigationItem *item = nullptr;
+    std::vector<FluVNavigationItem *> items = getAllItems();
+    FluVNavigationItem *item = nullptr;
     for (auto tmpItem : items)
     {
         if (tmpItem->getKey() == key)
@@ -188,14 +188,14 @@ void FluVNavigationView::onMenuItemClicked()
         // close all item in vLayout
         for (auto itemW : itemVct)
         {
-            auto item = (FluNavigationItem *)(itemW);
+            auto item = (FluVNavigationItem *)(itemW);
             if (item != nullptr)
             {
                 item->setLong(false);
                 // item->setFixedWidth(40);
             }
 
-            if (item->getItemType() == FluNavigationItemType::IconText)
+            if (item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 if (!iconTextItem->isDown())
@@ -207,7 +207,7 @@ void FluVNavigationView::onMenuItemClicked()
                 iconTextItem->hideLabelArrow();
             }
 
-            if (item->getItemType() == FluNavigationItemType::Setting)
+            if (item->getItemType() == FluVNavigationItemType::Setting)
             {
                 auto settingsItem = (FluVNavigationSettingsItem *)(item);
                 if (settingsItem != nullptr)
@@ -217,7 +217,7 @@ void FluVNavigationView::onMenuItemClicked()
                 }
             }
 
-            if (item->getItemType() == FluNavigationItemType::Search)
+            if (item->getItemType() == FluVNavigationItemType::Search)
             {
                 auto searchItem = (FluVNavigationSearchItem *)(item);
                 if (searchItem != nullptr)
@@ -227,7 +227,7 @@ void FluVNavigationView::onMenuItemClicked()
                 }
             }
 
-            if (item->getItemType() == FluNavigationItemType::Menu)
+            if (item->getItemType() == FluVNavigationItemType::Menu)
             {
                 auto menuItem = (FluVNavigationMenuItem *)(item);
                 if (menuItem != nullptr)
@@ -245,14 +245,14 @@ void FluVNavigationView::onMenuItemClicked()
     {
         for (auto itemW : itemVct)
         {
-            auto item = (FluNavigationItem *)(itemW);
+            auto item = (FluVNavigationItem *)(itemW);
             if (item != nullptr)
             {
                 item->setLong(true);
                 // item->setFixedWidth(40);
             }
 
-            if (item->getItemType() == FluNavigationItemType::IconText)
+            if (item->getItemType() == FluVNavigationItemType::IconText)
             {
                 auto iconTextItem = (FluVNavigationIconTextItem *)(item);
                 iconTextItem->setFixedWidth(320);
@@ -260,7 +260,7 @@ void FluVNavigationView::onMenuItemClicked()
                 iconTextItem->showLabelArrow();
             }
 
-            if (item->getItemType() == FluNavigationItemType::Setting)
+            if (item->getItemType() == FluVNavigationItemType::Setting)
             {
                 auto settingsItem = (FluVNavigationSettingsItem *)(item);
                 if (settingsItem != nullptr)
@@ -270,7 +270,7 @@ void FluVNavigationView::onMenuItemClicked()
                 }
             }
 
-            if (item->getItemType() == FluNavigationItemType::Search)
+            if (item->getItemType() == FluVNavigationItemType::Search)
             {
                 auto searchItem = (FluVNavigationSearchItem *)(item);
                 if (searchItem != nullptr)

@@ -2,7 +2,7 @@
 
 #include "FluWidget.h"
 #include <QVBoxLayout>
-#include "FluNavigationItem.h"
+#include "FluVNavigationItem.h"
 #include <vector>
 #include "FluVScrollView.h"
 

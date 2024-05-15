@@ -8,11 +8,11 @@
 #include "FluNavigationItem.h"
 #include "../FluUtils/FluUtils.h"
 
-class FluNavigationMenuItem : public FluNavigationItem
+class FluVNavigationMenuItem : public FluNavigationItem
 {
     Q_OBJECT
   public:
-    FluNavigationMenuItem(QWidget *parent = nullptr);
+    FluVNavigationMenuItem(QWidget *parent = nullptr);
 
     void paintEvent(QPaintEvent *event)
     {

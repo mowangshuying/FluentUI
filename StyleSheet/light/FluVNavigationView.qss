@@ -1,18 +1,16 @@
-FluNavigationView {
+FluVNavigationView {
     /* background-color: aqua; */
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(243, 243, 243);
 }
 
 #srollArea {
     border: none;
-    /* background-color: rgb(32, 32, 32); */
-    background-color: transparent;
 }
 
 #widget1,
 #widget2,
 #widget3 {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(243, 243, 243);
 }
 
 QScrollArea {

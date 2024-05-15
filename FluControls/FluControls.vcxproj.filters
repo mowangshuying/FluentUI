@@ -26,7 +26,7 @@
     <ClCompile Include="FluPushButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationView.cpp">
+    <ClCompile Include="FluVNavigationView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluTabWidget.cpp">
@@ -50,10 +50,10 @@
     <ClCompile Include="FluNavigationItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationMenuItem.cpp">
+    <ClCompile Include="FluVNavigationMenuItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationSearchItem.cpp">
+    <ClCompile Include="FluVNavigationSearchItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluStackedLayout.cpp">
@@ -83,7 +83,7 @@
     <ClCompile Include="FluRotationButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationSettingsItem.cpp">
+    <ClCompile Include="FluVNavigationSettingsItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluMenu.cpp">
@@ -107,7 +107,7 @@
     <ClCompile Include="FluFWScrollView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationIconTextItem.cpp">
+    <ClCompile Include="FluVNavigationIconTextItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluSearchLineEdit.cpp">
@@ -317,7 +317,7 @@
     <ClCompile Include="FluAppBarToggleButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationFlyIconTextItem.cpp">
+    <ClCompile Include="FluVNavigationFlyIconTextItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluWidget.cpp">
@@ -329,6 +329,9 @@
     <ClCompile Include="FluHScrollView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluHNavigationIconTextItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -337,7 +340,7 @@
     <QtMoc Include="FluDef.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationView.h">
+    <QtMoc Include="FluVNavigationView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTabWidget.h">
@@ -355,13 +358,13 @@
     <QtMoc Include="FluVScrollView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationIconTextItem.h">
+    <QtMoc Include="FluVNavigationIconTextItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationMenuItem.h">
+    <QtMoc Include="FluVNavigationMenuItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationSearchItem.h">
+    <QtMoc Include="FluVNavigationSearchItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluNavigationItem.h">
@@ -394,7 +397,7 @@
     <QtMoc Include="FluRotationButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationSettingsItem.h">
+    <QtMoc Include="FluVNavigationSettingsItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluMenu.h">
@@ -616,7 +619,7 @@
     <QtMoc Include="FluAppBarToggleButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationFlyIconTextItem.h">
+    <QtMoc Include="FluVNavigationFlyIconTextItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluWidget.h">
@@ -643,6 +646,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluCalendarSelectYearView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluHNavigationIconTextItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

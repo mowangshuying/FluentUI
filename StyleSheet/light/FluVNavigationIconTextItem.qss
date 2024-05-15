@@ -1,4 +1,4 @@
-FluNavigationIconTextItem {
+FluVNavigationIconTextItem {
     /* background-color: blueviolet; */
     background-color: transparent;
     /* background-color: rgb(243, 243, 243); */

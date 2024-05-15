@@ -3,7 +3,7 @@
 #include "FluWidget.h"
 #include <QStyle>
 
-class FluNavigationView;
+class FluVNavigationView;
 enum class FluNavigationItemType
 {
     Menu,
@@ -19,8 +19,8 @@ class FluNavigationItem : public FluWidget
   public:
     FluNavigationItem(QWidget* parent = nullptr);
 
-    void setParentView(FluNavigationView* view);
-    FluNavigationView* getParentView();
+    void setParentView(FluVNavigationView* view);
+    FluVNavigationView* getParentView();
 
     FluNavigationItemType getItemType();
 
@@ -58,7 +58,7 @@ class FluNavigationItem : public FluWidget
 
   protected:
     FluNavigationItemType m_itemType;
-    FluNavigationView* m_parentView;
+    FluVNavigationView* m_parentView;
     bool m_bLong;
     QString m_key;
 };

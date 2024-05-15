@@ -18,12 +18,12 @@
 #include "FluVScrollView.h"
 
 class FluNavigationItem;
-class FluNavigationIconTextItem;
-class FluNavigationView : public FluWidget
+class FluVNavigationIconTextItem;
+class FluVNavigationView : public FluWidget
 {
     Q_OBJECT
   public:
-    FluNavigationView(QWidget *parent = nullptr);
+    FluVNavigationView(QWidget *parent = nullptr);
 
     void addItemToTopLayout(QWidget *item);
 
@@ -57,11 +57,11 @@ class FluNavigationView : public FluWidget
         //LOG_DEBUG << "called";
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationView.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationView.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationView.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationView.qss", this);
         }
     }
 

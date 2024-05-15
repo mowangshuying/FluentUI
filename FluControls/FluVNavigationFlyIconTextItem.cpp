@@ -1,8 +1,8 @@
-#include "FluNavigationFlyIconTextItem.h"
-#include "FluNavigationIconTextItem.h"
+#include "FluVNavigationFlyIconTextItem.h"
+#include "FluVNavigationIconTextItem.h"
 #include "../FluUtils/FluStyleSheetUitls.h"
 
-FluNavigationFlyIconTextItem::FluNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_widget = new FluVScrollView;
     m_widget->setObjectName("centerWidget");
@@ -26,21 +26,21 @@ FluNavigationFlyIconTextItem::FluNavigationFlyIconTextItem(QWidget* parent /*= n
     onThemeChanged();
 }
 
- FluNavigationFlyIconTextItem::~FluNavigationFlyIconTextItem()
+ FluVNavigationFlyIconTextItem::~FluVNavigationFlyIconTextItem()
 {
      //LOG_DEBUG << "called";
  }
 
-void FluNavigationFlyIconTextItem::setIconTextItems(std::vector<FluNavigationIconTextItem*> items)
+void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationIconTextItem*> items)
 {
     // copy items;
     for (auto item : items)
     {
-        auto newItem = new FluNavigationIconTextItem(item);
+        auto newItem = new FluVNavigationIconTextItem(item);
         m_widget->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 
-        connect(newItem, &FluNavigationIconTextItem::itemClicked, [=]() {
+        connect(newItem, &FluVNavigationIconTextItem::itemClicked, [=]() {
             // item->onItemClickedDirect();
             if (newItem->isLeaf())
             {
@@ -53,7 +53,7 @@ void FluNavigationFlyIconTextItem::setIconTextItems(std::vector<FluNavigationIco
     adjustItemSize();
 }
 
-void FluNavigationFlyIconTextItem::adjustItemSize()
+void FluVNavigationFlyIconTextItem::adjustItemSize()
 {
     LOG_DEBUG << "called";
     int nMaxWidth = 0;
@@ -77,17 +77,17 @@ void FluNavigationFlyIconTextItem::adjustItemSize()
     setFixedWidth(nMaxWidth + 25);
 }
 
-void FluNavigationFlyIconTextItem::onThemeChanged()
+void FluVNavigationFlyIconTextItem::onThemeChanged()
 {
     // LOG_DEBUG << "called";
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", m_widget);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationFlyIconTextItem.qss", m_widget);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationFlyIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", m_widget);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", this);
     }
 }

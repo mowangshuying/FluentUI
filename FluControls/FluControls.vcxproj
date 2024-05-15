@@ -134,6 +134,7 @@
     <ClCompile Include="FluDatePickerView.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
+    <ClCompile Include="FluHNavigationIconTextItem.cpp" />
     <ClCompile Include="FluHNavigationView.cpp" />
     <ClCompile Include="FluHRadioGroupBox.cpp" />
     <ClCompile Include="FluHScrollView.cpp" />
@@ -144,7 +145,7 @@
     <ClCompile Include="FluLoopView.cpp" />
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
-    <ClCompile Include="FluNavigationFlyIconTextItem.cpp" />
+    <ClCompile Include="FluVNavigationFlyIconTextItem.cpp" />
     <ClCompile Include="FluPasswordBox.cpp" />
     <ClCompile Include="FluPivot.cpp" />
     <ClCompile Include="FluPivotTitleBar.cpp" />
@@ -192,12 +193,12 @@
     <ClCompile Include="FluLabel.cpp" />
     <ClCompile Include="FluLineEdit.cpp" />
     <ClCompile Include="FluMenu.cpp" />
-    <ClCompile Include="FluNavigationIconTextItem.cpp" />
+    <ClCompile Include="FluVNavigationIconTextItem.cpp" />
     <ClCompile Include="FluNavigationItem.cpp" />
-    <ClCompile Include="FluNavigationMenuItem.cpp" />
-    <ClCompile Include="FluNavigationSearchItem.cpp" />
-    <ClCompile Include="FluNavigationSettingsItem.cpp" />
-    <ClCompile Include="FluNavigationView.cpp" />
+    <ClCompile Include="FluVNavigationMenuItem.cpp" />
+    <ClCompile Include="FluVNavigationSearchItem.cpp" />
+    <ClCompile Include="FluVNavigationSettingsItem.cpp" />
+    <ClCompile Include="FluVNavigationView.cpp" />
     <ClCompile Include="FluPushButton.cpp" />
     <ClCompile Include="FluRadioButton.cpp" />
     <ClCompile Include="FluRepeatButton.cpp" />
@@ -220,16 +221,17 @@
     <QtMoc Include="FluDef.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="FluNavigationView.h" />
+    <QtMoc Include="FluVNavigationView.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FluHNavigationIconTextItem.h" />
     <QtMoc Include="FluHScrollView.h" />
     <QtMoc Include="FluHNavigationView.h" />
     <QtMoc Include="FluWidget.h" />
-    <QtMoc Include="FluNavigationFlyIconTextItem.h" />
+    <QtMoc Include="FluVNavigationFlyIconTextItem.h" />
     <QtMoc Include="FluTabView.h" />
     <QtMoc Include="FluTabBar.h" />
     <QtMoc Include="FluTabBarItem.h" />
@@ -277,7 +279,7 @@
     <QtMoc Include="FluStyleButton.h" />
     <QtMoc Include="FluGraphicalButton.h" />
     <QtMoc Include="FluMenu.h" />
-    <QtMoc Include="FluNavigationSettingsItem.h" />
+    <QtMoc Include="FluVNavigationSettingsItem.h" />
     <QtMoc Include="FluRotationButton.h" />
     <QtMoc Include="FluToggleButton.h" />
     <QtMoc Include="FluExpander.h" />
@@ -318,10 +320,10 @@
     <QtMoc Include="FluLabel.h" />
     <QtMoc Include="FluLineEdit.h" />
     <QtMoc Include="FluStackedLayout.h" />
-    <QtMoc Include="FluNavigationSearchItem.h" />
-    <QtMoc Include="FluNavigationIconTextItem.h" />
+    <QtMoc Include="FluVNavigationSearchItem.h" />
+    <QtMoc Include="FluVNavigationIconTextItem.h" />
     <QtMoc Include="FluNavigationItem.h" />
-    <QtMoc Include="FluNavigationMenuItem.h" />
+    <QtMoc Include="FluVNavigationMenuItem.h" />
     <QtMoc Include="FluVScrollView.h" />
     <QtMoc Include="FluHCard.h" />
     <QtMoc Include="FluVCard.h" />

@@ -7,11 +7,11 @@
 #include <QStyleOption>
 #include <QStyle>
 
-class FluNavigationSearchItem : public FluNavigationItem
+class FluVNavigationSearchItem : public FluNavigationItem
 {
     Q_OBJECT
   public:
-    FluNavigationSearchItem(QWidget* parent = nullptr);
+    FluVNavigationSearchItem(QWidget* parent = nullptr);
 
     void hideSearchButton()
     {

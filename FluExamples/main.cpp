@@ -1,4 +1,4 @@
-#include "../FluControls/FluNavigationView.h"
+#include "../FluControls/FluVNavigationView.h"
 #include "FluButtonDemo.h"
 #include "FluChangeBgDemo.h"
 #include "FluNavigationDemo.h"

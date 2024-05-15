@@ -10,13 +10,13 @@
 #include "FluRotationButton.h"
 #include "../FluUtils/FluUtils.h"
 
-class FluNavigationSettingsItem : public FluNavigationItem
+class FluVNavigationSettingsItem : public FluNavigationItem
 {
     Q_OBJECT
   public:
-    FluNavigationSettingsItem(QIcon icon, QString text, QWidget* parent = nullptr);
+    FluVNavigationSettingsItem(QIcon icon, QString text, QWidget* parent = nullptr);
 
-    FluNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent);
+    FluVNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent);
 
     void hideLabel()
     {

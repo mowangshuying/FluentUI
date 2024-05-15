@@ -1,16 +1,16 @@
 #include "FluNavigationItem.h"
-#include "FluNavigationView.h"
+#include "FluVNavigationView.h"
 
 FluNavigationItem::FluNavigationItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
 }
 
-void FluNavigationItem::setParentView(FluNavigationView* view)
+void FluNavigationItem::setParentView(FluVNavigationView* view)
 {
     m_parentView = view;
 }
 
-FluNavigationView* FluNavigationItem::getParentView()
+FluVNavigationView* FluNavigationItem::getParentView()
 {
     return m_parentView;
 }

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../FluControls/FluNavigationView.h"
-#include "../FluControls/FluNavigationIconTextItem.h"
+#include "../FluControls/FluVNavigationView.h"
+#include "../FluControls/FluVNavigationIconTextItem.h"
 #include <QFrame>
 #include "../FluControls/FluWidget.h"
 
@@ -19,17 +19,17 @@ class FluNavigationDemo : public FluWidget
 
     void addDesignGuidaceIconText()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
+        FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
         item->move(50, 50);
 
-        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item);
-        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item);
-        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
-        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem(FluAwesomeType::SetHistoryStatus2, "Accessibility", item);
+        FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item);
+        FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item);
+        FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
+        FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem(FluAwesomeType::SetHistoryStatus2, "Accessibility", item);
 
-        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("Screen reader support", item4);
-        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("Keyboard support", item4);
-        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("Color contrast", item4);
+        FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem("Screen reader support", item4);
+        FluVNavigationIconTextItem *item6 = new FluVNavigationIconTextItem("Keyboard support", item4);
+        FluVNavigationIconTextItem *item7 = new FluVNavigationIconTextItem("Color contrast", item4);
 
         item->addItem(item1);
         item->addItem(item2);
@@ -42,17 +42,17 @@ class FluNavigationDemo : public FluWidget
 
     void addDesignGuidaceText()
     {
-        FluNavigationIconTextItem *item = new FluNavigationIconTextItem("Design guidance", this);
+        FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem("Design guidance", this);
         item->move(50, 50);
 
-        FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("Typography", item);
-        FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("Icons", item);
-        FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("Colors", item);
-        FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("Accessibility", item);
+        FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("Typography", item);
+        FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("Icons", item);
+        FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("Colors", item);
+        FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("Accessibility", item);
 
-        FluNavigationIconTextItem *item5 = new FluNavigationIconTextItem("Screen reader support", item4);
-        FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("Keyboard support", item4);
-        FluNavigationIconTextItem *item7 = new FluNavigationIconTextItem("Color contrast", item4);
+        FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem("Screen reader support", item4);
+        FluVNavigationIconTextItem *item6 = new FluVNavigationIconTextItem("Keyboard support", item4);
+        FluVNavigationIconTextItem *item7 = new FluVNavigationIconTextItem("Color contrast", item4);
 
         item->addItem(item1);
         item->addItem(item2);

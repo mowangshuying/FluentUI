@@ -1,8 +1,8 @@
-#include "FluNavigationMenuItem.h"
+#include "FluVNavigationMenuItem.h"
 #include "../FluUtils/FluUtils.h"
 #include <QPropertyAnimation>
 
-FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
+FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : FluNavigationItem(parent)
 {
     m_itemType = FluNavigationItemType::Menu;
 
@@ -41,19 +41,19 @@ FluNavigationMenuItem::FluNavigationMenuItem(QWidget *parent /*= nullptr*/) : Fl
 
     connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);
 }
 
-void FluNavigationMenuItem::onThemeChanged()
+void FluVNavigationMenuItem::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
         m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationMenuItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);
     }
     else
     {
         m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationMenuItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationMenuItem.qss", this);
     }
 }

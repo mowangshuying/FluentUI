@@ -1,13 +1,13 @@
-FluNavigationMenuItem {
-    background-color: rgb(243, 243, 243);
+FluVNavigationMenuItem {
+    background-color: rgb(32, 32, 32);
 }
 
 #wrapWidget1 {
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(32, 32, 32);
 }
 
 #wrapWidget1:hover {
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(45, 45, 45);
     border-radius: 4px;
 }
 

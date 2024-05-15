@@ -1,7 +1,7 @@
-#include "FluNavigationSettingsItem.h"
-#include "FluNavigationView.h"
+#include "FluVNavigationSettingsItem.h"
+#include "FluVNavigationView.h"
 
-FluNavigationSettingsItem::FluNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluNavigationItem(parent)
+FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluNavigationItem(parent)
 {
     m_itemType = FluNavigationItemType::Setting;
     setFixedSize(320, 40);
@@ -34,18 +34,18 @@ FluNavigationSettingsItem::FluNavigationSettingsItem(QIcon icon, QString text, Q
     m_hMainLayout->addWidget(m_label, 1);
     m_hMainLayout->setSpacing(0);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationSettingsItem.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSettingsItem.qss", this);
     connect(m_icon, &FluRotationButton::clicked, [=](bool b) { emit itemClicked(); });
-    connect(this, &FluNavigationSettingsItem::itemClicked, this, &FluNavigationSettingsItem::onItemClicked);
+    connect(this, &FluVNavigationSettingsItem::itemClicked, this, &FluVNavigationSettingsItem::onItemClicked);
 }
 
-FluNavigationSettingsItem::FluNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent) : FluNavigationSettingsItem(QIcon(), text, parent)
+FluVNavigationSettingsItem::FluVNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent) : FluVNavigationSettingsItem(QIcon(), text, parent)
 {
     m_icon->setIcon(FluIconUtils::getFluentIcon(awesomeType));
     m_icon->setAwesomeType(awesomeType);
 }
 
-void FluNavigationSettingsItem::onItemClicked()
+void FluVNavigationSettingsItem::onItemClicked()
 {
     // click it and rotation it!
     m_icon->setReserveAngle(16);
@@ -59,14 +59,14 @@ void FluNavigationSettingsItem::onItemClicked()
     navView->updateAllItemsStyleSheet();
 }
 
-void FluNavigationSettingsItem::onThemeChanged()
+void FluVNavigationSettingsItem::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationSettingsItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSettingsItem.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationSettingsItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationSettingsItem.qss", this);
     }
 }

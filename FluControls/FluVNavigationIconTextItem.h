@@ -14,27 +14,27 @@
 #include "../FluUtils/FluUtils.h"
 #include <stack>
 
-class FluNavigationView;
-class FluNavigationIconTextItem : public FluNavigationItem
+class FluVNavigationView;
+class FluVNavigationIconTextItem : public FluNavigationItem
 {
     Q_OBJECT
   public:
-    FluNavigationIconTextItem(QWidget *parent = nullptr);
+    FluVNavigationIconTextItem(QWidget *parent = nullptr);
 
-    FluNavigationIconTextItem(QIcon icon, QString text, QWidget *parent = nullptr);
+    FluVNavigationIconTextItem(QIcon icon, QString text, QWidget *parent = nullptr);
 
-    FluNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent = nullptr);
+    FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent = nullptr);
 
-    FluNavigationIconTextItem(QString text, QWidget *parent = nullptr);
+    FluVNavigationIconTextItem(QString text, QWidget *parent = nullptr);
 
-    FluNavigationIconTextItem(FluNavigationIconTextItem *item);
+    FluVNavigationIconTextItem(FluVNavigationIconTextItem *item);
 
-    ~FluNavigationIconTextItem()
+    ~FluVNavigationIconTextItem()
     {
         //LOG_DEBUG << "called";
     }
 
-    void copyItem(FluNavigationIconTextItem *item);
+    void copyItem(FluVNavigationIconTextItem *item);
 
     QWidget *getWrapWidget1()
     {
@@ -79,10 +79,10 @@ class FluNavigationIconTextItem : public FluNavigationItem
             m_arrow->show();
     }
 
-    std::vector<FluNavigationIconTextItem *> getChildItems();
-    void getAllItems(std::vector<FluNavigationIconTextItem *> &totalItems)
+    std::vector<FluVNavigationIconTextItem *> getChildItems();
+    void getAllItems(std::vector<FluVNavigationIconTextItem *> &totalItems)
     {
-        std::vector<FluNavigationIconTextItem *> childItems = getChildItems();
+        std::vector<FluVNavigationIconTextItem *> childItems = getChildItems();
         for (auto childItem : childItems)
         {
             totalItems.push_back(childItem);
@@ -90,32 +90,32 @@ class FluNavigationIconTextItem : public FluNavigationItem
         }
     }
 
-    void addItem(FluNavigationIconTextItem *item);
+    void addItem(FluVNavigationIconTextItem *item);
 
     int calcItemW1Width();
-    int calcItemW2Height(FluNavigationIconTextItem *item);
+    int calcItemW2Height(FluVNavigationIconTextItem *item);
 
-    void adjustItemHeight(FluNavigationIconTextItem *item);
+    void adjustItemHeight(FluVNavigationIconTextItem *item);
 
     int getDepth();
 
-    FluNavigationIconTextItem *getRootItem();
+    FluVNavigationIconTextItem *getRootItem();
 
     void clearAllItemsSelectState()
     {
-        FluNavigationIconTextItem *rootItem = getRootItem();
+        FluVNavigationIconTextItem *rootItem = getRootItem();
         clearItemsSelectState(rootItem);
     }
 
-    void clearItemsSelectState(FluNavigationIconTextItem *item);
+    void clearItemsSelectState(FluVNavigationIconTextItem *item);
 
     void updateAllItemsStyleSheet()
     {
-        FluNavigationIconTextItem *rootItem = getRootItem();
+        FluVNavigationIconTextItem *rootItem = getRootItem();
         updateItemsStyleSheet(rootItem);
     }
 
-    void updateItemsStyleSheet(FluNavigationIconTextItem *item);
+    void updateItemsStyleSheet(FluVNavigationIconTextItem *item);
 
     void updateSelected(bool b);
 
@@ -149,8 +149,8 @@ class FluNavigationIconTextItem : public FluNavigationItem
 
     void onItemClickedDirect()
     {
-        std::stack<FluNavigationIconTextItem *> itemStack;
-        FluNavigationIconTextItem *item = this;
+        std::stack<FluVNavigationIconTextItem *> itemStack;
+        FluVNavigationIconTextItem *item = this;
         itemStack.push(item);
         while (item->m_parentItem != nullptr)
         {
@@ -174,13 +174,13 @@ class FluNavigationIconTextItem : public FluNavigationItem
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
             m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(8, 8, 8)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationIconTextItem.qss", this);
         }
         else
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(239, 239, 239)));
             m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(239, 239, 239)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationIconTextItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationIconTextItem.qss", this);
         }
     }
 
@@ -195,12 +195,12 @@ class FluNavigationIconTextItem : public FluNavigationItem
     QLabel *m_label;
     QPushButton *m_arrow;
     QHBoxLayout *m_hLayout1;
-    std::vector<FluNavigationIconTextItem *> m_items;
+    std::vector<FluVNavigationIconTextItem *> m_items;
 
     QVBoxLayout *m_vMainLayout;
     QVBoxLayout *m_vLayout1;
 
-    FluNavigationIconTextItem *m_parentItem;
+    FluVNavigationIconTextItem *m_parentItem;
 
     FluAwesomeType m_awesomeType;  // the icon display which
 

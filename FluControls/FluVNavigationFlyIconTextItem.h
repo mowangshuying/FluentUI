@@ -10,16 +10,16 @@
 #include <QStyleOption>
 #include <QPainter>
 
-class FluNavigationIconTextItem;
-class FluNavigationFlyIconTextItem : public FluWidget
+class FluVNavigationIconTextItem;
+class FluVNavigationFlyIconTextItem : public FluWidget
 {
     Q_OBJECT
   public:
-    FluNavigationFlyIconTextItem(QWidget* parent = nullptr);
+    FluVNavigationFlyIconTextItem(QWidget* parent = nullptr);
 
-    ~FluNavigationFlyIconTextItem();
+    ~FluVNavigationFlyIconTextItem();
 
-    void setIconTextItems(std::vector<FluNavigationIconTextItem*> items);
+    void setIconTextItems(std::vector<FluVNavigationIconTextItem*> items);
 
     void adjustItemSize();
 
@@ -40,5 +40,5 @@ class FluNavigationFlyIconTextItem : public FluWidget
 
     FluVScrollView* m_widget;
     // QVBoxLayout* m_vCenterLayout;
-    std::vector<FluNavigationIconTextItem*> m_items;
+    std::vector<FluVNavigationIconTextItem*> m_items;
 };

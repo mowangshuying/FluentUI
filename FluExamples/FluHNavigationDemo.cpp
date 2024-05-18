@@ -45,32 +45,32 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item5 = new FluHNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections");
     m_hNavView->addItemToMidLayout(item5);
 
- //   auto item6 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Date & Time");
- //   m_hNavView->addItemToMidLayout(item6);
+    auto item6 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Date & Time");
+    m_hNavView->addItemToMidLayout(item6);
 
- //   auto item7 = new FluHNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts");
- //   m_hNavView->addItemToMidLayout(item7);
+    auto item7 = new FluHNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts");
+    m_hNavView->addItemToMidLayout(item7);
 
- //   auto item8 = new FluHNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout");
- //   m_hNavView->addItemToMidLayout(item8);
+    auto item8 = new FluHNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout");
+    m_hNavView->addItemToMidLayout(item8);
 
- //   auto item9 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Mendia");
- //   m_hNavView->addItemToMidLayout(item9);
+    auto item9 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Mendia");
+    m_hNavView->addItemToMidLayout(item9);
 
- //   auto item10 = new FluHNavigationIconTextItem(FluAwesomeType::Save, "Menu & toolbars");
- //   m_hNavView->addItemToMidLayout(item10);
+    auto item10 = new FluHNavigationIconTextItem(FluAwesomeType::Save, "Menu & toolbars");
+    m_hNavView->addItemToMidLayout(item10);
 
- //   auto item11 = new FluHNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation");
- //   m_hNavView->addItemToMidLayout(item11);
+    auto item11 = new FluHNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation");
+    m_hNavView->addItemToMidLayout(item11);
 
- //   auto item12 = new FluHNavigationIconTextItem(FluAwesomeType::Sort, "Scrolling");
- //   m_hNavView->addItemToMidLayout(item12);
+    auto item12 = new FluHNavigationIconTextItem(FluAwesomeType::Sort, "Scrolling");
+    m_hNavView->addItemToMidLayout(item12);
 
- //   auto item13 = new FluHNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info");
- //   m_hNavView->addItemToMidLayout(item13);
+    auto item13 = new FluHNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info");
+    m_hNavView->addItemToMidLayout(item13);
 
- //   auto item14 = new FluHNavigationIconTextItem(FluAwesomeType::Font, "Text");
- //   m_hNavView->addItemToMidLayout(item14);
+    auto item14 = new FluHNavigationIconTextItem(FluAwesomeType::Font, "Text");
+    m_hNavView->addItemToMidLayout(item14);
 
     auto searchItem = new FluHNavigationSearchItem;
     searchItem->setFixedWidth(220);

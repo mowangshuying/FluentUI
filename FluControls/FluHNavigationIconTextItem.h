@@ -64,6 +64,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_arrow->setFixedWidth(25);
 
         //onThemeChanged();
+        //setFixedHeight(40);
     }
 
     FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent = nullptr) : FluHNavigationIconTextItem(parent)

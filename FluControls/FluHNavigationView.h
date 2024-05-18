@@ -41,7 +41,7 @@ class FluHNavigationView : public FluWidget
     QWidget* m_rightWrapWidget;
 
     QHBoxLayout* m_hLeftWrapLayout;
-    QHBoxLayout* m_hMidWrapLayout;
+    //QHBoxLayout* m_hMidWrapLayout;
     QHBoxLayout* m_hRightWrapLayout;
 
 };

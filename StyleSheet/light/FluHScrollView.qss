@@ -1,0 +1,10 @@
+/*The scroll view qss*/
+
+#contextWidget {
+    background-color: transparent;
+}
+
+QScrollArea {
+    background-color: transparent;
+    border: none;
+}

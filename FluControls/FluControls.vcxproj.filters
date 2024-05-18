@@ -335,6 +335,12 @@
     <ClCompile Include="FluHNavigationItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluHNavigationSearchItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluHNavigationSettingsItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -637,6 +643,15 @@
     <QtMoc Include="FluHNavigationItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluHNavigationIconTextItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHNavigationSearchItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHNavigationSettingsItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -652,9 +667,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluCalendarSelectYearView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluHNavigationIconTextItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

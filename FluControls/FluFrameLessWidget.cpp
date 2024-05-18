@@ -48,12 +48,12 @@ void FluFrameLessWidget::initialize()
     m_contentLayout->setContentsMargins(0, 0, 0, 0);
     m_contentLayout->setSpacing(0);
 
-    const auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setSpacing(0);
-    mainLayout->setContentsMargins(0, 0, 0, 0);
-    mainLayout->addWidget(m_titleBar, Qt::AlignTop);
-    mainLayout->addLayout(m_contentLayout, 1);
-    setLayout(mainLayout);
+    m_vMainLayout = new QVBoxLayout(this);
+    m_vMainLayout->setSpacing(0);
+    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
+    m_vMainLayout->addWidget(m_titleBar, Qt::AlignTop);
+    m_vMainLayout->addLayout(m_contentLayout, 1);
+    setLayout(m_vMainLayout);
 
     updateStyleSheet();
 

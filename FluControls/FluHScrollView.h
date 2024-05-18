@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QHBoxLayout>
 #include "../FluUtils/FluUtils.h"
+#include <QWheelEvent>
 
 class FluHScrollView : public QScrollArea
 {
@@ -15,6 +16,7 @@ class FluHScrollView : public QScrollArea
           setMinimumSize(0, 0);
 
           setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+          setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
           m_contextWidget = new QWidget(this);
           setWidget(m_contextWidget);
 
@@ -32,6 +34,16 @@ class FluHScrollView : public QScrollArea
       QHBoxLayout* getMainLayout()
       {
           return m_hMainLayout;
+      }
+
+      void wheelEvent(QWheelEvent* event)
+      {
+          QPointF pos(0, 0);
+          QPointF gPos(0, 0);
+          QPoint pixelDelta(0, 0);
+          QPoint angleDelta(event->angleDelta().y(), 0);
+          QWheelEvent wheelEvent(pos, gPos, pixelDelta, angleDelta, event->buttons(), event->modifiers(), event->phase(), event->inverted());
+          QScrollArea::wheelEvent(&wheelEvent);
       }
 
     public slots:

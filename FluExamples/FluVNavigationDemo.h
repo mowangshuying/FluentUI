@@ -5,11 +5,11 @@
 #include <QFrame>
 #include "../FluControls/FluWidget.h"
 
-class FluNavigationDemo : public FluWidget
+class FluVNavigationDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluNavigationDemo(QWidget *parent = nullptr) : FluWidget(parent)
+    FluVNavigationDemo(QWidget *parent = nullptr) : FluWidget(parent)
     {
         addDesignGuidaceText();
 

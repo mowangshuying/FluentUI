@@ -2,6 +2,7 @@
 
 #include <FramelessHelper/Widgets/FramelessWidget>
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -36,5 +37,6 @@ class FluFrameLessWidget : public FRAMELESSHELPER_PREPEND_NAMESPACE(FramelessWid
   protected:
     FRAMELESSHELPER_PREPEND_NAMESPACE(StandardTitleBar) *m_titleBar = nullptr;
     // QWidget *m_centerWidget;
+    QVBoxLayout* m_vMainLayout;
     QHBoxLayout *m_contentLayout;
 };

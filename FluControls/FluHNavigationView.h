@@ -5,6 +5,10 @@
 
 #include "FluHScrollView.h"
 
+#include <QStyleOption>
+#include <QPainter>
+
+class FluHNavigationIconTextItem;
 class FluHNavigationView : public FluWidget
 {
     Q_OBJECT
@@ -39,8 +43,33 @@ class FluHNavigationView : public FluWidget
           m_hLayout->addWidget(m_midHScrollView);
           m_hLayout->addWidget(m_rightWrapWidget);
 
-          setFixedHeight(40);
+          setFixedHeight(48);
+          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationView.qss", this);
       }
+
+      void addItemToLeftLayout(QWidget* item)
+      {
+          m_hLeftWrapLayout->addWidget(item, Qt::AlignLeft);
+      }
+
+      void addItemToMidLayout(QWidget* item)
+      {
+          m_midHScrollView->getMainLayout()->addWidget(item, 0, Qt::AlignLeft);
+      }
+
+      void addItemToRightLayout(QWidget* item)
+      {
+          m_hRightWrapLayout->addWidget(item, 0, Qt::AlignRight);
+      }
+
+      void paintEvent(QPaintEvent* event)
+      {
+          QStyleOption opt;
+          opt.initFrom(this);
+          QPainter painter(this);
+          style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+      }
+
   protected:
     QHBoxLayout* m_hLayout;
     QWidget* m_leftWrapWidget;

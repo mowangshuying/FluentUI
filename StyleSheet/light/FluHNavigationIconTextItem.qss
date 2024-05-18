@@ -1,0 +1,75 @@
+FluHNavigationIconTextItem {
+    /* background-color: blueviolet; */
+    background-color: transparent;
+    /* background-color: rgb(243, 243, 243); */
+    border-radius: 4px;
+}
+
+#wrapWidget1 {
+    /* background-color: blueviolet; */
+    background-color: rgb(243, 243, 243);
+    border-radius: 4px;
+    /* border-radius: 0px; */
+}
+
+#wrapWidget1[selected=true] {
+    /* background-color: aquamarine; */
+    background-color: rgb(234, 234, 234);
+    border-radius: 4px;
+}
+
+#wrapWidget1[enableThisItem=false] {
+    background-color: rgb(243, 243, 243);
+}
+
+#wrapWidget1:hover {
+    /* background-color: aquamarine; */
+    background-color: rgb(234, 234, 234);
+    /* background-color: bisque; */
+    border-radius: 4px;
+}
+
+#wrapWidget1[enableThisItem=false]:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+#indicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#indicator[selected=true] {
+    background-color: rgb(0, 90, 158);
+    border-radius: 2px;
+}
+
+#indicator[enableThisItem=false] {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#icon {
+    border: none;
+    background-color: transparent;
+    /* background-color: aquamarine; */
+}
+
+#label {
+    background-color: transparent;
+    /* background-color: blueviolet; */
+    font-size: 12px;
+}
+
+#label[enableThisItem=false] {
+    color: rgb(178, 178, 178);
+}
+
+#arrow {
+    border: none;
+    background-color: transparent;
+}
+
+#wrapWidget2 {
+    /* background-color: blueviolet; */
+    background-color: transparent;
+}

@@ -136,6 +136,8 @@
     <ClCompile Include="FluDoubleSpinBox.cpp" />
     <ClCompile Include="FluHNavigationIconTextItem.cpp" />
     <ClCompile Include="FluHNavigationItem.cpp" />
+    <ClCompile Include="FluHNavigationSearchItem.cpp" />
+    <ClCompile Include="FluHNavigationSettingsItem.cpp" />
     <ClCompile Include="FluHNavigationView.cpp" />
     <ClCompile Include="FluHRadioGroupBox.cpp" />
     <ClCompile Include="FluHScrollView.cpp" />
@@ -228,7 +230,9 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FluHNavigationIconTextItem.h" />
+    <QtMoc Include="FluHNavigationSettingsItem.h" />
+    <QtMoc Include="FluHNavigationSearchItem.h" />
+    <QtMoc Include="FluHNavigationIconTextItem.h" />
     <QtMoc Include="FluHNavigationItem.h" />
     <QtMoc Include="FluHScrollView.h" />
     <QtMoc Include="FluHNavigationView.h" />

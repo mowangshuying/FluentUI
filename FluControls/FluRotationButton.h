@@ -20,6 +20,8 @@ class FluRotationButton : public QPushButton
         m_bRotation = false;
         m_nAngle = 0;
         m_nReserveAngle = 0;
+
+        //onThemeChanged();
         connect(m_timer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
         // connect(this, &FluRotationButton::clicked, [=](bool b) {
         //     m_nReserveAngle = 16;
@@ -78,12 +80,15 @@ class FluRotationButton : public QPushButton
             m_penColor = QColor(8, 8, 8);
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
             setIcon(QIcon(pixmap));
+
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);
         }
         else
         {
             m_penColor = QColor(239, 239, 239);
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
             setIcon(QIcon(pixmap));
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRotationButton.qss", this);
         }
     }
 

@@ -41,7 +41,7 @@
     <ClCompile Include="FluExpandDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluNavigationDemo.cpp">
+    <ClCompile Include="FluVNavigationDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluFlowLayoutDemo.cpp">
@@ -158,6 +158,9 @@
     <ClCompile Include="FluFrameLessDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluHNavigationDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -178,7 +181,7 @@
     <QtMoc Include="FluExpandDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluNavigationDemo.h">
+    <QtMoc Include="FluVNavigationDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluLineEditDemo.h">
@@ -263,6 +266,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluFrameLessDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHNavigationDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

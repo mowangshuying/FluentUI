@@ -13,7 +13,7 @@
 #include "FluToggleButtonPage.h"
 #include "FluDropDownButtonPage.h"
 #include "FluHyperLinkButtonPage.h"
-#include "FluSettingPage.h"
+#include "FluSettingPage.h" 
 #include "FluRepeatButtonPage.h"
 #include "FluRadioButtonPage.h"
 #include "FluAllSamplesPage.h"

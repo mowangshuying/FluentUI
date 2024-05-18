@@ -78,6 +78,11 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     {
 
     }
+
+    QString getText()
+    {
+        return m_label->text();
+    }
    public slots:
     void onThemeChanged()
     {

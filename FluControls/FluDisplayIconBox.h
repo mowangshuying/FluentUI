@@ -32,7 +32,6 @@ class FluDisplayIconBox : public FluWidget
         m_iconLabel->setObjectName("iconLabel");
         m_textLable->setObjectName("textLabel");
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
-        
     }
 
     FluDisplayIconBox(FluAwesomeType type, QWidget* parent = nullptr) : FluDisplayIconBox(parent)

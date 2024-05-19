@@ -174,14 +174,14 @@ int FluVNavigationIconTextItem::calcItemW1Width()
     if (m_items.empty())
         nArrowWidth = 0;
 
-    //LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
-    //LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
-    //LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
-    //LOG_DEBUG << "nIconWidth:" << nIconWidth;
-    //LOG_DEBUG << "nSpacing:" << nSpacing;
-    //LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
-    //LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
-    //LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
+    // LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
+    // LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
+    // LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
+    // LOG_DEBUG << "nIconWidth:" << nIconWidth;
+    // LOG_DEBUG << "nSpacing:" << nSpacing;
+    // LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
+    // LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
+    // LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
 
     return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
 }

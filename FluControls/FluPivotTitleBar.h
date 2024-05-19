@@ -17,7 +17,6 @@ class FluPivotTitleBar : public FluWidget
         m_hMainLayout->setAlignment(Qt::AlignLeft);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBar.qss", this);
-        
     }
 
     void addTitleBarItem(FluPivotTitleBarItem* item)

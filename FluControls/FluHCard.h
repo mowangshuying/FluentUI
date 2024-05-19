@@ -53,8 +53,6 @@ class FluHCard : public FluWidget
 
         QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHCard.qss");
         setStyleSheet(qss);
-
-        
     }
 
     FluHCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluHCard(parent)

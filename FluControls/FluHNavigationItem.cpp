@@ -1,6 +1,6 @@
 #include "FluHNavigationItem.h"
 
- FluHNavigationItem::FluHNavigationItem(QWidget* parent /*= nullptr*/)
+FluHNavigationItem::FluHNavigationItem(QWidget* parent /*= nullptr*/)
 {
 }
 

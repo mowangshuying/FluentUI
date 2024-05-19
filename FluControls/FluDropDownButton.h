@@ -56,7 +56,6 @@ class FluDropDownButton : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
-        
     }
 
     QPushButton* getTextBtn()

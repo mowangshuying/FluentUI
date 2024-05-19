@@ -28,7 +28,6 @@ class FluRatingControl : public FluWidget
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
         }
-        
     }
 
     void addStar()

@@ -89,7 +89,6 @@ class FluTimePicker24HView : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
-        
     }
 
     int getHour()

@@ -28,7 +28,7 @@ class FluLabel : public QLabel
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
         }
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluLabel(FluLabelStyle style, QWidget* parent = nullptr) : QLabel(parent), m_style(style)
@@ -41,7 +41,7 @@ class FluLabel : public QLabel
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
         }
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setLabelStyle(FluLabelStyle style)

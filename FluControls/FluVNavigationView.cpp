@@ -48,8 +48,6 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     setFixedWidth(320 + 20);
     connect(menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
     connect(searchItem, &FluVNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
-
-    
 }
 
 void FluVNavigationView::addItemToTopLayout(QWidget *item)

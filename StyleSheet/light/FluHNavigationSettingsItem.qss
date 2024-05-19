@@ -1,0 +1,10 @@
+FluHNavigationSettingsItem {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+FluHNavigationSettingsItem:hover {
+    border: 1px solid transparent;
+    background-color: rgb(234, 234, 234);
+}

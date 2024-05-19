@@ -26,7 +26,6 @@ class FluVScrollView : public QScrollArea
 
     ~FluVScrollView()
     {
-      
     }
 
     QVBoxLayout* getMainLayout()

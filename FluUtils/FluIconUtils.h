@@ -32,6 +32,7 @@ class FluIconUtils
 
     static QPixmap getSvgPixmap(QString svgPath);
     static QIcon getSvgIcon(QString svgPath);
+
   private:
     QFont m_fluentFont;
 };

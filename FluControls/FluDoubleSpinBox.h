@@ -10,7 +10,7 @@ class FluDoubleSpinBox : public QDoubleSpinBox
     FluDoubleSpinBox(QWidget* parent = nullptr) : QDoubleSpinBox(parent)
     {
         onThemeChanged();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

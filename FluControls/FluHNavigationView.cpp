@@ -1,7 +1,7 @@
 #include "FluHNavigationView.h"
 #include "FluHNavigationIconTextItem.h"
 
- FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_hLayout = new QHBoxLayout;
     setLayout(m_hLayout);
@@ -11,27 +11,26 @@
     m_rightWrapWidget = new QWidget(this);
 
     m_hLeftWrapLayout = new QHBoxLayout;
-    //m_hMidWrapLayout = new QHBoxLayout;
+    // m_hMidWrapLayout = new QHBoxLayout;
     m_hRightWrapLayout = new QHBoxLayout;
 
     m_leftWrapWidget->setLayout(m_hLeftWrapLayout);
-    //m_MidWrapWidget->setLayout(m_hMidWrapLayout);
+    // m_MidWrapWidget->setLayout(m_hMidWrapLayout);
     m_rightWrapWidget->setLayout(m_hRightWrapLayout);
 
     m_hLeftWrapLayout->setContentsMargins(0, 0, 0, 0);
-    //m_hMidWrapLayout->setContentsMargins(0, 0, 0, 0);
+    // m_hMidWrapLayout->setContentsMargins(0, 0, 0, 0);
     m_hRightWrapLayout->setContentsMargins(0, 0, 0, 0);
 
     m_hLeftWrapLayout->setSpacing(5);
     m_hRightWrapLayout->setSpacing(5);
 
     m_hLeftWrapLayout->setAlignment(Qt::AlignLeft);
-    //m_hMidWrapLayout->setAlignment(Qt::AlignLeft);
+    // m_hMidWrapLayout->setAlignment(Qt::AlignLeft);
     m_hRightWrapLayout->setAlignment(Qt::AlignRight);
 
-
-    //m_hMidWrapLayout->setSizeConstraint(QHBoxLayout);
-    //m_MidWrapWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    // m_hMidWrapLayout->setSizeConstraint(QHBoxLayout);
+    // m_MidWrapWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     m_hLayout->addWidget(m_leftWrapWidget);
     m_hLayout->addWidget(m_MidWrapWidget, 1);
@@ -49,7 +48,7 @@ void FluHNavigationView::addItemToLeftLayout(QWidget* item)
 
 void FluHNavigationView::addItemToMidLayout(QWidget* item)
 {
-    //m_hMidWrapLayout->addWidget(item, 0, Qt::AlignLeft);
+    // m_hMidWrapLayout->addWidget(item, 0, Qt::AlignLeft);
     auto iconTextItem = (FluHNavigationIconTextItem*)item;
     item->setParent(m_MidWrapWidget);
     m_items.push_back(iconTextItem);
@@ -62,8 +61,8 @@ void FluHNavigationView::addItemToRightLayout(QWidget* item)
 
 void FluHNavigationView::removeItemMidLayout(QWidget* item)
 {
-    //m_hMidWrapLayout->removeWidget(item);
-   // auto itf = std::find(m_items.begin(), m_items.end)
+    // m_hMidWrapLayout->removeWidget(item);
+    // auto itf = std::find(m_items.begin(), m_items.end)
 }
 
 void FluHNavigationView::resizeEvent(QResizeEvent* event)
@@ -71,16 +70,21 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
     LOG_DEBUG << width();
     // adjust size;
 
-    //for (auto item : m_items)
+    // for (auto item : m_items)
     //{
-    //    LOG_DEBUG << "IconTextItem:" << item->getText() << ", size:" << item->sizeHint();
-    //}
+    //     LOG_DEBUG << "IconTextItem:" << item->getText() << ", size:" << item->sizeHint();
+    // }
 
     int nMidWidth = 0;
     for (int i = 0; i < m_items.size(); i++)
     {
         m_items[i]->show();
         nMidWidth += m_items[i]->sizeHint().width();
+        if (i == 0)
+        {
+            nMidWidth += 5;
+        }
+
         if (nMidWidth > m_MidWrapWidget->width())
         {
             for (int j = i; j < m_items.size(); j++)

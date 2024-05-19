@@ -21,17 +21,14 @@ class FluRotationButton : public QPushButton
         m_nAngle = 0;
         m_nReserveAngle = 0;
 
-        //onThemeChanged();
         connect(m_timer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
-        // connect(this, &FluRotationButton::clicked, [=](bool b) {
-        //     m_nReserveAngle = 16;
-        // });
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     FluRotationButton(FluAwesomeType awesomeType, QWidget* parent = nullptr) : FluRotationButton(parent)
     {
         m_awesomeType = awesomeType;
+        onThemeChanged();
     }
 
     void setAwesomeType(FluAwesomeType awesomeType)
@@ -59,12 +56,12 @@ class FluRotationButton : public QPushButton
             m_nReserveAngle = 0;
             return;
         }
-        //    return;
 
         QTransform transform;
         transform.rotate(m_nAngle);
 
-        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+        //QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, FluThemeUtils::getUtils()->getTheme());
         pixmap = pixmap.transformed(transform);
         QIcon icon(pixmap);
         setIcon(icon);
@@ -77,17 +74,19 @@ class FluRotationButton : public QPushButton
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            m_penColor = QColor(8, 8, 8);
-            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
-            setIcon(QIcon(pixmap));
+            //m_penColor = QColor(8, 8, 8);
+            //QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+            //setIcon(QIcon(pixmap));
 
+            setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);
         }
         else
         {
-            m_penColor = QColor(239, 239, 239);
-            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
-            setIcon(QIcon(pixmap));
+            //m_penColor = QColor(239, 239, 239);
+            //QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+            //setIcon(QIcon(pixmap));
+            setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRotationButton.qss", this);
         }
     }

@@ -50,7 +50,6 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidge
 
     setFixedHeight(300);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
-    
 }
 
 void FluCalendarSelectYearView::setYears(int nYear, int nMonth)

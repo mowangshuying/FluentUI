@@ -14,7 +14,7 @@ class FluListView : public QListWidget
     {
         setItemDelegate(new FluListViewItemDelegate);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

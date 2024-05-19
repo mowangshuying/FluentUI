@@ -54,7 +54,7 @@ class FluVNavigationView : public FluWidget
     void onMenuItemClicked();
     void onThemeChanged()
     {
-        //LOG_DEBUG << "called";
+        // LOG_DEBUG << "called";
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationView.qss", this);

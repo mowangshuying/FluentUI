@@ -22,14 +22,13 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
     m_titleBar->setFixedHeight(48);
 
-
-    // new 
+    // new
     m_vMainLayout->setAlignment(Qt::AlignTop);
     m_hNavView = new FluHNavigationView;
     m_vMainLayout->insertWidget(1, m_hNavView, 0, Qt::AlignTop);
 
-    //auto label = new QLabel;
-    //m_vMainLayout->addWidget(label, 1);
+    // auto label = new QLabel;
+    // m_vMainLayout->addWidget(label, 1);
     auto item1 = new FluHNavigationIconTextItem(FluAwesomeType::Home, "Home");
     m_hNavView->addItemToMidLayout(item1);
 

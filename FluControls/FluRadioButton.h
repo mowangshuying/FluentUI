@@ -13,13 +13,13 @@ class FluRadioButton : public QRadioButton
     explicit FluRadioButton(QWidget* parent = nullptr) : QRadioButton(parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     explicit FluRadioButton(const QString& text, QWidget* parent = nullptr) : QRadioButton(text, parent)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

@@ -7,12 +7,12 @@ class FluHNavigationDemo : public FluFrameLessWidget
 {
     Q_OBJECT
   public:
-      FluHNavigationDemo(QWidget* parent = nullptr);
+    FluHNavigationDemo(QWidget* parent = nullptr);
 
-   public slots:
-      void onThemeChanged();
+  public slots:
+    void onThemeChanged();
 
-   protected:
-      FluHNavigationView* m_hNavView;
-     //QVBoxLayout* m_vMainLayout;
+  protected:
+    FluHNavigationView* m_hNavView;
+    // QVBoxLayout* m_vMainLayout;
 };

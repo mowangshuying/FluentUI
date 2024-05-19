@@ -13,7 +13,6 @@ class FluHSplitLine : public FluWidget
     {
         setFixedWidth(1);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHSplitLine.qss", this);
-        
     }
 
     void paintEvent(QPaintEvent* event)

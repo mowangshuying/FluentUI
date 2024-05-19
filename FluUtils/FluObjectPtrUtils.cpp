@@ -1,6 +1,6 @@
 #include "FluObjectPtrUtils.h"
 
- FluObjectPtrUtils::FluObjectPtrUtils()
+FluObjectPtrUtils::FluObjectPtrUtils()
 {
 }
 

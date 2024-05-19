@@ -26,10 +26,10 @@ FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*=
     onThemeChanged();
 }
 
- FluVNavigationFlyIconTextItem::~FluVNavigationFlyIconTextItem()
+FluVNavigationFlyIconTextItem::~FluVNavigationFlyIconTextItem()
 {
-     //LOG_DEBUG << "called";
- }
+    // LOG_DEBUG << "called";
+}
 
 void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationIconTextItem*> items)
 {

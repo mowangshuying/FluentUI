@@ -128,7 +128,6 @@ class FluDatePickerView : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
-        
     }
 
     int getMonth()

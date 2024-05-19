@@ -12,6 +12,7 @@ class FluObjectPtrUtils
     void add(int64_t key, QString value);
 
     void remove(int64_t key);
+
   protected:
     std::map<int64_t, QString> m_ptr2strMap;
 };

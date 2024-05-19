@@ -73,7 +73,6 @@ class FluTimePickerAP : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAP.qss", this);
-        
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

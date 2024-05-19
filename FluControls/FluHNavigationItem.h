@@ -38,6 +38,7 @@ class FluHNavigationItem : public FluWidget
     {
         m_key = key;
     }
+
   protected:
     FluHNavigationItemType m_itemType;
     FluHNavigationView* m_parentView;

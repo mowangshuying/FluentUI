@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "FluHNavigationItem.h"
 
 #include <QWidget>
@@ -19,7 +18,6 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     {
         m_itemType = FluHNavigationItemType::IconText;
         m_parentView = nullptr;
-        
 
         m_wrapWidget1 = new QWidget;
         m_wrapWidget2 = new QWidget;
@@ -63,8 +61,9 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
         m_arrow->setFixedWidth(25);
 
-        //onThemeChanged();
-        //setFixedHeight(40);
+        // onThemeChanged();
+        // setFixedHeight(40);
+        setFixedHeight(40);
     }
 
     FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent = nullptr) : FluHNavigationIconTextItem(parent)
@@ -77,14 +76,13 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     ~FluHNavigationIconTextItem()
     {
-
     }
 
     QString getText()
     {
         return m_label->text();
     }
-   public slots:
+  public slots:
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
@@ -100,7 +98,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationIconTextItem.qss", this);
         }
     }
-   protected:
+
+  protected:
     QWidget* m_wrapWidget1;
     QWidget* m_wrapWidget2;
 

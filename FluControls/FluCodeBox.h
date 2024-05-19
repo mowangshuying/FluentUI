@@ -21,7 +21,7 @@ class FluCodeBox : public QTextEdit
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCodeBox.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     void setCodeText(QString code)

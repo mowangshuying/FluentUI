@@ -31,7 +31,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     ~FluVNavigationIconTextItem()
     {
-        //LOG_DEBUG << "called";
+        // LOG_DEBUG << "called";
     }
 
     void copyItem(FluVNavigationIconTextItem *item);

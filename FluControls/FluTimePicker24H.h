@@ -64,7 +64,6 @@ class FluTimePicker24H : public FluWidget
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
-        
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

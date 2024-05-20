@@ -158,6 +158,15 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
             itemStack.push(item);
         }
 
+        if (itemStack.empty())
+        {
+            return;
+        }
+
+        auto topItem = itemStack.top();
+        if (!topItem->isLong())
+            return;
+
         while (!itemStack.empty())
         {
             auto item = itemStack.top();

@@ -1,6 +1,7 @@
 FluHNavigationMoreItem {
     background-color: transparent;
     border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 FluHNavigationMoreItem:hover {

@@ -41,17 +41,18 @@ class FluHNavigationSettingsItem : public FluHNavigationItem
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
   public slots:
-      void onThemeChanged()
-      {
-          if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
-          {
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationSettingsItem.qss", this);
-          }
-          else
-          {
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationSettingsItem.qss", this);
-          }
-      }
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationSettingsItem.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationSettingsItem.qss", this);
+        }
+    }
+
   protected:
     FluAwesomeType m_awesomeType;
     FluRotationButton* m_icon;

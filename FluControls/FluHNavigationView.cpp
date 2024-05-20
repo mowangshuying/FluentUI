@@ -13,7 +13,7 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
 
     m_moreItem = new FluHNavigationMoreItem(m_MidWrapWidget);
     m_moreItem->setFixedSize(40, 40);
-    //m_moreItem->hide();
+    // m_moreItem->hide();
 
     m_hLeftWrapLayout = new QHBoxLayout;
     // m_hMidWrapLayout = new QHBoxLayout;
@@ -72,8 +72,8 @@ void FluHNavigationView::removeItemMidLayout(QWidget* item)
 
 void FluHNavigationView::resizeEvent(QResizeEvent* event)
 {
-    //LOG_DEBUG << width();
-    //m_moreItem->show();
+    // LOG_DEBUG << width();
+    // m_moreItem->show();
     int nMidWidth = 0;
     for (int i = 0; i < m_items.size(); i++)
     {
@@ -91,7 +91,7 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
             // nMidWidth += m_items[i]->sizeHint().width();
             m_items[i]->move(nMidWidth, 0);
             nMidWidth += m_items[i]->sizeHint().width();
-            //nMidWidth += 5;
+            // nMidWidth += 5;
             LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
         }
     }

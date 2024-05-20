@@ -60,7 +60,7 @@ class FluRotationButton : public QPushButton
         QTransform transform;
         transform.rotate(m_nAngle);
 
-        //QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+        // QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
         QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, FluThemeUtils::getUtils()->getTheme());
         pixmap = pixmap.transformed(transform);
         QIcon icon(pixmap);
@@ -74,18 +74,18 @@ class FluRotationButton : public QPushButton
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            //m_penColor = QColor(8, 8, 8);
-            //QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
-            //setIcon(QIcon(pixmap));
+            // m_penColor = QColor(8, 8, 8);
+            // QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+            // setIcon(QIcon(pixmap));
 
             setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);
         }
         else
         {
-            //m_penColor = QColor(239, 239, 239);
-            //QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
-            //setIcon(QIcon(pixmap));
+            // m_penColor = QColor(239, 239, 239);
+            // QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
+            // setIcon(QIcon(pixmap));
             setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRotationButton.qss", this);
         }

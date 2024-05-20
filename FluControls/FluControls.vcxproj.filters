@@ -341,6 +341,9 @@
     <ClCompile Include="FluHNavigationSettingsItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluHNavigationMoreItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -650,6 +653,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluHNavigationSettingsItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluHNavigationMoreItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

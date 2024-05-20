@@ -9,6 +9,7 @@
 #include <QPainter>
 
 class FluHNavigationIconTextItem;
+class FluHNavigationMoreItem;
 class FluHNavigationView : public FluWidget
 {
     Q_OBJECT
@@ -43,4 +44,6 @@ class FluHNavigationView : public FluWidget
     QHBoxLayout* m_hLeftWrapLayout;
     // QHBoxLayout* m_hMidWrapLayout;
     QHBoxLayout* m_hRightWrapLayout;
+
+    FluHNavigationMoreItem* m_moreItem;
 };

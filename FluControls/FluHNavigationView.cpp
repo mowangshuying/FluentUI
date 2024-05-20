@@ -1,5 +1,6 @@
 #include "FluHNavigationView.h"
 #include "FluHNavigationIconTextItem.h"
+#include "FluHNavigationMoreItem.h"
 
 FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -9,6 +10,10 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
     m_leftWrapWidget = new QWidget(this);
     m_MidWrapWidget = new QWidget(this);
     m_rightWrapWidget = new QWidget(this);
+
+    m_moreItem = new FluHNavigationMoreItem(m_MidWrapWidget);
+    m_moreItem->setFixedSize(40, 40);
+    //m_moreItem->hide();
 
     m_hLeftWrapLayout = new QHBoxLayout;
     // m_hMidWrapLayout = new QHBoxLayout;
@@ -67,25 +72,13 @@ void FluHNavigationView::removeItemMidLayout(QWidget* item)
 
 void FluHNavigationView::resizeEvent(QResizeEvent* event)
 {
-    LOG_DEBUG << width();
-    // adjust size;
-
-    // for (auto item : m_items)
-    //{
-    //     LOG_DEBUG << "IconTextItem:" << item->getText() << ", size:" << item->sizeHint();
-    // }
-
+    //LOG_DEBUG << width();
+    //m_moreItem->show();
     int nMidWidth = 0;
     for (int i = 0; i < m_items.size(); i++)
     {
         m_items[i]->show();
-        nMidWidth += m_items[i]->sizeHint().width();
-        if (i == 0)
-        {
-            nMidWidth += 5;
-        }
-
-        if (nMidWidth > m_MidWrapWidget->width())
+        if (nMidWidth + m_items[i]->sizeHint().width() + m_moreItem->sizeHint().width() > m_MidWrapWidget->width())
         {
             for (int j = i; j < m_items.size(); j++)
             {
@@ -95,9 +88,16 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
         }
         else
         {
-            m_items[i]->move(nMidWidth - m_items[i]->sizeHint().width(), 0);
+            // nMidWidth += m_items[i]->sizeHint().width();
+            m_items[i]->move(nMidWidth, 0);
+            nMidWidth += m_items[i]->sizeHint().width();
+            //nMidWidth += 5;
+            LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
         }
     }
+    m_moreItem->setParent(m_MidWrapWidget);
+    m_moreItem->move(nMidWidth, 0);
+    m_moreItem->show();
 }
 
 void FluHNavigationView::paintEvent(QPaintEvent* event)

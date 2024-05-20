@@ -1,0 +1,13 @@
+FluHNavigationMoreItem {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+FluHNavigationMoreItem:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+#iconBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+}

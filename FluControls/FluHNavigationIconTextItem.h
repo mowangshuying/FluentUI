@@ -9,6 +9,8 @@
 #include <QVBoxLayout>
 
 #include "../FluUtils/FluUtils.h"
+#include <QStyleOption>
+#include <QPainter>
 
 class FluHNavigationIconTextItem : public FluHNavigationItem
 {
@@ -40,12 +42,10 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_wrapWidget1->setLayout(m_hLayout1);
         m_hLayout1->setContentsMargins(4, 4, 4, 4);
 
-        // m_indicator = new QWidget;
         m_iconBtn = new QPushButton;
         m_label = new QLabel;
         m_arrow = new QPushButton;
 
-        // m_hLayout1->addWidget(m_indicator);
         m_hLayout1->addWidget(m_iconBtn);
         m_hLayout1->addWidget(m_label, 1);
         m_hLayout1->addWidget(m_arrow);
@@ -61,8 +61,6 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
         m_arrow->setFixedWidth(25);
 
-        // onThemeChanged();
-        // setFixedHeight(40);
         setFixedHeight(40);
     }
 
@@ -78,11 +76,50 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     {
     }
 
+    QWidget* getWrapWidget1()
+    {
+        return m_wrapWidget1;
+    }
+
+    QWidget* getWrapWidget2()
+    {
+        return m_wrapWidget2;
+    }
+
+    QPushButton* getIconBtn()
+    {
+        return m_iconBtn;
+    }
+
+    QLabel* getLabel()
+    {
+        return m_label;
+    }
+
+    FluAwesomeType getAwesomeType()
+    {
+        return m_awesomeType;
+    }
+
     QString getText()
     {
         return m_label->text();
     }
+
+
+    void paintEvent(QPaintEvent* event)
+    {
+        QStyleOption opt;
+        opt.initFrom(this);
+        QPainter painter(this);
+        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    }
+signals:
+    void itemClicked();
   public slots:
+    void onItemClicked()
+    {
+    }
     void onThemeChanged()
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

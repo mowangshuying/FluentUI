@@ -80,6 +80,11 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto settingsItem = new FluHNavigationSettingsItem(FluAwesomeType::Settings);
     m_hNavView->addItemToRightLayout(settingsItem);
 
+
+    auto bodyWidget = new QWidget;
+    bodyWidget->setObjectName("bodyWidget");
+    m_contentLayout->addWidget(bodyWidget);
+
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     resize(800, 600);

@@ -24,10 +24,10 @@ class FluHNavigationView : public FluWidget
 
     void removeItemMidLayout(QWidget* item);
 
-    QSize minimumSizeHint()
-    {
-        return QSize(120, 40);
-    }
+    //QSize minimumSizeHint()
+    //{
+    //     return QSize(120, 40);
+    //}
 
     void resizeEvent(QResizeEvent* event);
 

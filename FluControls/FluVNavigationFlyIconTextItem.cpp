@@ -40,7 +40,7 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
         m_widget->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 
-        connect(newItem, &FluVNavigationIconTextItem::itemClicked, [=]() {
+        connect(newItem, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
             // item->onItemClickedDirect();
             if (newItem->isLeaf())
             {

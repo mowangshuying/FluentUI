@@ -129,9 +129,7 @@ std::vector<FluVNavigationItem *> FluVNavigationView::getAllItems()
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)item;
-            std::vector<FluVNavigationIconTextItem *> totalItems;
-            iconTextItem->getAllItems(totalItems);
-
+            std::vector<FluVNavigationIconTextItem *> totalItems = iconTextItem->getAllItems();
             allItems.insert(allItems.end(), totalItems.begin(), totalItems.end());
         }
     }

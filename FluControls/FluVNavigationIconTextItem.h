@@ -34,7 +34,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
         // LOG_DEBUG << "called";
     }
 
-    void copyItem(FluVNavigationIconTextItem *item);
+    void itemClone(FluVNavigationIconTextItem *item);
 
     QWidget *getWrapWidget1()
     {
@@ -79,16 +79,9 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
             m_arrow->show();
     }
 
-    std::vector<FluVNavigationIconTextItem *> getChildItems();
-    void getAllItems(std::vector<FluVNavigationIconTextItem *> &totalItems)
-    {
-        std::vector<FluVNavigationIconTextItem *> childItems = getChildItems();
-        for (auto childItem : childItems)
-        {
-            totalItems.push_back(childItem);
-            childItem->getAllItems(totalItems);
-        }
-    }
+    std::vector<FluVNavigationIconTextItem *> getItems();
+    void getAllItems(std::vector<FluVNavigationIconTextItem *> &totalItems);
+    std::vector<FluVNavigationIconTextItem *> getAllItems();
 
     void addItem(FluVNavigationIconTextItem *item);
 
@@ -170,7 +163,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
         while (!itemStack.empty())
         {
             auto item = itemStack.top();
-            if ((item->m_bDown && !item->getChildItems().empty()) || item->getChildItems().empty())
+            if ((item->m_bDown && !item->getItems().empty()) || item->getItems().empty())
                 item->onItemClicked();
             itemStack.pop();
         }

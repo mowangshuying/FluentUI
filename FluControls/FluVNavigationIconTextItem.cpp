@@ -115,10 +115,10 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluAwesomeType awesomeTyp
 
 FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluVNavigationIconTextItem *item) : FluVNavigationIconTextItem()
 {
-    copyItem(item);
+    itemClone(item);
 }
 
-void FluVNavigationIconTextItem::copyItem(FluVNavigationIconTextItem *item)
+void FluVNavigationIconTextItem::itemClone(FluVNavigationIconTextItem *item)
 {
     m_iconBtn->setIcon(item->getIconBtn()->icon());
     m_label->setText(item->getLabel()->text());
@@ -129,18 +129,35 @@ void FluVNavigationIconTextItem::copyItem(FluVNavigationIconTextItem *item)
     if (m_bHideIcon)
         m_iconBtn->hide();
 
-    std::vector<FluVNavigationIconTextItem *> items = item->getChildItems();
+    std::vector<FluVNavigationIconTextItem *> items = item->getItems();
     for (auto tmpItem : items)
     {
         auto newItem = new FluVNavigationIconTextItem;
-        newItem->copyItem(tmpItem);
+        newItem->itemClone(tmpItem);
         addItem(newItem);
     }
 }
 
-std::vector<FluVNavigationIconTextItem *> FluVNavigationIconTextItem::getChildItems()
+std::vector<FluVNavigationIconTextItem *> FluVNavigationIconTextItem::getItems()
 {
     return m_items;
+}
+
+void FluVNavigationIconTextItem::getAllItems(std::vector<FluVNavigationIconTextItem *> &totalItems)
+{
+    std::vector<FluVNavigationIconTextItem *> childItems = getItems();
+    for (auto childItem : childItems)
+    {
+        totalItems.push_back(childItem);
+        childItem->getAllItems(totalItems);
+    }
+}
+
+std::vector<FluVNavigationIconTextItem *> FluVNavigationIconTextItem::getAllItems()
+{
+    std::vector<FluVNavigationIconTextItem *> totalItems;
+    getAllItems(totalItems);
+    return totalItems;
 }
 
 void FluVNavigationIconTextItem::addItem(FluVNavigationIconTextItem *item)
@@ -353,7 +370,7 @@ void FluVNavigationIconTextItem::onItemClicked()
 
     if (navView != nullptr && !navView->isLong() && rootItem == this)
     {
-        if (!getChildItems().empty())
+        if (!getItems().empty())
         {
             LOG_DEBUG << "Clicked IconTextItem text:" << m_label->text();
             // log gemo
@@ -366,7 +383,7 @@ void FluVNavigationIconTextItem::onItemClicked()
             // #ifdef _DEBUG
             auto flyIconTextItem = new FluVNavigationFlyIconTextItem;
             LOG_DEBUG << flyIconTextItem;
-            flyIconTextItem->setIconTextItems(getChildItems());
+            flyIconTextItem->setIconTextItems(getItems());
             flyIconTextItem->move(gPoint.x(), gPoint.y());
             flyIconTextItem->show();
             // #endif

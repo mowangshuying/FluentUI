@@ -611,11 +611,11 @@ bool Utils::isWindowAccelerated(const QWindow *window)
     }
     switch (window->surfaceType()) {
     case QSurface::RasterGLSurface:
-#if FRAMELESSHELPER_CONFIG(private_qt)
-        return qt_window_private(const_cast<QWindow *>(window))->compositing;
-#else
+//#if FRAMELESSHELPER_CONFIG(private_qt)
+//        return qt_window_private(const_cast<QWindow *>(window))->compositing;
+//#else
         return true;
-#endif
+//#endif
     case QSurface::OpenGLSurface:
     case QSurface::VulkanSurface:
     case QSurface::MetalSurface:

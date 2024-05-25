@@ -335,7 +335,7 @@ void FluVNavigationIconTextItem::onItemClicked()
         // m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp, FluThemeUtils::getUtils()->getTheme()));
 
-        // display chid
+        // display child
         if (m_items.size() > 0)
         {
             int nH = 0;

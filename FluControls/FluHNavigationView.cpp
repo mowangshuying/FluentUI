@@ -55,7 +55,11 @@ void FluHNavigationView::addItemToMidLayout(QWidget* item)
 {
     // m_hMidWrapLayout->addWidget(item, 0, Qt::AlignLeft);
     auto iconTextItem = (FluHNavigationIconTextItem*)item;
+    iconTextItem->setParentView(this);
     item->setParent(m_MidWrapWidget);
+    
+    iconTextItem->setParentIsFlyIconTextItem(false);
+    iconTextItem->setParentIsNavigationView(true);
     m_items.push_back(iconTextItem);
 }
 

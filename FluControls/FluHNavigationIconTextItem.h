@@ -77,9 +77,36 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_bHideIcon = bHideIcon;
     }
 
+   //bool m_bParentIsFlyIconTextItem;
+   // bool m_bParentIsNavigationView;
+
+    bool parentIsFlyIconTextItem()
+    {
+        return m_bParentIsFlyIconTextItem;
+    }
+
+    bool parentIsNavigationView()
+    {
+        return m_bParentIsNavigationView;
+    }
+
+    void setParentIsFlyIconTextItem(bool bParent)
+    {
+        m_bParentIsFlyIconTextItem = bParent;
+    }
+
+    void setParentIsNavigationView(bool bParent)
+    {
+        m_bParentIsNavigationView = bParent;
+    }
+
+
     void addItem(FluHNavigationIconTextItem* item);
 
     int calcItemW1Width();
+    int calcItemW2Height(FluHNavigationIconTextItem* item);
+
+    void adjustItemHeight(FluHNavigationIconTextItem* item);
 
     int getDepth();
 
@@ -118,10 +145,14 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     std::vector<FluHNavigationIconTextItem*> m_items;
 
     QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_vLayout1;
 
     FluHNavigationIconTextItem* m_parentItem;
     FluAwesomeType m_awesomeType;
 
     bool m_bHideIcon;
     bool m_bSelected;
+
+    bool m_bParentIsFlyIconTextItem;
+    bool m_bParentIsNavigationView;
 };

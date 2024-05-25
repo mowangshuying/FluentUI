@@ -1,5 +1,6 @@
 #include "FluHNavigationIconTextItem.h"
 #include "FluHNavigationFlyIconTextItem.h"
+#include <QThread>
 
 FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
@@ -29,6 +30,9 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_wrapWidget1->setLayout(m_hLayout1);
     m_hLayout1->setContentsMargins(4, 4, 4, 4);
 
+    m_vLayout1 = new QVBoxLayout;
+    m_wrapWidget2->setLayout(m_vLayout1);
+
     m_iconBtn = new QPushButton;
     m_label = new QLabel;
     m_arrow = new QPushButton;
@@ -37,6 +41,8 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_hLayout1->addWidget(m_label, 1);
     m_hLayout1->addWidget(m_arrow);
 
+    m_vLayout1->setContentsMargins(0, 0, 0, 0);
+    m_vLayout1->setSpacing(5);
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
@@ -76,9 +82,11 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluHNavigationIconTextIte
  FluHNavigationIconTextItem::FluHNavigationIconTextItem(QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
 {
      m_awesomeType = FluAwesomeType::None;
-    m_iconBtn->hide();
+     m_iconBtn->hide();
      m_bHideIcon = true;
-    onThemeChanged();
+
+     m_label->setText(text);
+     onThemeChanged();
  }
 
 FluHNavigationIconTextItem::~FluHNavigationIconTextItem()
@@ -125,6 +133,11 @@ void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
 {
     item->m_parentItem = this;
     m_items.push_back(item);
+
+    //int nDepth = item->getDepth();
+
+    m_vLayout1->addWidget(item);
+    m_arrow->show();
 }
 
 int FluHNavigationIconTextItem::calcItemW1Width()
@@ -162,6 +175,35 @@ int FluHNavigationIconTextItem::calcItemW1Width()
     return margins.left() + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
 }
 
+int FluHNavigationIconTextItem::calcItemW2Height(FluHNavigationIconTextItem* item)
+{
+    int nH = 0;
+    for (int i = 0; i < item->m_vLayout1->count(); i++)
+    {
+        auto tmpItem = (FluHNavigationIconTextItem*)(item->m_vLayout1->itemAt(i)->widget());
+        nH += tmpItem->height() + 5;
+    }
+    nH += 5;
+    return nH;
+}
+
+void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* item)
+{
+    if (item == nullptr)
+        return;
+
+    LOG_DEBUG << item->getText();
+
+    int nH = calcItemW2Height(item);
+    item->m_wrapWidget2->setFixedHeight(nH);
+    item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());
+
+   // if (item->m_parentItem->m_parentView == nullptr)
+   // {
+        adjustItemHeight(item->m_parentItem);
+   // }
+}
+
 int FluHNavigationIconTextItem::getDepth()
 {
     int nDepth = 0;
@@ -195,7 +237,7 @@ void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
 
 void FluHNavigationIconTextItem::onItemClicked()
 {
-    LOG_DEBUG << "called";
+    LOG_DEBUG << getText() <<" called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -203,12 +245,37 @@ void FluHNavigationIconTextItem::onItemClicked()
         return;
     }
 
-    LOG_DEBUG << "root item not empty.";
-    auto parentView = rootItem->getParentView();
-    if (parentView == nullptr)
+#ifdef _DEBUG
+    if (getText() == "Accessibility")
     {
-        // show fly item;
-        LOG_DEBUG << "parent view empty.";
+        QThread::msleep(0);
+    }
+#endif
+
+    LOG_DEBUG << "root item not empty.";
+    auto navView = rootItem->getParentView();
+
+    if (rootItem->parentIsFlyIconTextItem())
+    {
+        if (m_items.size() > 0)
+        {
+            int nH = 0;
+            for (int i = 0; i < m_vLayout1->count(); i++)
+            {
+                auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
+                LOG_DEBUG << item->getText();
+                nH += item->height() + 5;
+            }
+
+            m_wrapWidget2->setFixedHeight(nH);
+            m_wrapWidget2->show();
+            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height() + 5);
+        }
+    }
+
+    if (navView != nullptr && rootItem == this)
+    {
+        LOG_DEBUG << "parent view not empty.";
         if (!getItems().empty())
         {
             auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
@@ -219,11 +286,18 @@ void FluHNavigationIconTextItem::onItemClicked()
             return;
         }
     }
-
-    if (parentView != nullptr)
+    
+    if (navView == nullptr)
     {
-        LOG_DEBUG << "parent view not empty.";
-        return;
+        if (!getItems().empty())
+        {
+            // expand---
+
+        }
+        else
+        {
+
+        }
     }
 }
 

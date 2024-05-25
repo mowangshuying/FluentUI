@@ -1,10 +1,12 @@
 #include "FluHNavigationIconTextItem.h"
+#include "FluHNavigationFlyIconTextItem.h"
 
- FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
+FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
     m_itemType = FluHNavigationItemType::IconText;
     m_parentView = nullptr;
     m_awesomeType = FluAwesomeType::None;
+    m_parentItem = nullptr;
 
     m_wrapWidget1 = new QWidget;
     m_wrapWidget2 = new QWidget;
@@ -41,30 +43,46 @@
 
     m_iconBtn->setIconSize(QSize(24, 24));
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home));
+    m_iconBtn->setFixedWidth(30);
 
     m_arrow->setIconSize(QSize(18, 18));
     m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
     m_arrow->setFixedWidth(25);
 
+    connect(m_arrow, &QPushButton::clicked, this, [=](){ emit itemClicked();
+        });
+    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
+    connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked();
+    });
+
     setFixedHeight(40);
 }
 
- FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
+FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
 {
     m_awesomeType = awesomeType;
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType));
     m_label->setText(text);
+    m_bHideIcon = false;
     onThemeChanged();
 }
 
- FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluHNavigationIconTextItem* item) : FluHNavigationIconTextItem()
+FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluHNavigationIconTextItem* item) : FluHNavigationIconTextItem()
 {
-     itemClone(item);
+    itemClone(item);
+    onThemeChanged();
 }
+
+ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
+{
+     m_awesomeType = FluAwesomeType::None;
+    m_iconBtn->hide();
+     m_bHideIcon = true;
+    onThemeChanged();
+ }
 
 FluHNavigationIconTextItem::~FluHNavigationIconTextItem()
 {
-     
 }
 
 void FluHNavigationIconTextItem::itemClone(FluHNavigationIconTextItem* item)
@@ -105,8 +123,43 @@ std::vector<FluHNavigationIconTextItem*> FluHNavigationIconTextItem::getAllItems
 
 void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
 {
-    m_parentItem = this;
+    item->m_parentItem = this;
     m_items.push_back(item);
+}
+
+int FluHNavigationIconTextItem::calcItemW1Width()
+{
+    QMargins margins = m_wrapWidget1->contentsMargins();
+    //int nIndicatorWidth = m_indicator->width();
+
+    int nIconWidth = m_iconBtn->width();
+    if (m_bHideIcon)
+        nIconWidth = 0;
+
+    int nSpacing = 8;
+    int nLabelWidth = m_label->fontMetrics().boundingRect(m_label->text()).width();
+    int nArrowWidth = m_arrow->width();
+    if (m_items.empty())
+    {
+        nArrowWidth = 0;
+        m_arrow->hide();
+    }
+    else
+    {
+        m_arrow->show();
+    }
+
+    // LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
+    // LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
+    // LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
+    // LOG_DEBUG << "nIconWidth:" << nIconWidth;
+    // LOG_DEBUG << "nSpacing:" << nSpacing;
+    // LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
+    // LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
+    // LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
+
+    //return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
+    return margins.left() + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
 }
 
 int FluHNavigationIconTextItem::getDepth()
@@ -131,8 +184,18 @@ FluHNavigationIconTextItem* FluHNavigationIconTextItem::getRootItem()
     return item;
 }
 
+void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
+{
+    QPoint pos = event->pos();
+    if (!m_wrapWidget1->rect().contains(pos))
+        return;
+
+    emit itemClicked();
+}
+
 void FluHNavigationIconTextItem::onItemClicked()
 {
+    LOG_DEBUG << "called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -140,16 +203,26 @@ void FluHNavigationIconTextItem::onItemClicked()
         return;
     }
 
+    LOG_DEBUG << "root item not empty.";
     auto parentView = rootItem->getParentView();
     if (parentView == nullptr)
     {
         // show fly item;
-        return;
+        LOG_DEBUG << "parent view empty.";
+        if (!getItems().empty())
+        {
+            auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
+            flyIconTextItem->setIconTextItems(getItems());
+            flyIconTextItem->show();
+            QPoint gPoint = mapToGlobal(QPoint(0, height()));
+            flyIconTextItem->move(gPoint.x(), gPoint.y());
+            return;
+        }
     }
 
     if (parentView != nullptr)
     {
-
+        LOG_DEBUG << "parent view not empty.";
         return;
     }
 }

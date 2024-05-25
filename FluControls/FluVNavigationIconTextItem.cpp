@@ -84,10 +84,10 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
     // m_currentWidth  = 320;
     m_parentItem = nullptr;
     m_parentView = nullptr;
-    connect(m_arrow, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
 
-    connect(m_iconBtn, &QPushButton::clicked, [=](bool b) { emit itemClicked(); });
-    connect(this, &FluVNavigationIconTextItem::itemClicked, [=]() { onItemClicked(); });
+    connect(m_arrow, &QPushButton::clicked, this, [=](bool b) { emit itemClicked(); });
+    connect(m_iconBtn, &QPushButton::clicked, this, [=](bool b) { emit itemClicked(); });
+    connect(this, &FluVNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked(); });
 
     onThemeChanged();
 }

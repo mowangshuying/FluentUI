@@ -6,7 +6,6 @@
 #include <QStyleOption>
 #include <QPaintEvent>
 
-
 #include <QVBoxLayout>
 #include <vector>
 #include "FluVScrollView.h"
@@ -21,8 +20,8 @@ class FluHNavigationFlyIconTextItem : public FluWidget
 
     void setIconTextItems(std::vector<FluHNavigationIconTextItem*> items);
     void adjustItemSize();
-  
-     // to enable qss
+
+    // to enable qss
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;

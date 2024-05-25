@@ -72,8 +72,7 @@ void FluHNavigationView::removeItemMidLayout(QWidget* item)
 
 void FluHNavigationView::resizeEvent(QResizeEvent* event)
 {
-    // LOG_DEBUG << width();
-    // m_moreItem->show();
+    LOG_DEBUG << "called ----------";
     int nMidWidth = 0;
     for (int i = 0; i < m_items.size(); i++)
     {
@@ -88,10 +87,8 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
         }
         else
         {
-            // nMidWidth += m_items[i]->sizeHint().width();
             m_items[i]->move(nMidWidth, 0);
             nMidWidth += m_items[i]->sizeHint().width();
-            // nMidWidth += 5;
             LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
         }
     }

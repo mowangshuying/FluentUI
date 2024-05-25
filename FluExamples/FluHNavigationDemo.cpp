@@ -34,8 +34,32 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item1 = new FluHNavigationIconTextItem(FluAwesomeType::Home, "Home");
     m_hNavView->addItemToMidLayout(item1);
 
-    auto item2 = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance");
+    auto item2  = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
+    auto item21 = new FluHNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item2);
+    auto item22 = new FluHNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item2);
+    auto item23 = new FluHNavigationIconTextItem(FluAwesomeType::Color, "Colors", item2);
+    auto item24 = new FluHNavigationIconTextItem(FluAwesomeType::EaseOfAccess, "Accessibility", item2);
+    auto item241 = new FluHNavigationIconTextItem("Screen reader support", item24);
+    auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
+    auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
+
+
+
+    
+
+    item2->addItem(item21);
+    item2->addItem(item22);
+    item2->addItem(item23);
+    item2->addItem(item24);
+
+    item24->addItem(item241);
+    item24->addItem(item242);
+    item24->addItem(item243);
+
     m_hNavView->addItemToMidLayout(item2);
+
+
+
 
     auto item3 = new FluHNavigationIconTextItem(FluAwesomeType::AllApps, "All samples");
     m_hNavView->addItemToMidLayout(item3);

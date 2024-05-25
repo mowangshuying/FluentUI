@@ -20,6 +20,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent = nullptr);
 
+    FluHNavigationIconTextItem(QString text, QWidget* parent = nullptr);
+
     FluHNavigationIconTextItem(FluHNavigationIconTextItem* item);
 
     ~FluHNavigationIconTextItem();
@@ -31,7 +33,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         return m_items;
     }
 
-    void getAllItems(std::vector<FluHNavigationIconTextItem*> &totalItems);
+    void getAllItems(std::vector<FluHNavigationIconTextItem*>& totalItems);
 
     std::vector<FluHNavigationIconTextItem*> getAllItems();
 
@@ -77,6 +79,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void addItem(FluHNavigationIconTextItem* item);
 
+    int calcItemW1Width();
+
     int getDepth();
 
     FluHNavigationIconTextItem* getRootItem();
@@ -86,6 +90,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         return m_items.empty();
     }
 
+    void mouseReleaseEvent(QMouseEvent* event);
+
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;
@@ -93,7 +99,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
-signals:
+  signals:
     void itemClicked();
   public slots:
     void onItemClicked();

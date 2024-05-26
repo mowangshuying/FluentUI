@@ -68,7 +68,7 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="flu_utils_fonts.qrc">
+    <QtRcc Include="FluUtilsFonts.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

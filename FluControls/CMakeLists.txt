@@ -19,7 +19,7 @@ qt_add_library(${TGT}
     STATIC 
     ${DIR_SRCS}
 )
-qt_add_resources(${TGT} "flu_controls_qss"
+qt_add_resources(${TGT} "FluControlsQss"
     PREFIX "/"
     BASE ".."
     FILES

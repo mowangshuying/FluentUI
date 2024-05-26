@@ -683,7 +683,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="flu_controls_qss.qrc">
+    <QtRcc Include="FluControlsQss.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

@@ -302,7 +302,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="flu_examples_qss.qrc">
+    <QtRcc Include="FluExamplesQss.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

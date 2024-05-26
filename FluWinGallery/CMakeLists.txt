@@ -19,7 +19,7 @@ qt_add_executable(${TGT}
     ${DIR_SRCS}
 )
 
-qt_add_resources(${TGT} "flu_win_gallery_res"
+qt_add_resources(${TGT} "FluWinGalleryRes"
     PREFIX "/"
     BASE ".."
     FILES
@@ -439,7 +439,7 @@ qt_add_resources(${TGT} "flu_win_gallery_res"
     "../res/Tiles/contrast-white/XAMLControlsGalleryWideTile.scale-400_contrast-white.png"
 )
 
-qt_add_resources(${TGT} "flu_win_gallery_code"
+qt_add_resources(${TGT} "FluWinGalleryCode"
     PREFIX "/"
     BASE ".."
     FILES
@@ -490,7 +490,7 @@ qt_add_resources(${TGT} "flu_win_gallery_code"
     "../code/ToggleButtonPageCode1.md"
     "../code/ToggleSwitchPageCode1.md"
 )
-qt_add_resources(${TGT} "flu_win_gallery_qss"
+qt_add_resources(${TGT} "FluWinGalleryQss"
     PREFIX "/"
     BASE ".."
     FILES

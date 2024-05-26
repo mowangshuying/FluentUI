@@ -72,7 +72,7 @@
     <Link>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FluControls.lib;FluUtils.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ForceSymbolReferences>?qInitResources_flu_utils_fonts@@YAHXZ;?qCleanupResources_flu_utils_fonts@@YAHXZ;?qInitResources_flu_controls_qss@@YAHXZ;?qCleanupResources_flu_controls_qss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
+      <ForceSymbolReferences>?qInitResources_FluUtilsFonts@@YAHXZ;?qCleanupResources_FluUtilsFonts@@YAHXZ;?qInitResources_FluControlsQss@@YAHXZ;?qCleanupResources_FluControlsQss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -90,7 +90,7 @@
     <Link>
       <AdditionalDependencies>FluControls.lib;FluUtils.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ForceSymbolReferences>?qInitResources_flu_utils_fonts@@YAHXZ;?qCleanupResources_flu_utils_fonts@@YAHXZ;?qInitResources_flu_controls_qss@@YAHXZ;?qCleanupResources_flu_controls_qss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
+      <ForceSymbolReferences>?qInitResources_FluUtilsFonts@@YAHXZ;?qCleanupResources_FluUtilsFonts@@YAHXZ;?qInitResources_FluControlsQss@@YAHXZ;?qCleanupResources_FluControlsQss@@YAHXZ</ForceSymbolReferences>
     </Link>
     <PreLinkEvent>
       <Command>xcopy $(SolutionDir)3rdparty\framelesshelper\bin\$(QtBuildConfig)\*.dll $(OutDir) /F /Y</Command>
@@ -264,9 +264,9 @@
     <QtMoc Include="FluInfoBadgePage.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="flu_win_gallery_code.qrc" />
-    <QtRcc Include="flu_win_gallery_qss.qrc" />
-    <QtRcc Include="flu_win_gallery_res.qrc" />
+    <QtRcc Include="FluWinGalleryCode.qrc" />
+    <QtRcc Include="FluWinGalleryQss.qrc" />
+    <QtRcc Include="FluWinGalleryRes.qrc" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluInfoBarPage.h" />

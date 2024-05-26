@@ -18,7 +18,7 @@ message(")")
 qt_add_executable(${TGT}
     ${DIR_SRCS}
 )
-qt_add_resources(${TGT} "flu_examples_qss"
+qt_add_resources(${TGT} "FluExamplesQss"
     PREFIX "/"
     BASE ".."
     FILES

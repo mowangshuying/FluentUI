@@ -63,7 +63,7 @@ class FluTimePicker24H : public FluWidget
             m_minuteBtn->setText(sMinute);
         });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePicker24H.qss", this);
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
@@ -85,11 +85,11 @@ class FluTimePicker24H : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePicker24H.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePicker24H.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluTimePicker24H.qss", this);
         }
     }
 

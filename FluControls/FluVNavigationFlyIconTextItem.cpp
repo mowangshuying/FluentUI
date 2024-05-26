@@ -21,8 +21,8 @@ FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*=
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
+    // FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluNavigationFlyIconTextItem.qss", m_widget);
+    // FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluNavigationFlyIconTextItem.qss", this);
     onThemeChanged();
 }
 
@@ -82,12 +82,12 @@ void FluVNavigationFlyIconTextItem::onThemeChanged()
     // LOG_DEBUG << "called";
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", m_widget);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationFlyIconTextItem.qss", m_widget);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationFlyIconTextItem.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", m_widget);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", m_widget);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", this);
     }
 }

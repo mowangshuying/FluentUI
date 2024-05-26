@@ -72,7 +72,7 @@ class FluTimePickerAP : public FluWidget
             m_apBtn->setText(sAmOrPm);
         });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAP.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePickerAP.qss", this);
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
@@ -94,11 +94,11 @@ class FluTimePickerAP : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAP.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePickerAP.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerAP.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluTimePickerAP.qss", this);
         }
     }
 

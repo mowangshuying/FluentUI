@@ -25,7 +25,7 @@ class FluPivot : public FluWidget
         m_sLayout = new FluStackedLayout;
         m_vMainLayout->addLayout(m_sLayout);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivot.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPivot.qss", this);
     }
 
     void addPivotItem(QString key, QWidget* widget)
@@ -56,11 +56,11 @@ class FluPivot : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivot.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPivot.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivot.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluPivot.qss", this);
         }
     }
 

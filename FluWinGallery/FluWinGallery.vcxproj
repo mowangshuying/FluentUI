@@ -45,6 +45,7 @@
     <QtInstall>6.5.1_msvc2019_64</QtInstall>
     <QtModules>core;gui;widgets;svg</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
+    <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
@@ -64,15 +65,23 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <PropertyGroup Label="QtDeploy" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FluControls.lib;FluUtils.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ForceSymbolReferences>?qInitResources_flu_utils_fonts@@YAHXZ;?qCleanupResources_flu_utils_fonts@@YAHXZ;?qInitResources_flu_controls_qss@@YAHXZ;?qCleanupResources_flu_controls_qss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <PostBuildEvent />
+    <PreLinkEvent>
+      <Command>xcopy $(SolutionDir)3rdparty\framelesshelper\bin\$(QtBuildConfig)\*.dll $(OutDir) /F /Y</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -81,7 +90,11 @@
     <Link>
       <AdditionalDependencies>FluControls.lib;FluUtils.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ForceSymbolReferences>?qInitResources_flu_utils_fonts@@YAHXZ;?qCleanupResources_flu_utils_fonts@@YAHXZ;?qInitResources_flu_controls_qss@@YAHXZ;?qCleanupResources_flu_controls_qss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
+    <PreLinkEvent>
+      <Command>xcopy $(SolutionDir)3rdparty\framelesshelper\bin\$(QtBuildConfig)\*.dll $(OutDir) /F /Y</Command>
+    </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -251,7 +264,9 @@
     <QtMoc Include="FluInfoBadgePage.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="res.qrc" />
+    <QtRcc Include="flu_win_gallery_code.qrc" />
+    <QtRcc Include="flu_win_gallery_qss.qrc" />
+    <QtRcc Include="flu_win_gallery_res.qrc" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluInfoBarPage.h" />

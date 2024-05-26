@@ -16,7 +16,7 @@ class FluListViewPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("Basic ListView with Simple DateTemplate");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/ListViewPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath(":/code/ListViewPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(480);
 
         FluListView* listView = new FluListView(displayBox1);
@@ -47,7 +47,7 @@ class FluListViewPage : public FluAEmptyPage
         displayBox1->getBodyLayout()->addWidget(listView);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluListViewPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -56,11 +56,11 @@ class FluListViewPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListViewPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluListViewPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListViewPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluListViewPage.qss", this);
         }
     }
 };

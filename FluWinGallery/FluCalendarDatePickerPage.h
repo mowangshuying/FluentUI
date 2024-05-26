@@ -19,14 +19,14 @@ class FluCalendarDatePickerPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("CalendarDatePicker with a header ad placeholder text.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/CalendarDatePickerPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/CalendarDatePickerPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(60);
 
         auto calendarView = new FluCalendarDatePicker(displayBox);
         calendarView->move(50, 50);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePickerPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarDatePickerPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -35,11 +35,11 @@ class FluCalendarDatePickerPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePickerPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarDatePickerPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarDatePickerPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarDatePickerPage.qss", this);
         }
     }
 };

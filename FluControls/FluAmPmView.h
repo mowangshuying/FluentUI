@@ -73,7 +73,7 @@ class FluAmPmView : public FluWidget
 
         setAmPm("AM", "PM");
         setAm(true);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAmPmView.qss", this);
     }
 
     void setAmPm(QString am, QString pm)
@@ -212,13 +212,13 @@ class FluAmPmView : public FluWidget
         {
             m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
             m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAmPmView.qss", this);
         }
         else
         {
             m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
             m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAmPmView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluAmPmView.qss", this);
         }
     }
 

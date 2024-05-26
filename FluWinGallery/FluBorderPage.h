@@ -19,7 +19,7 @@ class FluBorderPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBoxEx;
         displayBox->setTitle("A Border around a TextBlock.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/BorderPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/BorderPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(120);
 
         auto boder = new FluBorder;
@@ -41,7 +41,7 @@ class FluBorderPage : public FluAEmptyPage
         displayBox->getBodyRightLayout()->addWidget(group);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluBorderPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -50,11 +50,11 @@ class FluBorderPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluBorderPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBorderPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluBorderPage.qss", this);
         }
     }
 };

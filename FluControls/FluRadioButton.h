@@ -12,13 +12,13 @@ class FluRadioButton : public QRadioButton
   public:
     explicit FluRadioButton(QWidget* parent = nullptr) : QRadioButton(parent)
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButton.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
     explicit FluRadioButton(const QString& text, QWidget* parent = nullptr) : QRadioButton(text, parent)
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButton.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -27,11 +27,11 @@ class FluRadioButton : public QRadioButton
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButton.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluRadioButton.qss", this);
         }
     }
 };

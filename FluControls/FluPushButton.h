@@ -14,10 +14,10 @@ class FluPushButton : public QPushButton
     {
         setFixedSize(200, 30);
         // setFixedHeight(30);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPushButton.qss", this);
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluPushButton.qss", this);
         }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
@@ -26,11 +26,11 @@ class FluPushButton : public QPushButton
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPushButton.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluPushButton.qss", this);
         }
     }
 

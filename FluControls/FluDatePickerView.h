@@ -127,7 +127,7 @@ class FluDatePickerView : public FluWidget
             m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
         });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDatePickerView.qss", this);
     }
 
     int getMonth()
@@ -217,13 +217,13 @@ class FluDatePickerView : public FluWidget
         {
             m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Light));
             m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Light));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDatePickerView.qss", this);
         }
         else
         {
             m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Dark));
             m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Dark));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePickerView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluDatePickerView.qss", this);
         }
     }
 

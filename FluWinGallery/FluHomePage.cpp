@@ -22,13 +22,13 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     auto AnnotatedScrollBarCard = new FluHCard();
     recentlyAddedSamplesLayout->addWidget(AnnotatedScrollBarCard);
 
-    auto infoBadgeCard = new FluHCard(QPixmap("../res/ControlImages/InfoBadge.png"), "InfoBadge", "An non-instrusive Ui to display notifications or bring focus to an area");
+    auto infoBadgeCard = new FluHCard(QPixmap(":/res/ControlImages/InfoBadge.png"), "InfoBadge", "An non-instrusive Ui to display notifications or bring focus to an area");
     recentlyAddedSamplesLayout->addWidget(infoBadgeCard);
 
-    auto itemsViewCard = new FluHCard(QPixmap("../res/ControlImages/ItemsView.png"), "ItemsView", "A control that presents a collection of items using various layouts");
+    auto itemsViewCard = new FluHCard(QPixmap(":/res/ControlImages/ItemsView.png"), "ItemsView", "A control that presents a collection of items using various layouts");
     recentlyAddedSamplesLayout->addWidget(itemsViewCard);
 
-    auto lineCard = new FluHCard(QPixmap("../res/ControlImages/Line.png"), "Line", "Draws a straight line between two points");
+    auto lineCard = new FluHCard(QPixmap(":/res/ControlImages/Line.png"), "Line", "Draws a straight line between two points");
     recentlyAddedSamplesLayout->addWidget(lineCard);
 
     recentlyUpdatedSamplesLabel->setText("Recently updated samples");
@@ -37,16 +37,16 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     recentlyUpdatedSamplesLayout->setContentsMargins(40, 0, 40, 0);
     recentlyUpdatedSamplesLayout->setSpacing(10, 10);
 
-    auto AnimatedIconCard = new FluHCard(QPixmap("../res/ControlImages/AnimatedIcon.png"), "AnimatedIcon", "An element that displays and controls and icon that animates when the user interacts with the control.");
+    auto AnimatedIconCard = new FluHCard(QPixmap(":/res/ControlImages/AnimatedIcon.png"), "AnimatedIcon", "An element that displays and controls and icon that animates when the user interacts with the control.");
     recentlyUpdatedSamplesLayout->addWidget(AnimatedIconCard);
 
-    auto autoSuggestBoxCard = new FluHCard(QPixmap("../res/ControlImages/AutoSuggestBox.png"), "AutoSuggestBox", "A control to provide suggestions as a user is typing.");
+    auto autoSuggestBoxCard = new FluHCard(QPixmap(":/res/ControlImages/AutoSuggestBox.png"), "AutoSuggestBox", "A control to provide suggestions as a user is typing.");
     recentlyUpdatedSamplesLayout->addWidget(autoSuggestBoxCard);
 
-    auto breadcrumbBarCard = new FluHCard(QPixmap("../res/ControlImages/BreadcrumbBar.png"), "BreadcrumbBar", "Shows the trail of navigation token to the current location.");
+    auto breadcrumbBarCard = new FluHCard(QPixmap(":/res/ControlImages/BreadcrumbBar.png"), "BreadcrumbBar", "Shows the trail of navigation token to the current location.");
     recentlyUpdatedSamplesLayout->addWidget(breadcrumbBarCard);
 
-    auto buttonCard = new FluHCard(QPixmap("../res/ControlImages/Button.png"), "Button", "A control that responds to user input and raises a Click event.");
+    auto buttonCard = new FluHCard(QPixmap(":/res/ControlImages/Button.png"), "Button", "A control that responds to user input and raises a Click event.");
     recentlyUpdatedSamplesLayout->addWidget(buttonCard);
 
     m_vMainLayout->addWidget(titleWidget);
@@ -60,7 +60,7 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     recentlyAddedSamplesLabel->setObjectName("recentlyAddedSamplesLabel");
     recentlyUpdatedSamplesLabel->setObjectName("recentlyUpdatedSamplesLabel");
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHomePage.qss");
+    QString qss = FluStyleSheetUitls::getQssByFileName(":/StyleSheet/light/FluHomePage.qss");
     setStyleSheet(qss);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }

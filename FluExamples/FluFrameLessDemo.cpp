@@ -22,7 +22,7 @@ FluFrameLessDemo::FluFrameLessDemo(QWidget *parent /*= nullptr*/) : FluFrameLess
 #ifndef _DEBUG
     setWindowTitle("Cpp WinUI3 Demo");
 #endif
-    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+    setWindowIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
     resize(800, 600);
 
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);

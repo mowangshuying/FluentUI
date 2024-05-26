@@ -13,7 +13,7 @@ class FluListView : public QListWidget
     FluListView(QWidget* parent = nullptr) : QListWidget(parent)
     {
         setItemDelegate(new FluListViewItemDelegate);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluListView.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -22,13 +22,13 @@ class FluListView : public QListWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluListView.qss", this);
             //  style()->polish(this);
             //    setItemDelegate(new FluListViewItemDelegate);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluListView.qss", this);
             //  style()->polish(this);
             //  setItemDelegate(new FluListViewItemDelegate);
         }

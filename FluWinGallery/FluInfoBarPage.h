@@ -26,7 +26,7 @@ class FluInfoBarPage : public FluAEmptyPage
         addDynamicInfoBar();
 
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluInfoBarPage.qss", this);
     }
 
     void addClosableInfoBar()
@@ -140,11 +140,11 @@ class FluInfoBarPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluInfoBarPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluInfoBarPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluInfoBarPage.qss", this);
         }
     }
 };

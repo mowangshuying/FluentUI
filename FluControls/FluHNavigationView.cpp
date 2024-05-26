@@ -43,7 +43,7 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
 
     setFixedHeight(48);
     // m_hLayout->setSizeConstraint(QHBoxLayout::SetMaximumSize);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationView.qss", this);
+    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationView.qss", this);
 }
 
 void FluHNavigationView::addItemToLeftLayout(QWidget* item)

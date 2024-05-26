@@ -16,7 +16,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
 #ifndef _DEBUG
     setWindowTitle("CppQt WinUI3 Demo");
 #endif
-    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+    setWindowIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
 
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
@@ -109,7 +109,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     bodyWidget->setObjectName("bodyWidget");
     m_contentLayout->addWidget(bodyWidget);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
+    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationDemo.qss", this);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     resize(800, 600);
 }
@@ -130,7 +130,7 @@ void FluHNavigationDemo::onThemeChanged()
         // m_titleBar->update();
         // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }
@@ -148,7 +148,7 @@ void FluHNavigationDemo::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationDemo.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }

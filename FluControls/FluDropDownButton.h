@@ -55,7 +55,7 @@ class FluDropDownButton : public FluWidget
             //  m_menu->show();
         });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDropDownButton.qss", this);
     }
 
     QPushButton* getTextBtn()
@@ -136,7 +136,7 @@ class FluDropDownButton : public FluWidget
                 m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Light));
             if (m_svgLightPath != "")
                 m_textBtn->setIcon(FluIconUtils::getSvgIcon(m_svgLightPath));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDropDownButton.qss", this);
         }
         else
         {
@@ -146,7 +146,7 @@ class FluDropDownButton : public FluWidget
             if (m_svgDarkPath != "")
                 m_textBtn->setIcon(FluIconUtils::getSvgIcon(m_svgDarkPath));
 
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluDropDownButton.qss", this);
         }
     }
 

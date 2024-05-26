@@ -42,17 +42,17 @@ class FluCalendarViewTitle : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_yearMonthBtn);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_preBtn);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", m_yearMonthBtn);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", m_preBtn);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewTitle.qss", m_yearMonthBtn);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewTitle.qss", m_preBtn);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewTitle.qss", m_nextBtn);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewTitle.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarViewTitle.qss", m_yearMonthBtn);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarViewTitle.qss", m_preBtn);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarViewTitle.qss", m_nextBtn);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarViewTitle.qss", this);
         }
     }
 

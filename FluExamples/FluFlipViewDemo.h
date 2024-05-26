@@ -16,11 +16,11 @@ class FluFlipViewDemo : public FluWidget
             flipView->move(50, 50);
             // resize(800, 600);
 
-            flipView->addPixmap(QPixmap("../res/SampleMedia/cliff.jpg"));
-            flipView->addPixmap(QPixmap("../res/SampleMedia/grapes.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/cliff.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/grapes.jpg"));
             // LandscapeImage8.jpg
-            flipView->addPixmap(QPixmap("../res/SampleMedia/LandscapeImage8.jpg"));
-            flipView->addPixmap(QPixmap("../res/SampleMedia/sunset.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/LandscapeImage8.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/sunset.jpg"));
         }
 
         {
@@ -28,11 +28,11 @@ class FluFlipViewDemo : public FluWidget
             flipView->move(50 + 600, 50);
             // resize(800, 600);
 
-            flipView->addPixmap(QPixmap("../res/SampleMedia/cliff.jpg"));
-            flipView->addPixmap(QPixmap("../res/SampleMedia/grapes.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/cliff.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/grapes.jpg"));
             // LandscapeImage8.jpg
-            flipView->addPixmap(QPixmap("../res/SampleMedia/LandscapeImage8.jpg"));
-            flipView->addPixmap(QPixmap("../res/SampleMedia/sunset.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/LandscapeImage8.jpg"));
+            flipView->addPixmap(QPixmap(":/res/SampleMedia/sunset.jpg"));
         }
     }
 };

@@ -22,7 +22,7 @@ class FluNumberBoxPage : public FluAEmptyPage
 
         addDoubleSpinBox();
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluNumberBoxPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -30,7 +30,7 @@ class FluNumberBoxPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A spin box");
-        displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/NumberBoxPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(90);
 
         auto spinBox = new FluSpinBox(this);
@@ -43,7 +43,7 @@ class FluNumberBoxPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A double spin box");
-        displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode2.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/NumberBoxPageCode2.md");
         displayBox->setBodyWidgetFixedHeight(90);
 
         auto doubleSpinBox = new FluDoubleSpinBox(this);
@@ -57,11 +57,11 @@ class FluNumberBoxPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluNumberBoxPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNumberBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluNumberBoxPage.qss", this);
         }
     }
 };

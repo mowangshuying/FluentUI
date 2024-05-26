@@ -34,7 +34,7 @@ class FluComboBoxTextItem : public FluWidget
 #ifdef _DEBUG
         m_indicatorLabel->setText("0000");
 #endif
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluComboBoxTextItem.qss", this);
     }
 
     QString getItemText()

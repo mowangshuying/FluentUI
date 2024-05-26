@@ -18,7 +18,7 @@ class FluInfoBadgePage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("InfoBadge with Different Value.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/InfoBadgePageCode1.md");
         displayBox->setBodyWidgetFixedHeight(96);
 
         auto targetWidget1 = new QWidget(displayBox->getBodyWidget());
@@ -41,7 +41,7 @@ class FluInfoBadgePage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadgePage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluInfoBadgePage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -50,11 +50,11 @@ class FluInfoBadgePage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadgePage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluInfoBadgePage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluInfoBadgePage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluInfoBadgePage.qss", this);
         }
     }
 };

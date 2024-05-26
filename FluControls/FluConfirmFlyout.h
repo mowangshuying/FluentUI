@@ -44,10 +44,10 @@ class FluConfirmFlyout : public FluVFlyout
 
         connect(m_cancelBtn, &FluPushButton::clicked, [=]() { close(); });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluConfirmFlyout.qss", this);
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluConfirmFlyout.qss", this);
         }
     }
 
@@ -83,11 +83,11 @@ class FluConfirmFlyout : public FluVFlyout
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluConfirmFlyout.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluConfirmFlyout.qss", this);
         }
     }
 

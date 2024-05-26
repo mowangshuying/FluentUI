@@ -19,13 +19,13 @@ class FluDatePickerPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A simple DatePicker with a header.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/DatePickerPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath(":/code/DatePickerPageCode1.md");
         auto datePicker = new FluDatePicker;
         displayBox1->getBodyLayout()->addWidget(datePicker);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDatePickerPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -34,11 +34,11 @@ class FluDatePickerPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDatePickerPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePickerPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluDatePickerPage.qss", this);
         }
     }
 };

@@ -51,7 +51,7 @@ class FluTabBarItem : public FluWidget
         connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
 
         connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTabBarItem.qss", this);
     }
 
     void setSelected(bool bSel)

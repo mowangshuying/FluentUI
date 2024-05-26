@@ -20,7 +20,7 @@ class FluFlyoutPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A button with a flyout.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/FlyoutPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/FlyoutPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(96);
 
         auto emptyCartBtn = new FluPushButton;
@@ -36,7 +36,7 @@ class FluFlyoutPage : public FluAEmptyPage
         displayBox->getBodyLayout()->addWidget(emptyCartBtn);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlyoutPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluFlyoutPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -45,11 +45,11 @@ class FluFlyoutPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlyoutPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluFlyoutPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluFlyoutPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluFlyoutPage.qss", this);
         }
     }
 };

@@ -20,7 +20,7 @@ class FluProgressRingPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("An indeterminate progress ring.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath(":/code/ProgressRingPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto progressRing1 = new FluProgressRing(displayBox1);
@@ -31,7 +31,7 @@ class FluProgressRingPage : public FluAEmptyPage
 
         auto displayBox2 = new FluDisplayBox;
         displayBox2->setTitle("An indeterminate ring.");
-        displayBox2->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode2.md");
+        displayBox2->getCodeExpander()->setCodeByPath(":/code/ProgressRingPageCode2.md");
         displayBox2->setBodyWidgetFixedHeight(96);
 
         auto progressRing2 = new FluProgressRing(displayBox2);
@@ -52,7 +52,7 @@ class FluProgressRingPage : public FluAEmptyPage
 
         // displayBox1->getBodyLayout()->addWidget(checkBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressRingPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluProgressRingPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -61,11 +61,11 @@ class FluProgressRingPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressRingPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluProgressRingPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluProgressRingPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluProgressRingPage.qss", this);
         }
     }
 

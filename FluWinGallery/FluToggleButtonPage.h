@@ -21,14 +21,14 @@ class FluToggleButtonPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A simple toggle button with text content.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/ToggleButtonPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath(":/code/ToggleButtonPageCode1.md");
         auto btn1 = new FluToggleButton(this);
         btn1->setText("Toggle Button");
         displayBox1->setBodyWidgetFixedHeight(96);
         displayBox1->getBodyLayout()->addWidget(btn1);
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluToggleButtonPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -37,11 +37,11 @@ class FluToggleButtonPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluToggleButtonPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluToggleButtonPage.qss", this);
         }
     }
 };

@@ -16,7 +16,7 @@ class FluToggleSwitch : public QCheckBox
         m_bEmptyText = false;
 
         setText(m_offText);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
             if (m_bEmptyText)
                 return;
@@ -36,7 +36,7 @@ class FluToggleSwitch : public QCheckBox
         m_offText = "Off";
 
         setText(m_offText);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
             if (m_bEmptyText)
                 return;
@@ -66,11 +66,11 @@ class FluToggleSwitch : public QCheckBox
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluToggleSwitch.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitch.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluToggleSwitch.qss", this);
         }
     }
 

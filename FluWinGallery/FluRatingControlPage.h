@@ -17,14 +17,14 @@ class FluRatingControlPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A Simple RatingControl.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/RatingControlPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/RatingControlPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(96);
 
         auto ratingControl = new FluRatingControl;
         displayBox->getBodyLayout()->addWidget(ratingControl);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControlPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRatingControlPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
   public slots:
@@ -32,11 +32,11 @@ class FluRatingControlPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControlPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRatingControlPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControlPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluRatingControlPage.qss", this);
         }
     }
 };

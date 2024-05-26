@@ -36,7 +36,7 @@ class FluTypeographyPage : public FluAEmptyPage
         auto imgLabel = new QLabel;
         imgLabel->setObjectName("imgLabel");
         imgLabel->setFixedSize(740, 450);
-        QPixmap pixmap = QPixmap("../res/Typography.light.png");
+        QPixmap pixmap = QPixmap(":/res/Typography.light.png");
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         imgLabel->setPixmap(pixmap);
 
@@ -77,7 +77,7 @@ class FluTypeographyPage : public FluAEmptyPage
         expander->setCodeText(code);
         m_vScrollView->getMainLayout()->addWidget(expander);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTypeographyPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -119,11 +119,11 @@ class FluTypeographyPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTypeographyPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTypeographyPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluTypeographyPage.qss", this);
         }
     }
 };

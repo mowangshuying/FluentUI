@@ -50,7 +50,7 @@ class FluCalendarDatePicker : public QPushButton
         connect(m_textButton, &QPushButton::clicked, [=]() { onClicked(); });
         connect(m_iconButton, &QPushButton::clicked, [=]() { onClicked(); });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarDatePicker.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
         //  {
         //     onThemeChanged();
@@ -84,12 +84,12 @@ class FluCalendarDatePicker : public QPushButton
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarDatePicker.qss", this);
         }
         else
         {
             m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar, FluTheme::Dark));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarDatePicker.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarDatePicker.qss", this);
         }
     }
 

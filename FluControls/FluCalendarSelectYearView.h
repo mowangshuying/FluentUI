@@ -36,11 +36,11 @@ class FluCalendarSelectYearView : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarSelectYearView.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectYearView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarSelectYearView.qss", this);
         }
     }
 

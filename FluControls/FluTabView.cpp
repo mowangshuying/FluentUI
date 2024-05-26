@@ -22,7 +22,7 @@ FluTabView::FluTabView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_sWidgt->setLayout(m_sLayout);
 
     connect(m_tabBar, &FluTabBar::addTabBtnClicked, [=]() { emit addTabBtnClicked(); });
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabView.qss", this);
+    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTabView.qss", this);
 }
 
 void FluTabView::addTab(QString tabString, QWidget* tabWidget)

@@ -18,7 +18,7 @@ class FluAutoSuggestBoxPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A basic autosuggest box.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/AutoSuggestBoxPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/AutoSuggestBoxPageCode1.md");
 
         auto autoSuggestBox = new FluAutoSuggestBox;
         autoSuggestBox->setFixedWidth(300);
@@ -27,7 +27,7 @@ class FluAutoSuggestBoxPage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
   public slots:
@@ -35,11 +35,11 @@ class FluAutoSuggestBoxPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAutoSuggestBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluAutoSuggestBoxPage.qss", this);
         }
     }
 };

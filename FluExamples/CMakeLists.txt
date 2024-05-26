@@ -18,6 +18,14 @@ message(")")
 qt_add_executable(${TGT}
     ${DIR_SRCS}
 )
+qt_add_resources(${TGT} "flu_examples_qss"
+    PREFIX "/"
+    BASE ".."
+    FILES
+    "../StyleSheet/dark/FluMenuDemo.qss"
+    "../StyleSheet/light/FluHNavigationDemo.qss"
+    "../StyleSheet/light/FluMenuDemo.qss"
+)
 
 target_link_libraries(${TGT}
     PRIVATE

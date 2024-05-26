@@ -35,7 +35,7 @@ class FluAppBarToggleButton : public FluWidget
         m_vMainLayout->addWidget(m_textLabel);
 
         m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarToggleButton.qss", this);
 
         setToggled(m_bToggled);
 
@@ -133,11 +133,11 @@ class FluAppBarToggleButton : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarToggleButton.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarToggleButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluAppBarToggleButton.qss", this);
         }
 
         updateIcon();

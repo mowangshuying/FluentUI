@@ -18,7 +18,7 @@ class FluHRadioGroupBox : public QGroupBox
 
         setLayout(m_hMainLayout);
         m_hMainLayout->addSpacing(15);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVRadioGroupBox.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -29,7 +29,7 @@ class FluHRadioGroupBox : public QGroupBox
         // m_vMainLayout->setContentsMargins(0, 0, 0, 0);
         setLayout(m_hMainLayout);
         m_hMainLayout->addSpacing(15);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVRadioGroupBox.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -43,11 +43,11 @@ class FluHRadioGroupBox : public QGroupBox
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVRadioGroupBox.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVRadioGroupBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVRadioGroupBox.qss", this);
         }
     }
 

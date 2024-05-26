@@ -45,12 +45,12 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     updateInfoBarTypeProperty(infobarType);
     m_nDisappearDuration = -1;
     m_bDisappearing = false;
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
+    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluShortInfoBar.qss", this);
 
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
     {
         m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluShortInfoBar.qss", this);
     }
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     //  setWindowFlags(Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint | Qt::Window);

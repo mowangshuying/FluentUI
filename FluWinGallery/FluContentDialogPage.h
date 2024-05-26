@@ -19,7 +19,7 @@ class FluContentDialogPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A basic content dialog with content.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/ContentDialogPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/ContentDialogPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(56);
 
         auto showDlgBtn = new FluPushButton;
@@ -34,7 +34,7 @@ class FluContentDialogPage : public FluAEmptyPage
         displayBox->getBodyLayout()->addWidget(showDlgBtn);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluContentDialogPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluContentDialogPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
   public slots:
@@ -42,11 +42,11 @@ class FluContentDialogPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluContentDialogPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluContentDialogPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluContentDialogPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluContentDialogPage.qss", this);
         }
     }
 };

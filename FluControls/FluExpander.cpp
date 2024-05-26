@@ -90,12 +90,12 @@ void FluExpander::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluExpander.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluExpander.qss", m_downOrUpButton);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpander.qss", this);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpander.qss", m_downOrUpButton);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluExpander.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluExpander.qss", m_downOrUpButton);
     }
 }

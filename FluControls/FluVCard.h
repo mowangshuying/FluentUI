@@ -22,7 +22,7 @@ class FluVCard : public FluWidget
 
         m_iconLabel = new QLabel(this);
         m_iconLabel->setFixedSize(60, 60);
-        QPixmap galleryPng = QPixmap("../res/HomeHeaderTiles/Header-WinUIGallery.png");
+        QPixmap galleryPng = QPixmap(":/res/HomeHeaderTiles/Header-WinUIGallery.png");
         galleryPng = galleryPng.scaled(60, 60);
         m_iconLabel->setPixmap(galleryPng);
 
@@ -42,7 +42,7 @@ class FluVCard : public FluWidget
         vMainLaout->addWidget(m_contextLabel);
 
         setFixedSize(200, 220);
-        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
+        QString qss = FluStyleSheetUitls::getQssByFileName(":/StyleSheet/light/FluVCard.qss");
         setStyleSheet(qss);
     }
 
@@ -72,11 +72,11 @@ class FluVCard : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVCard.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVCard.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVCard.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVCard.qss", this);
         }
     }
 

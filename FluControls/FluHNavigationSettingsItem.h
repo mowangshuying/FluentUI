@@ -23,14 +23,14 @@ class FluHNavigationSettingsItem : public FluHNavigationItem
         m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Settings));
         m_hMainLayout->addWidget(m_icon);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationSettingsItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationSettingsItem.qss", this);
     }
 
     FluHNavigationSettingsItem(FluAwesomeType awesomeType, QWidget* parent = nullptr) : FluHNavigationSettingsItem(parent)
     {
         m_awesomeType = awesomeType;
         m_icon->setAwesomeType(awesomeType);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationSettingsItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationSettingsItem.qss", this);
     }
 
     void paintEvent(QPaintEvent* event)
@@ -45,11 +45,11 @@ class FluHNavigationSettingsItem : public FluHNavigationItem
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationSettingsItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationSettingsItem.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationSettingsItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHNavigationSettingsItem.qss", this);
         }
     }
 

@@ -18,11 +18,11 @@ class FluDoubleSpinBox : public QDoubleSpinBox
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDoubleSpinBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDoubleSpinBox.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDoubleSpinBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluDoubleSpinBox.qss", this);
         }
     }
 };

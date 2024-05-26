@@ -39,7 +39,7 @@ class FluSettingsLabelBox : public FluWidget
         m_mainLayout->addWidget(m_versionLabel);
 
         setFixedHeight(70);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSettingsLabelBox.qss", this);
     }
 
     void setIcon(QIcon icon)
@@ -70,11 +70,11 @@ class FluSettingsLabelBox : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSettingsLabelBox.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsLabelBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluSettingsLabelBox.qss", this);
         }
     }
 

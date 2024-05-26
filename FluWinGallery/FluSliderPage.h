@@ -21,7 +21,7 @@ class FluSliderPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A simple Slider.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/SliderPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath(":/code/SliderPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto hSlider = new FluSlider(displayBox1);
@@ -37,7 +37,7 @@ class FluSliderPage : public FluAEmptyPage
 
         auto displayBox2 = new FluDisplayBox;
         displayBox2->setTitle("A vertical slider.");
-        displayBox2->getCodeExpander()->setCodeByPath("../code/SliderPageCode2.md");
+        displayBox2->getCodeExpander()->setCodeByPath(":/code/SliderPageCode2.md");
         displayBox2->setBodyWidgetFixedHeight(180);
 
         auto vSlider = new FluSlider(displayBox2);
@@ -49,7 +49,7 @@ class FluSliderPage : public FluAEmptyPage
         vSlider->move(50, 50);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSliderPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSliderPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -58,11 +58,11 @@ class FluSliderPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSliderPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSliderPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSliderPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluSliderPage.qss", this);
         }
     }
 };

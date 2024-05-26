@@ -19,7 +19,7 @@ class FluSplitButtonPage : public FluAEmptyPage
 
         addSplitButtonWithText();
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSplitButtonPage.qss", this);
 
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
@@ -28,7 +28,7 @@ class FluSplitButtonPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A SplitButton with text.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/SplitButtonPageCode1.md");
 
         auto splitButton = new FluSplitButton(this);
         splitButton->setText("Choose Color.");
@@ -64,7 +64,7 @@ class FluSplitButtonPage : public FluAEmptyPage
         connect(splitButton, &FluSplitButton::clicked, [=]() { colorLayout->show(); });
 
         displayBox->getBodyLayout()->addWidget(splitButton);
-        displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/SplitButtonPageCode1.md");
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     }
   public slots:
@@ -72,11 +72,11 @@ class FluSplitButtonPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSplitButtonPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluSplitButtonPage.qss", this);
         }
     }
 };

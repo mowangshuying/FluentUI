@@ -19,6 +19,12 @@ qt_add_library(${TGT}
     STATIC
     ${DIR_SRCS}
 )
+qt_add_resources(${TGT} "flu_utils_fonts"
+    PREFIX "/"
+    BASE ".."
+    FILES
+    "../res/Segoe_Fluent_Icons.ttf"
+)
 
 target_link_libraries(${TGT}
     PUBLIC

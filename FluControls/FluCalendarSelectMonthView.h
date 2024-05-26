@@ -31,11 +31,11 @@ class FluCalendarSelectMonthView : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectMonthView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarSelectMonthView.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectMonthView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarSelectMonthView.qss", this);
         }
     }
 

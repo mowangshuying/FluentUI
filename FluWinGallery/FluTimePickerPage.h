@@ -21,7 +21,7 @@ class FluTimePickerPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A simple TimePicker");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/TimePickerPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath(":/code/TimePickerPageCode1.md");
         auto timePickerAp = new FluTimePickerAP;
         displayBox1->getBodyLayout()->addWidget(timePickerAp);
 
@@ -29,12 +29,12 @@ class FluTimePickerPage : public FluAEmptyPage
 
         auto displayBox2 = new FluDisplayBox;
         displayBox2->setTitle("A TimePicker using a 24-hour clock.");
-        displayBox2->getCodeExpander()->setCodeByPath("../code/TimePickerPageCode2.md");
+        displayBox2->getCodeExpander()->setCodeByPath(":/code/TimePickerPageCode2.md");
         auto timePicker24H = new FluTimePicker24H;
         displayBox2->getBodyLayout()->addWidget(timePicker24H);
         m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePickerPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -43,11 +43,11 @@ class FluTimePickerPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePickerPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluTimePickerPage.qss", this);
         }
     }
 };

@@ -19,7 +19,7 @@ class FluProgressBarPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("An indeterminate progress ring.");
-        displayBox1->getCodeExpander()->setCodeByPath("../code/ProgressBarPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath(":/code/ProgressBarPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto progressBar1 = new FluProgressBar(displayBox1);
@@ -30,7 +30,7 @@ class FluProgressBarPage : public FluAEmptyPage
         // progressRing1->setWorking(true);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluProgressBarPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -39,11 +39,11 @@ class FluProgressBarPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBarPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluProgressBarPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluProgressBarPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluProgressBarPage.qss", this);
         }
     }
 };

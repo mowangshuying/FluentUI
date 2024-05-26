@@ -110,6 +110,9 @@
     <ClCompile Include="FluStyleSheetUitls.cpp" />
     <ClCompile Include="FluThemeUtils.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="flu_utils_fonts.qrc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

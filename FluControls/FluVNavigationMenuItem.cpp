@@ -41,7 +41,7 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
 
     connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);
+    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationMenuItem.qss", this);
 }
 
 void FluVNavigationMenuItem::onThemeChanged()
@@ -49,11 +49,11 @@ void FluVNavigationMenuItem::onThemeChanged()
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
         m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationMenuItem.qss", this);
     }
     else
     {
         m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationMenuItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVNavigationMenuItem.qss", this);
     }
 }

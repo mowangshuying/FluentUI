@@ -176,13 +176,13 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
             m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(8, 8, 8)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationIconTextItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationIconTextItem.qss", this);
         }
         else
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(239, 239, 239)));
             m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(239, 239, 239)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationIconTextItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVNavigationIconTextItem.qss", this);
         }
     }
 

@@ -74,10 +74,10 @@ class FluSettingPage : public FluWidget
 
         auto aboutLabelBox = new FluSettingsLabelBox;
         aboutLabelBox->setTitleInfo("CppQtFluent888 Gallery", "©2023-2024 FluentUI For Qt & Cpp. All rights reserved.");
-        aboutLabelBox->setIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+        aboutLabelBox->setIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
         aboutLabelBox->setVersion("");  // empty it!;
         m_vScrollView->getMainLayout()->addWidget(aboutLabelBox);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSettingPage.qss", this);
     }
 
     void paintEvent(QPaintEvent* event)
@@ -92,11 +92,11 @@ class FluSettingPage : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSettingPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluSettingPage.qss", this);
         }
     }
 

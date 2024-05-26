@@ -17,7 +17,7 @@ class FluAppBarToggleButtonPage : public FluAEmptyPage
             "An AppBarToggleButton looks like an AppBarButton, but works like a CheckBox. It typically has two state, checked(on) or unchecked(off), "
             "but can be indeterminate if the IsThreeState property is true. You can determine it's state by checking the IsChecked property.");
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarToggleButtonPage.qss", this);
 
         addSymbolIconAppBarButton();
 
@@ -28,7 +28,7 @@ class FluAppBarToggleButtonPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("An AppBarButton with a symbol icon.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/AppBarToggleButtonPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/AppBarToggleButtonPageCode1.md");
 
         auto appBarButton = new FluAppBarToggleButton(FluAwesomeType::Like);
         appBarButton->setText("SymbolIcon");
@@ -43,11 +43,11 @@ class FluAppBarToggleButtonPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarToggleButtonPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarToggleButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluAppBarToggleButtonPage.qss", this);
         }
     }
 };

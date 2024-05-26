@@ -23,7 +23,7 @@ class FluHScrollView : public QScrollArea
         m_hMainLayout = new QHBoxLayout(m_contextWidget);
         m_contextWidget->setObjectName("contextWidget");
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHScrollView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHScrollView.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -51,11 +51,11 @@ class FluHScrollView : public QScrollArea
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHScrollView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHScrollView.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHScrollView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHScrollView.qss", this);
         }
     }
 

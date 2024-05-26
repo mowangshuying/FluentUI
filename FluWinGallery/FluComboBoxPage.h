@@ -18,7 +18,7 @@ class FluComboBoxPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A ComboBox with items defined inline and its width set.");
-        displayBox->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath(":/code/ComboBoxPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(96);
 
         auto comboBox = new FluComboBoxEx(displayBox);
@@ -41,7 +41,7 @@ class FluComboBoxPage : public FluAEmptyPage
             colorLabel->setProperty("color", text);
             colorLabel->style()->polish(colorLabel);
         });
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluComboBoxPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -50,11 +50,11 @@ class FluComboBoxPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluComboBoxPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluComboBoxPage.qss", this);
         }
     }
 };

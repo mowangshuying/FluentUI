@@ -307,12 +307,12 @@ void FluHNavigationIconTextItem::onThemeChanged()
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationIconTextItem.qss", this);
     }
     else
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(239, 239, 239)));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHNavigationIconTextItem.qss", this);
     }
 }

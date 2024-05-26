@@ -68,12 +68,14 @@
     <Link>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FluUtils.lib;FluControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ForceSymbolReferences>?qInitResources_flu_utils_fonts@@YAHXZ;?qCleanupResources_flu_utils_fonts@@YAHXZ;?qInitResources_flu_controls_qss@@YAHXZ;?qCleanupResources_flu_controls_qss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
       <AdditionalDependencies>FluUtils.lib;FluControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ForceSymbolReferences>?qInitResources_flu_utils_fonts@@YAHXZ;?qCleanupResources_flu_utils_fonts@@YAHXZ;?qInitResources_flu_controls_qss@@YAHXZ;?qCleanupResources_flu_controls_qss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">

@@ -88,7 +88,7 @@ class FluAutoSuggestBox : public FluWidget
             emit currentIndexChanged(nIndex);
         });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAutoSuggestBox.qss", this);
     }
 
     void setKeys(std::vector<QString> keys)
@@ -140,11 +140,11 @@ class FluAutoSuggestBox : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAutoSuggestBox.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAutoSuggestBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluAutoSuggestBox.qss", this);
         }
     }
 

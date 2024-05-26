@@ -53,7 +53,7 @@ class FluLoopView : public QListWidget
 
         setMaxVisibleNum(9);
         m_nVisibleMidIndex = 0;
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluLoopView.qss", this);
     }
 
     void setAllItems(const std::vector<QString>& datas)
@@ -223,13 +223,13 @@ class FluLoopView : public QListWidget
         {
             m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Light)));
             m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Light)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluLoopView.qss", this);
         }
         else
         {
             m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
             m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLoopView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluLoopView.qss", this);
         }
     }
 

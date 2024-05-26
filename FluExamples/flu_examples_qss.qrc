@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="StyleSheet/dark/FluMenuDemo.qss">../StyleSheet/dark/FluMenuDemo.qss</file>
+        <file alias="StyleSheet/light/FluHNavigationDemo.qss">../StyleSheet/light/FluHNavigationDemo.qss</file>
+        <file alias="StyleSheet/light/FluMenuDemo.qss">../StyleSheet/light/FluMenuDemo.qss</file>
+    </qresource>
+</RCC>

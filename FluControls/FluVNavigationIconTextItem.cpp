@@ -78,7 +78,7 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
 
     m_bEnableThisItem = true;
     m_awesomeType = FluAwesomeType::None;
-    //  QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
+    //  QString qss = FluStyleSheetUitls::getQssByFileName(":/StyleSheet/light/FluNavigationIconTextItem.qss");
     //  setStyleSheet(qss);
 
     // m_currentWidth  = 320;

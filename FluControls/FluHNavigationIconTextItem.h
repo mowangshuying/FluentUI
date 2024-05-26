@@ -136,6 +136,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     QWidget* m_wrapWidget1;
     QWidget* m_wrapWidget2;
 
+    QWidget* m_emptyWidget;
+
     QWidget* m_indicator;
     QPushButton* m_iconBtn;
     QLabel* m_label;

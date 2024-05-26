@@ -16,9 +16,9 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     Q_OBJECT
   public:
     FluHNavigationFlyIconTextItem(QWidget* parent = nullptr);
-    //~FluHNavigationFlyIconTextItem();
 
     void setIconTextItems(std::vector<FluHNavigationIconTextItem*> items);
+    
     void adjustItemSize();
 
     // to enable qss

@@ -10,7 +10,8 @@ FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*=
     m_vMainLayout->setContentsMargins(5, 5, 5, 5);
     setLayout(m_vMainLayout);
 
-    m_vScrollView->setContentsMargins(5, 5, 5, 5);
+    m_vScrollView->setContentsMargins(0, 0, 0, 0);
+    m_vScrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
     m_vScrollView->getMainLayout()->setSpacing(0);
     m_vMainLayout->addWidget(m_vScrollView);
 

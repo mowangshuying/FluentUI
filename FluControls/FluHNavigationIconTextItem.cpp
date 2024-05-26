@@ -15,52 +15,60 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_wrapWidget1->setObjectName("wrapWidget1");
     m_wrapWidget2->setObjectName("wrapWidget2");
 
+
+    m_emptyWidget = new QWidget;
+    m_emptyWidget->setFixedSize(0, 0);
+
     m_vMainLayout = new QVBoxLayout;
     setLayout(m_vMainLayout);
 
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->setSpacing(5);
+    m_vMainLayout->setSpacing(0);
     m_vMainLayout->addWidget(m_wrapWidget1);
+    m_vMainLayout->addSpacing(5);
     m_vMainLayout->addWidget(m_wrapWidget2);
     m_wrapWidget2->hide();
 
     m_hLayout1 = new QHBoxLayout;
-    setLayout(m_hLayout1);
-
     m_wrapWidget1->setLayout(m_hLayout1);
     m_hLayout1->setContentsMargins(4, 4, 4, 4);
+    m_hLayout1->setSpacing(0);
 
     m_vLayout1 = new QVBoxLayout;
     m_wrapWidget2->setLayout(m_vLayout1);
 
+    m_indicator = new QWidget;
     m_iconBtn = new QPushButton;
     m_label = new QLabel;
     m_arrow = new QPushButton;
 
+    m_hLayout1->addWidget(m_emptyWidget);
+    m_hLayout1->addWidget(m_indicator);
     m_hLayout1->addWidget(m_iconBtn);
     m_hLayout1->addWidget(m_label, 1);
     m_hLayout1->addWidget(m_arrow);
 
+    m_indicator->setFixedHeight(18);
+    m_indicator->setFixedWidth(4);
+
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
     m_vLayout1->setSpacing(5);
+    m_indicator->setObjectName("indicator");
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
 
     m_iconBtn->setIconSize(QSize(24, 24));
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home));
-    m_iconBtn->setFixedWidth(30);
+    m_iconBtn->setFixedSize(30, 30);
 
     m_arrow->setIconSize(QSize(18, 18));
     m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
     m_arrow->setFixedWidth(25);
 
-    connect(m_arrow, &QPushButton::clicked, this, [=](){ emit itemClicked();
-        });
+    connect(m_arrow, &QPushButton::clicked, this, [=](){ emit itemClicked();});
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
-    connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked();
-    });
-
+    connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked();});
     setFixedHeight(40);
 }
 
@@ -192,8 +200,7 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     if (item == nullptr)
         return;
 
-    LOG_DEBUG << item->getText();
-
+    //LOG_DEBUG << item->getText();
     int nH = calcItemW2Height(item);
     item->m_wrapWidget2->setFixedHeight(nH);
     item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());

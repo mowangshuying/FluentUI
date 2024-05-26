@@ -15,7 +15,6 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_wrapWidget1->setObjectName("wrapWidget1");
     m_wrapWidget2->setObjectName("wrapWidget2");
 
-
     m_emptyWidget = new QWidget;
     m_emptyWidget->setFixedSize(0, 0);
 
@@ -66,9 +65,9 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
     m_arrow->setFixedWidth(25);
 
-    connect(m_arrow, &QPushButton::clicked, this, [=](){ emit itemClicked();});
+    connect(m_arrow, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
-    connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked();});
+    connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked(); });
     setFixedHeight(40);
 }
 
@@ -87,15 +86,15 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluHNavigationIconTextIte
     onThemeChanged();
 }
 
- FluHNavigationIconTextItem::FluHNavigationIconTextItem(QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
+FluHNavigationIconTextItem::FluHNavigationIconTextItem(QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
 {
-     m_awesomeType = FluAwesomeType::None;
-     m_iconBtn->hide();
-     m_bHideIcon = true;
+    m_awesomeType = FluAwesomeType::None;
+    m_iconBtn->hide();
+    m_bHideIcon = true;
 
-     m_label->setText(text);
-     onThemeChanged();
- }
+    m_label->setText(text);
+    onThemeChanged();
+}
 
 FluHNavigationIconTextItem::~FluHNavigationIconTextItem()
 {
@@ -142,7 +141,7 @@ void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
     item->m_parentItem = this;
     m_items.push_back(item);
 
-    //int nDepth = item->getDepth();
+    // int nDepth = item->getDepth();
 
     m_vLayout1->addWidget(item);
     m_arrow->show();
@@ -151,7 +150,7 @@ void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
 int FluHNavigationIconTextItem::calcItemW1Width()
 {
     QMargins margins = m_wrapWidget1->contentsMargins();
-    //int nIndicatorWidth = m_indicator->width();
+    // int nIndicatorWidth = m_indicator->width();
 
     int nIconWidth = m_iconBtn->width();
     if (m_bHideIcon)
@@ -179,7 +178,7 @@ int FluHNavigationIconTextItem::calcItemW1Width()
     // LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
     // LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
 
-    //return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
+    // return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
     return margins.left() + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
 }
 
@@ -200,15 +199,15 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     if (item == nullptr)
         return;
 
-    //LOG_DEBUG << item->getText();
+    // LOG_DEBUG << item->getText();
     int nH = calcItemW2Height(item);
     item->m_wrapWidget2->setFixedHeight(nH);
     item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());
 
-   // if (item->m_parentItem->m_parentView == nullptr)
-   // {
-        adjustItemHeight(item->m_parentItem);
-   // }
+    // if (item->m_parentItem->m_parentView == nullptr)
+    // {
+    adjustItemHeight(item->m_parentItem);
+    // }
 }
 
 int FluHNavigationIconTextItem::getDepth()
@@ -244,7 +243,7 @@ void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
 
 void FluHNavigationIconTextItem::onItemClicked()
 {
-    LOG_DEBUG << getText() <<" called";
+    LOG_DEBUG << getText() << " called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -293,17 +292,15 @@ void FluHNavigationIconTextItem::onItemClicked()
             return;
         }
     }
-    
+
     if (navView == nullptr)
     {
         if (!getItems().empty())
         {
             // expand---
-
         }
         else
         {
-
         }
     }
 }

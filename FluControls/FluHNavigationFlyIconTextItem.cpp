@@ -30,7 +30,7 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
 
         newItem->setParentIsFlyIconTextItem(true);
         newItem->setParentIsNavigationView(false);
-        
+
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 

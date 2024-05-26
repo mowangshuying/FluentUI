@@ -77,8 +77,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_bHideIcon = bHideIcon;
     }
 
-   //bool m_bParentIsFlyIconTextItem;
-   // bool m_bParentIsNavigationView;
+    // bool m_bParentIsFlyIconTextItem;
+    //  bool m_bParentIsNavigationView;
 
     bool parentIsFlyIconTextItem()
     {
@@ -99,7 +99,6 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     {
         m_bParentIsNavigationView = bParent;
     }
-
 
     void addItem(FluHNavigationIconTextItem* item);
 

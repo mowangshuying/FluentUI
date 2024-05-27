@@ -10,7 +10,6 @@ FluHomePage {
 #titleWidget {
     /* height: 450px; */
     /* background-color: aqua; */
-    /* background-image: "../../res/GalleryHeaderImage.png"; */
 }
 
 #recentlyAddedSamplesLabel,

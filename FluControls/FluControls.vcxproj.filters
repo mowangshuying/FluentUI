@@ -686,5 +686,8 @@
     <QtRcc Include="FluControlsQss.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <QtRcc Include="FluControlsRes.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
 </Project>

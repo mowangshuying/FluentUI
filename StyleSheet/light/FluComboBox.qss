@@ -13,14 +13,13 @@ QComboBox::drop-down {
     height: 15px;
     width: 15px;
     /* background-color: greenyellow; */
-    /* image: url("../../res/ChevronDown.png"); */
     border: none;
 }
 
 QComboBox::down-arrow {
     height: 15px;
     width: 15px;
-    image: url("../res/ControlResImages/ChevronDown-Light.png");
+    image: url(":/res/ControlResImages/ChevronDown-Light.png");
 }
 
 QComboBox QAbstractItemView {

@@ -32,7 +32,7 @@ QMenu::item:selected {
 QMenu::right-arrow {
     width: 18px;
     height: 18px;
-    image: url(../res/ControlResImages/ChevronRight-Black.png);
+    image: url(:/res/ControlResImages/ChevronRight-Black.png);
 }
 
 QMenu::separator {

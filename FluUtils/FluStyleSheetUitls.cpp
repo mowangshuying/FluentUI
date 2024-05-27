@@ -24,7 +24,7 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
 
 void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
 {
-#if (defined Q_OS_WIN) && (defined _DEBUG)
+#ifdef USE_ONLY_RELATIVE_PATH
     QString qssFileName = fileName;
     qssFileName.replace(":", "..");
     QString qss = FluStyleSheetUitls::getQssByFileName(qssFileName);

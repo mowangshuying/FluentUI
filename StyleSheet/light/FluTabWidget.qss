@@ -38,7 +38,7 @@ QTabWidget::pane {
 }
 
 QTabBar::close-button {
-    image: url("../res/ChromeClose.png");
+    image: url(":/res/ChromeClose.png");
     /* min-width: 30px;
     min-height: 30px; */
     border-radius: 2px;
@@ -48,7 +48,7 @@ QTabBar::close-button {
 }
 
 QTabBar::close-button:hover {
-    image: url("../res/ChromeClose.png");
+    image: url(":/res/ChromeClose.png");
     /* background-color: rgb(225, 225, 225); */
     /* width: 30px;
     height: 30px; */
@@ -56,7 +56,7 @@ QTabBar::close-button:hover {
 }
 
 QTabBar::close-button:pressed {
-    image: url("../res/ChromeClose.png");
+    image: url(":/res/ChromeClose.png");
     /* background-color: rgb(243, 243, 243); */
     /* width: 30px;
     height: 30px; */

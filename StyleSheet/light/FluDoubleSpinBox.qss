@@ -21,7 +21,7 @@ QDoubleSpinBox:focus {
 }
 
 QDoubleSpinBox::up-button {
-    image: url("../res/ControlResImages/SpinBoxUp-Light.png");
+    image: url(":/res/ControlResImages/SpinBoxUp-Light.png");
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -42,7 +42,7 @@ QDoubleSpinBox::up-button:pressed {
 }
 
 QDoubleSpinBox::down-button {
-    image: url("../res/ControlResImages/SpinBoxDown-Light.png");
+    image: url(":/res/ControlResImages/SpinBoxDown-Light.png");
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -74,9 +74,9 @@ QDoubleSpinBox:disabled {
 }
 
 QDoubleSpinBox::up-button:disabled {
-    image: url("../res/ControlResImages/SpinBoxUpDisabled-Light.png");
+    image: url(":/res/ControlResImages/SpinBoxUpDisabled-Light.png");
 }
 
 QDoubleSpinBox::down-button:disabled {
-    image: url("../res/ControlResImages/SpinBoxDownDisabled-Light.png");
+    image: url(":/res/ControlResImages/SpinBoxDownDisabled-Light.png");
 }

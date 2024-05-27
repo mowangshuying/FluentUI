@@ -51,7 +51,7 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_indicator->setFixedWidth(4);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
-    m_vLayout1->setSpacing(5);
+    //m_vLayout1->setSpacing(5);
     m_indicator->setObjectName("indicator");
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
@@ -269,13 +269,12 @@ void FluHNavigationIconTextItem::onItemClicked()
             for (int i = 0; i < m_vLayout1->count(); i++)
             {
                 auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
-                LOG_DEBUG << item->getText();
-                nH += item->height() + 5;
+                nH += item->height();
             }
 
             m_wrapWidget2->setFixedHeight(nH);
             m_wrapWidget2->show();
-            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height() + 5);
+            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height());
         }
     }
 

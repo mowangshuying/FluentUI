@@ -70,7 +70,7 @@ void FluHNavigationFlyIconTextItem::adjustItemSize()
     }
 
     setFixedWidth(nMaxWidth + 25);
-    setFixedHeight(nMaxHeight + 30);
+    setFixedHeight(nMaxHeight);
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()

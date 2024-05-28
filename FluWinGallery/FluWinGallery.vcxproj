@@ -251,9 +251,6 @@
     <QtMoc Include="FluInfoBadgePage.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="res.qrc" />
-  </ItemGroup>
-  <ItemGroup>
     <QtMoc Include="FluInfoBarPage.h" />
   </ItemGroup>
   <ItemGroup>

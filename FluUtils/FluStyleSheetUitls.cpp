@@ -24,13 +24,13 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
 
 void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
 {
-#ifdef USE_ONLY_RELATIVE_PATH
-    QString qssFileName = fileName;
-    qssFileName.replace(":", "..");
-    QString qss = FluStyleSheetUitls::getQssByFileName(qssFileName);
-#else
+//#ifdef USE_ONLY_RELATIVE_PATH
+//    QString qssFileName = fileName;
+//    qssFileName.replace(":", "..");
+//    QString qss = FluStyleSheetUitls::getQssByFileName(qssFileName);
+//#else
     QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
-#endif
+//#endif
     if (widget != nullptr)
     {
         widget->setStyleSheet(qss);

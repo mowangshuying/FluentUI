@@ -90,8 +90,8 @@ int main(int argc, char **argv)
     // FluButtonDemo demo;
     // demo.show();
 
-    //  FluMenuDemo demo;
-    //  demo.show();
+      FluMenuDemo demo;
+    demo.show();
 
     // FluDisplayBoxDemo demo;
     // demo.show();
@@ -201,7 +201,7 @@ int main(int argc, char **argv)
     // FluVNavigationDemo demo;
     // demo.show();
 
-    FluHNavigationDemo demo;
-    demo.show();
+    //FluHNavigationDemo demo;
+    //demo.show();
     return app.exec();
 }

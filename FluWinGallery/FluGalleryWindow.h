@@ -410,7 +410,7 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void makeMediaNavItem()
     {
-        FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Calendar, "Media", this);
+        FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Media, "Media", this);
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("AnimatedVisualPlayer", item);
         FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("Capture Element / Camera Preview", item);
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("Image", item);

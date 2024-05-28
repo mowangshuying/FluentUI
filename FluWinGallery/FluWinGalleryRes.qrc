@@ -134,7 +134,7 @@
         <file alias="res/ControlResImages/CheckBoxPressed-White.png">../res/ControlResImages/CheckBoxPressed-White.png</file>
         <file alias="res/ControlResImages/ChevronDown-Dark.png">../res/ControlResImages/ChevronDown-Dark.png</file>
         <file alias="res/ControlResImages/ChevronDown-Light.png">../res/ControlResImages/ChevronDown-Light.png</file>
-        <file alias="res/ControlResImages/ChevronRight-Black.png">../res/ControlResImages/ChevronRight-Black.png</file>
+        <file alias="res/ControlResImages/ChevronRight-Light.png">../res/ControlResImages/ChevronRight-Light.png</file>
         <file alias="res/ControlResImages/RadioButton-Black.png">../res/ControlResImages/RadioButton-Black.png</file>
         <file alias="res/ControlResImages/RadioButton-White.png">../res/ControlResImages/RadioButton-White.png</file>
         <file alias="res/ControlResImages/RadioButtonHover-Black.png">../res/ControlResImages/RadioButtonHover-Black.png</file>

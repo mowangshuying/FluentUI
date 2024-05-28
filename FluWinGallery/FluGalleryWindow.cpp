@@ -128,11 +128,11 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
-
+#ifndef Q_OS_MACOS
         m_titleBar->minimizeButton()->setActiveForegroundColor(Qt::black);
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::black);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
-
+#endif
         // m_titleBar->update();
         // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
@@ -148,11 +148,11 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::white);
         // m_titleBar->update();
         // m_titleBar->style()->polish(m_titleBar);
-
+#ifndef Q_OS_MACOS
         m_titleBar->minimizeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
-
+#endif
         m_titleBar->show();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
         // repaint();

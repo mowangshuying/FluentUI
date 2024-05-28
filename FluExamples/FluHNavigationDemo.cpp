@@ -16,7 +16,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
 #ifndef _DEBUG
     setWindowTitle("CppQt WinUI3 Demo");
 #endif
-    setWindowIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
+    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
@@ -34,7 +34,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item1 = new FluHNavigationIconTextItem(FluAwesomeType::Home, "Home");
     m_hNavView->addItemToMidLayout(item1);
 
-    auto item2 = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
+    auto item2  = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
     auto item21 = new FluHNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item2);
     auto item22 = new FluHNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item2);
     auto item23 = new FluHNavigationIconTextItem(FluAwesomeType::Color, "Colors", item2);
@@ -42,6 +42,10 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item241 = new FluHNavigationIconTextItem("Screen reader support", item24);
     auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
     auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
+
+
+
+    
 
     item2->addItem(item21);
     item2->addItem(item22);
@@ -53,6 +57,9 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     item24->addItem(item243);
 
     m_hNavView->addItemToMidLayout(item2);
+
+
+
 
     auto item3 = new FluHNavigationIconTextItem(FluAwesomeType::AllApps, "All samples");
     m_hNavView->addItemToMidLayout(item3);
@@ -97,11 +104,12 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto settingsItem = new FluHNavigationSettingsItem(FluAwesomeType::Settings);
     m_hNavView->addItemToRightLayout(settingsItem);
 
+
     auto bodyWidget = new QWidget;
     bodyWidget->setObjectName("bodyWidget");
     m_contentLayout->addWidget(bodyWidget);
 
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationDemo.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     resize(800, 600);
 }
@@ -114,16 +122,15 @@ void FluHNavigationDemo::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
-#ifndef Q_OS_MACOS
+
         m_titleBar->minimizeButton()->setActiveForegroundColor(Qt::black);
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::black);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
-#endif
 
         // m_titleBar->update();
         // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationDemo.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }
@@ -135,13 +142,13 @@ void FluHNavigationDemo::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::white);
         // m_titleBar->update();
         // m_titleBar->style()->polish(m_titleBar);
-#ifndef Q_OS_MACOS
+
         m_titleBar->minimizeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
-#endif
+
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHNavigationDemo.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }

@@ -12,7 +12,7 @@ class FluVSplitLine : public FluWidget
     FluVSplitLine(QWidget* parent = nullptr) : FluWidget(parent)
     {
         setFixedHeight(1);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVSplitLine.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
     }
 
     void paintEvent(QPaintEvent* event)
@@ -27,11 +27,11 @@ class FluVSplitLine : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVSplitLine.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVSplitLine.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVSplitLine.qss", this);
         }
     }
 };

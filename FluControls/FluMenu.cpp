@@ -16,7 +16,7 @@ FluMenu::FluMenu(QWidget* parent /*= nullptr*/) : QMenu(parent)
     setWindowFlags(windowFlags() | Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true);
     setMouseTracking(true);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluMenu.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
@@ -75,11 +75,11 @@ void FluMenu::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluMenu.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluMenu.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenu.qss", this);
     }
 
     // auto actions = findChildren<FluAction*>();

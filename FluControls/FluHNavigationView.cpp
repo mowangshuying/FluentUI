@@ -43,7 +43,7 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
 
     setFixedHeight(48);
     // m_hLayout->setSizeConstraint(QHBoxLayout::SetMaximumSize);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationView.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationView.qss", this);
 }
 
 void FluHNavigationView::addItemToLeftLayout(QWidget* item)
@@ -57,7 +57,7 @@ void FluHNavigationView::addItemToMidLayout(QWidget* item)
     auto iconTextItem = (FluHNavigationIconTextItem*)item;
     iconTextItem->setParentView(this);
     item->setParent(m_MidWrapWidget);
-
+    
     iconTextItem->setParentIsFlyIconTextItem(false);
     iconTextItem->setParentIsNavigationView(true);
     m_items.push_back(iconTextItem);

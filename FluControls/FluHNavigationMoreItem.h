@@ -43,12 +43,12 @@ class FluHNavigationMoreItem : public FluHNavigationItem
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Light));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationMoreItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationMoreItem.qss", this);
         }
         else
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Dark));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHNavigationMoreItem.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationMoreItem.qss", this);
         }
     }
 

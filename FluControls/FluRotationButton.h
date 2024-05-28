@@ -79,7 +79,7 @@ class FluRotationButton : public QPushButton
             // setIcon(QIcon(pixmap));
 
             setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRotationButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);
         }
         else
         {
@@ -87,7 +87,7 @@ class FluRotationButton : public QPushButton
             // QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
             // setIcon(QIcon(pixmap));
             setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluRotationButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRotationButton.qss", this);
         }
     }
 

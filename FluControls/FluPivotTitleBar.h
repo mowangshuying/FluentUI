@@ -16,7 +16,7 @@ class FluPivotTitleBar : public FluWidget
         m_hMainLayout->setContentsMargins(0, 0, 0, 0);
         m_hMainLayout->setAlignment(Qt::AlignLeft);
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPivotTitleBar.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBar.qss", this);
     }
 
     void addTitleBarItem(FluPivotTitleBarItem* item)
@@ -51,11 +51,11 @@ class FluPivotTitleBar : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPivotTitleBar.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBar.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluPivotTitleBar.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivotTitleBar.qss", this);
         }
     }
 

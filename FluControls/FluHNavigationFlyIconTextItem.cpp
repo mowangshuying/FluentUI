@@ -30,7 +30,7 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
 
         newItem->setParentIsFlyIconTextItem(true);
         newItem->setParentIsNavigationView(false);
-
+        
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 
@@ -70,19 +70,19 @@ void FluHNavigationFlyIconTextItem::adjustItemSize()
     }
 
     setFixedWidth(nMaxWidth + 25);
-    setFixedHeight(nMaxHeight);
+    setFixedHeight(nMaxHeight + 30);
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationFlyIconTextItem.qss", m_vScrollView);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHNavigationFlyIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationFlyIconTextItem.qss", m_vScrollView);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationFlyIconTextItem.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHNavigationFlyIconTextItem.qss", m_vScrollView);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHNavigationFlyIconTextItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationFlyIconTextItem.qss", m_vScrollView);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationFlyIconTextItem.qss", this);
     }
 }

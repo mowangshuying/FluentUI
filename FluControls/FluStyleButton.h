@@ -10,7 +10,7 @@ class FluStyleButton : public QPushButton
     FluStyleButton(QWidget* parent = nullptr) : QPushButton(parent)
     {
         setFixedSize(200, 30);
-        QString qss = FluStyleSheetUitls::getQssByFileName(":/StyleSheet/light/FluStyleButton.qss");
+        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluStyleButton.qss");
         setStyleSheet(qss);
     }
 };

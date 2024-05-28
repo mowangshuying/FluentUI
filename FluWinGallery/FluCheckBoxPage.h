@@ -22,14 +22,14 @@ class FluCheckBoxPage : public FluAEmptyPage
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A 2-state CheckBox");
-        displayBox1->getCodeExpander()->setCodeByPath(":/code/CheckBoxPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/CheckBoxPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(56);
 
         auto checkBox = new FluCheckBox("Two-State CheckBox", this);
         displayBox1->getBodyLayout()->addWidget(checkBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCheckBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBoxPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -38,11 +38,11 @@ class FluCheckBoxPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCheckBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBoxPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCheckBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCheckBoxPage.qss", this);
         }
     }
 };

@@ -324,13 +324,7 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="FluWinGalleryCode.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <QtRcc Include="FluWinGalleryQss.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <QtRcc Include="FluWinGalleryRes.qrc">
+    <QtRcc Include="res.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>

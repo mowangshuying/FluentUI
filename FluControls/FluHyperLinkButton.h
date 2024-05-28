@@ -20,11 +20,11 @@ class FluHyperLinkButton : public QPushButton
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHyperLinkButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButton.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHyperLinkButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHyperLinkButton.qss", this);
         }
     }
 

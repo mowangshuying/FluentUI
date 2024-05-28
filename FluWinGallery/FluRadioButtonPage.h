@@ -18,11 +18,11 @@ class FluRadioButtonPage : public FluAEmptyPage
         // m_subTitleLabel->setText("CppQtFluentUi888::FluRadioButton");
 
         m_infoLabel->setText("Use RadioButton to let a user choose between mutually exclusive, related options. Generally contained within a RadioButtons group control.");
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonPage.qss", this);
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A group of RadioButton controls in RadioButtons group.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/RadioButtonPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(160);
 
         FluVRadioGroupBox* groupBox = new FluVRadioGroupBox("Options");
@@ -39,7 +39,7 @@ class FluRadioButtonPage : public FluAEmptyPage
         displayBox->getBodyLayout()->addWidget(groupBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -48,11 +48,11 @@ class FluRadioButtonPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluRadioButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButtonPage.qss", this);
         }
     }
 };

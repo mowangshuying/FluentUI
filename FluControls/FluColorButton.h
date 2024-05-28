@@ -12,7 +12,7 @@ class FluColorButton : public QPushButton
         std::map<QString, QString> kvMap;
         m_backgroundColor = backgroundColor;
         kvMap["backgroundColor"] = QString::asprintf("rgb(%d,%d,%d)", backgroundColor.red(), backgroundColor.green(), backgroundColor.blue());
-        FluStyleSheetUitls::setQssByFileName(kvMap, ":/StyleSheet/light/FluColorButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(kvMap, "../StyleSheet/light/FluColorButton.qss", this);
     }
 
     QColor getBackgroundColor()

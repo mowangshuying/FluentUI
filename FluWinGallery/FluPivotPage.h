@@ -18,7 +18,7 @@ class FluPivotPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A basic pivot.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/PivotPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/PivotPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(360);
 
         auto pivot = new FluPivot;
@@ -51,7 +51,7 @@ class FluPivotPage : public FluAEmptyPage
         displayBox->getBodyLayout()->addWidget(pivot);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPivotPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -60,11 +60,11 @@ class FluPivotPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPivotPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluPivotPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivotPage.qss", this);
         }
     }
 };

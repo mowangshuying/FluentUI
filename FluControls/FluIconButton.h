@@ -16,7 +16,7 @@ class FluIconButton : public QPushButton
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
 
-        // FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluIconButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
         onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
@@ -29,7 +29,7 @@ class FluIconButton : public QPushButton
 
         m_type1 = type1;
         setType(type1);
-        // FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluIconButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
         onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
@@ -44,7 +44,7 @@ class FluIconButton : public QPushButton
         pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         setIcon(QIcon(pixmap));
 
-        // FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluIconButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
         onThemeChanged();
 
         // can change type1 to type2, type2 auto change to type1
@@ -89,13 +89,13 @@ class FluIconButton : public QPushButton
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             m_penColor = QColor(8, 8, 8);
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluIconButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
             setType(m_type);
         }
         else
         {
             m_penColor = QColor(239, 239, 239);
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluIconButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconButton.qss", this);
             setType(m_type);
         }
     }

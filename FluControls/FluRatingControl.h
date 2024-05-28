@@ -22,11 +22,11 @@ class FluRatingControl : public FluWidget
 
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluRatingControl.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRatingControl.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
         }
     }
 
@@ -84,11 +84,11 @@ class FluRatingControl : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRatingControl.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluRatingControl.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
         }
     }
 

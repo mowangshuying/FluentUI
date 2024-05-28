@@ -22,7 +22,7 @@ class FluComboBox : public QComboBox
         setView(new QListView());
         view()->window()->setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         view()->window()->setAttribute(Qt::WA_TranslucentBackground);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluComboBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBox.qss", this);
     }
 
   public slots:
@@ -30,11 +30,11 @@ class FluComboBox : public QComboBox
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluComboBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBox.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluComboBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBox.qss", this);
         }
     }
 

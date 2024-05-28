@@ -39,7 +39,7 @@ class FluTabBarContent : public QScrollArea
 
         m_hMainWidget->setFixedHeight(40);
         setFixedHeight(40);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTabBarContent.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarContent.qss", this);
     }
 
     void addBarItem(FluTabBarItem* item)

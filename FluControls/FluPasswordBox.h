@@ -44,7 +44,7 @@ class FluPasswordBox : public FluWidget
 
         m_edit->setEchoMode(QLineEdit::Password);
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPasswordBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
     }
 
     void setMaskC(unsigned maskC)
@@ -106,12 +106,12 @@ class FluPasswordBox : public FluWidget
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Light));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluPasswordBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
         }
         else
         {
             m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Dark));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluPasswordBox.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPasswordBox.qss", this);
         }
     }
 

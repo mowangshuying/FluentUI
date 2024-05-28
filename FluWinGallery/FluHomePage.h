@@ -25,11 +25,11 @@ class FluHomePage : public FluVScrollView
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluHomePage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluHomePage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePage.qss", this);
         }
     }
 

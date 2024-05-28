@@ -23,7 +23,7 @@ class FluExpanderPage : public FluAEmptyPage
         addExpanderDemo2();
         addExpanderDemo3();
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluExpanderPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpanderPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -31,7 +31,7 @@ class FluExpanderPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("An Expander with text in the header and content areas.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/ExpanderPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/ExpanderPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(120);
 
         auto expander = new FluExpander(this);
@@ -56,7 +56,7 @@ class FluExpanderPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("An Expander with other controls in the header and content.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/ExpanderPageCode2.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/ExpanderPageCode2.md");
         displayBox->setBodyWidgetFixedHeight(120);
 
         auto expander = new FluExpander(this);
@@ -80,7 +80,7 @@ class FluExpanderPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("Modifying Expanders content alignment.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/ExpanderPageCode3.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/ExpanderPageCode3.md");
         displayBox->setBodyWidgetFixedHeight(120);
 
         auto expander = new FluExpander(this);
@@ -106,11 +106,11 @@ class FluExpanderPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluExpanderPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpanderPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluExpanderPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpanderPage.qss", this);
         }
     }
 };

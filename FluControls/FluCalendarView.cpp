@@ -110,7 +110,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
 
     // setFixedWidth(300);
     setFixedSize(300, 360);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarView.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
 }
 
 void FluCalendarView::switchSelectViewState(FluCalendarViewState state)
@@ -177,11 +177,11 @@ void FluCalendarView::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarView.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarView.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarView.qss", this);
         //   style()->polish(this);
     }
 }

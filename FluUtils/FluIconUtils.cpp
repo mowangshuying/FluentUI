@@ -6,7 +6,7 @@
 
 FluIconUtils::FluIconUtils()
 {
-    int fontId = QFontDatabase::addApplicationFont(":/res/Segoe_Fluent_Icons.ttf");
+    int fontId = QFontDatabase::addApplicationFont("../res/Segoe_Fluent_Icons.ttf");
     QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
     m_fluentFont.setFamily(fontFamilies.at(0));
 }

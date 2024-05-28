@@ -96,7 +96,7 @@ class FluTimePickerAPView : public FluWidget
             close();
         });
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePickerAPView.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
     }
 
     int getHour()
@@ -167,13 +167,13 @@ class FluTimePickerAPView : public FluWidget
         {
             m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Light));
             m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Light));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTimePickerAPView.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
         }
         else
         {
             m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Dark));
             m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Dark));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluTimePickerAPView.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerAPView.qss", this);
         }
     }
 

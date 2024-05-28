@@ -73,14 +73,12 @@
     <Link>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>FluUtils.lib;FluControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ForceSymbolReferences>?qInitResources_FluUtilsFonts@@YAHXZ;?qCleanupResources_FluUtilsFonts@@YAHXZ;?qInitResources_FluControlsQss@@YAHXZ;?qCleanupResources_FluControlsQss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
       <AdditionalDependencies>FluUtils.lib;FluControls.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ForceSymbolReferences>?qInitResources_FluUtilsFonts@@YAHXZ;?qCleanupResources_FluUtilsFonts@@YAHXZ;?qInitResources_FluControlsQss@@YAHXZ;?qCleanupResources_FluControlsQss@@YAHXZ;%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -218,9 +216,6 @@
     <QtMoc Include="FluDisplay16.h" />
     <ClInclude Include="FluFlowLayoutDemo.h" />
     <QtMoc Include="FluLineEditDemo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="FluExamplesQss.qrc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

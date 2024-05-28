@@ -19,7 +19,7 @@ class FluAppBarButtonPage : public FluAEmptyPage
             "-You use the Label and Icon properties to set the content instead of the content property.The Content property is ignored.\n"
             "-The button's IsCompact property control its size.");
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButtonPage.qss", this);
 
         addSymbolIconAppBarButton();
         addKeyboardAcceleratorAppBarButton();
@@ -31,7 +31,7 @@ class FluAppBarButtonPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("An AppBarButton with a symbol icon.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/AppBarButtonPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode1.md");
 
         auto appBarButton = new FluAppBarButton(FluAwesomeType::Like);
         appBarButton->setText("SymbolIcon");
@@ -45,7 +45,7 @@ class FluAppBarButtonPage : public FluAEmptyPage
     {
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("An AppBarButton with a KeyboardAccelerator.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/AppBarButtonPageCode2.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode2.md");
 
         auto appBarButton = new FluAppBarButton(FluAwesomeType::Save);
         appBarButton->setText("Save");
@@ -61,11 +61,11 @@ class FluAppBarButtonPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButtonPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluAppBarButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarButtonPage.qss", this);
         }
     }
 };

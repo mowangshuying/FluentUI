@@ -18,7 +18,7 @@ class FluToggleSwitchPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A simple ToggleSwitch.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/ToggleSwitchPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/ToggleSwitchPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(70);
 
         auto toggleSwitch = new FluToggleSwitch(displayBox);
@@ -26,7 +26,7 @@ class FluToggleSwitchPage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluToggleSwitchPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -35,11 +35,11 @@ class FluToggleSwitchPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluToggleSwitchPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluToggleSwitchPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitchPage.qss", this);
         }
     }
 };

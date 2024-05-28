@@ -16,11 +16,11 @@ class FluDropDownButtonPage : public FluAEmptyPage
         m_titleLabel->setText("DropDownButton");
         // m_subTitleLabel->setText("CppQtFluentUi888::FluDropDownButton");
         m_infoLabel->setText("A control that drops down a flyout of chices from which one can be chosen.");
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDropDownButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButtonPage.qss", this);
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("Simple DropDownButton");
-        displayBox1->getCodeExpander()->setCodeByPath(":/code/DropDownButtonPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(56);
 
         auto dropDownButton1 = new FluDropDownButton(this);
@@ -35,7 +35,7 @@ class FluDropDownButtonPage : public FluAEmptyPage
 
         auto displayBox2 = new FluDisplayBox;
         displayBox2->setTitle("DropDownButton with Icons");
-        displayBox2->getCodeExpander()->setCodeByPath(":/code/DropDownButtonPageCode2.md");
+        displayBox2->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode2.md");
         displayBox2->setBodyWidgetFixedHeight(56);
 
         auto dropDownButton2 = new FluDropDownButton(this);
@@ -55,11 +55,11 @@ class FluDropDownButtonPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluDropDownButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButtonPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluDropDownButtonPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButtonPage.qss", this);
         }
     }
 };

@@ -14,7 +14,7 @@ class FluMenuBar : public QMenuBar
     FluMenuBar(QWidget* parent = nullptr) : QMenuBar(parent)
     {
         setMouseTracking(true);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluMenuBar.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -23,11 +23,11 @@ class FluMenuBar : public QMenuBar
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluMenuBar.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluMenuBar.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuBar.qss", this);
         }
     }
 };

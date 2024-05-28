@@ -96,10 +96,8 @@ class FluIconsPage : public FluAEmptyPage
         for (int i = 0; i < metaEnum.keyCount(); i++)
         {
 #ifdef _DEBUG
-            if (i >= 256)
-            {
+            if (i >= 512)
                 continue;
-            }
 #endif
             // addIcon((FluAwesomeType)metaEnum.value(i));
             auto displayIconBox = new FluDisplayIconBox((FluAwesomeType)metaEnum.value(i));
@@ -154,7 +152,7 @@ class FluIconsPage : public FluAEmptyPage
         if (m_sDisplayIconBox != nullptr)
             emit m_sDisplayIconBox->clicked();
 
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluIconsPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -187,7 +185,7 @@ class FluIconsPage : public FluAEmptyPage
             pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             m_iconLabel->setPixmap(pixmap);
 
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluIconsPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
         }
         else
         {
@@ -196,7 +194,7 @@ class FluIconsPage : public FluAEmptyPage
             pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             m_iconLabel->setPixmap(pixmap);
 
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluIconsPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconsPage.qss", this);
         }
     }
 

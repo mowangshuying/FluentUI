@@ -73,7 +73,7 @@ FluHFlipView::FluHFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
         }
     });
 
-    QString qss = FluStyleSheetUitls::getQssByFileName(":/StyleSheet/light/FluHFlipView.qss");
+    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHFlipView.qss");
     setStyleSheet(qss);
 }
 

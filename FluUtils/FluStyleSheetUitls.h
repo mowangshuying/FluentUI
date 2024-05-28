@@ -46,7 +46,7 @@ class FluStyleSheetUitls : public QObject
     static void __init()
     {
         getUtils();
-        FluStyleSheetUitls::getUtils()->setStyleSheetDir(":/StyleSheet/light/");
+        FluStyleSheetUitls::getUtils()->setStyleSheetDir("../StyleSheet/light/");
     }
 
     static void __deInit()

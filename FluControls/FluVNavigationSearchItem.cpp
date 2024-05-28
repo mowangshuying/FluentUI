@@ -25,7 +25,7 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
 
     setFixedHeight(40);
     // m_searchLineEdit->setFixedWidth(300);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationSearchItem.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSearchItem.qss", this);
     // connect(this, &FluNavigationSearchItem::itemClicked, this, &FluNavigationSearchItem::onItemClicked);
     connect(m_searchButton, &QPushButton::clicked, [=]() { emit itemClicked(); });
 }
@@ -39,11 +39,11 @@ void FluVNavigationSearchItem::onThemeChanged()
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
         m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationSearchItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSearchItem.qss", this);
     }
     else
     {
         m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVNavigationSearchItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationSearchItem.qss", this);
     }
 }

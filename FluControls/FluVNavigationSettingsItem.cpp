@@ -34,7 +34,7 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text,
     m_hMainLayout->addWidget(m_label, 1);
     m_hMainLayout->setSpacing(0);
 
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationSettingsItem.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSettingsItem.qss", this);
     connect(m_icon, &FluRotationButton::clicked, [=](bool b) { emit itemClicked(); });
     connect(this, &FluVNavigationSettingsItem::itemClicked, this, &FluVNavigationSettingsItem::onItemClicked);
 }
@@ -63,10 +63,10 @@ void FluVNavigationSettingsItem::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluVNavigationSettingsItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSettingsItem.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluVNavigationSettingsItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationSettingsItem.qss", this);
     }
 }

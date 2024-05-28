@@ -76,11 +76,11 @@ class FluColorFlyout : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluColorFlyout.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorFlyout.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluColorFlyout.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluColorFlyout.qss", this);
         }
     }
 

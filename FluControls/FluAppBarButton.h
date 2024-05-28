@@ -38,7 +38,7 @@ class FluAppBarButton : public FluWidget
         m_vMainLayout->addWidget(m_textLabel);
 
         m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButton.qss", this);
     }
 
     void setAwesomeType(FluAwesomeType awesomeType)
@@ -96,12 +96,12 @@ class FluAppBarButton : public FluWidget
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluAppBarButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButton.qss", this);
         }
         else
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluAppBarButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarButton.qss", this);
         }
     }
 

@@ -23,10 +23,10 @@ FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : FluW
 
     setFixedHeight(50);
 
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", m_yearMonthBtn);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", m_preBtn);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewTitle.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_yearMonthBtn);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_preBtn);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", this);
 }
 
 void FluCalendarViewTitle::setYearMonth(int nYear, int nMonth)

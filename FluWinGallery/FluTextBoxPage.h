@@ -15,11 +15,11 @@ class FluTextBoxPage : public FluAEmptyPage
         m_mainLayout->setAlignment(Qt::AlignTop);
         m_titleLabel->setText("TextBox");
         m_infoLabel->setText("Use a TextBox to let a user enter simple text input in your app. You can add a header and placeholder text to let the user know what the TextBox is for,and you can customize it in other way.");
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTextBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextBoxPage.qss", this);
 
         auto displayBox1 = new FluDisplayBox;
         displayBox1->setTitle("A multi-line TextBox");
-        displayBox1->getCodeExpander()->setCodeByPath(":/code/TextBoxPageCode1.md");
+        displayBox1->getCodeExpander()->setCodeByPath("../code/TextBoxPageCode1.md");
         //  displayBox1->setBodyWidgetFixedHeight(56);
 
         auto textEdit = new FluTextEdit;
@@ -37,11 +37,11 @@ class FluTextBoxPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTextBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextBoxPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluTextBoxPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextBoxPage.qss", this);
         }
     }
 };

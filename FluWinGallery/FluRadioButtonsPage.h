@@ -18,7 +18,7 @@ class FluRadioButtonsPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("Two RadioButtons controls with strings as options.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/RadioButtonsPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonsPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(360);
 
         auto border = new FluBorder;
@@ -52,7 +52,7 @@ class FluRadioButtonsPage : public FluAEmptyPage
         displayBox->getBodyLayout()->addWidget(border, Qt::AlignTop);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButtonsPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonsPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -61,11 +61,11 @@ class FluRadioButtonsPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluRadioButtonsPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonsPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluRadioButtonsPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButtonsPage.qss", this);
         }
     }
 };

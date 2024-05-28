@@ -12,7 +12,7 @@ FluToggleSwitch::indicator {
     border-radius: 12px;
     border: 1px solid rgb(130, 130, 130);
     background-color: rgb(237, 237, 237);
-    image: url(":/res/ControlResImages/ToggleSwitchOff-light.png");
+    image: url("../res/ControlResImages/ToggleSwitchOff-light.png");
     margin-right: 5px;
     padding-right: 25px;
     padding-left: 0px;
@@ -20,20 +20,20 @@ FluToggleSwitch::indicator {
 
 FluToggleSwitch::indicator:hover {
     background-color: rgb(229, 229, 229);
-    image: url(":/res/ControlResImages/ToggleSwitchOffHover-light.png");
+    image: url("../res/ControlResImages/ToggleSwitchOffHover-light.png");
 }
 
 FluToggleSwitch::indicator:pressed {
     background-color: rgb(220, 220, 220);
     width: 26px;
     padding-right: 21px;
-    image: url(":/res/ControlResImages/ToggleSwitchOffPressed-light.png");
+    image: url("../res/ControlResImages/ToggleSwitchOffPressed-light.png");
 }
 
 FluToggleSwitch::indicator:checked {
     background-color: rgb(0, 90, 158);
     border: 1px solid rgb(0, 90, 158);
-    image: url(":/res/ControlResImages/ToggleSwitchOn-light.png");
+    image: url("../res/ControlResImages/ToggleSwitchOn-light.png");
     color: rgb(255, 255, 255);
     padding-left: 25px;
     padding-right: 0px;
@@ -41,14 +41,14 @@ FluToggleSwitch::indicator:checked {
 
 FluToggleSwitch::indicator:checked:hover {
     background-color: rgb(25, 106, 167);
-    image: url(":/res/ControlResImages/ToggleSwitchOnHover-light.png");
+    image: url("../res/ControlResImages/ToggleSwitchOnHover-light.png");
 }
 
 FluToggleSwitch::indicator:checked:pressed {
     background-color: rgb(44, 116, 170);
     width: 26px;
     padding-left: 21px;
-    image: url(":/res/ControlResImages/ToggleSwitchOnPressed-light.png");
+    image: url("../res/ControlResImages/ToggleSwitchOnPressed-light.png");
 }
 
 FluToggleSwitch:disabled {
@@ -57,5 +57,5 @@ FluToggleSwitch:disabled {
 
 #toggleSwitch::indicator:disabled {
     border: 2px solid #bbbbbb;
-    image: url(":/res/ControlResImages/ToggleSwitchDisabled-light.png");
+    image: url("../res/ControlResImages/ToggleSwitchDisabled-light.png");
 }

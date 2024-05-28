@@ -1,10 +1,10 @@
 QMenu {
     background-color: rgb(44, 44, 44);
     border: 1px solid rgb(28, 28, 28);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 4px;
-    /* padding-left: 8px; */
-    /* padding-right: 8px; */
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 QMenu::title {
@@ -17,11 +17,10 @@ QMenu::item {
     background-color: rgb(44, 44, 44);
     color: white;
     height: 30px;
-    min-width: 48px;
+    min-width: 96px;
     font-size: 12px;
     border-radius: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+    /* padding-left: 36px; */
 }
 
 QMenu::item:selected {
@@ -33,7 +32,7 @@ QMenu::item:selected {
 QMenu::right-arrow {
     width: 18px;
     height: 18px;
-    image: url(:/res/ControlResImages/ChevronRight-Dark.png);
+    image: url(../res/ControlResImages/ChevronRight-White.png);
 }
 
 QMenu::separator {

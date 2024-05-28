@@ -18,7 +18,7 @@ class FluTextEdit : public QTextEdit
 
             setFixedHeight(this->document()->size().height() + 6);
         });
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTextEdit.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextEdit.qss", this);
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -38,11 +38,11 @@ class FluTextEdit : public QTextEdit
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluTextEdit.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextEdit.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluTextEdit.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextEdit.qss", this);
         }
     }
 

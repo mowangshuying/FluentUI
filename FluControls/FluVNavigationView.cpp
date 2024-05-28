@@ -41,7 +41,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     auto searchItem = new FluVNavigationSearchItem;
     m_vTopWrapLayout->addWidget(searchItem);
 
-    QString qss = FluStyleSheetUitls::getQssByFileName(":/StyleSheet/light/FluVNavigationView.qss");
+    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVNavigationView.qss");
     setStyleSheet(qss);
 
     m_bLong = true;

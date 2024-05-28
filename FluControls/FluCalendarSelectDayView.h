@@ -63,11 +63,11 @@ class FluCalendarMonthView : public FluWidget
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarMonthView.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarMonthView.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarMonthView.qss", this);
         }
     }
 
@@ -118,11 +118,11 @@ class FluCalendarSelectDayView : public FluWidget
     //  {
     //      if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     //      {
-    //          FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarSelectDayView.qss", this);
+    //          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectDayView.qss", this);
     //      }
     //      else
     //      {
-    //          FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarSelectDayView.qss", this);
+    //          FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectDayView.qss", this);
     //      }
     //  }
   protected:

@@ -27,7 +27,7 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluW
     setFixedHeight(70);
 
     m_iconAwesomeType = FluAwesomeType::None;
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSettingsSelectBox.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
 }
 
 FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluSettingsSelectBox(parent)
@@ -77,11 +77,11 @@ void FluSettingsSelectBox::onThemeChanged()
     {
         // m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap())
         setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluSettingsSelectBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
     }
     else
     {
         setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluSettingsSelectBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsSelectBox.qss", this);
     }
 }

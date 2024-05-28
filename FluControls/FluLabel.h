@@ -23,10 +23,10 @@ class FluLabel : public QLabel
     FluLabel(QWidget* parent = nullptr) : QLabel(parent)
     {
         m_style = FluLabelStyle::CaptionTextBlockSylte;
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluLabel.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluLabel.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
         }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
@@ -36,10 +36,10 @@ class FluLabel : public QLabel
         // reference WinUi3 Gallary Typeography page.
         // setProperty("style", m_style);
         setLabelStyle(style);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluLabel.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluLabel.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
         }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
@@ -85,11 +85,11 @@ class FluLabel : public QLabel
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluLabel.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLabel.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluLabel.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLabel.qss", this);
         }
     }
 

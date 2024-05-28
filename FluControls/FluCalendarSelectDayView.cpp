@@ -25,7 +25,7 @@ FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/
     }
 
     setFixedHeight(30);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
 }
 
 void FluCalendarViewWeakTitle::paintEvent(QPaintEvent* event)
@@ -40,11 +40,11 @@ void FluCalendarViewWeakTitle::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarViewWeakTitle.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewWeakTitle.qss", this);
     }
 }
 
@@ -96,7 +96,7 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
     // m_calendar.init();
 
     setFixedHeight(270);
-    FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarMonthView.qss", this);
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
 }
 
 FluCalendarItem* FluCalendarMonthView::getItem(int nIndex)

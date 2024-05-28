@@ -18,14 +18,14 @@ class FluCalendarViewPage : public FluAEmptyPage
 
         auto displayBox = new FluDisplayBox;
         displayBox->setTitle("A basic calendar view.");
-        displayBox->getCodeExpander()->setCodeByPath(":/code/CalendarViewPageCode1.md");
+        displayBox->getCodeExpander()->setCodeByPath("../code/CalendarViewPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(400);
 
         auto calendarView = new FluCalendarView(displayBox);
         calendarView->move(50, 50);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-        FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }
 
@@ -34,11 +34,11 @@ class FluCalendarViewPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/light/FluCalendarViewPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewPage.qss", this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName(":/StyleSheet/dark/FluCalendarViewPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewPage.qss", this);
         }
     }
 };

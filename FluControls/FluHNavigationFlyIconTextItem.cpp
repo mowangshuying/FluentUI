@@ -69,7 +69,7 @@ void FluHNavigationFlyIconTextItem::adjustItemSize()
         nMaxHeight += 36;
     }
 
-    setFixedWidth(nMaxWidth + 25);
+    setFixedWidth(nMaxWidth + 5);
     setFixedHeight(nMaxHeight + 30);
 }
 

@@ -69,7 +69,10 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     connect(m_arrow, &QPushButton::clicked, this, [=](){ emit itemClicked();});
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked();});
-    setFixedHeight(40);
+    setFixedHeight(45);
+
+    m_indicator->hide();
+    m_arrow->hide();
 }
 
 FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
@@ -142,8 +145,6 @@ void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
     item->m_parentItem = this;
     m_items.push_back(item);
 
-    //int nDepth = item->getDepth();
-
     m_vLayout1->addWidget(item);
     m_arrow->show();
 }
@@ -199,7 +200,12 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
 {
     if (item == nullptr)
         return;
-
+#ifdef _DEBUG
+    if (item->getText() == "Home")
+    {
+        QThread::msleep(0);
+    }
+#endif
     //LOG_DEBUG << item->getText();
     int nH = calcItemW2Height(item);
     item->m_wrapWidget2->setFixedHeight(nH);
@@ -264,19 +270,33 @@ void FluHNavigationIconTextItem::onItemClicked()
 
     if (rootItem->parentIsFlyIconTextItem())
     {
+        LOG_DEBUG << getText() << " depth:" << getDepth();
+        m_emptyWidget->setFixedWidth(30 * getDepth());
         if (m_items.size() > 0)
         {
             int nH = 0;
+            int nMaxW = 0;
+
             for (int i = 0; i < m_vLayout1->count(); i++)
             {
                 auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
-                LOG_DEBUG << item->getText();
-                nH += item->height() + 5;
+                item->getWrapWidget1()->setFixedHeight(36);
+                item->setFixedHeight(36);
+                nH += item->height();
+                item->m_emptyWidget->setFixedWidth(30 * item->getDepth());
+
+                if (item->width() > nMaxW)
+                {
+                    nMaxW = item->width();
+                }
             }
 
             m_wrapWidget2->setFixedHeight(nH);
+            
+            m_wrapWidget2->setFixedWidth(nMaxW);
             m_wrapWidget2->show();
-            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height() + 5);
+            
+            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height());
         }
     }
 

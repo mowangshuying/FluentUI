@@ -6,8 +6,8 @@ FluHNavigationIconTextItem {
 }
 
 #wrapWidget1 {
-    background-color: blueviolet;
-    /* background-color: rgb(243, 243, 243); */
+    /* background-color: blueviolet; */
+    background-color: rgb(243, 243, 243);
     border-radius: 4px;
     /* border-radius: 0px; */
 }
@@ -23,8 +23,8 @@ FluHNavigationIconTextItem {
 }
 
 #wrapWidget1:hover {
-    background-color: aquamarine;
-    /* background-color: rgb(234, 234, 234); */
+    /* background-color: aquamarine; */
+    background-color: rgb(234, 234, 234);
     /* background-color: bisque; */
     border-radius: 4px;
 }
@@ -53,12 +53,12 @@ FluHNavigationIconTextItem {
     border: none;
     background-color: transparent;
     /* background-color: aquamarine; */
-    background-color: bisque;
+    /* background-color: bisque; */
 }
 
 #label {
     background-color: transparent;
-    background-color: pink;
+    /* background-color: pink; */
     font-size: 12px;
 }
 

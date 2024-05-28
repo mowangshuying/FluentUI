@@ -15,7 +15,7 @@ class FluSearchLineEdit : public FluWidget
   public:
     FluSearchLineEdit(QWidget* parent = nullptr) : FluWidget(parent)
     {
-        m_hLayout = new QHBoxLayout(this);
+        m_hLayout = new QHBoxLayout;
         setLayout(m_hLayout);
         m_hLayout->setContentsMargins(1, 0, 1, 0);
         m_hLayout->setSpacing(0);
@@ -30,8 +30,8 @@ class FluSearchLineEdit : public FluWidget
         //  m_edit->setFixedWidth(120);
         m_edit->setFixedHeight(30);
 
-        m_hLayout->addWidget(m_edit, 1, Qt::AlignLeft);
-        m_hLayout->addWidget(m_btn, 0, Qt::AlignRight);
+        m_hLayout->addWidget(m_edit, 1);
+        m_hLayout->addWidget(m_btn);
         m_hLayout->addSpacing(4);
 
         // setFixedWidth(155);
@@ -79,10 +79,10 @@ class FluSearchLineEdit : public FluWidget
         return QWidget::eventFilter(watched, event);
     }
 
-    void resizeEvent(QResizeEvent* event)
-    {
-        m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
-    }
+    //void resizeEvent(QResizeEvent* event)
+    //{
+    //    //m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
+    //}
 
     void paintEvent(QPaintEvent* event)
     {

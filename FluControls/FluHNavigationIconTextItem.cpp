@@ -1,6 +1,7 @@
 #include "FluHNavigationIconTextItem.h"
 #include "FluHNavigationFlyIconTextItem.h"
 #include <QThread>
+#include "FluHNavigationView.h"
 
 FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
@@ -181,7 +182,7 @@ int FluHNavigationIconTextItem::calcItemW1Width()
     // LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
 
     //return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
-    return margins.left() + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
+    return margins.left() + m_emptyWidget->width() + m_indicator->width() + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
 }
 
 int FluHNavigationIconTextItem::calcItemW2Height(FluHNavigationIconTextItem* item)
@@ -215,6 +216,21 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
    // {
         adjustItemHeight(item->m_parentItem);
    // }
+}
+
+void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* item, int &nMaxWidth)
+{
+    if (item == m_parentItem)
+    {
+        return;
+    }
+
+    //int nW = item->calcItemW1Width();
+    //if (nW > nMaxWidth)
+    //    nMaxWidth = nW;
+
+    item->setFixedWidth(nMaxWidth);
+    adjustItemWidth(item->m_parentItem, nMaxWidth);
 }
 
 int FluHNavigationIconTextItem::getDepth()
@@ -268,7 +284,7 @@ void FluHNavigationIconTextItem::onItemClicked()
     LOG_DEBUG << "root item not empty.";
     auto navView = rootItem->getParentView();
 
-    if (rootItem->parentIsFlyIconTextItem())
+    if (rootItem->parentIsFlyIconTextItem() && m_bDown)
     {
         LOG_DEBUG << getText() << " depth:" << getDepth();
         m_emptyWidget->setFixedWidth(30 * getDepth());
@@ -285,21 +301,46 @@ void FluHNavigationIconTextItem::onItemClicked()
                 nH += item->height();
                 item->m_emptyWidget->setFixedWidth(30 * item->getDepth());
 
-                if (item->width() > nMaxW)
+                int nTmpWidth = item->calcItemW1Width();
+                if (nTmpWidth > nMaxW)
                 {
-                    nMaxW = item->width();
+                    nMaxW = nTmpWidth;
                 }
             }
 
             m_wrapWidget2->setFixedHeight(nH);
             
-            m_wrapWidget2->setFixedWidth(nMaxW);
-            m_wrapWidget2->show();
+            //m_wrapWidget1->setFixedWidth(nMaxW);
+            //m_wrapWidget2->setFixedWidth(nMaxW);
             
+            
+            m_wrapWidget2->show();
+
+            //adjustItemWidth(m_parentItem, nMaxW);
+            //if (rootItem->parentIsFlyIconTextItem())
+            //{
+            //    //rootItem->m_parentView->setFixedWidth(nMaxW);
+            //    FluHNavigationFlyIconTextItem* parentFlyIconTextItem = rootItem->m_parentFlyIconTextItem;
+            //    parentFlyIconTextItem->setFixedWidth(nMaxW);
+            //}
+
             setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height());
         }
     }
 
+    if (rootItem->parentIsFlyIconTextItem() && !m_bDown)
+    {
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
+        setFixedHeight(36);
+        if (m_items.size() > 0)
+        {
+            m_wrapWidget2->hide();
+            adjustItemHeight(m_parentItem);
+        }
+    }
+
+
+    m_bDown = !m_bDown;
     if (navView != nullptr && rootItem == this)
     {
         LOG_DEBUG << "parent view not empty.";
@@ -314,18 +355,18 @@ void FluHNavigationIconTextItem::onItemClicked()
         }
     }
     
-    if (navView == nullptr)
-    {
-        if (!getItems().empty())
-        {
-            // expand---
+    //if (navView == nullptr)
+    //{
+    //    if (!getItems().empty())
+    //    {
+    //        // expand---
+    //
+    //    }
+   //     else
+   //     {
 
-        }
-        else
-        {
-
-        }
-    }
+   //     }
+   // }
 }
 
 void FluHNavigationIconTextItem::onThemeChanged()

@@ -12,6 +12,7 @@
 #include <QStyleOption>
 #include <QPainter>
 
+class FluHNavigationFlyIconTextItem;
 class FluHNavigationIconTextItem : public FluHNavigationItem
 {
     Q_OBJECT
@@ -100,6 +101,11 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_bParentIsNavigationView = bParent;
     }
 
+    void setParentFlyIconTextItem(FluHNavigationFlyIconTextItem* parentFlyIconTextItem)
+    {
+        m_parentFlyIconTextItem = parentFlyIconTextItem;
+    }
+
 
     void addItem(FluHNavigationIconTextItem* item);
 
@@ -107,6 +113,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     int calcItemW2Height(FluHNavigationIconTextItem* item);
 
     void adjustItemHeight(FluHNavigationIconTextItem* item);
+
+    void adjustItemWidth(FluHNavigationIconTextItem* item, int &nMaxWidth);
 
     int getDepth();
 
@@ -150,10 +158,13 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     QVBoxLayout* m_vLayout1;
 
     FluHNavigationIconTextItem* m_parentItem;
+    FluHNavigationFlyIconTextItem* m_parentFlyIconTextItem;
     FluAwesomeType m_awesomeType;
 
     bool m_bHideIcon;
     bool m_bSelected;
+    bool m_bDown;
+
 
     bool m_bParentIsFlyIconTextItem;
     bool m_bParentIsNavigationView;

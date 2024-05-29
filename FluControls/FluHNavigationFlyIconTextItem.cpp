@@ -27,10 +27,12 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
     for (auto item : items)
     {
         auto newItem = new FluHNavigationIconTextItem(item);
+        newItem->setFixedHeight(36);
 
         newItem->setParentIsFlyIconTextItem(true);
         newItem->setParentIsNavigationView(false);
-        
+        newItem->setParentFlyIconTextItem(this);
+
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 
@@ -70,7 +72,7 @@ void FluHNavigationFlyIconTextItem::adjustItemSize()
     }
 
     setFixedWidth(nMaxWidth + 5);
-    setFixedHeight(nMaxHeight + 30);
+    setFixedHeight(nMaxHeight + 10);
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()

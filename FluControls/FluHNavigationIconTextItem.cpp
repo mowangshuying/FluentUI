@@ -2,6 +2,7 @@
 #include "FluHNavigationFlyIconTextItem.h"
 #include <QThread>
 #include "FluHNavigationView.h"
+#include "FluVScrollView.h"
 
 FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
@@ -153,14 +154,21 @@ void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
 int FluHNavigationIconTextItem::calcItemW1Width()
 {
     QMargins margins = m_wrapWidget1->contentsMargins();
-    //int nIndicatorWidth = m_indicator->width();
+    int leftMargins = margins.left();
+    int rightMargins = margins.right();
+
+    int emptyWidgetWidth = m_emptyWidget->width();
+    int nIndicatorWidth = m_indicator->width();
 
     int nIconWidth = m_iconBtn->width();
     if (m_bHideIcon)
+    {
         nIconWidth = 0;
+    }
 
     int nSpacing = 8;
     int nLabelWidth = m_label->fontMetrics().boundingRect(m_label->text()).width();
+    //int nSpacing = 8;
     int nArrowWidth = m_arrow->width();
     if (m_items.empty())
     {
@@ -172,35 +180,39 @@ int FluHNavigationIconTextItem::calcItemW1Width()
         m_arrow->show();
     }
 
-    // LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
-    // LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
-    // LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
-    // LOG_DEBUG << "nIconWidth:" << nIconWidth;
-    // LOG_DEBUG << "nSpacing:" << nSpacing;
-    // LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
-    // LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
-    // LOG_DEBUG << "W1 width:" << margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
-
-    //return margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20;
-    return margins.left() + m_emptyWidget->width() + m_indicator->width() + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right();
+    LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
+    LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
+    LOG_DEBUG << "emptyWidgetWidth:" << emptyWidgetWidth;
+    LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
+    LOG_DEBUG << "nIconWidth:" << nIconWidth;
+    LOG_DEBUG << "nSpacing:" << nSpacing;
+    LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
+    LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
+    LOG_DEBUG << "W1 width:" << leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nSpacing + nArrowWidth + rightMargins;
+    return leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + rightMargins;
 }
 
 int FluHNavigationIconTextItem::calcItemW2Height(FluHNavigationIconTextItem* item)
 {
+    if (item->getWrapWidget2()->isHidden())
+        return 0;
+
     int nH = 0;
     for (int i = 0; i < item->m_vLayout1->count(); i++)
     {
         auto tmpItem = (FluHNavigationIconTextItem*)(item->m_vLayout1->itemAt(i)->widget());
-        nH += tmpItem->height() + 5;
+        nH += tmpItem->height();
     }
-    nH += 5;
     return nH;
 }
 
 void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* item)
 {
     if (item == nullptr)
+    {
         return;
+    }
+
 #ifdef _DEBUG
     if (item->getText() == "Home")
     {
@@ -211,26 +223,76 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     int nH = calcItemW2Height(item);
     item->m_wrapWidget2->setFixedHeight(nH);
     item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());
+    
+    adjustItemHeight(item->m_parentItem);
 
-   // if (item->m_parentItem->m_parentView == nullptr)
-   // {
-        adjustItemHeight(item->m_parentItem);
-   // }
+    if (item->parentIsFlyIconTextItem())
+    {
+        //FluHNavigationFlyIconTextItem* flyIconTextItem = getParentFlyIconTextItem();
+        //flyIconTextItem->adjustItemSize();
+        //LOG_DEBUG << item->getParentFlyIconTextItem()->height();
+        //int nH = item->getParentFlyIconTextItem()->getVScrollView()->getMainLayout()->sizeHint().height();
+        //item->getParentFlyIconTextItem()->setFixedHeight(nH + 10);
+
+        //item->getParentFlyIconTextItem()->adjustItemSize();
+
+        auto flyIconTextItem = item->getParentFlyIconTextItem();
+        auto vLayout = flyIconTextItem->getVScrollView()->getMainLayout();
+        
+        int nH = 0;
+        for (int i = 0; i < vLayout->count(); i++)
+        {
+            auto tmpItem = (FluHNavigationIconTextItem*)(vLayout->itemAt(i)->widget());
+            nH += tmpItem->height();
+        }
+
+        flyIconTextItem->setFixedHeight(nH);
+    }
 }
 
 void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* item, int &nMaxWidth)
 {
-    if (item == m_parentItem)
+    if (item == nullptr)
     {
         return;
     }
 
-    //int nW = item->calcItemW1Width();
-    //if (nW > nMaxWidth)
-    //    nMaxWidth = nW;
+    if (item->width() > nMaxWidth)
+    {
+        nMaxWidth = item->width();
+    }
 
     item->setFixedWidth(nMaxWidth);
+    item->getWrapWidget1()->setFixedWidth(nMaxWidth);
+    item->getWrapWidget2()->setFixedWidth(nMaxWidth);
+
+    for (int i = 0; i < item->m_vLayout1->count(); i++)
+    {
+        auto tmpItem = (FluHNavigationIconTextItem*)(item->m_vLayout1->itemAt(i)->widget());
+        tmpItem->setFixedWidth(nMaxWidth);
+        tmpItem->getWrapWidget1()->setFixedWidth(nMaxWidth);
+        tmpItem->getWrapWidget2()->setFixedWidth(nMaxWidth);
+    }
+
     adjustItemWidth(item->m_parentItem, nMaxWidth);
+
+    if (item->parentIsFlyIconTextItem())
+    {
+        if (nMaxWidth > item->getParentFlyIconTextItem()->width())
+        {
+            item->getParentFlyIconTextItem()->setFixedWidth(nMaxWidth + 10);
+
+            auto vLayout = item->getParentFlyIconTextItem()->getVScrollView()->getMainLayout();
+
+            for (int i = 0; i < vLayout->count(); i++)
+            {
+                auto tmpItem = (FluHNavigationIconTextItem*)(vLayout->itemAt(i)->widget());
+                tmpItem->setFixedWidth(nMaxWidth);
+                tmpItem->getWrapWidget1()->setFixedWidth(nMaxWidth);
+                tmpItem->getWrapWidget2()->setFixedWidth(nMaxWidth);
+            }
+        }
+    }
 }
 
 int FluHNavigationIconTextItem::getDepth()
@@ -281,12 +343,15 @@ void FluHNavigationIconTextItem::onItemClicked()
     }
 #endif
 
-    LOG_DEBUG << "root item not empty.";
-    auto navView = rootItem->getParentView();
+    //LOG_DEBUG << "root item not empty.";
 
+    auto navView = rootItem->getParentView();
     if (rootItem->parentIsFlyIconTextItem() && m_bDown)
     {
-        LOG_DEBUG << getText() << " depth:" << getDepth();
+        LOG_DEBUG << "RootItem<" << rootItem->getText() << ">   "
+                  << "NowItem<" << getText() << ">  " 
+                  << "depth:" << getDepth();
+        
         m_emptyWidget->setFixedWidth(30 * getDepth());
         if (m_items.size() > 0)
         {
@@ -308,23 +373,23 @@ void FluHNavigationIconTextItem::onItemClicked()
                 }
             }
 
+            LOG_DEBUG << "item H:" << nH << ", item W:" << nMaxW;
+
+            for (int i = 0; i < m_vLayout1->count(); i++)
+            {
+                auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
+                item->setFixedWidth(nMaxW);
+            }
+
             m_wrapWidget2->setFixedHeight(nH);
-            
-            //m_wrapWidget1->setFixedWidth(nMaxW);
-            //m_wrapWidget2->setFixedWidth(nMaxW);
-            
-            
+            m_wrapWidget1->setFixedWidth(nMaxW);
+            m_wrapWidget2->setFixedWidth(nMaxW);
+            setFixedWidth(nMaxW);
+            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height());
             m_wrapWidget2->show();
 
-            //adjustItemWidth(m_parentItem, nMaxW);
-            //if (rootItem->parentIsFlyIconTextItem())
-            //{
-            //    //rootItem->m_parentView->setFixedWidth(nMaxW);
-            //    FluHNavigationFlyIconTextItem* parentFlyIconTextItem = rootItem->m_parentFlyIconTextItem;
-            //    parentFlyIconTextItem->setFixedWidth(nMaxW);
-            //}
-
-            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height());
+            adjustItemWidth(this, nMaxW);
+            adjustItemHeight(this);
         }
     }
 
@@ -335,7 +400,7 @@ void FluHNavigationIconTextItem::onItemClicked()
         if (m_items.size() > 0)
         {
             m_wrapWidget2->hide();
-            adjustItemHeight(m_parentItem);
+            adjustItemHeight(this);
         }
     }
 

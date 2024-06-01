@@ -66,12 +66,15 @@ void FluHNavigationFlyIconTextItem::adjustItemSize()
     {
         item->getWrapWidget1()->setFixedWidth(nMaxWidth);
         item->getWrapWidget1()->setFixedHeight(36);
+
+        item->getWrapWidget2()->setFixedWidth(nMaxWidth);
+
         item->setFixedWidth(nMaxWidth);
         item->setFixedHeight(36);
         nMaxHeight += 36;
     }
 
-    setFixedWidth(nMaxWidth + 5);
+    setFixedWidth(nMaxWidth + 10);
     setFixedHeight(nMaxHeight + 10);
 }
 

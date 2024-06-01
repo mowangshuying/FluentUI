@@ -106,6 +106,10 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_parentFlyIconTextItem = parentFlyIconTextItem;
     }
 
+    FluHNavigationFlyIconTextItem* getParentFlyIconTextItem()
+    {
+        return m_parentFlyIconTextItem;
+    }
 
     void addItem(FluHNavigationIconTextItem* item);
 

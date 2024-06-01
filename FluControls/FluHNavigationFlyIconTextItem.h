@@ -21,6 +21,16 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     
     void adjustItemSize();
 
+    QVBoxLayout* getMainLayout()
+    {
+        return m_vMainLayout;
+    }
+
+    FluVScrollView* getVScrollView()
+    {
+        return m_vScrollView;
+    }
+
     // to enable qss
     void paintEvent(QPaintEvent* event)
     {

@@ -19,7 +19,7 @@ class FluHNavigationFlyIconTextItem : public FluWidget
 
     void setIconTextItems(std::vector<FluHNavigationIconTextItem*> items);
     
-    void adjustItemSize();
+    void adjustItemWidth();
 
     QVBoxLayout* getMainLayout()
     {

@@ -43,10 +43,12 @@
 #include "FluTabViewDemo.h"
 #include "FluFrameLessDemo.h"
 #include "FluHNavigationDemo.h"
+#include "../FluUtils/FluUtils.h"
 
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
+    FluLogUtils::__init();
 
     // FluChangeBackgroundWidget demo;
     // demo.show();
@@ -203,5 +205,6 @@ int main(int argc, char **argv)
 
     FluHNavigationDemo demo;
     demo.show();
+
     return app.exec();
 }

@@ -120,6 +120,13 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void adjustItemWidth(FluHNavigationIconTextItem* item, int &nMaxWidth);
 
+    void setItemFixedWidth(int nMaxWidth)
+    {
+        setFixedWidth(nMaxWidth);
+        getWrapWidget1()->setFixedWidth(nMaxWidth);
+        getWrapWidget2()->setFixedWidth(nMaxWidth);
+    }
+
     int getDepth();
 
     FluHNavigationIconTextItem* getRootItem();

@@ -27,7 +27,7 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
     m_vMainLayout->setSpacing(0);
     m_vMainLayout->addWidget(m_wrapWidget1);
-    m_vMainLayout->addSpacing(5);
+    //m_vMainLayout->addSpacing(5);
     m_vMainLayout->addWidget(m_wrapWidget2);
     m_wrapWidget2->hide();
 
@@ -47,14 +47,18 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_hLayout1->addWidget(m_emptyWidget);
     m_hLayout1->addWidget(m_indicator);
     m_hLayout1->addWidget(m_iconBtn);
+    m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_label, 1);
+   // m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_arrow);
+   // m_hLayout1->addSpacing(8);
 
     m_indicator->setFixedHeight(18);
     m_indicator->setFixedWidth(4);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
-    m_vLayout1->setSpacing(5);
+    m_vLayout1->setSpacing(0);
+   // m_vLayout1->setSpacing(5);
     m_indicator->setObjectName("indicator");
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
@@ -188,8 +192,8 @@ int FluHNavigationIconTextItem::calcItemW1Width()
     LOG_DEBUG << "nSpacing:" << nSpacing;
     LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
     LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
-    LOG_DEBUG << "W1 width:" << leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nSpacing + nArrowWidth + rightMargins;
-    return leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + rightMargins;
+    LOG_DEBUG << "W1 width:" << leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nSpacing + nArrowWidth + nSpacing + rightMargins + 20;
+    return leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + rightMargins + 20;
 }
 
 int FluHNavigationIconTextItem::calcItemW2Height(FluHNavigationIconTextItem* item)
@@ -228,23 +232,19 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
 
     if (item->parentIsFlyIconTextItem())
     {
-        //FluHNavigationFlyIconTextItem* flyIconTextItem = getParentFlyIconTextItem();
-        //flyIconTextItem->adjustItemSize();
-        //LOG_DEBUG << item->getParentFlyIconTextItem()->height();
-        //int nH = item->getParentFlyIconTextItem()->getVScrollView()->getMainLayout()->sizeHint().height();
-        //item->getParentFlyIconTextItem()->setFixedHeight(nH + 10);
-
-        //item->getParentFlyIconTextItem()->adjustItemSize();
-
         auto flyIconTextItem = item->getParentFlyIconTextItem();
         auto vLayout = flyIconTextItem->getVScrollView()->getMainLayout();
-        
+
         int nH = 0;
         for (int i = 0; i < vLayout->count(); i++)
         {
             auto tmpItem = (FluHNavigationIconTextItem*)(vLayout->itemAt(i)->widget());
-            nH += tmpItem->height();
+            nH += tmpItem->sizeHint().height();
         }
+
+        nH += 15;
+        if (nH > 500)
+            nH = 500;
 
         flyIconTextItem->setFixedHeight(nH);
     }
@@ -262,16 +262,11 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
         nMaxWidth = item->width();
     }
 
-    item->setFixedWidth(nMaxWidth);
-    item->getWrapWidget1()->setFixedWidth(nMaxWidth);
-    item->getWrapWidget2()->setFixedWidth(nMaxWidth);
-
+    item->setItemFixedWidth(nMaxWidth);
     for (int i = 0; i < item->m_vLayout1->count(); i++)
     {
         auto tmpItem = (FluHNavigationIconTextItem*)(item->m_vLayout1->itemAt(i)->widget());
-        tmpItem->setFixedWidth(nMaxWidth);
-        tmpItem->getWrapWidget1()->setFixedWidth(nMaxWidth);
-        tmpItem->getWrapWidget2()->setFixedWidth(nMaxWidth);
+        tmpItem->setItemFixedWidth(nMaxWidth);
     }
 
     adjustItemWidth(item->m_parentItem, nMaxWidth);
@@ -283,13 +278,10 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
             item->getParentFlyIconTextItem()->setFixedWidth(nMaxWidth + 10);
 
             auto vLayout = item->getParentFlyIconTextItem()->getVScrollView()->getMainLayout();
-
             for (int i = 0; i < vLayout->count(); i++)
             {
                 auto tmpItem = (FluHNavigationIconTextItem*)(vLayout->itemAt(i)->widget());
-                tmpItem->setFixedWidth(nMaxWidth);
-                tmpItem->getWrapWidget1()->setFixedWidth(nMaxWidth);
-                tmpItem->getWrapWidget2()->setFixedWidth(nMaxWidth);
+                tmpItem->setItemFixedWidth(nMaxWidth);
             }
         }
     }

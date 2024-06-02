@@ -8,9 +8,10 @@ FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*=
 
     m_vMainLayout = new QVBoxLayout;
     m_vMainLayout->setContentsMargins(5, 5, 5, 5);
+    m_vMainLayout->setSpacing(0);
     setLayout(m_vMainLayout);
 
-    m_vScrollView->setContentsMargins(0, 0, 0, 0);
+    // m_vScrollView->setContentsMargins(0, 0, 0, 0);
     m_vScrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
     m_vScrollView->getMainLayout()->setSpacing(0);
     m_vMainLayout->addWidget(m_vScrollView);
@@ -28,6 +29,8 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
     {
         auto newItem = new FluHNavigationIconTextItem(item);
         newItem->setFixedHeight(36);
+        newItem->getWrapWidget1()->setFixedHeight(36);
+        newItem->getWrapWidget2()->hide();
 
         newItem->setParentIsFlyIconTextItem(true);
         newItem->setParentIsNavigationView(false);
@@ -45,10 +48,10 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
         });
     }
 
-    adjustItemSize();
+    adjustItemWidth();
 }
 
-void FluHNavigationFlyIconTextItem::adjustItemSize()
+void FluHNavigationFlyIconTextItem::adjustItemWidth()
 {
     LOG_DEBUG << "called";
     int nMaxWidth = 0;
@@ -65,8 +68,6 @@ void FluHNavigationFlyIconTextItem::adjustItemSize()
     for (auto item : m_items)
     {
         item->getWrapWidget1()->setFixedWidth(nMaxWidth);
-        item->getWrapWidget1()->setFixedHeight(36);
-
         item->getWrapWidget2()->setFixedWidth(nMaxWidth);
 
         item->setFixedWidth(nMaxWidth);
@@ -74,8 +75,11 @@ void FluHNavigationFlyIconTextItem::adjustItemSize()
         nMaxHeight += 36;
     }
 
+    LOG_DEBUG << "vScrollView sizeHint:" << m_vScrollView->sizeHint();
+    LOG_DEBUG << "HFlyIconItem sizeHint:" << sizeHint();
+
     setFixedWidth(nMaxWidth + 10);
-    setFixedHeight(nMaxHeight + 10);
+    //setFixedHeight(nMaxHeight + 10);
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()

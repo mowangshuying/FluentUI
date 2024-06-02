@@ -29,11 +29,11 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     m_hNavView = new FluHNavigationView;
     m_vMainLayout->insertWidget(1, m_hNavView, 0, Qt::AlignTop);
 
-    // auto label = new QLabel;
-    // m_vMainLayout->addWidget(label, 1);
+    // add home item;
     auto item1 = new FluHNavigationIconTextItem(FluAwesomeType::Home, "Home");
     m_hNavView->addItemToMidLayout(item1);
 
+    // add Design items;
     auto item2  = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
     auto item21 = new FluHNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item2);
     auto item22 = new FluHNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item2);
@@ -42,10 +42,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item241 = new FluHNavigationIconTextItem("Screen reader support", item24);
     auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
     auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
-
-
-
-    
 
     item2->addItem(item21);
     item2->addItem(item22);
@@ -58,15 +54,47 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
 
     m_hNavView->addItemToMidLayout(item2);
 
-
-
-
+    // add All samples;
     auto item3 = new FluHNavigationIconTextItem(FluAwesomeType::AllApps, "All samples");
     m_hNavView->addItemToMidLayout(item3);
 
+    // Basic inputs;
     auto item4 = new FluHNavigationIconTextItem(FluAwesomeType::CheckboxComposite, "Basic input");
+    auto item41 = new FluHNavigationIconTextItem("Button", item4);
+    auto item42 = new FluHNavigationIconTextItem("DropDownButton", item4);
+    auto item43 = new FluHNavigationIconTextItem("HyperLinkButton", item4);
+    auto item44 = new FluHNavigationIconTextItem("RepeatButton", item4);
+    auto item45 = new FluHNavigationIconTextItem("ToggleButton", item4);
+    auto item46 = new FluHNavigationIconTextItem("ToggleSplitButton", item4);
+    auto item47 = new FluHNavigationIconTextItem("CheckBox", item4);
+    auto item48 = new FluHNavigationIconTextItem("ColorPicker", item4);
+    auto item49 = new FluHNavigationIconTextItem("ComboBox", item4);
+    auto item410 = new FluHNavigationIconTextItem("RadioButton", item4);
+    auto item411 = new FluHNavigationIconTextItem("RatingControl", item4);
+    auto item412 = new FluHNavigationIconTextItem("Slider", item4);
+    auto item413 = new FluHNavigationIconTextItem("ToggleSwitch", item4);
+
+    
+
+    item4->addItem(item41);
+    item4->addItem(item42);
+    item4->addItem(item43);
+    item4->addItem(item44);
+
+    item4->addItem(item45);
+    item4->addItem(item46);
+    item4->addItem(item47);
+    item4->addItem(item48);
+
+    item4->addItem(item49);
+    item4->addItem(item410);
+    item4->addItem(item411);
+    item4->addItem(item412);
+    item4->addItem(item413);
+
     m_hNavView->addItemToMidLayout(item4);
 
+    // Connections;
     auto item5 = new FluHNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections");
     m_hNavView->addItemToMidLayout(item5);
 

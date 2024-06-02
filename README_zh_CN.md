@@ -29,6 +29,10 @@
   git clone https://github.com/mowangshuying/CppQtFluentUi888.git
   ```
 
+* 选择分支.
+
+  > 如果你想使用qrc资源的话，请切换成qrc分支，否则请使用master分支.
+  
 * Build
 
   >1.用Vs2022打开CppQtFluentUi888.sln
@@ -45,6 +49,10 @@
   git clone https://github.com/mowangshuying/CppQtFluentUi888.git
   ```
 
+* 选择分支.
+
+  > 如果你想使用qrc资源的话，请切换成qrc分支，否则请使用master分支.
+  
 * Build
 
   >1.用Qt Creator打开CMakeLists.txt.

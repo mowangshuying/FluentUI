@@ -79,7 +79,7 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
     LOG_DEBUG << "HFlyIconItem sizeHint:" << sizeHint();
 
     setFixedWidth(nMaxWidth + 10);
-    //setFixedHeight(nMaxHeight + 10);
+    // setFixedHeight(nMaxHeight + 10);
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()

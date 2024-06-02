@@ -27,9 +27,9 @@ class FluPivotTitleBarItem : public QPushButton
 
         m_indicatorLabel->setFixedHeight(5);
         setSelected(false);
-		setFixedHeight(45);
+        setFixedHeight(45);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBarItem.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=]() { onThemeChanged();});
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=]() { onThemeChanged(); });
         adjustItemSize();
     }
 

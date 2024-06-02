@@ -17,7 +17,6 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_wrapWidget1->setObjectName("wrapWidget1");
     m_wrapWidget2->setObjectName("wrapWidget2");
 
-
     m_emptyWidget = new QWidget;
     m_emptyWidget->setFixedSize(0, 0);
 
@@ -27,7 +26,7 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
     m_vMainLayout->setSpacing(0);
     m_vMainLayout->addWidget(m_wrapWidget1);
-    //m_vMainLayout->addSpacing(5);
+    // m_vMainLayout->addSpacing(5);
     m_vMainLayout->addWidget(m_wrapWidget2);
     m_wrapWidget2->hide();
 
@@ -49,16 +48,16 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_hLayout1->addWidget(m_iconBtn);
     m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_label, 1);
-   // m_hLayout1->addSpacing(8);
+    // m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_arrow);
-   // m_hLayout1->addSpacing(8);
+    // m_hLayout1->addSpacing(8);
 
     m_indicator->setFixedHeight(18);
     m_indicator->setFixedWidth(4);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
     m_vLayout1->setSpacing(0);
-   // m_vLayout1->setSpacing(5);
+    // m_vLayout1->setSpacing(5);
     m_indicator->setObjectName("indicator");
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
@@ -72,9 +71,9 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
     m_arrow->setFixedWidth(25);
 
-    connect(m_arrow, &QPushButton::clicked, this, [=](){ emit itemClicked();});
+    connect(m_arrow, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
-    connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked();});
+    connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked(); });
     setFixedHeight(45);
 
     m_indicator->hide();
@@ -96,15 +95,15 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluHNavigationIconTextIte
     onThemeChanged();
 }
 
- FluHNavigationIconTextItem::FluHNavigationIconTextItem(QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
+FluHNavigationIconTextItem::FluHNavigationIconTextItem(QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
 {
-     m_awesomeType = FluAwesomeType::None;
-     m_iconBtn->hide();
-     m_bHideIcon = true;
+    m_awesomeType = FluAwesomeType::None;
+    m_iconBtn->hide();
+    m_bHideIcon = true;
 
-     m_label->setText(text);
-     onThemeChanged();
- }
+    m_label->setText(text);
+    onThemeChanged();
+}
 
 FluHNavigationIconTextItem::~FluHNavigationIconTextItem()
 {
@@ -172,7 +171,7 @@ int FluHNavigationIconTextItem::calcItemW1Width()
 
     int nSpacing = 8;
     int nLabelWidth = m_label->fontMetrics().boundingRect(m_label->text()).width();
-    //int nSpacing = 8;
+    // int nSpacing = 8;
     int nArrowWidth = m_arrow->width();
     if (m_items.empty())
     {
@@ -223,11 +222,11 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
         QThread::msleep(0);
     }
 #endif
-    //LOG_DEBUG << item->getText();
+    // LOG_DEBUG << item->getText();
     int nH = calcItemW2Height(item);
     item->m_wrapWidget2->setFixedHeight(nH);
     item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());
-    
+
     adjustItemHeight(item->m_parentItem);
 
     if (item->parentIsFlyIconTextItem())
@@ -250,7 +249,7 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     }
 }
 
-void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* item, int &nMaxWidth)
+void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth)
 {
     if (item == nullptr)
     {
@@ -320,7 +319,7 @@ void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
 
 void FluHNavigationIconTextItem::onItemClicked()
 {
-    LOG_DEBUG << getText() <<" called";
+    LOG_DEBUG << getText() << " called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -335,15 +334,15 @@ void FluHNavigationIconTextItem::onItemClicked()
     }
 #endif
 
-    //LOG_DEBUG << "root item not empty.";
+    // LOG_DEBUG << "root item not empty.";
 
     auto navView = rootItem->getParentView();
     if (rootItem->parentIsFlyIconTextItem() && m_bDown)
     {
         LOG_DEBUG << "RootItem<" << rootItem->getText() << ">   "
-                  << "NowItem<" << getText() << ">  " 
+                  << "NowItem<" << getText() << ">  "
                   << "depth:" << getDepth();
-        
+
         m_emptyWidget->setFixedWidth(30 * getDepth());
         if (m_items.size() > 0)
         {
@@ -396,7 +395,6 @@ void FluHNavigationIconTextItem::onItemClicked()
         }
     }
 
-
     m_bDown = !m_bDown;
     if (navView != nullptr && rootItem == this)
     {
@@ -411,19 +409,19 @@ void FluHNavigationIconTextItem::onItemClicked()
             return;
         }
     }
-    
-    //if (navView == nullptr)
-    //{
-    //    if (!getItems().empty())
-    //    {
-    //        // expand---
-    //
-    //    }
-   //     else
-   //     {
 
-   //     }
-   // }
+    // if (navView == nullptr)
+    //{
+    //     if (!getItems().empty())
+    //     {
+    //         // expand---
+    //
+    //     }
+    //     else
+    //     {
+
+    //     }
+    // }
 }
 
 void FluHNavigationIconTextItem::onThemeChanged()

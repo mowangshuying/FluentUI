@@ -34,7 +34,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     m_hNavView->addItemToMidLayout(item1);
 
     // add Design items;
-    auto item2  = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
+    auto item2 = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
     auto item21 = new FluHNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item2);
     auto item22 = new FluHNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item2);
     auto item23 = new FluHNavigationIconTextItem(FluAwesomeType::Color, "Colors", item2);
@@ -73,8 +73,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item411 = new FluHNavigationIconTextItem("RatingControl", item4);
     auto item412 = new FluHNavigationIconTextItem("Slider", item4);
     auto item413 = new FluHNavigationIconTextItem("ToggleSwitch", item4);
-
-    
 
     item4->addItem(item41);
     item4->addItem(item42);
@@ -131,7 +129,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
 
     auto settingsItem = new FluHNavigationSettingsItem(FluAwesomeType::Settings);
     m_hNavView->addItemToRightLayout(settingsItem);
-
 
     auto bodyWidget = new QWidget;
     bodyWidget->setObjectName("bodyWidget");

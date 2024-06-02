@@ -78,8 +78,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_bHideIcon = bHideIcon;
     }
 
-   //bool m_bParentIsFlyIconTextItem;
-   // bool m_bParentIsNavigationView;
+    // bool m_bParentIsFlyIconTextItem;
+    //  bool m_bParentIsNavigationView;
 
     bool parentIsFlyIconTextItem()
     {
@@ -118,7 +118,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void adjustItemHeight(FluHNavigationIconTextItem* item);
 
-    void adjustItemWidth(FluHNavigationIconTextItem* item, int &nMaxWidth);
+    void adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth);
 
     void setItemFixedWidth(int nMaxWidth)
     {
@@ -175,7 +175,6 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     bool m_bHideIcon;
     bool m_bSelected;
     bool m_bDown;
-
 
     bool m_bParentIsFlyIconTextItem;
     bool m_bParentIsNavigationView;

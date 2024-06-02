@@ -79,10 +79,10 @@ class FluSearchLineEdit : public FluWidget
         return QWidget::eventFilter(watched, event);
     }
 
-    //void resizeEvent(QResizeEvent* event)
+    // void resizeEvent(QResizeEvent* event)
     //{
-    //    //m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
-    //}
+    //     //m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
+    // }
 
     void paintEvent(QPaintEvent* event)
     {

@@ -119,7 +119,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     m_hNavView->addItemToMidLayout(item6);
 
     auto item7 = new FluHNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts");
-    
+
     auto item71 = new FluHNavigationIconTextItem("ContentDialog", item7);
     auto item72 = new FluHNavigationIconTextItem("Flyout", item7);
     auto item73 = new FluHNavigationIconTextItem("TeachingTip", item7);

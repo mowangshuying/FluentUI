@@ -94,12 +94,40 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
 
     // Connections;
     auto item5 = new FluHNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections");
+    auto item51 = new FluHNavigationIconTextItem("FlipView", item5);
+    auto item52 = new FluHNavigationIconTextItem("ListView", item5);
+    auto item53 = new FluHNavigationIconTextItem("TreeView", item5);
+
+    item5->addItem(item51);
+    item5->addItem(item52);
+    item5->addItem(item53);
+
     m_hNavView->addItemToMidLayout(item5);
 
     auto item6 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Date & Time");
+
+    auto item61 = new FluHNavigationIconTextItem("CalendarDatePicker", item6);
+    auto item62 = new FluHNavigationIconTextItem("CalendarView", item6);
+    auto item63 = new FluHNavigationIconTextItem("DatePicker", item6);
+    auto item64 = new FluHNavigationIconTextItem("TimePicker", item6);
+
+    item6->addItem(item61);
+    item6->addItem(item62);
+    item6->addItem(item63);
+    item6->addItem(item64);
+
     m_hNavView->addItemToMidLayout(item6);
 
     auto item7 = new FluHNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts");
+    
+    auto item71 = new FluHNavigationIconTextItem("ContentDialog", item7);
+    auto item72 = new FluHNavigationIconTextItem("Flyout", item7);
+    auto item73 = new FluHNavigationIconTextItem("TeachingTip", item7);
+
+    item7->addItem(item71);
+    item7->addItem(item72);
+    item7->addItem(item73);
+
     m_hNavView->addItemToMidLayout(item7);
 
     auto item8 = new FluHNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout");

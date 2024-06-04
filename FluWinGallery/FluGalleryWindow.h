@@ -279,7 +279,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("DateAndTimePage", dateAndTimePage);
         connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DateAndTimePage"); });
 
-        FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("CalendarDatePickerPage", item);
+        FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("CalendarDatePicker", item);
         item1->setKey("CalendarDatePickerPage");
         auto calendarDatePickerPage = new FluCalendarDatePickerPage;
         m_sLayout->addWidget("CalendarDatePickerPage", calendarDatePickerPage);

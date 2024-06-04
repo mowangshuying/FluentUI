@@ -10,6 +10,7 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_parentView = nullptr;
     m_awesomeType = FluAwesomeType::None;
     m_parentItem = nullptr;
+    m_bDown = true;
 
     m_wrapWidget1 = new QWidget;
     m_wrapWidget2 = new QWidget;

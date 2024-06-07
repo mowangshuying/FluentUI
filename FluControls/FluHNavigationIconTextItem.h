@@ -114,11 +114,14 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     void addItem(FluHNavigationIconTextItem* item);
 
     int calcItemW1Width();
+
+    int calcItemWidth();
+    
     int calcItemW2Height(FluHNavigationIconTextItem* item);
 
     void adjustItemHeight(FluHNavigationIconTextItem* item);
 
-    void adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth);
+    void adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth, int& nCallHierarchy);
 
     void setItemFixedWidth(int nMaxWidth)
     {

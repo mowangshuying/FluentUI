@@ -98,11 +98,14 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void setParentIsNavigationView(bool bParent)
     {
+        if (bParent)
+            m_hIndicator->show();
         m_bParentIsNavigationView = bParent;
     }
 
     void setParentFlyIconTextItem(FluHNavigationFlyIconTextItem* parentFlyIconTextItem)
     {
+        //m_hIndicator->show();
         m_parentFlyIconTextItem = parentFlyIconTextItem;
     }
 
@@ -147,6 +150,21 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void collapse();
 
+    void clearAllItemsSelectState();
+
+    void clearAllItemsSelectState(FluHNavigationIconTextItem* item);
+
+    void updateAllItemsStyleSheet();
+
+    void updateAllItemsStyleSheet(FluHNavigationIconTextItem* item);
+
+    void updateSelected(bool b);
+
+    QWidget* getVIndicator()
+    {
+        return m_vIndicator;
+    }
+
     void mouseReleaseEvent(QMouseEvent* event);
 
     void paintEvent(QPaintEvent* event)
@@ -169,7 +187,11 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     QWidget* m_emptyWidget;
 
-    QWidget* m_indicator;
+    QWidget* m_hIndicatorWrap;
+    QHBoxLayout* m_hIndicatorLayout;
+    QWidget* m_hIndicator;
+
+    QWidget* m_vIndicator;
     QPushButton* m_iconBtn;
     QLabel* m_label;
     QPushButton* m_arrow;

@@ -29,6 +29,9 @@ class FluHNavigationView : public FluWidget
     //      return QSize(120, 40);
     // }
 
+    void clearAllItemsSelectState();
+    void updateAllItemsStyleSheet();
+
     void resizeEvent(QResizeEvent* event);
 
     void paintEvent(QPaintEvent* event);

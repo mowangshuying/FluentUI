@@ -6,7 +6,7 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
 {
     m_hLayout = new QHBoxLayout;
     setLayout(m_hLayout);
-    m_hLayout->setContentsMargins(8, 4, 8, 4);
+    m_hLayout->setContentsMargins(8, 2, 8, 2);
     m_leftWrapWidget = new QWidget(this);
     m_MidWrapWidget = new QWidget(this);
     m_rightWrapWidget = new QWidget(this);
@@ -53,7 +53,6 @@ void FluHNavigationView::addItemToLeftLayout(QWidget* item)
 
 void FluHNavigationView::addItemToMidLayout(QWidget* item)
 {
-    // m_hMidWrapLayout->addWidget(item, 0, Qt::AlignLeft);
     auto iconTextItem = (FluHNavigationIconTextItem*)item;
     iconTextItem->setParentView(this);
     item->setParent(m_MidWrapWidget);
@@ -72,6 +71,31 @@ void FluHNavigationView::removeItemMidLayout(QWidget* item)
 {
     // m_hMidWrapLayout->removeWidget(item);
     // auto itf = std::find(m_items.begin(), m_items.end)
+}
+
+void FluHNavigationView::clearAllItemsSelectState()
+{
+    for (int i = 0; i < m_items.size(); i++)
+    {
+        auto curItem = m_items[i];
+        curItem->clearAllItemsSelectState();
+    }
+
+    //for (int i = 0; i < m_hRightWrapLayout->count(); i++)
+    //{
+    //    auto curItem = (FluHNavigationItem*)(m_hRightWrapLayout->itemAt(i)->widget());
+    //    curItem->clearAllItemsSelectState();
+    //}
+}
+
+void FluHNavigationView::updateAllItemsStyleSheet()
+{
+    for (int i = 0; i < m_items.size(); i++)
+    {
+        auto curItem = m_items[i];
+        curItem->updateAllItemsStyleSheet();
+        curItem->update();
+    }
 }
 
 void FluHNavigationView::resizeEvent(QResizeEvent* event)

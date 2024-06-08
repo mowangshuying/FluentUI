@@ -31,6 +31,10 @@ class FluHNavigationFlyIconTextItem : public FluWidget
         return m_vScrollView;
     }
 
+    // 
+    void clearAllItemsSelectState();
+    void updateAllItemsStyleSheet();
+
     // to enable qss
     void paintEvent(QPaintEvent* event)
     {

@@ -35,17 +35,18 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
         newItem->setParentIsFlyIconTextItem(true);
         newItem->setParentIsNavigationView(false);
         newItem->setParentFlyIconTextItem(this);
+        //newItem->getVIndicator()->hide();
 
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 
-        connect(newItem, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
-            if (newItem->isLeaf())
-            {
-                emit item->itemClicked();
-                close();
-            }
-        });
+       //connect(newItem, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
+       //     if (newItem->isLeaf())
+       //     {
+       //         emit item->itemClicked();
+       //         close();
+       //     }
+       // });
     }
 
     adjustItemWidth();
@@ -80,6 +81,25 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
 
     setFixedWidth(nMaxWidth + 10);
     // setFixedHeight(nMaxHeight + 10);
+}
+
+void FluHNavigationFlyIconTextItem::clearAllItemsSelectState()
+{
+    for (int i = 0; i < m_items.size(); i++)
+    {
+        auto curItem = m_items[i];
+        curItem->clearAllItemsSelectState();
+    }
+}
+
+void FluHNavigationFlyIconTextItem::updateAllItemsStyleSheet()
+{
+    for (int i = 0; i < m_items.size(); i++)
+    {
+        auto curItem = m_items[i];
+        curItem->updateAllItemsStyleSheet();
+        curItem->update();
+    }
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()

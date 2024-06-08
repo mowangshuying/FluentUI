@@ -10,6 +10,7 @@
 
 class FluHNavigationIconTextItem;
 class FluHNavigationMoreItem;
+class FluHNavigationItem;
 class FluHNavigationView : public FluWidget
 {
     Q_OBJECT
@@ -28,6 +29,15 @@ class FluHNavigationView : public FluWidget
     //{
     //      return QSize(120, 40);
     // }
+    void setLastSelectedItem(FluHNavigationItem* item)
+    {
+        m_lastSelectedItem = item;
+    }
+
+    FluHNavigationItem* getLastSelectedItem()
+    {
+        return m_lastSelectedItem;
+    }
 
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
@@ -49,4 +59,6 @@ class FluHNavigationView : public FluWidget
     QHBoxLayout* m_hRightWrapLayout;
 
     FluHNavigationMoreItem* m_moreItem;
+
+    FluHNavigationItem* m_lastSelectedItem;
 };

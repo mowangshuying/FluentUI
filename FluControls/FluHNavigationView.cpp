@@ -4,6 +4,8 @@
 
 FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
+    m_lastSelectedItem = nullptr;
+
     m_hLayout = new QHBoxLayout;
     setLayout(m_hLayout);
     m_hLayout->setContentsMargins(8, 2, 8, 2);

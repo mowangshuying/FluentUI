@@ -631,13 +631,16 @@ void FluHNavigationIconTextItem::onItemClicked()
     else if (rootItem->parentIsFlyIconTextItem() && !m_bDown)
     {
         collapse();
-
     }
     else if (navView != nullptr && rootItem == this)
     {
         if (!getItems().empty())
         {
             auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
+            flyIconTextItem->setNavView(navView);
+
+            navView->setLastSelectedItem(rootItem);
+
             flyIconTextItem->setIconTextItems(getItems());
             flyIconTextItem->show();
             QPoint gPoint = mapToGlobal(QPoint(0, height()));
@@ -663,7 +666,23 @@ void FluHNavigationIconTextItem::onItemClicked()
 
         if (isLeaf())
         {
-            //flyIconTextItem->close();
+            auto curNavView = flyIconTextItem->getNavView();
+            curNavView->clearAllItemsSelectState();
+            
+            // update
+            auto iconTextItem = (FluHNavigationIconTextItem*)curNavView->getLastSelectedItem();
+            if (iconTextItem != nullptr)
+            {
+                iconTextItem->updateSelected(true);
+            }
+            curNavView->updateAllItemsStyleSheet();
+            flyIconTextItem->close();
+        }
+        else
+        {
+            auto curNavView = flyIconTextItem->getNavView();
+            curNavView->clearAllItemsSelectState();
+            curNavView->updateAllItemsStyleSheet();
         }
     }
     else if (navView != nullptr)

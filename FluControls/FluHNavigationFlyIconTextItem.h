@@ -11,6 +11,7 @@
 #include "FluVScrollView.h"
 
 class FluHNavigationIconTextItem;
+class FluHNavigationView;
 class FluHNavigationFlyIconTextItem : public FluWidget
 {
     Q_OBJECT
@@ -35,6 +36,10 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
 
+    void setNavView(FluHNavigationView* view);
+
+    FluHNavigationView* getNavView();
+
     // to enable qss
     void paintEvent(QPaintEvent* event)
     {
@@ -49,5 +54,6 @@ class FluHNavigationFlyIconTextItem : public FluWidget
   protected:
     QVBoxLayout* m_vMainLayout;
     FluVScrollView* m_vScrollView;
+    FluHNavigationView* m_NavView;
     std::vector<FluHNavigationIconTextItem*> m_items;
 };

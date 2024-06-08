@@ -102,6 +102,16 @@ void FluHNavigationFlyIconTextItem::updateAllItemsStyleSheet()
     }
 }
 
+void FluHNavigationFlyIconTextItem::setNavView(FluHNavigationView* view)
+{
+    m_NavView = view;
+}
+
+FluHNavigationView* FluHNavigationFlyIconTextItem::getNavView()
+{
+    return m_NavView;
+}
+
 void FluHNavigationFlyIconTextItem::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)

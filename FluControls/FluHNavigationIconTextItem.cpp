@@ -154,8 +154,7 @@ void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
     m_items.push_back(item);
 
     m_vLayout1->addWidget(item);
-    //m_arrow->show();
-    m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
+    setArrowBtnToChevronDown();
 }
 
 int FluHNavigationIconTextItem::calcItemW1Width()
@@ -175,28 +174,21 @@ int FluHNavigationIconTextItem::calcItemW1Width()
 
     int nSpacing = 8;
     int nLabelWidth = m_label->fontMetrics().boundingRect(m_label->text()).width();
-    // int nSpacing = 8;
     int nArrowWidth = m_arrow->width();
-    //if (m_items.empty())
-    //{
-    //    nArrowWidth = 0;
-    //    m_arrow->hide();
-    //}
-    //else
-    //{
-    //    m_arrow->show();
-    //}
 
-    LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
-    LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
-    LOG_DEBUG << "emptyWidgetWidth:" << emptyWidgetWidth;
-    LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
-    LOG_DEBUG << "nIconWidth:" << nIconWidth;
-    LOG_DEBUG << "nSpacing:" << nSpacing;
-    LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
-    LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
-    LOG_DEBUG << "W1 width:" << leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nSpacing + nArrowWidth + nSpacing + rightMargins + 20;
-    return leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + rightMargins + 20;
+    //LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
+    //LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
+    //LOG_DEBUG << "emptyWidgetWidth:" << emptyWidgetWidth;
+    //LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
+    //LOG_DEBUG << "nIconWidth:" << nIconWidth;
+    //LOG_DEBUG << "nSpacing:" << nSpacing;
+    //LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
+    //LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
+    //LOG_DEBUG << "W1 width:" << leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nSpacing + nArrowWidth + nSpacing + rightMargins + 20;
+
+    int nW1Width = leftMargins + emptyWidgetWidth + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + rightMargins + 20;
+    LOG_DEBUG << "item:" << getText() << "W1Width:" << nW1Width;
+    return nW1Width;
 }
 
 int FluHNavigationIconTextItem::calcItemWidth()
@@ -218,13 +210,14 @@ int FluHNavigationIconTextItem::calcItemWidth()
         }
     }
 
-    return qMax(nW1Width, nW2Width);
+    int nWidth = qMax(nW1Width, nW2Width);
+    LOG_DEBUG << "item:" << getText() << "Width:" << nWidth;
+    return nWidth;
 }
 
 int FluHNavigationIconTextItem::calcItemW2Height(FluHNavigationIconTextItem* item)
 {
-    LOG_DEBUG << "item:" << item->getText() << " "
-              << "called";
+    LOG_DEBUG << "item:" << item->getText() << " " << "called";
     if (item->getWrapWidget2()->isHidden())
     {
         LOG_DEBUG << "item:" << item->getText() << " wrap widget2 is hidden.";
@@ -357,6 +350,30 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
     }
 }
 
+void FluHNavigationIconTextItem::setArrowBtnToChevronUp()
+{
+    if (!m_items.empty())
+    {
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp, FluThemeUtils::getUtils()->getTheme()));
+    }
+    else
+    {
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
+    }
+}
+
+void FluHNavigationIconTextItem::setArrowBtnToChevronDown()
+{
+    if (!m_items.empty())
+    {
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
+    }
+    else
+    {
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
+    }
+}
+
 int FluHNavigationIconTextItem::getDepth()
 {
     int nDepth = 0;
@@ -377,6 +394,94 @@ FluHNavigationIconTextItem* FluHNavigationIconTextItem::getRootItem()
         item = item->m_parentItem;
     }
     return item;
+}
+
+void FluHNavigationIconTextItem::expand()
+{
+#ifdef _DEBUG
+    if (getText() == "Accessibility")
+    {
+        QThread::msleep(0);
+        if (m_items.size() > 0)
+        {
+            if (!m_items[0]->m_bDown)
+            {
+                QThread::msleep(0);
+            }
+        }
+    }
+#endif
+
+    m_bDown = !m_bDown;
+    setArrowBtnToChevronUp();
+
+    m_emptyWidget->setFixedWidth(30 * getDepth());
+    if (m_items.size() > 0)
+    {
+        int nH = 0;
+        int nMaxW = 0;
+
+        for (int i = 0; i < m_vLayout1->count(); i++)
+        {
+            auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
+            item->getWrapWidget1()->setFixedHeight(36);
+            if (item->m_bDown)
+            {
+                item->setFixedHeight(36);
+            }
+            
+            nH += item->height();
+            item->m_emptyWidget->setFixedWidth(30 * item->getDepth());
+
+            int nTmpWidth = item->calcItemWidth();
+            if (nTmpWidth > nMaxW)
+            {
+                nMaxW = nTmpWidth;
+            }
+        }
+
+        LOG_DEBUG << "item H:" << nH << ", item W:" << nMaxW;
+
+        for (int i = 0; i < m_vLayout1->count(); i++)
+        {
+            auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
+            item->setFixedWidth(nMaxW);
+        }
+
+        m_wrapWidget2->setFixedHeight(nH);
+        m_wrapWidget1->setFixedWidth(nMaxW);
+        m_wrapWidget2->setFixedWidth(nMaxW);
+        setFixedWidth(nMaxW);
+        setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height());
+        m_wrapWidget2->show();
+
+        int nCallHierarchy = 0;
+        adjustItemWidth(this, nMaxW, nCallHierarchy);
+        adjustItemHeight(this);
+    }
+}
+
+void FluHNavigationIconTextItem::collapse()
+{
+#ifdef _DEBUG
+
+#endif
+    m_bDown = !m_bDown;
+
+    setArrowBtnToChevronDown();
+
+    // adjust height;
+    setFixedHeight(36);
+    if (m_items.size() > 0)
+    {
+        m_wrapWidget2->hide();
+        adjustItemHeight(this);
+    }
+
+    // adjust width;
+    int nCallHierarchy = 0;
+    int nMaxW = calcItemWidth();
+    adjustItemWidth(this, nMaxW, nCallHierarchy);
 }
 
 void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
@@ -413,70 +518,13 @@ void FluHNavigationIconTextItem::onItemClicked()
     auto navView = rootItem->getParentView();
     if (rootItem->parentIsFlyIconTextItem() && m_bDown)
     {
-        m_bDown = !m_bDown;
-        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp));
+        expand();
 
-        LOG_DEBUG << "RootItem<" << rootItem->getText() << ">   "
-                  << "NowItem<" << getText() << ">  "
-                  << "depth:" << getDepth();
-
-        m_emptyWidget->setFixedWidth(30 * getDepth());
-        if (m_items.size() > 0)
-        {
-            int nH = 0;
-            int nMaxW = 0;
-
-            for (int i = 0; i < m_vLayout1->count(); i++)
-            {
-                auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
-                item->getWrapWidget1()->setFixedHeight(36);
-                item->setFixedHeight(36);
-                nH += item->height();
-                item->m_emptyWidget->setFixedWidth(30 * item->getDepth());
-
-                int nTmpWidth = item->calcItemWidth();
-                if (nTmpWidth > nMaxW)
-                {
-                    nMaxW = nTmpWidth;
-                }
-            }
-
-            LOG_DEBUG << "item H:" << nH << ", item W:" << nMaxW;
-
-            for (int i = 0; i < m_vLayout1->count(); i++)
-            {
-                auto item = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
-                item->setFixedWidth(nMaxW);
-            }
-
-            m_wrapWidget2->setFixedHeight(nH);
-            m_wrapWidget1->setFixedWidth(nMaxW);
-            m_wrapWidget2->setFixedWidth(nMaxW);
-            setFixedWidth(nMaxW);
-            setFixedHeight(m_wrapWidget1->height() + m_wrapWidget2->height());
-            m_wrapWidget2->show();
-
-            int nCallHierarchy = 0;
-            adjustItemWidth(this, nMaxW, nCallHierarchy);
-            adjustItemHeight(this);
-        }
     }
     else if (rootItem->parentIsFlyIconTextItem() && !m_bDown)
     {
-        m_bDown = !m_bDown;
-        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
+        collapse();
 
-        //m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
-        setFixedHeight(36);
-        if (m_items.size() > 0)
-        {
-            m_wrapWidget2->hide();
-            adjustItemHeight(this);
-        }
-
-        int nCallHierarchy = 0;
-        int nMaxW = calcItemWidth();
-        adjustItemWidth(this, nMaxW, nCallHierarchy);
     }
     else if (navView != nullptr && rootItem == this)
     {
@@ -498,22 +546,13 @@ void FluHNavigationIconTextItem::onThemeChanged()
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationIconTextItem.qss", this);
-        if (m_items.empty())
-        {
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluTheme::Light));
-        }
+        setArrowBtnToChevronDown();
     }
     else
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationIconTextItem.qss", this);
-
-         if (m_items.empty())
-        {
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluTheme::Dark));
-        }
+        setArrowBtnToChevronUp();
     }
 }

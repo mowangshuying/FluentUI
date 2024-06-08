@@ -130,6 +130,10 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         getWrapWidget2()->setFixedWidth(nMaxWidth);
     }
 
+    void setArrowBtnToChevronUp();
+
+    void setArrowBtnToChevronDown();
+
     int getDepth();
 
     FluHNavigationIconTextItem* getRootItem();
@@ -138,6 +142,10 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     {
         return m_items.empty();
     }
+
+    void expand();
+
+    void collapse();
 
     void mouseReleaseEvent(QMouseEvent* event);
 
@@ -152,6 +160,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     void itemClicked();
   public slots:
     void onItemClicked();
+
     void onThemeChanged();
 
   protected:

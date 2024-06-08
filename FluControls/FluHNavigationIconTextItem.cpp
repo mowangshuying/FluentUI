@@ -215,7 +215,7 @@ int FluHNavigationIconTextItem::calcItemWidth()
     {
         return calcItemW1Width();
     }
-    
+
     int nW1Width = calcItemW1Width();
     int nW2Width = 0;
     for (int i = 0; i < m_vLayout1->layout()->count(); i++)
@@ -235,7 +235,8 @@ int FluHNavigationIconTextItem::calcItemWidth()
 
 int FluHNavigationIconTextItem::calcItemW2Height(FluHNavigationIconTextItem* item)
 {
-    LOG_DEBUG << "item:" << item->getText() << " " << "called";
+    LOG_DEBUG << "item:" << item->getText() << " "
+              << "called";
     if (item->getWrapWidget2()->isHidden())
     {
         LOG_DEBUG << "item:" << item->getText() << " wrap widget2 is hidden.";
@@ -267,8 +268,7 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     }
 #endif
     // LOG_DEBUG << item->getText();
-    LOG_DEBUG << "item:" << item->getText()
-              << "called";
+    LOG_DEBUG << "item:" << item->getText() << "called";
 
     if (item->m_bDown)
     {
@@ -306,7 +306,7 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     }
 }
 
-void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth, int &nCallHierarchy)
+void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth, int& nCallHierarchy)
 {
     if (item == nullptr)
     {
@@ -320,7 +320,7 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
     }
 
     LOG_DEBUG << sHierarchy << "text:" << getText() << ", child item count:" << item->m_vLayout1->count();
-    
+
     int nItemW = item->calcItemWidth();
     if (nItemW > nMaxWidth)
     {
@@ -337,8 +337,9 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
         }
     }
 
-    LOG_DEBUG << nCallHierarchy << "max width:" << nMaxWidth << "," << "item width:" << nItemW;
-    
+    LOG_DEBUG << nCallHierarchy << "max width:" << nMaxWidth << ","
+              << "item width:" << nItemW;
+
     item->setItemFixedWidth(nMaxWidth);
     for (int i = 0; i < item->m_vLayout1->count(); i++)
     {
@@ -346,7 +347,7 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
         tmpItem->setItemFixedWidth(nMaxWidth);
     }
 
-    //int nCallHierarchy = 0;
+    // int nCallHierarchy = 0;
     adjustItemWidth(item->m_parentItem, nMaxWidth, nCallHierarchy);
 
     if (item->parentIsFlyIconTextItem())
@@ -373,8 +374,7 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
             tmpItem->setItemFixedWidth(nMaxWidth);
         }
 
-       item->getParentFlyIconTextItem()->setFixedWidth(nMaxWidth + 15);
-
+        item->getParentFlyIconTextItem()->setFixedWidth(nMaxWidth + 15);
     }
 }
 
@@ -458,7 +458,7 @@ void FluHNavigationIconTextItem::expand()
             {
                 item->setFixedHeight(36);
             }
-            
+
             nH += item->height();
             item->m_emptyWidget->setFixedWidth(30 * item->getDepth());
 
@@ -559,8 +559,7 @@ void FluHNavigationIconTextItem::updateAllItemsStyleSheet(FluHNavigationIconText
     {
         auto tmpItem = (FluHNavigationIconTextItem*)(item->m_vLayout1->itemAt(i)->widget());
         updateAllItemsStyleSheet(tmpItem);
-        //updateSelected(true);
-
+        // updateSelected(true);
     }
 }
 
@@ -626,7 +625,6 @@ void FluHNavigationIconTextItem::onItemClicked()
     if (rootItem->parentIsFlyIconTextItem() && m_bDown)
     {
         expand();
-
     }
     else if (rootItem->parentIsFlyIconTextItem() && !m_bDown)
     {
@@ -652,12 +650,12 @@ void FluHNavigationIconTextItem::onItemClicked()
     if (rootItem->parentIsFlyIconTextItem())
     {
 #ifdef _DEBUG
-       // static int tmp = 0;
-       // tmp++;
-       // if (tmp == 3)
-       // {
-       //     QThread::msleep(0);
-       // }
+        // static int tmp = 0;
+        // tmp++;
+        // if (tmp == 3)
+        // {
+        //     QThread::msleep(0);
+        // }
 #endif
         auto flyIconTextItem = rootItem->getParentFlyIconTextItem();
         flyIconTextItem->clearAllItemsSelectState();
@@ -668,7 +666,7 @@ void FluHNavigationIconTextItem::onItemClicked()
         {
             auto curNavView = flyIconTextItem->getNavView();
             curNavView->clearAllItemsSelectState();
-            
+
             // update
             auto iconTextItem = (FluHNavigationIconTextItem*)curNavView->getLastSelectedItem();
             if (iconTextItem != nullptr)
@@ -691,7 +689,6 @@ void FluHNavigationIconTextItem::onItemClicked()
         updateSelected(true);
         navView->updateAllItemsStyleSheet();
     }
-
 }
 
 void FluHNavigationIconTextItem::onThemeChanged()

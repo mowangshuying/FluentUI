@@ -47,8 +47,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item2412 = new FluHNavigationIconTextItem("The Other2--------xyzxyz", item241);
     auto item2413 = new FluHNavigationIconTextItem("The Other3--------xyzxyzxyz", item241);
 
-
-
     item2->addItem(item21);
     item2->addItem(item22);
     item2->addItem(item23);
@@ -61,7 +59,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     item241->addItem(item2411);
     item241->addItem(item2412);
     item241->addItem(item2413);
-
 
     m_hNavView->addItemToMidLayout(item2);
 

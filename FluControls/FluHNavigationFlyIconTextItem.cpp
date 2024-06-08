@@ -35,18 +35,18 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
         newItem->setParentIsFlyIconTextItem(true);
         newItem->setParentIsNavigationView(false);
         newItem->setParentFlyIconTextItem(this);
-        //newItem->getVIndicator()->hide();
+        // newItem->getVIndicator()->hide();
 
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
 
-       //connect(newItem, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
-       //     if (newItem->isLeaf())
-       //     {
-       //         emit item->itemClicked();
-       //         close();
-       //     }
-       // });
+        // connect(newItem, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
+        //      if (newItem->isLeaf())
+        //      {
+        //          emit item->itemClicked();
+        //          close();
+        //      }
+        //  });
     }
 
     adjustItemWidth();

@@ -105,7 +105,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void setParentFlyIconTextItem(FluHNavigationFlyIconTextItem* parentFlyIconTextItem)
     {
-        //m_hIndicator->show();
+        // m_hIndicator->show();
         m_parentFlyIconTextItem = parentFlyIconTextItem;
     }
 
@@ -119,7 +119,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     int calcItemW1Width();
 
     int calcItemWidth();
-    
+
     int calcItemW2Height(FluHNavigationIconTextItem* item);
 
     void adjustItemHeight(FluHNavigationIconTextItem* item);

@@ -83,11 +83,11 @@ void FluHNavigationView::clearAllItemsSelectState()
         curItem->clearAllItemsSelectState();
     }
 
-    //for (int i = 0; i < m_hRightWrapLayout->count(); i++)
+    // for (int i = 0; i < m_hRightWrapLayout->count(); i++)
     //{
-    //    auto curItem = (FluHNavigationItem*)(m_hRightWrapLayout->itemAt(i)->widget());
-    //    curItem->clearAllItemsSelectState();
-    //}
+    //     auto curItem = (FluHNavigationItem*)(m_hRightWrapLayout->itemAt(i)->widget());
+    //     curItem->clearAllItemsSelectState();
+    // }
 }
 
 void FluHNavigationView::updateAllItemsStyleSheet()

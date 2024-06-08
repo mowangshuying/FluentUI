@@ -32,7 +32,7 @@ class FluHNavigationFlyIconTextItem : public FluWidget
         return m_vScrollView;
     }
 
-    // 
+    //
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
 

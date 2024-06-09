@@ -11,6 +11,7 @@
 class FluHNavigationIconTextItem;
 class FluHNavigationMoreItem;
 class FluHNavigationItem;
+class FluHNavigationFlyIconTextItem;
 class FluHNavigationView : public FluWidget
 {
     Q_OBJECT
@@ -39,6 +40,16 @@ class FluHNavigationView : public FluWidget
         return m_lastSelectedItem;
     }
 
+    void setFlyIconTextItem(FluHNavigationFlyIconTextItem* flyIconTextIcon)
+    {
+        m_FlyIconTextItem = flyIconTextIcon;
+    }
+
+    FluHNavigationFlyIconTextItem* getFlyIconTextIcon()
+    {
+        return m_FlyIconTextItem;
+    }
+
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
 
@@ -61,4 +72,5 @@ class FluHNavigationView : public FluWidget
     FluHNavigationMoreItem* m_moreItem;
 
     FluHNavigationItem* m_lastSelectedItem;
+    FluHNavigationFlyIconTextItem* m_FlyIconTextItem;
 };

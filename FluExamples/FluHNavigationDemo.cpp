@@ -43,9 +43,9 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
     auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
 
-    auto item2411 = new FluHNavigationIconTextItem("The Other1--------xyz", item241);
-    auto item2412 = new FluHNavigationIconTextItem("The Other2--------xyzxyz", item241);
-    auto item2413 = new FluHNavigationIconTextItem("The Other3--------xyzxyzxyz", item241);
+    //auto item2411 = new FluHNavigationIconTextItem("The Other1--------xyz", item241);
+   // auto item2412 = new FluHNavigationIconTextItem("The Other2--------xyzxyz", item241);
+   // auto item2413 = new FluHNavigationIconTextItem("The Other3--------xyzxyzxyz", item241);
 
     item2->addItem(item21);
     item2->addItem(item22);
@@ -56,9 +56,9 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     item24->addItem(item242);
     item24->addItem(item243);
 
-    item241->addItem(item2411);
-    item241->addItem(item2412);
-    item241->addItem(item2413);
+   // item241->addItem(item2411);
+ //   item241->addItem(item2412);
+  //  item241->addItem(item2413);
 
     m_hNavView->addItemToMidLayout(item2);
 
@@ -139,12 +139,80 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     m_hNavView->addItemToMidLayout(item7);
 
     auto item8 = new FluHNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout");
+
+
+    auto item81 = new FluHNavigationIconTextItem("Border", item8);
+    auto item82 = new FluHNavigationIconTextItem("Canvas", item8);
+    auto item83 = new FluHNavigationIconTextItem("Expander", item8);
+    auto item84 = new FluHNavigationIconTextItem("ItemsRepeater", item8);
+    auto item85 = new FluHNavigationIconTextItem("Grid", item8);
+    auto item86 = new FluHNavigationIconTextItem("RadioButtons", item8);
+    auto item87 = new FluHNavigationIconTextItem("RelativePanel", item8);
+    auto item88 = new FluHNavigationIconTextItem("SplitView", item8);
+    auto item89 = new FluHNavigationIconTextItem("StackPanel", item8);
+    auto item810 = new FluHNavigationIconTextItem("VariableSizedWrapGrid", item8);
+    auto item811 = new FluHNavigationIconTextItem("ViewBox", item8);
+
+    item8->addItem(item81);
+    item8->addItem(item82);
+    item8->addItem(item83);
+    item8->addItem(item84);
+    item8->addItem(item85);
+    item8->addItem(item86);
+    item8->addItem(item87);
+    item8->addItem(item88);
+    item8->addItem(item89);
+    item8->addItem(item810);
+    item8->addItem(item811);
+
+
     m_hNavView->addItemToMidLayout(item8);
 
     auto item9 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Mendia");
+
+    auto item91 = new FluHNavigationIconTextItem("AnimatedVisualPlayer", item9);
+    auto item92 = new FluHNavigationIconTextItem("Capture Element / Camera Preview", item9);
+    auto item93 = new FluHNavigationIconTextItem("Image", item9);
+    auto item94 = new FluHNavigationIconTextItem("mediaPalyerElement", item9);
+    auto item95 = new FluHNavigationIconTextItem("PersonPicture", item9);
+    auto item96 = new FluHNavigationIconTextItem("Sound", item9);
+    auto item97 = new FluHNavigationIconTextItem("WebView2", item9);
+
+    item9->addItem(item91);
+    item9->addItem(item92);
+    item9->addItem(item93);
+    item9->addItem(item94);
+    item9->addItem(item95);
+    item9->addItem(item96);
+    item9->addItem(item97);
+
+
     m_hNavView->addItemToMidLayout(item9);
 
     auto item10 = new FluHNavigationIconTextItem(FluAwesomeType::Save, "Menu & toolbars");
+
+    auto item101 = new FluHNavigationIconTextItem("XamlUICommand", item10);
+    auto item102 = new FluHNavigationIconTextItem("StandardUICommand", item10);
+    auto item103 = new FluHNavigationIconTextItem("AppBarButton", item10);
+    auto item104 = new FluHNavigationIconTextItem("AppBarSeparator", item10);
+    auto item105 = new FluHNavigationIconTextItem("AppBarToggleButton", item10);
+    auto item106 = new FluHNavigationIconTextItem("CommandBar", item10);
+    auto item107 = new FluHNavigationIconTextItem("MenuBar", item10);
+    auto item108 = new FluHNavigationIconTextItem("CommandBarFlyout", item10);
+    auto item109 = new FluHNavigationIconTextItem("MenuFlyout", item10);
+    auto item1010 = new FluHNavigationIconTextItem("SwipeControl", item10);
+
+    item10->addItem(item101);
+    item10->addItem(item102);
+    item10->addItem(item103);
+    item10->addItem(item104);
+    item10->addItem(item105);
+    item10->addItem(item106);
+    item10->addItem(item107);
+    item10->addItem(item108);
+    item10->addItem(item109);
+    item10->addItem(item1010);
+
     m_hNavView->addItemToMidLayout(item10);
 
     auto item11 = new FluHNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation");

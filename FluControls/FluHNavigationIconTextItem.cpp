@@ -634,15 +634,32 @@ void FluHNavigationIconTextItem::onItemClicked()
     {
         if (!getItems().empty())
         {
-            auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
-            flyIconTextItem->setNavView(navView);
+            if (rootItem->m_bDown)
+            {
+                rootItem->m_bDown = !rootItem->m_bDown;
 
-            navView->setLastSelectedItem(rootItem);
+                auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
+                flyIconTextItem->setNavView(navView);
 
-            flyIconTextItem->setIconTextItems(getItems());
-            flyIconTextItem->show();
-            QPoint gPoint = mapToGlobal(QPoint(0, height()));
-            flyIconTextItem->move(gPoint.x(), gPoint.y());
+                navView->setLastSelectedItem(rootItem);
+                navView->setFlyIconTextItem(flyIconTextItem);
+
+                rootItem->setArrowBtnToChevronUp();
+
+                flyIconTextItem->setIconTextItems(getItems());
+                flyIconTextItem->show();
+                QPoint gPoint = mapToGlobal(QPoint(0, height()));
+                flyIconTextItem->move(gPoint.x(), gPoint.y());
+            }
+            else
+            {
+                rootItem->m_bDown = !rootItem->m_bDown;
+                rootItem->setArrowBtnToChevronDown();
+                
+                //auto flyIconTextItem = navView->getFlyIconTextIcon();
+                //flyIconTextItem->close();
+                return;
+            }
         }
     }
 
@@ -672,6 +689,8 @@ void FluHNavigationIconTextItem::onItemClicked()
             if (iconTextItem != nullptr)
             {
                 iconTextItem->updateSelected(true);
+                iconTextItem->setArrowBtnToChevronDown();
+                iconTextItem->m_bDown = !iconTextItem->m_bDown;
             }
             curNavView->updateAllItemsStyleSheet();
             flyIconTextItem->close();

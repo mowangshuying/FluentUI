@@ -5,6 +5,7 @@
 FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_lastSelectedItem = nullptr;
+    m_FlyIconTextItem = nullptr;
 
     m_hLayout = new QHBoxLayout;
     setLayout(m_hLayout);

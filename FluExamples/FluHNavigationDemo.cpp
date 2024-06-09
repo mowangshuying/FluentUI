@@ -43,9 +43,9 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
     auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
 
-    //auto item2411 = new FluHNavigationIconTextItem("The Other1--------xyz", item241);
-   // auto item2412 = new FluHNavigationIconTextItem("The Other2--------xyzxyz", item241);
-   // auto item2413 = new FluHNavigationIconTextItem("The Other3--------xyzxyzxyz", item241);
+    // auto item2411 = new FluHNavigationIconTextItem("The Other1--------xyz", item241);
+    // auto item2412 = new FluHNavigationIconTextItem("The Other2--------xyzxyz", item241);
+    // auto item2413 = new FluHNavigationIconTextItem("The Other3--------xyzxyzxyz", item241);
 
     item2->addItem(item21);
     item2->addItem(item22);
@@ -56,9 +56,9 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     item24->addItem(item242);
     item24->addItem(item243);
 
-   // item241->addItem(item2411);
- //   item241->addItem(item2412);
-  //  item241->addItem(item2413);
+    // item241->addItem(item2411);
+    //   item241->addItem(item2412);
+    //  item241->addItem(item2413);
 
     m_hNavView->addItemToMidLayout(item2);
 
@@ -140,7 +140,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
 
     auto item8 = new FluHNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout");
 
-
     auto item81 = new FluHNavigationIconTextItem("Border", item8);
     auto item82 = new FluHNavigationIconTextItem("Canvas", item8);
     auto item83 = new FluHNavigationIconTextItem("Expander", item8);
@@ -165,7 +164,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     item8->addItem(item810);
     item8->addItem(item811);
 
-
     m_hNavView->addItemToMidLayout(item8);
 
     auto item9 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Mendia");
@@ -186,13 +184,12 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     item9->addItem(item96);
     item9->addItem(item97);
 
-
     m_hNavView->addItemToMidLayout(item9);
 
     auto item10 = new FluHNavigationIconTextItem(FluAwesomeType::Save, "Menu & toolbars");
 
-    auto item101 = new FluHNavigationIconTextItem("XamlUICommand", item10);
-    auto item102 = new FluHNavigationIconTextItem("StandardUICommand", item10);
+    //  auto item101 = new FluHNavigationIconTextItem("XamlUICommand", item10);
+    //  auto item102 = new FluHNavigationIconTextItem("StandardUICommand", item10);
     auto item103 = new FluHNavigationIconTextItem("AppBarButton", item10);
     auto item104 = new FluHNavigationIconTextItem("AppBarSeparator", item10);
     auto item105 = new FluHNavigationIconTextItem("AppBarToggleButton", item10);
@@ -202,8 +199,8 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item109 = new FluHNavigationIconTextItem("MenuFlyout", item10);
     auto item1010 = new FluHNavigationIconTextItem("SwipeControl", item10);
 
-    item10->addItem(item101);
-    item10->addItem(item102);
+    // item10->addItem(item101);
+    // item10->addItem(item102);
     item10->addItem(item103);
     item10->addItem(item104);
     item10->addItem(item105);

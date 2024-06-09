@@ -655,9 +655,9 @@ void FluHNavigationIconTextItem::onItemClicked()
             {
                 rootItem->m_bDown = !rootItem->m_bDown;
                 rootItem->setArrowBtnToChevronDown();
-                
-                //auto flyIconTextItem = navView->getFlyIconTextIcon();
-                //flyIconTextItem->close();
+
+                // auto flyIconTextItem = navView->getFlyIconTextIcon();
+                // flyIconTextItem->close();
                 return;
             }
         }

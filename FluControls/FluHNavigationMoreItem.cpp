@@ -1,5 +1,6 @@
 #include "FluHNavigationMoreItem.h"
 #include "FluHNavigationView.h"
+#include "FluHNavigationFlyIconTextItem.h"
 
  FluHNavigationMoreItem::FluHNavigationMoreItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
@@ -88,7 +89,17 @@ void FluHNavigationMoreItem::onItemClicked()
     {
         return;
     }
+    
+    // show flyout item;
+    auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
+    flyIconTextItem->setNavView(navView);
+    flyIconTextItem->setIconTextItems(navView->getHideItems());
+    flyIconTextItem->show();
 
+    QPoint gPoint = mapToGlobal(QPoint(width() - flyIconTextItem->width(), height()));
+    flyIconTextItem->move(gPoint.x(), gPoint.y());
+
+    // update indicator;
     navView->clearAllItemsSelectState();
     updateSelected(true);
     navView->updateAllItemsStyleSheet();

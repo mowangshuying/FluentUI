@@ -17,36 +17,27 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
     m_moreItem = new FluHNavigationMoreItem(m_MidWrapWidget);
     m_moreItem->setFixedSize(40, 40);
     m_moreItem->setParentView(this);
-    // m_moreItem->hide();
 
     m_hLeftWrapLayout = new QHBoxLayout;
-    // m_hMidWrapLayout = new QHBoxLayout;
     m_hRightWrapLayout = new QHBoxLayout;
 
     m_leftWrapWidget->setLayout(m_hLeftWrapLayout);
-    // m_MidWrapWidget->setLayout(m_hMidWrapLayout);
     m_rightWrapWidget->setLayout(m_hRightWrapLayout);
 
     m_hLeftWrapLayout->setContentsMargins(0, 0, 0, 0);
-    // m_hMidWrapLayout->setContentsMargins(0, 0, 0, 0);
     m_hRightWrapLayout->setContentsMargins(0, 0, 0, 0);
 
     m_hLeftWrapLayout->setSpacing(5);
     m_hRightWrapLayout->setSpacing(5);
 
     m_hLeftWrapLayout->setAlignment(Qt::AlignLeft);
-    // m_hMidWrapLayout->setAlignment(Qt::AlignLeft);
     m_hRightWrapLayout->setAlignment(Qt::AlignRight);
-
-    // m_hMidWrapLayout->setSizeConstraint(QHBoxLayout);
-    // m_MidWrapWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     m_hLayout->addWidget(m_leftWrapWidget);
     m_hLayout->addWidget(m_MidWrapWidget, 1);
     m_hLayout->addWidget(m_rightWrapWidget);
 
     setFixedHeight(48);
-    // m_hLayout->setSizeConstraint(QHBoxLayout::SetMaximumSize);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationView.qss", this);
 }
 
@@ -74,10 +65,15 @@ void FluHNavigationView::addItemToRightLayout(QWidget* item)
     curItem->setParent(m_rightWrapWidget);
 }
 
-void FluHNavigationView::removeItemMidLayout(QWidget* item)
-{
+//void FluHNavigationView::removeItemMidLayout(QWidget* item)
+//{
     // m_hMidWrapLayout->removeWidget(item);
     // auto itf = std::find(m_items.begin(), m_items.end)
+//}
+
+std::vector<FluHNavigationIconTextItem*> FluHNavigationView::getHideItems()
+{
+    return m_hideItems;
 }
 
 void FluHNavigationView::clearAllItemsSelectState()
@@ -119,6 +115,8 @@ void FluHNavigationView::updateAllItemsStyleSheet()
 void FluHNavigationView::resizeEvent(QResizeEvent* event)
 {
     //LOG_DEBUG << "called ----------";
+
+    m_hideItems.clear();
     int nMidWidth = 0;
     for (int i = 0; i < m_items.size(); i++)
     {
@@ -128,6 +126,7 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
             for (int j = i; j < m_items.size(); j++)
             {
                 m_items[j]->hide();
+                m_hideItems.push_back(m_items[j]);
             }
             break;
         }

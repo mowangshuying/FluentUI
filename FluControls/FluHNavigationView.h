@@ -24,7 +24,7 @@ class FluHNavigationView : public FluWidget
 
     void addItemToRightLayout(QWidget* item);
 
-    void removeItemMidLayout(QWidget* item);
+  //  void removeItemMidLayout(QWidget* item);
 
     // QSize minimumSizeHint()
     //{
@@ -50,6 +50,8 @@ class FluHNavigationView : public FluWidget
         return m_FlyIconTextItem;
     }
 
+    std::vector<FluHNavigationIconTextItem*> getHideItems();
+
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
 
@@ -59,6 +61,8 @@ class FluHNavigationView : public FluWidget
 
   protected:
     std::vector<FluHNavigationIconTextItem*> m_items;
+    std::vector<FluHNavigationIconTextItem*> m_hideItems;
+
     QHBoxLayout* m_hLayout;
     QWidget* m_leftWrapWidget;
     // FluHScrollView* m_midHScrollView;

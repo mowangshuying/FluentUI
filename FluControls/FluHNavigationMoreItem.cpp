@@ -1,4 +1,5 @@
 #include "FluHNavigationMoreItem.h"
+#include "FluHNavigationView.h"
 
  FluHNavigationMoreItem::FluHNavigationMoreItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
@@ -38,7 +39,30 @@
 
    // m_hIndicatorWrap->hide();
 
+    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
+    connect(this, &FluHNavigationMoreItem::itemClicked, this, [=]() { onItemClicked(); });
+
     onThemeChanged();
+}
+
+void FluHNavigationMoreItem::clearAllItemsSelectState()
+{
+    updateSelected(false);
+}
+
+void FluHNavigationMoreItem::updateAllItemsStyleSheet()
+{
+    style()->polish(this);
+    m_iconBtn->style()->polish(m_iconBtn);
+    m_hIndicator->style()->polish(m_hIndicator);
+}
+
+void FluHNavigationMoreItem::updateSelected(bool b)
+{
+    m_bSelected = b;
+    setProperty("selected", b);
+    m_iconBtn->setProperty("selected", b);
+    m_hIndicator->setProperty("selected", b);
 }
 
 void FluHNavigationMoreItem::mouseReleaseEvent(QMouseEvent* event)
@@ -56,10 +80,18 @@ void FluHNavigationMoreItem::paintEvent(QPaintEvent* event)
 
 void FluHNavigationMoreItem::onItemClicked()
 {
-    if (m_parentView == nullptr)
+    //if (m_parentView == nullptr)
+    //    return;
+
+    auto navView = getParentView();
+    if (navView == nullptr)
+    {
         return;
+    }
 
-
+    navView->clearAllItemsSelectState();
+    updateSelected(true);
+    navView->updateAllItemsStyleSheet();
 }
 
 void FluHNavigationMoreItem::onThemeChanged()

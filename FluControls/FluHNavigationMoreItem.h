@@ -14,6 +14,13 @@ class FluHNavigationMoreItem : public FluHNavigationItem
   public:
     FluHNavigationMoreItem(QWidget* parent = nullptr);
 
+
+    void clearAllItemsSelectState();
+
+    void updateAllItemsStyleSheet();
+
+    void updateSelected(bool b);
+
     void mouseReleaseEvent(QMouseEvent* event);
 
     void paintEvent(QPaintEvent* event);
@@ -34,4 +41,6 @@ signals:
     QWidget* m_hIndicator;
 
     QVBoxLayout* m_vMainLayout;
+
+    bool m_bSelected;
 };

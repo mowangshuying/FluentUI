@@ -40,6 +40,10 @@ class FluHNavigationFlyIconTextItem : public FluWidget
 
     FluHNavigationView* getNavView();
 
+    void getCloseByClickedItem(bool b);
+
+    bool setCloseByClickedItem();
+
     // to enable qss
     void paintEvent(QPaintEvent* event)
     {
@@ -48,10 +52,20 @@ class FluHNavigationFlyIconTextItem : public FluWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
     }
+
+    void closeEvent(QCloseEvent* event)
+    {
+        emit itemClose();
+    }
+
+signals:
+    void itemClose();
   public slots:
     void onThemeChanged();
 
   protected:
+    bool m_bCloseByClickedItem;
+
     QVBoxLayout* m_vMainLayout;
     FluVScrollView* m_vScrollView;
     FluHNavigationView* m_NavView;

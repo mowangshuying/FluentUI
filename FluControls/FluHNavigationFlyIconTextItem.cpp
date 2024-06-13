@@ -54,7 +54,7 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
 
 void FluHNavigationFlyIconTextItem::adjustItemWidth()
 {
-    LOG_DEBUG << "called";
+    //LOG_DEBUG << "called";
     int nMaxWidth = 0;
     for (auto item : m_items)
     {
@@ -76,8 +76,8 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
         nMaxHeight += 36;
     }
 
-    LOG_DEBUG << "vScrollView sizeHint:" << m_vScrollView->sizeHint();
-    LOG_DEBUG << "HFlyIconItem sizeHint:" << sizeHint();
+   // LOG_DEBUG << "vScrollView sizeHint:" << m_vScrollView->sizeHint();
+    //LOG_DEBUG << "HFlyIconItem sizeHint:" << sizeHint();
 
     setFixedWidth(nMaxWidth + 10);
     // setFixedHeight(nMaxHeight + 10);
@@ -110,6 +110,16 @@ void FluHNavigationFlyIconTextItem::setNavView(FluHNavigationView* view)
 FluHNavigationView* FluHNavigationFlyIconTextItem::getNavView()
 {
     return m_NavView;
+}
+
+void FluHNavigationFlyIconTextItem::getCloseByClickedItem(bool b)
+{
+    m_bCloseByClickedItem = b;
+}
+
+bool FluHNavigationFlyIconTextItem::setCloseByClickedItem()
+{
+    return m_bCloseByClickedItem;
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()

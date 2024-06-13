@@ -103,7 +103,7 @@ void FluHNavigationView::updateAllItemsStyleSheet()
 
 void FluHNavigationView::resizeEvent(QResizeEvent* event)
 {
-    LOG_DEBUG << "called ----------";
+    //LOG_DEBUG << "called ----------";
     int nMidWidth = 0;
     for (int i = 0; i < m_items.size(); i++)
     {
@@ -120,7 +120,7 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
         {
             m_items[i]->move(nMidWidth, 0);
             nMidWidth += m_items[i]->sizeHint().width();
-            LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
+            //LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
         }
     }
     m_moreItem->setParent(m_MidWrapWidget);

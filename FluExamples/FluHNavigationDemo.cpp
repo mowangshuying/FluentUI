@@ -213,15 +213,70 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     m_hNavView->addItemToMidLayout(item10);
 
     auto item11 = new FluHNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation");
+
+    auto item111 = new FluHNavigationIconTextItem("BreadcrumbBar", item11);
+    auto item112 = new FluHNavigationIconTextItem("NavigationView", item11);
+    auto item113 = new FluHNavigationIconTextItem("Pivot", item11);
+    auto item114 = new FluHNavigationIconTextItem("TabView", item11);
+
+    item11->addItem(item111);
+    item11->addItem(item112);
+    item11->addItem(item113);
+    item11->addItem(item114);
+
     m_hNavView->addItemToMidLayout(item11);
 
     auto item12 = new FluHNavigationIconTextItem(FluAwesomeType::Sort, "Scrolling");
+
+    auto item121 = new FluHNavigationIconTextItem("AnnotatedScrollBar", item12);
+    auto item122 = new FluHNavigationIconTextItem("PipsPager", item12);
+    auto item123 = new FluHNavigationIconTextItem("ScrollView", item12);
+    auto item124 = new FluHNavigationIconTextItem("ScrollViewer", item12);
+    auto item125 = new FluHNavigationIconTextItem("SemanticZoom", item12);
+
+
+    item12->addItem(item121);
+    item12->addItem(item122);
+    item12->addItem(item123);
+    item12->addItem(item124);
+    item12->addItem(item125);
+
     m_hNavView->addItemToMidLayout(item12);
 
     auto item13 = new FluHNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info");
+
+    auto item131 = new FluHNavigationIconTextItem("InfoBadge", item13);
+    auto item132 = new FluHNavigationIconTextItem("InfoBar", item13);
+    auto item133 = new FluHNavigationIconTextItem("progressBar", item13);
+    auto item134 = new FluHNavigationIconTextItem("progressRing", item13);
+    auto item135 = new FluHNavigationIconTextItem("ToolTip", item13);
+
+    item13->addItem(item131);
+    item13->addItem(item132);
+    item13->addItem(item133);
+    item13->addItem(item134);
+    item13->addItem(item135);
+
     m_hNavView->addItemToMidLayout(item13);
 
     auto item14 = new FluHNavigationIconTextItem(FluAwesomeType::Font, "Text");
+    
+    auto item141 = new FluHNavigationIconTextItem("AutoSuggestBox", item14);
+    auto item142 = new FluHNavigationIconTextItem("NumberBox", item14);
+    auto item143 = new FluHNavigationIconTextItem("PasswordBox", item14);
+    auto item144 = new FluHNavigationIconTextItem("RichEditBox", item14);
+    auto item145 = new FluHNavigationIconTextItem("RichTextBlock", item14);
+    auto item146 = new FluHNavigationIconTextItem("TextBlock", item14);
+    auto item147 = new FluHNavigationIconTextItem("TextBox", item14);
+
+    item14->addItem(item141);
+    item14->addItem(item142);
+    item14->addItem(item143);
+    item14->addItem(item144);
+    item14->addItem(item145);
+    item14->addItem(item146);
+    item14->addItem(item147);
+    
     m_hNavView->addItemToMidLayout(item14);
 
     auto searchItem = new FluHNavigationSearchItem;

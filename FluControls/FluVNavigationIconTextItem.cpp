@@ -372,11 +372,11 @@ void FluVNavigationIconTextItem::onItemClicked()
     {
         if (!getItems().empty())
         {
-            LOG_DEBUG << "Clicked IconTextItem text:" << m_label->text();
+            //LOG_DEBUG << "Clicked IconTextItem text:" << m_label->text();
             // log gemo
-            LOG_DEBUG << "geometry:" << geometry();
-            LOG_DEBUG << "x:" << x() << ","
-                      << "y:" << y();
+            //LOG_DEBUG << "geometry:" << geometry();
+            //LOG_DEBUG << "x:" << x() << ","
+            //          << "y:" << y();
             // log global
             QPoint gPoint = mapToGlobal(QPoint(navView->width(), 0));
             // show flyout icon text item;

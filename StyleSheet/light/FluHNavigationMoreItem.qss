@@ -4,11 +4,27 @@ FluHNavigationMoreItem {
     border-radius: 4px;
 }
 
-FluHNavigationMoreItem:hover {
+
+/* FluHNavigationMoreItem:hover {
     background-color: rgb(234, 234, 234);
-}
+} */
 
 #iconBtn {
     background-color: transparent;
     border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#iconBtn:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+#hIndicatorWrap {
+    background-color: transparent;
+}
+
+#hIndicator {
+    /* background-color: transparent; */
+    background-color: rgb(0, 90, 158);
+    border-radius: 2px;
 }

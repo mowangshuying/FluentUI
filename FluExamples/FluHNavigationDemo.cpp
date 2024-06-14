@@ -234,7 +234,6 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     auto item124 = new FluHNavigationIconTextItem("ScrollViewer", item12);
     auto item125 = new FluHNavigationIconTextItem("SemanticZoom", item12);
 
-
     item12->addItem(item121);
     item12->addItem(item122);
     item12->addItem(item123);
@@ -260,7 +259,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     m_hNavView->addItemToMidLayout(item13);
 
     auto item14 = new FluHNavigationIconTextItem(FluAwesomeType::Font, "Text");
-    
+
     auto item141 = new FluHNavigationIconTextItem("AutoSuggestBox", item14);
     auto item142 = new FluHNavigationIconTextItem("NumberBox", item14);
     auto item143 = new FluHNavigationIconTextItem("PasswordBox", item14);
@@ -276,7 +275,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     item14->addItem(item145);
     item14->addItem(item146);
     item14->addItem(item147);
-    
+
     m_hNavView->addItemToMidLayout(item14);
 
     auto searchItem = new FluHNavigationSearchItem;

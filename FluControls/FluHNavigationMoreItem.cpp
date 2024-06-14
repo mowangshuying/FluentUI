@@ -2,7 +2,7 @@
 #include "FluHNavigationView.h"
 #include "FluHNavigationFlyIconTextItem.h"
 
- FluHNavigationMoreItem::FluHNavigationMoreItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
+FluHNavigationMoreItem::FluHNavigationMoreItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
     m_vMainLayout = new QVBoxLayout;
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
@@ -38,7 +38,7 @@
     m_vMainLayout->addLayout(m_hIconBtnLayout);
     m_vMainLayout->addWidget(m_hIndicatorWrap);
 
-   // m_hIndicatorWrap->hide();
+    // m_hIndicatorWrap->hide();
 
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(this, &FluHNavigationMoreItem::itemClicked, this, [=]() { onItemClicked(); });
@@ -81,15 +81,15 @@ void FluHNavigationMoreItem::paintEvent(QPaintEvent* event)
 
 void FluHNavigationMoreItem::onItemClicked()
 {
-    //if (m_parentView == nullptr)
-    //    return;
+    // if (m_parentView == nullptr)
+    //     return;
 
     auto navView = getParentView();
     if (navView == nullptr)
     {
         return;
     }
-    
+
     // show flyout item;
     auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
     flyIconTextItem->setNavView(navView);

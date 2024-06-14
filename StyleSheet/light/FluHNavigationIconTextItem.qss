@@ -5,6 +5,9 @@ FluHNavigationIconTextItem {
     border-radius: 4px;
 }
 
+
+/*wrapwidget1 at navigation view*/
+
 #wrapWidget1 {
     /* background-color: blueviolet; */
     background-color: rgb(243, 243, 243);
@@ -31,6 +34,17 @@ FluHNavigationIconTextItem {
 
 #wrapWidget1[enableThisItem=false]:hover {
     background-color: rgb(243, 243, 243);
+}
+
+
+/* wrapwidget1 at flyicontexItem*/
+
+#wrapWidget1[fly=true][selected=true] {
+    background-color: rgb(251, 251, 251);
+}
+
+#wrapWidget1[fly=true]:hover {
+    background-color: rgb(241, 241, 241);
 }
 
 #hIndicator {

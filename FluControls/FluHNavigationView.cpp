@@ -65,10 +65,10 @@ void FluHNavigationView::addItemToRightLayout(QWidget* item)
     curItem->setParent(m_rightWrapWidget);
 }
 
-//void FluHNavigationView::removeItemMidLayout(QWidget* item)
+// void FluHNavigationView::removeItemMidLayout(QWidget* item)
 //{
-    // m_hMidWrapLayout->removeWidget(item);
-    // auto itf = std::find(m_items.begin(), m_items.end)
+//  m_hMidWrapLayout->removeWidget(item);
+//  auto itf = std::find(m_items.begin(), m_items.end)
 //}
 
 std::vector<FluHNavigationIconTextItem*> FluHNavigationView::getHideItems()
@@ -84,13 +84,13 @@ void FluHNavigationView::clearAllItemsSelectState()
         curItem->clearAllItemsSelectState();
     }
 
-     for (int i = 0; i < m_hRightWrapLayout->count(); i++)
+    for (int i = 0; i < m_hRightWrapLayout->count(); i++)
     {
         auto curItem = (FluHNavigationItem*)(m_hRightWrapLayout->itemAt(i)->widget());
         curItem->clearAllItemsSelectState();
     }
 
-     m_moreItem->clearAllItemsSelectState();
+    m_moreItem->clearAllItemsSelectState();
 }
 
 void FluHNavigationView::updateAllItemsStyleSheet()
@@ -114,7 +114,7 @@ void FluHNavigationView::updateAllItemsStyleSheet()
 
 void FluHNavigationView::resizeEvent(QResizeEvent* event)
 {
-    //LOG_DEBUG << "called ----------";
+    // LOG_DEBUG << "called ----------";
 
     m_hideItems.clear();
     int nMidWidth = 0;
@@ -134,7 +134,7 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
         {
             m_items[i]->move(nMidWidth, 0);
             nMidWidth += m_items[i]->sizeHint().width();
-            //LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
+            // LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
         }
     }
     m_moreItem->setParent(m_MidWrapWidget);

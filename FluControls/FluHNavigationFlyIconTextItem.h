@@ -58,7 +58,7 @@ class FluHNavigationFlyIconTextItem : public FluWidget
         emit itemClose();
     }
 
-signals:
+  signals:
     void itemClose();
   public slots:
     void onThemeChanged();

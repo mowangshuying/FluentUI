@@ -14,7 +14,6 @@ class FluHNavigationMoreItem : public FluHNavigationItem
   public:
     FluHNavigationMoreItem(QWidget* parent = nullptr);
 
-
     void clearAllItemsSelectState();
 
     void updateAllItemsStyleSheet();
@@ -25,16 +24,16 @@ class FluHNavigationMoreItem : public FluHNavigationItem
 
     void paintEvent(QPaintEvent* event);
 
-signals:
+  signals:
     void itemClicked();
   public slots:
-      void onItemClicked();
-      void onThemeChanged();
+    void onItemClicked();
+    void onThemeChanged();
 
   protected:
     QHBoxLayout* m_hIconBtnLayout;
     QPushButton* m_iconBtn;
-    //QHBoxLayout* m_hIconLayout;
+    // QHBoxLayout* m_hIconLayout;
 
     QWidget* m_hIndicatorWrap;
     QHBoxLayout* m_hIndicatorLayout;

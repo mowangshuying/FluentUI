@@ -24,7 +24,7 @@ class FluHNavigationView : public FluWidget
 
     void addItemToRightLayout(QWidget* item);
 
-  //  void removeItemMidLayout(QWidget* item);
+    //  void removeItemMidLayout(QWidget* item);
 
     // QSize minimumSizeHint()
     //{

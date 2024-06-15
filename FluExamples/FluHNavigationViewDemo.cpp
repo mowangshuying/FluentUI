@@ -1,4 +1,4 @@
-#include "FluHNavigationDemo.h"
+#include "FluHNavigationViewDemo.h"
 
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
@@ -10,14 +10,14 @@
 #include "../FluControls/FluHNavigationSettingsItem.h"
 
 #include <QLabel>
-FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
+FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
-    setWindowTitle("CppQt WinUI3 Demo Dev");
+    setWindowTitle("CppQt WinUI3  Navigation Demo Dev");
 #ifndef _DEBUG
-    setWindowTitle("CppQt WinUI3 Demo");
+    setWindowTitle("CppQt WinUI3 Navigation Demo");
 #endif
-    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
+    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
@@ -294,7 +294,7 @@ FluHNavigationDemo::FluHNavigationDemo(QWidget* parent /*= nullptr*/) : FluFrame
     resize(800, 600);
 }
 
-void FluHNavigationDemo::onThemeChanged()
+void FluHNavigationViewDemo::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {

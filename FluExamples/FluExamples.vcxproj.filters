@@ -158,7 +158,7 @@
     <ClCompile Include="FluFrameLessDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluHNavigationDemo.cpp">
+    <ClCompile Include="FluHNavigationViewDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -268,7 +268,7 @@
     <QtMoc Include="FluFrameLessDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluHNavigationDemo.h">
+    <QtMoc Include="FluHNavigationViewDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

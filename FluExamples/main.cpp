@@ -1,7 +1,7 @@
 #include "../FluControls/FluVNavigationView.h"
 #include "FluButtonDemo.h"
 #include "FluChangeBgDemo.h"
-#include "FluVNavigationDemo.h"
+#include "FluVNavigationViewDemo.h"
 #include "FluTabDemo.h"
 #include <QApplication>
 #include "FluFlowLayoutDemo.h"
@@ -42,7 +42,7 @@
 #include "FluTabBarDemo.h"
 #include "FluTabViewDemo.h"
 #include "FluFrameLessDemo.h"
-#include "FluHNavigationDemo.h"
+#include "FluHNavigationViewDemo.h"
 #include "../FluUtils/FluUtils.h"
 
 int main(int argc, char **argv)
@@ -203,7 +203,7 @@ int main(int argc, char **argv)
     // FluVNavigationDemo demo;
     // demo.show();
 
-    FluHNavigationDemo demo;
+    FluHNavigationViewDemo demo;
     demo.show();
 
     return app.exec();

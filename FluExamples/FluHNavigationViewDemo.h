@@ -3,11 +3,11 @@
 #include "../FluControls/FluFrameLessWidget.h"
 #include "../FluControls/FluHNavigationView.h"
 
-class FluHNavigationDemo : public FluFrameLessWidget
+class FluHNavigationViewDemo : public FluFrameLessWidget
 {
     Q_OBJECT
   public:
-    FluHNavigationDemo(QWidget* parent = nullptr);
+    FluHNavigationViewDemo(QWidget* parent = nullptr);
 
   public slots:
     void onThemeChanged();

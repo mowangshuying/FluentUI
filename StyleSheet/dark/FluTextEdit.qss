@@ -3,7 +3,7 @@ QTextEdit {
     border: 1px solid rgb(48, 48, 48);
     font-size: 14px;
     border-radius: 4px;
-    border-bottom: 2px solid rgb(154, 154, 154);
+    border-bottom: 1px solid rgb(154, 154, 154);
     color: white;
 }
 

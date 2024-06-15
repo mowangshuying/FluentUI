@@ -296,7 +296,7 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
             nH += tmpItem->sizeHint().height();
         }
 
-        //nH += 15;
+        // nH += 15;
         nH += 15;
         if (nH > 600)
             nH = 600;
@@ -367,8 +367,6 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
 
         if (nMaxItemWidth > nMaxWidth)
             nMaxWidth = nMaxItemWidth;
-
-  
 
         for (int i = 0; i < vLayout->count(); i++)
         {

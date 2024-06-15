@@ -1,9 +1,7 @@
 FluTypeographyPage {
     background-color: rgb(249, 249, 249);
-    border-radius: 8px;
+    border-top-left-radius: 8px;
     border: 1px solid rgb(229, 229, 229);
-    margin-right: 5px;
-    margin-bottom: 5px;
 }
 
 #titleLabel {

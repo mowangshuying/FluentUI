@@ -41,7 +41,7 @@
     <ClCompile Include="FluExpandDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluVNavigationDemo.cpp">
+    <ClCompile Include="FluVNavigationViewDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluFlowLayoutDemo.cpp">
@@ -181,7 +181,7 @@
     <QtMoc Include="FluExpandDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluVNavigationDemo.h">
+    <QtMoc Include="FluVNavigationViewDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluLineEditDemo.h">

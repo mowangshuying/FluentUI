@@ -1,9 +1,7 @@
 FluAEmptyPage {
     background-color: rgb(39, 39, 39);
-    border-radius: 8px;
+    border-top-left-radius: 8px;
     border: 1px solid rgb(29, 29, 29);
-    margin-right: 5px;
-    margin-bottom: 5px;
 }
 
 #titleLabel {

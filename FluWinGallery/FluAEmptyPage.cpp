@@ -15,6 +15,8 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_mainLayout->setContentsMargins(35, 35, 35, 35);
 
+   // m_mainLayout->setContentsMargins(35, 35, 0, 0);
+
     m_titleLabel = new QLabel;
     m_titleLabel->setObjectName("titleLabel");
     m_titleLabel->setText("A Temp Title Label");

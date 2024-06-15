@@ -34,6 +34,11 @@ class FluShortInfoBar : public FluWidget
 
     void setDisappearDurartion(int disappearDuration);
 
+    QPushButton* getCloseBtn()
+    {
+        return m_closeBtn;
+    }
+
     void paintEvent(QPaintEvent* event);
 
   public slots:

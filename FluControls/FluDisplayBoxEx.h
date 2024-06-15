@@ -68,7 +68,7 @@ class FluDisplayBoxEx : public FluWidget
     }
 
   protected:
-    QVBoxLayout* m_mainLayout;
+    QVBoxLayout* m_vMainLayout;
     QLabel* m_titleLabel;
 
     QWidget* m_bodyWidget;

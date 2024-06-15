@@ -8,6 +8,9 @@
 #include "../FluControls/FluComboBoxEx.h"
 #include "../FluControls/FluPushButton.h"
 #include "../FluControls/FluInfoBarMgr.h"
+#include "../FluControls/FluLabel.h"
+#include "../FluControls/FluCheckBox.h"
+
 
 class FluInfoBarPage : public FluAEmptyPage
 {
@@ -32,13 +35,24 @@ class FluInfoBarPage : public FluAEmptyPage
     void addClosableInfoBar()
     {
         FluDisplayBoxEx* displayBox = new FluDisplayBoxEx;
+       displayBox->getBodyRightLayout()->setAlignment(Qt::AlignTop);
+
         displayBox->setTitle("A closabel InforBar with options to change its severity.");
         displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(120);
 
         FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info);
+        //sInfoBar->hide();
         sInfoBar->setFixedWidth(270);
         displayBox->getBodyContentLayout()->addWidget(sInfoBar);
+
+        auto isClosableCheckBox = new FluCheckBox("Is Closable");
+        displayBox->getBodyRightLayout()->addWidget(isClosableCheckBox);
+
+        auto severityLabel = new FluLabel(FluLabelStyle::BodyTextBlockStyle);
+        severityLabel->setText("Severity");
+        displayBox->getBodyRightLayout()->addWidget(severityLabel,0, Qt::AlignTop);
+
 
         auto comboBox = new FluComboBoxEx;
         comboBox->addItem("Informational");
@@ -76,10 +90,25 @@ class FluInfoBarPage : public FluAEmptyPage
                     break;
             }
             sInfoBar->setFixedWidth(270);
+            sInfoBar->getCloseBtn()->hide();
+            if (isClosableCheckBox->isChecked())
+            {
+                sInfoBar->getCloseBtn()->show();
+            }
+
             displayBox->getBodyContentLayout()->addWidget(sInfoBar);
         });
 
-        displayBox->getBodyRightLayout()->addWidget(comboBox);
+        connect(isClosableCheckBox, &FluCheckBox::stateChanged, this, [=](int nState) {
+
+            auto sInfoBar = (FluShortInfoBar*)(displayBox->getBodyContentLayout()->itemAt(0)->widget());
+            if (nState == Qt::Checked)
+                sInfoBar->getCloseBtn()->show();
+            else
+                sInfoBar->getCloseBtn()->hide();
+        });
+
+        displayBox->getBodyRightLayout()->addWidget(comboBox, 0 , Qt::AlignTop);
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     }
 

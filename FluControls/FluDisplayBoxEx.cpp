@@ -2,10 +2,10 @@
 
 FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
 {
-    m_mainLayout = new QVBoxLayout;
-    setLayout(m_mainLayout);
-    m_mainLayout->setContentsMargins(8, 8, 8, 8);
-    m_mainLayout->setSpacing(0);
+    m_vMainLayout = new QVBoxLayout;
+    setLayout(m_vMainLayout);
+    m_vMainLayout->setContentsMargins(8, 8, 8, 8);
+    m_vMainLayout->setSpacing(0);
 
     m_titleLabel = new QLabel;
     m_titleLabel->setFixedHeight(30);
@@ -13,11 +13,11 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_titleLabel->setObjectName("titleLabel");
     m_titleLabel->setText("A Title");
 
-    m_mainLayout->addWidget(m_titleLabel);
+    m_vMainLayout->addWidget(m_titleLabel);
 
     m_bodyWidget = new QWidget;
     m_bodyWidget->setObjectName("bodyWidget");
-    m_mainLayout->addWidget(m_bodyWidget, 1);
+    m_vMainLayout->addWidget(m_bodyWidget, 1);
 
     m_hBodyLayout = new QHBoxLayout;
     m_bodyWidget->setLayout(m_hBodyLayout);
@@ -38,7 +38,7 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_bodyRightWidget->setObjectName("bodyRightWidget");
 
     m_codeExpander = new FluCodeExpander;
-    m_mainLayout->addWidget(m_codeExpander);
+    m_vMainLayout->addWidget(m_codeExpander);
     m_codeExpander->setObjectName("codeExpander");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBoxEx.qss", this);
 }

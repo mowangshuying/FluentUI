@@ -54,6 +54,8 @@ class FluLoopView : public QListWidget
         setMaxVisibleNum(9);
         m_nVisibleMidIndex = 0;
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged();
+        });
     }
 
     void setAllItems(const std::vector<QString>& datas)

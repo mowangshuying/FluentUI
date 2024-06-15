@@ -199,6 +199,7 @@ class FluDatePickerView : public FluWidget
 
     void showEvent(QShowEvent* event)
     {
+        FluWidget::showEvent(event);
         if (!m_bFirstShow)
             return;
 

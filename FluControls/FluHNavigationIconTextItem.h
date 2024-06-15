@@ -78,9 +78,6 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         m_bHideIcon = bHideIcon;
     }
 
-    // bool m_bParentIsFlyIconTextItem;
-    //  bool m_bParentIsNavigationView;
-
     bool parentIsFlyIconTextItem()
     {
         return m_bParentIsFlyIconTextItem;
@@ -99,7 +96,13 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     void setParentIsNavigationView(bool bParent)
     {
         if (bParent)
+        {
             m_hIndicator->show();
+        }
+        else
+        {
+            m_hIndicatorWrap->hide();
+        }
         m_bParentIsNavigationView = bParent;
     }
 
@@ -126,12 +129,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth, int& nCallHierarchy);
 
-    void setItemFixedWidth(int nMaxWidth)
-    {
-        setFixedWidth(nMaxWidth);
-        getWrapWidget1()->setFixedWidth(nMaxWidth);
-        getWrapWidget2()->setFixedWidth(nMaxWidth);
-    }
+    void setItemFixedWidth(int nMaxWidth);
 
     void setArrowBtnToChevronUp();
 

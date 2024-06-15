@@ -71,38 +71,34 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_hLayout1->addWidget(m_iconBtn);
     m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_label, 1);
-    // m_hLayout1->addSpacing(8);
     m_hLayout1->addWidget(m_arrow);
-    // m_hLayout1->addSpacing(8);
 
     m_vIndicator->setFixedHeight(18);
     m_vIndicator->setFixedWidth(4);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
     m_vLayout1->setSpacing(0);
-    // m_vLayout1->setSpacing(5);
+
+    // set obj names;
     m_vIndicator->setObjectName("indicator");
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
 
     m_iconBtn->setIconSize(QSize(24, 24));
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home));
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
     m_iconBtn->setFixedSize(30, 30);
 
     m_arrow->setIconSize(QSize(18, 18));
-    m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
+    m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
     m_arrow->setFixedWidth(25);
 
     connect(m_arrow, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked(); });
 
-    // fix height 45;
+    // fix height 40;
     setFixedHeight(40);
-
-    // m_vIndicator->hide();
-    m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None));
 }
 
 FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)
@@ -288,7 +284,6 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());
 
     adjustItemHeight(item->m_parentItem);
-
     if (item->parentIsFlyIconTextItem())
     {
         auto flyIconTextItem = item->getParentFlyIconTextItem();
@@ -301,9 +296,10 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
             nH += tmpItem->sizeHint().height();
         }
 
+        //nH += 15;
         nH += 15;
-        if (nH > 500)
-            nH = 500;
+        if (nH > 600)
+            nH = 600;
 
         flyIconTextItem->setFixedHeight(nH);
         flyIconTextItem->show();
@@ -372,6 +368,8 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
         if (nMaxItemWidth > nMaxWidth)
             nMaxWidth = nMaxItemWidth;
 
+  
+
         for (int i = 0; i < vLayout->count(); i++)
         {
             auto tmpItem = (FluHNavigationIconTextItem*)(vLayout->itemAt(i)->widget());
@@ -379,6 +377,21 @@ void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* ite
         }
 
         item->getParentFlyIconTextItem()->setFixedWidth(nMaxWidth + 15);
+    }
+}
+
+void FluHNavigationIconTextItem::setItemFixedWidth(int nMaxWidth)
+{
+    setFixedWidth(nMaxWidth);
+    getWrapWidget1()->setFixedWidth(nMaxWidth);
+    getWrapWidget2()->setFixedWidth(nMaxWidth);
+
+    for (int i = 0; i < m_vLayout1->count(); i++)
+    {
+        auto tmpItem = (FluHNavigationIconTextItem*)(m_vLayout1->itemAt(i)->widget());
+        tmpItem->setFixedWidth(nMaxWidth);
+        tmpItem->getWrapWidget1()->setFixedWidth(nMaxWidth);
+        tmpItem->getWrapWidget2()->setFixedWidth(nMaxWidth);
     }
 }
 
@@ -430,7 +443,7 @@ FluHNavigationIconTextItem* FluHNavigationIconTextItem::getRootItem()
 
 void FluHNavigationIconTextItem::expand()
 {
-    // LOG_DEBUG << "called";
+    LOG_DEBUG << "called";
 #ifdef _DEBUG
     // if (getText() == "Accessibility")
     //{
@@ -492,6 +505,8 @@ void FluHNavigationIconTextItem::expand()
         adjustItemWidth(this, nMaxW, nCallHierarchy);
         adjustItemHeight(this);
     }
+
+    LOG_DEBUG << "item:" << getText() << ", height:" << height();
 }
 
 void FluHNavigationIconTextItem::collapse()

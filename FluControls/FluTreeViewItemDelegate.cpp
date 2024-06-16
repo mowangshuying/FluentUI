@@ -40,25 +40,17 @@ void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, cons
 void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     QStyledItemDelegate::paint(painter, option, index);
-
-//    QString text = index.data(Qt::DisplayRole).toString();
-//    LOG_DEBUG << text;
-
     painter->save();
 
     bool bSelected = option.state & QStyle::State_Selected;
     bool bHover = option.state & QStyle::State_MouseOver;
 
     painter->setPen(Qt::NoPen);
-    painter->setRenderHint(QPainter::Antialiasing);
+    painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-   // draw background
-   QRect backgroundRect = QRect(0, option.rect.y(), m_treeView->width(), option.rect.height());
-   // painter->setBrush(m_backgroundColor);
-   // painter->drawRect(backgroundRect);
-
-    QRect hoverSelectedRect(backgroundRect.x() + 2, backgroundRect.y() + 2, backgroundRect.width() - 4, backgroundRect.height() - 4);
-    QRect indicatorRect(hoverSelectedRect.x(), hoverSelectedRect.y() + 9, 3, 18);
+    QRect backgroundRect = QRect(0, option.rect.y(), m_treeView->width(), option.rect.height());
+    QRect hoverSelectedRect(backgroundRect.x(), backgroundRect.y() + 2, backgroundRect.width(), backgroundRect.height() - 4);
+    QRect indicatorRect(hoverSelectedRect.x(), hoverSelectedRect.y() + 7, 3, 18);
     if (bSelected)
     {
         // draw selected;
@@ -74,11 +66,6 @@ void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
         painter->setBrush(m_hoverBackgroundColor);
         painter->drawRoundedRect(hoverSelectedRect, 4, 4);
     }
-
-    //QString text = index.data(Qt::DisplayRole).toString();
-    //QRect textRect(backgroundRect.x() + 12, backgroundRect.y() + 2, backgroundRect.width() - 12, backgroundRect.height() - 4);
-    //painter->setPen(m_foregroundColor);
-    //painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
 
     painter->restore();
 }

@@ -1,0 +1,46 @@
+FluTreeView {
+    background-color: rgb(243, 243, 243);
+    border: 1px solid rgb(229, 229, 229);
+    outline: none;
+}
+
+FluTreeView::item {
+    color: black;
+    background-color: transparent;
+    height: 34px;
+    border-radius: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 24px;
+}
+
+FluTreeView::item:hover {
+    background-color: transparent;
+}
+
+FluTreeView::item:selected {
+    background-color: transparent;
+}
+
+QScrollBar:vertical {
+    width: 4px;
+    background-color: transparent;
+}
+
+QScrollBar::handle:vertical {
+    border-radius: 2px;
+    width: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 25px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background-color: transparent;
+    border: none;
+}
+
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical {
+    background-color: transparent;
+}

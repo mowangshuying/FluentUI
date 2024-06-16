@@ -148,6 +148,7 @@
     <ClCompile Include="FluTabBarDemo.cpp" />
     <ClCompile Include="FluTabDemo.cpp" />
     <ClCompile Include="FluExpandDemo.cpp" />
+    <ClCompile Include="FluTreeViewDemo.cpp" />
     <ClCompile Include="FluVNavigationViewDemo.cpp" />
     <ClCompile Include="FluAllGlobalColorDemo.cpp" />
     <ClCompile Include="FluTabViewDemo.cpp" />
@@ -178,6 +179,8 @@
     <QtMoc Include="FluVNavigationViewDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <QtMoc Include="FluTreeViewDemo.h" />
     <QtMoc Include="FluFrameLessDemo.h" />
     <QtMoc Include="FluHNavigationViewDemo.h" />
     <ClInclude Include="FluTabViewDemo.h" />
@@ -216,6 +219,9 @@
     <QtMoc Include="FluDisplay16.h" />
     <ClInclude Include="FluFlowLayoutDemo.h" />
     <QtMoc Include="FluLineEditDemo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FluExamples.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

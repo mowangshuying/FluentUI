@@ -150,6 +150,8 @@
     <ClCompile Include="FluLoopView.cpp" />
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
+    <ClCompile Include="FluTreeView.cpp" />
+    <ClCompile Include="FluTreeViewItemDelegate.cpp" />
     <ClCompile Include="FluVNavigationFlyIconTextItem.cpp" />
     <ClCompile Include="FluPasswordBox.cpp" />
     <ClCompile Include="FluPivot.cpp" />
@@ -232,6 +234,8 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluTreeViewItemDelegate.h" />
+    <QtMoc Include="FluTreeView.h" />
     <QtMoc Include="FluHNavigationFlyIconTextItem.h" />
     <QtMoc Include="FluHNavigationMoreItem.h" />
     <QtMoc Include="FluHNavigationSettingsItem.h" />

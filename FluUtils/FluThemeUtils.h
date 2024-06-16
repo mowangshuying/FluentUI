@@ -33,6 +33,16 @@ class FluThemeUtils : public QObject
         return m_themeUtils;
     }
 
+    static bool isLightTheme()
+    {
+        return getUtils()->getTheme() == FluTheme::Light;
+    }
+
+    static bool isDarkTheme()
+    {
+        return getUtils()->getTheme() == FluTheme::Dark;
+    }
+
     static void __init()
     {
         getUtils();

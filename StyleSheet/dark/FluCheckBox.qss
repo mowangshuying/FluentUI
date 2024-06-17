@@ -5,8 +5,8 @@ QCheckBox {
 }
 
 QCheckBox::indicator {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border-radius: 5px;
     border: 1px solid rgb(153, 153, 153);
     background-color: rgb(29, 29, 29);

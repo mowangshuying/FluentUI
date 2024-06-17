@@ -10,31 +10,31 @@ FluTreeViewItemDelegate::FluTreeViewItemDelegate(FluTreeView* parent /*= nullptr
     m_treeView = parent;
     if (FluThemeUtils::isLightTheme())
     {
-        //m_foregroundColor = QColor(55, 55, 55);
+        // m_foregroundColor = QColor(55, 55, 55);
 
-        //m_backgroundColor = QColor(243, 243, 243);
+        // m_backgroundColor = QColor(243, 243, 243);
         m_hoverBackgroundColor = QColor(0, 0, 0, 16);
         m_selectBackgroundColor = QColor(0, 0, 0, 16);
-        
+
         m_indicatorColor = QColor(0, 90, 158);
     }
     else if (FluThemeUtils::isDarkTheme())
     {
-        //m_foregroundColor = QColor(238, 238, 238);
+        // m_foregroundColor = QColor(238, 238, 238);
 
-        //m_backgroundColor = QColor(32, 32, 32);
+        // m_backgroundColor = QColor(32, 32, 32);
         m_hoverBackgroundColor = QColor(45, 45, 45, 9);
         m_selectBackgroundColor = QColor(45, 45, 45, 9);
-        
+
         m_indicatorColor = QColor(118, 185, 237);
     }
 }
 
 void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const
 {
-   QStyledItemDelegate::initStyleOption(option, index);
-   option->palette.setColor(QPalette::Text, m_foregroundColor);
-   option->palette.setColor(QPalette::HighlightedText, m_foregroundColor);
+    QStyledItemDelegate::initStyleOption(option, index);
+    option->palette.setColor(QPalette::Text, m_foregroundColor);
+    option->palette.setColor(QPalette::HighlightedText, m_foregroundColor);
 }
 
 void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
@@ -56,7 +56,7 @@ void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
         // draw selected;
         painter->setBrush(m_selectBackgroundColor);
         painter->drawRoundedRect(hoverSelectedRect, 4, 4);
-        
+
         // draw indicator;
         painter->setBrush(m_indicatorColor);
         painter->drawRoundedRect(indicatorRect, 4, 4);

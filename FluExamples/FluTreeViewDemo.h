@@ -25,7 +25,6 @@ class FluTreeViewDemo : public FluWidget
         auto flooringWoodgrainTypeItem = new QTreeWidgetItem({"Flooring woodgrain type"});
         auto kitchenCabinetStyleItem = new QTreeWidgetItem({"Kitchen cabinet style"});
 
-
         workDocumentsItem->addChild(xyzFunctionnalSpecItem);
         workDocumentsItem->addChild(featureScheduleItem);
         workDocumentsItem->addChild(overallProjectPlanItem);
@@ -45,11 +44,11 @@ class FluTreeViewDemo : public FluWidget
         resize(600, 600);
     }
 
-    //void resizeEvent(QResizeEvent* event)
+    // void resizeEvent(QResizeEvent* event)
     //{
-    //    m_treeView->setFixedSize(width(), height());
-    //}
+    //     m_treeView->setFixedSize(width(), height());
+    // }
 
-   protected:
+  protected:
     FluTreeView* m_treeView;
 };

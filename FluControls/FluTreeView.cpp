@@ -2,7 +2,7 @@
 #include <QHeaderView>
 #include "../FluUtils/FluStyleSheetUitls.h"
 
-FluTreeView::FluTreeView(QWidget* parent /*= nullptr*/) : QTreeWidget(parent)
+FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
 {
     m_delegate = new FluTreeViewItemDelegate(this);
     setItemDelegate(m_delegate);

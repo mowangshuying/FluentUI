@@ -7,9 +7,10 @@ class FluTreeView : public QTreeWidget
 {
     Q_OBJECT
   public:
-      FluTreeView(QWidget* parent = nullptr);
+    FluTreeView(QWidget *parent = nullptr);
 
-      void drawBranches(QPainter *painter, const QRect &rect, const QModelIndex &index) const;
+    void drawBranches(QPainter *painter, const QRect &rect, const QModelIndex &index) const;
+
   protected:
-      FluTreeViewItemDelegate* m_delegate;
+    FluTreeViewItemDelegate *m_delegate;
 };

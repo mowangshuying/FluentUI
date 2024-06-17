@@ -15,7 +15,6 @@ FluTreeViewItemDelegate::FluTreeViewItemDelegate(FluTreeView* parent /*= nullptr
         // m_backgroundColor = QColor(243, 243, 243);
         m_hoverBackgroundColor = QColor(0, 0, 0, 16);
         m_selectBackgroundColor = QColor(0, 0, 0, 16);
-
         m_indicatorColor = QColor(0, 90, 158);
     }
     else if (FluThemeUtils::isDarkTheme())
@@ -33,8 +32,8 @@ FluTreeViewItemDelegate::FluTreeViewItemDelegate(FluTreeView* parent /*= nullptr
 void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const
 {
     QStyledItemDelegate::initStyleOption(option, index);
-    option->palette.setColor(QPalette::Text, m_foregroundColor);
-    option->palette.setColor(QPalette::HighlightedText, m_foregroundColor);
+    //option->palette.setColor(QPalette::Text, m_foregroundColor);
+    //option->palette.setColor(QPalette::HighlightedText, m_foregroundColor);
 }
 
 void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const

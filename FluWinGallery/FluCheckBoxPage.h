@@ -29,6 +29,16 @@ class FluCheckBoxPage : public FluAEmptyPage
         displayBox1->getBodyLayout()->addWidget(checkBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
+        auto displayBox2 = new FluDisplayBox;
+        displayBox2->setTitle("A 3-state CheckBox");
+        displayBox2->getCodeExpander()->setCodeByPath("../code/CheckBoxPageCode2.md");
+        displayBox2->setBodyWidgetFixedHeight(56);
+
+        auto checkBox2 = new FluCheckBox("Three-state CheckBox", this);
+        checkBox2->setTristate(true);
+        displayBox2->getBodyLayout()->addWidget(checkBox2);
+        m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBoxPage.qss", this);
         // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
     }

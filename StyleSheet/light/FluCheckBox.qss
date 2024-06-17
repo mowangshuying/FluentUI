@@ -4,12 +4,12 @@ QCheckBox {
 }
 
 QCheckBox::indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
     border: 1px solid rgb(133, 133, 133);
     background-color: rgb(237, 237, 237);
-    margin-right: 5px;
+    margin-right: 4px;
 }
 
 QCheckBox::indicator:hover {
@@ -29,6 +29,12 @@ QCheckBox::indicator:checked {
 
 QCheckBox::indicator:checked:pressed {
     image: url("../res/ControlResImages/CheckBoxPressed-White.png");
+}
+
+QCheckBox::indicator:indeterminate {
+    background-color: rgb(0, 90, 158);
+    border: 1px solid rgb(0, 90, 158);
+    image: url(../res/ControlResImages/CheckboxIndeterminate-White.png);
 }
 
 QCheckBox:disabled {

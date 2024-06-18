@@ -7,8 +7,7 @@ class FluTextToggleSwitchEx : public FluWidget
 {
     Q_OBJECT
   public:
-      FluTextToggleSwitchEx(QWidget* parent = nullptr) : FluWidget(parent)
-      {
-
-      }
+    FluTextToggleSwitchEx(QWidget* parent = nullptr) : FluWidget(parent)
+    {
+    }
 };

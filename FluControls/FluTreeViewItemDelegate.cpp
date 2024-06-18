@@ -32,8 +32,8 @@ FluTreeViewItemDelegate::FluTreeViewItemDelegate(FluTreeView* parent /*= nullptr
 void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const
 {
     QStyledItemDelegate::initStyleOption(option, index);
-    //option->palette.setColor(QPalette::Text, m_foregroundColor);
-    //option->palette.setColor(QPalette::HighlightedText, m_foregroundColor);
+    // option->palette.setColor(QPalette::Text, m_foregroundColor);
+    // option->palette.setColor(QPalette::HighlightedText, m_foregroundColor);
 }
 
 void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const

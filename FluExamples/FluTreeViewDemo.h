@@ -14,15 +14,13 @@ class FluTreeViewDemo : public FluWidget
         m_treeView->setHeaderHidden(true);
 
         auto workDocumentsItem = new QTreeWidgetItem({"Work Documents"});
-        //workDocumentsItem->setCheckState(0, Qt::Unchecked);
+        // workDocumentsItem->setCheckState(0, Qt::Unchecked);
         workDocumentsItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
         workDocumentsItem->setCheckState(0, Qt::Unchecked);
-
 
         auto xyzFunctionnalSpecItem = new QTreeWidgetItem({"XYZ Functional Spec"});
         xyzFunctionnalSpecItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
         xyzFunctionnalSpecItem->setCheckState(0, Qt::Unchecked);
-
 
         auto featureScheduleItem = new QTreeWidgetItem({"Feature Schedule"});
         featureScheduleItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
@@ -42,7 +40,7 @@ class FluTreeViewDemo : public FluWidget
 
         auto homeRemodelItem = new QTreeWidgetItem({"Contractor Contact Info"});
         homeRemodelItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
-        homeRemodelItem->setCheckState(0, Qt::Unchecked); 
+        homeRemodelItem->setCheckState(0, Qt::Unchecked);
 
         auto paintColorSchemeItem = new QTreeWidgetItem({"Paint Color Scheme"});
         paintColorSchemeItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);

@@ -207,7 +207,11 @@ int main(int argc, char **argv)
     // FluHNavigationViewDemo demo;
     // demo.show();
 
-    FluTreeViewDemo demo;
+    //FluTreeViewDemo demo;
+    //demo.show();
+
+
+    FluToggleSwitchDemo demo;
     demo.show();
 
     return app.exec();

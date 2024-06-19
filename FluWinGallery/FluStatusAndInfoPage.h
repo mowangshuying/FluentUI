@@ -40,7 +40,6 @@ class FluStatusAndInfoPage : public FluATitlePage
         connect(toolTipCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStatusAndInfoPage.qss", this);
-        
     }
   signals:
     void clickedHCard(QString key);

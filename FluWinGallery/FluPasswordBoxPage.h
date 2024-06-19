@@ -40,7 +40,6 @@ class FluPasswordBoxPage : public FluAEmptyPage
         m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBoxPage.qss", this);
-        
     }
 
   public slots:

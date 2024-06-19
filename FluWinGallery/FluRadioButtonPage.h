@@ -40,7 +40,6 @@ class FluRadioButtonPage : public FluAEmptyPage
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonPage.qss", this);
-        
     }
 
   public slots:

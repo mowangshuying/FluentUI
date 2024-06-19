@@ -24,7 +24,6 @@ class FluExpanderPage : public FluAEmptyPage
         addExpanderDemo3();
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpanderPage.qss", this);
-        
     }
 
     void addExpanderDemo1()

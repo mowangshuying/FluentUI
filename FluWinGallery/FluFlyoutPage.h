@@ -37,7 +37,6 @@ class FluFlyoutPage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlyoutPage.qss", this);
-        
     }
 
   public slots:

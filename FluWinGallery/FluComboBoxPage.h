@@ -42,7 +42,6 @@ class FluComboBoxPage : public FluAEmptyPage
             colorLabel->style()->polish(colorLabel);
         });
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
-        
     }
 
   public slots:

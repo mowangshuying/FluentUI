@@ -32,7 +32,6 @@ class FluCollectionsPage : public FluATitlePage
         connect(treeViewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCollectionsPage.qss", this);
-        
     }
 
   signals:

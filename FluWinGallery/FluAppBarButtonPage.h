@@ -23,8 +23,6 @@ class FluAppBarButtonPage : public FluAEmptyPage
 
         addSymbolIconAppBarButton();
         addKeyboardAcceleratorAppBarButton();
-
-        
     }
 
     void addSymbolIconAppBarButton()

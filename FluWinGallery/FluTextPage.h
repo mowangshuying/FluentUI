@@ -49,7 +49,6 @@ class FluTextPage : public FluATitlePage
         connect(textBoxCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextPage.qss", this);
-        
     }
   signals:
     void clickedHCard(QString key);

@@ -27,7 +27,6 @@ class FluInfoBarPage : public FluAEmptyPage
 
         addDynamicInfoBar();
 
-        
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
     }
 

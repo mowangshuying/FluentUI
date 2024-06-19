@@ -29,7 +29,6 @@ class FluToggleButtonPage : public FluAEmptyPage
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButtonPage.qss", this);
-        
     }
 
   public slots:

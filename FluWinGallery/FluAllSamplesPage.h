@@ -92,7 +92,6 @@ class FluAllSamplesPage : public FluATitlePage
         connect(toggleSwitchCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
-        
     }
   signals:
     void clickedHCard(QString key);

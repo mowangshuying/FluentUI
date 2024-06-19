@@ -23,7 +23,6 @@ class FluNumberBoxPage : public FluAEmptyPage
         addDoubleSpinBox();
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
-        
     }
 
     void addSpinBox()

@@ -57,8 +57,6 @@ class FluButtonPage : public FluAEmptyPage
         displayBox3->setBodyWidgetFixedHeight(96);
         displayBox3->getBodyLayout()->addWidget(btn3);
         m_vScrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
-
-        
     }
 
   public slots:

@@ -26,7 +26,6 @@ class FluDatePickerPage : public FluAEmptyPage
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerPage.qss", this);
-        
     }
 
   public slots:

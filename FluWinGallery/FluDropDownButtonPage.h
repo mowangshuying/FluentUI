@@ -47,7 +47,6 @@ class FluDropDownButtonPage : public FluAEmptyPage
 
         displayBox2->getBodyLayout()->addWidget(dropDownButton2);
         m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
-        
     }
 
   public slots:

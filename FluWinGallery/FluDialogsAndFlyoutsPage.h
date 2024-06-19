@@ -31,7 +31,6 @@ class FluDialogsAndFlyoutsPage : public FluATitlePage
         connect(TeachingTipCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDialogsAndFlyoutsPage.qss", this);
-        
     }
 
   signals:

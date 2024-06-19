@@ -41,7 +41,7 @@ class FluDateAndTimePage : public FluATitlePage
         connect(timePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDateAndTimePage.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
   signals:

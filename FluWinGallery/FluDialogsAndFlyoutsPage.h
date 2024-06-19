@@ -31,7 +31,7 @@ class FluDialogsAndFlyoutsPage : public FluATitlePage
         connect(TeachingTipCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDialogsAndFlyoutsPage.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
   signals:

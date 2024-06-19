@@ -58,7 +58,7 @@ class FluButtonPage : public FluAEmptyPage
         displayBox3->getBodyLayout()->addWidget(btn3);
         m_vScrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
 
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
   public slots:

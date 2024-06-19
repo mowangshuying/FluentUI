@@ -23,7 +23,7 @@ class FluNumberBoxPage : public FluAEmptyPage
         addDoubleSpinBox();
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     void addSpinBox()

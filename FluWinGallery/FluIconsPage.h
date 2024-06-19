@@ -153,7 +153,7 @@ class FluIconsPage : public FluAEmptyPage
             emit m_sDisplayIconBox->clicked();
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
     //  void paintEvent(QPaintEvent* event)

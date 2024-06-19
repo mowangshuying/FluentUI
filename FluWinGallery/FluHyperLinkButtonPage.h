@@ -30,7 +30,7 @@ class FluHyperLinkButtonPage : public FluAEmptyPage
         displayBox1->setBodyWidgetFixedHeight(66);
         displayBox1->getBodyLayout()->addWidget(btn1);
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
   public slots:

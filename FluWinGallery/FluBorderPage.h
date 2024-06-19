@@ -42,7 +42,7 @@ class FluBorderPage : public FluAEmptyPage
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); }); { onThemeChanged(); });
+        
     }
 
   public slots:

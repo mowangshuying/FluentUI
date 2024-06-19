@@ -55,6 +55,7 @@
 #include "FluAppBarButtonPage.h"
 #include "FluAppBarToggleButtonPage.h"
 #include "FluLayoutPage.h"
+#include "FluMenuAndToolBarsPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -474,29 +475,56 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeMenuToolBarsNavItem()
     {
         FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Save, "Menus & toolbars", this);
+        item->setKey("MenusAndToolBarsPage");
+        auto menusAndToolBarsPage = new FluMenuAndToolBarsPage;
+        m_sLayout->addWidget("MenusAndToolBarsPage", menusAndToolBarsPage);
+        connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("MenusAndToolBarsPage"); });
+
         //  FluNavigationIconTextItem *item1 = new FluNavigationIconTextItem("XamlUICommand", item);
         //  FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("StandardUICommand", item);
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("AppBarButton", item);
+        item3->setKey("AppBarButtonPage");
         auto appBarButtonPage = new FluAppBarButtonPage;
         m_sLayout->addWidget("AppBarButtonPage", appBarButtonPage);
         connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AppBarButtonPage"); });
 
         FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("AppBarSeparator", item);
+        item4->setKey("AppBarSeparator");
+
         FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem("AppBarToggleButton", item);
+        item5->setKey("AppBarToggleButton");
         auto appBarToggleButtonPage = new FluAppBarToggleButtonPage;
         m_sLayout->addWidget("AppBarToggleButtonPage", appBarToggleButtonPage);
         connect(item5, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AppBarToggleButtonPage"); });
 
         FluVNavigationIconTextItem *item6 = new FluVNavigationIconTextItem("CommandBar", item);
+        item6->setKey("CommandBarPage");
 
         FluVNavigationIconTextItem *item7 = new FluVNavigationIconTextItem("MenuBar", item);
+        item7->setKey("MenuBarPage");
         auto menuBarPage = new FluMenuBarPage;
         m_sLayout->addWidget("MenuBarPage", menuBarPage);
         connect(item7, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("MenuBarPage"); });
 
         FluVNavigationIconTextItem *item8 = new FluVNavigationIconTextItem("CommandBarFlyout", item);
+        item8->setKey("CommandBarFlyoutPage");
+
         FluVNavigationIconTextItem *item9 = new FluVNavigationIconTextItem("MenuFlyout", item);
+        item9->setKey("MenuFlyoutPage");
+
         FluVNavigationIconTextItem *item10 = new FluVNavigationIconTextItem("SwipeControl", item);
+        item10->setKey("SwipeControlPage");
+
+        connect(menusAndToolBarsPage, &FluMenuAndToolBarsPage::clickedHCard, [=](QString key) {
+            // LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
 
         // item->addItem(item1);
         //  item->addItem(item2);

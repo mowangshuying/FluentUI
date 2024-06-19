@@ -399,9 +399,8 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluVNavigationIconTextItem *item10 = new FluVNavigationIconTextItem("VariableSizedWrapGrid", item);
         FluVNavigationIconTextItem *item11 = new FluVNavigationIconTextItem("ViewBox", item);
 
-
         connect(layoutPage, &FluLayoutPage::clickedHCard, [=](QString key) {
-            //LOG_DEBUG << key;
+            // LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
             if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {

@@ -54,6 +54,7 @@
 #include "FluSplitButtonPage.h"
 #include "FluAppBarButtonPage.h"
 #include "FluAppBarToggleButtonPage.h"
+#include "FluLayoutPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -367,6 +368,10 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeLayoutNavItem()
     {
         FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout", this);
+        item->setKey("LayoutPage");
+        auto layoutPage = new FluLayoutPage;
+        m_sLayout->addWidget("LayoutPage", layoutPage);
+        connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("LayoutPage"); });
 
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("Border", item);
         auto borderPage = new FluBorderPage;
@@ -393,6 +398,18 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluVNavigationIconTextItem *item9 = new FluVNavigationIconTextItem("StackPanel", item);
         FluVNavigationIconTextItem *item10 = new FluVNavigationIconTextItem("VariableSizedWrapGrid", item);
         FluVNavigationIconTextItem *item11 = new FluVNavigationIconTextItem("ViewBox", item);
+
+
+        connect(layoutPage, &FluLayoutPage::clickedHCard, [=](QString key) {
+            //LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
 
         item->addItem(item1);
         item->addItem(item2);

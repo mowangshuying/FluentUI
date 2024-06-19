@@ -374,30 +374,46 @@ class FluGalleryWindow : public FluFrameLessWidget
         connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("LayoutPage"); });
 
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("Border", item);
+        item1->setKey("BorderPage");
         auto borderPage = new FluBorderPage;
         m_sLayout->addWidget("BorderPage", borderPage);
         connect(item1, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("BorderPage"); });
 
         FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("Canvas", item);
+        item2->setKey("CanvasPage");
 
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("Expander", item);
+        item3->setKey("ExpanderPage");
         auto expanderPage = new FluExpanderPage;
         m_sLayout->addWidget("ExpanderPage", expanderPage);
         connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ExpanderPage"); });
 
         FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("ItemsRepeater", item);
+        item4->setKey("ItemsRepeaterPage");
+
         FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem("Grid", item);
+        item5->setKey("GridPage");
 
         FluVNavigationIconTextItem *item6 = new FluVNavigationIconTextItem("RadioButtons", item);
+        item6->setKey("RadioButtonsPage");
         auto radioButtonsPage = new FluRadioButtonsPage;
         m_sLayout->addWidget("RadioButtonsPage", radioButtonsPage);
         connect(item6, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("RadioButtonsPage"); });
 
         FluVNavigationIconTextItem *item7 = new FluVNavigationIconTextItem("RelativePanel", item);
+        item7->setKey("RelativePanelPage");
+
         FluVNavigationIconTextItem *item8 = new FluVNavigationIconTextItem("SplitView", item);
+        item8->setKey("SplitViewPage");
+
         FluVNavigationIconTextItem *item9 = new FluVNavigationIconTextItem("StackPanel", item);
+        item9->setKey("StackPanelPage");
+
         FluVNavigationIconTextItem *item10 = new FluVNavigationIconTextItem("VariableSizedWrapGrid", item);
-        FluVNavigationIconTextItem *item11 = new FluVNavigationIconTextItem("ViewBox", item);
+        item10->setKey("VariableSizedWrapGridPage");
+
+        FluVNavigationIconTextItem *item11 = new FluVNavigationIconTextItem("Viewbox", item);
+        item11->setKey("ViewboxPage");
 
         connect(layoutPage, &FluLayoutPage::clickedHCard, [=](QString key) {
             // LOG_DEBUG << key;

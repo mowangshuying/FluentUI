@@ -574,7 +574,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("ScrollingPage", scrollingPage);
         connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ScrollingPage"); });
 
-
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("AnnotatedScrollBar", item);
         FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("PipsPager", item);
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("ScrollView", item);

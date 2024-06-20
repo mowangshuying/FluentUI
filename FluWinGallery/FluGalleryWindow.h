@@ -57,6 +57,7 @@
 #include "FluLayoutPage.h"
 #include "FluMenuAndToolBarsPage.h"
 #include "FluMediaPage.h"
+#include "FluScrollingPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -568,6 +569,12 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeScrollingNavItem()
     {
         FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Sort, "Scrolling", this);
+        item->setKey("ScrollingPage");
+        auto scrollingPage = new FluScrollingPage;
+        m_sLayout->addWidget("ScrollingPage", scrollingPage);
+        connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ScrollingPage"); });
+
+
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("AnnotatedScrollBar", item);
         FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("PipsPager", item);
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("ScrollView", item);

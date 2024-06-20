@@ -56,6 +56,7 @@
 #include "FluAppBarToggleButtonPage.h"
 #include "FluLayoutPage.h"
 #include "FluMenuAndToolBarsPage.h"
+#include "FluMediaPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -444,6 +445,11 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeMediaNavItem()
     {
         FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Calendar, "Media", this);
+        item->setKey("MediaPage");
+        auto mediaPage = new FluMediaPage;
+        m_sLayout->addWidget("MediaPage", mediaPage);
+        connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("MediaPage"); });
+
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("AnimatedVisualPlayer", item);
         FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("Capture Element / Camera Preview", item);
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("Image", item);

@@ -58,6 +58,7 @@
 #include "FluMenuAndToolBarsPage.h"
 #include "FluMediaPage.h"
 #include "FluScrollingPage.h"
+#include "FluNavigationPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -549,15 +550,36 @@ class FluGalleryWindow : public FluFrameLessWidget
     void makeNavigationNavItem()
     {
         FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation", this);
+        item->setKey("NavigationPage");
+        auto navigationPage = new FluNavigationPage;
+        m_sLayout->addWidget("NavigationPage", navigationPage);
+        connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("NavigationPage"); });
+
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("BreadcrumbBar", item);
+        item1->setKey("BreadcrumbBarPage");
+
         FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("NavigationView", item);
+        item2->setKey("NavigationViewPage");
 
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("Pivot", item);
+        item3->setKey("PivotPage");
         auto pivotPage = new FluPivotPage;
         m_sLayout->addWidget("PivotPage", pivotPage);
         connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("PivotPage"); });
 
         FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("TabView", item);
+        item4->setKey("TabViewPage");
+
+        connect(navigationPage, &FluNavigationPage::clickedHCard, [=](QString key) {
+            // LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
 
         item->addItem(item1);
         item->addItem(item2);

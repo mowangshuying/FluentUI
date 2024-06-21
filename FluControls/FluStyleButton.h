@@ -10,7 +10,23 @@ class FluStyleButton : public QPushButton
     FluStyleButton(QWidget* parent = nullptr) : QPushButton(parent)
     {
         setFixedSize(200, 30);
-        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluStyleButton.qss");
-        setStyleSheet(qss);
+        //QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluStyleButton.qss");
+        //setStyleSheet(qss);
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStyleButton.qss", this);
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged();
+        });
+    }
+
+  public slots:
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStyleButton.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluStyleButton.qss", this);
+        }
     }
 };

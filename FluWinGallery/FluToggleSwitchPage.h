@@ -6,6 +6,7 @@
 #include "../FluControls/FluVScrollView.h"
 #include "../FluControls/FluToggleSwitch.h"
 #include "../FluControls/FluToggleSwitchEx.h"
+#include "../FluControls/FluTextToggleSwitchEx.h"
 
 class FluToggleSwitchPage : public FluAEmptyPage
 {
@@ -22,7 +23,7 @@ class FluToggleSwitchPage : public FluAEmptyPage
         displayBox->getCodeExpander()->setCodeByPath("../code/ToggleSwitchPageCode1.md");
         displayBox->setBodyWidgetFixedHeight(70);
 
-        auto toggleSwitch = new FluToggleSwitchEx(displayBox);
+        auto toggleSwitch = new FluTextToggleSwitchEx(displayBox);
         toggleSwitch->move(50, 50);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);

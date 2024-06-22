@@ -1,0 +1,13 @@
+/*FluProgressBar*/
+
+QProgressBar {
+    background-color: rgb(154, 154, 154);
+    border-radius: 2px;
+    min-height: 4px;
+    max-height: 4px;
+}
+
+QProgressBar::chunk {
+    background-color: rgb(118, 185, 237);
+    border-radius: 2px;
+}

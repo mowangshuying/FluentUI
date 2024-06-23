@@ -210,8 +210,8 @@ int main(int argc, char **argv)
     // FluTreeViewDemo demo;
     // demo.show();
 
-    //FluToggleSwitchDemo demo;
-    //demo.show();
+    // FluToggleSwitchDemo demo;
+    // demo.show();
 
     FluSliderDemo demo;
     demo.show();

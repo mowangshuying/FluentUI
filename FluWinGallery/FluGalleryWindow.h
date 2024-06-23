@@ -129,9 +129,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::CheckboxComposite, "Basic input", this);
         auto basicInputPage = new FluBasicInputPage;
         m_sLayout->addWidget("BasicInputPage", basicInputPage);
-            connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("BasicInputPage");
-        });
-
+        connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("BasicInputPage"); });
 
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("InputValidation", item);
         item1->enableThisItem(false);
@@ -212,7 +210,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("ToggleSwitchPage", toggleSwitchPage);
         connect(item15, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ToggleSwitchPage"); });
 
-         connect(basicInputPage, &FluBasicInputPage::clickedHCard, [=](QString key) {
+        connect(basicInputPage, &FluBasicInputPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
             if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)

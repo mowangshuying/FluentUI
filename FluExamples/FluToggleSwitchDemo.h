@@ -19,7 +19,7 @@ class FluToggleSwitchDemo : public FluWidget
         toggleSwithEx->move(50, 100);
 
         auto textToggleSwithEx = new FluTextToggleSwitchEx(this);
-        //textToggleSwithEx->setText("off");
+        // textToggleSwithEx->setText("off");
         textToggleSwithEx->move(50, 150);
 
         resize(600, 400);

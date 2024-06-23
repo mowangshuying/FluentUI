@@ -50,7 +50,6 @@ class FluProgressRing : public FluWidget
         if (FluThemeUtils::isDarkTheme())
             pen.setColor(QColor(154, 154, 154));
 
-
         painter.setPen(pen);
         QRectF outerC(4, 4, minWH - trunkW - 2, minWH - trunkW - 2);
         painter.drawEllipse(outerC);

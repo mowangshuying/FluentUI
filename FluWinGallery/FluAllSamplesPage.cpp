@@ -1,6 +1,6 @@
 #include "FluAllSamplesPage.h"
 
- FluAllSamplesPage::FluAllSamplesPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
+FluAllSamplesPage::FluAllSamplesPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
     m_vMainLayout->setContentsMargins(35, 35, 0, 35);
 
@@ -18,9 +18,7 @@
     makeStatusInfoCards();
     makeTextCards();
 
-    std::sort(m_cards.begin(), m_cards.end(), [=](FluHCard* card1, FluHCard* card2) { 
-        return card1->getKey() < card2->getKey();
-    });
+    std::sort(m_cards.begin(), m_cards.end(), [=](FluHCard* card1, FluHCard* card2) { return card1->getKey() < card2->getKey(); });
 
     for (auto card : m_cards)
     {
@@ -218,7 +216,6 @@ void FluAllSamplesPage::makeMediaCards()
     auto webView2Card = new FluHCard(QPixmap("../res/ControlImages/WebView.png"), "WebView2", "A Microsoft Edge(Chrominum) based control that hosts HTML content in an app.");
     webView2Card->setKey("WebView2Page");
     m_cards.push_back(webView2Card);
-  
 }
 
 void FluAllSamplesPage::makeMenusAndToolbars()
@@ -227,11 +224,9 @@ void FluAllSamplesPage::makeMenusAndToolbars()
     appBarButtonCard->setKey("AppBarButtonPage");
     m_cards.push_back(appBarButtonCard);
 
-
     auto appBarSeparatorCard = new FluHCard(QPixmap("../res/ControlImages/AppBarSeparator.png"), "AppBarSeparator", "A vertical line that's used to visually separate groups of commands in an app bar.");
     appBarSeparatorCard->setKey("AppBarSeparatorPage");
     m_cards.push_back(appBarSeparatorCard);
-
 
     auto appBarToggleButtonCard =
         new FluHCard(QPixmap("../res/ControlImages/AppBarToggleButton.png"), "AppBarToggleButton", "A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI.");
@@ -268,7 +263,6 @@ void FluAllSamplesPage::makeNavigationCards()
     auto breadcrumbBarCard = new FluHCard(QPixmap("../res/ControlImages/BreadcrumbBar.png"), "BreadcrumbBar", "Shows the trail of navigation taken to the current location..");
     breadcrumbBarCard->setKey("BreadcrumbBarPage");
     m_cards.push_back(breadcrumbBarCard);
-
 
     auto navigationViewCard = new FluHCard(QPixmap("../res/ControlImages/NavigationView.png"), "NavigationView", "Common vertical layout for top-level areas of your app via a collapsible navigation menu.");
     navigationViewCard->setKey("NavigationViewPage");

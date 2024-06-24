@@ -203,6 +203,7 @@ void FluAllSamplesPage::makeMediaCards()
     m_cards.push_back(mapControlCard);
 
     auto mediaPlayerElementCard = new FluHCard(QPixmap("../res/ControlImages/MediaPlayerElement.png"), "MediaPlayerElement", "A control to display video and image content.");
+    mediaPlayerElementCard->setKey("MediaPlayerElementPage");
     m_cards.push_back(mediaPlayerElementCard);
 
     auto personPictureCard = new FluHCard(QPixmap("../res/ControlImages/PersonPicture.png"), "PersonPicture", "Displays the picture of a person/contact.");

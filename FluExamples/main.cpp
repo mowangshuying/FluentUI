@@ -45,7 +45,7 @@
 #include "FluHNavigationViewDemo.h"
 #include "../FluUtils/FluUtils.h"
 #include "FluTreeViewDemo.h"
-#include "FluDemo.h"
+#include "FluTemplateDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -214,10 +214,10 @@ int main(int argc, char **argv)
     // FluToggleSwitchDemo demo;
     // demo.show();
 
-    //FluSliderDemo demo;
-    //demo.show();
+    // FluSliderDemo demo;
+    // demo.show();
 
-    FluDemo demo;
+    FluTemplateDemo demo;
     demo.show();
 
     return app.exec();

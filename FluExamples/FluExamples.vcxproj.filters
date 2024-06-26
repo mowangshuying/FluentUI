@@ -164,7 +164,7 @@
     <ClCompile Include="FluTreeViewDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluDemo.cpp">
+    <ClCompile Include="FluTemplateDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -280,7 +280,7 @@
     <QtMoc Include="FluTreeViewDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluDemo.h">
+    <QtMoc Include="FluTemplateDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

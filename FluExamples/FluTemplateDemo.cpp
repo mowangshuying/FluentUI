@@ -1,4 +1,4 @@
-#include "FluDemo.h"
+#include "FluTemplateDemo.h"
 
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
@@ -8,12 +8,13 @@
 #include "../FluControls/FluHNavigationIconTextItem.h"
 #include "../FluControls/FluHNavigationSearchItem.h"
 #include "../FluControls/FluHNavigationSettingsItem.h"
+#include <QContextMenuEvent>
 
-FluDemo::FluDemo(QWidget* parent /*= nullptr*/)
+FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/)
 {
-    setWindowTitle("CppQt WinUI3 Demo Dev");
+    setWindowTitle("CppQt WinUI3 Template Demo Dev");
 #ifndef _DEBUG
-    setWindowTitle("CppQt WinUI3 Demo");
+    setWindowTitle("CppQt WinUI3 Template Demo");
 #endif
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
@@ -21,9 +22,33 @@ FluDemo::FluDemo(QWidget* parent /*= nullptr*/)
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
     m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
     m_titleBar->setFixedHeight(48);
+
+    m_titleBar->setObjectName("titleBar");
+
+    m_contextMenu = new FluMenu;
+    auto lightAction = new FluAction;
+    lightAction->setText("light");
+
+    auto darkAction = new FluAction;
+    darkAction->setText("dark");
+
+    m_contextMenu->addAction(lightAction);
+    m_contextMenu->addAction(darkAction);
+
+    connect(lightAction, &FluAction::triggered, this, [=]() { FluThemeUtils::getUtils()->setTheme(FluTheme::Light); });
+
+    connect(darkAction, &FluAction::triggered, this, [=]() { FluThemeUtils::getUtils()->setTheme(FluTheme::Dark); });
+
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    onThemeChanged();
 }
 
-void FluDemo::onThemeChanged()
+void FluTemplateDemo::contextMenuEvent(QContextMenuEvent* event)
+{
+    m_contextMenu->exec(event->globalPos());
+}
+
+void FluTemplateDemo::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
@@ -36,12 +61,8 @@ void FluDemo::onThemeChanged()
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::black);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
-        // m_titleBar->update();
-        // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDemo.qss", this);
-        // repaint();
-        // QApplication::processEvents();
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTemplateDemo.qss", this);
     }
     else
     {
@@ -49,16 +70,12 @@ void FluDemo::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::white);
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::white);
-        // m_titleBar->update();
-        // m_titleBar->style()->polish(m_titleBar);
 #ifndef Q_OS_MACOS
         m_titleBar->minimizeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDemo.qss", this);
-        // repaint();
-        // QApplication::processEvents();
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTemplateDemo.qss", this);
     }
 }

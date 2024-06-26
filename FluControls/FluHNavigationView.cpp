@@ -137,9 +137,17 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
             // LOG_DEBUG << "IconTextItem Move to x:" << nMidWidth;
         }
     }
-    m_moreItem->setParent(m_MidWrapWidget);
-    m_moreItem->move(nMidWidth, 0);
-    m_moreItem->show();
+
+    if (m_hideItems.empty())
+    {
+        m_moreItem->hide();
+    }
+    else
+    {
+        m_moreItem->setParent(m_MidWrapWidget);
+        m_moreItem->move(nMidWidth, 0);
+        m_moreItem->show();
+    }
 }
 
 void FluHNavigationView::paintEvent(QPaintEvent* event)

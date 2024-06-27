@@ -150,6 +150,7 @@
     <ClCompile Include="FluTabDemo.cpp" />
     <ClCompile Include="FluExpandDemo.cpp" />
     <ClCompile Include="FluTreeViewDemo.cpp" />
+    <ClCompile Include="FluTriangleDemo.cpp" />
     <ClCompile Include="FluVNavigationViewDemo.cpp" />
     <ClCompile Include="FluAllGlobalColorDemo.cpp" />
     <ClCompile Include="FluTabViewDemo.cpp" />
@@ -181,6 +182,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluTemplateDemo.h" />
+    <QtMoc Include="FluTriangleDemo.h" />
     <ClInclude Include="resource.h" />
     <QtMoc Include="FluTreeViewDemo.h" />
     <QtMoc Include="FluFrameLessDemo.h" />

@@ -359,6 +359,9 @@
     <ClCompile Include="FluTextToggleSwitchEx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -686,6 +689,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTextToggleSwitchEx.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTriangle.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -27,7 +27,7 @@ class FluContentDialogPage : public FluAEmptyPage
         showDlgBtn->setFixedSize(100, 30);
 
         connect(showDlgBtn, &FluPushButton::clicked, [=]() {
-            FluMessageBox messageBox("Save your work?", "***********  La La La! Ha! Ha! Ha! **********", window());
+            FluMessageBox messageBox("Save your work?", "Lorem ipsum dolor sit amet, adipisicing elit.", window());
             messageBox.exec();
         });
 

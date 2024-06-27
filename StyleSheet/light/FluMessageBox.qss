@@ -3,7 +3,7 @@ FluMessageBox {
 }
 
 #windowMask {
-    background-color: rgba(75, 75, 75, 0.8);
+    background-color: rgba(74, 74, 74, 0.44);
 }
 
 #centerWidget {
@@ -21,4 +21,10 @@ FluMessageBox {
     font-size: 14px;
     color: rgb(91, 91, 91);
     background-color: transparent;
+}
+
+#btnWidget {
+    background-color: rgb(243, 243, 243);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

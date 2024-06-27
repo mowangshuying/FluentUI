@@ -154,6 +154,7 @@
     <ClCompile Include="FluToggleSwitchEx.cpp" />
     <ClCompile Include="FluTreeView.cpp" />
     <ClCompile Include="FluTreeViewItemDelegate.cpp" />
+    <ClCompile Include="FluTriangle.cpp" />
     <ClCompile Include="FluVNavigationFlyIconTextItem.cpp" />
     <ClCompile Include="FluPasswordBox.cpp" />
     <ClCompile Include="FluPivot.cpp" />
@@ -236,6 +237,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluTriangle.h" />
     <QtMoc Include="FluTextToggleSwitchEx.h" />
     <QtMoc Include="FluToggleSwitchEx.h" />
     <QtMoc Include="FluTreeViewItemDelegate.h" />

@@ -69,8 +69,8 @@ class FluMessageBox : public QDialog
 
         m_vWidgetLayout->setContentsMargins(0, 0, 0, 0);
         m_vWidgetLayout->setSpacing(0);
-        //m_vWidgetLayout->addWidget(m_titleLabel);
-        //m_vWidgetLayout->addWidget(m_infoLabel, 1);
+        // m_vWidgetLayout->addWidget(m_titleLabel);
+        // m_vWidgetLayout->addWidget(m_infoLabel, 1);
 
         m_vWidgetLayout->addWidget(m_contentWidget);
         m_vContentWidgetLayout->addWidget(m_titleLabel);
@@ -83,7 +83,7 @@ class FluMessageBox : public QDialog
         m_hBtnLayout = new QHBoxLayout;
         m_btnWidget->setLayout(m_hBtnLayout);
 
-        //m_hBtnLayout->setSpacing(10);
+        // m_hBtnLayout->setSpacing(10);
         m_hBtnLayout->setSpacing(0);
         m_hBtnLayout->setContentsMargins(24, 0, 24, 0);
         m_hBtnLayout->addWidget(m_okBtn);

@@ -218,8 +218,8 @@ int main(int argc, char **argv)
     // FluSliderDemo demo;
     // demo.show();
 
-    //FluTemplateDemo demo;
-    //demo.show();
+    // FluTemplateDemo demo;
+    // demo.show();
 
     FluTriangleDemo demo;
     demo.show();

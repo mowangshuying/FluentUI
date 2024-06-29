@@ -10,6 +10,7 @@
 #include "../FluUtils/FluUtils.h"
 #include "FluATitlePage.h"
 #include "../FluControls/FluHCard.h"
+#include "../FluControls/FluCircleDot.h"
 
 class FluBasicInputPage : public FluATitlePage
 {
@@ -22,11 +23,15 @@ class FluBasicInputPage : public FluATitlePage
 
         auto buttonCard = new FluHCard(QPixmap("../res/ControlImages/Button.png"), "Button", "A control that responds to user input and raises a Click event.");
         buttonCard->setKey("ButtonPage");
+
+        FluCircleDot::setCircleDot(buttonCard, 20, 20);
         getFWScrollView()->getMainLayout()->addWidget(buttonCard);
         connect(buttonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         auto checkboxCard = new FluHCard(QPixmap("../res/ControlImages/CheckBox.png"), "CheckBox", "A control that a user can select or clear.");
         checkboxCard->setKey("CheckBoxPage");
+
+        FluCircleDot::setCircleDot(checkboxCard, 20, 20);
         getFWScrollView()->getMainLayout()->addWidget(checkboxCard);
         connect(checkboxCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
@@ -67,11 +72,15 @@ class FluBasicInputPage : public FluATitlePage
 
         auto sliderCard = new FluHCard(QPixmap("../res/ControlImages/Slider.png"), "Slider", "A control that lets the user select from a range of values by moving a Thumb control along a track.");
         sliderCard->setKey("SliderPage");
+
+        FluCircleDot::setCircleDot(sliderCard, 20, 20);
         getFWScrollView()->getMainLayout()->addWidget(sliderCard);
         connect(sliderCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
         auto splitButtonCard = new FluHCard(QPixmap("../res/ControlImages/SplitButton.png"), "SplitButton", "A two-part button that display a flyout when its secondary part is clicked.");
         splitButtonCard->setKey("SplitButtonPage");
+
+        FluCircleDot::setCircleDot(splitButtonCard, 20, 20);
         getFWScrollView()->getMainLayout()->addWidget(splitButtonCard);
         connect(splitButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 

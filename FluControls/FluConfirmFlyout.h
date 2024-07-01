@@ -41,14 +41,8 @@ class FluConfirmFlyout : public FluVFlyout
         m_cancelBtn->setText("Cancel");
 
         connect(m_okBtn, &FluStyleButton::clicked, [=]() { close(); });
-
         connect(m_cancelBtn, &FluPushButton::clicked, [=]() { close(); });
-
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
-        }
+        onThemeChanged();
     }
 
     void setTitle(QString title)

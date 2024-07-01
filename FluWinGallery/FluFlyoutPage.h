@@ -24,6 +24,7 @@ class FluFlyoutPage : public FluAEmptyPage
         displayBox->setBodyWidgetFixedHeight(96);
 
         auto emptyCartBtn = new FluPushButton;
+        emptyCartBtn->setFixedWidth(96);
         emptyCartBtn->setText("Empty cart");
 
         connect(emptyCartBtn, &FluPushButton::clicked, this, [=]() {

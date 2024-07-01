@@ -22,7 +22,7 @@ class FluTriangle : public FluWidget
   public:
     FluTriangle(QWidget* parent = nullptr) : FluWidget(parent)
     {
-        setFixedSize(20, 10);
+        setFixedSize(24, 14);
         // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTriangle.qss", this);
     }
 
@@ -95,7 +95,7 @@ class FluTriangle : public FluWidget
         QPen pen;
         pen.setWidth(1);
         pen.setStyle(Qt::SolidLine);
-        pen.setColor(QColor(192, 192, 192));
+        pen.setColor(QColor(175, 175, 175));
         painter.setPen(pen);
 
         QBrush brush;

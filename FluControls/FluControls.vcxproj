@@ -151,6 +151,7 @@
     <ClCompile Include="FluLoopView.cpp" />
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
+    <ClCompile Include="FluTeachingTip.cpp" />
     <ClCompile Include="FluTextToggleSwitchEx.cpp" />
     <ClCompile Include="FluToggleSwitchEx.cpp" />
     <ClCompile Include="FluTreeView.cpp" />
@@ -238,6 +239,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />
     <QtMoc Include="FluTextToggleSwitchEx.h" />
     <QtMoc Include="FluToggleSwitchEx.h" />

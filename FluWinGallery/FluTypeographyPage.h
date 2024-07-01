@@ -33,16 +33,16 @@ class FluTypeographyPage : public FluAEmptyPage
         typeRampWrapLayout->setAlignment(Qt::AlignTop);
         typeRampWrap->setLayout(typeRampWrapLayout);
 
-        auto imgLabel = new QLabel;
-        imgLabel->setObjectName("imgLabel");
-        imgLabel->setFixedSize(740, 450);
+        m_imgLabel = new QLabel;
+        m_imgLabel->setObjectName("imgLabel");
+        m_imgLabel->setFixedSize(740, 450);
         QPixmap pixmap = QPixmap("../res/Typography.light.png");
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        imgLabel->setPixmap(pixmap);
+        m_imgLabel->setPixmap(pixmap);
 
         auto imgLabelLayout = new QHBoxLayout;
         typeRampWrapLayout->addLayout(imgLabelLayout, Qt::AlignTop | Qt::AlignHCenter);
-        imgLabelLayout->addWidget(imgLabel, Qt::AlignHCenter);
+        imgLabelLayout->addWidget(m_imgLabel, Qt::AlignHCenter);
 
         auto row1 = addARow(FluLabelStyle::CaptionTextBlockSylte, "Example", "Variable Font", "Size", "Style", 60);
         typeRampWrapLayout->addWidget(row1, Qt::AlignTop);
@@ -118,11 +118,21 @@ class FluTypeographyPage : public FluAEmptyPage
     {
         if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
         {
+            QPixmap pixmap = QPixmap("../res/Typography.light.png");
+            pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            m_imgLabel->setPixmap(pixmap);
+
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
         }
         else
         {
+            QPixmap pixmap = QPixmap("../res/Typography.dark.png");
+            pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            m_imgLabel->setPixmap(pixmap);
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTypeographyPage.qss", this);
         }
     }
+
+  protected:
+    QLabel* m_imgLabel;
 };

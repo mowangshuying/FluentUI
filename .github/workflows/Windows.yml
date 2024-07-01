@@ -87,24 +87,13 @@ jobs:
           echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
-           
-      # - uses: actions/upload-artifact@v2
-      #  with:
-      #    name: ${{ steps.package.outputs.packageName }}
-      #    path: dist
           
-      #- name: inno setup install
-      #  if: startsWith(github.event.ref, 'refs/tags/')
-      #  uses: mowangshuying/inno-setup-action@v1.0.1
-      #  with:
-      #    filepath: ./package/InstallerScript.iss
-          
-    - name: New Release 
-      if: startsWith(github.event.ref, 'refs/tags/')
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./build/FluGalleryWin64Msvc.zip
-        asset_name: ${{ env.fileName }}_${{ github.ref_name }}_${{ matrix.qt_arch }}_Qt${{ matrix.qt_ver }}.zip
-        tag: ${{ github.ref }}
-        overwrite: true 
+      - name: New Release 
+        if: startsWith(github.event.ref, 'refs/tags/')
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./build/FluGalleryWin64Msvc.zip
+          asset_name: ${{ env.fileName }}_${{ github.ref_name }}_${{ matrix.qt_arch }}_Qt${{ matrix.qt_ver }}.zip
+          tag: ${{ github.ref }}
+          overwrite: true 

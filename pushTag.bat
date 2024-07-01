@@ -1,3 +1,3 @@
-# push tags
+@ push tags
 git push origin --tags
 pause

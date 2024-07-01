@@ -47,7 +47,9 @@ install(DIRECTORY code
     DESTINATION .
 )
 
+
 set(CPACK_PACKAGE_FILE_NAME "FluGalleryWin64Msvc")
+set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)
 
 include(InstallRequiredSystemLibraries)
 set(CPACK_GENERATOR "ZIP")

@@ -47,7 +47,7 @@ install(DIRECTORY code
     DESTINATION .
 )
 
-set(CPACK_SYSTEM_NAME "FluWinGallery")
+set(CPACK_SYSTEM_NAME "FluGalleryWin64Msvc")
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     string(APPEND CPACK_SYSTEM_NAME "-debug")
 endif()

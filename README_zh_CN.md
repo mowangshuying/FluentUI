@@ -5,7 +5,7 @@
 <p align="center">
  一个由Qt-Cpp编写的FluentUi设计组件库.
 </p>
-![win-badge] ![ubuntu-badge] ![macos-badge] ![release-badge] ![download-badge] ![download-latest]
+![release-badge] ![download-badge] ![download-latest]
 <p align="center">
 简体中文 | <a href="README.md">English</a>
 </p>
@@ -13,13 +13,6 @@
 <div align=center>
   <img src="docs/gallery.png">
 </div>
-[win-link]: https://github.com/mowangshuying/CppQtFluentUi888/actions?query=workflow%3AWindows "WindowsAction"
-[win-badge]: https://github.com/mowangshuying/CppQtFluentUi888/workflows/Windows/badge.svg  "Windows"
-[ubuntu-link]: https://github.com/mowangshuying/CppQtFluentUi888/actions?query=workflow%3AUbuntu "UbuntuAction"
-[ubuntu-badge]: https://github.com/mowangshuying/CppQtFluentUi888/workflows/Ubuntu/badge.svg "Ubuntu"
-[macos-link]: https://github.com/mowangshuying/CppQtFluentUi888/actions?query=workflow%3AMacOS "MacOSAction"
-[macos-badge]: https://github.com/mowangshuying/CppQtFluentUi888/workflows/MacOS/badge.svg "MacOS"
-[release-link]: https://github.com/mowangshuying/CppQtFluentUi888/releases "Release status"
 [release-badge]: https://img.shields.io/github/release/zhuzichu520/FluentUI.svg?style=flat-square "Release status"
 [download-link]: https://github.com/mowangshuying/CppQtFluentUi888/releases/latest "Download status"
 [download-badge]: https://img.shields.io/github/downloads/mowangshuying/CppQtFluentUi888/total.svg "Download status"

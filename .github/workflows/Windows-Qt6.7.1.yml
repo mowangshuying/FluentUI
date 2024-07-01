@@ -1,0 +1,99 @@
+name: Windows-Qt6.7.1
+on: 
+  push:
+    paths:
+      - '*.sln'
+      - 'CMakeLists.txt'
+      - '*.bat'
+      - '*.sh'
+      - '3rdparty/**'
+      - 'code/**'
+      - 'config/**'
+      - 'FluControls/**'
+      - 'FluExamples/**'
+      - 'FluIconTool/**'
+      - 'FluUtils/**'
+      - 'res/**'
+      - 'StyleSheet/**'
+      - 'FluIconTool/**'
+      - 'FluIconTool/**'
+      - 'FluIconTool/**'
+      - '.github/workflows/Windows-Qt6.7.1.yml'
+  pull_request:
+    paths:
+      - '*.sln'
+      - 'CMakeLists.txt'
+      - '*.bat'
+      - '*.sh'
+      - '3rdparty/**'
+      - 'code/**'
+      - 'config/**'
+      - 'FluControls/**'
+      - 'FluExamples/**'
+      - 'FluIconTool/**'
+      - 'FluUtils/**'
+      - 'res/**'
+      - 'StyleSheet/**'
+      - 'FluIconTool/**'
+      - 'FluIconTool/**'
+      - 'FluIconTool/**'
+      - '.github/workflows/Windows-Qt6.7.1.yml'
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        include:
+          - qt_ver: 6.5.1        
+            qt_arch: win64_msvc2019_64
+            msvc_arch: x64
+            qt_arch_install: msvc2019_64  
+    env:
+      targetName: FluWinGallery.exe
+      fileName: FluWinGallery
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          
+      - name: Setup ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
+        with:
+          version: 1.10.2
+          
+      - name: Install qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ matrix.qt_ver }}
+          arch: ${{ matrix.qt_arch }}
+          cache: ${{steps.cache-qt.outputs.cache-hit}}
+          modules: 'qt5compat qtmultimedia qtshadertools qtimageformats qtspeech qt3d'
+          
+      - name: Msvc build & Package
+        id: build
+        shell: cmd
+        run: |
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ${{ matrix.msvc_arch }}
+          ninja --version
+          mkdir build
+          cd build
+          cmake -DCMAKE_MESSAGE_LOG_LEVEL=STATUS -DCMAKE_PREFIX_PATH=D:\a\CppQtFluentUi888\Qt\${{ matrix.qt_ver }}\msvc2019_64 -DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl -DCMAKE_BUILD_TYPE=Release -GNinja ..
+          cmake --build . --target all --config Release --parallel
+          cmake --build . --target package
+          echo winSdkDir=%WindowsSdkDir% >> %GITHUB_ENV%
+          echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
+          echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
+          echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
+          
+      - name: New Release 
+        if: startsWith(github.event.ref, 'refs/tags/')
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./build/FluGalleryWin64Msvc.zip
+          asset_name: ${{ env.fileName }}_${{ github.ref_name }}_${{ matrix.qt_arch }}_Qt${{ matrix.qt_ver }}.zip
+          tag: ${{ github.ref }}
+          overwrite: true 

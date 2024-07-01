@@ -72,7 +72,7 @@ jobs:
           cache: ${{steps.cache-qt.outputs.cache-hit}}
           modules: 'qt5compat qtmultimedia qtshadertools qtimageformats qtspeech qt3d'
           
-      - name: Msvc build
+      - name: Msvc build & Package
         id: build
         shell: cmd
         run: |
@@ -82,23 +82,13 @@ jobs:
           cd build
           cmake -DCMAKE_MESSAGE_LOG_LEVEL=STATUS -DCMAKE_PREFIX_PATH=D:\a\CppQtFluentUi888\Qt\${{ matrix.qt_ver }}\msvc2019_64 -DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl -DCMAKE_BUILD_TYPE=Release -GNinja ..
           cmake --build . --target all --config Release --parallel
+          cmake --build . --target package
           echo winSdkDir=%WindowsSdkDir% >> %GITHUB_ENV%
           echo winSdkVer=%WindowsSdkVersion% >> %GITHUB_ENV%
           echo vcToolsInstallDir=%VCToolsInstallDir% >> %GITHUB_ENV%
           echo vcToolsRedistDir=%VCToolsRedistDir% >> %GITHUB_ENV%
-          
-      #- name: package
-      #  id: package      
-      #  env:
-      #    archiveName: ${{ env.fileName }}-${{ matrix.qt_arch }}-${{ matrix.qt_ver }}
-      #    msvcArch: ${{ matrix.msvc_arch }}          
-      #  shell: pwsh
-      #  run: |
-      #    & scripts\windows-publish.ps1 ${env:archiveName} ${env:targetName}
-      #     $name = ${env:archiveName}
-      #     echo "::set-output name=packageName::$name"     
            
-      #- uses: actions/upload-artifact@v2
+      # - uses: actions/upload-artifact@v2
       #  with:
       #    name: ${{ steps.package.outputs.packageName }}
       #    path: dist

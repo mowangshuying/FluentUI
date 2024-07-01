@@ -47,10 +47,7 @@ install(DIRECTORY code
     DESTINATION .
 )
 
-set(CPACK_SYSTEM_NAME "FluGalleryWin64Msvc")
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-    string(APPEND CPACK_SYSTEM_NAME "-debug")
-endif()
+set(CPACK_PACKAGE_FILE_NAME "FluGalleryWin64Msvc")
 
 include(InstallRequiredSystemLibraries)
 set(CPACK_GENERATOR "ZIP")

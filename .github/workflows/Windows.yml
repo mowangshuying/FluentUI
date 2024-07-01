@@ -18,7 +18,7 @@ on:
       - 'FluIconTool/**'
       - 'FluIconTool/**'
       - 'FluIconTool/**'
-      - '.github/workflows/windows.yml'
+      - '.github/workflows/Windows.yml'
   pull_request:
     paths:
       - '*.sln'
@@ -37,7 +37,7 @@ on:
       - 'FluIconTool/**'
       - 'FluIconTool/**'
       - 'FluIconTool/**'
-      
+      - '.github/workflows/Windows.yml'
 jobs:
   build:
     name: Build

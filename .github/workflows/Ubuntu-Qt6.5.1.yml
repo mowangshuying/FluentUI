@@ -15,9 +15,7 @@ on:
       - 'FluUtils/**'
       - 'res/**'
       - 'StyleSheet/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
+      - 'FluWinGallery/**'
       - '.github/workflows/Ubuntu-Qt6.5.1.yml'
   pull_request:
     paths:
@@ -33,9 +31,7 @@ on:
       - 'FluUtils/**'
       - 'res/**'
       - 'StyleSheet/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
+      - 'FluWinGallery/**'
       - '.github/workflows/Ubuntu-Qt6.5.1.yml'
       
 jobs:

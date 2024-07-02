@@ -15,9 +15,7 @@ on:
       - 'FluUtils/**'
       - 'res/**'
       - 'StyleSheet/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
+      - 'FluWinGallery/**'
       - '.github/workflows/Windows-Qt6.7.1.yml'
   pull_request:
     paths:
@@ -34,9 +32,7 @@ on:
       - 'FluUtils/**'
       - 'res/**'
       - 'StyleSheet/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
-      - 'FluIconTool/**'
+      - 'FluWinGallery/**'
       - '.github/workflows/Windows-Qt6.7.1.yml'
 jobs:
   build:

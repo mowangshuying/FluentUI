@@ -28,6 +28,7 @@ on:
       - 'FluExamples/**'
       - 'FluIconTool/**'
       - 'FluUtils/**'
+      - 'FluWinGallery/**'
       - 'res/**'
       - 'StyleSheet/**'
       - '.github/workflows/MacOS-Qt6.5.1.yml'

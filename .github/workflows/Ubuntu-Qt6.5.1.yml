@@ -13,9 +13,9 @@ on:
       - 'FluExamples/**'
       - 'FluIconTool/**'
       - 'FluUtils/**'
+      - 'FluWinGallery/**'
       - 'res/**'
       - 'StyleSheet/**'
-      - 'FluWinGallery/**'
       - '.github/workflows/Ubuntu-Qt6.5.1.yml'
   pull_request:
     paths:
@@ -29,9 +29,9 @@ on:
       - 'FluExamples/**'
       - 'FluIconTool/**'
       - 'FluUtils/**'
+      - 'FluWinGallery/**'
       - 'res/**'
       - 'StyleSheet/**'
-      - 'FluWinGallery/**'
       - '.github/workflows/Ubuntu-Qt6.5.1.yml'
       
 jobs:
@@ -67,7 +67,7 @@ jobs:
       - name: Install GL library
         run: sudo apt-get install -y libxcb-cursor0 libgl1-mesa-dev libxcb1-dev libgtk-3-dev libxkbcommon-x11-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-randr0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxcb-xinerama0-dev libxcb-sync-dev  libxcb-render-util0-dev libxcb-shm0-dev
         
-      - name: ubuntu install libfuse2
+      - name: Install libfuse2
         run: sudo apt install libfuse2
         
       - name: install QT linux deploy

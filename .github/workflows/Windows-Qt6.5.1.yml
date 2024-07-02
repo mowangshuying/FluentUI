@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - '*.sln'
-      - 'CMakeLists.txt'
+      - '*.txt'
       - '*.bat'
       - '*.sh'
       - '3rdparty/**'
@@ -22,7 +22,7 @@ on:
   pull_request:
     paths:
       - '*.sln'
-      - 'CMakeLists.txt'
+      - '*.txt'
       - '*.bat'
       - '*.sh'
       - '3rdparty/**'

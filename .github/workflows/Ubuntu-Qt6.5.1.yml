@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'CMakeLists.txt'
+      - '*.txt'
       - '*.bat'
       - '*.sh'
       - '3rdparty/**'
@@ -21,7 +21,7 @@ on:
       - '.github/workflows/Ubuntu-Qt6.5.1.yml'
   pull_request:
     paths:
-      - 'CMakeLists.txt'
+      - '*.txt'
       - '*.bat'
       - '*.sh'
       - '3rdparty/**'

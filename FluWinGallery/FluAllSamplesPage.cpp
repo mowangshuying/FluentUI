@@ -35,7 +35,7 @@ void FluAllSamplesPage::makeBasicInputCards()
     buttonCard->setKey("ButtonPage");
     m_cards.push_back(buttonCard);
 
-    auto checkboxCard = new FluHCard(QPixmap("../res/ControlImages/CheckBox.png"), "CheckBox", "A control that a user can select or clear.");
+    auto checkboxCard = new FluHCard(QPixmap("../res/ControlImages/Checkbox.png"), "CheckBox", "A control that a user can select or clear.");
     checkboxCard->setKey("CheckBoxPage");
     m_cards.push_back(checkboxCard);
 

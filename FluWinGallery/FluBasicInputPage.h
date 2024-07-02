@@ -28,7 +28,7 @@ class FluBasicInputPage : public FluATitlePage
         getFWScrollView()->getMainLayout()->addWidget(buttonCard);
         connect(buttonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-        auto checkboxCard = new FluHCard(QPixmap("../res/ControlImages/CheckBox.png"), "CheckBox", "A control that a user can select or clear.");
+        auto checkboxCard = new FluHCard(QPixmap("../res/ControlImages/Checkbox.png"), "CheckBox", "A control that a user can select or clear.");
         checkboxCard->setKey("CheckBoxPage");
 
         FluCircleDot::setCircleDot(checkboxCard, 20, 20);

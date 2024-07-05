@@ -2305,8 +2305,12 @@ bool Utils::shouldAppsUseDarkMode_windows()
         return false;
     }
 #if FRAMELESSHELPER_CONFIG(private_qt)
-#  if (QT_VERSION >= QT_VERSION_CHECK(6, 2, 0))
-    if (const auto app = qApp->nativeInterface<QNativeInterface::Private::QWindowsApplication>()) {
+#if (QT_VERSION == QT_VERSION_CHECK(6, 8, 0))
+    {
+        WARNING << "Failed to retrieve the platform native interface.";
+    }
+#  elif (QT_VERSION >= QT_VERSION_CHECK(6, 2, 0)) 
+    else if (const auto app = qApp->nativeInterface<QNativeInterface::Private::QWindowsApplication>()) {
         return app->isDarkMode();
     } else {
         WARNING << "QWindowsApplication is not available.";

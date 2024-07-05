@@ -1,0 +1,47 @@
+FluWindowKitTitleBar {
+    background-color: rgb(25, 90, 190);
+}
+
+#titleLabel {
+    padding: 0px;
+    border: none;
+    color: #ECECEC;
+    background-color: transparent;
+    min-height: 28px;
+}
+
+#iconButton {
+    min-width: 30px;
+    background-color: transparent;
+}
+
+#minButton {
+    min-width: 30px;
+    background-color: transparent;
+}
+
+#minButton:hover,
+#minButton:pressed {
+    background-color: rgba(0, 0, 0, 15%);
+}
+
+#maxButton {
+    min-width: 30px;
+    background-color: transparent;
+}
+
+#maxButton:hover,
+#maxButton:pressed {
+    background-color: rgba(0, 0, 0, 15%);
+}
+
+#closeButton {
+    min-width: 30px;
+    background-color: transparent;
+}
+
+#closeButton:hover,
+#closeButton:pressed {
+    border: none;
+    background-color: #e81123;
+}

@@ -47,6 +47,7 @@
 #include "FluTreeViewDemo.h"
 #include "FluTemplateDemo.h"
 #include "FluTriangleDemo.h"
+#include "../FluControls/FluWindowKitWidget.h"
 
 int main(int argc, char **argv)
 {
@@ -221,7 +222,10 @@ int main(int argc, char **argv)
     // FluTemplateDemo demo;
     // demo.show();
 
-    FluTriangleDemo demo;
+    //FluTriangleDemo demo;
+    //demo.show();
+
+    FluWindowKitWidget demo;
     demo.show();
 
     return app.exec();

@@ -24,4 +24,5 @@ target_link_libraries(${TGT}
     PUBLIC
     framelesshelper
     FluUtils
+    qwindowkit
 )

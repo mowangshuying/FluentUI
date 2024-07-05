@@ -5,7 +5,7 @@ FluWindowKitTitleBar {
 #titleLabel {
     padding: 0px;
     border: none;
-    color: #ECECEC;
+    color: rgb(236, 236, 236);
     background-color: transparent;
     min-height: 28px;
 }

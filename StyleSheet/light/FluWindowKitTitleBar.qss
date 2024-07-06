@@ -1,11 +1,12 @@
 FluWindowKitTitleBar {
-    background-color: rgb(25, 90, 190);
+    background-color: rgb(rgb(243, 243, 243));
 }
 
 #titleLabel {
     padding: 0px;
     border: none;
-    color: rgb(236, 236, 236);
+    color: black;
+    font: 14px;
     background-color: transparent;
     min-height: 28px;
 }

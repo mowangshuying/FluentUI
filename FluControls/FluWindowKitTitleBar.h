@@ -16,6 +16,7 @@ class FluWindowKitTitleBar : public QFrame
         IconButton,
         MenuWidget,
         TitleLabel,
+        
         MinimumButton,
         MaximumButton,
         CloseButton,

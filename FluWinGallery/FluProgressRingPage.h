@@ -5,6 +5,9 @@
 #include "../FluUtils/FluUtils.h"
 #include "../FluControls/FluDisplayBox.h"
 #include "../FluControls/FluVScrollView.h"
+#include "../FluControls/FluDisplayBoxEx.h"
+#include "../FluControls/FluLabel.h"
+#include "../FluControls/FluComboBoxEx.h"
 
 class FluProgressRingPage : public FluAEmptyPage
 {
@@ -18,14 +21,34 @@ class FluProgressRingPage : public FluAEmptyPage
 
         m_infoLabel->setText("The ProgressRing has two different visual representations.\nIndeterminate - shows that a task is ongoing.but blocks user interaction.\nDeterminate - shows how much progress has been made on a known amount of work.");
 
-        auto displayBox1 = new FluDisplayBox;
+        auto displayBox1 = new FluDisplayBoxEx;
+        displayBox1->getBodyContentLayout()->setAlignment(Qt::AlignTop);
+        displayBox1->getBodyRightLayout()->setAlignment(Qt::AlignTop);
+
         displayBox1->setTitle("An indeterminate progress ring.");
         displayBox1->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode1.md");
         displayBox1->setBodyWidgetFixedHeight(96);
 
         auto progressRing1 = new FluProgressRing(displayBox1);
-        progressRing1->move(50, 50);
+        //progressRing1->move(50, 50);
         progressRing1->setWorking(true);
+
+        auto progressOptionsLabel = new FluLabel(FluLabelStyle::CaptionTextBlockSylte);
+        progressOptionsLabel->setText("Track Background color");
+
+        auto comboBox = new FluComboBoxEx;
+        comboBox->addItem("Transparent");
+        comboBox->addItem("LightGray");
+        connect(comboBox, &FluComboBoxEx::currentIndexChanged, [=](int index) {
+            if (index == 0)
+                progressRing1->setTransparentTrack(true);
+            else
+                progressRing1->setTransparentTrack(false);
+        });
+
+        displayBox1->getBodyContentLayout()->addWidget(progressRing1);
+        displayBox1->getBodyRightLayout()->addWidget(progressOptionsLabel, 0, Qt::AlignTop);
+        displayBox1->getBodyRightLayout()->addWidget(comboBox, 0, Qt::AlignTop);
 
         m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 

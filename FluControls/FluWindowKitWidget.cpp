@@ -6,6 +6,8 @@
 #include "FluWindowKitTitleBar.h"
 #include "../FluUtils/FluUtils.h"
 
+#include <QStyleOption>
+
 FluWindowKitWidget::FluWindowKitWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
@@ -94,5 +96,11 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget* parent /*= nullptr*/) : QWidget(
 
     connect(titleBar, &FluWindowKitTitleBar::closeRequested, this, &QWidget::close);
 #endif  // !Q_OS_MAC
+
+#ifdef Q_OS_WIN
+    //setAttribute(Qt::WA_TranslucentBackground);
+    //agent->setWindowAttribute(QStringLiteral("acrylic-material"), true);
+    //style()->polish(this);
+#endif
 
 }

@@ -224,14 +224,14 @@ int main(int argc, char **argv)
     // FluTemplateDemo demo;
     // demo.show();
 
-    //FluTriangleDemo demo;
-    //demo.show();
+    // FluTriangleDemo demo;
+    // demo.show();
 
-   // FluWindowKitWidget demo;
-   // demo.show();
+    // FluWindowKitWidget demo;
+    // demo.show();
 
-   // FluTimeLineIconDemo demo;
-   // demo.show();
+    // FluTimeLineIconDemo demo;
+    // demo.show();
 
     FluTimeLineDemo demo;
     demo.show();

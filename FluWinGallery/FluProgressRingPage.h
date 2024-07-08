@@ -23,7 +23,6 @@ class FluProgressRingPage : public FluAEmptyPage
 
         addIndeterminateProgressRing();
 
-
         addIndeterminateRing();
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressRingPage.qss", this);
@@ -40,8 +39,8 @@ class FluProgressRingPage : public FluAEmptyPage
 
         auto hBoxLayout = new QHBoxLayout;
         hBoxLayout->setContentsMargins(0, 0, 0, 0);
-       // hBoxLayout->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
-        
+        // hBoxLayout->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+
         auto progressRing1 = new FluProgressRing;
         progressRing1->setWorking(true);
 
@@ -52,7 +51,7 @@ class FluProgressRingPage : public FluAEmptyPage
         auto progressRing3 = new FluProgressRing;
         progressRing3->setFixedSize(25, 25);
         progressRing3->setWorking(true);
-        
+
         hBoxLayout->addWidget(progressRing1);
         hBoxLayout->addWidget(progressRing2);
         hBoxLayout->addWidget(progressRing3);
@@ -79,7 +78,7 @@ class FluProgressRingPage : public FluAEmptyPage
             }
         });
 
-      //  displayBox->getBodyContentLayout()->addWidget(progressRing1);
+        //  displayBox->getBodyContentLayout()->addWidget(progressRing1);
         displayBox->getBodyRightLayout()->addWidget(progressOptionsLabel, 0, Qt::AlignTop);
         displayBox->getBodyRightLayout()->addWidget(comboBox, 0, Qt::AlignTop);
 

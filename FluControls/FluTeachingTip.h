@@ -14,8 +14,7 @@ class FluTeachingTip : public FluWidget
 {
     Q_OBJECT
   public:
-      FluTeachingTip(QWidget* parent = nullptr) : FluWidget(parent)
-      {
-
-      }
+    FluTeachingTip(QWidget* parent = nullptr) : FluWidget(parent)
+    {
+    }
 };

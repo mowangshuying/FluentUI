@@ -52,7 +52,7 @@ class FluProgressRing : public FluWidget
         if (FluThemeUtils::isDarkTheme())
             pen.setColor(QColor(154, 154, 154));
 
-         if (m_bTransparentTrack)
+        if (m_bTransparentTrack)
             pen.setColor(Qt::transparent);
 
         painter.setPen(pen);

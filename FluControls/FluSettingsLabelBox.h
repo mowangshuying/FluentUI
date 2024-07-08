@@ -39,7 +39,7 @@ class FluSettingsLabelBox : public FluWidget
         m_mainLayout->addWidget(m_versionLabel);
 
         setFixedHeight(70);
-       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
         onThemeChanged();
     }
 

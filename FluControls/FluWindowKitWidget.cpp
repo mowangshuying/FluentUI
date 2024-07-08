@@ -98,9 +98,8 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget* parent /*= nullptr*/) : QWidget(
 #endif  // !Q_OS_MAC
 
 #ifdef Q_OS_WIN
-    //setAttribute(Qt::WA_TranslucentBackground);
-    //agent->setWindowAttribute(QStringLiteral("acrylic-material"), true);
-    //style()->polish(this);
+    // setAttribute(Qt::WA_TranslucentBackground);
+    // agent->setWindowAttribute(QStringLiteral("acrylic-material"), true);
+    // style()->polish(this);
 #endif
-
 }

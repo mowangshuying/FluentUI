@@ -46,6 +46,8 @@ class FluProgressRing : public FluWidget
 
         QPen pen;
         pen.setWidth(6);
+        pen.setCapStyle(Qt::RoundCap);
+        pen.setJoinStyle(Qt::RoundJoin);
         pen.setColor(QColor(211, 211, 211));
         if (FluThemeUtils::isDarkTheme())
             pen.setColor(QColor(154, 154, 154));

@@ -48,6 +48,8 @@
 #include "FluTemplateDemo.h"
 #include "FluTriangleDemo.h"
 #include "../FluControls/FluWindowKitWidget.h"
+#include "FluTimeLineIconDemo.h"
+#include "FluTimeLineDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -225,7 +227,13 @@ int main(int argc, char **argv)
     //FluTriangleDemo demo;
     //demo.show();
 
-    FluWindowKitWidget demo;
+   // FluWindowKitWidget demo;
+   // demo.show();
+
+   // FluTimeLineIconDemo demo;
+   // demo.show();
+
+    FluTimeLineDemo demo;
     demo.show();
 
     return app.exec();

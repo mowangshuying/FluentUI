@@ -170,6 +170,12 @@
     <ClCompile Include="FluTriangleDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluTimeLineIconDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluTimeLineDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -287,6 +293,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTriangleDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTimeLineIconDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTimeLineDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -81,7 +81,7 @@ class FluProgressRing : public FluWidget
 
             painter.setPen(pen);
 
-            QString curPersent = QString::asprintf("%d", m_curValue * 100 / (m_maxValue - m_minValue));
+            QString curPersent = QString::asprintf("%d%%", m_curValue * 100 / (m_maxValue - m_minValue));
             painter.drawText(outerC, Qt::AlignCenter, curPersent);
         }
     }

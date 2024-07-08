@@ -149,6 +149,8 @@
     <ClCompile Include="FluTabBarDemo.cpp" />
     <ClCompile Include="FluTabDemo.cpp" />
     <ClCompile Include="FluExpandDemo.cpp" />
+    <ClCompile Include="FluTimeLineDemo.cpp" />
+    <ClCompile Include="FluTimeLineIconDemo.cpp" />
     <ClCompile Include="FluTreeViewDemo.cpp" />
     <ClCompile Include="FluTriangleDemo.cpp" />
     <ClCompile Include="FluVNavigationViewDemo.cpp" />
@@ -183,6 +185,8 @@
   <ItemGroup>
     <QtMoc Include="FluTemplateDemo.h" />
     <QtMoc Include="FluTriangleDemo.h" />
+    <QtMoc Include="FluTimeLineIconDemo.h" />
+    <QtMoc Include="FluTimeLineDemo.h" />
     <ClInclude Include="resource.h" />
     <QtMoc Include="FluTreeViewDemo.h" />
     <QtMoc Include="FluFrameLessDemo.h" />

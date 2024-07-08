@@ -153,6 +153,9 @@
     <ClCompile Include="FluMessageBox.cpp" />
     <ClCompile Include="FluTeachingTip.cpp" />
     <ClCompile Include="FluTextToggleSwitchEx.cpp" />
+    <ClCompile Include="FluTimeLine.cpp" />
+    <ClCompile Include="FluTimeLineIcon.cpp" />
+    <ClCompile Include="FluTimeLineItem.cpp" />
     <ClCompile Include="FluToggleSwitchEx.cpp" />
     <ClCompile Include="FluTreeView.cpp" />
     <ClCompile Include="FluTreeViewItemDelegate.cpp" />
@@ -244,6 +247,9 @@
   <ItemGroup>
     <QtMoc Include="FluWindowkitButton.h" />
     <QtMoc Include="FluWindowKitTitleBar.h" />
+    <QtMoc Include="FluTimeLine.h" />
+    <QtMoc Include="FluTimeLineItem.h" />
+    <QtMoc Include="FluTimeLineIcon.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

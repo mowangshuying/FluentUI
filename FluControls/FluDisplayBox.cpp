@@ -26,6 +26,7 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_vBodyLayout->setAlignment(Qt::AlignTop);
 
     m_codeExpander = new FluCodeExpander;
+    m_codeExpander->setTopRadius0(true);
     m_mainLayout->addWidget(m_codeExpander);
     m_codeExpander->setObjectName("codeExpander");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBox.qss", this);

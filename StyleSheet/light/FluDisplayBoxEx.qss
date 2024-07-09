@@ -13,6 +13,8 @@ FluDisplayBoxEx {
     background-color: rgb(243, 243, 243);
     border: 1px solid rgb(234, 234, 234);
     border-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #bodyContentWidget {

@@ -233,7 +233,10 @@ int main(int argc, char **argv)
     // FluTimeLineIconDemo demo;
     // demo.show();
 
-    FluTimeLineDemo demo;
+    //FluTimeLineDemo demo;
+    //demo.show();
+
+     FluExpandDemo demo;
     demo.show();
 
     return app.exec();

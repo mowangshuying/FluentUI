@@ -8,3 +8,13 @@ FluIconButton {
 FluIconButton:hover {
     background-color: rgb(58, 58, 58);
 }
+
+FluIconButton[noBorder=true] {
+    background-color: rgb(50, 50, 50);
+    border-radius: 4px;
+    border: none;
+}
+
+FluIconButton[noBorder=true]:hover {
+    background-color: rgb(62, 62, 62);
+}

@@ -4,6 +4,7 @@
 #include "FluDef.h"
 #include "../FluUtils/FluUtils.h"
 #include <QTimer>
+#include <QStyle>
 
 // to display fluent icon use fluent font
 class FluIconButton : public QPushButton
@@ -15,6 +16,7 @@ class FluIconButton : public QPushButton
         // set fixed size
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
+        setNoBorder(false);
 
         // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
         onThemeChanged();
@@ -25,6 +27,8 @@ class FluIconButton : public QPushButton
     {
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
+        setNoBorder(false);
+
         // please ensure type1 will in FluAwesomeType, if can't suitable may crash.
 
         m_type1 = type1;
@@ -38,6 +42,8 @@ class FluIconButton : public QPushButton
     {
         setFixedSize(30, 30);
         setIconSize(QSize(20, 20));
+        setNoBorder(false);
+
         // please ensure type1 will in FluAwesomeType, if can't suitable may crash.
 
         QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type1, m_penColor);
@@ -81,6 +87,12 @@ class FluIconButton : public QPushButton
     {
         m_type2 = type;
         setType(m_type2);
+    }
+
+    void setNoBorder(bool bNoBorder)
+    {
+        setProperty("noBorder", bNoBorder);
+        style()->polish(this);
     }
 
   public slots:

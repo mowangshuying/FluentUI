@@ -17,6 +17,32 @@ class FluExpander : public FluWidget
   public:
     FluExpander(QWidget* parent = nullptr);
 
+    bool getDown()
+    {
+        return m_bDown;
+    }
+
+    void setDown(bool bDown)
+    {
+        m_bDown = bDown;
+        setProperty("down", bDown);
+        m_wrap1->setProperty("down", bDown);
+        m_wrap2->setProperty("down", bDown);
+
+        style()->polish(this);
+        m_wrap1->style()->polish(m_wrap1);
+        m_wrap2->style()->polish(m_wrap2);
+    }
+
+    void setTopRadius0(bool bTopRadius0)
+    {
+        m_wrap1->setProperty("topRadius0", bTopRadius0);
+        setProperty("topRadius0", bTopRadius0);
+
+        style()->polish(this);
+        m_wrap1->style()->polish(m_wrap1);
+    }
+
     void setWrap2Height(int h)
     {
         m_wrap2Height = h;

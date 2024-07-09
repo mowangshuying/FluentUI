@@ -12,7 +12,7 @@ FluPivotTitleBarItem {
 
 #indicatorLabel {
     border: 1px solid transparent;
-    border-radius: 2px;
+    border-radius: 1.5px;
     background-color: transparent;
 }
 

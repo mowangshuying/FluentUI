@@ -25,7 +25,7 @@ class FluPivotTitleBarItem : public QPushButton
         m_indicatorLabel->setObjectName("indicatorLabel");
         m_vMainLayout->addWidget(m_indicatorLabel);
 
-        m_indicatorLabel->setFixedHeight(5);
+        m_indicatorLabel->setFixedHeight(4);
         setSelected(false);
         setFixedHeight(45);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBarItem.qss", this);

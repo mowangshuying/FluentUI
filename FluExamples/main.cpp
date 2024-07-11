@@ -50,6 +50,7 @@
 #include "../FluControls/FluWindowKitWidget.h"
 #include "FluTimeLineIconDemo.h"
 #include "FluTimeLineDemo.h"
+#include "FluAnimationDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -236,7 +237,10 @@ int main(int argc, char **argv)
     //FluTimeLineDemo demo;
     //demo.show();
 
-     FluExpandDemo demo;
+    // FluExpandDemo demo;
+    //demo.show();
+
+    FluAnimationDemo demo;
     demo.show();
 
     return app.exec();

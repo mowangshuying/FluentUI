@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets Svg StateMachine)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Svg)
 qt_standard_project_setup()
 
 add_subdirectory("3rdparty")

@@ -116,6 +116,7 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluAwesomeType awesomeTyp
 FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluVNavigationIconTextItem *item) : FluVNavigationIconTextItem()
 {
     itemClone(item);
+    onThemeChanged();
 }
 
 void FluVNavigationIconTextItem::itemClone(FluVNavigationIconTextItem *item)

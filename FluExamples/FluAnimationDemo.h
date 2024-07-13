@@ -14,6 +14,10 @@ class FluAnimationDemo : public FluTemplateDemo
   public:
       FluAnimationDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
       {
+          setWindowTitle("CppQt WinUI3 Animation Demo Dev");
+#ifndef _DEBUG
+          setWindowTitle("CppQt WinUI3 Animation Demo");
+#endif
           addPosAni();
 
           addOpacityAni();

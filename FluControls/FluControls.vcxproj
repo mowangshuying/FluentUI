@@ -151,6 +151,7 @@
     <ClCompile Include="FluLoopView.cpp" />
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
+    <ClCompile Include="FluSettingsVersionBox.cpp" />
     <ClCompile Include="FluTeachingTip.cpp" />
     <ClCompile Include="FluTextToggleSwitchEx.cpp" />
     <ClCompile Include="FluTimeLine.cpp" />
@@ -250,6 +251,7 @@
     <QtMoc Include="FluTimeLine.h" />
     <QtMoc Include="FluTimeLineItem.h" />
     <QtMoc Include="FluTimeLineIcon.h" />
+    <QtMoc Include="FluSettingsVersionBox.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

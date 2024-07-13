@@ -120,6 +120,7 @@
     <ClCompile Include="FluCheckBoxDemo.cpp" />
     <ClCompile Include="FluColorDemo.cpp" />
     <ClCompile Include="FluComboBoxDemo.cpp" />
+    <ClCompile Include="FluSettingsVersionBoxDemo.cpp" />
     <ClCompile Include="FluTemplateDemo.cpp" />
     <ClCompile Include="FluFrameLessDemo.cpp" />
     <ClCompile Include="FluDisplay16.cpp" />
@@ -189,6 +190,7 @@
     <QtMoc Include="FluTimeLineIconDemo.h" />
     <QtMoc Include="FluTimeLineDemo.h" />
     <ClInclude Include="FluAnimationDemo.h" />
+    <QtMoc Include="FluSettingsVersionBoxDemo.h" />
     <ClInclude Include="resource.h" />
     <QtMoc Include="FluTreeViewDemo.h" />
     <QtMoc Include="FluFrameLessDemo.h" />

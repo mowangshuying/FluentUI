@@ -386,6 +386,9 @@
     <ClCompile Include="FluTimeLineIcon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluSettingsVersionBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -737,6 +740,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTimeLineIcon.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluSettingsVersionBox.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -31,6 +31,8 @@ class FluSettingsVersionBox : public FluExpander
           return m_iconLabel;
       }
 
+   public slots:
+      void onThemeChanged();
   protected:
       FluAwesomeType m_iconAwesomeType;
       QVBoxLayout* m_vLayout;

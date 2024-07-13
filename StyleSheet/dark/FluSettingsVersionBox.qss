@@ -1,0 +1,48 @@
+FluSettingsVersionBox {
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#wrap1[down=true] {
+    background-color: rgb(50, 50, 50);
+    border-radius: 4px;
+    border: 1px solid rgb(29, 29, 29);
+}
+
+#wrap1[down=false] {
+    background-color: rgb(50, 50, 50);
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(50, 50, 50);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#wrap2[down=false] {
+    background-color: rgb(46, 46, 46);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid rgb(29, 29, 29);
+}
+
+#wrap1[topRadius0=true] {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+#titleLabel {
+    font-size: 15px;
+    color: rgb(225, 225, 225);
+}
+
+#infoLabel {
+    font-size: 12px;
+    color: rgb(210, 210, 210);
+}
+
+#versionLabel {
+    font-size: 15px;
+    color: rgb(210, 210, 210);
+}

@@ -34,9 +34,18 @@ FluSettingsVersionBox::FluSettingsVersionBox(QWidget* parent /*= nullptr*/) : Fl
     getWrap1Layout()->addLayout(m_vLayout, 1);
     getWrap1Layout()->addWidget(m_versionLabel);
     getWrap1Layout()->setContentsMargins(10, 10, 40, 10);
-    
-    //getWrap2Layout()->setContentsMargins(50, 10, 50, 10);
-    //getWrap2Layout()->setAlignment(Qt::AlignLeft);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsVersionBox.qss", this);
+    onThemeChanged();
+}
+
+void FluSettingsVersionBox::onThemeChanged()
+{
+    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsVersionBox.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsVersionBox.qss", this);
+    }
 }

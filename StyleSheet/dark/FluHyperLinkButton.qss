@@ -8,6 +8,6 @@ FluHyperLinkButton {
 }
 
 FluHyperLinkButton:hover {
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(62, 62, 62);
     color: rgb(152, 197, 232);
 }

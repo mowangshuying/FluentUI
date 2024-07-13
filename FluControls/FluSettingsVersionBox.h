@@ -4,6 +4,7 @@
 #include "../FluUtils/FluUtils.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include "FluVSplitLine.h"
 
 class FluSettingsVersionBox : public FluExpander
 {
@@ -31,6 +32,20 @@ class FluSettingsVersionBox : public FluExpander
           return m_iconLabel;
       }
 
+      void addVSplitLine()
+      {
+          getWrap2Layout()->addWidget(new FluVSplitLine);
+      }
+
+      void addWidget(QWidget* widget)
+      {
+          auto hLayout = new QHBoxLayout;
+          hLayout->setContentsMargins(50, 0, 10, 0);
+
+          hLayout->addWidget(widget);
+          hLayout->addStretch();
+          getWrap2Layout()->addLayout(hLayout);
+      }
    public slots:
       void onThemeChanged();
   protected:

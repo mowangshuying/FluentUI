@@ -28,16 +28,20 @@ class FluSettingsVersionBoxDemo : public FluTemplateDemo
           repoLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
           repoLabel->setText("To clone thepository");
           //repoLabel->setWordWrap(true);
-          settingsVersionBox->getWrap2Layout()->addWidget(repoLabel);
+          //settingsVersionBox->getWrap2Layout()->addWidget(repoLabel);
+
+          settingsVersionBox->addWidget(repoLabel);
 
           auto cloneRepoBtn = new FluHyperLinkButton("");
           cloneRepoBtn->setFixedWidth(390);
           cloneRepoBtn->setText("git clone https://github.com/mowangshuying/CppQtFluentUi888");
-          settingsVersionBox->getWrap2Layout()->addWidget(cloneRepoBtn);
+          //settingsVersionBox->getWrap2Layout()->addWidget(cloneRepoBtn);
 
+          settingsVersionBox->addWidget(cloneRepoBtn);
          
           //auto splitLine1 = new FluVSplitLine;
-          settingsVersionBox->getWrap2Layout()->addWidget(new FluVSplitLine);
+         // settingsVersionBox->getWrap2Layout()->addWidget(new FluVSplitLine);
+          settingsVersionBox->addVSplitLine();
 
           auto issueLabel = new FluLabel;
           issueLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
@@ -47,15 +51,19 @@ class FluSettingsVersionBoxDemo : public FluTemplateDemo
           issueRef->setText("Get Start.");
           issueRef->setFixedWidth(120);
 
-          settingsVersionBox->getWrap2Layout()->addWidget(issueLabel);
-          settingsVersionBox->getWrap2Layout()->addWidget(issueRef);
+          //settingsVersionBox->getWrap2Layout()->addWidget(issueLabel);
+          //settingsVersionBox->getWrap2Layout()->addWidget(issueRef);
 
-          settingsVersionBox->getWrap2Layout()->addWidget(new FluVSplitLine);
+          //settingsVersionBox->getWrap2Layout()->addWidget(new FluVSplitLine);
+
+          settingsVersionBox->addWidget(issueLabel);
+          settingsVersionBox->addWidget(issueRef);
+          settingsVersionBox->addVSplitLine();
 
           auto dependAndRef = new FluLabel;
           dependAndRef->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
           dependAndRef->setText("Dependencies & references");
-          settingsVersionBox->getWrap2Layout()->addWidget(dependAndRef);
+         // settingsVersionBox->getWrap2Layout()->addWidget(dependAndRef);
 
           auto winUiGalleryRef = new FluHyperLinkButton("https://github.com/microsoft/WinUI-Gallery");
           winUiGalleryRef->setFixedWidth(160);
@@ -69,9 +77,14 @@ class FluSettingsVersionBoxDemo : public FluTemplateDemo
           qwindowkitRef->setText("stdware/qwindowkit");
           qwindowkitRef->setFixedWidth(140);
 
-          settingsVersionBox->getWrap2Layout()->addWidget(winUiGalleryRef);
-          settingsVersionBox->getWrap2Layout()->addWidget(framelesshelperRef);
-          settingsVersionBox->getWrap2Layout()->addWidget(qwindowkitRef);
+          //settingsVersionBox->getWrap2Layout()->addWidget(winUiGalleryRef);
+          //settingsVersionBox->getWrap2Layout()->addWidget(framelesshelperRef);
+          //settingsVersionBox->getWrap2Layout()->addWidget(qwindowkitRef);
+
+          settingsVersionBox->addWidget(dependAndRef);
+          settingsVersionBox->addWidget(winUiGalleryRef);
+          settingsVersionBox->addWidget(framelesshelperRef);
+          settingsVersionBox->addWidget(qwindowkitRef);
 
           settingsVersionBox->move(100, 100);
       }

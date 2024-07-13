@@ -4,6 +4,10 @@ FluSettingsSelectBox {
     background-color: rgb(50, 50, 50);
 }
 
+FluSettingsSelectBox:hover {
+    background-color: rgb(58, 58, 58);
+}
+
 #titleLabel {
     font-size: 15px;
     color: rgb(210, 210, 210);

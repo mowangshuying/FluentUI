@@ -4,6 +4,10 @@ FluSettingsLabelBox {
     background-color: rgb(253, 253, 253);
 }
 
+FluSettingsLabelBox:hover {
+    background-color: rgb(249, 249, 249);
+}
+
 #titleLabel {
     font-size: 15px;
 }

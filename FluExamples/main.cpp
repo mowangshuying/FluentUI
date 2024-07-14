@@ -52,6 +52,7 @@
 #include "FluTimeLineDemo.h"
 #include "FluAnimationDemo.h"
 #include "FluSettingsVersionBoxDemo.h"
+#include "FluColorViewDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -244,7 +245,10 @@ int main(int argc, char **argv)
     //FluAnimationDemo demo;
     //demo.show();
 
-    FluSettingsVersionBoxDemo demo;
+   // FluSettingsVersionBoxDemo demo;
+   // demo.show();
+
+    FluColorViewDemo demo;
     demo.show();
 
     return app.exec();

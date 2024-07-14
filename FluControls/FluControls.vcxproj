@@ -129,6 +129,10 @@
     <ClCompile Include="FluCircleDot.cpp" />
     <ClCompile Include="FluColorButton.cpp" />
     <ClCompile Include="FluColorLabel.cpp" />
+    <ClCompile Include="FluColorView.cpp" />
+    <ClCompile Include="FluColorViewGradient.cpp" />
+    <ClCompile Include="FluColorViewHHandle.cpp" />
+    <ClCompile Include="FluColorViewVHandle.cpp" />
     <ClCompile Include="FluComboBoxEx.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
     <ClCompile Include="FluDatePicker.cpp" />
@@ -252,6 +256,10 @@
     <QtMoc Include="FluTimeLineItem.h" />
     <QtMoc Include="FluTimeLineIcon.h" />
     <QtMoc Include="FluSettingsVersionBox.h" />
+    <QtMoc Include="FluColorViewGradient.h" />
+    <QtMoc Include="FluColorViewVHandle.h" />
+    <QtMoc Include="FluColorViewHHandle.h" />
+    <QtMoc Include="FluColorView.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

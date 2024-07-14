@@ -389,6 +389,18 @@
     <ClCompile Include="FluSettingsVersionBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluColorViewGradient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluColorViewVHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluColorViewHHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluColorView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -743,6 +755,18 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluSettingsVersionBox.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluColorViewGradient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluColorViewVHandle.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluColorViewHHandle.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluColorView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

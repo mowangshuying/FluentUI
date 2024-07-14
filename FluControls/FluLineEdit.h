@@ -10,6 +10,22 @@ class FluLineEdit : public QLineEdit
   public:
     FluLineEdit(QWidget* parent = nullptr) : QLineEdit(parent)
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLineEdit.qss", this);
+        onThemeChanged();
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+            onThemeChanged();
+        });
+    }
+
+  public slots:
+    virtual void onThemeChanged()
+    {
+        if (FluThemeUtils::isLightTheme())
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLineEdit.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLineEdit.qss", this);
+        }
     }
 };

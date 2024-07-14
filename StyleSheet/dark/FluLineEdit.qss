@@ -1,12 +1,12 @@
 FluLineEdit {
     border-radius: 4px;
-    border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(134, 134, 134);
-    background-color: rgb(251, 251, 251);
+    border: 1px solid rgb(48, 48, 48);
+    border-bottom: 1px solid rgb(154, 154, 154);
+    background-color: rgb(45, 45, 45);
 }
 
 FluLineEdit:hover {
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(50, 50, 50);
 }
 
 FluLineEdit:focus {

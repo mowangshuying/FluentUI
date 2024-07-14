@@ -22,4 +22,5 @@ qt_add_executable(${TGT}
 target_link_libraries(${TGT}
     PRIVATE
     FluControls
+    Qt6::StateMachine
 )

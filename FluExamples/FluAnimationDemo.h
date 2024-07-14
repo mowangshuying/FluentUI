@@ -4,8 +4,8 @@
 #include <QPropertyAnimation>
 #include "../FluControls/FluPushButton.h"
 #include "../FluUtils/FluUtils.h"
-//#include <QState>
-//#include <QStateMachine>
+#include <QState>
+#include <QStateMachine>
 
 // QParallelAnimationGroup
 // QSequentialAnimationGroup
@@ -24,7 +24,7 @@ class FluAnimationDemo : public FluTemplateDemo
 
           addShakeAni();
 
-          //addStateMachineAni();
+          addStateMachineAni();
       }
 
       void addPosAni()
@@ -115,33 +115,33 @@ class FluAnimationDemo : public FluTemplateDemo
           //connect(animation, &QPropertyAnimation::finished, [=]() { animation->deleteLater(); });
       }
 
-      //void addStateMachineAni()
-      //{
-      //    auto btn = new FluPushButton(this);
-      //    //btn->setText("Click me!");
-      //    btn->setFixedWidth(138);
-      //    btn->move(100, 200);
+      void addStateMachineAni()
+      {
+          auto btn = new FluPushButton(this);
+          //btn->setText("Click me!");
+          btn->setFixedWidth(138);
+          btn->move(100, 200);
 
-      //    QState* state1 = new QState;
-      //    state1->assignProperty(btn, "text", "@@@@");
+          QState* state1 = new QState;
+          state1->assignProperty(btn, "text", "@@@@");
 
-      //    QState* state2 = new QState;
-      //    state2->assignProperty(btn, "text", "%%%%");
+          QState* state2 = new QState;
+          state2->assignProperty(btn, "text", "%%%%");
 
-      //    QState* state3 = new QState;
-      //    state3->assignProperty(btn, "text", "&&&&&&&&");
+          QState* state3 = new QState;
+          state3->assignProperty(btn, "text", "&&&&&&&&");
 
-      //    state1->addTransition(btn, &FluPushButton::clicked, state2);
-      //    state2->addTransition(btn, &FluPushButton::clicked, state3);
-      //    state3->addTransition(btn, &FluPushButton::clicked, state1);
+          state1->addTransition(btn, &FluPushButton::clicked, state2);
+          state2->addTransition(btn, &FluPushButton::clicked, state3);
+          state3->addTransition(btn, &FluPushButton::clicked, state1);
 
 
-      //    QStateMachine* stateMachine = new QStateMachine(this);
-      //    stateMachine->addState(state1);
-      //    stateMachine->addState(state2);
-      //    stateMachine->addState(state3);
+          QStateMachine* stateMachine = new QStateMachine(this);
+          stateMachine->addState(state1);
+          stateMachine->addState(state2);
+          stateMachine->addState(state3);
 
-      //    stateMachine->setInitialState(state1);
-      //    stateMachine->start();
-      //}
+          stateMachine->setInitialState(state1);
+          stateMachine->start();
+      }
 };

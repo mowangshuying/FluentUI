@@ -7,6 +7,7 @@
 #include "../FluControls/FluLabel.h"
 #include "../FluControls/FluLineEdit.h"
 #include "../FluControls/FluColorView.h"
+#include "../FluControls/FluPushButton.h"
 
 class FluColorViewDemo : public FluTemplateDemo
 {
@@ -14,7 +15,18 @@ class FluColorViewDemo : public FluTemplateDemo
   public:
       FluColorViewDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
       {
-          auto colorView = new FluColorView(this);
-          colorView->move(50, 50);
+          //auto colorView = new FluColorView(this);
+          //colorView->move(50, 50);
+
+          auto btn = new FluPushButton(this);
+          btn->setFixedSize(120, 30);
+          btn->setText("Click Me!");
+
+          btn->move(200, 200);
+
+          connect(btn, &FluPushButton::clicked, [=]() { 
+              FluColorView view(window());
+              view.exec();
+          });
       }
 };

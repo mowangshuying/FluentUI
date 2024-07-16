@@ -20,7 +20,7 @@ class FluColorViewHHandle : public FluWidget
 
           m_nMinV = 0;
           m_nMaxV = 100;
-          m_nV = 0;
+          m_fV = 0;
       }
 
       void setMaxV(int nV)
@@ -43,14 +43,15 @@ class FluColorViewHHandle : public FluWidget
           return m_nMinV;
       }
 
-      int getV()
+      float getV()
       {
-          return m_nV;
+          return m_fV;
       }
 
       void updateV(int nX)
       {
-          m_nV = ((nX - 10) * 1.0) / (width() - 20) * (m_nMaxV - m_nMinV);
+          m_fV = ((nX - 10) * 1.0) / (width() - 20);
+          emit valueChanged(m_fV);
       }
 
       void setFixedSize(int w, int h)
@@ -62,6 +63,8 @@ class FluColorViewHHandle : public FluWidget
       void setColor(QColor color)
       {
           m_color = color;
+          emit colorChanged(m_color);
+          emit valueChanged(m_fV);
           update();
       }
 
@@ -85,7 +88,7 @@ class FluColorViewHHandle : public FluWidget
               }
 
               updateV(m_circleP.x());
-              LOG_DEBUG << "Value Changed:" << m_nV;
+              //LOG_DEBUG << "Value Changed:" << m_nV;
               update();
           }
       }
@@ -104,7 +107,10 @@ class FluColorViewHHandle : public FluWidget
           
           m_bPressed = true;
           updateV(m_circleP.x());
-          LOG_DEBUG << "Value Changed:" << m_nV;
+
+          //float percentage = (m_circleP.x() - 10) / (rect().width() - 20);
+          //emit valueChanged(percentage);
+          //LOG_DEBUG << "Value Changed:" << m_nV;
           update();
       }
 
@@ -143,13 +149,17 @@ class FluColorViewHHandle : public FluWidget
           painter.setBrush(QColor(27, 27, 27));
           painter.drawEllipse(m_circleP, 5, 5);
       }
+
+  signals:
+      void colorChanged(QColor color);
+    void valueChanged(float percentage);
   protected:
       QColor m_color;
       QPoint m_circleP;
 
       int m_nMaxV;
       int m_nMinV;
-      int m_nV;
+      float m_fV;
 
       bool m_bPressed;
 };

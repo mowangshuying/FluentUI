@@ -130,12 +130,30 @@ class FluColorView : public QDialog
 
           m_vContentWidgetLayout->addLayout(hLayout);
 
+          // limit edit value;
+
           connect(okBtn, &FluStyleButton::clicked, this, [=]() { 
               accept();
           });
 
           connect(cancelBtn, &FluPushButton::clicked, this, [=]() { 
               reject();
+          });
+
+          connect(colorViewGradient, &FluColorViewGradient::colorChanged, [=](QColor color) { 
+              colorViewHHandle->setColor(color);
+          });
+
+          connect(colorViewHHandle, &FluColorViewHHandle::valueChanged, [=](float percentage) { 
+              int r = colorViewHHandle->getColor().red() * percentage;
+              int g = colorViewHHandle->getColor().green() * percentage; 
+              int b = colorViewHHandle->getColor().blue() * percentage; 
+
+              rEdit->setText(QString::asprintf("%d", r));
+              gEdit->setText(QString::asprintf("%d", g));
+              bEdit->setText(QString::asprintf("%d",b));
+
+              colorViewVHandle->setColor(QColor(r, g, b));
           });
       }
 

@@ -18,7 +18,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_downOrUpButton = new FluIconButton(FluAwesomeType::ChevronDown, m_wrap1);
     m_downOrUpButton->setNoBorder(true);
-    //m_downOrUpButton->setObjectName("downOrUpButton");
+    // m_downOrUpButton->setObjectName("downOrUpButton");
 
     //   m_hWrap1Layout->addStretch();
     //   m_hWrap1Layout->addWidget(m_downOrUpButton, Qt::AlignHCenter);
@@ -33,10 +33,10 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_wrap2->setLayout(m_vWrap2Layout);
 
     m_mainLayout->addWidget(m_wrap1);
-    //m_mainLayout->addSpacing(1);
+    // m_mainLayout->addSpacing(1);
     m_mainLayout->addWidget(m_wrap2);
 
-   // m_bDown = true;
+    // m_bDown = true;
     setDown(true);
     setTopRadius0(false);
     auto expandAni = new QPropertyAnimation(m_wrap2, "geometry");
@@ -51,7 +51,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
             expandAni->start();
 
             m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
-            //m_bDown = false;
+            // m_bDown = false;
             setDown(false);
         }
         else
@@ -60,7 +60,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
             expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
             expandAni->start();
             m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
-            //m_bDown = true;
+            // m_bDown = true;
             setDown(true);
         }
     });
@@ -96,11 +96,11 @@ void FluExpander::onThemeChanged()
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
-        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);
     }
     else
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpander.qss", this);
-       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpander.qss", m_downOrUpButton);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpander.qss", m_downOrUpButton);
     }
 }

@@ -128,7 +128,6 @@ class FluSettingPage : public FluWidget
 
         m_vScrollView->getMainLayout()->addWidget(settingsVersionBox);
 
-
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
     }
 

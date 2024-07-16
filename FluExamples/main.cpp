@@ -236,17 +236,17 @@ int main(int argc, char **argv)
     // FluTimeLineIconDemo demo;
     // demo.show();
 
-    //FluTimeLineDemo demo;
-    //demo.show();
+    // FluTimeLineDemo demo;
+    // demo.show();
 
     // FluExpandDemo demo;
-    //demo.show();
+    // demo.show();
 
-    //FluAnimationDemo demo;
-    //demo.show();
+    // FluAnimationDemo demo;
+    // demo.show();
 
-   // FluSettingsVersionBoxDemo demo;
-   // demo.show();
+    // FluSettingsVersionBoxDemo demo;
+    // demo.show();
 
     FluColorViewDemo demo;
     demo.show();

@@ -20,7 +20,7 @@ FluSettingsVersionBox::FluSettingsVersionBox(QWidget* parent /*= nullptr*/) : Fl
     // version
     m_versionLabel = new QLabel;
     m_versionLabel->setWordWrap(true);
-    //m_versionLabel->setFixedWidth(50);
+    // m_versionLabel->setFixedWidth(50);
 
     m_titleLabel->setObjectName("titleLabel");
     m_infoLabel->setObjectName("infoLabel");

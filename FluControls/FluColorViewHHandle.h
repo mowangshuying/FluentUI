@@ -11,155 +11,156 @@ class FluColorViewHHandle : public FluWidget
 {
     Q_OBJECT
   public:
-      FluColorViewHHandle(QWidget* parent = nullptr) : FluWidget(parent)
-      {
-          m_circleP = QPoint(10, 8);
-          m_bPressed = false;
+    FluColorViewHHandle(QWidget* parent = nullptr) : FluWidget(parent)
+    {
+        m_circleP = QPoint(10, 8);
+        m_bPressed = false;
 
-          m_color = QColor(110, 98, 251);
+        m_color = QColor(110, 98, 251);
 
-          m_nMinV = 0;
-          m_nMaxV = 100;
-          m_fV = 0;
-      }
+        m_nMinV = 0;
+        m_nMaxV = 100;
+        m_fV = 0;
+    }
 
-      void setMaxV(int nV)
-      {
-          m_nMaxV = nV;
-      }
+    void setMaxV(int nV)
+    {
+        m_nMaxV = nV;
+    }
 
-      int getMaxV()
-      {
-          return m_nMaxV;
-      }
+    int getMaxV()
+    {
+        return m_nMaxV;
+    }
 
-      void setMinV(int nV)
-      {
-          m_nMinV = nV;
-      }
+    void setMinV(int nV)
+    {
+        m_nMinV = nV;
+    }
 
-      int getMinV()
-      {
-          return m_nMinV;
-      }
+    int getMinV()
+    {
+        return m_nMinV;
+    }
 
-      float getV()
-      {
-          return m_fV;
-      }
+    float getV()
+    {
+        return m_fV;
+    }
 
-      void updateV(int nX)
-      {
-          m_fV = ((nX - 10) * 1.0) / (width() - 20);
-          emit valueChanged(m_fV);
-      }
+    void updateV(int nX)
+    {
+        m_fV = ((nX - 10) * 1.0) / (width() - 20);
+        emit valueChanged(m_fV);
+    }
 
-      void setFixedSize(int w, int h)
-      {
-          FluWidget::setFixedSize(w, h);
-          update();
-      }
+    void setFixedSize(int w, int h)
+    {
+        FluWidget::setFixedSize(w, h);
+        update();
+    }
 
-      void setColor(QColor color)
-      {
-          m_color = color;
-          emit colorChanged(m_color);
-          emit valueChanged(m_fV);
-          update();
-      }
+    void setColor(QColor color)
+    {
+        m_color = color;
+        emit colorChanged(m_color);
+        emit valueChanged(m_fV);
+        update();
+    }
 
-      QColor getColor()
-      {
-          return m_color;
-      }
+    QColor getColor()
+    {
+        return m_color;
+    }
 
-      void mouseMoveEvent(QMouseEvent* event)
-      {
-          if (m_bPressed)
-          {
-              m_circleP = QPoint(event->pos().x(), 8);
-              if (event->pos().x() > rect().width() - 10)
-              {
-                  m_circleP = QPoint(rect().width() - 10, 8);
-              }
-              else if (event->pos().x() < 10)
-              {
-                  m_circleP = QPoint(10, 8);
-              }
+    void mouseMoveEvent(QMouseEvent* event)
+    {
+        if (m_bPressed)
+        {
+            m_circleP = QPoint(event->pos().x(), 8);
+            if (event->pos().x() > rect().width() - 10)
+            {
+                m_circleP = QPoint(rect().width() - 10, 8);
+            }
+            else if (event->pos().x() < 10)
+            {
+                m_circleP = QPoint(10, 8);
+            }
 
-              updateV(m_circleP.x());
-              //LOG_DEBUG << "Value Changed:" << m_nV;
-              update();
-          }
-      }
+            updateV(m_circleP.x());
+            // LOG_DEBUG << "Value Changed:" << m_nV;
+            update();
+        }
+    }
 
-      void mousePressEvent(QMouseEvent* event)
-      {
-          m_circleP = QPoint(event->pos().x(), 8);
-          if (event->pos().x() > rect().width() - 10)
-          {
-              m_circleP = QPoint(rect().width() - 10, 8);
-          }
-          else if (event->pos().x() < 10)
-          {
-              m_circleP = QPoint(10, 8);
-          }
-          
-          m_bPressed = true;
-          updateV(m_circleP.x());
+    void mousePressEvent(QMouseEvent* event)
+    {
+        m_circleP = QPoint(event->pos().x(), 8);
+        if (event->pos().x() > rect().width() - 10)
+        {
+            m_circleP = QPoint(rect().width() - 10, 8);
+        }
+        else if (event->pos().x() < 10)
+        {
+            m_circleP = QPoint(10, 8);
+        }
 
-          //float percentage = (m_circleP.x() - 10) / (rect().width() - 20);
-          //emit valueChanged(percentage);
-          //LOG_DEBUG << "Value Changed:" << m_nV;
-          update();
-      }
+        m_bPressed = true;
+        updateV(m_circleP.x());
 
-      void mouseReleaseEvent(QMouseEvent* event)
-      {
-          m_bPressed = false;
-      }
+        // float percentage = (m_circleP.x() - 10) / (rect().width() - 20);
+        // emit valueChanged(percentage);
+        // LOG_DEBUG << "Value Changed:" << m_nV;
+        update();
+    }
 
-      void paintEvent(QPaintEvent* event)
-      {
-          QPainter painter(this);
-          painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-          
-          // draw handle;
-          painter.setPen(Qt::NoPen);
-          //painter.setBrush(m_color);
+    void mouseReleaseEvent(QMouseEvent* event)
+    {
+        m_bPressed = false;
+    }
 
-         // QLinearGradient gradient();
+    void paintEvent(QPaintEvent* event)
+    {
+        QPainter painter(this);
+        painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-          // rect;
-          QRect handleR = rect();
-          handleR = handleR.adjusted(2, 2, -2, -2);
-          
-          QLinearGradient gradient(handleR.x(), 0, handleR.x() + handleR.width(), 0);
-          gradient.setColorAt(0, QColor(0, 0, 0));
-          gradient.setColorAt(1, m_color);
-          painter.setBrush(gradient);
+        // draw handle;
+        painter.setPen(Qt::NoPen);
+        // painter.setBrush(m_color);
 
-          painter.drawRoundedRect(handleR, 6, 6);
+        // QLinearGradient gradient();
 
-          // draw out circle;
-          painter.setBrush(QColor(255, 255, 255));
-          painter.drawEllipse(m_circleP, 8, 8);
+        // rect;
+        QRect handleR = rect();
+        handleR = handleR.adjusted(2, 2, -2, -2);
 
-          // draw inner circle;
-          painter.setBrush(QColor(27, 27, 27));
-          painter.drawEllipse(m_circleP, 5, 5);
-      }
+        QLinearGradient gradient(handleR.x(), 0, handleR.x() + handleR.width(), 0);
+        gradient.setColorAt(0, QColor(0, 0, 0));
+        gradient.setColorAt(1, m_color);
+        painter.setBrush(gradient);
+
+        painter.drawRoundedRect(handleR, 6, 6);
+
+        // draw out circle;
+        painter.setBrush(QColor(255, 255, 255));
+        painter.drawEllipse(m_circleP, 8, 8);
+
+        // draw inner circle;
+        painter.setBrush(QColor(27, 27, 27));
+        painter.drawEllipse(m_circleP, 5, 5);
+    }
 
   signals:
-      void colorChanged(QColor color);
+    void colorChanged(QColor color);
     void valueChanged(float percentage);
+
   protected:
-      QColor m_color;
-      QPoint m_circleP;
+    QColor m_color;
+    QPoint m_circleP;
 
-      int m_nMaxV;
-      int m_nMinV;
-      float m_fV;
+    int m_nMaxV;
+    int m_nMinV;
+    float m_fV;
 
-      bool m_bPressed;
+    bool m_bPressed;
 };

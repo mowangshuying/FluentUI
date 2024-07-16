@@ -11,9 +11,7 @@ class FluLineEdit : public QLineEdit
     FluLineEdit(QWidget* parent = nullptr) : QLineEdit(parent)
     {
         onThemeChanged();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-            onThemeChanged();
-        });
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

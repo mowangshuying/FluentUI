@@ -196,7 +196,6 @@ class FluColorView : public QDialog
           else
           {
               FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorView.qss", this);
-
           }
       }
   protected:

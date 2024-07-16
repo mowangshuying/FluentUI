@@ -46,7 +46,7 @@ class FluColorView : public QDialog
       {
           m_widget = new QFrame(this);
           m_widget->setObjectName("centerWidget");
-          m_widget->setFixedSize(320, 440);
+          m_widget->setFixedSize(320, 460);
           m_hMainLayout->addWidget(m_widget, 1, Qt::AlignCenter);
           
 
@@ -68,7 +68,7 @@ class FluColorView : public QDialog
           m_vContentWidgetLayout->addLayout(hLayout);
 
           auto colorViewHHandle = new FluColorViewHHandle;
-          colorViewHHandle->setFixedHeight(13);
+          colorViewHHandle->setFixedHeight(17);
           m_vContentWidgetLayout->addWidget(colorViewHHandle);
 
           hLayout = new QHBoxLayout;

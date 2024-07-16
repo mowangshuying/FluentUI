@@ -3,6 +3,9 @@
 #include <QPainter>
 #include <QPainterPath>
 #include "FluWidget.h"
+#include <QMouseEvent>
+#include "../FluUtils/FluUtils.h"
+#include <QLinearGradient>
 
 class FluColorViewHHandle : public FluWidget
 {
@@ -10,7 +13,44 @@ class FluColorViewHHandle : public FluWidget
   public:
       FluColorViewHHandle(QWidget* parent = nullptr) : FluWidget(parent)
       {
+          m_circleP = QPoint(10, 8);
+          m_bPressed = false;
 
+          m_color = QColor(110, 98, 251);
+
+          m_nMinV = 0;
+          m_nMaxV = 100;
+          m_nV = 0;
+      }
+
+      void setMaxV(int nV)
+      {
+          m_nMaxV = nV;
+      }
+
+      int getMaxV()
+      {
+          return m_nMaxV;
+      }
+
+      void setMinV(int nV)
+      {
+          m_nMinV = nV;
+      }
+
+      int getMinV()
+      {
+          return m_nMinV;
+      }
+
+      int getV()
+      {
+          return m_nV;
+      }
+
+      void updateV(int nX)
+      {
+          m_nV = ((nX - 10) * 1.0) / (width() - 20) * (m_nMaxV - m_nMinV);
       }
 
       void setFixedSize(int w, int h)
@@ -30,6 +70,49 @@ class FluColorViewHHandle : public FluWidget
           return m_color;
       }
 
+      void mouseMoveEvent(QMouseEvent* event)
+      {
+          if (m_bPressed)
+          {
+              m_circleP = QPoint(event->pos().x(), 8);
+              if (event->pos().x() > rect().width() - 10)
+              {
+                  m_circleP = QPoint(rect().width() - 10, 8);
+              }
+              else if (event->pos().x() < 10)
+              {
+                  m_circleP = QPoint(10, 8);
+              }
+
+              updateV(m_circleP.x());
+              LOG_DEBUG << "Value Changed:" << m_nV;
+              update();
+          }
+      }
+
+      void mousePressEvent(QMouseEvent* event)
+      {
+          m_circleP = QPoint(event->pos().x(), 8);
+          if (event->pos().x() > rect().width() - 10)
+          {
+              m_circleP = QPoint(rect().width() - 10, 8);
+          }
+          else if (event->pos().x() < 10)
+          {
+              m_circleP = QPoint(10, 8);
+          }
+          
+          m_bPressed = true;
+          updateV(m_circleP.x());
+          LOG_DEBUG << "Value Changed:" << m_nV;
+          update();
+      }
+
+      void mouseReleaseEvent(QMouseEvent* event)
+      {
+          m_bPressed = false;
+      }
+
       void paintEvent(QPaintEvent* event)
       {
           QPainter painter(this);
@@ -37,9 +120,36 @@ class FluColorViewHHandle : public FluWidget
           
           // draw handle;
           painter.setPen(Qt::NoPen);
-          painter.setBrush(m_color);
-          painter.drawRoundedRect(rect(), 6, 6);
+          //painter.setBrush(m_color);
+
+         // QLinearGradient gradient();
+
+          // rect;
+          QRect handleR = rect();
+          handleR = handleR.adjusted(2, 2, -2, -2);
+          
+          QLinearGradient gradient(handleR.x(), 0, handleR.x() + handleR.width(), 0);
+          gradient.setColorAt(0, QColor(0, 0, 0));
+          gradient.setColorAt(1, m_color);
+          painter.setBrush(gradient);
+
+          painter.drawRoundedRect(handleR, 6, 6);
+
+          // draw out circle;
+          painter.setBrush(QColor(255, 255, 255));
+          painter.drawEllipse(m_circleP, 8, 8);
+
+          // draw inner circle;
+          painter.setBrush(QColor(27, 27, 27));
+          painter.drawEllipse(m_circleP, 5, 5);
       }
   protected:
       QColor m_color;
+      QPoint m_circleP;
+
+      int m_nMaxV;
+      int m_nMinV;
+      int m_nV;
+
+      bool m_bPressed;
 };

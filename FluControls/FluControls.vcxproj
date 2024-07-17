@@ -150,6 +150,7 @@
     <ClCompile Include="FluHScrollView.cpp" />
     <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluInfoBarMgr.cpp" />
+    <ClCompile Include="FluIntValidator.cpp" />
     <ClCompile Include="FluListView.cpp" />
     <ClCompile Include="FluListViewItemDelegate.cpp" />
     <ClCompile Include="FluLoopView.cpp" />
@@ -260,6 +261,7 @@
     <QtMoc Include="FluColorViewVHandle.h" />
     <QtMoc Include="FluColorViewHHandle.h" />
     <QtMoc Include="FluColorView.h" />
+    <ClInclude Include="FluIntValidator.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

@@ -38,6 +38,26 @@ class FluColorViewGradient : public FluWidget
         return m_color;
     }
 
+    bool findColor(QColor color, QPoint& point)
+    {
+        bool bFind = false;
+        for (int i = 0; i < 256; i++)
+        {
+            for (int j = 0; j < 256; i++)
+            {
+                QColor curColor = m_pixmap.toImage().pixelColor(i, j);
+                if (color.red() == curColor.red() && color.green() == curColor.green() && color.blue() == curColor.blue())
+                {
+                    point.setX(i);
+                    point.setY(j);
+                    bFind = true;
+                    break;
+                }
+            }
+        }
+        return bFind;
+    }
+
     void mouseMoveEvent(QMouseEvent* event)
     {
         if (m_bPressed)

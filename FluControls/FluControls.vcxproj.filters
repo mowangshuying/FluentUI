@@ -401,6 +401,9 @@
     <ClCompile Include="FluColorView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluIntValidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -787,6 +790,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluWindowKitWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluIntValidator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

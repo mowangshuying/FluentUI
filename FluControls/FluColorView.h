@@ -3,6 +3,7 @@
 #include "FluColorViewGradient.h"
 #include "FluColorViewHHandle.h"
 #include "FluColorViewVHandle.h"
+#include "FluIntValidator.h"
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -74,6 +75,8 @@ class FluColorView : public QDialog
         rLabel->setFixedWidth(50);
         rLabel->setText("Red:");
         auto rEdit = new FluLineEdit;
+        rEdit->setText("0");
+        rEdit->setValidator(new FluIntValidator(0, 255, rEdit));
         rEdit->setFixedSize(120, 35);
 
         hLayout->addWidget(rLabel);
@@ -89,6 +92,8 @@ class FluColorView : public QDialog
         gLabel->setFixedWidth(50);
 
         auto gEdit = new FluLineEdit;
+        gEdit->setText("0");
+        gEdit->setValidator(new FluIntValidator(0, 255, gEdit));
         gEdit->setFixedSize(120, 35);
 
         hLayout->addWidget(gLabel);
@@ -104,6 +109,8 @@ class FluColorView : public QDialog
         bLabel->setFixedWidth(50);
 
         auto bEdit = new FluLineEdit;
+        bEdit->setText("0");
+        bEdit->setValidator(new FluIntValidator(0, 255, bEdit));
         bEdit->setFixedSize(120, 35);
 
         hLayout->addWidget(bLabel);

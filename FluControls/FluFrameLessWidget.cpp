@@ -51,7 +51,7 @@ void FluFrameLessWidget::initialize()
     m_vMainLayout = new QVBoxLayout(this);
     m_vMainLayout->setSpacing(0);
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->addWidget(m_titleBar, Qt::AlignTop);
+    m_vMainLayout->addWidget(m_titleBar, 0, Qt::AlignTop);
     m_vMainLayout->addLayout(m_contentLayout, 1);
     setLayout(m_vMainLayout);
 

@@ -22,7 +22,7 @@ class FluColorViewDemo : public FluTemplateDemo
         btn->setFixedSize(120, 30);
         btn->setText("Click Me!");
 
-        //btn->move(300, 400);
+        // btn->move(300, 400);
         m_contentLayout->setAlignment(Qt::AlignCenter);
         m_contentLayout->addWidget(btn);
 

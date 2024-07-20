@@ -52,9 +52,9 @@ class FluColorViewHHandle : public FluWidget
     {
         m_fV = v;
         // update circleP;
-        m_circleP.setX( (width() - 20) * m_fV + 10);
+        m_circleP.setX((width() - 20) * m_fV + 10);
         updateVByMouseOper(m_circleP.x(), false);
-        //emit valueChanged(v);
+        // emit valueChanged(v);
     }
 
     void updateVByMouseOper(int nX, bool bEmitSignal = true)
@@ -103,7 +103,7 @@ class FluColorViewHHandle : public FluWidget
 
             updateVByMouseOper(m_circleP.x());
             // LOG_DEBUG << "Value Changed:" << m_nV;
-            //update();
+            // update();
         }
     }
 
@@ -125,7 +125,7 @@ class FluColorViewHHandle : public FluWidget
         // float percentage = (m_circleP.x() - 10) / (rect().width() - 20);
         // emit valueChanged(percentage);
         // LOG_DEBUG << "Value Changed:" << m_nV;
-        //update();
+        // update();
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

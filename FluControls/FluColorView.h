@@ -76,7 +76,7 @@ class FluColorView : public QDialog
         rLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
         rLabel->setFixedWidth(50);
         rLabel->setText("Red:");
-        
+
         rEdit = new FluLineEdit;
         rEdit->setText("0");
         rEdit->setValidator(new FluIntValidator(0, 255, rEdit));
@@ -150,30 +150,24 @@ class FluColorView : public QDialog
             int g = colorViewHHandle->getColor().green() * percentage;
             int b = colorViewHHandle->getColor().blue() * percentage;
 
-            //m_bRgbChanging = true;
-          
-            //m_mutex.lock();
+            // m_bRgbChanging = true;
+
+            // m_mutex.lock();
             rEdit->setText(QString::asprintf("%d", r));
             gEdit->setText(QString::asprintf("%d", g));
             bEdit->setText(QString::asprintf("%d", b));
             colorViewVHandle->setColor(QColor(r, g, b));
-            //m_mutex.unlock();
-            //m_bRgbChanging = false;
+            // m_mutex.unlock();
+            // m_bRgbChanging = false;
         });
 
-        connect(rEdit, &FluLineEdit::textChanged, this, [=](const QString& rValue) { 
-            onRgbValueChanged();
-        });
+        connect(rEdit, &FluLineEdit::textChanged, this, [=](const QString& rValue) { onRgbValueChanged(); });
 
-        connect(gEdit, &FluLineEdit::textChanged, this, [=](const QString& gValue) { 
-            onRgbValueChanged();
-        });
+        connect(gEdit, &FluLineEdit::textChanged, this, [=](const QString& gValue) { onRgbValueChanged(); });
 
-        connect(bEdit, &FluLineEdit::textChanged, this, [=](const QString& bValue) { 
-            onRgbValueChanged();
-        });
+        connect(bEdit, &FluLineEdit::textChanged, this, [=](const QString& bValue) { onRgbValueChanged(); });
 
-        connect(colorViewHHandle, &FluColorViewHHandle::pressed, this, [=]() { 
+        connect(colorViewHHandle, &FluColorViewHHandle::pressed, this, [=]() {
             rEdit->clearFocus();
             gEdit->clearFocus();
             bEdit->clearFocus();
@@ -193,7 +187,6 @@ class FluColorView : public QDialog
             bEdit->clearFocus();
         }
     }
-
 
     void resizeEvent(QResizeEvent* event)
     {
@@ -224,7 +217,7 @@ class FluColorView : public QDialog
     }
 
   public slots:
- 
+
     void onRgbValueChanged()
     {
         bool bHasFocus = rEdit->hasFocus() || bEdit->hasFocus() || gEdit->hasFocus();
@@ -238,17 +231,17 @@ class FluColorView : public QDialog
         int g = gEdit->text().toInt();
         int b = bEdit->text().toInt();
 
-        //if (m_bRgbChanging)
+        // if (m_bRgbChanging)
         //{
-        //    LOG_DEBUG << "called";
-        //    return;
-        //}
+        //     LOG_DEBUG << "called";
+        //     return;
+        // }
 
         float fv = 0;
         if (r >= g && r >= b)
         {
             fv = r * 1.0 / 255;
-            //return;
+            // return;
         }
 
         if (g >= r && g >= b)
@@ -265,10 +258,10 @@ class FluColorView : public QDialog
         g = g / fv;
         b = b / fv;
 
-       // m_mutex.lock();
+        // m_mutex.lock();
         colorViewHHandle->setV(fv);
         colorViewHHandle->setColor(QColor(r, g, b), false);
-       // m_mutex.unlock();
+        // m_mutex.unlock();
     }
 
     void onThemeChanged()
@@ -295,7 +288,7 @@ class FluColorView : public QDialog
     QVBoxLayout* m_vContentWidgetLayout;
 
     // colorViewHHandle;
-    FluColorViewHHandle *colorViewHHandle;
+    FluColorViewHHandle* colorViewHHandle;
     // r/g/b edit;
     FluLineEdit* rEdit;
     FluLineEdit* gEdit;

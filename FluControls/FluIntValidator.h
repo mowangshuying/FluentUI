@@ -18,38 +18,38 @@ class FluIntValidator : public QIntValidator
         const QValidator::State state = QIntValidator::validate(input, pos);
         if (state == QIntValidator::Acceptable || state == QIntValidator::Intermediate)
         {
-            //bool isNum = true;
-            //for (int i = 0; i < input.length(); i++)
+            // bool isNum = true;
+            // for (int i = 0; i < input.length(); i++)
             //{
-            //    bool b = input.at(i) >= '0' && input.at(i) <= '9';
-            //    if (!b)
-            //    {
-            //        isNum = false;
-            //        break;
-            //    }
-            //}
+            //     bool b = input.at(i) >= '0' && input.at(i) <= '9';
+            //     if (!b)
+            //     {
+            //         isNum = false;
+            //         break;
+            //     }
+            // }
 
-            //if (!isNum)
+            // if (!isNum)
             //{
-            //    return QIntValidator::Invalid;
-            //}
+            //     return QIntValidator::Invalid;
+            // }
 
-            //int nValue = input.toInt();
-            //bool b = nValue >= 0 && nValue <= 255;
-            //if (!b)
+            // int nValue = input.toInt();
+            // bool b = nValue >= 0 && nValue <= 255;
+            // if (!b)
             //{
-            //    return QIntValidator::Invalid;
-            //}
+            //     return QIntValidator::Invalid;
+            // }
 
-            //if (input.length() > 3)
+            // if (input.length() > 3)
             //{
-            //    return QIntValidator::Invalid;
-            //}
+            //     return QIntValidator::Invalid;
+            // }
 
-           /// if (input.length() == 0)
-           // {
-           //     return QIntValidator::Invalid;
-           // }
+            /// if (input.length() == 0)
+            // {
+            //     return QIntValidator::Invalid;
+            // }
         }
 
         return state;

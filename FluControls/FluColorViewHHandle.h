@@ -48,10 +48,21 @@ class FluColorViewHHandle : public FluWidget
         return m_fV;
     }
 
-    void updateV(int nX)
+    void setV(float v)
+    {
+        m_fV = v;
+        // update circleP;
+        m_circleP.setX( (width() - 20) * m_fV + 10);
+        updateVByMouseOper(m_circleP.x(), false);
+        //emit valueChanged(v);
+    }
+
+    void updateVByMouseOper(int nX, bool bEmitSignal = true)
     {
         m_fV = ((nX - 10) * 1.0) / (width() - 20);
-        emit valueChanged(m_fV);
+        if (bEmitSignal)
+            emit valueChanged(m_fV);
+        update();
     }
 
     void setFixedSize(int w, int h)
@@ -60,11 +71,14 @@ class FluColorViewHHandle : public FluWidget
         update();
     }
 
-    void setColor(QColor color)
+    void setColor(QColor color, bool bEmitSignal = true)
     {
         m_color = color;
-        emit colorChanged(m_color);
-        emit valueChanged(m_fV);
+        if (bEmitSignal)
+        {
+            emit colorChanged(m_color);
+            emit valueChanged(m_fV);
+        }
         update();
     }
 
@@ -87,9 +101,9 @@ class FluColorViewHHandle : public FluWidget
                 m_circleP = QPoint(10, 8);
             }
 
-            updateV(m_circleP.x());
+            updateVByMouseOper(m_circleP.x());
             // LOG_DEBUG << "Value Changed:" << m_nV;
-            update();
+            //update();
         }
     }
 
@@ -106,17 +120,18 @@ class FluColorViewHHandle : public FluWidget
         }
 
         m_bPressed = true;
-        updateV(m_circleP.x());
+        updateVByMouseOper(m_circleP.x());
 
         // float percentage = (m_circleP.x() - 10) / (rect().width() - 20);
         // emit valueChanged(percentage);
         // LOG_DEBUG << "Value Changed:" << m_nV;
-        update();
+        //update();
     }
 
     void mouseReleaseEvent(QMouseEvent* event)
     {
         m_bPressed = false;
+        emit pressed();
     }
 
     void paintEvent(QPaintEvent* event)
@@ -153,6 +168,7 @@ class FluColorViewHHandle : public FluWidget
   signals:
     void colorChanged(QColor color);
     void valueChanged(float percentage);
+    void pressed();
 
   protected:
     QColor m_color;

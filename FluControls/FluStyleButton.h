@@ -11,8 +11,9 @@ class FluStyleButton : public QPushButton
     {
         setFixedSize(200, 30);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStyleButton.qss", this);
-        // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+
         onThemeChanged();
+        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }
 
   public slots:

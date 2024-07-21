@@ -224,6 +224,7 @@ class FluColorView : public QDialog
         if (!bHasFocus)
             return;
 
+
         // get r value;
         // get g value;
         // get b value;

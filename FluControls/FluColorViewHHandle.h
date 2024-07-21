@@ -120,6 +120,7 @@ class FluColorViewHHandle : public FluWidget
         }
 
         m_bPressed = true;
+        emit pressed();
         updateVByMouseOper(m_circleP.x());
 
         // float percentage = (m_circleP.x() - 10) / (rect().width() - 20);
@@ -131,7 +132,7 @@ class FluColorViewHHandle : public FluWidget
     void mouseReleaseEvent(QMouseEvent* event)
     {
         m_bPressed = false;
-        emit pressed();
+        //emit pressed();
     }
 
     void paintEvent(QPaintEvent* event)

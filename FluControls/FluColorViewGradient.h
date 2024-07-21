@@ -40,17 +40,17 @@ class FluColorViewGradient : public FluWidget
 
     bool findColor(QColor color, QPoint& point)
     {
-        //LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
+        // LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
         bool bFind = false;
-        
-        //std::vector<QColor> colors;
+
+        // std::vector<QColor> colors;
         for (int i = 0; i < 256; i++)
         {
             for (int j = 0; j < 256; j++)
             {
                 QColor curColor = m_pixmap.toImage().pixelColor(i, j);
-                //colors.push_back(curColor);
-                //LOG_DEBUG << "cur color:" << curColor.red() << "," << curColor.green() << "," << curColor.blue();
+                // colors.push_back(curColor);
+                // LOG_DEBUG << "cur color:" << curColor.red() << "," << curColor.green() << "," << curColor.blue();
                 if (atRange(color.red(), curColor.red(), 2) && atRange(color.green(), curColor.green(), 2) && atRange(color.blue(), curColor.blue(), 2))
                 {
                     point.setX(i);
@@ -61,21 +61,21 @@ class FluColorViewGradient : public FluWidget
             }
         }
 
-       // std::sort(colors.begin(), colors.end(), [=](const QColor &color1, const QColor &color2) { 
-       //     if (color1.red() != color2.red())
-       //         return color1.red() < color2.red();
+        // std::sort(colors.begin(), colors.end(), [=](const QColor &color1, const QColor &color2) {
+        //     if (color1.red() != color2.red())
+        //         return color1.red() < color2.red();
 
-       //      if (color1.green() != color2.green())
-       //         return color1.green() < color2.green();
+        //      if (color1.green() != color2.green())
+        //         return color1.green() < color2.green();
 
-       //      return color1.blue() < color2.blue();
-       // });
+        //      return color1.blue() < color2.blue();
+        // });
 
-       // for (int i = 0; i < colors.size(); i++)
-       // {
-       //     auto color = colors[i];
-       //     LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
-       // }
+        // for (int i = 0; i < colors.size(); i++)
+        // {
+        //     auto color = colors[i];
+        //     LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
+        // }
 
         return bFind;
     }
@@ -154,9 +154,9 @@ class FluColorViewGradient : public FluWidget
         m_bPressed = true;
         m_color = m_pixmap.toImage().pixelColor(m_circleP);
 #ifdef _DEBUG
-        //LOG_DEBUG << "color r:" << m_color.red();
-        //LOG_DEBUG << "color g:" << m_color.green();
-        //LOG_DEBUG << "color b:" << m_color.blue();
+        // LOG_DEBUG << "color r:" << m_color.red();
+        // LOG_DEBUG << "color g:" << m_color.green();
+        // LOG_DEBUG << "color b:" << m_color.blue();
 #endif
         colorChanged(m_color);
         update();

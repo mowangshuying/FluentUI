@@ -261,7 +261,7 @@ class FluColorView : public QDialog
         // m_mutex.lock();
         colorViewHHandle->setV(fv);
         colorViewHHandle->setColor(QColor(r, g, b), false);
-        
+
         // m_mutex.unlock();
         colorViewGradient->circleMoveToPoint(QColor(r, g, b));
     }

@@ -56,7 +56,7 @@ class FluColorView : public QDialog
         m_widget->setLayout(m_vContentWidgetLayout);
 
         auto hLayout = new QHBoxLayout;
-        auto colorViewGradient = new FluColorViewGradient;
+        colorViewGradient = new FluColorViewGradient;
         colorViewGradient->setFixedSize(256, 256);
 
         auto colorViewVHandle = new FluColorViewVHandle;
@@ -261,7 +261,9 @@ class FluColorView : public QDialog
         // m_mutex.lock();
         colorViewHHandle->setV(fv);
         colorViewHHandle->setColor(QColor(r, g, b), false);
+        
         // m_mutex.unlock();
+        colorViewGradient->circleMoveToPoint(QColor(r, g, b));
     }
 
     void onThemeChanged()
@@ -287,6 +289,7 @@ class FluColorView : public QDialog
     QFrame* m_widget;
     QVBoxLayout* m_vContentWidgetLayout;
 
+    FluColorViewGradient* colorViewGradient;
     // colorViewHHandle;
     FluColorViewHHandle* colorViewHHandle;
     // r/g/b edit;

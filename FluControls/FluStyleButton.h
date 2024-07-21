@@ -10,8 +10,6 @@ class FluStyleButton : public QPushButton
     FluStyleButton(QWidget* parent = nullptr) : QPushButton(parent)
     {
         setFixedSize(200, 30);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStyleButton.qss", this);
-
         onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     }

@@ -13,7 +13,7 @@ class FluHyperLinkButtonPage : public FluAEmptyPage
     FluHyperLinkButtonPage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
-        m_titleLabel->setText("HyperLinkButtonPage");
+        m_titleLabel->setText("HyperLinkButton");
         // m_subTitleLabel->setText("CppQtFluentUi888::FluHyperLinkButton");
         m_infoLabel->setText(
             "A HyperlinkButton appears as a text hyperlink. When a user clicks it, it opens the page you specify in the uri property in the default browser.Or your can handle its Click event, typically to navigate within your app.");

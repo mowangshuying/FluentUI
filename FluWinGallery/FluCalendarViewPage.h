@@ -12,7 +12,7 @@ class FluCalendarViewPage : public FluAEmptyPage
     FluCalendarViewPage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
-        m_titleLabel->setText("CalendarViewPage");
+        m_titleLabel->setText("CalendarView");
         // m_subTitleLabel->setText("CppQtFluentUi888.FluControls.FluCalendarView");
         m_infoLabel->setText("CalendarView shows a larger view for showing and selecting dates. DatePicker by contrast has a compact view with inline selection.");
 

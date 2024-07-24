@@ -13,7 +13,7 @@ class FluProgressBarPage : public FluAEmptyPage
     FluProgressBarPage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
-        m_titleLabel->setText("ProgressBarPage");
+        m_titleLabel->setText("ProgressBar");
         m_infoLabel->setText(
             "The ProgressBar has two different visual representations.\nIndeterminate - shows that a task is ongoing, but doesn't block user interaction.\nDeterminate - show how much progress has been made on a kknown amount of work.");
 

@@ -13,7 +13,7 @@ class FluFlipViewPage : public FluAEmptyPage
     FluFlipViewPage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
-        m_titleLabel->setText("FlipViewPage");
+        m_titleLabel->setText("FlipView");
         m_infoLabel->setText("The FlipView lets you flip through a collection of items.one at a time.it's great for displaying images from a gallery, pages of a magazine or similar items.");
 
         auto displayBox1 = new FluDisplayBox;

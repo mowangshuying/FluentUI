@@ -13,7 +13,7 @@ class FluRepeatButtonPage : public FluAEmptyPage
     FluRepeatButtonPage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
-        m_titleLabel->setText("RepeatButtonPage");
+        m_titleLabel->setText("RepeatButton");
         // m_subTitleLabel->setText("CppQtFluentUi888::RepeatButton");
         m_infoLabel->setText("The RepeatButton control is like a standard button, except that the Click event occurs continuously while the user presses the RepeatButton.");
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRepeatButtonPage.qss", this);

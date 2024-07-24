@@ -13,7 +13,7 @@ class FluInfoBadgePage : public FluAEmptyPage
     FluInfoBadgePage(QWidget* parent = nullptr) : FluAEmptyPage(parent)
     {
         m_mainLayout->setAlignment(Qt::AlignTop);
-        m_titleLabel->setText("InfoBadgePage");
+        m_titleLabel->setText("InfoBadge");
         m_infoLabel->setText("Badging is a non-instrusive and intuitive way to display notifications or bring focus to an area within an app - weheher that be for notifications, indicating new content, or showing an alert.");
 
         auto displayBox = new FluDisplayBox;

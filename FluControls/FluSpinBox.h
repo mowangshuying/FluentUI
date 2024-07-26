@@ -13,6 +13,16 @@ class FluSpinBox : public QSpinBox
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
+
+    void paintEvent(QPaintEvent* event)
+    {
+        QSpinBox::paintEvent(event);
+        if (!hasFocus())
+            return;
+
+        QPainter painter(this);
+        FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    }
   public slots:
     void onThemeChanged()
     {

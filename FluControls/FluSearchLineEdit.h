@@ -8,6 +8,8 @@
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QPainter>
+#include <QPaintEvent>
+#include <QPainterPath>
 
 class FluSearchLineEdit : public FluWidget
 {
@@ -90,6 +92,12 @@ class FluSearchLineEdit : public FluWidget
         opt.initFrom(this);
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+
+     
+        if (!property("isFocused").toBool())
+            return;
+
+        FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
     }
   signals:
     void onSearchBtnClicked();

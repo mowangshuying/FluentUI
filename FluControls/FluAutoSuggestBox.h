@@ -13,6 +13,7 @@
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QPainter>
+#include <QPainterPath>
 
 class FluAutoSuggestBox : public FluWidget
 {
@@ -128,6 +129,12 @@ class FluAutoSuggestBox : public FluWidget
         opt.initFrom(this);
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+
+        if (!property("isFocused").toBool())
+            return;
+
+        FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+
     }
   signals:
     void searchBtnClicked();

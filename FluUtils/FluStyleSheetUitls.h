@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FluLogUtils.h"
+#include "FluThemeUtils.h"
 #include <QByteArray>
 #include <QFile>
 #include <QJsonArray>
@@ -10,6 +11,9 @@
 #include <map>
 #include <QWidget>
 #include <QTimer>
+#include <QPainter>
+#include <QWidget>
+#include <QPainterPath>
 
 class FluStyleSheetUitls : public QObject
 {
@@ -28,6 +32,38 @@ class FluStyleSheetUitls : public QObject
 
     static void replaceVar(const QString &jsonVars, QString &styleSheet);
     static void replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet);
+
+    static void drawBottomLineIndicator(QWidget* widget, QPainter* painter)
+    {
+        painter->setPen(Qt::NoPen);
+        painter->setRenderHints(QPainter::Antialiasing);
+        //if (!property("isFocused").toBool())
+        //    return;
+
+        QMargins margins = widget->contentsMargins();
+
+        int nW = widget->width() - (margins.left() + margins.right());
+        int nH = widget->height();
+
+        QPainterPath path;
+        path.addRoundedRect(QRectF(margins.left(), nH - 10, nW - margins.right(), 10), 5, 5);
+
+        QPainterPath clipPath;
+        clipPath.addRect(margins.left(), nH - 10, nW - margins.right(), 7);
+        path = path.subtracted(clipPath);
+
+        QBrush brush;
+        if (FluThemeUtils::isLightTheme())
+        {
+            brush = QBrush(QColor(0, 90, 158));
+        }
+        else
+        {
+            brush = QBrush(QColor(118, 185, 237));
+        }
+
+        painter->fillPath(path, brush);
+    }
 
     static FluStyleSheetUitls *getUtils()
     {

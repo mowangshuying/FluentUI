@@ -3,24 +3,14 @@
 #include <QTextEdit>
 #include "../FluUtils/FluUtils.h"
 #include <QTextDocument>
+#include <QWidget>
 
+class FluTextEditWrap;
 class FluTextEdit : public QTextEdit
 {
     Q_OBJECT
   public:
-    FluTextEdit(QWidget* parent = nullptr) : QTextEdit(parent)
-    {
-        m_bAutoAdjustSize = false;
-
-        connect(document(), &QTextDocument::contentsChanged, this, [=]() {
-            if (!m_bAutoAdjustSize)
-                return;
-
-            setFixedHeight(this->document()->size().height() + 6);
-        });
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextEdit.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    }
+    FluTextEdit(QWidget* parent = nullptr);
 
     bool getAutoAdjustSize()
     {
@@ -33,6 +23,15 @@ class FluTextEdit : public QTextEdit
         document()->contentsChanged();
     }
 
+    void paintEvent(QPaintEvent* event)
+    {
+        QTextEdit::paintEvent(event);
+        if (!hasFocus())
+            return;
+
+        QPainter painter(viewport());
+        FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    }
   public slots:
     void onThemeChanged()
     {
@@ -47,5 +46,6 @@ class FluTextEdit : public QTextEdit
     }
 
   protected:
+    FluTextEditWrap* m_wrap;
     bool m_bAutoAdjustSize;
 };

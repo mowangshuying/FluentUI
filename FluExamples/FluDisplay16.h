@@ -1,19 +1,24 @@
 #pragma once
 
 #include "../FluControls/FluWidget.h"
+#include "FluTemplateDemo.h"
 #include <QGridLayout>
 
 // to display widget max can display 16 wdigets.
-class FluDisplay16 : public FluWidget
+class FluDisplay16 : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluDisplay16(QWidget* parent = nullptr) : FluWidget(parent)
+    FluDisplay16(QWidget* parent = nullptr) : FluTemplateDemo(parent)
     {
+        auto widget = new FluWidget;
+        m_contentLayout->addWidget(widget);
+
         gridLayout = new QGridLayout;
-        setLayout(gridLayout);
-        setStyleSheet("background-color:rgb(249, 249, 249");
-        setFixedSize(800, 600);
+        widget->setLayout(gridLayout);
+        //gridLayout->setSpacing(15);
+        //gridLayout->setContentsMargins(0, 0, 0, 0);
+        //m_contentLayout->addLayout(gridLayout, 1);
     }
 
     void addDemo(QWidget* widget)

@@ -98,6 +98,11 @@ class FluPasswordBox : public FluWidget
         opt.initFrom(this);
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+
+         if (!property("isFocused").toBool())
+            return;
+
+        FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
     }
 
   public slots:

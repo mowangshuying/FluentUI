@@ -10,7 +10,7 @@
 #include "../FluControls/FluHNavigationSettingsItem.h"
 #include <QContextMenuEvent>
 
-FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/)
+FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
     setWindowTitle("CppQt WinUI3 Template Demo Dev");
 #ifndef _DEBUG

@@ -33,12 +33,12 @@ class FluStyleSheetUitls : public QObject
     static void replaceVar(const QString &jsonVars, QString &styleSheet);
     static void replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet);
 
-    static void drawBottomLineIndicator(QWidget* widget, QPainter* painter)
+    static void drawBottomLineIndicator(QWidget *widget, QPainter *painter)
     {
         painter->setPen(Qt::NoPen);
         painter->setRenderHints(QPainter::Antialiasing);
-        //if (!property("isFocused").toBool())
-        //    return;
+        // if (!property("isFocused").toBool())
+        //     return;
 
         QMargins margins = widget->contentsMargins();
 

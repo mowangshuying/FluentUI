@@ -13,11 +13,10 @@ class FluLineEdit : public QLineEdit
   public:
     FluLineEdit(QWidget* parent = nullptr) : QLineEdit(parent)
     {
-      //  setContentsMargins(4, 4, 4, 4);
+        //  setContentsMargins(4, 4, 4, 4);
         onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
-
 
     void paintEvent(QPaintEvent* event)
     {

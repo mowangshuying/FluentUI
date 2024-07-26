@@ -93,7 +93,6 @@ class FluSearchLineEdit : public FluWidget
         QPainter painter(this);
         style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 
-     
         if (!property("isFocused").toBool())
             return;
 

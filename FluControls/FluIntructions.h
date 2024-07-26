@@ -44,6 +44,6 @@ class FluIntructions : public FluExpander
         getWrap2Layout()->addWidget(new FluVSplitLine);
     }
 
-protected:
+  protected:
     QLabel* m_titleLabel;
 };

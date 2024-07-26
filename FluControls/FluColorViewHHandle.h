@@ -132,7 +132,7 @@ class FluColorViewHHandle : public FluWidget
     void mouseReleaseEvent(QMouseEvent* event)
     {
         m_bPressed = false;
-        //emit pressed();
+        // emit pressed();
     }
 
     void paintEvent(QPaintEvent* event)

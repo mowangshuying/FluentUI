@@ -16,9 +16,9 @@ class FluDisplay16 : public FluTemplateDemo
 
         gridLayout = new QGridLayout;
         widget->setLayout(gridLayout);
-        //gridLayout->setSpacing(15);
-        //gridLayout->setContentsMargins(0, 0, 0, 0);
-        //m_contentLayout->addLayout(gridLayout, 1);
+        // gridLayout->setSpacing(15);
+        // gridLayout->setContentsMargins(0, 0, 0, 0);
+        // m_contentLayout->addLayout(gridLayout, 1);
     }
 
     void addDemo(QWidget* widget)

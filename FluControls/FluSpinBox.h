@@ -13,7 +13,6 @@ class FluSpinBox : public QSpinBox
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
-
     void paintEvent(QPaintEvent* event)
     {
         QSpinBox::paintEvent(event);

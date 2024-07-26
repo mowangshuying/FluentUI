@@ -134,7 +134,6 @@ class FluAutoSuggestBox : public FluWidget
             return;
 
         FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
-
     }
   signals:
     void searchBtnClicked();

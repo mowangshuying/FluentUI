@@ -21,7 +21,6 @@ class FluIconsPage : public FluAEmptyPage
         // m_subTitleLabel->setText("CppQtFluentUi888::FluIcons");
         m_infoLabel->setText("With the release of Windows 11, Segoe Fluent Icons is the remmended icon font.");
 
-        
         // instructions
         auto instructions = new FluIntructions;
         instructions->setTitleLabelText("Instructions on how to use Segoe Fluent Icons");
@@ -35,8 +34,8 @@ class FluIconsPage : public FluAEmptyPage
             "An icon with a 16-epx font size is the equivalent of a 16x16-epx icon, to make sizing and positioning more predictable. For optimal appearance, use these specific sizes: 16, 20, 24, 32, 40, 48, and 64. Deviating from these font "
             "sizes could lead to less crisp or blurry outcomes.\n"
             "All glyphs in Segoe Fluent Icons have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other.");
-        
-       // instructions->addEnd();
+
+        // instructions->addEnd();
         m_vScrollView->getMainLayout()->addWidget(instructions);
 
         m_searchLabel = new QLabel;

@@ -8,7 +8,6 @@
 #include <vector>
 #include <QWidget>
 
-
 class FluIntructions : public FluExpander
 {
     Q_OBJECT
@@ -22,7 +21,7 @@ class FluIntructions : public FluExpander
         m_titleLabel->setObjectName("wrap1TitleLabel");
         m_titleLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
         m_titleLabel->setWordWrap(true);
-        
+
         getWrap1Layout()->addWidget(m_titleLabel);
         getWrap1Layout()->setContentsMargins(15, 0, 15, 0);
         getWrap2Layout()->setContentsMargins(15, 15, 15, 15);
@@ -54,7 +53,6 @@ class FluIntructions : public FluExpander
         titleLabel->setText(title);
         contentLabel->setText(content);
 
-
         titleLabel->adjustSize();
         contentLabel->adjustSize();
 
@@ -68,7 +66,6 @@ class FluIntructions : public FluExpander
         vSplitLine->setObjectName("wrap2SplitLine");
         getWrap2Layout()->addWidget(vSplitLine);
     }
-
 
     void resizeEvent(QResizeEvent* event)
     {
@@ -101,7 +98,6 @@ class FluIntructions : public FluExpander
         setFixedHeight(m_wrap1->height() + m_wrap2->height());
     }
 
-
     void paintEvent(QPaintEvent* event)
     {
         FluExpander::paintEvent(event);
@@ -113,22 +109,22 @@ class FluIntructions : public FluExpander
         int nAutoH = 0;
         for (int i = 0; i < getWrap2Layout()->count(); i++)
         {
-             auto widget = getWrap2Layout()->itemAt(i)->widget();
-             if (widget->objectName() != "wrap2SplitLine")
-             {
-                 auto label = (FluLabel*)widget;
-                 nAutoH += label->heightForWidth(m_wrap2->width() - getWrap2Layout()->contentsMargins().left() - getWrap2Layout()->contentsMargins().right());
+            auto widget = getWrap2Layout()->itemAt(i)->widget();
+            if (widget->objectName() != "wrap2SplitLine")
+            {
+                auto label = (FluLabel*)widget;
+                nAutoH += label->heightForWidth(m_wrap2->width() - getWrap2Layout()->contentsMargins().left() - getWrap2Layout()->contentsMargins().right());
             }
-             else
-             {
-                 nAutoH += widget->height();
-             }
-            
-             nAutoH += getWrap2Layout()->spacing();
-         }
+            else
+            {
+                nAutoH += widget->height();
+            }
 
-         nAutoH += getWrap2Layout()->contentsMargins().top() + getWrap2Layout()->contentsMargins().bottom();
-         m_wrap2->setFixedHeight(nAutoH);
+            nAutoH += getWrap2Layout()->spacing();
+        }
+
+        nAutoH += getWrap2Layout()->contentsMargins().top() + getWrap2Layout()->contentsMargins().bottom();
+        m_wrap2->setFixedHeight(nAutoH);
         if (m_bDown)
         {
             m_expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
@@ -145,6 +141,7 @@ class FluIntructions : public FluExpander
             m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
         }
     }
+
   protected:
     FluLabel* m_titleLabel;
     QTimer* m_timer;

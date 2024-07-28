@@ -85,7 +85,7 @@ class FluExpander : public FluWidget
 
             m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
             // m_bDown = false;
-            //setDown(false);
+            // setDown(false);
         }
         else
         {
@@ -94,12 +94,12 @@ class FluExpander : public FluWidget
             m_expandAni->start();
             m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
             // m_bDown = true;
-            //setDown(true);
+            // setDown(true);
         }
     }
 
   protected:
-    QPropertyAnimation *m_expandAni;
+    QPropertyAnimation* m_expandAni;
 
     QVBoxLayout* m_mainLayout;
     QHBoxLayout* m_hWrap1Layout;

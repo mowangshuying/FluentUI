@@ -43,10 +43,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_expandAni->setDuration(200);
 
     // m_wrap2Height = 128;
-    connect(m_downOrUpButton, &QPushButton::clicked, [=](bool b) {
-        onClicked();
-        
-    });
+    connect(m_downOrUpButton, &QPushButton::clicked, [=](bool b) { onClicked(); });
 
     connect(m_expandAni, &QPropertyAnimation::valueChanged, [=](const QVariant& value) {
         QRect tmp = value.toRect();
@@ -55,9 +52,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         update();
     });
 
-    connect(m_expandAni, &QPropertyAnimation::finished, [=](void) { 
-        setDown(!m_bDown);
-    });
+    connect(m_expandAni, &QPropertyAnimation::finished, [=](void) { setDown(!m_bDown); });
 
     onThemeChanged();
 }

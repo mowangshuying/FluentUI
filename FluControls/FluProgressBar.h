@@ -17,7 +17,7 @@ class FluProgressBar : public QProgressBar
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBar.qss", this);
         }

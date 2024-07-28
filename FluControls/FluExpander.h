@@ -75,7 +75,32 @@ class FluExpander : public FluWidget
   public slots:
     void onThemeChanged();
 
+    virtual void onClicked()
+    {
+        if (m_bDown)
+        {
+            m_expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
+            m_expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
+            m_expandAni->start();
+
+            m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
+            // m_bDown = false;
+            //setDown(false);
+        }
+        else
+        {
+            m_expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
+            m_expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
+            m_expandAni->start();
+            m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
+            // m_bDown = true;
+            //setDown(true);
+        }
+    }
+
   protected:
+    QPropertyAnimation *m_expandAni;
+
     QVBoxLayout* m_mainLayout;
     QHBoxLayout* m_hWrap1Layout;
     QVBoxLayout* m_vWrap2Layout;

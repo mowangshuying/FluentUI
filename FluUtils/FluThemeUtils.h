@@ -6,6 +6,7 @@ enum class FluTheme
 {
     Light,
     Dark,
+    Custom,
 };
 
 class FluThemeUtils : public QObject
@@ -41,6 +42,11 @@ class FluThemeUtils : public QObject
     static bool isDarkTheme()
     {
         return getUtils()->getTheme() == FluTheme::Dark;
+    }
+
+    static bool isCustomTheme()
+    {
+        return getUtils()->getTheme() == FluTheme::Custom;
     }
 
     static void __init()

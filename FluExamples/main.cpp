@@ -53,6 +53,7 @@
 #include "FluAnimationDemo.h"
 #include "FluSettingsVersionBoxDemo.h"
 #include "FluColorViewDemo.h"
+#include "FluIntructionsDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -74,8 +75,8 @@ int main(int argc, char **argv)
     //  FluFlowLayoutDemo demo;
     //  demo.show();
 
-    FluLineEditDemo demo;
-    demo.show();
+    //FluLineEditDemo demo;
+    //demo.show();
 
     //  FluButtonDemo demo;
     //  demo.show();
@@ -250,6 +251,9 @@ int main(int argc, char **argv)
 
     // FluColorViewDemo demo;
     // demo.show();
+
+    FluIntructionsDemo demo;
+    demo.show();
 
     return app.exec();
 }

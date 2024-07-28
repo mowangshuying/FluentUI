@@ -296,7 +296,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
 
 void FluHNavigationViewDemo::onThemeChanged()
 {
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);

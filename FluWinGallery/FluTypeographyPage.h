@@ -116,7 +116,7 @@ class FluTypeographyPage : public FluAEmptyPage
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             QPixmap pixmap = QPixmap("../res/Typography.light.png");
             pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);

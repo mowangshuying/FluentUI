@@ -98,7 +98,7 @@ class FluIconButton : public QPushButton
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             m_penColor = QColor(8, 8, 8);
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);

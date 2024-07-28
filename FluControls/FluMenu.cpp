@@ -73,7 +73,7 @@ void FluMenu::paintEvent(QPaintEvent* event)
 
 void FluMenu::onThemeChanged()
 {
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
     }

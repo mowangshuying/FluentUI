@@ -40,7 +40,7 @@ FluSettingsVersionBox::FluSettingsVersionBox(QWidget* parent /*= nullptr*/) : Fl
 
 void FluSettingsVersionBox::onThemeChanged()
 {
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsVersionBox.qss", this);
     }

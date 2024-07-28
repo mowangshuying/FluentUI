@@ -74,7 +74,7 @@ class FluHomePageTitle : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             m_githubCard->setIcon(QPixmap("../res/HomeHeaderTiles/github-mark.png"));
             m_color1 = QColor(206, 216, 228);

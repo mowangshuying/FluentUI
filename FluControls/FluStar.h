@@ -31,7 +31,7 @@ class FluStar : public QLabel
     {
         m_bSolid = true;
         setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(0, 90, 158)));
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        if (FluThemeUtils::isDarkTheme())
         {
             setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(118, 185, 237)));
         }
@@ -40,7 +40,7 @@ class FluStar : public QLabel
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             if (m_bSolid)
             {

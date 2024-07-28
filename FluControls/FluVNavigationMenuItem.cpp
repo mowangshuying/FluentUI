@@ -46,7 +46,7 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
 
 void FluVNavigationMenuItem::onThemeChanged()
 {
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(8, 8, 8)));
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);

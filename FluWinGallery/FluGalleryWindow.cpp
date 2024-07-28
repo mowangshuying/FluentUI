@@ -122,7 +122,7 @@ void FluGalleryWindow::closeEvent(QCloseEvent *event)
 void FluGalleryWindow::onThemeChanged()
 {
     // LOG_DEBUG << "Func Beg";
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);

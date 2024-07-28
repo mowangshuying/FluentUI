@@ -61,7 +61,7 @@ void FluVNavigationSettingsItem::onItemClicked()
 
 void FluVNavigationSettingsItem::onThemeChanged()
 {
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSettingsItem.qss", this);
     }

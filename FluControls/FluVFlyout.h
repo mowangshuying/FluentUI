@@ -51,7 +51,7 @@ class FluVFlyout : public FluWidget
         setAttribute(Qt::WA_TranslucentBackground);
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
-        // if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        // if (FluThemeUtils::isDarkTheme())
         // {
         //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
         // }
@@ -119,7 +119,7 @@ class FluVFlyout : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
         }

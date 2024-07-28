@@ -72,7 +72,7 @@ class FluRotationButton : public QPushButton
 
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);

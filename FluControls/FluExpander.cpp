@@ -39,37 +39,24 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     // m_bDown = true;
     setDown(true);
     setTopRadius0(false);
-    auto expandAni = new QPropertyAnimation(m_wrap2, "geometry");
-    expandAni->setDuration(200);
+    m_expandAni = new QPropertyAnimation(m_wrap2, "geometry");
+    m_expandAni->setDuration(200);
 
     // m_wrap2Height = 128;
     connect(m_downOrUpButton, &QPushButton::clicked, [=](bool b) {
-        if (m_bDown)
-        {
-            expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
-            expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
-            expandAni->start();
-
-            m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
-            // m_bDown = false;
-            setDown(false);
-        }
-        else
-        {
-            expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
-            expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
-            expandAni->start();
-            m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
-            // m_bDown = true;
-            setDown(true);
-        }
+        onClicked();
+        
     });
 
-    connect(expandAni, &QPropertyAnimation::valueChanged, [=](const QVariant& value) {
+    connect(m_expandAni, &QPropertyAnimation::valueChanged, [=](const QVariant& value) {
         QRect tmp = value.toRect();
         m_wrap2->setFixedHeight(tmp.height());
         setFixedHeight(m_wrap1->height() + m_wrap2->height() + 1);
         update();
+    });
+
+    connect(m_expandAni, &QPropertyAnimation::finished, [=](void) { 
+        setDown(!m_bDown);
     });
 
     onThemeChanged();
@@ -93,7 +80,7 @@ bool FluExpander::eventFilter(QObject* watched, QEvent* event)
 
 void FluExpander::onThemeChanged()
 {
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
         // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);

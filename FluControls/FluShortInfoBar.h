@@ -44,7 +44,7 @@ class FluShortInfoBar : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             // if (m_closeBtn != nullptr)
             // {

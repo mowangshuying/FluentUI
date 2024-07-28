@@ -25,7 +25,6 @@ class FluListViewItemDelegate : public QStyledItemDelegate
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
     {
         QStyledItemDelegate::paint(painter, option, index);
-
         QString text = index.data(Qt::DisplayRole).toString();
 
         //  LOG_DEBUG << text;
@@ -37,7 +36,7 @@ class FluListViewItemDelegate : public QStyledItemDelegate
 
         QRect backgroundRect = option.rect;
         painter->setBrush(QColor(243, 243, 243));
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        if (FluThemeUtils::isDarkTheme())
         {
             painter->setBrush(QColor(32, 32, 32));
         }
@@ -49,7 +48,7 @@ class FluListViewItemDelegate : public QStyledItemDelegate
         {
             //   LOG_DEBUG << "hoverSelectedRect:" << hoverSelectedRect;
             painter->setBrush(QColor(234, 234, 234));
-            if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+            if (FluThemeUtils::isDarkTheme())
             {
                 painter->setBrush(QColor(45, 45, 45));
             }
@@ -61,7 +60,7 @@ class FluListViewItemDelegate : public QStyledItemDelegate
         {
             QRect indicatorRect(hoverSelectedRect.x(), hoverSelectedRect.y() + 9, 3, 18);
             painter->setBrush(QColor(0, 90, 158));
-            if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+            if (FluThemeUtils::isDarkTheme())
             {
                 painter->setBrush(QColor(118, 185, 237));
             }
@@ -71,7 +70,7 @@ class FluListViewItemDelegate : public QStyledItemDelegate
 
         QRect textRect(backgroundRect.x() + 12, backgroundRect.y() + 2, backgroundRect.width() - 12, backgroundRect.height() - 4);
         painter->setPen(Qt::black);
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+        if (FluThemeUtils::isDarkTheme())
         {
             painter->setPen(Qt::white);
         }

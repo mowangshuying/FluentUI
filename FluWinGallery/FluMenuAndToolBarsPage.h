@@ -67,7 +67,7 @@ class FluMenuAndToolBarsPage : public FluATitlePage
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuAndToolBarsPage.qss", this);
         }

@@ -52,7 +52,7 @@ class FluAppBarToggleButton : public FluWidget
 
     void updateIcon()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             if (m_bToggled)
             {
@@ -131,7 +131,7 @@ class FluAppBarToggleButton : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButton.qss", this);
         }

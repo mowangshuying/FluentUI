@@ -47,7 +47,7 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     m_bDisappearing = false;
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
 
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+    if (FluThemeUtils::isDarkTheme())
     {
         m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);

@@ -73,7 +73,7 @@ void FluSettingsSelectBox::paintEvent(QPaintEvent* event)
 
 void FluSettingsSelectBox::onThemeChanged()
 {
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         // m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap())
         setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(8, 8, 8)));

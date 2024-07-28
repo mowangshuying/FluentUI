@@ -172,7 +172,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
     void onThemeChanged()
     {
         // LOG_DEBUG << "called";
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
             m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(8, 8, 8)));

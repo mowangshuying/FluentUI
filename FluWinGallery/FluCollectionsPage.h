@@ -39,7 +39,7 @@ class FluCollectionsPage : public FluATitlePage
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCollectionsPage.qss", this);
         }

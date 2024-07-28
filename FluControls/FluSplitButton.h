@@ -61,7 +61,7 @@ class FluSplitButton : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);

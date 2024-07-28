@@ -80,7 +80,7 @@ void FluVNavigationFlyIconTextItem::adjustItemSize()
 void FluVNavigationFlyIconTextItem::onThemeChanged()
 {
     // LOG_DEBUG << "called";
-    if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+    if (FluThemeUtils::isLightTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", m_widget);
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", this);

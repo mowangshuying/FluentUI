@@ -103,7 +103,7 @@ class FluExpanderPage : public FluAEmptyPage
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpanderPage.qss", this);
         }

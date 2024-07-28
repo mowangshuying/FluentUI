@@ -78,7 +78,7 @@ class FluProgressRing : public FluWidget
             // drawText
             pen.setWidth(1);
             pen.setColor(Qt::black);
-            if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
+            if (FluThemeUtils::isDarkTheme())
                 pen.setColor(Qt::white);
 
             painter.setPen(pen);

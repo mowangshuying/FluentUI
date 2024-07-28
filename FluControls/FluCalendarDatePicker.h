@@ -98,7 +98,7 @@ class FluCalendarDatePicker : public QPushButton
 
     void onThemeChanged()
     {
-        if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
+        if (FluThemeUtils::isLightTheme())
         {
             m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar));
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);

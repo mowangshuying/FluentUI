@@ -745,9 +745,6 @@ class FluGalleryWindow : public FluFrameLessWidget
 
     void resizeEvent(QResizeEvent *event)
     {
-        // if (event->size().width() == width())
-        //     return;
-
         if (width() > 1000)
         {
             // check it
@@ -762,14 +759,6 @@ class FluGalleryWindow : public FluFrameLessWidget
     }
 
     void closeEvent(QCloseEvent *event);
-
-    ///*void paintEvent(QPaintEvent* event)
-    //{
-    //    QStyleOption opt;
-    //    opt.initFrom(this);
-    //    QPainter painter(this);
-    //    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    //}*/
 
   public slots:
     void onThemeChanged();

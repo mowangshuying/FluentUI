@@ -3,6 +3,7 @@
 
 #include "FluGalleryWindow.h"
 #include "../FluUtils/FluLogUtils.h"
+#include <QProcess>
 
 int main(int argc, char **argv)
 {
@@ -12,5 +13,12 @@ int main(int argc, char **argv)
     FluGalleryWindow w;
     w.show();
 
-    return app.exec();
+    int nExec = app.exec();
+    if (nExec == 931)
+    {
+        QProcess::startDetached(qApp->applicationFilePath());
+        return nExec;
+    }
+
+    return nExec;
 }

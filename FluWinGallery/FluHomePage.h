@@ -27,11 +27,12 @@ class FluHomePage : public FluVScrollView
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePage.qss", this);
         }
-        else
+        else 
         {
             FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePage.qss", this);
         }
     }
-
+signals:
+    void clickedHCard(QString key);
   protected:
 };

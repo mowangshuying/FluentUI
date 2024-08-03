@@ -23,7 +23,9 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     recentlyAddedSamplesLayout->addWidget(AnnotatedScrollBarCard);
 
     auto infoBadgeCard = new FluHCard(QPixmap("../res/ControlImages/InfoBadge.png"), "InfoBadge", "An non-instrusive Ui to display notifications or bring focus to an area");
+    infoBadgeCard->setKey("InfoBadgePage");
     recentlyAddedSamplesLayout->addWidget(infoBadgeCard);
+    connect(infoBadgeCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
     auto itemsViewCard = new FluHCard(QPixmap("../res/ControlImages/ItemsView.png"), "ItemsView", "A control that presents a collection of items using various layouts");
     recentlyAddedSamplesLayout->addWidget(itemsViewCard);
@@ -41,12 +43,17 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     recentlyUpdatedSamplesLayout->addWidget(AnimatedIconCard);
 
     auto autoSuggestBoxCard = new FluHCard(QPixmap("../res/ControlImages/AutoSuggestBox.png"), "AutoSuggestBox", "A control to provide suggestions as a user is typing.");
+    autoSuggestBoxCard->setKey("AutoSuggestBoxPage");
+    connect(autoSuggestBoxCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     recentlyUpdatedSamplesLayout->addWidget(autoSuggestBoxCard);
 
     auto breadcrumbBarCard = new FluHCard(QPixmap("../res/ControlImages/BreadcrumbBar.png"), "BreadcrumbBar", "Shows the trail of navigation token to the current location.");
     recentlyUpdatedSamplesLayout->addWidget(breadcrumbBarCard);
 
     auto buttonCard = new FluHCard(QPixmap("../res/ControlImages/Button.png"), "Button", "A control that responds to user input and raises a Click event.");
+    buttonCard->setKey("ButtonPage");
+    connect(buttonCard,&FluHCard::clicked, [=](QString key) {
+        emit clickedHCard(key); });
     recentlyUpdatedSamplesLayout->addWidget(buttonCard);
 
     m_vMainLayout->addWidget(titleWidget);

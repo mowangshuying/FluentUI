@@ -80,6 +80,17 @@ class FluGalleryWindow : public FluFrameLessWidget
             //  FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
             // int nExec = messageBox.exec();
         });
+
+        connect(homePage, &FluHomePage::clickedHCard, [=](QString key) {
+            //LOG_DEBUG << key;
+            auto item = m_navView->getItemByKey(key);
+            if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                m_sLayout->setCurrentWidget(key);
+            }
+        });
     }
 
     void makeDesignGuidanceNavItem()

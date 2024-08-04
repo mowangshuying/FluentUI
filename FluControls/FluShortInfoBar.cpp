@@ -77,6 +77,11 @@ void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)
     m_closeBtn->style()->polish(m_closeBtn);
 }
 
+void FluShortInfoBar::setInfoBarText(QString infoBarText)
+{
+    m_infoLabel->setText(infoBarText);
+}
+
 void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
 {
     switch (infoBarType)

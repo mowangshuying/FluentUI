@@ -188,6 +188,9 @@
     <ClCompile Include="FluIntructionsDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluBusyProgressRingDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -355,6 +358,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluAnimationDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluBusyProgressRingDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

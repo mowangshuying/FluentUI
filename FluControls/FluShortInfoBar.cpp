@@ -6,7 +6,7 @@ int FluShortInfoBar::m_count = 0;
 FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_count++;
-    LOG_DEBUG << "Count = " << m_count;
+    //LOG_DEBUG << "Count = " << m_count;
     setFixedHeight(50);
 
     m_hMainLayout = new QHBoxLayout;
@@ -45,16 +45,9 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     updateInfoBarTypeProperty(infobarType);
     m_nDisappearDuration = -1;
     m_bDisappearing = false;
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
-
-    if (FluThemeUtils::isDarkTheme())
-    {
-        m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
-    }
+   
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    //  setWindowFlags(Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint | Qt::Window);
-    //  setAttribute(Qt::WA_TranslucentBackground);
 }
 
 FluShortInfoBar::~FluShortInfoBar()

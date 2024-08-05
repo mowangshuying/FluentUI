@@ -119,6 +119,7 @@
     <ClCompile Include="FluAppBarToggleButton.cpp" />
     <ClCompile Include="FluAutoSuggestBox.cpp" />
     <ClCompile Include="FluBorder.cpp" />
+    <ClCompile Include="FluBusyProgressRing.cpp" />
     <ClCompile Include="FluCalendarDatePicker.cpp" />
     <ClCompile Include="FluCalendarItem.cpp" />
     <ClCompile Include="FluCalendarSelectDayView.cpp" />
@@ -264,6 +265,7 @@
     <QtMoc Include="FluColorViewHHandle.h" />
     <QtMoc Include="FluColorView.h" />
     <QtMoc Include="FluIntructions.h" />
+    <QtMoc Include="FluBusyProgressRing.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />
     <ClInclude Include="FluWindowKitWidget.h" />

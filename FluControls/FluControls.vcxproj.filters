@@ -410,6 +410,9 @@
     <ClCompile Include="FluTextEditWrap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluBusyProgressRing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -782,6 +785,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTextEditWrap.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluBusyProgressRing.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

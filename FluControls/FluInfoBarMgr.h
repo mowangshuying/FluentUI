@@ -7,6 +7,7 @@
 #include <algorithm>
 
 class FluShortInfoBar;
+enum class FluShortInfoBarType;
 
 // class FluInfoBarList
 //{
@@ -28,6 +29,8 @@ class FluInfoBarMgr : public QObject
         static FluInfoBarMgr mgr;
         return &mgr;
     }
+
+    static void showInfoBar(QWidget* parentWidget, FluShortInfoBarType type, QString text, bool bCloseable = true);
 
     void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int nDisappearDuration = 800);
 

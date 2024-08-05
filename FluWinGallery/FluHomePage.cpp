@@ -52,8 +52,7 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
 
     auto buttonCard = new FluHCard(QPixmap("../res/ControlImages/Button.png"), "Button", "A control that responds to user input and raises a Click event.");
     buttonCard->setKey("ButtonPage");
-    connect(buttonCard,&FluHCard::clicked, [=](QString key) {
-        emit clickedHCard(key); });
+    connect(buttonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     recentlyUpdatedSamplesLayout->addWidget(buttonCard);
 
     m_vMainLayout->addWidget(titleWidget);

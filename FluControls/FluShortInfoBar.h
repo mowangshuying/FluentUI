@@ -28,6 +28,8 @@ class FluShortInfoBar : public FluWidget
 
     void setInfoBarTypeProperty(QString infoBarType);
 
+    void setInfoBarType(FluShortInfoBarType type);
+
     void setInfoBarText(QString infoBarText);
 
     void updateInfoBarTypeProperty(FluShortInfoBarType infoBarType);

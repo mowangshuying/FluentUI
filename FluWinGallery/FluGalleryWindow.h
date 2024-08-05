@@ -82,7 +82,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         });
 
         connect(homePage, &FluHomePage::clickedHCard, [=](QString key) {
-            //LOG_DEBUG << key;
+            // LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);
             if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
             {

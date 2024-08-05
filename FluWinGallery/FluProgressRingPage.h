@@ -8,6 +8,7 @@
 #include "../FluControls/FluDisplayBoxEx.h"
 #include "../FluControls/FluLabel.h"
 #include "../FluControls/FluComboBoxEx.h"
+#include "../FluControls/FluBusyProgressRing.h"
 
 class FluProgressRingPage : public FluAEmptyPage
 {
@@ -24,6 +25,8 @@ class FluProgressRingPage : public FluAEmptyPage
         addIndeterminateProgressRing();
 
         addIndeterminateRing();
+
+        addBusyRing();
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressRingPage.qss", this);
     }
@@ -107,6 +110,20 @@ class FluProgressRingPage : public FluAEmptyPage
             m_nTimes = m_nTimes %= 100;
             progressRing->setCurValue(m_nTimes);
         });
+
+        // displayBox1->getBodyLayout()->addWidget(checkBox);
+        m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    }
+
+    void addBusyRing()
+    {
+        auto displayBox = new FluDisplayBox;
+        displayBox->setTitle("An busy ring.");
+        displayBox->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode3.md");
+        displayBox->setBodyWidgetFixedHeight(96);
+
+        auto busyRing = new FluBusyProgressRing(displayBox);
+        busyRing->move(50, 50);
 
         // displayBox1->getBodyLayout()->addWidget(checkBox);
         m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);

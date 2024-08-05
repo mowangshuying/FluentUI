@@ -253,10 +253,13 @@ int main(int argc, char **argv)
     // FluColorViewDemo demo;
     // demo.show();
 
-    //FluIntructionsDemo demo;
-    //demo.show();
+    // FluIntructionsDemo demo;
+    // demo.show();
 
-    FluBusyProgressRingDemo demo;
+    // FluBusyProgressRingDemo demo;
+    // demo.show();
+
+    FluInfoBarDemo demo;
     demo.show();
     return app.exec();
 }

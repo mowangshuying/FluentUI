@@ -130,29 +130,13 @@ class FluInfoBarPage : public FluAEmptyPage
         warnBtn->setFixedWidth(120);
         errorBtn->setFixedWidth(120);
 
-        connect(infoBtn, &FluPushButton::clicked, [=]() {
-            FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info, window());
-            sInfoBar->setFixedWidth(270);
-            FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
-        });
+        connect(infoBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Info, "This is an informational message."); });
 
-        connect(sucBtn, &FluPushButton::clicked, [=]() {
-            FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Suc, window());
-            sInfoBar->setFixedWidth(270);
-            FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
-        });
+        connect(sucBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Suc, "This is an success message."); });
 
-        connect(warnBtn, &FluPushButton::clicked, [=]() {
-            FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Warn, window());
-            sInfoBar->setFixedWidth(270);
-            FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
-        });
+        connect(warnBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Warn, "This is an warn message."); });
 
-        connect(errorBtn, &FluPushButton::clicked, [=]() {
-            FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Error, window());
-            sInfoBar->setFixedWidth(270);
-            FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
-        });
+        connect(errorBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Error, "This is an error message."); });
 
         displayBox->getBodyLayout()->addWidget(infoBtn);
         displayBox->getBodyLayout()->addWidget(sucBtn);

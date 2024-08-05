@@ -66,6 +66,20 @@ FluInfoBarMgr::~FluInfoBarMgr()
     // m_timer->stop();
 }
 
+void FluInfoBarMgr::showInfoBar(QWidget* parentWidget, FluShortInfoBarType type, QString text, bool bCloseable /*= true*/)
+{
+    FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info, parentWidget);
+    // sInfoBar->setFixedWidth(270);
+    sInfoBar->setInfoBarText(text);
+    sInfoBar->setInfoBarType(type);
+    if (!bCloseable)
+        sInfoBar->getCloseBtn()->hide();
+    sInfoBar->setFixedWidth(270);
+    // sInfoBar->show();
+    // sInfoBar->hide();
+    FluInfoBarMgr::getInstance()->addInfoBar(parentWidget, sInfoBar);
+}
+
 void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int nDisappearDuration /* = 2000*/)
 {
     if (parentWidget == nullptr || infoBar == nullptr)
@@ -84,8 +98,8 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, 
         parentWidget->installEventFilter(this);
 
         // set infoBar pos
-        int nX = parentWidget->width() / 2 - infoBar->sizeHint().width() / 2;
-        // LOG_DEBUG << "parentWidget Width:" << parentWidget->width() << ", infoBar width:" << infoBar->width();
+        int nX = parentWidget->width() / 2 - infoBar->width() / 2;
+        // LOG_DEBUG << "parentWidget Width:" << parentWidget->width() << ", infoBar width:" << infoBar->sizeHint().width();
         int nY = 75;
 
         infoBar->move(nX, nY);
@@ -97,7 +111,7 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, 
         return;
     }
 
-    int nX = parentWidget->width() / 2 - infoBar->sizeHint().width() / 2;
+    int nX = parentWidget->width() / 2 - infoBar->width() / 2;
     int nY = itf->second.back()->y() + itf->second.back()->height() + 15;
 
     infoBar->move(nX, nY);
@@ -142,7 +156,7 @@ bool FluInfoBarMgr::eventFilter(QObject* watched, QEvent* event)
         for (auto itList = itf->second.begin(); itList != itf->second.end(); itList++)
         {
             QWidget* parentWidget = (QWidget*)watched;
-            int nX = parentWidget->width() / 2 - (*itList)->sizeHint().width() / 2;
+            int nX = parentWidget->width() / 2 - (*itList)->width() / 2;
             int nY = (*itList)->y();
             (*itList)->move(nX, nY);
         }

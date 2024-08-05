@@ -6,73 +6,35 @@
 #include <QVBoxLayout>
 #include "../FluControls/FluPushButton.h"
 #include "../FluControls/FluInfoBarMgr.h"
+#include "FluTemplateDemo.h"
 
-class FluInfoBarDemo : public FluWidget
+class FluInfoBarDemo : public FluTemplateDemo
 {
     // Q_OBJECT
   public:
-    FluInfoBarDemo(QWidget* parent = nullptr) : FluWidget(parent)
+    FluInfoBarDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
     {
-        // auto vLayout = new QVBoxLayout;
-        // setLayout(vLayout);
+        auto infoBtn = new FluPushButton(this);
+        infoBtn->setText("Clicked me! Info!");
+        infoBtn->move(50, 50);
 
-        //  vLayout->setContentsMargins(20, 20, 20, 20);
+        auto sucBtn = new FluPushButton(this);
+        sucBtn->setText("Clicked me! Suc!");
+        sucBtn->move(50, 100);
 
-        //  auto sInfoBar1 = new FluShortInfoBar(FluShortInfoBarType::Info);
-        //  vLayout->addWidget(sInfoBar1);
+        auto warnBtn = new FluPushButton(this);
+        warnBtn->setText("Clicked me! Warn!");
+        warnBtn->move(50, 150);
 
-        //  auto sInfoBar2 = new FluShortInfoBar(FluShortInfoBarType::Suc);
-        //  vLayout->addWidget(sInfoBar2);
+        auto errorBtn = new FluPushButton(this);
+        errorBtn->setText("Clicked me! Error!");
+        errorBtn->move(50, 200);
 
-        //  auto sInfoBar3 = new FluShortInfoBar(FluShortInfoBarType::Warn);
-        //   vLayout->addWidget(sInfoBar3);
-
-        //  auto sInfoBar4 = new FluShortInfoBar(FluShortInfoBarType::Error);
-        //    vLayout->addWidget(sInfoBar4);
-
-        {
-            auto clickBtn = new FluPushButton(this);
-            clickBtn->setText("Clicked me! Info!");
-            clickBtn->move(50, 50);
-            connect(clickBtn, &FluPushButton::clicked, [=]() {
-                FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info, this);
-                FluInfoBarMgr::getInstance()->addInfoBar(this, sInfoBar);
-            });
-        }
-
-        {
-            auto clickBtn = new FluPushButton(this);
-            clickBtn->setText("Clicked me! Suc!");
-            clickBtn->move(50, 100);
-            connect(clickBtn, &FluPushButton::clicked, [=]() {
-                FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Suc, this);
-                FluInfoBarMgr::getInstance()->addInfoBar(this, sInfoBar);
-            });
-        }
-
-        {
-            auto clickBtn = new FluPushButton(this);
-            clickBtn->setText("Clicked me! Warn!");
-            clickBtn->move(50, 150);
-            connect(clickBtn, &FluPushButton::clicked, [=]() {
-                FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Warn, this);
-                FluInfoBarMgr::getInstance()->addInfoBar(this, sInfoBar);
-            });
-        }
-
-        {
-            {
-                auto clickBtn = new FluPushButton(this);
-                clickBtn->setText("Clicked me! Error!");
-                clickBtn->move(50, 200);
-                connect(clickBtn, &FluPushButton::clicked, [=]() {
-                    FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Error, this);
-                    FluInfoBarMgr::getInstance()->addInfoBar(this, sInfoBar);
-                });
-            }
-        }
+        connect(infoBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Info, "This is an informational message."); });
+        connect(sucBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Suc, "This is an success message."); });
+        connect(warnBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Warn, "This is an warn message."); });
+        connect(errorBtn, &FluPushButton::clicked, [=]() { FluInfoBarMgr::showInfoBar(window(), FluShortInfoBarType::Error, "This is an error message."); });
 
         resize(600, 400);
-        // clickBtn->move(300 - clickBtn->width() / 2, 200 - clickBtn->height() / 2);
     }
 };

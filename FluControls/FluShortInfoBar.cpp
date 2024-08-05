@@ -6,7 +6,7 @@ int FluShortInfoBar::m_count = 0;
 FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_count++;
-    //LOG_DEBUG << "Count = " << m_count;
+    // LOG_DEBUG << "Count = " << m_count;
     setFixedHeight(50);
 
     m_hMainLayout = new QHBoxLayout;
@@ -45,7 +45,7 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     updateInfoBarTypeProperty(infobarType);
     m_nDisappearDuration = -1;
     m_bDisappearing = false;
-   
+
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
@@ -68,6 +68,11 @@ void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)
     m_iconLabel->style()->polish(m_iconLabel);
     m_infoLabel->style()->polish(m_infoLabel);
     m_closeBtn->style()->polish(m_closeBtn);
+}
+
+void FluShortInfoBar::setInfoBarType(FluShortInfoBarType type)
+{
+    updateInfoBarTypeProperty(type);
 }
 
 void FluShortInfoBar::setInfoBarText(QString infoBarText)

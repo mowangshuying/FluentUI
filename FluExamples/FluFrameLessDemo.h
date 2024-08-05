@@ -11,9 +11,9 @@ class FluFrameLessDemo : public FluFrameLessWidget
   public:
     FluFrameLessDemo(QWidget* parent = nullptr);
 
-    //void paintEvent(QPaintEvent* event)
+    // void paintEvent(QPaintEvent* event)
     //{
-        // LOG_DEBUG << "themeSwitch:" << m_themeSwitch->isEnabled();
+    //  LOG_DEBUG << "themeSwitch:" << m_themeSwitch->isEnabled();
     //}
 
   protected:

@@ -16,6 +16,7 @@ class FluBusyProgressRing : public FluWidget
         int m_workAngle;
         QPointF m_point;
     };
+
   public:
     FluBusyProgressRing(QWidget* parent = nullptr) : FluWidget(parent)
     {
@@ -26,10 +27,10 @@ class FluBusyProgressRing : public FluWidget
         m_workingTimer->setInterval(12);
         m_workingTimer->start();
         m_workAngle = 270;
-        
-        connect(m_workingTimer, &QTimer::timeout, [=]() { 
-            //m_workAngle--;
-            
+
+        connect(m_workingTimer, &QTimer::timeout, [=]() {
+            // m_workAngle--;
+
             m_nTimes %= 16;
             if (m_workDatas.size() < 6 && m_nTimes == 0)
             {
@@ -38,7 +39,7 @@ class FluBusyProgressRing : public FluWidget
                 wd.m_point = getPoint(wd.m_workAngle);
                 m_workDatas.push_back(wd);
             }
-        
+
             for (int i = 0; i < m_workDatas.size(); i++)
             {
                 m_workDatas[i].m_workAngle += getSpeed(m_workDatas[i].m_workAngle);
@@ -46,19 +47,18 @@ class FluBusyProgressRing : public FluWidget
                     m_workDatas[i].m_workAngle = m_workDatas[i].m_workAngle % 360;
                 m_workDatas[i].m_point = getPoint(m_workDatas[i].m_workAngle);
             }
-            
+
             m_nTimes++;
             update();
         });
     }
 
-
     QPointF getPoint(int angle)
     {
-        //LOG_DEBUG << "angle:" << angle;
+        // LOG_DEBUG << "angle:" << angle;
         float r = qMin(width(), height()) / 2;
-        float x = (r-6) * qCos(angle *1.0 / 180 * M_PI) + r;
-        float y = (r-6) * qSin(angle * 1.0 / 180 * M_PI) + r;
+        float x = (r - 6) * qCos(angle * 1.0 / 180 * M_PI) + r;
+        float y = (r - 6) * qSin(angle * 1.0 / 180 * M_PI) + r;
         return QPointF(x, y);
     }
 
@@ -75,24 +75,24 @@ class FluBusyProgressRing : public FluWidget
 
         switch (nCurI)
         {
-        case 0:
-            return 4;
-        case 1:
-            return 8;
-        case 2:
-            return 8;
-        case 3:
-            return 4;
-        case 4:
-            return 2;
-        case 5:
-            return 1;
-        case 6:
-            return 1;
-        case 7:
-            return 2;
-        //default:
-        //    return 0;
+            case 0:
+                return 4;
+            case 1:
+                return 8;
+            case 2:
+                return 8;
+            case 3:
+                return 4;
+            case 4:
+                return 2;
+            case 5:
+                return 1;
+            case 6:
+                return 1;
+            case 7:
+                return 2;
+                // default:
+                //     return 0;
         }
 
         return 1;
@@ -105,30 +105,30 @@ class FluBusyProgressRing : public FluWidget
 
         // draw circle;
         QPen pen;
-       // pen.setWidth(7);
-       // pen.setColor(Qt::red);
+        // pen.setWidth(7);
+        // pen.setColor(Qt::red);
 
-      //  painter.setPen(pen);
-      //  float minWH = qMin(width(), height());
-      //  float trunkW = 6;
+        //  painter.setPen(pen);
+        //  float minWH = qMin(width(), height());
+        //  float trunkW = 6;
 
-      //   QRectF outerC(4, 4, minWH - trunkW - 2, minWH - trunkW - 2);
-      //   painter.drawEllipse(outerC);
+        //   QRectF outerC(4, 4, minWH - trunkW - 2, minWH - trunkW - 2);
+        //   painter.drawEllipse(outerC);
 
         painter.setPen(Qt::NoPen);
         if (FluThemeUtils::isLightTheme())
-           painter.setBrush(QBrush(QColor(0, 90, 158)));
+            painter.setBrush(QBrush(QColor(0, 90, 158)));
         else if (FluThemeUtils::isDarkTheme())
             painter.setBrush(QBrush(QColor(118, 185, 237)));
 
-         for (int i = 0; i < m_workDatas.size(); i++)
-         {
-             QRectF rf = QRectF(m_workDatas[i].m_point.x() - 3, m_workDatas[i].m_point.y() - 3, 6, 6);
-             painter.drawEllipse(rf);
-         }
+        for (int i = 0; i < m_workDatas.size(); i++)
+        {
+            QRectF rf = QRectF(m_workDatas[i].m_point.x() - 3, m_workDatas[i].m_point.y() - 3, 6, 6);
+            painter.drawEllipse(rf);
+        }
     }
 
- protected:
+  protected:
     QTimer* m_workingTimer;
     int m_nTimes;
     int m_workAngle;

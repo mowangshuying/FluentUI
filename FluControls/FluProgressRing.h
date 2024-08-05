@@ -32,7 +32,7 @@ class FluProgressRing : public FluWidget
                 return;
 
             m_workStartValue -= 1;
-            //m_workStartValue %= 360;
+            // m_workStartValue %= 360;
             if (m_workStartValue == 0)
                 m_workStartValue = 360;
             update();

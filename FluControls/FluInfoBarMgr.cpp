@@ -69,14 +69,14 @@ FluInfoBarMgr::~FluInfoBarMgr()
 void FluInfoBarMgr::showInfoBar(QWidget* parentWidget, FluShortInfoBarType type, QString text, bool bCloseable /*= true*/)
 {
     FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info, parentWidget);
-    // sInfoBar->setFixedWidth(270);
+   // sInfoBar->setFixedWidth(270);
     sInfoBar->setInfoBarText(text);
     sInfoBar->setInfoBarType(type);
     if (!bCloseable)
         sInfoBar->getCloseBtn()->hide();
     sInfoBar->setFixedWidth(270);
-    // sInfoBar->show();
-    // sInfoBar->hide();
+    //sInfoBar->show();
+    //sInfoBar->hide();
     FluInfoBarMgr::getInstance()->addInfoBar(parentWidget, sInfoBar);
 }
 
@@ -99,7 +99,7 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, 
 
         // set infoBar pos
         int nX = parentWidget->width() / 2 - infoBar->width() / 2;
-        // LOG_DEBUG << "parentWidget Width:" << parentWidget->width() << ", infoBar width:" << infoBar->sizeHint().width();
+        //LOG_DEBUG << "parentWidget Width:" << parentWidget->width() << ", infoBar width:" << infoBar->sizeHint().width();
         int nY = 75;
 
         infoBar->move(nX, nY);

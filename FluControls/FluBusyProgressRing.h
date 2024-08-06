@@ -9,6 +9,7 @@
 class FluBusyProgressRing : public FluWidget
 {
     Q_OBJECT
+    Q_PROPERTY(QColor circleColor READ getCircleColor WRITE setCircleColor)
   public:
     class WorkData
     {
@@ -28,6 +29,8 @@ class FluBusyProgressRing : public FluWidget
         m_workingTimer->start();
         m_workAngle = 270;
 
+        setCircleColor(QColor(0, 90, 158));
+        onThemeChanged();
         connect(m_workingTimer, &QTimer::timeout, [=]() {
             // m_workAngle--;
 
@@ -51,6 +54,17 @@ class FluBusyProgressRing : public FluWidget
             m_nTimes++;
             update();
         });
+    }
+
+    QColor getCircleColor()
+    {
+        return m_circleColor;
+    }
+
+    void setCircleColor(QColor color)
+    {
+        m_circleColor = color;
+        update();
     }
 
     QPointF getPoint(int angle)
@@ -116,23 +130,36 @@ class FluBusyProgressRing : public FluWidget
         //   painter.drawEllipse(outerC);
 
         painter.setPen(Qt::NoPen);
-        if (FluThemeUtils::isLightTheme())
-            painter.setBrush(QBrush(QColor(0, 90, 158)));
-        else if (FluThemeUtils::isDarkTheme())
-            painter.setBrush(QBrush(QColor(118, 185, 237)));
+        //if (FluThemeUtils::isLightTheme())
+        //    painter.setBrush(QBrush(QColor(0, 90, 158)));
+        //else if (FluThemeUtils::isDarkTheme())
+        //    painter.setBrush(QBrush(QColor(118, 185, 237)));
 
+        painter.setBrush(QBrush(m_circleColor));
         for (int i = 0; i < m_workDatas.size(); i++)
         {
             QRectF rf = QRectF(m_workDatas[i].m_point.x() - 3, m_workDatas[i].m_point.y() - 3, 6, 6);
             painter.drawEllipse(rf);
         }
     }
-
+  public slots:
+      void onThemeChanged()
+      {
+          if (FluThemeUtils::isLightTheme())
+          {
+              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBusyProgressRing.qss", this);
+          }
+          else
+          {
+              FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBusyProgressRing.qss", this);
+          }
+      }
   protected:
     QTimer* m_workingTimer;
     int m_nTimes;
     int m_workAngle;
     QPointF m_point;
 
+    QColor m_circleColor;
     std::vector<WorkData> m_workDatas;
 };

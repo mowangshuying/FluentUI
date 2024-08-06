@@ -1,3 +1,4 @@
 FluBusyProgressRing {
     qproperty-circleColor: rgb(0, 90, 158);
+    /* qproperty-circleColor: pink; */
 }

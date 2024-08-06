@@ -103,20 +103,23 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)
 {
-    FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
+    //FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
     // messageBox.exec();
 
-    int nExec = messageBox.exec();
-    if (nExec == QDialog::Rejected)
-    {
-        // m_titleBar->show();
-        event->ignore();  // can't run it! has some bug.
-        return;
-    }
-    else if (nExec == QDialog::Accepted)
-    {
-        event->accept();
-    }
+    //int nExec = messageBox.exec();
+    //if (nExec == QDialog::Rejected)
+    //{
+    //    // m_titleBar->show();
+    //    event->ignore();  // can't run it! has some bug.
+        
+    //   // FramelessWidgetsHelper *helper = FramelessWidgetsHelper::get(this);
+    //   // helper->setTitleBarWidget(m_titleBar);
+    //    return;
+    //}
+    //else if (nExec == QDialog::Accepted)
+    //{
+    //    event->accept();
+    //}
 }
 
 void FluGalleryWindow::onThemeChanged()

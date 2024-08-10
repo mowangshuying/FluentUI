@@ -38,10 +38,15 @@ class FluIconsPage : public FluAEmptyPage
         // instructions->addEnd();
         m_vScrollView->getMainLayout()->addWidget(instructions);
 
+        m_vScrollView->getMainLayout()->addSpacing(15);
+
         m_searchLabel = new QLabel;
         m_searchLabel->setObjectName("searchLabel");
         m_searchLabel->setText("Fluent Icons Library.");
         m_vScrollView->getMainLayout()->addWidget(m_searchLabel);
+
+
+        m_vScrollView->getMainLayout()->addSpacing(5);
 
         m_searchEdit = new FluSearchLineEdit;
         m_searchEdit->setFixedWidth(300);

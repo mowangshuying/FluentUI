@@ -177,25 +177,6 @@ class FluIconsPage : public FluAEmptyPage
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
     }
 
-    //  void paintEvent(QPaintEvent* event)
-    //   {
-    //      QStyleOption opt;
-    //      opt.initFrom(this);
-    //      QPainter painter(this);
-    //     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    //  }
-
-    // void showEvent(QShowEvent* event)
-    // {
-    //     LOG_DEBUG << "show Event";
-    //    onThemeChanged();
-    // }
-
-    //  void hideEvent(QHideEvent* event)
-    //  {
-    //     LOG_DEBUG << "hide Event";
-    // }
-
   public slots:
     void onThemeChanged()
     {

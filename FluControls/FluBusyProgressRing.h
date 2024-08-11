@@ -130,10 +130,10 @@ class FluBusyProgressRing : public FluWidget
         //   painter.drawEllipse(outerC);
 
         painter.setPen(Qt::NoPen);
-        //if (FluThemeUtils::isLightTheme())
-        //    painter.setBrush(QBrush(QColor(0, 90, 158)));
-        //else if (FluThemeUtils::isDarkTheme())
-        //    painter.setBrush(QBrush(QColor(118, 185, 237)));
+        // if (FluThemeUtils::isLightTheme())
+        //     painter.setBrush(QBrush(QColor(0, 90, 158)));
+        // else if (FluThemeUtils::isDarkTheme())
+        //     painter.setBrush(QBrush(QColor(118, 185, 237)));
 
         painter.setBrush(QBrush(m_circleColor));
         for (int i = 0; i < m_workDatas.size(); i++)
@@ -143,17 +143,18 @@ class FluBusyProgressRing : public FluWidget
         }
     }
   public slots:
-      void onThemeChanged()
-      {
-          if (FluThemeUtils::isLightTheme())
-          {
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBusyProgressRing.qss", this);
-          }
-          else
-          {
-              FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBusyProgressRing.qss", this);
-          }
-      }
+    void onThemeChanged()
+    {
+        if (FluThemeUtils::isLightTheme())
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBusyProgressRing.qss", this);
+        }
+        else
+        {
+            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBusyProgressRing.qss", this);
+        }
+    }
+
   protected:
     QTimer* m_workingTimer;
     int m_nTimes;

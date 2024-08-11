@@ -21,7 +21,8 @@ class FluPushButton : public QPushButton
         }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
-    explicit FluPushButton(const QString &text, QWidget *parent = nullptr) : FluPushButton(parent) {
+    explicit FluPushButton(const QString &text, QWidget *parent = nullptr) : FluPushButton(parent)
+    {
         setText(text);
     }
   public slots:

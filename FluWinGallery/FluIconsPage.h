@@ -45,7 +45,6 @@ class FluIconsPage : public FluAEmptyPage
         m_searchLabel->setText("Fluent Icons Library.");
         m_vScrollView->getMainLayout()->addWidget(m_searchLabel);
 
-
         m_vScrollView->getMainLayout()->addSpacing(5);
 
         m_searchEdit = new FluSearchLineEdit;

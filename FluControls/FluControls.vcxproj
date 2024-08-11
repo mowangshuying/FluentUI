@@ -158,6 +158,7 @@
     <ClCompile Include="FluLoopView.cpp" />
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
+    <ClCompile Include="FluPPushButton.cpp" />
     <ClCompile Include="FluSettingsVersionBox.cpp" />
     <ClCompile Include="FluTeachingTip.cpp" />
     <ClCompile Include="FluTextEditWrap.cpp" />
@@ -268,6 +269,7 @@
     <QtMoc Include="FluBusyProgressRing.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />
+    <QtMoc Include="FluPPushButton.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

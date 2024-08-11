@@ -21,6 +21,13 @@ static QString EnumTypeToQString(EnumType type)
     return metaEnum.valueToKey((int)(type));
 }
 
+enum class FluMouseState
+{
+    Normal,
+    Hover,
+    Pressed,
+};
+
 namespace FluAwesomeTypeNameSpace
 {
 Q_NAMESPACE

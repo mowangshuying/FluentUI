@@ -259,7 +259,10 @@ int main(int argc, char **argv)
     // FluBusyProgressRingDemo demo;
     // demo.show();
 
-    FluInfoBarDemo demo;
+    //FluInfoBarDemo demo;
+    //demo.show();
+
+    FluButtonDemo demo;
     demo.show();
     return app.exec();
 }

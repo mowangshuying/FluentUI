@@ -36,7 +36,7 @@ class FluVNavigationItem : public FluWidget
 
     virtual void setLong(bool bLong)
     {
-        setProperty("isLong", bLong);
+        setProperty("isLong",  QVariant::fromValue(bLong));
         m_bLong = bLong;
         style()->polish(this);
     }

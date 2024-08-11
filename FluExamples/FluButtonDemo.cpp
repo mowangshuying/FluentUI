@@ -8,6 +8,7 @@
 #include "../FluControls/FluRepeatButton.h"
 #include "../FluControls/FluAppBarButton.h"
 #include "../FluControls/FluAppBarToggleButton.h"
+#include "../FluControls/FluPPushButton.h"
 
 FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay16(parent)
 {
@@ -50,6 +51,10 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay16(paren
     auto btn10 = new FluAppBarToggleButton(FluAwesomeType::Like);
     btn10->setText("SymbolIcon");
     addDemo(btn10);
+
+    auto btn11 = new FluPPushButton;
+    btn11->setText("Paint Button");
+    addDemo(btn11);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

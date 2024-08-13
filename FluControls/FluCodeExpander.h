@@ -31,9 +31,11 @@ class FluCodeExpander : public FluExpander
         {
             code = file.readAll();
             file.close();
+            setCodeText(code);
+            return;
         }
 
-        setCodeText(code);
+        LOG_ERR << "open code file failed: " << fileName;
     }
 
     void paintEvent(QPaintEvent* event)

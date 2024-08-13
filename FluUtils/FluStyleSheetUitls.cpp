@@ -18,7 +18,7 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
         file.close();
         return qssStr;
     }
-
+    LOG_ERR << "open qss file failed: " << fileName;
     return "";
 }
 

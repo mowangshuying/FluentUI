@@ -10,12 +10,26 @@ FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
     header()->setHighlightSections(false);
     header()->setDefaultAlignment(Qt::AlignCenter);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeView.qss", this);
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=]() { onThemeChanged(); });
 }
 
 void FluTreeView::drawBranches(QPainter *painter, const QRect &rect, const QModelIndex &index) const
 {
-    // rect.setX(rect.x() + 15);
     QRect barcnchesRect(rect.x() + 16, rect.y(), rect.width(), rect.height());
     QTreeWidget::drawBranches(painter, barcnchesRect, index);
+}
+
+void FluTreeView::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        m_delegate->updateColor();
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeView.qss", this);
+    }
+    else
+    {
+        m_delegate->updateColor();
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeView.qss", this);
+    }
 }

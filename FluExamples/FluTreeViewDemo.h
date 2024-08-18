@@ -3,12 +3,13 @@
 #include "../FluControls/FluWidget.h"
 #include "../FluControls/FluTreeView.h"
 #include <QTreeWidgetItem>
+#include "FluTemplateDemo.h"
 
-class FluTreeViewDemo : public FluWidget
+class FluTreeViewDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluTreeViewDemo(FluWidget* parent = nullptr) : FluWidget(parent)
+    FluTreeViewDemo(FluWidget* parent = nullptr) : FluTemplateDemo(parent)
     {
         m_treeView = new FluTreeView(this);
         m_treeView->setHeaderHidden(true);

@@ -14,8 +14,7 @@ class FluTreeViewDemo : public FluTemplateDemo
         m_treeView = new FluTreeView(this);
         m_treeView->setHeaderHidden(true);
 
-        auto workDocumentsItem = new QTreeWidgetItem({"Work Documents"});
-        // workDocumentsItem->setCheckState(0, Qt::Unchecked);
+        auto workDocumentsItem = new QTreeWidgetItem({"Work Documents", "Work Documents ********", "Work Documents &&&&&&&&"});
         workDocumentsItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
         workDocumentsItem->setCheckState(0, Qt::Unchecked);
 

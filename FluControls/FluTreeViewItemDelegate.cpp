@@ -81,7 +81,7 @@ void FluTreeViewItemDelegate::paintIt(QPainter* painter, const QStyleOptionViewI
     }
 
     QString text = index.data(Qt::DisplayRole).toString();
-    QRect textRect(option.rect.x() + 45, backgroundRect.y() + 2, option.rect.width() - 45, backgroundRect.height() - 4);
+    QRect textRect(option.rect.x() + 45, option.rect.y() + 2, option.rect.width() - 45, option.rect.height());
     painter->setPen(m_textColor);
     painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
 

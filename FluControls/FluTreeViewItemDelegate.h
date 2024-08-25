@@ -16,7 +16,7 @@ class FluTreeViewItemDelegate : public QStyledItemDelegate
 
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
-    void paintIt(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    void paintRect(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
     void paintCheckBox(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 

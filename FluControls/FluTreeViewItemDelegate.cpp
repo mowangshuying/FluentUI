@@ -42,48 +42,58 @@ void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, cons
 void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     QStyledItemDelegate::paint(painter, option, index);
-    paintIt(painter, option, index);
-    paintCheckBox(painter, option, index);
-    paintArrow(painter, option, index);
+    paintRect(painter, option, index);
+    //paintCheckBox(painter, option, index);
+    //paintArrow(painter, option, index);
 }
 
-void FluTreeViewItemDelegate::paintIt(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+void FluTreeViewItemDelegate::paintRect(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     painter->save();
 
     bool bSelected = option.state & QStyle::State_Selected;
     bool bHover = option.state & QStyle::State_MouseOver;
 
-    painter->setPen(Qt::NoPen);
-    painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-
-    QRect backgroundRect = QRect(0, option.rect.y(), m_treeView->width(), option.rect.height());
-
-    painter->setBrush(m_normalBackgroundColor);
-    painter->drawRect(backgroundRect);
-
-    QRect hoverSelectedRect(backgroundRect.x(), backgroundRect.y() + 2, backgroundRect.width(), backgroundRect.height() - 4);
-    QRect indicatorRect(hoverSelectedRect.x() + 2, hoverSelectedRect.y() + 7, 3, 18);
-    if (bSelected)
+    //if (index.column() == 0)
     {
-        // draw selected;
-        painter->setBrush(m_selectBackgroundColor);
-        painter->drawRoundedRect(hoverSelectedRect, 4, 4);
+        painter->setPen(Qt::NoPen);
+        painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-        // draw indicator;
-        painter->setBrush(m_indicatorBrushColor);
-        painter->drawRoundedRect(indicatorRect, 1.5, 1.5);
+        QRect backgroundRect = QRect(0, option.rect.y(), m_treeView->width(), option.rect.height());
+
+        painter->setBrush(m_normalBackgroundColor);
+        painter->drawRect(backgroundRect);
+
+        QRect hoverSelectedRect(backgroundRect.x(), backgroundRect.y() + 2, backgroundRect.width(), backgroundRect.height() - 4);
+        QRect indicatorRect(hoverSelectedRect.x() + 2, hoverSelectedRect.y() + 7, 3, 18);
+        if (bSelected)
+        {
+            // draw selected;
+            painter->setBrush(m_selectBackgroundColor);
+            painter->drawRoundedRect(hoverSelectedRect, 4, 4);
+
+            // draw indicator;
+            painter->setBrush(m_indicatorBrushColor);
+            painter->drawRoundedRect(indicatorRect, 1.5, 1.5);
+        }
+        else if (bHover)
+        {
+            painter->setBrush(m_hoverBackgroundColor);
+            painter->drawRoundedRect(hoverSelectedRect, 4, 4);
+        }
     }
-    else if (bHover)
+
+   // if (index.column() == 0)
     {
-        painter->setBrush(m_hoverBackgroundColor);
-        painter->drawRoundedRect(hoverSelectedRect, 4, 4);
+        QString text = index.data(Qt::DisplayRole).toString();
+        LOG_DEBUG << "Rect:" << option.rect << ", text:" << text;
+        QRect textRect(option.rect.x(), option.rect.y(), option.rect.width(), option.rect.height());
+        painter->setPen(Qt::red);
+        painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
+        //painter->drawRect(textRect);
     }
 
-    QString text = index.data(Qt::DisplayRole).toString();
-    QRect textRect(option.rect.x() + 45, option.rect.y() + 2, option.rect.width() - 45, option.rect.height());
-    painter->setPen(m_textColor);
-    painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
+
 
     painter->restore();
 }

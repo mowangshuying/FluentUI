@@ -10,15 +10,11 @@ void FluScrollBarTrunk::init(Qt::Orientation orientation)
     initHorizontal(orientation);
     initVertical(orientation);
     initOpacityAnimation();
-    //m_handleBackgoundColor = Qt::red;
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_handleBackgoundColor = QColor(249, 249, 249);
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        m_handleBackgoundColor = QColor(44, 44, 44);
-    }
+
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 }
 
 void FluScrollBarTrunk::initVertical(Qt::Orientation orientation)
@@ -114,4 +110,17 @@ void FluScrollBarTrunk::paintEvent(QPaintEvent* event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(Qt::NoPen);
     drawHandleBackground(&painter);
+}
+
+void FluScrollBarTrunk::onThemeChanged()
+{
+    // m_handleBackgoundColor = Qt::red;
+    if (FluThemeUtils::isLightTheme())
+    {
+        m_handleBackgoundColor = QColor(249, 249, 249);
+    }
+    else if (FluThemeUtils::isDarkTheme())
+    {
+        m_handleBackgoundColor = QColor(44, 44, 44);
+    }
 }

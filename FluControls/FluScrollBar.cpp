@@ -11,6 +11,7 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, FluScrollArea* scrollAre
     m_scrollBar = getOriginalScrollBar();
     hideOriginalScrollBar();
     adjustScrollBarPosAndSize(m_scrollArea->size());
+    setRangeValue(0, 0);
     //  adjustHandleSize();
     //  adjustHandlePos();
 
@@ -61,7 +62,11 @@ void FluScrollBar::setMinValue(int nValue)
 void FluScrollBar::setRangeValue(int nMinValue, int nMaxValue)
 {
     if (m_nMinValue == nMinValue && m_nMaxValue == nMaxValue)
+    {
+        if (nMaxValue == 0)
+            setVisible(false);
         return;
+    }
 
     m_nMinValue = nMinValue;
     m_nMaxValue = nMaxValue;

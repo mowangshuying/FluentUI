@@ -42,11 +42,12 @@ class FluScrollBarTrunk : public QWidget
       void expandTrunk();
 
       void collapseTrunk();
-
   public:
       void drawHandleBackground(QPainter *painter);
 
       void paintEvent(QPaintEvent* event);
+    public slots:
+        void onThemeChanged();
   protected:
       QColor m_handleBackgoundColor;
       FluScrollBarArrowButton* m_preBtn;

@@ -55,6 +55,7 @@
 #include "FluColorViewDemo.h"
 #include "FluIntructionsDemo.h"
 #include "FluBusyProgressRingDemo.h"
+#include "FluScrollAreaDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -265,7 +266,10 @@ int main(int argc, char **argv)
     //FluButtonDemo demo;
     //demo.show();
 
-    FluTreeViewDemo demo;
+    //FluTreeViewDemo demo;
+    //demo.show();
+
+    FluScrollAreaDemo demo;
     demo.show();
 
     return app.exec();

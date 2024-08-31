@@ -1,56 +1,53 @@
 #pragma once
 
 #include <QWidget>
-#include <QVBoxLayout>
 #include <QPainter>
+#include "../FluUtils/FluUtils.h"
 
-class FluScrollBarHandle : public QWidget
+
+class FluScrollbarHandle : public QWidget
 {
+    Q_OBJECT
   public:
-      FluScrollBarHandle(Qt::Orientation orientation = Qt::Orientation::Vertical, QWidget* parent = nullptr)
+    FluScrollbarHandle(Qt::Orientation orientation, QWidget* parent = nullptr) : QWidget(parent), m_orientation(orientation)
       {
-
-      }
-
-      void initVertical(Qt::Orientation orientation)
-      {
-          if (orientation != Qt::Orientation::Vertical)
-              return;
-
-          setFixedWidth(12);
-
-      }
-
-      void initHorizontal(Qt::Orientation orientation)
-      {
-          if (orientation != Qt::Orientation::Horizontal)
-              return;
-          setFixedWidth(12);
-      }
-      
-      void setHandleBackgoundColor(QColor color)
-      {
-          m_handleBackgoundColor = color;
-      }
-
-      QColor getHandleBackgoundColor()
-      {
-          return m_handleBackgoundColor;
-      }
-
-      void drawHandleBackground(QPainter *painter)
-      {
-          painter->setBrush(m_handleBackgoundColor);
-          painter->drawRoundedRect(rect(), 6, 6);
+        if (orientation == Qt::Vertical)
+            setFixedWidth(3);
+        else
+            setFixedHeight(3);
       }
 
       void paintEvent(QPaintEvent* event)
       {
           QPainter painter(this);
-          painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
+          //LOG_DEBUG << "Rect:" << rect();
+          painter.setRenderHints(QPainter::Antialiasing);
           painter.setPen(Qt::NoPen);
-      }
-  protected:
-      QColor m_handleBackgoundColor;
+          //
+          int nR = 0;
+          if (m_orientation == Qt::Vertical)
+          {
+              nR = width() / 2;
+          }
+          else
+          {
+              nR = height() / 2;
+          }
 
+          QColor color;
+          if (FluThemeUtils::isLightTheme())
+          {
+              color = QColor(138, 138, 138);
+          }
+          else if (FluThemeUtils::isDarkTheme())
+          {
+              color = QColor(159, 159, 159);
+          }
+
+          painter.setBrush(QBrush(color));
+          painter.drawRoundedRect(rect(), nR, nR);
+      }
+
+  protected:
+      Qt::Orientation m_orientation;
 };

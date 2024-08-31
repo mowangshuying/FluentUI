@@ -191,6 +191,9 @@
     <ClCompile Include="FluBusyProgressRingDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluScrollAreaDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -323,6 +326,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluIntructionsDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluScrollAreaDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

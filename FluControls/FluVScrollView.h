@@ -1,20 +1,23 @@
 #pragma once
 
 #include "FluWidget.h"
-#include <QScrollArea>
+//#include <QScrollArea>
 #include <QVBoxLayout>
 #include "../FluUtils/FluStyleSheetUitls.h"
 #include "../FluUtils/FluUtils.h"
+#include "FluScrollArea.h"
 
-class FluVScrollView : public QScrollArea
+class FluVScrollView : public FluScrollArea
 {
     Q_OBJECT
   public:
-    FluVScrollView(QWidget* parent = nullptr) : QScrollArea(parent)
+    FluVScrollView(QWidget* parent = nullptr) : FluScrollArea(parent)
     {
         setWidgetResizable(true);
         setMinimumSize(0, 0);
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        hideHScrollBar();
+
         m_contextWidget = new QWidget(this);
         setWidget(m_contextWidget);
         m_vMainLayout = new QVBoxLayout(m_contextWidget);

@@ -4,16 +4,19 @@
 #include <QScrollArea>
 #include "FluFlowLayout.h"
 #include "../FluUtils/FluUtils.h"
+#include "FluScrollArea.h"
 
-class FluFWScrollView : public QScrollArea
+class FluFWScrollView : public FluScrollArea
 {
     Q_OBJECT
   public:
-    FluFWScrollView(QWidget* parent = nullptr) : QScrollArea(parent)
+    FluFWScrollView(QWidget* parent = nullptr) : FluScrollArea(parent)
     {
         setWidgetResizable(true);
         setMinimumSize(0, 0);
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        //setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        hideHScrollBar();
+
         m_contextWidget = new QWidget(this);
         setWidget(m_contextWidget);
         m_vMainLayout = new FluFlowLayout(m_contextWidget);

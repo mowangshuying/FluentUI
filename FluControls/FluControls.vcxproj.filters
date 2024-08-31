@@ -425,6 +425,15 @@
     <ClCompile Include="FluScrollBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluScrollBarTrunk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluScrollBarArrowButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluScrollbarHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -812,6 +821,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluScrollBar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluScrollBarArrowButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluScrollbarHandle.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluScrollBarTrunk.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

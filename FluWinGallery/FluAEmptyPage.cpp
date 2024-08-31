@@ -60,6 +60,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_vScrollView = new FluVScrollView(this);
     m_vScrollView->setObjectName("vScrollView");
+    m_vScrollView->hideHScrollBar();
     m_mainLayout->addWidget(m_vScrollView, 1);
 
     m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);

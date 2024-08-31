@@ -235,7 +235,7 @@ void FluVNavigationView::onMenuItemClicked()
 
         setFixedWidth(48);
         m_bLong = false;
-        m_midVScrollView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        //m_midVScrollView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     }
     else
     {
@@ -277,7 +277,7 @@ void FluVNavigationView::onMenuItemClicked()
             }
         }
 
-        m_midVScrollView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+     //   m_midVScrollView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         setFixedWidth(320 + 20);
         m_bLong = true;
     }

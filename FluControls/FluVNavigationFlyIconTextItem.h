@@ -24,13 +24,7 @@ class FluVNavigationFlyIconTextItem : public FluWidget
     void adjustItemSize();
 
     // to enable qss
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   public slots:
     void onThemeChanged();
@@ -38,7 +32,6 @@ class FluVNavigationFlyIconTextItem : public FluWidget
   protected:
     QVBoxLayout* m_vMainLayout;
 
-    FluVScrollView* m_widget;
-    // QVBoxLayout* m_vCenterLayout;
+    FluVScrollView* m_vScrollView;
     std::vector<FluVNavigationIconTextItem*> m_items;
 };

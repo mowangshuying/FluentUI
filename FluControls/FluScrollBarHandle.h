@@ -4,11 +4,11 @@
 #include <QPainter>
 #include "../FluUtils/FluUtils.h"
 
-class FluScrollbarHandle : public QWidget
+class FluScrollBarHandle : public QWidget
 {
     Q_OBJECT
   public:
-    FluScrollbarHandle(Qt::Orientation orientation, QWidget* parent = nullptr);
+    FluScrollBarHandle(Qt::Orientation orientation, QWidget* parent = nullptr);
 
     void paintEvent(QPaintEvent* event);
 

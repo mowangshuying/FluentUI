@@ -1,12 +1,12 @@
 #include "FluScrollBar.h"
 #include "FluScrollArea.h"
-#include "FluScrollbarHandle.h"
+#include "FluScrollBarHandle.h"
 
 FluScrollBar::FluScrollBar(Qt::Orientation orientation, FluScrollArea* scrollArea /*= nullptr*/)
     : QWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_nMaxValue(0), m_nMinValue(0), m_nCurrentValue(0), m_nPadding(14), m_nPageStep(50)
 {
     m_scrollBarTrunk = new FluScrollBarTrunk(orientation, this);
-    m_scrollBarHandle = new FluScrollbarHandle(orientation, this);
+    m_scrollBarHandle = new FluScrollBarHandle(orientation, this);
     m_timer = new QTimer(this);
 
     m_scrollBar = getOriginalScrollBar();

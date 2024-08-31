@@ -1,6 +1,6 @@
 #include "FluScrollbarHandle.h"
 
-FluScrollbarHandle::FluScrollbarHandle(Qt::Orientation orientation, QWidget* parent /*= nullptr*/) : QWidget(parent), m_orientation(orientation)
+FluScrollBarHandle::FluScrollBarHandle(Qt::Orientation orientation, QWidget* parent /*= nullptr*/) : QWidget(parent), m_orientation(orientation)
 {
     if (orientation == Qt::Vertical)
         setFixedWidth(3);
@@ -8,7 +8,7 @@ FluScrollbarHandle::FluScrollbarHandle(Qt::Orientation orientation, QWidget* par
         setFixedHeight(3);
 }
 
-void FluScrollbarHandle::paintEvent(QPaintEvent* event)
+void FluScrollBarHandle::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     // LOG_DEBUG << "Rect:" << rect();

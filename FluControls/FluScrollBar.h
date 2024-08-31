@@ -11,7 +11,7 @@
 #include <QScrollBar>
 
 class FluScrollArea;
-class FluScrollbarHandle;
+class FluScrollBarHandle;
 class FluScrollBar : public QWidget
 {
     Q_OBJECT
@@ -96,7 +96,7 @@ class FluScrollBar : public QWidget
   protected:
     FluScrollArea* m_scrollArea;
     FluScrollBarTrunk* m_scrollBarTrunk;
-    FluScrollbarHandle* m_scrollBarHandle;
+    FluScrollBarHandle* m_scrollBarHandle;
 
     QScrollBar* m_scrollBar;
 

@@ -162,7 +162,7 @@
     <ClCompile Include="FluScrollArea.cpp" />
     <ClCompile Include="FluScrollBar.cpp" />
     <ClCompile Include="FluScrollBarArrowButton.cpp" />
-    <ClCompile Include="FluScrollbarHandle.cpp" />
+    <ClCompile Include="FluScrollBarHandle.cpp" />
     <ClCompile Include="FluScrollBarTrunk.cpp" />
     <ClCompile Include="FluScrollDelegate.cpp" />
     <ClCompile Include="FluSettingsVersionBox.cpp" />
@@ -280,7 +280,7 @@
     <QtMoc Include="FluScrollDelegate.h" />
     <QtMoc Include="FluScrollBar.h" />
     <QtMoc Include="FluScrollBarArrowButton.h" />
-    <QtMoc Include="FluScrollbarHandle.h" />
+    <QtMoc Include="FluScrollBarHandle.h" />
     <QtMoc Include="FluScrollBarTrunk.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />

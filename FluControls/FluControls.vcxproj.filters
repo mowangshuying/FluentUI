@@ -431,7 +431,7 @@
     <ClCompile Include="FluScrollBarArrowButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluScrollbarHandle.cpp">
+    <ClCompile Include="FluScrollBarHandle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -826,7 +826,7 @@
     <QtMoc Include="FluScrollBarArrowButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluScrollbarHandle.h">
+    <QtMoc Include="FluScrollBarHandle.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluScrollBarTrunk.h">

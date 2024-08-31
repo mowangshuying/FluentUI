@@ -11,50 +11,52 @@ class FluScrollBarTrunk : public QWidget
 {
     Q_OBJECT
   public:
-      FluScrollBarTrunk(Qt::Orientation orientation = Qt::Orientation::Vertical, QWidget* parent = nullptr);
+    FluScrollBarTrunk(Qt::Orientation orientation = Qt::Orientation::Vertical, QWidget* parent = nullptr);
 
-      void init(Qt::Orientation orientation);
+    void init(Qt::Orientation orientation);
 
-      void initVertical(Qt::Orientation orientation);
+    void initVertical(Qt::Orientation orientation);
 
-      void initHorizontal(Qt::Orientation orientation);
-      
-      void initOpacityAnimation();
+    void initHorizontal(Qt::Orientation orientation);
 
-      FluScrollBarArrowButton* getPreBtn();
+    void initOpacityAnimation();
 
-      FluScrollBarArrowButton* getLstBtn();
+    FluScrollBarArrowButton* getPreBtn();
 
-      void setHandleBackgoundColor(QColor color);
+    FluScrollBarArrowButton* getLstBtn();
 
-      QColor getHandleBackgoundColor();
+    void setHandleBackgoundColor(QColor color);
 
-      QPropertyAnimation* getAnimation()
-      {
-          return m_animation;
-      }
+    QColor getHandleBackgoundColor();
 
-      QGraphicsOpacityEffect* getEffect()
-      {
-          return m_effect;
-      }
+    QPropertyAnimation* getAnimation()
+    {
+        return m_animation;
+    }
 
-      void expandTrunk();
+    QGraphicsOpacityEffect* getEffect()
+    {
+        return m_effect;
+    }
 
-      void collapseTrunk();
+    void expandTrunk();
+
+    void collapseTrunk();
+
   public:
-      void drawHandleBackground(QPainter *painter);
+    void drawHandleBackground(QPainter* painter);
 
-      void paintEvent(QPaintEvent* event);
-    public slots:
-        void onThemeChanged();
+    void paintEvent(QPaintEvent* event);
+  public slots:
+    void onThemeChanged();
+
   protected:
-      QColor m_handleBackgoundColor;
-      FluScrollBarArrowButton* m_preBtn;
-      FluScrollBarArrowButton* m_lstBtn;
+    QColor m_handleBackgoundColor;
+    FluScrollBarArrowButton* m_preBtn;
+    FluScrollBarArrowButton* m_lstBtn;
 
-      QLayout* m_Layout;
+    QLayout* m_Layout;
 
-      QGraphicsOpacityEffect* m_effect;
-      QPropertyAnimation* m_animation;
+    QGraphicsOpacityEffect* m_effect;
+    QPropertyAnimation* m_animation;
 };

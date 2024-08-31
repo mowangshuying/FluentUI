@@ -23,7 +23,7 @@ class FluTreeViewItemDelegate : public QStyledItemDelegate
     void paintArrow(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
   protected:
-    QColor m_fontColor; // the font color;
+    QColor m_fontColor;  // the font color;
 
     QColor m_normalBackgroundColor;
     QColor m_hoverBackgroundColor;

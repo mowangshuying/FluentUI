@@ -18,102 +18,102 @@ class FluScrollBar : public QWidget
   public:
     FluScrollBar(Qt::Orientation orientation, FluScrollArea* scrollArea = nullptr);
 
-      Qt::Orientation getOrientation();
+    Qt::Orientation getOrientation();
 
-      int getMaxValue();
+    int getMaxValue();
 
-      void setMaxValue(int nValue);
+    void setMaxValue(int nValue);
 
-      int getMinValue();
+    int getMinValue();
 
-      void setMinValue(int nValue);
+    void setMinValue(int nValue);
 
-      void setRangeValue(int nMinValue, int nMaxValue);
+    void setRangeValue(int nMinValue, int nMaxValue);
 
+    int getCurrentValue();
 
-      int getCurrentValue();
+    void setCurrrentValue(int nValue);
 
-      void setCurrrentValue(int nValue);
+    void scrollCurrentValue(int nValue);
 
-      void scrollCurrentValue(int nValue);
+    int getPadding();
 
-      int getPadding();
+    void setPadding(int nPadding);
 
-      void setPadding(int nPadding);
+    int getPageStep();
 
-      int getPageStep();
+    void setPageStep(int nPageStep);
 
-      void setPageStep(int nPageStep);
+    int getTrunkLen();
 
-      int getTrunkLen();
+    bool atTrunk(const QPoint& pos);
 
-      bool atTrunk(const QPoint& pos);
+    int getSlideWayLen();
 
-      int getSlideWayLen();
+    void adjustScrollBarPosAndSize(QSize scrollAreaSize);
 
-      void adjustScrollBarPosAndSize(QSize scrollAreaSize);
+    QScrollBar* getOriginalScrollBar();
 
-      QScrollBar* getOriginalScrollBar();
+    void hideOriginalScrollBar();
 
-      void hideOriginalScrollBar();
-      
-      void adjustHandlePos();
+    void adjustHandlePos();
 
-      void adjustHandleSize();
-    public:
-      bool eventFilter(QObject* watched, QEvent* event);
+    void adjustHandleSize();
 
-      void enterEvent(QEnterEvent* event);
+  public:
+    bool eventFilter(QObject* watched, QEvent* event);
 
-      void leaveEvent(QEvent* event);
+    void enterEvent(QEnterEvent* event);
 
-      void resizeEvent(QResizeEvent* event);
+    void leaveEvent(QEvent* event);
 
-      void mouseMoveEvent(QMouseEvent* event);
+    void resizeEvent(QResizeEvent* event);
 
-      void mousePressEvent(QMouseEvent* event);
+    void mouseMoveEvent(QMouseEvent* event);
 
-      void mouseReleaseEvent(QMouseEvent* event);
+    void mousePressEvent(QMouseEvent* event);
 
-      void wheelEvent(QWheelEvent* event);
+    void mouseReleaseEvent(QMouseEvent* event);
+
+    void wheelEvent(QWheelEvent* event);
   signals:
-      void valueRangeChanged(int nMinValue, int nMaxValue);
+    void valueRangeChanged(int nMinValue, int nMaxValue);
     void currentValueChanged(int nValue);
   public slots:
-      void OnPageUp();
-      
-      void OnPageDown();
+    void OnPageUp();
 
-      void onCurrentValueChanged(int nValue);
+    void OnPageDown();
 
-      void expand();
+    void onCurrentValueChanged(int nValue);
 
-      void collapse();
+    void expand();
 
-      void onOpacityAnimationChanged(const QVariant& value);
+    void collapse();
+
+    void onOpacityAnimationChanged(const QVariant& value);
+
   protected:
-      FluScrollArea* m_scrollArea;
-      FluScrollBarTrunk* m_scrollBarTrunk;
-      FluScrollbarHandle* m_scrollBarHandle;
+    FluScrollArea* m_scrollArea;
+    FluScrollBarTrunk* m_scrollBarTrunk;
+    FluScrollbarHandle* m_scrollBarHandle;
 
-      QScrollBar* m_scrollBar;
+    QScrollBar* m_scrollBar;
 
-      Qt::Orientation m_orientation;
+    Qt::Orientation m_orientation;
 
+    QTimer* m_timer;
 
-      QTimer* m_timer;
+    int m_nMaxValue;
+    int m_nMinValue;
+    int m_nCurrentValue;
 
-      int m_nMaxValue;
-      int m_nMinValue;
-      int m_nCurrentValue;
+    int m_nPadding;
 
-      int m_nPadding;
+    int m_nPageStep;
 
-      int m_nPageStep;
+    bool m_bExpanded;
+    bool m_bEnter;
 
-      bool m_bExpanded;
-      bool m_bEnter;
-
-      QPoint m_pressedPoint;
-      bool m_bPressed;
+    QPoint m_pressedPoint;
+    bool m_bPressed;
 };

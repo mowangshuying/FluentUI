@@ -8,7 +8,6 @@ FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*=
     m_vScrollView->setContentsMargins(0, 0, 0, 0);
     m_vScrollView->setObjectName("centerWidget");
 
-
     m_vMainLayout = new QVBoxLayout;
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
     setLayout(m_vMainLayout);
@@ -52,7 +51,7 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
 
 void FluVNavigationFlyIconTextItem::adjustItemSize()
 {
-    //LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
     int nMaxWidth = 0;
     for (auto item : m_items)
     {

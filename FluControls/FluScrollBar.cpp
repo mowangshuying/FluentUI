@@ -18,9 +18,7 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, FluScrollArea* scrollAre
     m_scrollArea->installEventFilter(this);
     connect(m_scrollBarTrunk->getPreBtn(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageUp);
     connect(m_scrollBarTrunk->getLstBtn(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageDown);
-    connect(m_scrollBar, &QScrollBar::rangeChanged, this, [=](int nMinValue, int nMaxValue) {
-        setRangeValue(nMinValue, nMaxValue);
-    });
+    connect(m_scrollBar, &QScrollBar::rangeChanged, this, [=](int nMinValue, int nMaxValue) { setRangeValue(nMinValue, nMaxValue); });
     connect(m_scrollBar, &QScrollBar::valueChanged, this, &FluScrollBar::onCurrentValueChanged);
     connect(this, &FluScrollBar::currentValueChanged, m_scrollBar, [=](int nValue) { m_scrollBar->setValue(nValue); });
     connect(m_scrollBarTrunk->getAnimation(), &QPropertyAnimation::valueChanged, this, &FluScrollBar::onOpacityAnimationChanged);
@@ -167,10 +165,10 @@ QScrollBar* FluScrollBar::getOriginalScrollBar()
 
 void FluScrollBar::hideOriginalScrollBar()
 {
-   // if (m_orientation == Qt::Vertical)
-        m_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-   // else if (m_orientation == Qt::Horizontal)
-        m_scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // if (m_orientation == Qt::Vertical)
+    m_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // else if (m_orientation == Qt::Horizontal)
+    m_scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 void FluScrollBar::adjustHandlePos()
@@ -183,7 +181,7 @@ void FluScrollBar::adjustHandlePos()
         int nDelta = 1.0 * getCurrentValue() / nTotal * getSlideWayLen();
 
         int nX = width() - m_scrollBarHandle->width() - 3;
-        //LOG_DEBUG << width() << "," << m_scrollBarHandle->width();
+        // LOG_DEBUG << width() << "," << m_scrollBarHandle->width();
         int nY = m_nPadding + nDelta;
         m_scrollBarHandle->move(nX, nY);
     }

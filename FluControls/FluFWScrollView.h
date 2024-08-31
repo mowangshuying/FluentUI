@@ -14,7 +14,7 @@ class FluFWScrollView : public FluScrollArea
     {
         setWidgetResizable(true);
         setMinimumSize(0, 0);
-        //setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        // setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         hideHScrollBar();
 
         m_contextWidget = new QWidget(this);

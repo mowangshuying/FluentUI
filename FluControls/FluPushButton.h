@@ -21,8 +21,8 @@ class FluPushButton : public QPushButton
         }
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
-    
-	FluPushButton(const QString &text, QWidget *parent = nullptr) : FluPushButton(parent)
+
+    FluPushButton(const QString &text, QWidget *parent = nullptr) : FluPushButton(parent)
     {
         setText(text);
     }

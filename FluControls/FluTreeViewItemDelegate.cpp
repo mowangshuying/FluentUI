@@ -43,8 +43,8 @@ void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
 {
     QStyledItemDelegate::paint(painter, option, index);
     paintRect(painter, option, index);
-    //paintCheckBox(painter, option, index);
-    //paintArrow(painter, option, index);
+    // paintCheckBox(painter, option, index);
+    // paintArrow(painter, option, index);
 }
 
 void FluTreeViewItemDelegate::paintRect(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
@@ -54,7 +54,7 @@ void FluTreeViewItemDelegate::paintRect(QPainter* painter, const QStyleOptionVie
     bool bSelected = option.state & QStyle::State_Selected;
     bool bHover = option.state & QStyle::State_MouseOver;
 
-    //if (index.column() == 0)
+    // if (index.column() == 0)
     {
         painter->setPen(Qt::NoPen);
         painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
@@ -83,17 +83,15 @@ void FluTreeViewItemDelegate::paintRect(QPainter* painter, const QStyleOptionVie
         }
     }
 
-   // if (index.column() == 0)
+    // if (index.column() == 0)
     {
         QString text = index.data(Qt::DisplayRole).toString();
         LOG_DEBUG << "Rect:" << option.rect << ", text:" << text;
         QRect textRect(option.rect.x(), option.rect.y(), option.rect.width(), option.rect.height());
         painter->setPen(Qt::red);
         painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
-        //painter->drawRect(textRect);
+        // painter->drawRect(textRect);
     }
-
-
 
     painter->restore();
 }
@@ -129,7 +127,7 @@ void FluTreeViewItemDelegate::paintCheckBox(QPainter* painter, const QStyleOptio
     }
     else if (nChecked == 1)
     {
-        //painter->setPen(Qt::red);
+        // painter->setPen(Qt::red);
         QPen pen;
         pen.setWidth(1);
         pen.setColor(m_indicatorPenColor);
@@ -143,7 +141,7 @@ void FluTreeViewItemDelegate::paintCheckBox(QPainter* painter, const QStyleOptio
     }
     else
     {
-        //painter->setPen(Qt::red);
+        // painter->setPen(Qt::red);
         QPen pen;
         pen.setWidth(1);
         pen.setColor(m_indicatorPenColor);

@@ -1,4 +1,4 @@
-#include "FluScrollbarHandle.h"
+#include "FluScrollBarHandle.h"
 
 FluScrollBarHandle::FluScrollBarHandle(Qt::Orientation orientation, QWidget* parent /*= nullptr*/) : QWidget(parent), m_orientation(orientation)
 {

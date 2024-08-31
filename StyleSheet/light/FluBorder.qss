@@ -1,4 +1,5 @@
 FluBorder {
+    color: [[TextColor]];
     background-color: [[BackGroundColor]];
     border: [[BorderWith]] solid [[BorderColor]];
     border-radius: 4px;

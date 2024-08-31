@@ -241,6 +241,18 @@ void FluCalendarMonthView::gotoPreMonth()
     setYearMonth(date.year(), date.month());
 }
 
+void FluCalendarMonthView::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarMonthView.qss", this);
+    }
+}
+
 FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_parentView = (FluCalendarView*)parent;
@@ -260,4 +272,34 @@ FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/
     //  LOG_DEBUG << curDate;
     m_monthView->setYearMonth(curDate.year(), curDate.month());
     m_parentView->getViewTitle()->setYearMonth(curDate.year(), curDate.month());
+}
+
+void FluCalendarSelectDayView::gotoNextMonth()
+{
+    m_monthView->gotoNextMonth();
+}
+
+void FluCalendarSelectDayView::gotoPreMonth()
+{
+    m_monthView->gotoPreMonth();
+}
+
+QDate FluCalendarSelectDayView::getCurMonth()
+{
+    return m_monthView->getCurMonth();
+}
+
+void FluCalendarSelectDayView::setParentView(FluCalendarView* view)
+{
+    m_parentView = view;
+}
+
+FluCalendarViewWeakTitle* FluCalendarSelectDayView::getWeekTitle()
+{
+    return m_weekTitle;
+}
+
+FluCalendarMonthView* FluCalendarSelectDayView::getMonthView()
+{
+    return m_monthView;
 }

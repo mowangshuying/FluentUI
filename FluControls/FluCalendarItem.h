@@ -10,64 +10,21 @@ class FluCalendarItem : public QLabel
 {
     Q_OBJECT
   public:
-    FluCalendarItem(QWidget* parent = nullptr) : QLabel(parent)
-    {
-        m_infoText = QString("");
-    }
+    FluCalendarItem(QWidget* parent = nullptr);
 
-    void setInfoText(QString infoText)
-    {
-        m_infoText = infoText;
-        update();
-    }
+    void setInfoText(QString infoText);
 
-    void setViewState(FluCalendarViewState viewState)
-    {
-        m_viewState = viewState;
-    }
+    void setViewState(FluCalendarViewState viewState);
 
-    FluCalendarViewState getViewState()
-    {
-        return m_viewState;
-    }
+    FluCalendarViewState getViewState();
 
-    QDate getCurDate()
-    {
-        return m_curDate;
-    }
+    QDate getCurDate();
 
-    void setCurDate(QDate curDate)
-    {
-        m_curDate = curDate;
-    }
+    void setCurDate(QDate curDate);
 
-    void mouseReleaseEvent(QMouseEvent* ev)
-    {
-        QLabel::mouseReleaseEvent(ev);
-        LOG_DEBUG << "called";
-        emit clicked();
-    }
+    void mouseReleaseEvent(QMouseEvent* ev);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QLabel::paintEvent(event);
-
-        QPainter painter(this);
-        if (m_infoText.isEmpty())
-        {
-            return;
-        }
-
-        QPen pen;
-        pen.setBrush(QBrush(QColor(131, 131, 131)));
-        painter.setPen(pen);
-
-        QFont font;
-        font.setPointSize(6);
-        painter.setFont(font);
-        QRect textRect(15, 6, 20, 10);
-        painter.drawText(textRect, m_infoText);
-    }
+    void paintEvent(QPaintEvent* event);
   signals:
     void clicked();
 

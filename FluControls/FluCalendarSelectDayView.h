@@ -59,17 +59,7 @@ class FluCalendarMonthView : public FluWidget
   signals:
     void curMonthChanged();
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarMonthView.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QGridLayout* m_gMainLayout;
@@ -83,35 +73,17 @@ class FluCalendarSelectDayView : public FluWidget
   public:
     FluCalendarSelectDayView(QWidget* parent = nullptr);
 
-    void gotoNextMonth()
-    {
-        m_monthView->gotoNextMonth();
-    }
+    void gotoNextMonth();
 
-    void gotoPreMonth()
-    {
-        m_monthView->gotoPreMonth();
-    }
+    void gotoPreMonth();
 
-    QDate getCurMonth()
-    {
-        return m_monthView->getCurMonth();
-    }
+    QDate getCurMonth();
 
-    void setParentView(FluCalendarView* view)
-    {
-        m_parentView = view;
-    }
+    void setParentView(FluCalendarView* view);
 
-    FluCalendarViewWeakTitle* getWeekTitle()
-    {
-        return m_weekTitle;
-    }
+    FluCalendarViewWeakTitle* getWeekTitle();
 
-    FluCalendarMonthView* getMonthView()
-    {
-        return m_monthView;
-    }
+    FluCalendarMonthView* getMonthView();
 
   public slots:
     // void onThemeChanged()

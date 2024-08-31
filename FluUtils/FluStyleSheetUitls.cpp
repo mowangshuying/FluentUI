@@ -113,3 +113,71 @@ void FluStyleSheetUitls::replaceVar(const std::map<QString, QString> &kvMap, QSt
         styleSheet.replace(key, value);
     }
 }
+
+void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *painter)
+{
+    painter->setPen(Qt::NoPen);
+    painter->setRenderHints(QPainter::Antialiasing);
+    // if (!property("isFocused").toBool())
+    //     return;
+
+    QMargins margins = widget->contentsMargins();
+
+    int nW = widget->width() - (margins.left() + margins.right());
+    int nH = widget->height();
+
+    QPainterPath path;
+    path.addRoundedRect(QRectF(margins.left(), nH - 10, nW - margins.right(), 10), 5, 5);
+
+    QPainterPath clipPath;
+    clipPath.addRect(margins.left(), nH - 10, nW - margins.right(), 7);
+    path = path.subtracted(clipPath);
+
+    QBrush brush;
+    if (FluThemeUtils::isLightTheme())
+    {
+        brush = QBrush(QColor(0, 90, 158));
+    }
+    else
+    {
+        brush = QBrush(QColor(118, 185, 237));
+    }
+
+    painter->fillPath(path, brush);
+}
+
+FluStyleSheetUitls *FluStyleSheetUitls::getUtils()
+{
+    if (m_styleSheetUtils == nullptr)
+        m_styleSheetUtils = new FluStyleSheetUitls;
+    return m_styleSheetUtils;
+}
+
+QTimer *FluStyleSheetUitls::getTimer()
+{
+    return FluStyleSheetUitls::getUtils()->m_timer;
+}
+
+void FluStyleSheetUitls::__init()
+{
+    getUtils();
+    FluStyleSheetUitls::getUtils()->setStyleSheetDir("../StyleSheet/light/");
+}
+
+void FluStyleSheetUitls::__deInit()
+{
+    if (m_styleSheetUtils == nullptr)
+        return;
+    delete m_styleSheetUtils;
+    m_styleSheetUtils = nullptr;
+}
+
+void FluStyleSheetUitls::setStyleSheetDir(QString styleSheetDir)
+{
+    m_styleSheetDir = styleSheetDir;
+}
+
+QString FluStyleSheetUitls::getStyleSheetDir()
+{
+    return m_styleSheetDir;
+}

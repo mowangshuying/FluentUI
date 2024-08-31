@@ -33,75 +33,21 @@ class FluStyleSheetUitls : public QObject
     static void replaceVar(const QString &jsonVars, QString &styleSheet);
     static void replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet);
 
-    static void drawBottomLineIndicator(QWidget *widget, QPainter *painter)
-    {
-        painter->setPen(Qt::NoPen);
-        painter->setRenderHints(QPainter::Antialiasing);
-        // if (!property("isFocused").toBool())
-        //     return;
+    static void drawBottomLineIndicator(QWidget *widget, QPainter *painter);
 
-        QMargins margins = widget->contentsMargins();
-
-        int nW = widget->width() - (margins.left() + margins.right());
-        int nH = widget->height();
-
-        QPainterPath path;
-        path.addRoundedRect(QRectF(margins.left(), nH - 10, nW - margins.right(), 10), 5, 5);
-
-        QPainterPath clipPath;
-        clipPath.addRect(margins.left(), nH - 10, nW - margins.right(), 7);
-        path = path.subtracted(clipPath);
-
-        QBrush brush;
-        if (FluThemeUtils::isLightTheme())
-        {
-            brush = QBrush(QColor(0, 90, 158));
-        }
-        else
-        {
-            brush = QBrush(QColor(118, 185, 237));
-        }
-
-        painter->fillPath(path, brush);
-    }
-
-    static FluStyleSheetUitls *getUtils()
-    {
-        if (m_styleSheetUtils == nullptr)
-            m_styleSheetUtils = new FluStyleSheetUitls;
-        return m_styleSheetUtils;
-    }
+    static FluStyleSheetUitls *getUtils();
 
     // #ifdef _DEBUG_QSS
-    static QTimer *getTimer()
-    {
-        return FluStyleSheetUitls::getUtils()->m_timer;
-    }
+    static QTimer *getTimer();
     // #endif
 
-    static void __init()
-    {
-        getUtils();
-        FluStyleSheetUitls::getUtils()->setStyleSheetDir("../StyleSheet/light/");
-    }
+    static void __init();
 
-    static void __deInit()
-    {
-        if (m_styleSheetUtils == nullptr)
-            return;
-        delete m_styleSheetUtils;
-        m_styleSheetUtils = nullptr;
-    }
+    static void __deInit();
 
-    void setStyleSheetDir(QString styleSheetDir)
-    {
-        m_styleSheetDir = styleSheetDir;
-    }
+    void setStyleSheetDir(QString styleSheetDir);
 
-    QString getStyleSheetDir()
-    {
-        return m_styleSheetDir;
-    }
+    QString getStyleSheetDir();
 
   protected:
     QString m_styleSheetDir;

@@ -5,12 +5,13 @@
 #include <QEvent>
 #include <QWheelEvent>
 #include "FluScrollBarTrunk.h"
-#include "FluScrollbarHandle.h"
+//#include "FluScrollbarHandle.h"
 #include <QResizeEvent>
 #include "FluScrollBarArrowButton.h"
 #include <QScrollBar>
 
 class FluScrollArea;
+class FluScrollbarHandle;
 class FluScrollBar : public QWidget
 {
     Q_OBJECT

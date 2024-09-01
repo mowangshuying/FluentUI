@@ -14,29 +14,13 @@ class FluColorViewGradient : public FluWidget
 {
     Q_OBJECT
   public:
-    FluColorViewGradient(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-        setFixedSize(192, 192);
-        m_pixmap = QPixmap("../res/ControlResImages/GradientColor.png");
-        m_pixmap = m_pixmap.scaled(192, 192);
-    }
+    FluColorViewGradient(QWidget* parent = nullptr);
 
-    void setFixedSize(int w, int h)
-    {
-        FluWidget::setFixedSize(w, h);
-        m_pixmap = m_pixmap.scaled(w, h);
-        update();
-    }
+    void setFixedSize(int w, int h);
 
-    void setColor(QColor color)
-    {
-        m_color = color;
-    }
+    void setColor(QColor color);
 
-    QColor getColor()
-    {
-        return m_color;
-    }
+    QColor getColor();
 
     bool findColor(QColor color, QPoint& point)
     {

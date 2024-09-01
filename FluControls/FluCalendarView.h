@@ -42,38 +42,17 @@ class FluCalendarView : public FluWidget
 
     FluCalendarSelectYearView* getSelectYearView();
 
-    FluCalendarViewTitle* getViewTitle()
-    {
-        return m_title;
-    }
+    FluCalendarViewTitle* getViewTitle();
 
-    QDate getCurDate()
-    {
-        return m_curDate;
-    }
+    QDate getCurDate();
 
-    void setCurDate(QDate date)
-    {
-        m_curDate = date;
-    }
+    void setCurDate(QDate date);
 
-    FluCalendarViewState getViewState()
-    {
-        return m_viewState;
-    }
+    FluCalendarViewState getViewState();
 
-    void setViewState(FluCalendarViewState viewState)
-    {
-        m_viewState = viewState;
-    }
+    void setViewState(FluCalendarViewState viewState);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
   signals:
     void selectedDate(QDate date);
 

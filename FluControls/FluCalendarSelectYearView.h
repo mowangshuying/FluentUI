@@ -13,13 +13,7 @@ class FluCalendarSelectYearView : public FluWidget
   public:
     FluCalendarSelectYearView(QWidget* parent = nullptr);
 
-    FluCalendarItem* getItem(int nIndex)
-    {
-        if (nIndex < 0 || nIndex >= m_labelList.size())
-            return nullptr;
-
-        return m_labelList.at(nIndex);
-    }
+    FluCalendarItem* getItem(int nIndex);
 
     void setYears(int nYear, int nMonth);
 
@@ -32,17 +26,7 @@ class FluCalendarSelectYearView : public FluWidget
     void getRange(int nYear, int& nStartYear, int& nEndYear);
 
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectYearView.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QGridLayout* m_gMainLayout;

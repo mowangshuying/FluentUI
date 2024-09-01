@@ -132,3 +132,15 @@ FluCalendarItem* FluCalendarSelectMonthView::getItem(int nIndex)
 {
     return m_labelList.at(nIndex);
 }
+
+void FluCalendarSelectMonthView::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectMonthView.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectMonthView.qss", this);
+    }
+}

@@ -173,6 +173,39 @@ FluCalendarSelectYearView* FluCalendarView::getSelectYearView()
     return m_selectYearView;
 }
 
+FluCalendarViewTitle* FluCalendarView::getViewTitle()
+{
+    return m_title;
+}
+
+QDate FluCalendarView::getCurDate()
+{
+    return m_curDate;
+}
+
+void FluCalendarView::setCurDate(QDate date)
+{
+    m_curDate = date;
+}
+
+FluCalendarViewState FluCalendarView::getViewState()
+{
+    return m_viewState;
+}
+
+void FluCalendarView::setViewState(FluCalendarViewState viewState)
+{
+    m_viewState = viewState;
+}
+
+void FluCalendarView::paintEvent(QPaintEvent* event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
 void FluCalendarView::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())

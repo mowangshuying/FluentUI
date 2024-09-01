@@ -13,11 +13,7 @@ class FluFlowLayout : public QLayout
     ~FluFlowLayout();
 
     void addItem(QLayoutItem *item) override;
-    void setSpacing(int hSpace, int vSpace)
-    {
-        m_hSpace = hSpace;
-        m_vSpace = vSpace;
-    }
+    void setSpacing(int hSpace, int vSpace);
 
     int horizontalSpacing() const;
     int verticalSpacing() const;

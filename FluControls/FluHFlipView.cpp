@@ -85,3 +85,52 @@ void FluHFlipView::addPixmap(QPixmap pixmap)
     m_hLayout->addWidget(imageBox, 0, Qt::AlignHCenter);
     imageBox->setObjectName("imageBox");
 }
+
+void FluHFlipView::hideOrShowRLBtn(bool bEnter)
+{
+    if (bEnter)
+    {
+        m_lBtn->show();
+        m_rBtn->show();
+        if (m_nImgBoxIndex == 0)
+            m_lBtn->hide();
+
+        if (m_nImgBoxIndex == m_hLayout->count() - 1)
+            m_rBtn->hide();
+    }
+    else
+    {
+        m_lBtn->hide();
+        m_rBtn->hide();
+    }
+}
+
+void FluHFlipView::enterEvent(QEnterEvent* event)
+{
+    hideOrShowRLBtn(true);
+}
+
+void FluHFlipView::leaveEvent(QEvent* event)
+{
+    hideOrShowRLBtn(false);
+}
+
+void FluHFlipView::resizeEvent(QResizeEvent* event)
+{
+    QScrollArea::resizeEvent(event);
+    // fixed pos
+    // get height
+    // get width
+
+    int nH = height();
+    int nW = width();
+
+    int nLY = nH / 2 - m_lBtn->height() / 2;
+    int nLX = 5;
+
+    m_lBtn->move(nLX, nLY);
+
+    int nRX = nW - m_lBtn->width() - 5;
+    int nRY = nH / 2 - m_lBtn->height() / 2;
+    m_rBtn->move(nRX, nRY);
+}

@@ -74,6 +74,16 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
     // setFixedHeight(nMaxHeight + 10);
 }
 
+QVBoxLayout* FluHNavigationFlyIconTextItem::getMainLayout()
+{
+    return m_vMainLayout;
+}
+
+FluVScrollView* FluHNavigationFlyIconTextItem::getVScrollView()
+{
+    return m_vScrollView;
+}
+
 void FluHNavigationFlyIconTextItem::clearAllItemsSelectState()
 {
     for (int i = 0; i < m_items.size(); i++)

@@ -15,92 +15,22 @@ class FluHCard : public FluWidget
 {
     Q_OBJECT
   public:
-    FluHCard(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-        setFixedSize(360, 90);
+    FluHCard(QWidget* parent = nullptr);
 
-        auto mainLayout = new QHBoxLayout(this);
-        mainLayout->setSpacing(0);
-        setLayout(mainLayout);
+    FluHCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr);
 
-        auto rightLayout = new QVBoxLayout();
+    void setKey(QString key);
 
-        m_iconLabel = new QLabel(this);
-        m_iconLabel->setFixedSize(50, 50);
-        QPixmap pixmap = QPixmap("../res/ControlImages/Placeholder.png");
-        pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        m_iconLabel->setPixmap(pixmap);
+    QString getKey();
 
-        m_titleLabel = new QLabel("this");
-        m_titleLabel->setText("AnimatedIcon");
+    void mouseReleaseEvent(QMouseEvent* event);
 
-        m_contextLabel = new QLabel(this);
-        m_contextLabel->setText("An element that displays and controls an icon that animates when the user interacts with the controls.");
-
-        m_titleLabel->setWordWrap(true);
-        m_contextLabel->setWordWrap(true);
-
-        m_iconLabel->setObjectName("iconLabel");
-        m_titleLabel->setObjectName("titleLabel");
-        m_contextLabel->setObjectName("contextLabel");
-
-        mainLayout->addSpacing(20);
-        mainLayout->addWidget(m_iconLabel);
-        mainLayout->addSpacing(20);
-        mainLayout->addLayout(rightLayout);
-        rightLayout->addWidget(m_titleLabel);
-        rightLayout->addWidget(m_contextLabel);
-
-        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHCard.qss");
-        setStyleSheet(qss);
-    }
-
-    FluHCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluHCard(parent)
-    {
-        QPixmap pixmap = icon.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        m_iconLabel->setPixmap(pixmap);
-        m_titleLabel->setText(titleText);
-        m_contextLabel->setText(contextText);
-        // m_key = titleText;
-    }
-
-    void setKey(QString key)
-    {
-        m_key = key;
-    }
-
-    QString getKey()
-    {
-        return m_key;
-    }
-
-    void mouseReleaseEvent(QMouseEvent* event)
-    {
-        emit clicked(m_key);
-    }
-
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   signals:
     void clicked(QString key);
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHCard.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHCard.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QString m_key;

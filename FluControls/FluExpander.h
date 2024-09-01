@@ -17,86 +17,30 @@ class FluExpander : public FluWidget
   public:
     FluExpander(QWidget* parent = nullptr);
 
-    bool getDown()
-    {
-        return m_bDown;
-    }
+    bool getDown();
 
-    void setDown(bool bDown)
-    {
-        m_bDown = bDown;
-        setProperty("down", bDown);
-        m_wrap1->setProperty("down", bDown);
-        m_wrap2->setProperty("down", bDown);
+    void setDown(bool bDown);
 
-        style()->polish(this);
-        m_wrap1->style()->polish(m_wrap1);
-        m_wrap2->style()->polish(m_wrap2);
-    }
+    void setTopRadius0(bool bTopRadius0);
 
-    void setTopRadius0(bool bTopRadius0)
-    {
-        m_wrap1->setProperty("topRadius0", bTopRadius0);
-        setProperty("topRadius0", bTopRadius0);
-
-        style()->polish(this);
-        m_wrap1->style()->polish(m_wrap1);
-    }
-
-    void setWrap2Height(int h)
-    {
-        m_wrap2Height = h;
-    }
+    void setWrap2Height(int h);
 
     // signals:
     //   void windowSizeChanged();
-    QHBoxLayout* getWrap1Layout()
-    {
-        return m_hWrap1Layout;
-    }
+    QHBoxLayout* getWrap1Layout();
 
-    QVBoxLayout* getWrap2Layout()
-    {
-        return m_vWrap2Layout;
-    }
+    QVBoxLayout* getWrap2Layout();
 
     void resizeEvent(QResizeEvent* event);
 
     bool eventFilter(QObject* watched, QEvent* event);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   public slots:
     void onThemeChanged();
 
-    virtual void onClicked()
-    {
-        if (m_bDown)
-        {
-            m_expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
-            m_expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
-            m_expandAni->start();
-
-            m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
-            // m_bDown = false;
-            // setDown(false);
-        }
-        else
-        {
-            m_expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), m_wrap2->sizeHint().height()));
-            m_expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
-            m_expandAni->start();
-            m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
-            // m_bDown = true;
-            // setDown(true);
-        }
-    }
+    virtual void onClicked();
 
   protected:
     QPropertyAnimation* m_expandAni;

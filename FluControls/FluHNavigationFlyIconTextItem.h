@@ -22,15 +22,9 @@ class FluHNavigationFlyIconTextItem : public FluWidget
 
     void adjustItemWidth();
 
-    QVBoxLayout* getMainLayout()
-    {
-        return m_vMainLayout;
-    }
+    QVBoxLayout* getMainLayout();
 
-    FluVScrollView* getVScrollView()
-    {
-        return m_vScrollView;
-    }
+    FluVScrollView* getVScrollView();
 
     //
     void clearAllItemsSelectState();

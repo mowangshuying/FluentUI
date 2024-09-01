@@ -29,6 +29,13 @@ void FluFlowLayout::addItem(QLayoutItem *item)
 {
     itemList.append(item);
 }
+
+void FluFlowLayout::setSpacing(int hSpace, int vSpace)
+{
+    m_hSpace = hSpace;
+    m_vSpace = vSpace;
+}
+
 //! [3]
 
 //! [4]

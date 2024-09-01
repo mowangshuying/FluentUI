@@ -22,6 +22,7 @@ class FluBorder : public QLabel
     void setTExtColor(QColor textColor);
 
     bool isTransparentBackground();
+
   protected:
     std::map<QString, QString> m_map;
 };

@@ -16,6 +16,6 @@ class FluBorderPage : public FluAEmptyPage
   public slots:
     void onThemeChanged();
 
- protected:
+  protected:
     FluBorder* m_border;
 };

@@ -65,3 +65,75 @@ QPushButton* FluComboBoxEx::getTextBtn()
 {
     return m_textBtn;
 }
+
+QPushButton* FluComboBoxEx::getIconBtn()
+{
+    return m_iconBtn;
+}
+
+void FluComboBoxEx::setIcon(FluAwesomeType type)
+{
+    m_textAwesomeType = type;
+    m_textBtn->setIconSize(QSize(18, 18));
+    m_textBtn->setIcon(FluIconUtils::getFluentIconPixmap(type, FluThemeUtils::getUtils()->getTheme()));
+}
+
+void FluComboBoxEx::setText(QString text)
+{
+    m_textBtn->setText(text);
+}
+
+void FluComboBoxEx::addItem(QString text)
+{
+    addTextItem(text);
+}
+
+void FluComboBoxEx::addItem(FluAwesomeType type, QString text)
+{
+    addIconTextItem(type, text);
+}
+
+void FluComboBoxEx::addTextItem(QString text)
+{
+    m_menu->addAction(new FluAction(text));
+    if (m_menu->actions().size() == 1)
+        m_textBtn->setText(text);
+}
+
+void FluComboBoxEx::addIconTextItem(FluAwesomeType type, QString text)
+{
+    m_menu->addAction(new FluAction(type, text));
+    if (m_menu->actions().size() == 1)
+        m_textBtn->setText(text);
+}
+
+void FluComboBoxEx::mouseReleaseEvent(QMouseEvent* e)
+{
+    emit clicked();
+}
+
+void FluComboBoxEx::paintEvent(QPaintEvent* event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluComboBoxEx::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
+        if (m_textAwesomeType != FluAwesomeType::None)
+            m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Light));
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
+    }
+    else
+    {
+        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
+        if (m_textAwesomeType != FluAwesomeType::None)
+            m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Dark));
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBoxEx.qss", this);
+    }
+}

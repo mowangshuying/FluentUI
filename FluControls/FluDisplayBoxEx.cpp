@@ -43,3 +43,53 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_codeExpander->setObjectName("codeExpander");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBoxEx.qss", this);
 }
+
+void FluDisplayBoxEx::setTitle(QString title)
+{
+    m_titleLabel->setText(title);
+}
+
+QHBoxLayout* FluDisplayBoxEx::getBodyLayout()
+{
+    return m_hBodyLayout;
+}
+
+QVBoxLayout* FluDisplayBoxEx::getBodyContentLayout()
+{
+    return m_vBodyContentLayout;
+}
+
+QVBoxLayout* FluDisplayBoxEx::getBodyRightLayout()
+{
+    return m_vBodyRightLayout;
+}
+
+FluCodeExpander* FluDisplayBoxEx::getCodeExpander()
+{
+    return m_codeExpander;
+}
+
+void FluDisplayBoxEx::setBodyWidgetFixedHeight(int nHeight)
+{
+    m_bodyWidget->setFixedHeight(nHeight);
+}
+
+void FluDisplayBoxEx::paintEvent(QPaintEvent* event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluDisplayBoxEx::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBoxEx.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayBoxEx.qss", this);
+    }
+}

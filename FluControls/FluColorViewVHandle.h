@@ -9,43 +9,15 @@ class FluColorViewVHandle : public FluWidget
 {
     Q_OBJECT
   public:
-    FluColorViewVHandle(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-    }
+    FluColorViewVHandle(QWidget* parent = nullptr);
 
-    void setFixedSize(int w, int h)
-    {
-        FluWidget::setFixedSize(w, h);
-        update();
-    }
+    void setFixedSize(int w, int h);
 
-    void setColor(QColor color)
-    {
-        m_color = color;
-        update();
-    }
+    void setColor(QColor color);
 
-    QColor getColor()
-    {
-        return m_color;
-    }
+    QColor getColor();
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QPainter painter(this);
-        painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-
-        // clip;
-        QPainterPath path;
-        path.addRoundedRect(rect(), 4, 4);
-        painter.setClipPath(path);
-
-        // color;
-        painter.setPen(Qt::NoPen);
-        painter.setBrush(m_color);
-
-        painter.drawRect(rect());
-    }
+    void paintEvent(QPaintEvent* event);
 
   protected:
     QColor m_color;

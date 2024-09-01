@@ -14,74 +14,21 @@ class FluDisplayIconBox : public FluWidget
 {
     Q_OBJECT
   public:
-    FluDisplayIconBox(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-        setFixedSize(48, 48);
-        m_vMainLayout = new QVBoxLayout;
-        m_vMainLayout->setSpacing(0);
-        m_vMainLayout->setContentsMargins(5, 5, 5, 5);
-        setLayout(m_vMainLayout);
+    FluDisplayIconBox(QWidget* parent = nullptr);
 
-        m_iconLabel = new QLabel(this);
-        m_iconLabel->setFixedSize(30, 30);
-        m_vMainLayout->addWidget(m_iconLabel, 0, Qt::AlignHCenter);
+    FluDisplayIconBox(FluAwesomeType type, QWidget* parent = nullptr);
 
-        m_textLable = new QLabel(this);
-        m_vMainLayout->addWidget(m_textLable, 0, Qt::AlignHCenter);
+    void setSelected(bool bSelected);
 
-        m_iconLabel->setObjectName("iconLabel");
-        m_textLable->setObjectName("textLabel");
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
-    }
+    FluAwesomeType getAwesomeType();
 
-    FluDisplayIconBox(FluAwesomeType type, QWidget* parent = nullptr) : FluDisplayIconBox(parent)
-    {
-        m_type = type;
-        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type, QColor(8, 8, 8), 30, 30);
-        m_iconLabel->setPixmap(pixmap);
-        m_textLable->setText(EnumTypeToQString(type));
-    }
+    void mouseReleaseEvent(QMouseEvent* event);
 
-    void setSelected(bool bSelected)
-    {
-        setProperty("selected", bSelected);
-        update();
-    }
-
-    FluAwesomeType getAwesomeType()
-    {
-        return m_type;
-    }
-
-    void mouseReleaseEvent(QMouseEvent* event)
-    {
-        QWidget::mouseReleaseEvent(event);
-        emit clicked();
-    }
-
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
   signals:
     void clicked();
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_type, QColor(8, 8, 8)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
-        }
-        else
-        {
-            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_type, QColor(239, 239, 239)));
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayIconBox.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     FluAwesomeType m_type;

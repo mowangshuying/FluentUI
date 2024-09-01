@@ -16,51 +16,20 @@ class FluDisplayBox : public FluWidget
   public:
     FluDisplayBox(QWidget* parent = nullptr);
 
-    void setTitle(QString title)
-    {
-        m_titleLabel->setText(title);
-    }
+    void setTitle(QString title);
 
-    QVBoxLayout* getBodyLayout()
-    {
-        return m_vBodyLayout;
-    }
+    QVBoxLayout* getBodyLayout();
 
-    QWidget* getBodyWidget()
-    {
-        return m_bodyWidget;
-    }
+    QWidget* getBodyWidget();
 
-    FluCodeExpander* getCodeExpander()
-    {
-        return m_codeExpander;
-    }
+    FluCodeExpander* getCodeExpander();
 
-    void setBodyWidgetFixedHeight(int nHeight)
-    {
-        m_bodyWidget->setFixedHeight(nHeight);
-    }
+    void setBodyWidgetFixedHeight(int nHeight);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBox.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayBox.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QVBoxLayout* m_mainLayout;

@@ -16,56 +16,22 @@ class FluDisplayBoxEx : public FluWidget
   public:
     FluDisplayBoxEx(QWidget* parent = nullptr);
 
-    void setTitle(QString title)
-    {
-        m_titleLabel->setText(title);
-    }
+    void setTitle(QString title);
 
-    QHBoxLayout* getBodyLayout()
-    {
-        return m_hBodyLayout;
-    }
+    QHBoxLayout* getBodyLayout();
 
-    QVBoxLayout* getBodyContentLayout()
-    {
-        return m_vBodyContentLayout;
-    }
+    QVBoxLayout* getBodyContentLayout();
 
-    QVBoxLayout* getBodyRightLayout()
-    {
-        return m_vBodyRightLayout;
-    }
+    QVBoxLayout* getBodyRightLayout();
 
-    FluCodeExpander* getCodeExpander()
-    {
-        return m_codeExpander;
-    }
+    FluCodeExpander* getCodeExpander();
 
-    void setBodyWidgetFixedHeight(int nHeight)
-    {
-        m_bodyWidget->setFixedHeight(nHeight);
-    }
+    void setBodyWidgetFixedHeight(int nHeight);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBoxEx.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayBoxEx.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QVBoxLayout* m_vMainLayout;

@@ -7,32 +7,10 @@ class FluDoubleSpinBox : public QDoubleSpinBox
 {
     Q_OBJECT
   public:
-    FluDoubleSpinBox(QWidget* parent = nullptr) : QDoubleSpinBox(parent)
-    {
-        onThemeChanged();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    }
+    FluDoubleSpinBox(QWidget* parent = nullptr);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QDoubleSpinBox::paintEvent(event);
-        if (!hasFocus())
-            return;
-
-        QPainter painter(this);
-        FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
-    }
+    void paintEvent(QPaintEvent* event);
 
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDoubleSpinBox.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDoubleSpinBox.qss", this);
-        }
-    }
+    void onThemeChanged();
 };

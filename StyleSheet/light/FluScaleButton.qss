@@ -1,0 +1,20 @@
+ FluScaleButton {
+     color: black;
+     border: 1px solid rgb(229, 229, 229);
+     border-radius: 4px;
+     border-bottom: 1px solid rgb(204, 204, 204);
+     background-color: rgb(251, 251, 251);
+     font-size: 15px;
+ }
+ 
+ FluScaleButton:hover {
+     border: 1px solid rgb(229, 229, 229);
+     border-bottom: 1px solid rgb(204, 204, 204);
+     background-color: rgb(246, 246, 246);
+ }
+ 
+ FluScaleButton:pressed {
+     border: 1px solid rgb(229, 229, 229);
+     border-bottom: 1px solid rgb(229, 229, 229);
+     background-color: rgb(245, 245, 245);
+ }

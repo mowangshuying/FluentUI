@@ -9,6 +9,7 @@
 #include "../FluControls/FluAppBarButton.h"
 #include "../FluControls/FluAppBarToggleButton.h"
 #include "../FluControls/FluPPushButton.h"
+#include "../FluControls/FluScaleButton.h"
 
 FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay16(parent)
 {
@@ -55,6 +56,9 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay16(paren
     auto btn11 = new FluPPushButton;
     btn11->setText("Paint Button");
     addDemo(btn11);
+
+    auto btn12 = new FluScaleButton(FluAwesomeType::Search);
+    addDemo(btn12);
 }
 
 void FluButtonDemo::paintEvent(QPaintEvent *paintEvent)

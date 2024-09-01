@@ -269,7 +269,10 @@ int main(int argc, char **argv)
     // FluTreeViewDemo demo;
     // demo.show();
 
-    FluScrollAreaDemo demo;
+    //FluScrollAreaDemo demo;
+    //demo.show();
+
+    FluButtonDemo demo;
     demo.show();
 
     return app.exec();

@@ -434,6 +434,9 @@
     <ClCompile Include="FluScrollBarHandle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluScaleButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -830,6 +833,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluScrollBarTrunk.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluScaleButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

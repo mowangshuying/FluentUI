@@ -159,6 +159,7 @@
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
     <ClCompile Include="FluPPushButton.cpp" />
+    <ClCompile Include="FluScaleButton.cpp" />
     <ClCompile Include="FluScrollArea.cpp" />
     <ClCompile Include="FluScrollBar.cpp" />
     <ClCompile Include="FluScrollBarArrowButton.cpp" />
@@ -282,6 +283,7 @@
     <QtMoc Include="FluScrollBarArrowButton.h" />
     <QtMoc Include="FluScrollBarHandle.h" />
     <QtMoc Include="FluScrollBarTrunk.h" />
+    <QtMoc Include="FluScaleButton.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

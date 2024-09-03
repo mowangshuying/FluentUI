@@ -153,6 +153,7 @@
     <ClCompile Include="FluRatingControlPage.cpp" />
     <ClCompile Include="FluRepeatButtonPage.cpp" />
     <ClCompile Include="FluScrollingPage.cpp" />
+    <ClCompile Include="FluScrollViewPage.cpp" />
     <ClCompile Include="FluSettingPage.cpp" />
     <ClCompile Include="FluSliderPage.cpp" />
     <ClCompile Include="FluSplitButtonPage.cpp" />
@@ -327,6 +328,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluBasicInputPage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="FluScrollViewPage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

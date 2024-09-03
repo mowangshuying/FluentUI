@@ -3,7 +3,7 @@
 #include "FluScrollBarHandle.h"
 
 FluScrollBar::FluScrollBar(Qt::Orientation orientation, FluScrollArea* scrollArea /*= nullptr*/)
-    : QWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_nMaxValue(0), m_nMinValue(0), m_nCurrentValue(0), m_nPadding(14), m_nPageStep(50)
+    : QWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_nMaxValue(0), m_nMinValue(0), m_nCurrentValue(0), m_nPadding(14), m_nPageStep(50), m_bHideScrollBar(false)
 {
     m_scrollBarTrunk = new FluScrollBarTrunk(orientation, this);
     m_scrollBarHandle = new FluScrollBarHandle(orientation, this);
@@ -62,7 +62,7 @@ void FluScrollBar::setRangeValue(int nMinValue, int nMaxValue)
 {
     if (m_nMinValue == nMinValue && m_nMaxValue == nMaxValue)
     {
-        if (nMaxValue == 0)
+        if (nMaxValue == 0 || m_bHideScrollBar)
             setVisible(false);
         return;
     }
@@ -72,7 +72,7 @@ void FluScrollBar::setRangeValue(int nMinValue, int nMaxValue)
 
     adjustHandleSize();
     adjustHandlePos();
-    setVisible(nMaxValue > 0);
+    setVisible(nMaxValue > 0 && !m_bHideScrollBar);
     emit valueRangeChanged(m_nMinValue, m_nMaxValue);
 }
 
@@ -138,6 +138,16 @@ int FluScrollBar::getSlideWayLen()
     if (m_orientation == Qt::Vertical)
         return getTrunkLen() - m_scrollBarHandle->height();
     return getTrunkLen() - m_scrollBarHandle->width();
+}
+
+void FluScrollBar::setHideScrollBar(bool bHideScrollBar)
+{
+    m_bHideScrollBar = bHideScrollBar;
+}
+
+bool FluScrollBar::isHideScrollBar()
+{
+    return m_bHideScrollBar;
 }
 
 void FluScrollBar::adjustScrollBarPosAndSize(QSize scrollAreaSize)

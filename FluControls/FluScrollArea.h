@@ -16,13 +16,13 @@ class FluScrollArea : public QScrollArea
     void hideVScrollBar()
     {
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        m_scrollDelegate->getVScrollBar()->hide();
+        m_scrollDelegate->getVScrollBar()->setHideScrollBar(true);
     }
 
     void hideHScrollBar()
     {
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        m_scrollDelegate->getHScrollBar()->hide();
+        m_scrollDelegate->getHScrollBar()->setHideScrollBar(true);
     }
 
   protected:

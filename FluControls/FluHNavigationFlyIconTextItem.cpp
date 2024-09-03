@@ -14,6 +14,7 @@ FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*=
     // m_vScrollView->setContentsMargins(0, 0, 0, 0);
     m_vScrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
     m_vScrollView->getMainLayout()->setSpacing(0);
+    m_vScrollView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_vMainLayout->addWidget(m_vScrollView);
 
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);

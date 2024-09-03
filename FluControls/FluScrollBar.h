@@ -51,6 +51,10 @@ class FluScrollBar : public QWidget
 
     int getSlideWayLen();
 
+    void setHideScrollBar(bool bHideScrollBar);
+
+    bool isHideScrollBar();
+
     void adjustScrollBarPosAndSize(QSize scrollAreaSize);
 
     QScrollBar* getOriginalScrollBar();
@@ -117,4 +121,6 @@ class FluScrollBar : public QWidget
 
     QPoint m_pressedPoint;
     bool m_bPressed;
+
+    bool m_bHideScrollBar;
 };

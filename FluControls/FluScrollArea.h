@@ -8,22 +8,11 @@ class FluScrollArea : public QScrollArea
 {
     Q_OBJECT
   public:
-    FluScrollArea(QWidget* parent = nullptr) : QScrollArea(parent)
-    {
-        m_scrollDelegate = new FluScrollDelegate(this);
-    }
+    FluScrollArea(QWidget* parent = nullptr);
 
-    void hideVScrollBar()
-    {
-        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        m_scrollDelegate->getVScrollBar()->setHideScrollBar(true);
-    }
+    void hideVScrollBar();
 
-    void hideHScrollBar()
-    {
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        m_scrollDelegate->getHScrollBar()->setHideScrollBar(true);
-    }
+    void hideHScrollBar();
 
   protected:
     FluScrollDelegate* m_scrollDelegate = nullptr;

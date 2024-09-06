@@ -199,7 +199,6 @@
     <QtMoc Include="FluIntructionsDemo.h" />
     <ClInclude Include="FluBusyProgressRingDemo.h" />
     <QtMoc Include="FluScrollAreaDemo.h" />
-    <ClInclude Include="resource.h" />
     <QtMoc Include="FluTreeViewDemo.h" />
     <QtMoc Include="FluFrameLessDemo.h" />
     <QtMoc Include="FluHNavigationViewDemo.h" />
@@ -239,9 +238,6 @@
     <QtMoc Include="FluDisplay16.h" />
     <ClInclude Include="FluFlowLayoutDemo.h" />
     <QtMoc Include="FluLineEditDemo.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="FluExamples.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

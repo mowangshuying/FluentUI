@@ -38,33 +38,12 @@ class FluShortInfoBar : public FluWidget
 
     void setDisappearDurartion(int disappearDuration);
 
-    QPushButton* getCloseBtn()
-    {
-        return m_closeBtn;
-    }
+    QPushButton* getCloseBtn();
 
     void paintEvent(QPaintEvent* event);
 
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            // if (m_closeBtn != nullptr)
-            // {
-            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
-            // }
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
-        }
-        else
-        {
-            // if (m_closeBtn != nullptr)
-            // {
-            m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
-            // }
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QHBoxLayout* m_hMainLayout;

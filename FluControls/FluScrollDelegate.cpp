@@ -19,6 +19,16 @@ FluScrollDelegate::FluScrollDelegate(FluScrollArea* scrollArea /*= nullptr*/) : 
     m_scrollArea->viewport()->installEventFilter(this);
 }
 
+FluScrollBar* FluScrollDelegate::getVScrollBar()
+{
+    return m_vScrollBar;
+}
+
+FluScrollBar* FluScrollDelegate::getHScrollBar()
+{
+    return m_hScrollBar;
+}
+
 bool FluScrollDelegate::eventFilter(QObject* watched, QEvent* event)
 {
     if (event->type() == QEvent::Wheel)

@@ -128,10 +128,35 @@ void FluShortInfoBar::setDisappearDurartion(int disappearDuration)
     m_nDisappearDuration = disappearDuration;
 }
 
+QPushButton* FluShortInfoBar::getCloseBtn()
+{
+    return m_closeBtn;
+}
+
 void FluShortInfoBar::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
     opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluShortInfoBar::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        // if (m_closeBtn != nullptr)
+        // {
+        m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
+        // }
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
+    }
+    else
+    {
+        // if (m_closeBtn != nullptr)
+        // {
+        m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
+        // }
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
+    }
 }

@@ -38,6 +38,41 @@ FluSettingsVersionBox::FluSettingsVersionBox(QWidget* parent /*= nullptr*/) : Fl
     onThemeChanged();
 }
 
+QLabel* FluSettingsVersionBox::getTitleLabel()
+{
+    return m_titleLabel;
+}
+
+QLabel* FluSettingsVersionBox::getInfoLabel()
+{
+    return m_infoLabel;
+}
+
+QLabel* FluSettingsVersionBox::getVersionLabel()
+{
+    return m_versionLabel;
+}
+
+QLabel* FluSettingsVersionBox::getIconLabel()
+{
+    return m_iconLabel;
+}
+
+void FluSettingsVersionBox::addVSplitLine()
+{
+    getWrap2Layout()->addWidget(new FluVSplitLine);
+}
+
+void FluSettingsVersionBox::addWidget(QWidget* widget)
+{
+    auto hLayout = new QHBoxLayout;
+    hLayout->setContentsMargins(50, 0, 10, 0);
+
+    hLayout->addWidget(widget);
+    hLayout->addStretch();
+    getWrap2Layout()->addLayout(hLayout);
+}
+
 void FluSettingsVersionBox::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())

@@ -12,40 +12,17 @@ class FluSettingsVersionBox : public FluExpander
   public:
     FluSettingsVersionBox(QWidget* parent = nullptr);
 
-    QLabel* getTitleLabel()
-    {
-        return m_titleLabel;
-    }
+    QLabel* getTitleLabel();
 
-    QLabel* getInfoLabel()
-    {
-        return m_infoLabel;
-    }
+    QLabel* getInfoLabel();
 
-    QLabel* getVersionLabel()
-    {
-        return m_versionLabel;
-    }
+    QLabel* getVersionLabel();
 
-    QLabel* getIconLabel()
-    {
-        return m_iconLabel;
-    }
+    QLabel* getIconLabel();
 
-    void addVSplitLine()
-    {
-        getWrap2Layout()->addWidget(new FluVSplitLine);
-    }
+    void addVSplitLine();
 
-    void addWidget(QWidget* widget)
-    {
-        auto hLayout = new QHBoxLayout;
-        hLayout->setContentsMargins(50, 0, 10, 0);
-
-        hLayout->addWidget(widget);
-        hLayout->addStretch();
-        getWrap2Layout()->addLayout(hLayout);
-    }
+    void addWidget(QWidget* widget);
   public slots:
     void onThemeChanged();
 

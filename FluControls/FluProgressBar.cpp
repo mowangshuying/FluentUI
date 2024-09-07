@@ -1,6 +1,6 @@
 #include "FluProgressBar.h"
 
- FluProgressBar::FluProgressBar(QWidget* parent /*= nullptr*/) : QProgressBar(parent)
+FluProgressBar::FluProgressBar(QWidget* parent /*= nullptr*/) : QProgressBar(parent)
 {
     setTextVisible(true);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBar.qss", this);

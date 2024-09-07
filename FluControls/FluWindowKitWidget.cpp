@@ -8,7 +8,7 @@
 
 #include <QStyleOption>
 
-FluWindowKitWidget::FluWindowKitWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
     setWindowTitle("windowkit widget");

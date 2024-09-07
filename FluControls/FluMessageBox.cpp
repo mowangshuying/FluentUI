@@ -1,6 +1,6 @@
 #include "FluMessageBox.h"
 
- FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDialog(parent)
+FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDialog(parent)
 {
     m_parentWidget = parent;
 

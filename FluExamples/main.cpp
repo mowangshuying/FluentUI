@@ -272,8 +272,8 @@ int main(int argc, char **argv)
     // FluScrollAreaDemo demo;
     // demo.show();
 
-    //FluButtonDemo demo;
-    //demo.show();
+    // FluButtonDemo demo;
+    // demo.show();
 
     FluHNavigationViewDemo demo;
     demo.show();

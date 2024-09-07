@@ -119,7 +119,7 @@ void FluLoopView::setVisibaleMidIndex(int nMidIndex)
     m_nVisibleMidIndex = nMidIndex;
 
     setCurrentItem(item(nItemIndex));
-    //LOG_DEBUG << "Item Index:" << nItemIndex << ", Visible Index:" << m_nVisibleMidIndex;
+    // LOG_DEBUG << "Item Index:" << nItemIndex << ", Visible Index:" << m_nVisibleMidIndex;
     scrollToItem(item(nItemIndex), QAbstractItemView::PositionAtCenter);
     emit visibaleMidIndexChanged(m_nVisibleMidIndex);
 }

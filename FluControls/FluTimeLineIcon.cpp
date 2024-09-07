@@ -1,6 +1,6 @@
 #include "FluTimeLineIcon.h"
 
- FluTimeLineIcon::FluTimeLineIcon(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluTimeLineIcon::FluTimeLineIcon(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedSize(40, 40);
 }

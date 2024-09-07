@@ -625,14 +625,12 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem("AnnotatedScrollBar", item);
         FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem("PipsPager", item);
-        
+
         FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("ScrollView", item);
         item3->setKey("ScrollViewPage");
         auto scrollViewPage = new FluScrollViewPage;
         m_sLayout->addWidget("ScrollViewPage", scrollViewPage);
         connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ScrollViewPage"); });
-
-
 
         FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("ScrollViewer", item);
         FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem("SemanticZoom", item);

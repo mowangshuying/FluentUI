@@ -12,38 +12,13 @@ class FluTextEdit : public QTextEdit
   public:
     FluTextEdit(QWidget* parent = nullptr);
 
-    bool getAutoAdjustSize()
-    {
-        return m_bAutoAdjustSize;
-    }
+    bool getAutoAdjustSize();
 
-    void setAutoAdjustSize(bool bAdjustSize)
-    {
-        m_bAutoAdjustSize = bAdjustSize;
-        document()->contentsChanged();
-    }
+    void setAutoAdjustSize(bool bAdjustSize);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QTextEdit::paintEvent(event);
-        if (!hasFocus())
-            return;
-
-        QPainter painter(viewport());
-        FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
-    }
+    void paintEvent(QPaintEvent* event);
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextEdit.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextEdit.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     FluTextEditWrap* m_wrap;

@@ -12,98 +12,25 @@ class FluTabBarItem : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTabBarItem(QWidget* parent = nullptr)
-    {
-        m_hMainLayout = new QHBoxLayout;
-        setLayout(m_hMainLayout);
-        m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-        m_hMainLayout->setSpacing(0);
+    FluTabBarItem(QWidget* parent = nullptr);
 
-        m_iconBtn = new QPushButton(this);
-        m_textBtn = new QPushButton(this);
-        m_closeBtn = new QPushButton(this);
+    void setSelected(bool bSel);
 
-        m_iconBtn->setFixedSize(30, 30);
-        m_closeBtn->setFixedSize(30, 20);
+    bool getSelected();
 
-        m_iconBtn->setIconSize(QSize(25, 25));
-        m_closeBtn->setIconSize(QSize(15, 15));
-        m_textBtn->setFixedHeight(30);
-        m_textBtn->setText("Document");
+    void setText(QString text);
 
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document));
-        m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose));
+    QString getText();
 
-        m_iconBtn->setObjectName("iconBtn");
-        m_textBtn->setObjectName("textBtn");
-        m_closeBtn->setObjectName("closeBtn");
+    void resizeEvent(QResizeEvent* event);
 
-        m_hMainLayout->addWidget(m_iconBtn, 0);
-        m_hMainLayout->addWidget(m_textBtn, 1);
-        m_hMainLayout->addWidget(m_closeBtn, 0);
-        m_hMainLayout->addSpacing(5);
+    void enterEvent(QEnterEvent* event);
 
-        setFixedHeight(35);
-        //   setFixedWidth(240);
+    void leaveEvent(QEvent* event);
 
-        connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
+    void mouseReleaseEvent(QMouseEvent* event);
 
-        connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
-
-        connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
-    }
-
-    void setSelected(bool bSel)
-    {
-        m_bSel = bSel;
-        setProperty("selected", bSel);
-        m_closeBtn->setProperty("selected", bSel);
-        m_closeBtn->style()->polish(m_closeBtn);
-    }
-
-    bool getSelected()
-    {
-        return m_bSel;
-    }
-
-    void setText(QString text)
-    {
-        m_textBtn->setText(text);
-    }
-
-    QString getText()
-    {
-        return m_textBtn->text();
-    }
-
-    void resizeEvent(QResizeEvent* event)
-    {
-        emit sizeChanged();
-    }
-
-    void enterEvent(QEnterEvent* event)
-    {
-        // m_closeBtn->setProperty("tabBarItemHover", true);
-    }
-
-    void leaveEvent(QEvent* event)
-    {
-        // m_closeBtn->setProperty("tabBarItemHover", false);
-    }
-
-    void mouseReleaseEvent(QMouseEvent* event)
-    {
-        emit clicked();
-    }
-
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   signals:
     void clicked();

@@ -27,264 +27,57 @@ class FluWindowKitTitleBar : public QFrame
 
     void init();
 
-    inline void insertDefaultSpace(int nIndex)
-    {
-        m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0));
-    }
+    void insertDefaultSpace(int nIndex);
 
-    inline QWidget* widgetAt(int nIndex) const
-    {
-        return m_hMainLayout->itemAt(nIndex)->widget();
-    }
+    QWidget* widgetAt(int nIndex) const;
 
-    void setWidgetAt(int nIndex, QWidget* widget)
-    {
-        auto item = m_hMainLayout->takeAt(nIndex);
-        auto orgWidget = item->widget();
-        if (orgWidget)
-        {
-            orgWidget->deleteLater();
-        }
-        delete item;
+    void setWidgetAt(int nIndex, QWidget* widget);
 
-        if (!widget)
-        {
-            insertDefaultSpace(nIndex);
-        }
-        else
-        {
-            m_hMainLayout->insertWidget(nIndex, widget);
-        }
-    }
+    QWidget* takeWidgetAt(int nIndex);
 
-    QWidget* takeWidgetAt(int nIndex)
-    {
-        auto item = m_hMainLayout->itemAt(nIndex);
-        auto orgWidget = item->widget();
-        if (orgWidget)
-        {
-            item = m_hMainLayout->takeAt(nIndex);
-            delete item;
-            insertDefaultSpace(nIndex);
-        }
+    QPushButton* iconButton() const;
 
-        return orgWidget;
-    }
+    QLabel* titleLabel() const;
 
-    QPushButton* iconButton() const
-    {
-        return static_cast<QPushButton*>(widgetAt(IconButton));
-    }
+    QPushButton* minButton() const;
 
-    QLabel* titleLabel() const
-    {
-        return static_cast<QLabel*>(widgetAt(TitleLabel));
-    }
+    QPushButton* maxButton() const;
 
-    QPushButton* minButton() const
-    {
-        return static_cast<QPushButton*>(widgetAt(MinimumButton));
-    }
+    QPushButton* closeButton() const;
 
-    QPushButton* maxButton() const
-    {
-        return static_cast<QPushButton*>(widgetAt(MaximumButton));
-    }
+    void setTitleLabel(QLabel* label);
 
-    QPushButton* closeButton() const
-    {
-        return static_cast<QPushButton*>(widgetAt(CloseButton));
-    }
+    void setIconButton(QPushButton* btn);
 
-    void setTitleLabel(QLabel* label)
-    {
-        auto org = takeTitleLabel();
-        if (org)
-            org->deleteLater();
+    void setMinButton(QPushButton* btn);
 
-        if (!label)
-            return;
+    void setMaxButton(QPushButton* btn);
 
-        setWidgetAt(TitleLabel, label);
-        if (m_autoTitle && m_w)
-        {
-            label->setText(m_w->windowTitle());
-        }
-        label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-    }
+    void setCloseButton(QPushButton* btn);
 
-    void setIconButton(QPushButton* btn)
-    {
-        auto org = takeIconButton();
-        if (org)
-            org->deleteLater();
-        if (!btn)
-            return;
-        setWidgetAt(IconButton, btn);
-        if (m_autoIcon && m_w)
-        {
-            btn->setIcon(m_w->windowIcon());
-        }
+    QLabel* takeTitleLabel();
 
-        btn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
-    }
+    QPushButton* takeIconButton();
 
-    void setMinButton(QPushButton* btn)
-    {
-        auto org = takeMinButton();
-        if (org)
-        {
-            org->deleteLater();
-        }
+    QPushButton* takeMinButton();
 
-        if (!btn)
-        {
-            return;
-        }
+    QPushButton* takeMaxButton();
 
-        setWidgetAt(MinimumButton, btn);
-        connect(btn, &QPushButton::clicked, this, &FluWindowKitTitleBar::minimizeRequested);
-    }
+    QPushButton* takeCloseButton();
 
-    void setMaxButton(QPushButton* btn)
-    {
-        auto org = takeMaxButton();
-        if (org)
-        {
-            org->deleteLater();
-        }
+    QWidget* hostWidget();
 
-        if (!btn)
-            return;
+    void setHostWidget(QWidget* w);
 
-        setWidgetAt(MaximumButton, btn);
-        connect(btn, &QPushButton::clicked, this, &FluWindowKitTitleBar::maximizeRequested);
-    }
+    bool iconFollowWindow();
 
-    void setCloseButton(QPushButton* btn)
-    {
-        auto org = takeCloseButton();
-        if (org)
-        {
-            org->deleteLater();
-        }
+    void setIconFollowWindow(bool value);
 
-        if (!btn)
-            return;
+    void titleChanged(const QString& text);
 
-        setWidgetAt(CloseButton, btn);
-        connect(btn, &QPushButton::clicked, this, &FluWindowKitTitleBar::closeRequested);
-    }
+    void iconChanged(const QIcon& icon);
 
-    QLabel* takeTitleLabel()
-    {
-        return static_cast<QLabel*>(takeWidgetAt(TitleLabel));
-    }
-
-    QPushButton* takeIconButton()
-    {
-        return static_cast<QPushButton*>(takeWidgetAt(IconButton));
-    }
-
-    QPushButton* takeMinButton()
-    {
-        return static_cast<QPushButton*>(takeWidgetAt(MinimumButton));
-    }
-
-    QPushButton* takeMaxButton()
-    {
-        return static_cast<QPushButton*>(takeWidgetAt(MaximumButton));
-    }
-
-    QPushButton* takeCloseButton()
-    {
-        return static_cast<QPushButton*>(takeWidgetAt(CloseButton));
-    }
-
-    QWidget* hostWidget()
-    {
-        return m_w;
-    }
-
-    void setHostWidget(QWidget* w)
-    {
-        // m_w = w;
-        auto org = m_w;
-        if (org)
-        {
-            org->removeEventFilter(this);
-        }
-
-        m_w = w;
-        if (w)
-        {
-            w->installEventFilter(this);
-        }
-    }
-
-    bool iconFollowWindow()
-    {
-        return m_autoIcon;
-    }
-
-    void setIconFollowWindow(bool value)
-    {
-        m_autoIcon = value;
-    }
-
-    void titleChanged(const QString& text)
-    {
-        Q_UNUSED(text);
-    }
-
-    void iconChanged(const QIcon& icon)
-    {
-        Q_UNUSED(icon);
-    }
-
-    bool eventFilter(QObject* watched, QEvent* event)
-    {
-        auto w = m_w;
-        if (watched == w)
-        {
-            QAbstractButton* iconBtn = iconButton();
-            QLabel* label = titleLabel();
-            QAbstractButton* maxBtn = maxButton();
-            switch (event->type())
-            {
-                case QEvent::WindowIconChange:
-                {
-                    if (m_autoIcon && iconButton())
-                    {
-                        iconBtn->setIcon(w->windowIcon());
-                        iconChanged(w->windowIcon());
-                    }
-                    break;
-                }
-                case QEvent::WindowTitleChange:
-                {
-                    if (m_autoIcon && label)
-                    {
-                        label->setText(w->windowTitle());
-                        titleChanged(w->windowTitle());
-                    }
-                    break;
-                }
-                case QEvent::WindowStateChange:
-                {
-                    if (maxButton())
-                    {
-                        maxButton()->setChecked(w->isMaximized());
-                    }
-                    break;
-                }
-                default:
-                    break;
-            }
-        }
-
-        return QWidget::eventFilter(watched, event);
-    }
+    bool eventFilter(QObject* watched, QEvent* event);
 
   signals:
     void minimizeRequested();

@@ -18,56 +18,22 @@ class FluVNavigationSettingsItem : public FluVNavigationItem
 
     FluVNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent);
 
-    void hideLabel()
-    {
-        m_label->hide();
-    }
+    void hideLabel();
 
-    void showLabel()
-    {
-        m_label->show();
-    }
+    void showLabel();
 
-    void updateAllItemsStyleSheet()
-    {
-        updateItemsStyleSheet();
-    }
+    void updateAllItemsStyleSheet();
 
-    void updateItemsStyleSheet()
-    {
-        style()->polish(this);
-        m_indicator->style()->polish(m_indicator);
-        m_icon->style()->polish(m_icon);
-        m_label->style()->polish(m_label);
-    }
+    void updateItemsStyleSheet();
 
-    void updateSelected(bool b)
-    {
-        m_bSelected = b;
-        setProperty("selected", b);
-        m_indicator->setProperty("selected", b);
-        m_label->setProperty("selected", b);
-    }
+    void updateSelected(bool b);
 
-    void clearAllItemsSelectState()
-    {
-        updateSelected(false);
-    }
+    void clearAllItemsSelectState();
 
-    void mouseReleaseEvent(QMouseEvent* event)
-    {
-        FluVNavigationItem::mouseReleaseEvent(event);
-        emit itemClicked();
-    }
+    void mouseReleaseEvent(QMouseEvent* event);
 
     // to enable qss
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   signals:
     void itemClicked();

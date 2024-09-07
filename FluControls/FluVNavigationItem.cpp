@@ -29,3 +29,25 @@ int FluVNavigationItem::getItemHeight()  // to easy get item height
 {
     return 0;
 }
+
+void FluVNavigationItem::setLong(bool bLong)
+{
+    setProperty("isLong", QVariant::fromValue(bLong));
+    m_bLong = bLong;
+    style()->polish(this);
+}
+
+bool FluVNavigationItem::isLong()
+{
+    return m_bLong;
+}
+
+QString FluVNavigationItem::getKey()
+{
+    return m_key;
+}
+
+void FluVNavigationItem::setKey(QString key)
+{
+    m_key = key;
+}

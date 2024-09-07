@@ -34,27 +34,13 @@ class FluVNavigationItem : public FluWidget
 
     virtual int getItemHeight();  // to easy get item height
 
-    virtual void setLong(bool bLong)
-    {
-        setProperty("isLong", QVariant::fromValue(bLong));
-        m_bLong = bLong;
-        style()->polish(this);
-    }
+    virtual void setLong(bool bLong);
 
-    bool isLong()
-    {
-        return m_bLong;
-    }
+    bool isLong();
 
-    QString getKey()
-    {
-        return m_key;
-    }
+    QString getKey();
 
-    void setKey(QString key)
-    {
-        m_key = key;
-    }
+    void setKey(QString key);
 
   protected:
     FluVNavigationItemType m_itemType;

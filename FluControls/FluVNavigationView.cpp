@@ -282,3 +282,16 @@ void FluVNavigationView::onMenuItemClicked()
         m_bLong = true;
     }
 }
+
+void FluVNavigationView::onThemeChanged()
+{
+    // LOG_DEBUG << "called";
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationView.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationView.qss", this);
+    }
+}

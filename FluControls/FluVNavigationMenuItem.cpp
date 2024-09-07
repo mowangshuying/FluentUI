@@ -44,6 +44,14 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);
 }
 
+void FluVNavigationMenuItem::paintEvent(QPaintEvent *event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
 void FluVNavigationMenuItem::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())

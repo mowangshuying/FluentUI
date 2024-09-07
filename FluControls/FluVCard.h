@@ -14,71 +14,15 @@ class FluVCard : public FluWidget
 {
     Q_OBJECT
   public:
-    FluVCard(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-        auto vMainLaout = new QVBoxLayout(this);
-        vMainLaout->setAlignment(Qt::AlignTop);
-        vMainLaout->setContentsMargins(20, 30, 20, 30);
+    FluVCard(QWidget* parent = nullptr);
 
-        m_iconLabel = new QLabel(this);
-        m_iconLabel->setFixedSize(60, 60);
-        QPixmap galleryPng = QPixmap("../res/HomeHeaderTiles/Header-WinUIGallery.png");
-        galleryPng = galleryPng.scaled(60, 60);
-        m_iconLabel->setPixmap(galleryPng);
+    FluVCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr);
 
-        vMainLaout->addWidget(m_iconLabel);
+    void setIcon(QPixmap icon);
 
-        m_titleLabel = new QLabel(this);
-        m_titleLabel->setText("Getting started");
-        m_titleLabel->setObjectName("titleLabel");
-
-        vMainLaout->addSpacing(20);
-        vMainLaout->addWidget(m_titleLabel);
-
-        m_contextLabel = new QLabel(this);
-        m_contextLabel->setText("An overview of app development options, tools, and samples.");
-        m_contextLabel->setObjectName("contextLabel");
-        m_contextLabel->setWordWrap(true);
-        vMainLaout->addWidget(m_contextLabel);
-
-        setFixedSize(200, 220);
-        QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
-        setStyleSheet(qss);
-    }
-
-    FluVCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent = nullptr) : FluVCard(parent)
-    {
-        QPixmap pixmap = icon.scaled(60, 60);
-        m_iconLabel->setPixmap(pixmap);
-        m_titleLabel->setText(titleText);
-        m_contextLabel->setText(contextText);
-    }
-
-    void setIcon(QPixmap icon)
-    {
-        QPixmap pixmap = icon.scaled(60, 60);
-        m_iconLabel->setPixmap(pixmap);
-    }
-
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVCard.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVCard.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QLabel* m_iconLabel;

@@ -11,43 +11,14 @@ class FluVScrollView : public FluScrollArea
 {
     Q_OBJECT
   public:
-    FluVScrollView(QWidget* parent = nullptr) : FluScrollArea(parent)
-    {
-        setWidgetResizable(true);
-        setMinimumSize(0, 0);
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        hideHScrollBar();
+    FluVScrollView(QWidget* parent = nullptr);
 
-        m_contextWidget = new QWidget(this);
-        setWidget(m_contextWidget);
-        m_vMainLayout = new QVBoxLayout(m_contextWidget);
-        m_contextWidget->setObjectName("contextWidget");
+    ~FluVScrollView();
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVScrollView.qss", this);
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    }
-
-    ~FluVScrollView()
-    {
-    }
-
-    QVBoxLayout* getMainLayout()
-    {
-        return m_vMainLayout;
-    }
+    QVBoxLayout* getMainLayout();
 
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVScrollView.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVScrollView.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     QWidget* m_contextWidget;

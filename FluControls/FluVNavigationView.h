@@ -52,18 +52,7 @@ class FluVNavigationView : public FluWidget
 
   public slots:
     void onMenuItemClicked();
-    void onThemeChanged()
-    {
-        // LOG_DEBUG << "called";
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationView.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationView.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   public:
     QVBoxLayout *m_vLayout;

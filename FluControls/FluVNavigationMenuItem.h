@@ -14,13 +14,7 @@ class FluVNavigationMenuItem : public FluVNavigationItem
   public:
     FluVNavigationMenuItem(QWidget *parent = nullptr);
 
-    void paintEvent(QPaintEvent *event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent *event);
 
   signals:
     void menuItemClicked();

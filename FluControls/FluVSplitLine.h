@@ -9,30 +9,9 @@ class FluVSplitLine : public FluWidget
 {
     Q_OBJECT
   public:
-    FluVSplitLine(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-        setFixedHeight(1);
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
-        onThemeChanged();
-    }
+    FluVSplitLine(QWidget* parent = nullptr);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVSplitLine.qss", this);
-        }
-    }
+    void onThemeChanged();
 };

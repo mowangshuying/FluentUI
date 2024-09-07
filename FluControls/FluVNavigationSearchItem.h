@@ -13,32 +13,14 @@ class FluVNavigationSearchItem : public FluVNavigationItem
   public:
     FluVNavigationSearchItem(QWidget* parent = nullptr);
 
-    void hideSearchButton()
-    {
-        m_searchButton->hide();
-        m_searchLineEdit->show();
-    }
+    void hideSearchButton();
 
-    void hideSearchEdit()
-    {
-        m_searchButton->show();
-        m_searchLineEdit->hide();
-    }
+    void hideSearchEdit();
 
-    void mouseReleaseEvent(QMouseEvent* event)
-    {
-        FluVNavigationItem::mouseReleaseEvent(event);
-        emit itemClicked();
-    }
+    void mouseReleaseEvent(QMouseEvent* event);
 
     // to enable qss
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event);
 
   signals:
     void itemClicked();

@@ -4,8 +4,8 @@
 #include <QPropertyAnimation>
 #include "../FluControls/FluPushButton.h"
 #include "../FluUtils/FluUtils.h"
-#include <QState>
-#include <QStateMachine>
+//#include <QState>
+//#include <QStateMachine>
 
 // QParallelAnimationGroup
 // QSequentialAnimationGroup

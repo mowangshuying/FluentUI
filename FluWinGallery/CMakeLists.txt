@@ -15,9 +15,18 @@ message("add_library(\${TGT} SHARED")
     endforeach()
 message(")")
 
-qt_add_executable(${TGT}
-    ${DIR_SRCS}
-)
+# qt_add_executable(${TGT}
+#     ${DIR_SRCS}
+# )
+if (${QT_VERSION_MAJOR} LESS 6)
+    add_executable(${TGT}
+        ${DIR_SRCS}
+    )
+else()
+    qt_add_executable(${TGT}
+        ${DIR_SRCS}
+    )
+endif()
 
 target_link_libraries(${TGT}
     PRIVATE
@@ -37,9 +46,11 @@ install(TARGETS ${TGT}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
+if(${QT_VERSION} VERSION_GREATER 6.3.0)
 qt_generate_deploy_app_script(
      TARGET ${TGT}
      OUTPUT_SCRIPT deploy_script
      NO_UNSUPPORTED_PLATFORM_ERROR
  )
  install(SCRIPT ${deploy_script})
+ endif()

@@ -7,6 +7,7 @@
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
+#include <QEnterEvent>
 
 class FluTabBarItem : public FluWidget
 {

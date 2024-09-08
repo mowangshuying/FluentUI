@@ -2,7 +2,6 @@
 #include "../FluControls/FluWidget.h"
 
 #include "FluGalleryWindow.h"
-#include "../FluUtils/FluLogUtils.h"
 #include <QProcess>
 
 int main(int argc, char **argv)

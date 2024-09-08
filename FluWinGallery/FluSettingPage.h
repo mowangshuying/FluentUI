@@ -79,7 +79,7 @@ class FluSettingPage : public FluWidget
         auto settingsVersionBox = new FluSettingsVersionBox;
 
         settingsVersionBox->getTitleLabel()->setText("FluentUI Gallery(Cpp & Qt).");
-        settingsVersionBox->getInfoLabel()->setText("©2023-2024 FluentUI For Qt & Cpp. All rights reserved.");
+        settingsVersionBox->getInfoLabel()->setText("@2023-2024 FluentUI For Qt & Cpp. All rights reserved.");
         settingsVersionBox->getVersionLabel()->setText("0.3.2");
 
         QIcon icon = QIcon("../res/Tiles/GalleryIcon.ico");

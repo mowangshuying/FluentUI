@@ -4,6 +4,7 @@
 #include <QVBoxLayout>
 #include <QScrollArea>
 #include <QPushButton>
+#include <QEnterEvent>
 #include "../FluUtils/FluUtils.h"
 
 class FluHFlipView : public QScrollArea

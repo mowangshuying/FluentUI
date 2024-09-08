@@ -18,10 +18,10 @@ class FluIconToolWidget : public FluWidget
     {
         auto vBoxLayout = new QVBoxLayout(this);
         auto hLayout1 = new QHBoxLayout(this);
-        auto label1 = new QLabel("#值");
+        auto label1 = new QLabel("#value");
         auto lineEdit1 = new QLineEdit();
         auto hLayout2 = new QHBoxLayout(this);
-        auto btn1 = new QPushButton("执行");
+        auto btn1 = new QPushButton("excute");
 
         vBoxLayout->addLayout(hLayout1);
         vBoxLayout->addLayout(hLayout2);

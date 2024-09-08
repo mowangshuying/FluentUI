@@ -15,12 +15,17 @@ message("add_library(\${TGT} SHARED")
     endforeach()
 message(")")
 
-qt_add_executable(${TGT}
-    ${DIR_SRCS}
-)
+if (${QT_VERSION_MAJOR} LESS 6)
+    add_executable(${TGT}
+        ${DIR_SRCS}
+    )
+else()
+    qt_add_executable(${TGT}
+        ${DIR_SRCS}
+    )
+endif()
 
 target_link_libraries(${TGT}
     PRIVATE
     FluControls
-    Qt6::StateMachine
 )

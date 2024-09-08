@@ -15,13 +15,20 @@ message("add_library(\${TGT} SHARED")
     endforeach()
 message(")")
 
-qt_add_library(${TGT}
-    STATIC
-    ${DIR_SRCS}
-)
+if (${QT_VERSION_MAJOR} LESS 6)
+    add_library(${TGT}
+        STATIC
+        ${DIR_SRCS}
+    )
+else()
+    qt_add_library(${TGT}
+        STATIC
+        ${DIR_SRCS}
+    )
+endif()
 
 target_link_libraries(${TGT}
     PUBLIC
-    Qt6::Widgets
-    Qt6::Svg
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Svg
 )

@@ -5,6 +5,7 @@ FluVNavigationView {
 
 #srollArea {
     border: none;
+    background-color: transparent;
 }
 
 #widget1,

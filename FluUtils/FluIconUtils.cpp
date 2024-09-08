@@ -3,12 +3,15 @@
 #include <QFontDatabase>
 #include <QPainter>
 #include <QtSvg/QSvgRenderer>
+#include <QApplication>
 
 FluIconUtils::FluIconUtils()
 {
     int fontId = QFontDatabase::addApplicationFont("../res/Segoe_Fluent_Icons.ttf");
     QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
     m_fluentFont.setFamily(fontFamilies.at(0));
+
+   // QApplication::setFont(m_fluentFont);
 }
 
 FluIconUtils::~FluIconUtils()

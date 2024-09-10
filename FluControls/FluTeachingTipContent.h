@@ -7,14 +7,9 @@ class FluTeachingTipContent : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTeachingTipContent(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-    }
+    FluTeachingTipContent(QWidget* parent = nullptr);
 
-    void paintEvent(QPaintEvent* event)
-    {
-        FluWidget::paintEvent(event);
-    }
+    void paintEvent(QPaintEvent* event);
 
   protected:
     QColor m_borderC;

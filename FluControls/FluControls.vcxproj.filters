@@ -437,6 +437,9 @@
     <ClCompile Include="FluScaleButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluTeachingTipContent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -836,6 +839,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluScaleButton.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTeachingTipContent.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -168,6 +168,7 @@
     <ClCompile Include="FluScrollDelegate.cpp" />
     <ClCompile Include="FluSettingsVersionBox.cpp" />
     <ClCompile Include="FluTeachingTip.cpp" />
+    <ClCompile Include="FluTeachingTipContent.cpp" />
     <ClCompile Include="FluTextEditWrap.cpp" />
     <ClCompile Include="FluTextToggleSwitchEx.cpp" />
     <ClCompile Include="FluTimeLine.cpp" />
@@ -284,6 +285,7 @@
     <QtMoc Include="FluScrollBarHandle.h" />
     <QtMoc Include="FluScrollBarTrunk.h" />
     <QtMoc Include="FluScaleButton.h" />
+    <QtMoc Include="FluTeachingTipContent.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

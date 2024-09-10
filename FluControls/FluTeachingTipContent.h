@@ -20,7 +20,7 @@ class FluTeachingTipContent : public FluWidget
     QColor m_borderC;
     QColor m_brushC;
 
-    FluTeachingTipPos m_TipPos;
+    FluTeachingTipPosition m_TipPos;
 
     int m_nSpacing;
 };

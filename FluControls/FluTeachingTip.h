@@ -2,7 +2,7 @@
 
 #include "FluWidget.h"
 
-enum class FluTeachingTipPos
+enum class FluTeachingTipPosition
 {
     Top,
     Botton,

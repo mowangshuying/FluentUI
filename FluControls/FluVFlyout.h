@@ -24,6 +24,8 @@ class FluVFlyout : public FluWidget
   public:
     FluVFlyout(QWidget* target, FluFlyoutPosition position = FluFlyoutPosition::Top);
 
+    void setShadowEffect();
+
     // void resizeEvent(QResizeEvent* event)
     //  {
     //      m_shadowWidget->resize(width(), height());

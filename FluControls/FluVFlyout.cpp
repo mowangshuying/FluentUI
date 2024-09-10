@@ -19,12 +19,8 @@ FluVFlyout::FluVFlyout(QWidget* target, FluFlyoutPosition position /*= FluFlyout
     setFixedWidth(360);
     setMinimumHeight(96);
 
-    // set shadow;
-    m_shadowEffect = new QGraphicsDropShadowEffect;
-    m_shadowEffect->setBlurRadius(8);
-    m_shadowEffect->setOffset(0, 0);
-    m_shadowEffect->setColor(QColor(0, 0, 0, 30));
-    m_shadowWidget->setGraphicsEffect(m_shadowEffect);
+    setShadowEffect();
+
 
     setAttribute(Qt::WA_TranslucentBackground);
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
@@ -35,6 +31,18 @@ FluVFlyout::FluVFlyout(QWidget* target, FluFlyoutPosition position /*= FluFlyout
     // }
 
     onThemeChanged();
+}
+
+void FluVFlyout::setShadowEffect()
+{
+    // set shadow;
+    m_shadowEffect = new QGraphicsDropShadowEffect;
+    m_shadowEffect->setBlurRadius(8);
+    m_shadowEffect->setOffset(0, 0);
+    m_shadowEffect->setColor(QColor(0, 0, 0, 30));
+    if (FluThemeUtils::isDarkTheme())
+        m_shadowEffect->setColor(QColor(0,0,0,80));
+    m_shadowWidget->setGraphicsEffect(m_shadowEffect);
 }
 
 void FluVFlyout::showEvent(QShowEvent* event)
@@ -79,6 +87,7 @@ void FluVFlyout::showEvent(QShowEvent* event)
 void FluVFlyout::closeEvent(QCloseEvent* event)
 {
     //  LOG_DEBUG << "close it!";
+    FluWidget::closeEvent(event);
     deleteLater();
 }
 

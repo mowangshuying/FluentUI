@@ -4,7 +4,7 @@ FluStyleButton::FluStyleButton(QWidget* parent /*= nullptr*/) : QPushButton(pare
 {
     setFixedSize(200, 30);
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluStyleButton::onThemeChanged()

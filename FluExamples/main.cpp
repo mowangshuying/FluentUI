@@ -56,7 +56,7 @@
 #include "FluIntructionsDemo.h"
 #include "FluBusyProgressRingDemo.h"
 #include "FluScrollAreaDemo.h"
-#include <src/Qsci/qsciscintilla.h>
+#include <Qsci/qsciscintilla.h>
 
 int main(int argc, char **argv)
 {

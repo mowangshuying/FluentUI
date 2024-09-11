@@ -28,4 +28,5 @@ endif()
 target_link_libraries(${TGT}
     PRIVATE
     FluControls
+    qscintilla
 )

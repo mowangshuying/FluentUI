@@ -25,3 +25,6 @@ target_link_libraries(${TGT}
     QWKCore
     QWKWidgets
 )
+
+add_subdirectory("qscintilla-2.14.0")
+

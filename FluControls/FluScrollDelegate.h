@@ -2,14 +2,15 @@
 
 #include <QObject>
 
-class FluScrollArea;
+//class FluScrollArea;
+class QAbstractScrollArea;
 class FluScrollBar;
 
 class FluScrollDelegate : public QObject
 {
     Q_OBJECT
   public:
-    FluScrollDelegate(FluScrollArea* scrollArea = nullptr);
+    FluScrollDelegate(QAbstractScrollArea* scrollArea = nullptr);
 
     FluScrollBar* getVScrollBar();
 
@@ -18,7 +19,7 @@ class FluScrollDelegate : public QObject
     bool eventFilter(QObject* watched, QEvent* event);
 
   protected:
-    FluScrollArea* m_scrollArea;
+    QAbstractScrollArea* m_scrollArea;
     FluScrollBar* m_vScrollBar;
     FluScrollBar* m_hScrollBar;
 };

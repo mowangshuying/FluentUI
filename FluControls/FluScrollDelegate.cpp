@@ -1,9 +1,10 @@
 #include "FluScrollDelegate.h"
-#include "FluScrollArea.h"
+//#include "FluScrollArea.h"
 #include "FluScrollBar.h"
+#include <QAbstractScrollArea>
 #include <QAbstractItemView>
 
-FluScrollDelegate::FluScrollDelegate(FluScrollArea* scrollArea /*= nullptr*/) : QObject(scrollArea)
+FluScrollDelegate::FluScrollDelegate(QAbstractScrollArea* scrollArea /*= nullptr*/) : QObject(scrollArea)
 {
     m_scrollArea = scrollArea;
     m_vScrollBar = new FluScrollBar(Qt::Vertical, scrollArea);

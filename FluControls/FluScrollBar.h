@@ -9,15 +9,17 @@
 #include <QResizeEvent>
 #include "FluScrollBarArrowButton.h"
 #include <QScrollBar>
+#include <QAbstractScrollArea>
 
 class FluScrollArea;
 class FluScrollBarHandle;
+
 class FluScrollBar : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(int value READ getCurrentValue WRITE setCurrrentValue)
   public:
-    FluScrollBar(Qt::Orientation orientation, FluScrollArea* scrollArea = nullptr);
+    FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea = nullptr);
 
     Qt::Orientation getOrientation();
 
@@ -98,7 +100,7 @@ class FluScrollBar : public QWidget
     void onOpacityAnimationChanged(const QVariant& value);
 
   protected:
-    FluScrollArea* m_scrollArea;
+    QAbstractScrollArea* m_scrollArea;
     FluScrollBarTrunk* m_scrollBarTrunk;
     FluScrollBarHandle* m_scrollBarHandle;
 

@@ -56,7 +56,7 @@
 #include "FluIntructionsDemo.h"
 #include "FluBusyProgressRingDemo.h"
 #include "FluScrollAreaDemo.h"
-#include <Qsci/qsciscintilla.h>
+#include "FluScintillaDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -279,7 +279,10 @@ int main(int argc, char **argv)
     //FluHNavigationViewDemo demo;
     //demo.show();
 
-    QsciScintilla demo;
+    //QsciScintilla demo;
+    //demo.show();
+
+    FluScintillaDemo demo;
     demo.show();
 
     return app.exec();

@@ -6,6 +6,7 @@
 #include <FramelessHelper/Widgets/standardtitlebar.h>
 #include "../FluControls/FluMessageBox.h"
 #include <QApplication>
+#include <QTimer>
 
 FRAMELESSHELPER_USE_NAMESPACE
 
@@ -99,6 +100,14 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     ///* connect(m_titleBar->closeButton(), &QPushButton::clicked, [=]() { FluMessageBox messageBox;
     //     messageBox.exec();
     // });*/
+
+#if (QT_VERSION <= QT_VERSION_CHECK(6,0,0))
+    FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
+    QTimer::singleShot(500, [=](){
+        m_navView->onThemeChanged();
+    });
+#endif
+
 }
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)

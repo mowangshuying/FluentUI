@@ -12,8 +12,13 @@ class FluTextToggleSwitchEx : public FluWidget
     FluTextToggleSwitchEx(QWidget* parent = nullptr);
 
     void setText(QString onText, QString offText);
+    void setChecked(bool checked);
+
   public slots:
     void onThemeChanged();
+
+  signals:
+    void stateChanged(bool checked);
 
   protected:
     QString m_onText;

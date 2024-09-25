@@ -25,6 +25,8 @@ FluTextToggleSwitchEx::FluTextToggleSwitchEx(QWidget* parent /*= nullptr*/) : Fl
         {
             m_textLabel->setText(m_offText);
         }
+
+        emit stateChanged(bChecked);
     });
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextToggleSwithEx.qss", this);
@@ -36,6 +38,11 @@ void FluTextToggleSwitchEx::setText(QString onText, QString offText)
     // m_textLabel->setText(text);
     m_onText = onText;
     m_offText = offText;
+}
+
+void FluTextToggleSwitchEx::setChecked(bool checked)
+{
+    m_toggleSwithEx->setChecked(checked);
 }
 
 void FluTextToggleSwitchEx::onThemeChanged()

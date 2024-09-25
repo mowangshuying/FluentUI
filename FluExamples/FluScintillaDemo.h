@@ -3,7 +3,7 @@
 #include "FluTemplateDemo.h"
 #include "../FluControls/FluScrollDelegate.h"
 #include <Qsci/qsciscintilla.h>
-#include <QSci/qscilexercpp.h>
+#include <Qsci/qscilexercpp.h>
 
 class FluScintillaDemo : public FluTemplateDemo
 {

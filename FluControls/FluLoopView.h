@@ -15,6 +15,8 @@ class FluLoopView : public QListWidget
 
     void setAllItems(const std::vector<QString>& datas);
 
+    QString getCurrentText();
+
     int getMaxVisibleNum();
 
     void setMaxVisibleNum(int nNum);

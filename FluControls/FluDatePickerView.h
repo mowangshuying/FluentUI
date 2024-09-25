@@ -10,6 +10,7 @@
 #include <QStyleOption>
 #include "FluHSplitLine.h"
 #include "FluVSplitLine.h"
+#include "FluDatePickerViewMask.h"
 
 class FluDatePickerView : public FluWidget
 {
@@ -36,6 +37,8 @@ class FluDatePickerView : public FluWidget
     void paintEvent(QPaintEvent* event);
 
     void showEvent(QShowEvent* event);
+
+    void resizeEvent(QResizeEvent* event);
   signals:
     void clickedOk();
     void clickedCancel();
@@ -47,6 +50,7 @@ class FluDatePickerView : public FluWidget
     QHBoxLayout* m_hViewLayout;
     QHBoxLayout* m_hBtnLayout;
 
+    FluDatePickerViewMask* m_mask;
     FluLoopView* m_monthView;
     FluLoopView* m_dayView;
     FluLoopView* m_yearView;

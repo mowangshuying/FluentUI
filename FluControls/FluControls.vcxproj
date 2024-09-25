@@ -138,6 +138,7 @@
     <ClCompile Include="FluConfirmFlyout.cpp" />
     <ClCompile Include="FluDatePicker.cpp" />
     <ClCompile Include="FluDatePickerView.cpp" />
+    <ClCompile Include="FluDatePickerViewMask.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
     <ClCompile Include="FluHNavigationFlyIconTextItem.cpp" />
@@ -275,6 +276,7 @@
     <QtMoc Include="FluColorView.h" />
     <QtMoc Include="FluIntructions.h" />
     <QtMoc Include="FluBusyProgressRing.h" />
+    <ClInclude Include="FluDatePickerViewMask.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />
     <QtMoc Include="FluPPushButton.h" />

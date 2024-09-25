@@ -12,7 +12,7 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_monthBtn->setObjectName("monthBtn");
 
     m_dayBtn = new QPushButton;
-    m_dayBtn->setText("dayBtn");
+    m_dayBtn->setText("day");
     m_dayBtn->setObjectName("dayBtn");
 
     m_yearBtn = new QPushButton;

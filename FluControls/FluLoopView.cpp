@@ -91,6 +91,11 @@ void FluLoopView::setAllItems(const std::vector<QString>& datas)
     m_nTotalItemCount = count();
 }
 
+QString FluLoopView::getCurrentText()
+{
+    return currentItem()->text();
+}
+
 int FluLoopView::getMaxVisibleNum()
 {
     return m_nMaxVisibleNum;

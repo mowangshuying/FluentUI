@@ -440,6 +440,9 @@
     <ClCompile Include="FluTeachingTipContent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDatePickerViewMask.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -865,6 +868,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluIntValidator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluDatePickerViewMask.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

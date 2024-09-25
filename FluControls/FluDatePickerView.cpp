@@ -1,6 +1,6 @@
 #include "FluDatePickerView.h"
 
-FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bFirstShow(true)
+FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bFirstShow(true), m_mask(nullptr)
 {
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -70,6 +70,12 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     m_vMainLayout->addWidget(new FluVSplitLine);
     m_vMainLayout->addLayout(m_hBtnLayout);
 
+     m_mask = new FluDatePickerViewMask(this);
+     m_mask->addItem("", 140, 40);
+     m_mask->addItem("", 80, 40);
+     m_mask->addItem("", 80, 40);
+
+
     setDay(0);
     setMonth(0);
     setYear(0 + 100);
@@ -96,6 +102,11 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
         m_dayView->clear();
         m_dayView->setAllItems(datas);
         m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
+        m_mask->setItemText(0, m_monthView->getCurrentText());
+    });
+
+    connect(m_dayView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
+        m_mask->setItemText(1, m_dayView->getCurrentText());
     });
 
     connect(m_yearView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) {
@@ -110,6 +121,7 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
         m_dayView->clear();
         m_dayView->setAllItems(datas);
         m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
+        m_mask->setItemText(2, m_yearView->getCurrentText());
     });
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
@@ -134,6 +146,8 @@ void FluDatePickerView::setMonth(int month)
 {
     m_month = month;
     m_monthView->setVisibaleMidIndex(month);
+    if (m_mask != nullptr)
+        m_mask->setItemText(0, m_monthView->getCurrentText());
     // m_hourView->scrollTo(hour);
 }
 
@@ -141,6 +155,8 @@ void FluDatePickerView::setDay(int day)
 {
     m_day = day;
     m_dayView->setVisibaleMidIndex(day);
+    if (m_mask != nullptr)
+        m_mask->setItemText(1, m_dayView->getCurrentText());
     // m_hourView->scrollTo(minute);
 }
 
@@ -148,6 +164,8 @@ void FluDatePickerView::setYear(int year)
 {
     m_year = year;
     m_yearView->setVisibaleMidIndex(year);
+    if (m_mask != nullptr)
+        m_mask->setItemText(2, m_yearView->getCurrentText());
 }
 
 void FluDatePickerView::updateTime()
@@ -192,6 +210,12 @@ void FluDatePickerView::showEvent(QShowEvent* event)
     m_monthView->scrollTo(m_month);
     m_dayView->scrollTo(m_day);
     m_yearView->scrollTo(m_year);
+}
+
+void FluDatePickerView::resizeEvent(QResizeEvent* event)
+{
+    m_mask->resize(width(), 40);
+    m_mask->move(0, 162);
 }
 
 void FluDatePickerView::onThemeChanged()

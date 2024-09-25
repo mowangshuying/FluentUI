@@ -3,6 +3,7 @@
 #include "FluTemplateDemo.h"
 #include "../FluControls/FluScrollDelegate.h"
 #include <Qsci/qsciscintilla.h>
+#include <QSci/qscilexercpp.h>
 
 class FluScintillaDemo : public FluTemplateDemo
 {
@@ -22,7 +23,7 @@ class FluScintillaDemo : public FluTemplateDemo
             edit->setMarginWidth(0, 30);
 
             // set background color;
-            // edit->setStyleSheet("background-color:rgb(255,255,255)");
+            edit->setStyleSheet("border:none;");
 
             // set line number background color;
             edit->setMarginsBackgroundColor(QColor(255,255,255));
@@ -32,6 +33,14 @@ class FluScintillaDemo : public FluTemplateDemo
             edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
             edit->setScrollWidth(5);
             edit->setScrollWidthTracking(true);
+
+
+             // set cpp lexer
+            edit->setLexer(new QsciLexerCPP(edit));
+            //
+            edit->setFolding(QsciScintilla::BoxedTreeFoldStyle);
+            edit->setFoldMarginColors(QColor(255, 255, 255), QColor(255, 255, 255));
+
             auto delegate = new FluScrollDelegate(edit);
     }
 };

@@ -59,6 +59,11 @@ FluAmPmView::FluAmPmView(int nFixedW /*= 80*/, QWidget* parent /*= nullptr*/) : 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
 }
 
+QString FluAmPmView::getCurrentText()
+{
+    return m_apView->currentItem()->text();
+}
+
 void FluAmPmView::setAmPm(QString am, QString pm)
 {
     m_apView->clear();
@@ -110,11 +115,13 @@ void FluAmPmView::setAm(bool bAm)
     {
         m_apView->setCurrentItem(m_apView->item(1));
         m_apView->scrollToItem(m_apView->item(1), QAbstractItemView::PositionAtCenter);
+        emit currentItemChanged();
     }
     else
     {
         m_apView->setCurrentItem(m_apView->item(2));
         m_apView->scrollToItem(m_apView->item(2), QAbstractItemView::PositionAtCenter);
+        emit currentItemChanged();
     }
 }
 
@@ -126,6 +133,7 @@ void FluAmPmView::scrollUp()
     m_bAm = !m_bAm;
     m_apView->setCurrentItem(m_apView->item(1));
     m_apView->scrollToItem(m_apView->item(1), QAbstractItemView::PositionAtCenter);
+    emit currentItemChanged();
 }
 
 void FluAmPmView::scrollDown()
@@ -136,6 +144,7 @@ void FluAmPmView::scrollDown()
     m_bAm = !m_bAm;
     m_apView->setCurrentItem(m_apView->item(2));
     m_apView->scrollToItem(m_apView->item(2), QAbstractItemView::PositionAtCenter);
+    emit currentItemChanged();
 }
 
 void FluAmPmView::enterEvent(QEnterEvent* event)

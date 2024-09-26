@@ -175,6 +175,7 @@
     <ClCompile Include="FluTimeLine.cpp" />
     <ClCompile Include="FluTimeLineIcon.cpp" />
     <ClCompile Include="FluTimeLineItem.cpp" />
+    <ClCompile Include="FluTimePickerViewMask.cpp" />
     <ClCompile Include="FluToggleSwitchEx.cpp" />
     <ClCompile Include="FluTreeView.cpp" />
     <ClCompile Include="FluTreeViewItemDelegate.cpp" />
@@ -288,6 +289,7 @@
     <QtMoc Include="FluScrollBarTrunk.h" />
     <QtMoc Include="FluScaleButton.h" />
     <QtMoc Include="FluTeachingTipContent.h" />
+    <ClInclude Include="FluTimePickerViewMask.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

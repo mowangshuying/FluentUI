@@ -11,12 +11,13 @@
 #include "FluAmPmView.h"
 #include "FluHSplitLine.h"
 #include "FluVSplitLine.h"
+#include "FluTimePickerViewMask.h"
 
 class FluTimePickerAPView : public FluWidget
 {
     Q_OBJECT
   public:
-    FluTimePickerAPView(QWidget* parent = nullptr) : FluWidget(parent), m_bAm(true), m_hour(0), m_minute(0), m_bFirstShow(true)
+    FluTimePickerAPView(QWidget* parent = nullptr) : FluWidget(parent), m_bAm(true), m_hour(0), m_minute(0), m_bFirstShow(true), m_mask(nullptr)
     {
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
@@ -83,8 +84,19 @@ class FluTimePickerAPView : public FluWidget
         m_vMainLayout->addWidget(new FluVSplitLine);
         m_vMainLayout->addLayout(m_hBtnLayout);
 
+
+        m_mask = new FluTimePickerViewMask(this);
+        m_mask->addItem("", 80, 40);
+        m_mask->addItem("", 80, 40);
+        m_mask->addItem("", 80, 40);
+
         setMinute(0);
         setHour(0);
+        setAm(true);
+
+        m_mask->setItemText(0, m_hourView->getCurrentText());
+        m_mask->setItemText(1, m_minuteView->getCurrentText()); 
+        m_mask->setItemText(2, m_ampmView->getCurrentText());
 
         connect(m_okBtn, &QPushButton::clicked, [=]() {
             updateTime();
@@ -94,6 +106,19 @@ class FluTimePickerAPView : public FluWidget
         connect(m_cancelBtn, &QPushButton::clicked, [=]() {
             emit clickedCancel();
             close();
+        });
+
+
+        connect(m_hourView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
+            m_mask->setItemText(0, m_hourView->getCurrentText());
+        });
+
+        connect(m_minuteView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
+            m_mask->setItemText(1, m_minuteView->getCurrentText()); 
+        });
+
+        connect(m_ampmView, &FluAmPmView::currentItemChanged, [=]() { 
+            m_mask->setItemText(2, m_ampmView->getCurrentText());
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
@@ -158,6 +183,12 @@ class FluTimePickerAPView : public FluWidget
             m_minuteView->scrollTo(m_minute);
         }
     }
+
+    void resizeEvent(QResizeEvent* event)
+    {
+        m_mask->resize(width(), 40);
+        m_mask->move(0, 162);
+    }
   signals:
     void clickedOk();
     void clickedCancel();
@@ -182,6 +213,8 @@ class FluTimePickerAPView : public FluWidget
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hViewLayout;
     QHBoxLayout* m_hBtnLayout;
+
+    FluTimePickerViewMask* m_mask;
 
     FluLoopView* m_hourView;
     FluLoopView* m_minuteView;

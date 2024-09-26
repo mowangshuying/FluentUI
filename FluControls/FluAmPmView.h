@@ -19,6 +19,8 @@ class FluAmPmView : public FluWidget
   public:
     FluAmPmView(int nFixedW = 80, QWidget* parent = nullptr);
 
+    QString getCurrentText();
+
     void setAmPm(QString am, QString pm);
 
     bool isAm();
@@ -38,6 +40,8 @@ class FluAmPmView : public FluWidget
     void keyPressEvent(QKeyEvent* event);
 
     void paintEvent(QPaintEvent* event);
+signals:
+    void currentItemChanged();
   public slots:
     void onThemeChanged();
 

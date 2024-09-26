@@ -8,6 +8,7 @@
 #include "../FluUtils/FluUtils.h"
 #include <QPainter>
 #include <QStyleOption>
+#include "FluTimePickerViewMask.h"
 
 class FluTimePicker24HView : public FluWidget
 {
@@ -75,6 +76,10 @@ class FluTimePicker24HView : public FluWidget
 
         m_vMainLayout->addLayout(m_hBtnLayout);
 
+        m_mask = new FluTimePickerViewMask(this);
+        m_mask->addItem("", 120, 40);
+        m_mask->addItem("", 120, 40);
+
         setMinute(0);
         setHour(0);
 
@@ -87,6 +92,10 @@ class FluTimePicker24HView : public FluWidget
             emit clickedCancel();
             close();
         });
+
+        connect(m_hourView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { m_mask->setItemText(0, m_hourView->getCurrentText()); });
+
+        connect(m_minuteView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { m_mask->setItemText(1, m_minuteView->getCurrentText()); });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
     }
@@ -105,6 +114,8 @@ class FluTimePicker24HView : public FluWidget
     {
         m_hour = hour;
         m_hourView->setVisibaleMidIndex(hour);
+        if (m_mask != nullptr)
+            m_mask->setItemText(0, m_hourView->getCurrentText());
         // m_hourView->scrollTo(hour);
     }
 
@@ -112,6 +123,8 @@ class FluTimePicker24HView : public FluWidget
     {
         m_minute = minute;
         m_minuteView->setVisibaleMidIndex(minute);
+        if (m_mask != nullptr)
+            m_mask->setItemText(1, m_minuteView->getCurrentText());
         // m_hourView->scrollTo(minute);
     }
 
@@ -139,6 +152,12 @@ class FluTimePicker24HView : public FluWidget
         m_hourView->scrollTo(m_hour);
         m_minuteView->scrollTo(m_minute);
     }
+
+    void resizeEvent(QResizeEvent* event)
+    {
+        m_mask->resize(width(), 40);
+        m_mask->move(0, 162);
+    }
   signals:
     void clickedOk();
     void clickedCancel();
@@ -164,6 +183,8 @@ class FluTimePicker24HView : public FluWidget
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hViewLayout;
     QHBoxLayout* m_hBtnLayout;
+
+    FluTimePickerViewMask* m_mask;
 
     FluLoopView* m_hourView;
     FluLoopView* m_minuteView;

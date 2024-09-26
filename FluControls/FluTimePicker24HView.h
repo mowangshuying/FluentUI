@@ -9,6 +9,10 @@
 #include <QPainter>
 #include <QStyleOption>
 #include "FluTimePickerViewMask.h"
+#include "FluHSplitLine.h"
+#include "FluVSplitLine.h"
+#include <QFrame>
+#include <QGraphicsDropShadowEffect>
 
 class FluTimePicker24HView : public FluWidget
 {
@@ -19,10 +23,18 @@ class FluTimePicker24HView : public FluWidget
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
 
+        m_hMainViewLayout = new QHBoxLayout;
+        setLayout(m_hMainViewLayout);
+        m_hMainViewLayout->setContentsMargins(8, 8, 8, 8);
+
+        m_mainView = new QFrame;
+        m_mainView->setObjectName("mainView");
+        m_hMainViewLayout->addWidget(m_mainView);
+
         m_vMainLayout = new QVBoxLayout;
-        m_vMainLayout->setContentsMargins(0, 0, 0, 0);
+        m_vMainLayout->setContentsMargins(4, 4, 4, 4);
         m_vMainLayout->setSpacing(0);
-        setLayout(m_vMainLayout);
+        m_mainView->setLayout(m_vMainLayout);
 
         m_hViewLayout = new QHBoxLayout;
         // setLayout(m_hViewLayout);
@@ -30,6 +42,8 @@ class FluTimePicker24HView : public FluWidget
 
         m_hourView = new FluLoopView(120);
         m_minuteView = new FluLoopView(120);
+        m_mainView->setFixedWidth(248);
+        setFixedWidth(264);
 
         // set hour data;
         std::vector<QString> datas;
@@ -51,10 +65,11 @@ class FluTimePicker24HView : public FluWidget
 
         m_hViewLayout->setSpacing(0);
         m_hViewLayout->addWidget(m_hourView);
+        m_hViewLayout->addWidget(new FluHSplitLine);
         m_hViewLayout->addWidget(m_minuteView);
 
         m_hBtnLayout = new QHBoxLayout;
-        m_hBtnLayout->setContentsMargins(5, 5, 5, 5);
+        m_hBtnLayout->setContentsMargins(4, 4, 4, 4);
 
         m_okBtn = new QPushButton;
         m_cancelBtn = new QPushButton;
@@ -74,15 +89,17 @@ class FluTimePicker24HView : public FluWidget
         m_hBtnLayout->addWidget(m_okBtn);
         m_hBtnLayout->addWidget(m_cancelBtn);
 
+        m_vMainLayout->addWidget(new FluVSplitLine);
         m_vMainLayout->addLayout(m_hBtnLayout);
 
-        m_mask = new FluTimePickerViewMask(this);
+        m_mask = new FluTimePickerViewMask(m_mainView);
         m_mask->addItem("", 120, 40);
         m_mask->addItem("", 120, 40);
 
         setMinute(0);
         setHour(0);
 
+        setShadowEffect();
         connect(m_okBtn, &QPushButton::clicked, [=]() {
             updateTime();
             emit clickedOk();
@@ -134,6 +151,18 @@ class FluTimePicker24HView : public FluWidget
         m_minute = m_minuteView->getVisibleMidIndex();
     }
 
+    void setShadowEffect()
+    {
+        // set shadow;
+        m_shadowEffect = new QGraphicsDropShadowEffect;
+        m_shadowEffect->setBlurRadius(8);
+        m_shadowEffect->setOffset(0, 0);
+        m_shadowEffect->setColor(QColor(0, 0, 0, 30));
+        if (FluThemeUtils::isDarkTheme())
+            m_shadowEffect->setColor(QColor(0, 0, 0, 80));
+        m_mainView->setGraphicsEffect(m_shadowEffect);
+    }
+
     void paintEvent(QPaintEvent* event)
     {
         QStyleOption opt;
@@ -145,6 +174,7 @@ class FluTimePicker24HView : public FluWidget
     void showEvent(QShowEvent* event)
     {
         FluWidget::showEvent(event);
+        //LOG_DEBUG << "size:" << size();
         if (!m_bFirstShow)
             return;
 
@@ -155,8 +185,8 @@ class FluTimePicker24HView : public FluWidget
 
     void resizeEvent(QResizeEvent* event)
     {
-        m_mask->resize(width(), 40);
-        m_mask->move(0, 162);
+        m_mask->resize(m_mainView->width(), 40);
+        m_mask->move(0, 166);
     }
   signals:
     void clickedOk();
@@ -180,6 +210,10 @@ class FluTimePicker24HView : public FluWidget
     }
 
   protected:
+    QFrame* m_mainView;
+    QHBoxLayout* m_hMainViewLayout;
+    QGraphicsDropShadowEffect* m_shadowEffect;
+
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hViewLayout;
     QHBoxLayout* m_hBtnLayout;

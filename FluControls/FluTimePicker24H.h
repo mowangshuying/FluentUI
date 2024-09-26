@@ -37,7 +37,7 @@ class FluTimePicker24H : public FluWidget
         m_hMainLayout->addWidget(m_minuteBtn);
 
         m_timerPicker24HView = new FluTimePicker24HView;
-        m_timerPicker24HView->setFixedWidth(240);
+       // m_timerPicker24HView->setFixedWidth(240);
         m_timerPicker24HView->hide();
 
         setFixedSize(240, 30);
@@ -48,7 +48,7 @@ class FluTimePicker24H : public FluWidget
             LOG_DEBUG << "Called";
             // show FluTimerPickerView
 
-            int nX = 0;
+            int nX = 0 - 8;
             int nY = height() / 2 - 180;
             QPoint gPoint = mapToGlobal(QPoint(nX, nY));
             m_timerPicker24HView->move(gPoint.x(), gPoint.y());

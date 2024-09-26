@@ -1,4 +1,8 @@
 FluTimePicker24HView {
+    background-color: transparent;
+}
+
+#mainView {
     background-color: rgb(44, 44, 44);
     border: 1px solid rgb(61, 61, 61);
     border-radius: 8px;

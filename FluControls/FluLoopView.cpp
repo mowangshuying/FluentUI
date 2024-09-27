@@ -135,7 +135,7 @@ void FluLoopView::scrollDown()
     if (nNextIndex >= m_nTotalVisibleCount)
         nNextIndex = 0;
 
-    LOG_DEBUG << "Scroll down next index:" << nNextIndex;
+    //LOG_DEBUG << "Scroll down next index:" << nNextIndex;
     setVisibaleMidIndex(nNextIndex);
 }
 
@@ -144,7 +144,7 @@ void FluLoopView::scrollUp()
     int nNextIndex = m_nVisibleMidIndex - 1;
     if (nNextIndex < 0)
         nNextIndex = m_nTotalVisibleCount - 1;
-    LOG_DEBUG << "Scroll up next index:" << nNextIndex;
+    //LOG_DEBUG << "Scroll up next index:" << nNextIndex;
     setVisibaleMidIndex(nNextIndex);
 }
 

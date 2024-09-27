@@ -43,7 +43,7 @@ class FluTimePickerAP : public FluWidget
         m_hMainLayout->addWidget(m_apBtn);
 
         m_timerPickerApView = new FluTimePickerAPView;
-        m_timerPickerApView->setFixedWidth(240);
+        //m_timerPickerApView->setFixedWidth(240);
         m_timerPickerApView->hide();
 
         setFixedSize(240, 30);
@@ -51,7 +51,7 @@ class FluTimePickerAP : public FluWidget
         connect(m_minuteBtn, &QPushButton::clicked, [=]() { emit clicked(); });
         connect(this, &FluTimePickerAP::clicked, [=]() {
             // get current time
-            LOG_DEBUG << "Called";
+           // LOG_DEBUG << "Called";
             // show FluTimerPickerView
 
             int nX = 0;

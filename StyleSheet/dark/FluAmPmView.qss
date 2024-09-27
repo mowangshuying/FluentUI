@@ -27,10 +27,11 @@ QListWidget::item:hover {
     background-color: rgb(56, 56, 56);
 }
 
-QListWidget::item:selected {
+
+/* QListWidget::item:selected {
     background-color: rgb(118, 185, 237);
     color: black;
-}
+} */
 
 #scrollDownBtn {
     background-color: transparent;

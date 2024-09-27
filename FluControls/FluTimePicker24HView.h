@@ -185,8 +185,8 @@ class FluTimePicker24HView : public FluWidget
 
     void resizeEvent(QResizeEvent* event)
     {
-        m_mask->resize(m_mainView->width(), 40);
-        m_mask->move(0, 166);
+        m_mask->resize(m_mainView->width() - 10, 40);
+        m_mask->move(5, 166);
     }
   signals:
     void clickedOk();

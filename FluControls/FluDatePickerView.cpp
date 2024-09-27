@@ -5,18 +5,30 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
+    m_hMainViewLayout = new QHBoxLayout;
+    setLayout(m_hMainViewLayout);
+    m_hMainViewLayout->setContentsMargins(8, 8, 8, 8);
+
+    m_mainView = new QFrame;
+    m_mainView->setObjectName("mainView");
+    m_hMainViewLayout->addWidget(m_mainView);
+
     m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
+    m_vMainLayout->setContentsMargins(4, 4, 4, 4);
     m_vMainLayout->setSpacing(0);
-    setLayout(m_vMainLayout);
+    m_mainView->setLayout(m_vMainLayout);
 
     m_hViewLayout = new QHBoxLayout;
-    // setLayout(m_hViewLayout);
+    m_hViewLayout->setSpacing(0);
+    m_hViewLayout->setContentsMargins(0, 0, 0, 0);
     m_vMainLayout->addLayout(m_hViewLayout);
 
     m_monthView = new FluLoopView(140);
     m_dayView = new FluLoopView(80);
     m_yearView = new FluLoopView(80);
+    
+    m_mainView->setFixedWidth(308);
+    setFixedWidth(324);
 
     // set month data;
     std::vector<QString> datas{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
@@ -47,7 +59,7 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     m_hViewLayout->addWidget(m_yearView);
 
     m_hBtnLayout = new QHBoxLayout;
-    m_hBtnLayout->setContentsMargins(5, 5, 5, 5);
+    m_hBtnLayout->setContentsMargins(4, 4, 4, 4);
 
     m_okBtn = new QPushButton;
     m_cancelBtn = new QPushButton;
@@ -70,7 +82,7 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     m_vMainLayout->addWidget(new FluVSplitLine);
     m_vMainLayout->addLayout(m_hBtnLayout);
 
-     m_mask = new FluDatePickerViewMask(this);
+     m_mask = new FluDatePickerViewMask(m_mainView);
      m_mask->addItem("", 140, 40);
      m_mask->addItem("", 80, 40);
      m_mask->addItem("", 80, 40);
@@ -80,6 +92,7 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     setMonth(0);
     setYear(0 + 100);
 
+    setShadowEffect();
     connect(m_okBtn, &QPushButton::clicked, [=]() {
         updateTime();
         emit clickedOk();
@@ -192,6 +205,19 @@ int FluDatePickerView::getMonthDays(int year, int month)
     return count;
 }
 
+
+void FluDatePickerView::setShadowEffect()
+{
+    // set shadow;
+    m_shadowEffect = new QGraphicsDropShadowEffect;
+    m_shadowEffect->setBlurRadius(8);
+    m_shadowEffect->setOffset(0, 0);
+    m_shadowEffect->setColor(QColor(0, 0, 0, 30));
+    if (FluThemeUtils::isDarkTheme())
+        m_shadowEffect->setColor(QColor(0, 0, 0, 80));
+    m_mainView->setGraphicsEffect(m_shadowEffect);
+}
+
 void FluDatePickerView::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
@@ -214,8 +240,8 @@ void FluDatePickerView::showEvent(QShowEvent* event)
 
 void FluDatePickerView::resizeEvent(QResizeEvent* event)
 {
-    m_mask->resize(width(), 40);
-    m_mask->move(0, 162);
+    m_mask->resize(m_mainView->width() - 8, 40);
+    m_mask->move(4, 166);
 }
 
 void FluDatePickerView::onThemeChanged()

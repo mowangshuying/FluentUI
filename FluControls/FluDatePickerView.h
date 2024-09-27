@@ -11,6 +11,8 @@
 #include "FluHSplitLine.h"
 #include "FluVSplitLine.h"
 #include "FluDatePickerViewMask.h"
+#include <QFrame>
+#include <QGraphicsDropShadowEffect>
 
 class FluDatePickerView : public FluWidget
 {
@@ -34,6 +36,8 @@ class FluDatePickerView : public FluWidget
 
     int getMonthDays(int year, int month);
 
+    void setShadowEffect();
+
     void paintEvent(QPaintEvent* event);
 
     void showEvent(QShowEvent* event);
@@ -46,6 +50,10 @@ class FluDatePickerView : public FluWidget
     void onThemeChanged();
 
   protected:
+    QFrame* m_mainView;
+    QHBoxLayout* m_hMainViewLayout;
+    QGraphicsDropShadowEffect* m_shadowEffect;
+
     QVBoxLayout* m_vMainLayout;
     QHBoxLayout* m_hViewLayout;
     QHBoxLayout* m_hBtnLayout;

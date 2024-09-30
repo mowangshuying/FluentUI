@@ -101,13 +101,10 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     //     messageBox.exec();
     // });*/
 
-#if (QT_VERSION <= QT_VERSION_CHECK(6,0,0))
+#if (QT_VERSION <= QT_VERSION_CHECK(6, 0, 0))
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
-    QTimer::singleShot(500, [=](){
-        m_navView->onThemeChanged();
-    });
+    QTimer::singleShot(500, [=]() { m_navView->onThemeChanged(); });
 #endif
-
 }
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)

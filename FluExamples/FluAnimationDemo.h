@@ -4,8 +4,8 @@
 #include <QPropertyAnimation>
 #include "../FluControls/FluPushButton.h"
 #include "../FluUtils/FluUtils.h"
-//#include <QState>
-//#include <QStateMachine>
+// #include <QState>
+// #include <QStateMachine>
 
 // QParallelAnimationGroup
 // QSequentialAnimationGroup
@@ -24,7 +24,7 @@ class FluAnimationDemo : public FluTemplateDemo
 
         addShakeAni();
 
-        //addStateMachineAni();
+        // addStateMachineAni();
     }
 
     void addPosAni()
@@ -111,12 +111,12 @@ class FluAnimationDemo : public FluTemplateDemo
         // connect(animation, &QPropertyAnimation::finished, [=]() { animation->deleteLater(); });
     }
 
-    //void addStateMachineAni()
+    // void addStateMachineAni()
     //{
-    //    auto btn = new FluPushButton(this);
-    //    // btn->setText("Click me!");
-    //    btn->setFixedWidth(138);
-    //    btn->move(100, 200);
+    //     auto btn = new FluPushButton(this);
+    //     // btn->setText("Click me!");
+    //     btn->setFixedWidth(138);
+    //     btn->move(100, 200);
 
     //    QState* state1 = new QState;
     //    state1->assignProperty(btn, "text", "@@@@");

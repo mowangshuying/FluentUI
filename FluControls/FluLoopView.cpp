@@ -135,7 +135,7 @@ void FluLoopView::scrollDown()
     if (nNextIndex >= m_nTotalVisibleCount)
         nNextIndex = 0;
 
-    //LOG_DEBUG << "Scroll down next index:" << nNextIndex;
+    // LOG_DEBUG << "Scroll down next index:" << nNextIndex;
     setVisibaleMidIndex(nNextIndex);
 }
 
@@ -144,7 +144,7 @@ void FluLoopView::scrollUp()
     int nNextIndex = m_nVisibleMidIndex - 1;
     if (nNextIndex < 0)
         nNextIndex = m_nTotalVisibleCount - 1;
-    //LOG_DEBUG << "Scroll up next index:" << nNextIndex;
+    // LOG_DEBUG << "Scroll up next index:" << nNextIndex;
     setVisibaleMidIndex(nNextIndex);
 }
 
@@ -169,7 +169,7 @@ void FluLoopView::scrollTo(int nIndex)
 
 void FluLoopView::enterEvent(QEnterEvent* event)
 {
-   // LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
     m_scrollUpBtn->move(0, 0);
     m_scrollDownBtn->move(0, height() - m_scrollDownBtn->height());
     m_scrollUpBtn->show();
@@ -178,7 +178,7 @@ void FluLoopView::enterEvent(QEnterEvent* event)
 
 void FluLoopView::leaveEvent(QEvent* event)
 {
-    //LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
     m_scrollUpBtn->move(0, 0);
     m_scrollDownBtn->move(0, height() - m_scrollDownBtn->height());
     m_scrollUpBtn->hide();

@@ -62,41 +62,41 @@ void FluDatePickerViewMask::paintText(QPainter& painter)
     }
 }
 
-//void FluDatePickerViewMask::enterEvent(QEnterEvent* event)
+// void FluDatePickerViewMask::enterEvent(QEnterEvent* event)
 //{
-//    int x = mapFromGlobal(QCursor().pos()).x();
-//    for (int i = 0; i < m_items.size(); i++)
-//    {
-//        if (x >= m_items[i].m_nWidth)
-//            x -= m_items[i].m_nWidth;
-//        else
-//        {
-//            emit enterChanged(i, event);
-//            break;
-//        }
-//    }
-//}
+//     int x = mapFromGlobal(QCursor().pos()).x();
+//     for (int i = 0; i < m_items.size(); i++)
+//     {
+//         if (x >= m_items[i].m_nWidth)
+//             x -= m_items[i].m_nWidth;
+//         else
+//         {
+//             emit enterChanged(i, event);
+//             break;
+//         }
+//     }
+// }
 //
-//void FluDatePickerViewMask::leaveEvent(QEvent* event)
+// void FluDatePickerViewMask::leaveEvent(QEvent* event)
 //{
-//    int x = mapFromGlobal(QCursor().pos()).x();
-//    for (int i = 0; i < m_items.size(); i++)
-//    {
-//        if (x >= m_items[i].m_nWidth)
-//            x -= m_items[i].m_nWidth;
-//        else
-//        {
-//            emit leaveChanged(i, event);
-//            break;
-//        }
-//    }
-//}
+//     int x = mapFromGlobal(QCursor().pos()).x();
+//     for (int i = 0; i < m_items.size(); i++)
+//     {
+//         if (x >= m_items[i].m_nWidth)
+//             x -= m_items[i].m_nWidth;
+//         else
+//         {
+//             emit leaveChanged(i, event);
+//             break;
+//         }
+//     }
+// }
 
 void FluDatePickerViewMask::mouseMoveEvent(QMouseEvent* event)
 {
-    //LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
     int x = mapFromGlobal(QCursor().pos()).x();
-    //LOG_DEBUG << "x:" << x;
+    // LOG_DEBUG << "x:" << x;
 
     int nTmpIndex = -1;
     for (int i = 0; i < m_items.size(); i++)
@@ -105,26 +105,25 @@ void FluDatePickerViewMask::mouseMoveEvent(QMouseEvent* event)
         {
             x -= m_items[i].m_nWidth;
 
-
-            //QPointF localP;
-            //QPointF senceP; 
-            //QPointF globalP;
-            //QEnterEvent tmpEvent(localP, senceP, globalP);
-            //emit enterChanged(i, &tmpEvent);
+            // QPointF localP;
+            // QPointF senceP;
+            // QPointF globalP;
+            // QEnterEvent tmpEvent(localP, senceP, globalP);
+            // emit enterChanged(i, &tmpEvent);
         }
         else
         {
-           // QEvent tmpEvent(QEvent::None);
-          //  emit leaveChanged(i, &tmpEvent);
-            //break;
+            // QEvent tmpEvent(QEvent::None);
+            //  emit leaveChanged(i, &tmpEvent);
+            // break;
 
-          ///* QPointF localP;
-          // QPointF senceP;
-          // QPointF globalP;
-          // QEnterEvent tmpEvent(localP, senceP, globalP);*/
-           //emit enterChanged(i, &tmpEvent);
-           nTmpIndex = i;
-           break;
+            ///* QPointF localP;
+            // QPointF senceP;
+            // QPointF globalP;
+            // QEnterEvent tmpEvent(localP, senceP, globalP);*/
+            // emit enterChanged(i, &tmpEvent);
+            nTmpIndex = i;
+            break;
         }
     }
 
@@ -132,11 +131,11 @@ void FluDatePickerViewMask::mouseMoveEvent(QMouseEvent* event)
     {
         m_nCurIndex = nTmpIndex;
 
-         QPointF localP;
-         QPointF senceP;
-         QPointF globalP;
-         QEnterEvent tmpEvent(localP, senceP, globalP);
-         emit enterChanged(m_nCurIndex, &tmpEvent);
+        QPointF localP;
+        QPointF senceP;
+        QPointF globalP;
+        QEnterEvent tmpEvent(localP, senceP, globalP);
+        emit enterChanged(m_nCurIndex, &tmpEvent);
         return;
     }
 
@@ -144,7 +143,6 @@ void FluDatePickerViewMask::mouseMoveEvent(QMouseEvent* event)
     {
         QEvent tmpLeaveEvent(QEvent::Leave);
         emit leaveChanged(m_nCurIndex, &tmpLeaveEvent);
-
 
         QPointF localP;
         QPointF senceP;
@@ -154,8 +152,6 @@ void FluDatePickerViewMask::mouseMoveEvent(QMouseEvent* event)
 
         m_nCurIndex = nTmpIndex;
     }
-
-
 }
 
 void FluDatePickerViewMask::wheelEvent(QWheelEvent* event)

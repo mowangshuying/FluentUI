@@ -198,8 +198,8 @@ int main(int argc, char **argv)
     // FluLoopViewDemo demo;
     // demo.show();
 
-     FluTimePickerDemo demo;
-     demo.show();
+    FluTimePickerDemo demo;
+    demo.show();
 
     // FluTabBarDemo demo;
     // demo.show();
@@ -276,14 +276,14 @@ int main(int argc, char **argv)
     // FluButtonDemo demo;
     // demo.show();
 
-    //FluHNavigationViewDemo demo;
-    //demo.show();
+    // FluHNavigationViewDemo demo;
+    // demo.show();
 
-    //QsciScintilla demo;
-    //demo.show();
+    // QsciScintilla demo;
+    // demo.show();
 
-    //FluScintillaDemo demo;
-    //demo.show();
+    // FluScintillaDemo demo;
+    // demo.show();
 
     return app.exec();
 }

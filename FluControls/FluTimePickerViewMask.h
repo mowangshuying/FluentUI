@@ -35,10 +35,11 @@ class FluTimePickerViewMask : public QWidget
     void wheelEvent(QWheelEvent* event);
 
     void paintEvent(QPaintEvent* event);
-signals:
+  signals:
     void enterChanged(int nIndex, QEnterEvent* event);
     void leaveChanged(int nIndex, QEvent* event);
     void wheelChanged(int nIndex, QWheelEvent* event);
+
   protected:
     std::vector<FluTimePickerViewMaskItem> m_items;
     int m_nCurIndex;

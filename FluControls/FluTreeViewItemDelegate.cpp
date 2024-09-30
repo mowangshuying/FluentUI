@@ -164,7 +164,7 @@ void FluTreeViewItemDelegate::paintArrow(QPainter* painter, const QStyleOptionVi
     int nRadius = 4;
 
     QRect arrowRect(nX, nY, 20, 20);
-#if (QT_VERSION >= QT_VERSION_CHECK(6,0,0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
     if (m_treeView->itemFromIndex(index)->childCount() > 0)
     {
         if (m_treeView->isExpanded(index))

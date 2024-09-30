@@ -11,7 +11,7 @@ FluIconUtils::FluIconUtils()
     QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
     m_fluentFont.setFamily(fontFamilies.at(0));
 
-   // QApplication::setFont(m_fluentFont);
+    // QApplication::setFont(m_fluentFont);
 }
 
 FluIconUtils::~FluIconUtils()

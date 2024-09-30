@@ -28,7 +28,7 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     m_monthView = new FluLoopView(140);
     m_dayView = new FluLoopView(80);
     m_yearView = new FluLoopView(80);
-    
+
     m_mainView->setFixedWidth(308);
     setFixedWidth(324);
 
@@ -84,11 +84,10 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     m_vMainLayout->addWidget(new FluVSplitLine);
     m_vMainLayout->addLayout(m_hBtnLayout);
 
-     m_mask = new FluDatePickerViewMask(m_mainView);
-     m_mask->addItem("", 140, 40);
-     m_mask->addItem("", 80, 40);
-     m_mask->addItem("", 80, 40);
-
+    m_mask = new FluDatePickerViewMask(m_mainView);
+    m_mask->addItem("", 140, 40);
+    m_mask->addItem("", 80, 40);
+    m_mask->addItem("", 80, 40);
 
     setDay(0);
     setMonth(0);
@@ -120,9 +119,7 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
         m_mask->setItemText(0, m_monthView->getCurrentText());
     });
 
-    connect(m_dayView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
-        m_mask->setItemText(1, m_dayView->getCurrentText());
-    });
+    connect(m_dayView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { m_mask->setItemText(1, m_dayView->getCurrentText()); });
 
     connect(m_yearView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) {
         int nDays = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
@@ -139,8 +136,8 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
         m_mask->setItemText(2, m_yearView->getCurrentText());
     });
 
-   connect(m_mask, &FluDatePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) {
-        //LOG_DEBUG << "nIndex:" << nIndex;
+    connect(m_mask, &FluDatePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) {
+        // LOG_DEBUG << "nIndex:" << nIndex;
         if (nIndex == 0)
             QApplication::sendEvent(m_monthView->viewport(), wheelEvent);
         else if (nIndex == 1)
@@ -149,25 +146,25 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
             QApplication::sendEvent(m_yearView->viewport(), wheelEvent);
     });
 
-      connect(m_mask, &FluDatePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
-       //LOG_DEBUG << "nIndex:" << nIndex;
-       if (nIndex == 0)
-           QApplication::sendEvent(m_monthView, event);
-       else if (nIndex == 1)
-           QApplication::sendEvent(m_dayView, event);
-       else
-           QApplication::sendEvent(m_yearView, event);
-   });
+    connect(m_mask, &FluDatePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
+        // LOG_DEBUG << "nIndex:" << nIndex;
+        if (nIndex == 0)
+            QApplication::sendEvent(m_monthView, event);
+        else if (nIndex == 1)
+            QApplication::sendEvent(m_dayView, event);
+        else
+            QApplication::sendEvent(m_yearView, event);
+    });
 
-         connect(m_mask, &FluDatePickerViewMask::leaveChanged, [=](int nIndex, QEvent* event) {
-          //LOG_DEBUG << "nIndex:" << nIndex;
-          if (nIndex == 0)
-              QApplication::sendEvent(m_monthView, event);
-          else if (nIndex == 1)
-              QApplication::sendEvent(m_dayView, event);
-          else
-              QApplication::sendEvent(m_yearView, event);
-      });
+    connect(m_mask, &FluDatePickerViewMask::leaveChanged, [=](int nIndex, QEvent* event) {
+        // LOG_DEBUG << "nIndex:" << nIndex;
+        if (nIndex == 0)
+            QApplication::sendEvent(m_monthView, event);
+        else if (nIndex == 1)
+            QApplication::sendEvent(m_dayView, event);
+        else
+            QApplication::sendEvent(m_yearView, event);
+    });
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
 }
@@ -236,7 +233,6 @@ int FluDatePickerView::getMonthDays(int year, int month)
     }
     return count;
 }
-
 
 void FluDatePickerView::setShadowEffect()
 {

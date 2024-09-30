@@ -82,7 +82,7 @@ void FluTriangle::paintEvent(QPaintEvent* event)
     brush.setColor(QColor(249, 249, 249));
     brush.setStyle(Qt::SolidPattern);
     painter.setBrush(brush);
-#if (QT_VERSION >= QT_VERSION_CHECK(6,0,0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
     painter.drawPolygon(getPointsByOrient(FluTriangleOrient::Top));
 #endif
 }

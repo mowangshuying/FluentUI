@@ -123,7 +123,7 @@ class FluTimePicker24HView : public FluWidget
                 QApplication::sendEvent(m_minuteView->viewport(), wheelEvent);
         });
 
-              connect(m_mask, &FluTimePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
+        connect(m_mask, &FluTimePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
             // LOG_DEBUG << "nIndex:" << nIndex;
             if (nIndex == 0)
                 QApplication::sendEvent(m_hourView, event);
@@ -199,7 +199,7 @@ class FluTimePicker24HView : public FluWidget
     void showEvent(QShowEvent* event)
     {
         FluWidget::showEvent(event);
-        //LOG_DEBUG << "size:" << size();
+        // LOG_DEBUG << "size:" << size();
         if (!m_bFirstShow)
             return;
 

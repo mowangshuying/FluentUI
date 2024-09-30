@@ -28,7 +28,7 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_hMainLayout->addWidget(m_yearBtn);
 
     m_datePickerView = new FluDatePickerView;
-    //m_datePickerView->setFixedWidth(300);
+    // m_datePickerView->setFixedWidth(300);
     m_datePickerView->hide();
 
     setFixedSize(300, 30);
@@ -36,7 +36,7 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     connect(m_dayBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(this, &FluDatePicker::clicked, [=]() {
         // get current time
-        //LOG_DEBUG << "Called";
+        // LOG_DEBUG << "Called";
         // show FluTimerPickerView
 
         int nX = -8;

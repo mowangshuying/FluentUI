@@ -7,11 +7,11 @@ FluTimePickerViewMaskItem::FluTimePickerViewMaskItem(QString text, int width, in
     m_nHeight = height;
 }
 
- FluTimePickerViewMask::FluTimePickerViewMask(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluTimePickerViewMask::FluTimePickerViewMask(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
-     m_nCurIndex = -1;
+    m_nCurIndex = -1;
     setMouseTracking(true);
- }
+}
 
 void FluTimePickerViewMask::addItem(QString text, int nW, int nH)
 {

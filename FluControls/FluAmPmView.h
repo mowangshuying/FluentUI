@@ -40,7 +40,7 @@ class FluAmPmView : public FluWidget
     void keyPressEvent(QKeyEvent* event);
 
     void paintEvent(QPaintEvent* event);
-signals:
+  signals:
     void currentItemChanged();
   public slots:
     void onThemeChanged();

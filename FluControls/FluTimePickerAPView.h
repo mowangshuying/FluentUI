@@ -26,14 +26,13 @@ class FluTimePickerAPView : public FluWidget
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
 
-       m_hMainViewLayout = new QHBoxLayout;
+        m_hMainViewLayout = new QHBoxLayout;
         setLayout(m_hMainViewLayout);
         m_hMainViewLayout->setContentsMargins(8, 8, 8, 8);
 
         m_mainView = new QFrame;
         m_mainView->setObjectName("mainView");
         m_hMainViewLayout->addWidget(m_mainView);
-
 
         m_vMainLayout = new QVBoxLayout;
         m_vMainLayout->setContentsMargins(4, 4, 4, 4);
@@ -100,7 +99,6 @@ class FluTimePickerAPView : public FluWidget
         m_vMainLayout->addWidget(new FluVSplitLine);
         m_vMainLayout->addLayout(m_hBtnLayout);
 
-
         m_mask = new FluTimePickerViewMask(m_mainView);
         m_mask->addItem("", 80, 40);
         m_mask->addItem("", 80, 40);
@@ -111,7 +109,7 @@ class FluTimePickerAPView : public FluWidget
         setAm(true);
 
         m_mask->setItemText(0, m_hourView->getCurrentText());
-        m_mask->setItemText(1, m_minuteView->getCurrentText()); 
+        m_mask->setItemText(1, m_minuteView->getCurrentText());
         m_mask->setItemText(2, m_ampmView->getCurrentText());
 
         setShadowEffect();
@@ -125,20 +123,13 @@ class FluTimePickerAPView : public FluWidget
             close();
         });
 
+        connect(m_hourView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { m_mask->setItemText(0, m_hourView->getCurrentText()); });
 
-        connect(m_hourView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
-            m_mask->setItemText(0, m_hourView->getCurrentText());
-        });
+        connect(m_minuteView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { m_mask->setItemText(1, m_minuteView->getCurrentText()); });
 
-        connect(m_minuteView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { 
-            m_mask->setItemText(1, m_minuteView->getCurrentText()); 
-        });
+        connect(m_ampmView, &FluAmPmView::currentItemChanged, [=]() { m_mask->setItemText(2, m_ampmView->getCurrentText()); });
 
-        connect(m_ampmView, &FluAmPmView::currentItemChanged, [=]() { 
-            m_mask->setItemText(2, m_ampmView->getCurrentText());
-        });
-
-        connect(m_mask, &FluTimePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) { 
+        connect(m_mask, &FluTimePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) {
             if (nIndex == 0)
                 QApplication::sendEvent(m_hourView->viewport(), wheelEvent);
             else if (nIndex == 1)
@@ -222,7 +213,6 @@ class FluTimePickerAPView : public FluWidget
             m_shadowEffect->setColor(QColor(0, 0, 0, 80));
         m_mainView->setGraphicsEffect(m_shadowEffect);
     }
-
 
     void paintEvent(QPaintEvent* event)
     {

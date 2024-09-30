@@ -13,6 +13,7 @@
 #include "FluVSplitLine.h"
 #include <QFrame>
 #include <QGraphicsDropShadowEffect>
+#include <QApplication>
 
 class FluTimePicker24HView : public FluWidget
 {
@@ -22,6 +23,7 @@ class FluTimePicker24HView : public FluWidget
     {
         setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
+        setMouseTracking(true);
 
         m_hMainViewLayout = new QHBoxLayout;
         setLayout(m_hMainViewLayout);
@@ -113,6 +115,29 @@ class FluTimePicker24HView : public FluWidget
         connect(m_hourView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { m_mask->setItemText(0, m_hourView->getCurrentText()); });
 
         connect(m_minuteView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) { m_mask->setItemText(1, m_minuteView->getCurrentText()); });
+
+        connect(m_mask, &FluTimePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) {
+            if (nIndex == 0)
+                QApplication::sendEvent(m_hourView->viewport(), wheelEvent);
+            else if (nIndex == 1)
+                QApplication::sendEvent(m_minuteView->viewport(), wheelEvent);
+        });
+
+              connect(m_mask, &FluTimePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
+            // LOG_DEBUG << "nIndex:" << nIndex;
+            if (nIndex == 0)
+                QApplication::sendEvent(m_hourView, event);
+            else if (nIndex == 1)
+                QApplication::sendEvent(m_minuteView, event);
+        });
+
+        connect(m_mask, &FluTimePickerViewMask::leaveChanged, [=](int nIndex, QEvent* event) {
+            // LOG_DEBUG << "nIndex:" << nIndex;
+            if (nIndex == 0)
+                QApplication::sendEvent(m_hourView, event);
+            else if (nIndex == 1)
+                QApplication::sendEvent(m_minuteView, event);
+        });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
     }

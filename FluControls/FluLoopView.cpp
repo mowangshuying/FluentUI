@@ -169,6 +169,7 @@ void FluLoopView::scrollTo(int nIndex)
 
 void FluLoopView::enterEvent(QEnterEvent* event)
 {
+   // LOG_DEBUG << "called";
     m_scrollUpBtn->move(0, 0);
     m_scrollDownBtn->move(0, height() - m_scrollDownBtn->height());
     m_scrollUpBtn->show();
@@ -177,6 +178,7 @@ void FluLoopView::enterEvent(QEnterEvent* event)
 
 void FluLoopView::leaveEvent(QEvent* event)
 {
+    //LOG_DEBUG << "called";
     m_scrollUpBtn->move(0, 0);
     m_scrollDownBtn->move(0, height() - m_scrollDownBtn->height());
     m_scrollUpBtn->hide();

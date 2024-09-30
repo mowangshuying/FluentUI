@@ -14,6 +14,8 @@
 #include "FluTimePickerViewMask.h"
 #include <QFrame>
 #include <QGraphicsDropShadowEffect>
+#include <QApplication>
+#include <QWheelEvent>
 
 class FluTimePickerAPView : public FluWidget
 {
@@ -134,6 +136,35 @@ class FluTimePickerAPView : public FluWidget
 
         connect(m_ampmView, &FluAmPmView::currentItemChanged, [=]() { 
             m_mask->setItemText(2, m_ampmView->getCurrentText());
+        });
+
+        connect(m_mask, &FluTimePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) { 
+            if (nIndex == 0)
+                QApplication::sendEvent(m_hourView->viewport(), wheelEvent);
+            else if (nIndex == 1)
+                QApplication::sendEvent(m_minuteView->viewport(), wheelEvent);
+            else
+                QApplication::sendEvent(m_ampmView, wheelEvent);
+        });
+
+        connect(m_mask, &FluTimePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
+            // LOG_DEBUG << "nIndex:" << nIndex;
+            if (nIndex == 0)
+                QApplication::sendEvent(m_hourView, event);
+            else if (nIndex == 1)
+                QApplication::sendEvent(m_minuteView, event);
+            else
+                QApplication::sendEvent(m_ampmView, event);
+        });
+
+        connect(m_mask, &FluTimePickerViewMask::leaveChanged, [=](int nIndex, QEvent* event) {
+            // LOG_DEBUG << "nIndex:" << nIndex;
+            if (nIndex == 0)
+                QApplication::sendEvent(m_hourView, event);
+            else if (nIndex == 1)
+                QApplication::sendEvent(m_minuteView, event);
+            else
+                QApplication::sendEvent(m_ampmView, event);
         });
 
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);

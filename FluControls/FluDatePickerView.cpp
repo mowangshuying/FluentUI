@@ -1,9 +1,11 @@
 #include "FluDatePickerView.h"
+#include <QApplication>
 
 FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bFirstShow(true), m_mask(nullptr)
 {
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
+    setMouseTracking(true);
 
     m_hMainViewLayout = new QHBoxLayout;
     setLayout(m_hMainViewLayout);
@@ -136,6 +138,36 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
         m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
         m_mask->setItemText(2, m_yearView->getCurrentText());
     });
+
+   connect(m_mask, &FluDatePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) {
+        //LOG_DEBUG << "nIndex:" << nIndex;
+        if (nIndex == 0)
+            QApplication::sendEvent(m_monthView->viewport(), wheelEvent);
+        else if (nIndex == 1)
+            QApplication::sendEvent(m_dayView->viewport(), wheelEvent);
+        else
+            QApplication::sendEvent(m_yearView->viewport(), wheelEvent);
+    });
+
+      connect(m_mask, &FluDatePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
+       //LOG_DEBUG << "nIndex:" << nIndex;
+       if (nIndex == 0)
+           QApplication::sendEvent(m_monthView, event);
+       else if (nIndex == 1)
+           QApplication::sendEvent(m_dayView, event);
+       else
+           QApplication::sendEvent(m_yearView, event);
+   });
+
+         connect(m_mask, &FluDatePickerViewMask::leaveChanged, [=](int nIndex, QEvent* event) {
+          //LOG_DEBUG << "nIndex:" << nIndex;
+          if (nIndex == 0)
+              QApplication::sendEvent(m_monthView, event);
+          else if (nIndex == 1)
+              QApplication::sendEvent(m_dayView, event);
+          else
+              QApplication::sendEvent(m_yearView, event);
+      });
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
 }

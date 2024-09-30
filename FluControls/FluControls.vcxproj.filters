@@ -850,6 +850,12 @@
     <QtMoc Include="FluTeachingTipContent.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluTimePickerViewMask.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDatePickerViewMask.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -871,12 +877,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluIntValidator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluDatePickerViewMask.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluTimePickerViewMask.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

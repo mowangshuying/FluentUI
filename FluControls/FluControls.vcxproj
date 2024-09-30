@@ -277,7 +277,7 @@
     <QtMoc Include="FluColorView.h" />
     <QtMoc Include="FluIntructions.h" />
     <QtMoc Include="FluBusyProgressRing.h" />
-    <ClInclude Include="FluDatePickerViewMask.h" />
+    <QtMoc Include="FluDatePickerViewMask.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />
     <QtMoc Include="FluPPushButton.h" />
@@ -289,7 +289,7 @@
     <QtMoc Include="FluScrollBarTrunk.h" />
     <QtMoc Include="FluScaleButton.h" />
     <QtMoc Include="FluTeachingTipContent.h" />
-    <ClInclude Include="FluTimePickerViewMask.h" />
+    <QtMoc Include="FluTimePickerViewMask.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

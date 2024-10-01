@@ -78,6 +78,25 @@ void FluComboBoxEx::setIcon(FluAwesomeType type)
     m_textBtn->setIcon(FluIconUtils::getFluentIconPixmap(type, FluThemeUtils::getUtils()->getTheme()));
 }
 
+void FluComboBoxEx::setIndex(int index)
+{
+    if (index < -1 || index >= m_menu->actions().size())
+    {
+        return;
+    }
+
+    QString text = "";
+    if (index != -1)
+    {
+        auto action = m_menu->actions()[index];
+        text = action->text();
+    }
+
+    m_textBtn->setText(text);
+    emit currentTextChanged(text);
+    emit currentIndexChanged(index);
+}
+
 void FluComboBoxEx::setText(QString text)
 {
     m_textBtn->setText(text);

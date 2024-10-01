@@ -20,6 +20,8 @@ class FluComboBoxEx : public FluWidget
 
     void setIcon(FluAwesomeType type);
 
+    void setIndex(int index);
+
     void setText(QString text);
 
     void addItem(QString text);

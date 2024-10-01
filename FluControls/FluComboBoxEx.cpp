@@ -93,8 +93,8 @@ void FluComboBoxEx::setIndex(int index)
     }
 
     m_textBtn->setText(text);
-    emit currentTextChanged(text);
     emit currentIndexChanged(index);
+    emit currentTextChanged(text);
 }
 
 void FluComboBoxEx::setText(QString text)

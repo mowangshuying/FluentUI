@@ -2,12 +2,13 @@
 
 #include <QPainter>
 #include "../FluControls/FluWidget.h"
+#include "FluTemplateDemo.h"
 
-class FluColorDemo : public FluWidget
+class FluColorDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluColorDemo(QWidget *parent = nullptr) : FluWidget(parent)
+    FluColorDemo(QWidget *parent = nullptr) : FluTemplateDemo(parent)
     {
     }
 

@@ -3,11 +3,13 @@
 #include "../FluControls/FluWidget.h"
 #include "../FluControls/FluComboBox.h"
 #include "../FluControls/FluComboBoxEx.h"
-class FluComboBoxDemo : public FluWidget
+#include "FluTemplateDemo.h"
+
+class FluComboBoxDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluComboBoxDemo(QWidget* parent = nullptr) : FluWidget(parent)
+    FluComboBoxDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
     {
         auto comboBoxEx = new FluComboBoxEx(this);
         comboBoxEx->setFixedWidth(120);

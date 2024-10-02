@@ -4,12 +4,13 @@
 
 #include "../FluControls/FluDisplayBox.h"
 #include "../FluControls/FluDisplayBoxEx.h"
+#include "FluTemplateDemo.h"
 
-class FluDisplayBoxDemo : public FluWidget
+class FluDisplayBoxDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluDisplayBoxDemo(QWidget* parent = nullptr) : FluWidget(parent)
+    FluDisplayBoxDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
     {
         resize(600, 400);
         auto mainLayout = new QVBoxLayout;

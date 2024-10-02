@@ -6,13 +6,18 @@
 #include "../FluControls/FluTimePickerAP.h"
 
 #include "../FluControls/FluDatePicker.h"
+#include "FluTemplateDemo.h"
 
-class FluTimePickerDemo : public FluWidget
+class FluTimePickerDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluTimePickerDemo(QWidget* parent = nullptr) : FluWidget(parent)
+    FluTimePickerDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
     {
+        setWindowTitle("Date & Time Picker Demo");
+#ifdef _DEBUG
+        setWindowTitle("Date & Time Picker Demo Dev");
+#endif
         auto timePicker24H = new FluTimePicker24H(this);
         timePicker24H->move(300 - timePicker24H->width() / 2, 100);
 

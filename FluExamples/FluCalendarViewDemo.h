@@ -9,10 +9,5 @@ class FluCalendarViewDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluCalendarViewDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
-    {
-        auto calendarView = new FluCalendarView(this);
-        calendarView->move(50, 50);
-        resize(600, 600);
-    }
+    FluCalendarViewDemo(QWidget* parent = nullptr);
 };

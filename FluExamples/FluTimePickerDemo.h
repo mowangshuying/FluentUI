@@ -2,9 +2,7 @@
 
 #include "../FluControls/FluWidget.h"
 #include "../FluControls/FluTimePicker24H.h"
-
 #include "../FluControls/FluTimePickerAP.h"
-
 #include "../FluControls/FluDatePicker.h"
 #include "FluTemplateDemo.h"
 

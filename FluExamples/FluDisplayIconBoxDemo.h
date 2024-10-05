@@ -2,17 +2,11 @@
 
 #include "../FluControls/FluWidget.h"
 #include "../FluControls/FluDisplayIconBox.h"
+#include "FluTemplateDemo.h"
 
-class FluDisplayIconBoxDemo : public FluWidget
+class FluDisplayIconBoxDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluDisplayIconBoxDemo(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-        setStyleSheet("background-color:rgb(243,243,243);");
-        resize(600, 400);
-
-        auto iconBox = new FluDisplayIconBox(FluAwesomeType::Wifi, this);
-        iconBox->move(50, 50);
-    }
+    FluDisplayIconBoxDemo(QWidget* parent = nullptr);
 };

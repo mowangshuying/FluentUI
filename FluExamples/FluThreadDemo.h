@@ -8,25 +8,9 @@ class FluThreadDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluThreadDemo(QWidget* parent = nullptr) : FluWidget(parent)
-    {
-        m_thread.start([](FluThread* thread) { LOG_DEBUG << "Start..."; },
-                       [](FluThread* thread) {
-                           // while (true)
-                           // {
-                           LOG_DEBUG << "Running...";
-                           // }
-                       },
+    FluThreadDemo(QWidget* parent = nullptr);
 
-                       [](FluThread* thread) { LOG_DEBUG << "End..."; });
-        resize(600, 400);
-    }
-
-    ~FluThreadDemo()
-    {
-        m_thread.quit();
-        m_thread.wait();
-    }
+    ~FluThreadDemo();
 
   protected:
     FluThread m_thread;

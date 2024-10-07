@@ -8,23 +8,12 @@ class FluColorDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:
-    FluColorDemo(QWidget *parent = nullptr) : FluTemplateDemo(parent)
-    {
-    }
+    FluColorDemo(QWidget *parent = nullptr);
 
-    void setBgColor(const QColor &color)
-    {
-        m_bgColor = color;
-        update();
-    }
+    void setBgColor(const QColor &color);
 
   protected:
-    void paintEvent(QPaintEvent *event)
-    {
-        QWidget::paintEvent(event);
-        QPainter painter(this);
-        painter.fillRect(rect(), m_bgColor);
-    }
+    void paintEvent(QPaintEvent *event);
 
   private:
     QColor m_bgColor;

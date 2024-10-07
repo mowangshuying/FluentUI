@@ -9,39 +9,14 @@ class FluTextAreaDemo : public QPlainTextEdit
 {
     Q_OBJECT
   public:
-    explicit FluTextAreaDemo(QWidget *parent = nullptr) : QPlainTextEdit(parent)
-    {
-        setReadOnly(true);
-        setStyleSheet("background-color: white; color: black;");
-        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    }
+    FluTextAreaDemo(QWidget *parent = nullptr);
 
-    QSize sizeHint() const override
-    {
-        QSize size = QPlainTextEdit::sizeHint();
-        QFontMetrics fm(font());
-        int lineSpacing = fm.lineSpacing();
-        int lines = toPlainText().count("n") + 1;
-        int height = lineSpacing * lines + (2 * frameWidth());
-        size.setHeight(height);
-        return size;
-    }
+    QSize sizeHint() const override;
 
-    void setText(const QString &text)
-    {
-        QPlainTextEdit::setPlainText(text);
-        updateSize();
-    }
+    void setText(const QString &text);
 
   protected:
-    void resizeEvent(QResizeEvent *event) override
-    {
-        QPlainTextEdit::resizeEvent(event);
-        updateSize();
-    }
+    void resizeEvent(QResizeEvent *event) override;
 
-    void updateSize()
-    {
-        adjustSize();
-    }
+    void updateSize();
 };

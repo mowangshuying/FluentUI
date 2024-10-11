@@ -3,7 +3,8 @@
 FluListView::FluListView(QWidget* parent /*= nullptr*/) : QListWidget(parent)
 {
     setItemDelegate(new FluListViewItemDelegate);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+    m_delegate = new FluScrollDelegate(this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

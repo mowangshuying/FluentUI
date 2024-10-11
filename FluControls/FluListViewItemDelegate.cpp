@@ -16,13 +16,10 @@ void FluListViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
 {
     QStyledItemDelegate::paint(painter, option, index);
     QString text = index.data(Qt::DisplayRole).toString();
-
-    //  LOG_DEBUG << text;
-
     painter->save();
 
     painter->setPen(Qt::NoPen);
-    painter->setRenderHint(QPainter::Antialiasing);
+    painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     QRect backgroundRect = option.rect;
     painter->setBrush(QColor(243, 243, 243));
@@ -36,7 +33,6 @@ void FluListViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
     QRect hoverSelectedRect(backgroundRect.x() + 2, backgroundRect.y() + 2, backgroundRect.width() - 4, backgroundRect.height() - 4);
     if (option.state.testFlag(QStyle::State_MouseOver) || option.state.testFlag(QStyle::State_Selected))
     {
-        //   LOG_DEBUG << "hoverSelectedRect:" << hoverSelectedRect;
         painter->setBrush(QColor(234, 234, 234));
         if (FluThemeUtils::isDarkTheme())
         {

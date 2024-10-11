@@ -159,8 +159,8 @@ int main(int argc, char **argv)
     // FluCalendarDatePickerDemo demo;
     // demo.show();
 
-    // FluListViewDemo demo;
-    // demo.show();
+     FluListViewDemo demo;
+     demo.show();
 
     // FluInfoBadgeDemo demo;
     // demo.show();
@@ -216,8 +216,8 @@ int main(int argc, char **argv)
     // FluVNavigationDemo demo;
     // demo.show();
 
-     FluHNavigationViewDemo demo;
-    demo.show();
+    // FluHNavigationViewDemo demo;
+    //demo.show();
 
     // FluTreeViewDemo demo;
     // demo.show();

@@ -14,4 +14,7 @@ class FluListView : public QListWidget
 
   public slots:
     void onThemeChanged();
+
+  protected:
+    FluScrollDelegate* m_delegate;
 };

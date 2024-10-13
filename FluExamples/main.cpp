@@ -57,6 +57,7 @@
 #include "FluBusyProgressRingDemo.h"
 #include "FluScrollAreaDemo.h"
 #include "FluScintillaDemo.h"
+#include "FluTableViewDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -159,8 +160,8 @@ int main(int argc, char **argv)
     // FluCalendarDatePickerDemo demo;
     // demo.show();
 
-     FluListViewDemo demo;
-     demo.show();
+     //FluListViewDemo demo;
+     //demo.show();
 
     // FluInfoBadgeDemo demo;
     // demo.show();
@@ -284,6 +285,9 @@ int main(int argc, char **argv)
 
     // FluScintillaDemo demo;
     // demo.show();
+
+    FluTableViewDemo demo;
+    demo.show();
 
     return app.exec();
 }

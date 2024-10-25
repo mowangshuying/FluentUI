@@ -58,6 +58,7 @@
 #include "FluScrollAreaDemo.h"
 #include "FluScintillaDemo.h"
 #include "FluTableViewDemo.h"
+#include "FluTableViewExDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -286,8 +287,10 @@ int main(int argc, char **argv)
     // FluScintillaDemo demo;
     // demo.show();
 
-    FluTableViewDemo demo;
-    demo.show();
+    //FluTableViewDemo demo;
+    //demo.show();
 
+    FluTableViewExDemo demo;
+    demo.show();
     return app.exec();
 }

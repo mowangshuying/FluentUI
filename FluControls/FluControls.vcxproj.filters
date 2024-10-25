@@ -446,6 +446,9 @@
     <ClCompile Include="FluTimePickerViewMask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluTableItemDelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -854,6 +857,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluDatePickerViewMask.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTableItemDelegate.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

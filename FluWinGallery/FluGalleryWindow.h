@@ -61,6 +61,7 @@
 #include "FluNavigationPage.h"
 #include "FluBasicInputPage.h"
 #include "FluScrollViewPage.h"
+#include "FluTableViewPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {
@@ -279,7 +280,12 @@ class FluGalleryWindow : public FluFrameLessWidget
 
         // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
         FluVNavigationIconTextItem *item7 = new FluVNavigationIconTextItem("TreeView", item);
-        // FluNavigationIconTextItem *item8 = new FluNavigationIconTextItem("DataGrid", item);
+        FluVNavigationIconTextItem *item8 = new FluVNavigationIconTextItem("TableView", item);
+        item8->setKey("TableViewPage");
+        auto tableViewPage = new FluTableViewPage;
+        m_sLayout->addWidget("TableViewPage", tableViewPage);
+        connect(item8, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TableViewPage"); });
+
 
         connect(collectionsPage, &FluCollectionsPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
@@ -299,7 +305,7 @@ class FluGalleryWindow : public FluFrameLessWidget
         item->addItem(item5);
         // item->addItem(item6);
         item->addItem(item7);
-        //  item->addItem(item8);
+        item->addItem(item8);
         m_navView->addItemToMidLayout(item);
     }
 

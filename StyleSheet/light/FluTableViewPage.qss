@@ -1,0 +1,22 @@
+FluTableViewPage {
+    background-color: rgb(249, 249, 249);
+    border-top-left-radius: 8px;
+    border: 1px solid rgb(229, 229, 229);
+}
+
+#titleLabel {
+    font-size: 26px;
+    /* font-weight: bold; */
+    /* text-decoration: underline; */
+}
+
+#subTitleLabel {
+    margin-left: 5px;
+    font-size: 12px;
+    color: rgb(98, 98, 98);
+}
+
+#infoLabel {
+    font-size: 12px;
+    color: rgb(26, 26, 26);
+}

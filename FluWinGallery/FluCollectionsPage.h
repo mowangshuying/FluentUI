@@ -31,6 +31,11 @@ class FluCollectionsPage : public FluATitlePage
         getFWScrollView()->getMainLayout()->addWidget(treeViewCard);
         connect(treeViewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
+        auto tableViewCard = new FluHCard(QPixmap("../res/ControlImages/GridView.png"), "TableView", "A control taht presents a collection of items in rows and columns.");
+        tableViewCard->setKey("TableViewPage");
+        getFWScrollView()->getMainLayout()->addWidget(tableViewCard);
+        connect(tableViewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCollectionsPage.qss", this);
     }
 

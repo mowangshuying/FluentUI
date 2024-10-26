@@ -158,6 +158,7 @@
     <ClCompile Include="FluSliderPage.cpp" />
     <ClCompile Include="FluSplitButtonPage.cpp" />
     <ClCompile Include="FluStatusAndInfoPage.cpp" />
+    <ClCompile Include="FluTableViewPage.cpp" />
     <ClCompile Include="FluTextBoxPage.cpp" />
     <ClCompile Include="FluTextPage.cpp" />
     <ClCompile Include="FluTimePickerPage.cpp" />
@@ -336,6 +337,7 @@
     <ResourceCompile Include="FluWinGallery.rc" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluTableViewPage.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

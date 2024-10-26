@@ -194,6 +194,9 @@
     <ClCompile Include="FluScrollViewPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluTableViewPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -362,6 +365,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluScrollViewPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluTableViewPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -1,14 +1,16 @@
 QTableView {
     background: transparent;
     outline: none;
-    border: none;
+    border: 1px solid rgb(15, 15, 15);
     selection-background-color: transparent;
     alternate-background-color: transparent;
 }
 
 QTableView::item {
     background: transparent;
-    border: 0px;
+    /* border: 0px; */
+    border-right: 1px solid rgb(15, 15, 15);
+    border-bottom: 1px solid rgb(15, 15, 15);
     padding-left: 16px;
     padding-right: 16px;
     height: 35px;
@@ -35,17 +37,10 @@ QHeaderView::section {
 
 QHeaderView::section:horizontal {
     border-left: none;
+    border-top: none;
     height: 33px;
 }
 
 QHeaderView::section:horizontal:last {
     border-right: none;
-}
-
-QHeaderView::section:vertical {
-    border-top: none;
-}
-
-QHeaderView::section:checked {
-    background-color: transparent;
 }

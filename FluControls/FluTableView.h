@@ -22,6 +22,11 @@ class FluTableView : public QTableWidget
 
       void setSelectedRows(std::list<QModelIndex> indexList);
 
+      std::set<int> getReadOnlySet();
+
+      bool judgeReadOnlyCol(int nCol);
+
+      void setReadOnlySet(std::set<int> readOnlySet);
 
       void setItemDelegate(FluTableItemDelegate* delegate);
 
@@ -45,6 +50,7 @@ class FluTableView : public QTableWidget
     public slots:
       void onThemeChanged();
    protected:
+      std::set<int> m_readOnlySet;
       FluTableItemDelegate* m_tableItemDelegate;
-     FluScrollDelegate* m_scrollDelegate;
+      FluScrollDelegate* m_scrollDelegate;
 };

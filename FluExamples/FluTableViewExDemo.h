@@ -11,6 +11,7 @@ class FluTableViewExDemo : public FluTemplateDemo
         m_tableView = new FluTableView(this);
         m_tableView->setWordWrap(false);
         m_tableView->setColumnCount(3);
+        m_tableView->setReadOnlySet({0});
         QStringList header;
         header << "index"
                << "time"

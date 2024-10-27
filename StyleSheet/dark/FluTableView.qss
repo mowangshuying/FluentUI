@@ -2,6 +2,7 @@ QTableView {
     background: transparent;
     outline: none;
     border: 1px solid rgb(15, 15, 15);
+    border-right: 0px;
     selection-background-color: transparent;
     alternate-background-color: transparent;
 }
@@ -42,5 +43,5 @@ QHeaderView::section:horizontal {
 }
 
 QHeaderView::section:horizontal:last {
-    border-right: none;
+    border-right: 1px solid rgb(15, 15, 15);
 }

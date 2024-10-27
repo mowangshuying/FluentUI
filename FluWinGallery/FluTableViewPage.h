@@ -24,6 +24,7 @@ class FluTableViewPage : public FluAEmptyPage
           auto tableView = new FluTableView(this);
           tableView->setWordWrap(false);
           tableView->setColumnCount(3);
+          tableView->setReadOnlySet({0});
           QStringList header;
           header << "index"
                  << "time"

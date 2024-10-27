@@ -14,8 +14,8 @@ FluTableView::FluTableView(QWidget* parent /*= nullptr*/) : QTableWidget(parent)
     verticalHeader()->setHighlightSections(false);
     verticalHeader()->setDefaultSectionSize(38);
     horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
 
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
         onThemeChanged();
     });
@@ -47,6 +47,21 @@ void FluTableView::setSelectedRows(std::list<QModelIndex> indexList)
 {
     m_tableItemDelegate->setSelectedRows(indexList);
     viewport()->update();
+}
+
+std::set<int> FluTableView::getReadOnlySet()
+{
+    return m_readOnlySet;
+}
+
+bool FluTableView::judgeReadOnlyCol(int nCol)
+{
+    return m_readOnlySet.find(nCol) != m_readOnlySet.end();
+}
+
+void FluTableView::setReadOnlySet(std::set<int> readOnlySet)
+{
+    m_readOnlySet = readOnlySet;
 }
 
 void FluTableView::setItemDelegate(FluTableItemDelegate* delegate)

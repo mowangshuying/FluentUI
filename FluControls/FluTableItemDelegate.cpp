@@ -51,8 +51,9 @@ void FluTableItemDelegate::updateEditorGeometry(QWidget *editor, const QStyleOpt
     int nW = tmpRect.width();
     if (index.column() == 0)
         nW -= 8;
+
     int nH = tmpRect.height();
-    editor->setGeometry(nX, nY, nW, nH);
+    editor->setGeometry(nX, nY, nW, nH - 4);
 }
 
 void FluTableItemDelegate::initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const

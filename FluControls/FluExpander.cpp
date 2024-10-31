@@ -128,12 +128,10 @@ void FluExpander::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", this);
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpander.qss", m_downOrUpButton);
     }
     else
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpander.qss", this);
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpander.qss", m_downOrUpButton);
     }
 }
 
@@ -146,8 +144,6 @@ void FluExpander::onClicked()
         m_expandAni->start();
 
         m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
-        // m_bDown = false;
-        // setDown(false);
     }
     else
     {
@@ -155,7 +151,5 @@ void FluExpander::onClicked()
         m_expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
         m_expandAni->start();
         m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
-        // m_bDown = true;
-        // setDown(true);
     }
 }

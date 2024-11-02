@@ -161,8 +161,8 @@ int main(int argc, char **argv)
     // FluCalendarDatePickerDemo demo;
     // demo.show();
 
-     //FluListViewDemo demo;
-     //demo.show();
+    // FluListViewDemo demo;
+    // demo.show();
 
     // FluInfoBadgeDemo demo;
     // demo.show();
@@ -200,8 +200,8 @@ int main(int argc, char **argv)
     // FluLoopViewDemo demo;
     // demo.show();
 
-    //FluTimePickerDemo demo;
-    //demo.show();
+    // FluTimePickerDemo demo;
+    // demo.show();
 
     // FluTabBarDemo demo;
     // demo.show();
@@ -219,7 +219,7 @@ int main(int argc, char **argv)
     // demo.show();
 
     // FluHNavigationViewDemo demo;
-    //demo.show();
+    // demo.show();
 
     // FluTreeViewDemo demo;
     // demo.show();
@@ -287,8 +287,8 @@ int main(int argc, char **argv)
     // FluScintillaDemo demo;
     // demo.show();
 
-    //FluTableViewDemo demo;
-    //demo.show();
+    // FluTableViewDemo demo;
+    // demo.show();
 
     FluTableViewExDemo demo;
     demo.show();

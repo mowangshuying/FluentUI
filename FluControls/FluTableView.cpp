@@ -16,9 +16,7 @@ FluTableView::FluTableView(QWidget* parent /*= nullptr*/) : QTableWidget(parent)
     horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluTableView::setCurrentCell(int row, int column)
@@ -136,7 +134,7 @@ void FluTableView::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);     
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
     }
     else
     {

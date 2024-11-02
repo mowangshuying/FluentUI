@@ -5,7 +5,7 @@ FluVRadioGroupBox::FluVRadioGroupBox(QWidget* parent /*= nullptr*/) : QGroupBox(
     m_vMainLayout = new QVBoxLayout;
     setLayout(m_vMainLayout);
     m_vMainLayout->addSpacing(15);
-    
+
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }

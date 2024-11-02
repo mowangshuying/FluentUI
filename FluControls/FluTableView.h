@@ -10,47 +10,48 @@ class FluTableView : public QTableWidget
 {
     Q_OBJECT
   public:
-      FluTableView(QWidget* parent = nullptr);
+    FluTableView(QWidget* parent = nullptr);
 
-      void setCurrentCell(int row, int column);
-      
-      void setCurrentCell(int row, int column, QItemSelectionModel::SelectionFlags command);
+    void setCurrentCell(int row, int column);
 
-      void setHoverRow(int nRow);
+    void setCurrentCell(int row, int column, QItemSelectionModel::SelectionFlags command);
 
-      void setPressedRow(int nRow);
+    void setHoverRow(int nRow);
 
-      void setSelectedRows(std::list<QModelIndex> indexList);
+    void setPressedRow(int nRow);
 
-      std::set<int> getReadOnlySet();
+    void setSelectedRows(std::list<QModelIndex> indexList);
 
-      bool judgeReadOnlyCol(int nCol);
+    std::set<int> getReadOnlySet();
 
-      void setReadOnlySet(std::set<int> readOnlySet);
+    bool judgeReadOnlyCol(int nCol);
 
-      void setItemDelegate(FluTableItemDelegate* delegate);
+    void setReadOnlySet(std::set<int> readOnlySet);
 
-      void selectRow(int row);
+    void setItemDelegate(FluTableItemDelegate* delegate);
 
-      void clearSelection();
+    void selectRow(int row);
 
-      void setCurrentIndex(QModelIndex index);
+    void clearSelection();
 
-      void updateSelectedRows();
+    void setCurrentIndex(QModelIndex index);
 
-      void leaveEvent(QEvent* event);
+    void updateSelectedRows();
 
-      void resizeEvent(QResizeEvent* event);
+    void leaveEvent(QEvent* event);
 
-      void keyPressEvent(QKeyEvent* event);
+    void resizeEvent(QResizeEvent* event);
 
-      void mousePressEvent(QMouseEvent* event);
+    void keyPressEvent(QKeyEvent* event);
 
-      void mouseReleaseEvent(QMouseEvent* event);
-    public slots:
-      void onThemeChanged();
-   protected:
-      std::set<int> m_readOnlySet;
-      FluTableItemDelegate* m_tableItemDelegate;
-      FluScrollDelegate* m_scrollDelegate;
+    void mousePressEvent(QMouseEvent* event);
+
+    void mouseReleaseEvent(QMouseEvent* event);
+  public slots:
+    void onThemeChanged();
+
+  protected:
+    std::set<int> m_readOnlySet;
+    FluTableItemDelegate* m_tableItemDelegate;
+    FluScrollDelegate* m_scrollDelegate;
 };

@@ -41,7 +41,6 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     auto searchItem = new FluVNavigationSearchItem;
     m_vTopWrapLayout->addWidget(searchItem);
 
-
     m_bLong = true;
     setFixedWidth(320 + 20);
 

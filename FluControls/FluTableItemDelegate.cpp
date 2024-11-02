@@ -1,7 +1,7 @@
 #include "FluTableItemDelegate.h"
 #include "FluTableView.h"
 
-FluTableItemDelegate::FluTableItemDelegate(FluTableView* parent) : QStyledItemDelegate(parent)
+FluTableItemDelegate::FluTableItemDelegate(FluTableView *parent) : QStyledItemDelegate(parent)
 {
     m_tableView = parent;
 }

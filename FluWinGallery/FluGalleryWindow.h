@@ -286,7 +286,6 @@ class FluGalleryWindow : public FluFrameLessWidget
         m_sLayout->addWidget("TableViewPage", tableViewPage);
         connect(item8, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TableViewPage"); });
 
-
         connect(collectionsPage, &FluCollectionsPage::clickedHCard, [=](QString key) {
             LOG_DEBUG << key;
             auto item = m_navView->getItemByKey(key);

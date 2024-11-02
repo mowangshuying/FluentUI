@@ -46,7 +46,7 @@ class FluTableViewExDemo : public FluTemplateDemo
         resize(700, 700);
     }
 
-public:
-    //QHBoxLayout* m_hLayout;
+  public:
+    // QHBoxLayout* m_hLayout;
     FluTableView* m_tableView;
 };

@@ -49,7 +49,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         QRect tmp = value.toRect();
         m_wrap2->setFixedHeight(tmp.height());
         setFixedHeight(m_wrap1->height() + m_wrap2->height() + 1);
-        //LOG_DEBUG << "height:" << height();
+        // LOG_DEBUG << "height:" << height();
         update();
     });
 

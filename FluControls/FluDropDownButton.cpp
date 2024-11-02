@@ -42,7 +42,7 @@ FluDropDownButton::FluDropDownButton(QWidget* parent /*= nullptr*/) : FluWidget(
         //  m_menu->show();
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
+    onThemeChanged();
 }
 
 QPushButton* FluDropDownButton::getTextBtn()
@@ -96,11 +96,6 @@ void FluDropDownButton::addIconTextItem(QIcon type, QString text)
 
 void FluDropDownButton::mouseReleaseEvent(QMouseEvent* e)
 {
-    //  QPoint leftBottomPos = rect().bottomLeft();
-    //  leftBottomPos = mapToGlobal(leftBottomPos);
-    //  leftBottomPos.setY(leftBottomPos.y() + 3);
-    //  m_menu->exec(leftBottomPos);
-    //  m_menu->show();
     emit clicked();
 }
 

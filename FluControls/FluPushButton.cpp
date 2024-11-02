@@ -3,12 +3,7 @@
 FluPushButton::FluPushButton(QWidget *parent /*= nullptr*/) : QPushButton(parent)
 {
     setFixedSize(200, 30);
-    // setFixedHeight(30);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
-    if (FluThemeUtils::isDarkTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
-    }
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

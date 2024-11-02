@@ -5,7 +5,7 @@ FluRepeatButton::FluRepeatButton(QWidget* parent /*= nullptr*/) : QPushButton(pa
     m_nClickedCount = 0;
     setFixedSize(200, 30);
     connect(this, &FluRepeatButton::clicked, [=](bool bChecked) { m_nClickedCount++; });
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRepeatButton.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

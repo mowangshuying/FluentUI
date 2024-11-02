@@ -25,7 +25,7 @@ FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/
     }
 
     setFixedHeight(30);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
+    onThemeChanged();
 }
 
 void FluCalendarViewWeakTitle::paintEvent(QPaintEvent* event)

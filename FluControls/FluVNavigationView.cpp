@@ -41,17 +41,13 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     auto searchItem = new FluVNavigationSearchItem;
     m_vTopWrapLayout->addWidget(searchItem);
 
-    // QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVNavigationView.qss");
-    // setStyleSheet(qss);
 
     m_bLong = true;
     setFixedWidth(320 + 20);
 
-    // onThemeChanged();
     connect(menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
     connect(searchItem, &FluVNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
 
-    // style()->polish(this);
     onThemeChanged();
 }
 

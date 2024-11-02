@@ -28,7 +28,7 @@ FluSearchLineEdit::FluSearchLineEdit(QWidget* parent /*= nullptr*/) : FluWidget(
 
     connect(m_btn, &QPushButton::clicked, [=]() { emit onSearchBtnClicked(); });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
+    onThemeChanged();
 }
 
 QString FluSearchLineEdit::getText()

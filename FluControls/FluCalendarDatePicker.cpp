@@ -38,11 +38,8 @@ FluCalendarDatePicker::FluCalendarDatePicker(QWidget* parent /*= nullptr*/) : QP
     connect(m_textButton, &QPushButton::clicked, [=]() { onClicked(); });
     connect(m_iconButton, &QPushButton::clicked, [=]() { onClicked(); });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    //  {
-    //     onThemeChanged();
-    // });
 }
 
 QDate FluCalendarDatePicker::getCurDate()

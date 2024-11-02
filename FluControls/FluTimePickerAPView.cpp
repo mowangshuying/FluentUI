@@ -137,7 +137,7 @@ FluTimePickerAPView::FluTimePickerAPView(QWidget* parent /*= nullptr*/) : FluWid
             QApplication::sendEvent(m_ampmView, event);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
+    onThemeChanged();
 }
 
 int FluTimePickerAPView::getHour()

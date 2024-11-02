@@ -19,7 +19,7 @@ FluPivotTitleBarItem::FluPivotTitleBarItem(QWidget* parent /*= nullptr*/) : QPus
     m_indicatorLabel->setFixedHeight(4);
     setSelected(false);
     setFixedHeight(45);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBarItem.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=]() { onThemeChanged(); });
     adjustItemSize();
 }

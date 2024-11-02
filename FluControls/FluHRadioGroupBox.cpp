@@ -7,7 +7,7 @@ FluHRadioGroupBox::FluHRadioGroupBox(QWidget* parent /*= nullptr*/) : QGroupBox(
 
     setLayout(m_hMainLayout);
     m_hMainLayout->addSpacing(15);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
@@ -18,7 +18,7 @@ FluHRadioGroupBox::FluHRadioGroupBox(QString title, QWidget* parent /*= nullptr*
     // m_vMainLayout->setContentsMargins(0, 0, 0, 0);
     setLayout(m_hMainLayout);
     m_hMainLayout->addSpacing(15);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

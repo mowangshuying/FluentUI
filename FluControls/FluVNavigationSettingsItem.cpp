@@ -34,7 +34,7 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text,
     m_hMainLayout->addWidget(m_label, 1);
     m_hMainLayout->setSpacing(0);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSettingsItem.qss", this);
+    onThemeChanged();
     connect(m_icon, &FluRotationButton::clicked, [=](bool b) { emit itemClicked(); });
     connect(this, &FluVNavigationSettingsItem::itemClicked, this, &FluVNavigationSettingsItem::onItemClicked);
 }

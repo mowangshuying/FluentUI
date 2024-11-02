@@ -3,7 +3,7 @@
 FluProgressBar::FluProgressBar(QWidget* parent /*= nullptr*/) : QProgressBar(parent)
 {
     setTextVisible(true);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBar.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

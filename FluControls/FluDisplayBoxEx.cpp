@@ -41,7 +41,8 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_codeExpander->setTopRadius0(true);
     m_vMainLayout->addWidget(m_codeExpander);
     m_codeExpander->setObjectName("codeExpander");
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBoxEx.qss", this);
+
+    onThemeChanged();
 }
 
 void FluDisplayBoxEx::setTitle(QString title)

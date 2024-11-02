@@ -2,13 +2,13 @@
 
 FluSlider::FluSlider(QWidget* parent /*= nullptr*/) : QSlider(parent)
 {
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 FluSlider::FluSlider(Qt::Orientation orientation, QWidget* parent /*= nullptr*/) : QSlider(orientation, parent)
 {
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

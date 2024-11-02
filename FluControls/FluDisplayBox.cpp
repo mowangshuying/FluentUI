@@ -18,7 +18,6 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_bodyWidget = new QWidget;
     m_bodyWidget->setObjectName("bodyWidget");
-    //  m_bodyWidget->setFixedHeight(80);
     m_mainLayout->addWidget(m_bodyWidget, 1);
 
     m_vBodyLayout = new QVBoxLayout;
@@ -29,7 +28,8 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_codeExpander->setTopRadius0(true);
     m_mainLayout->addWidget(m_codeExpander);
     m_codeExpander->setObjectName("codeExpander");
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayBox.qss", this);
+
+    onThemeChanged();
 }
 
 void FluDisplayBox::setTitle(QString title)

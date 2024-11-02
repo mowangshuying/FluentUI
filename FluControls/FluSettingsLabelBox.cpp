@@ -28,7 +28,6 @@ FluSettingsLabelBox::FluSettingsLabelBox(QWidget* parent /*= nullptr*/)
     m_mainLayout->addWidget(m_versionLabel);
 
     setFixedHeight(70);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
     onThemeChanged();
 }
 

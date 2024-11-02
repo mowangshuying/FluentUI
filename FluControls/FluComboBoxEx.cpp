@@ -42,7 +42,7 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         m_menu->exec(leftBottomPos);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
+   // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
 
     connect(m_menu, &FluMenu::triggered, [=](QAction* action) {
         m_textBtn->setText(action->text());
@@ -59,6 +59,8 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         }
         emit currentIndexChanged(nIndex);
     });
+
+    onThemeChanged();
 }
 
 QPushButton* FluComboBoxEx::getTextBtn()

@@ -36,8 +36,8 @@ FluHCard::FluHCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     rightLayout->addWidget(m_titleLabel);
     rightLayout->addWidget(m_contextLabel);
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHCard.qss");
-    setStyleSheet(qss);
+    onThemeChanged();
+
 }
 
 FluHCard::FluHCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent /*= nullptr*/) : FluHCard(parent)

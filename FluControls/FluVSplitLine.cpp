@@ -3,7 +3,6 @@
 FluVSplitLine::FluVSplitLine(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedHeight(1);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
     onThemeChanged();
 }
 

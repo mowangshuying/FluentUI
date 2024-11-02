@@ -3,7 +3,7 @@
 FluMenuBar::FluMenuBar(QWidget* parent /*= nullptr*/) : QMenuBar(parent)
 {
     setMouseTracking(true);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

@@ -49,7 +49,7 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidge
     setYears(curDate.year(), curDate.month());
 
     setFixedHeight(300);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
+    onThemeChanged();
 }
 
 FluCalendarItem* FluCalendarSelectYearView::getItem(int nIndex)

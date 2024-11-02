@@ -13,7 +13,7 @@ FluTextEdit::FluTextEdit(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
 
         setFixedHeight(this->document()->size().height() + 6);
     });
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextEdit.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

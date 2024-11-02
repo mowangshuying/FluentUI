@@ -85,12 +85,7 @@ FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDi
 
     connect(m_cancelBtn, &QPushButton::clicked, [=]() { reject(); });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMessageBox.qss", this);
-    if (FluThemeUtils::isDarkTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMessageBox.qss", this);
-    }
-
+    onThemeChanged();
     m_parentWidget->installEventFilter(this);
 }
 

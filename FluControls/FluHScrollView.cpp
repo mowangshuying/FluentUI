@@ -13,7 +13,7 @@ FluHScrollView::FluHScrollView(QWidget* parent /*= nullptr*/) : QScrollArea(pare
     m_hMainLayout = new QHBoxLayout(m_contextWidget);
     m_contextWidget->setObjectName("contextWidget");
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHScrollView.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

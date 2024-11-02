@@ -7,15 +7,7 @@ FluRatingControl::FluRatingControl(QWidget* parent /*= nullptr*/) : FluWidget(pa
 
     addStar();
     setFixedSize(170, 45);
-
-    if (FluThemeUtils::isDarkTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
-    }
+    onThemeChanged();
 }
 
 void FluRatingControl::addStar()

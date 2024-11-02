@@ -42,7 +42,7 @@ FluLoopView::FluLoopView(int nFixedW /*= 80*/, QWidget* parent /*= nullptr*/) : 
 
     setMaxVisibleNum(9);
     m_nVisibleMidIndex = 0;
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

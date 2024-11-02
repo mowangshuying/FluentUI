@@ -22,7 +22,6 @@ FluAppBarToggleButton::FluAppBarToggleButton(FluAwesomeType awesomeType, QWidget
     m_vMainLayout->addWidget(m_textLabel);
 
     m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButton.qss", this);
 
     setToggled(m_bToggled);
 
@@ -35,6 +34,8 @@ FluAppBarToggleButton::FluAppBarToggleButton(FluAwesomeType awesomeType, QWidget
 
         update();
     });
+
+    onThemeChanged();
 }
 
 void FluAppBarToggleButton::updateIcon()

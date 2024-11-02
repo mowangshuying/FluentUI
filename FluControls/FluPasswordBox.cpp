@@ -31,7 +31,7 @@ FluPasswordBox::FluPasswordBox(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     m_edit->setEchoMode(QLineEdit::Password);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
+    onThemeChanged();
 }
 
 void FluPasswordBox::setMaskC(unsigned maskC)

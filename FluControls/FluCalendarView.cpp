@@ -110,7 +110,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
 
     // setFixedWidth(300);
     setFixedSize(300, 360);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
+    onThemeChanged();
 }
 
 void FluCalendarView::switchSelectViewState(FluCalendarViewState state)

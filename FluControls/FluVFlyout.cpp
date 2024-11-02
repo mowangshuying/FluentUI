@@ -23,11 +23,6 @@ FluVFlyout::FluVFlyout(QWidget* target, FluFlyoutPosition position /*= FluFlyout
 
     setAttribute(Qt::WA_TranslucentBackground);
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
-    // if (FluThemeUtils::isDarkTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
-    // }
 
     onThemeChanged();
 }

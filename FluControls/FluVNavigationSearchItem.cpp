@@ -24,9 +24,7 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     hideSearchButton();
 
     setFixedHeight(40);
-    // m_searchLineEdit->setFixedWidth(300);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSearchItem.qss", this);
-    // connect(this, &FluNavigationSearchItem::itemClicked, this, &FluNavigationSearchItem::onItemClicked);
+    onThemeChanged();
     connect(m_searchButton, &QPushButton::clicked, [=]() { emit itemClicked(); });
 }
 

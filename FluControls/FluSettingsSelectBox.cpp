@@ -27,7 +27,7 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluW
     setFixedHeight(70);
 
     m_iconAwesomeType = FluAwesomeType::None;
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
+    onThemeChanged();
 }
 
 FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluSettingsSelectBox(parent)

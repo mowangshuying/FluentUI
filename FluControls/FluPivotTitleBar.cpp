@@ -8,7 +8,7 @@ FluPivotTitleBar::FluPivotTitleBar(QWidget* parent /*= nullptr*/) : FluWidget(pa
     m_hMainLayout->setContentsMargins(0, 0, 0, 0);
     m_hMainLayout->setAlignment(Qt::AlignLeft);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBar.qss", this);
+    onThemeChanged();
 }
 
 void FluPivotTitleBar::addTitleBarItem(FluPivotTitleBarItem* item)

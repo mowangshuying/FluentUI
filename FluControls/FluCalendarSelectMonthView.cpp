@@ -46,7 +46,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
     }
 
     setFixedHeight(300);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectMonthView.qss", this);
+    onThemeChanged();
 }
 
 void FluCalendarSelectMonthView::setYearMonth(int nYear, int nMonth)

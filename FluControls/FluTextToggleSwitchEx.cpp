@@ -29,7 +29,7 @@ FluTextToggleSwitchEx::FluTextToggleSwitchEx(QWidget* parent /*= nullptr*/) : Fl
         emit stateChanged(bChecked);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextToggleSwithEx.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

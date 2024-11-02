@@ -70,7 +70,7 @@ FluAutoSuggestBox::FluAutoSuggestBox(QWidget* parent /*= nullptr*/) : FluWidget(
         emit currentIndexChanged(nIndex);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBox.qss", this);
+    onThemeChanged();
 }
 
 void FluAutoSuggestBox::setKeys(std::vector<QString> keys)

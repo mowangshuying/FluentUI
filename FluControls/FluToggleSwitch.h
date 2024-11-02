@@ -16,7 +16,6 @@ class FluToggleSwitch : public QCheckBox
         m_bEmptyText = false;
 
         setText(m_offText);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
             if (m_bEmptyText)
                 return;
@@ -27,6 +26,7 @@ class FluToggleSwitch : public QCheckBox
                 setText(m_offText);
         });
 
+        onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 
@@ -36,7 +36,6 @@ class FluToggleSwitch : public QCheckBox
         m_offText = "Off";
 
         setText(m_offText);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
         connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
             if (m_bEmptyText)
                 return;
@@ -47,6 +46,7 @@ class FluToggleSwitch : public QCheckBox
                 setText(m_offText);
         });
 
+        onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 

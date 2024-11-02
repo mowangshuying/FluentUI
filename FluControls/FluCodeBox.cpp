@@ -8,7 +8,7 @@ FluCodeBox::FluCodeBox(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
     setFocusPolicy(Qt::FocusPolicy::NoFocus);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCodeBox.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

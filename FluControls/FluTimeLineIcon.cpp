@@ -13,13 +13,8 @@ void FluTimeLineIcon::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
 
-    //   painter.setPen(Qt::NoPen);
-    //   painter.setBrush(QColor(Qt::lightGray));
-    //   painter.drawRect(QRectF(0,0,width(),height()));
-
     // draw line;
     painter.setPen(Qt::NoPen);
-    // painter.setBrush(Qt::lightGray);
     painter.setBrush(QColor(29, 29, 29));
     if (FluThemeUtils::isDarkTheme())
         painter.setBrush(QColor(229, 229, 229));
@@ -71,7 +66,6 @@ void FluTimeLineIcon::paintEvent(QPaintEvent* event)
 
     // draw line;
     painter.setPen(Qt::NoPen);
-    // painter.setBrush(Qt::lightGray);
     painter.setBrush(QColor(29, 29, 29));
     if (FluThemeUtils::isDarkTheme())
         painter.setBrush(QColor(229, 229, 229));

@@ -57,8 +57,7 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         m_yearBtn->setText(sYear);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged,  this, [=](FluTheme theme) { onThemeChanged(); });
+    onThemeChanged();
 }
 
 void FluDatePicker::mouseReleaseEvent(QMouseEvent* event)

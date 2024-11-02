@@ -16,7 +16,7 @@ FluMenu::FluMenu(QWidget* parent /*= nullptr*/) : QMenu(parent)
     setWindowFlags(windowFlags() | Qt::NoDropShadowWindowHint | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true);
     setMouseTracking(true);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

@@ -14,7 +14,7 @@ FluPivot::FluPivot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_sLayout = new FluStackedLayout;
     m_vMainLayout->addLayout(m_sLayout);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivot.qss", this);
+    onThemeChanged();
 }
 
 void FluPivot::addPivotItem(QString key, QWidget* widget)

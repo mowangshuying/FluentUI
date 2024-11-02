@@ -4,15 +4,14 @@ FluFWScrollView::FluFWScrollView(QWidget* parent /*= nullptr*/) : FluScrollArea(
 {
     setWidgetResizable(true);
     setMinimumSize(0, 0);
-    // setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     hideHScrollBar();
 
     m_contextWidget = new QWidget(this);
     setWidget(m_contextWidget);
     m_vMainLayout = new FluFlowLayout(m_contextWidget);
     m_contextWidget->setObjectName("contextWidget");
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluFWScrollView.qss");
-    setStyleSheet(qss);
+
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

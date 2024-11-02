@@ -166,7 +166,7 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
             QApplication::sendEvent(m_yearView, event);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
+    onThemeChanged();
 }
 
 int FluDatePickerView::getMonth()

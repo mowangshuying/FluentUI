@@ -15,7 +15,6 @@ class FluToggleButton : public QPushButton
         m_bToggled = false;
         setProperty("toggled", false);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButton.qss", this);
         connect(this, &FluToggleButton::clicked, [=](bool bChecked) {
             m_bToggled = !m_bToggled;
             setProperty("toggled", m_bToggled);
@@ -23,6 +22,7 @@ class FluToggleButton : public QPushButton
             update();
         });
 
+        onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     }
 

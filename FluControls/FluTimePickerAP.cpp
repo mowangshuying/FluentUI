@@ -57,7 +57,7 @@ FluTimePickerAP::FluTimePickerAP(QWidget* parent /*= nullptr*/) : FluWidget(pare
         m_apBtn->setText(sAmOrPm);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAP.qss", this);
+    onThemeChanged();
 }
 
 void FluTimePickerAP::mouseReleaseEvent(QMouseEvent* event)

@@ -63,7 +63,7 @@ class FluTimePicker24H : public FluWidget
             m_minuteBtn->setText(sMinute);
         });
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
+        onThemeChanged();
     }
 
     void mouseReleaseEvent(QMouseEvent* event)

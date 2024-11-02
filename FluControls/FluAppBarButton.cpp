@@ -23,7 +23,7 @@ FluAppBarButton::FluAppBarButton(FluAwesomeType awesomeType, QWidget* parent /*=
     m_vMainLayout->addWidget(m_textLabel);
 
     m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButton.qss", this);
+    onThemeChanged();
 }
 
 void FluAppBarButton::setAwesomeType(FluAwesomeType awesomeType)

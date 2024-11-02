@@ -120,7 +120,7 @@ FluTimePicker24HView::FluTimePicker24HView(QWidget* parent /*= nullptr*/) : FluW
             QApplication::sendEvent(m_minuteView, event);
     });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
+   onThemeChanged();
 }
 
 int FluTimePicker24HView::getHour()

@@ -22,11 +22,7 @@ FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : FluW
     m_nextBtn->setObjectName("nextBtn");
 
     setFixedHeight(50);
-
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_yearMonthBtn);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_preBtn);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", m_nextBtn);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewTitle.qss", this);
+    onThemeChanged();
 }
 
 FluPushButton* FluCalendarViewTitle::getYearMonthBtn()

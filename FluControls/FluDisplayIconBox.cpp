@@ -1,6 +1,6 @@
 #include "FluDisplayIconBox.h"
 
-FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_type(FluAwesomeType::None)
 {
     setFixedSize(48, 48);
     m_vMainLayout = new QVBoxLayout;
@@ -17,7 +17,7 @@ FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(
 
     m_iconLabel->setObjectName("iconLabel");
     m_textLable->setObjectName("textLabel");
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
+    onThemeChanged();
 }
 
 FluDisplayIconBox::FluDisplayIconBox(FluAwesomeType type, QWidget* parent /*= nullptr*/) : FluDisplayIconBox(parent)

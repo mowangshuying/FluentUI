@@ -218,8 +218,8 @@ int main(int argc, char **argv)
     // FluVNavigationDemo demo;
     // demo.show();
 
-    // FluHNavigationViewDemo demo;
-    // demo.show();
+     FluHNavigationViewDemo demo;
+     demo.show();
 
     // FluTreeViewDemo demo;
     // demo.show();
@@ -290,7 +290,7 @@ int main(int argc, char **argv)
     // FluTableViewDemo demo;
     // demo.show();
 
-    FluTableViewExDemo demo;
-    demo.show();
+    //FluTableViewExDemo demo;
+    //demo.show();
     return app.exec();
 }

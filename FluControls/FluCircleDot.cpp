@@ -2,8 +2,6 @@
 
 FluCircleDot::FluCircleDot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadge.qss", this);
-
     setFixedSize(11, 11);
     onThemeChanged();
     m_target = parent;

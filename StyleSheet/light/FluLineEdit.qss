@@ -11,6 +11,6 @@ FluLineEdit:hover {
 }
 
 FluLineEdit:focus {
-    color: white;
+    color: black;
     border-bottom: 2px solid rgb(0, 90, 158);
 }

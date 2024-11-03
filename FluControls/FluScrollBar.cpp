@@ -3,7 +3,7 @@
 #include "FluScrollBarHandle.h"
 
 FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea /*= nullptr*/)
-    : QWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_nMaxValue(0), m_nMinValue(0), m_nCurrentValue(0), m_nPadding(14), m_nPageStep(50), m_bHideScrollBar(false)
+    : QWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_nMaxValue(0), m_nMinValue(0), m_nCurrentValue(0), m_nPadding(14), m_nPageStep(50), m_bHideScrollBar(false), m_bExpanded(false)
 {
     m_scrollBarTrunk = new FluScrollBarTrunk(orientation, this);
     m_scrollBarHandle = new FluScrollBarHandle(orientation, this);

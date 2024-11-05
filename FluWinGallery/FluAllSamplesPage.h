@@ -32,17 +32,7 @@ class FluAllSamplesPage : public FluATitlePage
   signals:
     void clickedHCard(QString key);
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAllSamplesPage.qss", this);
-        }
-    }
+    void onThemeChanged();
 
   protected:
     std::vector<FluHCard*> m_cards;

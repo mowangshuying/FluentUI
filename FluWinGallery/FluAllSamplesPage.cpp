@@ -358,3 +358,15 @@ void FluAllSamplesPage::makeTextCards()
     textBoxCard->setKey("TextBoxPage");
     m_cards.push_back(textBoxCard);
 }
+
+void FluAllSamplesPage::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAllSamplesPage.qss", this);
+    }
+}

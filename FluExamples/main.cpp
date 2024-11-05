@@ -218,8 +218,8 @@ int main(int argc, char **argv)
     // FluVNavigationDemo demo;
     // demo.show();
 
-     FluHNavigationViewDemo demo;
-     demo.show();
+     //FluHNavigationViewDemo demo;
+     //demo.show();
 
     // FluTreeViewDemo demo;
     // demo.show();
@@ -284,8 +284,8 @@ int main(int argc, char **argv)
     // QsciScintilla demo;
     // demo.show();
 
-    // FluScintillaDemo demo;
-    // demo.show();
+     FluScintillaDemo demo;
+     demo.show();
 
     // FluTableViewDemo demo;
     // demo.show();

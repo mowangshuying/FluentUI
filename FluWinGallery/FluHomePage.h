@@ -21,17 +21,7 @@ class FluHomePage : public FluVScrollView
     FluHomePage(QWidget *parent = nullptr);
 
   public slots:
-    void onThemeChanged()
-    {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePage.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePage.qss", this);
-        }
-    }
+    void onThemeChanged();
   signals:
     void clickedHCard(QString key);
 

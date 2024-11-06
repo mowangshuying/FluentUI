@@ -7,8 +7,6 @@ FluComboBox::FluComboBox(QWidget* parent /*= nullptr*/) : QComboBox(parent)
     setView(new QListView());
     view()->window()->setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     view()->window()->setAttribute(Qt::WA_TranslucentBackground);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBox.qss", this);
-
     onThemeChanged();
 }
 

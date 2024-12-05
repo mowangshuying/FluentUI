@@ -22,7 +22,9 @@ class FluIconUtils
     static QIcon getFluentIcon(FluAwesomeType nType);
 
     static QPixmap getFluentIconPixmap(FluAwesomeType nType, FluTheme theme);
+    static QPixmap getFluentIconPixmap(FluAwesomeType nType, FluTheme theme, int w, int h);
     static QIcon getFluentIcon(FluAwesomeType nType, FluTheme theme);
+    static QIcon getFluentIcon(FluAwesomeType nType, FluTheme theme, int w, int h);
 
     static QPixmap getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h);
     static QPixmap getFluentIconPixmap(FluAwesomeType nType, QColor penColor);

@@ -1,0 +1,10 @@
+FluMSNavigationView {
+    /* background-color: transparent; */
+    /* background-color: blueviolet; */
+    background-color: rgb(243, 243, 243);
+}
+
+#topWrapWidget,
+#bottomWrapWidget {
+    background-color: transparent;
+}

@@ -1,0 +1,7 @@
+FluMSWindow {
+    background-color: rgb(243, 243, 243);
+}
+
+#titleBar {
+    background-color: rgb(243, 243, 243);
+}

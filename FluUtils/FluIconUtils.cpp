@@ -71,9 +71,25 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, FluTheme theme)
     return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8));
 }
 
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, FluTheme theme, int w, int h)
+{
+    if (theme == FluTheme::Light)
+        return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8), w, h);
+
+    if (theme == FluTheme::Dark)
+        return FluIconUtils::getFluentIconPixmap(nType, QColor(239, 239, 239), w, h);
+
+    return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8), w, h);
+}
+
 QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType, FluTheme theme)
 {
     return QIcon(getFluentIconPixmap(nType, theme));
+}
+
+QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType, FluTheme theme, int w, int h)
+{
+    return QIcon(getFluentIconPixmap(nType, theme, w, h));
 }
 
 QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType, QColor penColor)

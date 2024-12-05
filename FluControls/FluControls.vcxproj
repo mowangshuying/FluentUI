@@ -159,6 +159,9 @@
     <ClCompile Include="FluLoopView.cpp" />
     <ClCompile Include="FluMenuBar.cpp" />
     <ClCompile Include="FluMessageBox.cpp" />
+    <ClCompile Include="FluMSNavigationItem.cpp" />
+    <ClCompile Include="FluMSNavigationView.cpp" />
+    <ClCompile Include="FluMSWindow.cpp" />
     <ClCompile Include="FluPPushButton.cpp" />
     <ClCompile Include="FluScaleButton.cpp" />
     <ClCompile Include="FluScrollArea.cpp" />
@@ -294,6 +297,9 @@
     <QtMoc Include="FluTimePickerViewMask.h" />
     <QtMoc Include="FluTableItemDelegate.h" />
     <QtMoc Include="FluTableView.h" />
+    <QtMoc Include="FluMSNavigationView.h" />
+    <QtMoc Include="FluMSWindow.h" />
+    <QtMoc Include="FluMSNavigationItem.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

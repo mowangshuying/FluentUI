@@ -59,6 +59,7 @@
 #include "FluScintillaDemo.h"
 #include "FluTableViewDemo.h"
 #include "FluTableViewExDemo.h"
+#include "FluMSWindowDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -284,13 +285,17 @@ int main(int argc, char **argv)
     // QsciScintilla demo;
     // demo.show();
 
-     FluScintillaDemo demo;
-     demo.show();
+     //FluScintillaDemo demo;
+     //demo.show();
 
     // FluTableViewDemo demo;
     // demo.show();
 
     //FluTableViewExDemo demo;
     //demo.show();
+
+    FluMSWindowDemo demo;
+    demo.show();
+
     return app.exec();
 }

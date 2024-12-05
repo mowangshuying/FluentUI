@@ -203,6 +203,9 @@
     <ClCompile Include="FluTableViewExDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluMSWindowDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -344,6 +347,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTableViewDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluMSWindowDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

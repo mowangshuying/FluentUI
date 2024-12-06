@@ -9,7 +9,7 @@ FluMSNavigationItem:hover {
 }
 
 FluMSNavigationItem[selected=true] {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(40, 40, 40);
 }
 
 #iconBtn {

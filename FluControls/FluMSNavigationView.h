@@ -50,6 +50,7 @@ class FluMSNavigationView : public FluWidget
 
       void addItem(FluMSNavigationItem* item, FluMSNavigationItemPosition position = FluMSNavigationItemPosition::Mid)
       {
+          item->setParentView(this);
           switch (position)
           {
               case FluMSNavigationItemPosition::Top:
@@ -81,6 +82,30 @@ class FluMSNavigationView : public FluWidget
           m_vBottomLayout->addWidget(item, Qt::AlignTop);
       }
 
+      void setSelectedItem(FluMSNavigationItem* item)
+      {
+          for (int i = 0; i < m_vTopLayout->count(); i++)
+          {
+              auto curItem = (FluMSNavigationItem*)(m_vTopLayout->itemAt(i)->widget());
+              curItem->setSelected(false);
+          }
+
+          for (int i = 0; i < m_vScrollView->getMainLayout()->count(); i++)
+          {
+              auto curItem = (FluMSNavigationItem*)(m_vScrollView->getMainLayout()->itemAt(i)->widget());
+              curItem->setSelected(false);
+          }
+
+          for (int i = 0; i < m_vBottomLayout->count(); i++)
+          {
+              auto curItem = (FluMSNavigationItem*)(m_vBottomLayout->itemAt(i)->widget());
+              curItem->setSelected(false);
+          }
+
+          if (item != nullptr)
+              item->setSelected(true);
+      }
+
       void paintEvent(QPaintEvent* event)
       {
           QStyleOption opt;
@@ -100,11 +125,6 @@ public slots:
             {
                 FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMSNavigationView.qss", this);
             }
-        }
-
-        void onItemClicked()
-        {
-
         }
   protected:
       QVBoxLayout* m_vLayout;

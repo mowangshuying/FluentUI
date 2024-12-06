@@ -1,4 +1,5 @@
 #include "FluMSNavigationItem.h"
+#include "FluMSNavigationView.h"
 
 FluMSNavigationItem::FluMSNavigationItem(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(FluAwesomeType::None)
 {
@@ -28,6 +29,7 @@ FluMSNavigationItem::FluMSNavigationItem(QWidget* parent /*= nullptr*/) : FluWid
     m_vLayout->addWidget(m_textLabel);
 
     onThemeChanged();
+    //connect(this, &FluMSNavigationItem::clicked, this, [=]() { onItemClicked(); });
 }
 
 FluMSNavigationItem::FluMSNavigationItem(FluAwesomeType awesomeType, QString text, QString key, QWidget* parent /*= nullptr*/) : FluMSNavigationItem(parent)
@@ -36,6 +38,8 @@ FluMSNavigationItem::FluMSNavigationItem(FluAwesomeType awesomeType, QString tex
     setText(text);
     setKey(key);
     onThemeChanged();
+    connect(this, &FluMSNavigationItem::clicked, this, [=]() { onItemClicked(); });
+    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { onItemClicked(); });
 }
 
 void FluMSNavigationItem::setAwesomeType(FluAwesomeType type)
@@ -68,9 +72,35 @@ QString FluMSNavigationItem::getKey()
     return m_Key;
 }
 
+void FluMSNavigationItem::setSelected(bool bSelected)
+{
+    m_bSelected = bSelected;
+    setProperty("selected", m_bSelected);
+    m_indicatorLabel->setProperty("selected", m_bSelected);
+
+    m_indicatorLabel->style()->polish(m_indicatorLabel);
+    style()->polish(this);
+}
+
+bool FluMSNavigationItem::getSelected()
+{
+    return m_bSelected;
+}
+
+void FluMSNavigationItem::setParentView(FluMSNavigationView* parentView)
+{
+    m_parentView = parentView;
+}
+
+FluMSNavigationView* FluMSNavigationItem::getParentView()
+{
+    return m_parentView;
+}
+
 void FluMSNavigationItem::mouseReleaseEvent(QMouseEvent* event)
 {
     QWidget::mouseReleaseEvent(event);
+    LOG_DEBUG << "click item:" << getText();
     emit clicked();
 }
 
@@ -80,6 +110,15 @@ void FluMSNavigationItem::paintEvent(QPaintEvent* event)
     opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluMSNavigationItem::onItemClicked()
+{
+    auto parentView = getParentView();
+    if (parentView == nullptr)
+        return;
+    
+   parentView->setSelectedItem(this);
 }
 
 void FluMSNavigationItem::onThemeChanged()

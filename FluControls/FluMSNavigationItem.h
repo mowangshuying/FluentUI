@@ -9,7 +9,9 @@
 #include <QLabel>
 #include <QStyleOption>
 #include <QPainter>
+#include <QMouseEvent>
 
+class FluMSNavigationView;
 enum class FluMSNavigationItemPosition
 {
     Top,
@@ -37,6 +39,14 @@ class FluMSNavigationItem : public FluWidget
 
        QString getKey();
 
+       void setSelected(bool bSelected);
+
+       bool getSelected();
+
+       void setParentView(FluMSNavigationView* parentView);
+
+       FluMSNavigationView* getParentView();
+
        void mouseReleaseEvent(QMouseEvent* event);
 
        void paintEvent(QPaintEvent* event);
@@ -44,8 +54,11 @@ class FluMSNavigationItem : public FluWidget
   signals:
        void clicked();
   public slots:
+       void onItemClicked();
       void onThemeChanged();
   protected:
+
+    FluMSNavigationView* m_parentView;
     FluAwesomeType m_awesomeType;
     QHBoxLayout* m_hMainLayout;
     QVBoxLayout* m_vLayout;
@@ -54,4 +67,5 @@ class FluMSNavigationItem : public FluWidget
     QLabel* m_textLabel;
 
     QString m_Key;
+    bool m_bSelected;
 };

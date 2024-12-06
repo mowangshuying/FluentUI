@@ -22,3 +22,13 @@ FluMSNavigationItem[selected=true] {
     color: black;
     font-size: 8px;
 }
+
+#indicatorLabel {
+    border: 1px solid transparent;
+    border-radius: 1.5px;
+    background-color: transparent;
+}
+
+#indicatorLabel[selected=true] {
+    background-color: rgb(0, 90, 158);
+}

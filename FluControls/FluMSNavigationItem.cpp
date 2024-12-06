@@ -11,8 +11,11 @@ FluMSNavigationItem::FluMSNavigationItem(QWidget* parent /*= nullptr*/) : FluWid
     setFixedSize(65, 60);
 
     m_indicatorLabel = new QLabel;
-    m_indicatorLabel->setFixedWidth(3);
+    m_indicatorLabel->setObjectName("indicatorLabel");
+    m_indicatorLabel->setFixedWidth(4);
+    m_indicatorLabel->setFixedHeight(26);
     m_hMainLayout->addWidget(m_indicatorLabel);
+    m_hMainLayout->addSpacing(3);
 
     m_vLayout = new QVBoxLayout;
     m_hMainLayout->addLayout(m_vLayout);

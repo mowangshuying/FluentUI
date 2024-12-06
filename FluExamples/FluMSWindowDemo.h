@@ -60,13 +60,13 @@ class FluMSWindowDemo : public FluMSWindow
           addWidget(FluAwesomeType::Home, "Home", "HomePage", homePage, FluMSNavigationItemPosition::Top);
 
           auto applicationPage = new FluMSPage("Application Page");
-          addWidget(FluAwesomeType::OEM, "Application", "ApplicationPage", homePage, FluMSNavigationItemPosition::Top);
+          addWidget(FluAwesomeType::OEM, "Application", "ApplicationPage", applicationPage, FluMSNavigationItemPosition::Top);
 
           auto gamePage = new FluMSPage("Game Page");
-          addWidget(FluAwesomeType::Game, "Game", "GamePage", homePage, FluMSNavigationItemPosition::Top);
+          addWidget(FluAwesomeType::Game, "Game", "GamePage", gamePage, FluMSNavigationItemPosition::Top);
 
           auto settingsPage = new FluMSPage("Settings Page");
-          addWidget(FluAwesomeType::Settings, "Settings", "SettingsPage", homePage, FluMSNavigationItemPosition::Bottom);
+          addWidget(FluAwesomeType::Settings, "Settings", "SettingsPage", settingsPage, FluMSNavigationItemPosition::Bottom);
 
           m_contextMenu = new FluMenu;
           auto lightAction = new FluAction;

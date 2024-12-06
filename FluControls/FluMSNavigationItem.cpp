@@ -39,7 +39,7 @@ FluMSNavigationItem::FluMSNavigationItem(FluAwesomeType awesomeType, QString tex
     setKey(key);
     onThemeChanged();
     connect(this, &FluMSNavigationItem::clicked, this, [=]() { onItemClicked(); });
-    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { onItemClicked(); });
+    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit clicked(); });
 }
 
 void FluMSNavigationItem::setAwesomeType(FluAwesomeType type)

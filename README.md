@@ -26,7 +26,7 @@ English | <a href="README_zh_CN.md">简体中文</a>
 * Clone the repository.
 
   ```SHELL
-  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
 * Choose a branch.
@@ -35,7 +35,7 @@ English | <a href="README_zh_CN.md">简体中文</a>
   
 * Build
 
-  >1.open CppQtFluentUi888.sln with Vs2022.
+  >1.open FluentUI.sln with Vs2022.
   >
   >2.build it!
   >
@@ -46,7 +46,7 @@ English | <a href="README_zh_CN.md">简体中文</a>
 * Clone the repository
 
   ```shell
-  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
 * Choose a branch.
@@ -72,5 +72,5 @@ looking it at ./docs
 
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/CppQtFluentUi888&type=Date)
+![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/FluentUI&type=Date)
 

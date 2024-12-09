@@ -25,7 +25,7 @@
 * 克隆仓库.
 
   ```SHELL
-  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
 * 选择分支.
@@ -34,7 +34,7 @@
   
 * Build
 
-  >1.用Vs2022打开CppQtFluentUi888.sln
+  >1.用Vs2022打开FluentUI.sln
   >
   >2.编译!
   >
@@ -45,7 +45,7 @@
 * 克隆仓库
 
   ``` SHELL
-  git clone https://github.com/mowangshuying/CppQtFluentUi888.git
+  git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
 * 选择分支.
@@ -71,4 +71,4 @@
 
 ##  历史点赞
 
-![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/CppQtFluentUi888&type=Date)
+![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/FluentUI&type=Date)

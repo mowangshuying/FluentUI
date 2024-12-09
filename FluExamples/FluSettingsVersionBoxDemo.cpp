@@ -23,7 +23,7 @@ FluSettingsVersionBoxDemo::FluSettingsVersionBoxDemo(QWidget* parent /*= nullptr
 
     auto cloneRepoBtn = new FluHyperLinkButton("");
     cloneRepoBtn->setFixedWidth(390);
-    cloneRepoBtn->setText("git clone https://github.com/mowangshuying/CppQtFluentUi888");
+    cloneRepoBtn->setText("git clone https://github.com/mowangshuying/FluentUI");
     // settingsVersionBox->getWrap2Layout()->addWidget(cloneRepoBtn);
 
     settingsVersionBox->addWidget(cloneRepoBtn);

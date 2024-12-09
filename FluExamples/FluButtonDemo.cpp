@@ -37,8 +37,8 @@ FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay16(paren
     auto btn6 = new FluRadioButton;
     addDemo(btn6);
 
-    auto btn7 = new FluHyperLinkButton("https://github.com/mowangshuying/CppQtFluentUi888");
-    btn7->setText("CppQtFluentUi888 Repo Home Page");
+    auto btn7 = new FluHyperLinkButton("https://github.com/mowangshuying/FluentUI");
+    btn7->setText("FluentUI Repo Home Page");
     addDemo(btn7);
 
     auto btn8 = new FluRepeatButton;

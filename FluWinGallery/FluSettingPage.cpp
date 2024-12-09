@@ -73,7 +73,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     repoLabel->setText("To clone thepository");
 
     auto cloneRepoBtn = new FluHyperLinkButton("");
-    cloneRepoBtn->setText("git clone https://github.com/mowangshuying/CppQtFluentUi888");
+    cloneRepoBtn->setText("git clone https://github.com/mowangshuying/FluentUI");
 
     settingsVersionBox->addWidget(repoLabel);
     settingsVersionBox->addWidget(cloneRepoBtn);

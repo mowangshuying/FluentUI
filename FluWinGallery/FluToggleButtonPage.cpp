@@ -5,7 +5,7 @@ FluToggleButtonPage::FluToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText("ToggleButton");
 
-    // m_subTitleLabel->setText("CppQtFluentUi888::FluToggleButton");
+    // m_subTitleLabel->setText("FluentUI::FluToggleButton");
 
     m_infoLabel->setText("ToggleButton demos.");
 

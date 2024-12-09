@@ -4,7 +4,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText("Icons");
-    // m_subTitleLabel->setText("CppQtFluentUi888::FluIcons");
+    // m_subTitleLabel->setText("FluentUI::FluIcons");
     m_infoLabel->setText("With the release of Windows 11, Segoe Fluent Icons is the remmended icon font.");
 
     // instructions

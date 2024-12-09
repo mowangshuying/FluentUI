@@ -4,7 +4,7 @@ FluHyperLinkButtonPage::FluHyperLinkButtonPage(QWidget* parent /*= nullptr*/) : 
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText("HyperLinkButton");
-    // m_subTitleLabel->setText("CppQtFluentUi888::FluHyperLinkButton");
+    // m_subTitleLabel->setText("FluentUI::FluHyperLinkButton");
     m_infoLabel->setText("A HyperlinkButton appears as a text hyperlink. When a user clicks it, it opens the page you specify in the uri property in the default browser.Or your can handle its Click event, typically to navigate within your app.");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButtonPage.qss", this);
 
@@ -12,8 +12,8 @@ FluHyperLinkButtonPage::FluHyperLinkButtonPage(QWidget* parent /*= nullptr*/) : 
     displayBox1->setTitle("A hyperlink button with a Url.");
     displayBox1->getCodeExpander()->setCodeByPath("../code/HyperLinkButtonPageCode1.md");
 
-    auto btn1 = new FluHyperLinkButton("https://github.com/mowangshuying/CppQtFluentUi888");
-    btn1->setText("CppQtFluentUi888 Repo Url");
+    auto btn1 = new FluHyperLinkButton("https://github.com/mowangshuying/FluentUI");
+    btn1->setText("FluentUI Repo Url");
     btn1->setFixedWidth(200);
 
     displayBox1->setBodyWidgetFixedHeight(66);

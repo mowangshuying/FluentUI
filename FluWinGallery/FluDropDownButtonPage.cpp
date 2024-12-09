@@ -4,7 +4,7 @@ FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : Fl
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText("DropDownButton");
-    // m_subTitleLabel->setText("CppQtFluentUi888::FluDropDownButton");
+    // m_subTitleLabel->setText("FluentUI::FluDropDownButton");
     m_infoLabel->setText("A control that drops down a flyout of chices from which one can be chosen.");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButtonPage.qss", this);
 

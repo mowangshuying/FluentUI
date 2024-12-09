@@ -5,7 +5,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     m_titleLabel->setText("Typography");
     m_mainLayout->setAlignment(Qt::AlignTop);
 
-    // m_subTitleLabel->setText("CppQtFluentUi888::FluTypeography");
+    // m_subTitleLabel->setText("FluentUI::FluTypeography");
 
     auto typeRampLabel = new QLabel;
     typeRampLabel->setText("Type ramp");

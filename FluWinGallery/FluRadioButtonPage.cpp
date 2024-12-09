@@ -4,7 +4,7 @@ FluRadioButtonPage::FluRadioButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText("RadioButton");
-    // m_subTitleLabel->setText("CppQtFluentUi888::FluRadioButton");
+    // m_subTitleLabel->setText("FluentUI::FluRadioButton");
 
     m_infoLabel->setText("Use RadioButton to let a user choose between mutually exclusive, related options. Generally contained within a RadioButtons group control.");
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonPage.qss", this);

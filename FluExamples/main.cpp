@@ -60,6 +60,7 @@
 #include "FluTableViewDemo.h"
 #include "FluTableViewExDemo.h"
 #include "FluMSWindowDemo.h"
+#include "FluSplitterDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -294,7 +295,10 @@ int main(int argc, char **argv)
     //FluTableViewExDemo demo;
     //demo.show();
 
-    FluMSWindowDemo demo;
+    //FluMSWindowDemo demo;
+    //demo.show();
+
+    FluSplitterDemo demo;
     demo.show();
 
     return app.exec();

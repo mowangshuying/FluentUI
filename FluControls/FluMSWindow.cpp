@@ -1,7 +1,7 @@
 #include "FluMSWindow.h"
 #include "FluMSNavigationItem.h"
 
- FluMSWindow::FluMSWindow(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
+FluMSWindow::FluMSWindow(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
     setWindowTitle("CppQt MS Window Dev");
 #ifndef _DEBUG
@@ -22,8 +22,7 @@
     m_contentLayout->addLayout(m_sLayout, 1);
 
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=]() { onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=]() { onThemeChanged(); });
 }
 
 void FluMSWindow::addWidget(FluAwesomeType awesomeType, QString text, QString key, QWidget* page, FluMSNavigationItemPosition position)
@@ -37,9 +36,7 @@ void FluMSWindow::addWidget(FluAwesomeType awesomeType, QString text, QString ke
     auto navItem = new FluMSNavigationItem(awesomeType, text, key, m_navView);
     m_navView->addItem(navItem, position);
     m_sLayout->addWidget(key, page);
-    connect(navItem, &FluMSNavigationItem::clicked, this, [=]() { 
-        m_sLayout->setCurrentWidget(key);
-    });
+    connect(navItem, &FluMSNavigationItem::clicked, this, [=]() { m_sLayout->setCurrentWidget(key); });
 }
 
 void FluMSWindow::onThemeChanged()

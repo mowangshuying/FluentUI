@@ -34,6 +34,7 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     setFixedSize(300, 30);
     connect(m_monthBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_dayBtn, &QPushButton::clicked, [=]() { emit clicked(); });
+    connect(m_yearBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(this, &FluDatePicker::clicked, [=]() {
         // get current time
         // LOG_DEBUG << "Called";

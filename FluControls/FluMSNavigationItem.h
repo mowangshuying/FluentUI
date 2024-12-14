@@ -23,41 +23,41 @@ class FluMSNavigationItem : public FluWidget
 {
     Q_OBJECT
   public:
-       FluMSNavigationItem(QWidget* parent = nullptr);
+    FluMSNavigationItem(QWidget* parent = nullptr);
 
-       FluMSNavigationItem(FluAwesomeType awesomeType, QString text, QString key, QWidget* parent = nullptr);
+    FluMSNavigationItem(FluAwesomeType awesomeType, QString text, QString key, QWidget* parent = nullptr);
 
-       void setAwesomeType(FluAwesomeType type);
+    void setAwesomeType(FluAwesomeType type);
 
-       FluAwesomeType getAwesomeType();
+    FluAwesomeType getAwesomeType();
 
-       void setText(QString text);
+    void setText(QString text);
 
-       QString getText();
+    QString getText();
 
-       void setKey(QString key);
+    void setKey(QString key);
 
-       QString getKey();
+    QString getKey();
 
-       void setSelected(bool bSelected);
+    void setSelected(bool bSelected);
 
-       bool getSelected();
+    bool getSelected();
 
-       void setParentView(FluMSNavigationView* parentView);
+    void setParentView(FluMSNavigationView* parentView);
 
-       FluMSNavigationView* getParentView();
+    FluMSNavigationView* getParentView();
 
-       void mouseReleaseEvent(QMouseEvent* event);
+    void mouseReleaseEvent(QMouseEvent* event);
 
-       void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
 
   signals:
-       void clicked();
+    void clicked();
   public slots:
-       void onItemClicked();
-      void onThemeChanged();
-  protected:
+    void onItemClicked();
+    void onThemeChanged();
 
+  protected:
     FluMSNavigationView* m_parentView;
     FluAwesomeType m_awesomeType;
     QHBoxLayout* m_hMainLayout;

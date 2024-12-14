@@ -22,7 +22,7 @@ FluMSNavigationItem::FluMSNavigationItem(QWidget* parent /*= nullptr*/) : FluWid
 
     m_iconBtn = new QPushButton;
     m_iconBtn->setFixedSize(40, 40);
-    m_iconBtn->setIconSize(QSize(40,40));
+    m_iconBtn->setIconSize(QSize(40, 40));
     m_iconBtn->setObjectName("iconBtn");
     m_vLayout->addWidget(m_iconBtn);
 
@@ -32,7 +32,7 @@ FluMSNavigationItem::FluMSNavigationItem(QWidget* parent /*= nullptr*/) : FluWid
     m_vLayout->addWidget(m_textLabel);
 
     onThemeChanged();
-    //connect(this, &FluMSNavigationItem::clicked, this, [=]() { onItemClicked(); });
+    // connect(this, &FluMSNavigationItem::clicked, this, [=]() { onItemClicked(); });
 }
 
 FluMSNavigationItem::FluMSNavigationItem(FluAwesomeType awesomeType, QString text, QString key, QWidget* parent /*= nullptr*/) : FluMSNavigationItem(parent)
@@ -120,8 +120,8 @@ void FluMSNavigationItem::onItemClicked()
     auto parentView = getParentView();
     if (parentView == nullptr)
         return;
-    
-   parentView->setSelectedItem(this);
+
+    parentView->setSelectedItem(this);
 }
 
 void FluMSNavigationItem::onThemeChanged()

@@ -13,14 +13,14 @@ class FluMSWindow : public FluFrameLessWidget
 {
     Q_OBJECT
   public:
-      FluMSWindow(QWidget* parent = nullptr);
+    FluMSWindow(QWidget* parent = nullptr);
 
-      void addWidget(FluAwesomeType awesomeType, QString text, QString key, QWidget* page, FluMSNavigationItemPosition position);
+    void addWidget(FluAwesomeType awesomeType, QString text, QString key, QWidget* page, FluMSNavigationItemPosition position);
 
   public slots:
-      void onThemeChanged();
+    void onThemeChanged();
 
   protected:
-      FluMSNavigationView* m_navView;
-      FluStackedLayout* m_sLayout;
+    FluMSNavigationView* m_navView;
+    FluStackedLayout* m_sLayout;
 };

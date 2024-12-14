@@ -26,8 +26,8 @@ class FluVNavigationItem : public FluWidget
 
     void setItemType(FluVNavigationItemType itemType);
 
-    virtual void clearAllItemsSelectState(){};
-    virtual void updateAllItemsStyleSheet(){};
+    virtual void clearAllItemsSelectState() {};
+    virtual void updateAllItemsStyleSheet() {};
 
     // when nav long set item long
     // when nav short set item short

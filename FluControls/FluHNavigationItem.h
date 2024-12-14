@@ -26,8 +26,8 @@ class FluHNavigationItem : public FluWidget
 
     void setItemType(FluHNavigationItemType itemType);
 
-    virtual void clearAllItemsSelectState(){};
-    virtual void updateAllItemsStyleSheet(){};
+    virtual void clearAllItemsSelectState() {};
+    virtual void updateAllItemsStyleSheet() {};
 
     QString getKey()
     {

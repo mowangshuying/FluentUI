@@ -675,6 +675,17 @@ void FluGalleryWindow::makeScrollingNavItem()
     m_sLayout->addWidget("ScrollViewPage", scrollViewPage);
     connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ScrollViewPage"); });
 
+
+   connect(scrollingPage, &FluScrollingPage::clickedHCard, [=](QString key) {
+        auto item = m_navView->getItemByKey(key);
+        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
+        {
+            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+            iconTextItem->onItemClickedDirect();
+            m_sLayout->setCurrentWidget(key);
+        }
+    });
+
     FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("ScrollViewer", item);
     FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem("SemanticZoom", item);
 

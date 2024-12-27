@@ -2,11 +2,16 @@
 #include "FluInfoBarMgr.h"
 #include <QPointer>
 
+#ifdef _DEBUG
 int FluShortInfoBar::m_count = 0;
+#endif
+
 FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
+#ifdef _DEBUG
     m_count++;
     // LOG_DEBUG << "Count = " << m_count;
+#endif
     setFixedHeight(50);
 
     m_hMainLayout = new QHBoxLayout;
@@ -52,10 +57,12 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
 
 FluShortInfoBar::~FluShortInfoBar()
 {
+#ifdef _DEBUG
     m_count--;
-    LOG_DEBUG << "Count = " << m_count;
+    //LOG_DEBUG << "Count = " << m_count;
     // disconnect();
     // FluInfoBarMgr::getInstance()->removeInfoBar(this);
+#endif
 }
 
 void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)
@@ -105,7 +112,6 @@ void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
 
 void FluShortInfoBar::disappear()
 {
-    // m_nDisappearDuration = duration;
     QPointer<FluShortInfoBar> ptr(this);
     if (m_nDisappearDuration > 0 && !m_bDisappearing)
     {
@@ -145,18 +151,12 @@ void FluShortInfoBar::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        // if (m_closeBtn != nullptr)
-        // {
         m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
-        // }
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
     }
-    else
+    else if (FluThemeUtils::isDarkTheme())
     {
-        // if (m_closeBtn != nullptr)
-        // {
         m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
-        // }
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
     }
 }

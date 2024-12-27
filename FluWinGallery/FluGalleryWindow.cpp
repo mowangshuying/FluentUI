@@ -21,7 +21,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
     // resize
-    resize(1200, 800);
+    resize(1200, 900);
 
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
@@ -718,13 +718,13 @@ void FluGalleryWindow::makeStatusInfoNavItem()
     m_sLayout->addWidget("InfoBarPage", infoBarPage);
     connect(item2, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("InfoBarPage"); });
 
-    FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("progressBar", item);
+    FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem("ProgressBar", item);
     item3->setKey("ProgressBarPage");
     auto progressBarPage = new FluProgressBarPage;
     m_sLayout->addWidget("ProgressBarPage", progressBarPage);
     connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ProgressBarPage"); });
 
-    FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("progressRing", item);
+    FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem("ProgressRing", item);
     item4->setKey("ProgressRingPage");
 
     auto progressRingPage = new FluProgressRingPage;

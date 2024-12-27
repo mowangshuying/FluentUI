@@ -48,7 +48,7 @@ void FluCalendarViewTitle::setYearMonth(int nYear, int nMonth)
     const QList<QString> monthTexts = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     if (m_parentView->getViewState() == FluCVS_SelectDayView)
     {
-        QString yearMonthText = QString::asprintf("%s %d", monthTexts.at(nMonth - 1).toStdString().data(), nYear);
+        QString yearMonthText = QString::asprintf("%s %d", monthTexts.at(nMonth - 1).toUtf8().data(), nYear);
         m_yearMonthBtn->setText(yearMonthText);
     }
     else if (m_parentView->getViewState() == FluCVS_SelectMonthView)

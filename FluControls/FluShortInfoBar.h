@@ -56,6 +56,7 @@ class FluShortInfoBar : public FluWidget
 
     int m_nDisappearDuration;
     bool m_bDisappearing;
-
+#ifdef _DEBUG
     static int m_count;
+#endif
 };

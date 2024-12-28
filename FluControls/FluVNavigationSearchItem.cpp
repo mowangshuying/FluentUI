@@ -10,8 +10,8 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     m_hMainLayout->setContentsMargins(0, 4, 0, 4);
     setLayout(m_hMainLayout);
 
-    m_searchLineEdit = new FluSearchLineEdit;
-    m_searchLineEdit->setObjectName("searchLineEdit");
+    m_autoSuggestBox = new FluAutoSuggestBox(true);
+    m_autoSuggestBox->setObjectName("autoSuggestBox");
     m_searchButton = new QPushButton;
     m_searchButton->setFixedSize(44, 40);
     m_searchButton->setObjectName("searchButton");
@@ -20,7 +20,7 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
 
     m_hMainLayout->addWidget(m_searchButton);
     m_hMainLayout->addSpacing(8);
-    m_hMainLayout->addWidget(m_searchLineEdit);
+    m_hMainLayout->addWidget(m_autoSuggestBox);
     hideSearchButton();
 
     setFixedHeight(40);
@@ -31,13 +31,13 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
 void FluVNavigationSearchItem::hideSearchButton()
 {
     m_searchButton->hide();
-    m_searchLineEdit->show();
+    m_autoSuggestBox->show();
 }
 
 void FluVNavigationSearchItem::hideSearchEdit()
 {
     m_searchButton->show();
-    m_searchLineEdit->hide();
+    m_autoSuggestBox->hide();
 }
 
 void FluVNavigationSearchItem::mouseReleaseEvent(QMouseEvent* event)

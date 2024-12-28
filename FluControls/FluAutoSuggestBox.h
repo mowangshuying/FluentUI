@@ -14,14 +14,24 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QPainterPath>
+#include <QPushButton>
+#include <set>
 
 class FluAutoSuggestBox : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAutoSuggestBox(QWidget* parent = nullptr);
+    FluAutoSuggestBox(bool bSearch = false, QWidget* parent = nullptr);
 
     void setKeys(std::vector<QString> keys);
+
+    void setKey(QString key);
+
+    void addKeys(std::vector<QString> keys);
+
+    void addKey(QString key);
+
+    void clearKeys();
 
     QString getText();
 
@@ -31,12 +41,14 @@ class FluAutoSuggestBox : public FluWidget
 
     QString getPlaceholderText();
 
+    void setSearch(bool bSearch);
+    bool getSearch();
+
     bool eventFilter(QObject* watched, QEvent* event);
 
     void paintEvent(QPaintEvent* event);
   signals:
     void searchBtnClicked();
-
     void currentTextChanged(QString text);
     void currentIndexChanged(int nIndex);
 
@@ -44,9 +56,12 @@ class FluAutoSuggestBox : public FluWidget
     void onThemeChanged();
 
   protected:
+    bool m_bSearch;
+
     std::vector<QString> m_keys;
 
     QLineEdit* m_lineEdit;
+    QPushButton* m_btn;
     QHBoxLayout* m_hMainLayout;
 
     FluMenu* m_completerMenu;

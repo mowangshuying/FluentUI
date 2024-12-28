@@ -2,12 +2,12 @@
 
 QProgressBar {
     background-color: rgb(154, 154, 154);
-    border-radius: 2px;
-    min-height: 4px;
-    max-height: 4px;
+    border-radius: 3px;
+    min-height: 7px;
+    max-height: 7px;
 }
 
 QProgressBar::chunk {
     background-color: rgb(118, 185, 237);
-    border-radius: 2px;
+    border-radius: 3px;
 }

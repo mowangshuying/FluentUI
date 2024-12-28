@@ -63,13 +63,7 @@ QList<QPoint> FluTriangle::getPointsByOrient(FluTriangleOrient orient)
 
 void FluTriangle::paintEvent(QPaintEvent* event)
 {
-    // QStyleOption opt;
-    // opt.initFrom(this);
-    // QPainter painter(this);
-    // style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-
     QPainter painter(this);
-
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     QPen pen;

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "FluVNavigationItem.h"
-#include "FluSearchLineEdit.h"
+#include "FluAutoSuggestBox.h"
 #include <QHBoxLayout>
 #include <QPaintEvent>
 #include <QStyleOption>
@@ -31,6 +31,6 @@ class FluVNavigationSearchItem : public FluVNavigationItem
 
   protected:
     QHBoxLayout* m_hMainLayout;
-    FluSearchLineEdit* m_searchLineEdit;
+    FluAutoSuggestBox* m_autoSuggestBox;
     QPushButton* m_searchButton;
 };

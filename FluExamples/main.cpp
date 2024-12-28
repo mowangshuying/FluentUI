@@ -82,8 +82,8 @@ int main(int argc, char **argv)
     //  FluFlowLayoutDemo demo;
     //  demo.show();
 
-    // FluLineEditDemo demo;
-    // demo.show();
+     FluLineEditDemo demo;
+     demo.show();
 
     //  FluButtonDemo demo;
     //  demo.show();
@@ -154,8 +154,8 @@ int main(int argc, char **argv)
     // FluProgressRingDemo demo;
     // demo.show();
 
-    // FluProgressBarDemo demo;
-    // demo.show();
+     //FluProgressBarDemo demo;
+     //demo.show();
 
     // FluCalendarViewDemo demo;
     // demo.show();
@@ -298,8 +298,8 @@ int main(int argc, char **argv)
     //FluMSWindowDemo demo;
     //demo.show();
 
-    FluSplitterDemo demo;
-    demo.show();
+    //FluSplitterDemo demo;
+    //demo.show();
 
     return app.exec();
 }

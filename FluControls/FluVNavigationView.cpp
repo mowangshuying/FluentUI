@@ -136,6 +136,16 @@ std::vector<FluVNavigationItem *> FluVNavigationView::getAllItems()
     return allItems;
 }
 
+std::vector<QString> FluVNavigationView::getAllItemsKeys()
+{
+    auto allItems = getAllItems();
+    std::vector<QString> keys;
+    for (auto item : allItems)
+    {
+        keys.push_back(item->getKey());
+    }
+}
+
 FluVNavigationItem *FluVNavigationView::getItemByKey(QString key)
 {
     std::vector<FluVNavigationItem *> items = getAllItems();

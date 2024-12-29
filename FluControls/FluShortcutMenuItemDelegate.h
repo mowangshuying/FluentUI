@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../FluUtils/FluUtils.h"
-#include "FluMenuITemDelegate.h"
+#include "FluMenuItemDelegate.h"
 #include <QFontMetrics>
 #include <QStyleOptionViewItem>
 

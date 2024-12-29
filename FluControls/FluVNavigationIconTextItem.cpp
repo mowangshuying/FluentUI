@@ -102,7 +102,6 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QWidget *pa
 {
     m_iconBtn->hide();
     m_bHideIcon = true;
-    // m_icon->setIcon(QIcon());
     m_label->setText(text);
 }
 

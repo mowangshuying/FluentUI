@@ -26,6 +26,7 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
     m_lineEdit->installEventFilter(this);
 
     m_completerMenu = new FluMenu;
+    m_completerMenu->setMaximumHeight(320);
     m_completerMenu->installEventFilter(this);
 
     connect(m_lineEdit, &QLineEdit::textEdited, [=](QString text) {

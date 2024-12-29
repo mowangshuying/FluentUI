@@ -35,18 +35,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     m_navView = new FluVNavigationView(this);
     m_sLayout = new FluStackedLayout;
 
-    // if nav long will be short, short will be long after clicked it.
-    // m_navView->onMenuItemClicked();
-
     m_contentLayout->addWidget(m_navView);
-    //  m_contentLayout->addSpacing(20);
     m_contentLayout->addLayout(m_sLayout, 1);
-
-    //  auto homePage = new FluHomePage(this);
-    //  m_sLayout->addWidget(homePage);
-
-    //  auto aEmptyPage = new FluAEmptyPage(this);
-    //  m_sLayout->addWidget(aEmptyPage);
 
     // home
     makeHomeNavItem();
@@ -95,11 +85,9 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     // settings
     makeSettingsNavItem();
 
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    //m_navView->updateSearchKeys();
 
-    ///* connect(m_titleBar->closeButton(), &QPushButton::clicked, [=]() { FluMessageBox messageBox;
-    //     messageBox.exec();
-    // });*/
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 
 #if (QT_VERSION <= QT_VERSION_CHECK(6, 0, 0))
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
@@ -116,13 +104,9 @@ void FluGalleryWindow::makeHomeNavItem()
     m_sLayout->addWidget("HomePage", homePage);
     connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() {
         m_sLayout->setCurrentWidget("HomePage");
-
-        //  FluMessageBox messageBox("Close Gallery Window?", "choose \"Ok\" to close. choose \"Cancel\" do nothing.", this);
-        // int nExec = messageBox.exec();
     });
 
     connect(homePage, &FluHomePage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {

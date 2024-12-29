@@ -19,6 +19,8 @@
 
 class FluVNavigationItem;
 class FluVNavigationIconTextItem;
+class FluVNavigationMenuItem;
+class FluVNavigationSearchItem;
 class FluVNavigationView : public FluWidget
 {
     Q_OBJECT
@@ -48,6 +50,8 @@ class FluVNavigationView : public FluWidget
     std::vector<QString> getAllItemsKeys();
     FluVNavigationItem *getItemByKey(QString key);
 
+    void updateSearchKeys();
+
     void paintEvent(QPaintEvent *event) override;
 
   public slots:
@@ -64,5 +68,8 @@ class FluVNavigationView : public FluWidget
     QVBoxLayout *m_vTopWrapLayout;
     QVBoxLayout *m_vBottomLayout;
 
+
+    FluVNavigationMenuItem *m_menuButtonItem;
+    FluVNavigationSearchItem* m_searchItem;
     bool m_bLong;
 };

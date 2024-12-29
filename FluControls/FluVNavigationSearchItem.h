@@ -6,6 +6,7 @@
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QStyle>
+#include <vector>
 
 class FluVNavigationSearchItem : public FluVNavigationItem
 {
@@ -16,6 +17,8 @@ class FluVNavigationSearchItem : public FluVNavigationItem
     void hideSearchButton();
 
     void hideSearchEdit();
+
+    void updateSearchKeys(std::vector<QString> keys);
 
     void mouseReleaseEvent(QMouseEvent* event);
 
@@ -33,4 +36,6 @@ class FluVNavigationSearchItem : public FluVNavigationItem
     QHBoxLayout* m_hMainLayout;
     FluAutoSuggestBox* m_autoSuggestBox;
     QPushButton* m_searchButton;
+
+
 };

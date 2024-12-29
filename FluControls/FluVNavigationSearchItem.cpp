@@ -3,8 +3,6 @@
 FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/) : FluVNavigationItem(parent)
 {
     m_itemType = FluVNavigationItemType::Search;
-    // long is search edit
-    // short is search button
 
     m_hMainLayout = new QHBoxLayout;
     m_hMainLayout->setContentsMargins(0, 4, 0, 4);
@@ -38,6 +36,11 @@ void FluVNavigationSearchItem::hideSearchEdit()
 {
     m_searchButton->show();
     m_autoSuggestBox->hide();
+}
+
+void FluVNavigationSearchItem::updateSearchKeys(std::vector<QString> keys)
+{
+    m_autoSuggestBox->addKeys(keys);
 }
 
 void FluVNavigationSearchItem::mouseReleaseEvent(QMouseEvent* event)

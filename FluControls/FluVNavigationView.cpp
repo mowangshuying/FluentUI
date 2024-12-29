@@ -35,17 +35,17 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     m_midVScrollView->setObjectName("widget2");
     m_bottomWrapWidget->setObjectName("widget3");
 
-    auto menuButtonItem = new FluVNavigationMenuItem(this);
-    m_vTopWrapLayout->addWidget(menuButtonItem);
+    m_menuButtonItem = new FluVNavigationMenuItem(this);
+    m_vTopWrapLayout->addWidget(m_menuButtonItem);
 
-    auto searchItem = new FluVNavigationSearchItem;
-    m_vTopWrapLayout->addWidget(searchItem);
+    m_searchItem = new FluVNavigationSearchItem;
+    m_vTopWrapLayout->addWidget(m_searchItem);
 
     m_bLong = true;
     setFixedWidth(320 + 20);
 
-    connect(menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
-    connect(searchItem, &FluVNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
+    connect(m_menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
+    connect(m_searchItem, &FluVNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
 
     onThemeChanged();
 }
@@ -144,6 +144,7 @@ std::vector<QString> FluVNavigationView::getAllItemsKeys()
     {
         keys.push_back(item->getKey());
     }
+    return keys;
 }
 
 FluVNavigationItem *FluVNavigationView::getItemByKey(QString key)
@@ -160,6 +161,12 @@ FluVNavigationItem *FluVNavigationView::getItemByKey(QString key)
     }
 
     return item;
+}
+
+void FluVNavigationView::updateSearchKeys()
+{
+    auto keys = getAllItemsKeys();
+    m_searchItem->updateSearchKeys(keys);
 }
 
 void FluVNavigationView::paintEvent(QPaintEvent *event)

@@ -1,0 +1,39 @@
+FluRoundMenuView {
+    border: 1px solid rgba(248, 248, 248, 0.08);
+    border-radius: 9px;
+    background-color: rgb(48, 48, 48);
+    outline: none;
+    font: 14px;
+}
+
+FluRoundMenuView::item {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border: none;
+    color: black;
+}
+
+FluRoundMenuView::item:disabled {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: none;
+    color: rgba(248, 248, 248, 0.8);
+}
+
+FluRoundMenuView::item:hover {
+    background-color: rgba(248, 248, 248, 8);
+}
+
+FluRoundMenuView::item:selected {
+    background-color: rgba(248, 248, 248, 8);
+    color: black;
+}
+
+FluRoundMenuView::item:selected:active {
+    background-color: rgba(248, 248, 248.08);
+    color: rgba(248, 248, 248, 0.8);
+}

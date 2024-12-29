@@ -209,6 +209,9 @@
     <ClCompile Include="FluSplitterDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluRoundMenuDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -394,6 +397,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluTableViewExDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluRoundMenuDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

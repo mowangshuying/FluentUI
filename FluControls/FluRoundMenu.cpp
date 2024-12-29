@@ -116,12 +116,12 @@ void FluRoundMenu::clear()
 
 void FluRoundMenu::addAction(QAction* action)
 {
-    QListWidgetItem* item = _createActionItem(action);
+    QListWidgetItem* item = createActionItem(action);
     m_roundMenuView->addItem(item);
     adjustSize();
 }
 
-QListWidgetItem* FluRoundMenu::_createActionItem(QAction* action, QAction* preAction /*= nullptr*/)
+QListWidgetItem* FluRoundMenu::createActionItem(QAction* action, QAction* preAction /*= nullptr*/)
 {
     if (preAction == nullptr)
     {
@@ -141,7 +141,7 @@ QListWidgetItem* FluRoundMenu::_createActionItem(QAction* action, QAction* preAc
     }
 
     QListWidgetItem* item = new QListWidgetItem(makeItemIcon(action), action->text());
-    _adjustItemText(item, action);
+    adjustItemText(item, action);
     if (!action->isEnabled())
         item->setFlags(Qt::NoItemFlags);
     item->setData(Qt::UserRole, QVariant::fromValue(action));
@@ -152,7 +152,7 @@ QListWidgetItem* FluRoundMenu::_createActionItem(QAction* action, QAction* preAc
     return item;
 }
 
-int FluRoundMenu::_adjustItemText(QListWidgetItem* item, QAction* action)
+int FluRoundMenu::adjustItemText(QListWidgetItem* item, QAction* action)
 {
     int spaceForShortCut = 0;
     QString className = m_roundMenuView->itemDelegate()->metaObject()->className();
@@ -259,7 +259,7 @@ void FluRoundMenu::insertAction(QAction* before, QAction* action)
         return;
 
     int index = m_roundMenuView->row(beforeItem);
-    QListWidgetItem* item = _createActionItem(action, before);
+    QListWidgetItem* item = createActionItem(action, before);
     m_roundMenuView->insertItem(index, item);
     adjustSize();
 }
@@ -372,7 +372,7 @@ void FluRoundMenu::addSeparator()
     item->setFlags(Qt::NoItemFlags);
     item->setSizeHint(QSize(nW, 9));
     m_roundMenuView->addItem(item);
-    item->setData(Qt::DecorationRole, "seperator");
+    item->setData(Qt::DecorationRole, "separator");
     adjustSize();
 }
 
@@ -485,7 +485,7 @@ void FluRoundMenu::onActionChanged()
     QListWidgetItem* item = action->property("item").value<QListWidgetItem*>();
     item->setIcon(makeItemIcon(action));
 
-    _adjustItemText(item, action);
+    adjustItemText(item, action);
     if (action->isEnabled())
         item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
     else

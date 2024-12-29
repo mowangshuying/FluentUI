@@ -6,7 +6,7 @@
 
 bool FluMenuItemDelegate::isSeparator(QModelIndex index) const
 {
-    return index.model()->data(index, Qt::DecorationRole) == "seperator";
+    return index.model()->data(index, Qt::DecorationRole) == "separator";
 }
 
 void FluMenuItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const

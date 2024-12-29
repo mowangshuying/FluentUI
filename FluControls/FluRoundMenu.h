@@ -39,9 +39,9 @@ class FluRoundMenu : public QMenu
 
     void addAction(QAction* action);
 
-    QListWidgetItem* _createActionItem(QAction* action, QAction* preAction = nullptr);
+    QListWidgetItem* createActionItem(QAction* action, QAction* preAction = nullptr);
 
-    int _adjustItemText(QListWidgetItem* item, QAction* action);
+    int adjustItemText(QListWidgetItem* item, QAction* action);
 
     int calcShortcutWidth();
 

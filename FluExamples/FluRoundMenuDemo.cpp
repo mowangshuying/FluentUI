@@ -19,8 +19,8 @@ void FluRoundMenuDemo::contextMenuEvent(QContextMenuEvent* event)
 
     auto subRoundMenu = new FluRoundMenu("Add to", this);
     subRoundMenu->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Add));
-    auto musicAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::MusicAlbum), "Music");
-    auto videoAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Video), "Video");
+    auto musicAction = new QAction("Music");
+    auto videoAction = new QAction("Video");
     
     QList<QAction*> actions;
     actions.append(musicAction);

@@ -6,6 +6,7 @@
 
 #include <vector>
 #include "FluMenu.h"
+#include "FluRoundMenu.h"
 
 #include <QLineEdit>
 #include <QPushButton>
@@ -64,5 +65,5 @@ class FluAutoSuggestBox : public FluWidget
     QPushButton* m_btn;
     QHBoxLayout* m_hMainLayout;
 
-    FluMenu* m_completerMenu;
+    FluRoundMenu* m_completerMenu;
 };

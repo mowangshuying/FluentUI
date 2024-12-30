@@ -25,18 +25,16 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
 
     m_lineEdit->installEventFilter(this);
 
-    m_completerMenu = new FluMenu;
-    m_completerMenu->setMaximumHeight(320);
+    m_completerMenu = new FluRoundMenu("", FluAwesomeType::None);
+    m_completerMenu->setMaxVisibleItems(16);
     m_completerMenu->installEventFilter(this);
 
     connect(m_lineEdit, &QLineEdit::textEdited, [=](QString text) {
-        m_completerMenu->clear();
-        m_completerMenu->hide();
 
         std::vector<QString> keys;
         for (auto key : m_keys)
         {
-            if (key.contains(text) && !text.isEmpty())
+            if (key.indexOf(text) == 0 && !text.isEmpty())
             {
                 keys.push_back(key);
             }
@@ -44,23 +42,58 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
 
         if (keys.empty())
         {
+            m_completerMenu->hide();
             return;
         }
 
-        for (auto key : keys)
+        std::vector<QString> actionkeys;
+        for (auto action : m_completerMenu->actions())
         {
-            m_completerMenu->addAction(new FluAction(key));
+            actionkeys.push_back(action->text());
         }
 
-        // show menu;
-        QPoint leftBottomPos = rect().bottomLeft();
-        leftBottomPos = mapToGlobal(leftBottomPos);
-        leftBottomPos.setY(leftBottomPos.y() + 2);
-        m_completerMenu->setFixedWidth(width());
-        m_completerMenu->exec(leftBottomPos);
+        LOG_DEBUG << "Keys:";
+        LOG_DEBUG << keys;
+        LOG_DEBUG << "Action Keys:";
+        LOG_DEBUG << actionkeys;
+
+        bool bSame = true;
+        if (actionkeys.size() == keys.size())
+        {
+            for (int i = 0; i < keys.size(); i++)
+            {
+                if (actionkeys[i] != keys[i])
+                {
+                    bSame = false;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            bSame = false;
+        }
+
+        if (!bSame)
+        {
+            m_completerMenu->clear();
+            m_completerMenu->hide();
+            for (auto key : keys)
+            {
+                m_completerMenu->addAction(new FluAction(key));
+            }
+
+            // show menu;
+            QPoint leftBottomPos = rect().bottomLeft();
+            leftBottomPos = mapToGlobal(leftBottomPos);
+            leftBottomPos.setY(leftBottomPos.y() + 2);
+            m_completerMenu->getView()->setMinimumWidth(width());
+            m_completerMenu->setMinimumWidth(width());
+            m_completerMenu->exec(leftBottomPos);
+        }
     });
 
-    connect(m_completerMenu, &FluMenu::triggered, [=](QAction* action) {
+    connect(m_completerMenu, &FluRoundMenu::triggered, [=](QAction* action) {
         m_lineEdit->setText(action->text());
         int nIndex = 0;
         for (auto tmpAct : m_completerMenu->actions())
@@ -106,6 +139,7 @@ void FluAutoSuggestBox::addKey(QString key)
     {
         m_keys.push_back(key);
     }
+    std::sort(m_keys.begin(), m_keys.end());
 }
 
 void FluAutoSuggestBox::clearKeys()

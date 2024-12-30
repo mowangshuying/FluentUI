@@ -137,6 +137,7 @@
     <ClCompile Include="FluColorViewHHandle.cpp" />
     <ClCompile Include="FluColorViewVHandle.cpp" />
     <ClCompile Include="FluComboBoxEx.cpp" />
+    <ClCompile Include="FluCompleterMenu.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
     <ClCompile Include="FluDatePicker.cpp" />
     <ClCompile Include="FluDatePickerView.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="FluHNavigationView.cpp" />
     <ClCompile Include="FluHRadioGroupBox.cpp" />
     <ClCompile Include="FluHScrollView.cpp" />
+    <ClCompile Include="FluIndicatorMenuItemDeleage.cpp" />
     <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluInfoBarMgr.cpp" />
     <ClCompile Include="FluIntructions.cpp" />
@@ -291,6 +293,8 @@
     <QtMoc Include="FluIntructions.h" />
     <QtMoc Include="FluBusyProgressRing.h" />
     <QtMoc Include="FluDatePickerViewMask.h" />
+    <QtMoc Include="FluCompleterMenu.h" />
+    <ClInclude Include="FluIndicatorMenuItemDeleage.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />
     <QtMoc Include="FluPPushButton.h" />

@@ -12,6 +12,7 @@ FluRoundMenuDemo::FluRoundMenuDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
 void FluRoundMenuDemo::contextMenuEvent(QContextMenuEvent* event)
 {
     FluRoundMenu* roundMenu = new FluRoundMenu("", FluAwesomeType::None,  this);
+    roundMenu->setMaxVisibleItems(5);
     auto copyAction = new FluAction(FluAwesomeType::Copy, "Copy");
     roundMenu->addAction(copyAction);
 

@@ -85,7 +85,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     // settings
     makeSettingsNavItem();
 
-    //m_navView->updateSearchKeys();
+    m_navView->updateSearchKeys();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 

@@ -14,6 +14,7 @@ class FluRoundMenu : public QMenu
 {
     Q_OBJECT
   public:
+    FluRoundMenu(QWidget* parent = nullptr);
     FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* parent = nullptr);
 
   public:
@@ -52,6 +53,8 @@ class FluRoundMenu : public QMenu
     QIcon makeItemIcon(FluRoundMenu* menu);
 
     bool hasMenuItemIcon();
+
+    QList<QAction*> actions() const;
 
     void insertAction(QAction* before, QAction* action);
 

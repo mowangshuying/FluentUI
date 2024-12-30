@@ -4,6 +4,11 @@
 #include "FluMenuAniMgr.h"
 #include "FluAction.h"
 
+ FluRoundMenu::FluRoundMenu(QWidget* parent /*= nullptr*/)
+{
+    FluRoundMenu("", FluAwesomeType::None, parent);
+}
+
 FluRoundMenu::FluRoundMenu(QString title = "", FluAwesomeType iconType = FluAwesomeType::None, QWidget* parent /*= nullptr*/) : QMenu(parent)
 {
     //m_title = title;
@@ -256,6 +261,11 @@ bool FluRoundMenu::hasMenuItemIcon()
     }
 
     return false;
+}
+
+QList<QAction*> FluRoundMenu::actions() const
+{
+    return m_actions;
 }
 
 void FluRoundMenu::insertAction(QAction* before, QAction* action)

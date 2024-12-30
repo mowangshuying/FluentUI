@@ -479,6 +479,12 @@
     <ClCompile Include="FluMenuItemDelegate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluIndicatorMenuItemDeleage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCompleterMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -919,6 +925,9 @@
     <QtMoc Include="FluMenuItemDelegate.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluCompleterMenu.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -946,6 +955,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluMenuAniType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluIndicatorMenuItemDeleage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

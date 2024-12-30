@@ -9,11 +9,12 @@
 
 class FluSubMenuItemWidget;
 class FluMenuAniMgr;
+class FluAction;
 class FluRoundMenu : public QMenu
 {
     Q_OBJECT
   public:
-    FluRoundMenu(QString title, QWidget* parent = nullptr);
+    FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* parent = nullptr);
 
   public:
 
@@ -34,6 +35,7 @@ class FluRoundMenu : public QMenu
     void setIcon(QPixmap icon);
 
     QString getTitle();
+    void setTitle(QString title);
 
     void clear();
 
@@ -67,7 +69,7 @@ class FluRoundMenu : public QMenu
 
     void insertMenu(QAction* before, FluRoundMenu* menu);
 
-    FluSubMenuItemWidget* _createSubMenuItem(FluRoundMenu* menu);
+    FluSubMenuItemWidget* createSubMenuItem(FluRoundMenu* menu);
 
     void addSeparator();
 
@@ -94,6 +96,8 @@ class FluRoundMenu : public QMenu
     void onActionChanged();
 
     void onShowSubMenu(QListWidgetItem* item);
+
+    void onThemeChanged();
   protected:
     void hideEvent(QHideEvent* event);
 
@@ -108,8 +112,9 @@ class FluRoundMenu : public QMenu
     bool m_bHideBySystem;
     int m_itemHeight;
 
-    QString m_title;
-    QPixmap m_icon;
+    //QString m_title;
+    //QPixmap m_icon;
+    FluAction* m_mainAction;
 
     FluRoundMenu* m_parentMenu = nullptr;
     

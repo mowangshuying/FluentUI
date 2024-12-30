@@ -19,7 +19,8 @@ class FluAction : public QAction
     FluAwesomeType getAwesomeType();
 
     void setAwesomeType(FluAwesomeType type);
-
+  public slots:
+    void onThemeChanged();
   protected:
     FluAwesomeType m_awesomeType;
 };

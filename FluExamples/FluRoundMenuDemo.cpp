@@ -2,6 +2,7 @@
 
 FluRoundMenuDemo::FluRoundMenuDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
+    //FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
     m_label = new QLabel("Right click your mouse!", this);
     m_label->setAlignment(Qt::AlignCenter);
     m_contentLayout->addWidget(m_label);
@@ -10,17 +11,17 @@ FluRoundMenuDemo::FluRoundMenuDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
 
 void FluRoundMenuDemo::contextMenuEvent(QContextMenuEvent* event)
 {
-    FluRoundMenu* roundMenu = new FluRoundMenu("", this);
-    auto copyAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Copy), "Copy");
+    FluRoundMenu* roundMenu = new FluRoundMenu("", FluAwesomeType::None,  this);
+    auto copyAction = new FluAction(FluAwesomeType::Copy, "Copy");
     roundMenu->addAction(copyAction);
 
-    auto cutAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Cut), "Cut");
+    auto cutAction = new FluAction(FluAwesomeType::Cut, "Cut");
     roundMenu->addAction(cutAction);
 
-    auto subRoundMenu = new FluRoundMenu("Add to", this);
-    subRoundMenu->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Add));
-    auto musicAction = new QAction("Music");
-    auto videoAction = new QAction("Video");
+    auto subRoundMenu = new FluRoundMenu("Add to", FluAwesomeType::Add );
+    //subRoundMenu->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Add, FluTheme::Dark));
+    auto musicAction = new FluAction("Music");
+    auto videoAction = new FluAction("Video");
     
     QList<QAction*> actions;
     actions.append(musicAction);
@@ -28,21 +29,21 @@ void FluRoundMenuDemo::contextMenuEvent(QContextMenuEvent* event)
     subRoundMenu->addActions(actions);
     roundMenu->addMenu(subRoundMenu);
 
-    auto pasteAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Paste), "Paste");
+    auto pasteAction = new FluAction(FluAwesomeType::Paste, "Paste");
     roundMenu->addAction(pasteAction);
 
-    auto undoAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Undo), "Undo");
+    auto undoAction = new FluAction(FluAwesomeType::Undo, "Undo");
     roundMenu->addAction(undoAction);
 
     roundMenu->addSeparator();
 
-    auto selectAllAction = new QAction("Select all");
+    auto selectAllAction = new FluAction("Select all");
     selectAllAction->setShortcut(QKeySequence("Ctrl+A"));
     roundMenu->addAction(selectAllAction);
 
-    auto settingAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Settings), "Setting");
-    auto helpAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Help), "Help");
-    auto feedbackAction = new QAction(FluIconUtils::getFluentIcon(FluAwesomeType::Feedback), "Feedback");
+    auto settingAction = new FluAction(FluAwesomeType::Settings, "Setting");
+    auto helpAction = new FluAction(FluAwesomeType::Help, "Help");
+    auto feedbackAction = new FluAction(FluAwesomeType::Feedback, "Feedback");
 
     settingAction->setShortcut(QKeySequence("Ctrl+S"));
     helpAction->setShortcut(QKeySequence("Ctrl+H"));

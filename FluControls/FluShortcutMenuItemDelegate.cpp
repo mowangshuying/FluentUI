@@ -37,6 +37,8 @@ void FluShortcutMenuItemDelegate::paint(QPainter *painter, const QStyleOptionVie
         penColor = QColor(0, 0, 0, 153);
     }
 
+    painter->setPen(penColor);
+
     QFontMetrics fm = QFontMetrics(font);
     QString shortcut = action->shortcut().toString(QKeySequence::NativeText);
     int sw = fm.horizontalAdvance(shortcut);

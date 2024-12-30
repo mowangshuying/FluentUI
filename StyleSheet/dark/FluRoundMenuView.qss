@@ -13,7 +13,7 @@ FluRoundMenuView::item {
     margin-left: 6px;
     margin-right: 6px;
     border: none;
-    color: black;
+    color: white;
 }
 
 FluRoundMenuView::item:disabled {
@@ -26,11 +26,12 @@ FluRoundMenuView::item:disabled {
 
 FluRoundMenuView::item:hover {
     background-color: rgba(248, 248, 248, 8);
+    color:white;
 }
 
 FluRoundMenuView::item:selected {
     background-color: rgba(248, 248, 248, 8);
-    color: black;
+    color: white;
 }
 
 FluRoundMenuView::item:selected:active {

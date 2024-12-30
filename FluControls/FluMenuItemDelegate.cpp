@@ -17,9 +17,9 @@ void FluMenuItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &o
     painter->save();
     int c = 0;
     if (FluThemeUtils::isDarkTheme())
-        c = 0;
-    else
         c = 255;
+    else
+        c = 0;
 
     QPen pen = QPen(QColor(c, c, c, 25), 1);
     pen.setCosmetic(true);

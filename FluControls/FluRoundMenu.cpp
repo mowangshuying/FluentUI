@@ -2,12 +2,13 @@
 #include "FluSubMenuItemWidget.h"
 #include "../FluUtils/FluUtils.h"
 #include "FluMenuAniMgr.h"
+#include "FluAction.h"
 
-FluRoundMenu::FluRoundMenu(QString title, QWidget* parent /*= nullptr*/) : QMenu(parent)
+FluRoundMenu::FluRoundMenu(QString title = "", FluAwesomeType iconType = FluAwesomeType::None, QWidget* parent /*= nullptr*/) : QMenu(parent)
 {
-    m_title = title;
-    m_icon = QPixmap();
-
+    //m_title = title;
+    //m_icon = QPixmap();
+    m_mainAction = new FluAction(iconType, title);
     m_bSubMenu = false;
     m_parentMenu = nullptr;
     m_menuItem = nullptr;
@@ -35,9 +36,11 @@ FluRoundMenu::FluRoundMenu(QString title, QWidget* parent /*= nullptr*/) : QMenu
     m_hBoxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
     m_hBoxLayout->setContentsMargins(12, 8, 12, 20);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenu.qss", this);
     connect(m_roundMenuView, &FluRoundMenuView::itemClicked, this, &FluRoundMenu::onItemClicked);
     connect(m_roundMenuView, &FluRoundMenuView::itemEntered, this, &FluRoundMenu::onItemEntered);
+
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluRoundMenu::setMaxVisibleItems(int num)
@@ -91,17 +94,24 @@ void FluRoundMenu::adjustSize()
 
 QPixmap FluRoundMenu::getIcon()
 {
-    return m_icon;
+    //return m_icon;
+    return m_mainAction->icon().pixmap(20,20);
 }
 
 void FluRoundMenu::setIcon(QPixmap icon)
 {
-    m_icon = icon;
+    //m_icon = icon;
+    m_mainAction->setIcon(icon);
 }
 
 QString FluRoundMenu::getTitle()
 {
-    return m_title;
+    return m_mainAction->text();
+}
+
+void FluRoundMenu::setTitle(QString title)
+{
+    m_mainAction->setText(title);
 }
 
 void FluRoundMenu::clear()
@@ -215,8 +225,8 @@ QIcon FluRoundMenu::makeItemIcon(QAction* action)
 QIcon FluRoundMenu::makeItemIcon(FluRoundMenu* menu)
 {
     bool hasIcon = hasMenuItemIcon();
-    QIcon icon = menu->icon();
-    if (hasIcon && menu->icon().isNull())
+    QIcon icon = menu->getIcon();
+    if (hasIcon && menu->getIcon().isNull())
     {
         QPixmap pixmap = QPixmap(m_roundMenuView->iconSize());
         pixmap.fill(Qt::transparent);
@@ -319,7 +329,7 @@ void FluRoundMenu::setDefaultAction(int nIndex)
 
 void FluRoundMenu::addMenu(FluRoundMenu* menu)
 {
-    FluSubMenuItemWidget* widget = _createSubMenuItem(menu);
+    FluSubMenuItemWidget* widget = createSubMenuItem(menu);
     QListWidgetItem* item = widget->getItem();
 
     m_roundMenuView->addItem(item);
@@ -333,7 +343,7 @@ void FluRoundMenu::insertMenu(QAction* before, FluRoundMenu* menu)
     if (itf == m_actions.end())
         return;
 
-    FluSubMenuItemWidget* widget = _createSubMenuItem(menu);
+    FluSubMenuItemWidget* widget = createSubMenuItem(menu);
     QListWidgetItem* item = widget->getItem();
 
     QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
@@ -343,7 +353,7 @@ void FluRoundMenu::insertMenu(QAction* before, FluRoundMenu* menu)
     adjustSize();
 }
 
-FluSubMenuItemWidget* FluRoundMenu::_createSubMenuItem(FluRoundMenu* menu)
+FluSubMenuItemWidget* FluRoundMenu::createSubMenuItem(FluRoundMenu* menu)
 {
     m_subMenus.append(menu);
     QListWidgetItem* item = new QListWidgetItem(makeItemIcon(menu), menu->getTitle());
@@ -500,6 +510,27 @@ void FluRoundMenu::onShowSubMenu(QListWidgetItem* item)
     m_lastHoverSubMenuItem = item;
     m_timer->stop();
     m_timer->start();
+}
+
+void FluRoundMenu::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenu.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRoundMenu.qss", this);
+    }
+
+    for (auto action : actions())
+    {
+        auto fluAction = (FluAction*)action;
+        if (fluAction->getAwesomeType() == FluAwesomeType::None)
+            continue;
+
+        fluAction->setIcon(FluIconUtils::getFluentIcon(fluAction->getAwesomeType(), FluThemeUtils::getUtils()->getTheme()));
+    }
 }
 
 void FluRoundMenu::hideEvent(QHideEvent* event)

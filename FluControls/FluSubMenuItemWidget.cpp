@@ -16,7 +16,7 @@ void FluSubMenuItemWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing);
-    painter.drawPixmap(QRect(width() - 10, height() / 2 - 9 / 2, 9, 9), FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronRight));
+    painter.drawPixmap(QRect(width() - 10, height() / 2 - 9 / 2, 9, 9), FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronRight, FluThemeUtils::getUtils()->getTheme()));
 }
 
 QListWidgetItem* FluSubMenuItemWidget::getItem()

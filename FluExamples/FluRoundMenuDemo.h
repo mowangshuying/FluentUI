@@ -6,6 +6,7 @@
 #include "../FluControls/FluRoundMenu.h"
 #include <QContextMenuEvent>
 #include "FluTemplateDemo.h"
+#include "../FluControls/FluAction.h"
 
 class FluRoundMenuDemo : public FluTemplateDemo
 {

@@ -15,7 +15,9 @@ FluRoundMenuView::FluRoundMenuView(QWidget* parent /*= nullptr*/) : QListWidget(
     setItemDelegate(new FluShortcutMenuItemDelegate(this));
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
+    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluRoundMenuView::insertItem(int row, QListWidgetItem* item)
@@ -114,4 +116,16 @@ int FluRoundMenuView::itemsHeight()
 void FluRoundMenuView::hockEvent(QEvent* event)
 {
     QListWidget::event(event);
+}
+
+void FluRoundMenuView::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
+    }
+    else
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRoundMenuView.qss", this);
+    }
 }

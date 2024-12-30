@@ -26,7 +26,7 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
     m_lineEdit->installEventFilter(this);
 
     m_completerMenu = new FluRoundMenu("", FluAwesomeType::None);
-    m_completerMenu->setMaxVisibleItems(16);
+    m_completerMenu->setMaxVisibleItems(5);
     m_completerMenu->installEventFilter(this);
 
     connect(m_lineEdit, &QLineEdit::textEdited, [=](QString text) {
@@ -86,9 +86,9 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
             // show menu;
             QPoint leftBottomPos = rect().bottomLeft();
             leftBottomPos = mapToGlobal(leftBottomPos);
-            leftBottomPos.setY(leftBottomPos.y() + 2);
+            leftBottomPos.setY(leftBottomPos.y());
             m_completerMenu->getView()->setMinimumWidth(width());
-            m_completerMenu->setMinimumWidth(width());
+            m_completerMenu->adjustSize();
             m_completerMenu->exec(leftBottomPos);
         }
     });

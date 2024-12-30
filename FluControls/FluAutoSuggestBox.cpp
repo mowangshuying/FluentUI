@@ -74,10 +74,10 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
             bSame = false;
         }
 
-        if (!bSame)
+        if (!bSame || m_completerMenu->isHidden())
         {
-            m_completerMenu->clear();
             m_completerMenu->hide();
+            m_completerMenu->clear();
             for (auto key : keys)
             {
                 m_completerMenu->addAction(new FluAction(key));

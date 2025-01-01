@@ -46,6 +46,15 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
     connect(m_menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
     connect(m_searchItem, &FluVNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
+    connect(m_searchItem, &FluVNavigationSearchItem::currentTextChanged, [=](QString text) { 
+        auto item = getItemByText(text);
+        if (item != nullptr)
+        {
+            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+            iconTextItem->onItemClickedDirect();
+            emit searchKeyChanged(iconTextItem->getKey());
+        }
+    });
 
     onThemeChanged();
 }
@@ -182,6 +191,30 @@ std::vector<QString> FluVNavigationView::getAllItemsTexts()
     }
 
     return texts;
+}
+
+FluVNavigationItem *FluVNavigationView::getItemByText(QString text)
+{
+    std::vector<FluVNavigationItem *> allItems = getAllItems();
+    FluVNavigationItem *item = nullptr;
+    for (auto item : allItems)
+    {
+        if (item->getItemType() == FluVNavigationItemType::IconText)
+        {
+            auto iconTextItem = (FluVNavigationIconTextItem *)item;
+            //texts.push_back(iconTextItem->getLabel()->text());
+            if (iconTextItem->getLabel()->text() == text)
+                return item;
+        }
+        else if (item->getItemType() == FluVNavigationItemType::Setting)
+        {
+            auto settingsItem = (FluVNavigationSettingsItem *)item;
+            if (settingsItem->getLabel()->text() == text)
+                return item;
+        }
+    }
+
+    return item;
 }
 
 void FluVNavigationView::updateSearchKeys()

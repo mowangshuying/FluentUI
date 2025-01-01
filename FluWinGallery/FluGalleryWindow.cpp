@@ -88,6 +88,9 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     m_navView->updateSearchKeys();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+    connect(m_navView, &FluVNavigationView::searchKeyChanged, [=](QString text) { 
+        m_sLayout->setCurrentWidget(text);
+    });
 
 #if (QT_VERSION <= QT_VERSION_CHECK(6, 0, 0))
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
@@ -98,6 +101,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 void FluGalleryWindow::makeHomeNavItem()
 {
     FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Home, "Home", this);
+    item->setKey("HomePage");
     m_navView->addItemToMidLayout(item);
 
     auto homePage = new FluHomePage;
@@ -123,14 +127,18 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem(FluAwesomeType::FontSize, "Typography", item);
     FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item);
     // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
-
+    
+    item1->setKey("TypographyPage");
     item->addItem(item1);
+
+    item2->setKey("IconsPage");
     item->addItem(item2);
     // item->addItem(item3);
     m_navView->addItemToMidLayout(item);
 
     auto typographyPage = new FluTypeographyPage;
     m_sLayout->addWidget("TypographyPage", typographyPage);
+    
     connect(item1, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TypographyPage"); });
 
     auto iconsPage = new FluIconsPage;
@@ -141,6 +149,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
 void FluGalleryWindow::makeSamplesNavItem()
 {
     FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::AllApps, "All samples", this);
+    item->setKey("AllSamplesPage");
     m_navView->addItemToMidLayout(item);
 
     auto allSamplesPage = new FluAllSamplesPage;
@@ -162,6 +171,8 @@ void FluGalleryWindow::makeSamplesNavItem()
 void FluGalleryWindow::makeBasicInputNavItem()
 {
     FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::CheckboxComposite, "Basic input", this);
+    item->setKey("BasicInputPage");
+
     auto basicInputPage = new FluBasicInputPage;
     m_sLayout->addWidget("BasicInputPage", basicInputPage);
     connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("BasicInputPage"); });
@@ -384,7 +395,7 @@ void FluGalleryWindow::makDateTimeNavItem()
 void FluGalleryWindow::makeDialogsFlyouts()
 {
     FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts", this);
-    item->setKey("");
+    item->setKey("DialogsAndFlyoutsPage");
     auto dialogAndFlyoutPage = new FluDialogsAndFlyoutsPage;
     m_sLayout->addWidget("DialogsAndFlyoutsPage", dialogAndFlyoutPage);
     connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("DialogsAndFlyoutsPage"); });
@@ -527,6 +538,7 @@ void FluGalleryWindow::makeMediaNavItem()
 void FluGalleryWindow::makeSettingsNavItem()
 {
     FluVNavigationSettingsItem *item = new FluVNavigationSettingsItem(FluAwesomeType::Settings, "Setting", this);
+    item->setKey("SettingPage");
     m_navView->addItemToBottomLayout(item);
 
     auto settingsPage = new FluSettingPage;

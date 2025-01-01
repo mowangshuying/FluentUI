@@ -51,10 +51,12 @@ class FluVNavigationView : public FluWidget
     FluVNavigationItem *getItemByKey(QString key);
 
     std::vector<QString> getAllItemsTexts();
+    FluVNavigationItem *getItemByText(QString text);
     void updateSearchKeys();
 
     void paintEvent(QPaintEvent *event) override;
-
+signals:
+    void searchKeyChanged(QString key);
   public slots:
     void onMenuItemClicked();
     void onThemeChanged();

@@ -27,9 +27,9 @@ class FluVNavigationSearchItem : public FluVNavigationItem
 
   signals:
     void itemClicked();
+    void currentTextChanged(QString text);
   public slots:
     void onItemClicked();
-
     void onThemeChanged();
 
   protected:

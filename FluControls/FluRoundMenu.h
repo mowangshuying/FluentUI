@@ -15,7 +15,7 @@ class FluRoundMenu : public QMenu
     Q_OBJECT
   public:
     FluRoundMenu(QWidget* parent = nullptr);
-    FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* parent = nullptr);
+    FluRoundMenu(QString title, FluAwesomeType iconType= FluAwesomeType::None, QWidget* parent = nullptr);
 
   public:
 

@@ -9,7 +9,7 @@
     FluRoundMenu("", FluAwesomeType::None, parent);
 }
 
-FluRoundMenu::FluRoundMenu(QString title = "", FluAwesomeType iconType = FluAwesomeType::None, QWidget* parent /*= nullptr*/) : QMenu(parent)
+FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* parent /*= nullptr*/) : QMenu(parent)
 {
     //m_title = title;
     //m_icon = QPixmap();

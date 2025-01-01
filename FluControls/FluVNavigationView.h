@@ -50,6 +50,7 @@ class FluVNavigationView : public FluWidget
     std::vector<QString> getAllItemsKeys();
     FluVNavigationItem *getItemByKey(QString key);
 
+    std::vector<QString> getAllItemsTexts();
     void updateSearchKeys();
 
     void paintEvent(QPaintEvent *event) override;

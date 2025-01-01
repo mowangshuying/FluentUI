@@ -1,7 +1,6 @@
 #include "FluRoundMenuView.h"
 #include "FluShortcutMenuItemDelegate.h"
 #include "FluMenuAniMgr.h"
-#include "FluScrollDelegate.h"
 
 FluRoundMenuView::FluRoundMenuView(QWidget* parent /*= nullptr*/) : QListWidget(parent)
 {
@@ -14,7 +13,7 @@ FluRoundMenuView::FluRoundMenuView(QWidget* parent /*= nullptr*/) : QListWidget(
     setMouseTracking(true);
     setIconSize(QSize(14, 14));
     setItemDelegate(new FluShortcutMenuItemDelegate(this));
-    new FluScrollDelegate(this);
+    m_scrollDelegate = new FluScrollDelegate(this);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
@@ -117,7 +116,7 @@ int FluRoundMenuView::itemsHeight()
 
 void FluRoundMenuView::hockEvent(QEvent* event)
 {
-    QListWidget::event(event);
+    FluRoundMenuView::event(event);
 }
 
 void FluRoundMenuView::onThemeChanged()

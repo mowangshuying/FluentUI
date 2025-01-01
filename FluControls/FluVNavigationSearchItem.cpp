@@ -14,7 +14,7 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     m_searchButton->setFixedSize(44, 40);
     m_searchButton->setObjectName("searchButton");
     m_searchButton->setIconSize(QSize(24, 24));
-    m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search));
+    m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme()));
 
     m_hMainLayout->addWidget(m_searchButton);
     m_hMainLayout->addSpacing(8);

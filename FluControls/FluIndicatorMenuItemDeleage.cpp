@@ -7,11 +7,12 @@ FluIndicatorMenuItemDeleage::FluIndicatorMenuItemDeleage(QObject *parent /*= nul
 
 void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    FluMenuItemDelegate::paint(painter, option, index);
     if (isSeparator(index))
-        return FluMenuItemDelegate::paint(painter, option, index);
+        return;
 
     if (!(option.state & QStyle::State_Selected))
-        return FluMenuItemDelegate::paint(painter, option, index);
+        return;
 
     painter->save();
     painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
@@ -22,6 +23,6 @@ void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionVie
     else if (FluThemeUtils::isDarkTheme())
         painter->setBrush(QColor(118, 185, 237));
 
-    painter->drawRoundedRect(6, 11 + option.rect.y(), 3, 15, 1.5, 1.5);
+    painter->drawRoundedRect(6, 9 + option.rect.y(), 3, 15, 1.5, 1.5);
     painter->restore();
 }

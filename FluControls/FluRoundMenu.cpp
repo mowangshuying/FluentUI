@@ -482,11 +482,13 @@ void FluRoundMenu::onItemClicked(QListWidgetItem* item)
     if (!m_bSubMenu)
     {
         action->trigger();
+        emit FluRoundMenu::triggered(action);
         return;
     }
 
     closeParentMenu();
     action->trigger();
+    emit FluRoundMenu::triggered(action);
 }
 
 void FluRoundMenu::onItemEntered(QListWidgetItem* item)

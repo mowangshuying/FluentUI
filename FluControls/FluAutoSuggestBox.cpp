@@ -25,73 +25,11 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
 
     m_lineEdit->installEventFilter(this);
 
-    m_completerMenu = new FluRoundMenu("", FluAwesomeType::None);
+    m_completerMenu = new FluCompleterMenu(this);
     m_completerMenu->setMaxVisibleItems(5);
     m_completerMenu->installEventFilter(this);
 
-    connect(m_lineEdit, &QLineEdit::textEdited, [=](QString text) {
-
-        std::vector<QString> keys;
-        for (auto key : m_keys)
-        {
-            if (key.indexOf(text) == 0 && !text.isEmpty())
-            {
-                keys.push_back(key);
-            }
-        }
-
-        if (keys.empty())
-        {
-            m_completerMenu->hide();
-            return;
-        }
-
-        std::vector<QString> actionkeys;
-        for (auto action : m_completerMenu->actions())
-        {
-            actionkeys.push_back(action->text());
-        }
-
-        LOG_DEBUG << "Keys:";
-        LOG_DEBUG << keys;
-        LOG_DEBUG << "Action Keys:";
-        LOG_DEBUG << actionkeys;
-
-        bool bSame = true;
-        if (actionkeys.size() == keys.size())
-        {
-            for (int i = 0; i < keys.size(); i++)
-            {
-                if (actionkeys[i] != keys[i])
-                {
-                    bSame = false;
-                    break;
-                }
-            }
-        }
-        else
-        {
-            bSame = false;
-        }
-
-        if (!bSame || m_completerMenu->isHidden())
-        {
-            m_completerMenu->hide();
-            m_completerMenu->clear();
-            for (auto key : keys)
-            {
-                m_completerMenu->addAction(new FluAction(key));
-            }
-
-            // show menu;
-            QPoint leftBottomPos = rect().bottomLeft();
-            leftBottomPos = mapToGlobal(leftBottomPos);
-            leftBottomPos.setY(leftBottomPos.y());
-            m_completerMenu->getView()->setMinimumWidth(width());
-            m_completerMenu->adjustSize();
-            m_completerMenu->exec(leftBottomPos);
-        }
-    });
+    connect(m_lineEdit, &QLineEdit::textEdited, this, &FluAutoSuggestBox::onTextEdited);
 
     connect(m_completerMenu, &FluRoundMenu::triggered, [=](QAction* action) {
         m_lineEdit->setText(action->text());
@@ -113,7 +51,6 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
     connect(m_btn, &QPushButton::clicked, [=]() { emit searchBtnClicked(); });
     onThemeChanged();
 }
-
 
 void FluAutoSuggestBox::setKeys(std::vector<QString> keys)
 {
@@ -181,6 +118,11 @@ bool FluAutoSuggestBox::getSearch()
     return m_bSearch;
 }
 
+void FluAutoSuggestBox::hockEvent(QEvent* event)
+{
+    m_lineEdit->event(event);
+}
+
 bool FluAutoSuggestBox::eventFilter(QObject* watched, QEvent* event)
 {
     if (watched == m_lineEdit)
@@ -196,14 +138,6 @@ bool FluAutoSuggestBox::eventFilter(QObject* watched, QEvent* event)
             style()->polish(this);
         }
     }
-    else if (watched == m_completerMenu)
-    {
-        if (event->type() == QEvent::KeyPress)
-        {
-            m_lineEdit->event(event);
-        }
-    }
-
     return QWidget::eventFilter(watched, event);
 }
 
@@ -218,6 +152,57 @@ void FluAutoSuggestBox::paintEvent(QPaintEvent* event)
         return;
 
     FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+}
+
+void FluAutoSuggestBox::onTextEdited(QString text)
+{
+    std::vector<QString> keys;
+    for (auto key : m_keys)
+    {
+        if (key.indexOf(text) == 0 && !text.isEmpty())
+        {
+            keys.push_back(key);
+        }
+    }
+
+    if (keys.empty())
+    {
+        m_completerMenu->close();
+        return;
+    }
+
+    std::vector<QString> actionkeys;
+    for (auto action : m_completerMenu->actions())
+    {
+        actionkeys.push_back(action->text());
+    }
+
+    bool bSameKeys = true;
+    if (actionkeys.size() == keys.size())
+    {
+        for (int i = 0; i < keys.size(); i++)
+        {
+            if (actionkeys[i] != keys[i])
+            {
+                bSameKeys = false;
+                break;
+            }
+        }
+    }
+    else
+    {
+        bSameKeys = false;
+    }
+
+    if (!bSameKeys || m_completerMenu->isHidden())
+    {
+        QPoint pos = rect().bottomLeft();
+        pos = mapToGlobal(pos);
+        pos.setY(pos.y() - 2);
+
+        m_completerMenu->updateActions(keys);
+        m_completerMenu->popup(pos);
+    }
 }
 
 void FluAutoSuggestBox::onThemeChanged()

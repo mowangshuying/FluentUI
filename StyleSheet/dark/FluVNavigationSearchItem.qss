@@ -9,7 +9,7 @@ FluNavigationSearchItem[isLong=false]:hover {
     border-radius: 4px;
 }
 
-#autoSuggestBox {
+#searchButton {
     background-color: transparent;
     border:1px solid transparent;
 }

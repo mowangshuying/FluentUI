@@ -163,9 +163,30 @@ FluVNavigationItem *FluVNavigationView::getItemByKey(QString key)
     return item;
 }
 
+std::vector<QString> FluVNavigationView::getAllItemsTexts()
+{
+    std::vector<QString> texts;
+    auto allItems = getAllItems();
+    for (auto item : allItems)
+    {
+        if (item->getItemType() == FluVNavigationItemType::IconText)
+        {
+            auto iconTextItem = (FluVNavigationIconTextItem *)item;
+            texts.push_back(iconTextItem->getLabel()->text());
+        }
+        else if (item->getItemType() == FluVNavigationItemType::Setting)
+        {
+            auto settingsItem = (FluVNavigationSettingsItem *)item;
+            texts.push_back(settingsItem->getLabel()->text());
+        }
+    }
+
+    return texts;
+}
+
 void FluVNavigationView::updateSearchKeys()
 {
-    auto keys = getAllItemsKeys();
+    auto keys = getAllItemsTexts();
     m_searchItem->updateSearchKeys(keys);
 }
 

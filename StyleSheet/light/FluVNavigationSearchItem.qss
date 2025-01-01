@@ -4,12 +4,13 @@ FluVNavigationSearchItem {
     border: 1px solid transparent;
 }
 
-FluNavigationSearchItem[isLong=false]:hover {
+FluVNavigationSearchItem[isLong=false]:hover {
     background-color: rgb(234, 234, 234);
     border-radius: 4px;
 }
 
-#autoSuggestBox {
+
+#searchButton {
     background-color: transparent;
     border: 1px solid transparent;
 }

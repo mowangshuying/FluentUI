@@ -4,6 +4,7 @@
 #include "FluMenuAniType.h"
 #include <QEvent>
 #include "../FluUtils/FluUtils.h"
+#include "FluScrollDelegate.h"
 
 class FluRoundMenuView : public QListWidget
 {
@@ -36,4 +37,7 @@ class FluRoundMenuView : public QListWidget
   protected:
     int m_itemHeight;
     int m_maxVisibleItem;
+
+    FluScrollDelegate* m_scrollDelegate;
+
 };

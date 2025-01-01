@@ -6,8 +6,8 @@
 
 #include <vector>
 #include "FluMenu.h"
-#include "FluRoundMenu.h"
-
+//#include "FluRoundMenu.h"
+#include "FluCompleterMenu.h"
 #include <QLineEdit>
 #include <QPushButton>
 
@@ -45,6 +45,8 @@ class FluAutoSuggestBox : public FluWidget
     void setSearch(bool bSearch);
     bool getSearch();
 
+    void hockEvent(QEvent* event);
+
     bool eventFilter(QObject* watched, QEvent* event);
 
     void paintEvent(QPaintEvent* event);
@@ -54,6 +56,8 @@ class FluAutoSuggestBox : public FluWidget
     void currentIndexChanged(int nIndex);
 
   public slots:
+
+    void onTextEdited(QString text);
     void onThemeChanged();
 
   protected:
@@ -65,5 +69,5 @@ class FluAutoSuggestBox : public FluWidget
     QPushButton* m_btn;
     QHBoxLayout* m_hMainLayout;
 
-    FluRoundMenu* m_completerMenu;
+    FluCompleterMenu* m_completerMenu;
 };

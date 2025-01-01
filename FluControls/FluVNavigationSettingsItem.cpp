@@ -45,6 +45,11 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(FluAwesomeType awesomeTyp
     m_icon->setAwesomeType(awesomeType);
 }
 
+QLabel* FluVNavigationSettingsItem::getLabel()
+{
+    return m_label;
+}
+
 void FluVNavigationSettingsItem::hideLabel()
 {
     m_label->hide();

@@ -18,6 +18,8 @@ class FluVNavigationSettingsItem : public FluVNavigationItem
 
     FluVNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent);
 
+    QLabel* getLabel();
+
     void hideLabel();
 
     void showLabel();

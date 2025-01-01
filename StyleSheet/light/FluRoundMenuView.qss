@@ -6,6 +6,16 @@ FluRoundMenuView {
     font: 14px;
 }
 
+FluRoundMenuView[radiusType="NoTopRadius"] {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+FluRoundMenuView[radiusType="NoBottomRadius"] {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
 FluRoundMenuView::item {
     padding-left: 10px;
     padding-right: 10px;

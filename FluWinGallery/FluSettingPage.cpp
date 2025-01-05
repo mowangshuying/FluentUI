@@ -95,7 +95,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     dependAndRef->setText("Dependencies & references");
 
     auto winUiGalleryRef = new FluHyperLinkButton("https://github.com/microsoft/WinUI-Gallery");
-    winUiGalleryRef->setText("microsoft/WinUI-Gallery");
+    winUiGalleryRef->setText("Microsoft/WinUI-Gallery");
 
     auto framelesshelperRef = new FluHyperLinkButton("https://github.com/wangwenx190/framelesshelper");
     framelesshelperRef->setText("wangwenx190/framelesshelper");

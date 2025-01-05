@@ -20,9 +20,6 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
-    // resize
-    resize(1200, 900);
-
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
@@ -96,6 +93,11 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
     QTimer::singleShot(500, [=]() { m_navView->onThemeChanged(); });
 #endif
+
+    // resize
+    resize(1200, 900);
+    m_navView->onMenuItemClicked();
+
 }
 
 void FluGalleryWindow::makeHomeNavItem()

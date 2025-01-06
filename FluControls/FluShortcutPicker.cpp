@@ -3,10 +3,6 @@
 
  FluShortcutPicker::FluShortcutPicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    //m_keyTexts.push_back("Ctrl");
-    //m_keyTexts.push_back("Shift");
-    //m_keyTexts.push_back("P");
-
     m_hMainLayout = new QHBoxLayout;
     m_hMainLayout->setSpacing(10);
     setLayout(m_hMainLayout);
@@ -15,8 +11,6 @@
 
 
     setFixedHeight(48);
-    //setFixedWidth(150);
-
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortcutPicker.qss", this);
 
     connect(this, &FluShortcutPicker::clicked, this, [=]() { 

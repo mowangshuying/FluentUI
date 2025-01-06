@@ -130,6 +130,7 @@
     <ClCompile Include="FluScintillaDemo.cpp" />
     <ClCompile Include="FluScrollAreaDemo.cpp" />
     <ClCompile Include="FluSettingsVersionBoxDemo.cpp" />
+    <ClCompile Include="FluShortcutPickerDemo.cpp" />
     <ClCompile Include="FluSplitterDemo.cpp" />
     <ClCompile Include="FluTableViewDemo.cpp" />
     <ClCompile Include="FluTableViewExDemo.cpp" />
@@ -215,6 +216,7 @@
     <QtMoc Include="FluMSWindowDemo.h" />
     <QtMoc Include="FluSplitterDemo.h" />
     <ClInclude Include="FluRoundMenuDemo.h" />
+    <QtMoc Include="FluShortcutPickerDemo.h" />
     <ClInclude Include="FluTableViewExDemo.h" />
     <ClInclude Include="FluTabViewDemo.h" />
     <QtMoc Include="FluTabBarDemo.h" />

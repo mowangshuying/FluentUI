@@ -181,6 +181,8 @@
     <ClCompile Include="FluScrollDelegate.cpp" />
     <ClCompile Include="FluSettingsVersionBox.cpp" />
     <ClCompile Include="FluShortcutMenuItemDelegate.cpp" />
+    <ClCompile Include="FluShortcutPicker.cpp" />
+    <ClCompile Include="FluShortcutPickerDlg.cpp" />
     <ClCompile Include="FluSubMenuItemWidget.cpp" />
     <ClCompile Include="FluTableItemDelegate.cpp" />
     <ClCompile Include="FluTableView.cpp" />
@@ -320,6 +322,8 @@
     <QtMoc Include="FluRoundMenu.h" />
     <QtMoc Include="FluShortcutMenuItemDelegate.h" />
     <QtMoc Include="FluSubMenuItemWidget.h" />
+    <QtMoc Include="FluShortcutPicker.h" />
+    <QtMoc Include="FluShortcutPickerDlg.h" />
     <ClInclude Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />

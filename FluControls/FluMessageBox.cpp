@@ -1,4 +1,5 @@
 #include "FluMessageBox.h"
+#include <QThread>
 
 FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDialog(parent)
 {
@@ -89,6 +90,26 @@ FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDi
     m_parentWidget->installEventFilter(this);
 }
 
+QString FluMessageBox::getTitle()
+{
+    return m_titleLabel->text();
+}
+
+void FluMessageBox::setTitle(QString title)
+{
+    m_titleLabel->setText(title);
+}
+
+QString FluMessageBox::getInfo()
+{
+    return m_infoLabel->text();
+}
+
+void FluMessageBox::setInfo(QString info)
+{
+    m_infoLabel->setText(info);
+}
+
 void FluMessageBox::showEvent(QShowEvent* event)
 {
     QDialog::showEvent(event);
@@ -114,6 +135,11 @@ bool FluMessageBox::eventFilter(QObject* obj, QEvent* event)
         m_windowMask->resize(m_parentWidget->size());
         resize(m_parentWidget->size());
         return true;
+    }
+
+    if (event->type() == QEvent::KeyPress)
+    {
+        QThread::msleep(0);
     }
 
     return QDialog::eventFilter(obj, event);

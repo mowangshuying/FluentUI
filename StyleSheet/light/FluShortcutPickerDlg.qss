@@ -1,0 +1,38 @@
+FluShortcutPickerDlg {
+    background-color: transparent;
+}
+
+#windowMask {
+    background-color: rgba(74, 74, 74, 0.44);
+}
+
+#centerWidget {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+#titleLabel {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+#infoLabel {
+    font-size: 14px;
+    color: rgb(91, 91, 91);
+    background-color: transparent;
+}
+
+#btnWidget {
+    background-color: rgb(243, 243, 243);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#keyLabel {
+    background-color: rgb(0, 90, 158);
+    font-size:12px;
+    color:white;
+    border-radius:4px;
+    border: 1px solid rgb(0, 90, 158);
+}

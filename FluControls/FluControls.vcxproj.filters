@@ -485,6 +485,12 @@
     <ClCompile Include="FluCompleterMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluShortcutPicker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluShortcutPickerDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -926,6 +932,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluCompleterMenu.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluShortcutPicker.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluShortcutPickerDlg.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

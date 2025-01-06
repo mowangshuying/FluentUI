@@ -21,6 +21,14 @@ class FluMessageBox : public QDialog
   public:
     FluMessageBox(QString title, QString info, QWidget* parent);
 
+    QString getTitle();
+
+    void setTitle(QString title);
+
+    QString getInfo();
+
+    void setInfo(QString info);
+
     void showEvent(QShowEvent* event);
 
     void closeEvent(QCloseEvent* event);

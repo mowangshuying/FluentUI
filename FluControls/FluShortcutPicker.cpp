@@ -8,11 +8,7 @@
     setLayout(m_hMainLayout);
 
     updateKeys();
-
-
     setFixedHeight(48);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortcutPicker.qss", this);
-
     connect(this, &FluShortcutPicker::clicked, this, [=]() { 
         FluShortcutPickerDlg dlg(window());
         dlg.setKeyTexts(m_keyTexts);
@@ -25,6 +21,8 @@
             updateKeys();
         }
     });
+
+    onThemeChanged();
 }
 
 void FluShortcutPicker::updateKeys()

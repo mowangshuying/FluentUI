@@ -5,15 +5,12 @@ FluMediaPage::FluMediaPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent
     m_vMainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("Media"));
 
-    auto animatedVisualPlayerCard = new FluHCard(QPixmap("../res/ControlImages/AnimatedVisualPlayer.png"), 
-        tr("AnimatedVisualPlayer"), 
-        tr("An element to render and control playback of motion graphics."));
+    auto animatedVisualPlayerCard = new FluHCard(QPixmap("../res/ControlImages/AnimatedVisualPlayer.png"), tr("AnimatedVisualPlayer"), tr("An element to render and control playback of motion graphics."));
     animatedVisualPlayerCard->setKey("AnimatedVisualPlayerPage");
     getFWScrollView()->getMainLayout()->addWidget(animatedVisualPlayerCard);
     connect(animatedVisualPlayerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto captureElementAndCameraPreviewCard = new FluHCard(QPixmap("../res/ControlImages/CaptureElement.png"), 
-        tr("Capture Element / Camera Perview"), tr("A sample for doing a camera preview."));
+    auto captureElementAndCameraPreviewCard = new FluHCard(QPixmap("../res/ControlImages/CaptureElement.png"), tr("Capture Element / Camera Perview"), tr("A sample for doing a camera preview."));
     captureElementAndCameraPreviewCard->setKey("CaptureElementAndCameraPerviewPage");
     getFWScrollView()->getMainLayout()->addWidget(captureElementAndCameraPreviewCard);
     connect(captureElementAndCameraPreviewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });

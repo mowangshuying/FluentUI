@@ -15,7 +15,7 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
     toggleSwitch->move(50, 50);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    
+
     onThemeChanged();
 }
 

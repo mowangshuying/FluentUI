@@ -32,7 +32,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
 
             connect(getItem(i * 4 + j), &FluCalendarItem::clicked, [=]() {
                 QDate itemDate = getItem(i * 4 + j)->getCurDate();
-                //LOG_DEBUG << itemDate;
+                // LOG_DEBUG << itemDate;
                 setYearMonth(itemDate.year(), itemDate.month());
                 m_parentView->setCurDate(itemDate);
                 m_parentView->switchSelectDayView();
@@ -40,7 +40,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
                 m_parentView->getSelectMonthView()->setYearMonth(itemDate.year(), itemDate.month());
                 m_parentView->getViewTitle()->setYearMonth(itemDate.year(), itemDate.month());
                 //   emit m_parentView->selectedDate(itemDate);
-                //LOG_DEBUG << "item Clicked!";
+                // LOG_DEBUG << "item Clicked!";
             });
         }
     }

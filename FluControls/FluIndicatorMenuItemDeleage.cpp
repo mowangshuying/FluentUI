@@ -17,7 +17,7 @@ void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionVie
     painter->save();
     painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
     painter->setPen(Qt::NoPen);
-    //painter->setBrush(themeColor());
+    // painter->setBrush(themeColor());
     if (FluThemeUtils::isLightTheme())
         painter->setBrush(QColor(0, 98, 158));
     else if (FluThemeUtils::isDarkTheme())

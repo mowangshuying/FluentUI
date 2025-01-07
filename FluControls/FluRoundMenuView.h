@@ -34,10 +34,10 @@ class FluRoundMenuView : public QListWidget
     void hockEvent(QEvent* event);
   public slots:
     void onThemeChanged();
+
   protected:
     int m_itemHeight;
     int m_maxVisibleItem;
 
     FluScrollDelegate* m_scrollDelegate;
-
 };

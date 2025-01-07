@@ -1,6 +1,6 @@
 #include "FluShortcutPickerDlg.h"
 
- FluShortcutPickerDlg::FluShortcutPickerDlg(QWidget* parent /*= nullptr*/) : FluMessageBox("", "", parent)
+FluShortcutPickerDlg::FluShortcutPickerDlg(QWidget* parent /*= nullptr*/) : FluMessageBox("", "", parent)
 {
     setTitle(tr("Active the Shortcut"));
     setInfo(tr("Press the key combination to change the shortcut."));
@@ -14,10 +14,10 @@
     m_hKeysLayout->setAlignment(Qt::AlignCenter);
     m_hKeysLayout->setSpacing(10);
     m_vContentWidgetLayout->addWidget(m_KeysWidget);
-    
+
     m_btnWidget->setFixedHeight(60);
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this,[=](FluTheme theme) { onThemeChanged();});
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 std::vector<QString> FluShortcutPickerDlg::getKeyTexts()
@@ -48,10 +48,10 @@ void FluShortcutPickerDlg::updateKeys()
     }
 
     // set icon;
-   // auto label = new QLabel;
-   // label->setFixedSize(32, 32);
-   // label->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::PenWorkspace));
-   // m_hKeysLayout->addWidget(label);
+    // auto label = new QLabel;
+    // label->setFixedSize(32, 32);
+    // label->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::PenWorkspace));
+    // m_hKeysLayout->addWidget(label);
 }
 
 void FluShortcutPickerDlg::clearLabels()
@@ -280,9 +280,9 @@ void FluShortcutPickerDlg::keyPressEvent(QKeyEvent* event)
     if (!key.isEmpty())
         m_keyTexts.push_back(key);
 
-    //event->setAccepted(true);
+    // event->setAccepted(true);
 
-    //LOG_DEBUG << m_keyTexts;
+    // LOG_DEBUG << m_keyTexts;
     updateKeys();
 }
 

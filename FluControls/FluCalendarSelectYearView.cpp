@@ -36,7 +36,7 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidge
                 // m_parentView->getSelectMonthView()->setYearMonth(itemDate.year(), itemDate.month());
                 // m_parentView->getViewTitle()->setYearMonth(itemDate.year(), itemDate.month());
 
-                //LOG_DEBUG << "item Clicked!";
+                // LOG_DEBUG << "item Clicked!";
             });
 
             m_labelList.append(label);

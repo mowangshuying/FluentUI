@@ -1,7 +1,7 @@
 #include "FluShortcutPicker.h"
 #include "FluShortcutPickerDlg.h"
 
- FluShortcutPicker::FluShortcutPicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluShortcutPicker::FluShortcutPicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_hMainLayout = new QHBoxLayout;
     m_hMainLayout->setSpacing(10);
@@ -9,7 +9,7 @@
 
     updateKeys();
     setFixedHeight(48);
-    connect(this, &FluShortcutPicker::clicked, this, [=]() { 
+    connect(this, &FluShortcutPicker::clicked, this, [=]() {
         FluShortcutPickerDlg dlg(window());
         dlg.setKeyTexts(m_keyTexts);
         dlg.updateKeys();
@@ -66,7 +66,7 @@ void FluShortcutPicker::mouseReleaseEvent(QMouseEvent* event)
 {
     FluWidget::mouseReleaseEvent(event);
     emit clicked();
-    //LOG_DEBUG << "clicked.";
+    // LOG_DEBUG << "clicked.";
 }
 
 void FluShortcutPicker::paintEvent(QPaintEvent* event)

@@ -5,9 +5,8 @@ FluFlyoutPage::FluFlyoutPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("Flyout"));
     m_infoLabel->setText(
-        tr(
-        "A Flyout displays lightweight UI that is either information, or requires user interaction. Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it.Use it to collect input from the user, show more details "
-        "about an item, or ask the user to confirm an action."));
+        tr("A Flyout displays lightweight UI that is either information, or requires user interaction. Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it.Use it to collect input from the user, show more details "
+           "about an item, or ask the user to confirm an action."));
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A button with a flyout."));

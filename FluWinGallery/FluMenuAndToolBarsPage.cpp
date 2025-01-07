@@ -16,27 +16,22 @@ FluMenuAndToolBarsPage::FluMenuAndToolBarsPage(QWidget* parent /*= nullptr*/) : 
     connect(appBarSeparatorCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
     auto appBarToggleButtonCard =
-        new FluHCard(QPixmap("../res/ControlImages/AppBarToggleButton.png"), tr("AppBarToggleButton"), 
-            tr("A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI."));
+        new FluHCard(QPixmap("../res/ControlImages/AppBarToggleButton.png"), tr("AppBarToggleButton"), tr("A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI."));
     appBarToggleButtonCard->setKey("AppBarToggleButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(appBarToggleButtonCard);
     connect(appBarToggleButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto commandBarCard = new FluHCard(QPixmap("../res/ControlImages/CommandBar.png"), 
-        tr("CommandBar"), 
-        tr("A toolbar for displaying application-specific commands that hanles layout and resizing of its contents."));
+    auto commandBarCard = new FluHCard(QPixmap("../res/ControlImages/CommandBar.png"), tr("CommandBar"), tr("A toolbar for displaying application-specific commands that hanles layout and resizing of its contents."));
     commandBarCard->setKey("CommandBarPage");
     getFWScrollView()->getMainLayout()->addWidget(commandBarCard);
     connect(commandBarCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto commandBarFlyoutCard = new FluHCard(QPixmap("../res/ControlImages/CommandBarFlyout.png"), 
-        tr("CommandBarFlyout"), tr("A mini-toolbar displaying proactive commands, and an optional menu of command."));
+    auto commandBarFlyoutCard = new FluHCard(QPixmap("../res/ControlImages/CommandBarFlyout.png"), tr("CommandBarFlyout"), tr("A mini-toolbar displaying proactive commands, and an optional menu of command."));
     commandBarFlyoutCard->setKey("CommandBarFlyoutPage");
     getFWScrollView()->getMainLayout()->addWidget(commandBarFlyoutCard);
     connect(commandBarFlyoutCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto menuBarCard = new FluHCard(QPixmap("../res/ControlImages/MenuBar.png"), tr("MenuBar"),
-        tr("A classic menu, allowing the display of MenuItems containing MenuFlyoutItems."));
+    auto menuBarCard = new FluHCard(QPixmap("../res/ControlImages/MenuBar.png"), tr("MenuBar"), tr("A classic menu, allowing the display of MenuItems containing MenuFlyoutItems."));
     menuBarCard->setKey("MenuBarPage");
     getFWScrollView()->getMainLayout()->addWidget(menuBarCard);
     connect(menuBarCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
@@ -46,8 +41,7 @@ FluMenuAndToolBarsPage::FluMenuAndToolBarsPage(QWidget* parent /*= nullptr*/) : 
     getFWScrollView()->getMainLayout()->addWidget(menuFlyoutCard);
     connect(menuFlyoutCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto standUICommandCard = new FluHCard(QPixmap("../res/ControlImages/StandardUICommand.png"),
-        tr("StandardUICommand"), tr("A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g.'save'."));
+    auto standUICommandCard = new FluHCard(QPixmap("../res/ControlImages/StandardUICommand.png"), tr("StandardUICommand"), tr("A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g.'save'."));
     standUICommandCard->setKey(tr("StandardUICommandPage"));
     getFWScrollView()->getMainLayout()->addWidget(standUICommandCard);
     connect(standUICommandCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });

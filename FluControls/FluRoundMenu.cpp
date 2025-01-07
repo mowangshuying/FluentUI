@@ -4,15 +4,15 @@
 #include "FluMenuAniMgr.h"
 #include "FluAction.h"
 
- FluRoundMenu::FluRoundMenu(QWidget* parent /*= nullptr*/)
+FluRoundMenu::FluRoundMenu(QWidget* parent /*= nullptr*/)
 {
     FluRoundMenu("", FluAwesomeType::None, parent);
 }
 
 FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* parent /*= nullptr*/) : QMenu(parent)
 {
-    //m_title = title;
-    //m_icon = QPixmap();
+    // m_title = title;
+    // m_icon = QPixmap();
     m_mainAction = new FluAction(iconType, title);
     m_bSubMenu = false;
     m_parentMenu = nullptr;
@@ -36,7 +36,6 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
     m_timer->setInterval(400);
     connect(m_timer, &QTimer::timeout, this, &FluRoundMenu::onShowMenuTimeOut);
 
-  
     setShadowEffect();
     m_hBoxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
     m_hBoxLayout->setContentsMargins(12, 8, 12, 20);
@@ -99,13 +98,13 @@ void FluRoundMenu::adjustSize()
 
 QPixmap FluRoundMenu::getIcon()
 {
-    //return m_icon;
-    return m_mainAction->icon().pixmap(20,20);
+    // return m_icon;
+    return m_mainAction->icon().pixmap(20, 20);
 }
 
 void FluRoundMenu::setIcon(QPixmap icon)
 {
-    //m_icon = icon;
+    // m_icon = icon;
     m_mainAction->setIcon(icon);
 }
 
@@ -122,7 +121,7 @@ void FluRoundMenu::setTitle(QString title)
 void FluRoundMenu::clear()
 {
     auto itList = m_actions.begin();
-    for (;itList != m_actions.end();)
+    for (; itList != m_actions.end();)
     {
         removeAction((*itList));
         itList = m_actions.begin();

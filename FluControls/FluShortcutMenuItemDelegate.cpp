@@ -1,6 +1,6 @@
 #include "FluShortcutMenuItemDelegate.h"
 
- FluShortcutMenuItemDelegate::FluShortcutMenuItemDelegate(QObject *parent /*= nullptr*/) : FluMenuItemDelegate(parent)
+FluShortcutMenuItemDelegate::FluShortcutMenuItemDelegate(QObject *parent /*= nullptr*/) : FluMenuItemDelegate(parent)
 {
 }
 

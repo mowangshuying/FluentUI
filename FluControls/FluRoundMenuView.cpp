@@ -16,7 +16,7 @@ FluRoundMenuView::FluRoundMenuView(QWidget* parent /*= nullptr*/) : QListWidget(
     m_scrollDelegate = new FluScrollDelegate(this);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }

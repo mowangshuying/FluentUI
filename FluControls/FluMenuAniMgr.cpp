@@ -6,7 +6,7 @@ FluMenuAniMgr::FluMenuAniMgr(FluRoundMenu* menu, FluMenuAniType aniType) : QObje
     m_menu = menu;
     m_posAni = new QPropertyAnimation((QObject*)menu, "pos", (QObject*)menu);
     m_posAni->setDuration(250);
-    m_posAni->setEasingCurve(QEasingCurve::OutQuad); 
+    m_posAni->setEasingCurve(QEasingCurve::OutQuad);
 
     connect(m_posAni, &QPropertyAnimation::valueChanged, this, &FluMenuAniMgr::onValueChanged);
     connect(m_posAni, &QPropertyAnimation::valueChanged, this, &FluMenuAniMgr::updateMenuViewport);
@@ -33,9 +33,9 @@ QSize FluMenuAniMgr::availableViewSize(QPoint pos)
         return QSize(nW, nH);
     }
 
-    QRect screenRect = QApplication::screenAt(QCursor::pos())->availableGeometry();  
-    int w = screenRect.width() - 100;                                                
-    int h = screenRect.height() - 100;                                               
+    QRect screenRect = QApplication::screenAt(QCursor::pos())->availableGeometry();
+    int w = screenRect.width() - 100;
+    int h = screenRect.height() - 100;
     return QSize(w, h);
 }
 

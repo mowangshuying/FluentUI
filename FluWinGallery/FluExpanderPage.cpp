@@ -4,9 +4,9 @@ FluExpanderPage::FluExpanderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("Expander"));
-    m_infoLabel->setText(tr(
-        "The Expander has a header and can expand to show a body with more content."
-        "Use an Expander when some content is only relevant some of the time(for example to read more information or access additional options for an item)."));
+    m_infoLabel->setText(
+        tr("The Expander has a header and can expand to show a body with more content."
+           "Use an Expander when some content is only relevant some of the time(for example to read more information or access additional options for an item)."));
 
     addExpanderDemo1();
     addExpanderDemo2();

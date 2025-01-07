@@ -15,8 +15,10 @@ class FluCompleterMenu : public FluRoundMenu
     void updateActions(std::vector<QString> strs);
 
     void popup(QPoint pos);
+
   public:
     bool eventFilter(QObject* watched, QEvent* event);
+
   protected:
     FluAutoSuggestBox* m_autoSuggestBox;
 };

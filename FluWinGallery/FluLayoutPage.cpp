@@ -10,20 +10,17 @@ FluLayoutPage::FluLayoutPage(QWidget* parent /*= nullptr*/) : FluATitlePage(pare
     getFWScrollView()->getMainLayout()->addWidget(borderCard);
     connect(borderCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto canvasCard = new FluHCard(QPixmap("../res/ControlImages/Canvas.png"), tr("Canvas"), 
-        tr("A layout panel that supports absolute positioning of child elements relative to the top left corner of the canvas."));
+    auto canvasCard = new FluHCard(QPixmap("../res/ControlImages/Canvas.png"), tr("Canvas"), tr("A layout panel that supports absolute positioning of child elements relative to the top left corner of the canvas."));
     canvasCard->setKey("CanvasPage");
     getFWScrollView()->getMainLayout()->addWidget(canvasCard);
     connect(canvasCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto expanderCard = new FluHCard(QPixmap("../res/ControlImages/Expander.png"), tr("Expander"), 
-        tr("A container with a header that can be expanded to show a body with more content."));
+    auto expanderCard = new FluHCard(QPixmap("../res/ControlImages/Expander.png"), tr("Expander"), tr("A container with a header that can be expanded to show a body with more content."));
     expanderCard->setKey("ExpanderPage");
     getFWScrollView()->getMainLayout()->addWidget(expanderCard);
     connect(expanderCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto gridCard = new FluHCard(QPixmap("../res/ControlImages/Grid.png"), tr("Grid"), 
-        tr("A flexible, primitive control for data-driven layouts."));
+    auto gridCard = new FluHCard(QPixmap("../res/ControlImages/Grid.png"), tr("Grid"), tr("A flexible, primitive control for data-driven layouts."));
     gridCard->setKey("GridPage");
     getFWScrollView()->getMainLayout()->addWidget(gridCard);
     connect(gridCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
@@ -33,13 +30,12 @@ FluLayoutPage::FluLayoutPage(QWidget* parent /*= nullptr*/) : FluATitlePage(pare
     getFWScrollView()->getMainLayout()->addWidget(itemsRepeaterCard);
     connect(itemsRepeaterCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto radioButtonsCard = new FluHCard(QPixmap("../res/ControlImages/RadioButtons.png"), 
-        tr("RadioButtons"), tr("A control that displays a group of mutually exclusive options with keyboarding and accessibility support."));
+    auto radioButtonsCard = new FluHCard(QPixmap("../res/ControlImages/RadioButtons.png"), tr("RadioButtons"), tr("A control that displays a group of mutually exclusive options with keyboarding and accessibility support."));
     radioButtonsCard->setKey("RadioButtonsPage");
     getFWScrollView()->getMainLayout()->addWidget(radioButtonsCard);
     connect(radioButtonsCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto relativePanelCard = new FluHCard(QPixmap("../res/ControlImages/RelativePanel.png"),tr( "RelativePanel"), tr("A panel that users relationships between elements to define layout."));
+    auto relativePanelCard = new FluHCard(QPixmap("../res/ControlImages/RelativePanel.png"), tr("RelativePanel"), tr("A panel that users relationships between elements to define layout."));
     relativePanelCard->setKey("RelativePanelPage");
     getFWScrollView()->getMainLayout()->addWidget(relativePanelCard);
     connect(relativePanelCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
@@ -49,21 +45,18 @@ FluLayoutPage::FluLayoutPage(QWidget* parent /*= nullptr*/) : FluATitlePage(pare
     getFWScrollView()->getMainLayout()->addWidget(splitViewCard);
     connect(splitViewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto stackPanelCard = new FluHCard(QPixmap("../res/ControlImages/StackPanel.png"), tr("StackPanel"), 
-        tr("A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically."));
+    auto stackPanelCard = new FluHCard(QPixmap("../res/ControlImages/StackPanel.png"), tr("StackPanel"), tr("A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically."));
     stackPanelCard->setKey("StackPanelPage");
     getFWScrollView()->getMainLayout()->addWidget(stackPanelCard);
     connect(stackPanelCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
     auto variableSizedWrapGridCard =
-        new FluHCard(QPixmap("../res/ControlImages/VariableSizedWrapGrid.png"), tr("VariableSizedWrapGrid"), 
-            tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."));
+        new FluHCard(QPixmap("../res/ControlImages/VariableSizedWrapGrid.png"), tr("VariableSizedWrapGrid"), tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."));
     variableSizedWrapGridCard->setKey("VariableSizedWrapGridPage");
     getFWScrollView()->getMainLayout()->addWidget(variableSizedWrapGridCard);
     connect(variableSizedWrapGridCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto viewboxCard = new FluHCard(QPixmap("../res/ControlImages/Viewbox.png"), tr("Viewbox"), 
-        tr("A container control that scales its content to a specified size."));
+    auto viewboxCard = new FluHCard(QPixmap("../res/ControlImages/Viewbox.png"), tr("Viewbox"), tr("A container control that scales its content to a specified size."));
     viewboxCard->setKey("ViewboxPage");
     getFWScrollView()->getMainLayout()->addWidget(viewboxCard);
     connect(viewboxCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });

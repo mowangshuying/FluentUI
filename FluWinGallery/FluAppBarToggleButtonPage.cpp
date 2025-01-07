@@ -4,9 +4,9 @@ FluAppBarToggleButtonPage::FluAppBarToggleButtonPage(QWidget* parent /*= nullptr
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("AppBarToggleButton"));
-    m_infoLabel->setText(tr(
-        "An AppBarToggleButton looks like an AppBarButton, but works like a CheckBox. It typically has two state, checked(on) or unchecked(off), "
-        "but can be indeterminate if the IsThreeState property is true. You can determine it's state by checking the IsChecked property."));
+    m_infoLabel->setText(
+        tr("An AppBarToggleButton looks like an AppBarButton, but works like a CheckBox. It typically has two state, checked(on) or unchecked(off), "
+           "but can be indeterminate if the IsThreeState property is true. You can determine it's state by checking the IsChecked property."));
 
     addSymbolIconAppBarButton();
     onThemeChanged();

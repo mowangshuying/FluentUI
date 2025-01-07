@@ -22,11 +22,12 @@ class FluShortcutPicker : public FluWidget
     void mouseReleaseEvent(QMouseEvent* event);
 
     void paintEvent(QPaintEvent* event);
-signals:
+  signals:
     void clicked();
   public slots:
-      void onThemeChanged();
+    void onThemeChanged();
+
   protected:
-      std::vector<QString> m_keyTexts;
-      QHBoxLayout* m_hMainLayout;
+    std::vector<QString> m_keyTexts;
+    QHBoxLayout* m_hMainLayout;
 };

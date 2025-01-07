@@ -84,8 +84,8 @@ int main(int argc, char **argv)
     //  FluFlowLayoutDemo demo;
     //  demo.show();
 
-    //FluLineEditDemo demo;
-    //demo.show();
+    // FluLineEditDemo demo;
+    // demo.show();
 
     //  FluButtonDemo demo;
     //  demo.show();
@@ -156,8 +156,8 @@ int main(int argc, char **argv)
     // FluProgressRingDemo demo;
     // demo.show();
 
-     //FluProgressBarDemo demo;
-     //demo.show();
+    // FluProgressBarDemo demo;
+    // demo.show();
 
     // FluCalendarViewDemo demo;
     // demo.show();
@@ -222,8 +222,8 @@ int main(int argc, char **argv)
     // FluVNavigationDemo demo;
     // demo.show();
 
-     //FluHNavigationViewDemo demo;
-     //demo.show();
+    // FluHNavigationViewDemo demo;
+    // demo.show();
 
     // FluTreeViewDemo demo;
     // demo.show();
@@ -288,23 +288,23 @@ int main(int argc, char **argv)
     // QsciScintilla demo;
     // demo.show();
 
-     //FluScintillaDemo demo;
-     //demo.show();
+    // FluScintillaDemo demo;
+    // demo.show();
 
     // FluTableViewDemo demo;
     // demo.show();
 
-    //FluTableViewExDemo demo;
-    //demo.show();
+    // FluTableViewExDemo demo;
+    // demo.show();
 
-    //FluMSWindowDemo demo;
-    //demo.show();
+    // FluMSWindowDemo demo;
+    // demo.show();
 
-    //FluSplitterDemo demo;
-    //demo.show();
+    // FluSplitterDemo demo;
+    // demo.show();
 
-    //FluRoundMenuDemo demo;
-    //demo.show();
+    // FluRoundMenuDemo demo;
+    // demo.show();
 
     FluShortcutPickerDemo demo;
     demo.show();

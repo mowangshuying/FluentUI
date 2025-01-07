@@ -28,7 +28,7 @@ FluCalendarDatePicker::FluCalendarDatePicker(QWidget* parent /*= nullptr*/) : QP
     connect(m_calendarView, &FluCalendarView::selectedDate, [=](QDate date) {
         QString dateText = QString::asprintf("%d/%d/%d", date.month(), date.day(), date.year());
         m_textButton->setText(dateText);
-        //LOG_DEBUG << date;
+        // LOG_DEBUG << date;
         m_calendarView->hide();
 
         emit selectedDate(date);

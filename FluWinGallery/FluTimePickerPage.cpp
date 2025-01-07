@@ -4,9 +4,9 @@ FluTimePickerPage::FluTimePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("TimePicker"));
-    m_infoLabel->setText(tr(
-        "Use a TimePicker to let users set a time in your app. for example to set a reminder. The TimePicker displays three controls"
-        "for hour, minute, and AM/PM. These controls are easy to use with touch or mouse, and they can be styled and configured in several different ways."));
+    m_infoLabel->setText(
+        tr("Use a TimePicker to let users set a time in your app. for example to set a reminder. The TimePicker displays three controls"
+           "for hour, minute, and AM/PM. These controls are easy to use with touch or mouse, and they can be styled and configured in several different ways."));
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple TimePicker"));

@@ -39,14 +39,14 @@ class FluLogUtils
 
 #define LOG_FUNC LOG_DEBUG << ";";
 #define LOG_DEBUG                                                                    \
-    qDebug().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]"                       \
+    qDebug().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
                        << "["                                                        \
                        << "debug"                                                    \
                        << "]"                                                        \
                        << "[" << FluLogUtils::getFileName(__FILE__).toStdString().c_str() << "][" << __FUNCTION__ << "][" << __LINE__ << "] "
 
 #define LOG_INFO                                                                    \
-    qInfo().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]"                       \
+    qInfo().nospace() << "[" << FluLogUtils::getTime().toStdString().c_str() << "]" \
                       << "["                                                        \
                       << "info"                                                     \
                       << "]"                                                        \

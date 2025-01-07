@@ -2,7 +2,7 @@
 
 FluRoundMenuDemo::FluRoundMenuDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
-    //FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
+    // FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
     m_label = new QLabel("Right click your mouse!", this);
     m_label->setAlignment(Qt::AlignCenter);
     m_contentLayout->addWidget(m_label);
@@ -11,7 +11,7 @@ FluRoundMenuDemo::FluRoundMenuDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
 
 void FluRoundMenuDemo::contextMenuEvent(QContextMenuEvent* event)
 {
-    FluRoundMenu* roundMenu = new FluRoundMenu("", FluAwesomeType::None,  this);
+    FluRoundMenu* roundMenu = new FluRoundMenu("", FluAwesomeType::None, this);
     roundMenu->setMaxVisibleItems(5);
     auto copyAction = new FluAction(FluAwesomeType::Copy, "Copy");
     roundMenu->addAction(copyAction);
@@ -19,11 +19,11 @@ void FluRoundMenuDemo::contextMenuEvent(QContextMenuEvent* event)
     auto cutAction = new FluAction(FluAwesomeType::Cut, "Cut");
     roundMenu->addAction(cutAction);
 
-    auto subRoundMenu = new FluRoundMenu("Add to", FluAwesomeType::Add );
-    //subRoundMenu->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Add, FluTheme::Dark));
+    auto subRoundMenu = new FluRoundMenu("Add to", FluAwesomeType::Add);
+    // subRoundMenu->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Add, FluTheme::Dark));
     auto musicAction = new FluAction("Music");
     auto videoAction = new FluAction("Video");
-    
+
     QList<QAction*> actions;
     actions.append(musicAction);
     actions.append(videoAction);

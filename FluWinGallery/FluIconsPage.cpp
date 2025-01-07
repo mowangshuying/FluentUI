@@ -15,12 +15,11 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     instructions->addVSplitLine();
 
     instructions->addTitleContent(
-        tr(
-        "How to use the font"),tr(
-        "If you don't specify a FontFamily, or you specify a FontFamily that is not available on the system at runtime, the FontIcon falls back to the default font family defined by the SymbolThemeFontFamily resource.\n"
-        "An icon with a 16-epx font size is the equivalent of a 16x16-epx icon, to make sizing and positioning more predictable. For optimal appearance, use these specific sizes: 16, 20, 24, 32, 40, 48, and 64. Deviating from these font "
-        "sizes could lead to less crisp or blurry outcomes.\n"
-        "All glyphs in Segoe Fluent Icons have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other."));
+        tr("How to use the font"),
+        tr("If you don't specify a FontFamily, or you specify a FontFamily that is not available on the system at runtime, the FontIcon falls back to the default font family defined by the SymbolThemeFontFamily resource.\n"
+           "An icon with a 16-epx font size is the equivalent of a 16x16-epx icon, to make sizing and positioning more predictable. For optimal appearance, use these specific sizes: 16, 20, 24, 32, 40, 48, and 64. Deviating from these font "
+           "sizes could lead to less crisp or blurry outcomes.\n"
+           "All glyphs in Segoe Fluent Icons have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other."));
 
     // instructions->addEnd();
     m_vScrollView->getMainLayout()->addWidget(instructions);

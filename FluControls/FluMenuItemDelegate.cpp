@@ -1,6 +1,6 @@
 #include "FluMenuItemDelegate.h"
 
- FluMenuItemDelegate::FluMenuItemDelegate(QObject *parent /*= nullptr*/) : QStyledItemDelegate(parent)
+FluMenuItemDelegate::FluMenuItemDelegate(QObject *parent /*= nullptr*/) : QStyledItemDelegate(parent)
 {
 }
 

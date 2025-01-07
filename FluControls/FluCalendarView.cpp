@@ -33,7 +33,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
 
     m_viewState = FluCVS_SelectDayView;
 
-    //LOG_DEBUG << m_curDate;
+    // LOG_DEBUG << m_curDate;
     m_curDate = QDate::currentDate();
     m_title->setYearMonth(m_curDate.year(), m_curDate.month());
     connect(m_title->getYearMonthBtn(), &FluPushButton::clicked, [=](bool bClicked) {

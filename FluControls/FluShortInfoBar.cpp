@@ -59,9 +59,9 @@ FluShortInfoBar::~FluShortInfoBar()
 {
 #ifdef _DEBUG
     m_count--;
-    //LOG_DEBUG << "Count = " << m_count;
-    // disconnect();
-    // FluInfoBarMgr::getInstance()->removeInfoBar(this);
+    // LOG_DEBUG << "Count = " << m_count;
+    //  disconnect();
+    //  FluInfoBarMgr::getInstance()->removeInfoBar(this);
 #endif
 }
 

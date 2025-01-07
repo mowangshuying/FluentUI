@@ -17,9 +17,7 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     tableView->setColumnCount(3);
     tableView->setReadOnlySet({0});
     QStringList header;
-    header << tr("index")
-           << tr("time")
-           << tr("content");
+    header << tr("index") << tr("time") << tr("content");
     tableView->setHorizontalHeaderLabels(header);
     tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     tableView->setColumnWidth(0, 60);

@@ -4,11 +4,11 @@ FluAppBarButtonPage::FluAppBarButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("AppBarButton"));
-    m_infoLabel->setText(tr(
-        "App bar buttons differ from standard buttons in several ways:\n"
-        "-Their default appearance is a transparent background with a smaller size\n"
-        "-You use the Label and Icon properties to set the content instead of the content property.The Content property is ignored.\n"
-        "-The button's IsCompact property control its size."));
+    m_infoLabel->setText(
+        tr("App bar buttons differ from standard buttons in several ways:\n"
+           "-Their default appearance is a transparent background with a smaller size\n"
+           "-You use the Label and Icon properties to set the content instead of the content property.The Content property is ignored.\n"
+           "-The button's IsCompact property control its size."));
 
     addSymbolIconAppBarButton();
     addKeyboardAcceleratorAppBarButton();
@@ -25,7 +25,7 @@ void FluAppBarButtonPage::addSymbolIconAppBarButton()
     auto appBarButton = new FluAppBarButton(FluAwesomeType::Like);
     appBarButton->setText(tr("SymbolIcon"));
     displayBox->getBodyLayout()->addWidget(appBarButton);
-   // connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
+    // connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
@@ -40,7 +40,7 @@ void FluAppBarButtonPage::addKeyboardAcceleratorAppBarButton()
     appBarButton->setText("Save");
     appBarButton->setShortCut(QKeySequence(Qt::CTRL + Qt::Key_S));
     displayBox->getBodyLayout()->addWidget(appBarButton);
-    //connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
+    // connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }

@@ -55,7 +55,7 @@ class FluVNavigationView : public FluWidget
     void updateSearchKeys();
 
     void paintEvent(QPaintEvent *event) override;
-signals:
+  signals:
     void searchKeyChanged(QString key);
   public slots:
     void onMenuItemClicked();
@@ -71,8 +71,7 @@ signals:
     QVBoxLayout *m_vTopWrapLayout;
     QVBoxLayout *m_vBottomLayout;
 
-
     FluVNavigationMenuItem *m_menuButtonItem;
-    FluVNavigationSearchItem* m_searchItem;
+    FluVNavigationSearchItem *m_searchItem;
     bool m_bLong;
 };

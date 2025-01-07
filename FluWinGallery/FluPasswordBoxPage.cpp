@@ -4,9 +4,9 @@ FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("PasswordBox"));
-    m_infoLabel->setText(tr(
-        "A user can enter a single line of non-wrapping text in a PasswordBox control. The text is Masked by characters that you can specify by using the PasswordChar property, and you can specify the maximum number of characters that the user "
-        "can enter by setting the MaxLength property."));
+    m_infoLabel->setText(
+        tr("A user can enter a single line of non-wrapping text in a PasswordBox control. The text is Masked by characters that you can specify by using the PasswordChar property, and you can specify the maximum number of characters that the user "
+           "can enter by setting the MaxLength property."));
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple PasswordBox."));

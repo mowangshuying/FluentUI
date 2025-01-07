@@ -14,7 +14,7 @@ class FluRoundMenu;
 class FluMenuAniMgr : public QObject
 {
   public:
-    FluMenuAniMgr(FluRoundMenu* menu, FluMenuAniType aniType=FluMenuAniType::none);
+    FluMenuAniMgr(FluRoundMenu* menu, FluMenuAniType aniType = FluMenuAniType::none);
 
   public:
     virtual QSize availableViewSize(QPoint pos);

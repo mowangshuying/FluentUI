@@ -85,9 +85,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     m_navView->updateSearchKeys();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-    connect(m_navView, &FluVNavigationView::searchKeyChanged, [=](QString text) { 
-        m_sLayout->setCurrentWidget(text);
-    });
+    connect(m_navView, &FluVNavigationView::searchKeyChanged, [=](QString text) { m_sLayout->setCurrentWidget(text); });
 
 #if (QT_VERSION <= QT_VERSION_CHECK(6, 0, 0))
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
@@ -97,7 +95,6 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
     // resize
     resize(1200, 900);
     m_navView->onMenuItemClicked();
-
 }
 
 void FluGalleryWindow::makeHomeNavItem()
@@ -108,9 +105,7 @@ void FluGalleryWindow::makeHomeNavItem()
 
     auto homePage = new FluHomePage;
     m_sLayout->addWidget("HomePage", homePage);
-    connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() {
-        m_sLayout->setCurrentWidget("HomePage");
-    });
+    connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("HomePage"); });
 
     connect(homePage, &FluHomePage::clickedHCard, [=](QString key) {
         auto item = m_navView->getItemByKey(key);
@@ -129,7 +124,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem(FluAwesomeType::FontSize, tr("Typography"), item);
     FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, tr("Icons"), item);
     // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
-    
+
     item1->setKey("TypographyPage");
     item->addItem(item1);
 
@@ -140,7 +135,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
 
     auto typographyPage = new FluTypeographyPage;
     m_sLayout->addWidget("TypographyPage", typographyPage);
-    
+
     connect(item1, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TypographyPage"); });
 
     auto iconsPage = new FluIconsPage;
@@ -420,7 +415,7 @@ void FluGalleryWindow::makeDialogsFlyouts()
     item3->setKey("TeachingTipPage");
 
     connect(dialogAndFlyoutPage, &FluDialogsAndFlyoutsPage::clickedHCard, [=](QString key) {
-        //LOG_DEBUG << key;
+        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -673,8 +668,7 @@ void FluGalleryWindow::makeScrollingNavItem()
     m_sLayout->addWidget("ScrollViewPage", scrollViewPage);
     connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ScrollViewPage"); });
 
-
-   connect(scrollingPage, &FluScrollingPage::clickedHCard, [=](QString key) {
+    connect(scrollingPage, &FluScrollingPage::clickedHCard, [=](QString key) {
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {

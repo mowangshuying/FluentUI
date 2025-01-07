@@ -45,7 +45,6 @@ void FluCompleterMenu::popup(QPoint pos)
     getView()->setFocusPolicy(Qt::NoFocus);
     setFocusPolicy(Qt::NoFocus);
     exec(pos);
-
 }
 
 bool FluCompleterMenu::eventFilter(QObject* watched, QEvent* event)

@@ -34,8 +34,7 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     FluCircleDot::setCircleDot(itemsViewCard, 20, 20);
     recentlyAddedSamplesLayout->addWidget(itemsViewCard);
 
-    auto lineCard = new FluHCard(QPixmap("../res/ControlImages/Line.png"), tr("Line"), 
-        tr("Draws a straight line between two points"));
+    auto lineCard = new FluHCard(QPixmap("../res/ControlImages/Line.png"), tr("Line"), tr("Draws a straight line between two points"));
     FluCircleDot::setCircleDot(lineCard, 20, 20);
     recentlyAddedSamplesLayout->addWidget(lineCard);
 

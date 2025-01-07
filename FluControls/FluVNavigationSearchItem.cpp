@@ -24,9 +24,7 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     setFixedHeight(40);
     onThemeChanged();
     connect(m_searchButton, &QPushButton::clicked, [=]() { emit itemClicked(); });
-    connect(m_autoSuggestBox, &FluAutoSuggestBox::currentTextChanged, this, [=](QString text) { 
-        emit currentTextChanged(text);
-    });
+    connect(m_autoSuggestBox, &FluAutoSuggestBox::currentTextChanged, this, [=](QString text) { emit currentTextChanged(text); });
 }
 
 void FluVNavigationSearchItem::hideSearchButton()

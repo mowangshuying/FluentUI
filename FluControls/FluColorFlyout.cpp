@@ -2,7 +2,7 @@
 
 FluColorFlyout::FluColorFlyout(QWidget* targetWidget) : FluWidget(nullptr), m_targetWidget(targetWidget)
 {
-    //LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
 
     m_gridLayout = new QGridLayout;
     setLayout(m_gridLayout);
@@ -18,7 +18,7 @@ FluColorFlyout::FluColorFlyout(QWidget* targetWidget) : FluWidget(nullptr), m_ta
 
 FluColorFlyout::~FluColorFlyout()
 {
-    //LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
 }
 
 void FluColorFlyout::addColorButton(FluColorButton* colorBtn, int row, int col)

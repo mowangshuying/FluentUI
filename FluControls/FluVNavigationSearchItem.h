@@ -36,6 +36,4 @@ class FluVNavigationSearchItem : public FluVNavigationItem
     QHBoxLayout* m_hMainLayout;
     FluAutoSuggestBox* m_autoSuggestBox;
     QPushButton* m_searchButton;
-
-
 };

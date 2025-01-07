@@ -80,12 +80,12 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
                     getItem(i)->style()->polish(getItem(i));
                 }
 
-               // LOG_DEBUG << "item Clicked!";
+                // LOG_DEBUG << "item Clicked!";
                 label->setProperty("selected", true);
                 label->style()->polish(label);
                 // m_calendarView->setCurDate(label->getCurDate());
 
-                //LOG_DEBUG << label->getCurDate();
+                // LOG_DEBUG << label->getCurDate();
 
                 m_calendarView->setCurDate(label->getCurDate());
                 emit m_calendarView->selectedDate(label->getCurDate());

@@ -8,9 +8,8 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     //   m_subTitleLabel->setText("FluentUI::FluCheckBox");
 
     m_infoLabel->setText(
-        tr(
-        "CheckBox controls let the user select a combination of binary options.In contrast, RadioButton controls allow the user to select from mutually exclusive options.The indeterminate state is used to indicate that an option is set for "
-        "some,but not all,child options. Don't allow users to set an indeterminate state directly to indicate a third option."));
+        tr("CheckBox controls let the user select a combination of binary options.In contrast, RadioButton controls allow the user to select from mutually exclusive options.The indeterminate state is used to indicate that an option is set for "
+           "some,but not all,child options. Don't allow users to set an indeterminate state directly to indicate a third option."));
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A 2-state CheckBox"));
@@ -31,7 +30,7 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     displayBox2->getBodyLayout()->addWidget(checkBox2);
     m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
-   onThemeChanged();
+    onThemeChanged();
 }
 
 void FluCheckBoxPage::onThemeChanged()

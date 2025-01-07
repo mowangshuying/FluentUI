@@ -46,7 +46,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
     connect(m_menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
     connect(m_searchItem, &FluVNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });
-    connect(m_searchItem, &FluVNavigationSearchItem::currentTextChanged, [=](QString text) { 
+    connect(m_searchItem, &FluVNavigationSearchItem::currentTextChanged, [=](QString text) {
         auto item = getItemByText(text);
         if (item != nullptr)
         {
@@ -202,7 +202,7 @@ FluVNavigationItem *FluVNavigationView::getItemByText(QString text)
         if (item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)item;
-            //texts.push_back(iconTextItem->getLabel()->text());
+            // texts.push_back(iconTextItem->getLabel()->text());
             if (iconTextItem->getLabel()->text() == text)
                 return item;
         }

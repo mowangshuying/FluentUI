@@ -48,8 +48,7 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     });
 
     connect(m_datePickerView, &FluDatePickerView::clickedOk, [=]() {
-        const std::vector<QString> sMonths{tr("January"), tr("February"), tr("March"), tr("April"), tr("May"), tr("June"), tr("July"), 
-        tr("August"), tr("September"), tr("October"), tr("November"), tr("December")};
+        const std::vector<QString> sMonths{tr("January"), tr("February"), tr("March"), tr("April"), tr("May"), tr("June"), tr("July"), tr("August"), tr("September"), tr("October"), tr("November"), tr("December")};
 
         m_monthBtn->setText(sMonths[m_datePickerView->getMonth()]);
         QString sDay = QString::asprintf("%02d", m_datePickerView->getDay() + 1);

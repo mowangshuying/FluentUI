@@ -15,10 +15,9 @@ class FluRoundMenu : public QMenu
     Q_OBJECT
   public:
     FluRoundMenu(QWidget* parent = nullptr);
-    FluRoundMenu(QString title, FluAwesomeType iconType= FluAwesomeType::None, QWidget* parent = nullptr);
+    FluRoundMenu(QString title, FluAwesomeType iconType = FluAwesomeType::None, QWidget* parent = nullptr);
 
   public:
-
     void setMaxVisibleItems(int num);
 
     void setItemHeight(int height);
@@ -101,6 +100,7 @@ class FluRoundMenu : public QMenu
     void onShowSubMenu(QListWidgetItem* item);
 
     void onThemeChanged();
+
   protected:
     void hideEvent(QHideEvent* event);
 
@@ -115,12 +115,12 @@ class FluRoundMenu : public QMenu
     bool m_bHideBySystem;
     int m_itemHeight;
 
-    //QString m_title;
-    //QPixmap m_icon;
+    // QString m_title;
+    // QPixmap m_icon;
     FluAction* m_mainAction;
 
     FluRoundMenu* m_parentMenu = nullptr;
-    
+
     QListWidgetItem* m_menuItem;
     QListWidgetItem* m_lastHoverItem;
     QListWidgetItem* m_lastHoverSubMenuItem;

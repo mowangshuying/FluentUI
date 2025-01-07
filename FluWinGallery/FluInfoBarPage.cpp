@@ -6,7 +6,7 @@ FluInfoBarPage::FluInfoBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     m_titleLabel->setText(tr("InfoBar"));
     m_infoLabel->setText(
         tr("Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily "
-        "break user flow."));
+           "break user flow."));
 
     addClosableInfoBar();
 

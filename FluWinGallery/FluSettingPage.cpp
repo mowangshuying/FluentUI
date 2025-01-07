@@ -10,7 +10,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     m_titleLabel = new QLabel;
     m_titleLabel->setObjectName("titleLabel");
-    m_titleLabel->setText("Settings");
+    m_titleLabel->setText(tr("Settings"));
     m_mainLayout->addWidget(m_titleLabel);
 
     m_vScrollView = new FluVScrollView;
@@ -21,15 +21,15 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     m_appBehaviorLabel = new QLabel;
     m_appBehaviorLabel->setObjectName("appBehaviorLabel");
-    m_appBehaviorLabel->setText("Appearance & behavior");
+    m_appBehaviorLabel->setText(tr("Appearance & behavior"));
     m_vScrollView->getMainLayout()->addWidget(m_appBehaviorLabel);
 
     auto appThemeSelectBox = new FluSettingsSelectBox;
-    appThemeSelectBox->setTitleInfo("App theme", "Select which app theme to display.");
+    appThemeSelectBox->setTitleInfo(tr("App theme"), tr("Select which app theme to display."));
     appThemeSelectBox->setIcon(FluAwesomeType::Color);
 
-    appThemeSelectBox->getComboBox()->addItem("Light");
-    appThemeSelectBox->getComboBox()->addItem("Dark");
+    appThemeSelectBox->getComboBox()->addItem(tr("Light"));
+    appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
 
     connect(appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == 0)
@@ -44,10 +44,10 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     auto navStyleSelectBox = new FluSettingsSelectBox;
     navStyleSelectBox->hideInfoLabel();
-    navStyleSelectBox->setTitleInfo("Navigation style", "");
+    navStyleSelectBox->setTitleInfo(tr("Navigation style"), tr(""));
     navStyleSelectBox->setIcon(FluAwesomeType::HolePunchLandscapeLeft);
-    navStyleSelectBox->getComboBox()->addItem("Left");
-    navStyleSelectBox->getComboBox()->addItem("Top");
+    navStyleSelectBox->getComboBox()->addItem(tr("Left"));
+    navStyleSelectBox->getComboBox()->addItem(tr("Top"));
     m_vScrollView->getMainLayout()->addWidget(navStyleSelectBox);
 
     m_vScrollView->getMainLayout()->addSpacing(30);
@@ -60,9 +60,9 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     // version;
     auto settingsVersionBox = new FluSettingsVersionBox;
 
-    settingsVersionBox->getTitleLabel()->setText("FluentUI Gallery(Cpp & Qt).");
-    settingsVersionBox->getInfoLabel()->setText("@2023-2024 FluentUI For Qt & Cpp. All rights reserved.");
-    settingsVersionBox->getVersionLabel()->setText("0.3.7");
+    settingsVersionBox->getTitleLabel()->setText(tr("FluentUI Gallery(Cpp & Qt)."));
+    settingsVersionBox->getInfoLabel()->setText(tr("@2023-2024 FluentUI For Qt & Cpp. All rights reserved."));
+    settingsVersionBox->getVersionLabel()->setText(tr("0.3.7"));
 
     QIcon icon = QIcon("../res/Tiles/GalleryIcon.ico");
     settingsVersionBox->getIconLabel()->setPixmap(icon.pixmap(20, 20));
@@ -70,7 +70,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     auto repoLabel = new FluLabel;
     repoLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
-    repoLabel->setText("To clone thepository");
+    repoLabel->setText(tr("To clone thepository"));
 
     auto cloneRepoBtn = new FluHyperLinkButton("");
     cloneRepoBtn->setText("git clone https://github.com/mowangshuying/FluentUI");
@@ -81,10 +81,10 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     auto issueLabel = new FluLabel;
     issueLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
-    issueLabel->setText("File a bug or Suggest a sample.");
+    issueLabel->setText(tr("File a bug or Suggest a sample."));
 
     auto issueRef = new FluHyperLinkButton("");
-    issueRef->setText("Get Start.");
+    issueRef->setText(tr("Get Start."));
 
     settingsVersionBox->addWidget(issueLabel);
     settingsVersionBox->addWidget(issueRef);
@@ -92,16 +92,16 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     auto dependAndRef = new FluLabel;
     dependAndRef->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
-    dependAndRef->setText("Dependencies & references");
+    dependAndRef->setText(tr("Dependencies & references"));
 
     auto winUiGalleryRef = new FluHyperLinkButton("https://github.com/microsoft/WinUI-Gallery");
-    winUiGalleryRef->setText("Microsoft/WinUI-Gallery");
+    winUiGalleryRef->setText(tr("Microsoft/WinUI-Gallery"));
 
     auto framelesshelperRef = new FluHyperLinkButton("https://github.com/wangwenx190/framelesshelper");
-    framelesshelperRef->setText("wangwenx190/framelesshelper");
+    framelesshelperRef->setText(tr("wangwenx190/framelesshelper"));
 
     auto qwindowkitRef = new FluHyperLinkButton("https://github.com/stdware/qwindowkit");
-    qwindowkitRef->setText("stdware/qwindowkit");
+    qwindowkitRef->setText(tr("stdware/qwindowkit"));
 
     settingsVersionBox->addWidget(dependAndRef);
     settingsVersionBox->addWidget(winUiGalleryRef);
@@ -110,7 +110,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     m_vScrollView->getMainLayout()->addWidget(settingsVersionBox);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
+    onThemeChanged();
 }
 
 void FluSettingPage::paintEvent(QPaintEvent* event)

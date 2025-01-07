@@ -3,11 +3,11 @@
 FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("TableView");
-    m_infoLabel->setText("The TableView control provides a flexible way to display a collection of data in row and columns.");
+    m_titleLabel->setText(tr("TableView"));
+    m_infoLabel->setText(tr("The TableView control provides a flexible way to display a collection of data in row and columns."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("Base TableView Demo.");
+    displayBox->setTitle(tr("Base TableView Demo."));
     displayBox->getCodeExpander()->setCodeByPath("../code/TableViewPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(600);
 
@@ -17,9 +17,9 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     tableView->setColumnCount(3);
     tableView->setReadOnlySet({0});
     QStringList header;
-    header << "index"
-           << "time"
-           << "content";
+    header << tr("index")
+           << tr("time")
+           << tr("content");
     tableView->setHorizontalHeaderLabels(header);
     tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     tableView->setColumnWidth(0, 60);

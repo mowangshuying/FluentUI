@@ -3,11 +3,11 @@
 FluScrollViewPage::FluScrollViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("ScrollView");
-    m_infoLabel->setText("A ScrollView lets user scroll, pan, and zoom to see content that's larger than the viewable area. The ItemsView has a ScrollView built into its control template to provide automatic scrolling.");
+    m_titleLabel->setText(tr("ScrollView"));
+    m_infoLabel->setText(tr("A ScrollView lets user scroll, pan, and zoom to see content that's larger than the viewable area. The ItemsView has a ScrollView built into its control template to provide automatic scrolling."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("Content inside of ScrollView.");
+    displayBox->setTitle(tr("Content inside of ScrollView."));
     displayBox->getCodeExpander()->setCodeByPath("../code/ScrollViewPageCode1.md");
     // displayBox->setBodyWidgetFixedHeight(800);
 

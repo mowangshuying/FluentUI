@@ -15,7 +15,7 @@ FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
 
     m_titleLabel = new QLabel;
     m_titleLabel->setObjectName("titleLabel");
-    m_titleLabel->setText("A Temp Title Label");
+    m_titleLabel->setText(tr("A Temp Title Label"));
     m_vMainLayout->addWidget(m_titleLabel);
 
     m_vMainLayout->addSpacing(20);

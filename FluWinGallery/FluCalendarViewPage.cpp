@@ -3,12 +3,12 @@
 FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("CalendarView");
+    m_titleLabel->setText(tr("CalendarView"));
     // m_subTitleLabel->setText("FluentUI.FluControls.FluCalendarView");
-    m_infoLabel->setText("CalendarView shows a larger view for showing and selecting dates. DatePicker by contrast has a compact view with inline selection.");
+    m_infoLabel->setText(tr("CalendarView shows a larger view for showing and selecting dates. DatePicker by contrast has a compact view with inline selection."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("A basic calendar view.");
+    displayBox->setTitle(tr("A basic calendar view."));
     displayBox->getCodeExpander()->setCodeByPath("../code/CalendarViewPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(400);
 
@@ -16,7 +16,7 @@ FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEm
     calendarView->move(50, 50);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewPage.qss", this);
+    onThemeChanged();
 }
 
 void FluCalendarViewPage::onThemeChanged()

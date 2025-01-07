@@ -3,8 +3,8 @@
 FluSplitButtonPage::FluSplitButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("SplitButton");
-    m_infoLabel->setText("The splitButton is a dropdown button, but with an addition execution hit target.");
+    m_titleLabel->setText(tr("SplitButton"));
+    m_infoLabel->setText(tr("The splitButton is a dropdown button, but with an addition execution hit target."));
 
     addSplitButtonWithText();
 
@@ -14,7 +14,7 @@ FluSplitButtonPage::FluSplitButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 void FluSplitButtonPage::addSplitButtonWithText()
 {
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("A SplitButton with text.");
+    displayBox->setTitle(tr("A SplitButton with text."));
     displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
 
     auto splitButton = new FluSplitButton(this);

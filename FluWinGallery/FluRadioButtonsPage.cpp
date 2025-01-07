@@ -3,11 +3,11 @@
 FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("RadioButtons");
-    m_infoLabel->setText("A control that displays a group of mutually exclusive options with keyboarding and accessibility support.");
+    m_titleLabel->setText(tr("RadioButtons"));
+    m_infoLabel->setText(tr("A control that displays a group of mutually exclusive options with keyboarding and accessibility support."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("Two RadioButtons controls with strings as options.");
+    displayBox->setTitle(tr("Two RadioButtons controls with strings as options."));
     displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonsPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(360);
 
@@ -15,10 +15,10 @@ FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEm
     border->setFixedSize(376, 54);
     border->setBorderWidth(12);
 
-    auto* backgroundGroup = new FluHRadioGroupBox("Background", this);
-    auto btn1 = new FluRadioButton("Green", backgroundGroup);
-    auto btn2 = new FluRadioButton("Yellow", backgroundGroup);
-    auto btn3 = new FluRadioButton("White", backgroundGroup);
+    auto* backgroundGroup = new FluHRadioGroupBox(tr("Background"), this);
+    auto btn1 = new FluRadioButton(tr("Green"), backgroundGroup);
+    auto btn2 = new FluRadioButton(tr("Yellow"), backgroundGroup);
+    auto btn3 = new FluRadioButton(tr("White"), backgroundGroup);
     backgroundGroup->addRadioButton(btn1);
     backgroundGroup->addRadioButton(btn2);
     backgroundGroup->addRadioButton(btn3);
@@ -26,10 +26,10 @@ FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEm
     connect(btn2, &FluRadioButton::toggled, [=]() { border->setBackGroundColor("yellow"); });
     connect(btn3, &FluRadioButton::toggled, [=]() { border->setBackGroundColor("white"); });
 
-    auto* borderGroup = new FluHRadioGroupBox("Border", this);
-    auto btn4 = new FluRadioButton("Green", borderGroup);
-    auto btn5 = new FluRadioButton("Yellow", borderGroup);
-    auto btn6 = new FluRadioButton("White", borderGroup);
+    auto* borderGroup = new FluHRadioGroupBox(tr("Border"), this);
+    auto btn4 = new FluRadioButton(tr("Green"), borderGroup);
+    auto btn5 = new FluRadioButton(tr("Yellow"), borderGroup);
+    auto btn6 = new FluRadioButton(tr("White"), borderGroup);
     borderGroup->addRadioButton(btn4);
     borderGroup->addRadioButton(btn5);
     borderGroup->addRadioButton(btn6);
@@ -42,7 +42,7 @@ FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEm
     displayBox->getBodyLayout()->addWidget(border, Qt::AlignTop);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonsPage.qss", this);
+    onThemeChanged();
 }
 
 void FluRadioButtonsPage::onThemeChanged()

@@ -350,11 +350,12 @@ void FluAllSamplesPage::makeTextCards()
     richTextBlockCard->setKey("RichTextBlockPage");
     m_cards.push_back(richTextBlockCard);
 
-    auto textBlockCard = new FluHCard(QPixmap("../res/ControlImages/TextBlock.png"), "TextBlock", "A lightweight control for displaying small amounts of text.");
+    auto textBlockCard = new FluHCard(QPixmap("../res/ControlImages/TextBlock.png"), tr("TextBlock"), tr("A lightweight control for displaying small amounts of text."));
     textBlockCard->setKey("TextBlockPage");
     m_cards.push_back(textBlockCard);
 
-    auto textBoxCard = new FluHCard(QPixmap("../res/ControlImages/TextBox.png"), "TextBox", "A single-line or multi-line plain text field.");
+    auto textBoxCard = new FluHCard(QPixmap("../res/ControlImages/TextBox.png"), tr("TextBox"), 
+        tr("A single-line or multi-line plain text field."));
     textBoxCard->setKey("TextBoxPage");
     m_cards.push_back(textBoxCard);
 }

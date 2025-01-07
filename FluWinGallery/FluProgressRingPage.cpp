@@ -3,10 +3,10 @@
 FluProgressRingPage::FluProgressRingPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("ProgressRing");
+    m_titleLabel->setText(tr("ProgressRing"));
     // m_subTitleLabel->setText("FluentUI::FluProgressRing");
 
-    m_infoLabel->setText("The ProgressRing has two different visual representations.\nIndeterminate - shows that a task is ongoing.but blocks user interaction.\nDeterminate - shows how much progress has been made on a known amount of work.");
+    m_infoLabel->setText(tr("The ProgressRing has two different visual representations.\nIndeterminate - shows that a task is ongoing.but blocks user interaction.\nDeterminate - shows how much progress has been made on a known amount of work."));
 
     addIndeterminateProgressRing();
 
@@ -14,7 +14,7 @@ FluProgressRingPage::FluProgressRingPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     addBusyRing();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressRingPage.qss", this);
+    onThemeChanged();
 }
 
 void FluProgressRingPage::addIndeterminateProgressRing()
@@ -22,7 +22,7 @@ void FluProgressRingPage::addIndeterminateProgressRing()
     auto displayBox = new FluDisplayBoxEx;
     displayBox->getBodyContentLayout()->setAlignment(Qt::AlignTop);
     displayBox->getBodyRightLayout()->setAlignment(Qt::AlignTop);
-    displayBox->setTitle("An indeterminate progress ring.");
+    displayBox->setTitle(tr("An indeterminate progress ring."));
     displayBox->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
@@ -47,11 +47,11 @@ void FluProgressRingPage::addIndeterminateProgressRing()
     displayBox->getBodyContentLayout()->addLayout(hBoxLayout);
 
     auto progressOptionsLabel = new FluLabel(FluLabelStyle::CaptionTextBlockSylte);
-    progressOptionsLabel->setText("Track Background color");
+    progressOptionsLabel->setText(tr("Track Background color"));
 
     auto comboBox = new FluComboBoxEx;
-    comboBox->addItem("Transparent");
-    comboBox->addItem("LightGray");
+    comboBox->addItem(tr("Transparent"));
+    comboBox->addItem(tr("LightGray"));
     connect(comboBox, &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == 0)
         {

@@ -3,11 +3,11 @@
 FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("InfoBadge");
-    m_infoLabel->setText("Badging is a non-instrusive and intuitive way to display notifications or bring focus to an area within an app - weheher that be for notifications, indicating new content, or showing an alert.");
+    m_titleLabel->setText(tr("InfoBadge"));
+    m_infoLabel->setText(tr("Badging is a non-instrusive and intuitive way to display notifications or bring focus to an area within an app - weheher that be for notifications, indicating new content, or showing an alert."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("InfoBadge with Different Value.");
+    displayBox->setTitle(tr("InfoBadge with Different Value."));
     displayBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
@@ -31,7 +31,7 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadgePage.qss", this);
+    onThemeChanged();
 }
 
 void FluInfoBadgePage::onThemeChanged()

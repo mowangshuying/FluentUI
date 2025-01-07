@@ -11,7 +11,7 @@ FluHomePageTitle::FluHomePageTitle(QWidget* parent /*= nullptr*/) : FluWidget(pa
     m_titleLabel1 = new QLabel("FluentUi Gallery");
     m_titleLabel2 = new QLabel("Qt & Cpp");
 
-    m_githubCard = new FluVCard(QPixmap("../res/HomeHeaderTiles/github-mark.png"), "GitHub", "The latest Windows native controls and styles for your applications", this);
+    m_githubCard = new FluVCard(QPixmap("../res/HomeHeaderTiles/github-mark.png"), tr("GitHub"), tr("The latest Windows native controls and styles for your applications"), this);
     m_githubCard->move(40, 120);
 
     m_titleLabel1->setObjectName("titleLabel1");

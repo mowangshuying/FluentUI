@@ -3,11 +3,11 @@
 FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("ContentDialog");
-    m_infoLabel->setText("Use a ContentDialog to show relavant information to provide a modal dialog experience that can show any text content.");
+    m_titleLabel->setText(tr("ContentDialog"));
+    m_infoLabel->setText(tr("Use a ContentDialog to show relavant information to provide a modal dialog experience that can show any text content."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("A basic content dialog with content.");
+    displayBox->setTitle(tr("A basic content dialog with content."));
     displayBox->getCodeExpander()->setCodeByPath("../code/ContentDialogPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(56);
 
@@ -16,14 +16,14 @@ FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluA
     showDlgBtn->setFixedSize(100, 30);
 
     connect(showDlgBtn, &FluPushButton::clicked, [=]() {
-        FluMessageBox messageBox("Save your work?", "Lorem ipsum dolor sit amet, adipisicing elit.", window());
+        FluMessageBox messageBox(tr("Save your work?"), tr("Lorem ipsum dolor sit amet, adipisicing elit."), window());
         messageBox.exec();
     });
 
     displayBox->getBodyLayout()->addWidget(showDlgBtn);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluContentDialogPage.qss", this);
+    onThemeChanged();
 }
 
 void FluContentDialogPage::onThemeChanged()

@@ -3,14 +3,14 @@
 FluMenuBarPage::FluMenuBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("MenuBar");
-    m_infoLabel->setText("The Menubar simplifies the creation of basic applications by providing a set of menus at the top of the app or window.");
+    m_titleLabel->setText(tr("MenuBar"));
+    m_infoLabel->setText(tr("The Menubar simplifies the creation of basic applications by providing a set of menus at the top of the app or window."));
 
     addSimpleMenuBar();
 
     addMenuBarWithAccelerators();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBarPage.qss", this);
+    onThemeChanged();
 }
 
 void FluMenuBarPage::addSimpleMenuBar()
@@ -23,13 +23,13 @@ void FluMenuBarPage::addSimpleMenuBar()
     auto menuBar = new FluMenuBar;
     // menuBar->move(50, 50);
 
-    auto newFileAction = new FluAction("new");
-    auto openFileAction = new FluAction("Open");
-    auto saveFileAction = new FluAction("Save");
-    auto exitFileAction = new FluAction("Exit");
+    auto newFileAction = new FluAction(tr("new"));
+    auto openFileAction = new FluAction(tr("Open"));
+    auto saveFileAction = new FluAction(tr("Save"));
+    auto exitFileAction = new FluAction(tr("Exit"));
 
     auto fileMenu = new FluMenu(menuBar);
-    fileMenu->setTitle("File");
+    fileMenu->setTitle(tr("File"));
     fileMenu->addAction(newFileAction);
     fileMenu->addAction(openFileAction);
     fileMenu->addAction(saveFileAction);
@@ -37,13 +37,13 @@ void FluMenuBarPage::addSimpleMenuBar()
     menuBar->addMenu(fileMenu);
 
     // undo cut copy paste
-    auto undoEditAction = new FluAction("Undo");
-    auto cutEditAction = new FluAction("Cut");
-    auto copyEditAction = new FluAction("Copy");
-    auto pasteEditAction = new FluAction("Paste");
+    auto undoEditAction = new FluAction(tr("Undo"));
+    auto cutEditAction = new FluAction(tr("Cut"));
+    auto copyEditAction = new FluAction(tr("Copy"));
+    auto pasteEditAction = new FluAction(tr("Paste"));
 
     auto editMenu = new FluMenu(menuBar);
-    editMenu->setTitle("Edit");
+    editMenu->setTitle(tr("Edit"));
     editMenu->addAction(undoEditAction);
     editMenu->addAction(cutEditAction);
     editMenu->addAction(copyEditAction);
@@ -51,9 +51,9 @@ void FluMenuBarPage::addSimpleMenuBar()
     menuBar->addMenu(editMenu);
 
     // Help
-    auto aboutAction = new FluAction("About");
+    auto aboutAction = new FluAction(tr("About"));
     auto helpMenu = new FluMenu(menuBar);
-    helpMenu->setTitle("Help");
+    helpMenu->setTitle(tr("Help"));
     helpMenu->addAction(aboutAction);
     menuBar->addMenu(helpMenu);
 
@@ -64,17 +64,17 @@ void FluMenuBarPage::addSimpleMenuBar()
 void FluMenuBarPage::addMenuBarWithAccelerators()
 {
     auto displayBox1 = new FluDisplayBox;
-    displayBox1->setTitle("MenuBar with keyboard accelerators");
+    displayBox1->setTitle(tr("MenuBar with keyboard accelerators"));
     displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode2.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto menuBar = new FluMenuBar;
     // menuBar->move(50, 50);
 
-    auto newFileAction = new FluAction("New");
-    auto openFileAction = new FluAction("Open");
-    auto saveFileAction = new FluAction("Save");
-    auto exitFileAction = new FluAction("Exit");
+    auto newFileAction = new FluAction(tr("New"));
+    auto openFileAction = new FluAction(tr("Open"));
+    auto saveFileAction = new FluAction(tr("Save"));
+    auto exitFileAction = new FluAction(tr("Exit"));
 
     newFileAction->setShortcut(QKeySequence::New);
     openFileAction->setShortcut(QKeySequence::Open);
@@ -90,10 +90,10 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
     menuBar->addMenu(fileMenu);
 
     // undo cut copy paste
-    auto undoEditAction = new FluAction("Undo");
-    auto cutEditAction = new FluAction("Cut");
-    auto copyEditAction = new FluAction("Copy");
-    auto pasteEditAction = new FluAction("Paste");
+    auto undoEditAction = new FluAction(tr("Undo"));
+    auto cutEditAction = new FluAction(tr("Cut"));
+    auto copyEditAction = new FluAction(tr("Copy"));
+    auto pasteEditAction = new FluAction(tr("Paste"));
 
     undoEditAction->setShortcut(QKeySequence::Undo);
     cutEditAction->setShortcut(QKeySequence::Cut);
@@ -101,7 +101,7 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
     pasteEditAction->setShortcut(QKeySequence::Paste);
 
     auto editMenu = new FluMenu(menuBar);
-    editMenu->setTitle("Edit");
+    editMenu->setTitle(tr("Edit"));
     editMenu->addAction(undoEditAction);
     editMenu->addAction(cutEditAction);
     editMenu->addAction(copyEditAction);
@@ -109,11 +109,11 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
     menuBar->addMenu(editMenu);
 
     // Help
-    auto aboutAction = new FluAction("About");
+    auto aboutAction = new FluAction(tr("About"));
     aboutAction->setShortcut(QKeySequence("Ctrl+L"));
 
     auto helpMenu = new FluMenu(menuBar);
-    helpMenu->setTitle("Help");
+    helpMenu->setTitle(tr("Help"));
     helpMenu->addAction(aboutAction);
     menuBar->addMenu(helpMenu);
 

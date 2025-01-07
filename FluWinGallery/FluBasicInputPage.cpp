@@ -3,33 +3,33 @@
 FluBasicInputPage::FluBasicInputPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
     m_vMainLayout->setContentsMargins(35, 35, 0, 35);
-    m_titleLabel->setText("Basic input");
+    m_titleLabel->setText(tr("Basic input"));
 
-    auto buttonCard = new FluHCard(QPixmap("../res/ControlImages/Button.png"), "Button", "A control that responds to user input and raises a Click event.");
+    auto buttonCard = new FluHCard(QPixmap("../res/ControlImages/Button.png"), tr("Button"), tr("A control that responds to user input and raises a Click event."));
     buttonCard->setKey("ButtonPage");
 
     FluCircleDot::setCircleDot(buttonCard, 20, 20);
     getFWScrollView()->getMainLayout()->addWidget(buttonCard);
     connect(buttonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto checkboxCard = new FluHCard(QPixmap("../res/ControlImages/Checkbox.png"), "CheckBox", "A control that a user can select or clear.");
+    auto checkboxCard = new FluHCard(QPixmap("../res/ControlImages/Checkbox.png"), tr("CheckBox"), tr("A control that a user can select or clear."));
     checkboxCard->setKey("CheckBoxPage");
 
     FluCircleDot::setCircleDot(checkboxCard, 20, 20);
     getFWScrollView()->getMainLayout()->addWidget(checkboxCard);
     connect(checkboxCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto colorPickerCard = new FluHCard(QPixmap("../res/ControlImages/ColorPicker.png"), "ColorPicker", "A control that displays a selectable color spectrum.");
+    auto colorPickerCard = new FluHCard(QPixmap("../res/ControlImages/ColorPicker.png"), tr("ColorPicker"), tr("A control that displays a selectable color spectrum."));
     colorPickerCard->setKey("ColorPickerPage");
     getFWScrollView()->getMainLayout()->addWidget(colorPickerCard);
     connect(colorPickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto comboBoxBtn = new FluHCard(QPixmap("../res/ControlImages/ComboBox.png"), "ComboBox", "A drop-down list of items a user can select from.");
+    auto comboBoxBtn = new FluHCard(QPixmap("../res/ControlImages/ComboBox.png"), tr("ComboBox"), tr("A drop-down list of items a user can select from."));
     comboBoxBtn->setKey("ComboBoxPage");
     getFWScrollView()->getMainLayout()->addWidget(comboBoxBtn);
     connect(comboBoxBtn, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto dropDownButtonCard = new FluHCard(QPixmap("../res/ControlImages/DropDownButton.png"), "DropDownButton", "A button that displays a flyout of choices when clicked.");
+    auto dropDownButtonCard = new FluHCard(QPixmap("../res/ControlImages/DropDownButton.png"), tr("DropDownButton"), tr("A button that displays a flyout of choices when clicked."));
     dropDownButtonCard->setKey("DropDownButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(dropDownButtonCard);
     connect(dropDownButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });

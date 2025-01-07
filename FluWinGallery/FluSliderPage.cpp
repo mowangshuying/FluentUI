@@ -3,14 +3,14 @@
 FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("Slider");
+    m_titleLabel->setText(tr("Slider"));
 
     // m_subTitleLabel->setText("FluentUI::FluSlider");
 
-    m_infoLabel->setText("Use a Slider when your want your users to be able to set defined, contiguous values(such as volume or brightness) or a range of discrete values(such as screen resolution settings).");
+    m_infoLabel->setText(tr("Use a Slider when your want your users to be able to set defined, contiguous values(such as volume or brightness) or a range of discrete values(such as screen resolution settings)."));
 
     auto displayBox1 = new FluDisplayBox;
-    displayBox1->setTitle("A simple Slider.");
+    displayBox1->setTitle(tr("A simple Slider."));
     displayBox1->getCodeExpander()->setCodeByPath("../code/SliderPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 

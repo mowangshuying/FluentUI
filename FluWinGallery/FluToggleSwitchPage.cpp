@@ -3,11 +3,11 @@
 FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("ToggleSwith");
-    m_infoLabel->setText("Use ToggleSwith controls to present users with exactly two mutually exclusive options(lik on/off), where choosing an option results in an immediate commit. A toggle switch should have a single label.");
+    m_titleLabel->setText(tr("ToggleSwith"));
+    m_infoLabel->setText(tr("Use ToggleSwith controls to present users with exactly two mutually exclusive options(lik on/off), where choosing an option results in an immediate commit. A toggle switch should have a single label."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("A simple ToggleSwitch.");
+    displayBox->setTitle(tr("A simple ToggleSwitch."));
     displayBox->getCodeExpander()->setCodeByPath("../code/ToggleSwitchPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(70);
 
@@ -15,8 +15,8 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
     toggleSwitch->move(50, 50);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchPage.qss", this);
+    
+    onThemeChanged();
 }
 
 void FluToggleSwitchPage::onThemeChanged()

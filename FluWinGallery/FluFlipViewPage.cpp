@@ -3,11 +3,11 @@
 FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("FlipView");
-    m_infoLabel->setText("The FlipView lets you flip through a collection of items.one at a time.it's great for displaying images from a gallery, pages of a magazine or similar items.");
+    m_titleLabel->setText(tr("FlipView"));
+    m_infoLabel->setText(tr("The FlipView lets you flip through a collection of items.one at a time.it's great for displaying images from a gallery, pages of a magazine or similar items."));
 
     auto displayBox1 = new FluDisplayBox;
-    displayBox1->setTitle("A simple FlipView with items declared inline.");
+    displayBox1->setTitle(tr("A simple FlipView with items declared inline."));
     displayBox1->getCodeExpander()->setCodeByPath("../code/FlipViewPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(300);
 
@@ -33,7 +33,7 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     vFlipView->addPixmap(QPixmap("../res/SampleMedia/sunset.jpg"));
 
     m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlipViewPage.qss", this);
+    onThemeChanged();
 }
 
 void FluFlipViewPage::onThemeChanged()

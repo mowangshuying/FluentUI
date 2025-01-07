@@ -4,11 +4,11 @@ FluCalendarDatePickerPage::FluCalendarDatePickerPage(QWidget* parent /*= nullptr
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
 
-    m_titleLabel->setText("CalendarDatePicker");
-    m_infoLabel->setText("A control that lets users pick a date value using a calendar.");
+    m_titleLabel->setText(tr("CalendarDatePicker"));
+    m_infoLabel->setText(tr("A control that lets users pick a date value using a calendar."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("CalendarDatePicker with a header ad placeholder text.");
+    displayBox->setTitle(tr("CalendarDatePicker with a header ad placeholder text."));
     displayBox->getCodeExpander()->setCodeByPath("../code/CalendarDatePickerPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(60);
 
@@ -16,7 +16,7 @@ FluCalendarDatePickerPage::FluCalendarDatePickerPage(QWidget* parent /*= nullptr
     calendarView->move(50, 50);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePickerPage.qss", this);
+    onThemeChanged();
 }
 
 void FluCalendarDatePickerPage::onThemeChanged()

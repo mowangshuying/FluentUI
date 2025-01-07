@@ -3,21 +3,20 @@
 FluNumberBoxPage::FluNumberBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("NumberBox");
-
-    m_infoLabel->setText("Use NumberBox to allow users to enter a algebraic equations and numeric input in your app.");
+    m_titleLabel->setText(tr("NumberBox"));
+    m_infoLabel->setText(tr("Use NumberBox to allow users to enter a algebraic equations and numeric input in your app."));
 
     addSpinBox();
 
     addDoubleSpinBox();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
+    onThemeChanged();
 }
 
 void FluNumberBoxPage::addSpinBox()
 {
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("A spin box");
+    displayBox->setTitle(tr("A spin box"));
     displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(90);
 
@@ -30,7 +29,7 @@ void FluNumberBoxPage::addSpinBox()
 void FluNumberBoxPage::addDoubleSpinBox()
 {
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("A double spin box");
+    displayBox->setTitle(tr("A double spin box"));
     displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode2.md");
     displayBox->setBodyWidgetFixedHeight(90);
 

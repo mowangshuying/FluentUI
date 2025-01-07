@@ -3,11 +3,11 @@
 FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("ProgressBar");
-    m_infoLabel->setText("The ProgressBar has two different visual representations.\nIndeterminate - shows that a task is ongoing, but doesn't block user interaction.\nDeterminate - show how much progress has been made on a kknown amount of work.");
+    m_titleLabel->setText(tr("ProgressBar"));
+    m_infoLabel->setText(tr("The ProgressBar has two different visual representations.\nIndeterminate - shows that a task is ongoing, but doesn't block user interaction.\nDeterminate - show how much progress has been made on a kknown amount of work."));
 
     auto displayBox1 = new FluDisplayBox;
-    displayBox1->setTitle("An indeterminate progress ring.");
+    displayBox1->setTitle(tr("An indeterminate progress ring."));
     displayBox1->getCodeExpander()->setCodeByPath("../code/ProgressBarPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
@@ -19,7 +19,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     // progressRing1->setWorking(true);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBarPage.qss", this);
+    onThemeChanged();
 }
 
 void FluProgressBarPage::onThemeChanged()

@@ -34,7 +34,7 @@ void FluCalendarItem::setCurDate(QDate curDate)
 void FluCalendarItem::mouseReleaseEvent(QMouseEvent* ev)
 {
     QLabel::mouseReleaseEvent(ev);
-    LOG_DEBUG << "called";
+    //LOG_DEBUG << "called";
     emit clicked();
 }
 

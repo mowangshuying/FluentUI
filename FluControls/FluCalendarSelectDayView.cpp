@@ -11,7 +11,7 @@ FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/
     m_hMainLayout->setSpacing(0);
     setLayout(m_hMainLayout);
 
-    QList<QString> weekTexts = {"Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"};
+    QList<QString> weekTexts = {tr("Su"), tr("Mo"), tr("Tu"), tr("We"), tr("Th"), tr("Fr"), tr("Sa")};
     for (int i = 0; i < weekTexts.size(); i++)
     {
         QLabel* label = new QLabel;
@@ -80,12 +80,12 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
                     getItem(i)->style()->polish(getItem(i));
                 }
 
-                LOG_DEBUG << "item Clicked!";
+               // LOG_DEBUG << "item Clicked!";
                 label->setProperty("selected", true);
                 label->style()->polish(label);
                 // m_calendarView->setCurDate(label->getCurDate());
 
-                LOG_DEBUG << label->getCurDate();
+                //LOG_DEBUG << label->getCurDate();
 
                 m_calendarView->setCurDate(label->getCurDate());
                 emit m_calendarView->selectedDate(label->getCurDate());
@@ -180,7 +180,7 @@ void FluCalendarMonthView::setYearMonth(int nYear, int nMonth)
         if (date.day() == 1)
         {
             // LOG_DEBUG << "the date day == 1 && " << date << ",month:" << date.month();
-            QList<QString> monthTexts = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+            QList<QString> monthTexts = {tr("Jan"), tr("Feb"), tr("Mar"), tr("Apr"), tr("May"), tr("Jun"), tr("Jul"), tr("Aug"), tr("Sep"), tr("Oct"), tr("Nov"), tr("Dec")};
             getItem(j)->setInfoText(monthTexts.at(date.month() - 1));
         }
         else

@@ -14,7 +14,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
     m_gMainLayout->setVerticalSpacing(5);
     setLayout(m_gMainLayout);
 
-    QList<QString> monthTexts = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    QList<QString> monthTexts = {tr("Jan"), tr("Feb"), tr("Mar"), tr("Apr"), tr("May"), tr("Jun"), tr("Jul"), tr("Aug"), tr("Sep"), tr("Oct"), tr("Nov"), tr("Dec")};
     for (int i = 0; i < 4; i++)
     {
         for (int j = 0; j < 4; j++)
@@ -32,7 +32,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
 
             connect(getItem(i * 4 + j), &FluCalendarItem::clicked, [=]() {
                 QDate itemDate = getItem(i * 4 + j)->getCurDate();
-                LOG_DEBUG << itemDate;
+                //LOG_DEBUG << itemDate;
                 setYearMonth(itemDate.year(), itemDate.month());
                 m_parentView->setCurDate(itemDate);
                 m_parentView->switchSelectDayView();
@@ -40,7 +40,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
                 m_parentView->getSelectMonthView()->setYearMonth(itemDate.year(), itemDate.month());
                 m_parentView->getViewTitle()->setYearMonth(itemDate.year(), itemDate.month());
                 //   emit m_parentView->selectedDate(itemDate);
-                LOG_DEBUG << "item Clicked!";
+                //LOG_DEBUG << "item Clicked!";
             });
         }
     }

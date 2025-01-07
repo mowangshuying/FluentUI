@@ -12,7 +12,7 @@ FluCalendarDatePicker::FluCalendarDatePicker(QWidget* parent /*= nullptr*/) : QP
     setLayout(m_hMainLayout);
 
     setFixedSize(120, 30);
-    m_textButton->setText("Pick a date");
+    m_textButton->setText(tr("Pick a date"));
 
     m_iconButton->setIconSize(QSize(20, 20));
     m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar));
@@ -28,7 +28,7 @@ FluCalendarDatePicker::FluCalendarDatePicker(QWidget* parent /*= nullptr*/) : QP
     connect(m_calendarView, &FluCalendarView::selectedDate, [=](QDate date) {
         QString dateText = QString::asprintf("%d/%d/%d", date.month(), date.day(), date.year());
         m_textButton->setText(dateText);
-        LOG_DEBUG << date;
+        //LOG_DEBUG << date;
         m_calendarView->hide();
 
         emit selectedDate(date);

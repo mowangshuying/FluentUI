@@ -11,7 +11,7 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_titleLabel->setFixedHeight(30);
     m_titleLabel->setWordWrap(true);
     m_titleLabel->setObjectName("titleLabel");
-    m_titleLabel->setText("A Title");
+    m_titleLabel->setText(tr("A Title"));
 
     m_vMainLayout->addWidget(m_titleLabel);
 

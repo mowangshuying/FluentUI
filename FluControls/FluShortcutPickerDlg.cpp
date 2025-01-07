@@ -2,8 +2,8 @@
 
  FluShortcutPickerDlg::FluShortcutPickerDlg(QWidget* parent /*= nullptr*/) : FluMessageBox("", "", parent)
 {
-    setTitle("Active the Shortcut");
-    setInfo("Press the key combination to change the shortcut.");
+    setTitle(tr("Active the Shortcut"));
+    setInfo(tr("Press the key combination to change the shortcut."));
     setFocusPolicy(Qt::StrongFocus);
     setFocus();
 

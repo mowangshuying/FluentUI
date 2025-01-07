@@ -8,15 +8,15 @@ FluTimePickerAP::FluTimePickerAP(QWidget* parent /*= nullptr*/) : FluWidget(pare
     setLayout(m_hMainLayout);
 
     m_hourBtn = new QPushButton;
-    m_hourBtn->setText("hour");
+    m_hourBtn->setText(tr("hour"));
     m_hourBtn->setObjectName("hourBtn");
 
     m_minuteBtn = new QPushButton;
-    m_minuteBtn->setText("minute");
+    m_minuteBtn->setText(tr("minute"));
     m_minuteBtn->setObjectName("minuteBtn");
 
     m_apBtn = new QPushButton;
-    m_apBtn->setText("AM");
+    m_apBtn->setText(tr("AM"));
     m_apBtn->setObjectName("apBtn");
 
     m_hourBtn->setFixedHeight(30);
@@ -53,7 +53,7 @@ FluTimePickerAP::FluTimePickerAP(QWidget* parent /*= nullptr*/) : FluWidget(pare
         QString sMinute = QString::asprintf("%02d", m_timerPickerApView->getMinute());
         m_minuteBtn->setText(sMinute);
 
-        QString sAmOrPm = m_timerPickerApView->isAm() ? "AM" : "PM";
+        QString sAmOrPm = m_timerPickerApView->isAm() ? tr("AM") : tr("PM");
         m_apBtn->setText(sAmOrPm);
     });
 

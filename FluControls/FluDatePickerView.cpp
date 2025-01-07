@@ -33,7 +33,8 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(
     setFixedWidth(324);
 
     // set month data;
-    std::vector<QString> datas{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    std::vector<QString> datas{tr("January"), tr("February"), tr("March"), tr("April"), tr("May"), tr("June"), 
+        tr("July"), tr("August"), tr("September"), tr("October"), tr("November"), tr("December")};
     m_monthView->setAllItems(datas);
 
     // set day data;

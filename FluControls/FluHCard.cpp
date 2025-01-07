@@ -16,10 +16,10 @@ FluHCard::FluHCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     m_iconLabel->setPixmap(pixmap);
 
-    m_titleLabel = new QLabel("this");
+    m_titleLabel = new QLabel;
     m_titleLabel->setText("AnimatedIcon");
 
-    m_contextLabel = new QLabel(this);
+    m_contextLabel = new QLabel;
     m_contextLabel->setText("An element that displays and controls an icon that animates when the user interacts with the controls.");
 
     m_titleLabel->setWordWrap(true);

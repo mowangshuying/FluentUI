@@ -54,7 +54,7 @@ FluAmPmView::FluAmPmView(int nFixedW /*= 80*/, QWidget* parent /*= nullptr*/) : 
     m_apView->setFixedWidth(nFixedW);
     setFixedWidth(nFixedW);
 
-    setAmPm("AM", "PM");
+    setAmPm(tr("AM"), tr("PM"));
     setAm(true);
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
 }

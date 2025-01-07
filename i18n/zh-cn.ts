@@ -798,16 +798,13 @@
     - 按钮的 IsCompact 属性控制其大小。</translation>
     </message>
     <message>
-            <location filename="../FluWinGallery/FluAppBarButtonPage.cpp" line="8"/>
-            <source>App bar buttons differ from standard buttons in several ways:
-    -Their default appearance is a transparent background with a smaller size
-    -You use the Label and Icon properties to set the content instead of the content property.The Content property is ignored.
-    -The button&apos;s IsCompact property control its size.</source>
-            <translation>应用栏按钮在多个方面与标准按钮不同：
-    - 它们的默认外观是透明背景且尺寸较小
-    - 您使用 Label 和 Icon 属性来设置内容，而不是使用 Content 属性。Content 属性被忽略。
-    - 按钮的 IsCompact 属性控制其大小。</translation>
-        </message>
+        <location filename="../FluWinGallery/FluAppBarButtonPage.cpp" line="8"/>
+        <source>App bar buttons differ from standard buttons in several ways:
+-Their default appearance is a transparent background with a smaller size
+-You use the Label and Icon properties to set the content instead of the content property.The Content property is ignored.
+-The button&apos;s IsCompact property control its size.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../FluWinGallery/FluAppBarButtonPage.cpp" line="22"/>
         <source>An AppBarButton with a symbol icon.</source>
@@ -886,152 +883,152 @@
     </message>
 </context>
 <context>
-        <name>FluBasicInputPage</name>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="6"/>
-            <source>Basic input</source>
-            <translation>基本输入</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="8"/>
-            <source>Button</source>
-            <translation>按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="8"/>
-            <source>A control that responds to user input and raises a Click event.</source>
-            <translation>一个响应用户输入并触发点击事件的控件。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="15"/>
-            <source>CheckBox</source>
-            <translation>复选框</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="15"/>
-            <source>A control that a user can select or clear.</source>
-            <translation>一个用户可以选择或清除的控件。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="22"/>
-            <source>ColorPicker</source>
-            <translation>颜色选择器</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="22"/>
-            <source>A control that displays a selectable color spectrum.</source>
-            <translation>一个显示可选择颜色光谱的控件。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="27"/>
-            <source>ComboBox</source>
-            <translation>组合框</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="27"/>
-            <source>A drop-down list of items a user can select from.</source>
-            <translation>一个用户可以从中选择项目的下拉列表。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="32"/>
-            <source>DropDownButton</source>
-            <translation>下拉按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="32"/>
-            <source>A button that displays a flyout of choices when clicked.</source>
-            <translation>一个点击时显示选项弹出框的按钮。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="37"/>
-            <source>HyperlinkButton</source>
-            <translation>超链接按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="37"/>
-            <source>A button that appears as hyperlink text and can navigate to URI or handle a Click event.</source>
-            <translation>以超链接文本形式出现的按钮，可以导航到 URI 或处理点击事件。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="42"/>
-            <source>RadioButton</source>
-            <translation>单选按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="42"/>
-            <source>A control that allows a user to select a single option from a group of options.</source>
-            <translation>允许用户从一组选项中选择一个选项的控件。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="47"/>
-            <source>RatingControl</source>
-            <translation>评分控件</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="47"/>
-            <source>Rate something 1 to 5 stars.</source>
-            <translation>对某物进行1到5星的评分。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="52"/>
-            <source>RepeatButton</source>
-            <translation>重复按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="52"/>
-            <source>A button that raisers its Click event repeatedly from the time it&apos;s pressed until it&apos;s released.</source>
-            <translation>一个按钮，从按下到释放期间会重复触发其点击事件。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="57"/>
-            <source>Slider</source>
-            <translation>滑块</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="57"/>
-            <source>A control that lets the user select from a range of values by moving a Thumb control along a track.</source>
-            <translation>一个控件，允许用户通过沿轨道移动拇指控件从一系列值中进行选择。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="64"/>
-            <source>SplitButton</source>
-            <translation>分割按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="64"/>
-            <source>A two-part button that display a flyout when its secondary part is clicked.</source>
-            <translation>一个两部分的按钮，当点击其次要部分时会显示一个弹出窗口。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="71"/>
-            <source>ToggleButton</source>
-            <translation>切换按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="71"/>
-            <source>A button that can be switched between two states like a CheckBox.</source>
-            <translation>一个可以在两种状态之间切换的按钮，类似于复选框。</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="76"/>
-            <source>ToggleSplitButton</source>
-            <translation>切换分割按钮</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="76"/>
-            <source>A version of the SplitButton where the activation target toggles on/off</source>
-            <translation>一种分割按钮，其激活目标可以切换开/关</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="81"/>
-            <source>ToggleSwitch</source>
-            <translation>切换开关</translation>
-        </message>
-        <message>
-            <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="81"/>
-            <source>A switch that can be toggled between 2 states.</source>
-            <translation>一个可以在两种状态之间切换的开关。</translation>
-        </message>
+    <name>FluBasicInputPage</name>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="6"/>
+        <source>Basic input</source>
+        <translation>基本输入</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="8"/>
+        <source>Button</source>
+        <translation>按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="8"/>
+        <source>A control that responds to user input and raises a Click event.</source>
+        <translation>一个响应用户输入并触发点击事件的控件。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="15"/>
+        <source>CheckBox</source>
+        <translation>复选框</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="15"/>
+        <source>A control that a user can select or clear.</source>
+        <translation>一个用户可以选择或清除的控件。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="22"/>
+        <source>ColorPicker</source>
+        <translation>颜色选择器</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="22"/>
+        <source>A control that displays a selectable color spectrum.</source>
+        <translation>一个显示可选择颜色光谱的控件。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="27"/>
+        <source>ComboBox</source>
+        <translation>组合框</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="27"/>
+        <source>A drop-down list of items a user can select from.</source>
+        <translation>一个用户可以从中选择项目的下拉列表。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="32"/>
+        <source>DropDownButton</source>
+        <translation>下拉按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="32"/>
+        <source>A button that displays a flyout of choices when clicked.</source>
+        <translation>一个点击时显示选项弹出框的按钮。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="37"/>
+        <source>HyperlinkButton</source>
+        <translation>超链接按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="37"/>
+        <source>A button that appears as hyperlink text and can navigate to URI or handle a Click event.</source>
+        <translation>以超链接文本形式出现的按钮，可以导航到 URI 或处理点击事件。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="42"/>
+        <source>RadioButton</source>
+        <translation>单选按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="42"/>
+        <source>A control that allows a user to select a single option from a group of options.</source>
+        <translation>允许用户从一组选项中选择一个选项的控件。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="47"/>
+        <source>RatingControl</source>
+        <translation>评分控件</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="47"/>
+        <source>Rate something 1 to 5 stars.</source>
+        <translation>对某物进行1到5星的评分。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="52"/>
+        <source>RepeatButton</source>
+        <translation>重复按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="52"/>
+        <source>A button that raisers its Click event repeatedly from the time it&apos;s pressed until it&apos;s released.</source>
+        <translation>一个按钮，从按下到释放期间会重复触发其点击事件。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="57"/>
+        <source>Slider</source>
+        <translation>滑块</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="57"/>
+        <source>A control that lets the user select from a range of values by moving a Thumb control along a track.</source>
+        <translation>一个控件，允许用户通过沿轨道移动拇指控件从一系列值中进行选择。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="64"/>
+        <source>SplitButton</source>
+        <translation>分割按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="64"/>
+        <source>A two-part button that display a flyout when its secondary part is clicked.</source>
+        <translation>一个两部分的按钮，当点击其次要部分时会显示一个弹出窗口。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="71"/>
+        <source>ToggleButton</source>
+        <translation>切换按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="71"/>
+        <source>A button that can be switched between two states like a CheckBox.</source>
+        <translation>一个可以在两种状态之间切换的按钮，类似于复选框。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="76"/>
+        <source>ToggleSplitButton</source>
+        <translation>切换分割按钮</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="76"/>
+        <source>A version of the SplitButton where the activation target toggles on/off</source>
+        <translation>一种分割按钮，其激活目标可以切换开/关</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="81"/>
+        <source>ToggleSwitch</source>
+        <translation>切换开关</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="81"/>
+        <source>A switch that can be toggled between 2 states.</source>
+        <translation>一个可以在两种状态之间切换的开关。</translation>
+    </message>
 </context>
 <context>
     <name>FluBorderPage</name>
@@ -2471,6 +2468,11 @@
         <translation>动画图标</translation>
     </message>
     <message>
+        <location filename="../FluWinGallery/FluHomePage.cpp" line="16"/>
+        <source>Recently added samples</source>
+        <translation>最近添加的示例</translation>
+    </message>
+    <message>
         <location filename="../FluWinGallery/FluHomePage.cpp" line="23"/>
         <source>An element that displays and controls an icon that animates when the user interacts with the controls.</source>
         <translation>一个显示和控制图标的元素，当用户与控件交互时，该图标会动画化。</translation>
@@ -3650,12 +3652,12 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="63"/>
         <source>FluentUI Gallery(Cpp &amp; Qt).</source>
-        <translation>FluentUI 画廊（Cpp 和 Qt）。</translation>
+        <translation>FluentUI Gallery(Cpp &amp; Qt).</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="64"/>
         <source>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
-        <translation>@2023-2024 FluentUI For Qt &amp; Cpp。版权所有。</translation>
+        <translation>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="65"/>
@@ -3685,7 +3687,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="98"/>
         <source>Microsoft/WinUI-Gallery</source>
-        <translation>微软/WinUI-画廊</translation>
+        <translation type="unfinished">Microsoft/WinUI-Gallery</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="101"/>

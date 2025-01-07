@@ -13,7 +13,7 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
 
     auto recentlyAddedSamplesLabel = new QLabel;
     auto recentlyUpdatedSamplesLabel = new QLabel;
-    recentlyAddedSamplesLabel->setText("Recently added samples");
+    recentlyAddedSamplesLabel->setText(tr("Recently added samples"));
     auto recentlyAddedSamplesLayout = new FluFlowLayout;
     auto recentlyAddedSamplesLayoutWrap = new QWidget(this);
     recentlyAddedSamplesLayoutWrap->setLayout(recentlyAddedSamplesLayout);

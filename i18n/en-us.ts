@@ -2458,6 +2458,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../FluWinGallery/FluHomePage.cpp" line="16"/>
+        <source>Recently added samples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../FluWinGallery/FluHomePage.cpp" line="23"/>
         <source>An element that displays and controls an icon that animates when the user interacts with the controls.</source>
         <translation type="unfinished"></translation>

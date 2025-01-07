@@ -34,56 +34,56 @@ FluBasicInputPage::FluBasicInputPage(QWidget* parent /*= nullptr*/) : FluATitleP
     getFWScrollView()->getMainLayout()->addWidget(dropDownButtonCard);
     connect(dropDownButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto hyperlinkButtonCard = new FluHCard(QPixmap("../res/ControlImages/HyperlinkButton.png"), "HyperlinkButton", "A button that appears as hyperlink text and can navigate to URI or handle a Click event.");
+    auto hyperlinkButtonCard = new FluHCard(QPixmap("../res/ControlImages/HyperlinkButton.png"), tr("HyperlinkButton"), tr("A button that appears as hyperlink text and can navigate to URI or handle a Click event."));
     hyperlinkButtonCard->setKey("HyperlinkButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(hyperlinkButtonCard);
     connect(hyperlinkButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto radioButtonCard = new FluHCard(QPixmap("../res/ControlImages/RadioButton.png"), "RadioButton", "A control that allows a user to select a single option from a group of options.");
+    auto radioButtonCard = new FluHCard(QPixmap("../res/ControlImages/RadioButton.png"), tr("RadioButton"), tr("A control that allows a user to select a single option from a group of options."));
     radioButtonCard->setKey("RadioButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(radioButtonCard);
     connect(radioButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto ratingControlCard = new FluHCard(QPixmap("../res/ControlImages/RatingControl.png"), "RatingControl", "Rate something 1 to 5 stars.");
+    auto ratingControlCard = new FluHCard(QPixmap("../res/ControlImages/RatingControl.png"), tr("RatingControl"), tr("Rate something 1 to 5 stars."));
     ratingControlCard->setKey("RatingControlPage");
     getFWScrollView()->getMainLayout()->addWidget(ratingControlCard);
     connect(ratingControlCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto repeatButtonCard = new FluHCard(QPixmap("../res/ControlImages/RepeatButton.png"), "RepeatButton", "A button that raisers its Click event repeatedly from the time it's pressed until it's released.");
+    auto repeatButtonCard = new FluHCard(QPixmap("../res/ControlImages/RepeatButton.png"), tr("RepeatButton"), tr("A button that raisers its Click event repeatedly from the time it's pressed until it's released."));
     repeatButtonCard->setKey("RepeatButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(repeatButtonCard);
     connect(repeatButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto sliderCard = new FluHCard(QPixmap("../res/ControlImages/Slider.png"), "Slider", "A control that lets the user select from a range of values by moving a Thumb control along a track.");
+    auto sliderCard = new FluHCard(QPixmap("../res/ControlImages/Slider.png"), tr("Slider"), tr("A control that lets the user select from a range of values by moving a Thumb control along a track."));
     sliderCard->setKey("SliderPage");
 
     FluCircleDot::setCircleDot(sliderCard, 20, 20);
     getFWScrollView()->getMainLayout()->addWidget(sliderCard);
     connect(sliderCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto splitButtonCard = new FluHCard(QPixmap("../res/ControlImages/SplitButton.png"), "SplitButton", "A two-part button that display a flyout when its secondary part is clicked.");
+    auto splitButtonCard = new FluHCard(QPixmap("../res/ControlImages/SplitButton.png"), tr("SplitButton"), tr("A two-part button that display a flyout when its secondary part is clicked."));
     splitButtonCard->setKey("SplitButtonPage");
 
     FluCircleDot::setCircleDot(splitButtonCard, 20, 20);
     getFWScrollView()->getMainLayout()->addWidget(splitButtonCard);
     connect(splitButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto toggleButtonCard = new FluHCard(QPixmap("../res/ControlImages/ToggleButton.png"), "ToggleButton", "A button that can be switched between two states like a CheckBox.");
+    auto toggleButtonCard = new FluHCard(QPixmap("../res/ControlImages/ToggleButton.png"), tr("ToggleButton"), tr("A button that can be switched between two states like a CheckBox."));
     toggleButtonCard->setKey("ToggleButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(toggleButtonCard);
     connect(toggleButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto toggleSplitButtonCard = new FluHCard(QPixmap("../res/ControlImages/ToggleSplitButton.png"), "ToggleSplitButton", "A version of the SplitButton where the activation target toggles on/off");
+    auto toggleSplitButtonCard = new FluHCard(QPixmap("../res/ControlImages/ToggleSplitButton.png"), tr("ToggleSplitButton"), tr("A version of the SplitButton where the activation target toggles on/off"));
     toggleSplitButtonCard->setKey("ToggleSplitButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(toggleSplitButtonCard);
     connect(toggleSplitButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto toggleSwitchCard = new FluHCard(QPixmap("../res/ControlImages/ToggleSwitch.png"), "ToggleSwitch", "A switch that can be toggled between 2 states.");
+    auto toggleSwitchCard = new FluHCard(QPixmap("../res/ControlImages/ToggleSwitch.png"), tr("ToggleSwitch"), tr("A switch that can be toggled between 2 states."));
     toggleSwitchCard->setKey("ToggleSwitchPage");
     getFWScrollView()->getMainLayout()->addWidget(toggleSwitchCard);
     connect(toggleSwitchCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBasicInputPage.qss", this);
+    onThemeChanged();
 }
 
 void FluBasicInputPage::onThemeChanged()

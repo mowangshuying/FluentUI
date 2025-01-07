@@ -20,7 +20,7 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     recentlyAddedSamplesLayout->setContentsMargins(40, 0, 40, 0);
     recentlyAddedSamplesLayout->setSpacing(10, 10);
 
-    auto AnnotatedScrollBarCard = new FluHCard();
+    auto AnnotatedScrollBarCard = new FluHCard(QPixmap("../res/ControlImages/Placeholder.png"), tr("AnimatedIcon"), tr("An element that displays and controls an icon that animates when the user interacts with the controls."));
     FluCircleDot::setCircleDot(AnnotatedScrollBarCard, 20, 20);
     recentlyAddedSamplesLayout->addWidget(AnnotatedScrollBarCard);
 

@@ -9,6 +9,7 @@
 class FluCalendarView;
 class FluCalendarSelectMonthView : public FluWidget
 {
+    Q_OBJECT
   public:
     FluCalendarSelectMonthView(QWidget* parent = nullptr);
 

@@ -409,7 +409,7 @@
     <ClInclude Include="FluCalendarDef.h" />
     <QtMoc Include="FluCalendarSelectDayView.h" />
     <QtMoc Include="FluCalendarItem.h" />
-    <ClInclude Include="FluCalendarSelectMonthView.h" />
+    <QtMoc Include="FluCalendarSelectMonthView.h" />
     <ClInclude Include="FluCalendarSelectYearView.h" />
     <QtMoc Include="FluColorLabel.h" />
     <QtMoc Include="FluCalendarViewTitle.h" />

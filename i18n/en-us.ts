@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>FluAEmptyPage</name>
+    <message>
+        <location filename="../FluWinGallery/FluAEmptyPage.cpp" line="39"/>
+        <source>Documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluAEmptyPage.cpp" line="46"/>
+        <source>Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluAEmptyPage.cpp" line="71"/>
+        <source>Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px Semibold.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FluATitlePage</name>
     <message>
         <location filename="../FluWinGallery/FluATitlePage.cpp" line="18"/>
@@ -909,6 +927,96 @@
     <message>
         <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="32"/>
         <source>A button that displays a flyout of choices when clicked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="37"/>
+        <source>HyperlinkButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="37"/>
+        <source>A button that appears as hyperlink text and can navigate to URI or handle a Click event.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="42"/>
+        <source>RadioButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="42"/>
+        <source>A control that allows a user to select a single option from a group of options.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="47"/>
+        <source>RatingControl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="47"/>
+        <source>Rate something 1 to 5 stars.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="52"/>
+        <source>RepeatButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="52"/>
+        <source>A button that raisers its Click event repeatedly from the time it&apos;s pressed until it&apos;s released.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="57"/>
+        <source>Slider</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="57"/>
+        <source>A control that lets the user select from a range of values by moving a Thumb control along a track.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="64"/>
+        <source>SplitButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="64"/>
+        <source>A two-part button that display a flyout when its secondary part is clicked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="71"/>
+        <source>ToggleButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="71"/>
+        <source>A button that can be switched between two states like a CheckBox.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="76"/>
+        <source>ToggleSplitButton</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="76"/>
+        <source>A version of the SplitButton where the activation target toggles on/off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="81"/>
+        <source>ToggleSwitch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluBasicInputPage.cpp" line="81"/>
+        <source>A switch that can be toggled between 2 states.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2344,8 +2452,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../FluWinGallery/FluHomePage.cpp" line="23"/>
         <location filename="../FluWinGallery/FluHomePage.cpp" line="47"/>
         <source>AnimatedIcon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluHomePage.cpp" line="23"/>
+        <source>An element that displays and controls an icon that animates when the user interacts with the controls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

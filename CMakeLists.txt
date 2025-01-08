@@ -34,6 +34,12 @@ add_custom_target(resource_copy
     COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
     ${CMAKE_CURRENT_SOURCE_DIR}/code
     ${PROJECT_BINARY_DIR}/code
+    COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
+    ${CMAKE_CURRENT_SOURCE_DIR}/i18n
+    ${PROJECT_BINARY_DIR}/i18n
+    COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
+    ${CMAKE_CURRENT_SOURCE_DIR}/config
+    ${PROJECT_BINARY_DIR}/config
 )
 
 install(DIRECTORY res

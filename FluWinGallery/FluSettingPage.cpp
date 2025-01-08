@@ -54,12 +54,19 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     languageSelectBox->getComboBox()->addItem(tr("en-US"));
     languageSelectBox->getComboBox()->addItem(tr("zh-CN"));
 
-  connect(languageSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
+    if (FluConfigUtils::getUtils()->getLanguage() == "en-US")
+        languageSelectBox->getComboBox()->setIndex(0);
+    else if (FluConfigUtils::getUtils()->getLanguage() == "zh-CN")
+        languageSelectBox->getComboBox()->setIndex(1);
+
+    connect(languageSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == 0)
             FluConfigUtils::getUtils()->setLanguage("en-US");
         else
             FluConfigUtils::getUtils()->setLanguage("zh-CN");
     });
+
+
 
     m_vScrollView->getMainLayout()->addWidget(languageSelectBox);
 

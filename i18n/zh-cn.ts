@@ -3414,6 +3414,16 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <source>LightGray</source>
         <translation>浅灰色</translation>
     </message>
+    <message>
+        <location filename="../FluWinGallery/FluProgressRingPage.cpp" line="80"/>
+        <source>An indeterminate ring.</source>
+        <translation>一个不确定的环。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluProgressRingPage.cpp" line="107"/>
+        <source>An busy ring.</source>
+        <translation>忙碌的环。</translation>
+    </message>
 </context>
 <context>
     <name>FluRadioButtonPage</name>

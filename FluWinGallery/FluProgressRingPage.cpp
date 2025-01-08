@@ -77,7 +77,7 @@ void FluProgressRingPage::addIndeterminateProgressRing()
 void FluProgressRingPage::addIndeterminateRing()
 {
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("An indeterminate ring.");
+    displayBox->setTitle(tr("An indeterminate ring."));
     displayBox->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode2.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
@@ -104,7 +104,7 @@ void FluProgressRingPage::addIndeterminateRing()
 void FluProgressRingPage::addBusyRing()
 {
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle("An busy ring.");
+    displayBox->setTitle(tr("An busy ring."));
     displayBox->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode3.md");
     displayBox->setBodyWidgetFixedHeight(96);
 

@@ -36,7 +36,7 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
     m_timer->setInterval(400);
     connect(m_timer, &QTimer::timeout, this, &FluRoundMenu::onShowMenuTimeOut);
 
-    setShadowEffect();
+    //setShadowEffect();
     m_hBoxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
     m_hBoxLayout->setContentsMargins(12, 8, 12, 20);
 
@@ -67,15 +67,15 @@ FluRoundMenuView* FluRoundMenu::getView()
     return m_roundMenuView;
 }
 
-void FluRoundMenu::setShadowEffect(int blurRadius /*= 30*/, QPoint offset /*= QPoint(0, 8)*/, QColor color /*= QColor(0, 0, 0, 30)*/)
-{
-    m_shadowEffect = new QGraphicsDropShadowEffect(m_roundMenuView);
-    m_shadowEffect->setBlurRadius(blurRadius);
-    m_shadowEffect->setOffset(offset);
-    m_shadowEffect->setColor(color);
-    m_roundMenuView->setGraphicsEffect(nullptr);
-    m_roundMenuView->setGraphicsEffect(m_shadowEffect);
-}
+// void FluRoundMenu::setShadowEffect(int blurRadius /*= 30*/, QPoint offset /*= QPoint(0, 8)*/, QColor color /*= QColor(0, 0, 0, 30)*/)
+// {
+//     m_shadowEffect = new QGraphicsDropShadowEffect(m_roundMenuView);
+//     m_shadowEffect->setBlurRadius(blurRadius);
+//     m_shadowEffect->setOffset(offset);
+//     m_shadowEffect->setColor(color);
+//     m_roundMenuView->setGraphicsEffect(nullptr);
+//     m_roundMenuView->setGraphicsEffect(m_shadowEffect);
+// }
 
 void FluRoundMenu::setParentMenu(FluRoundMenu* menu, QListWidgetItem* item)
 {
@@ -158,8 +158,10 @@ QListWidgetItem* FluRoundMenu::createActionItem(QAction* action, QAction* preAct
     adjustItemText(item, action);
     if (!action->isEnabled())
         item->setFlags(Qt::NoItemFlags);
-    item->setData(Qt::UserRole, QVariant::fromValue(action));
-    action->setProperty("item", QVariant::fromValue(item));
+    item->setData(Qt::UserRole, QVariant::fromValue<QAction*>(action));
+
+    auto fluAction = (FluAction*)action;
+    fluAction->setListWidgetItem(item);
 
     connect(action, &QAction::changed, this, &FluRoundMenu::onActionChanged);
 
@@ -273,7 +275,9 @@ void FluRoundMenu::insertAction(QAction* before, QAction* action)
     if (itf == m_actions.end())
         return;
 
-    QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
+    //QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
+    auto fluAction = (FluAction*)action;
+    QListWidgetItem* beforeItem = fluAction->getListWidgetItem();
     if (beforeItem == nullptr)
         return;
 
@@ -308,7 +312,9 @@ void FluRoundMenu::removeAction(QAction* action)
 
     int nIndex = itf - m_actions.begin();
     m_actions.erase(itf);
-    action->setProperty("item", QVariant::fromValue(nullptr));
+
+    auto fluAction = (FluAction*)action;
+    fluAction->setListWidgetItem(nullptr);
 
     QListWidgetItem* item = m_roundMenuView->takeItem(nIndex);
     item->setData(Qt::UserRole, QVariant::fromValue(nullptr));
@@ -355,7 +361,10 @@ void FluRoundMenu::insertMenu(QAction* before, FluRoundMenu* menu)
     FluSubMenuItemWidget* widget = createSubMenuItem(menu);
     QListWidgetItem* item = widget->getItem();
 
-    QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
+    //QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
+    auto fluAction = (FluAction*)before;
+    QListWidgetItem* beforeItem = fluAction->getListWidgetItem();
+
     int nRow = m_roundMenuView->row(beforeItem);
     m_roundMenuView->insertItem(nRow, item);
     m_roundMenuView->setItemWidget(item, widget);
@@ -503,7 +512,9 @@ void FluRoundMenu::onItemEntered(QListWidgetItem* item)
 void FluRoundMenu::onActionChanged()
 {
     QAction* action = (QAction*)(sender());
-    QListWidgetItem* item = action->property("item").value<QListWidgetItem*>();
+    //QListWidgetItem* item = action->property("item").value<QListWidgetItem*>();
+    auto fluAction = (FluAction*)action;
+    auto item = fluAction->getListWidgetItem();
     item->setIcon(makeItemIcon(action));
 
     adjustItemText(item, action);

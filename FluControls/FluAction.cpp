@@ -34,6 +34,16 @@ void FluAction::setAwesomeType(FluAwesomeType type)
         setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
 }
 
+void FluAction::setListWidgetItem(QListWidgetItem* item)
+{
+    m_listWidgetItem = item;
+}
+
+QListWidgetItem* FluAction::getListWidgetItem()
+{
+    return m_listWidgetItem;
+}
+
 void FluAction::onThemeChanged()
 {
 }

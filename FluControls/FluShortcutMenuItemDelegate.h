@@ -4,6 +4,7 @@
 #include "FluMenuItemDelegate.h"
 #include <QFontMetrics>
 #include <QStyleOptionViewItem>
+#include <QAction>
 
 class FluShortcutMenuItemDelegate : public FluMenuItemDelegate
 {

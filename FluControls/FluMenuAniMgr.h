@@ -5,7 +5,10 @@
 #include <QApplication>
 #include <QScreen>
 #include <QHoverEvent>
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 #include <QtMinMax>
+#endif
 
 #include "FluRoundMenuView.h"
 #include "FluMenuAniType.h"

@@ -24,7 +24,7 @@ class FluRoundMenu : public QMenu
 
     FluRoundMenuView* getView();
 
-    void setShadowEffect(int blurRadius = 30, QPoint offset = QPoint(0, 8), QColor color = QColor(0, 0, 0, 30));
+    //void setShadowEffect(int blurRadius = 30, QPoint offset = QPoint(0, 8), QColor color = QColor(0, 0, 0, 30));
 
     void setParentMenu(FluRoundMenu* menu, QListWidgetItem* item);
 
@@ -115,8 +115,6 @@ class FluRoundMenu : public QMenu
     bool m_bHideBySystem;
     int m_itemHeight;
 
-    // QString m_title;
-    // QPixmap m_icon;
     FluAction* m_mainAction;
 
     FluRoundMenu* m_parentMenu = nullptr;

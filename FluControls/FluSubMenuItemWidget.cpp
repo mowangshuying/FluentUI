@@ -6,7 +6,11 @@ FluSubMenuItemWidget::FluSubMenuItemWidget(FluRoundMenu* menu, QListWidgetItem* 
     m_item = item;
 }
 
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 void FluSubMenuItemWidget::enterEvent(QEnterEvent* event)
+#else
+void FluSubMenuItemWidget::enterEvent(QEvent* event)
+#endif
 {
     QWidget::enterEvent(event);
     emit showMenuSig(m_item);

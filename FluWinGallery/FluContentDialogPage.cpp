@@ -16,7 +16,7 @@ FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluA
     showDlgBtn->setFixedSize(100, 30);
 
     connect(showDlgBtn, &FluPushButton::clicked, [=]() {
-        FluMessageBox messageBox(tr("Save your work?"), tr("Lorem ipsum dolor sit amet, adipisicing elit."), window());
+        FluMessageBox messageBox(tr("Save your work?"), tr("This just a message box."), window());
         messageBox.exec();
     });
 

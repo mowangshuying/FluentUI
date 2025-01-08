@@ -1548,7 +1548,7 @@
     </message>
     <message>
         <location filename="../FluWinGallery/FluContentDialogPage.cpp" line="19"/>
-        <source>Lorem ipsum dolor sit amet, adipisicing elit.</source>
+        <source>This just a message box.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2428,6 +2428,16 @@
         <source>TextBox</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="827"/>
+        <source>Close Gallery Window?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="827"/>
+        <source>choose &quot;Ok&quot; to close. choose &quot;Cancel&quot; do nothing.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FluHomePage</name>
@@ -3202,6 +3212,19 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
     </message>
 </context>
 <context>
+    <name>FluMessageBox</name>
+    <message>
+        <location filename="../FluControls/FluMessageBox.cpp" line="34"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluControls/FluMessageBox.cpp" line="35"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FluNavigationPage</name>
     <message>
         <location filename="../FluWinGallery/FluNavigationPage.cpp" line="8"/>
@@ -3678,57 +3701,57 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="70"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="77"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="76"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="83"/>
         <source>FluentUI Gallery(Cpp &amp; Qt).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="77"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="84"/>
         <source>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="78"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="85"/>
         <source>0.3.7</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="86"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="93"/>
         <source>To clone thepository</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="97"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="104"/>
         <source>File a bug or Suggest a sample.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="100"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="107"/>
         <source>Get Start.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="108"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="115"/>
         <source>Dependencies &amp; references</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="111"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="118"/>
         <source>Microsoft/WinUI-Gallery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="114"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="121"/>
         <source>wangwenx190/framelesshelper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="117"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="124"/>
         <source>stdware/qwindowkit</source>
         <translation type="unfinished"></translation>
     </message>

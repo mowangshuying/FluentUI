@@ -31,8 +31,8 @@ FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDi
     m_okBtn = new FluStyleButton;
     m_cancelBtn = new FluPushButton;
 
-    m_okBtn->setText("OK");
-    m_cancelBtn->setText("Cancel");
+    m_okBtn->setText(tr("OK"));
+    m_cancelBtn->setText(tr("Cancel"));
 
     m_titleLabel->setText(title);
     m_infoLabel->setText(info);

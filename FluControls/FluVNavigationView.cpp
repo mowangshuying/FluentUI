@@ -50,9 +50,18 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
         auto item = getItemByText(text);
         if (item != nullptr)
         {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            emit searchKeyChanged(iconTextItem->getKey());
+            if (item->getItemType() == FluVNavigationItemType::IconText)
+            {
+                auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+                iconTextItem->onItemClickedDirect();
+                emit searchKeyChanged(iconTextItem->getKey());
+            }
+            else if (item->getItemType() == FluVNavigationItemType::Setting)
+            {
+                auto settingsItem = (FluVNavigationSettingsItem *)item;
+                settingsItem->onItemClicked();
+                emit searchKeyChanged(settingsItem->getKey());
+            }
         }
     });
 

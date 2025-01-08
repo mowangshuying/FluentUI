@@ -1,8 +1,9 @@
 #include "FluConfigUtils.h"
 
+FluConfigUtils* FluConfigUtils::m_configUtils = nullptr;
 FluConfigUtils::FluConfigUtils(QObject* parent /*= nullptr*/) : QObject(parent)
 {
-    m_settings = new QSettings("../config/config.ini");
+    m_settings = new QSettings("../config/config.ini", QSettings::IniFormat);
 }
 
 FluConfigUtils::~FluConfigUtils()
@@ -38,5 +39,21 @@ void FluConfigUtils::setTheme(FluTheme theme)
         m_settings->setValue("theme", "Dark");
     }
 
+    m_settings->endGroup();
+}
+
+QString FluConfigUtils::getLanguage()
+{
+    m_settings->beginGroup("config");
+    QString languageStr = m_settings->value("language", "en-US").toString();
+    m_settings->endGroup();
+
+    return languageStr;
+}
+
+void FluConfigUtils::setLanguage(QString language)
+{
+    m_settings->beginGroup("config");
+    m_settings->setValue("language", language);
     m_settings->endGroup();
 }

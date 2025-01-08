@@ -3635,67 +3635,92 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>深色</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="47"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="45"/>
         <source>Navigation style</source>
         <translation>导航样式</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="49"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="47"/>
         <source>Left</source>
         <translation>左侧</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="50"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="48"/>
         <source>Top</source>
         <translation>顶部</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="63"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="52"/>
+        <source>Language</source>
+        <translation>语言</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="52"/>
+        <source>Select which language to display.</source>
+        <translation>选择要显示的语言。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="54"/>
+        <source>en-US</source>
+        <translation>英语</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="55"/>
+        <source>zh-CN</source>
+        <translation>简体中文</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="70"/>
+        <source>About</source>
+        <translation>关于</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="76"/>
         <source>FluentUI Gallery(Cpp &amp; Qt).</source>
         <translation>FluentUI Gallery(Cpp &amp; Qt).</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="64"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="77"/>
         <source>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
         <translation>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="65"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="78"/>
         <source>0.3.7</source>
         <translation>0.3.7</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="73"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="86"/>
         <source>To clone thepository</source>
         <translation>克隆存储库</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="84"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="97"/>
         <source>File a bug or Suggest a sample.</source>
         <translation>提交错误或建议示例。</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="87"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="100"/>
         <source>Get Start.</source>
         <translation>开始。</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="95"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="108"/>
         <source>Dependencies &amp; references</source>
         <translation>依赖项和参考</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="98"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="111"/>
         <source>Microsoft/WinUI-Gallery</source>
-        <translation type="unfinished">Microsoft/WinUI-Gallery</translation>
+        <translation>Microsoft/WinUI-Gallery</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="101"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="114"/>
         <source>wangwenx190/framelesshelper</source>
         <translation>wangwenx190/framelesshelper</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="104"/>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="117"/>
         <source>stdware/qwindowkit</source>
         <translation>stdware/qwindowkit</translation>
     </message>

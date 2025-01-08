@@ -10,12 +10,23 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
 
     FluLogUtils::__init();
-
-    // load qm
-    static QTranslator translator;
-    bool bLoad = translator.load("../i18n/zh-cn.qm");
-    LOG_DEBUG << "Load:" << bLoad;
-    app.installTranslator(&translator);
+    QTranslator translator;
+    if (FluConfigUtils::getUtils()->getLanguage() == "zh-CN")
+    {
+        bool bLoad = translator.load("../i18n/zh-cn.qm");
+        if (bLoad)
+        {
+            app.installTranslator(&translator);
+        }
+    }
+    else
+    {
+        bool bLoad = translator.load("../i18n/en-US.qm");
+        if (bLoad)
+        {
+            app.installTranslator(&translator);
+        }
+    }
 
     FluGalleryWindow w;
     w.show();

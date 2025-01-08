@@ -788,22 +788,15 @@
         <translation>应用栏按钮</translation>
     </message>
     <message>
-        <source>App bar buttons differ from standard buttons in several ways:
-    -Their default appearance is a transparent background with a smaller size
-    -You use the Label and Icon properties to set the content instead of the content property.The Content property is ignored.
-    -The button&apos;s IsCompact property control its size.</source>
-        <translation type="vanished">应用栏按钮在多个方面与标准按钮不同：
-    - 它们的默认外观是透明背景且尺寸较小
-    - 使用 Label 和 Icon 属性设置内容，而不是使用 Content 属性。Content 属性被忽略。
-    - 按钮的 IsCompact 属性控制其大小。</translation>
-    </message>
-    <message>
         <location filename="../FluWinGallery/FluAppBarButtonPage.cpp" line="8"/>
         <source>App bar buttons differ from standard buttons in several ways:
 -Their default appearance is a transparent background with a smaller size
 -You use the Label and Icon properties to set the content instead of the content property.The Content property is ignored.
 -The button&apos;s IsCompact property control its size.</source>
-        <translation type="unfinished"></translation>
+        <translation>应用栏按钮在多个方面与标准按钮不同：
+    - 它们的默认外观是透明背景且尺寸较小
+    - 使用 Label 和 Icon 属性设置内容，而不是使用 Content 属性。Content 属性被忽略。
+    - 按钮的 IsCompact 属性控制其大小。</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluAppBarButtonPage.cpp" line="22"/>
@@ -1612,6 +1605,21 @@
 </context>
 <context>
     <name>FluDatePicker</name>
+    <message>
+        <location filename="../FluControls/FluDatePicker.cpp" line="11"/>
+        <source>month</source>
+        <translation>月</translation>
+    </message>
+    <message>
+        <location filename="../FluControls/FluDatePicker.cpp" line="15"/>
+        <source>day</source>
+        <translation>日</translation>
+    </message>
+    <message>
+        <location filename="../FluControls/FluDatePicker.cpp" line="19"/>
+        <source>year</source>
+        <translation>年</translation>
+    </message>
     <message>
         <location filename="../FluControls/FluDatePicker.cpp" line="51"/>
         <source>January</source>
@@ -3972,6 +3980,19 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <location filename="../FluWinGallery/FluTextPage.cpp" line="38"/>
         <source>A single-line or multi-line plain text field.</source>
         <translation>一个单行或多行纯文本字段。</translation>
+    </message>
+</context>
+<context>
+    <name>FluTimePicker24H</name>
+    <message>
+        <location filename="../FluControls/FluTimePicker24H.cpp" line="11"/>
+        <source>hour</source>
+        <translation>时</translation>
+    </message>
+    <message>
+        <location filename="../FluControls/FluTimePicker24H.cpp" line="15"/>
+        <source>minute</source>
+        <translation>分</translation>
     </message>
 </context>
 <context>

@@ -8,15 +8,15 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     setLayout(m_hMainLayout);
 
     m_monthBtn = new QPushButton;
-    m_monthBtn->setText("month");
+    m_monthBtn->setText(tr("month"));
     m_monthBtn->setObjectName("monthBtn");
 
     m_dayBtn = new QPushButton;
-    m_dayBtn->setText("day");
+    m_dayBtn->setText(tr("day"));
     m_dayBtn->setObjectName("dayBtn");
 
     m_yearBtn = new QPushButton;
-    m_yearBtn->setText("year");
+    m_yearBtn->setText(tr("year"));
     m_yearBtn->setObjectName("yearBtn");
 
     m_monthBtn->setFixedWidth(140);

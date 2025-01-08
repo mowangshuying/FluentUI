@@ -1603,6 +1603,21 @@
 <context>
     <name>FluDatePicker</name>
     <message>
+        <location filename="../FluControls/FluDatePicker.cpp" line="11"/>
+        <source>month</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluControls/FluDatePicker.cpp" line="15"/>
+        <source>day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluControls/FluDatePicker.cpp" line="19"/>
+        <source>year</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../FluControls/FluDatePicker.cpp" line="51"/>
         <source>January</source>
         <translation type="unfinished"></translation>
@@ -3954,6 +3969,19 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../FluWinGallery/FluTextPage.cpp" line="38"/>
         <source>A single-line or multi-line plain text field.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FluTimePicker24H</name>
+    <message>
+        <location filename="../FluControls/FluTimePicker24H.cpp" line="11"/>
+        <source>hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluControls/FluTimePicker24H.cpp" line="15"/>
+        <source>minute</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

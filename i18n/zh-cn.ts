@@ -1545,6 +1545,11 @@
         <translation>一个带有内容的基本内容对话框。</translation>
     </message>
     <message>
+        <location filename="../FluWinGallery/FluContentDialogPage.cpp" line="15"/>
+        <source>Show dialog</source>
+        <translation>显示对话框</translation>
+    </message>
+    <message>
         <location filename="../FluWinGallery/FluContentDialogPage.cpp" line="19"/>
         <source>Save your work?</source>
         <translation>保存您的工作吗？</translation>

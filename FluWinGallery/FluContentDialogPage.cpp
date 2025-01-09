@@ -12,7 +12,7 @@ FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluA
     displayBox->setBodyWidgetFixedHeight(56);
 
     auto showDlgBtn = new FluPushButton;
-    showDlgBtn->setText("Show dialog");
+    showDlgBtn->setText(tr("Show dialog"));
     showDlgBtn->setFixedSize(100, 30);
 
     connect(showDlgBtn, &FluPushButton::clicked, [=]() {

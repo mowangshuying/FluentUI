@@ -1542,6 +1542,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../FluWinGallery/FluContentDialogPage.cpp" line="15"/>
+        <source>Show dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../FluWinGallery/FluContentDialogPage.cpp" line="19"/>
         <source>Save your work?</source>
         <translation type="unfinished"></translation>

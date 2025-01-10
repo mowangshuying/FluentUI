@@ -824,18 +824,18 @@ void FluGalleryWindow::resizeEvent(QResizeEvent *event)
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)
 {
-    // FluMessageBox messageBox(tr("Close Gallery Window?"), tr("choose \"Ok\" to close. choose \"Cancel\" do nothing."), this);
-    // int nExec = messageBox.exec();
-    // if (nExec == QDialog::Rejected)
-    //{
-    //    event->ignore();
-    //    return;
-    //}
-    // else if (nExec == QDialog::Accepted)
-    //{
-    //    //event->accept();
-    //    QApplication::quit();
-    //}
+     FluMessageBox messageBox(tr("Close Gallery Window?"), tr("choose \"Ok\" to close. choose \"Cancel\" do nothing."), this);
+     int nExec = messageBox.exec();
+     if (nExec == QDialog::Rejected)
+    {
+        event->ignore();
+        return;
+    }
+     else if (nExec == QDialog::Accepted)
+    {
+        //event->accept();
+        QApplication::quit();
+    }
 }
 
 void FluGalleryWindow::onThemeChanged()

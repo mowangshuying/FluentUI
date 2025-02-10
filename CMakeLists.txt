@@ -54,6 +54,13 @@ install(DIRECTORY code
     DESTINATION .
 )
 
+install(DIRECTORY config
+    DESTINATION .
+)
+
+install(DIRECTORY i18n
+    DESTINATION .
+)
 
 set(CPACK_PACKAGE_FILE_NAME "FluGalleryWin64Msvc")
 set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)

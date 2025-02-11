@@ -156,11 +156,17 @@ void FluScrollBar::adjustScrollBarPosAndSize(QSize scrollAreaSize)
     {
         resize(12, scrollAreaSize.height() - 2);
         move(scrollAreaSize.width() - 13, 1);
+
+        adjustHandleSize();
+        adjustHandlePos();
     }
     else if (m_orientation == Qt::Horizontal)
     {
         resize(scrollAreaSize.width() - 2, 12);
         move(1, scrollAreaSize.height() - 13);
+
+        adjustHandleSize();
+        adjustHandlePos();
     }
 }
 

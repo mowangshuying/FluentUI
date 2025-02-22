@@ -5,6 +5,10 @@ FluTreeView {
     outline: none;
 }
 
+FluTreeView::disabled {
+	color:rgba(0,0,0,118);
+}
+
 FluTreeView::item {
     color: black;
     background-color: transparent;

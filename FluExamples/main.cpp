@@ -306,7 +306,10 @@ int main(int argc, char **argv)
     // FluRoundMenuDemo demo;
     // demo.show();
 
-    FluShortcutPickerDemo demo;
+    //FluShortcutPickerDemo demo;
+    //demo.show();
+
+    FluTreeViewDemo demo;
     demo.show();
 
     return app.exec();

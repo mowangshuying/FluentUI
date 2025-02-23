@@ -5,6 +5,7 @@
 FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
 {
     m_delegate = new FluTreeViewItemDelegate(this);
+    setIconSize(QSize(16,16));
     setItemDelegate(m_delegate);
 
     header()->setHighlightSections(false);

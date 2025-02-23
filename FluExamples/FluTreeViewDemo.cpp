@@ -59,8 +59,8 @@ FluTreeViewDemo::FluTreeViewDemo(FluWidget* parent /*= nullptr*/) : FluTemplateD
     m_treeView->addTopLevelItem(workDocumentsItem);
     m_treeView->addTopLevelItem(personalDocumentsItem);
 
-    m_treeView->resize(600, 600);
-    m_treeView->move(125, 100);
+    m_treeView->resize(400, 600);
+    m_treeView->move(50, 100);
 
-    resize(800, 800);
+    resize(500, 800);
 }

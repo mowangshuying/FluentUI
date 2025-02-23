@@ -4,9 +4,11 @@
 
 FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
 {
-    m_delegate = new FluTreeViewItemDelegate(this);
+    m_ItemDelegate = new FluTreeViewItemDelegate(this);
+    m_scrollDelegate = new FluScrollDelegate(this);
+
     setIconSize(QSize(16,16));
-    setItemDelegate(m_delegate);
+    setItemDelegate(m_ItemDelegate);
 
     header()->setHighlightSections(false);
     header()->setDefaultAlignment(Qt::AlignCenter);

@@ -2,6 +2,7 @@
 
 #include <QTreeWidget>
 #include "FluTreeViewItemDelegate.h"
+#include "FluScrollDelegate.h"
 
 class FluTreeView : public QTreeWidget
 {
@@ -14,5 +15,6 @@ class FluTreeView : public QTreeWidget
     void onThemeChanged();
 
   protected:
-    FluTreeViewItemDelegate *m_delegate;
+    FluTreeViewItemDelegate *m_ItemDelegate;
+    FluScrollDelegate *m_scrollDelegate;
 };

@@ -59,9 +59,9 @@ void FluTreeViewItemDelegate::drawBackground(QPainter* painter, const QStyleOpti
     int tmpH = option.rect.height() - 4;
     QColor tmpBrushC;
     if (FluThemeUtils::isLightTheme())
-        tmpBrushC = QColor(254, 0, 0, 10);
+        tmpBrushC = QColor(0, 0, 0, 20);
     else if (FluThemeUtils::isDarkTheme())
-        tmpBrushC = QColor(0, 0, 0, 10);
+        tmpBrushC = QColor(0, 0, 0, 36);
     painter->setBrush(QBrush(tmpBrushC));
     painter->drawRoundedRect(4, option.rect.y() + 2, m_treeView->width() - 8, option.rect.height() - 4, 4, 4);
     painter->restore();

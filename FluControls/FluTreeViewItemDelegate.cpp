@@ -40,6 +40,7 @@ void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
     QStyledItemDelegate::paint(painter, option, index);
     drawBackground(painter, option, index);
     drawCheckBox(painter, option, index);
+    drawIndicator(painter, option, index);
 }
 
 void FluTreeViewItemDelegate::drawBackground(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
@@ -134,5 +135,30 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
             }
         }
     }
+    painter->restore();
+}
+
+void FluTreeViewItemDelegate::drawIndicator(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
+{
+    painter->save();
+    painter->setPen(Qt::NoPen);
+
+    bool bSelected = option.state & QStyle::State_Selected;
+
+    if (!bSelected)
+    {
+        painter->restore();
+        return;
+    }
+
+    int tmpH = option.rect.height() - 4;
+    QColor tmpBrushC;
+    if (FluThemeUtils::isLightTheme())
+        tmpBrushC = QColor(0, 90, 158);
+    else if (FluThemeUtils::isDarkTheme())
+        tmpBrushC = QColor(118, 185, 237);
+    painter->setBrush(QBrush(tmpBrushC));
+
+    painter->drawRoundedRect(4, 9 + option.rect.y(), 3, option.rect.height() - 17, 1.5, 1.5);
     painter->restore();
 }

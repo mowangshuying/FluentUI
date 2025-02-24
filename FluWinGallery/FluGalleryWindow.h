@@ -62,6 +62,7 @@
 #include "FluBasicInputPage.h"
 #include "FluScrollViewPage.h"
 #include "FluTableViewPage.h"
+#include "FluTreeViewPage.h"
 
 class FluGalleryWindow : public FluFrameLessWidget
 {

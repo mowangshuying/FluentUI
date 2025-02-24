@@ -7,10 +7,10 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("TreeView"));
-    m_infoLabel->setText("");
+    m_infoLabel->setText(tr("The TreeView control is hierarchical list pattern with expanding and collapsing nodes that contain nested items."));
 
     auto displayBox = new FluDisplayBox;
-    displayBox->setTitle(tr("Base TreeView Demo."));
+    displayBox->setTitle(tr("A simple TreeView with drag and drop support."));
     displayBox->getCodeExpander()->setCodeByPath("../code/TreeViewPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(300);
 
@@ -71,6 +71,7 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 
     treeView->addTopLevelItem(workDocumentsItem);
     treeView->addTopLevelItem(personalDocumentsItem);
+    treeView->setFixedWidth(400);
     // end---
 
     displayBox->getBodyLayout()->addWidget(treeView);

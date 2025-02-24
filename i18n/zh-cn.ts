@@ -2116,337 +2116,337 @@
         <translation>树视图</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="313"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="319"/>
         <source>TableView</source>
         <translation>表视图</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="343"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="349"/>
         <source>Date &amp; time</source>
         <translation>日期和时间</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="349"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="355"/>
         <source>CalendarDatePicker</source>
         <translation>日历日期选择器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="355"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="361"/>
         <source>CalendarView</source>
         <translation>日历视图</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="361"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="367"/>
         <source>DatePicker</source>
         <translation>日期选择器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="367"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="373"/>
         <source>TimePicker</source>
         <translation>时间选择器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="394"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="400"/>
         <source>Dialogs &amp; flyouts</source>
         <translation>对话框和弹出框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="400"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="406"/>
         <source>ContentDialog</source>
         <translation>内容对话框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="407"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="413"/>
         <source>Flyout</source>
         <translation>弹出框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="414"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="420"/>
         <source>TeachingTip</source>
         <translation>教学提示</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="436"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="442"/>
         <source>Layout</source>
         <translation>布局</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="442"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="448"/>
         <source>Border</source>
         <translation>边框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="448"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="454"/>
         <source>Canvas</source>
         <translation>画布</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="451"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="457"/>
         <source>Expander</source>
         <translation>扩展器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="457"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="463"/>
         <source>ItemsRepeater</source>
         <translation>项目重复器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="460"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="466"/>
         <source>Grid</source>
         <translation>网格</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="463"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="469"/>
         <source>RadioButtons</source>
         <translation>单选按钮</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="469"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="475"/>
         <source>RelativePanel</source>
         <translation>相对面板</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="472"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="478"/>
         <source>SplitView</source>
         <translation>分割视图</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="475"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="481"/>
         <source>StackPanel</source>
         <translation>堆栈面板</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="478"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="484"/>
         <source>VariableSizedWrapGrid</source>
         <translation>可变大小包装网格</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="481"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="487"/>
         <source>Viewbox</source>
         <translation>视图框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="511"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="517"/>
         <source>Media</source>
         <translation>媒体</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="517"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="523"/>
         <source>AnimatedVisualPlayer</source>
         <translation>动画视觉播放器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="518"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="524"/>
         <source>Capture Element / Camera Preview</source>
         <translation>捕获元素/相机预览</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="519"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="525"/>
         <source>Image</source>
         <translation>图像</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="520"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="526"/>
         <source>mediaPalyerElement</source>
         <translation>媒体播放器元素</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="521"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="527"/>
         <source>PersonPicture</source>
         <translation>人物图片</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="522"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="528"/>
         <source>Sound</source>
         <translation>声音</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="523"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="529"/>
         <source>WebView2</source>
         <translation>WebView2</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="537"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="543"/>
         <source>Setting</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="548"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="554"/>
         <source>Menus &amp; toolbars</source>
         <translation>菜单和工具栏</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="556"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="562"/>
         <source>AppBarButton</source>
         <translation>应用栏按钮</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="562"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="568"/>
         <source>AppBarSeparator</source>
         <translation>应用栏分隔符</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="565"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="571"/>
         <source>AppBarToggleButton</source>
         <translation>应用栏切换按钮</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="571"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="577"/>
         <source>CommandBar</source>
         <translation>命令栏</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="574"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="580"/>
         <source>MenuBar</source>
         <translation>菜单栏</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="580"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="586"/>
         <source>CommandBarFlyout</source>
         <translation>命令栏弹出框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="583"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="589"/>
         <source>MenuFlyout</source>
         <translation>菜单弹出框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="586"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="592"/>
         <source>SwipeControl</source>
         <translation>滑动控件</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="615"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="621"/>
         <source>Navigation</source>
         <translation>导航</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="621"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="627"/>
         <source>BreadcrumbBar</source>
         <translation>面包屑栏</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="624"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="630"/>
         <source>NavigationView</source>
         <translation>导航视图</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="627"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="633"/>
         <source>Pivot</source>
         <translation>枢轴</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="633"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="639"/>
         <source>TabView</source>
         <translation>标签视图</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="656"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="662"/>
         <source>Scrolling</source>
         <translation>滚动</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="662"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="668"/>
         <source>AnnotatedScrollBar</source>
         <translation>带注释的滚动条</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="663"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="669"/>
         <source>PipsPager</source>
         <translation>分页器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="665"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="671"/>
         <source>ScrollView</source>
         <translation>滚动视图</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="681"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="687"/>
         <source>ScrollViewer</source>
         <translation>滚动查看器</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="682"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="688"/>
         <source>SemanticZoom</source>
         <translation>语义缩放</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="694"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="700"/>
         <source>Status &amp; info</source>
         <translation>状态和信息</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="700"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="706"/>
         <source>InfoBadge</source>
         <translation>信息徽章</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="706"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="712"/>
         <source>InfoBar</source>
         <translation>信息栏</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="713"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="719"/>
         <source>ProgressBar</source>
         <translation>进度条</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="719"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="725"/>
         <source>ProgressRing</source>
         <translation>进度环</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="726"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="732"/>
         <source>ToolTip</source>
         <translation>工具提示</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="750"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="756"/>
         <source>Text</source>
         <translation>文本</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="756"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="762"/>
         <source>AutoSuggestBox</source>
         <translation>自动建议框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="762"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="768"/>
         <source>NumberBox</source>
         <translation>数字框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="768"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="774"/>
         <source>PasswordBox</source>
         <translation>密码框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="774"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="780"/>
         <source>RichEditBox</source>
         <translation>富文本编辑框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="777"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="783"/>
         <source>RichTextBlock</source>
         <translation>富文本块</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="780"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="786"/>
         <source>TextBlock</source>
         <translation>文本块</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="783"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="789"/>
         <source>TextBox</source>
         <translation>文本框</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="827"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="833"/>
         <source>Close Gallery Window?</source>
         <translation>关闭主窗口？</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="827"/>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="833"/>
         <source>choose &quot;Ok&quot; to close. choose &quot;Cancel&quot; do nothing.</source>
         <translation>点击关闭按钮，关闭窗口， 点击取消，不做任何事情。</translation>
     </message>
@@ -3736,8 +3736,12 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="85"/>
+        <source>0.3.9</source>
+        <translation type="unfinished">0.3.9</translation>
+    </message>
+    <message>
         <source>0.3.7</source>
-        <translation>0.3.7</translation>
+        <translation type="vanished">0.3.7</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="93"/>
@@ -4113,6 +4117,74 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <location filename="../FluWinGallery/FluToggleSwitchPage.cpp" line="10"/>
         <source>A simple ToggleSwitch.</source>
         <translation>一个简单的切换开关。</translation>
+    </message>
+</context>
+<context>
+    <name>FluTreeViewPage</name>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="9"/>
+        <source>TreeView</source>
+        <translation>树视图</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="10"/>
+        <source>The TreeView control is hierarchical list pattern with expanding and collapsing nodes that contain nested items.</source>
+        <translation>树控件是一种分层列表模式，具有包含嵌套项的展开和折叠节点。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="13"/>
+        <source>A simple TreeView with drag and drop support.</source>
+        <translation>一个支持拖放的简单树视图。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="22"/>
+        <source>Work Documents</source>
+        <translation>工作文件</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="26"/>
+        <source>XYZ Functional Spec</source>
+        <translation>XYZ功能规范</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="30"/>
+        <source>Feature Schedule</source>
+        <translation>功能一览表</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="34"/>
+        <source>Overal Project Plan</source>
+        <translation>总体项目计划</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="38"/>
+        <source>Feature Resources Allocation</source>
+        <translation>特征资源分配</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="42"/>
+        <source>Personal Documents</source>
+        <translation>个人文件</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="46"/>
+        <source>Contractor Contact Info</source>
+        <translation>承包商联系信息</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="50"/>
+        <source>Paint Color Scheme</source>
+        <translation>油漆配色方案</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="54"/>
+        <source>Flooring woodgrain type</source>
+        <translation>地板木纹类型</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTreeViewPage.cpp" line="58"/>
+        <source>Kitchen cabinet style</source>
+        <translation>橱柜风格</translation>
     </message>
 </context>
 <context>

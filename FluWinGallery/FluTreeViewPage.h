@@ -8,7 +8,6 @@ class FluTreeViewPage : public FluAEmptyPage
   public:
         FluTreeViewPage(QWidget* parent = nullptr);
 
-        void addTreeViewDemo();
   public slots:
         void onThemeChanged();
 };

@@ -310,6 +310,12 @@ void FluGalleryWindow::makeCollectionsNavItem()
 
     // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
     FluVNavigationIconTextItem *item7 = new FluVNavigationIconTextItem(tr("TreeView"), item);
+    item7->setKey("TreeViewPage");
+    auto treeViewPage = new FluTreeViewPage;
+    m_sLayout->addWidget("TreeViewPage", treeViewPage);
+    connect(item7, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TreeViewPage"); });
+
+
     FluVNavigationIconTextItem *item8 = new FluVNavigationIconTextItem(tr("TableView"), item);
     item8->setKey("TableViewPage");
     auto tableViewPage = new FluTableViewPage;

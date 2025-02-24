@@ -166,6 +166,7 @@
     <ClCompile Include="FluTimePickerPage.cpp" />
     <ClCompile Include="FluToggleButtonPage.cpp" />
     <ClCompile Include="FluToggleSwitchPage.cpp" />
+    <ClCompile Include="FluTreeViewPage.cpp" />
     <ClCompile Include="FluTypeographyPage.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -340,6 +341,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluTableViewPage.h" />
+    <QtMoc Include="FluTreeViewPage.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

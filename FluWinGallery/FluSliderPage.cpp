@@ -26,7 +26,7 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     auto displayBox2 = new FluDisplayBox;
-    displayBox2->setTitle("A vertical slider.");
+    displayBox2->setTitle(tr("A vertical slider."));
     displayBox2->getCodeExpander()->setCodeByPath("../code/SliderPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(180);
 

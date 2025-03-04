@@ -3736,8 +3736,12 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="85"/>
+        <source>0.4.0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>0.3.9</source>
-        <translation type="unfinished">0.3.9</translation>
+        <translation type="obsolete">0.3.9</translation>
     </message>
     <message>
         <source>0.3.7</source>
@@ -3816,6 +3820,11 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <location filename="../FluWinGallery/FluSliderPage.cpp" line="13"/>
         <source>A simple Slider.</source>
         <translation>一个简单的滑块。</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluSliderPage.cpp" line="29"/>
+        <source>A vertical slider.</source>
+        <translation>一个垂直的滑块。</translation>
     </message>
 </context>
 <context>

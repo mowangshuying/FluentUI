@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(FluWinGallery VERSION 0.1.5 LANGUAGES CXX)
+project(FluWinGallery VERSION 0.4.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)

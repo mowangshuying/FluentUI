@@ -1,5 +1,5 @@
 FluWindowKitTitleBar {
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(32, 32, 32);
 }
 
 #titleLabel {

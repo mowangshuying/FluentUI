@@ -1,4 +1,4 @@
-#include "FluGalleryWindow.h"
+﻿#include "FluGalleryWindow.h"
 #include "FluAEmptyPage.h"
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
@@ -10,7 +10,13 @@
 
 FRAMELESSHELPER_USE_NAMESPACE
 
-FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
+#ifdef USE_FRAMELESSHELPER_WIDGET
+FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/): FluFrameLessWidget(parent)
+#endif
+
+#ifdef USE_WINDOWKIT_WIDGET
+FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKitWidget(parent)
+#endif
 {
     setWindowTitle("CppQt WinUI3 Gallery Dev");
 
@@ -20,11 +26,13 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
-    m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
-    m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
-    m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
-    m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
-    m_titleBar->setFixedHeight(48);
+#ifdef USE_FRAMELESSHELPER_WIDGET
+   m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
+   m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
+   m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
+   m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
+   m_titleBar->setFixedHeight(48);
+#endif
 
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
     setStyleSheet(qss);
@@ -846,7 +854,8 @@ void FluGalleryWindow::closeEvent(QCloseEvent *event)
 
 void FluGalleryWindow::onThemeChanged()
 {
-    // LOG_DEBUG << "Func Beg";
+
+#ifdef USE_FRAMELESSHELPER_WIDGET
     if (FluThemeUtils::isLightTheme())
     {
         m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
@@ -858,12 +867,8 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::black);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
-        // m_titleBar->update();
-        // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
-        // repaint();
-        // QApplication::processEvents();
     }
     else
     {
@@ -871,8 +876,7 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::white);
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::white);
-        // m_titleBar->update();
-        // m_titleBar->style()->polish(m_titleBar);
+
 #ifndef Q_OS_MACOS
         m_titleBar->minimizeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::white);
@@ -880,8 +884,6 @@ void FluGalleryWindow::onThemeChanged()
 #endif
         m_titleBar->show();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
-        // repaint();
-        // QApplication::processEvents();
     }
-    // LOG_DEBUG << "Func End";
+#endif
 }

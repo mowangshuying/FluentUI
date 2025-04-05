@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "../FluControls/FluFrameLessWidget.h"
 #include "../FluControls/FluVNavigationView.h"
@@ -63,8 +63,16 @@
 #include "FluScrollViewPage.h"
 #include "FluTableViewPage.h"
 #include "FluTreeViewPage.h"
+#include "../FluControls/FluWindowKitWidget.h"
 
+#define USE_FRAMELESSHELPER_WIDGET
+
+#ifdef USE_FRAMELESSHELPER_WIDGET
 class FluGalleryWindow : public FluFrameLessWidget
+#endif
+#ifdef USE_WINDOWKIT_WIDGET
+class FluGalleryWindow : public FluWindowKitWidget
+#endif
 {
     Q_OBJECT
   public:

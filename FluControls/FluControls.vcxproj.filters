@@ -943,6 +943,9 @@
     <QtMoc Include="FluCalendarSelectMonthView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluWindowKitWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -955,9 +958,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluCalendarSelectYearView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FluWindowKitWidget.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluIntValidator.h">

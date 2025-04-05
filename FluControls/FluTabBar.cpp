@@ -1,4 +1,4 @@
-#include "FluTabBar.h"
+﻿#include "FluTabBar.h"
 
 FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -22,9 +22,11 @@ FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add));
     m_addTabBtn->setObjectName("addTabBtn");
 
+    onThemeChanged();
     connect(m_addTabBtn, &QPushButton::clicked, [=]() { emit addTabBtnClicked(); });
-
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBar.qss", this);
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 }
 
 std::vector<FluTabBarItem*> FluTabBar::getTabBarItems()
@@ -36,6 +38,7 @@ void FluTabBar::addBarItem(FluTabBarItem* item)
 {
     m_tabBarContent->addBarItem(item);
     connect(item, &FluTabBarItem::sizeChanged, [=]() { adjustAddTabBtnPosition(); });
+    connect(item, &FluTabBarItem::clickedCloseBtn, [this, item]() { removeTabBarItem(item); });
 }
 
 void FluTabBar::removeTabBarItem(FluTabBarItem* item)

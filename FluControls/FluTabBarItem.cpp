@@ -1,4 +1,4 @@
-#include "FluTabBarItem.h"
+﻿#include "FluTabBarItem.h"
 
 FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
 {
@@ -35,9 +35,7 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     //   setFixedWidth(240);
 
     connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
-
     connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
-
     connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
 }

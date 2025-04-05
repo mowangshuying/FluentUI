@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include "FluTabBarContent.h"
@@ -28,7 +28,14 @@ class FluTabBar : public FluWidget
 
   signals:
     void addTabBtnClicked();
-
+  public slots:
+      void onThemeChanged()
+      {
+          if (FluThemeUtils::isLightTheme())
+              FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBar.qss", this);
+          else if (FluThemeUtils::isDarkTheme())
+              FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTabBar.qss", this);
+      }
   protected:
     QHBoxLayout* m_hMainLayout;
     FluTabBarContent* m_tabBarContent;

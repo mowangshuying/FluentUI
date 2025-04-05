@@ -65,12 +65,10 @@
 #include "FluTreeViewPage.h"
 #include "../FluControls/FluWindowKitWidget.h"
 
-#define USE_FRAMELESSHELPER_WIDGET
-
-#ifdef USE_FRAMELESSHELPER_WIDGET
+//#define USE_WINDOWKIT_WIDGET
+#if !defined USE_WINDOWKIT_WIDGET
 class FluGalleryWindow : public FluFrameLessWidget
-#endif
-#ifdef USE_WINDOWKIT_WIDGET
+#else
 class FluGalleryWindow : public FluWindowKitWidget
 #endif
 {

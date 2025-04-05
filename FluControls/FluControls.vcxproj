@@ -324,7 +324,7 @@
     <QtMoc Include="FluSubMenuItemWidget.h" />
     <QtMoc Include="FluShortcutPicker.h" />
     <QtMoc Include="FluShortcutPickerDlg.h" />
-    <ClInclude Include="FluWindowKitWidget.h" />
+    <QtMoc Include="FluWindowKitWidget.h" />
     <QtMoc Include="FluTeachingTip.h" />
     <QtMoc Include="FluTriangle.h" />
     <QtMoc Include="FluTextToggleSwitchEx.h" />

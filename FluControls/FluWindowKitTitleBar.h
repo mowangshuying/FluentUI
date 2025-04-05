@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QFrame>
 #include <QHBoxLayout>
@@ -83,7 +83,8 @@ class FluWindowKitTitleBar : public QFrame
     void minimizeRequested();
     void maximizeRequested(bool max = false);
     void closeRequested();
-
+  public slots:
+    void onThemeChanged();
   protected:
     QHBoxLayout* m_hMainLayout;
     QWidget* m_w;

@@ -1,11 +1,14 @@
-#include "FluWindowKitTitleBar.h"
+﻿#include "FluWindowKitTitleBar.h"
 #include "../FluUtils/FluUtils.h"
 
 FluWindowKitTitleBar::FluWindowKitTitleBar(QWidget* parent /*= nullptr*/) : QFrame(parent)
 {
     m_w = nullptr;
     init();
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitTitleBar.qss", this);
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 }
 
 void FluWindowKitTitleBar::init()
@@ -279,4 +282,12 @@ bool FluWindowKitTitleBar::eventFilter(QObject* watched, QEvent* event)
     }
 
     return QWidget::eventFilter(watched, event);
+}
+
+void FluWindowKitTitleBar::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitTitleBar.qss", this);
+    else if(FluThemeUtils::isDarkTheme())
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitTitleBar.qss", this);
 }

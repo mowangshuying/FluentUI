@@ -1,10 +1,11 @@
-#include "FluWindowKitWidget.h"
+﻿#include "FluWindowKitWidget.h"
 #include <QWKWidgets/widgetwindowagent.h>
 
 #include <QLabel>
 #include "FluWindowkitButton.h"
 #include "FluWindowKitTitleBar.h"
 #include "../FluUtils/FluUtils.h"
+#include "FluLabel.h"
 
 #include <QStyleOption>
 
@@ -17,47 +18,47 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     auto agent = new QWK::WidgetWindowAgent(this);
     agent->setup(this);
 
-    auto titleLabel = new QLabel;
-    titleLabel->setAlignment(Qt::AlignCenter);
-    titleLabel->setObjectName("titleLabel");
-    titleLabel->setText("WindowKit Widget.");
+    m_titleLabel = new FluLabel;
+    m_titleLabel->setAlignment(Qt::AlignCenter);
+    m_titleLabel->setObjectName("titleLabel");
+    m_titleLabel->setText("WindowKit Widget.");
 
 #ifndef Q_OS_MAC
-    auto iconButton = new FluWindowkitButton();
-    iconButton->setObjectName("iconButton");
-    iconButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    m_iconButton = new FluWindowkitButton;
+    m_iconButton->setObjectName("iconButton");
+    m_iconButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    auto minButton = new FluWindowkitButton();
-    minButton->setObjectName("minButton");
-    minButton->setProperty("systemButton", true);
-    minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize));
-    minButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    m_minButton = new FluWindowkitButton;
+    m_minButton->setObjectName("minButton");
+    m_minButton->setProperty("systemButton", true);
+    m_minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize));
+    m_minButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    auto maxButton = new FluWindowkitButton();
-    maxButton->setCheckable(true);
-    maxButton->setObjectName("maxButton");
-    maxButton->setProperty("systemButton", true);
-    maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize));
-    maxButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    m_maxButton = new FluWindowkitButton;
+    m_maxButton->setCheckable(true);
+    m_maxButton->setObjectName("maxButton");
+    m_maxButton->setProperty("systemButton", true);
+    m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize));
+    m_maxButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    auto closeButton = new FluWindowkitButton();
-    closeButton->setObjectName("closeButton");
-    closeButton->setProperty("systemButton", true);
-    closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
-    closeButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    m_closeButton = new FluWindowkitButton;
+    m_closeButton->setObjectName("closeButton");
+    m_closeButton->setProperty("systemButton", true);
+    m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
+    m_closeButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 #endif
 
-    auto titleBar = new FluWindowKitTitleBar;
-    titleBar->setFixedHeight(35);
+    m_titleBar = new FluWindowKitTitleBar;
+    m_titleBar->setFixedHeight(35);
 #ifndef Q_OS_MAC
-    titleBar->setIconButton(iconButton);
-    titleBar->setMinButton(minButton);
-    titleBar->setMaxButton(maxButton);
-    titleBar->setCloseButton(closeButton);
+    m_titleBar->setIconButton(m_iconButton);
+    m_titleBar->setMinButton(m_minButton);
+    m_titleBar->setMaxButton(m_maxButton);
+    m_titleBar->setCloseButton(m_closeButton);
 #endif
-    titleBar->setTitleLabel(titleLabel);
-    titleBar->setHostWidget(this);
-    agent->setTitleBar(titleBar);
+    m_titleBar->setTitleLabel(m_titleLabel);
+    m_titleBar->setHostWidget(this);
+    agent->setTitleBar(m_titleBar);
 
     // contentLayout;
     m_contentLayout = new QHBoxLayout;
@@ -68,20 +69,20 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_vMainLayout = new QVBoxLayout(this);
     m_vMainLayout->setSpacing(0);
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->addWidget(titleBar, Qt::AlignTop);
+    m_vMainLayout->addWidget(m_titleBar, Qt::AlignTop);
     m_vMainLayout->addLayout(m_contentLayout, 1);
     setLayout(m_vMainLayout);
 
 #ifndef Q_OS_MAC
-    agent->setSystemButton(QWK::WindowAgentBase::WindowIcon, iconButton);
-    agent->setSystemButton(QWK::WindowAgentBase::Minimize, minButton);
-    agent->setSystemButton(QWK::WindowAgentBase::Maximize, maxButton);
-    agent->setSystemButton(QWK::WindowAgentBase::Close, closeButton);
+    agent->setSystemButton(QWK::WindowAgentBase::WindowIcon, m_iconButton);
+    agent->setSystemButton(QWK::WindowAgentBase::Minimize, m_minButton);
+    agent->setSystemButton(QWK::WindowAgentBase::Maximize, m_maxButton);
+    agent->setSystemButton(QWK::WindowAgentBase::Close, m_closeButton);
 #endif
 
 #ifndef Q_OS_MAC
-    connect(titleBar, &FluWindowKitTitleBar::minimizeRequested, this, &QWidget::showMinimized);
-    connect(titleBar, &FluWindowKitTitleBar::maximizeRequested, this, [this, maxButton](bool max) {
+    connect(m_titleBar, &FluWindowKitTitleBar::minimizeRequested, this, &QWidget::showMinimized);
+    connect(m_titleBar, &FluWindowKitTitleBar::maximizeRequested, this, [this](bool max) {
         if (max)
         {
             showMaximized();
@@ -91,10 +92,13 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
             showNormal();
         }
 
-        emulateLeaveEvent(maxButton);
+        emulateLeaveEvent(m_maxButton);
     });
 
-    connect(titleBar, &FluWindowKitTitleBar::closeRequested, this, &QWidget::close);
+    connect(m_titleBar, &FluWindowKitTitleBar::closeRequested, this, &QWidget::close);
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 #endif  // !Q_OS_MAC
 
 #ifdef Q_OS_WIN
@@ -141,4 +145,20 @@ void FluWindowKitWidget::emulateLeaveEvent(QWidget *widget)
             }
         }
     });
+}
+
+void FluWindowKitWidget::onThemeChanged()
+{
+    m_minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize, FluThemeUtils::getUtils()->getTheme()));
+    m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
+    m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
+
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitWidget.qss", this);
+    }
+    else if(FluThemeUtils::isDarkTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitWidget.qss", this);
+    }
 }

@@ -2,7 +2,6 @@
 #include "FluButtonDemo.h"
 #include "FluChangeBgDemo.h"
 #include "FluVNavigationViewDemo.h"
-#include "FluTabDemo.h"
 #include <QApplication>
 #include "FluFlowLayoutDemo.h"
 #include "FluLineEditDemo.h"

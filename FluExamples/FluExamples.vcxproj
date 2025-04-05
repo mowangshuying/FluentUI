@@ -162,7 +162,6 @@
     <ClCompile Include="FluSpinBoxDemo.cpp" />
     <ClCompile Include="FluSplitButtonDemo.cpp" />
     <ClCompile Include="FluTabBarDemo.cpp" />
-    <ClCompile Include="FluTabDemo.cpp" />
     <ClCompile Include="FluExpandDemo.cpp" />
     <ClCompile Include="FluTimeLineDemo.cpp" />
     <ClCompile Include="FluTimeLineIconDemo.cpp" />
@@ -178,9 +177,6 @@
     <ClCompile Include="FluToggleSwitchDemo.cpp" />
     <ClCompile Include="FluFlyoutDemo.cpp" />
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="FluTabDemo.h" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluAllGlobalColorDemo.h" />

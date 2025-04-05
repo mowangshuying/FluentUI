@@ -26,9 +26,6 @@
     <ClCompile Include="FluChangeBgDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluTabDemo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FluAllGlobalColorDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -218,9 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="FluTabDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluAllGlobalColorDemo.h">

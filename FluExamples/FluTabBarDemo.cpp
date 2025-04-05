@@ -1,4 +1,4 @@
-#include "FluTabBarDemo.h"
+﻿#include "FluTabBarDemo.h"
 
 FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -15,5 +15,11 @@ FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_vMainLayout->addWidget(tabBar);
     m_vMainLayout->addStretch(1);
 
+    connect(tabBar, &FluTabBar::addTabBtnClicked, 
+        [=]() { 
+            auto tmpTabBarItem = new FluTabBarItem;
+            tabBar->addBarItem(tmpTabBarItem);
+        });
     resize(600, 400);
+
 }

@@ -1,4 +1,41 @@
-#include "FluTabDemo.h"
+﻿#include "FluTabDemo.h"
+
+FluTabPage::FluTabPage(QString text, QWidget *parent)
+{
+    auto hLayout = new QHBoxLayout;
+    setLayout(hLayout);
+    hLayout->setAlignment(Qt::AlignCenter);
+
+    auto label = new FluLabel;
+    label->setText(text);
+    label->setLabelStyle(FluLabelStyle::SubTitleTextBlockStyle);
+    hLayout->addWidget(label);
+
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=]() { onThemeChanged(); });
+
+    onThemeChanged();
+}
+
+void FluTabPage::paintEvent(QPaintEvent *event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluTabPage::onThemeChanged()
+{
+    if (FluThemeUtils::isLightTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabPage.qss", this);
+    }
+    else if (FluThemeUtils::isDarkTheme())
+    {
+        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTabPage.qss", this);
+    }
+}
+
 
 FluTabDemo::FluTabDemo(QWidget *parent /*= nullptr*/) : FluTabWidget(parent)
 {
@@ -7,29 +44,8 @@ FluTabDemo::FluTabDemo(QWidget *parent /*= nullptr*/) : FluTabWidget(parent)
     setVisible(true);
     setTabsClosable(true);
 
-    addColorExampleWidget();
-    addChangeBackgrondWidget();
-    addButtonExmapleWidget();
-}
-
-void FluTabDemo::addColorExampleWidget()
-{
-    FluColorDemo *widget = new FluColorDemo(this);
-    widget->setAttribute(Qt::WA_DeleteOnClose);
-    widget->setBgColor(QColor("#1994e1"));
-    addTab(widget, "Colors example");
-}
-
-void FluTabDemo::addChangeBackgrondWidget()
-{
-    FluChangeBgDemo *widget = new FluChangeBgDemo(this);
-    widget->setAttribute(Qt::WA_DeleteOnClose);
-    addTab(widget, "Change background");
-}
-
-void FluTabDemo::addButtonExmapleWidget()
-{
-    FluButtonDemo *widget = new FluButtonDemo(this);
-    widget->setAttribute(Qt::WA_DeleteOnClose);
-    addTab(widget, "Button example");
+    // add Tab;
+    addTab(new FluTabPage("Tab 1"), "tab1");
+    addTab(new FluTabPage("Tab 2"), "tab2");
+    addTab(new FluTabPage("Tab 3"), "tab3");
 }

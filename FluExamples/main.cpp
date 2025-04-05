@@ -1,4 +1,4 @@
-#include "../FluControls/FluVNavigationView.h"
+﻿#include "../FluControls/FluVNavigationView.h"
 #include "FluButtonDemo.h"
 #include "FluChangeBgDemo.h"
 #include "FluVNavigationViewDemo.h"
@@ -309,8 +309,10 @@ int main(int argc, char **argv)
     //FluShortcutPickerDemo demo;
     //demo.show();
 
-    FluTreeViewDemo demo;
-    demo.show();
+    //FluTreeViewDemo demo;
+    //demo.show();
 
+    FluTabBarDemo demo;
+    demo.show();
     return app.exec();
 }

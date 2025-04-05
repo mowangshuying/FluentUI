@@ -10,11 +10,9 @@
 
 FRAMELESSHELPER_USE_NAMESPACE
 
-#ifdef USE_FRAMELESSHELPER_WIDGET
+#if !defined USE_WINDOWKIT_WIDGET
 FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/): FluFrameLessWidget(parent)
-#endif
-
-#ifdef USE_WINDOWKIT_WIDGET
+#else
 FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKitWidget(parent)
 #endif
 {
@@ -26,7 +24,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
-#ifdef USE_FRAMELESSHELPER_WIDGET
+#if !defined USE_WINDOWKIT_WIDGET 
    m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
    m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
    m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
@@ -855,7 +853,7 @@ void FluGalleryWindow::closeEvent(QCloseEvent *event)
 void FluGalleryWindow::onThemeChanged()
 {
 
-#ifdef USE_FRAMELESSHELPER_WIDGET
+#if !defined USE_WINDOWKIT_WIDGET
     if (FluThemeUtils::isLightTheme())
     {
         m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);

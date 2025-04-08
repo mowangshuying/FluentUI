@@ -179,6 +179,8 @@
     <ClCompile Include="FluScrollBarHandle.cpp" />
     <ClCompile Include="FluScrollBarTrunk.cpp" />
     <ClCompile Include="FluScrollDelegate.cpp" />
+    <ClCompile Include="FluSegmented.cpp" />
+    <ClCompile Include="FluSegmentedItem.cpp" />
     <ClCompile Include="FluSettingsVersionBox.cpp" />
     <ClCompile Include="FluShortcutMenuItemDelegate.cpp" />
     <ClCompile Include="FluShortcutPicker.cpp" />
@@ -198,6 +200,7 @@
     <ClCompile Include="FluTreeView.cpp" />
     <ClCompile Include="FluTreeViewItemDelegate.cpp" />
     <ClCompile Include="FluTriangle.cpp" />
+    <ClCompile Include="FluValueObject.cpp" />
     <ClCompile Include="FluVNavigationFlyIconTextItem.cpp" />
     <ClCompile Include="FluPasswordBox.cpp" />
     <ClCompile Include="FluPivot.cpp" />
@@ -283,6 +286,9 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluValueObject.h" />
+    <QtMoc Include="FluSegmentedItem.h" />
+    <QtMoc Include="FluSegmented.h" />
     <QtMoc Include="FluWindowkitButton.h" />
     <QtMoc Include="FluWindowKitTitleBar.h" />
     <QtMoc Include="FluTimeLine.h" />

@@ -1,4 +1,4 @@
-#include "FluAnimationDemo.h"
+﻿#include "FluAnimationDemo.h"
 
 FluAnimationDemo::FluAnimationDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
@@ -13,6 +13,8 @@ FluAnimationDemo::FluAnimationDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     addShakeAni();
 
     // addStateMachineAni();
+
+    addTmpAni();
 }
 
 void FluAnimationDemo::addPosAni()
@@ -127,3 +129,24 @@ void FluAnimationDemo::addShakeAni()
 //     stateMachine->setInitialState(state1);
 //     stateMachine->start();
 // }
+
+void FluAnimationDemo::addTmpAni()
+{
+    auto btn = new FluPushButton(this);
+    btn->setText("Tmp Ani");
+    btn->setFixedWidth(138);
+    btn->move(100, 200);
+
+    auto animation = new QPropertyAnimation;
+    animation->setPropertyName("tmp");
+
+    auto aniObj = new FluTmpAniObj;
+    animation->setTargetObject(aniObj);
+    animation->setStartValue(1);
+    animation->setEndValue(0);
+
+    connect(btn, &FluPushButton::clicked, [=]() { 
+        animation->start();
+    });
+
+}

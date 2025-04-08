@@ -212,6 +212,9 @@
     <ClCompile Include="FluShortcutPickerDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluSegmentedDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -361,6 +364,9 @@
     <QtMoc Include="FluShortcutPickerDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluAnimationDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayoutDemo.h">
@@ -390,9 +396,6 @@
     <ClInclude Include="FluTabViewDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FluAnimationDemo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FluBusyProgressRingDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -400,6 +403,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluRoundMenuDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluSegmentedDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

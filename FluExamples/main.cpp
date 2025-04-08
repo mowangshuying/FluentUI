@@ -62,6 +62,7 @@
 #include "FluSplitterDemo.h"
 #include "FluRoundMenuDemo.h"
 #include "FluShortcutPickerDemo.h"
+#include "FluSegmentedDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -239,8 +240,8 @@ int main(int argc, char **argv)
     // FluTriangleDemo demo;
     // demo.show();
 
-     FluWindowKitWidget demo;
-     demo.show();
+     //FluWindowKitWidget demo;
+     //demo.show();
 
     // FluTimeLineIconDemo demo;
     // demo.show();
@@ -313,6 +314,9 @@ int main(int argc, char **argv)
 
     //FluTabBarDemo demo;
     //demo.show();
+
+    FluSegmentedDemo demo;
+    demo.show();
 
     
     return app.exec();

@@ -1,0 +1,17 @@
+FluSegmentedItem {
+    color: black;
+    border: 1px solid transparent;
+    background-color: rgba(232, 232, 232, 0.4);
+    font-size: 15px;
+    border-radius: 0px;
+}
+
+FluSegmentedItem:hover{
+    background-color: rgba(192, 192, 192, 0.4);
+    border-radius: 4px;
+}
+
+FluSegmentedItem:pressed{
+    background-color: rgba(192, 192, 192, 0.4);
+    border-radius: 4px;
+}

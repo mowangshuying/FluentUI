@@ -145,8 +145,5 @@ void FluAnimationDemo::addTmpAni()
     animation->setStartValue(1);
     animation->setEndValue(0);
 
-    connect(btn, &FluPushButton::clicked, [=]() { 
-        animation->start();
-    });
-
+    connect(btn, &FluPushButton::clicked, [=]() { animation->start(); });
 }

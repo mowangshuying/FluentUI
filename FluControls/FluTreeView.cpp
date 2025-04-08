@@ -7,7 +7,7 @@ FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
     m_ItemDelegate = new FluTreeViewItemDelegate(this);
     m_scrollDelegate = new FluScrollDelegate(this);
 
-    setIconSize(QSize(16,16));
+    setIconSize(QSize(16, 16));
     setItemDelegate(m_ItemDelegate);
 
     header()->setHighlightSections(false);
@@ -27,12 +27,12 @@ void FluTreeView::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        //m_delegate->updateColor();
+        // m_delegate->updateColor();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeView.qss", this);
     }
     else
     {
-        //m_delegate->updateColor();
+        // m_delegate->updateColor();
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeView.qss", this);
     }
 }

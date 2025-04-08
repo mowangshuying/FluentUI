@@ -24,6 +24,7 @@ class FluTabDemo : public FluTabWidget
 {
     Q_OBJECT
   public:
-    FluTabDemo(QWidget *parent = nullptr);
+    FluTabDemo(QWidget* parent = nullptr);
+
   private:
 };

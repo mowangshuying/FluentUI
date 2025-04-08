@@ -36,7 +36,7 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
     m_timer->setInterval(400);
     connect(m_timer, &QTimer::timeout, this, &FluRoundMenu::onShowMenuTimeOut);
 
-    //setShadowEffect();
+    // setShadowEffect();
     m_hBoxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
     m_hBoxLayout->setContentsMargins(12, 8, 12, 20);
 
@@ -275,7 +275,7 @@ void FluRoundMenu::insertAction(QAction* before, QAction* action)
     if (itf == m_actions.end())
         return;
 
-    //QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
+    // QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
     auto fluAction = (FluAction*)action;
     QListWidgetItem* beforeItem = fluAction->getListWidgetItem();
     if (beforeItem == nullptr)
@@ -361,7 +361,7 @@ void FluRoundMenu::insertMenu(QAction* before, FluRoundMenu* menu)
     FluSubMenuItemWidget* widget = createSubMenuItem(menu);
     QListWidgetItem* item = widget->getItem();
 
-    //QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
+    // QListWidgetItem* beforeItem = before->property("item").value<QListWidgetItem*>();
     auto fluAction = (FluAction*)before;
     QListWidgetItem* beforeItem = fluAction->getListWidgetItem();
 
@@ -512,7 +512,7 @@ void FluRoundMenu::onItemEntered(QListWidgetItem* item)
 void FluRoundMenu::onActionChanged()
 {
     QAction* action = (QAction*)(sender());
-    //QListWidgetItem* item = action->property("item").value<QListWidgetItem*>();
+    // QListWidgetItem* item = action->property("item").value<QListWidgetItem*>();
     auto fluAction = (FluAction*)action;
     auto item = fluAction->getListWidgetItem();
     item->setIcon(makeItemIcon(action));

@@ -96,9 +96,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     });
 
     connect(m_titleBar, &FluWindowKitTitleBar::closeRequested, this, &QWidget::close);
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 #endif  // !Q_OS_MAC
 
 #ifdef Q_OS_WIN
@@ -157,7 +155,7 @@ void FluWindowKitWidget::onThemeChanged()
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitWidget.qss", this);
     }
-    else if(FluThemeUtils::isDarkTheme())
+    else if (FluThemeUtils::isDarkTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitWidget.qss", this);
     }

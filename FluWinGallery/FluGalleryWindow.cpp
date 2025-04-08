@@ -11,7 +11,7 @@
 FRAMELESSHELPER_USE_NAMESPACE
 
 #if !defined USE_WINDOWKIT_WIDGET
-FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/): FluFrameLessWidget(parent)
+FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
 #else
 FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKitWidget(parent)
 #endif
@@ -24,12 +24,12 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 
-#if !defined USE_WINDOWKIT_WIDGET 
-   m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
-   m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
-   m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
-   m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
-   m_titleBar->setFixedHeight(48);
+#if !defined USE_WINDOWKIT_WIDGET
+    m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
+    m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
+    m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
+    m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
+    m_titleBar->setFixedHeight(48);
 #endif
 
     QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
@@ -320,7 +320,6 @@ void FluGalleryWindow::makeCollectionsNavItem()
     auto treeViewPage = new FluTreeViewPage;
     m_sLayout->addWidget("TreeViewPage", treeViewPage);
     connect(item7, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TreeViewPage"); });
-
 
     FluVNavigationIconTextItem *item8 = new FluVNavigationIconTextItem(tr("TableView"), item);
     item8->setKey("TableViewPage");
@@ -836,23 +835,22 @@ void FluGalleryWindow::resizeEvent(QResizeEvent *event)
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)
 {
-     FluMessageBox messageBox(tr("Close Gallery Window?"), tr("choose \"Ok\" to close. choose \"Cancel\" do nothing."), this);
-     int nExec = messageBox.exec();
-     if (nExec == QDialog::Rejected)
+    FluMessageBox messageBox(tr("Close Gallery Window?"), tr("choose \"Ok\" to close. choose \"Cancel\" do nothing."), this);
+    int nExec = messageBox.exec();
+    if (nExec == QDialog::Rejected)
     {
         event->ignore();
         return;
     }
-     else if (nExec == QDialog::Accepted)
+    else if (nExec == QDialog::Accepted)
     {
-        //event->accept();
+        // event->accept();
         QApplication::quit();
     }
 }
 
 void FluGalleryWindow::onThemeChanged()
 {
-
 #if !defined USE_WINDOWKIT_WIDGET
     if (FluThemeUtils::isLightTheme())
     {

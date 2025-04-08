@@ -5,12 +5,11 @@
 
 class FluConfigUtils : public QObject
 {
-protected:
-
+  protected:
     FluConfigUtils(QObject* parent = nullptr);
     ~FluConfigUtils();
 
-public:
+  public:
     static FluConfigUtils* getUtils()
     {
         if (m_configUtils == nullptr)
@@ -25,6 +24,7 @@ public:
     QString getLanguage();
 
     void setLanguage(QString language);
+
   protected:
     QSettings* m_settings;
 

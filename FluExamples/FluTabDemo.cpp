@@ -36,7 +36,6 @@ void FluTabPage::onThemeChanged()
     }
 }
 
-
 FluTabDemo::FluTabDemo(QWidget *parent /*= nullptr*/) : FluTabWidget(parent)
 {
     resize(800, 600);

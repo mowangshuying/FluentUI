@@ -65,7 +65,7 @@
 #include "FluTreeViewPage.h"
 #include "../FluControls/FluWindowKitWidget.h"
 
-//#define USE_WINDOWKIT_WIDGET
+// #define USE_WINDOWKIT_WIDGET
 #if !defined USE_WINDOWKIT_WIDGET
 class FluGalleryWindow : public FluFrameLessWidget
 #else

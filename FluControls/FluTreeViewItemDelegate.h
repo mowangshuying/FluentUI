@@ -19,7 +19,7 @@ class FluTreeViewItemDelegate : public QStyledItemDelegate
     void drawCheckBox(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
     void drawIndicator(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+
   protected:
     FluTreeView* m_treeView;
-
 };

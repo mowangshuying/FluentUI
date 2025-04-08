@@ -66,8 +66,6 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
             FluConfigUtils::getUtils()->setLanguage("zh-CN");
     });
 
-
-
     m_vScrollView->getMainLayout()->addWidget(languageSelectBox);
 
     m_vScrollView->getMainLayout()->addSpacing(30);

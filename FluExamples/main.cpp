@@ -240,8 +240,8 @@ int main(int argc, char **argv)
     // FluTriangleDemo demo;
     // demo.show();
 
-     //FluWindowKitWidget demo;
-     //demo.show();
+    // FluWindowKitWidget demo;
+    // demo.show();
 
     // FluTimeLineIconDemo demo;
     // demo.show();
@@ -306,18 +306,17 @@ int main(int argc, char **argv)
     // FluRoundMenuDemo demo;
     // demo.show();
 
-    //FluShortcutPickerDemo demo;
-    //demo.show();
+    // FluShortcutPickerDemo demo;
+    // demo.show();
 
-    //FluTreeViewDemo demo;
-    //demo.show();
+    // FluTreeViewDemo demo;
+    // demo.show();
 
-    //FluTabBarDemo demo;
-    //demo.show();
+    // FluTabBarDemo demo;
+    // demo.show();
 
     FluSegmentedDemo demo;
     demo.show();
 
-    
     return app.exec();
 }

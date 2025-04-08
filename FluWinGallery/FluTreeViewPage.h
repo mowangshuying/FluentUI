@@ -4,10 +4,10 @@
 
 class FluTreeViewPage : public FluAEmptyPage
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-        FluTreeViewPage(QWidget* parent = nullptr);
+    FluTreeViewPage(QWidget* parent = nullptr);
 
   public slots:
-        void onThemeChanged();
+    void onThemeChanged();
 };

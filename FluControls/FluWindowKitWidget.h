@@ -21,8 +21,9 @@ class FluWindowKitWidget : public QWidget
     static void emulateLeaveEvent(QWidget *widget);
   public slots:
     void onThemeChanged();
+
   protected:
-    FluWindowKitTitleBar* m_titleBar;
+    FluWindowKitTitleBar *m_titleBar;
     FluLabel *m_titleLabel;
     FluWindowkitButton *m_iconButton;
     FluWindowkitButton *m_minButton;

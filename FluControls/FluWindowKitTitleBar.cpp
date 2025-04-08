@@ -6,9 +6,7 @@ FluWindowKitTitleBar::FluWindowKitTitleBar(QWidget* parent /*= nullptr*/) : QFra
     m_w = nullptr;
     init();
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluWindowKitTitleBar::init()
@@ -288,6 +286,6 @@ void FluWindowKitTitleBar::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitTitleBar.qss", this);
-    else if(FluThemeUtils::isDarkTheme())
+    else if (FluThemeUtils::isDarkTheme())
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitTitleBar.qss", this);
 }

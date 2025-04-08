@@ -85,6 +85,7 @@ class FluWindowKitTitleBar : public QFrame
     void closeRequested();
   public slots:
     void onThemeChanged();
+
   protected:
     QHBoxLayout* m_hMainLayout;
     QWidget* m_w;

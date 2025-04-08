@@ -21,7 +21,7 @@ void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, cons
     tmpFont.setWeight(QFont::Normal);
     option->font = tmpFont;
 
-    //set text color;
+    // set text color;
     if (FluThemeUtils::isLightTheme())
     {
         option->palette.setColor(QPalette::Text, Qt::black);

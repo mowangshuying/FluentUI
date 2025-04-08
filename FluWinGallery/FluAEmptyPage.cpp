@@ -69,7 +69,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_infoLabel->setWordWrap(true);
     m_infoLabel->setText(
         tr("Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px "
-        "Semibold."));
+           "Semibold."));
     m_infoLabel->setObjectName("infoLabel");
     m_vScrollView->getMainLayout()->addWidget(m_infoLabel, 0, Qt::AlignTop);
     m_vScrollView->getMainLayout()->addSpacing(20);

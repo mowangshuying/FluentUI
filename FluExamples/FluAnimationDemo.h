@@ -7,7 +7,6 @@
 // #include <QState>
 // #include <QStateMachine>
 
-
 class FluTmpAniObj : public QObject
 {
     Q_OBJECT

@@ -1,5 +1,5 @@
 FluSegmented {
     border: 1px solid rgb(234, 234, 234);
-    background-color: rgba(243, 243, 243, 0.5);
+    background-color: rgba(232, 232, 232, 0.85);
     border-radius: 4px;
 }

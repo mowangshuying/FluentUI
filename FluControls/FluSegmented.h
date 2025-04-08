@@ -44,11 +44,26 @@ class FluSegmented : public FluWidget
 		  }
 
           m_currentItem = item;
+
+		  for (int i = 0; i < m_hMainLayout->layout()->count(); i++)
+          {
+              auto item = (FluSegmentedItem*)m_hMainLayout->layout()->itemAt(i)->widget();
+			  if (item != nullptr)
+			  {
+                   item->setProperty("isSelected", false);
+				   if (item == m_currentItem)
+				   {
+                         item->setProperty("isSelected", true);
+				   }
+                   item->style()->polish(item);
+			  }
+          }
+          //m_currentItem->setProperty("isSelected", true);
 	  }
 
 	  void setCurrentItem(QString text)
 	  {
-		  for (int i = 0; i < m_hMainLayout->layout()->count() - 1; i++)
+		  for (int i = 0; i < m_hMainLayout->layout()->count(); i++)
 		  {
                auto item = (FluSegmentedItem*)m_hMainLayout->layout()->itemAt(i)->widget();
 			   if (item->text() == text)
@@ -82,16 +97,35 @@ class FluSegmented : public FluWidget
               QPainter painter(this);
               style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 
-			  // paint rect;
-              //auto current = getCurrentItem();
-             // QPainter painter(this);
-              painter.setPen(Qt::transparent);
-              painter.setBrush(QColor(0, 90, 158, 128));
 			  if (m_currentItem != nullptr)
 			  {
-                    auto backgroundRect = m_currentItem->rect().adjusted(1, 1, -1, -1).translated(m_animation->currentValue().toFloat(), 0);
-                    painter.drawRoundedRect(backgroundRect, 4, 4);
-                    update();
+				  if (FluThemeUtils::isLightTheme())
+				  {
+                        painter.setPen(Qt::transparent);
+                        painter.setBrush(QColor(251, 251, 251, 128));
+
+						auto backgroundRect = m_currentItem->rect().adjusted(1, 1, -1, -1).translated(m_animation->currentValue().toFloat(), 0);
+                        painter.drawRoundedRect(backgroundRect, 4, 4);
+
+						painter.setPen(Qt::NoPen);
+                        painter.setBrush(QColor(0, 90, 158));
+                        auto indicatorRect = QRect(m_animation->currentValue().toFloat() + m_currentItem->width() / 2 - 15, height() - 4, 30, 4);
+                        painter.drawRoundedRect(indicatorRect, 2, 2);
+			      }
+				  else if (FluThemeUtils::isDarkTheme())
+				  {
+                        painter.setPen(Qt::transparent);
+                        painter.setBrush(QColor(45, 45, 45, 128));
+
+                        auto backgroundRect = m_currentItem->rect().adjusted(1, 1, -1, -1).translated(m_animation->currentValue().toFloat(), 0);
+                        painter.drawRoundedRect(backgroundRect, 4, 4);
+
+                        painter.setPen(Qt::NoPen);
+                        painter.setBrush(QColor(118, 185, 237));
+                        auto indicatorRect = QRect(m_animation->currentValue().toFloat() + m_currentItem->width() / 2 - 15, height() - 4, 30, 4);
+                        painter.drawRoundedRect(indicatorRect, 2, 2);
+				  }					
+					update();
 	          }
 	  }
 

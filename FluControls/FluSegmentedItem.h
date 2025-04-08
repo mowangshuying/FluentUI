@@ -15,6 +15,10 @@ class FluSegmentedItem : public QPushButton
             connect(this, &FluSegmentedItem::clicked, this, [=]() { 
                 emit ItemClicked(this);
             });
+
+            connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { 
+                onThemeChanged();
+            });
       }
    signals:
       void ItemClicked(FluSegmentedItem* item);

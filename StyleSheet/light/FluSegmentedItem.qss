@@ -1,17 +1,21 @@
 FluSegmentedItem {
     color: black;
     border: 1px solid transparent;
-    background-color: rgba(232, 232, 232, 0.4);
+    background-color: transparent;
     font-size: 15px;
     border-radius: 0px;
 }
 
-FluSegmentedItem:hover{
+FluSegmentedItem[isSelected=false]:hover{
     background-color: rgba(192, 192, 192, 0.4);
     border-radius: 4px;
 }
 
-FluSegmentedItem:pressed{
+FluSegmentedItem[isSelected=false]:pressed{
     background-color: rgba(192, 192, 192, 0.4);
     border-radius: 4px;
+}
+
+FluSegmentedItem[isSelected=true]:hover, FluSegmentedItem[isSelected=true]:pressed{
+    background-color: transparent;
 }

@@ -16,6 +16,10 @@ FluSegmentedItem[isSelected=false]:pressed{
     border-radius: 4px;
 }
 
-FluSegmentedItem[isSelected=true]:hover, FluSegmentedItem[isSelected=true]:pressed{
+FluSegmentedItem[isSelected=true]:hover{
+    background-color: transparent;
+}
+
+FluSegmentedItem[isSelected=true]:pressed{
     background-color: transparent;
 }

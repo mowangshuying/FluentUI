@@ -1,4 +1,6 @@
 #include "FluStyleSheetUitls.h"
+// #include <QFileInfo>
+// #include <QDir>
 
 FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
 FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
@@ -25,10 +27,10 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
 void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
 {
     QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
+    // QString absolutePath = QDir("../").absolutePath();
     if (widget != nullptr)
     {
         widget->setStyleSheet(qss);
-
         // if (bDebugQss)
         //{
         //     // just change file

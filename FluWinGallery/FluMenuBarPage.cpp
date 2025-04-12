@@ -17,7 +17,7 @@ void FluMenuBarPage::addSimpleMenuBar()
 {
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle("A Simple MenuBar");
-    displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode1.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/MenuBarPageCode1.md"));
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto menuBar = new FluMenuBar;
@@ -65,7 +65,7 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
 {
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("MenuBar with keyboard accelerators"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode2.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/MenuBarPageCode2.md"));
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto menuBar = new FluMenuBar;
@@ -125,10 +125,10 @@ void FluMenuBarPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluMenuBarPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluMenuBarPage.qss"), this);
     }
 }

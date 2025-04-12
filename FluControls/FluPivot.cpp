@@ -44,10 +44,10 @@ void FluPivot::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivot.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluPivot.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivot.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluPivot.qss"), this);
     }
 }

@@ -9,7 +9,7 @@ FluCalendarDatePickerPage::FluCalendarDatePickerPage(QWidget* parent /*= nullptr
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("CalendarDatePicker with a header ad placeholder text."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/CalendarDatePickerPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/CalendarDatePickerPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(60);
 
     auto calendarView = new FluCalendarDatePicker(displayBox);
@@ -23,10 +23,10 @@ void FluCalendarDatePickerPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePickerPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluCalendarDatePickerPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarDatePickerPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluCalendarDatePickerPage.qss"), this);
     }
 }

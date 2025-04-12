@@ -50,11 +50,11 @@ void FluSplitButton::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluSplitButton.qss"), this);
     }
     else
     {
         m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluSplitButton.qss"), this);
     }
 }

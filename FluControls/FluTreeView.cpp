@@ -28,11 +28,11 @@ void FluTreeView::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         // m_delegate->updateColor();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTreeView.qss"), this);
     }
     else
     {
         // m_delegate->updateColor();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluTreeView.qss"), this);
     }
 }

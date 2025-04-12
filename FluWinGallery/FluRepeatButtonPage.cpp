@@ -10,7 +10,7 @@ FluRepeatButtonPage::FluRepeatButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A simple RepeatButton with text context."));
 
-    displayBox->getCodeExpander()->setCodeByPath("../code/RepeatButtonPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/RepeatButtonPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(64);
 
     auto repeatButton = new FluRepeatButton;
@@ -26,10 +26,10 @@ void FluRepeatButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRepeatButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluRepeatButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRepeatButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluRepeatButtonPage.qss"), this);
     }
 }

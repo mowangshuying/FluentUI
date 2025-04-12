@@ -8,7 +8,7 @@ FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : Fl
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A basic autosuggest box."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AutoSuggestBoxPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/AutoSuggestBoxPageCode1.md"));
 
     auto autoSuggestBox = new FluAutoSuggestBox;
     autoSuggestBox->setFixedWidth(300);
@@ -17,17 +17,17 @@ FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : Fl
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluAutoSuggestBoxPage.qss"), this);
 }
 
 void FluAutoSuggestBoxPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluAutoSuggestBoxPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAutoSuggestBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluAutoSuggestBoxPage.qss"), this);
     }
 }

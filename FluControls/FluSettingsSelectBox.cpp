@@ -77,11 +77,11 @@ void FluSettingsSelectBox::onThemeChanged()
     {
         // m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap())
         setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsSelectBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluSettingsSelectBox.qss"), this);
     }
     else
     {
         setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsSelectBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluSettingsSelectBox.qss"), this);
     }
 }

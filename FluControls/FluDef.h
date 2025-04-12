@@ -7,6 +7,12 @@
 #include <QVBoxLayout>
 #include "FluWidget.h"
 
+#ifndef FLU_USE_QRC
+#define FLURC(x) ("../" x)
+#else
+#define FLURC(x) (":/" x)
+#endif
+
 template <typename EnumType>
 static EnumType QStringToEnum(QString str)
 {

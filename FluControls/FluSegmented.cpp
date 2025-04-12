@@ -123,10 +123,10 @@ void FluSegmented::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSegmented.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluSegmented.qss"), this);
     }
     else if (FluThemeUtils::isDarkTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSegmented.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluSegmented.qss"), this);
     }
 }

@@ -14,7 +14,7 @@ void FluBorder::updateProperty(QString textColor, QString bgColor, QString borde
     m_map["BackGroundColor"] = bgColor;
     m_map["BorderWith"] = borderWidth;
     m_map["BorderColor"] = borderColor;
-    FluStyleSheetUitls::setQssByFileName(m_map, "../StyleSheet/light/FluBorder.qss", this);
+    FluStyleSheetUitls::setQssByFileName(m_map, FLURC("StyleSheet/light/FluBorder.qss"), this);
     style()->polish(this);
 }
 

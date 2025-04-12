@@ -30,11 +30,11 @@ class FluTriangle : public FluWidget
     {
         // if (FluThemeUtils::isLightTheme())
         //{
-        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTriangle.qss", this);
+        //     FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTriangle.qss"), this);
         // }
         // else
         //{
-        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTriangle.qss", this);
+        //     FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluTriangle.qss"), this);
         // }
     }
 };

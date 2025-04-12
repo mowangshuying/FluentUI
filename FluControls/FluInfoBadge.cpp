@@ -7,7 +7,7 @@ FluInfoBadge::FluInfoBadge(QWidget* parent /*= nullptr*/) : QLabel(parent)
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     m_parent = nullptr;
     m_target = nullptr;
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadge.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluInfoBadge.qss"), this);
 }
 
 void FluInfoBadge::setParent(QWidget* parent)

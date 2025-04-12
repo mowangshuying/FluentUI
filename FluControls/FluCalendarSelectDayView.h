@@ -90,11 +90,11 @@ class FluCalendarSelectDayView : public FluWidget
     //  {
     //      if (FluThemeUtils::isLightTheme())
     //      {
-    //          FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectDayView.qss", this);
+    //          FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluCalendarSelectDayView.qss"), this);
     //      }
     //      else
     //      {
-    //          FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectDayView.qss", this);
+    //          FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluCalendarSelectDayView.qss"), this);
     //      }
     //  }
   protected:

@@ -12,13 +12,13 @@ void FluListView::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluListView.qss"), this);
         //  style()->polish(this);
         //    setItemDelegate(new FluListViewItemDelegate);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluListView.qss"), this);
         //  style()->polish(this);
         //  setItemDelegate(new FluListViewItemDelegate);
     }

@@ -81,12 +81,12 @@ void FluShortcutPicker::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortcutPicker.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluShortcutPicker.qss"), this);
         updateKeys();
     }
     else if (FluThemeUtils::isDarkTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortcutPicker.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluShortcutPicker.qss"), this);
         updateKeys();
     }
 }

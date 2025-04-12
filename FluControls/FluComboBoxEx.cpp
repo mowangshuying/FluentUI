@@ -42,7 +42,7 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         m_menu->exec(leftBottomPos);
     });
 
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
+    // FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluComboBoxEx.qss"), this);
 
     connect(m_menu, &FluMenu::triggered, [=](QAction* action) {
         m_textBtn->setText(action->text());
@@ -148,13 +148,13 @@ void FluComboBoxEx::onThemeChanged()
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
         if (m_textAwesomeType != FluAwesomeType::None)
             m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Light));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluComboBoxEx.qss"), this);
     }
     else
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
         if (m_textAwesomeType != FluAwesomeType::None)
             m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBoxEx.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluComboBoxEx.qss"), this);
     }
 }

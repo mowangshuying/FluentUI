@@ -8,7 +8,7 @@ FluBorderPage::FluBorderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     auto displayBox = new FluDisplayBoxEx;
     displayBox->setTitle(tr("A Border around a TextBlock."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/BorderPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/BorderPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(120);
 
     m_border = new FluBorder;
@@ -39,7 +39,7 @@ FluBorderPage::FluBorderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     displayBox->getBodyRightLayout()->addWidget(group);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluBorderPage.qss"), this);
 }
 
 void FluBorderPage::onThemeChanged()
@@ -50,11 +50,11 @@ void FluBorderPage::onThemeChanged()
             m_border->setTExtColor(Qt::black);
         else
             m_border->setTExtColor(Qt::white);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluBorderPage.qss"), this);
     }
     else
     {
         m_border->setTExtColor(Qt::white);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBorderPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluBorderPage.qss"), this);
     }
 }

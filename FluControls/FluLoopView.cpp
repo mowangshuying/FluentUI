@@ -218,12 +218,12 @@ void FluLoopView::onThemeChanged()
     {
         m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Light)));
         m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Light)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluLoopView.qss"), this);
     }
     else
     {
         m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
         m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLoopView.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluLoopView.qss"), this);
     }
 }

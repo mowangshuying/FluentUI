@@ -58,11 +58,11 @@ void FluDisplayIconBox::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_type, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDisplayIconBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluDisplayIconBox.qss"), this);
     }
     else
     {
         m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_type, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDisplayIconBox.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluDisplayIconBox.qss"), this);
     }
 }

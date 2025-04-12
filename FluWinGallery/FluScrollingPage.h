@@ -19,11 +19,11 @@ class FluScrollingPage : public FluATitlePage
     {
         if (FluThemeUtils::isLightTheme())
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluScrollingPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluScrollingPage.qss"), this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluScrollingPage.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluScrollingPage.qss"), this);
         }
     }
 };

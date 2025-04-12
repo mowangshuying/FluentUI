@@ -3,7 +3,7 @@
 FluColorViewGradient::FluColorViewGradient(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedSize(192, 192);
-    m_pixmap = QPixmap("../res/ControlResImages/GradientColor.png");
+    m_pixmap = QPixmap(FLURC("res/ControlResImages/GradientColor.png"));
     m_pixmap = m_pixmap.scaled(192, 192);
 }
 

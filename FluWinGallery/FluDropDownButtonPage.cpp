@@ -9,7 +9,7 @@ FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : Fl
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("Simple DropDownButton"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode1.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/DropDownButtonPageCode1.md"));
     displayBox1->setBodyWidgetFixedHeight(56);
 
     auto dropDownButton1 = new FluDropDownButton(this);
@@ -24,7 +24,7 @@ FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : Fl
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("DropDownButton with Icons"));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/DropDownButtonPageCode2.md");
+    displayBox2->getCodeExpander()->setCodeByPath(FLURC("code/DropDownButtonPageCode2.md"));
     displayBox2->setBodyWidgetFixedHeight(56);
 
     auto dropDownButton2 = new FluDropDownButton(this);
@@ -44,10 +44,10 @@ void FluDropDownButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluDropDownButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluDropDownButtonPage.qss"), this);
     }
 }

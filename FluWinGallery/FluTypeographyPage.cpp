@@ -24,7 +24,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     m_imgLabel = new QLabel;
     m_imgLabel->setObjectName("imgLabel");
     m_imgLabel->setFixedSize(740, 450);
-    QPixmap pixmap = QPixmap("../res/Typography.light.png");
+    QPixmap pixmap = QPixmap(FLURC("res/Typography.light.png"));
     pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     m_imgLabel->setPixmap(pixmap);
 
@@ -104,17 +104,17 @@ void FluTypeographyPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        QPixmap pixmap = QPixmap("../res/Typography.light.png");
+        QPixmap pixmap = QPixmap(FLURC("res/Typography.light.png"));
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_imgLabel->setPixmap(pixmap);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTypeographyPage.qss"), this);
     }
     else
     {
-        QPixmap pixmap = QPixmap("../res/Typography.dark.png");
+        QPixmap pixmap = QPixmap(FLURC("res/Typography.dark.png"));
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_imgLabel->setPixmap(pixmap);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTypeographyPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluTypeographyPage.qss"), this);
     }
 }

@@ -129,11 +129,11 @@ void FluMSNavigationItem::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMSNavigationItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluMSNavigationItem.qss"), this);
     }
     else
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMSNavigationItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluMSNavigationItem.qss"), this);
     }
 }

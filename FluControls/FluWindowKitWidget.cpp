@@ -11,7 +11,7 @@
 
 FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
-    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+    setWindowIcon(QIcon(FLURC("res/Tiles/GalleryIcon.ico")));
     setWindowTitle("windowkit widget");
     resize(800, 600);
 
@@ -153,10 +153,10 @@ void FluWindowKitWidget::onThemeChanged()
 
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitWidget.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluWindowKitWidget.qss"), this);
     }
     else if (FluThemeUtils::isDarkTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitWidget.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluWindowKitWidget.qss"), this);
     }
 }

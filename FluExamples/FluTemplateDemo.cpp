@@ -16,7 +16,7 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
 #ifndef _DEBUG
     setWindowTitle("CppQt WinUI3 Template Demo");
 #endif
-    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+    setWindowIcon(QIcon(FLURC("res/Tiles/GalleryIcon.ico")));
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
@@ -62,7 +62,7 @@ void FluTemplateDemo::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTemplateDemo.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTemplateDemo.qss"), this);
     }
     else
     {
@@ -76,6 +76,6 @@ void FluTemplateDemo::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTemplateDemo.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluTemplateDemo.qss"), this);
     }
 }

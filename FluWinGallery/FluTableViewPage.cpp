@@ -8,7 +8,7 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("Base TableView Demo."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/TableViewPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/TableViewPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(600);
 
     // table view
@@ -46,17 +46,17 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     //
     displayBox->getBodyLayout()->addWidget(tableView);
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableViewPage.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTableViewPage.qss"), this);
 }
 
 void FluTableViewPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTableViewPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTableViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluTableViewPage.qss"), this);
     }
 }

@@ -2,6 +2,7 @@
 
 #include "FluLogUtils.h"
 #include "FluThemeUtils.h"
+#include "../FluControls/FluDef.h"
 #include <QByteArray>
 #include <QFile>
 #include <QJsonArray>

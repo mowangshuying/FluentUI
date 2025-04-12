@@ -62,11 +62,11 @@ void FluRotationButton::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluRotationButton.qss"), this);
     }
     else
     {
         setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRotationButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluRotationButton.qss"), this);
     }
 }

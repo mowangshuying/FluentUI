@@ -9,7 +9,7 @@ FluSettingsVersionBoxDemo::FluSettingsVersionBoxDemo(QWidget* parent /*= nullptr
     settingsVersionBox->getInfoLabel()->setText("©2023-2024 FluentUI For Qt & Cpp. All rights reserved.");
     settingsVersionBox->getVersionLabel()->setText("0.2.6");
 
-    QIcon icon = QIcon("../res/Tiles/GalleryIcon.ico");
+    QIcon icon = QIcon(FLURC("res/Tiles/GalleryIcon.ico"));
     settingsVersionBox->getIconLabel()->setPixmap(icon.pixmap(20, 20));
     settingsVersionBox->getIconLabel()->setFixedSize(40, 40);
 

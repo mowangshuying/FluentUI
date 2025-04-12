@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     QTranslator translator;
     if (FluConfigUtils::getUtils()->getLanguage() == "zh-CN")
     {
-        bool bLoad = translator.load("../i18n/zh-cn.qm");
+        bool bLoad = translator.load(FLURC("i18n/zh-cn.qm"));
         if (bLoad)
         {
             app.installTranslator(&translator);
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
     }
     else
     {
-        bool bLoad = translator.load("../i18n/en-US.qm");
+        bool bLoad = translator.load(FLURC("i18n/en-US.qm"));
         if (bLoad)
         {
             app.installTranslator(&translator);

@@ -11,7 +11,7 @@ FluToggleButtonPage::FluToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple toggle button with text content."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ToggleButtonPageCode1.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/ToggleButtonPageCode1.md"));
     auto btn1 = new FluToggleButton(this);
     btn1->setText(tr("Toggle Button"));
     displayBox1->setBodyWidgetFixedHeight(96);
@@ -25,10 +25,10 @@ void FluToggleButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluToggleButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluToggleButtonPage.qss"), this);
     }
 }

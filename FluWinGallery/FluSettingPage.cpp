@@ -82,7 +82,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     settingsVersionBox->getInfoLabel()->setText(tr("@2023-2024 FluentUI For Qt & Cpp. All rights reserved."));
     settingsVersionBox->getVersionLabel()->setText(tr("0.4.0"));
 
-    QIcon icon = QIcon("../res/Tiles/GalleryIcon.ico");
+    QIcon icon = QIcon(FLURC("res/Tiles/GalleryIcon.ico"));
     settingsVersionBox->getIconLabel()->setPixmap(icon.pixmap(20, 20));
     settingsVersionBox->getIconLabel()->setFixedSize(40, 40);
 
@@ -143,10 +143,10 @@ void FluSettingPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluSettingPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluSettingPage.qss"), this);
     }
 }

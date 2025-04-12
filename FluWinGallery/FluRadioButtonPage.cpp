@@ -9,7 +9,7 @@ FluRadioButtonPage::FluRadioButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A group of RadioButton controls in RadioButtons group."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/RadioButtonPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(160);
 
     FluVRadioGroupBox* groupBox = new FluVRadioGroupBox(tr("Options"));
@@ -33,10 +33,10 @@ void FluRadioButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluRadioButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluRadioButtonPage.qss"), this);
     }
 }

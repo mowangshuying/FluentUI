@@ -9,7 +9,7 @@ FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A basic calendar view."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/CalendarViewPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/CalendarViewPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(400);
 
     auto calendarView = new FluCalendarView(displayBox);
@@ -23,10 +23,10 @@ void FluCalendarViewPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluCalendarViewPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluCalendarViewPage.qss"), this);
     }
 }

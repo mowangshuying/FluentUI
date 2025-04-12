@@ -17,7 +17,7 @@ void FluNumberBoxPage::addSpinBox()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A spin box"));
-    displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/NumberBoxPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(90);
 
     auto spinBox = new FluSpinBox(this);
@@ -30,7 +30,7 @@ void FluNumberBoxPage::addDoubleSpinBox()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A double spin box"));
-    displayBox->getCodeExpander()->setCodeByPath("../code/NumberBoxPageCode2.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/NumberBoxPageCode2.md"));
     displayBox->setBodyWidgetFixedHeight(90);
 
     auto doubleSpinBox = new FluDoubleSpinBox(this);
@@ -43,10 +43,10 @@ void FluNumberBoxPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluNumberBoxPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNumberBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluNumberBoxPage.qss"), this);
     }
 }

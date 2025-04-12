@@ -14,10 +14,10 @@ void FluSegmentedItem::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSegmentedItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluSegmentedItem.qss"), this);
     }
     else if (FluThemeUtils::isDarkTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSegmentedItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluSegmentedItem.qss"), this);
     }
 }

@@ -8,10 +8,10 @@ FluScrollViewPage::FluScrollViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("Content inside of ScrollView."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ScrollViewPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/ScrollViewPageCode1.md"));
     // displayBox->setBodyWidgetFixedHeight(800);
 
-    QPixmap img("../res/SampleMedia/LandscapeImage9.jpg");
+    QPixmap img(FLURC("res/SampleMedia/LandscapeImage9.jpg"));
     auto imgBox = new FluImageBox(img, this);
     imgBox->setFixedSize(2000, 2000);
     auto scrollArea = new FluScrollArea;
@@ -28,10 +28,10 @@ void FluScrollViewPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluScrollViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluScrollViewPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluScrollViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluScrollViewPage.qss"), this);
     }
 }

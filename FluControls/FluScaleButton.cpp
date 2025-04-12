@@ -75,11 +75,11 @@ void FluScaleButton::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         scaleByPercentage(m_currentPercentage);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluScaleButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluScaleButton.qss"), this);
     }
     else
     {
         scaleByPercentage(m_currentPercentage);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluScaleButton.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluScaleButton.qss"), this);
     }
 }

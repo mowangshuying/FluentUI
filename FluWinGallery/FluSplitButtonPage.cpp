@@ -8,14 +8,14 @@ FluSplitButtonPage::FluSplitButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
     addSplitButtonWithText();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluSplitButtonPage.qss"), this);
 }
 
 void FluSplitButtonPage::addSplitButtonWithText()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A SplitButton with text."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/SplitButtonPageCode1.md"));
 
     auto splitButton = new FluSplitButton(this);
     splitButton->setText("Choose Color.");
@@ -51,7 +51,7 @@ void FluSplitButtonPage::addSplitButtonWithText()
     connect(splitButton, &FluSplitButton::clicked, [=]() { colorLayout->show(); });
 
     displayBox->getBodyLayout()->addWidget(splitButton);
-    displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/SplitButtonPageCode1.md"));
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
@@ -59,10 +59,10 @@ void FluSplitButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluSplitButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluSplitButtonPage.qss"), this);
     }
 }

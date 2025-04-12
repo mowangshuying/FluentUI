@@ -28,7 +28,7 @@ FluTabBarContent::FluTabBarContent(QWidget* parent /*= nullptr*/) : QScrollArea(
 
     m_hMainWidget->setFixedHeight(40);
     setFixedHeight(40);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarContent.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTabBarContent.qss"), this);
 }
 
 void FluTabBarContent::addBarItem(FluTabBarItem* item)

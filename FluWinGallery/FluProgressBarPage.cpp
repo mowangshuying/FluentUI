@@ -9,7 +9,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("An indeterminate progress ring."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ProgressBarPageCode1.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/ProgressBarPageCode1.md"));
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto progressBar1 = new FluProgressBar(displayBox1);
@@ -27,10 +27,10 @@ void FluProgressBarPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluProgressBarPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluProgressBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluProgressBarPage.qss"), this);
     }
 }

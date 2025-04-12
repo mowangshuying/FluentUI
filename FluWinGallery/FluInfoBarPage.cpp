@@ -12,7 +12,7 @@ FluInfoBarPage::FluInfoBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
 
     addDynamicInfoBar();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluInfoBarPage.qss"), this);
 }
 
 void FluInfoBarPage::addClosableInfoBar()
@@ -21,7 +21,7 @@ void FluInfoBarPage::addClosableInfoBar()
     displayBox->getBodyRightLayout()->setAlignment(Qt::AlignTop);
 
     displayBox->setTitle(tr("A closabel InforBar with options to change its severity."));
-    displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("Code/InfoBarPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(120);
 
     FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info);
@@ -97,7 +97,7 @@ void FluInfoBarPage::addDynamicInfoBar()
 {
     FluDisplayBox* displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A dynamic InforBar."));
-    displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode2.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("Code/InfoBarPageCode2.md"));
     displayBox->setBodyWidgetFixedHeight(256);
 
     auto infoBtn = new FluPushButton;
@@ -131,10 +131,10 @@ void FluInfoBarPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluInfoBarPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluInfoBarPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluInfoBarPage.qss"), this);
     }
 }

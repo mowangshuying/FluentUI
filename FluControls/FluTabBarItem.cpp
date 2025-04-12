@@ -37,7 +37,7 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTabBarItem.qss"), this);
 }
 
 void FluTabBarItem::setSelected(bool bSel)

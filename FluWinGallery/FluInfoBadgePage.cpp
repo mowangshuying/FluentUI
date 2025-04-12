@@ -8,7 +8,7 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("InfoBadge with Different Value."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/InfoBadgePageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto targetWidget1 = new QWidget(displayBox->getBodyWidget());
@@ -38,10 +38,10 @@ void FluInfoBadgePage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadgePage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluInfoBadgePage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluInfoBadgePage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluInfoBadgePage.qss"), this);
     }
 }

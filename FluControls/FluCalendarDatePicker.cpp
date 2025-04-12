@@ -80,11 +80,11 @@ void FluCalendarDatePicker::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluCalendarDatePicker.qss"), this);
     }
     else
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarDatePicker.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluCalendarDatePicker.qss"), this);
     }
 }

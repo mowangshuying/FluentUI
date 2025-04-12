@@ -3,7 +3,7 @@
 FluTriangle::FluTriangle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedSize(24, 14);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTriangle.qss", this);
+    // FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTriangle.qss"), this);
 }
 
 QList<QPoint> FluTriangle::getPointsByOrient(FluTriangleOrient orient)

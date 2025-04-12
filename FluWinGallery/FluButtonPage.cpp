@@ -10,7 +10,7 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     auto displayBox1 = new FluDisplayBoxEx;
     //  displayBox1->setFixedHeight(140);
     displayBox1->setTitle(tr("A simple button with text content."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ButtonPageCode1.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/ButtonPageCode1.md"));
     auto btn1 = new FluPushButton(this);
     btn1->setText(tr("Standard XAML button"));
     displayBox1->setBodyWidgetFixedHeight(96);
@@ -24,9 +24,9 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A Button with grapical content."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/ButtonPageCode2.md");
+    displayBox2->getCodeExpander()->setCodeByPath(FLURC("code/ButtonPageCode2.md"));
     auto btn2 = new FluGraphicalButton;
-    btn2->setIcon(QPixmap("../res/Slices.png"));
+    btn2->setIcon(QPixmap(FLURC("res/Slices.png")));
     displayBox2->setBodyWidgetFixedHeight(96);
     displayBox2->getBodyLayout()->addWidget(btn2);
     m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
@@ -34,7 +34,7 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     auto displayBox3 = new FluDisplayBox;
     displayBox3->setTitle(tr("Accent style applied to Button."));
-    displayBox3->getCodeExpander()->setCodeByPath("../code/ButtonPageCode3.md");
+    displayBox3->getCodeExpander()->setCodeByPath(FLURC("code/ButtonPageCode3.md"));
     auto btn3 = new FluStyleButton;
     btn3->setText(tr("Accent style button."));
     displayBox3->setBodyWidgetFixedHeight(96);
@@ -48,10 +48,10 @@ void FluButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluButtonPage.qss"), this);
     }
 }

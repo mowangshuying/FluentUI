@@ -10,7 +10,7 @@ FluDatePickerPage::FluDatePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple DatePicker with a header."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/DatePickerPageCode1.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/DatePickerPageCode1.md"));
     auto datePicker = new FluDatePicker;
     displayBox1->getBodyLayout()->addWidget(datePicker);
 
@@ -23,10 +23,10 @@ void FluDatePickerPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluDatePickerPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePickerPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluDatePickerPage.qss"), this);
     }
 }

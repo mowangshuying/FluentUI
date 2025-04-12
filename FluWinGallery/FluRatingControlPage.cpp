@@ -8,7 +8,7 @@ FluRatingControlPage::FluRatingControlPage(QWidget* parent /*= nullptr*/) : FluA
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A Simple RatingControl."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/RatingControlPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/RatingControlPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto ratingControl = new FluRatingControl;
@@ -22,10 +22,10 @@ void FluRatingControlPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControlPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluRatingControlPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControlPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluRatingControlPage.qss"), this);
     }
 }

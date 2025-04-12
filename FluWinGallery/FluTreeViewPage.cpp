@@ -11,7 +11,7 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A simple TreeView with drag and drop support."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/TreeViewPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/TreeViewPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(300);
 
     // tree view demo;
@@ -84,10 +84,10 @@ void FluTreeViewPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluTreeViewPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluTreeViewPage.qss"), this);
     }
 }

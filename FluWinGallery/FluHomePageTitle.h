@@ -32,7 +32,7 @@ class FluHomePageTitle : public FluWidget
         painter.setBrush(gradient1);
         painter.drawRect(rect());
 
-        QPixmap pixmap("../res/GalleryHeaderImage.png");
+        QPixmap pixmap(FLURC("res/GalleryHeaderImage.png"));
         pixmap.copy(0, 0, pixmap.width(), pixmap.height() / 4);
         pixmap = pixmap.scaled(rect().width(), rect().height(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         painter.drawPixmap(rect(), pixmap);
@@ -50,18 +50,18 @@ class FluHomePageTitle : public FluWidget
     {
         if (FluThemeUtils::isLightTheme())
         {
-            m_githubCard->setIcon(QPixmap("../res/HomeHeaderTiles/github-mark.png"));
+            m_githubCard->setIcon(QPixmap(FLURC("res/HomeHeaderTiles/github-mark.png")));
             m_color1 = QColor(206, 216, 228);
             m_color2 = QColor(223, 231, 240);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePageTitle.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluHomePageTitle.qss"), this);
             update();
         }
         else
         {
-            m_githubCard->setIcon(QPixmap("../res/HomeHeaderTiles/github-mark-white.png"));
+            m_githubCard->setIcon(QPixmap(FLURC("res/HomeHeaderTiles/github-mark-white.png")));
             m_color1 = QColor(0, 0, 0);
             m_color2 = QColor(39, 39, 39);
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePageTitle.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluHomePageTitle.qss"), this);
             update();
         }
     }

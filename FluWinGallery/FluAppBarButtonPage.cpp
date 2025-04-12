@@ -20,7 +20,7 @@ void FluAppBarButtonPage::addSymbolIconAppBarButton()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An AppBarButton with a symbol icon."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/AppBarButtonPageCode1.md"));
 
     auto appBarButton = new FluAppBarButton(FluAwesomeType::Like);
     appBarButton->setText(tr("SymbolIcon"));
@@ -34,7 +34,7 @@ void FluAppBarButtonPage::addKeyboardAcceleratorAppBarButton()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An AppBarButton with a KeyboardAccelerator."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode2.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/AppBarButtonPageCode2.md"));
 
     auto appBarButton = new FluAppBarButton(FluAwesomeType::Save);
     appBarButton->setText("Save");
@@ -49,10 +49,10 @@ void FluAppBarButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluAppBarButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluAppBarButtonPage.qss"), this);
     }
 }

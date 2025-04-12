@@ -8,7 +8,7 @@ FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluA
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A basic content dialog with content."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ContentDialogPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/ContentDialogPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(56);
 
     auto showDlgBtn = new FluPushButton;
@@ -30,10 +30,10 @@ void FluContentDialogPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluContentDialogPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluContentDialogPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluContentDialogPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluContentDialogPage.qss"), this);
     }
 }

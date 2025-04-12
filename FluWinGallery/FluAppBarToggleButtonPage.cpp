@@ -16,7 +16,7 @@ void FluAppBarToggleButtonPage::addSymbolIconAppBarButton()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An AppBarButton with a symbol icon."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AppBarToggleButtonPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/AppBarToggleButtonPageCode1.md"));
 
     auto appBarButton = new FluAppBarToggleButton(FluAwesomeType::Like);
     appBarButton->setText("SymbolIcon");
@@ -30,10 +30,10 @@ void FluAppBarToggleButtonPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluAppBarToggleButtonPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarToggleButtonPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluAppBarToggleButtonPage.qss"), this);
     }
 }

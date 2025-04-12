@@ -12,7 +12,7 @@ FluHCard::FluHCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_iconLabel = new QLabel(this);
     m_iconLabel->setFixedSize(50, 50);
-    QPixmap pixmap = QPixmap("../res/ControlImages/Placeholder.png");
+    QPixmap pixmap = QPixmap(FLURC("res/ControlImages/Placeholder.png"));
     pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     m_iconLabel->setPixmap(pixmap);
 
@@ -75,10 +75,10 @@ void FluHCard::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHCard.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluHCard.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHCard.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluHCard.qss"), this);
     }
 }

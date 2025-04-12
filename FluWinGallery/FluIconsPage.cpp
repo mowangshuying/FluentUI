@@ -159,7 +159,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     if (m_sDisplayIconBox != nullptr)
         emit m_sDisplayIconBox->clicked();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+    FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluIconsPage.qss"), this);
 }
 
 void FluIconsPage::onThemeChanged()
@@ -171,7 +171,7 @@ void FluIconsPage::onThemeChanged()
         pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_iconLabel->setPixmap(pixmap);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluIconsPage.qss"), this);
     }
     else
     {
@@ -180,6 +180,6 @@ void FluIconsPage::onThemeChanged()
         pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_iconLabel->setPixmap(pixmap);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconsPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluIconsPage.qss"), this);
     }
 }

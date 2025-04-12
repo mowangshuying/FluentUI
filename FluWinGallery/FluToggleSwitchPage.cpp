@@ -8,7 +8,7 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A simple ToggleSwitch."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ToggleSwitchPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/ToggleSwitchPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(70);
 
     auto toggleSwitch = new FluTextToggleSwitchEx(displayBox);
@@ -23,10 +23,10 @@ void FluToggleSwitchPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluToggleSwitchPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitchPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluToggleSwitchPage.qss"), this);
     }
 }

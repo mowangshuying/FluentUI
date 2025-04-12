@@ -8,7 +8,7 @@ FluPivotPage::FluPivotPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A basic pivot."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/PivotPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/PivotPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(360);
 
     auto pivot = new FluPivot;
@@ -48,10 +48,10 @@ void FluPivotPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluPivotPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivotPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluPivotPage.qss"), this);
     }
 }

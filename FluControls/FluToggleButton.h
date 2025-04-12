@@ -31,11 +31,11 @@ class FluToggleButton : public QPushButton
     {
         if (FluThemeUtils::isLightTheme())
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluToggleButton.qss"), this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleButton.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluToggleButton.qss"), this);
         }
     }
 

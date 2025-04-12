@@ -22,7 +22,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     setWindowTitle("CppQt WinUI3 Gallery");
 #endif
 
-    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+    setWindowIcon(QIcon(FLURC("res/Tiles/GalleryIcon.ico")));
 
 #if !defined USE_WINDOWKIT_WIDGET
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
@@ -32,7 +32,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_titleBar->setFixedHeight(48);
 #endif
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
+    QString qss = FluStyleSheetUitls::getQssByFileName(FLURC("StyleSheet/light/FluGalleryWindow.qss"));
     setStyleSheet(qss);
 
     m_navView = new FluVNavigationView(this);
@@ -864,7 +864,7 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluGalleryWindow.qss"), this);
     }
     else
     {
@@ -879,7 +879,7 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluGalleryWindow.qss"), this);
     }
 #endif
 }

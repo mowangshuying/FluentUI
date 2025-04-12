@@ -8,7 +8,7 @@ FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("Two RadioButtons controls with strings as options."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/RadioButtonsPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/RadioButtonsPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(360);
 
     auto border = new FluBorder;
@@ -49,10 +49,10 @@ void FluRadioButtonsPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonsPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluRadioButtonsPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButtonsPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluRadioButtonsPage.qss"), this);
     }
 }

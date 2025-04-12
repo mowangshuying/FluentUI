@@ -67,11 +67,11 @@ void FluVNavigationSearchItem::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, QColor(8, 8, 8)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSearchItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluVNavigationSearchItem.qss"), this);
     }
     else
     {
         m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, QColor(239, 239, 239)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationSearchItem.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluVNavigationSearchItem.qss"), this);
     }
 }

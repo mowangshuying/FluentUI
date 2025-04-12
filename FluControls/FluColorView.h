@@ -270,11 +270,11 @@ class FluColorView : public QDialog
     {
         if (FluThemeUtils::isLightTheme())
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluColorView.qss"), this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluColorView.qss"), this);
         }
     }
 

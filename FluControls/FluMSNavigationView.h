@@ -119,11 +119,11 @@ class FluMSNavigationView : public FluWidget
     {
         if (FluThemeUtils::isLightTheme())
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMSNavigationView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluMSNavigationView.qss"), this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMSNavigationView.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluMSNavigationView.qss"), this);
         }
     }
 

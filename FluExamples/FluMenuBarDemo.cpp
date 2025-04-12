@@ -49,7 +49,7 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent
     // menuBar->addMenu(helpMenu);
     menuBar->addAction(helpMenu->menuAction());
 
-    //  FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", menuBar);
+    //  FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluMenuBar.qss"), menuBar);
 
     // menuBar->show();
 

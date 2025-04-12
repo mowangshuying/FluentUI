@@ -66,11 +66,11 @@ class FluToggleSwitch : public QCheckBox
     {
         if (FluThemeUtils::isLightTheme())
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluToggleSwitch.qss"), this);
         }
         else
         {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitch.qss", this);
+            FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluToggleSwitch.qss"), this);
         }
     }
 

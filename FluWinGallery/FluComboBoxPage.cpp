@@ -8,7 +8,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A ComboBox with items defined inline and its width set."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath(FLURC("code/ComboBoxPageCode1.md"));
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto comboBox = new FluComboBoxEx(displayBox);
@@ -38,10 +38,10 @@ void FluComboBoxPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluComboBoxPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBoxPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluComboBoxPage.qss"), this);
     }
 }

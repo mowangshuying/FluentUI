@@ -8,7 +8,7 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("Basic ListView with Simple DateTemplate"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ListViewPageCode1.md");
+    displayBox1->getCodeExpander()->setCodeByPath(FLURC("code/ListViewPageCode1.md"));
     displayBox1->setBodyWidgetFixedHeight(480);
 
     FluListView* listView = new FluListView(displayBox1);
@@ -46,10 +46,10 @@ void FluListViewPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/light/FluListViewPage.qss"), this);
     }
     else
     {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListViewPage.qss", this);
+        FluStyleSheetUitls::setQssByFileName(FLURC("StyleSheet/dark/FluListViewPage.qss"), this);
     }
 }

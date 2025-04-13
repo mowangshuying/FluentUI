@@ -35,12 +35,13 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluCheckBoxPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBoxPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCheckBoxPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBoxPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCheckBoxPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluCheckBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

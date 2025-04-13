@@ -36,12 +36,14 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
 void FluInfoBadgePage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadgePage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluInfoBadgePage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadgePage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluInfoBadgePage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluInfoBadgePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

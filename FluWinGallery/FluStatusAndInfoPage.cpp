@@ -35,12 +35,14 @@ FluStatusAndInfoPage::FluStatusAndInfoPage(QWidget* parent /*= nullptr*/) : FluA
 
 void FluStatusAndInfoPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStatusAndInfoPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluStatusAndInfoPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStatusAndInfoPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluStatusAndInfoPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluStatusAndInfoPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

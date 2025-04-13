@@ -23,12 +23,14 @@ FluTextBoxPage::FluTextBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
 
 void FluTextBoxPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextBoxPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextBoxPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextBoxPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextBoxPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluTextBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

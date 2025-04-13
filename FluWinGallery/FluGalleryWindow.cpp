@@ -864,7 +864,7 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
+       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
     }
     else
     {
@@ -879,7 +879,9 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
+       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
     }
+
+       FluStyleSheetUitls::setQssByFileName("FluGalleryWindow.qss", this, FluThemeUtils::getUtils()->getTheme());
 #endif
 }

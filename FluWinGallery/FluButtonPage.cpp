@@ -46,12 +46,14 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
 void FluButtonPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluButtonPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluButtonPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluButtonPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluButtonPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

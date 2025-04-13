@@ -76,12 +76,13 @@ void FluDatePicker::paintEvent(QPaintEvent* event)
 
 void FluDatePicker::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePicker.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePicker.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluDatePicker.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

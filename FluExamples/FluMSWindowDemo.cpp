@@ -26,14 +26,16 @@ void FluMSPage::paintEvent(QPaintEvent* event)
 
 void FluMSPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMSPage.qss", this);
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMSPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMSPage.qss", this);
+    // }
+    // else if (FluThemeUtils::isDarkTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMSPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluMSPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 FluMSWindowDemo::FluMSWindowDemo(QWidget* parent /*= nullptr*/) : FluMSWindow(parent)

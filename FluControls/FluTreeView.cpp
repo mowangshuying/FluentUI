@@ -25,14 +25,15 @@ void FluTreeView::drawBranches(QPainter *painter, const QRect &rect, const QMode
 
 void FluTreeView::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        // m_delegate->updateColor();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeView.qss", this);
-    }
-    else
-    {
-        // m_delegate->updateColor();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeView.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     // m_delegate->updateColor();
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeView.qss", this);
+    // }
+    // else
+    // {
+    //     // m_delegate->updateColor();
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeView.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluTreeView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

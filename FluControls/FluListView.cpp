@@ -10,16 +10,19 @@ FluListView::FluListView(QWidget* parent /*= nullptr*/) : QListWidget(parent)
 
 void FluListView::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
-        //  style()->polish(this);
-        //    setItemDelegate(new FluListViewItemDelegate);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListView.qss", this);
-        //  style()->polish(this);
-        //  setItemDelegate(new FluListViewItemDelegate);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListView.qss", this);
+    //     //  style()->polish(this);
+    //     //    setItemDelegate(new FluListViewItemDelegate);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListView.qss", this);
+    //     //  style()->polish(this);
+    //     //  setItemDelegate(new FluListViewItemDelegate);
+    // }
+
+
+    FluStyleSheetUitls::setQssByFileName("FluListView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -60,12 +60,13 @@ void FluColorFlyout::paintEvent(QPaintEvent* event)
 
 void FluColorFlyout::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorFlyout.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluColorFlyout.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorFlyout.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluColorFlyout.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluColorFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

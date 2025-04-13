@@ -44,12 +44,5 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
 void FluSliderPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSliderPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSliderPage.qss", this);
-    }
+    FluStyleSheetUitls::setQssByFileName("FluSliderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

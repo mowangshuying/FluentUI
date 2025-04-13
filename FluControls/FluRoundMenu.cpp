@@ -536,14 +536,16 @@ void FluRoundMenu::onShowSubMenu(QListWidgetItem* item)
 
 void FluRoundMenu::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenu.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRoundMenu.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenu.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRoundMenu.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluRoundMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
 
     for (auto action : actions())
     {

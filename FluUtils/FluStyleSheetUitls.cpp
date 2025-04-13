@@ -9,6 +9,8 @@ FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(
     m_timer = new QTimer;
     m_timer->start(5000);
     // #endif
+
+    m_styleSheetDir = "../StyleSheet/";
 }
 
 QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)

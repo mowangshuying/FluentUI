@@ -21,12 +21,14 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluToggleSwitchPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitchPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitchPage.qss", this);
+    // }
+    //
+    FluStyleSheetUitls::setQssByFileName("FluToggleSwitchPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

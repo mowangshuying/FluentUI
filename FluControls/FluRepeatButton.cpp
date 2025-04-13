@@ -22,12 +22,15 @@ int FluRepeatButton::getClickCount()
 
 void FluRepeatButton::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRepeatButton.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRepeatButton.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRepeatButton.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRepeatButton.qss", this);
+    // }
+
+
+    FluStyleSheetUitls::setQssByFileName("FluRepeatButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

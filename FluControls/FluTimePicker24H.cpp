@@ -66,12 +66,14 @@ void FluTimePicker24H::paintEvent(QPaintEvent* event)
 
 void FluTimePicker24H::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePicker24H.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24H.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePicker24H.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluTimePicker24H.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

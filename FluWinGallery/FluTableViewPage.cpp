@@ -51,12 +51,13 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
 void FluTableViewPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableViewPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTableViewPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableViewPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTableViewPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluTableViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

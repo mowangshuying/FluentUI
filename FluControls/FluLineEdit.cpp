@@ -21,12 +21,13 @@ void FluLineEdit::paintEvent(QPaintEvent* event)
 
 void FluLineEdit::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLineEdit.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLineEdit.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLineEdit.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLineEdit.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluLineEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

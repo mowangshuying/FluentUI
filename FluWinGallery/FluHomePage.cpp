@@ -81,12 +81,14 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
 
 void FluHomePage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHomePage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHomePage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluHomePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

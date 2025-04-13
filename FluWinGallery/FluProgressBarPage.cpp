@@ -25,12 +25,14 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
 void FluProgressBarPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBarPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluProgressBarPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressBarPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluProgressBarPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("../StyleSheet/FluProgressBarPage.qss", this);
 }

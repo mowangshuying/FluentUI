@@ -79,11 +79,10 @@ void FluAppBarButton::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButton.qss", this);
     }
     else
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarButton.qss", this);
     }
+    FluStyleSheetUitls::setQssByFileName("FluAppBarButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

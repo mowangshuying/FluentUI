@@ -208,13 +208,14 @@ void FluCalendarView::paintEvent(QPaintEvent* event)
 
 void FluCalendarView::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarView.qss", this);
-        //   style()->polish(this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarView.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarView.qss", this);
+    //     //   style()->polish(this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluCalendarView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

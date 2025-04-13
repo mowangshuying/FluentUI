@@ -151,12 +151,13 @@ void FluWindowKitWidget::onThemeChanged()
     m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
     m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitWidget.qss", this);
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitWidget.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitWidget.qss", this);
+    // }
+    // else if (FluThemeUtils::isDarkTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitWidget.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluWindowKitWidget.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

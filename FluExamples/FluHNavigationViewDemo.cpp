@@ -310,7 +310,7 @@ void FluHNavigationViewDemo::onThemeChanged()
         // m_titleBar->update();
         // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }
@@ -328,8 +328,10 @@ void FluHNavigationViewDemo::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationDemo.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }
+
+    FluStyleSheetUitls::setQssByFileName("FluHNavigationDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

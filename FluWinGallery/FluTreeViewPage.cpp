@@ -82,12 +82,15 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 
 void FluTreeViewPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeViewPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeViewPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeViewPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeViewPage.qss", this);
+    // }
+
+    //
+    FluStyleSheetUitls::setQssByFileName("FluTreeViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -123,12 +123,13 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
 
 void FluMenuBarPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBarPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuBarPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBarPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuBarPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluMenuBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -44,12 +44,13 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluListViewPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListViewPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListViewPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListViewPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListViewPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluListViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

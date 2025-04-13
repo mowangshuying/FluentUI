@@ -73,7 +73,7 @@ QSlider::add-page:vertical {
 
 QSlider::handle:vertical {
     background-color: rgb(118, 185, 237);
-    border: 5px solid rgb(69, 69, 69);
+    border: 5px solid rgba(243, 145, 199, 0.95);
     height: 9px;
     margin: 0px -7px;
     border-radius: 9px;
@@ -81,7 +81,7 @@ QSlider::handle:vertical {
 
 QSlider::handle:vertical:hover {
     background-color: rgb(118, 185, 237);
-    border: 4px solid rgb(69, 69, 69);
+    border: 4px solid rgba(243, 165, 209, 0.95);
     height: 11px;
     margin: 0px -7px;
     border-radius: 9px
@@ -89,7 +89,7 @@ QSlider::handle:vertical:hover {
 
 QSlider::handle:vertical:pressed {
     background-color: rgb(118, 185, 237);
-    border: 6px solid rgb(69, 69, 69);
+    border: 6px solid rgba(243, 165, 209, 0.95);
     height: 7px;
     margin: 0px -7px;
     border-radius: 9px

@@ -121,12 +121,14 @@ void FluRoundMenuView::hockEvent(QEvent* event)
 
 void FluRoundMenuView::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRoundMenuView.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRoundMenuView.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRoundMenuView.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluRoundMenuView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

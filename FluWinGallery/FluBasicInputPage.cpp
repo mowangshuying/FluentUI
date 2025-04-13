@@ -88,12 +88,14 @@ FluBasicInputPage::FluBasicInputPage(QWidget* parent /*= nullptr*/) : FluATitleP
 
 void FluBasicInputPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBasicInputPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBasicInputPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBasicInputPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBasicInputPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluBasicInputPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

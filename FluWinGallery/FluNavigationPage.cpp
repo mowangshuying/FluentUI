@@ -33,12 +33,14 @@ FluNavigationPage::FluNavigationPage(QWidget* parent /*= nullptr*/) : FluATitleP
 
 void FluNavigationPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNavigationPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNavigationPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluNavigationPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

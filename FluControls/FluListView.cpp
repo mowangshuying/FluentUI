@@ -23,6 +23,5 @@ void FluListView::onThemeChanged()
     //     //  setItemDelegate(new FluListViewItemDelegate);
     // }
 
-
     FluStyleSheetUitls::setQssByFileName("FluListView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

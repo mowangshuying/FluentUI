@@ -57,6 +57,5 @@ void FluBorderPage::onThemeChanged()
         m_border->setTExtColor(Qt::white);
         // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBorderPage.qss", this);
     }
-        FluStyleSheetUitls::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
-
+    FluStyleSheetUitls::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -288,8 +288,8 @@ int main(int argc, char **argv)
     // QsciScintilla demo;
     // demo.show();
 
-    //FluScintillaDemo demo;
-    //demo.show();
+    // FluScintillaDemo demo;
+    // demo.show();
 
     // FluTableViewDemo demo;
     // demo.show();

@@ -202,16 +202,17 @@ class FluToggleSwitchEx : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        //if (FluThemeUtils::isLightTheme())
+        // if (FluThemeUtils::isLightTheme())
         //{
-        //    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchEx.qss", this);
-        //}
-        //else if (FluThemeUtils::isDarkTheme())
+        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchEx.qss", this);
+        // }
+        // else if (FluThemeUtils::isDarkTheme())
         //{
-        //    FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitchEx.qss", this);
-        //}
+        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitchEx.qss", this);
+        // }
         FluStyleSheetUitls::setQssByFileName("FluToggleSwitchEx.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
+
   protected:
     bool m_bChecked;
     bool m_bMouseDown;

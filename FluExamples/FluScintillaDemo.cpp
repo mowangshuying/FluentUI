@@ -2,7 +2,6 @@
 
 FluScintillaDemo::FluScintillaDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
-
     setWindowTitle("CppQt WinUI3 Scintiila Demo Dev");
 #ifndef _DEBUG
     setWindowTitle("CppQt WinUI3 Scintiila Demo");

@@ -62,7 +62,7 @@ void FluTemplateDemo::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
         m_titleBar->show();
-        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTemplateDemo.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTemplateDemo.qss", this);
     }
     else
     {
@@ -76,7 +76,7 @@ void FluTemplateDemo::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTemplateDemo.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTemplateDemo.qss", this);
     }
 
     // just do stylesheet;

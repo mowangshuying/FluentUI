@@ -25,9 +25,9 @@ class FluScrollBarTrunk : public QWidget
 
     FluScrollBarArrowButton* getLstBtn();
 
-    void setHandleBackgoundColor(QColor color);
+    void setTrunkBackgoundColor(QColor color);
 
-    QColor getHandleBackgoundColor();
+    QColor getTrunkBackgoundColor();
 
     QPropertyAnimation* getAnimation()
     {
@@ -44,14 +44,14 @@ class FluScrollBarTrunk : public QWidget
     void collapseTrunk();
 
   public:
-    void drawHandleBackground(QPainter* painter);
+    void drawTrunkBackground(QPainter* painter);
 
     void paintEvent(QPaintEvent* event);
-  public slots:
-    void onThemeChanged();
+  // public slots:
+    // void onThemeChanged();
 
   protected:
-    QColor m_handleBackgoundColor;
+    QColor m_trunkBackgoundColor;
     FluScrollBarArrowButton* m_preBtn;
     FluScrollBarArrowButton* m_lstBtn;
 

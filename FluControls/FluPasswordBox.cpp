@@ -92,14 +92,13 @@ void FluPasswordBox::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Light));
-       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
     }
     else
     {
         m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Dark));
-       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPasswordBox.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPasswordBox.qss", this);
     }
 
     FluStyleSheetUitls::setQssByFileName("FluPasswordBox.qss", this, FluThemeUtils::getUtils()->getTheme());
-
 }

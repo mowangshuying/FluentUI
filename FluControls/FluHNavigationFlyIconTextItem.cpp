@@ -137,6 +137,6 @@ void FluHNavigationFlyIconTextItem::onThemeChanged()
     //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationFlyIconTextItem.qss", this);
     // }
 
-            FluStyleSheetUitls::setQssByFileName("FluHNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
-        FluStyleSheetUitls::setQssByFileName("FluHNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUitls::setQssByFileName("FluHNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUitls::setQssByFileName("FluHNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

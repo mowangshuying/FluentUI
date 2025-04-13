@@ -33,13 +33,13 @@ class FluStyleSheetUitls : public QObject
     static void setQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName, QWidget *widget);
 
     // dir/theme/filename
-    static void setQssByFileName(const QString &filename, QWidget* widget, FluTheme theme)
+    static void setQssByFileName(const QString &filename, QWidget *widget, FluTheme theme)
     {
-        #ifdef _DEBUG
-          // log styleSheetDir;
-          //QString absolutePath = QDir(m_styleSheetDir).absolutePath();
-          //LOG_DEBUG << "styleSheetDir: " << absolutePath;
-        #endif
+#ifdef _DEBUG
+        // log styleSheetDir;
+        // QString absolutePath = QDir(m_styleSheetDir).absolutePath();
+        // LOG_DEBUG << "styleSheetDir: " << absolutePath;
+#endif
 
         QString qssFileName = getUtils()->getStyleSheetDir() + FluThemeUtils::getThemeName() + "/" + filename;
         setQssByFileName(qssFileName, widget);

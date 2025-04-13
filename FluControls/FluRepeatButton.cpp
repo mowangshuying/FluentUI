@@ -31,6 +31,5 @@ void FluRepeatButton::onThemeChanged()
     //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRepeatButton.qss", this);
     // }
 
-
     FluStyleSheetUitls::setQssByFileName("FluRepeatButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

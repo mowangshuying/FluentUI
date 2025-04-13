@@ -88,8 +88,8 @@ void FluCalendarViewTitle::onThemeChanged()
     //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewTitle.qss", this);
     // }
 
-        FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_yearMonthBtn, FluThemeUtils::getUtils()->getTheme());
-        FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_preBtn, FluThemeUtils::getUtils()->getTheme());
-        FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_nextBtn, FluThemeUtils::getUtils()->getTheme());
-        FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_yearMonthBtn, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_preBtn, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_nextBtn, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

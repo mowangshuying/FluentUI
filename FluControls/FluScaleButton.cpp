@@ -82,7 +82,6 @@ void FluScaleButton::onThemeChanged()
     //     scaleByPercentage(m_currentPercentage);
     //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluScaleButton.qss", this);
     // }
-        scaleByPercentage(m_currentPercentage);
+    scaleByPercentage(m_currentPercentage);
     FluStyleSheetUitls::setQssByFileName("FluScaleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
-
 }

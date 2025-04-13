@@ -10,7 +10,6 @@ enum class FluTheme
     _END,
 };
 
-
 class FluThemeUtils : public QObject
 {
     Q_OBJECT
@@ -33,14 +32,14 @@ class FluThemeUtils : public QObject
     {
         switch (getUtils()->getTheme())
         {
-        case FluTheme::Light:
-            return "light";
-        case FluTheme::Dark:
-            return "dark";
-        case FluTheme::Custom:
-            return "custom";
-        default:
-            return "Light";
+            case FluTheme::Light:
+                return "light";
+            case FluTheme::Dark:
+                return "dark";
+            case FluTheme::Custom:
+                return "custom";
+            default:
+                return "Light";
         }
     }
 

@@ -70,6 +70,5 @@ void FluRatingControl::onThemeChanged()
     //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
     // }
 
-
     FluStyleSheetUitls::setQssByFileName("FluRatingControl.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

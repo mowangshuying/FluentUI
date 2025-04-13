@@ -50,12 +50,12 @@ void FluSplitButton::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
-        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);
     }
     else
     {
         m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
-        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);
     }
     FluStyleSheetUitls::setQssByFileName("FluSplitButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

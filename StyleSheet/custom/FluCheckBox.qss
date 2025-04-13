@@ -1,0 +1,48 @@
+QCheckBox {
+    min-height: 30px;
+    max-height: 30px;
+    color: rgb(73, 66, 71);
+}
+
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid rgb(153, 153, 153);
+    background-color: rgba(243, 145, 199, 0.95);
+    margin-right: 4px;
+}
+
+QCheckBox::indicator:hover {
+    background-color: rgba(243, 165, 209, 0.95);
+}
+
+QCheckBox::indicator:pressed {
+    background-color: rgba(243, 165, 209, 0.95);
+}
+
+QCheckBox::indicator:checked {
+    background-color: rgb(118, 185, 237);
+    border: 1px solid rgb(118, 185, 237);
+    color: rgb(255, 255, 255);
+    image: url("../res/ControlResImages/CheckBox-Black.png");
+}
+
+QCheckBox::indicator:checked:pressed {
+    image: url("../res/ControlResImages/CheckBoxPressed-Black.png");
+}
+
+QCheckBox::indicator:indeterminate {
+    background-color: rgb(118, 185, 237);
+    border: 1px solid rgb(118, 185, 237);
+    image: url(../res/ControlResImages/CheckboxIndeterminate-Black.png);
+}
+
+QCheckBox:disabled {
+    color: rgb(73, 66, 71);
+}
+
+QCheckBox::indicator:disabled {
+    border: 1px solid rgb(100, 100, 100);
+    background-color: rgb(0, 0, 0);
+}

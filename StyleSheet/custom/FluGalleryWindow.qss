@@ -1,0 +1,8 @@
+FluGalleryWindow {
+    background-color: rgb(250, 118, 188);
+}
+
+#titleBar {
+    color: rgb(73, 66, 71);
+    background-color: rgb(250,118,188);
+}

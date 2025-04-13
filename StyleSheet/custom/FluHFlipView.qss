@@ -1,0 +1,22 @@
+FluHFlipView {
+    /* border: 1px solid rgb(229, 229, 229); */
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#contextWidget {
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#lBtn {
+    margin-left: 5px;
+    background-color: rgb(249, 249, 249);
+    border-radius: 4px;
+}
+
+#rBtn {
+    margin-right: 5px;
+    background-color: rgb(249, 249, 249);
+    border-radius: 4px;
+}

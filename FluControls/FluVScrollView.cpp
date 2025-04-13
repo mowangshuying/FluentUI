@@ -1,4 +1,4 @@
-#include "FluVScrollView.h"
+﻿#include "FluVScrollView.h"
 
 FluVScrollView::FluVScrollView(QWidget* parent /*= nullptr*/) : FluScrollArea(parent)
 {
@@ -31,7 +31,7 @@ void FluVScrollView::onThemeChanged()
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVScrollView.qss", this);
     }
-    else
+    else if (FluThemeUtils::isDarkTheme())
     {
         FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVScrollView.qss", this);
     }

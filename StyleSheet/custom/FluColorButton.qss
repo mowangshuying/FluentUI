@@ -1,0 +1,6 @@
+FluColorButton {
+    background-color: [[backgroundColor]];
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+}

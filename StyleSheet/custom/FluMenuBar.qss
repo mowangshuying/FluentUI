@@ -1,0 +1,25 @@
+QMenuBar {
+    background-color: transparent;
+    color: rgb(73, 66, 71);
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+QMenuBar::item {
+    background-color: transparent;
+    padding: 5px 8px;
+    margin-left: 4px;
+    border-radius: 4px;
+    color: rgb(73, 66, 71);
+}
+
+QMenuBar::item:selected {
+    color: rgb(73, 66, 71);
+    background-color: rgb(45, 45, 45);
+}
+
+QMenuBar::item:pressed {
+    color: rgb(73, 66, 71);
+    background-color: rgb(45, 45, 45);
+}

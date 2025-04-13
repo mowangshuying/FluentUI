@@ -1,0 +1,8 @@
+FluVFlyout {
+    border-radius: 8px;
+}
+
+#shadowWidget {
+    background-color: rgb(44, 44, 44);
+    border-radius: 8px;
+}

@@ -1,0 +1,5 @@
+FluConfirmFlyout {
+    background-color: rgb(44, 44, 44);
+    /* background-color: aquamarine; */
+    border-radius: 8px;
+}

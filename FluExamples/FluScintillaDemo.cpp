@@ -2,7 +2,13 @@
 
 FluScintillaDemo::FluScintillaDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
-    m_contentLayout->setContentsMargins(5, 5, 5, 5);
+
+    setWindowTitle("CppQt WinUI3 Scintiila Demo Dev");
+#ifndef _DEBUG
+    setWindowTitle("CppQt WinUI3 Scintiila Demo");
+#endif
+
+    m_contentLayout->setContentsMargins(0, 0, 0, 0);
     auto edit = new QsciScintilla;
     edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     m_contentLayout->addWidget(edit);
@@ -13,7 +19,7 @@ FluScintillaDemo::FluScintillaDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     edit->setMarginWidth(0, 30);
 
     // set background color;
-    edit->setStyleSheet("border:none;");
+    edit->setStyleSheet("border:1px solid rgb(232, 232, 232);");
 
     // set line number background color;
     edit->setMarginsBackgroundColor(QColor(255, 255, 255));
@@ -24,11 +30,10 @@ FluScintillaDemo::FluScintillaDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     edit->setScrollWidth(5);
     edit->setScrollWidthTracking(true);
 
-    // set cpp lexer
-    edit->setLexer(new QsciLexerCPP(edit));
-    //
-    edit->setFolding(QsciScintilla::BoxedTreeFoldStyle);
-    edit->setFoldMarginColors(QColor(255, 255, 255), QColor(255, 255, 255));
+    // // set cpp lexer
+    // edit->setLexer(new QsciLexerCPP(edit));
+    // edit->setFolding(QsciScintilla::BoxedTreeFoldStyle);
+    // edit->setFoldMarginColors(QColor(255, 255, 255), QColor(255, 255, 255));
 
     auto delegate = new FluScrollDelegate(edit);
 }

@@ -1,0 +1,61 @@
+/*FluToggleSwitch*/
+
+FluToggleSwitch {
+    color: rgb(73, 66, 71);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+FluToggleSwitch::indicator {
+    width: 22px;
+    height: 22px;
+    border-radius: 12px;
+    border: 1px solid rgb(255,172,220);
+    background-color: rgba(243, 145, 199, 0.95);
+    image: url("../res/ControlResImages/ToggleSwitchOff-Dark.png");
+    margin-right: 5px;
+    padding-right: 25px;
+    padding-left: 0px;
+}
+
+FluToggleSwitch::indicator:hover {
+    background-color: rgba(243, 165, 209, 0.95);
+    image: url("../res/ControlResImages/ToggleSwitchOffHover-Dark.png");
+}
+
+FluToggleSwitch::indicator:pressed {
+    background-color: rgba(243, 165, 209, 0.95);
+    width: 26px;
+    padding-right: 21px;
+    image: url("../res/ControlResImages/ToggleSwitchOffPressed-Dark.png");
+}
+
+FluToggleSwitch::indicator:checked {
+    background-color: rgb(118, 185, 237);
+    border: 1px solid rgb(118, 185, 237);
+    image: url("../res/ControlResImages/ToggleSwitchOn-Dark.png");
+    color: rgb(73, 66, 71);
+    padding-left: 25px;
+    padding-right: 0px;
+}
+
+FluToggleSwitch::indicator:checked:hover {
+    background-color: rgb(109, 169, 216);
+    image: url("../res/ControlResImages/ToggleSwitchOnHover-Dark.png");
+}
+
+FluToggleSwitch::indicator:checked:pressed {
+    background-color: rgb(104, 158, 199);
+    width: 26px;
+    padding-left: 21px;
+    image: url("../res/ControlResImages/ToggleSwitchOnPressed-Dark.png");
+}
+
+FluToggleSwitch:disabled {
+    color: rgb(73, 66, 71);
+}
+
+#toggleSwitch::indicator:disabled {
+    border: 2px solid rgb(73, 66, 71);
+    image: url("../res/ControlResImages/ToggleSwitchDisabled-Dark.png");
+}

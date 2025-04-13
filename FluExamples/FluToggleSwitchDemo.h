@@ -5,8 +5,9 @@
 #include "../FluControls/FluToggleSwitch.h"
 #include "../FluControls/FluToggleSwitchEx.h"
 #include "../FluControls/FluTextToggleSwitchEx.h"
+#include "FluTemplateDemo.h"
 
-class FluToggleSwitchDemo : public FluWidget
+class FluToggleSwitchDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:

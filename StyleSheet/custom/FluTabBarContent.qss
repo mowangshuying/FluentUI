@@ -1,0 +1,18 @@
+QScrollArea {
+    background-color: transparent;
+    border: none;
+}
+
+#mainWidget {
+    background-color: transparent;
+}
+
+#addTabBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#addTabBtn:hover {
+    background-color: rgb(234, 234, 234);
+}

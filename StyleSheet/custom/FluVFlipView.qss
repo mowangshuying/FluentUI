@@ -1,0 +1,22 @@
+FluVFlipView {
+    /* border: 1px solid rgb(229, 229, 229); */
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#contextWidget {
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#tBtn {
+    margin-top: 5px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 4px;
+}
+
+#bBtn {
+    margin-bottom: 5px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 4px;
+}

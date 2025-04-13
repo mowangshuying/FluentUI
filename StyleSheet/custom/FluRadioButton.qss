@@ -1,0 +1,53 @@
+QRadioButton {
+    color: rgb(73, 66, 71);
+    min-height: 28px;
+    max-height: 28px;
+}
+
+QRadioButton::indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 11px;
+    border: 1px solid rgb(255, 172, 220);
+    color: rgb(73, 66, 71);
+    background-color: rgba(243, 145, 199, 0.95);
+    margin-left: 5px;
+}
+
+QRadioButton::indicator:hover {
+    background-color: rgba(243, 165, 209, 0.95);
+}
+
+QRadioButton::indicator:pressed {
+    background-color: rgba(243, 165, 209, 0.95);
+    border: 1px solid rgb(255, 172, 220);
+    /*when pressed it set png*/
+    image: url("../res/ControlResImages/RadioButton-Black.png");
+}
+
+QRadioButton::indicator:checked {
+    background-color: rgb(118, 185, 237);
+    border: 1px solid rgb(118, 185, 237);
+    width: 20px;
+    height: 20px;
+    border-radius: 11px;
+    /*when checked it set png*/
+    image: url("../res/ControlResImages/RadioButton-Black.png");
+}
+
+QRadioButton::indicator:checked:hover {
+    image: url("../res/ControlResImages/RadioButtonHover-Black.png");
+}
+
+QRadioButton::indicator:checked:pressed {
+    image: url("../res/ControlResImages/RadioButtonPressed-Black.png");
+}
+
+QRadioButton:disabled {
+    color: rgb(150, 150, 150);
+}
+
+QRadioButton::indicator:disabled {
+    border: 1px solid rgb(100, 100, 100);
+    background-color: rgb(245, 245, 245);
+}

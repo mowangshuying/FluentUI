@@ -1,6 +1,6 @@
 #include "FluToggleSwitchDemo.h"
 
-FluToggleSwitchDemo::FluToggleSwitchDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluToggleSwitchDemo::FluToggleSwitchDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
     auto toggleSwitch = new FluToggleSwitch("Off", this);
     toggleSwitch->move(50, 50);

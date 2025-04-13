@@ -1,0 +1,45 @@
+FluTreeView {
+    background-color: rgb(32, 32, 32);
+    border: 1px solid rgb(48, 48, 48);
+    /* border-radius: 4px; */
+    outline: none;
+    padding-left: 4px;
+}
+
+FluTreeView::item {
+    color: rgb(73, 66, 71);
+    background-color: transparent;
+    height: 36px;
+    border-radius: 4px;
+    margin-top: 4px;
+    /* margin-bottom: 2px; */
+    padding-left: 24px;
+}
+
+FluTreeView::item:hover {
+    background-color: transparent;
+}
+
+FluTreeView::item:selected {
+    background-color: transparent;
+}
+
+/*indicator*/
+FLuTreeView::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/*branch qss*/
+QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:closed:has-children:has-siblings {
+    image: url("../res/ControlResImages/ChevronRight-Dark.png");
+}
+
+QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children:has-siblings {
+    image: url("../res/ControlResImages/ChevronDown-Dark.png");
+}

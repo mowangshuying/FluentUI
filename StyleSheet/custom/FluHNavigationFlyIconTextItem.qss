@@ -1,0 +1,36 @@
+/*The scroll view qss*/
+
+#contextWidget {
+    /* background-color: rgb(136, 48, 224); */
+    background-color: rgb(243, 243, 243);
+    border-radius: 4px;
+}
+
+QScrollArea {
+    background-color: rgb(243, 243, 243);
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 4px;
+}
+
+QScrollBar:vertical {
+    width: 4px;
+    background-color: transparent;
+}
+
+QScrollBar::handle:vertical {
+    border-radius: 2px;
+    width: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 25px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background-color: transparent;
+    border: none;
+}
+
+QScrollBar::sub-page:vertical,
+QScrollBar::add-page:vertical {
+    background-color: transparent;
+}

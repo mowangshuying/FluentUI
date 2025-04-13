@@ -1,0 +1,20 @@
+FluHCard {
+    background-color: rgba(243, 145, 199, 0.95);
+    border-radius: 8px;
+    border: 0px;
+}
+
+FluHCard:hover {
+    background-color: rgba(243, 165, 209, 0.95);
+    border: 1px solid rgb(255,172,220);
+}
+
+#titleLabel {
+    font-size: 15px;
+    color: rgb(73,66,71);
+}
+
+#contextLabel {
+    font-size: 11px;
+    color: rgb(73, 66, 71);
+}

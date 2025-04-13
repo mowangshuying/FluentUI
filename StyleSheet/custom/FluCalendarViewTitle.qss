@@ -1,0 +1,32 @@
+/*FluCalendarViewTitle qss*/
+
+FluCalendarViewTitle {
+    background-color: rgb(31, 31, 31);
+    /* border-bottom: 1px solid rgb(47, 47, 47); */
+}
+
+#yearMonthBtn {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+    color: rgb(73, 66, 71);
+}
+
+#yearMonthBtn:hover {
+    background-color: rgb(44, 44, 44);
+}
+
+#preBtn,
+#nextBtn {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#preBtn:hover,
+#nextBtn:hover {
+    background-color: rgb(44, 44, 44);
+}

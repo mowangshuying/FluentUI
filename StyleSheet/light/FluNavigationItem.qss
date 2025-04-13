@@ -1,0 +1,50 @@
+FluNavigationItem {
+    /* background-color: blueviolet; */
+    background-color: rgb(32, 32, 32);
+    border-radius: 4px;
+}
+
+#wrapWidget1 {
+    /* background-color: blueviolet; */
+    background-color: rgb(32, 32, 32);
+    border-radius: 4px;
+    /* border-radius: 0px; */
+}
+
+#wrapWidget1[selected=true] {
+    /* background-color: aquamarine; */
+    background-color: rgb(45, 45, 45);
+    border-radius: 4px;
+}
+
+#wrapWidget1:hover {
+    /* background-color: aquamarine; */
+    background-color: rgb(45, 45, 45);
+    border-radius: 4px;
+}
+
+#indicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#indicator[selected=true] {
+    background-color: rgb(118, 185, 237);
+    border-radius: 2px;
+}
+
+#icon {
+    border: none;
+    background-color: transparent;
+}
+
+#label {
+    background-color: transparent;
+    color: rgb(73, 66, 71);
+    font-size: 12px;
+}
+
+#arrow {
+    border: none;
+    background-color: transparent;
+}

@@ -35,6 +35,16 @@ void FluListViewItemDelegate::setIndicatorColorEx(QColor color)
     m_indicatorColorEx = color;
 }
 
+QColor FluListViewItemDelegate::getTextColorEx() const
+{
+    return m_textColorEx;
+}
+
+void FluListViewItemDelegate::setTextColorEx(QColor color)
+{
+    m_textColorEx = color;
+}
+
 void FluListViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const
 {
     QStyledItemDelegate::initStyleOption(option, index);
@@ -71,7 +81,7 @@ void FluListViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
     }
 
     QRect textRect(backgroundRect.x() + 12, backgroundRect.y() + 2, backgroundRect.width() - 12, backgroundRect.height() - 4);
-    painter->setPen(getIndicatorColorEx());
+    painter->setPen(getTextColorEx());
     painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
 
     painter->restore();

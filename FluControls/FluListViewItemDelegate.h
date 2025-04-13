@@ -27,6 +27,10 @@ class FluListViewItemDelegate : public QStyledItemDelegate
 
     void setIndicatorColorEx(QColor color);
 
+    QColor getTextColorEx() const;
+
+    void setTextColorEx(QColor color);
+
     void initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const;
 
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;

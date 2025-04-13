@@ -1,4 +1,4 @@
-#include "FluDatePicker.h"
+﻿#include "FluDatePicker.h"
 
 FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -36,10 +36,6 @@ FluDatePicker::FluDatePicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     connect(m_dayBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_yearBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(this, &FluDatePicker::clicked, [=]() {
-        // get current time
-        // LOG_DEBUG << "Called";
-        // show FluTimerPickerView
-
         int nX = -8;
         int nY = height() / 2 - 180;
         QPoint gPoint = mapToGlobal(QPoint(nX, nY));
@@ -76,13 +72,5 @@ void FluDatePicker::paintEvent(QPaintEvent* event)
 
 void FluDatePicker::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePicker.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePicker.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluDatePicker.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

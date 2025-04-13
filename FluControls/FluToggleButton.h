@@ -29,14 +29,16 @@ class FluToggleButton : public QPushButton
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButton.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleButton.qss", this);
-        }
+        // if (FluThemeUtils::isLightTheme())
+        // {
+        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButton.qss", this);
+        // }
+        // else
+        // {
+        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleButton.qss", this);
+        // }
+
+        FluStyleSheetUitls::setQssByFileName("FluToggleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

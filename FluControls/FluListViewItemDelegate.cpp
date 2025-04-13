@@ -1,7 +1,38 @@
-#include "FluListViewItemDelegate.h"
+﻿#include "FluListViewItemDelegate.h"
 
 FluListViewItemDelegate::FluListViewItemDelegate(QWidget* parent /*= nullptr*/) : QStyledItemDelegate(parent)
 {
+}
+
+// QColor;
+QColor FluListViewItemDelegate::getBackgroundColorEx() const
+{
+    return m_backgroundColorEx;
+}
+
+void FluListViewItemDelegate::setBackgroundColorEx(QColor color)
+{
+    m_backgroundColorEx = color;
+}
+
+QColor FluListViewItemDelegate::getHoverColorEx() const
+{
+    return m_hoverColorEx;
+}
+
+void FluListViewItemDelegate::setHoverColorEx(QColor color)
+{
+    m_hoverColorEx = color;
+}
+
+QColor FluListViewItemDelegate::getIndicatorColorEx() const
+{
+    return m_indicatorColorEx;
+}
+
+void FluListViewItemDelegate::setIndicatorColorEx(QColor color)
+{
+    m_indicatorColorEx = color;
 }
 
 void FluListViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const
@@ -22,44 +53,25 @@ void FluListViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewIte
     painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     QRect backgroundRect = option.rect;
-    painter->setBrush(QColor(243, 243, 243));
-    if (FluThemeUtils::isDarkTheme())
-    {
-        painter->setBrush(QColor(32, 32, 32));
-    }
-
+    painter->setBrush(getBackgroundColorEx());
     painter->drawRect(backgroundRect);
 
     QRect hoverSelectedRect(backgroundRect.x() + 2, backgroundRect.y() + 2, backgroundRect.width() - 4, backgroundRect.height() - 4);
     if (option.state.testFlag(QStyle::State_MouseOver) || option.state.testFlag(QStyle::State_Selected))
     {
-        painter->setBrush(QColor(234, 234, 234));
-        if (FluThemeUtils::isDarkTheme())
-        {
-            painter->setBrush(QColor(45, 45, 45));
-        }
-
+        painter->setBrush(getHoverColorEx());
         painter->drawRoundedRect(hoverSelectedRect, 4, 4);
     }
 
     if (option.state.testFlag(QStyle::State_Selected))
     {
         QRect indicatorRect(hoverSelectedRect.x(), hoverSelectedRect.y() + 9, 3, 18);
-        painter->setBrush(QColor(0, 90, 158));
-        if (FluThemeUtils::isDarkTheme())
-        {
-            painter->setBrush(QColor(118, 185, 237));
-        }
-
+        painter->setBrush(getIndicatorColorEx());
         painter->drawRoundedRect(indicatorRect, 2, 2);
     }
 
     QRect textRect(backgroundRect.x() + 12, backgroundRect.y() + 2, backgroundRect.width() - 12, backgroundRect.height() - 4);
-    painter->setPen(Qt::black);
-    if (FluThemeUtils::isDarkTheme())
-    {
-        painter->setPen(Qt::white);
-    }
+    painter->setPen(getIndicatorColorEx());
     painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, text);
 
     painter->restore();

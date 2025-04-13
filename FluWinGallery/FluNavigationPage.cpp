@@ -1,4 +1,4 @@
-#include "FluNavigationPage.h"
+﻿#include "FluNavigationPage.h"
 
 FluNavigationPage::FluNavigationPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
@@ -29,6 +29,8 @@ FluNavigationPage::FluNavigationPage(QWidget* parent /*= nullptr*/) : FluATitleP
     tabViewCard->setKey("TabViewPage");
     getFWScrollView()->getMainLayout()->addWidget(tabViewCard);
     connect(tabViewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+
+    onThemeChanged();
 }
 
 void FluNavigationPage::onThemeChanged()

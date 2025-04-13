@@ -1,0 +1,8 @@
+FluTemplateDemo {
+    background-color: rgb(32, 32, 32);
+}
+
+#titleBar {
+    color: rgb(73, 66, 71);
+    background-color: rgb(32, 32, 32);
+}

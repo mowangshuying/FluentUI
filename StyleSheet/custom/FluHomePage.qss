@@ -1,0 +1,26 @@
+FluHomePage {
+    background-color: rgb(248, 101, 178);
+    border-radius: 8px;
+    /* margin-left: 20px; */
+}
+
+#contextWidget {
+    background-color: rgb(248, 101, 178);
+    /* border-radius: 8px; */
+}
+
+/* set height cann't work*/
+
+#titleWidget {
+    /* height: 450px; */
+    /* background-color: aqua; */
+    /* background-image: "../../res/GalleryHeaderImage.png"; */
+}
+
+#recentlyAddedSamplesLabel,
+#recentlyUpdatedSamplesLabel {
+    font-size: 18px;
+    margin-left: 35px;
+    /* font-weight: bold; */
+    color: rgb(73,66,71);
+}

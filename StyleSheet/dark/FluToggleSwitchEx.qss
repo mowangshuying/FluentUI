@@ -1,0 +1,13 @@
+FluToggleSwitchEx {
+    qproperty-borderColor: rgb(153, 153, 153);
+    qproperty-backgroundColor: rgb(29, 29, 29);
+    qproperty-indicatorBorderColor: rgb(207, 207, 207);
+    qproperty-indicatorBackgroundColor: rgb(207, 207, 207);
+}
+
+FluToggleSwitchEx[checked=true] {
+    qproperty-borderColor: rgb(118, 185, 237);
+    qproperty-backgroundColor: rgb(118, 185, 237);
+    qproperty-indicatorBorderColor: rgb(0, 0, 0);
+    qproperty-indicatorBackgroundColor: rgb(0, 0, 0);
+}

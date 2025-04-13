@@ -1,0 +1,4 @@
+FluRotationButton {
+    border-radius: 4px;
+    background-color: transparent;
+}

@@ -1,0 +1,12 @@
+FluMenuBarItem {
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    /* min-height: 30px; */
+    padding: 8px 12px;
+    width: 30px;
+}
+
+FluMenuBarItem:hover {
+    background-color: rgb(246, 246, 246);
+}

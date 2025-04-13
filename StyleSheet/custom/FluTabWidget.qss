@@ -1,0 +1,64 @@
+QTabWidget {
+    background-color: rgb(243, 243, 243);
+}
+
+QTabWidget::tab-bar {
+    left: 0px;
+    /* top: 8px; */
+    background-color: blue;
+}
+
+QTabBar {
+    background-color: rgb(243, 243, 243);
+}
+
+QTabBar::tab {
+    background-color: rgb(243, 243, 243);
+    font-size: 12px;
+    color: black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top: none;
+    border-bottom: none;
+    margin-top: 10px;
+    min-width: 250px;
+    height: 35px;
+}
+
+QTabBar::tab:selected {
+    background-color: rgb(249, 249, 249);
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: rgb(233, 233, 233);
+}
+
+QTabWidget::pane {
+    border: 1px solid rgb(229, 229, 229)
+}
+
+QTabBar::close-button {
+    image: url("../res/ChromeClose.png");
+    /* min-width: 30px;
+    min-height: 30px; */
+    border-radius: 2px;
+    margin-top: 8px;
+    /* background-color: transparent; */
+    /* subcontrol-position: right bottom; */
+}
+
+QTabBar::close-button:hover {
+    image: url("../res/ChromeClose.png");
+    /* background-color: rgb(225, 225, 225); */
+    /* width: 30px;
+    height: 30px; */
+    /* border-radius: 2px; */
+}
+
+QTabBar::close-button:pressed {
+    image: url("../res/ChromeClose.png");
+    /* background-color: rgb(243, 243, 243); */
+    /* width: 30px;
+    height: 30px; */
+    /* border-radius: 2px; */
+}

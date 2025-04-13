@@ -288,8 +288,8 @@ int main(int argc, char **argv)
     // QsciScintilla demo;
     // demo.show();
 
-    // FluScintillaDemo demo;
-    // demo.show();
+    //FluScintillaDemo demo;
+    //demo.show();
 
     // FluTableViewDemo demo;
     // demo.show();
@@ -315,7 +315,10 @@ int main(int argc, char **argv)
     // FluTabBarDemo demo;
     // demo.show();
 
-    FluSegmentedDemo demo;
+    // FluSegmentedDemo demo;
+    // demo.show();
+
+    FluToggleSwitchDemo demo;
     demo.show();
 
     return app.exec();

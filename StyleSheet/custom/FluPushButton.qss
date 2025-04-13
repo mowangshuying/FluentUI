@@ -1,0 +1,20 @@
+FluPushButton {
+    color: rgb(73, 66, 71);
+    border: 1px solid rgb(255,172,220);
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(255,172,220);
+    background-color: rgba(243, 145, 199, 0.95);
+    font-size: 15px;
+}
+
+FluPushButton:hover {
+    border: 1px solid rgb(255,172,220);
+    border-bottom: 1px solid rgb(255,172,220);
+    background-color: rgba(243, 165, 209, 0.95);
+}
+
+FluPushButton:pressed {
+    border: 1px solid rgb(255,172,220);
+    border-bottom: 1px solid rgb(255,172,220);
+    background-color: rgb(250,118,188);
+}

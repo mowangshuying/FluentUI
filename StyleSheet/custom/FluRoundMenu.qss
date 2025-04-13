@@ -1,0 +1,4 @@
+FluRoundMenu {
+    background-color: transparent;
+    border: none;
+}

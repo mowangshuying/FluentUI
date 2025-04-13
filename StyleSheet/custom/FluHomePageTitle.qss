@@ -1,0 +1,14 @@
+FluHomePageTitle {
+    border-radius: 8px;
+}
+
+#titleLabel1 {
+    font-size: 32px;
+    color: rgb(73, 66, 71);
+}
+
+#titleLabel2 {
+    font-size: 16px;
+    color: rgb(73, 66, 71);
+    /* font-weight: bold; */
+}

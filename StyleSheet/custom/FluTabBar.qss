@@ -1,0 +1,16 @@
+/*FluTabBar qss*/
+
+FluTabBar {
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    /* border-radius: 0px; */
+    border-bottom: 1px solid rgb(234, 234, 234);
+    background-color: rgb(118, 185, 237);
+}
+
+#addTabBtn {
+    border: 1px solid transparent;
+    background-color: transparent;
+}

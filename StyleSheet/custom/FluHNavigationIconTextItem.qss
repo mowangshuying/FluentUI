@@ -1,0 +1,99 @@
+FluHNavigationIconTextItem {
+    /* background-color: blueviolet; */
+    background-color: transparent;
+    /* background-color: rgb(243, 243, 243); */
+    border-radius: 4px;
+}
+
+
+/*wrapwidget1 at navigation view*/
+
+#wrapWidget1 {
+    /* background-color: blueviolet; */
+    background-color: rgb(243, 243, 243);
+    border-radius: 4px;
+    /* border-radius: 0px; */
+}
+
+#wrapWidget1[selected=true] {
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#wrapWidget1[enableThisItem=false] {
+    background-color: transparent;
+    background-color: rgb(243, 243, 243);
+}
+
+#wrapWidget1:hover {
+    /* background-color: aquamarine; */
+    background-color: rgb(234, 234, 234);
+    /* background-color: bisque; */
+    border-radius: 4px;
+}
+
+#wrapWidget1[enableThisItem=false]:hover {
+    background-color: rgb(243, 243, 243);
+}
+
+
+/* wrapwidget1 at flyicontexItem*/
+
+#wrapWidget1[fly=true][selected=true] {
+    background-color: rgb(251, 251, 251);
+}
+
+#wrapWidget1[fly=true]:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+#hIndicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#hIndicator[selected=true] {
+    background-color: rgb(0, 90, 158);
+}
+
+#indicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#indicator[selected=true] {
+    background-color: rgb(0, 90, 158);
+    border-radius: 2px;
+}
+
+#indicator[enableThisItem=false] {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#icon {
+    border: none;
+    background-color: transparent;
+    /* background-color: aquamarine; */
+    /* background-color: bisque; */
+}
+
+#label {
+    background-color: transparent;
+    /* background-color: pink; */
+    font-size: 12px;
+}
+
+#label[enableThisItem=false] {
+    color: rgb(178, 178, 178);
+}
+
+#arrow {
+    border: none;
+    background-color: transparent;
+}
+
+#wrapWidget2 {
+    /* background-color: blueviolet; */
+    background-color: transparent;
+}

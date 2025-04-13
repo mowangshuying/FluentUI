@@ -1,0 +1,28 @@
+FluHNavigationMoreItem {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#iconBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#iconBtn:hover {
+    background-color: rgb(234, 234, 234);
+}
+
+#hIndicatorWrap {
+    background-color: transparent;
+}
+
+#hIndicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#hIndicator[selected=true] {
+    background-color: rgb(0, 90, 158);
+}

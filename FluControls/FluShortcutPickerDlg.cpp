@@ -288,12 +288,13 @@ void FluShortcutPickerDlg::keyPressEvent(QKeyEvent* event)
 
 void FluShortcutPickerDlg::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortcutPickerDlg.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortcutPickerDlg.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortcutPickerDlg.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortcutPickerDlg.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluShortcutPickerDlg.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

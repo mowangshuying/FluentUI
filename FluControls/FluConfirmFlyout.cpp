@@ -62,12 +62,14 @@ void FluConfirmFlyout::paintEvent(QPaintEvent* event)
 
 void FluConfirmFlyout::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluConfirmFlyout.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluConfirmFlyout.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluConfirmFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

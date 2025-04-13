@@ -40,12 +40,14 @@ void FluTextEdit::paintEvent(QPaintEvent* event)
 
 void FluTextEdit::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextEdit.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextEdit.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextEdit.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextEdit.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluTextEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

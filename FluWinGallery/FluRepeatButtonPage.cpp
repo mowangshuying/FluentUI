@@ -24,12 +24,13 @@ FluRepeatButtonPage::FluRepeatButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluRepeatButtonPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRepeatButtonPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRepeatButtonPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRepeatButtonPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRepeatButtonPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluRepeatButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

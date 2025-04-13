@@ -25,12 +25,14 @@ FluHyperLinkButtonPage::FluHyperLinkButtonPage(QWidget* parent /*= nullptr*/) : 
 
 void FluHyperLinkButtonPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButtonPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHyperLinkButtonPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButtonPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHyperLinkButtonPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluHyperLinkButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

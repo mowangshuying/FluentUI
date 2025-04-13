@@ -56,12 +56,13 @@ FluMenuAndToolBarsPage::FluMenuAndToolBarsPage(QWidget* parent /*= nullptr*/) : 
 
 void FluMenuAndToolBarsPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuAndToolBarsPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuAndToolBarsPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuAndToolBarsPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuAndToolBarsPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluMenuAndToolBarsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

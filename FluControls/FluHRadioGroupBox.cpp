@@ -29,12 +29,13 @@ void FluHRadioGroupBox::addRadioButton(FluRadioButton* radioButton)
 
 void FluHRadioGroupBox::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVRadioGroupBox.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVRadioGroupBox.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluHRadioGroupBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

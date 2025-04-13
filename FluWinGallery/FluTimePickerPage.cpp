@@ -28,12 +28,13 @@ FluTimePickerPage::FluTimePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
 void FluTimePickerPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluTimePickerPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

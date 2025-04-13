@@ -95,12 +95,14 @@ void FluVFlyout::paintEvent(QPaintEvent* event)
 
 void FluVFlyout::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVFlyout.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVFlyout.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluVFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

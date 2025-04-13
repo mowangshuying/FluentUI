@@ -116,7 +116,7 @@ void FluDropDownButton::onThemeChanged()
             m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Light));
         if (m_svgLightPath != "")
             m_textBtn->setIcon(FluIconUtils::getSvgIcon(m_svgLightPath));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
+      //  FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
     }
     else
     {
@@ -126,6 +126,7 @@ void FluDropDownButton::onThemeChanged()
         if (m_svgDarkPath != "")
             m_textBtn->setIcon(FluIconUtils::getSvgIcon(m_svgDarkPath));
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButton.qss", this);
+      //  FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButton.qss", this);
     }
+    FluStyleSheetUitls::setQssByFileName("FluDropDownButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

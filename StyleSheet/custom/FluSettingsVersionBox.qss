@@ -19,7 +19,7 @@ FluSettingsVersionBox {
 }
 
 #wrap2[down=false] {
-    background-color: rgb(46, 46, 46);
+    background-color: rgba(243, 145, 199, 0.95);
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 4px;

@@ -15,12 +15,13 @@ void FluHyperLinkButton::setLinkUrl(QString linkUrl)
 
 void FluHyperLinkButton::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButton.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHyperLinkButton.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHyperLinkButton.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHyperLinkButton.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluHyperLinkButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

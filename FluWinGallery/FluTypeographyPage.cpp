@@ -108,13 +108,14 @@ void FluTypeographyPage::onThemeChanged()
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_imgLabel->setPixmap(pixmap);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTypeographyPage.qss", this);
     }
     else
     {
         QPixmap pixmap = QPixmap("../res/Typography.dark.png");
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_imgLabel->setPixmap(pixmap);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTypeographyPage.qss", this);
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTypeographyPage.qss", this);
     }
+    FluStyleSheetUitls::setQssByFileName("FluTypeographyPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

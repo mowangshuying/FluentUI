@@ -35,12 +35,13 @@ FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
 void FluPasswordBoxPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBoxPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPasswordBoxPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBoxPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPasswordBoxPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluPasswordBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

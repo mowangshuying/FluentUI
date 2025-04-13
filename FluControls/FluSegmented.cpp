@@ -121,12 +121,13 @@ void FluSegmented::onItemClicked(FluSegmentedItem* item)
 
 void FluSegmented::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSegmented.qss", this);
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSegmented.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSegmented.qss", this);
+    // }
+    // else if (FluThemeUtils::isDarkTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSegmented.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluSegmented.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

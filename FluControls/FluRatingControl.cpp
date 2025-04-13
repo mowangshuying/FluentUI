@@ -61,12 +61,15 @@ void FluRatingControl::paintEvent(QPaintEvent* event)
 
 void FluRatingControl::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControl.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControl.qss", this);
+    // }
+
+
+    FluStyleSheetUitls::setQssByFileName("FluRatingControl.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

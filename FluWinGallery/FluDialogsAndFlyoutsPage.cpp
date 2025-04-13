@@ -25,12 +25,14 @@ FluDialogsAndFlyoutsPage::FluDialogsAndFlyoutsPage(QWidget* parent /*= nullptr*/
 
 void FluDialogsAndFlyoutsPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDialogsAndFlyoutsPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDialogsAndFlyoutsPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDialogsAndFlyoutsPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDialogsAndFlyoutsPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluDialogsAndFlyoutsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

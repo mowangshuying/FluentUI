@@ -204,12 +204,12 @@ void FluAmPmView::onThemeChanged()
     {
         m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
         m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
     }
-    else
+    else if(FluThemeUtils::isDarkTheme())
     {
         m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
         m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAmPmView.qss", this);
     }
+
+    FluStyleSheetUitls::setQssByFileName("FluAmPmView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

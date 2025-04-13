@@ -30,12 +30,15 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     appThemeSelectBox->getComboBox()->addItem(tr("Light"));
     appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
+    appThemeSelectBox->getComboBox()->addItem(tr("Custom"));
 
     connect(appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == 0)
             FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
-        else
+        else if(index == 1)
             FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
+        else
+            FluThemeUtils::getUtils()->setTheme(FluTheme::Custom);
     });
 
     m_vScrollView->getMainLayout()->addWidget(appThemeSelectBox);
@@ -141,12 +144,13 @@ void FluSettingPage::paintEvent(QPaintEvent* event)
 
 void FluSettingPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluSettingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

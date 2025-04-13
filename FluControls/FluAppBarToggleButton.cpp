@@ -117,14 +117,6 @@ void FluAppBarToggleButton::paintEvent(QPaintEvent* event)
 
 void FluAppBarToggleButton::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButton.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarToggleButton.qss", this);
-    }
-
+    FluStyleSheetUitls::setQssByFileName("FluAppBarToggleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     updateIcon();
 }

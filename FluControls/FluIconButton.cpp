@@ -86,13 +86,16 @@ void FluIconButton::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_penColor = QColor(8, 8, 8);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
-        setType(m_type);
+        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
+        //setType(m_type);
     }
     else
     {
         m_penColor = QColor(239, 239, 239);
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconButton.qss", this);
-        setType(m_type);
+        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconButton.qss", this);
+        //setType(m_type);
     }
+
+    FluStyleSheetUitls::setQssByFileName("FluIconButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    setType(m_type);
 }

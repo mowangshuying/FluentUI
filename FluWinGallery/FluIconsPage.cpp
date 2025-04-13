@@ -171,7 +171,7 @@ void FluIconsPage::onThemeChanged()
         pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_iconLabel->setPixmap(pixmap);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
     }
     else
     {
@@ -180,6 +180,7 @@ void FluIconsPage::onThemeChanged()
         pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_iconLabel->setPixmap(pixmap);
 
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconsPage.qss", this);
+        //FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconsPage.qss", this);
     }
+    FluStyleSheetUitls::setQssByFileName("FluIconsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

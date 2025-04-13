@@ -126,12 +126,15 @@ void FluBusyProgressRing::paintEvent(QPaintEvent* event)
 
 void FluBusyProgressRing::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBusyProgressRing.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBusyProgressRing.qss", this);
-    }
+    //if (FluThemeUtils::isLightTheme())
+    //{
+    //    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBusyProgressRing.qss", this);
+    //}
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBusyProgressRing.qss", this);
+    // }
+
+    // set Qss By theme;
+    FluStyleSheetUitls::setQssByFileName("FluBusyProgressRing.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

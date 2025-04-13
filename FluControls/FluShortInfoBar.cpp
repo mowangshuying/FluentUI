@@ -152,11 +152,12 @@ void FluShortInfoBar::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
+       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
     }
     else if (FluThemeUtils::isDarkTheme())
     {
         m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
+       // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
     }
+    FluStyleSheetUitls::setQssByFileName("FluShortInfoBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

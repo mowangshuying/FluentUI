@@ -47,12 +47,14 @@ void FluTextToggleSwitchEx::setChecked(bool checked)
 
 void FluTextToggleSwitchEx::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextToggleSwithEx.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextToggleSwithEx.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextToggleSwithEx.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextToggleSwithEx.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluTextToggleSwithEx.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

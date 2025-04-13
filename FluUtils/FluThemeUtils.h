@@ -7,7 +7,9 @@ enum class FluTheme
     Light,
     Dark,
     Custom,
+    _END,
 };
+
 
 class FluThemeUtils : public QObject
 {
@@ -25,6 +27,21 @@ class FluThemeUtils : public QObject
     {
         m_theme = theme;
         emit themeChanged(m_theme);
+    }
+
+    static QString getThemeName()
+    {
+        switch (getUtils()->getTheme())
+        {
+        case FluTheme::Light:
+            return "light";
+        case FluTheme::Dark:
+            return "dark";
+        case FluTheme::Custom:
+            return "custom";
+        default:
+            return "Light";
+        }
     }
 
     static FluThemeUtils* getUtils()

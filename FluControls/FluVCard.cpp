@@ -56,12 +56,14 @@ void FluVCard::paintEvent(QPaintEvent* event)
 
 void FluVCard::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVCard.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVCard.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVCard.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVCard.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluVCard.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

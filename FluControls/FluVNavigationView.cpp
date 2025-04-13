@@ -366,12 +366,13 @@ void FluVNavigationView::onMenuItemClicked()
 void FluVNavigationView::onThemeChanged()
 {
     // LOG_DEBUG << "called";
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationView.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationView.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationView.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationView.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluVNavigationView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

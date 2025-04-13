@@ -21,12 +21,14 @@ FluDatePickerPage::FluDatePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
 void FluDatePickerPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePickerPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePickerPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluDatePickerPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

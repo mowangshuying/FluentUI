@@ -38,14 +38,16 @@ void FluCalendarViewWeakTitle::paintEvent(QPaintEvent* event)
 
 void FluCalendarViewWeakTitle::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewWeakTitle.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewWeakTitle.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewWeakTitle.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluCalendarViewWeakTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -243,14 +245,16 @@ void FluCalendarMonthView::gotoPreMonth()
 
 void FluCalendarMonthView::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarMonthView.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarMonthView.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluCalendarMonthView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/) : FluWidget(parent)

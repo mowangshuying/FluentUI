@@ -73,14 +73,15 @@ void FluMenu::paintEvent(QPaintEvent* event)
 
 void FluMenu::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenu.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenu.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenu.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
 
     // auto actions = findChildren<FluAction*>();
     for (auto action : actions())

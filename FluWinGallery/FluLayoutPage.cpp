@@ -66,12 +66,13 @@ FluLayoutPage::FluLayoutPage(QWidget* parent /*= nullptr*/) : FluATitlePage(pare
 
 void FluLayoutPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLayoutPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLayoutPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluLayoutPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluLayoutPage.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluLayoutPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

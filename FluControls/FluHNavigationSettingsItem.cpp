@@ -33,12 +33,13 @@ void FluHNavigationSettingsItem::paintEvent(QPaintEvent* event)
 
 void FluHNavigationSettingsItem::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationSettingsItem.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationSettingsItem.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationSettingsItem.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationSettingsItem.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluHNavigationSettingsItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

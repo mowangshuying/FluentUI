@@ -18,12 +18,13 @@ void FluDoubleSpinBox::paintEvent(QPaintEvent* event)
 
 void FluDoubleSpinBox::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDoubleSpinBox.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDoubleSpinBox.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDoubleSpinBox.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDoubleSpinBox.qss", this);
+    // }
+    FluStyleSheetUitls::setQssByFileName("FluDoubleSpinBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

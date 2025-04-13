@@ -32,12 +32,14 @@ FluFlyoutPage::FluFlyoutPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
 void FluFlyoutPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlyoutPage.qss", this);
-    }
-    else
-    {
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluFlyoutPage.qss", this);
-    }
+    // if (FluThemeUtils::isLightTheme())
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlyoutPage.qss", this);
+    // }
+    // else
+    // {
+    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluFlyoutPage.qss", this);
+    // }
+
+    FluStyleSheetUitls::setQssByFileName("FluFlyoutPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

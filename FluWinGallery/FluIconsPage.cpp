@@ -1,4 +1,4 @@
-#include "FluIconsPage.h"
+﻿#include "FluIconsPage.h"
 
 FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -159,28 +159,14 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     if (m_sDisplayIconBox != nullptr)
         emit m_sDisplayIconBox->clicked();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+    onThemeChanged();
 }
 
 void FluIconsPage::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_penColor = QColor(8, 8, 8);
-        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), m_penColor);
-        pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        m_iconLabel->setPixmap(pixmap);
-
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
-    }
-    else
-    {
-        m_penColor = QColor(239, 239, 239);
-        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), m_penColor);
-        pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-        m_iconLabel->setPixmap(pixmap);
-
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconsPage.qss", this);
-    }
+    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme());
+    pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    m_iconLabel->setPixmap(pixmap);
     FluStyleSheetUitls::setQssByFileName("FluIconsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

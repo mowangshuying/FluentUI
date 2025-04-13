@@ -1,4 +1,4 @@
-#include "FluListViewPage.h"
+﻿#include "FluListViewPage.h"
 
 FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -34,8 +34,6 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     listView->addItem(tr("Anthony lvanov"));
     listView->addItem(tr("Michael peltier"));
 
-    // listView->move(50, 80);
-
     displayBox1->getBodyLayout()->addWidget(listView);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
@@ -44,13 +42,5 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluListViewPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluListViewPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluListViewPage.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluListViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

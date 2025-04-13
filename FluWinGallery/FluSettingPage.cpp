@@ -1,4 +1,4 @@
-#include "FluSettingPage.h"
+﻿#include "FluSettingPage.h"
 
 FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {

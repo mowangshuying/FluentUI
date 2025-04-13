@@ -1,11 +1,11 @@
-#pragma once
+﻿#pragma once
 
 #include <QObject>
 
 enum class FluTheme
 {
-    Light,
-    Dark,
+    Light, 
+    Dark, 
     Custom,
     _END,
 };

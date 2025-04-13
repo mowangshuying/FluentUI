@@ -1,4 +1,4 @@
-#include "FluSliderPage.h"
+﻿#include "FluSliderPage.h"
 
 FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -39,7 +39,7 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     vSlider->move(50, 50);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSliderPage.qss", this);
+    onThemeChanged();
 }
 
 void FluSliderPage::onThemeChanged()

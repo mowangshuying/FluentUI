@@ -1,4 +1,4 @@
-#include "FluVNavigationMenuItem.h"
+﻿#include "FluVNavigationMenuItem.h"
 #include "../FluUtils/FluUtils.h"
 #include <QPropertyAnimation>
 
@@ -41,7 +41,7 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
 
     connect(m_menuButton, &QPushButton::clicked, [=](bool b) { emit menuItemClicked(); });
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);
+    onThemeChanged();
 }
 
 void FluVNavigationMenuItem::paintEvent(QPaintEvent *event)

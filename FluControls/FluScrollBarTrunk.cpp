@@ -1,4 +1,4 @@
-#include "FluScrollBarTrunk.h"
+﻿#include "FluScrollBarTrunk.h"
 
 FluScrollBarTrunk::FluScrollBarTrunk(Qt::Orientation orientation /*= Qt::Orientation::Vertical*/, QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
@@ -11,8 +11,8 @@ void FluScrollBarTrunk::init(Qt::Orientation orientation)
     initVertical(orientation);
     initOpacityAnimation();
 
-    onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
+    //onThemeChanged();
+    //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluScrollBarTrunk::initVertical(Qt::Orientation orientation)
@@ -70,14 +70,14 @@ FluScrollBarArrowButton* FluScrollBarTrunk::getLstBtn()
     return m_lstBtn;
 }
 
-void FluScrollBarTrunk::setHandleBackgoundColor(QColor color)
+void FluScrollBarTrunk::setTrunkBackgoundColor(QColor color)
 {
-    m_handleBackgoundColor = color;
+    m_trunkBackgoundColor = color;
 }
 
-QColor FluScrollBarTrunk::getHandleBackgoundColor()
+QColor FluScrollBarTrunk::getTrunkBackgoundColor()
 {
-    return m_handleBackgoundColor;
+    return m_trunkBackgoundColor;
 }
 
 void FluScrollBarTrunk::expandTrunk()
@@ -96,9 +96,9 @@ void FluScrollBarTrunk::collapseTrunk()
     m_animation->start();
 }
 
-void FluScrollBarTrunk::drawHandleBackground(QPainter* painter)
+void FluScrollBarTrunk::drawTrunkBackground(QPainter* painter)
 {
-    painter->setBrush(m_handleBackgoundColor);
+    painter->setBrush(m_trunkBackgoundColor);
     painter->drawRoundedRect(rect(), 6, 6);
 }
 
@@ -107,18 +107,18 @@ void FluScrollBarTrunk::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(Qt::NoPen);
-    drawHandleBackground(&painter);
+    drawTrunkBackground(&painter);
 }
 
-void FluScrollBarTrunk::onThemeChanged()
-{
-    // m_handleBackgoundColor = Qt::red;
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_handleBackgoundColor = QColor(249, 249, 249);
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        m_handleBackgoundColor = QColor(44, 44, 44);
-    }
-}
+// void FluScrollBarTrunk::onThemeChanged()
+// {
+//     // m_trunkBackgoundColor = Qt::red;
+//     if (FluThemeUtils::isLightTheme())
+//     {
+//         m_trunkBackgoundColor = QColor(249, 249, 249);
+//     }
+//     else if (FluThemeUtils::isDarkTheme())
+//     {
+//         m_trunkBackgoundColor = QColor(44, 44, 44);
+//     }
+// }

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QApplication>
 #include <QWidget>
@@ -10,14 +10,17 @@
 #include "FluScrollBarArrowButton.h"
 #include <QScrollBar>
 #include <QAbstractScrollArea>
+#include "FluWidget.h"
 
 class FluScrollArea;
 class FluScrollBarHandle;
 
-class FluScrollBar : public QWidget
+class FluScrollBar : public FluWidget
 {
     Q_OBJECT
     Q_PROPERTY(int value READ getCurrentValue WRITE setCurrrentValue)
+    Q_PROPERTY(QColor trunkBackgroundColor READ getTrunkBackgoundColor WRITE setTrunkBackgoundColor)
+    Q_PROPERTY(QColor handleBackgroundColor READ getHandleBackgroundColor WRITE setHandleBackgroundColor)
   public:
     FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea = nullptr);
 
@@ -67,6 +70,14 @@ class FluScrollBar : public QWidget
 
     void adjustHandleSize();
 
+    QColor getTrunkBackgoundColor();
+
+    void setTrunkBackgoundColor(QColor color);
+
+    QColor getHandleBackgroundColor();
+
+    void setHandleBackgroundColor(QColor color);
+
   public:
     bool eventFilter(QObject* watched, QEvent* event);
 
@@ -99,6 +110,7 @@ class FluScrollBar : public QWidget
 
     void onOpacityAnimationChanged(const QVariant& value);
 
+    void onThemeChanged();
   protected:
     QAbstractScrollArea* m_scrollArea;
     FluScrollBarTrunk* m_scrollBarTrunk;

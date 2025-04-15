@@ -1,7 +1,7 @@
 /*FluCalendarView qss*/
 
 FluCalendarView {
-    background-color: rgb(31, 31, 31);
-    border: 1px solid rgb(48, 48, 48);
+    background-color: rgba(243, 145, 199, 0.95);
+    border: 1px solid rgb(255, 172, 220);
     border-radius: 4px;
 }

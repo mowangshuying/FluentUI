@@ -1,4 +1,4 @@
-#include "FluTreeViewPage.h"
+﻿#include "FluTreeViewPage.h"
 #include "../FluControls/FluDisplayBox.h"
 #include "../FluControls/FluTreeView.h"
 #include "../FluControls/FluVScrollView.h"
@@ -78,19 +78,10 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 
     //
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    onThemeChanged();
 }
 
 void FluTreeViewPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTreeViewPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTreeViewPage.qss", this);
-    // }
-
-    //
     FluStyleSheetUitls::setQssByFileName("FluTreeViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

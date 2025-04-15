@@ -6,5 +6,5 @@ FluCalendarViewWeakTitle {
 #label {
     /* background-color: blueviolet; */
     background-color: transparent;
-    color: rgb(255, 255, 255);
+    color: rgb(73, 66, 71);
 }

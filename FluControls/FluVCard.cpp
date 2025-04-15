@@ -28,8 +28,9 @@ FluVCard::FluVCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     vMainLaout->addWidget(m_contextLabel);
 
     setFixedSize(200, 220);
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
-    setStyleSheet(qss);
+    //QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVCard.qss");
+    //setStyleSheet(qss);
+    onThemeChanged();
 }
 
 FluVCard::FluVCard(QPixmap icon, QString titleText, QString contextText, QWidget* parent /*= nullptr*/) : FluVCard(parent)
@@ -38,6 +39,7 @@ FluVCard::FluVCard(QPixmap icon, QString titleText, QString contextText, QWidget
     m_iconLabel->setPixmap(pixmap);
     m_titleLabel->setText(titleText);
     m_contextLabel->setText(contextText);
+    onThemeChanged();
 }
 
 void FluVCard::setIcon(QPixmap icon)

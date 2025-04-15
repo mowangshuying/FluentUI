@@ -11,7 +11,7 @@ class FluListView : public QListWidget
     Q_OBJECT
     Q_PROPERTY(QColor backgroundColorEx READ getBackgroundColorEx WRITE setBackgroundColorEx)
     Q_PROPERTY(QColor hoverColorEx READ getHoverColorEx WRITE setHoverColorEx)
-    Q_PROPERTY(QColor indicatorColorEx READ getIndicatorEx WRITE setIndicatorEx)
+    Q_PROPERTY(QColor indicatorColorEx READ getIndicatorColorEx WRITE setIndicatorColorEx)
     Q_PROPERTY(QColor textColorEx READ getTextColorEx WRITE setTextColorEx)
   public:
     FluListView(QWidget* parent = nullptr);

@@ -1,10 +1,12 @@
 FluDatePickerView {
     background-color: transparent;
+    qproperty-maskBackgroundColorEx: rgb(118, 185, 237);
+    qproperty-maskTextColorEx:rgb(73, 66, 71);
 }
 
 #mainView {
-    background-color: rgb(46, 46, 46);
-    border: 1px solid rgb(64, 64, 64);
+    background-color: rgba(243, 145, 199, 0.95);
+    border: 1px solid rgb(255,172,220);
     border-radius: 8px;
 }
 
@@ -15,7 +17,7 @@ FluDatePickerView {
 }
 
 #okBtn:hover {
-    background-color: rgb(58, 58, 58);
+    background-color: rgba(243, 165, 209, 0.95);
 }
 
 #cancelBtn {
@@ -25,5 +27,5 @@ FluDatePickerView {
 }
 
 #cancelBtn:hover {
-    background-color: rgb(58, 58, 58)
+    background-color: rgba(243, 165, 209, 0.95)
 }

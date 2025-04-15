@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include "FluLoopView.h"
@@ -17,8 +17,30 @@
 class FluDatePickerView : public FluWidget
 {
     Q_OBJECT
+    Q_PROPERTY(QColor maskBackgroundColorEx READ getMaskBackgroundColorEx WRITE setMaskBackgroundColorEx)
+    Q_PROPERTY(QColor maskTextColorEx READ getMaskTextColorEx WRITE setMaskTextColorEx)
   public:
     FluDatePickerView(QWidget* parent = nullptr);
+
+    void setMaskBackgroundColorEx(QColor color)
+    {
+        m_mask->setBackgroundColorEx(color);
+    }
+
+    QColor getMaskBackgroundColorEx()
+    {
+        return m_mask->getBackgroundColorEx();
+    }
+
+    void setMaskTextColorEx(QColor color)
+    {
+        m_mask->setTextColorEx(color);
+    }
+
+    QColor getMaskTextColorEx()
+    {
+        return m_mask->getTextColorEx();
+    }
 
     int getMonth();
 

@@ -1,4 +1,4 @@
-#include "FluTableViewPage.h"
+﻿#include "FluTableViewPage.h"
 
 FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -43,21 +43,12 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
         tableView->setItem(i, 2, item3);
     }
 
-    //
     displayBox->getBodyLayout()->addWidget(tableView);
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableViewPage.qss", this);
+    onThemeChanged();
 }
 
 void FluTableViewPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableViewPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTableViewPage.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluTableViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

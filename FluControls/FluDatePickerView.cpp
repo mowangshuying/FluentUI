@@ -1,4 +1,4 @@
-#include "FluDatePickerView.h"
+﻿#include "FluDatePickerView.h"
 #include <QApplication>
 
 FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bFirstShow(true), m_mask(nullptr)
@@ -274,17 +274,7 @@ void FluDatePickerView::resizeEvent(QResizeEvent* event)
 
 void FluDatePickerView::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Light));
-        m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Light));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDatePickerView.qss", this);
-    }
-    else
-    {
-        m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Dark));
-        m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDatePickerView.qss", this);
-    }
+    m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluThemeUtils::getUtils()->getTheme()));
+    m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUitls::setQssByFileName("FluDatePickerView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

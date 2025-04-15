@@ -1,5 +1,7 @@
 FluDatePickerView {
     background-color: transparent;
+    qproperty-maskBackgroundColorEx: rgb(0, 90, 158);
+    qproperty-maskTextColorEx: black;
 }
 
 #mainView {

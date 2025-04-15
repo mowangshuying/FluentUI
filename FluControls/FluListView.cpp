@@ -2,7 +2,6 @@
 
 FluListView::FluListView(QWidget* parent /*= nullptr*/) : QListWidget(parent)
 {
-    //setItemDelegate(new FluListViewItemDelegate);
     m_listViewItemDelegate = new FluListViewItemDelegate;
     setItemDelegate(m_listViewItemDelegate);
 

@@ -1,4 +1,4 @@
-#include "FluTableView.h"
+﻿#include "FluTableView.h"
 
 FluTableView::FluTableView(QWidget* parent /*= nullptr*/) : QTableWidget(parent)
 {
@@ -15,7 +15,8 @@ FluTableView::FluTableView(QWidget* parent /*= nullptr*/) : QTableWidget(parent)
     verticalHeader()->setDefaultSectionSize(38);
     horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
+    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 

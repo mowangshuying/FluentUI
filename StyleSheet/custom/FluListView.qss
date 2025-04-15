@@ -1,50 +1,8 @@
-QListWidget {
-    background: rgb(32, 32, 32);
-    outline: none;
-    border: 1px solid rgb(121, 121, 121);
-    border-radius: 0px;
-    /* selection-background-color: pink; */
-    /* alternate-background-color: green; */
-    padding: 4px;
-}
-
-QListWidget::item {
-    color: black;
-    background: rgb(32, 32, 32);
-    /* border: 1px solid blue; */
-    height: 35px;
-    margin-top: 3px;
-    border-radius: 4px;
-    color: rgb(73, 66, 71);
-}
-
-QListWidget::item:hover {
-    background-color: rgb(45, 45, 45);
-}
-
-QListWidget::item:selected {
-    background-color: rgb(45, 45, 45);
-}
-
-QScrollBar:vertical {
-    width: 4px;
-    background-color: transparent;
-}
-
-QScrollBar::handle:vertical {
-    border-radius: 2px;
-    width: 4px;
-    background: rgba(159, 159, 159, 0.5);
-    min-height: 25px;
-}
-
-QScrollBar::add-line:vertical,
-QScrollBar::sub-line:vertical {
-    background-color: transparent;
-    border: none;
-}
-
-QScrollBar::sub-page:vertical,
-QScrollBar::add-page:vertical {
-    background-color: transparent;
+FluListView {
+    background-color: rgba(243, 145, 199, 0.95);
+    border: 1px solid rgb(255,172,220);
+    qproperty-backgroundColorEx: rgba(243, 145, 199, 0.95);
+    qproperty-hoverColorEx: rgba(243, 165, 209, 0.95);
+    qproperty-indicatorColorEx: rgb(0, 90, 158);
+    qproperty-textColorEx: black;
 }

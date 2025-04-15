@@ -7,8 +7,6 @@
  #titleLabel {
      font-size: 26px;
      color: rgb(73, 66, 71);
-     /* font-weight: bold; */
-     /* text-decoration: underline; */
  }
  
  #subTitleLabel {

@@ -1,7 +1,7 @@
 FluDatePicker {
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
     background-color: rgba(243, 145, 199, 0.95);
-    border-bottom: 1px solid rgb(255,172,220);
+    border-bottom: 1px solid rgb(255, 172, 220);
     border-radius: 4px;
 }
 
@@ -9,14 +9,14 @@ FluDatePicker {
     color: rgb(73, 66, 71);
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(255,172,220);
+    border-right: 1px solid rgb(255, 172, 220);
 }
 
 #dayBtn {
     color: rgb(73, 66, 71);
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(255,172,220);
+    border-right: 1px solid rgb(255, 172, 220);
 }
 
 #yearBtn {

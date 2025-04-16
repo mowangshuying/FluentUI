@@ -6,20 +6,20 @@ FluSegmentedItem {
     border-radius: 0px;
 }
 
-FluSegmentedItem[isSelected=false]:hover{
+FluSegmentedItem[isSelected=false]:hover {
     background-color: rgba(192, 192, 192, 0.4);
     border-radius: 4px;
 }
 
-FluSegmentedItem[isSelected=false]:pressed{
+FluSegmentedItem[isSelected=false]:pressed {
     background-color: rgba(192, 192, 192, 0.4);
     border-radius: 4px;
 }
 
-FluSegmentedItem[isSelected=true]:hover{
+FluSegmentedItem[isSelected=true]:hover {
     background-color: transparent;
 }
 
-FluSegmentedItem[isSelected=true]:pressed{
+FluSegmentedItem[isSelected=true]:pressed {
     background-color: transparent;
 }

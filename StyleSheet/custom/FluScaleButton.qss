@@ -16,5 +16,5 @@ FluScaleButton:hover {
 FluScaleButton:pressed {
     border: 1px solid rgb(53, 53, 53);
     border-bottom: 1px solid rgb(53, 53, 53);
-    background-color: rgb(250,118,188);
+    background-color: rgb(250, 118, 188);
 }

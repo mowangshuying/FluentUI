@@ -6,12 +6,12 @@ FluHCard {
 
 FluHCard:hover {
     background-color: rgba(243, 165, 209, 0.95);
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
 }
 
 #titleLabel {
     font-size: 15px;
-    color: rgb(73,66,71);
+    color: rgb(73, 66, 71);
 }
 
 #contextLabel {

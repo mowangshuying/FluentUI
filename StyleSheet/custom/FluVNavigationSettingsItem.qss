@@ -1,5 +1,5 @@
 FluVNavigationSettingsItem {
-    background-color: rgb(250,118,188);
+    background-color: rgb(250, 118, 188);
     border-radius: 4px;
 }
 

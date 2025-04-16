@@ -3,19 +3,19 @@
      background-color: transparent;
      border-radius: 4px;
  }
- 
+
  FluColorLabel[color="Blue"] {
      background-color: blue;
  }
- 
+
  FluColorLabel[color="Green"] {
      background-color: green;
  }
- 
+
  FluColorLabel[color="Red"] {
      background-color: red;
  }
- 
+
  FluColorLabel[color="Yellow"] {
      background-color: yellow;
  }

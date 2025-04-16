@@ -9,10 +9,10 @@ FluVCard:hover {
 
 #titleLabel {
     font-size: 16px;
-    color: rgb(73,66,71);
+    color: rgb(73, 66, 71);
 }
 
 #contextLabel {
     font-size: 12px;
-    color: rgb(73,66,71);
+    color: rgb(73, 66, 71);
 }

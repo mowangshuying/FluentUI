@@ -10,7 +10,7 @@ FluToggleSwitch::indicator {
     width: 22px;
     height: 22px;
     border-radius: 12px;
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
     background-color: rgba(243, 145, 199, 0.95);
     image: url("../res/ControlResImages/ToggleSwitchOff-Dark.png");
     margin-right: 5px;

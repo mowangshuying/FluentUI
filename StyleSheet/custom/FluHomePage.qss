@@ -22,5 +22,5 @@ FluHomePage {
     font-size: 18px;
     margin-left: 35px;
     /* font-weight: bold; */
-    color: rgb(73,66,71);
+    color: rgb(73, 66, 71);
 }

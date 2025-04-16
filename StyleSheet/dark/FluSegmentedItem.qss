@@ -6,17 +6,17 @@ FluSegmentedItem {
     border-radius: 0px;
 }
 
-FluSegmentedItem[isSelected=false]:hover{
+FluSegmentedItem[isSelected=false]:hover {
     background-color: rgba(45, 45, 45, 0.5);
     border-radius: 4px;
 }
 
-FluSegmentedItem[isSelected=false]:pressed{
+FluSegmentedItem[isSelected=false]:pressed {
     background-color: rgba(45, 45, 45, 0.5);
     border-radius: 4px;
 }
 
-FluSegmentedItem[isSelected=true]:hover{
+FluSegmentedItem[isSelected=true]:hover {
     background-color: transparent;
 }
 

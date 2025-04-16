@@ -1,6 +1,6 @@
 FluVNavigationView {
     /* background-color: aqua; */
-    background-color: rgb(250,118,188);
+    background-color: rgb(250, 118, 188);
 }
 
 #srollArea {
@@ -12,5 +12,5 @@ FluVNavigationView {
 #widget1,
 #widget2,
 #widget3 {
-    background-color: rgb(250,118,188);
+    background-color: rgb(250, 118, 188);
 }

@@ -8,8 +8,8 @@ FluShortcutPicker {
 
 #keyLabel {
     background-color: rgb(0, 90, 158);
-    font-size:12px;
-    color:white;
-    border-radius:4px;
+    font-size: 12px;
+    color: white;
+    border-radius: 4px;
     border: 1px solid rgb(0, 90, 158);
 }

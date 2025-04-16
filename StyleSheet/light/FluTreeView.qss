@@ -6,7 +6,7 @@ FluTreeView {
 }
 
 FluTreeView::disabled {
-	color:rgba(0,0,0,118);
+    color: rgba(0, 0, 0, 118);
 }
 
 FluTreeView::item {
@@ -37,12 +37,12 @@ FLuTreeView::indicator {
 }
 
 /*branch qss*/
-QTreeView::branch:has-children:!has-siblings:closed,
+QTreeView::branch:has-children: !has-siblings:closed,
 QTreeView::branch:closed:has-children:has-siblings {
     image: url("../res/ControlResImages/ChevronRight-Light.png");
 }
 
-QTreeView::branch:open:has-children:!has-siblings,
+QTreeView::branch:open:has-children: !has-siblings,
 QTreeView::branch:open:has-children:has-siblings {
     image: url("../res/ControlResImages/ChevronDown-Light.png");
 }

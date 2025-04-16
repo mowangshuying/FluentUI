@@ -1,9 +1,9 @@
 QTextEdit {
     background-color: rgba(243, 145, 199, 0.95);
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
     font-size: 14px;
     border-radius: 4px;
-    border-bottom: 1px solid rgb(255,172,220);
+    border-bottom: 1px solid rgb(255, 172, 220);
     color: rgb(73, 66, 71);
 }
 

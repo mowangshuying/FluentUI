@@ -19,18 +19,10 @@ FluTextBoxPage::FluTextBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     displayBox1->getBodyLayout()->addWidget(textEdit);
     m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
+    onThemeChanged();
 }
 
 void FluTextBoxPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextBoxPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextBoxPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluTextBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

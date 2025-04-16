@@ -30,4 +30,5 @@ FluScrollingPage::FluScrollingPage(QWidget* parent /*= nullptr*/) : FluATitlePag
     semanticZoomCard->setKey("SemanticZoomPage");
     getFWScrollView()->getMainLayout()->addWidget(semanticZoomCard);
     connect(semanticZoomCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+    onThemeChanged();
 }

@@ -12,7 +12,8 @@ FluInfoBarPage::FluInfoBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
 
     addDynamicInfoBar();
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
+    onThemeChanged();
 }
 
 void FluInfoBarPage::addClosableInfoBar()
@@ -129,14 +130,5 @@ void FluInfoBarPage::addDynamicInfoBar()
 
 void FluInfoBarPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluInfoBarPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluInfoBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

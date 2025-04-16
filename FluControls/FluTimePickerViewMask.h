@@ -23,6 +23,14 @@ class FluTimePickerViewMask : public QWidget
   public:
     FluTimePickerViewMask(QWidget* parent = nullptr);
 
+    void setBackgroundColorEx(QColor color) { m_backgroundColorEx = color; }
+    QColor getBackgroundColorEx() { return m_backgroundColorEx; }
+
+    void setTextColorEx(QColor color) { m_textColorEx = color; }
+
+    QColor getTextColorEx() { return m_textColorEx; }
+
+
     void addItem(QString text, int nW, int nH);
 
     void setItemText(int nIndex, QString text);
@@ -43,4 +51,7 @@ class FluTimePickerViewMask : public QWidget
   protected:
     std::vector<FluTimePickerViewMaskItem> m_items;
     int m_nCurIndex;
+
+    QColor m_backgroundColorEx;
+    QColor m_textColorEx;
 };

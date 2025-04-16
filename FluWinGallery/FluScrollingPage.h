@@ -17,13 +17,6 @@ class FluScrollingPage : public FluATitlePage
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluScrollingPage.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluScrollingPage.qss", this);
-        }
+        FluStyleSheetUitls::setQssByFileName("FluScrollingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 };

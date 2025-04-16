@@ -111,6 +111,7 @@ class FluScrollBar : public FluWidget
     void onOpacityAnimationChanged(const QVariant& value);
 
     void onThemeChanged();
+
   protected:
     QAbstractScrollArea* m_scrollArea;
     FluScrollBarTrunk* m_scrollBarTrunk;

@@ -13,7 +13,6 @@ class FluListViewItemDelegate : public QStyledItemDelegate
   public:
     FluListViewItemDelegate(QWidget* parent = nullptr);
 
-
     // QColor;
     QColor getBackgroundColorEx() const;
 

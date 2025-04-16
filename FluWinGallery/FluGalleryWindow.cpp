@@ -32,8 +32,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_titleBar->setFixedHeight(48);
 #endif
 
-    //QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
-    //setStyleSheet(qss);
+    // QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
+    // setStyleSheet(qss);
 
     m_navView = new FluVNavigationView(this);
     m_sLayout = new FluStackedLayout;

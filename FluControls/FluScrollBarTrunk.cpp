@@ -11,8 +11,8 @@ void FluScrollBarTrunk::init(Qt::Orientation orientation)
     initVertical(orientation);
     initOpacityAnimation();
 
-    //onThemeChanged();
-    //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
+    // onThemeChanged();
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluScrollBarTrunk::initVertical(Qt::Orientation orientation)

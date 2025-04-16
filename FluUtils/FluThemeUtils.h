@@ -4,8 +4,8 @@
 
 enum class FluTheme
 {
-    Light, 
-    Dark, 
+    Light,
+    Dark,
     Custom,
     _END,
 };

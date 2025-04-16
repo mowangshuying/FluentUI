@@ -8,7 +8,7 @@ FluSplitButtonPage::FluSplitButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
     addSplitButtonWithText();
 
-    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
     onThemeChanged();
 }
 

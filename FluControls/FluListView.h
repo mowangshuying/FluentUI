@@ -16,7 +16,7 @@ class FluListView : public QListWidget
   public:
     FluListView(QWidget* parent = nullptr);
 
-        // QColor;
+    // QColor;
     QColor getBackgroundColorEx() const
     {
         return m_listViewItemDelegate->getBackgroundColorEx();

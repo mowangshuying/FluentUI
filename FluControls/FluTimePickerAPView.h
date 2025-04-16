@@ -25,11 +25,23 @@ class FluTimePickerAPView : public FluWidget
   public:
     FluTimePickerAPView(QWidget* parent = nullptr);
 
-    void setMaskBackgroundColorEx(QColor color) { m_mask->setBackgroundColorEx(color); }
-    QColor getMaskBackgroundColorEx() { return m_mask->getBackgroundColorEx(); }
+    void setMaskBackgroundColorEx(QColor color)
+    {
+        m_mask->setBackgroundColorEx(color);
+    }
+    QColor getMaskBackgroundColorEx()
+    {
+        return m_mask->getBackgroundColorEx();
+    }
 
-    void setMaskTextColorEx(QColor color) { m_mask->setTextColorEx(color); }
-    QColor getMaskTextColorEx() { return m_mask->getTextColorEx(); }
+    void setMaskTextColorEx(QColor color)
+    {
+        m_mask->setTextColorEx(color);
+    }
+    QColor getMaskTextColorEx()
+    {
+        return m_mask->getTextColorEx();
+    }
 
     int getHour();
 

@@ -1,10 +1,12 @@
 FluTimePicker24HView {
     background-color: transparent;
+    qproperty-maskBackgroundColorEx: rgb(118, 185, 237);
+    qproperty-maskTextColorEx: rgb(73, 66, 71);
 }
 
 #mainView {
-    background-color: rgb(44, 44, 44);
-    border: 1px solid rgb(61, 61, 61);
+    background-color: rgba(243, 145, 199, 0.95);
+    border: 1px solid rgb(255, 172, 220);
     border-radius: 8px;
 }
 
@@ -15,7 +17,7 @@ FluTimePicker24HView {
 }
 
 #okBtn:hover {
-    background-color: rgb(56, 56, 56);
+    background-color: rgba(243, 165, 209, 0.95);
 }
 
 #cancelBtn {
@@ -25,5 +27,5 @@ FluTimePicker24HView {
 }
 
 #cancelBtn:hover {
-    background-color: rgb(56, 56, 56)
+    background-color: rgba(243, 165, 209, 0.95);
 }

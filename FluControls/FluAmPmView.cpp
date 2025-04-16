@@ -56,7 +56,8 @@ FluAmPmView::FluAmPmView(int nFixedW /*= 80*/, QWidget* parent /*= nullptr*/) : 
 
     setAmPm(tr("AM"), tr("PM"));
     setAm(true);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
+    onThemeChanged();
 }
 
 QString FluAmPmView::getCurrentText()

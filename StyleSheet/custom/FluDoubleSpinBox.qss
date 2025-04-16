@@ -1,24 +1,24 @@
 QDoubleSpinBox {
-    background-color: rgb(45, 45, 45);
-    border: 1px solid rgb(48, 48, 48);
+    background-color: rgba(243, 145, 199, 0.95);
+    border: 1px solid rgb(255, 172, 220);
     border-radius: 4px;
     padding-left: 10px;
     min-height: 30px;
     max-height: 30px;
     min-width: 100px;
-    border-bottom: 1px solid rgb(154, 154, 154);
+    border-bottom: 1px solid rgb(255, 172, 220);
     selection-color: rgb(73, 66, 71);
     selection-background-color: rgb(0, 120, 215);
     color: rgb(73, 66, 71);
 }
 
 QDoubleSpinBox:hover {
-    background-color: rgb(50, 50, 50);
+    background-color: rgba(243, 165, 209, 0.95);
 }
 
 QDoubleSpinBox:focus {
     color: rgb(73, 66, 71);
-    border-bottom: 2px solid rgb(118, 185, 237);
+    border-bottom: 2px solid rgb(255, 172, 220);
 }
 
 QDoubleSpinBox::up-button {
@@ -35,11 +35,11 @@ QDoubleSpinBox::up-button {
 }
 
 QDoubleSpinBox::up-button:hover {
-    background-color: rgb(56, 56, 56);
+    background-color: rgba(243, 165, 209, 0.95);
 }
 
 QDoubleSpinBox::up-button:pressed {
-    background-color: rgb(56, 56, 56);
+    background-color: rgba(243, 165, 209, 0.95);
 }
 
 QDoubleSpinBox::down-button {
@@ -56,11 +56,11 @@ QDoubleSpinBox::down-button {
 }
 
 QDoubleSpinBox::down-button:hover {
-    background-color: rgb(56, 56, 56);
+    background-color: rgba(243, 165, 209, 0.95);
 }
 
 QDoubleSpinBox::down-button:pressed {
-    background-color: rgb(56, 56, 56);
+    background-color: rgba(243, 165, 209, 0.95);
 }
 
 QDoubleSpinBox::drop-down {
@@ -70,8 +70,8 @@ QDoubleSpinBox::drop-down {
 
 QDoubleSpinBox:disabled {
     color: rgb(120, 120, 120);
-    background-color: rgb(42, 42, 42);
-    border: 1px solid rgb(48, 48, 48);
+    background-color: rgba(243, 145, 199, 0.95);
+    border: 1px solid rgb(255, 172, 220);
 }
 
 QDoubleSpinBox::up-button:disabled {

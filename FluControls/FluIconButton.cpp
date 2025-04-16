@@ -33,7 +33,7 @@ FluIconButton::FluIconButton(FluAwesomeType type1, FluAwesomeType type2, QWidget
 
     // please ensure type1 will in FluAwesomeType, if can't suitable may crash.
 
-    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type1, m_penColor);
+    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type1, FluThemeUtils::getUtils()->getTheme());
     pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     setIcon(QIcon(pixmap));
 
@@ -58,7 +58,7 @@ FluIconButton::FluIconButton(FluAwesomeType type1, FluAwesomeType type2, QWidget
 void FluIconButton::setType(FluAwesomeType type)
 {
     m_type = type;
-    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type, m_penColor);
+    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(type, FluThemeUtils::getUtils()->getTheme());
     pixmap = pixmap.scaled(20, 20, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     setIcon(QIcon(pixmap));
 }
@@ -83,19 +83,6 @@ void FluIconButton::setNoBorder(bool bNoBorder)
 
 void FluIconButton::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_penColor = QColor(8, 8, 8);
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconButton.qss", this);
-        // setType(m_type);
-    }
-    else
-    {
-        m_penColor = QColor(239, 239, 239);
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluIconButton.qss", this);
-        // setType(m_type);
-    }
-
     FluStyleSheetUitls::setQssByFileName("FluIconButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     setType(m_type);
 }

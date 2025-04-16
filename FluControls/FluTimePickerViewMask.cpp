@@ -27,29 +27,29 @@ void FluTimePickerViewMask::setItemText(int nIndex, QString text)
 void FluTimePickerViewMask::paintBackground(QPainter& painter)
 {
     QColor backgroundColor;
-    if (FluThemeUtils::isLightTheme())
-    {
-        backgroundColor = QColor(0, 90, 158);
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        backgroundColor = QColor(118, 185, 237);
-    }
+    //if (FluThemeUtils::isLightTheme())
+    // {
+        // backgroundColor = QColor(0, 90, 158);
+    // }
+    // else if (FluThemeUtils::isDarkTheme())
+    // {
+        // backgroundColor = QColor(118, 185, 237);
+    // }
 
     painter.setPen(Qt::NoPen);
-    painter.setBrush(backgroundColor);
+    painter.setBrush(getBackgroundColorEx());
     painter.drawRoundedRect(rect().adjusted(4, 0, -4, 0), 4, 4);
 }
 
 void FluTimePickerViewMask::paintText(QPainter& painter)
 {
-    QColor textColor;
-    if (FluThemeUtils::isLightTheme())
-        textColor = Qt::white;
-    else if (FluThemeUtils::isDarkTheme())
-        textColor = Qt::black;
+    // QColor textColor;
+    // if (FluThemeUtils::isLightTheme())
+    //     textColor = Qt::white;
+    // else if (FluThemeUtils::isDarkTheme())
+    //     textColor = Qt::black;
 
-    painter.setPen(textColor);
+    painter.setPen(getTextColorEx());
 
     int nX = 0;
     int nY = 0;

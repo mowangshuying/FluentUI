@@ -17,7 +17,8 @@ FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : Fl
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
+    onThemeChanged();
 }
 
 void FluAutoSuggestBoxPage::onThemeChanged()

@@ -27,5 +27,5 @@ FluDatePickerView {
 }
 
 #cancelBtn:hover {
-    background-color: rgba(243, 165, 209, 0.95)
+    background-color: rgba(243, 165, 209, 0.95);
 }

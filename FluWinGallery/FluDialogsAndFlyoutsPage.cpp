@@ -19,20 +19,10 @@ FluDialogsAndFlyoutsPage::FluDialogsAndFlyoutsPage(QWidget* parent /*= nullptr*/
     TeachingTipCard->setKey("TeacingTipPage");
     getFWScrollView()->getMainLayout()->addWidget(TeachingTipCard);
     connect(TeachingTipCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
-
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDialogsAndFlyoutsPage.qss", this);
+    onThemeChanged();
 }
 
 void FluDialogsAndFlyoutsPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDialogsAndFlyoutsPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDialogsAndFlyoutsPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluDialogsAndFlyoutsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

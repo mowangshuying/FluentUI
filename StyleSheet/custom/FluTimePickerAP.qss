@@ -1,7 +1,7 @@
 FluTimePickerAP {
-    border: 1px solid rgb(61, 61, 61);
-    background-color: rgb(44, 44, 44);
-    border-bottom: 1px solid rgb(61, 61, 61);
+    border: 1px solid rgb(255, 172, 220);
+    background-color: rgba(243, 145, 199, 0.95);
+    border-bottom: 1px solid rgb(255, 172, 220);
     border-radius: 4px;
 }
 
@@ -9,14 +9,14 @@ FluTimePickerAP {
     color: rgb(73, 66, 71);
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(61, 61, 61);
+    border-right: 1px solid rgb(255, 172, 220);
 }
 
 #minuteBtn {
     color: rgb(73, 66, 71);
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(61, 61, 61);
+    border-right: 1px solid rgb(255, 172, 220);
 }
 
 #apBtn {

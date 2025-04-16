@@ -4,8 +4,8 @@
 }
 
 FluShortInfoBar[infoBarType="Info"] {
-    border: 1px solid rgb(248,175,220);
-    background-color: rgb(250,118,188);
+    border: 1px solid rgb(248, 175, 220);
+    background-color: rgb(250, 118, 188);
     border-radius: 4px;
 }
 
@@ -26,7 +26,7 @@ FluShortInfoBar[infoBarType="Info"] {
 }
 
 FluShortInfoBar[infoBarType="Suc"] {
-    border: 1px solid rgb(248,175,220);
+    border: 1px solid rgb(248, 175, 220);
     background-color: rgb(57, 61, 27);
     border-radius: 4px;
 }
@@ -48,7 +48,7 @@ FluShortInfoBar[infoBarType="Suc"] {
 }
 
 FluShortInfoBar[infoBarType="Warn"] {
-    border: 1px solid rgb(248,175,220);
+    border: 1px solid rgb(248, 175, 220);
     background-color: rgb(67, 53, 25);
     border-radius: 4px;
 }
@@ -70,7 +70,7 @@ FluShortInfoBar[infoBarType="Warn"] {
 }
 
 FluShortInfoBar[infoBarType="Error"] {
-    border: 1px solid rgb(248,175,220);
+    border: 1px solid rgb(248, 175, 220);
     background-color: rgb(68, 39, 38);
     border-radius: 4px;
 }

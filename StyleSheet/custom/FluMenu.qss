@@ -1,6 +1,6 @@
 QMenu {
     background-color: rgba(243, 145, 199, 0.95);
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
     border-radius: 8px;
     padding: 4px;
     padding-left: 8px;
@@ -24,7 +24,7 @@ QMenu::item {
 }
 
 QMenu::item:selected {
-    background-color: rgb(255,172,220);
+    background-color: rgb(255, 172, 220);
     height: 30px;
     border-radius: 4px;
 }

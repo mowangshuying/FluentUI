@@ -3,7 +3,7 @@ FluCalendarSelectYearView {
 }
 
 #label {
-    color: rgb(222,222,222);
+    color: rgb(222, 222, 222);
     /* width: 40px; */
     /* height: 40px; */
     border: 1px solid transparent;
@@ -15,7 +15,7 @@ FluCalendarSelectYearView {
 }
 
 #label[today=true] {
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     background-color: rgb(118, 185, 237);
 }
 

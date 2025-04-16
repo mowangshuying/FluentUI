@@ -1,5 +1,5 @@
 FluSettingsLabelBox {
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
     border-radius: 4px;
     background-color: rgba(243, 145, 199, 0.95);
 }

@@ -1,6 +1,6 @@
 FluListView {
     background-color: rgb(243, 243, 243);
-    border: 1px solid rgb(146,146,146);
+    border: 1px solid rgb(146, 146, 146);
     qproperty-backgroundColorEx: rgb(243, 243, 243);
     qproperty-hoverColorEx: rgb(234, 234, 234);
     qproperty-indicatorColorEx: rgb(0, 90, 158);

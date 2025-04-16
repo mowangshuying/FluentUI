@@ -1,7 +1,7 @@
 FluTypeographyPage {
-    background-color: rgb(250,118,188);
+    background-color: rgb(250, 118, 188);
     border-top-left-radius: 8px;
-    border: 1px solid rgb(248,175,220);
+    border: 1px solid rgb(248, 175, 220);
 }
 
 #titleLabel {
@@ -25,9 +25,9 @@ FluTypeographyPage {
 }
 
 #typeRampWrap {
-    background-color: rgb(250,118,188);
+    background-color: rgb(250, 118, 188);
     border-radius: 8px;
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
 }
 
 #labelsWrap {

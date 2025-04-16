@@ -1,8 +1,8 @@
 FluGraphicalButton {
     background-color: rgba(243, 145, 199, 0.95);
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
     border-radius: 4px;
-    border-bottom: 1px solid rgb(255,172,220);
+    border-bottom: 1px solid rgb(255, 172, 220);
 }
 
 FluGraphicalButton:hover {
@@ -11,5 +11,5 @@ FluGraphicalButton:hover {
 
 FluGraphicalButton:pressed {
     background-color: rgba(243, 165, 209, 0.95);
-    border: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
 }

@@ -1,18 +1,20 @@
 FluDropDownButton {
     background-color: rgba(243, 145, 199, 0.95);
-    border: 1px solid rgb(255,172,220);
-    border-bottom: 1px solid rgb(255,172,220);
+    border: 1px solid rgb(255, 172, 220);
+    border-bottom: 1px solid rgb(255, 172, 220);
     border-radius: 4px;
 }
 
 FluDropDownButton:hover {
-    border: 1px solid rgb(255,172,220);
-    border-bottom: 1px solid rgb(255,172,220);
-    background-color: rgba(243, 165, 209, 0.95);;
+    border: 1px solid rgb(255, 172, 220);
+    border-bottom: 1px solid rgb(255, 172, 220);
+    background-color: rgba(243, 165, 209, 0.95);
+    ;
 }
 
 FluDropDownButton:pressed {
-    background-color: rgba(243, 165, 209, 0.95);;
+    background-color: rgba(243, 165, 209, 0.95);
+    ;
     /* border: 1px solid rgb(32, 32, 32); */
 }
 

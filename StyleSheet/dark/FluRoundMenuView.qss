@@ -37,7 +37,7 @@ FluRoundMenuView::item:disabled {
 
 FluRoundMenuView::item:hover {
     background-color: rgba(248, 248, 248, 8);
-    color:white;
+    color: white;
 }
 
 FluRoundMenuView::item:selected {

@@ -15,7 +15,7 @@ FluCalendarSelectMonthView {
 }
 
 #label[today=true] {
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     background-color: rgb(118, 185, 237);
 }
 
@@ -24,6 +24,6 @@ FluCalendarSelectMonthView {
 }
 
 #label:hover[today=true] {
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
     background-color: rgb(118, 185, 237);
 }

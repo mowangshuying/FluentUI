@@ -27,13 +27,13 @@ void FluTimePickerViewMask::setItemText(int nIndex, QString text)
 void FluTimePickerViewMask::paintBackground(QPainter& painter)
 {
     QColor backgroundColor;
-    //if (FluThemeUtils::isLightTheme())
-    // {
-        // backgroundColor = QColor(0, 90, 158);
+    // if (FluThemeUtils::isLightTheme())
+    //  {
+    //  backgroundColor = QColor(0, 90, 158);
     // }
     // else if (FluThemeUtils::isDarkTheme())
     // {
-        // backgroundColor = QColor(118, 185, 237);
+    // backgroundColor = QColor(118, 185, 237);
     // }
 
     painter.setPen(Qt::NoPen);

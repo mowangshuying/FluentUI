@@ -159,7 +159,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     if (m_sDisplayIconBox != nullptr)
         emit m_sDisplayIconBox->clicked();
 
-    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
     onThemeChanged();
 }
 

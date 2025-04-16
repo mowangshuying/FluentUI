@@ -26,7 +26,7 @@ FluAllSamplesPage::FluAllSamplesPage(QWidget* parent /*= nullptr*/) : FluATitleP
         connect(card, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     }
 
-    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
     onThemeChanged();
 }
 

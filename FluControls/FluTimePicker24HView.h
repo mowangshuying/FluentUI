@@ -25,7 +25,7 @@ class FluTimePicker24HView : public FluWidget
 
     void setMaskBackgroundColorEx(QColor color)
     {
-        m_mask->setBackgroundColorEx(color);      
+        m_mask->setBackgroundColorEx(color);
     }
 
     QColor getMaskBackgroundColorEx()

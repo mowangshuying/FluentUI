@@ -14,6 +14,7 @@ class FluIconButton;
 class FluExpander : public FluWidget
 {
     Q_OBJECT
+    Q_PROPERTY(int contentHeight READ contentHeight WRITE setContentHeight NOTIFY contentHeightChanged FINAL)
   public:
     FluExpander(QWidget* parent = nullptr);
 
@@ -22,8 +23,6 @@ class FluExpander : public FluWidget
     void setDown(bool bDown);
 
     void setTopRadius0(bool bTopRadius0);
-
-    void setWrap2Height(int h);
 
     // signals:
     //   void windowSizeChanged();
@@ -37,15 +36,20 @@ class FluExpander : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
+    int contentHeight() const;
+    void setContentHeight(int newContentHeight);
+
   public slots:
     void onThemeChanged();
 
     virtual void onClicked();
 
+  signals:
+    void contentHeightChanged();
+
   protected:
     QPropertyAnimation* m_expandAni;
 
-    QVBoxLayout* m_mainLayout;
     QHBoxLayout* m_hWrap1Layout;
     QVBoxLayout* m_vWrap2Layout;
 
@@ -53,6 +57,7 @@ class FluExpander : public FluWidget
 
     QWidget* m_wrap1;
     QWidget* m_wrap2;
-    int m_wrap2Height;  // The height is wrap2 expand height.
     bool m_bDown;
+  private:
+    int m_contentHeight = 0;
 };

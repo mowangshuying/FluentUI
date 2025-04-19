@@ -42,12 +42,10 @@ FLuTreeView::indicator {
 }
 
 /*branch qss*/
-QTreeView::branch:has-children: !has-siblings:closed,
-QTreeView::branch:closed:has-children:has-siblings {
+QTreeView::branch:has-children {
     image: url("../res/ControlResImages/ChevronRight-Dark.png");
 }
 
-QTreeView::branch:open:has-children: !has-siblings,
-QTreeView::branch:open:has-children:has-siblings {
+QTreeView::branch:open:has-children{
     image: url("../res/ControlResImages/ChevronDown-Dark.png");
 }

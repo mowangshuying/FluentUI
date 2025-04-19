@@ -53,8 +53,8 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     tileWraHLayout->addStretch();
 
-    tileWraHLayout->addWidget(themeBtn,0, Qt::AlignRight);
-    tileWraHLayout->addWidget(copyLinkBtn, 0,  Qt::AlignRight);
+    tileWraHLayout->addWidget(themeBtn, 0, Qt::AlignRight);
+    tileWraHLayout->addWidget(copyLinkBtn, 0, Qt::AlignRight);
     tileWraHLayout->addWidget(sendFeedBackBtn, 0, Qt::AlignRight);
     tileWraHLayout->addSpacing(15);
 

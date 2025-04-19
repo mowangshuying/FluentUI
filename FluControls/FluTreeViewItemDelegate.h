@@ -17,67 +17,67 @@ class FluTreeViewItemDelegate : public QStyledItemDelegate
 
     void setIndicatorColorEx(QColor color)
     {
-      m_indicatorColorEx = color;
+        m_indicatorColorEx = color;
     }
 
     QColor getBackgroundColorEx()
     {
-      return m_backgroundColorEx;
+        return m_backgroundColorEx;
     }
 
     void setBackgroundColorEx(QColor color)
     {
-      m_backgroundColorEx = color;
+        m_backgroundColorEx = color;
     }
 
     QColor getTextColorEx()
     {
-      return m_textColorEx;
+        return m_textColorEx;
     }
 
     void setTextColorEx(QColor color)
     {
-      m_textColorEx = color;
+        m_textColorEx = color;
     }
 
     QColor getUnCheckedPenColorEx()
     {
-      return m_unCheckedPenColorEx;
+        return m_unCheckedPenColorEx;
     }
 
     void setUnCheckedPenColorEx(QColor color)
     {
-      m_unCheckedPenColorEx = color;
+        m_unCheckedPenColorEx = color;
     }
 
     QColor getUnCheckedBrushColorEx()
     {
-      return m_unCheckedBrushColorEx;
+        return m_unCheckedBrushColorEx;
     }
 
     void setUnCheckedBrushColorEx(QColor color)
     {
-      m_unCheckedBrushColorEx = color;
+        m_unCheckedBrushColorEx = color;
     }
 
     QColor getCheckedPenColorEx()
     {
-      return m_checkedPenColorEx;
+        return m_checkedPenColorEx;
     }
 
     void setCheckedPenColorEx(QColor color)
     {
-      m_checkedPenColorEx = color;
+        m_checkedPenColorEx = color;
     }
 
     QColor getCheckedBrushColorEx()
     {
-      return m_checkedBrushColorEx;
+        return m_checkedBrushColorEx;
     }
 
     void setCheckedBrushColorEx(QColor color)
     {
-      m_checkedBrushColorEx = color;
+        m_checkedBrushColorEx = color;
     }
 
     void initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const;

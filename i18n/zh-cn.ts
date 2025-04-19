@@ -3757,13 +3757,21 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="85"/>
-        <source>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
-        <translation>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</translation>
+        <source>@2023-2025 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
+        <translation type="unfinished">@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved. {2023-2025 ?}</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="86"/>
+        <source>1.0.0</source>
+        <translation type="unfinished">1.0.0</translation>
+    </message>
+    <message>
+        <source>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
+        <translation type="vanished">@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</translation>
+    </message>
+    <message>
         <source>0.4.0</source>
-        <translation>0.4.0</translation>
+        <translation type="vanished">0.4.0</translation>
     </message>
     <message>
         <source>0.3.9</source>
@@ -3965,6 +3973,11 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <location filename="../FluWinGallery/FluTableViewPage.cpp" line="20"/>
         <source>content</source>
         <translation>内容</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTableViewPage.cpp" line="42"/>
+        <source>just a row test data</source>
+        <translation>仅仅是一行测试数据</translation>
     </message>
 </context>
 <context>

@@ -1,4 +1,4 @@
-#include "FluVNavigationView.h"
+﻿#include "FluVNavigationView.h"
 #include "FluVNavigationIconTextItem.h"
 #include "FluVNavigationMenuItem.h"
 #include "../FluUtils/FluUtils.h"
@@ -70,12 +70,12 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
 void FluVNavigationView::addItemToTopLayout(QWidget *item)
 {
-    m_vTopWrapLayout->addWidget(item, Qt::AlignTop);
+    m_vTopWrapLayout->addWidget(item, 0, Qt::AlignTop);
 }
 
 void FluVNavigationView::addItemToMidLayout(QWidget *item)
 {
-    m_midVScrollView->getMainLayout()->addWidget(item, Qt::AlignTop);
+    m_midVScrollView->getMainLayout()->addWidget(item, 0, Qt::AlignTop);
 
     auto iconTextItem = (FluVNavigationIconTextItem *)item;
     iconTextItem->setParentView(this);

@@ -1,4 +1,4 @@
-#include "FluHNavigationView.h"
+﻿#include "FluHNavigationView.h"
 #include "FluHNavigationIconTextItem.h"
 #include "FluHNavigationMoreItem.h"
 
@@ -43,7 +43,7 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
 
 void FluHNavigationView::addItemToLeftLayout(QWidget* item)
 {
-    m_hLeftWrapLayout->addWidget(item, Qt::AlignLeft);
+    m_hLeftWrapLayout->addWidget(item, 0, Qt::AlignLeft);
 }
 
 void FluHNavigationView::addItemToMidLayout(QWidget* item)

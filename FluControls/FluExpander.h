@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QVBoxLayout>
@@ -14,7 +14,7 @@ class FluIconButton;
 class FluExpander : public FluWidget
 {
     Q_OBJECT
-    Q_PROPERTY(int contentHeight READ contentHeight WRITE setContentHeight NOTIFY contentHeightChanged FINAL)
+    Q_PROPERTY(int contentHeight READ getContentHeight WRITE setContentHeight NOTIFY contentHeightChanged FINAL)
   public:
     FluExpander(QWidget* parent = nullptr);
 
@@ -36,7 +36,7 @@ class FluExpander : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
-    int contentHeight() const;
+    int getContentHeight() const;
     void setContentHeight(int newContentHeight);
 
   public slots:

@@ -1,9 +1,11 @@
-#include "FluIntructions.h"
+﻿#include "FluIntructions.h"
+#include <QResizeEvent>
 
 FluIntructions::FluIntructions(QWidget* parent /*= nullptr*/) : FluExpander(parent)
 {
     m_wrap1->setFixedHeight(70);
-    setFixedHeight(70);
+    //setFixedHeight(70);
+    setMinimumHeight(70);
 
     m_titleLabel = new FluLabel;
     m_titleLabel->setObjectName("wrap1TitleLabel");
@@ -57,33 +59,35 @@ void FluIntructions::addVSplitLine(bool bAdd /*= true*/)
 
 void FluIntructions::resizeEvent(QResizeEvent* event)
 {
-    FluExpander::resizeEvent(event);
-    if (m_bDown)
-        return;
-
-    if (m_expandAni->state() == QPropertyAnimation::Running)
-        return;
-
-    int nAutoH = 0;
-    for (int i = 0; i < getWrap2Layout()->count(); i++)
+    if (!m_bDown && m_expandAni->state() != QPropertyAnimation::Running)
     {
-        auto widget = getWrap2Layout()->itemAt(i)->widget();
-        if (widget->objectName() != "wrap2SplitLine")
-        {
-            auto label = (FluLabel*)widget;
-            nAutoH += label->heightForWidth(m_wrap2->width() - getWrap2Layout()->contentsMargins().left() - getWrap2Layout()->contentsMargins().right());
-        }
-        else
-        {
-            nAutoH += widget->height();
-        }
+        int nAutoH = getAutoH();
+        
+        m_wrap2->setMinimumHeight(nAutoH);
+        m_wrap2->setFixedHeight(nAutoH);
+        setContentHeight(nAutoH);
+        m_wrap1->resize(event->size().width(), m_wrap1->height());
+        m_wrap1->move(0, 0);
+        m_wrap2->resize(event->size().width(), nAutoH);
+        m_wrap2->move(0, m_wrap1->height());
 
-        nAutoH += getWrap2Layout()->spacing();
+        int nX = m_wrap1->width() - m_downOrUpButton->width() - 5;
+        int nY = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
+        m_downOrUpButton->move(nX, nY);
+
+        return;
     }
 
-    nAutoH += getWrap2Layout()->contentsMargins().top() + getWrap2Layout()->contentsMargins().bottom();
-    m_wrap2->setFixedHeight(nAutoH);
-    setFixedHeight(m_wrap1->height() + m_wrap2->height());
+    int nAutoH = getAutoH();
+    m_wrap1->resize(event->size().width(), m_wrap1->height());
+    m_wrap1->move(0, 0);
+    m_wrap2->resize(event->size().width(), nAutoH);
+    //LOG_DEBUG << "sizeHint height:" << m_wrap2->sizeHint().height();
+    m_wrap2->move(0, m_wrap1->height() + getContentHeight() - nAutoH);
+
+    int nX = m_wrap1->width() - m_downOrUpButton->width() - 5;
+    int nY = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
+    m_downOrUpButton->move(nX, nY);
 }
 
 void FluIntructions::paintEvent(QPaintEvent* event)
@@ -93,37 +97,22 @@ void FluIntructions::paintEvent(QPaintEvent* event)
 
 void FluIntructions::onClicked()
 {
-    int nAutoH = 0;
-    for (int i = 0; i < getWrap2Layout()->count(); i++)
-    {
-        auto widget = getWrap2Layout()->itemAt(i)->widget();
-        if (widget->objectName() != "wrap2SplitLine")
-        {
-            auto label = (FluLabel*)widget;
-            nAutoH += label->heightForWidth(m_wrap2->width() - getWrap2Layout()->contentsMargins().left() - getWrap2Layout()->contentsMargins().right());
-        }
-        else
-        {
-            nAutoH += widget->height();
-        }
-
-        nAutoH += getWrap2Layout()->spacing();
-    }
-
-    nAutoH += getWrap2Layout()->contentsMargins().top() + getWrap2Layout()->contentsMargins().bottom();
+    int nAutoH = getAutoH();
+    LOG_DEBUG << "nAutoH:" << nAutoH;
+    m_wrap2->setMinimumHeight(nAutoH);
     m_wrap2->setFixedHeight(nAutoH);
     if (m_bDown)
     {
-        m_expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
-        m_expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), nAutoH));
+        m_expandAni->setStartValue(0);
+        m_expandAni->setEndValue(nAutoH);
         m_expandAni->start();
 
         m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
     }
     else
     {
-        m_expandAni->setStartValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), nAutoH));
-        m_expandAni->setEndValue(QRect(m_wrap2->x(), m_wrap2->y(), m_wrap2->width(), 0));
+        m_expandAni->setStartValue(nAutoH);
+        m_expandAni->setEndValue(0);
         m_expandAni->start();
         m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);
     }

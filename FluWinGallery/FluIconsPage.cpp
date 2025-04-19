@@ -22,7 +22,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
            "All glyphs in Segoe Fluent Icons have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other."));
 
     // instructions->addEnd();
-    m_vScrollView->getMainLayout()->addWidget(instructions);
+    m_vScrollView->getMainLayout()->addWidget(instructions, 0, Qt::AlignTop);
 
     m_vScrollView->getMainLayout()->addSpacing(15);
 

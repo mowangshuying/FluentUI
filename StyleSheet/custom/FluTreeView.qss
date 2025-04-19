@@ -1,9 +1,17 @@
 FluTreeView {
-    background-color: rgb(32, 32, 32);
-    border: 1px solid rgb(48, 48, 48);
+    background-color: rgb(243, 145, 199, 0.95);
+    border: 1px solid rgb(255, 172, 220);
     /* border-radius: 4px; */
     outline: none;
     padding-left: 4px;
+
+    qproperty-indicatorColorEx: rgba(243, 165, 209, 0.95);
+    qproperty-backgroundColorEx: rgba(243, 165, 209, 0.95);
+    qproperty-textColorEx: rgb(73, 66, 71);
+    qproperty-unCheckedPenColorEx: rgba(243, 165, 209, 0.95);
+    qproperty-unCheckedBrushColorEx: rgba(243, 165, 209, 0.95);
+    qproperty-checkedPenColorEx: rgba(243, 165, 209, 0.95);
+    qproperty-checkedBrushColorEx: rgba(243, 165, 209, 0.95);
 }
 
 FluTreeView::item {

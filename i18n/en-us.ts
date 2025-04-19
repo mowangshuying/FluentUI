@@ -3743,12 +3743,12 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="85"/>
-        <source>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
+        <source>@2023-2025 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="86"/>
-        <source>0.4.0</source>
+        <source>1.0.0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3942,6 +3942,11 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../FluWinGallery/FluTableViewPage.cpp" line="20"/>
         <source>content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluTableViewPage.cpp" line="42"/>
+        <source>just a row test data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

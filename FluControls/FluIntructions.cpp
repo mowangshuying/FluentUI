@@ -4,7 +4,7 @@
 FluIntructions::FluIntructions(QWidget* parent /*= nullptr*/) : FluExpander(parent)
 {
     m_wrap1->setFixedHeight(70);
-    //setFixedHeight(70);
+    // setFixedHeight(70);
     setMinimumHeight(70);
 
     m_titleLabel = new FluLabel;
@@ -62,7 +62,7 @@ void FluIntructions::resizeEvent(QResizeEvent* event)
     if (!m_bDown && m_expandAni->state() != QPropertyAnimation::Running)
     {
         int nAutoH = getAutoH();
-        
+
         m_wrap2->setMinimumHeight(nAutoH);
         m_wrap2->setFixedHeight(nAutoH);
         setContentHeight(nAutoH);
@@ -82,7 +82,7 @@ void FluIntructions::resizeEvent(QResizeEvent* event)
     m_wrap1->resize(event->size().width(), m_wrap1->height());
     m_wrap1->move(0, 0);
     m_wrap2->resize(event->size().width(), nAutoH);
-    //LOG_DEBUG << "sizeHint height:" << m_wrap2->sizeHint().height();
+    // LOG_DEBUG << "sizeHint height:" << m_wrap2->sizeHint().height();
     m_wrap2->move(0, m_wrap1->height() + getContentHeight() - nAutoH);
 
     int nX = m_wrap1->width() - m_downOrUpButton->width() - 5;

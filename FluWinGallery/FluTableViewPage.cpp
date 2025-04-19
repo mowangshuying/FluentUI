@@ -39,7 +39,7 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
         auto item2 = new QTableWidgetItem(QString::asprintf("2024/10/14 06:28"));
         tableView->setItem(i, 1, item2);
 
-        auto item3 = new QTableWidgetItem(QString::asprintf("just a row test data"));
+        auto item3 = new QTableWidgetItem(tr("just a row test data"));
         tableView->setItem(i, 2, item3);
     }
 

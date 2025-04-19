@@ -58,6 +58,7 @@ class FluExpander : public FluWidget
     QWidget* m_wrap1;
     QWidget* m_wrap2;
     bool m_bDown;
+
   private:
     int m_contentHeight = 0;
 };

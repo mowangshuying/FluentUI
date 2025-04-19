@@ -86,7 +86,6 @@ class FluTreeView : public QTreeWidget
         m_ItemDelegate->setCheckedBrushColorEx(color);
     }
 
-
     void drawBranches(QPainter *painter, const QRect &rect, const QModelIndex &index) const;
   public slots:
     void onThemeChanged();

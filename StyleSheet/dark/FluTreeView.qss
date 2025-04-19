@@ -4,6 +4,14 @@ FluTreeView {
     /* border-radius: 4px; */
     outline: none;
     padding-left: 4px;
+
+    qproperty-indicatorColorEx: rgb(118, 185, 237);
+    qproperty-backgroundColorEx: rgba(0, 0, 0, 0.140);
+    qproperty-textColorEx: white;
+    qproperty-unCheckedPenColorEx: rgba(255, 255, 255, 0.5);
+    qproperty-unCheckedBrushColorEx: rgb(32, 32, 32);
+    qproperty-checkedPenColorEx: rgb(118, 185, 237);
+    qproperty-checkedBrushColorEx: rgb(118, 185, 237);
 }
 
 FluTreeView::item {

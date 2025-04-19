@@ -318,8 +318,10 @@ int main(int argc, char **argv)
     // FluSegmentedDemo demo;
     // demo.show();
 
-    FluToggleSwitchDemo demo;
-    demo.show();
+    //FluToggleSwitchDemo demo;
+    //demo.show();
 
+    FluIntructionsDemo demo;
+    demo.show();
     return app.exec();
 }

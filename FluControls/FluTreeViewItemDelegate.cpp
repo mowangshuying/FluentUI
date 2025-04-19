@@ -1,4 +1,4 @@
-#include "FluTreeViewItemDelegate.h"
+﻿#include "FluTreeViewItemDelegate.h"
 #include "FluTreeView.h"
 #include <QColor>
 #include <QPalette>
@@ -110,7 +110,7 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
             // painter->setBrush(QColor(0, 90, 158));
             // painter->setPen(QColor(0, 90, 158));
             painter->setBrush(m_checkedBrushColorEx);
-            painter->setPen(m_unCheckedPenColorEx);
+            painter->setPen(m_checkedPenColorEx);
             painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
             if (nChecked == Qt::CheckState::Checked)
             {
@@ -128,7 +128,7 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
             // painter->setBrush(QColor(118, 185, 237));
             // painter->setPen(QColor(118, 185, 237));
             painter->setBrush(m_checkedBrushColorEx);
-            painter->setPen(m_unCheckedPenColorEx);
+            painter->setPen(m_checkedPenColorEx);
             painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
             if (nChecked == Qt::CheckState::Checked)
             {

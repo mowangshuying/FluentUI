@@ -1,4 +1,4 @@
-#include "FluMenuBarPage.h"
+﻿#include "FluMenuBarPage.h"
 
 FluMenuBarPage::FluMenuBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -16,7 +16,7 @@ FluMenuBarPage::FluMenuBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
 void FluMenuBarPage::addSimpleMenuBar()
 {
     auto displayBox1 = new FluDisplayBox;
-    displayBox1->setTitle("A Simple MenuBar");
+    displayBox1->setTitle(tr("A Simple MenuBar"));
     displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
@@ -82,7 +82,7 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
     exitFileAction->setShortcut(QKeySequence("Ctrl+E"));
 
     auto fileMenu = new FluMenu(menuBar);
-    fileMenu->setTitle("File");
+    fileMenu->setTitle(tr("File"));
     fileMenu->addAction(newFileAction);
     fileMenu->addAction(openFileAction);
     fileMenu->addAction(saveFileAction);

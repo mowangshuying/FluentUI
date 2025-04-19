@@ -1,9 +1,9 @@
-#include "FluCollectionsPage.h"
+﻿#include "FluCollectionsPage.h"
 
 FluCollectionsPage::FluCollectionsPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
     m_vMainLayout->setContentsMargins(35, 35, 0, 35);
-    m_titleLabel->setText("Collections");
+    m_titleLabel->setText(tr("Collections"));
 
     auto flipViewCard = new FluHCard(QPixmap("../res/ControlImages/FlipView.png"), tr("FlipView"), tr("Pressents a collection of items that the user can flip through, one item at a time."));
     flipViewCard->setKey("FlipViewPage");

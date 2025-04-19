@@ -1,9 +1,9 @@
-#include "FluTextPage.h"
+﻿#include "FluTextPage.h"
 
 FluTextPage::FluTextPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
     m_vMainLayout->setContentsMargins(35, 35, 0, 35);
-    m_titleLabel->setText("Text");
+    m_titleLabel->setText(tr("Text"));
 
     auto autoSuggestBoxCard = new FluHCard(QPixmap("../res/ControlImages/AutoSuggestBox.png"), tr("AutoSuggestBox"), tr("A control to provide suggestions as a user is typing."));
     autoSuggestBoxCard->setKey("AutoSuggestBoxPage");
@@ -45,13 +45,5 @@ FluTextPage::FluTextPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 
 void FluTextPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTextPage.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluTextPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

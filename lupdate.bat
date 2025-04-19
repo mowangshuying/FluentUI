@@ -1,0 +1,1 @@
+C:\Qt\6.5.1\msvc2019_64\bin\lupdate.exe ./FluControls ./FluUtils ./FluWinGallery -ts i18n/en-US.ts i18n/zh-CN.ts

@@ -19,7 +19,7 @@ void FluSplitButtonPage::addSplitButtonWithText()
     displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
 
     auto splitButton = new FluSplitButton(this);
-    splitButton->setText("Choose Color.");
+    splitButton->setText(tr("Choose Color."));
     // splitButton->move(50, 50);
     splitButton->setFixedSize(130, 30);
 

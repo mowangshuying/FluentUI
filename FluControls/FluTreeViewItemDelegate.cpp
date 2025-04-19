@@ -24,13 +24,13 @@ void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, cons
     // set text color;
     if (FluThemeUtils::isLightTheme())
     {
-        option->palette.setColor(QPalette::Text, Qt::black);
-        option->palette.setColor(QPalette::HighlightedText, Qt::black);
+        option->palette.setColor(QPalette::Text, m_textColorEx);
+        option->palette.setColor(QPalette::HighlightedText, m_textColorEx);
     }
     else if (FluThemeUtils::isDarkTheme())
     {
-        option->palette.setColor(QPalette::Text, Qt::white);
-        option->palette.setColor(QPalette::HighlightedText, Qt::white);
+        option->palette.setColor(QPalette::Text, m_textColorEx);
+        option->palette.setColor(QPalette::HighlightedText, m_textColorEx);
     }
 }
 
@@ -59,10 +59,11 @@ void FluTreeViewItemDelegate::drawBackground(QPainter* painter, const QStyleOpti
 
     int tmpH = option.rect.height() - 4;
     QColor tmpBrushC;
-    if (FluThemeUtils::isLightTheme())
-        tmpBrushC = QColor(0, 0, 0, 20);
-    else if (FluThemeUtils::isDarkTheme())
-        tmpBrushC = QColor(0, 0, 0, 36);
+    // if (FluThemeUtils::isLightTheme())
+    //     tmpBrushC = QColor(0, 0, 0, 20);
+    // else if (FluThemeUtils::isDarkTheme())
+    //     tmpBrushC = QColor(0, 0, 0, 36);
+    tmpBrushC = m_backgroundColorEx;
     painter->setBrush(QBrush(tmpBrushC));
     painter->drawRoundedRect(4, option.rect.y() + 2, m_treeView->width() - 8, option.rect.height() - 4, 4, 4);
     painter->restore();
@@ -88,24 +89,28 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
 
     if (nChecked == Qt::CheckState::Unchecked)
     {
-        if (FluThemeUtils::isLightTheme())
-        {
-            painter->setBrush(QColor(243, 243, 243));
-            painter->setPen(QColor(0, 0, 0, 128));
-        }
-        else if (FluThemeUtils::isDarkTheme())
-        {
-            painter->setBrush(QColor(32, 32, 32));
-            painter->setPen(QColor(255, 255, 255, 168));
-        }
+        //if (FluThemeUtils::isLightTheme())
+        //{
+        //    painter->setBrush(QColor(243, 243, 243));
+        //    painter->setPen(QColor(0, 0, 0, 128));
+        //}
+        //else if (FluThemeUtils::isDarkTheme())
+        //{
+        //    painter->setBrush(QColor(32, 32, 32));
+        //    painter->setPen(QColor(255, 255, 255, 168));
+        //}
+        painter->setBrush(m_unCheckedBrushColorEx);
+        painter->setPen(m_unCheckedPenColorEx);
         painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
     }
     else
     {
         if (FluThemeUtils::isLightTheme())
         {
-            painter->setBrush(QColor(0, 90, 158));
-            painter->setPen(QColor(0, 90, 158));
+            // painter->setBrush(QColor(0, 90, 158));
+            // painter->setPen(QColor(0, 90, 158));
+            painter->setBrush(m_checkedBrushColorEx);
+            painter->setPen(m_unCheckedPenColorEx);
             painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
             if (nChecked == Qt::CheckState::Checked)
             {
@@ -120,8 +125,10 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
         }
         else if (FluThemeUtils::isDarkTheme())
         {
-            painter->setBrush(QColor(118, 185, 237));
-            painter->setPen(QColor(118, 185, 237));
+            // painter->setBrush(QColor(118, 185, 237));
+            // painter->setPen(QColor(118, 185, 237));
+            painter->setBrush(m_checkedBrushColorEx);
+            painter->setPen(m_unCheckedPenColorEx);
             painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
             if (nChecked == Qt::CheckState::Checked)
             {
@@ -153,10 +160,11 @@ void FluTreeViewItemDelegate::drawIndicator(QPainter* painter, const QStyleOptio
 
     int tmpH = option.rect.height() - 4;
     QColor tmpBrushC;
-    if (FluThemeUtils::isLightTheme())
-        tmpBrushC = QColor(0, 90, 158);
-    else if (FluThemeUtils::isDarkTheme())
-        tmpBrushC = QColor(118, 185, 237);
+    // if (FluThemeUtils::isLightTheme())
+    //     tmpBrushC = QColor(0, 90, 158);
+    // else if (FluThemeUtils::isDarkTheme())
+    //     tmpBrushC = QColor(118, 185, 237);
+    tmpBrushC = m_indicatorColorEx;
     painter->setBrush(QBrush(tmpBrushC));
 
     painter->drawRoundedRect(4, 9 + option.rect.y(), 3, option.rect.height() - 17, 1.5, 1.5);

@@ -1,4 +1,4 @@
-#include "FluExpander.h"
+﻿#include "FluExpander.h"
 #include <QEvent>
 #include <QResizeEvent>
 
@@ -138,7 +138,7 @@ void FluExpander::onClicked()
     }
 }
 
-int FluExpander::contentHeight() const
+int FluExpander::getContentHeight() const
 {
     return m_contentHeight;
 }
@@ -153,7 +153,7 @@ void FluExpander::setContentHeight(int newContentHeight)
     resize(width(), height() + dy);
     setMinimumHeight(m_wrap1->height() + m_contentHeight);
     auto p = parentWidget();
-    while (p)
+    while (p && p != window())
     {
         // qDebug() << p;
         p->resize(p->width(), p->height() + dy);

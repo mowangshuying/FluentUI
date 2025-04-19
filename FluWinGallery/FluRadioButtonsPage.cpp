@@ -1,4 +1,4 @@
-#include "FluRadioButtonsPage.h"
+﻿#include "FluRadioButtonsPage.h"
 
 FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -37,9 +37,9 @@ FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEm
     connect(btn5, &FluRadioButton::toggled, [=]() { border->setBorderColor("yellow"); });
     connect(btn6, &FluRadioButton::toggled, [=]() { border->setBorderColor("white"); });
 
-    displayBox->getBodyLayout()->addWidget(backgroundGroup, Qt::AlignTop);
-    displayBox->getBodyLayout()->addWidget(borderGroup, Qt::AlignTop);
-    displayBox->getBodyLayout()->addWidget(border, Qt::AlignTop);
+    displayBox->getBodyLayout()->addWidget(backgroundGroup, 0, Qt::AlignTop);
+    displayBox->getBodyLayout()->addWidget(borderGroup, 0, Qt::AlignTop);
+    displayBox->getBodyLayout()->addWidget(border, 0, Qt::AlignTop);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();

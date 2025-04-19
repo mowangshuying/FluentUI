@@ -19,8 +19,6 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     hSlider->setMinimum(0);
     hSlider->setMaximum(100);
     hSlider->setSingleStep(10);
-    //   displayBox1->getBodyLayout()->addWidget(hSlider, 0);
-    //   displayBox1->getBodyLayout()->addStretch();
 
     hSlider->move(50, 60);
     m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);

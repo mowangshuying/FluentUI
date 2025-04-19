@@ -129,7 +129,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     settingsVersionBox->addWidget(framelesshelperRef);
     settingsVersionBox->addWidget(qwindowkitRef);
 
-    m_vScrollView->getMainLayout()->addWidget(settingsVersionBox);
+    m_vScrollView->getMainLayout()->addWidget(settingsVersionBox, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

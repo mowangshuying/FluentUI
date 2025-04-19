@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QVBoxLayout>
@@ -69,17 +69,17 @@ class FluMSNavigationView : public FluWidget
 
     void addItemToTopLayout(QWidget* item)
     {
-        m_vTopLayout->addWidget(item, Qt::AlignTop);
+        m_vTopLayout->addWidget(item, 0, Qt::AlignTop);
     }
 
     void addItemToMidLayout(QWidget* item)
     {
-        m_vScrollView->getMainLayout()->addWidget(item, Qt::AlignTop);
+        m_vScrollView->getMainLayout()->addWidget(item, 0, Qt::AlignTop);
     }
 
     void addItemToBottomLayout(QWidget* item)
     {
-        m_vBottomLayout->addWidget(item, Qt::AlignTop);
+        m_vBottomLayout->addWidget(item, 0, Qt::AlignTop);
     }
 
     void setSelectedItem(FluMSNavigationItem* item)

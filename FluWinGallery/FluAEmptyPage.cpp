@@ -1,4 +1,4 @@
-#include "FluAEmptyPage.h"
+﻿#include "FluAEmptyPage.h"
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
@@ -38,14 +38,14 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     documentationBtn->setIcon(FluAwesomeType::Document);
     documentationBtn->setText(tr("Documentation"));
     documentationBtn->setFixedWidth(160);
-    tileWraHLayout->addWidget(documentationBtn, Qt::AlignLeft);
+    tileWraHLayout->addWidget(documentationBtn, 0, Qt::AlignLeft);
 
     auto sourceBtn = new FluDropDownButton;
     sourceBtn->setIcon(FluIconUtils::getSvgIcon("../res/HomeHeaderTiles/github-mark.svg"));
     sourceBtn->setSvgPath("../res/HomeHeaderTiles/github-mark.svg", "../res/HomeHeaderTiles/github-mark-white.svg");
     sourceBtn->setText(tr("Source"));
     sourceBtn->setFixedWidth(120);
-    tileWraHLayout->addWidget(sourceBtn, Qt::AlignLeft);
+    tileWraHLayout->addWidget(sourceBtn, 0, Qt::AlignLeft);
 
     auto themeBtn = new FluIconButton(FluAwesomeType::Light);
     auto copyLinkBtn = new FluIconButton(FluAwesomeType::Link);
@@ -53,9 +53,9 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     tileWraHLayout->addStretch();
 
-    tileWraHLayout->addWidget(themeBtn, Qt::AlignRight);
-    tileWraHLayout->addWidget(copyLinkBtn, Qt::AlignRight);
-    tileWraHLayout->addWidget(sendFeedBackBtn, Qt::AlignRight);
+    tileWraHLayout->addWidget(themeBtn,0, Qt::AlignRight);
+    tileWraHLayout->addWidget(copyLinkBtn, 0,  Qt::AlignRight);
+    tileWraHLayout->addWidget(sendFeedBackBtn, 0, Qt::AlignRight);
     tileWraHLayout->addSpacing(15);
 
     m_vScrollView = new FluVScrollView(this);

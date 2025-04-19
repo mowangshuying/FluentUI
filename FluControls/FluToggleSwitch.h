@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QCheckBox>
@@ -10,8 +10,8 @@ class FluToggleSwitch : public QCheckBox
   public:
     FluToggleSwitch(QWidget* parent = nullptr) : QCheckBox(parent)
     {
-        m_onText = "On";
-        m_offText = "Off";
+        m_onText = tr("On");
+        m_offText = tr("Off");
 
         m_bEmptyText = false;
 

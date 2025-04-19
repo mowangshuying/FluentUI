@@ -1,9 +1,9 @@
-#include "FluScrollingPage.h"
+﻿#include "FluScrollingPage.h"
 
 FluScrollingPage::FluScrollingPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
     m_vMainLayout->setAlignment(Qt::AlignTop);
-    m_titleLabel->setText("Scrolling");
+    m_titleLabel->setText(tr("Scrolling"));
 
     auto annotatedScrollBarCard =
         new FluHCard(QPixmap("../res/ControlImages/AnnotatedScrollBar.png"), tr("AnnotatedScrollBar"), tr("A control that extends a regular vertical scrollbar's functionality for an easy navigation through large collections."));

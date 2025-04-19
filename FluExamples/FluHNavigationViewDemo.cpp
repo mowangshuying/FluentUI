@@ -1,4 +1,4 @@
-#include "FluHNavigationViewDemo.h"
+﻿#include "FluHNavigationViewDemo.h"
 
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
@@ -226,7 +226,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
 
     m_hNavView->addItemToMidLayout(item11);
 
-    auto item12 = new FluHNavigationIconTextItem(FluAwesomeType::Sort, "Scrolling");
+    auto item12 = new FluHNavigationIconTextItem(FluAwesomeType::Sort, tr("Scrolling"));
 
     auto item121 = new FluHNavigationIconTextItem("AnnotatedScrollBar", item12);
     auto item122 = new FluHNavigationIconTextItem("PipsPager", item12);
@@ -258,7 +258,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
 
     m_hNavView->addItemToMidLayout(item13);
 
-    auto item14 = new FluHNavigationIconTextItem(FluAwesomeType::Font, "Text");
+    auto item14 = new FluHNavigationIconTextItem(FluAwesomeType::Font, tr("Text"));
 
     auto item141 = new FluHNavigationIconTextItem("AutoSuggestBox", item14);
     auto item142 = new FluHNavigationIconTextItem("NumberBox", item14);

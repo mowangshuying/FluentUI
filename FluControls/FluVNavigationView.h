@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "../FluUtils/FluIconUtils.h"
 #include "../FluUtils/FluLogUtils.h"
@@ -16,6 +16,8 @@
 #include <QVBoxLayout>
 #include "FluWidget.h"
 #include "FluVScrollView.h"
+#include <QPropertyAnimation>
+#include "FluValueObject.h"
 
 class FluVNavigationItem;
 class FluVNavigationIconTextItem;
@@ -54,6 +56,12 @@ class FluVNavigationView : public FluWidget
     FluVNavigationItem *getItemByText(QString text);
     void updateSearchKeys();
 
+    void expandView();
+
+    void collapseView();
+
+    void collapseDownView();
+
     void paintEvent(QPaintEvent *event) override;
   signals:
     void searchKeyChanged(QString key);
@@ -61,7 +69,7 @@ class FluVNavigationView : public FluWidget
     void onMenuItemClicked();
     void onThemeChanged();
 
-  public:
+  protected:
     QVBoxLayout *m_vLayout;
 
     QWidget *m_topWrapWidget;
@@ -74,4 +82,8 @@ class FluVNavigationView : public FluWidget
     FluVNavigationMenuItem *m_menuButtonItem;
     FluVNavigationSearchItem *m_searchItem;
     bool m_bLong;
+
+    // animation;
+    QPropertyAnimation *m_animation;
+    FluValueObject *m_valueObject;
 };

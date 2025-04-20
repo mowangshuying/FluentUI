@@ -424,6 +424,7 @@ void FluVNavigationView::paintEvent(QPaintEvent *event)
 
 void FluVNavigationView::onMenuItemClicked()
 {
+    //LOG_DEBUG << "called.";
     if (m_bLong)
     {
         collapseDownView();

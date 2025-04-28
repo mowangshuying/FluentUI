@@ -3,7 +3,6 @@
 #include <qmath.h>
 #include "FluPaginationItem.h"
 
-
 FluPagination::FluPagination(int nPageCurrent, int nPageButtonCount, int nItemCount, QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
     m_nPageCurrent = nPageCurrent;
@@ -20,7 +19,7 @@ FluPagination::FluPagination(int nPageCurrent, int nPageButtonCount, int nItemCo
     m_nPageButtonHalf = qFloor(m_nPageButtonCount / 2) + 1;
 
     //// update current;
-    //updateByPageCurrent();
+    // updateByPageCurrent();
 
     // set H;
     setFixedHeight(40);
@@ -37,7 +36,7 @@ FluPagination::FluPagination(int nPageCurrent, int nPageButtonCount, int nItemCo
     beginItem->setText("<<");
     m_hMainLayout->addWidget(beginItem);
 
-    connect(beginItem, &FluPaginationItem::clicked, this, [=]() { 
+    connect(beginItem, &FluPaginationItem::clicked, this, [=]() {
         m_nPageCurrent = 1;
         updateByPageCurrent();
     });
@@ -60,7 +59,7 @@ FluPagination::FluPagination(int nPageCurrent, int nPageButtonCount, int nItemCo
             continue;
 
         auto numItem = new FluPaginationItem(FluPaginationItemType::Num);
-        numItem->setText(QString::number(i)); 
+        numItem->setText(QString::number(i));
         numItem->setPageNum(i);
         numItem->setIndex(i);
         m_numVcts.push_back(numItem);
@@ -68,8 +67,7 @@ FluPagination::FluPagination(int nPageCurrent, int nPageButtonCount, int nItemCo
         connect(numItem, &FluPaginationItem::clicked, this, [=]() {
             m_nPageCurrent = numItem->getPageNum();
             updateByPageCurrent();
-        }   
-        );
+        });
     }
 
     // lst
@@ -86,16 +84,16 @@ FluPagination::FluPagination(int nPageCurrent, int nPageButtonCount, int nItemCo
     // lst lst
     auto endItem = new FluPaginationItem(FluPaginationItemType::End);
     endItem->setText(">>");
-    connect(endItem, &FluPaginationItem::clicked, this, [=]() { 
+    connect(endItem, &FluPaginationItem::clicked, this, [=]() {
         m_nPageCurrent = m_nPageCount;
         updateByPageCurrent();
     });
 
     m_hMainLayout->addWidget(endItem);
 
-    //m_hMainLayout = new QHBoxLayout;
-    //m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-    //setLayout(m_hMainLayout);
+    // m_hMainLayout = new QHBoxLayout;
+    // m_hMainLayout->setContentsMargins(0, 0, 0, 0);
+    // setLayout(m_hMainLayout);
 
     m_hMainLayout->addStretch(1);
     setFixedWidth(500);

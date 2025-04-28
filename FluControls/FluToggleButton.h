@@ -15,8 +15,7 @@ class FluToggleButton : public QPushButton
         m_bToggled = false;
         setProperty("toggled", false);
 
-        connect(this, &FluToggleButton::clicked, [=](bool bChecked) { onToggled();
-        });
+        connect(this, &FluToggleButton::clicked, [=](bool bChecked) { onToggled(); });
 
         onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
@@ -33,13 +32,13 @@ class FluToggleButton : public QPushButton
     }
 
   public slots:
-      void onToggled()
-      {
-          m_bToggled = !m_bToggled;
-          setProperty("toggled", m_bToggled);
-          style()->polish(this);
-          update();
-      }
+    void onToggled()
+    {
+        m_bToggled = !m_bToggled;
+        setProperty("toggled", m_bToggled);
+        style()->polish(this);
+        update();
+    }
 
     void onThemeChanged()
     {

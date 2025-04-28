@@ -46,7 +46,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
     // ani;
     m_animation = new QPropertyAnimation;
-    m_animation->setDuration(500);
+    m_animation->setDuration(200);
     m_animation->setPropertyName("value");
 
     m_valueObject = new FluValueObject;

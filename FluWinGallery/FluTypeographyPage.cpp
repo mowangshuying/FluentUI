@@ -29,8 +29,8 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     m_imgLabel->setPixmap(pixmap);
 
     auto imgLabelLayout = new QHBoxLayout;
-    typeRampWrapLayout->addLayout(imgLabelLayout, Qt::AlignTop | Qt::AlignHCenter);
-    imgLabelLayout->addWidget(m_imgLabel, 0, Qt::AlignHCenter);
+    typeRampWrapLayout->addLayout(imgLabelLayout);
+    imgLabelLayout->addWidget(m_imgLabel, 0, Qt::AlignTop | Qt::AlignLeft);
 
     auto row1 = addARow(FluLabelStyle::CaptionTextBlockSylte, tr("Example"), tr("Variable Font"), tr("Size"), tr("Style"), 60);
     typeRampWrapLayout->addWidget(row1, 0, Qt::AlignTop);

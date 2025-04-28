@@ -162,6 +162,8 @@
     <ClCompile Include="FluListView.cpp" />
     <ClCompile Include="FluListViewItemDelegate.cpp" />
     <ClCompile Include="FluLoopView.cpp" />
+    <ClCompile Include="FluPagination.cpp" />
+    <ClCompile Include="FluPaginationItem.cpp" />
     <ClCompile Include="FluRoundMenuView.cpp" />
     <ClCompile Include="FluMenuAniMgr.cpp" />
     <ClCompile Include="FluMenuBar.cpp" />
@@ -286,6 +288,8 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluPaginationItem.h" />
+    <QtMoc Include="FluPagination.h" />
     <QtMoc Include="FluValueObject.h" />
     <QtMoc Include="FluSegmentedItem.h" />
     <QtMoc Include="FluSegmented.h" />

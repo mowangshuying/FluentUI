@@ -63,6 +63,7 @@
 #include "FluRoundMenuDemo.h"
 #include "FluShortcutPickerDemo.h"
 #include "FluSegmentedDemo.h"
+#include "FluPaginationDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -321,7 +322,11 @@ int main(int argc, char **argv)
     // FluToggleSwitchDemo demo;
     // demo.show();
 
-    FluIntructionsDemo demo;
+    //FluIntructionsDemo demo;
+    //demo.show();
+    
+    FluPaginationDemo demo;
     demo.show();
+
     return app.exec();
 }

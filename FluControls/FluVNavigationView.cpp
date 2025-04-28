@@ -75,15 +75,13 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
         }
     });
 
-    connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() { 
-        setFixedWidth(m_valueObject->getValue());
-    });
+    connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() { setFixedWidth(m_valueObject->getValue()); });
 
-    connect(m_animation, &QPropertyAnimation::finished, this, [=]() { 
+    connect(m_animation, &QPropertyAnimation::finished, this, [=]() {
         if (!m_bLong)
-            collapseView(); 
-        //else 
-        //    expandView();
+            collapseView();
+        // else
+        //     expandView();
     });
 
     onThemeChanged();
@@ -342,10 +340,10 @@ inline void FluVNavigationView::collapseView()
         if (item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-          //  if (!iconTextItem->isDown())
-           // {
-           //     iconTextItem->onItemClicked();
-           // }
+            //  if (!iconTextItem->isDown())
+            // {
+            //     iconTextItem->onItemClicked();
+            // }
             iconTextItem->setFixedWidth(40);
             iconTextItem->getWrapWidget1()->setFixedWidth(40);
             iconTextItem->hideLabelArrow();
@@ -424,7 +422,7 @@ void FluVNavigationView::paintEvent(QPaintEvent *event)
 
 void FluVNavigationView::onMenuItemClicked()
 {
-    //LOG_DEBUG << "called.";
+    // LOG_DEBUG << "called.";
     if (m_bLong)
     {
         collapseDownView();
@@ -438,7 +436,7 @@ void FluVNavigationView::onMenuItemClicked()
         expandView();
 
         m_animation->setStartValue(width());
-        m_animation->setEndValue(320+20);
+        m_animation->setEndValue(320 + 20);
         m_animation->start();
         m_bLong = true;
     }

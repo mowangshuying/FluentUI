@@ -322,9 +322,9 @@ int main(int argc, char **argv)
     // FluToggleSwitchDemo demo;
     // demo.show();
 
-    //FluIntructionsDemo demo;
-    //demo.show();
-    
+    // FluIntructionsDemo demo;
+    // demo.show();
+
     FluPaginationDemo demo;
     demo.show();
 

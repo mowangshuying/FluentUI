@@ -29,7 +29,8 @@ class FluPaginationItem : public QPushButton
 		   setFixedHeight(30);
 		   setMinimumWidth(30);
            onThemeChanged();
-	  }
+           connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
+          }
 
 	  FluPaginationItem(FluPaginationItemType type, QWidget* parent = nullptr) : FluPaginationItem(parent)
 	  {

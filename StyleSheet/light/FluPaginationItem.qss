@@ -16,3 +16,25 @@ FluPaginationItem[checked=true] {
     font-size: 15px;
 }
 
+FluPaginationItem[checked=false]:hover {
+    border: 1px solid rgb(229, 229, 229);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    background-color: rgb(246, 246, 246);
+}
+
+FluPaginationItem[checked=true]:hover {
+    border: 1px solid rgb(20, 103, 166);
+    border-bottom: 1px solid rgb(0, 54, 95);
+    background-color: rgb(25, 106, 167);
+}
+
+FluPaginationItem[checked=false]:pressed {
+    border: 1px solid rgb(229, 229, 229);
+    border-bottom: 1px solid rgb(229, 229, 229);
+    background-color: rgb(245, 245, 245);
+}
+
+FluPaginationItem[checked=true]:pressed {
+    border: 1px solid rgb(49, 121, 175);
+    background-color: rgb(49, 121, 175);
+}

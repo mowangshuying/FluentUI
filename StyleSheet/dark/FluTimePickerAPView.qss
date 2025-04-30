@@ -1,5 +1,7 @@
 FluTimePickerAPView {
     background-color: transparent;
+    qproperty-maskBackgroundColorEx: rgb(118, 185, 237);
+    qproperty-maskTextColorEx: white;
 }
 
 #mainView {

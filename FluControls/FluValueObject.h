@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <QPropertyAnimation>
+#include "../FluUtils/FluUtils.h"
 
 class FluValueObject : public QObject
 {
@@ -15,6 +16,7 @@ class FluValueObject : public QObject
     void setValue(float value)
     {
         m_value = value;
+        //LOG_DEBUG << value;
     }
 
     float getValue()

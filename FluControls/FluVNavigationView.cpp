@@ -4,6 +4,7 @@
 #include "../FluUtils/FluUtils.h"
 #include "FluVNavigationSettingsItem.h"
 #include "FluVNavigationSearchItem.h"
+#include <QResizeEvent>
 
 FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -46,7 +47,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
     // ani;
     m_animation = new QPropertyAnimation;
-    m_animation->setDuration(200);
+    m_animation->setDuration(100);
     m_animation->setPropertyName("value");
 
     m_valueObject = new FluValueObject;
@@ -75,7 +76,10 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
         }
     });
 
-    connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() { setFixedWidth(m_valueObject->getValue()); });
+    connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() { 
+            setFixedWidth(m_valueObject->getValue());
+            update();
+        });
 
     connect(m_animation, &QPropertyAnimation::finished, this, [=]() {
         if (!m_bLong)
@@ -410,6 +414,11 @@ void FluVNavigationView::collapseDownView()
             }
         }
     }
+}
+
+void FluVNavigationView::resizeEvent(QResizeEvent *event)
+{
+    //LOG_DEBUG << event->size();
 }
 
 void FluVNavigationView::paintEvent(QPaintEvent *event)

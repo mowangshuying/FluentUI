@@ -18,13 +18,7 @@ class FluPagination : public QWidget
 
     void updateByPageCurrent();
 
-    void paintEvent(QPaintEvent* event) override
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
+    void paintEvent(QPaintEvent* event) override;
   signals:
     void currentPageChange(int nCurrentPage);
     void requestPage(int nPage, int nCount);

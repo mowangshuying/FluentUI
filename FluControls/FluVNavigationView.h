@@ -62,6 +62,8 @@ class FluVNavigationView : public FluWidget
 
     void collapseDownView();
 
+    void resizeEvent(QResizeEvent *event);
+
     void paintEvent(QPaintEvent *event) override;
   signals:
     void searchKeyChanged(QString key);

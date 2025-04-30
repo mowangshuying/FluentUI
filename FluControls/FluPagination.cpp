@@ -156,3 +156,11 @@ void FluPagination::updateByPageCurrent()
         tmpItem->setChecked(tmpNum == m_nPageCurrent);
     }
 }
+
+void FluPagination::paintEvent(QPaintEvent* event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}

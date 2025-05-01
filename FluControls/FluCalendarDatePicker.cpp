@@ -56,12 +56,6 @@ void FluCalendarDatePicker::setCurDate(QDate date)
 
 void FluCalendarDatePicker::onClicked()
 {
-    // LOG_DEBUG << "clicked!";
-    //  if (!m_calendarView->isHidden())
-    //  {
-    //      m_calendarView->hide();
-    //       return;
-    //   }
 
     // the pos
     int nX = width() / 2;
@@ -80,12 +74,10 @@ void FluCalendarDatePicker::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePicker.qss", this);
     }
     else
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarDatePicker.qss", this);
     }
 
     FluStyleSheetUitls::setQssByFileName("FluCalendarDatePicker.qss", this, FluThemeUtils::getUtils()->getTheme());

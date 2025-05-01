@@ -20,14 +20,5 @@ FluRatingControlPage::FluRatingControlPage(QWidget* parent /*= nullptr*/) : FluA
 
 void FluRatingControlPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRatingControlPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRatingControlPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluRatingControlPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

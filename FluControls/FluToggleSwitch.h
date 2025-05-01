@@ -64,14 +64,7 @@ class FluToggleSwitch : public QCheckBox
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitch.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitch.qss", this);
-        }
+        FluStyleSheetUitls::setQssByFileName("FluToggleSwitch.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

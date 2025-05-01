@@ -14,13 +14,5 @@ FluCheckBox::FluCheckBox(const QString& text, QWidget* parent /*= nullptr*/) : Q
 
 void FluCheckBox::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCheckBox.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCheckBox.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluCheckBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

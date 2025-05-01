@@ -12,13 +12,5 @@ FluComboBox::FluComboBox(QWidget* parent /*= nullptr*/) : QComboBox(parent)
 
 void FluComboBox::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBox.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBox.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluComboBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

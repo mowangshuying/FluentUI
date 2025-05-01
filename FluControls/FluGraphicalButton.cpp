@@ -11,13 +11,5 @@ FluGraphicalButton::FluGraphicalButton(QWidget* parent /*= nullptr*/) : QPushBut
 
 void FluGraphicalButton::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGraphicalButton.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGraphicalButton.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluGraphicalButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

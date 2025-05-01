@@ -144,13 +144,5 @@ void FluSettingPage::paintEvent(QPaintEvent* event)
 
 void FluSettingPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingPage.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluSettingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

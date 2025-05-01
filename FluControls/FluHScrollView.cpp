@@ -38,13 +38,5 @@ void FluHScrollView::wheelEvent(QWheelEvent* event)
 
 void FluHScrollView::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHScrollView.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHScrollView.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluHScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

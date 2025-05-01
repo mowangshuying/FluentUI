@@ -26,14 +26,5 @@ void FluVRadioGroupBox::addRadioButton(FluRadioButton* radioButton)
 
 void FluVRadioGroupBox::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVRadioGroupBox.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVRadioGroupBox.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluVRadioGroupBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

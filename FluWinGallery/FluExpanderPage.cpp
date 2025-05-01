@@ -91,14 +91,5 @@ void FluExpanderPage::addExpanderDemo3()
 
 void FluExpanderPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluExpanderPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluExpanderPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluExpanderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

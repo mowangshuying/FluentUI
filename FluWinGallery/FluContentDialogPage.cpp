@@ -28,14 +28,5 @@ FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluA
 
 void FluContentDialogPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluContentDialogPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluContentDialogPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluContentDialogPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

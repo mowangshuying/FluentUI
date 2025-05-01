@@ -42,13 +42,5 @@ void FluPivot::pivotItemChanged(FluPivotTitleBarItem* item)
 
 void FluPivot::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivot.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivot.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluPivot.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

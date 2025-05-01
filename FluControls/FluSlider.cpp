@@ -14,13 +14,5 @@ FluSlider::FluSlider(Qt::Orientation orientation, QWidget* parent /*= nullptr*/)
 
 void FluSlider::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSlider.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSlider.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluSlider.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -42,14 +42,5 @@ FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : Fl
 
 void FluDropDownButtonPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButtonPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButtonPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluDropDownButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -72,16 +72,6 @@ void FluScaleButton::mouseReleaseEvent(QMouseEvent* e)
 
 void FluScaleButton::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     scaleByPercentage(m_currentPercentage);
-    //    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluScaleButton.qss", this);
-    // }
-    // else
-    // {
-    //     scaleByPercentage(m_currentPercentage);
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluScaleButton.qss", this);
-    // }
     scaleByPercentage(m_currentPercentage);
     FluStyleSheetUitls::setQssByFileName("FluScaleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

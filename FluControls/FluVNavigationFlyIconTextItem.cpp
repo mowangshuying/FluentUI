@@ -83,18 +83,6 @@ void FluVNavigationFlyIconTextItem::paintEvent(QPaintEvent* event)
 
 void FluVNavigationFlyIconTextItem::onThemeChanged()
 {
-    // LOG_DEBUG << "called";
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", m_vScrollView);
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationFlyIconTextItem.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", m_vScrollView);
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationFlyIconTextItem.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluVNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
     FluStyleSheetUitls::setQssByFileName("FluVNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

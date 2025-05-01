@@ -57,14 +57,5 @@ void FluPivotTitleBarItem::adjustItemSize()
 
 void FluPivotTitleBarItem::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBarItem.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivotTitleBarItem.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluPivotTitleBarItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -41,14 +41,5 @@ void FluPivotTitleBar::setCurTitleBarItem(FluPivotTitleBarItem* titleBarItem)
 
 void FluPivotTitleBar::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotTitleBar.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivotTitleBar.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluPivotTitleBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

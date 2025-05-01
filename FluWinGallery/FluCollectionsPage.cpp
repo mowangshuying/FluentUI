@@ -30,14 +30,5 @@ FluCollectionsPage::FluCollectionsPage(QWidget* parent /*= nullptr*/) : FluATitl
 
 void FluCollectionsPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCollectionsPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCollectionsPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluCollectionsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

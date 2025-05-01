@@ -50,14 +50,5 @@ FluMediaPage::FluMediaPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent
 
 void FluMediaPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMediaPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMediaPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluMediaPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

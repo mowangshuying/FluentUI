@@ -23,14 +23,5 @@ FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : Fl
 
 void FluAutoSuggestBoxPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAutoSuggestBoxPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluAutoSuggestBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

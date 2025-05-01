@@ -106,28 +106,6 @@ class FluToggleSwitchEx : public FluWidget
         QPainter painter(this);
         painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-        // set outer border color and backgroundcolor;
-        // if (FluThemeUtils::isLightTheme())
-        // {
-        //     painter.setPen(QColor(130, 130, 130));
-        //     painter.setBrush(QColor(237, 237, 237));
-        //     if (m_bChecked)
-        //     {
-        //         painter.setPen(QColor(0, 90, 158));
-        //         painter.setBrush(QColor(0, 90, 158));
-        //     }
-        // }
-        // else if (FluThemeUtils::isDarkTheme())
-        // {
-        //     painter.setPen(QColor(153, 153, 153));
-        //     painter.setBrush(QColor(29, 29, 29));
-        //     if (m_bChecked)
-        //     {
-        //         painter.setPen(QColor(118, 185, 237));
-        //         painter.setBrush(QColor(118, 185, 237));
-        //     }
-        // }
-
         // replace with color;
         painter.setPen(m_borderColor);
         painter.setBrush(m_backgroundColor);
@@ -145,27 +123,6 @@ class FluToggleSwitchEx : public FluWidget
         {
             indicatorRect = QRect(5, 5, 12, 12);
         }
-
-        // if (FluThemeUtils::isLightTheme())
-        // {
-        //     painter.setPen(QColor(90, 90, 90));
-        //     painter.setBrush(QColor(90, 90, 90));
-        //     if (m_bChecked)
-        //     {
-        //         painter.setPen(QColor(255, 255, 255));
-        //         painter.setBrush(QColor(255, 255, 255));
-        //     }
-        // }
-        // else if (FluThemeUtils::isDarkTheme())
-        // {
-        //     painter.setPen(QColor(207, 207, 207));
-        //     painter.setBrush(QColor(207, 207, 207));
-        //     if (m_bChecked)
-        //     {
-        //         painter.setPen(QColor(0, 0, 0));
-        //         painter.setBrush(QColor(0, 0, 0));
-        //     }
-        // }
 
         // replace with color;
         painter.setPen(m_indicatorBorderColor);
@@ -202,14 +159,6 @@ class FluToggleSwitchEx : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        // if (FluThemeUtils::isLightTheme())
-        //{
-        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleSwitchEx.qss", this);
-        // }
-        // else if (FluThemeUtils::isDarkTheme())
-        //{
-        //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleSwitchEx.qss", this);
-        // }
         FluStyleSheetUitls::setQssByFileName("FluToggleSwitchEx.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 

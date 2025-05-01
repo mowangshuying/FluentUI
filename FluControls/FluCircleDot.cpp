@@ -60,13 +60,5 @@ void FluCircleDot::setCircleDot(QWidget* target, int nMarginTop, int nMarginRigh
 
 void FluCircleDot::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCircleDot.qss", this);
-    // }
-    // else if (FluThemeUtils::isDarkTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCircleDot.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluCircleDot.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

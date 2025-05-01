@@ -16,14 +16,5 @@ void FluVSplitLine::paintEvent(QPaintEvent* event)
 
 void FluVSplitLine::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVSplitLine.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVSplitLine.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluVSplitLine.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

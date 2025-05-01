@@ -116,14 +116,5 @@ void FluVNavigationSettingsItem::onItemClicked()
 
 void FluVNavigationSettingsItem::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSettingsItem.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationSettingsItem.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluVNavigationSettingsItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

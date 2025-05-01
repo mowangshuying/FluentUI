@@ -364,14 +364,5 @@ void FluAllSamplesPage::makeTextCards()
 
 void FluAllSamplesPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAllSamplesPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluAllSamplesPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

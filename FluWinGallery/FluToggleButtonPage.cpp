@@ -23,14 +23,5 @@ FluToggleButtonPage::FluToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluToggleButtonPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluToggleButtonPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluToggleButtonPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluToggleButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -9,13 +9,5 @@ FluMenuBar::FluMenuBar(QWidget* parent /*= nullptr*/) : QMenuBar(parent)
 
 void FluMenuBar::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMenuBar.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluMenuBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

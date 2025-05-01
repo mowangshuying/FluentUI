@@ -84,16 +84,6 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
 
     if (nChecked == Qt::CheckState::Unchecked)
     {
-        // if (FluThemeUtils::isLightTheme())
-        //{
-        //     painter->setBrush(QColor(243, 243, 243));
-        //     painter->setPen(QColor(0, 0, 0, 128));
-        // }
-        // else if (FluThemeUtils::isDarkTheme())
-        //{
-        //     painter->setBrush(QColor(32, 32, 32));
-        //     painter->setPen(QColor(255, 255, 255, 168));
-        // }
         painter->setBrush(m_unCheckedBrushColorEx);
         painter->setPen(m_unCheckedPenColorEx);
         painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);

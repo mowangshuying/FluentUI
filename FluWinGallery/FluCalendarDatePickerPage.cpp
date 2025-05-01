@@ -21,14 +21,5 @@ FluCalendarDatePickerPage::FluCalendarDatePickerPage(QWidget* parent /*= nullptr
 
 void FluCalendarDatePickerPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarDatePickerPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarDatePickerPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluCalendarDatePickerPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

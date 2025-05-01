@@ -27,13 +27,5 @@ QVBoxLayout* FluVScrollView::getMainLayout()
 
 void FluVScrollView::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVScrollView.qss", this);
-    // }
-    // else if (FluThemeUtils::isDarkTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVScrollView.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluVScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

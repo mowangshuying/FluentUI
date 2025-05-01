@@ -36,14 +36,5 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluComboBoxPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluComboBoxPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluComboBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

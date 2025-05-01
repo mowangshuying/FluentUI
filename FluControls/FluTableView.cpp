@@ -133,13 +133,5 @@ void FluTableView::mouseReleaseEvent(QMouseEvent* event)
 
 void FluTableView::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTableView.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluTableView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

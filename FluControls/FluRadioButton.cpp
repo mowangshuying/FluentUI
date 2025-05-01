@@ -14,13 +14,5 @@ FluRadioButton::FluRadioButton(const QString& text, QWidget* parent /*= nullptr*
 
 void FluRadioButton::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButton.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButton.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluRadioButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

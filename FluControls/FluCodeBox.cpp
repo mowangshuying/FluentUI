@@ -26,13 +26,5 @@ void FluCodeBox::resizeEvent(QResizeEvent*)
 
 void FluCodeBox::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCodeBox.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCodeBox.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluCodeBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

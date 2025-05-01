@@ -41,13 +41,5 @@ void FluNumberBoxPage::addDoubleSpinBox()
 
 void FluNumberBoxPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluNumberBoxPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluNumberBoxPage.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluNumberBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -46,13 +46,5 @@ FluPivotPage::FluPivotPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
 void FluPivotPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPivotPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPivotPage.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluPivotPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

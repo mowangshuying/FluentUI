@@ -57,14 +57,5 @@ void FluSettingsLabelBox::paintEvent(QPaintEvent* event)
 
 void FluSettingsLabelBox::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSettingsLabelBox.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSettingsLabelBox.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluSettingsLabelBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

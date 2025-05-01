@@ -47,14 +47,5 @@ void FluAppBarButtonPage::addKeyboardAcceleratorAppBarButton()
 
 void FluAppBarButtonPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarButtonPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarButtonPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluAppBarButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

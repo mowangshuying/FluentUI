@@ -31,14 +31,5 @@ FluRadioButtonPage::FluRadioButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
 void FluRadioButtonPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRadioButtonPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRadioButtonPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluRadioButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

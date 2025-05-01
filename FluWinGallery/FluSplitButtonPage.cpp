@@ -58,14 +58,5 @@ void FluSplitButtonPage::addSplitButtonWithText()
 
 void FluSplitButtonPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButtonPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluSplitButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

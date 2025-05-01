@@ -147,13 +147,5 @@ bool FluMessageBox::eventFilter(QObject* obj, QEvent* event)
 
 void FluMessageBox::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMessageBox.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMessageBox.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluMessageBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

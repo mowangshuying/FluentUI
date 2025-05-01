@@ -117,14 +117,5 @@ void FluProgressRingPage::addBusyRing()
 
 void FluProgressRingPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluProgressRingPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluProgressRingPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluProgressRingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

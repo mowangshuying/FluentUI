@@ -38,14 +38,5 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluFlipViewPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFlipViewPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluFlipViewPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluFlipViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

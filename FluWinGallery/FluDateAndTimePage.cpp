@@ -30,14 +30,5 @@ FluDateAndTimePage::FluDateAndTimePage(QWidget* parent /*= nullptr*/) : FluATitl
 
 void FluDateAndTimePage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDateAndTimePage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDateAndTimePage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluDateAndTimePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

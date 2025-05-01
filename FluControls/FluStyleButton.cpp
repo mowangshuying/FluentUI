@@ -9,13 +9,5 @@ FluStyleButton::FluStyleButton(QWidget* parent /*= nullptr*/) : QPushButton(pare
 
 void FluStyleButton::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluStyleButton.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluStyleButton.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluStyleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

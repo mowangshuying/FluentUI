@@ -14,14 +14,5 @@ FluPushButton::FluPushButton(const QString &text, QWidget *parent /*= nullptr*/)
 
 void FluPushButton::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPushButton.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPushButton.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluPushButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

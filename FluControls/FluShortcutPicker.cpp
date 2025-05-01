@@ -79,16 +79,6 @@ void FluShortcutPicker::paintEvent(QPaintEvent* event)
 
 void FluShortcutPicker::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortcutPicker.qss", this);
-    //     updateKeys();
-    // }
-    // else if (FluThemeUtils::isDarkTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortcutPicker.qss", this);
-    //     updateKeys();
-    // }
     FluStyleSheetUitls::setQssByFileName("FluShortcutPicker.qss", this, FluThemeUtils::getUtils()->getTheme());
     updateKeys();
 }

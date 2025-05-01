@@ -28,14 +28,5 @@ void FluAppBarToggleButtonPage::addSymbolIconAppBarButton()
 
 void FluAppBarToggleButtonPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAppBarToggleButtonPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluAppBarToggleButtonPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluAppBarToggleButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

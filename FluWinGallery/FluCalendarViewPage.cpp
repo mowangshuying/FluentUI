@@ -21,14 +21,5 @@ FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluCalendarViewPage::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarViewPage.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarViewPage.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluCalendarViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

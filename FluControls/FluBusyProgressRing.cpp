@@ -100,22 +100,7 @@ void FluBusyProgressRing::paintEvent(QPaintEvent* event)
 
     // draw circle;
     QPen pen;
-    // pen.setWidth(7);
-    // pen.setColor(Qt::red);
-
-    //  painter.setPen(pen);
-    //  float minWH = qMin(width(), height());
-    //  float trunkW = 6;
-
-    //   QRectF outerC(4, 4, minWH - trunkW - 2, minWH - trunkW - 2);
-    //   painter.drawEllipse(outerC);
-
     painter.setPen(Qt::NoPen);
-    // if (FluThemeUtils::isLightTheme())
-    //     painter.setBrush(QBrush(QColor(0, 90, 158)));
-    // else if (FluThemeUtils::isDarkTheme())
-    //     painter.setBrush(QBrush(QColor(118, 185, 237)));
-
     painter.setBrush(QBrush(m_circleColor));
     for (int i = 0; i < m_workDatas.size(); i++)
     {
@@ -126,15 +111,6 @@ void FluBusyProgressRing::paintEvent(QPaintEvent* event)
 
 void FluBusyProgressRing::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    //{
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBusyProgressRing.qss", this);
-    // }
-    //  else
-    //  {
-    //      FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBusyProgressRing.qss", this);
-    //  }
-
     // set Qss By theme;
     FluStyleSheetUitls::setQssByFileName("FluBusyProgressRing.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

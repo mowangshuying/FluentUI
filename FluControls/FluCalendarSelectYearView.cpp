@@ -180,13 +180,5 @@ void FluCalendarSelectYearView::getRange(int nYear, int& nStartYear, int& nEndYe
 
 void FluCalendarSelectYearView::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarSelectYearView.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluCalendarSelectYearView.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluCalendarSelectYearView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

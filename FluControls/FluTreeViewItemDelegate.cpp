@@ -155,10 +155,6 @@ void FluTreeViewItemDelegate::drawIndicator(QPainter* painter, const QStyleOptio
 
     int tmpH = option.rect.height() - 4;
     QColor tmpBrushC;
-    // if (FluThemeUtils::isLightTheme())
-    //     tmpBrushC = QColor(0, 90, 158);
-    // else if (FluThemeUtils::isDarkTheme())
-    //     tmpBrushC = QColor(118, 185, 237);
     tmpBrushC = m_indicatorColorEx;
     painter->setBrush(QBrush(tmpBrushC));
 

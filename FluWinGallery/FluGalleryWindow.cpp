@@ -100,6 +100,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 
     // resize
     resize(1200, 900);
+    setMinimumWidth(850);
     // m_navView->onMenuItemClicked();
     onThemeChanged();
 }

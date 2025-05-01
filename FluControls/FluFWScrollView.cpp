@@ -22,13 +22,5 @@ FluFlowLayout* FluFWScrollView::getMainLayout()
 
 void FluFWScrollView::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluFWScrollView.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluFWScrollView.qss", this);
-    // }
     FluStyleSheetUitls::setQssByFileName("FluFWScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

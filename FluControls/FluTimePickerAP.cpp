@@ -75,14 +75,5 @@ void FluTimePickerAP::paintEvent(QPaintEvent* event)
 
 void FluTimePickerAP::onThemeChanged()
 {
-    // if (FluThemeUtils::isLightTheme())
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePickerAP.qss", this);
-    // }
-    // else
-    // {
-    //     FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePickerAP.qss", this);
-    // }
-
     FluStyleSheetUitls::setQssByFileName("FluTimePickerAP.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

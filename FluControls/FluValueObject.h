@@ -16,7 +16,7 @@ class FluValueObject : public QObject
     void setValue(float value)
     {
         m_value = value;
-        //LOG_DEBUG << value;
+        // LOG_DEBUG << value;
     }
 
     float getValue()

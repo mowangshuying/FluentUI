@@ -76,10 +76,10 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
         }
     });
 
-    connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() { 
-            setFixedWidth(m_valueObject->getValue());
-            update();
-        });
+    connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() {
+        setFixedWidth(m_valueObject->getValue());
+        update();
+    });
 
     connect(m_animation, &QPropertyAnimation::finished, this, [=]() {
         if (!m_bLong)
@@ -418,7 +418,7 @@ void FluVNavigationView::collapseDownView()
 
 void FluVNavigationView::resizeEvent(QResizeEvent *event)
 {
-    //LOG_DEBUG << event->size();
+    // LOG_DEBUG << event->size();
 }
 
 void FluVNavigationView::paintEvent(QPaintEvent *event)

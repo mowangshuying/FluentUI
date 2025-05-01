@@ -56,7 +56,6 @@ void FluCalendarDatePicker::setCurDate(QDate date)
 
 void FluCalendarDatePicker::onClicked()
 {
-
     // the pos
     int nX = width() / 2;
     int nY = height() + 5;

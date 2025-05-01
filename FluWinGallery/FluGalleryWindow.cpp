@@ -822,17 +822,17 @@ void FluGalleryWindow::makeTextNavItem()
 
 void FluGalleryWindow::resizeEvent(QResizeEvent *event)
 {
-    //if (width() > 1000)
+    // if (width() > 1000)
     //{
-    //    // check it
-    //    if (!m_navView->isLong())
-    //        m_navView->onMenuItemClicked();
-    //}
-    //else
+    //     // check it
+    //     if (!m_navView->isLong())
+    //         m_navView->onMenuItemClicked();
+    // }
+    // else
     //{
-    //    if (m_navView->isLong())
-    //        m_navView->onMenuItemClicked();
-    //}
+    //     if (m_navView->isLong())
+    //         m_navView->onMenuItemClicked();
+    // }
 }
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)

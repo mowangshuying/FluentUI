@@ -536,7 +536,6 @@ void FluRoundMenu::onShowSubMenu(QListWidgetItem* item)
 
 void FluRoundMenu::onThemeChanged()
 {
-
     FluStyleSheetUitls::setQssByFileName("FluRoundMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
 
     for (auto action : actions())

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluLogUtils.h"
 #include "FluThemeUtils.h"
@@ -49,6 +49,8 @@ class FluStyleSheetUitls : public QObject
     static void replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet);
 
     static void drawBottomLineIndicator(QWidget *widget, QPainter *painter);
+
+    static void doForQrcQssText(QString &data);
 
     static FluStyleSheetUitls *getUtils();
 

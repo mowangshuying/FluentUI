@@ -1,4 +1,4 @@
-#include "FluStyleSheetUitls.h"
+﻿#include "FluStyleSheetUitls.h"
 // #include <QFileInfo>
 // #include <QDir>
 
@@ -9,8 +9,10 @@ FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(
     m_timer = new QTimer;
     m_timer->start(5000);
     // #endif
-
     m_styleSheetDir = "../StyleSheet/";
+#ifdef _USE_QRC
+    m_styleSheetDir = ":/StyleSheet/";
+#endif
 }
 
 QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
@@ -30,17 +32,14 @@ void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widg
 {
     QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
     // QString absolutePath = QDir("../").absolutePath();
+    
+#ifdef _USE_QRC
+    doForQrcQssText(qss);
+#endif
+
     if (widget != nullptr)
     {
         widget->setStyleSheet(qss);
-        // if (bDebugQss)
-        //{
-        //     // just change file
-        //     connect(FluStyleSheetUitls::getTimer(), &QTimer::timeout, [=]() {
-        //         QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
-        //         widget->setStyleSheet(qss);
-        //     });
-        // }
     }
 }
 
@@ -148,6 +147,12 @@ void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *pain
     }
 
     painter->fillPath(path, brush);
+}           
+
+void FluStyleSheetUitls::doForQrcQssText(QString &data)
+{
+    // inner do for qss text;
+    data.replace("../res/", ":");
 }
 
 FluStyleSheetUitls *FluStyleSheetUitls::getUtils()

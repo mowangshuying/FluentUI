@@ -252,7 +252,7 @@ set(RES_FILES
     "../res/ControlImages/CalendarDatePicker.png"
     "../res/ControlImages/CalendarView.png"
     "../res/ControlImages/Canvas.png"
-    "../res/ControlImages/CheckBox.png"
+    "../res/ControlImages/Checkbox.png"
     "../res/ControlImages/Clipboard.png"
     "../res/ControlImages/ColorPaletteResources.png"
     "../res/ControlImages/ColorPicker.png"

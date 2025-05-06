@@ -72,6 +72,10 @@ void FluDropDownButton::setSvgPath(QString svgLightPath, QString svgDarkPath)
 {
     m_svgLightPath = svgLightPath;
     m_svgDarkPath = svgDarkPath;
+#ifdef USE_QRC
+    m_svgDarkPath = m_svgDarkPath.replace("../res/", ":/res/");
+    m_svgLightPath = m_svgLightPath.replace("../res/", ":/res/");
+#endif
 }
 
 void FluDropDownButton::setText(QString text)

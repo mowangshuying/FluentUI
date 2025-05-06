@@ -72,8 +72,7 @@ FluVFlipView::FluVFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
         }
     });
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluVFlipView.qss");
-    setStyleSheet(qss);
+    FluStyleSheetUitls::setQssByFileName("FluVFlipView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluVFlipView::addPixmap(QPixmap pixmap)

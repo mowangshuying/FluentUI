@@ -1,4 +1,4 @@
-#include "FluHCard.h"
+﻿#include "FluHCard.h"
 
 FluHCard::FluHCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -12,7 +12,7 @@ FluHCard::FluHCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_iconLabel = new QLabel(this);
     m_iconLabel->setFixedSize(50, 50);
-    QPixmap pixmap = QPixmap("../res/ControlImages/Placeholder.png");
+    QPixmap pixmap = FluIconUtils::getPixmap(("../res/ControlImages/Placeholder.png"));
     pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     m_iconLabel->setPixmap(pixmap);
 

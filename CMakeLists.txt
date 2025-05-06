@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(FluWinGallery VERSION 0.4.0 LANGUAGES CXX)
+project(FluWinGallery VERSION 1.0.0 LANGUAGES CXX)
+
+
+option(USE_QRC "Build With qrc" TRUE)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -15,6 +18,19 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${PROJECT_BINARY_DIR}/bin")
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Svg)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Svg)
+
+if (USE_QRC)
+if (MSVC_IDE)
+	message(STATUS "Qt6Widgets_LIBRARIES: ${Qt6Widgets_LIBRARIES}")
+	get_target_property(V_LOCATION ${Qt6Widgets_LIBRARIES} IMPORTED_LOCATION)
+	message(STATUS "V_LOCATION: ${V_LOCATION}")
+	cmake_path(GET V_LOCATION PARENT_PATH V_RUN_PATH)
+	message(STATUS "V_RUN_PATH: ${V_RUN_PATH}")
+	set(CMAKE_VS_DEBUGGER_ENVIRONMENT "PATH=%PATH%;${V_RUN_PATH}")
+	message(STATUS "CMAKE_VS_DEBUGGER_ENVIRONMENT: ${CMAKE_VS_DEBUGGER_ENVIRONMENT}")
+endif()
+endif()
+
 # qt_standard_project_setup()
 
 add_subdirectory("3rdparty")
@@ -26,6 +42,7 @@ add_subdirectory("FluWinGallery")
 # add_subdirectory("res")
 # add_subdirectory("StyleSheet")
 
+if (NOT USE_QRC)
 add_custom_target(resource_copy
     COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
     ${CMAKE_CURRENT_SOURCE_DIR}/res
@@ -63,6 +80,7 @@ install(DIRECTORY config
 install(DIRECTORY i18n
     DESTINATION .
 )
+endif()
 
 set(CPACK_PACKAGE_FILE_NAME "FluGalleryWin64Msvc")
 set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)

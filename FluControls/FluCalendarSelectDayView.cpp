@@ -89,7 +89,8 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
     // m_calendar.init();
 
     setFixedHeight(270);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+    onThemeChanged();
 }
 
 FluCalendarItem* FluCalendarMonthView::getItem(int nIndex)

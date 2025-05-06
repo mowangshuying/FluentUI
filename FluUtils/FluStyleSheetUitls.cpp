@@ -10,7 +10,7 @@ FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(
     m_timer->start(5000);
     // #endif
     m_styleSheetDir = "../StyleSheet/";
-#ifdef _USE_QRC
+#ifdef USE_QRC
     m_styleSheetDir = ":/StyleSheet/";
 #endif
 }
@@ -33,7 +33,7 @@ void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widg
     QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
     // QString absolutePath = QDir("../").absolutePath();
     
-#ifdef _USE_QRC
+#ifdef USE_QRC
     doForQrcQssText(qss);
 #endif
 

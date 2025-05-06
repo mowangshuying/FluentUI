@@ -1,4 +1,4 @@
-#include "FluFlipViewDemo.h"
+﻿#include "FluFlipViewDemo.h"
 
 FluFlipViewDemo::FluFlipViewDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -9,11 +9,11 @@ FluFlipViewDemo::FluFlipViewDemo(QWidget* parent /*= nullptr*/) : FluWidget(pare
         flipView->move(50, 50);
         // resize(800, 600);
 
-        flipView->addPixmap(QPixmap("../res/SampleMedia/cliff.jpg"));
-        flipView->addPixmap(QPixmap("../res/SampleMedia/grapes.jpg"));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/cliff.jpg")));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/grapes.jpg")));
         // LandscapeImage8.jpg
-        flipView->addPixmap(QPixmap("../res/SampleMedia/LandscapeImage8.jpg"));
-        flipView->addPixmap(QPixmap("../res/SampleMedia/sunset.jpg"));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/LandscapeImage8.jpg")));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/sunset.jpg")));
     }
 
     {
@@ -21,10 +21,10 @@ FluFlipViewDemo::FluFlipViewDemo(QWidget* parent /*= nullptr*/) : FluWidget(pare
         flipView->move(50 + 600, 50);
         // resize(800, 600);
 
-        flipView->addPixmap(QPixmap("../res/SampleMedia/cliff.jpg"));
-        flipView->addPixmap(QPixmap("../res/SampleMedia/grapes.jpg"));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/cliff.jpg")));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/grapes.jpg")));
         // LandscapeImage8.jpg
-        flipView->addPixmap(QPixmap("../res/SampleMedia/LandscapeImage8.jpg"));
-        flipView->addPixmap(QPixmap("../res/SampleMedia/sunset.jpg"));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/LandscapeImage8.jpg")));
+        flipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/sunset.jpg")));
     }
 }

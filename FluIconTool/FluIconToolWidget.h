@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../FluControls/FluDef.h"
 #include "../FluUtils/FluIconUtils.h"
 #include <QApplication>

@@ -22,7 +22,7 @@ void FluInfoBarPage::addClosableInfoBar()
     displayBox->getBodyRightLayout()->setAlignment(Qt::AlignTop);
 
     displayBox->setTitle(tr("A closabel InforBar with options to change its severity."));
-    displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode1.md");
+    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBarPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(120);
 
     FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info);
@@ -98,7 +98,7 @@ void FluInfoBarPage::addDynamicInfoBar()
 {
     FluDisplayBox* displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A dynamic InforBar."));
-    displayBox->getCodeExpander()->setCodeByPath("../Code/InfoBarPageCode2.md");
+    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBarPageCode2.md");
     displayBox->setBodyWidgetFixedHeight(256);
 
     auto infoBtn = new FluPushButton;

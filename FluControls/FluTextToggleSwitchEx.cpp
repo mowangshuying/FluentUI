@@ -47,5 +47,5 @@ void FluTextToggleSwitchEx::setChecked(bool checked)
 
 void FluTextToggleSwitchEx::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTextToggleSwithEx.qss", this, FluThemeUtils::getUtils()->getTheme());
+    // FluStyleSheetUitls::setQssByFileName("FluTextToggleSwithEx.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

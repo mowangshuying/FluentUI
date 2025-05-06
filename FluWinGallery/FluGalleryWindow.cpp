@@ -22,7 +22,11 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     setWindowTitle("CppQt WinUI3 Gallery");
 #endif
 
+#ifndef USE_QRC
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+#else
+    setWindowIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
+#endif
 
 #if !defined USE_WINDOWKIT_WIDGET
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);

@@ -7,7 +7,11 @@
 
 FluIconUtils::FluIconUtils()
 {
+#ifndef USE_QRC
     int fontId = QFontDatabase::addApplicationFont("../res/Segoe_Fluent_Icons.ttf");
+#else
+    int fontId = QFontDatabase::addApplicationFont(":/res/Segoe_Fluent_Icons.ttf");
+#endif
     QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
     m_fluentFont.setFamily(fontFamilies.at(0));
 }
@@ -42,7 +46,7 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor,
     painter.setFont(tmpFont);
     painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar((unsigned int)nType));
     painter.end();
-    // tmpPixMap.save("tmp.png");
+    // tmpPixMap.save("tmp.png"));
     return tmpPixMap;
 }
 

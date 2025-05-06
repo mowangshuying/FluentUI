@@ -25,6 +25,27 @@ else()
     )
 endif()
 
+
+if(USE_QRC)
+set(QSS_FILES
+    "../StyleSheet/dark/FluMenuDemo.qss"
+    "../StyleSheet/light/FluHNavigationDemo.qss"
+    "../StyleSheet/light/FluMenuDemo.qss"
+)
+source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
+
+qt_add_resources(${TGT} "FluExamplesQss"
+    PREFIX "/"
+    BASE ".."
+    FILES
+    ${QSS_FILES}
+)
+endif()
+
+if (USE_QRC)
+    add_definitions(-DUSE_QRC)
+endif()
+
 target_link_libraries(${TGT}
     PRIVATE
     FluControls

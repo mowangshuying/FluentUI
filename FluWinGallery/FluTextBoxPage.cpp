@@ -5,8 +5,7 @@ FluTextBoxPage::FluTextBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("TextBox"));
     m_infoLabel->setText(tr("Use a TextBox to let a user enter simple text input in your app. You can add a header and placeholder text to let the user know what the TextBox is for,and you can customize it in other way."));
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTextBoxPage.qss", this);
-
+    
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A multi-line TextBox"));
     displayBox1->getCodeExpander()->setCodeByPath("../code/TextBoxPageCode1.md");

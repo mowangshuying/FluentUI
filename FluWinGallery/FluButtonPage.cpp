@@ -1,4 +1,4 @@
-#include "FluButtonPage.h"
+﻿#include "FluButtonPage.h"
 
 FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -26,7 +26,7 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     displayBox2->setTitle(tr("A Button with grapical content."));
     displayBox2->getCodeExpander()->setCodeByPath("../code/ButtonPageCode2.md");
     auto btn2 = new FluGraphicalButton;
-    btn2->setIcon(QPixmap("../res/Slices.png"));
+    btn2->setIcon(FluIconUtils::getPixmap(("../res/Slices.png")));
     displayBox2->setBodyWidgetFixedHeight(96);
     displayBox2->getBodyLayout()->addWidget(btn2);
     m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);

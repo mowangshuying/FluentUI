@@ -1,4 +1,4 @@
-#include "FluHomePageTitle.h"
+﻿#include "FluHomePageTitle.h"
 
 FluHomePageTitle::FluHomePageTitle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -11,7 +11,7 @@ FluHomePageTitle::FluHomePageTitle(QWidget* parent /*= nullptr*/) : FluWidget(pa
     m_titleLabel1 = new QLabel("FluentUi Gallery");
     m_titleLabel2 = new QLabel("Qt & Cpp");
 
-    m_githubCard = new FluVCard(QPixmap("../res/HomeHeaderTiles/github-mark.png"), tr("GitHub"), tr("The latest Windows native controls and styles for your applications"), this);
+    m_githubCard = new FluVCard(FluIconUtils::getPixmap(("../res/HomeHeaderTiles/github-mark.png")), tr("GitHub"), tr("The latest Windows native controls and styles for your applications"), this);
     m_githubCard->move(40, 120);
 
     m_titleLabel1->setObjectName("titleLabel1");
@@ -24,6 +24,7 @@ FluHomePageTitle::FluHomePageTitle(QWidget* parent /*= nullptr*/) : FluWidget(pa
 
     m_color1 = QColor(206, 216, 228);
     m_color2 = QColor(223, 231, 240);
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHomePageTitle.qss");
-    setStyleSheet(qss);
+    // QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHomePageTitle.qss");
+    // setStyleSheet(qss);
+    onThemeChanged();
 }

@@ -1,4 +1,4 @@
-#include "FluCodeExpander.h"
+﻿#include "FluCodeExpander.h"
 
 FluCodeExpander::FluCodeExpander(QWidget* parent /*= nullptr*/) : FluExpander(parent)
 {
@@ -15,6 +15,10 @@ void FluCodeExpander::setCodeText(QString code)
 void FluCodeExpander::setCodeByPath(QString fileName)
 {
     QString code;
+
+#ifdef USE_QRC
+    fileName = fileName.replace("../code/", ":/code/");
+#endif
 
     QFile file(fileName);
     if (file.open(QIODevice::ReadOnly))

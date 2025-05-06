@@ -29,6 +29,10 @@ else()
     )
 endif()
 
+if (USE_QRC)
+    add_definitions(-DUSE_QRC)
+endif()
+
 target_link_libraries(${TGT}
     PRIVATE
     FluControls

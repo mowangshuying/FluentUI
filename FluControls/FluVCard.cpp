@@ -1,4 +1,4 @@
-#include "FluVCard.h"
+﻿#include "FluVCard.h"
 
 FluVCard::FluVCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -8,7 +8,7 @@ FluVCard::FluVCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_iconLabel = new QLabel(this);
     m_iconLabel->setFixedSize(60, 60);
-    QPixmap galleryPng = QPixmap("../res/HomeHeaderTiles/Header-WinUIGallery.png");
+    QPixmap galleryPng = FluIconUtils::getPixmap(("../res/HomeHeaderTiles/Header-WinUIGallery.png"));
     galleryPng = galleryPng.scaled(60, 60);
     m_iconLabel->setPixmap(galleryPng);
 

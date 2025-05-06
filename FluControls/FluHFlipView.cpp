@@ -73,8 +73,9 @@ FluHFlipView::FluHFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
         }
     });
 
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHFlipView.qss");
-    setStyleSheet(qss);
+    // QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHFlipView.qss");
+    // setStyleSheet(qss);
+    FluStyleSheetUitls::setQssByFileName("FluHFlipView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluHFlipView::addPixmap(QPixmap pixmap)

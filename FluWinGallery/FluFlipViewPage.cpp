@@ -1,4 +1,4 @@
-#include "FluFlipViewPage.h"
+﻿#include "FluFlipViewPage.h"
 
 FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -13,10 +13,10 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto hFlipView = new FluHFlipView(displayBox1);
     hFlipView->move(50, 50);
-    hFlipView->addPixmap(QPixmap("../res/SampleMedia/cliff.jpg"));
-    hFlipView->addPixmap(QPixmap("../res/SampleMedia/grapes.jpg"));
-    hFlipView->addPixmap(QPixmap("../res/SampleMedia/LandscapeImage8.jpg"));
-    hFlipView->addPixmap(QPixmap("../res/SampleMedia/sunset.jpg"));
+    hFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/cliff.jpg")));
+    hFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/grapes.jpg")));
+    hFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/LandscapeImage8.jpg")));
+    hFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/sunset.jpg")));
 
     m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
@@ -27,10 +27,10 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto vFlipView = new FluVFlipView(displayBox2);
     vFlipView->move(50, 50);
-    vFlipView->addPixmap(QPixmap("../res/SampleMedia/cliff.jpg"));
-    vFlipView->addPixmap(QPixmap("../res/SampleMedia/grapes.jpg"));
-    vFlipView->addPixmap(QPixmap("../res/SampleMedia/LandscapeImage8.jpg"));
-    vFlipView->addPixmap(QPixmap("../res/SampleMedia/sunset.jpg"));
+    vFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/cliff.jpg")));
+    vFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/grapes.jpg")));
+    vFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/LandscapeImage8.jpg")));
+    vFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/sunset.jpg")));
 
     m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
     onThemeChanged();

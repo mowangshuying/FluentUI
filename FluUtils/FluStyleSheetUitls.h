@@ -31,6 +31,11 @@ class FluStyleSheetUitls : public QObject
 
     static QString getQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName);
     static void setQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName, QWidget *widget);
+    static void setQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName, QWidget *widget, FluTheme theme)
+    {
+        QString qssFileName = getUtils()->getStyleSheetDir() + FluThemeUtils::getThemeName() + "/" + fileName;
+        setQssByFileName(qssFileName, widget);
+    }
 
     // dir/theme/filename
     static void setQssByFileName(const QString &filename, QWidget *widget, FluTheme theme)

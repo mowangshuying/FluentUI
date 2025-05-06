@@ -27,6 +27,24 @@ else()
     )
 endif()
 
+if(USE_QRC)
+set(RES_FILES
+    "../res/Segoe_Fluent_Icons.ttf"
+)
+source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${RES_FILES})
+
+qt_add_resources(${TGT} "FluUtilsFonts"
+    PREFIX "/"
+    BASE ".."
+    FILES
+    ${RES_FILES}
+)
+endif()
+
+if (USE_QRC)
+    add_definitions(-DUSE_QRC)
+endif()
+
 target_link_libraries(${TGT}
     PUBLIC
     Qt${QT_VERSION_MAJOR}::Widgets

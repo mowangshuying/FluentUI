@@ -24,7 +24,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     m_imgLabel = new QLabel;
     m_imgLabel->setObjectName("imgLabel");
     m_imgLabel->setFixedSize(740, 450);
-    QPixmap pixmap = QPixmap("../res/Typography.light.png");
+    QPixmap pixmap = FluIconUtils::getPixmap(("../res/Typography.light.png"));
     pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     m_imgLabel->setPixmap(pixmap);
 
@@ -104,13 +104,13 @@ void FluTypeographyPage::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        QPixmap pixmap = QPixmap("../res/Typography.light.png");
+        QPixmap pixmap = FluIconUtils::getPixmap(("../res/Typography.light.png"));
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_imgLabel->setPixmap(pixmap);
     }
     else
     {
-        QPixmap pixmap = QPixmap("../res/Typography.dark.png");
+        QPixmap pixmap = FluIconUtils::getPixmap(("../res/Typography.dark.png"));
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_imgLabel->setPixmap(pixmap);
     }

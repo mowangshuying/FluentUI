@@ -25,5 +25,5 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
 void FluProgressBarPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/FluProgressBarPage.qss", this);
+    FluStyleSheetUitls::setQssByFileName("FluProgressBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

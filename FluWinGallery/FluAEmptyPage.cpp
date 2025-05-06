@@ -41,7 +41,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     tileWraHLayout->addWidget(documentationBtn, 0, Qt::AlignLeft);
 
     auto sourceBtn = new FluDropDownButton;
-    sourceBtn->setIcon(FluIconUtils::getSvgIcon("../res/HomeHeaderTiles/github-mark.svg"));
+    // sourceBtn->setIcon(FluIconUtils::getSvgIcon("../res/HomeHeaderTiles/github-mark.svg"));
     sourceBtn->setSvgPath("../res/HomeHeaderTiles/github-mark.svg", "../res/HomeHeaderTiles/github-mark-white.svg");
     sourceBtn->setText(tr("Source"));
     sourceBtn->setFixedWidth(120);
@@ -73,9 +73,7 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_infoLabel->setObjectName("infoLabel");
     m_vScrollView->getMainLayout()->addWidget(m_infoLabel, 0, Qt::AlignTop);
     m_vScrollView->getMainLayout()->addSpacing(20);
-
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", this);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAEmptyPage.qss", m_vScrollView);
+    FluStyleSheetUitls::setQssByFileName("FluAEmptyPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluAEmptyPage::paintEvent(QPaintEvent* event)

@@ -1,4 +1,4 @@
-#include "FluScrollViewPage.h"
+﻿#include "FluScrollViewPage.h"
 
 FluScrollViewPage::FluScrollViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -11,7 +11,7 @@ FluScrollViewPage::FluScrollViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
     displayBox->getCodeExpander()->setCodeByPath("../code/ScrollViewPageCode1.md");
     // displayBox->setBodyWidgetFixedHeight(800);
 
-    QPixmap img("../res/SampleMedia/LandscapeImage9.jpg");
+    QPixmap   img = FluIconUtils::getPixmap("../res/SampleMedia/LandscapeImage9.jpg");
     auto imgBox = new FluImageBox(img, this);
     imgBox->setFixedSize(2000, 2000);
     auto scrollArea = new FluScrollArea;

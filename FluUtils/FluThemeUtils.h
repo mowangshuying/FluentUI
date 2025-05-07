@@ -17,38 +17,13 @@ class FluThemeUtils : public QObject
     FluThemeUtils(QObject* object = nullptr);
 
   public:
-    FluTheme getTheme()
-    {
-        return m_theme;
-    }
+    FluTheme getTheme();
 
-    void setTheme(FluTheme theme)
-    {
-        m_theme = theme;
-        emit themeChanged(m_theme);
-    }
+    void setTheme(FluTheme theme);
 
-    static QString getThemeName()
-    {
-        switch (getUtils()->getTheme())
-        {
-            case FluTheme::Light:
-                return "light";
-            case FluTheme::Dark:
-                return "dark";
-            case FluTheme::Custom:
-                return "custom";
-            default:
-                return "Light";
-        }
-    }
+    static QString getThemeName();
 
-    static FluThemeUtils* getUtils()
-    {
-        if (m_themeUtils == nullptr)
-            m_themeUtils = new FluThemeUtils();
-        return m_themeUtils;
-    }
+    static FluThemeUtils* getUtils();
 
     static bool isLightTheme()
     {

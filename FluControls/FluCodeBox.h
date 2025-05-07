@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QPlainTextEdit>
 #include "../FluUtils/FluUtils.h"
@@ -18,6 +18,7 @@ class FluCodeBox : public QTextEdit
 
     void resizeEvent(QResizeEvent*);
 
+    bool eventFilter(QObject* object, QEvent *event);
   signals:
     void sizeChanged();
 

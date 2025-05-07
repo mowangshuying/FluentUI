@@ -171,19 +171,8 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     void onThemeChanged()
     {
-        // LOG_DEBUG << "called";
-        if (FluThemeUtils::isLightTheme())
-        {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(8, 8, 8)));
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(8, 8, 8)));
-            // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationIconTextItem.qss", this);
-        }
-        else
-        {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, QColor(239, 239, 239)));
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, QColor(239, 239, 239)));
-            // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationIconTextItem.qss", this);
-        }
+        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
         FluStyleSheetUitls::setQssByFileName("FluVNavigationIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 

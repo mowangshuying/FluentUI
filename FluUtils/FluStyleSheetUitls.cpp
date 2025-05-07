@@ -152,7 +152,7 @@ void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *pain
 void FluStyleSheetUitls::doForQrcQssText(QString &data)
 {
     // inner do for qss text;
-    data.replace("../res/", ":");
+    data.replace("../res/", ":/res/");
 }
 
 FluStyleSheetUitls *FluStyleSheetUitls::getUtils()

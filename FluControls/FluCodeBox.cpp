@@ -1,4 +1,4 @@
-#include "FluCodeBox.h"
+﻿#include "FluCodeBox.h"
 
 FluCodeBox::FluCodeBox(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
 {
@@ -22,6 +22,16 @@ void FluCodeBox::resizeEvent(QResizeEvent*)
     document()->setTextWidth(viewport()->width());
     int newHeight = document()->size().height() + document()->documentMargin();
     setFixedHeight(newHeight);
+}
+
+bool FluCodeBox::eventFilter(QObject* object, QEvent* event)
+{
+    if (event->type() == QEvent::Wheel)
+    {
+        return true;
+    }
+
+    return false;
 }
 
 void FluCodeBox::onThemeChanged()

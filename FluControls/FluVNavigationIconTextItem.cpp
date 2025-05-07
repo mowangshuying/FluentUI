@@ -67,10 +67,10 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
     m_arrow->setObjectName("arrow");
 
     m_iconBtn->setIconSize(QSize(24, 24));
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home));
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home, FluThemeUtils::getUtils()->getTheme()));
 
     m_arrow->setIconSize(QSize(18, 18));
-    m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
+    m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
     m_arrow->setFixedWidth(25);
     m_bDown = true;
     m_bLong = true;
@@ -108,7 +108,7 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QWidget *pa
 FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
 {
     m_awesomeType = awesomeType;
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType));
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
     m_label->setText(text);
 }
 

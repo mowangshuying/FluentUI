@@ -20,8 +20,10 @@ FluTheme FluConfigUtils::getTheme()
 
     if (themeStr == "Light")
         theme = FluTheme::Light;
-    else
+    else if (themeStr == "Dark")
         theme = FluTheme::Dark;
+    else if (themeStr == "Custom")
+        theme = FluTheme::Custom;
     return theme;
 }
 
@@ -34,11 +36,15 @@ void FluConfigUtils::setTheme(FluTheme theme)
     {
         m_settings->setValue("theme", "Light");
     }
-    else
+    else if (theme == FluTheme::Dark)
     {
         m_settings->setValue("theme", "Dark");
     }
-
+    else if (theme == FluTheme::Custom)
+    {
+        m_settings->setValue("theme", "Custom");
+    }
+    
     m_settings->endGroup();
 }
 

@@ -23,7 +23,7 @@ FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(
 FluDisplayIconBox::FluDisplayIconBox(FluAwesomeType type, QWidget* parent /*= nullptr*/) : FluDisplayIconBox(parent)
 {
     m_type = type;
-    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type, QColor(8, 8, 8), 30, 30);
+    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type, FluThemeUtils::getUtils()->getTheme());
     m_iconLabel->setPixmap(pixmap);
     m_textLable->setText(EnumTypeToQString(type));
 }

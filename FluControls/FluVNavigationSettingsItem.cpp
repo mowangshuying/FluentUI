@@ -1,4 +1,4 @@
-#include "FluVNavigationSettingsItem.h"
+﻿#include "FluVNavigationSettingsItem.h"
 #include "FluVNavigationView.h"
 
 FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluVNavigationItem(parent)
@@ -41,7 +41,7 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text,
 
 FluVNavigationSettingsItem::FluVNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent) : FluVNavigationSettingsItem(QIcon(), text, parent)
 {
-    m_icon->setIcon(FluIconUtils::getFluentIcon(awesomeType));
+    m_icon->setIcon(FluIconUtils::getFluentIcon(awesomeType, FluThemeUtils::getUtils()->getTheme()));
     m_icon->setAwesomeType(awesomeType);
 }
 

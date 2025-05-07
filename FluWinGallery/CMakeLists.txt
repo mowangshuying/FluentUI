@@ -647,6 +647,20 @@ qt_add_resources(${TGT} "FluWinGalleryQss"
     FILES
     ${QSS_FILES}
 )
+
+set(I18N_FILES
+    "../i18n/zh-CN.qm"
+    "../i18n/en-US.qm"
+)
+source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${I18N_FILES})
+
+qt_add_resources(${TGT} "FluWinGalleryI18n"
+    PREFIX "/"
+    BASE ".."
+    FILES
+    ${I18N_FILES}
+)
+
 endif()
 
 if (USE_QRC)

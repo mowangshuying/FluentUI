@@ -117,14 +117,7 @@ class FluMSNavigationView : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMSNavigationView.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluMSNavigationView.qss", this);
-        }
+        FluStyleSheetUitls::setQssByFileName("FluMSNavigationView.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

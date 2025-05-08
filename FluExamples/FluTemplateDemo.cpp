@@ -16,7 +16,12 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
 #ifndef _DEBUG
     setWindowTitle("CppQt WinUI3 Template Demo");
 #endif
+
     setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+#ifdef USE_QRC
+    setWindowIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
+#endif
+
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);

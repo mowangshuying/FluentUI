@@ -56,7 +56,6 @@ FluAmPmView::FluAmPmView(int nFixedW /*= 80*/, QWidget* parent /*= nullptr*/) : 
 
     setAmPm(tr("AM"), tr("PM"));
     setAm(true);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAmPmView.qss", this);
     onThemeChanged();
 }
 
@@ -201,16 +200,7 @@ void FluAmPmView::paintEvent(QPaintEvent* event)
 
 void FluAmPmView::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
-        m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Light)));
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
-        m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
-    }
-
+    m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluThemeUtils::getUtils()->getTheme())));
+    m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluThemeUtils::getUtils()->getTheme())));
     FluStyleSheetUitls::setQssByFileName("FluAmPmView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

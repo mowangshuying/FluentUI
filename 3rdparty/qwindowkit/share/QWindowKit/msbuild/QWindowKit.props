@@ -15,4 +15,7 @@
       <AdditionalDependencies Condition="'$(Configuration)'=='Release'">QWKCore.lib;QWKWidgets.lib;QWKQuick.lib;%(AdditionalDependencies);</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
+  <PropertyGroup>
+    
+  </PropertyGroup>
 </Project>

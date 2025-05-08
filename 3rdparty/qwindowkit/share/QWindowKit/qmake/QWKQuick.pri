@@ -4,8 +4,10 @@
     include($$PWD/QWKCore.pri)
 
     CONFIG(debug, debug|release) {
-        LIBS += -lQWKQuickd
+        LIBS = $$QMAKE_QWK_LINK_PATH -lQWKQuickd $$LIBS
     } else {
-        LIBS += -lQWKQuick
+        LIBS = $$QMAKE_QWK_LINK_PATH -lQWKQuick $$LIBS
     }
+
+    
 }

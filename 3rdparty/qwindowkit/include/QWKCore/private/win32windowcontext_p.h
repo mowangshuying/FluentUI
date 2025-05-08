@@ -67,10 +67,15 @@ namespace QWK {
     protected:
         // The last hit test result, helpful to handle WM_MOUSEMOVE and WM_NCMOUSELEAVE.
         WindowPart lastHitTestResult = WindowPart::Outside;
+        int lastHitTestResultRaw = HTNOWHERE;
 
         // Whether the last mouse leave message is blocked, mainly for handling the unexpected
         // WM_MOUSELEAVE.
         bool mouseLeaveBlocked = false;
+
+        // For emulating traditional icon button behavior
+        uint64_t iconButtonClickTime = 0;
+        int iconButtonClickLevel = 0;
     };
 
 }

@@ -31,10 +31,12 @@ namespace QWK {
         }
 
         inline void setupNecessaryAttributes() {
-            // https://github.com/microsoft/terminal/blob/71a6f26e6ece656084e87de1a528c4a8072eeabd/src/cascadia/WindowsTerminal/NonClientIslandWindow.cpp#L940
-            // Must extend top frame to client area
-            static QVariant defaultMargins = QVariant::fromValue(QMargins(0, 1, 0, 0));
-            ctx->setWindowAttribute(QStringLiteral("extra-margins"), defaultMargins);
+            if (!isWin11OrGreater()) {
+                // https://github.com/microsoft/terminal/blob/71a6f26e6ece656084e87de1a528c4a8072eeabd/src/cascadia/WindowsTerminal/NonClientIslandWindow.cpp#L940
+                // Must extend top frame to client area
+                static QVariant defaultMargins = QVariant::fromValue(QMargins(0, 1, 0, 0));
+                ctx->setWindowAttribute(QStringLiteral("extra-margins"), defaultMargins);
+            }
 
             // Enable dark mode by default, otherwise the system borders are white
             ctx->setWindowAttribute(QStringLiteral("dark-mode"), true);
@@ -45,8 +47,18 @@ namespace QWK {
                      (Qt::WindowMinimized | Qt::WindowMaximized | Qt::WindowFullScreen));
         }
 
-        inline void drawBorder() {
-            ctx->virtual_hook(AbstractWindowContext::DrawWindows10BorderHook2, nullptr);
+        inline void drawBorderEmulated(QPainter *painter, const QRect &rect) {
+            QRegion region(rect);
+            void *args[] = {
+                painter,
+                const_cast<QRect *>(&rect),
+                &region,
+            };
+            ctx->virtual_hook(AbstractWindowContext::DrawWindows10BorderHook_Emulated, args);
+        }
+
+        inline void drawBorderNative() {
+            ctx->virtual_hook(AbstractWindowContext::DrawWindows10BorderHook_Native, nullptr);
         }
 
         inline int borderThickness() const {
@@ -54,6 +66,11 @@ namespace QWK {
         }
 
         inline void updateExtraMargins(bool windowActive) {
+            if (isWin11OrGreater()) {
+                return;
+            }
+
+            // ### FIXME: transparent seam
             if (windowActive) {
                 // Restore margins when the window is active
                 static QVariant defaultMargins = QVariant::fromValue(QMargins(0, 1, 0, 0));
@@ -91,6 +108,20 @@ namespace QWK {
 
                 case WM_ACTIVATE: {
                     updateExtraMargins(LOWORD(msg->wParam) != WA_INACTIVE);
+                    break;
+                }
+
+                case WM_THEMECHANGED:
+                case WM_SYSCOLORCHANGE:
+                case WM_DWMCOLORIZATIONCOLORCHANGED: {
+                    // If we do not refresh this property, the native border will turn white
+                    // permanently (like the dark mode is turned off) after the user changes
+                    // the accent color in system personalization settings.
+                    // So we need this ugly hack to re-apply dark mode to get rid of this
+                    // strange Windows bug.
+                    if (ctx->windowAttribute(QStringLiteral("dark-mode")).toBool()) {
+                        ctx->setWindowAttribute(QStringLiteral("dark-mode"), true);
+                    }
                     break;
                 }
 

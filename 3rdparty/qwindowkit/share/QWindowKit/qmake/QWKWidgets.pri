@@ -4,8 +4,10 @@
     include($$PWD/QWKCore.pri)
 
     CONFIG(debug, debug|release) {
-        LIBS += -lQWKWidgetsd
+        LIBS = $$QMAKE_QWK_LINK_PATH -lQWKWidgetsd $$LIBS
     } else {
-        LIBS += -lQWKWidgets
+        LIBS = $$QMAKE_QWK_LINK_PATH -lQWKWidgets $$LIBS
     }
+
+    
 }

@@ -16,7 +16,7 @@ target_link_libraries(${TGT}
 set(QWINDOWKIT_BUILD_STATIC ON)
 set(QWINDOWKIT_BUILD_QUICK OFF)
 set(QWINDOWKIT_INSTALL OFF)
-add_subdirectory("qwindowkit-1.1.0")
+add_subdirectory("qwindowkit-1.3.2")
 
 set(TGT qwindowkit)
 add_library(qwindowkit INTERFACE)

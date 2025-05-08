@@ -15,7 +15,9 @@
 //
 
 #include <array>
+#include <list>
 #include <memory>
+#include <utility>
 
 #include <QtCore/QSet>
 #include <QtCore/QPointer>
@@ -47,7 +49,7 @@ namespace QWK {
         inline WindowItemDelegate *delegate() const;
 
         inline bool isHitTestVisible(const QObject *obj) const;
-        bool setHitTestVisible(const QObject *obj, bool visible);
+        bool setHitTestVisible(QObject *obj, bool visible);
 
         inline QObject *systemButton(WindowAgentBase::SystemButton button) const;
         bool setSystemButton(WindowAgentBase::SystemButton button, QObject *obj);
@@ -63,6 +65,24 @@ namespace QWK {
         bool isInSystemButtons(const QPoint &pos, WindowAgentBase::SystemButton *button) const;
         bool isInTitleBarDraggableArea(const QPoint &pos) const;
 
+        inline bool isHostWidthFixed() const {
+            return m_windowHandle
+                       ? ((m_windowHandle->flags() & Qt::MSWindowsFixedSizeDialogHint) ||
+                          m_windowHandle->minimumWidth() == m_windowHandle->maximumWidth())
+                       : false;
+        }
+        inline bool isHostHeightFixed() const {
+            return m_windowHandle
+                       ? ((m_windowHandle->flags() & Qt::MSWindowsFixedSizeDialogHint) ||
+                          m_windowHandle->minimumHeight() == m_windowHandle->maximumHeight())
+                       : false;
+        }
+        inline bool isHostSizeFixed() const {
+            return m_windowHandle ? ((m_windowHandle->flags() & Qt::MSWindowsFixedSizeDialogHint) ||
+                                     m_windowHandle->minimumSize() == m_windowHandle->maximumSize())
+                                  : false;
+        }
+
         virtual QString key() const;
 
         enum WindowContextHook {
@@ -70,9 +90,9 @@ namespace QWK {
             RaiseWindowHook,
             ShowSystemMenuHook,
             DefaultColorsHook,
-            DrawWindows10BorderHook,     // Only works on Windows 10, emulated workaround
-            DrawWindows10BorderHook2,    // Only works on Windows 10, native workaround
-            SystemButtonAreaChangedHook, // Only works on Mac
+            DrawWindows10BorderHook_Emulated, // Only works on Windows 10, emulated workaround
+            DrawWindows10BorderHook_Native,   // Only works on Windows 10, native workaround
+            SystemButtonAreaChangedHook,      // Only works on Mac
         };
         virtual void virtual_hook(int id, void *data);
 
@@ -83,6 +103,9 @@ namespace QWK {
         virtual bool setWindowAttribute(const QString &key, const QVariant &attribute);
 
     protected:
+        bool eventFilter(QObject *obj, QEvent *event) override;
+
+    protected:
         virtual void winIdChanged(WId winId, WId oldWinId) = 0;
         virtual bool windowAttributeChanged(const QString &key, const QVariant &attribute,
                                             const QVariant &oldAttribute);
@@ -90,21 +113,23 @@ namespace QWK {
     protected:
         QObject *m_host{};
         std::unique_ptr<WindowItemDelegate> m_delegate;
-        QWindow *m_windowHandle{};
+        QPointer<QWindow> m_windowHandle;
         WId m_windowId{};
 
-        QSet<const QObject *> m_hitTestVisibleItems;
+        QVector<QPointer<QObject>> m_hitTestVisibleItems;
 #ifdef Q_OS_MAC
         ScreenRectCallback m_systemButtonAreaCallback;
 #endif
 
-        QObject *m_titleBar{};
-        std::array<QObject *, WindowAgentBase::Close + 1> m_systemButtons{};
+        QPointer<QObject> m_titleBar{};
+        std::array<QPointer<QObject>, WindowAgentBase::Close + 1> m_systemButtons{};
 
-        QVariantHash m_windowAttributes;
+        std::list<std::pair<QString, QVariant>> m_windowAttributesOrder;
+        QHash<QString, decltype(m_windowAttributesOrder)::iterator> m_windowAttributes;
 
-        std::unique_ptr<QObject> m_windowEventFilter;
         std::unique_ptr<WinIdChangeEventFilter> m_winIdChangeEventFilter;
+
+        void removeSystemButtonsAndHitTestItems();
     };
 
     inline QObject *AbstractWindowContext::host() const {
@@ -124,7 +149,7 @@ namespace QWK {
     }
 
     inline bool AbstractWindowContext::isHitTestVisible(const QObject *obj) const {
-        return m_hitTestVisibleItems.contains(obj);
+        return m_hitTestVisibleItems.contains(const_cast<QObject *>(obj));
     }
 
     inline QObject *

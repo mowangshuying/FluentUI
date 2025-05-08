@@ -7,17 +7,18 @@
     QMAKE_QWK_INSTALL_LIBDIR = lib
     QMAKE_QWK_INSTALL_INCDIR = include
 
-    # Shared include directory
+    # Shared link directory
+    QMAKE_QWK_LINK_PATH = "-L$$QMAKE_QWK_INSTALL_PREFIX/$$QMAKE_QWK_INSTALL_LIBDIR"
+
+    # Include directory
     INCLUDEPATH += \
         $$QMAKE_QWK_INSTALL_PREFIX/$$QMAKE_QWK_INSTALL_INCDIR/QWindowKit
-
-    # Shared link directory
-    LIBS += \
-        "-L$$QMAKE_QWK_INSTALL_PREFIX/$$QMAKE_QWK_INSTALL_LIBDIR"
     
     CONFIG(debug, debug|release) {
-        LIBS += -lQWKCored
+        LIBS = $$QMAKE_QWK_LINK_PATH -lQWKCored $$LIBS
     } else {
-        LIBS += -lQWKCore
+        LIBS = $$QMAKE_QWK_LINK_PATH -lQWKCore $$LIBS
     }
+
+    
 }

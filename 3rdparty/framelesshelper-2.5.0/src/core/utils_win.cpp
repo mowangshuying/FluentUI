@@ -2305,7 +2305,7 @@ bool Utils::shouldAppsUseDarkMode_windows()
         return false;
     }
 #if FRAMELESSHELPER_CONFIG(private_qt)
-#if (QT_VERSION == QT_VERSION_CHECK(6, 8, 0))
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 8, 0))
     {
         WARNING << "Failed to retrieve the platform native interface.";
     }

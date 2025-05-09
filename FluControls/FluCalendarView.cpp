@@ -3,6 +3,7 @@
 #include "FluCalendarSelectMonthView.h"
 #include "FluCalendarSelectYearView.h"
 #include "FluCalendarViewTitle.h"
+#include "FluVSplitLine.h"
 
 FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -18,6 +19,8 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
     setLayout(m_vMainLayout);
     m_title = new FluCalendarViewTitle(this);
     m_vMainLayout->addWidget(m_title);
+
+    m_vMainLayout->addWidget(new FluVSplitLine, 0, Qt::AlignTop);
 
     m_sLayout = new QStackedLayout;
     m_vMainLayout->addLayout(m_sLayout);

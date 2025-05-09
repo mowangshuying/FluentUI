@@ -31,7 +31,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     appThemeSelectBox->getComboBox()->addItem(tr("Light"));
     appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
     appThemeSelectBox->getComboBox()->addItem(tr("Custom"));
-
+    appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
     connect(appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == 0)
             FluThemeUtils::getUtils()->setTheme(FluTheme::Light);

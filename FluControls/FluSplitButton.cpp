@@ -11,6 +11,7 @@ FluSplitButton::FluSplitButton(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     m_dropDownBtn->setObjectName("dropDownBtn");
     m_dropDownBtn->setIconSize(QSize(20, 20));
+    m_dropDownBtn->setFixedSize(30, 30);
     m_textBtn->setObjectName("textBtn");
 
     m_hMainLayout->setContentsMargins(0, 0, 0, 0);
@@ -47,15 +48,6 @@ void FluSplitButton::paintEvent(QPaintEvent* event)
 
 void FluSplitButton::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButton.qss", this);
-    }
-    else
-    {
-        m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSplitButton.qss", this);
-    }
+    m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUitls::setQssByFileName("FluSplitButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -506,6 +506,9 @@
     <ClCompile Include="FluPaginationItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluColorPickerButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -974,6 +977,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluPaginationItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluColorPickerButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

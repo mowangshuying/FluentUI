@@ -328,8 +328,10 @@ int main(int argc, char **argv)
     // FluPaginationDemo demo;
     // demo.show();
 
-    FluVNavigationViewDemo demo;
-    demo.show();
+    //FluVNavigationViewDemo demo;
+    //demo.show();
 
+    FluColorViewDemo demo;
+    demo.show();
     return app.exec();
 }

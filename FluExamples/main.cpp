@@ -64,6 +64,7 @@
 #include "FluShortcutPickerDemo.h"
 #include "FluSegmentedDemo.h"
 #include "FluPaginationDemo.h"
+#include "FluQrCodeDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -331,7 +332,11 @@ int main(int argc, char **argv)
     //FluVNavigationViewDemo demo;
     //demo.show();
 
-    FluColorViewDemo demo;
+    // FluColorViewDemo demo;
+    // demo.show();
+
+    FluQrCodeDemo demo;
     demo.show();
+    
     return app.exec();
 }

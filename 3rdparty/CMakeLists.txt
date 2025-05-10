@@ -27,4 +27,5 @@ target_link_libraries(${TGT}
 )
 
 add_subdirectory("qscintilla-2.14.0")
+add_subdirectory("qrcode-1.4.0")
 

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluColorViewGradient.h"
 #include "FluColorViewHHandle.h"
@@ -184,6 +184,11 @@ class FluColorView : public QDialog
             gEdit->clearFocus();
             bEdit->clearFocus();
         });
+    }
+
+    QColor getColor()
+    {
+        return colorViewHHandle->getColor();
     }
 
     void mousePressEvent(QMouseEvent* event)

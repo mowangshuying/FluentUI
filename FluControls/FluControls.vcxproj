@@ -133,6 +133,7 @@
     <ClCompile Include="FluCircleDot.cpp" />
     <ClCompile Include="FluColorButton.cpp" />
     <ClCompile Include="FluColorLabel.cpp" />
+    <ClCompile Include="FluColorPickerButton.cpp" />
     <ClCompile Include="FluColorView.cpp" />
     <ClCompile Include="FluColorViewGradient.cpp" />
     <ClCompile Include="FluColorViewHHandle.cpp" />
@@ -307,6 +308,7 @@
     <QtMoc Include="FluBusyProgressRing.h" />
     <QtMoc Include="FluDatePickerViewMask.h" />
     <QtMoc Include="FluCompleterMenu.h" />
+    <QtMoc Include="FluColorPickerButton.h" />
     <ClInclude Include="FluIndicatorMenuItemDeleage.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />

@@ -2624,7 +2624,7 @@
     <message>
         <location filename="../FluWinGallery/FluHyperLinkButtonPage.cpp" line="16"/>
         <source>FluentUI Repo Url</source>
-        <translation>FluentUI 仓库 URL</translation>
+        <translation>FluentUI仓库地址</translation>
     </message>
 </context>
 <context>

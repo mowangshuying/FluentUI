@@ -507,6 +507,7 @@ set(CODE_FILES
     "../code/SliderPageCode1.md"
     "../code/SliderPageCode2.md"
     "../code/SplitButtonPageCode1.md"
+    "../code/TableViewPageCode1.md"
     "../code/TextBoxPageCode1.md"
     "../code/TimePickerPageCode1.md"
     "../code/TimePickerPageCode2.md"

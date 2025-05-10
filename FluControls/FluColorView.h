@@ -36,10 +36,14 @@ class FluColorView : public QDialog
 
         setWindowFlags(Qt::FramelessWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
-        setGeometry(0, 0, m_parentWidget->width(), m_parentWidget->height());
-        m_windowMask->resize(m_parentWidget->size());
+        
+        if (m_parentWidget != nullptr)
+        {
+            setGeometry(0, 0, m_parentWidget->width(), m_parentWidget->height());
+            m_windowMask->resize(m_parentWidget->size());
+            m_parentWidget->installEventFilter(this);
+        }
 
-        m_parentWidget->installEventFilter(this);
         onThemeChanged();
     }
 
@@ -75,7 +79,7 @@ class FluColorView : public QDialog
         auto rLabel = new FluLabel;
         rLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
         rLabel->setFixedWidth(50);
-        rLabel->setText("Red:");
+        rLabel->setText(tr("Red:"));
 
         rEdit = new FluLineEdit;
         rEdit->setText("0");
@@ -91,7 +95,7 @@ class FluColorView : public QDialog
         hLayout = new QHBoxLayout;
         auto gLabel = new FluLabel;
         gLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
-        gLabel->setText("Green:");
+        gLabel->setText(tr("Green:"));
         gLabel->setFixedWidth(50);
 
         gEdit = new FluLineEdit;
@@ -108,7 +112,7 @@ class FluColorView : public QDialog
         hLayout = new QHBoxLayout;
         auto bLabel = new FluLabel;
         bLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
-        bLabel->setText("Blue:");
+        bLabel->setText(tr("Blue:"));
         bLabel->setFixedWidth(50);
 
         bEdit = new FluLineEdit;
@@ -124,11 +128,11 @@ class FluColorView : public QDialog
 
         hLayout = new QHBoxLayout;
         auto okBtn = new FluStyleButton;
-        okBtn->setText("Ok");
+        okBtn->setText(tr("Ok"));
         okBtn->setFixedWidth(150);
 
         auto cancelBtn = new FluPushButton;
-        cancelBtn->setText("cancel");
+        cancelBtn->setText(tr("cancel"));
         cancelBtn->setFixedWidth(150);
 
         hLayout->addWidget(okBtn);
@@ -139,9 +143,17 @@ class FluColorView : public QDialog
 
         // limit edit value;
 
-        connect(okBtn, &FluStyleButton::clicked, this, [=]() { accept(); });
+        connect(okBtn, &FluStyleButton::clicked, this, [=]() { 
+            if (m_parentWidget == nullptr)
+                return;
+            accept(); 
+        });
 
-        connect(cancelBtn, &FluPushButton::clicked, this, [=]() { reject(); });
+        connect(cancelBtn, &FluPushButton::clicked, this, [=]() { 
+            if (m_parentWidget == nullptr)
+                return;
+            reject(); 
+        });
 
         connect(colorViewGradient, &FluColorViewGradient::colorChanged, [=](QColor color) { colorViewHHandle->setColor(color); });
 
@@ -191,13 +203,16 @@ class FluColorView : public QDialog
     void resizeEvent(QResizeEvent* event)
     {
         QDialog::resizeEvent(event);
-        m_windowMask->resize(m_parentWidget->size());
-        resize(m_parentWidget->size());
+        if(m_parentWidget  != nullptr)
+        {
+            m_windowMask->resize(m_parentWidget->size());
+            resize(m_parentWidget->size());
+        }
     }
 
     bool eventFilter(QObject* watched, QEvent* event)
     {
-        if (watched == m_parentWidget && event->type() == QEvent::Resize)
+        if (m_parentWidget != nullptr && watched == m_parentWidget && event->type() == QEvent::Resize)
         {
             QResizeEvent* resizeEvent = (QResizeEvent*)event;
             m_windowMask->resize(m_parentWidget->size());
@@ -268,14 +283,7 @@ class FluColorView : public QDialog
 
     void onThemeChanged()
     {
-        if (FluThemeUtils::isLightTheme())
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorView.qss", this);
-        }
-        else
-        {
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluColorView.qss", this);
-        }
+        FluStyleSheetUitls::setQssByFileName("FluColorView.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

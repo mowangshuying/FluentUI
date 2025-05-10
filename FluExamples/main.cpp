@@ -325,7 +325,10 @@ int main(int argc, char **argv)
     // FluIntructionsDemo demo;
     // demo.show();
 
-    FluPaginationDemo demo;
+    // FluPaginationDemo demo;
+    // demo.show();
+
+    FluVNavigationViewDemo demo;
     demo.show();
 
     return app.exec();

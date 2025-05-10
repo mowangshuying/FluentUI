@@ -649,6 +649,7 @@ set(RES_FILES
     "../res/widelogo.scale-180.png"
     "../res/WideLogo.scale-80.png"
     # "../res/Segoe_Fluent_Icons.ttf"
+    "../res/ControlResImages/GradientColor.png"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${RES_FILES})
 

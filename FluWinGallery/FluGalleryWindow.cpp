@@ -234,6 +234,10 @@ void FluGalleryWindow::makeBasicInputNavItem()
     connect(item9, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("CheckBoxPage"); });
 
     FluVNavigationIconTextItem *item10 = new FluVNavigationIconTextItem(tr("ColorPicker"), item);
+    item10->setKey("ColorPickerPage");
+    auto colorPickerPage = new FluColorPickerPage;
+    m_sLayout->addWidget("ColorPickerPage", colorPickerPage);
+    connect(item10, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ColorPickerPage"); });
 
     FluVNavigationIconTextItem *item11 = new FluVNavigationIconTextItem(tr("ComboBox"), item);
     item11->setKey("ComboBoxPage");

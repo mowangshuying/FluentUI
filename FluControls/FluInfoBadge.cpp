@@ -1,4 +1,4 @@
-#include "FluInfoBadge.h"
+﻿#include "FluInfoBadge.h"
 
 FluInfoBadge::FluInfoBadge(QWidget* parent /*= nullptr*/) : QLabel(parent)
 {
@@ -7,8 +7,10 @@ FluInfoBadge::FluInfoBadge(QWidget* parent /*= nullptr*/) : QLabel(parent)
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     m_parent = nullptr;
     m_target = nullptr;
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBadge.qss", this);
-    FluStyleSheetUitls::setQssByFileName("FluInfoBadge.qss", this, FluThemeUtils::getUtils()->getTheme());
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 }
 
 void FluInfoBadge::setParent(QWidget* parent)

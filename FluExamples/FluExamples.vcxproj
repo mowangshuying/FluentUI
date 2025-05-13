@@ -69,11 +69,11 @@
     <ClCompile>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>_DEBUG_QSS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include;$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include;$(SolutionDir)3rdparty\qrcode\include;$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\qscintilla\lib\debug;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FluUtils.lib;FluControls.lib;qscintilla2_qt6d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\qrcode\lib\debug;$(SolutionDir)3rdparty\qscintilla\lib\debug;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FluUtils.lib;FluControls.lib;qscintilla2_qt6d.lib;qrcoded.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,6 +127,7 @@
     <ClCompile Include="FluIntructionsDemo.cpp" />
     <ClCompile Include="FluMSWindowDemo.cpp" />
     <ClCompile Include="FluPaginationDemo.cpp" />
+    <ClCompile Include="FluQrCodeDemo.cpp" />
     <ClCompile Include="FluRoundMenuDemo.cpp" />
     <ClCompile Include="FluScintillaDemo.cpp" />
     <ClCompile Include="FluScrollAreaDemo.cpp" />
@@ -214,6 +215,7 @@
     <QtMoc Include="FluMSWindowDemo.h" />
     <QtMoc Include="FluSplitterDemo.h" />
     <QtMoc Include="FluPaginationDemo.h" />
+    <ClInclude Include="FluQrCodeDemo.h" />
     <ClInclude Include="FluRoundMenuDemo.h" />
     <QtMoc Include="FluShortcutPickerDemo.h" />
     <ClInclude Include="FluSegmentedDemo.h" />

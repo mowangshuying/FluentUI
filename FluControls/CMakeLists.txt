@@ -120,6 +120,7 @@ set(QSS_FILES
     "../StyleSheet/dark/FluVRadioGroupBox.qss"
     "../StyleSheet/dark/FluVScrollView.qss"
     "../StyleSheet/dark/FluVSplitLine.qss"
+	"../StyleSheet/dark/FluInfoBadge.qss"
     "../StyleSheet/light/FluAmPmView.qss"
     "../StyleSheet/light/FluAppBarButton.qss"
     "../StyleSheet/light/FluAppBarToggleButton.qss"

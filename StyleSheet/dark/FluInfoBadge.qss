@@ -1,0 +1,9 @@
+FluInfoBadge {
+    background-color: rgb(255, 77, 79);
+    padding: 2px;
+    font-size: 12px;
+    color: white;
+    border-radius: 11px;
+    min-height: 18px;
+    min-width: 18px;
+}

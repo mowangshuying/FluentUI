@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QLabel>
 #include "../FluUtils/FluUtils.h"
@@ -19,7 +19,11 @@ class FluInfoBadge : public QLabel
     bool eventFilter(QObject* watched, QEvent* event);
 
     static void setInfoBadge(QWidget* parent, QWidget* target, int nVlaue = 0);
-
+  public slots:
+      void onThemeChanged()
+      {
+          FluStyleSheetUitls::setQssByFileName("FluInfoBadge.qss", this, FluThemeUtils::getUtils()->getTheme());
+      }
   protected:
     QWidget* m_parent;
     QWidget* m_target;

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluAEmptyPage.h"
 #include "../FluUtils/FluUtils.h"
@@ -16,6 +16,8 @@ class FluMenuBarPage : public FluAEmptyPage
     void addSimpleMenuBar();
 
     void addMenuBarWithAccelerators();
+
+    void addRoundMenu();
 
   public slots:
     void onThemeChanged();

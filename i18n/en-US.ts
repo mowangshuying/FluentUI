@@ -3177,99 +3177,144 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
 <context>
     <name>FluMenuBarPage</name>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="6"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="8"/>
         <source>MenuBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="7"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="9"/>
         <source>The Menubar simplifies the creation of basic applications by providing a set of menus at the top of the app or window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="19"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="23"/>
         <source>A Simple MenuBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="26"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="30"/>
         <source>new</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="27"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="75"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="31"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="79"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="28"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="76"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="32"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="80"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="29"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="77"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="33"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="81"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="32"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="85"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="36"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="89"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="40"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="93"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="44"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="97"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="158"/>
         <source>Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="41"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="94"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="45"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="98"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="142"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="42"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="95"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="46"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="99"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="139"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="43"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="96"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="47"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="100"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="155"/>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="46"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="104"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="50"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="108"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="54"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="112"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="58"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="116"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="56"/>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="116"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="60"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="120"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="168"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="67"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="71"/>
         <source>MenuBar with keyboard accelerators</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="74"/>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="78"/>
         <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="131"/>
+        <source>A Round Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="135"/>
+        <source>show menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="145"/>
+        <source>Add to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="146"/>
+        <source>Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="147"/>
+        <source>Video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="163"/>
+        <source>Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="167"/>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluMenuBarPage.cpp" line="169"/>
+        <source>Feedback</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3794,7 +3839,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="86"/>
-        <source>1.0.1</source>
+        <source>1.0.2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

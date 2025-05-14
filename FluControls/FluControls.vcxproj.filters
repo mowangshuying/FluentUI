@@ -509,6 +509,18 @@
     <ClCompile Include="FluColorPickerButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluCommandBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCommandBarItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCommandBarIconItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluCommandBarIconTextItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -982,6 +994,9 @@
     <QtMoc Include="FluColorPickerButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluCommandBar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -1006,6 +1021,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FluIndicatorMenuItemDeleage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCommandBarItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCommandBarIconItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluCommandBarIconTextItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

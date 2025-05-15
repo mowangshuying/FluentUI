@@ -7,7 +7,13 @@ class FluCommandBarItem : public FluWidget
 {
 	Q_OBJECT
   public:
-	  FluCommandBarItem(FluCommandBarItemType type, QWidget* parent = nullptr)
+        FluCommandBarItem(QWidget* parent = nullptr)
+		  : FluWidget(parent)
+	  {
+
+	  }
+
+	  FluCommandBarItem(FluCommandBarItemType type, QWidget* parent = nullptr) : FluCommandBarItem(parent)
 	  {
             m_itemType = type;
 	  }
@@ -15,6 +21,10 @@ class FluCommandBarItem : public FluWidget
 signals:
 	 
 public slots:
+	void onThemeChanged() override
+	{
+
+	}
   protected:
       FluCommandBarItemType m_itemType;
 };

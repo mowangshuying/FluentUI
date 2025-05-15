@@ -3849,7 +3849,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="85"/>
         <source>@2023-2025 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
-        <translation>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved. {2023-2025 ?}</translation>
+        <translation type="unfinished">@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="86"/>

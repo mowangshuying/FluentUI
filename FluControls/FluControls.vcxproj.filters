@@ -997,6 +997,12 @@
     <QtMoc Include="FluCommandBar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluCommandBarItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluCommandBarIconTextItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -1023,14 +1029,11 @@
     <ClInclude Include="FluIndicatorMenuItemDeleage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FluCommandBarItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FluCommandBarIconItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FluCommandBarIconTextItem.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="FluCommandBarItemType.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

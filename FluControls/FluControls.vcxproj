@@ -315,8 +315,9 @@
     <QtMoc Include="FluColorPickerButton.h" />
     <QtMoc Include="FluCommandBar.h" />
     <ClInclude Include="FluCommandBarIconItem.h" />
-    <ClInclude Include="FluCommandBarIconTextItem.h" />
-    <ClInclude Include="FluCommandBarItem.h" />
+    <QtMoc Include="FluCommandBarIconTextItem.h" />
+    <QtMoc Include="FluCommandBarItem.h" />
+    <ClInclude Include="FluCommandBarItemType.h" />
     <ClInclude Include="FluIndicatorMenuItemDeleage.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />

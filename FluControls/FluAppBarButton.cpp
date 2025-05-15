@@ -1,4 +1,4 @@
-#include "FluAppBarButton.h"
+﻿#include "FluAppBarButton.h"
 
 FluAppBarButton::FluAppBarButton(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(awesomeType), m_shortCut(nullptr)
 {
@@ -76,13 +76,6 @@ void FluAppBarButton::paintEvent(QPaintEvent* event)
 
 void FluAppBarButton::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-    }
-    else
-    {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-    }
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUitls::setQssByFileName("FluAppBarButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

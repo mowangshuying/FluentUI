@@ -1,0 +1,23 @@
+FluCommandBarIconTextItem {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    margin: 0px;
+}
+
+FluCommandBarIconTextItem:hover {
+    background-color: rgba(255, 255, 255, 9);
+}
+
+FluCommandBarIconTextItem:pressed {
+    background-color: rgba(255, 255, 255, 5);
+}
+
+#iconBtn {
+    background-color: transparent;
+    border: none;
+}
+
+#textLabel {
+    color: white;
+}

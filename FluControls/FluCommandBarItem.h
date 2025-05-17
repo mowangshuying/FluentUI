@@ -7,15 +7,10 @@ class FluCommandBarItem : public FluWidget
 {
 	Q_OBJECT
   public:
-        FluCommandBarItem(QWidget* parent = nullptr)
+      FluCommandBarItem(QWidget* parent = nullptr)
 		  : FluWidget(parent)
 	  {
 
-	  }
-
-	  FluCommandBarItem(FluCommandBarItemType type, QWidget* parent = nullptr) : FluCommandBarItem(parent)
-	  {
-            m_itemType = type;
 	  }
 
 signals:
@@ -26,5 +21,5 @@ public slots:
 
 	}
   protected:
-      FluCommandBarItemType m_itemType;
+    FluCommandBarItemType m_itemType;
 };

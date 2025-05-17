@@ -1,0 +1,6 @@
+FluCommandBar {
+    /* background-color: aqua; */
+    background-color: rgb(243, 243, 243);
+    border-radius: 4px;
+    border: 1px solid rgb(229, 229, 229);
+}

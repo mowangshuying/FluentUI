@@ -143,6 +143,7 @@
     <ClCompile Include="FluCommandBarIconItem.cpp" />
     <ClCompile Include="FluCommandBarIconTextItem.cpp" />
     <ClCompile Include="FluCommandBarItem.cpp" />
+    <ClCompile Include="FluCommandBarSplitItem.cpp" />
     <ClCompile Include="FluCompleterMenu.cpp" />
     <ClCompile Include="FluConfirmFlyout.cpp" />
     <ClCompile Include="FluDatePicker.cpp" />
@@ -314,10 +315,11 @@
     <QtMoc Include="FluCompleterMenu.h" />
     <QtMoc Include="FluColorPickerButton.h" />
     <QtMoc Include="FluCommandBar.h" />
-    <ClInclude Include="FluCommandBarIconItem.h" />
+    <QtMoc Include="FluCommandBarIconItem.h" />
     <QtMoc Include="FluCommandBarIconTextItem.h" />
     <QtMoc Include="FluCommandBarItem.h" />
     <ClInclude Include="FluCommandBarItemType.h" />
+    <QtMoc Include="FluCommandBarSplitItem.h" />
     <ClInclude Include="FluIndicatorMenuItemDeleage.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />

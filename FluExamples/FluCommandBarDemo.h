@@ -16,10 +16,6 @@ class FluCommandBarDemo : public FluTemplateDemo
               auto commandBar = new FluCommandBar(this);
               commandBar->setHasMoreBtn(true);
               commandBar->move(200, 200);
-			  //m_contentLayout->addWidget(commandBar);
-
-			  //auto emojiBarItem = new FluCommandBarIconTextItem(FluAwesomeType::Emoji, tr("Emoji"), commandBar);
-             // commandBar->addBarItem(emojiBarItem);
 
 			  auto addBarItem = new FluCommandBarIconTextItem(FluAwesomeType::Add, tr("Add"), commandBar);
               commandBar->addBarItem(addBarItem);
@@ -35,6 +31,30 @@ class FluCommandBarDemo : public FluTemplateDemo
 
 			  auto shareBarItem = new FluCommandBarIconTextItem(FluAwesomeType::Share, tr("Share"), commandBar);
               commandBar->addBarItem(shareBarItem);
+
+			  auto roundMenu = commandBar->getMoreBtn()->getRoundMenu();
+              auto settingsAction = new FluAction(FluAwesomeType::Settings, tr("Settings"));
+              settingsAction->setShortcut(QKeySequence("Ctrl+l"));
+              roundMenu->addAction(settingsAction);
+
+			  auto button1Action = new FluAction(FluAwesomeType::Add, tr("Button1"));
+              button1Action->setShortcut(QKeySequence("Ctrl+N)"));
+              roundMenu->addAction(button1Action);
+
+              auto button2Action = new FluAction(FluAwesomeType::Delete, tr("Button2"));
+              button2Action->setShortcut(QKeySequence("Delete"));
+              roundMenu->addAction(button2Action);
+
+
+              auto button3Action = new FluAction(FluAwesomeType::Font, tr("Button3"));
+              button3Action->setShortcut(QKeySequence("Ctrl+-"));
+              roundMenu->addAction(button3Action);
+
+              auto button4Action = new FluAction(FluAwesomeType::Font, tr("Button4"));
+              button4Action->setShortcut(QKeySequence("Ctrl++"));
+              roundMenu->addAction(button4Action);
+
+
 
 			  //auto moreBarItem = new FluCommandBarIconItem(FluAwesomeType::More);
 	  }

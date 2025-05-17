@@ -9,6 +9,7 @@
 class FluCommandBarIconTextItem : public FluCommandBarItem
 {
 	Q_OBJECT
+
   public:
         FluCommandBarIconTextItem(QWidget* parent = nullptr);
 
@@ -25,6 +26,5 @@ class FluCommandBarIconTextItem : public FluCommandBarItem
       QHBoxLayout* m_hMainLayout;
 	  QPushButton* m_iconBtn;
       QLabel* m_textLabel;
-
       FluAwesomeType m_awesomeType;
 };

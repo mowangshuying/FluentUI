@@ -44,6 +44,11 @@ class FluCommandBar : public QFrame
             return m_bHasMoreBtn;
 	  }
 
+	  FluCommandBarIconItem* getMoreBtn()
+	  {
+              return m_moreItem;
+	  }
+
 	  void insertBarItem(int nIndex, FluCommandBarItem* barItem)
 	  {
             barItem->setParent(this);

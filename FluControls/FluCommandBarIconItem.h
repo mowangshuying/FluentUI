@@ -7,6 +7,7 @@
 #include <QStyleOption>
 #include <QStyle>
 #include <QPainter>
+#include "FluRoundMenu.h"
 
 class FluCommandBarIconItem : public FluCommandBarItem
 {
@@ -15,6 +16,14 @@ class FluCommandBarIconItem : public FluCommandBarItem
       FluCommandBarIconItem(QWidget* parent = nullptr);
 
       FluCommandBarIconItem(FluAwesomeType type, QWidget* parent = nullptr);
+
+      FluRoundMenu* getRoundMenu();
+
+      void setRoundMenu(FluRoundMenu* menu);
+
+      void showAtBottomRight();
+
+      void showAtBottomCenter();
 
       void mouseReleaseEvent(QMouseEvent* event);
 
@@ -31,4 +40,6 @@ class FluCommandBarIconItem : public FluCommandBarItem
       QHBoxLayout* m_hMainLayout;
       QPushButton* m_iconBtn;
       FluAwesomeType m_awesomeType;
+
+      FluRoundMenu* m_roundMenu;
 };

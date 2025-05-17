@@ -1,4 +1,4 @@
-#include "FluRoundMenu.h"
+﻿#include "FluRoundMenu.h"
 #include "FluMenuAniMgr.h"
 
 FluMenuAniMgr::FluMenuAniMgr(FluRoundMenu* menu, FluMenuAniType aniType) : QObject(), m_menuAniType(aniType)

@@ -1,7 +1,11 @@
-#include "FluStackedLayout.h"
+﻿#include "FluStackedLayout.h"
 
 FluStackedLayout::FluStackedLayout() : QStackedLayout()
 {
+   // m_animation = new QPropertyAnimation;
+   // m_animation->setPropertyName("pos");
+   // m_animation->setDuration(500);
+   // m_animation->setEasingCurve(QEasingCurve::OutBounce);
 }
 
 FluStackedLayout::FluStackedLayout(QWidget *parent) : QStackedLayout(parent)
@@ -40,4 +44,10 @@ void FluStackedLayout::setCurrentWidget(QString str)
         return;
 
     QStackedLayout::setCurrentWidget(itf.value());
+
+   // m_animation->setTargetObject(itf.value());
+  //  m_animation->setStartValue(itf.value()->pos());
+   // m_animation->setKeyValueAt(0.5, itf.value()->pos() + QPoint(0, 50));
+   // m_animation->setEndValue(itf.value()->pos());
+  //  m_animation->start();
 }

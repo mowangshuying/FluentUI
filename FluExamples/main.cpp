@@ -340,7 +340,10 @@ int main(int argc, char **argv)
     //demo.show();
 
 
-    FluCommandBarDemo demo;
+    // FluCommandBarDemo demo;
+    // demo.show();
+
+    FluTabBarDemo demo;
     demo.show();
     return app.exec();
 }

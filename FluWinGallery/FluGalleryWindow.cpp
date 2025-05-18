@@ -16,10 +16,10 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluFrameLess
 FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKitWidget(parent)
 #endif
 {
-    setWindowTitle("CppQt WinUI3 Gallery Dev");
+    setWindowTitle(tr("CppQt WinUI3 Gallery Dev"));
 
 #ifndef _DEBUG
-    setWindowTitle("CppQt WinUI3 Gallery");
+    setWindowTitle(tr("CppQt WinUI3 Gallery"));
 #endif
 
 #ifndef USE_QRC

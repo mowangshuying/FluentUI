@@ -2042,6 +2042,16 @@
 <context>
     <name>FluGalleryWindow</name>
     <message>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="19"/>
+        <source>CppQt WinUI3 Gallery Dev</source>
+        <translation type="unfinished">C++ Qt的WinUI3调试中图库</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="22"/>
+        <source>CppQt WinUI3 Gallery</source>
+        <translation type="unfinished">C++ Qt的WinUI3图库</translation>
+    </message>
+    <message>
         <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="114"/>
         <source>Home</source>
         <translation>主页</translation>

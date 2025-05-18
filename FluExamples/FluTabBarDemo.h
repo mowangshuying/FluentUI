@@ -12,11 +12,6 @@ class FluTabBarDemo : public FluWidget
   public:
     FluTabBarDemo(QWidget* parent = nullptr);
 
-    // void resizeEvent(QResizeEvent* event)
-    //{
-    //       tabBar->setFixedWidth(width());
-    // }
-
   protected:
     FluTabBar* tabBar;
     QVBoxLayout* m_vMainLayout;

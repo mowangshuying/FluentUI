@@ -2035,6 +2035,16 @@
 <context>
     <name>FluGalleryWindow</name>
     <message>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="19"/>
+        <source>CppQt WinUI3 Gallery Dev</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="22"/>
+        <source>CppQt WinUI3 Gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="114"/>
         <source>Home</source>
         <translation type="unfinished"></translation>

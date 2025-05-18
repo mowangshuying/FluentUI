@@ -2044,12 +2044,13 @@
     <message>
         <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="19"/>
         <source>CppQt WinUI3 Gallery Dev</source>
-        <translation type="unfinished">C++ Qt的WinUI3调试中图库</translation>
+        <translation>C++ Qt的WinUI3调试中图库</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="22"/>
         <source>CppQt WinUI3 Gallery</source>
-        <translation type="unfinished">C++ Qt的WinUI3图库</translation>
+        <translatorcomment>C++ Qt的WinUI3图库</translatorcomment>
+        <translation>FluentUI Gallery(Cpp &amp; Qt).</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="114"/>
@@ -3859,12 +3860,12 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="85"/>
         <source>@2023-2025 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
-        <translation type="unfinished">@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</translation>
+        <translation>@2023-2024 FluentUI For Qt &amp; Cpp. All rights reserved.</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="86"/>
         <source>1.0.2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>1.0.0</source>

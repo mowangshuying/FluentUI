@@ -225,6 +225,14 @@ set(QSS_FILES
     "../StyleSheet/light/FluVRadioGroupBox.qss"
     "../StyleSheet/light/FluVScrollView.qss"
     "../StyleSheet/light/FluVSplitLine.qss"
+    
+    "../StyleSheet/light/FluCommandBar.qss"
+    "../StyleSheet/light/FluCommandBarIconTextItem.qss"
+    "../StyleSheet/light/FluCommandBarIconItem.qss"
+
+    "../StyleSheet/dark/FluCommandBar.qss"
+    "../StyleSheet/dark/FluCommandBarIconTextItem.qss"
+    "../StyleSheet/dark/FluCommandBarIconItem.qss"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

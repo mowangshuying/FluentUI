@@ -7,6 +7,7 @@
 #include <QSettings>
 #include <vector>
 #include <utility>
+#include <QWheelEvent>
 
 class FluCodeBox : public QTextEdit
 {
@@ -16,9 +17,15 @@ class FluCodeBox : public QTextEdit
 
     void setCodeText(QString code);
 
+
+    void wheelEvent(QWheelEvent* event)
+    {
+        event->ignore();
+    }
+
     void resizeEvent(QResizeEvent*);
 
-    bool eventFilter(QObject* object, QEvent *event);
+    //bool eventFilter(QObject* object, QEvent *event);
   signals:
     void sizeChanged();
 

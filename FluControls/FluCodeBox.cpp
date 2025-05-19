@@ -24,15 +24,15 @@ void FluCodeBox::resizeEvent(QResizeEvent*)
     setFixedHeight(newHeight);
 }
 
-bool FluCodeBox::eventFilter(QObject* object, QEvent* event)
-{
-    if (event->type() == QEvent::Wheel)
-    {
-        return true;
-    }
+// bool FluCodeBox::eventFilter(QObject* object, QEvent* event)
+// {
+//     if (event->type() == QEvent::Wheel)
+//     {
+//         return true;
+//     }
 
-    return false;
-}
+//     return false;
+// }
 
 void FluCodeBox::onThemeChanged()
 {

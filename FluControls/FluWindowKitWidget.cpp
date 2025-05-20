@@ -28,23 +28,30 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_iconButton->setObjectName("iconButton");
     m_iconButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
+    m_pinButton = new FluWindowkitButton;
+    m_pinButton->setCheckable(true);
+    m_pinButton->setObjectName("pinButton");
+    m_pinButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::Pin, FluThemeUtils::getUtils()->getTheme()));
+    m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::Pinned, FluThemeUtils::getUtils()->getTheme()));
+    m_pinButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+
     m_minButton = new FluWindowkitButton;
     m_minButton->setObjectName("minButton");
     m_minButton->setProperty("systemButton", true);
-    m_minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize));
+    m_minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize, FluThemeUtils::getUtils()->getTheme()));
     m_minButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     m_maxButton = new FluWindowkitButton;
     m_maxButton->setCheckable(true);
     m_maxButton->setObjectName("maxButton");
     m_maxButton->setProperty("systemButton", true);
-    m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize));
+    m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
     m_maxButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     m_closeButton = new FluWindowkitButton;
     m_closeButton->setObjectName("closeButton");
     m_closeButton->setProperty("systemButton", true);
-    m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
+    m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
     m_closeButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 #endif
 
@@ -52,6 +59,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_titleBar->setFixedHeight(35);
 #ifndef Q_OS_MAC
     m_titleBar->setIconButton(m_iconButton);
+    m_titleBar->setPinButton(m_pinButton);
     m_titleBar->setMinButton(m_minButton);
     m_titleBar->setMaxButton(m_maxButton);
     m_titleBar->setCloseButton(m_closeButton);
@@ -74,6 +82,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     setLayout(m_vMainLayout);
 
 #ifndef Q_OS_MAC
+    agent->setHitTestVisible(m_pinButton, true);
     agent->setSystemButton(QWK::WindowAgentBase::WindowIcon, m_iconButton);
     agent->setSystemButton(QWK::WindowAgentBase::Minimize, m_minButton);
     agent->setSystemButton(QWK::WindowAgentBase::Maximize, m_maxButton);
@@ -81,6 +90,16 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
 #endif
 
 #ifndef Q_OS_MAC
+    connect(m_titleBar, &FluWindowKitTitleBar::pinRequested, this, [=](bool pin) {
+        if (isHidden() || isMinimized() || isMaximized() || isFullScreen())
+        {
+            return;
+        }
+        setWindowFlag(Qt::WindowStaysOnTopHint, pin);
+        show();
+        m_pinButton->setChecked(pin);
+    });
+
     connect(m_titleBar, &FluWindowKitTitleBar::minimizeRequested, this, &QWidget::showMinimized);
     connect(m_titleBar, &FluWindowKitTitleBar::maximizeRequested, this, [this](bool max) {
         if (max)
@@ -147,6 +166,8 @@ void FluWindowKitWidget::emulateLeaveEvent(QWidget *widget)
 
 void FluWindowKitWidget::onThemeChanged()
 {
+    m_pinButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::Pin, FluThemeUtils::getUtils()->getTheme()));
+    m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::Pinned, FluThemeUtils::getUtils()->getTheme()));
     m_minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize, FluThemeUtils::getUtils()->getTheme()));
     m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
     m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));

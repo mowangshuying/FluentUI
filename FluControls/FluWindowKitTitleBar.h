@@ -17,6 +17,8 @@ class FluWindowKitTitleBar : public QFrame
         MenuWidget,
         TitleLabel,
 
+        PinButton,
+
         MinimumButton,
         MaximumButton,
         CloseButton,
@@ -39,6 +41,8 @@ class FluWindowKitTitleBar : public QFrame
 
     QLabel* titleLabel() const;
 
+    QPushButton* pinButton();
+
     QPushButton* minButton() const;
 
     QPushButton* maxButton() const;
@@ -49,6 +53,8 @@ class FluWindowKitTitleBar : public QFrame
 
     void setIconButton(QPushButton* btn);
 
+    void setPinButton(QPushButton* btn);
+
     void setMinButton(QPushButton* btn);
 
     void setMaxButton(QPushButton* btn);
@@ -58,6 +64,8 @@ class FluWindowKitTitleBar : public QFrame
     QLabel* takeTitleLabel();
 
     QPushButton* takeIconButton();
+
+    QPushButton* takePinButton();
 
     QPushButton* takeMinButton();
 
@@ -83,6 +91,7 @@ class FluWindowKitTitleBar : public QFrame
     void minimizeRequested();
     void maximizeRequested(bool max = false);
     void closeRequested();
+    void pinRequested(bool pin = false);
   public slots:
     void onThemeChanged();
 

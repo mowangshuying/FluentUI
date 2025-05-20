@@ -29,8 +29,12 @@ class FluColorView : public QDialog
         m_parentWidget = parent;
         setMouseTracking(true);
         m_hMainLayout = new QHBoxLayout(this);
-        m_windowMask = new QWidget(this);
-        m_windowMask->setObjectName("windowMask");
+
+        if (m_parentWidget != nullptr)
+        {
+            m_windowMask = new QWidget(this);
+            m_windowMask->setObjectName("windowMask");
+        }
 
         initContentWidget();
 

@@ -77,6 +77,11 @@ QLabel* FluWindowKitTitleBar::titleLabel() const
     return static_cast<QLabel*>(widgetAt(TitleLabel));
 }
 
+QPushButton* FluWindowKitTitleBar::pinButton()
+{
+    return static_cast<QPushButton*>(widgetAt(PinButton));
+}
+
 QPushButton* FluWindowKitTitleBar::minButton() const
 {
     return static_cast<QPushButton*>(widgetAt(MinimumButton));
@@ -123,6 +128,19 @@ void FluWindowKitTitleBar::setIconButton(QPushButton* btn)
     }
 
     btn->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
+}
+
+void FluWindowKitTitleBar::setPinButton(QPushButton* btn)
+{
+    auto org = takePinButton();
+    if (org)
+        org->deleteLater();
+
+    if (!btn)
+        return;
+
+    setWidgetAt(PinButton, btn);
+    connect(btn, &QPushButton::clicked, this, &FluWindowKitTitleBar::pinRequested);
 }
 
 void FluWindowKitTitleBar::setMinButton(QPushButton* btn)
@@ -180,6 +198,11 @@ QLabel* FluWindowKitTitleBar::takeTitleLabel()
 QPushButton* FluWindowKitTitleBar::takeIconButton()
 {
     return static_cast<QPushButton*>(takeWidgetAt(IconButton));
+}
+
+QPushButton* FluWindowKitTitleBar::takePinButton()
+{
+    return static_cast<QPushButton*>(takeWidgetAt(PinButton));
 }
 
 QPushButton* FluWindowKitTitleBar::takeMinButton()

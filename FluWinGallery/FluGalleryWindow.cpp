@@ -891,7 +891,6 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->show();
         // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
     }
-
-    FluStyleSheetUitls::setQssByFileName("FluGalleryWindow.qss", this, FluThemeUtils::getUtils()->getTheme());
 #endif
+    FluStyleSheetUitls::setQssByFileName("FluGalleryWindow.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -16,6 +16,17 @@ FluWindowKitTitleBar {
     background-color: transparent;
 }
 
+
+#pinButton {
+    min-width: 30px;
+    background-color: transparent;
+}
+
+#pinButton:hover,
+#pinButton:pressed {
+    background-color: rgba(0, 0, 0, 15%);
+}
+
 #minButton {
     min-width: 30px;
     background-color: transparent;

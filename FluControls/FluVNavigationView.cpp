@@ -52,8 +52,8 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
     m_valueObject = new FluValueObject;
     m_animation->setTargetObject(m_valueObject);
-    m_animation->setStartValue(0);
-    m_animation->setEndValue(0);
+    m_animation->setStartValue(340);
+    m_animation->setEndValue(40);
 
     connect(m_menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
     connect(m_searchItem, &FluVNavigationSearchItem::itemClicked, [=]() { onMenuItemClicked(); });

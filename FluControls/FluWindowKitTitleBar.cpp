@@ -307,8 +307,5 @@ bool FluWindowKitTitleBar::eventFilter(QObject* watched, QEvent* event)
 
 void FluWindowKitTitleBar::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluWindowKitTitleBar.qss", this);
-    else if (FluThemeUtils::isDarkTheme())
-        FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluWindowKitTitleBar.qss", this);
+    FluStyleSheetUitls::setQssByFileName("FluWindowKitTitleBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -1499,27 +1499,27 @@
 <context>
     <name>FluColorView</name>
     <message>
-        <location filename="../FluControls/FluColorView.h" line="82"/>
+        <location filename="../FluControls/FluColorView.h" line="86"/>
         <source>Red:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluControls/FluColorView.h" line="98"/>
+        <location filename="../FluControls/FluColorView.h" line="102"/>
         <source>Green:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluControls/FluColorView.h" line="115"/>
+        <location filename="../FluControls/FluColorView.h" line="119"/>
         <source>Blue:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluControls/FluColorView.h" line="131"/>
+        <location filename="../FluControls/FluColorView.h" line="135"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FluControls/FluColorView.h" line="135"/>
+        <location filename="../FluControls/FluColorView.h" line="139"/>
         <source>cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3685,6 +3685,11 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../FluWinGallery/FluRepeatButtonPage.cpp" line="11"/>
         <source>A simple RepeatButton with text context.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluRepeatButtonPage.cpp" line="18"/>
+        <source>Click and hold</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

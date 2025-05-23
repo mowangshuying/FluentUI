@@ -6,6 +6,7 @@
 #include "FluWindowKitTitleBar.h"
 #include "../FluUtils/FluUtils.h"
 #include "FluLabel.h"
+#include <QWindow>
 
 #include <QStyleOption>
 
@@ -32,7 +33,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_pinButton->setCheckable(true);
     m_pinButton->setObjectName("pinButton");
     m_pinButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::Pin, FluThemeUtils::getUtils()->getTheme()));
-    m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::Pinned, FluThemeUtils::getUtils()->getTheme()));
+    m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::PinFill, FluThemeUtils::getUtils()->getTheme()));
     m_pinButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     m_minButton = new FluWindowkitButton;
@@ -95,8 +96,11 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
         {
             return;
         }
-        setWindowFlag(Qt::WindowStaysOnTopHint, pin);
-        show();
+
+        auto window = windowHandle();
+        window->setFlag(Qt::WindowStaysOnTopHint, pin);
+        //setWindowFlag(Qt::WindowStaysOnTopHint, pin);
+        //show();
         m_pinButton->setChecked(pin);
     });
 
@@ -168,7 +172,7 @@ void FluWindowKitWidget::emulateLeaveEvent(QWidget *widget)
 void FluWindowKitWidget::onThemeChanged()
 {
     m_pinButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::Pin, FluThemeUtils::getUtils()->getTheme()));
-    m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::Pinned, FluThemeUtils::getUtils()->getTheme()));
+    m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::PinFill, FluThemeUtils::getUtils()->getTheme()));
     m_minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize, FluThemeUtils::getUtils()->getTheme()));
     m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
     m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));

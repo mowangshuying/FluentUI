@@ -18,6 +18,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
 
     auto agent = new QWK::WidgetWindowAgent(this);
     agent->setup(this);
+    //agent->setWindowAttribute("dwm-blur", true);
 
     m_titleLabel = new FluLabel;
     m_titleLabel->setAlignment(Qt::AlignCenter);

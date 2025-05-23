@@ -34,7 +34,8 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType)
 QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h)
 {
     QFont tmpFont = getInstance()->m_fluentFont;
-    tmpFont.setPixelSize(15);
+    // 移除 tmpFont.setPointSize(15);
+    tmpFont.setPixelSize(qMin(w, h) * 0.8);  // 自适应图标大小
 
     QPixmap tmpPixMap(w, h);
     tmpPixMap.fill(Qt::transparent);
@@ -42,7 +43,7 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor,
     painter.begin(&tmpPixMap);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     painter.setPen(penColor);
-    tmpFont.setPointSize(15);
+    //tmpFont.setPointSize(15);
     painter.setFont(tmpFont);
     painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar((unsigned int)nType));
     painter.end();

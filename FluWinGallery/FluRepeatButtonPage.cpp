@@ -1,4 +1,4 @@
-#include "FluRepeatButtonPage.h"
+﻿#include "FluRepeatButtonPage.h"
 
 FluRepeatButtonPage::FluRepeatButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -15,7 +15,7 @@ FluRepeatButtonPage::FluRepeatButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     auto repeatButton = new FluRepeatButton;
     repeatButton->setFixedSize(120, 30);
-    repeatButton->setText("Click and hold");
+    repeatButton->setText(tr("Click and hold"));
     displayBox->getBodyLayout()->addWidget(repeatButton);
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 

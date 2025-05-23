@@ -1,4 +1,4 @@
-#include "FluFrameLessWidget.h"
+﻿#include "FluFrameLessWidget.h"
 #include <QtCore/qdatetime.h>
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 #include <QtGui/qshortcut.h>
@@ -38,6 +38,7 @@ void FluFrameLessWidget::initialize()
     setWindowTitle(tr("FramelessHelper demo application - QWidget"));
     setWindowIcon(QFileIconProvider().icon(QFileIconProvider::Computer));
     setAttribute(Qt::WidgetAttribute::WA_StyledBackground);
+    setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea);
 
     resize(800, 600);
     m_titleBar = new StandardTitleBar(this);

@@ -43,7 +43,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     m_vTopWrapLayout->addWidget(m_searchItem);
 
     m_bLong = true;
-    setFixedWidth(320 + 20);
+    setFixedWidth(320 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
 
     // ani;
     m_animation = new QPropertyAnimation;
@@ -52,7 +52,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
     m_valueObject = new FluValueObject;
     m_animation->setTargetObject(m_valueObject);
-    m_animation->setStartValue(340);
+    m_animation->setStartValue(width());
     m_animation->setEndValue(40);
 
     connect(m_menuButtonItem, &FluVNavigationMenuItem::menuItemClicked, [=]() { onMenuItemClicked(); });
@@ -436,7 +436,7 @@ void FluVNavigationView::onMenuItemClicked()
     {
         collapseDownView();
         m_animation->setStartValue(width());
-        m_animation->setEndValue(48);
+        m_animation->setEndValue(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
         m_animation->start();
         m_bLong = false;
     }
@@ -445,7 +445,7 @@ void FluVNavigationView::onMenuItemClicked()
         expandView();
 
         m_animation->setStartValue(width());
-        m_animation->setEndValue(320 + 20);
+        m_animation->setEndValue(320 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
         m_animation->start();
         m_bLong = true;
     }

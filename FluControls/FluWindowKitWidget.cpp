@@ -123,6 +123,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     // agent->setWindowAttribute(QStringLiteral("acrylic-material"), true);
     // style()->polish(this);
 #endif
+    setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea);
 }
 
 void FluWindowKitWidget::emulateLeaveEvent(QWidget *widget)

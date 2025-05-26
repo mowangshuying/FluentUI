@@ -137,13 +137,46 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, tr("Icons"), item);
     // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
 
+    FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("2-level"), item);
+    
+    FluVNavigationIconTextItem *item41 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("3-level"), item4);
+    FluVNavigationIconTextItem *item42 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("3-level"), item4);
+    FluVNavigationIconTextItem *item43 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("3-level"), item4);
+    
+    FluVNavigationIconTextItem *item421 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
+    FluVNavigationIconTextItem *item422 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
+    FluVNavigationIconTextItem *item423 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
+
     item1->setKey("TypographyPage");
     item->addItem(item1);
 
     item2->setKey("IconsPage");
+    
+    LOG_DEBUG << "item2 depth Before:" << item2->getDepth();
     item->addItem(item2);
+    LOG_DEBUG << "item2 depth After:" << item2->getDepth();
+
+    item4->addItem(item41);
+    item4->addItem(item42);
+    item4->addItem(item43);
+
+    LOG_DEBUG << "item41 depth:" << item41->getDepth();
+    LOG_DEBUG << "item42 depth:" << item42->getDepth();
+    LOG_DEBUG << "item43 depth:" << item43->getDepth();
+
+    item41->addItem(item421);
+    item41->addItem(item422);
+    item41->addItem(item423);
+
+    LOG_DEBUG << "item421 depth:" << item421->getDepth();
+    LOG_DEBUG << "item422 depth:" << item422->getDepth();
+    LOG_DEBUG << "item423 depth:" << item423->getDepth();
+    
+    item->addItem(item4);
+    
     // item->addItem(item3);
     m_navView->addItemToMidLayout(item);
+
 
     auto typographyPage = new FluTypeographyPage;
     m_sLayout->addWidget("TypographyPage", typographyPage);
@@ -152,7 +185,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
 
     auto iconsPage = new FluIconsPage;
     m_sLayout->addWidget("IconsPage", iconsPage);
-    connect(item2, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("IconsPage"); });
+    connect(item2, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("IconsPage"); });    
 }
 
 void FluGalleryWindow::makeSamplesNavItem()

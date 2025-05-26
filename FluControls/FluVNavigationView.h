@@ -48,6 +48,16 @@ class FluVNavigationView : public FluWidget
         return m_bLong;
     }
 
+    void setViewWidth(int width)
+    {
+        m_nViewWidth = width;
+    }
+
+    int getViewWidth()
+    {
+        return m_nViewWidth;
+    }
+
     std::vector<FluVNavigationItem *> getAllItems();
     std::vector<QString> getAllItemsKeys();
     FluVNavigationItem *getItemByKey(QString key);
@@ -84,6 +94,9 @@ class FluVNavigationView : public FluWidget
     FluVNavigationMenuItem *m_menuButtonItem;
     FluVNavigationSearchItem *m_searchItem;
     bool m_bLong;
+
+    //view width
+    int m_nViewWidth;
 
     // animation;
     QPropertyAnimation *m_animation;

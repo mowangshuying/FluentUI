@@ -18,7 +18,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
 
     auto agent = new QWK::WidgetWindowAgent(this);
     agent->setup(this);
-    //agent->setWindowAttribute("dwm-blur", true);
+   // agent->setWindowAttribute("dwm-blur", true);
 
     m_titleLabel = new FluLabel;
     m_titleLabel->setAlignment(Qt::AlignCenter);
@@ -48,6 +48,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_maxButton->setObjectName("maxButton");
     m_maxButton->setProperty("systemButton", true);
     m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
+    m_maxButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeRestore, FluThemeUtils::getUtils()->getTheme()));
     m_maxButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     m_closeButton = new FluWindowkitButton;
@@ -93,16 +94,16 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
 
 #ifndef Q_OS_MAC
     connect(m_titleBar, &FluWindowKitTitleBar::pinRequested, this, [=](bool pin) {
-        if (isHidden() || isMinimized() || isMaximized() || isFullScreen())
-        {
-            return;
-        }
+       // if (isHidden() || isMinimized() || isMaximized() || isFullScreen())
+       // {
+       //     return;
+       // }
 
-        auto window = windowHandle();
-        window->setFlag(Qt::WindowStaysOnTopHint, pin);
-        //setWindowFlag(Qt::WindowStaysOnTopHint, pin);
-        //show();
-        m_pinButton->setChecked(pin);
+       // auto window = windowHandle();
+       // window->setFlag(Qt::WindowStaysOnTopHint, pin);
+       // setWindowFlag(Qt::WindowStaysOnTopHint, pin);
+       // show();
+       // m_pinButton->setChecked(pin);
     });
 
     connect(m_titleBar, &FluWindowKitTitleBar::minimizeRequested, this, &QWidget::showMinimized);
@@ -119,6 +120,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
         emulateLeaveEvent(m_maxButton);
     });
 
+    onThemeChanged();
     connect(m_titleBar, &FluWindowKitTitleBar::closeRequested, this, &QWidget::close);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 #endif  // !Q_OS_MAC
@@ -176,6 +178,7 @@ void FluWindowKitWidget::onThemeChanged()
     m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::PinFill, FluThemeUtils::getUtils()->getTheme()));
     m_minButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize, FluThemeUtils::getUtils()->getTheme()));
     m_maxButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
+    m_maxButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeRestore, FluThemeUtils::getUtils()->getTheme()));
     m_closeButton->setIconNormal(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUitls::setQssByFileName("FluWindowKitWidget.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

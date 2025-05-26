@@ -8,6 +8,7 @@
 
 FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
+    m_nViewWidth = 320; // default width
     m_vLayout = new QVBoxLayout(this);
     m_vLayout->setContentsMargins(4, 8, 4, 8);
     m_topWrapWidget = new QWidget(this);
@@ -43,7 +44,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     m_vTopWrapLayout->addWidget(m_searchItem);
 
     m_bLong = true;
-    setFixedWidth(320 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    setFixedWidth(m_nViewWidth+ m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
 
     // ani;
     m_animation = new QPropertyAnimation;
@@ -286,8 +287,8 @@ inline void FluVNavigationView::expandView()
         if (item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->setFixedWidth(320);
-            iconTextItem->getWrapWidget1()->setFixedWidth(320);
+            iconTextItem->setFixedWidth(m_nViewWidth);
+            iconTextItem->getWrapWidget1()->setFixedWidth(m_nViewWidth);
             iconTextItem->showLabelArrow();
         }
 
@@ -296,7 +297,7 @@ inline void FluVNavigationView::expandView()
             auto settingsItem = (FluVNavigationSettingsItem *)(item);
             if (settingsItem != nullptr)
             {
-                settingsItem->setFixedWidth(320);
+                settingsItem->setFixedWidth(m_nViewWidth);
                 settingsItem->showLabel();
             }
         }
@@ -306,7 +307,7 @@ inline void FluVNavigationView::expandView()
             auto searchItem = (FluVNavigationSearchItem *)(item);
             if (searchItem != nullptr)
             {
-                searchItem->setFixedWidth(320);
+                searchItem->setFixedWidth(m_nViewWidth);
                 searchItem->hideSearchButton();
             }
         }
@@ -445,7 +446,7 @@ void FluVNavigationView::onMenuItemClicked()
         expandView();
 
         m_animation->setStartValue(width());
-        m_animation->setEndValue(320 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+        m_animation->setEndValue(m_nViewWidth + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
         m_animation->start();
         m_bLong = true;
     }

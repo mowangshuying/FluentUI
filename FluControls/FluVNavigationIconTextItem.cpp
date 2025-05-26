@@ -166,9 +166,12 @@ void FluVNavigationIconTextItem::addItem(FluVNavigationIconTextItem *item)
     item->m_parentItem = this;
     m_items.push_back(item);
 
+    // update item depth;
     int nDepth = item->getDepth();
     item->m_emptyWidget->setFixedWidth(36 * nDepth);
     item->show();
+
+    updateDepth(item);
 
     m_vLayout1->addWidget(item);
     // m_vLayout1->addSpacing(15);
@@ -206,12 +209,13 @@ int FluVNavigationIconTextItem::calcItemW1Width()
 int FluVNavigationIconTextItem::calcItemW2Height(FluVNavigationIconTextItem *item)
 {
     int nH = 0;
-    for (int i = 0; i < item->m_vLayout1->count(); i++)
+    int nLayoutCount = item->m_vLayout1->count();
+    for (int i = 0; i < nLayoutCount; i++)
     {
         auto tmpItem = (FluVNavigationIconTextItem *)item->m_vLayout1->itemAt(i)->widget();
-        nH += tmpItem->height() + 5;
+        nH += tmpItem->height();
     }
-    nH = nH + 5;
+    nH = nH + 5 * (nLayoutCount - 1) + m_vLayout1->contentsMargins().top() + m_vLayout1->contentsMargins().bottom();
     return nH;
 }
 
@@ -222,7 +226,7 @@ void FluVNavigationIconTextItem::adjustItemHeight(FluVNavigationIconTextItem *it
 
     int nH = calcItemW2Height(item);
     item->m_wrapWidget2->setFixedHeight(nH);
-    item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());
+    item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height() + 5 + m_vMainLayout->contentsMargins().top() + m_vMainLayout->contentsMargins().bottom());
     adjustItemHeight(item->m_parentItem);
 }
 
@@ -236,6 +240,20 @@ int FluVNavigationIconTextItem::getDepth()
         item = item->m_parentItem;
     }
     return nDepth;
+}
+
+void FluVNavigationIconTextItem::updateDepth(FluVNavigationIconTextItem  *item)
+{
+    if (item == nullptr)
+        return;
+
+     // get sub items and update depth
+     for (auto tmpItem : item->getItems())
+     {
+         tmpItem->m_emptyWidget->setFixedWidth(36 * tmpItem->getDepth());
+         tmpItem->show();
+         updateDepth(tmpItem);
+     }
 }
 
 FluVNavigationIconTextItem *FluVNavigationIconTextItem::getRootItem()

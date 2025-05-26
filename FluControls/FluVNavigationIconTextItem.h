@@ -92,6 +92,8 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     int getDepth();
 
+    void updateDepth(FluVNavigationIconTextItem  *item);
+    
     FluVNavigationIconTextItem *getRootItem();
 
     void clearAllItemsSelectState()

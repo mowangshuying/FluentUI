@@ -1,9 +1,9 @@
 {
     "C_Cpp.formatting": "clangFormat",
     "qtConfigure.qtDir": "C:\\Qt",
-    "qtConfigure.qtKitDir": "C:\\Qt\\6.5.1\\msvc2019_64",
+    "qtConfigure.qtKitDir": "C:\\Qt\\6.5.3\\msvc2019_64",
     // "qtConfigure.mingwPath": "C:\\Qt\\6.5.1\\mingw_64\\bin",
     "cmake.configureEnvironment": {
-        "CMAKE_PREFIX_PATH": "C:\\Qt\\6.5.1\\msvc2019_64"
+        "CMAKE_PREFIX_PATH": "C:\\Qt\\6.5.3\\msvc2019_64"
     }
 }

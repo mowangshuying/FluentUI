@@ -245,7 +245,7 @@ void QuickStandardTitleBar::setWindowIcon(const QVariant &value)
 
 void QuickStandardTitleBar::updateMaximizeButton()
 {
-#if (FRAMELESSHELPER_CONFIG(system_button) && defined(Q_OS_LINUX))
+#if (!defined(Q_OS_MACOS) && FRAMELESSHELPER_CONFIG(system_button))
     const QQuickWindow * const w = window();
     if (!w) {
         return;

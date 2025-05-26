@@ -13,7 +13,7 @@ project(QWindowKit
 option(QWINDOWKIT_BUILD_STATIC "Build static libraries" OFF)
 option(QWINDOWKIT_BUILD_WIDGETS "Build widgets module" ON)
 option(QWINDOWKIT_BUILD_QUICK "Build quick module" OFF)
-option(QWINDOWKIT_BUILD_EXAMPLES "Build examples" OFF)
+option(QWINDOWKIT_BUILD_EXAMPLES "Build examples" ON)
 option(QWINDOWKIT_BUILD_DOCUMENTATIONS "Build documentations" OFF)
 option(QWINDOWKIT_INSTALL "Install library" ON)
 

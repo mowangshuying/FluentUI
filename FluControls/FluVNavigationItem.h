@@ -4,6 +4,7 @@
 #include <QStyle>
 
 class FluVNavigationView;
+class FluVNavigationFlyIconTextItem;
 enum class FluVNavigationItemType
 {
     Menu,
@@ -13,14 +14,31 @@ enum class FluVNavigationItemType
     Setting,
 };
 
+enum class FluVNavigationState {
+  None,
+  Collapsing,
+  Expanding,
+  Collapsed,
+  Expanded,
+  // Long,
+  // Short,
+};
+
 class FluVNavigationItem : public FluWidget
 {
     Q_OBJECT
   public:
     FluVNavigationItem(QWidget* parent = nullptr);
 
+    void setState(FluVNavigationState state);
+    FluVNavigationState getState();
+
     void setParentView(FluVNavigationView* view);
     FluVNavigationView* getParentView();
+
+    FluVNavigationFlyIconTextItem* getParentFlyItem();
+
+    void setParentFlyItem(FluVNavigationFlyIconTextItem* flyItem);
 
     FluVNavigationItemType getItemType();
 
@@ -45,6 +63,8 @@ class FluVNavigationItem : public FluWidget
   protected:
     FluVNavigationItemType m_itemType;
     FluVNavigationView* m_parentView;
+    FluVNavigationFlyIconTextItem* m_flyItem;  // for fly item
+    FluVNavigationState m_state;
     bool m_bLong;
     QString m_key;
 };

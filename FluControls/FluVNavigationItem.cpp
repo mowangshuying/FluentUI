@@ -1,8 +1,21 @@
 #include "FluVNavigationItem.h"
 #include "FluVNavigationView.h"
+#include "FluVNavigationFlyIconTextItem.h"
 
 FluVNavigationItem::FluVNavigationItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
+    m_parentView = nullptr;
+    m_flyItem = nullptr;
+}
+
+void FluVNavigationItem::setState(FluVNavigationState state)
+{
+    m_state = state;
+}
+
+FluVNavigationState FluVNavigationItem::getState()
+{
+    return m_state;
 }
 
 void FluVNavigationItem::setParentView(FluVNavigationView* view)
@@ -13,6 +26,16 @@ void FluVNavigationItem::setParentView(FluVNavigationView* view)
 FluVNavigationView* FluVNavigationItem::getParentView()
 {
     return m_parentView;
+}
+
+FluVNavigationFlyIconTextItem* FluVNavigationItem::getParentFlyItem()
+{
+    return m_flyItem;
+}
+
+void FluVNavigationItem::setParentFlyItem(FluVNavigationFlyIconTextItem* flyItem)
+{
+    m_flyItem = flyItem;
 }
 
 FluVNavigationItemType FluVNavigationItem::getItemType()

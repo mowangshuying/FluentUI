@@ -152,25 +152,25 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
 
     item2->setKey("IconsPage");
     
-    LOG_DEBUG << "item2 depth Before:" << item2->getDepth();
+    // LOG_DEBUG << "item2 depth Before:" << item2->getDepth();
     item->addItem(item2);
-    LOG_DEBUG << "item2 depth After:" << item2->getDepth();
+    // LOG_DEBUG << "item2 depth After:" << item2->getDepth();
 
     item4->addItem(item41);
     item4->addItem(item42);
     item4->addItem(item43);
 
-    LOG_DEBUG << "item41 depth:" << item41->getDepth();
-    LOG_DEBUG << "item42 depth:" << item42->getDepth();
-    LOG_DEBUG << "item43 depth:" << item43->getDepth();
+    // LOG_DEBUG << "item41 depth:" << item41->getDepth();
+    // LOG_DEBUG << "item42 depth:" << item42->getDepth();
+    // LOG_DEBUG << "item43 depth:" << item43->getDepth();
 
     item41->addItem(item421);
     item41->addItem(item422);
     item41->addItem(item423);
 
-    LOG_DEBUG << "item421 depth:" << item421->getDepth();
-    LOG_DEBUG << "item422 depth:" << item422->getDepth();
-    LOG_DEBUG << "item423 depth:" << item423->getDepth();
+    // LOG_DEBUG << "item421 depth:" << item421->getDepth();
+    // LOG_DEBUG << "item422 depth:" << item422->getDepth();
+    // LOG_DEBUG << "item423 depth:" << item423->getDepth();
     
     item->addItem(item4);
     

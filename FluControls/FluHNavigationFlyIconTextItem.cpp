@@ -46,7 +46,6 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
 
 void FluHNavigationFlyIconTextItem::adjustItemWidth()
 {
-    // LOG_DEBUG << "called";
     int nMaxWidth = 0;
     for (auto item : m_items)
     {
@@ -57,22 +56,14 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
         }
     }
 
-    int nMaxHeight = 0;
     for (auto item : m_items)
     {
         item->getWrapWidget1()->setFixedWidth(nMaxWidth);
         item->getWrapWidget2()->setFixedWidth(nMaxWidth);
-
         item->setFixedWidth(nMaxWidth);
         item->setFixedHeight(36);
-        nMaxHeight += 36;
     }
-
-    // LOG_DEBUG << "vScrollView sizeHint:" << m_vScrollView->sizeHint();
-    // LOG_DEBUG << "HFlyIconItem sizeHint:" << sizeHint();
-
-    setFixedWidth(nMaxWidth + 10);
-    // setFixedHeight(nMaxHeight + 10);
+    setFixedWidth(nMaxWidth);
 }
 
 QVBoxLayout* FluHNavigationFlyIconTextItem::getMainLayout()

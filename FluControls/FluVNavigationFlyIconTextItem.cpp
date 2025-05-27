@@ -18,7 +18,7 @@ FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*=
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_DeleteOnClose);
-
+    // hide();
     onThemeChanged();
 }
 
@@ -33,11 +33,10 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
     for (auto item : items)
     {
         auto newItem = new FluVNavigationIconTextItem(item);
+        newItem->setParentFlyItem(this);
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
-
         connect(newItem, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
-            // item->onItemClickedDirect();
             if (newItem->isLeaf())
             {
                 emit item->itemClicked();
@@ -46,12 +45,22 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
         });
     }
 
-    adjustItemSize();
+    adjustItemWidth();
 }
 
-void FluVNavigationFlyIconTextItem::adjustItemSize()
+void FluVNavigationFlyIconTextItem::adjustItemHeight()
 {
-    // LOG_DEBUG << "called";
+    int nH = 0;
+    for (auto item : m_items)
+    {
+        nH += item->height();
+    }
+    nH = nH + m_vScrollView->getMainLayout()->spacing() * (m_items.size() - 1) + m_vScrollView->getMainLayout()->contentsMargins().top() + m_vScrollView->getMainLayout()->contentsMargins().bottom();
+    setFixedHeight(nH);
+}
+
+void FluVNavigationFlyIconTextItem::adjustItemWidth()
+{
     int nMaxWidth = 0;
     for (auto item : m_items)
     {

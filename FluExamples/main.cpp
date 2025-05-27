@@ -346,7 +346,10 @@ int main(int argc, char **argv)
     //FluTabBarDemo demo;
     //demo.show();
     
-    FluWindowKitWidget demo;
+    // FluWindowKitWidget demo;
+    // demo.show();
+
+    FluHNavigationViewDemo demo;
     demo.show();
 
     return app.exec();

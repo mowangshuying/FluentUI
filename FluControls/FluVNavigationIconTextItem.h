@@ -27,7 +27,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     FluVNavigationIconTextItem(QString text, QWidget *parent = nullptr);
 
-    FluVNavigationIconTextItem(FluVNavigationIconTextItem *item);
+    FluVNavigationIconTextItem(FluVNavigationIconTextItem *item, QWidget *parent = nullptr);
 
     ~FluVNavigationIconTextItem()
     {
@@ -88,7 +88,12 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
     int calcItemW1Width();
     int calcItemW2Height(FluVNavigationIconTextItem *item);
 
+    void adjustItemWidth(FluVNavigationIconTextItem *item);
     void adjustItemHeight(FluVNavigationIconTextItem *item);
+
+    void adjustFlyItemHeight(FluVNavigationFlyIconTextItem* flyItem);
+
+    void adjustFlyItemWidth(FluVNavigationFlyIconTextItem* flyItem);
 
     int getDepth();
 

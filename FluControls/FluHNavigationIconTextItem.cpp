@@ -652,12 +652,12 @@ void FluHNavigationIconTextItem::onItemClicked()
         if (!getItems().empty())
         {
 #ifdef _DEBUG
-            static int nClickedCount = 0;
-            nClickedCount++;
-            if (nClickedCount == 2)
-            {
-                QThread::sleep(0);
-            }
+            // static int nClickedCount = 0;
+            // nClickedCount++;
+            // if (nClickedCount == 2)
+            // {
+                // QThread::sleep(0);
+            // }
 #endif
             if (m_bDown)
             {

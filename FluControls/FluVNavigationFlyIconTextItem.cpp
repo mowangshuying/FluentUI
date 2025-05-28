@@ -83,6 +83,12 @@ void FluVNavigationFlyIconTextItem::adjustItemHeight()
 
 void FluVNavigationFlyIconTextItem::adjustItemWidth()
 {
+
+    for (auto item : m_items)
+    {
+        item->adjustItemWidth(item);
+    }
+
     int nMaxWidth = 0;
     for (auto item : m_items)
     {

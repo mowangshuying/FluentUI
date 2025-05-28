@@ -79,6 +79,22 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
             m_arrow->show();
     }
 
+    void setItemWidth(int nWidth)
+    {
+        // set child item width
+        for (auto item : m_items)
+        {
+            item->getWrapWidget1()->setFixedWidth(nWidth);
+            item->getWrapWidget2()->setFixedWidth(nWidth);
+            item->setFixedWidth(nWidth);
+        }
+
+        // set self width
+        m_wrapWidget1->setFixedWidth(nWidth);
+        m_wrapWidget2->setFixedWidth(nWidth);
+        setFixedWidth(nWidth);
+    }
+
     std::vector<FluVNavigationIconTextItem *> getItems();
     void getAllItems(std::vector<FluVNavigationIconTextItem *> &totalItems);
     std::vector<FluVNavigationIconTextItem *> getAllItems();
@@ -89,6 +105,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
     int calcItemWidth();
     int calcItemW2Height(FluVNavigationIconTextItem *item);
 
+    void adjustItemWidth();
     void adjustItemWidth(FluVNavigationIconTextItem *item);
     void adjustItemHeight(FluVNavigationIconTextItem *item);
 

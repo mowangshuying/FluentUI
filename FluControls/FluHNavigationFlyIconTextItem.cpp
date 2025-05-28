@@ -63,7 +63,7 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
         item->setFixedWidth(nMaxWidth);
         item->setFixedHeight(36);
     }
-    setFixedWidth(nMaxWidth);
+    setFixedWidth(nMaxWidth + m_vScrollView->getMainLayout()->contentsMargins().left() + m_vScrollView->getMainLayout()->contentsMargins().right());
 }
 
 QVBoxLayout* FluHNavigationFlyIconTextItem::getMainLayout()

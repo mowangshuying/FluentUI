@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -86,6 +86,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
     void addItem(FluVNavigationIconTextItem *item);
 
     int calcItemW1Width();
+    int calcItemWidth();
     int calcItemW2Height(FluVNavigationIconTextItem *item);
 
     void adjustItemWidth(FluVNavigationIconTextItem *item);

@@ -237,6 +237,15 @@ set(QSS_FILES
     # "../StyleSheet/light/FluWindowkitButton.qss"
     "../StyleSheet/light/FluWindowKitTitleBar.qss"
     "../StyleSheet/light/FluWindowKitWidget.qss"
+    "../StyleSheet/light/FluHNavigationIconTextItem.qss"
+    "../StyleSheet/light/FluHNavigationMoreItem.qss"
+    "../StyleSheet/light/FluHNavigationSettingsItem.qss"
+    "../StyleSheet/light/FluHNavigationView.qss"
+    # "../StyleSheet/dark/FluHNavigationIconTextItem.qss"
+    # "../StyleSheet/dark/FluHNavigationMoreItem.qss"
+    # "../StyleSheet/dark/FluHNavigationSettingsItem.qss"
+    # "../StyleSheet/dark/FluHNavigationView.qss"
+
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

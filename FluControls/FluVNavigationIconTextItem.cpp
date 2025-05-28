@@ -1,4 +1,4 @@
-#include "FluVNavigationIconTextItem.h"
+﻿#include "FluVNavigationIconTextItem.h"
 #include "FluVNavigationMenuItem.h"
 #include <QStyle>
 #include "../FluUtils/FluUtils.h"
@@ -197,6 +197,26 @@ int FluVNavigationIconTextItem::calcItemW1Width()
 
     int nCurentWidth = margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 20 + 36 * getDepth();
     return nCurentWidth;
+}
+
+int FluVNavigationIconTextItem::calcItemWidth()
+{
+    int nCurrentWidth = calcItemW1Width();
+    int nLayoutCount = m_vLayout1->count();
+
+    for (int i = 0; i < nLayoutCount; i++)
+    {
+        if (getState() != FluVNavigationState::Expanded && getState() != FluVNavigationState::Expanding)
+        {
+            break;
+        }
+        auto tmpItem = (FluVNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
+        int nTmpWidth = tmpItem->calcItemW1Width();
+        if (nTmpWidth > nCurrentWidth)
+            nCurrentWidth = nTmpWidth;
+    }
+
+    return nCurrentWidth;
 }
 
 int FluVNavigationIconTextItem::calcItemW2Height(FluVNavigationIconTextItem *item)
@@ -402,6 +422,7 @@ void FluVNavigationIconTextItem::onItemClicked()
 
         adjustItemHeight(m_parentItem);
         adjustFlyItemHeight(getParentFlyItem());
+        adjustFlyItemWidth(getParentFlyItem());
         m_wrapWidget2->show();
 
         // adjust width
@@ -440,6 +461,7 @@ void FluVNavigationIconTextItem::onItemClicked()
             m_wrapWidget2->hide();
             adjustItemHeight(m_parentItem);
             adjustFlyItemHeight(getParentFlyItem());
+            adjustFlyItemWidth(getParentFlyItem());
         }
         setState(FluVNavigationState::Collapsed);
     }

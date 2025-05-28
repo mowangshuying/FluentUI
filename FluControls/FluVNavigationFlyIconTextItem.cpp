@@ -1,4 +1,4 @@
-#include "FluVNavigationFlyIconTextItem.h"
+﻿#include "FluVNavigationFlyIconTextItem.h"
 #include "FluVNavigationIconTextItem.h"
 #include "../FluUtils/FluStyleSheetUitls.h"
 
@@ -36,10 +36,32 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
         newItem->setParentFlyItem(this);
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
-        connect(newItem, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
-            if (newItem->isLeaf())
+        //connect(newItem, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
+        //    if (newItem->isLeaf())
+        //    {
+        //        emit item->itemClicked();
+        //        close();
+        //    }
+        //});
+    }
+
+    // get all items;
+    std::vector<FluVNavigationIconTextItem*> allitems;
+    for (auto item : m_items)
+    {
+        std::vector<FluVNavigationIconTextItem*> tmpitems;
+        item->getAllItems(tmpitems);
+        allitems.insert(allitems.end(), tmpitems.begin(), tmpitems.end());
+        allitems.push_back(item);
+    }
+
+    // connect;
+    for (auto item : allitems)
+    {
+         connect(item, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
+            if (item->isLeaf())
             {
-                emit item->itemClicked();
+                //emit item->itemClicked();
                 close();
             }
         });
@@ -64,7 +86,7 @@ void FluVNavigationFlyIconTextItem::adjustItemWidth()
     int nMaxWidth = 0;
     for (auto item : m_items)
     {
-        int nWidth = item->calcItemW1Width();
+        int nWidth = item->calcItemWidth();
         if (nWidth > nMaxWidth)
         {
             nMaxWidth = nWidth;

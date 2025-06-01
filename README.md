@@ -29,10 +29,6 @@ English | <a href="README_zh_CN.md">简体中文</a>
   git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
-* Choose a branch.
-
-  > If you want to use qrc resources, please switch to the qrc branch. Otherwise, use the master branch.
-  
 * Build
 
   >1.open FluentUI.sln with Vs2022.
@@ -49,10 +45,6 @@ English | <a href="README_zh_CN.md">简体中文</a>
   git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
-* Choose a branch.
-
-  > If you want to use qrc resources, please switch to the qrc branch. Otherwise, use the master branch.
-  
 * Build
 
   > 1.Open CMakeLists.txt with Qt Creator.

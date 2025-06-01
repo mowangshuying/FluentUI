@@ -60,7 +60,7 @@
 
 * Build
 
-  > 1.Open CMakeLists.txt with Qt Creator.
+  > 1.Open CMakeLists.txt with VsCode.
   >
   > 2.build it! 
 

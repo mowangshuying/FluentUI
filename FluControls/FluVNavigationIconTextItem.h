@@ -79,6 +79,11 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
             m_arrow->show();
     }
 
+    FluVNavigationIconTextItem* getParentItem()
+    {
+        return m_parentItem;
+    }
+
     void setItemWidth(int nWidth)
     {
         // set child item width

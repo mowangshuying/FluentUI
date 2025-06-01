@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QStyle>
@@ -36,7 +36,7 @@ class FluVNavigationItem : public FluWidget
     void setParentView(FluVNavigationView* view);
     FluVNavigationView* getParentView();
 
-    FluVNavigationFlyIconTextItem* getParentFlyItem();
+    FluVNavigationFlyIconTextItem * getFlyItem();
 
     void setParentFlyItem(FluVNavigationFlyIconTextItem* flyItem);
 

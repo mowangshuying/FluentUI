@@ -49,7 +49,21 @@ English | <a href="README_zh_CN.md">简体中文</a>
 
   > 1.Open CMakeLists.txt with Qt Creator.
   >
-  > 2.build it!
+  > 2.build it! 
+
+### Build With VsCode
+
+* Clone the repository
+
+  ```shell
+  git clone https://github.com/mowangshuying/FluentUI.git
+  ```
+
+* Build
+
+  > 1.Open CMakeLists.txt with VsCode.
+  >
+  > 2.build it! 
 
 ##  Documentations
 

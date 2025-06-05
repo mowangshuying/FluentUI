@@ -188,18 +188,18 @@ int FluVNavigationIconTextItem::calcItemW1Width()
     if (m_items.empty())
         nArrowWidth = 0;
 
-    LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
-    LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
-    LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
-    LOG_DEBUG << "nIconWidth:" << nIconWidth;
-    LOG_DEBUG << "nSpacing:" << nSpacing;
-    LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
-    LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
-    LOG_DEBUG << "getDepth:" << getDepth();
+   // LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
+   // LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
+   // LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
+   // LOG_DEBUG << "nIconWidth:" << nIconWidth;
+   // LOG_DEBUG << "nSpacing:" << nSpacing;
+   // LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
+   // LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
+   // LOG_DEBUG << "getDepth:" << getDepth();
 
 
     int nCurentWidth = margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 36 * getDepth();
-    LOG_DEBUG << "W1 width:" << nCurentWidth;
+    //LOG_DEBUG << "W1 width:" << nCurentWidth;
     return nCurentWidth;
 }
 
@@ -208,14 +208,15 @@ int FluVNavigationIconTextItem::calcItemWidth()
     int nCurrentWidth = calcItemW1Width();
     int nLayoutCount = m_vLayout1->count();
 
+    if (getState() != FluVNavigationState::Expanded && getState() != FluVNavigationState::Expanding)
+    {
+        return nCurrentWidth;
+    }
+
     for (int i = 0; i < nLayoutCount; i++)
     {
-        if (getState() != FluVNavigationState::Expanded && getState() != FluVNavigationState::Expanding)
-        {
-            break;
-        }
         auto tmpItem = (FluVNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
-        int nTmpWidth = tmpItem->calcItemW1Width();
+        int nTmpWidth = tmpItem->calcItemWidth();
         if (nTmpWidth > nCurrentWidth)
             nCurrentWidth = nTmpWidth;
     }
@@ -431,15 +432,7 @@ void FluVNavigationIconTextItem::onItemClicked()
         {
             if (getState() == FluVNavigationState::Expanding)
             {
-                int nMaxW = calcItemWidth();
-                for (int i = 0; i < m_vLayout1->count(); i++)
-                {
-                    auto tmpItem = (FluVNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
-                    tmpItem->getWrapWidget1()->setFixedWidth(nMaxW);
-                    tmpItem->getWrapWidget2()->setFixedWidth(nMaxW);
-                    tmpItem->setFixedWidth(nMaxW);
-                }
-                adjustItemWidth(m_parentItem);
+                adjustItemWidth();
                 adjustFlyItemWidth(getParentFlyItem());
             }
         }

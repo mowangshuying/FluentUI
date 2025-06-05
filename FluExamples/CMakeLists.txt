@@ -53,4 +53,5 @@ target_link_libraries(${TGT}
     FluControls
     qscintilla
     qrcode
+    Qt${QT_VERSION_MAJOR}::Charts
 )

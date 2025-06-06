@@ -14,6 +14,8 @@ public:
     {
         setWindowTitle(tr("LineSeries Demo"));
 
+        
+
         QList<QLineSeries *> m_series;
         
         QLineSeries *s1 = new QLineSeries;
@@ -70,26 +72,36 @@ public:
     
         // append points
         s1->append(0, 6);
-        s1->append(2, 4);
-        s1->append(3, 8);
-        s1->append(7, 4);
-        s1->append(10, 5);
-        *s1 << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3) << QPointF(20, 2);
+        s1->append(1, 4);
+        s1->append(2, 8);
+        s1->append(3, 4);
+        s1->append(4, 5);
+        s1->append(5, 6);
+        s1->append(6, 4);
+        s1->append(7, 8);
+        s1->append(8, 4);
+        s1->append(9, 5);
+
+       // *s1 << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3) << QPointF(20, 2);
+
     
         s2->append(0, 8);
         s2->append(2, 5);
         s2->append(3, 3);
         s2->append(7, 9);
         s2->append(10, 2);
-        *s2 << QPointF(11, 3) << QPointF(13, 8) << QPointF(17, 2) << QPointF(18, 5) << QPointF(20, 7);
+
+      // *s2 << QPointF(11, 3) << QPointF(13, 8) << QPointF(17, 2) << QPointF(18, 5) << QPointF(20, 7);
+
+
     
     
         QChart *chart = new QChart();
-        chart->setTheme(QChart::ChartThemeLight);
+        // chart->setTheme(QChart::ChartThemeLight);
         //chart->setAnimationOptions(QChart::AllAnimations);
 
         // set background color; choose one of the theme or background color
-        //chart->setBackgroundBrush(QBrush(QColor(243,243,243)));
+        chart->setBackgroundBrush(QBrush(QColor(243,243,243)));
 
         // set shadow enabled
         //chart->setDropShadowEnabled(true);
@@ -107,24 +119,35 @@ public:
         // add s2;
         chart->addSeries(s2);
 
-        
-        chart->createDefaultAxes();
-        auto xAxis = qobject_cast<QValueAxis *>(chart->axes(Qt::Horizontal).first());
-        auto yAxis = qobject_cast<QValueAxis *>(chart->axes(Qt::Vertical).first());
-        if (xAxis){
-            xAxis->setRange(0, 25);
-            xAxis->setGridLineVisible(false);
-        }
+        // x; y;
+        auto xAxis = new QValueAxis;
+        auto yAxis = new QValueAxis;
 
-        if (yAxis){
-            yAxis->setRange(0, 15);
-            yAxis->setGridLineVisible(false);
-        }
+        xAxis->setRange(0, 30);
+        yAxis->setRange(0, 30);
+
+        xAxis->setTitleText("X");
+        yAxis->setTitleText("Y");
+
+        xAxis->setLabelFormat("%.1f");
+        xAxis->setTickCount(11);
+        xAxis->setMinorTickCount(2);
+        yAxis->setLabelFormat("%.1f");
+        yAxis->setTickCount(11);
+        yAxis->setMinorTickCount(2);
+
+        chart->addAxis(xAxis, Qt::AlignBottom);
+        chart->addAxis(yAxis, Qt::AlignLeft);
+
+        s1->attachAxis(xAxis);
+        s1->attachAxis(yAxis);
+        s2->attachAxis(xAxis);
+        s2->attachAxis(yAxis);
 
 
         chart->setTitle("Simple line chart example");
         chart->setTitleBrush(QBrush(Qt::black));
-        chart->setTitleFont(QFont("微软雅黑"));
+        chart->setTitleFont(QFont("微软雅黑", 18));
     
         //chart->legend()->setVisible(true);
         //chart->legend()->setAlignment(Qt::AlignBottom);

@@ -354,11 +354,11 @@ int main(int argc, char **argv)
     //FluHNavigationViewDemo demo;
     //demo.show();
 
-    // FluLineSeriesDemo demo;
-    // demo.show();
-
-    FluPieSeriesDemo demo;
+    FluLineSeriesDemo demo;
     demo.show();
+
+    // FluPieSeriesDemo demo;
+    // demo.show();
     
     return app.exec();
 }

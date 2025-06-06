@@ -13,7 +13,7 @@ FluMSWindow::FluMSWindow(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(par
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
     m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
-    m_titleBar->setFixedHeight(48);
+    m_titleBar->setFixedHeight(36);
 
     m_navView = new FluMSNavigationView(this);
     m_sLayout = new FluStackedLayout;

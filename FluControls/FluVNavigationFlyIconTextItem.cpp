@@ -10,11 +10,9 @@ FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*=
 
     m_vMainLayout = new QVBoxLayout;
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->setSpacing(0);
     setLayout(m_vMainLayout);
 
     m_vScrollView->getMainLayout()->setContentsMargins(4, 4, 4, 4);
-    m_vScrollView->getMainLayout()->setSpacing(5);
     m_vMainLayout->addWidget(m_vScrollView);
 
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
@@ -79,12 +77,7 @@ void FluVNavigationFlyIconTextItem::adjustItemHeight()
     {
         nH += item->height();
     }
-    nH += m_vScrollView->getMainLayout()->spacing() * (m_items.size() - 1) + m_vScrollView->getMainLayout()->contentsMargins().top() + m_vScrollView->getMainLayout()->contentsMargins().bottom();
-    if (nH > 450)
-        nH = 450;
-
-    m_vScrollView->setFixedHeight(nH);
-    nH += m_vMainLayout->contentsMargins().top() + m_vMainLayout->contentsMargins().bottom();
+    nH = nH + m_vScrollView->getMainLayout()->spacing() * (m_items.size() - 1) + m_vScrollView->getMainLayout()->contentsMargins().top() + m_vScrollView->getMainLayout()->contentsMargins().bottom();
     setFixedHeight(nH);
 }
 

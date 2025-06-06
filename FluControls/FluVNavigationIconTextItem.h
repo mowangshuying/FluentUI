@@ -79,11 +79,6 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
             m_arrow->show();
     }
 
-    FluVNavigationIconTextItem* getParentItem()
-    {
-        return m_parentItem;
-    }
-
     void setItemWidth(int nWidth)
     {
         // set child item width
@@ -98,6 +93,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
         m_wrapWidget1->setFixedWidth(nWidth);
         m_wrapWidget2->setFixedWidth(nWidth);
         setFixedWidth(nWidth);
+        LOG_DEBUG << "item:" << m_label->text() << " set width:" << nWidth;
     }
 
     std::vector<FluVNavigationIconTextItem *> getItems();

@@ -54,6 +54,15 @@ void FluVNavigationMenuItem::paintEvent(QPaintEvent *event)
 
 void FluVNavigationMenuItem::onThemeChanged()
 {
-    m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, FluThemeUtils::getUtils()->getTheme()));
+    if (FluThemeUtils::isLightTheme())
+    {
+        m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(8, 8, 8)));
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationMenuItem.qss", this);
+    }
+    else
+    {
+        m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, QColor(239, 239, 239)));
+        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationMenuItem.qss", this);
+    }
     FluStyleSheetUitls::setQssByFileName("FluVNavigationMenuItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -66,6 +66,8 @@
 #include "FluPaginationDemo.h"
 #include "FluQrCodeDemo.h"
 #include "FluCommandBarDemo.h"
+#include "FluLineSeriesDemo.h"
+#include "FluPieSeriesDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -349,8 +351,14 @@ int main(int argc, char **argv)
     // FluWindowKitWidget demo;
     // demo.show();
 
-    FluHNavigationViewDemo demo;
+    //FluHNavigationViewDemo demo;
+    //demo.show();
+
+    FluLineSeriesDemo demo;
     demo.show();
 
+    // FluPieSeriesDemo demo;
+    // demo.show();
+    
     return app.exec();
 }

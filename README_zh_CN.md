@@ -20,7 +20,7 @@
 
 ## 开始
 
-### Vs2022 构建方式
+### Vs2022构建方式
 
 * 克隆仓库.
 
@@ -28,6 +28,10 @@
   git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
+* 选择分支.
+
+  > 如果你想使用qrc资源的话，请切换成qrc分支，否则请使用master分支.
+  
 * Build
 
   >1.用Vs2022打开FluentUI.sln
@@ -44,25 +48,15 @@
   git clone https://github.com/mowangshuying/FluentUI.git
   ```
 
+* 选择分支.
+
+  > 如果你想使用qrc资源的话，请切换成qrc分支，否则请使用master分支.
+  
 * Build
 
   >1.用Qt Creator打开CMakeLists.txt.
   >
   >2.编译.
-
-### VsCode 构建方式
-
-* Clone the repository
-
-  ```shell
-  git clone https://github.com/mowangshuying/FluentUI.git
-  ```
-
-* Build
-
-  > 1.Open CMakeLists.txt with VsCode.
-  >
-  > 2.build it! 
 
 ##  文档
 

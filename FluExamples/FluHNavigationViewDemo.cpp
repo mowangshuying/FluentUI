@@ -22,7 +22,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
     m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
-    m_titleBar->setFixedHeight(48);
+    m_titleBar->setFixedHeight(36);
 
     // new
     m_vMainLayout->setAlignment(Qt::AlignTop);

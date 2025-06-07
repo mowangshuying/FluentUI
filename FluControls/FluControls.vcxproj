@@ -151,6 +151,8 @@
     <ClCompile Include="FluDatePickerViewMask.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
+    <ClCompile Include="FluFrameLessTitleBar.cpp" />
+    <ClCompile Include="FluFrameLessWidget.cpp" />
     <ClCompile Include="FluHNavigationFlyIconTextItem.cpp" />
     <ClCompile Include="FluHNavigationIconTextItem.cpp" />
     <ClCompile Include="FluHNavigationItem.cpp" />
@@ -247,7 +249,7 @@
     <ClCompile Include="FluExpander.cpp" />
     <ClCompile Include="FluHFlipView.cpp" />
     <ClCompile Include="FluFlowLayout.cpp" />
-    <ClCompile Include="FluFrameLessWidget.cpp" />
+    <ClCompile Include="FluFrameLessWidgetEx.cpp" />
     <ClCompile Include="FluFWScrollView.cpp" />
     <ClCompile Include="FluGraphicalButton.cpp" />
     <ClCompile Include="FluHCard.cpp" />
@@ -320,6 +322,8 @@
     <QtMoc Include="FluCommandBarItem.h" />
     <ClInclude Include="FluCommandBarItemType.h" />
     <QtMoc Include="FluCommandBarSplitItem.h" />
+    <QtMoc Include="FluFrameLessWidget.h" />
+    <QtMoc Include="FluFrameLessTitleBar.h" />
     <ClInclude Include="FluIndicatorMenuItemDeleage.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />
@@ -460,7 +464,7 @@
     <QtMoc Include="FluVScrollView.h" />
     <QtMoc Include="FluHCard.h" />
     <QtMoc Include="FluVCard.h" />
-    <QtMoc Include="FluFrameLessWidget.h" />
+    <QtMoc Include="FluFrameLessWidgetEx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

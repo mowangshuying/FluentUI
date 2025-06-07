@@ -68,6 +68,7 @@
 #include "FluCommandBarDemo.h"
 #include "FluLineSeriesDemo.h"
 #include "FluPieSeriesDemo.h"
+#include "../FluControls/FluFrameLessWidgetEx.h"
 
 int main(int argc, char **argv)
 {
@@ -354,11 +355,13 @@ int main(int argc, char **argv)
     //FluHNavigationViewDemo demo;
     //demo.show();
 
-    FluLineSeriesDemo demo;
-    demo.show();
+    //FluLineSeriesDemo demo;
+    //demo.show();
 
     // FluPieSeriesDemo demo;
     // demo.show();
     
+    FluFrameLessWidgetEx demo;
+    demo.show();
     return app.exec();
 }

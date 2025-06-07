@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluTemplateDemo.h"
 #include <QtCharts/QLineSeries>
@@ -13,9 +13,6 @@ public:
     FluLineSeriesDemo(QWidget* parent = nullptr)
     {
         setWindowTitle(tr("LineSeries Demo"));
-
-        
-
         QList<QLineSeries *> m_series;
         
         QLineSeries *s1 = new QLineSeries;

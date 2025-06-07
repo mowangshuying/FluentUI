@@ -2,6 +2,8 @@
 #include <QTimer>
 #include <FramelessHelper/Core/Utils>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
+#include "../FluUtils/FluUtils.h"
+#include <QApplication>
 
 
 using namespace wangwenx190::FramelessHelper::Global;
@@ -10,13 +12,69 @@ using namespace wangwenx190::FramelessHelper;
  FluFrameLessTitleBar::FluFrameLessTitleBar(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
     m_titleBarLayout = new QHBoxLayout(this);
+    m_titleBarLayout->setSpacing(0);
+    m_titleBarLayout->setContentsMargins(0, 0, 0, 0);
+
+
     m_vSystemButtonsOuterLayout = new QVBoxLayout(this);
     m_hSystemButtonsInnerLayout = new QHBoxLayout(this);
 #ifndef Q_OS_MACOS
-    m_minimizeButton = new QPushButton;
-    m_maximizeButton = new QPushButton;
-    m_closeButton = new QPushButton;
+    m_minimizeButton = new QPushButton(this);
+    m_minimizeButton->setObjectName("minButton");
+    m_minimizeButton->setIconSize(QSize(20, 20));
+    m_minimizeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMinimize, FluThemeUtils::getUtils()->getTheme()));
+    connect(m_minimizeButton, &QPushButton::clicked, window(), &QWidget::showMinimized);
+
+    m_maximizeButton = new QPushButton(this);
+    m_maximizeButton->setObjectName("maxButton");
+    m_maximizeButton->setIconSize(QSize(20, 20));
+    m_maximizeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
+    connect(m_maximizeButton, &QPushButton::clicked, this, [=](bool bClicked) {
+        LOG_DEBUG << "clicked maximize button";
+        if (window()->isMaximized())
+            window()->showNormal();
+        else
+            window()->showMaximized();
+
+    });
+    
+    m_closeButton = new QPushButton(this);
+    m_closeButton->setObjectName("closeButton");
+    m_closeButton->setIconSize(QSize(20, 20));
+    m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
+
+    connect(m_closeButton, &QPushButton::clicked, this, [this]() {
+        LOG_DEBUG << "click close button";
+        if (m_bHideWhenClose)
+            window()->hide();
+        else
+            window()->close();
+        });
+    m_hSystemButtonsInnerLayout->setSpacing(0);
+    m_hSystemButtonsInnerLayout->setContentsMargins(0, 0, 0, 0);
+    m_hSystemButtonsInnerLayout->addWidget(m_minimizeButton);
+    m_hSystemButtonsInnerLayout->addWidget(m_maximizeButton);
+    m_hSystemButtonsInnerLayout->addWidget(m_closeButton);
+
+    m_vSystemButtonsOuterLayout->addLayout(m_hSystemButtonsInnerLayout);
+    m_titleBarLayout->addStretch();
+    m_titleBarLayout->addLayout(m_vSystemButtonsOuterLayout);
+
+    FramelessWidgetsHelper::get(this)->setHitTestVisible(m_minimizeButton);
+    FramelessWidgetsHelper::get(this)->setHitTestVisible(m_maximizeButton);
+    FramelessWidgetsHelper::get(this)->setHitTestVisible(m_closeButton);
+
 #endif
+
+    retranslateUi();
+    updateTitleBarColor();
+    updateChromeButtonColor();
+    window()->installEventFilter(this);
+
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 }
 
 QRect FluFrameLessTitleBar::windowIconRect() const
@@ -78,7 +136,7 @@ QFont FluFrameLessTitleBar::defaultFont() const
 
 FluFrameLessTitleBar::FontMetrics FluFrameLessTitleBar::titleLabelSize() const
 {
-    const QString text = windowTitle();
+    const QString text = window()->windowTitle();
     if (text.isEmpty())
     {
         return {};
@@ -131,41 +189,17 @@ void FluFrameLessTitleBar::updateTitleBarColor()
 
 void FluFrameLessTitleBar::updateChromeButtonColor()
 {
-//#if (!defined(Q_OS_MACOS) && FRAMELESSHELPER_CONFIG(system_button))
-//    const bool active = window->isActiveWindow();
-//    const QColor activeForeground = chromePalette->titleBarActiveForegroundColor();
-//    const QColor inactiveForeground = chromePalette->titleBarInactiveForegroundColor();
-//    const QColor normal = chromePalette->chromeButtonNormalColor();
-//    const QColor hover = chromePalette->chromeButtonHoverColor();
-//    const QColor press = chromePalette->chromeButtonPressColor();
-//    minimizeButton->setActiveForegroundColor(activeForeground);
-//    minimizeButton->setInactiveForegroundColor(inactiveForeground);
-//    minimizeButton->setNormalColor(normal);
-//    minimizeButton->setHoverColor(hover);
-//    minimizeButton->setPressColor(press);
-//    minimizeButton->setActive(active);
-//    maximizeButton->setActiveForegroundColor(activeForeground);
-//    maximizeButton->setInactiveForegroundColor(inactiveForeground);
-//    maximizeButton->setNormalColor(normal);
-//    maximizeButton->setHoverColor(hover);
-//    maximizeButton->setPressColor(press);
-//    maximizeButton->setActive(active);
-//    closeButton->setActiveForegroundColor(activeForeground);
-//    closeButton->setInactiveForegroundColor(inactiveForeground);
-//    closeButton->setNormalColor(chromePalette->closeButtonNormalColor());
-//    closeButton->setHoverColor(chromePalette->closeButtonHoverColor());
-//    closeButton->setPressColor(chromePalette->closeButtonPressColor());
-//    closeButton->setActive(active);
-//#endif
+#ifndef Q_OS_MACOS
+#endif
 }
 
 void FluFrameLessTitleBar::retranslateUi()
 {
-//#if defined(Q_OS_LINUX))
-//    minimizeButton->setToolTip(tr("Minimize"));
-//    maximizeButton->setToolTip(window->isMaximized() ? tr("Restore") : tr("Maximize"));
-//    closeButton->setToolTip(tr("Close"));
-//#endif
+#ifdef Q_OS_LINUX
+    //m_minimizeButton->setToolTip(tr("Minimize"));
+    //m_maximizeButton->setToolTip(window->isMaximized() ? tr("Restore") : tr("Maximize"));
+    //m_closeButton->setToolTip(tr("Close"));
+#endif
 }
 
 bool FluFrameLessTitleBar::mouseEventHandler(QMouseEvent* event)
@@ -281,7 +315,7 @@ bool FluFrameLessTitleBar::eventFilter(QObject* object, QEvent* event)
         default:
             break;
     }
-    return QObject::eventFilter(object, event);
+    return QWidget::eventFilter(object, event);
 }
 
 Qt::Alignment FluFrameLessTitleBar::titleLabelAlignment() const
@@ -400,7 +434,7 @@ void FluFrameLessTitleBar::setWindowIconVisible(const bool value)
     // wrong). So here we have to use the top level widget directly, as a special case.
     // NOTE: In your own code, you should always use FramelessWidgetsHelper::get(this)
     // if possible.
-    FramelessWidgetsHelper::get(this)->setHitTestVisible(windowIconRect(), windowIconVisible_real());
+    FramelessWidgetsHelper::get(window())->setHitTestVisible(windowIconRect(), windowIconVisible_real());
 #endif  // Q_OS_MACOS
 }
 
@@ -421,77 +455,114 @@ void FluFrameLessTitleBar::setTitleFont(const QFont& value)
     Q_EMIT titleFontChanged();
 }
 
+void FluFrameLessTitleBar::emulateLeaveEvent(QWidget* widget)
+{
+    Q_ASSERT(widget);
+    if (!widget)
+    {
+        return;
+    }
+    QTimer::singleShot(0, widget, [widget]() {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+        const QScreen* screen = widget->screen();
+#else
+        const QScreen *screen = widget->windowHandle()->screen();
+#endif
+        const QPoint globalPos = QCursor::pos(screen);
+        if (!QRect(widget->mapToGlobal(QPoint{0, 0}), widget->size()).contains(globalPos))
+        {
+            QCoreApplication::postEvent(widget, new QEvent(QEvent::Leave));
+            if (widget->testAttribute(Qt::WA_Hover))
+            {
+                const QPoint localPos = widget->mapFromGlobal(globalPos);
+                const QPoint scenePos = widget->window()->mapFromGlobal(globalPos);
+                static constexpr const auto oldPos = QPoint{};
+                const Qt::KeyboardModifiers modifiers = QGuiApplication::keyboardModifiers();
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 4, 0))
+                const auto event = new QHoverEvent(QEvent::HoverLeave, scenePos, globalPos, oldPos, modifiers);
+                Q_UNUSED(localPos);
+#elif (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))
+                const auto event =  new QHoverEvent(QEvent::HoverLeave, localPos, globalPos, oldPos, modifiers);
+                Q_UNUSED(scenePos);
+#else
+                const auto event =  new QHoverEvent(QEvent::HoverLeave, localPos, oldPos, modifiers);
+                Q_UNUSED(scenePos);
+#endif
+                QCoreApplication::postEvent(widget, event);
+            }
+        }
+    });
+}
+
 void FluFrameLessTitleBar::paintEvent(QPaintEvent* event)
 {
-//    Q_ASSERT(event);
-//    if (!event)
-//    {
-//        return;
-//    }
-//    Q_D(StandardTitleBar);
-//    if (!d->window)
-//    {
-//        return;
-//    }
-//    const bool active = d->window->isActiveWindow();
-//    const QColor backgroundColor = (active ? d->chromePalette->titleBarActiveBackgroundColor() : d->chromePalette->titleBarInactiveBackgroundColor());
-//    const QColor foregroundColor = (active ? d->chromePalette->titleBarActiveForegroundColor() : d->chromePalette->titleBarInactiveForegroundColor());
-//    QPainter painter(this);
-//    painter.save();
-//    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
-//    painter.fillRect(QRect(QPoint(0, 0), size()), backgroundColor);
-//    if (d->titleLabelVisible)
-//    {
-//        const QString text = d->window->windowTitle();
-//        if (!text.isEmpty())
-//        {
-//            painter.setPen(foregroundColor);
-//            painter.setFont(d->titleFont.value_or(d->defaultFont()));
-//            const auto pos = [this, d]() -> QPoint {
-//                const StandardTitleBarPrivate::FontMetrics labelSize = d->titleLabelSize();
-//                const int titleBarWidth = width();
-//                int x = 0;
-//                if (d->labelAlignment & Qt::AlignLeft)
-//                {
-//                    x = (d->windowIconRect().right() + kDefaultTitleBarContentsMargin);
-//                }
-//                else if (d->labelAlignment & Qt::AlignRight)
-//                {
-//                    x = (titleBarWidth - kDefaultTitleBarContentsMargin - labelSize.width);
-//#if (!defined(Q_OS_MACOS) && FRAMELESSHELPER_CONFIG(system_button))
-//                    x -= (titleBarWidth - d->minimizeButton->x());
-//#endif
-//                }
-//                else if (d->labelAlignment & Qt::AlignHCenter)
-//                {
-//                    x = std::round(qreal(titleBarWidth - labelSize.width) / qreal(2));
-//                }
-//                else
-//                {
-//                    WARNING << "The alignment for the title label is not set!";
-//                }
-//                const int y = std::round((qreal(height() - labelSize.height) / qreal(2)) + qreal(labelSize.ascent));
-//                return {x, y};
-//            }();
-//            const int textMaxWidth = d->titleLabelMaxWidth();
-//            const QString elidedText = painter.fontMetrics().elidedText(text, Qt::ElideRight, textMaxWidth, Qt::TextShowMnemonic);
-//            // No need to draw the text if there's only the elide mark left (or even less).
-//            if (elidedText.size() > 3)
-//            {
-//                painter.drawText(pos, elidedText);
-//            }
-//        }
-//    }
-//    if (d->windowIconVisible)
-//    {
-//        const QIcon icon = d->window->windowIcon();
-//        if (!icon.isNull())
-//        {
-//            icon.paint(&painter, d->windowIconRect());
-//        }
-//    }
-//    painter.restore();
-//    event->accept();
+    //LOG_DEBUG << "called";
+    Q_ASSERT(event);
+    if (!event)
+    {
+        return;
+    }
+
+    const bool active = window()->isActiveWindow();
+    const QColor backgroundColor = Qt::white;
+    const QColor foregroundColor = Qt::black;
+    QPainter painter(this);
+    painter.save();
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
+    painter.fillRect(QRect(QPoint(0, 0), size()), backgroundColor);
+    if (m_bTitleLabelVisible)
+    {
+        const QString text = window()->windowTitle();
+        if (!text.isEmpty())
+        {
+            painter.setPen(foregroundColor);
+            painter.setFont(m_titleFont.value_or(defaultFont()));
+            const auto pos = [this]() -> QPoint {
+                const FontMetrics labelSize =titleLabelSize();
+                const int titleBarWidth = width();
+                int x = 0;
+                if (m_labelAlignment & Qt::AlignLeft)
+                {
+                    x = (windowIconRect().right() + kDefaultTitleBarContentsMargin);
+                }
+                else if (m_labelAlignment & Qt::AlignRight)
+                {
+                    x = (titleBarWidth - kDefaultTitleBarContentsMargin - labelSize.width);
+#if (!defined(Q_OS_MACOS) && FRAMELESSHELPER_CONFIG(system_button))
+                    x -= (titleBarWidth - m_minimizeButton->x());
+#endif
+                }
+                else if (m_labelAlignment & Qt::AlignHCenter)
+                {
+                    x = std::round(qreal(titleBarWidth - labelSize.width) / qreal(2));
+                }
+                else
+                {
+                    LOG_WARN << "The alignment for the title label is not set!";
+                }
+                int y = std::round((qreal(height() - labelSize.height) / qreal(2))+ qreal(labelSize.ascent));
+                //y = 20;
+                return {x, y};
+            }();
+            const int textMaxWidth = titleLabelMaxWidth();
+            const QString elidedText = painter.fontMetrics().elidedText(text, Qt::ElideRight, textMaxWidth, Qt::TextShowMnemonic);
+            // No need to draw the text if there's only the elide mark left (or even less).
+            if (elidedText.size() > 3)
+            {
+                painter.drawText(pos, elidedText);
+            }
+        }
+    }
+    if (m_bWindowIconVisible)
+    {
+        const QIcon icon = window()->windowIcon();
+        if (!icon.isNull())
+        {
+            icon.paint(&painter, windowIconRect());
+        }
+    }
+    painter.restore();
+    event->accept();
 }
 
 void FluFrameLessTitleBar::mouseReleaseEvent(QMouseEvent* event)
@@ -502,4 +573,9 @@ void FluFrameLessTitleBar::mouseReleaseEvent(QMouseEvent* event)
 void FluFrameLessTitleBar::mouseDoubleClickEvent(QMouseEvent* event)
 {
     mouseEventHandler(event);
+}
+
+void FluFrameLessTitleBar::onThemeChanged()
+{
+    FluStyleSheetUitls::setQssByFileName("FluFrameLessTitleBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

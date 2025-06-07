@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.5.1_msvc2019_64</QtInstall>
-    <QtModules>core;gui;network;widgets;printsupport;statemachine;svg</QtModules>
+    <QtModules>core;gui;network;widgets;printsupport;statemachine;svg;charts</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -126,6 +126,7 @@
     <ClCompile Include="FluComboBoxDemo.cpp" />
     <ClCompile Include="FluCommandBarDemo.cpp" />
     <ClCompile Include="FluIntructionsDemo.cpp" />
+    <ClCompile Include="FluLineSeriesDemo.cpp" />
     <ClCompile Include="FluMSWindowDemo.cpp" />
     <ClCompile Include="FluPaginationDemo.cpp" />
     <ClCompile Include="FluQrCodeDemo.cpp" />
@@ -217,6 +218,7 @@
     <QtMoc Include="FluSplitterDemo.h" />
     <QtMoc Include="FluPaginationDemo.h" />
     <QtMoc Include="FluCommandBarDemo.h" />
+    <QtMoc Include="FluLineSeriesDemo.h" />
     <ClInclude Include="FluQrCodeDemo.h" />
     <ClInclude Include="FluRoundMenuDemo.h" />
     <QtMoc Include="FluShortcutPickerDemo.h" />

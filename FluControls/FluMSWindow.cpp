@@ -1,4 +1,4 @@
-#include "FluMSWindow.h"
+﻿#include "FluMSWindow.h"
 #include "FluMSNavigationItem.h"
 
 FluMSWindow::FluMSWindow(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)

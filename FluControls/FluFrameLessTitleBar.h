@@ -87,7 +87,9 @@ class FluFrameLessTitleBar : public QWidget
       Q_NODISCARD QFont titleFont() const;
       void setTitleFont(const QFont& value);
 
+      virtual void emulateLeaveEvent(QWidget* widget);
 
+    protected:
        void paintEvent(QPaintEvent* event) override;
        void mouseReleaseEvent(QMouseEvent* event) override;
        void mouseDoubleClickEvent(QMouseEvent* event) override;
@@ -100,11 +102,18 @@ class FluFrameLessTitleBar : public QWidget
        void windowIconSizeChanged();
        void windowIconVisibleChanged();
        void titleFontChanged();
-      
+ public slots:
+       void onThemeChanged();
   protected:
       QHBoxLayout* m_titleBarLayout;
 	  QVBoxLayout* m_vSystemButtonsOuterLayout;
       QHBoxLayout* m_hSystemButtonsInnerLayout;
+
+      //// icons;
+      //QLabel* m_iconLabel;
+
+      //// title;
+      //QLabel* m_titleLabel;
 
 	  // buttons;
       QPushButton* m_minimizeButton;
@@ -112,8 +121,8 @@ class FluFrameLessTitleBar : public QWidget
       QPushButton* m_closeButton;
 
 	  bool m_bExtended;
-      Qt::Alignment m_labelAlignment;
-      bool m_bHideWhenClose;
+      Qt::Alignment m_labelAlignment = Qt::AlignLeft | Qt:: AlignVCenter;
+      bool m_bHideWhenClose = false;
       
       bool m_bTitleLabelVisible = true;
       std::optional<QSize> m_windowIconSize = std::nullopt;

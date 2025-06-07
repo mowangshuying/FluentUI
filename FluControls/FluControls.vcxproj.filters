@@ -35,7 +35,7 @@
     <ClCompile Include="FluFlowLayout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FluFrameLessWidget.cpp">
+    <ClCompile Include="FluFrameLessWidgetEx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FluVCard.cpp">
@@ -524,6 +524,12 @@
     <ClCompile Include="FluCommandBarSplitItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluFrameLessWidget.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluFrameLessTitleBar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -538,7 +544,7 @@
     <QtMoc Include="FluTabWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="FluFrameLessWidget.h">
+    <QtMoc Include="FluFrameLessWidgetEx.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluVCard.h">
@@ -1010,6 +1016,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluCommandBarSplitItem.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluFrameLessWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluFrameLessTitleBar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

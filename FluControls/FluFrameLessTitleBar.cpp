@@ -85,25 +85,25 @@ QRect FluFrameLessTitleBar::windowIconRect() const
     }
     const QSize size = windowIconSize();
 #ifdef Q_OS_MACOS
-    const auto x = [this, q, &size]() -> int {
-        if (labelAlignment & Qt::AlignLeft)
+    const auto x = [this, &size]() -> int {
+        if (m_labelAlignment & Qt::AlignLeft)
         {
             return (kMacOSChromeButtonAreaWidth + kDefaultTitleBarContentsMargin);
         }
-        const int titleBarWidth = q->width();
+        const int titleBarWidth = width();
         const int labelWidth = titleLabelSize().width;
-        if (labelAlignment & Qt::AlignRight)
+        if (m_labelAlignment & Qt::AlignRight)
         {
             // We need two spacer here, one is on the right edge of the title bar,
             // the other one is between the window icon and the window label.
             return (titleBarWidth - kDefaultTitleBarContentsMargin - labelWidth - kDefaultTitleBarContentsMargin - size.width());
         }
-        if (labelAlignment & Qt::AlignHCenter)
+        if (m_labelAlignment & Qt::AlignHCenter)
         {
             const int centeredX = std::round(qreal(titleBarWidth - labelWidth) / qreal(2));
             return (centeredX - kDefaultTitleBarContentsMargin - size.width());
         }
-        WARNING << "The alignment for the title label is not set!";
+        //WARNING << "The alignment for the title label is not set!";
         return 0;
     }();
 #else   // !Q_OS_MACOS

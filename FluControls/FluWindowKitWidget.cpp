@@ -59,7 +59,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
 #endif
 
     m_titleBar = new FluWindowKitTitleBar;
-    m_titleBar->setFixedHeight(36);
+    m_titleBar->setFixedHeight(35);
 #ifndef Q_OS_MAC
     m_titleBar->setIconButton(m_iconButton);
     m_titleBar->setPinButton(m_pinButton);

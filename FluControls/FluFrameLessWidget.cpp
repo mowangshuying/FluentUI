@@ -12,6 +12,8 @@
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qfileiconprovider.h>
 #include <QtWidgets/qlabel.h>
+#include <QEvent>
+#include <QWindowStateChangeEvent>
 
 FRAMELESSHELPER_USE_NAMESPACE
 
@@ -65,6 +67,18 @@ void FluFrameLessWidget::initialize()
     helper->setSystemButton(m_titleBar->maximizeButton(), SystemButtonType::Maximize);
     helper->setSystemButton(m_titleBar->closeButton(), SystemButtonType::Close);
 #endif  // Q_OS_MACOS
+}
+
+void FluFrameLessWidget::changeEvent(QEvent *event)
+{
+    if (QEvent::WindowStateChange == event->type())
+    {
+        QWindowStateChangeEvent *stateEvent = dynamic_cast<QWindowStateChangeEvent *>(event);
+        if (Q_NULLPTR != stateEvent)
+        {
+            m_titleBar->maximizeButton()->setButtonType(window()->isMaximized() ? SystemButtonType::Restore : SystemButtonType::Maximize);
+        }
+    }
 }
 
 void FluFrameLessWidget::updateStyleSheet()

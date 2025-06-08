@@ -202,6 +202,7 @@
     <ClCompile Include="FluTeachingTipContent.cpp" />
     <ClCompile Include="FluTextEditWrap.cpp" />
     <ClCompile Include="FluTextToggleSwitchEx.cpp" />
+    <ClCompile Include="FluThemeButton.cpp" />
     <ClCompile Include="FluTimeLine.cpp" />
     <ClCompile Include="FluTimeLineIcon.cpp" />
     <ClCompile Include="FluTimeLineItem.cpp" />
@@ -296,6 +297,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluThemeButton.h" />
     <QtMoc Include="FluPaginationItem.h" />
     <QtMoc Include="FluPagination.h" />
     <QtMoc Include="FluValueObject.h" />

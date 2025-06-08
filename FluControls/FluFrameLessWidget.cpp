@@ -71,6 +71,7 @@ void FluFrameLessWidget::initialize()
 
 void FluFrameLessWidget::changeEvent(QEvent *event)
 {
+#ifndef Q_OS_MACOS
     if (QEvent::WindowStateChange == event->type())
     {
         QWindowStateChangeEvent *stateEvent = dynamic_cast<QWindowStateChangeEvent *>(event);
@@ -79,6 +80,7 @@ void FluFrameLessWidget::changeEvent(QEvent *event)
             m_titleBar->maximizeButton()->setButtonType(window()->isMaximized() ? SystemButtonType::Restore : SystemButtonType::Maximize);
         }
     }
+#endif
 }
 
 void FluFrameLessWidget::updateStyleSheet()

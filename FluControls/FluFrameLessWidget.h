@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <FramelessHelper/Widgets/FramelessWidget>
 #include <QHBoxLayout>
@@ -24,6 +24,8 @@ class FluFrameLessWidget : public FRAMELESSHELPER_PREPEND_NAMESPACE(FramelessWid
 
     virtual void waitReady();
     virtual void initialize();
+
+    void changeEvent(QEvent *event);
 
   protected:
     void closeEvent(QCloseEvent *event) override;

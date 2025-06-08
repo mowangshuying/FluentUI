@@ -530,6 +530,9 @@
     <ClCompile Include="FluFrameLessTitleBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluThemeButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -1022,6 +1025,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluFrameLessTitleBar.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluThemeButton.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

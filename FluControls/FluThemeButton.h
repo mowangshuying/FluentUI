@@ -1,0 +1,58 @@
+﻿#pragma once
+
+#include <QPushButton>
+#include "../FluUtils/FluUtils.h"
+#include <map>
+
+class FluThemeButton : public QPushButton
+{
+    Q_OBJECT
+  public:
+      FluThemeButton(QWidget* parent = nullptr) : QPushButton(parent)
+      {
+          m_lightType = FluAwesomeType::Brightness;
+          m_darkType = FluAwesomeType::QuietHours;
+          setIconSize(QSize(20, 20));
+          
+
+          connect(this, &FluThemeButton::clicked, this, [=]() { 
+              if (FluThemeUtils::isDarkTheme())
+              {
+                  FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
+              }
+              else if (FluThemeUtils::isLightTheme())
+              {
+                  FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
+              }
+
+              onThemeChanged();
+
+              emit clickedThemeButton();
+          });
+
+          onThemeChanged();
+          connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+              onThemeChanged();
+          });
+      }
+
+signals:
+      void clickedThemeButton();
+  public slots:
+        void onThemeChanged()
+        {
+            if (FluThemeUtils::isLightTheme())
+            {
+                setIcon(FluIconUtils::getFluentIcon(m_lightType, FluThemeUtils::getUtils()->getTheme()));
+            }
+            else if (FluThemeUtils::isDarkTheme())
+            {
+                setIcon(FluIconUtils::getFluentIcon(m_darkType, FluThemeUtils::getUtils()->getTheme()));
+            }
+
+            FluStyleSheetUitls::setQssByFileName("FluThemeButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+        }
+  protected:
+        FluAwesomeType m_darkType;
+        FluAwesomeType m_lightType;
+};

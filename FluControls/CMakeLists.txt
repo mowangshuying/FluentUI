@@ -245,7 +245,8 @@ set(QSS_FILES
     # "../StyleSheet/dark/FluHNavigationMoreItem.qss"
     # "../StyleSheet/dark/FluHNavigationSettingsItem.qss"
     # "../StyleSheet/dark/FluHNavigationView.qss"
-
+    "../StyleSheet/dark/FluThemeButton.qss"
+    "../StyleSheet/light/FluThemeButton.qss"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

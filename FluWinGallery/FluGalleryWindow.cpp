@@ -7,6 +7,7 @@
 #include "../FluControls/FluMessageBox.h"
 #include <QApplication>
 #include <QTimer>
+#include "../FluControls/FluThemeButton.h"
 
 FRAMELESSHELPER_USE_NAMESPACE
 
@@ -34,6 +35,16 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
     m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
     m_titleBar->setFixedHeight(36);
+
+#ifndef Q_OS_MACOS
+    auto hLayout = (QHBoxLayout*)m_titleBar->layout();
+    auto vLayout = (QVBoxLayout*)hLayout->itemAt(1)->layout();
+    auto hButtonLayout = (QHBoxLayout *)vLayout->itemAt(0)->layout();
+    auto themeButton = new FluThemeButton;
+    hButtonLayout->insertWidget(0, themeButton);
+    FramelessWidgetsHelper::get(this)->setHitTestVisible(themeButton);
+#endif
+
 #endif
 
     // QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
@@ -147,7 +158,13 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item422 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
     FluVNavigationIconTextItem *item423 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
 
+    FluVNavigationIconTextItem *item5231 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("5-level"), item42);
+    FluVNavigationIconTextItem *item5232 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("5-level"), item42);
+    FluVNavigationIconTextItem *item5233 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("5-level"), item42);
+    FluVNavigationIconTextItem *item5234 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("5-level"), item42);
+   
     item1->setKey("TypographyPage");
+
     item->addItem(item1);
 
     item2->setKey("IconsPage");
@@ -167,6 +184,12 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     item41->addItem(item421);
     item41->addItem(item422);
     item41->addItem(item423);
+
+    item423->addItem(item5231);
+    item423->addItem(item5232);
+    item423->addItem(item5233);
+    item423->addItem(item5234);
+
 
     // LOG_DEBUG << "item421 depth:" << item421->getDepth();
     // LOG_DEBUG << "item422 depth:" << item422->getDepth();

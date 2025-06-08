@@ -1,12 +1,15 @@
-#include <QApplication>
+﻿#include <QApplication>
 #include "../FluControls/FluWidget.h"
 
 #include "FluGalleryWindow.h"
 #include <QProcess>
 #include <QTranslator>
 
+//#include <FramelessHelper/Core/private/framelessconfig_p.h>
+
 int main(int argc, char **argv)
 {
+    //wangwenx190::FramelessHelper::FramelessHelperWidgetsInitialize();
     QApplication app(argc, argv);
 
     FluLogUtils::__init();

@@ -329,6 +329,7 @@ void FluFrameLessTitleBar::setTitleLabelAlignment(const Qt::Alignment value)
     Q_EMIT titleLabelVisibleChanged();
 }
 
+#ifndef Q_OS_MACOS
 QPushButton* FluFrameLessTitleBar::minimizeButton() const
 {
     return m_minimizeButton;
@@ -343,6 +344,7 @@ QPushButton* FluFrameLessTitleBar::closeButton() const
 {
     return m_closeButton;
 }
+#endif
 
 bool FluFrameLessTitleBar::isExtended() const
 {

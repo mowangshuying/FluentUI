@@ -12,7 +12,12 @@ class FluThemeButton : public QPushButton
       {
           m_lightType = FluAwesomeType::Brightness;
           m_darkType = FluAwesomeType::QuietHours;
-          setIconSize(QSize(20, 20));
+          
+          setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+          setFixedSize(QSize(48,32));
+          setIconSize(QSize(16,16));
+          setMouseTracking(true);
+          setAttribute(Qt::WA_Hover);
           
 
           connect(this, &FluThemeButton::clicked, this, [=]() { 

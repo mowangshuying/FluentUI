@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QVBoxLayout>
@@ -27,6 +27,8 @@ class FluVNavigationFlyIconTextItem : public FluWidget
     // to enable qss
     void paintEvent(QPaintEvent* event);
 
+signals:
+    void itemClicked(QString key);
   public slots:
     void onThemeChanged();
 

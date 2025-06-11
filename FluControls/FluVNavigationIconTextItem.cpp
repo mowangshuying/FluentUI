@@ -129,6 +129,7 @@ void FluVNavigationIconTextItem::itemClone(FluVNavigationIconTextItem *item)
     m_awesomeType = item->getAwesomeType();
 
     m_bHideIcon = item->getHideIcon();
+    m_key = item->getKey();
     if (m_bHideIcon)
         m_iconBtn->hide();
 

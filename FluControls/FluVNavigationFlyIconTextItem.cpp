@@ -1,6 +1,7 @@
 ﻿#include "FluVNavigationFlyIconTextItem.h"
 #include "FluVNavigationIconTextItem.h"
 #include "../FluUtils/FluStyleSheetUitls.h"
+#include "FluVNavigationView.h"
 
 FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -32,19 +33,24 @@ FluVNavigationFlyIconTextItem::~FluVNavigationFlyIconTextItem()
 void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationIconTextItem*> items)
 {
     // copy items;
+
+    FluVNavigationView* navView = nullptr;
+    if (!items.empty())
+    {
+        //navView = items[0]->getRootItem()->getParentView();
+        auto rootItem = items[0]->getRootItem();
+        if (rootItem != nullptr)
+            navView = rootItem->getParentView();
+       // emit navView->keyChanged();
+    }
+
+    
     for (auto item : items)
     {
         auto newItem = new FluVNavigationIconTextItem(item);
         newItem->setParentFlyItem(this);
         m_vScrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
-        //connect(newItem, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
-        //    if (newItem->isLeaf())
-        //    {
-        //        emit item->itemClicked();
-        //        close();
-        //    }
-        //});
     }
 
     // get all items;
@@ -61,9 +67,11 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
     for (auto item : allitems)
     {
          connect(item, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
+            if (navView != nullptr)
+                emit navView->keyChanged(item->getKey());
+            
             if (item->isLeaf())
             {
-                //emit item->itemClicked();
                 close();
             }
         });

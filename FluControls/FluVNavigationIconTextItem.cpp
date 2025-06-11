@@ -142,6 +142,22 @@ void FluVNavigationIconTextItem::itemClone(FluVNavigationIconTextItem *item)
     }
 }
 
+void FluVNavigationIconTextItem::setItemWidth(int nWidth)
+{
+    // set child item width
+    for (auto item : m_items)
+    {
+        item->getWrapWidget1()->setFixedWidth(nWidth);
+        item->getWrapWidget2()->setFixedWidth(nWidth);
+        item->setFixedWidth(nWidth);
+    }
+
+    // set self width
+    m_wrapWidget1->setFixedWidth(nWidth);
+    m_wrapWidget2->setFixedWidth(nWidth);
+    setFixedWidth(nWidth);
+}
+
 std::vector<FluVNavigationIconTextItem *> FluVNavigationIconTextItem::getItems()
 {
     return m_items;

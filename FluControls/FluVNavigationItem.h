@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QStyle>
@@ -53,6 +53,11 @@ class FluVNavigationItem : public FluWidget
     virtual int getItemHeight();  // to easy get item height
 
     virtual void setLong(bool bLong);
+
+    virtual void setItemWidth(int nWidth)
+    {
+        setFixedWidth(nWidth);
+    }
 
     bool isLong();
 

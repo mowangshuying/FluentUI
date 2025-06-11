@@ -48,10 +48,7 @@ class FluVNavigationView : public FluWidget
         return m_bLong;
     }
 
-    void setViewWidth(int width)
-    {
-        m_nViewWidth = width;
-    }
+    void setViewWidth(int width);
 
     int getViewWidth()
     {

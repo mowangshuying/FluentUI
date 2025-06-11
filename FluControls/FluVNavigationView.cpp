@@ -143,6 +143,21 @@ void FluVNavigationView::updateAllItemsStyleSheet()
     }
 }
 
+void FluVNavigationView::setViewWidth(int width)
+{
+    m_nViewWidth = width;
+
+    int nItemWidth = m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+
+    // update all items width;
+    auto allitems = getAllItems();
+    for (auto item : allitems)
+    {
+        item->setItemWidth(nItemWidth);
+    }
+    setFixedWidth(m_nViewWidth);
+}
+
 std::vector<FluVNavigationItem *> FluVNavigationView::getAllItems()
 {
     std::vector<FluVNavigationItem *> items;

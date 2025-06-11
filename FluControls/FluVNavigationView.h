@@ -77,6 +77,7 @@ class FluVNavigationView : public FluWidget
     void paintEvent(QPaintEvent *event) override;
   signals:
     void searchKeyChanged(QString key);
+    void keyChanged(QString key);
   public slots:
     void onMenuItemClicked();
     void onThemeChanged();

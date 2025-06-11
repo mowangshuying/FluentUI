@@ -106,7 +106,10 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_navView->updateSearchKeys();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-    connect(m_navView, &FluVNavigationView::searchKeyChanged, [=](QString text) { m_sLayout->setCurrentWidget(text); });
+    connect(m_navView, &FluVNavigationView::searchKeyChanged, this, [=](QString text) { m_sLayout->setCurrentWidget(text); });
+    connect(m_navView, &FluVNavigationView::keyChanged, this, [=](QString key) { 
+        m_sLayout->setCurrentWidget(key); 
+    });
 
 #if (QT_VERSION <= QT_VERSION_CHECK(6, 0, 0))
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);

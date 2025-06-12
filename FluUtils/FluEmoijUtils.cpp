@@ -17,7 +17,19 @@ QPixmap FluEmoijUtils::getSvgPixmap(QString svgPath)
 
 QPixmap FluEmoijUtils::getSvgPixmap(FluEmoijType type)
 {
-    return QPixmap();
+// #ifndef USE_QRC
+    QString typeName = EnumTypeToQString(type);
+    typeName += ".svg";
+
+    QString svgPath = "";
+#ifndef USE_QRC
+    svgPath = "../res/Emoij/" + typeName;
+#else
+    svgPath = "../res/Emoij/" + typeName;
+#endif
+
+    // #endif
+    return FluEmoijUtils::getSvgPixmap(svgPath);
 }
 
 QIcon FluEmoijUtils::getSvgIcon(QString svgPath)
@@ -27,5 +39,5 @@ QIcon FluEmoijUtils::getSvgIcon(QString svgPath)
 
 QIcon FluEmoijUtils::getSvgIcon(FluEmoijType type)
 {
-    return QIcon();
+    return QIcon(FluEmoijUtils::getSvgPixmap(type));
 }

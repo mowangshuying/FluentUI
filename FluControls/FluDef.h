@@ -4595,7 +4595,7 @@ enum class FluEmoijType
     ZipperMouthFaceColor,
     ZzzColor,
 };
-Q_ENUMS(FluEmoijType)
+Q_ENUM_NS(FluEmoijType)
 }  // namespace FluEmoijTypeNameSpace
 
 using namespace FluEmoijTypeNameSpace;

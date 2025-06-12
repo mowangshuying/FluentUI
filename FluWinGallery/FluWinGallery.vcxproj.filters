@@ -203,6 +203,9 @@
     <ClCompile Include="FluColorPickerPage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluEmoijsPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluGalleryWindow.h">
@@ -380,6 +383,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluColorPickerPage.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluEmoijsPage.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

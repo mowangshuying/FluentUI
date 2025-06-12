@@ -107,6 +107,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FluConfigUtils.h" />
+    <ClInclude Include="FluEmoijUtils.h" />
     <ClInclude Include="FluIconUtils.h" />
     <ClInclude Include="FluLogUtils.h" />
     <ClInclude Include="FluObjectPtrUtils.h" />
@@ -116,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FluConfigUtils.cpp" />
+    <ClCompile Include="FluEmoijUtils.cpp" />
     <ClCompile Include="FluIconUtils.cpp" />
     <ClCompile Include="FluLogUtils.cpp" />
     <ClCompile Include="FluObjectPtrUtils.cpp" />

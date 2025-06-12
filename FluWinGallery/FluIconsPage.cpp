@@ -98,7 +98,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
     m_sDisplayIconBox = nullptr;
 
-    m_penColor = QColor(8, 8, 8);
+    // m_penColor = QColor(8, 8, 8);
     // add icons to display it!
     QMetaEnum metaEnum = QMetaEnum::fromType<FluAwesomeType>();
     for (int i = 0; i < metaEnum.keyCount(); i++)
@@ -130,7 +130,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
             displayIconBox->style()->polish(displayIconBox);
 
             titleLabel->setText(EnumTypeToQString(displayIconBox->getAwesomeType()));
-            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(displayIconBox->getAwesomeType(), m_penColor);
+            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(displayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme());
             pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             m_iconLabel->setPixmap(pixmap);
 

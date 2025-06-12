@@ -122,6 +122,7 @@
     <ClCompile Include="FluDateAndTimePage.cpp" />
     <ClCompile Include="FluDatePickerPage.cpp" />
     <ClCompile Include="FluDialogsAndFlyoutsPage.cpp" />
+    <ClCompile Include="FluEmoijsPage.cpp" />
     <ClCompile Include="FluExpanderPage.cpp" />
     <ClCompile Include="FluFlipViewPage.cpp" />
     <ClCompile Include="FluAEmptyPage.cpp" />
@@ -344,6 +345,7 @@
     <QtMoc Include="FluTableViewPage.h" />
     <QtMoc Include="FluTreeViewPage.h" />
     <QtMoc Include="FluColorPickerPage.h" />
+    <QtMoc Include="FluEmoijsPage.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

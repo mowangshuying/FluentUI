@@ -38,6 +38,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     m_vScrollView->getMainLayout()->addWidget(m_searchEdit);
 
     auto wrapWidget = new QWidget;
+    //wrapWidget->setFixedHeight(1000);
     wrapWidget->setObjectName("wrapWidget");
 
     auto wrapLayout = new QHBoxLayout;

@@ -1,4 +1,4 @@
-#include "FluDisplayIconBox.h"
+﻿#include "FluDisplayIconBox.h"
 
 FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_type(FluAwesomeType::None)
 {
@@ -26,6 +26,11 @@ FluDisplayIconBox::FluDisplayIconBox(FluAwesomeType type, QWidget* parent /*= nu
     QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type, FluThemeUtils::getUtils()->getTheme());
     m_iconLabel->setPixmap(pixmap);
     m_textLable->setText(EnumTypeToQString(type));
+}
+
+FluDisplayIconBox::FluDisplayIconBox(FluEmoijType type, QWidget* parent) : FluDisplayIconBox(parent)
+{
+    m_iconLabel->setPixmap(FluEmoijUtils::getSvgPixmap(type));
 }
 
 void FluDisplayIconBox::setSelected(bool bSelected)

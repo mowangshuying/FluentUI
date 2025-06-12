@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QLabel>
@@ -17,6 +17,8 @@ class FluDisplayIconBox : public FluWidget
     FluDisplayIconBox(QWidget* parent = nullptr);
 
     FluDisplayIconBox(FluAwesomeType type, QWidget* parent = nullptr);
+
+    FluDisplayIconBox(FluEmoijType type, QWidget* parent = nullptr);
 
     void setSelected(bool bSelected);
 

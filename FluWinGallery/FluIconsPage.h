@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluAEmptyPage.h"
 #include "../FluUtils/FluUtils.h"
@@ -20,7 +20,7 @@ class FluIconsPage : public FluAEmptyPage
     void onThemeChanged();
 
   protected:
-    QColor m_penColor;
+    //QColor m_penColor;
     QLabel* m_iconLabel;
 
     QLabel* m_searchLabel;

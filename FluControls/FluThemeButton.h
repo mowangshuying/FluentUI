@@ -48,11 +48,11 @@ signals:
         {
             if (FluThemeUtils::isLightTheme())
             {
-                setIcon(FluIconUtils::getFluentIcon(m_lightType, FluThemeUtils::getUtils()->getTheme()));
+                setIcon(FluIconUtils::getFluentIcon(m_darkType, FluThemeUtils::getUtils()->getTheme()));
             }
             else if (FluThemeUtils::isDarkTheme())
             {
-                setIcon(FluIconUtils::getFluentIcon(m_darkType, FluThemeUtils::getUtils()->getTheme()));
+                setIcon(FluIconUtils::getFluentIcon(m_lightType, FluThemeUtils::getUtils()->getTheme()));
             }
 
             FluStyleSheetUitls::setQssByFileName("FluThemeButton.qss", this, FluThemeUtils::getUtils()->getTheme());

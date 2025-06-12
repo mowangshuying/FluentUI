@@ -44,7 +44,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     m_vTopWrapLayout->addWidget(m_searchItem);
 
     m_bLong = true;
-    setFixedWidth(m_nViewWidth+ m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    setFixedWidth(m_nViewWidth);
 
     // ani;
     m_animation = new QPropertyAnimation;
@@ -78,6 +78,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     });
 
     connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() {
+       // LOG_DEBUG << "ValueObject value:" << m_valueObject->getValue();
         setFixedWidth(m_valueObject->getValue());
         update();
     });
@@ -146,7 +147,6 @@ void FluVNavigationView::updateAllItemsStyleSheet()
 void FluVNavigationView::setViewWidth(int width)
 {
     m_nViewWidth = width;
-
     int nItemWidth = m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
 
     // update all items width;
@@ -290,6 +290,7 @@ inline void FluVNavigationView::expandView()
         itemVct.push_back(m_bottomWrapWidget->layout()->itemAt(i)->widget());
     }
 
+    int nItemWidth = m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
     for (auto itemW : itemVct)
     {
         auto item = (FluVNavigationItem *)(itemW);
@@ -302,8 +303,8 @@ inline void FluVNavigationView::expandView()
         if (item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->setFixedWidth(m_nViewWidth);
-            iconTextItem->getWrapWidget1()->setFixedWidth(m_nViewWidth);
+            iconTextItem->setFixedWidth(nItemWidth);
+            iconTextItem->getWrapWidget1()->setFixedWidth(nItemWidth);
             iconTextItem->showLabelArrow();
         }
 
@@ -312,7 +313,7 @@ inline void FluVNavigationView::expandView()
             auto settingsItem = (FluVNavigationSettingsItem *)(item);
             if (settingsItem != nullptr)
             {
-                settingsItem->setFixedWidth(m_nViewWidth);
+                settingsItem->setFixedWidth(nItemWidth);
                 settingsItem->showLabel();
             }
         }
@@ -322,7 +323,7 @@ inline void FluVNavigationView::expandView()
             auto searchItem = (FluVNavigationSearchItem *)(item);
             if (searchItem != nullptr)
             {
-                searchItem->setFixedWidth(m_nViewWidth);
+                searchItem->setFixedWidth(nItemWidth);
                 searchItem->hideSearchButton();
             }
         }
@@ -451,6 +452,9 @@ void FluVNavigationView::onMenuItemClicked()
     if (m_bLong)
     {
         collapseDownView();
+
+        //LOG_DEBUG << width();
+        m_valueObject->setValue(width());
         m_animation->setStartValue(width());
         m_animation->setEndValue(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
         m_animation->start();
@@ -461,7 +465,7 @@ void FluVNavigationView::onMenuItemClicked()
         expandView();
 
         m_animation->setStartValue(width());
-        m_animation->setEndValue(m_nViewWidth + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+        m_animation->setEndValue(m_nViewWidth);
         m_animation->start();
         m_bLong = true;
     }

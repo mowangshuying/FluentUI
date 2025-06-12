@@ -15,7 +15,17 @@ QPixmap FluEmoijUtils::getSvgPixmap(QString svgPath)
     return pixmap;
 }
 
+QPixmap FluEmoijUtils::getSvgPixmap(FluEmoijType type)
+{
+    return QPixmap();
+}
+
 QIcon FluEmoijUtils::getSvgIcon(QString svgPath)
 {
     return QIcon(getSvgPixmap(svgPath));
+}
+
+QIcon FluEmoijUtils::getSvgIcon(FluEmoijType type)
+{
+    return QIcon();
 }

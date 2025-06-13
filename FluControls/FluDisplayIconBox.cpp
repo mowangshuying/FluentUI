@@ -1,6 +1,6 @@
 ﻿#include "FluDisplayIconBox.h"
 
-FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_type(FluAwesomeType::None)
+FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(FluAwesomeType::None)
 {
     setFixedSize(48, 48);
     m_vMainLayout = new QVBoxLayout;
@@ -17,19 +17,23 @@ FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(
 
     m_iconLabel->setObjectName("iconLabel");
     m_textLable->setObjectName("textLabel");
+
+    m_bUseAwesomeType = true;
     onThemeChanged();
 }
 
 FluDisplayIconBox::FluDisplayIconBox(FluAwesomeType type, QWidget* parent /*= nullptr*/) : FluDisplayIconBox(parent)
 {
-    m_type = type;
-    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_type, FluThemeUtils::getUtils()->getTheme());
+    m_awesomeType = type;
+    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, FluThemeUtils::getUtils()->getTheme());
     m_iconLabel->setPixmap(pixmap);
     m_textLable->setText(EnumTypeToQString(type));
 }
 
 FluDisplayIconBox::FluDisplayIconBox(FluEmoijType type, QWidget* parent) : FluDisplayIconBox(parent)
 {
+    m_emoijType = type;
+    setUseAwesomeType(false);
     m_iconLabel->setPixmap(FluEmoijUtils::getSvgPixmap(type));
 }
 
@@ -41,7 +45,12 @@ void FluDisplayIconBox::setSelected(bool bSelected)
 
 FluAwesomeType FluDisplayIconBox::getAwesomeType()
 {
-    return m_type;
+    return m_awesomeType;
+}
+
+FluEmoijType FluDisplayIconBox::getEmoijType()
+{
+    return m_emoijType;
 }
 
 void FluDisplayIconBox::mouseReleaseEvent(QMouseEvent* event)
@@ -60,6 +69,10 @@ void FluDisplayIconBox::paintEvent(QPaintEvent* event)
 
 void FluDisplayIconBox::onThemeChanged()
 {
-    m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_type, FluThemeUtils::getUtils()->getTheme()));
+    if (m_bUseAwesomeType)
+        m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
+    else
+        m_iconLabel->setPixmap(FluEmoijUtils::getSvgPixmap(m_emoijType));
+
     FluStyleSheetUitls::setQssByFileName("FluDisplayIconBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

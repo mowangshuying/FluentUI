@@ -23,6 +23,12 @@ class FluDisplayIconBox : public FluWidget
     void setSelected(bool bSelected);
 
     FluAwesomeType getAwesomeType();
+    FluEmoijType getEmoijType();
+
+    void setUseAwesomeType(bool bUseAwesomeType)
+    {
+        m_bUseAwesomeType = bUseAwesomeType;
+    }
 
     void mouseReleaseEvent(QMouseEvent* event);
 
@@ -33,7 +39,11 @@ class FluDisplayIconBox : public FluWidget
     void onThemeChanged();
 
   protected:
-    FluAwesomeType m_type;
+      // true: display awesometype;
+    bool m_bUseAwesomeType;
+    
+    FluAwesomeType m_awesomeType;
+    FluEmoijType m_emoijType;
     QLabel* m_iconLabel;
     QLabel* m_textLable;
     QVBoxLayout* m_vMainLayout;

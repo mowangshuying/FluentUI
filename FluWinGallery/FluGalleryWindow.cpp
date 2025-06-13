@@ -8,6 +8,7 @@
 #include <QApplication>
 #include <QTimer>
 #include "../FluControls/FluThemeButton.h"
+#include "FluEmoijsPage.h"
 
 FRAMELESSHELPER_USE_NAMESPACE
 
@@ -150,7 +151,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Design, tr("Design guidance"), this);
     FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem(FluAwesomeType::FontSize, tr("Typography"), item);
     FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, tr("Icons"), item);
-    // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem(FluAwesomeType::Color, "Colors", item);
+    FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem(FluAwesomeType::Emoji, "Emoijs", item);
 
     FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("2-level"), item);
     
@@ -176,6 +177,10 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     // LOG_DEBUG << "item2 depth Before:" << item2->getDepth();
     item->addItem(item2);
     // LOG_DEBUG << "item2 depth After:" << item2->getDepth();
+
+
+    item3->setKey("EmoijsPage");
+    item->addItem(item3);
 
     item4->addItem(item41);
     item4->addItem(item42);
@@ -212,7 +217,13 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
 
     auto iconsPage = new FluIconsPage;
     m_sLayout->addWidget("IconsPage", iconsPage);
-    connect(item2, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("IconsPage"); });    
+    connect(item2, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("IconsPage"); });
+
+    auto emoijsPage = new FluEmoijsPage;
+    m_sLayout->addWidget("EmoijsPage", emoijsPage);
+    connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { 
+        m_sLayout->setCurrentWidget("EmoijsPage");
+    });
 }
 
 void FluGalleryWindow::makeSamplesNavItem()

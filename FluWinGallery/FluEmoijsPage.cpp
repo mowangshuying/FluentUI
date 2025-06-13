@@ -45,7 +45,6 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
 
     auto awesomeTypeKeyLabel = new QLabel;
     auto awesomeTypeValueLabel = new QLabel;
-    // wrapWidget2AwesomeTypeLayout->addWidget(awesomeTypeKeyLabel);
 
     wrapWidget2Layout->addWidget(titleLabel, 0, Qt::AlignTop);
     wrapWidget2Layout->addSpacing(20);
@@ -69,15 +68,64 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
 
     m_sDisplayIconBox = nullptr;
 
-    QMetaEnum metaEnum = QMetaEnum::fromType<FluAwesomeType>();
+    QMetaEnum metaEnum = QMetaEnum::fromType<FluEmoijType>();
     for (int i = 0; i < metaEnum.keyCount(); i++)
     {
 #ifdef _DEBUG
         if (i >= 512)
             continue;
 #endif
+        auto displayIconBox = new FluDisplayIconBox((FluEmoijType)metaEnum.value(i));
+        if (i == 0)
+        {
+            m_sDisplayIconBox = displayIconBox;
+        }
+
+        // flowLayout->addWidget(displayIconBox);
+        wrapWidget1->getMainLayout()->addWidget(displayIconBox);
+        m_iconBoxMap[(FluEmoijType)metaEnum.value(i)] = displayIconBox;
+
+        connect(displayIconBox, &FluDisplayIconBox::clicked, [=]() {
+            if (m_sDisplayIconBox != nullptr)
+            {
+                m_sDisplayIconBox->setSelected(false);
+                m_sDisplayIconBox->style()->polish(m_sDisplayIconBox);
+            }
+
+            m_sDisplayIconBox = displayIconBox;
+            displayIconBox->setSelected(true);
+            displayIconBox->style()->polish(displayIconBox);
+
+            titleLabel->setText(EnumTypeToQString(displayIconBox->getEmoijType()));
+            QPixmap pixmap = FluEmoijUtils::getSvgPixmap(displayIconBox->getEmoijType());
+            pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            m_iconLabel->setPixmap(pixmap);
+
+            awesomeTypeKeyLabel->setText("");
+            awesomeTypeValueLabel->setText("");
+        });
         
     }
+
+
+    connect(m_searchEdit, &FluSearchLineEdit::onSearchBtnClicked, [=]() {
+        QString searchText = m_searchEdit->getText();
+        for (auto itMap = m_iconBoxMap.begin(); itMap != m_iconBoxMap.end(); itMap++)
+        {
+            QString enumString = EnumTypeToQString(itMap->first);
+            if (enumString.contains(searchText))
+            {
+                itMap->second->show();
+            }
+            else
+            {
+                itMap->second->hide();
+            }
+        }
+    });
+
+    if (m_sDisplayIconBox != nullptr)
+        emit m_sDisplayIconBox->clicked();
 
     onThemeChanged();
 }

@@ -13,11 +13,10 @@
             "environment": [
                 {
                     "name": "PATH",
-                    "value": "C:/Qt/6.5.3/msvc2019_64/bin"
+                    "value": "C:/Qt/6.5.1/msvc2019_64/bin"
                 }
             ],
             "console": "integratedTerminal",
-            "visualizerFile": "c:\\Users\\FT9Y614\\AppData\\Roaming\\Code\\User\\workspaceStorage\\3867ee641b6eccf599dc5384dd374531\\tonka3000.qtvsctools\\qt.natvis.xml"
         }
     ]
 }

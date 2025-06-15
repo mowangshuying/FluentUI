@@ -151,7 +151,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item = new FluVNavigationIconTextItem(FluAwesomeType::Design, tr("Design guidance"), this);
     FluVNavigationIconTextItem *item1 = new FluVNavigationIconTextItem(FluAwesomeType::FontSize, tr("Typography"), item);
     FluVNavigationIconTextItem *item2 = new FluVNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, tr("Icons"), item);
-    FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem(FluAwesomeType::Emoji, "Emoijs", item);
+    FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem(FluAwesomeType::Emoji, tr("Emoijs"), item);
 
     FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("2-level"), item);
     

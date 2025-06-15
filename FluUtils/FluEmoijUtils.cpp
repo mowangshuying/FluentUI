@@ -25,7 +25,7 @@ QPixmap FluEmoijUtils::getSvgPixmap(FluEmoijType type)
 #ifndef USE_QRC
     svgPath = "../res/Emoij/" + typeName;
 #else
-    svgPath = "../res/Emoij/" + typeName;
+    svgPath = ":/res/Emoij/" + typeName;
 #endif
 
     // #endif

@@ -44,7 +44,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.5.1_msvc2019_64</QtInstall>
-    <QtModules>core;gui;widgets;statemachine;svg</QtModules>
+    <QtModules>core;gui;widgets;statemachine;svg;charts</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -78,11 +78,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
-      <AdditionalDependencies>FluUtils.lib;FluControls.lib;qscintilla2_qt6.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)3rdparty\qscintilla\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FluUtils.lib;FluControls.lib;qscintilla2_qt6.lib;qrcode.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);$(SolutionDir)3rdparty\qrcode\lib\release;$(SolutionDir)3rdparty\qscintilla\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\qwindowkit\include;$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\qwindowkit\include;$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include;$(SolutionDir)3rdparty\qrcode\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>

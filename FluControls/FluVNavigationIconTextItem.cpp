@@ -407,7 +407,7 @@ void FluVNavigationIconTextItem::mouseReleaseEvent(QMouseEvent *event)
 
 void FluVNavigationIconTextItem::onItemClicked()
 {
-    // LOG_DEBUG << "called";
+    LOG_WARN << "called";
     //  enableThisItem equal false just return it.
     if (!m_bEnableThisItem)
         return;
@@ -418,10 +418,10 @@ void FluVNavigationIconTextItem::onItemClicked()
     if (rootItem == nullptr)
         return;
 
-    // LOG_DEBUG << "get root item.";
+    LOG_WARN << "get root item.";
     auto navView = rootItem->getParentView();
     auto flyItem = rootItem->getFlyItem();
-    // LOG_DEBUG << "bDown:" << m_bDown << "nav long:" << navView->isLong();
+    //LOG_WARN << "bDown:" << m_bDown << "nav long:" << navView->isLong();
 
     if ((navView != nullptr && m_bDown && navView->isLong()) || (navView == nullptr && isLong() && m_bDown))
     {

@@ -1,4 +1,4 @@
-#include "FluVNavigationItem.h"
+﻿#include "FluVNavigationItem.h"
 #include "FluVNavigationView.h"
 #include "FluVNavigationFlyIconTextItem.h"
 #include "FluVNavigationIconTextItem.h"
@@ -7,6 +7,8 @@ FluVNavigationItem::FluVNavigationItem(QWidget* parent /*= nullptr*/) : FluWidge
 {
     m_parentView = nullptr;
     m_flyItem = nullptr;
+    m_state = FluVNavigationState::None;
+    m_bLong = true;
 }
 
 void FluVNavigationItem::setState(FluVNavigationState state)

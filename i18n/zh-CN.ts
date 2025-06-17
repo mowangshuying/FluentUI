@@ -2080,8 +2080,7 @@
     <message>
         <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="24"/>
         <source>CppQt WinUI3 Gallery</source>
-        <translatorcomment>C++ Qt的WinUI3图库</translatorcomment>
-        <translation>FluentUI Gallery(Cpp &amp; Qt).</translation>
+        <translation type="unfinished">C++ Qt的WinUI3图库</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluGalleryWindow.cpp" line="130"/>

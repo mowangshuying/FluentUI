@@ -21,6 +21,12 @@ class FluSettingPage : public FluWidget
     FluSettingPage(QWidget* parent = nullptr);
 
     void paintEvent(QPaintEvent* event);
+
+    void updateThemeSelectBox()
+    {
+        m_appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
+    }
+
   public slots:
     void onThemeChanged();
 
@@ -30,5 +36,7 @@ class FluSettingPage : public FluWidget
     QLabel* m_titleLabel;
     QLabel* m_appBehaviorLabel;
     QLabel* m_aboutLabel;
+
+    FluSettingsSelectBox* m_appThemeSelectBox;
     FluVScrollView* m_vScrollView;
 };

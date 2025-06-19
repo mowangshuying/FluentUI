@@ -24,6 +24,8 @@ class FluStackedLayout : public QStackedLayout
 
     void setCurrentWidget(QString str);
 
+    QWidget *getWidget(QString str);
+
   protected:
     QMap<QString, QWidget *> m_widgetMap;
     //QPropertyAnimation *m_animation;

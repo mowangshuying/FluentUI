@@ -44,6 +44,11 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     auto themeButton = new FluThemeButton;
     hButtonLayout->insertWidget(0, themeButton);
     FramelessWidgetsHelper::get(this)->setHitTestVisible(themeButton);
+
+    connect(themeButton, &FluThemeButton::clickedThemeButton, this, [=]() { 
+        auto settingsPages = (FluSettingPage*)m_sLayout->getWidget("SettingPage");
+        settingsPages->updateThemeSelectBox();
+    });
 #endif
 
 #endif

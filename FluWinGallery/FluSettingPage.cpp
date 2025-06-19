@@ -24,15 +24,19 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     m_appBehaviorLabel->setText(tr("Appearance & behavior"));
     m_vScrollView->getMainLayout()->addWidget(m_appBehaviorLabel);
 
-    auto appThemeSelectBox = new FluSettingsSelectBox;
-    appThemeSelectBox->setTitleInfo(tr("App theme"), tr("Select which app theme to display."));
-    appThemeSelectBox->setIcon(FluAwesomeType::Color);
+    m_appThemeSelectBox = new FluSettingsSelectBox;
+    m_appThemeSelectBox->setTitleInfo(tr("App theme"), tr("Select which app theme to display."));
+    m_appThemeSelectBox->setIcon(FluAwesomeType::Color);
 
-    appThemeSelectBox->getComboBox()->addItem(tr("Light"));
-    appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
-    appThemeSelectBox->getComboBox()->addItem(tr("Custom"));
-    appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
-    connect(appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
+    m_appThemeSelectBox->getComboBox()->addItem(tr("Light"));
+    m_appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
+    m_appThemeSelectBox->getComboBox()->addItem(tr("Custom"));
+    m_appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
+    connect(m_appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
+
+        if (index == (int)FluThemeUtils::getUtils()->getTheme())
+            return;
+
         if (index == 0)
             FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
         else if (index == 1)
@@ -41,7 +45,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
             FluThemeUtils::getUtils()->setTheme(FluTheme::Custom);
     });
 
-    m_vScrollView->getMainLayout()->addWidget(appThemeSelectBox);
+    m_vScrollView->getMainLayout()->addWidget(m_appThemeSelectBox);
 
     auto navStyleSelectBox = new FluSettingsSelectBox;
     navStyleSelectBox->hideInfoLabel();

@@ -163,6 +163,7 @@
     <ClCompile Include="FluHRadioGroupBox.cpp" />
     <ClCompile Include="FluHScrollView.cpp" />
     <ClCompile Include="FluIndicatorMenuItemDeleage.cpp" />
+    <ClCompile Include="FluIndicatorRoundMenu.cpp" />
     <ClCompile Include="FluInfoBadge.cpp" />
     <ClCompile Include="FluInfoBarMgr.cpp" />
     <ClCompile Include="FluIntructions.cpp" />
@@ -327,6 +328,7 @@
     <QtMoc Include="FluFrameLessWidget.h" />
     <QtMoc Include="FluFrameLessTitleBar.h" />
     <ClInclude Include="FluIndicatorMenuItemDeleage.h" />
+    <QtMoc Include="FluIndicatorRoundMenu.h" />
     <ClInclude Include="FluIntValidator.h" />
     <QtMoc Include="FluTextEditWrap.h" />
     <QtMoc Include="FluPPushButton.h" />

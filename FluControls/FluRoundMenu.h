@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QMenu>
 #include <list>
@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QGraphicsDropShadowEffect>
 #include "FluRoundMenuView.h"
+#include "FluAction.h"
 
 class FluSubMenuItemWidget;
 class FluMenuAniMgr;
@@ -66,6 +67,8 @@ class FluRoundMenu : public QMenu
     void setDefaultAction(QAction* action);
 
     void setDefaultAction(int nIndex);
+
+    void setDefaultAction(QString text);
 
     void addMenu(FluRoundMenu* menu);
 

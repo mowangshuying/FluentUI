@@ -22,14 +22,13 @@ FluRoundMenuView::item {
     border-radius: 5px;
     margin-left: 6px;
     margin-right: 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     border: none;
     color: black;
 }
 
 FluRoundMenuView::item:disabled {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
     border: none;
     color: rgba(0, 0, 0, 110);
 }

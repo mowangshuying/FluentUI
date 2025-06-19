@@ -1,4 +1,4 @@
-#include "FluRoundMenu.h"
+﻿#include "FluRoundMenu.h"
 #include "FluSubMenuItemWidget.h"
 #include "../FluUtils/FluUtils.h"
 #include "FluMenuAniMgr.h"
@@ -336,10 +336,22 @@ void FluRoundMenu::setDefaultAction(QAction* action)
 
 void FluRoundMenu::setDefaultAction(int nIndex)
 {
-    if (nIndex >= 0 && nIndex < m_actions.count())
+    if (nIndex < 0 || nIndex >= m_actions.size())
         return;
 
     m_roundMenuView->setCurrentRow(nIndex);
+}
+
+void FluRoundMenu::setDefaultAction(QString text)
+{
+    for (auto iter = m_actions.begin(); iter != m_actions.end(); iter++)
+    {
+        if ((*iter)->text() == text)
+        {
+            setDefaultAction((*iter));
+            break;
+        }
+    }
 }
 
 void FluRoundMenu::addMenu(FluRoundMenu* menu)

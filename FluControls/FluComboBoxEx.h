@@ -1,11 +1,11 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QPushButton>
 #include "../FluUtils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
-#include "FluMenu.h"
+#include "FluIndicatorRoundMenu.h"
 #include <QIcon>
 
 class FluComboBoxEx : public FluWidget
@@ -50,7 +50,7 @@ class FluComboBoxEx : public FluWidget
     //  FluAwesomeType* m_iconAwesomeType;
 
     QHBoxLayout* m_hMainLayout;
-    FluMenu* m_menu;
+    FluIndicatorRoundMenu* m_menu;
 
     //  QString m_sText;
 };

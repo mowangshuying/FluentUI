@@ -1,4 +1,4 @@
-#include "FluComboBoxEx.h"
+﻿#include "FluComboBoxEx.h"
 
 FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -30,21 +30,22 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_hMainLayout->addWidget(m_iconBtn);
     setFixedHeight(30);
 
-    m_menu = new FluMenu;
-
+    m_menu = new FluIndicatorRoundMenu("", FluAwesomeType::None, this);
     connect(m_textBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
     connect(m_iconBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
     connect(this, &FluComboBoxEx::clicked, [=]() {
         QPoint leftBottomPos = rect().bottomLeft();
         leftBottomPos = mapToGlobal(leftBottomPos);
-        leftBottomPos.setY(leftBottomPos.y() + 3);
-        m_menu->setMinimumWidth(width());
-        m_menu->exec(leftBottomPos);
+        leftBottomPos.setY(leftBottomPos.y() + 1);
+
+        // get select index;
+        m_menu->setDefaultAction(m_textBtn->text());
+        m_menu->popup(leftBottomPos);
     });
 
     // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluComboBoxEx.qss", this);
 
-    connect(m_menu, &FluMenu::triggered, [=](QAction* action) {
+    connect(m_menu, &FluRoundMenu::triggered, [=](QAction* action) {
         m_textBtn->setText(action->text());
         emit currentTextChanged(action->text());
         int nIndex = 0;
@@ -57,6 +58,8 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
             nIndex++;
         }
+
+        setIndex(nIndex);
         emit currentIndexChanged(nIndex);
     });
 
@@ -92,6 +95,7 @@ void FluComboBoxEx::setIndex(int index)
     {
         auto action = m_menu->actions()[index];
         text = action->text();
+        m_menu->setDefaultAction(index);
     }
 
     m_textBtn->setText(text);

@@ -51,3 +51,12 @@ void FluStackedLayout::setCurrentWidget(QString str)
    // m_animation->setEndValue(itf.value()->pos());
   //  m_animation->start();
 }
+
+QWidget *FluStackedLayout::getWidget(QString str)
+{
+    auto itf = m_widgetMap.find(str);
+    if (itf == m_widgetMap.end())
+        return nullptr;
+
+    return itf.value();
+}

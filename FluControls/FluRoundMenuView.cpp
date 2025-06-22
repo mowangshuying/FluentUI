@@ -6,6 +6,7 @@ FluRoundMenuView::FluRoundMenuView(QWidget* parent /*= nullptr*/) : QListWidget(
 {
     m_itemHeight = 28;
     m_maxVisibleItem = -1;
+    m_bBTSpacing = false;
 
     setViewportMargins(0, 6, 0, 6);
     setTextElideMode(Qt::ElideNone);
@@ -112,6 +113,17 @@ int FluRoundMenuView::itemsHeight()
 
     nH += viewportMargins().top() + viewportMargins().bottom();
     return nH;
+}
+
+bool FluRoundMenuView::getBTSpacing()
+{
+    return m_bBTSpacing;
+}
+
+void FluRoundMenuView::setBTSpacing(bool bBTSpacing)
+{
+    m_bBTSpacing = bBTSpacing;
+
 }
 
 void FluRoundMenuView::hockEvent(QEvent* event)

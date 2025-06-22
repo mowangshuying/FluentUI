@@ -1,7 +1,8 @@
-#include "FluPushButton.h"
+﻿#include "FluPushButton.h"
 
 FluPushButton::FluPushButton(QWidget *parent /*= nullptr*/) : QPushButton(parent)
 {
+    setPill(false);
     setFixedSize(200, 30);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });

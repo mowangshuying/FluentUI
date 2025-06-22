@@ -7,6 +7,10 @@ FluStyleButton {
     font-size: 15px;
 }
 
+FluStyleButton[pill=true] {
+    border-radius: 15px;
+}
+
 FluStyleButton:hover {
     border: 1px solid rgb(120, 176, 219);
     border-bottom: 1px solid rgb(94, 146, 186);

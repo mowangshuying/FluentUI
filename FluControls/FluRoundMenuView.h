@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QListWidget>
 #include "FluMenuAniType.h"
@@ -9,6 +9,7 @@
 class FluRoundMenuView : public QListWidget
 {
     Q_OBJECT
+    Q_PROPERTY(bool btSpacing READ getBTSpacing WRITE setBTSpacing)
   public:
     FluRoundMenuView(QWidget* parent = nullptr);
 
@@ -31,6 +32,10 @@ class FluRoundMenuView : public QListWidget
 
     int itemsHeight();
 
+    bool getBTSpacing();
+
+    void setBTSpacing(bool bBTSpacing);
+
     void hockEvent(QEvent* event);
   public slots:
     void onThemeChanged();
@@ -39,5 +44,6 @@ class FluRoundMenuView : public QListWidget
     int m_itemHeight;
     int m_maxVisibleItem;
 
+    bool m_bBTSpacing;
     FluScrollDelegate* m_scrollDelegate;
 };

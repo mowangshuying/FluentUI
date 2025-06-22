@@ -22,10 +22,15 @@ FluRoundMenuView::item {
     border-radius: 5px;
     margin-left: 6px;
     margin-right: 6px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    /* margin-top: 2px;
+    margin-bottom: 2px; */
     border: none;
     color: black;
+}
+
+FluRoundMenuView::item[btSpacing=true] {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 FluRoundMenuView::item:disabled {

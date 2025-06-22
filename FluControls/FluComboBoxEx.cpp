@@ -31,6 +31,7 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     setFixedHeight(30);
 
     m_menu = new FluIndicatorRoundMenu("", FluAwesomeType::None, this);
+    m_menu->getView()->setBTSpacing(true);
     connect(m_textBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
     connect(m_iconBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
     connect(this, &FluComboBoxEx::clicked, [=]() {

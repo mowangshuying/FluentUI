@@ -16,6 +16,13 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     displayBox1->setBodyWidgetFixedHeight(96);
     displayBox1->getBodyContentLayout()->addWidget(btn1);
 
+    auto btn1_ = new FluPushButton(this);
+    btn1_->setText(tr("Standard XAML button"));
+    btn1_->setPill(true);
+    displayBox1->getBodyContentLayout()->addWidget(btn1_);
+
+
+
     auto checkBox = new FluCheckBox(tr("Disable Button"));
     //   displayBox1->getBodyRightLayout()->setAlignment(Qt::AlignTop);
     displayBox1->getBodyRightLayout()->addWidget(checkBox);
@@ -39,6 +46,13 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     btn3->setText(tr("Accent style button."));
     displayBox3->setBodyWidgetFixedHeight(96);
     displayBox3->getBodyLayout()->addWidget(btn3);
+
+    auto btn3_ = new FluStyleButton;
+    btn3_->setPill(true);
+    btn3_->setText(tr("Accent style button."));
+    displayBox3->getBodyLayout()->addWidget(btn3_);
+
+
     m_vScrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
 
     onThemeChanged();

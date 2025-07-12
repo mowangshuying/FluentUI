@@ -693,4 +693,5 @@ target_link_libraries(${TGT}
     framelesshelper
     FluUtils
     qwindowkit
+    Qt${QT_VERSION_MAJOR}::Core5Compat
 )

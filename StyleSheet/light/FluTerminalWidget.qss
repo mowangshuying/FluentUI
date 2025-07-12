@@ -1,0 +1,6 @@
+FluTerminalWidget {
+    background-color: rgb(251, 251, 251);
+    border: 0px;
+    font-size: 14px;
+    /* color: black; */
+}

@@ -54,4 +54,5 @@ target_link_libraries(${TGT}
     qscintilla
     qrcode
     Qt${QT_VERSION_MAJOR}::Charts
+    Qt${QT_VERSION_MAJOR}::Core5Compat
 )

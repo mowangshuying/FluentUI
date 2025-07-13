@@ -24,7 +24,7 @@ class FluTerminalWidget : public QTextEdit
 
   protected:
     QFont m_font;
-    QProcess *m_proc;
+    QProcess *m_process;
     long long m_lastPosition = 0;
     QByteArray m_lastInput;
 

@@ -13,13 +13,15 @@ FluTerminalWidget::FluTerminalWidget()
     //m_font.setPixelSize(14);
     setFont(m_font);
 
-    m_proc = new QProcess();
-    connect(m_proc, SIGNAL(readyReadStandardOutput()), this, SLOT(onReadyReadStandardOutput()));
-    connect(m_proc, SIGNAL(readyReadStandardError()), this, SLOT(onReadyReadStandardError()));
+    m_process = new QProcess();
+    connect(m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(onReadyReadStandardOutput()));
+    connect(m_process, SIGNAL(readyReadStandardError()), this, SLOT(onReadyReadStandardError()));
 
 #ifdef Q_OS_WIN
-    m_proc->start("cmd");
-#elif Q_OS_LINUX
+    m_process->start("cmd");
+#elif defined(Q_OS_LINUX)
+    proc->start("bash");
+#elif defined(Q_OS_MACOS)
     proc->start("bash");
 #endif
 
@@ -47,7 +49,7 @@ void FluTerminalWidget::keyPressEvent(QKeyEvent* e)
 #elif Q_OS_LINUX
         lastInput = string.toLocal8Bit() + '\n';
 #endif
-        m_proc->write(m_lastInput);
+        m_process->write(m_lastInput);
         return;
     }
     else if (e->key() == Qt::Key_Backspace && editCursor.position() <= m_lastPosition)
@@ -60,7 +62,7 @@ void FluTerminalWidget::keyPressEvent(QKeyEvent* e)
 
 void FluTerminalWidget::onReadyReadStandardOutput()
 {
-    QByteArray ba = m_proc->readAllStandardOutput();
+    QByteArray ba = m_process->readAllStandardOutput();
     QTextCodec* textCodec = QTextCodec::codecForName("System");
     assert(textCodec != nullptr);
     QString output = textCodec->toUnicode(ba);
@@ -82,7 +84,7 @@ void FluTerminalWidget::onReadyReadStandardOutput()
 
 void FluTerminalWidget::onReadyReadStandardError()
 {
-    QByteArray ba = m_proc->readAllStandardError();
+    QByteArray ba = m_process->readAllStandardError();
     QTextCodec* textCodec = QTextCodec::codecForName("System");
     assert(textCodec != nullptr);
     QString output = textCodec->toUnicode(ba);

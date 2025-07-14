@@ -20,9 +20,9 @@ FluTerminalWidget::FluTerminalWidget()
 #ifdef Q_OS_WIN
     m_process->start("cmd");
 #elif defined(Q_OS_LINUX)
-    proc->start("bash");
+    m_process->start("bash");
 #elif defined(Q_OS_MACOS)
-    proc->start("bash");
+    m_process->start("bash");
 #endif
 
     QTextCursor editCursor = textCursor();

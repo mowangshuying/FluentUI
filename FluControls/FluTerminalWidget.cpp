@@ -47,9 +47,9 @@ void FluTerminalWidget::keyPressEvent(QKeyEvent* e)
 #ifdef Q_OS_WIN
         m_lastInput = string.toLocal8Bit() + '\r' + '\n';
 #elif defined(Q_OS_LINUX)
-        lastInput = string.toLocal8Bit() + '\n';
+        m_lastInput = string.toLocal8Bit() + '\n';
 #elif defined(Q_OS_MACOS)
-        lastInput = string.toLocal8Bit() + '\n';
+        m_lastInput = string.toLocal8Bit() + '\n';
 #endif
         m_process->write(m_lastInput);
         return;

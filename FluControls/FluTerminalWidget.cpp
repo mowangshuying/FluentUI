@@ -46,7 +46,9 @@ void FluTerminalWidget::keyPressEvent(QKeyEvent* e)
         editCursor.clearSelection();
 #ifdef Q_OS_WIN
         m_lastInput = string.toLocal8Bit() + '\r' + '\n';
-#elif Q_OS_LINUX
+#elif defined(Q_OS_LINUX)
+        lastInput = string.toLocal8Bit() + '\n';
+#elif defined(Q_OS_MACOS)
         lastInput = string.toLocal8Bit() + '\n';
 #endif
         m_process->write(m_lastInput);

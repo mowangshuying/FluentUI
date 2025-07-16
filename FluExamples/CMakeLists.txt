@@ -33,6 +33,8 @@ set(QSS_FILES
     "../StyleSheet/light/FluMenuDemo.qss"
     "../StyleSheet/light/FluTemplateDemo.qss"
     "../StyleSheet/dark/FluTemplateDemo.qss"
+    "../StyleSheet/dark/FluMainWidgetDemo.qss"
+    "../StyleSheet/light/FluMainWidgetDemo.qss"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

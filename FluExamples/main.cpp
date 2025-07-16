@@ -70,6 +70,7 @@
 #include "FluPieSeriesDemo.h"
 #include "../FluControls/FluFrameLessWidgetEx.h"
 #include "../FluControls/FluTerminalWidget.h"
+#include "FluMainWidgetDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -366,7 +367,10 @@ int main(int argc, char **argv)
     //demo.show();
     
 
-    FluTerminalWidget widget;
-    widget.show();
+    //FluTerminalWidget widget;
+    //widget.show();
+
+    FluMainWidgetDemo demo;
+    demo.show();
     return app.exec();
 }

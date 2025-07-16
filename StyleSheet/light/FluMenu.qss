@@ -1,10 +1,10 @@
 QMenu {
     background-color: rgb(249, 249, 249);
     border: 1px solid rgb(223, 223, 223);
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 4px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 QMenu::title {

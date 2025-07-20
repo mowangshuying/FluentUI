@@ -539,6 +539,9 @@
     <ClCompile Include="FluTerminalWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluGifBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -1040,6 +1043,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluTerminalWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluGifBox.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

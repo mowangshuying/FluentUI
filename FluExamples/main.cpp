@@ -71,6 +71,7 @@
 #include "../FluControls/FluFrameLessWidgetEx.h"
 #include "../FluControls/FluTerminalWidget.h"
 #include "FluMainWidgetDemo.h"
+#include "FluGifBoxDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -370,7 +371,10 @@ int main(int argc, char **argv)
     //FluTerminalWidget widget;
     //widget.show();
 
-    FluMainWidgetDemo demo;
+    //FluMainWidgetDemo demo;
+    //demo.show();
+    
+    FluGifBoxDemo demo;
     demo.show();
     return app.exec();
 }

@@ -153,6 +153,7 @@
     <ClCompile Include="FluDoubleSpinBox.cpp" />
     <ClCompile Include="FluFrameLessTitleBar.cpp" />
     <ClCompile Include="FluFrameLessWidget.cpp" />
+    <ClCompile Include="FluGifBox.cpp" />
     <ClCompile Include="FluHNavigationFlyIconTextItem.cpp" />
     <ClCompile Include="FluHNavigationIconTextItem.cpp" />
     <ClCompile Include="FluHNavigationItem.cpp" />
@@ -329,6 +330,7 @@
     <QtMoc Include="FluCommandBarSplitItem.h" />
     <QtMoc Include="FluFrameLessWidget.h" />
     <QtMoc Include="FluFrameLessTitleBar.h" />
+    <QtMoc Include="FluGifBox.h" />
     <ClInclude Include="FluIndicatorMenuItemDeleage.h" />
     <QtMoc Include="FluIndicatorRoundMenu.h" />
     <ClInclude Include="FluIntValidator.h" />

@@ -125,6 +125,7 @@
     <ClCompile Include="FluColorViewDemo.cpp" />
     <ClCompile Include="FluComboBoxDemo.cpp" />
     <ClCompile Include="FluCommandBarDemo.cpp" />
+    <ClCompile Include="FluGifBoxDemo.cpp" />
     <ClCompile Include="FluIntructionsDemo.cpp" />
     <ClCompile Include="FluLineSeriesDemo.cpp" />
     <ClCompile Include="FluMainWidgetDemo.cpp" />
@@ -221,6 +222,7 @@
     <QtMoc Include="FluCommandBarDemo.h" />
     <QtMoc Include="FluLineSeriesDemo.h" />
     <QtMoc Include="FluMainWidgetDemo.h" />
+    <QtMoc Include="FluGifBoxDemo.h" />
     <ClInclude Include="FluQrCodeDemo.h" />
     <ClInclude Include="FluRoundMenuDemo.h" />
     <QtMoc Include="FluShortcutPickerDemo.h" />

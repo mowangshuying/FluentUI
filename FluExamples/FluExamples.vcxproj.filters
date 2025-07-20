@@ -230,6 +230,9 @@
     <ClCompile Include="FluMainWidgetDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluGifBoxDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluChangeBgDemo.h">
@@ -392,6 +395,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluMainWidgetDemo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluGifBoxDemo.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

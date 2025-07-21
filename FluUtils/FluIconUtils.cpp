@@ -69,7 +69,7 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, FluTheme theme)
     if (theme == FluTheme::Dark)
         return FluIconUtils::getFluentIconPixmap(nType, QColor(239, 239, 239));
 
-    if (theme == FluTheme::AutoOneDark)
+    if (theme == FluTheme::atomOneDark)
         return FluIconUtils::getFluentIconPixmap(nType, QColor(Qt::white));
 
     return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8));
@@ -83,7 +83,7 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, FluTheme theme, 
     if (theme == FluTheme::Dark)
         return FluIconUtils::getFluentIconPixmap(nType, QColor(239, 239, 239), w, h);
 
-    if (theme == FluTheme::AutoOneDark)
+    if (theme == FluTheme::atomOneDark)
         return FluIconUtils::getFluentIconPixmap(nType, QColor(Qt::white), w, h);
 
     return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8), w, h);

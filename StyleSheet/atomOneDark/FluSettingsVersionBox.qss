@@ -9,6 +9,10 @@ FluSettingsVersionBox {
     border: 1px solid rgb(71, 74, 79);
 }
 
+#wrap1[down=true]:hover {
+    background-color: rgb(50,54,60);
+}
+
 #wrap1[down=false] {
     background-color: rgb(44,48,54);
     border: 1px solid rgb(71, 74, 79);

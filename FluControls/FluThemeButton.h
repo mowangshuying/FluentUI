@@ -12,6 +12,7 @@ class FluThemeButton : public QPushButton
       {
           m_lightType = FluAwesomeType::Brightness;
           m_darkType = FluAwesomeType::QuietHours;
+          m_grayType = FluAwesomeType::Light;
           
           setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
           setFixedSize(QSize(48,32));
@@ -21,13 +22,22 @@ class FluThemeButton : public QPushButton
           
 
           connect(this, &FluThemeButton::clicked, this, [=]() { 
-              if (FluThemeUtils::isDarkTheme())
-              {
-                  FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
-              }
-              else if (FluThemeUtils::isLightTheme())
+              //if (FluThemeUtils::isDarkTheme())
+              //{
+              //    FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
+              //}
+              
+              if (FluThemeUtils::isLightTheme())
               {
                   FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
+              }
+              else if (FluThemeUtils::isDarkTheme())
+              {
+                  FluThemeUtils::getUtils()->setTheme(FluTheme::AtomOneDark);
+              }
+              else if (FluThemeUtils::isAtomOneDarkTheme())
+              {
+                  FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
               }
 
               onThemeChanged();
@@ -46,18 +56,24 @@ signals:
   public slots:
         void onThemeChanged()
         {
-            if (FluThemeUtils::isLightTheme() || FluThemeUtils::isAtomOneDarkTheme())
+            if (FluThemeUtils::isLightTheme())
             {
                 setIcon(FluIconUtils::getFluentIcon(m_darkType, FluThemeUtils::getUtils()->getTheme()));
             }
             else if (FluThemeUtils::isDarkTheme())
             {
+                setIcon(FluIconUtils::getFluentIcon(m_grayType, FluThemeUtils::getUtils()->getTheme()));
+            }
+            else if (FluThemeUtils::isAtomOneDarkTheme())
+            {
                 setIcon(FluIconUtils::getFluentIcon(m_lightType, FluThemeUtils::getUtils()->getTheme()));
             }
+
 
             FluStyleSheetUitls::setQssByFileName("FluThemeButton.qss", this, FluThemeUtils::getUtils()->getTheme());
         }
   protected:
         FluAwesomeType m_darkType;
         FluAwesomeType m_lightType;
+        FluAwesomeType m_grayType;
 };

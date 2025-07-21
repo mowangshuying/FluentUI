@@ -42,7 +42,7 @@ void FluConfigUtils::setTheme(FluTheme theme)
     }
     else if (theme == FluTheme::AtomOneDark)
     {
-        m_settings->setValue("theme", "atomOneDark");
+        m_settings->setValue("theme", "AtomOneDark");
     }
     
     m_settings->endGroup();

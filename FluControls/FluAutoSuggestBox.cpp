@@ -207,14 +207,6 @@ void FluAutoSuggestBox::onTextEdited(QString text)
 
 void FluAutoSuggestBox::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
-    }
-
+    m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUitls::setQssByFileName("FluAutoSuggestBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

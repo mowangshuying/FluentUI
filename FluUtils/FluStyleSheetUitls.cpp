@@ -141,9 +141,13 @@ void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *pain
     {
         brush = QBrush(QColor(0, 90, 158));
     }
-    else
+    else if (FluThemeUtils::isDarkTheme())
     {
         brush = QBrush(QColor(118, 185, 237));
+    }
+    else if (FluThemeUtils::isAtomOneDarkTheme())
+    {
+        brush = QBrush(QColor(82, 139, 255));
     }
 
     painter->fillPath(path, brush);

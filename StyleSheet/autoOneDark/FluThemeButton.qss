@@ -1,0 +1,14 @@
+FluThemeButton {
+    /* width: 30px;
+    height: 50px; */
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+FluThemeButton:hover {
+    background-color: rgba(0, 0, 0, 5%);
+}
+
+FluThemeButton:pressed {
+    background-color: rgba(0, 0, 0, 5%);
+}

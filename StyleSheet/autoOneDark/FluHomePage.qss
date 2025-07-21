@@ -1,11 +1,11 @@
 FluHomePage {
-    background-color: rgb(248, 101, 178);
+    background-color: rgb(40, 44, 52);
     border-radius: 8px;
     /* margin-left: 20px; */
 }
 
 #contextWidget {
-    background-color: rgb(248, 101, 178);
+    background-color: rgb(40, 44, 52);
     /* border-radius: 8px; */
 }
 

@@ -1,4 +1,4 @@
 FluScrollBar {
-    qproperty-trunkBackgroundColor: rgb(243, 145, 199);
-    qproperty-handleBackgroundColor: rgb(138, 138, 138);
+    qproperty-trunkBackgroundColor: rgb(40, 44, 52);
+    qproperty-handleBackgroundColor: rgb(65, 72, 85);
 }

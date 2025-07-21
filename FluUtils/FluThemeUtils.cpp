@@ -31,7 +31,7 @@ QString FluThemeUtils::getThemeName()
             return "light";
         case FluTheme::Dark:
             return "dark";
-        case FluTheme::atomOneDark:
+        case FluTheme::AtomOneDark:
             return "atomOneDark";
         default:
             return "light";

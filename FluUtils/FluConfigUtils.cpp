@@ -13,7 +13,7 @@ FluConfigUtils::~FluConfigUtils()
 
 FluTheme FluConfigUtils::getTheme()
 {
-    FluTheme theme;
+    FluTheme theme = FluTheme::Light;
     m_settings->beginGroup("config");
     QString themeStr = m_settings->value("theme", "Light").toString();
     m_settings->endGroup();
@@ -22,8 +22,8 @@ FluTheme FluConfigUtils::getTheme()
         theme = FluTheme::Light;
     else if (themeStr == "Dark")
         theme = FluTheme::Dark;
-    else if (themeStr == "atomOneDark")
-        theme = FluTheme::atomOneDark;
+    else if (themeStr == "AtomOneDark")
+        theme = FluTheme::AtomOneDark;
     return theme;
 }
 
@@ -40,7 +40,7 @@ void FluConfigUtils::setTheme(FluTheme theme)
     {
         m_settings->setValue("theme", "Dark");
     }
-    else if (theme == FluTheme::atomOneDark)
+    else if (theme == FluTheme::AtomOneDark)
     {
         m_settings->setValue("theme", "atomOneDark");
     }

@@ -46,7 +46,7 @@ signals:
   public slots:
         void onThemeChanged()
         {
-            if (FluThemeUtils::isLightTheme() || FluThemeUtils::isatomOneDarkTheme())
+            if (FluThemeUtils::isLightTheme() || FluThemeUtils::isAtomOneDarkTheme())
             {
                 setIcon(FluIconUtils::getFluentIcon(m_darkType, FluThemeUtils::getUtils()->getTheme()));
             }

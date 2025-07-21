@@ -30,7 +30,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     m_appThemeSelectBox->getComboBox()->addItem(tr("Light"));
     m_appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
-    m_appThemeSelectBox->getComboBox()->addItem(tr("atomOneDark"));
+    m_appThemeSelectBox->getComboBox()->addItem(tr("AtomOneDark"));
     m_appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
     connect(m_appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
 
@@ -42,7 +42,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
         else if (index == 1)
             FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
         else
-            FluThemeUtils::getUtils()->setTheme(FluTheme::atomOneDark);
+            FluThemeUtils::getUtils()->setTheme(FluTheme::AtomOneDark);
     });
 
     m_vScrollView->getMainLayout()->addWidget(m_appThemeSelectBox);

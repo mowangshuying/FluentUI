@@ -1,0 +1,51 @@
+FluRoundMenuView {
+    border: 1px solid rgb(71,74,79);
+    border-radius: 9px;
+    background-color: rgb(44,48,54);
+    outline: none;
+    font: 14px;
+}
+
+FluRoundMenuView[radiusType="NoTopRadius"] {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+FluRoundMenuView[radiusType="NoBottomRadius"] {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+
+FluRoundMenuView::item {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border: none;
+    color: white;
+}
+
+FluRoundMenuView::item:disabled {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+FluRoundMenuView::item:hover {
+    background-color: rgb(50,54,60);
+    color: white;
+}
+
+FluRoundMenuView::item:selected {
+    background-color: rgb(50,54,60);
+    color: white;
+}
+
+FluRoundMenuView::item:selected:active {
+    background-color: rgb(50,54,60);
+    color: white;
+}

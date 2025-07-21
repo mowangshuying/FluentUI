@@ -2,6 +2,7 @@
 
 FluGifBoxDemo::FluGifBoxDemo(QWidget* parent) : FluTemplateDemo(parent)
 {
+    setWindowTitle("CppQt WinUI3 Gif Demo");
     auto gifBox = new FluGifBox("../res/mona-loading-dark.gif", "../res/mona-loading-dark.gif");
     gifBox->setFixedSize(40, 40);
 

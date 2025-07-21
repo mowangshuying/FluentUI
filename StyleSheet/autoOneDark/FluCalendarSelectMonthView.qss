@@ -1,0 +1,29 @@
+FluCalendarSelectMonthView {
+    background-color: rgb(31, 31, 31);
+}
+
+#label {
+    color: rgb(222, 222, 222);
+    /* width: 40px; */
+    /* height: 40px; */
+    border: 1px solid transparent;
+    border-radius: 25px;
+}
+
+#label[outRange=true] {
+    color: rgb(151, 151, 151);
+}
+
+#label[today=true] {
+    color: rgb(0, 0, 0);
+    background-color: rgb(82, 139, 255);
+}
+
+#label:hover {
+    background-color: rgb(44, 44, 44);
+}
+
+#label:hover[today=true] {
+    color: rgb(0, 0, 0);
+    background-color: rgb(82, 139, 255);
+}

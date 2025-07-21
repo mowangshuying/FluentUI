@@ -1,0 +1,26 @@
+FluCalendarDatePicker {
+    border: 1px solid rgb(53, 53, 53);
+    border-bottom: 1px solid rgb(48, 48, 48);
+    border-radius: 4px;
+    background-color: rgb(45, 45, 45);
+}
+
+FluCalendarDatePicker:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+FluCalendarDatePicker:pressed {
+    background-color: rgb(40, 44, 52);
+    border: 1px solid rgb(48, 48, 48);
+}
+
+#textButton {
+    color: rgb(183, 183, 183);
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+#iconButton {
+    background-color: transparent;
+    border: 1px solid transparent;
+}

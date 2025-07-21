@@ -1,0 +1,5 @@
+FluCircleDot {
+    background-color: rgb(82, 139, 255);
+    border: 1px solid rgb(82, 139, 255);
+    border-radius: 5px;
+}

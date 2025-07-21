@@ -1,0 +1,51 @@
+FluTreeView {
+    background-color: rgb(40,44, 52);
+    border: 1px solid rgb(71, 74, 79);
+    /* border-radius: 4px; */
+    outline: none;
+    padding-left: 4px;
+
+    qproperty-indicatorColorEx: rgb(50,54,60);
+    qproperty-backgroundColorEx: rgb(50,54,60);
+    qproperty-textColorEx: white;
+    qproperty-unCheckedPenColorEx: rgb(50,54,60);
+    qproperty-unCheckedBrushColorEx: rgb(50,54,60);
+    qproperty-checkedPenColorEx: rgb(50,54,60);
+    qproperty-checkedBrushColorEx: rgb(50,54,60);
+}
+
+FluTreeView::item {
+    color: white;
+    background-color: transparent;
+    height: 36px;
+    border-radius: 4px;
+    margin-top: 4px;
+    /* margin-bottom: 2px; */
+    padding-left: 24px;
+}
+
+FluTreeView::item:hover {
+    background-color: transparent;
+}
+
+FluTreeView::item:selected {
+    background-color: transparent;
+}
+
+/*indicator*/
+FLuTreeView::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/*branch qss*/
+QTreeView::branch:has-children {
+    image: url("../res/ControlResImages/ChevronRight-Dark.png");
+}
+
+QTreeView::branch:open:has-children{
+    image: url("../res/ControlResImages/ChevronDown-Dark.png");
+}

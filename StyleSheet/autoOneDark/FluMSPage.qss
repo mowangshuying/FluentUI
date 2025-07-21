@@ -1,0 +1,5 @@
+ FluMSPage {
+     background-color: rgb(40, 44, 52);
+     border-top-left-radius: 8px;
+     border: 1px solid rgb(71, 74, 79);
+ }

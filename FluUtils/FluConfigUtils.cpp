@@ -1,4 +1,4 @@
-#include "FluConfigUtils.h"
+﻿#include "FluConfigUtils.h"
 
 FluConfigUtils* FluConfigUtils::m_configUtils = nullptr;
 FluConfigUtils::FluConfigUtils(QObject* parent /*= nullptr*/) : QObject(parent)
@@ -22,8 +22,8 @@ FluTheme FluConfigUtils::getTheme()
         theme = FluTheme::Light;
     else if (themeStr == "Dark")
         theme = FluTheme::Dark;
-    else if (themeStr == "Custom")
-        theme = FluTheme::Custom;
+    else if (themeStr == "AutoOneDark")
+        theme = FluTheme::AutoOneDark;
     return theme;
 }
 
@@ -40,9 +40,9 @@ void FluConfigUtils::setTheme(FluTheme theme)
     {
         m_settings->setValue("theme", "Dark");
     }
-    else if (theme == FluTheme::Custom)
+    else if (theme == FluTheme::AutoOneDark)
     {
-        m_settings->setValue("theme", "Custom");
+        m_settings->setValue("theme", "AutoOneDark");
     }
     
     m_settings->endGroup();

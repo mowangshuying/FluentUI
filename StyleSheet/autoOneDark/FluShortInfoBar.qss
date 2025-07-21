@@ -1,0 +1,92 @@
+#infoLabel {
+    background-color: transparent;
+    color: white;
+}
+
+FluShortInfoBar[infoBarType="Info"] {
+    border: 1px solid rgb(71, 74, 79);
+    background-color: rgb(40, 44, 52);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Info"] {
+    background-color: rgb(82, 139, 255);
+    border-radius: 9px;
+    border: 4px solid rgb(82, 139, 255);
+}
+
+#closeBtn[infoBarType="Info"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Info"] {
+    background-color: rgb(52, 52, 52);
+}
+
+FluShortInfoBar[infoBarType="Suc"] {
+    border: 1px solid rgb(71, 74, 79);
+    background-color: rgb(57, 61, 27);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Suc"] {
+    background-color: rgb(108, 203, 95);
+    border-radius: 9px;
+    border: 4px solid rgb(108, 203, 95);
+}
+
+#closeBtn[infoBarType="Suc"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Suc"] {
+    background-color: rgb(69, 72, 40);
+}
+
+FluShortInfoBar[infoBarType="Warn"] {
+    border: 1px solid rgb(71, 74, 79);
+    background-color: rgb(67, 53, 25);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Warn"] {
+    background-color: rgb(252, 225, 0);
+    border-radius: 9px;
+    border: 4px solid rgb(252, 225, 0);
+}
+
+#closeBtn[infoBarType="Warn"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Warn"] {
+    background-color: rgb(78, 65, 39);
+}
+
+FluShortInfoBar[infoBarType="Error"] {
+    border: 1px solid rgb(71, 74, 79);
+    background-color: rgb(68, 39, 38);
+    border-radius: 4px;
+}
+
+#iconLabel[infoBarType="Error"] {
+    background-color: rgb(255, 153, 164);
+    border-radius: 9px;
+    border: 4px solid rgb(255, 153, 164);
+}
+
+#closeBtn[infoBarType="Error"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[infoBarType="Error"] {
+    background-color: rgb(79, 52, 51);
+}

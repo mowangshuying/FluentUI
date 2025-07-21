@@ -1,0 +1,21 @@
+FluVNavigationMenuItem {
+    background-color: rgb(33, 37, 43);
+}
+
+#wrapWidget1 {
+    background-color: rgb(33, 37, 43);
+}
+
+#wrapWidget1:hover {
+    background-color: rgb(38, 42, 49);
+    border-radius: 4px;
+}
+
+#wrapWidget2 {
+    background-color: transparent;
+}
+
+#menuButton {
+    border: none;
+    background-color: transparent;
+}

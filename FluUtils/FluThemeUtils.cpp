@@ -31,10 +31,10 @@ QString FluThemeUtils::getThemeName()
             return "light";
         case FluTheme::Dark:
             return "dark";
-        case FluTheme::Custom:
-            return "custom";
+        case FluTheme::AutoOneDark:
+            return "autoOneDark";
         default:
-            return "Light";
+            return "light";
     }
 }
 

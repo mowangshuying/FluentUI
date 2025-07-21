@@ -1,0 +1,31 @@
+FluVNavigationSettingsItem {
+    background-color: rgb(33, 37, 43);
+    border-radius: 4px;
+}
+
+FluVNavigationSettingsItem:hover {
+    /* background-color: aquamarine; */
+    background-color: rgb(38, 42, 49);
+    border-radius: 4px;
+}
+
+#indicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#indicator[selected=true] {
+    background-color: rgb(82, 139, 255);
+    border-radius: 2px;
+}
+
+#icon {
+    border: none;
+    background-color: transparent;
+}
+
+#label {
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+}

@@ -1,0 +1,19 @@
+FluCommandBarIconItem {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    margin: 0px;
+}
+
+FluCommandBarIconItem:hover {
+    background-color: rgb(44, 49, 60);
+}
+
+#iconBtn {
+    background-color: transparent;
+    border: none;
+}
+
+/* #textLabel {
+    color: black;
+} */

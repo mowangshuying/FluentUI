@@ -1,0 +1,25 @@
+FluPivotTitleBarItem {
+    background-color: transparent;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+#textLabel {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(166, 166, 166);
+}
+
+#indicatorLabel {
+    border: 1px solid transparent;
+    border-radius: 1.5px;
+    background-color: transparent;
+}
+
+#textLabel[selected=true] {
+    color: rgb(255, 255, 255);
+}
+
+#indicatorLabel[selected=true] {
+    background-color: rgb(82, 139, 255);
+}

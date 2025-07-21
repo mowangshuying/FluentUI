@@ -1,0 +1,40 @@
+FluToggleButton[toggled=false] {
+    color: white;
+    border: 1px solid rgb(71,74,79);
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(71,74,79);
+    background-color: rgb(44,48,54);
+    font-size: 15px;
+}
+
+FluToggleButton[toggled=true] {
+    color: white;
+    border: 1px solid rgb(129, 190, 238);
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(102, 160, 204);
+    background-color: rgb(82, 139, 255);
+    font-size: 15px;
+}
+
+FluToggleButton[toggled=false]:hover {
+    border: 1px solid rgb(71,74,79);
+    border-bottom: 1px solid rgb(71,74,79);
+    background-color: rgb(50,54,60);
+}
+
+FluToggleButton[toggled=true]:hover {
+    border: 1px solid rgb(120, 176, 219);
+    border-bottom: 1px solid rgb(94, 146, 186);
+    background-color: rgb(109, 169, 216);
+}
+
+FluToggleButton[toggled=false]:pressed {
+    border: 1px solid rgb(71,74,79);
+    border-bottom: 1px solid rgb(71,74,79);
+    background-color: rgb(40, 44, 52);
+}
+
+FluToggleButton[toggled=true]:pressed {
+    border: 1px solid rgb(100, 154, 195);
+    background-color: rgb(100, 154, 195);
+}

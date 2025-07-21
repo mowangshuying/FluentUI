@@ -1,0 +1,48 @@
+QTableView {
+    background: transparent;
+    outline: none;
+    border: 1px solid rgb(71,74,79);
+    border-right: 0px;
+    selection-background-color: transparent;
+    alternate-background-color: transparent;
+}
+
+QTableView::item {
+    background: transparent;
+    /* border: 0px; */
+    border-right: 1px solid rgb(71,74,79);
+    border-bottom: 1px solid rgb(71,74,79);
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 35px;
+    color: white;
+}
+
+QTableView::indicator {
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+}
+
+QHeaderView {
+    background-color: transparent;
+}
+
+QHeaderView::section {
+    background-color: transparent;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid rgb(71,74,79);
+}
+
+QHeaderView::section:horizontal {
+    border-left: none;
+    border-top: none;
+    height: 33px;
+}
+
+QHeaderView::section:horizontal:last {
+    border-right: 1px solid rgb(71,74,79);
+}

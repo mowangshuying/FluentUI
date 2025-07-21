@@ -1,0 +1,3 @@
+FluBusyProgressRing {
+    qproperty-circleColor: rgb(82, 139, 255);
+}

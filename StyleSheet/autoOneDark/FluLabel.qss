@@ -1,0 +1,38 @@
+FluLabel {
+    border: 0px;
+    font-size: 12px;
+    color: white;
+}
+
+FluLabel[labelStyle="CaptionTextBlockSylte"] {
+    font-size: 12px;
+}
+
+FluLabel[labelStyle="BodyTextBlockStyle"] {
+    font-size: 14px;
+}
+
+FluLabel[labelStyle="BodyStrongTextBlockStyle"] {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+FluLabel[labelStyle="SubTitleTextBlockStyle"] {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+FluLabel[labelStyle="TitleTextBlockStyle"] {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+FluLabel[labelStyle="TitleLargeTextBlockStyle"] {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+FluLabel[labelStyle="DisplayTextBlockStyle"] {
+    font-size: 68px;
+    font-weight: bold;
+}

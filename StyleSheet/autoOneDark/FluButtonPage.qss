@@ -1,0 +1,18 @@
+FluButtonPage {
+    background-color: rgb(40, 44, 52);
+    border-top-left-radius: 8px;
+    border: 1px solid rgb(71, 74, 79);
+}
+
+#titleLabel {
+    font-size: 26px;
+    color: white;
+    /* font-weight: bold; */
+    /* text-decoration: underline; */
+}
+
+#infoLabel {
+    font-size: 12px;
+    /* color: rgb(26, 26, 26); */
+    color: white;
+}

@@ -1,0 +1,23 @@
+ FluListViewPage {
+     background-color: rgb(40, 44, 52);
+     border-top-left-radius: 8px;
+     border: 1px solid rgb(71, 74, 79);
+ }
+
+ #titleLabel {
+     font-size: 26px;
+     color: white;
+     /* font-weight: bold; */
+     /* text-decoration: underline; */
+ }
+
+ #subTitleLabel {
+     margin-left: 5px;
+     font-size: 12px;
+     color: white;
+ }
+
+ #infoLabel {
+     font-size: 12px;
+     color: white;
+ }

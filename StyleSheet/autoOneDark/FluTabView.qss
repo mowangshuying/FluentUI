@@ -1,0 +1,24 @@
+FluTabView {
+    /* border: 1px solid rgb(234, 234, 234); */
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: rgb(249, 249, 249);
+}
+
+#sWidget {
+    background-color: rgb(249, 249, 249);
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#addTabBtn {
+    background-color: rgb(82, 139, 255);
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#addTabBtn:hover {
+    background-color: rgb(114, 178, 229);
+}

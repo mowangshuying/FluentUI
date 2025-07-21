@@ -1,0 +1,17 @@
+QTextEdit {
+    background-color: rgb(44,48,54);
+    border: 1px solid rgb(71,74,79);
+    font-size: 14px;
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(71,74,79);
+    color: white;
+}
+
+QTextEdit:hover {
+    background-color: rgb(50,54,60);
+}
+
+QTextEdit:focus {
+    background-color: rgb(50,54,60);
+    border-bottom: 2px solid rgb(82, 139, 255);
+}

@@ -40,7 +40,7 @@ FluToggleSwitch::indicator:checked {
 }
 
 FluToggleSwitch::indicator:checked:hover {
-    background-color: rgb(109, 169, 216);
+    background-color: rgb(78,106,189);
     image: url("../res/ControlResImages/ToggleSwitchOnHover-Dark.png");
 }
 

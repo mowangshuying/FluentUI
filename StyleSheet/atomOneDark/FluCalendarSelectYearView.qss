@@ -25,5 +25,5 @@ FluCalendarSelectYearView {
 
 #label:hover[today=true] {
     color: white;
-    background-color: rgb(109, 169, 216);
+    background-color: rgb(78,106,189);
 }

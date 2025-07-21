@@ -247,6 +247,7 @@ set(QSS_FILES
     # "../StyleSheet/dark/FluHNavigationView.qss"
     "../StyleSheet/dark/FluThemeButton.qss"
     "../StyleSheet/light/FluThemeButton.qss"
+    "../StyleSheet/atomOneDark/FluThemeButton.qss"
     "../StyleSheet/atomOneDark/FluAmPmView.qss"
     "../StyleSheet/atomOneDark/FluAppBarButton.qss"
     "../StyleSheet/atomOneDark/FluAppBarToggleButton.qss"

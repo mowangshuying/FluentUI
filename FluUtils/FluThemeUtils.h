@@ -6,7 +6,7 @@ enum class FluTheme
 {
     Light,
     Dark,
-    atomOneDark,
+    AtomOneDark,
     _END,
 };
 
@@ -35,9 +35,9 @@ class FluThemeUtils : public QObject
         return getUtils()->getTheme() == FluTheme::Dark;
     }
 
-    static bool isatomOneDarkTheme()
+    static bool isAtomOneDarkTheme()
     {
-        return getUtils()->getTheme() == FluTheme::atomOneDark;
+        return getUtils()->getTheme() == FluTheme::AtomOneDark;
     }
 
     static void __init()

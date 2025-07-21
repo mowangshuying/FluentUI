@@ -3864,7 +3864,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="33"/>
-        <source>Custom</source>
+        <source>AtomOneDark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3919,7 +3919,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="90"/>
-        <source>1.0.3</source>
+        <source>1.0.4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

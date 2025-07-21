@@ -3877,9 +3877,13 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>深色</translation>
     </message>
     <message>
-        <location filename="../FluWinGallery/FluSettingPage.cpp" line="33"/>
         <source>Custom</source>
-        <translation>自定义</translation>
+        <translation type="vanished">自定义</translation>
+    </message>
+    <message>
+        <location filename="../FluWinGallery/FluSettingPage.cpp" line="33"/>
+        <source>AtomOneDark</source>
+        <translation>暗色(Atom)</translation>
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="52"/>
@@ -3933,7 +3937,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../FluWinGallery/FluSettingPage.cpp" line="90"/>
-        <source>1.0.3</source>
+        <source>1.0.4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

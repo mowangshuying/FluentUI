@@ -148,17 +148,8 @@ void FluComboBoxEx::paintEvent(QPaintEvent* event)
 
 void FluComboBoxEx::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Light));
-        if (m_textAwesomeType != FluAwesomeType::None)
-            m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Light));
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluTheme::Dark));
-        if (m_textAwesomeType != FluAwesomeType::None)
-            m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Dark));
-    }
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
+    if (m_textAwesomeType != FluAwesomeType::None)
+        m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUitls::setQssByFileName("FluComboBoxEx.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

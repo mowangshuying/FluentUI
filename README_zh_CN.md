@@ -9,10 +9,10 @@
 <p align="center">
 简体中文 | <a href="README.md">English</a>
 </p>
-
 <div align=center>
-  <img src="docs/gallery.png">
+  <img src="docs/gallery-atomOneDark.png">
 </div>
+
 
 ## 条件
 

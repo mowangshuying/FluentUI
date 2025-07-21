@@ -10,9 +10,12 @@
 English | <a href="README_zh_CN.md">简体中文</a>
 </p>
 
+
 <div align=center>
-  <img src="docs/gallery.png">
+  <img src="docs/gallery-atomOneDark.png">
 </div>
+
+
 
 
 ## Requirements

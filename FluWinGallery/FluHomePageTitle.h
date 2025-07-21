@@ -56,7 +56,7 @@ class FluHomePageTitle : public FluWidget
             FluStyleSheetUitls::setQssByFileName("FluHomePageTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
             update();
         }
-        else
+        else if (FluThemeUtils::isDarkTheme() || FluThemeUtils::isAutoOneDarkTheme())
         {
             m_githubCard->setIcon(FluIconUtils::getPixmap(("../res/HomeHeaderTiles/github-mark-white.png")));
             m_color1 = QColor(0, 0, 0);

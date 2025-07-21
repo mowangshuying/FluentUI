@@ -35,7 +35,7 @@ class FluThemeUtils : public QObject
         return getUtils()->getTheme() == FluTheme::Dark;
     }
 
-    static bool isCustomTheme()
+    static bool isAutoOneDarkTheme()
     {
         return getUtils()->getTheme() == FluTheme::AutoOneDark;
     }

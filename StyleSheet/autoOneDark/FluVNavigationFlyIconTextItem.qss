@@ -1,17 +1,17 @@
 /*The scroll view qss*/
 
 #contextWidget {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(33, 37, 43);
     border-radius: 4px;
 }
 
 QScrollArea {
-    background-color: rgb(32, 32, 32);
-    border: 1px solid rgb(32, 32, 32);
+    background-color: rgb(33, 37, 43);
+    border: 1px solid rgb(33, 37, 43);
     border-radius: 4px;
 }
 
-QScrollBar:vertical {
+/* QScrollBar:vertical {
     width: 4px;
     background-color: transparent;
 }
@@ -32,4 +32,4 @@ QScrollBar::sub-line:vertical {
 QScrollBar::sub-page:vertical,
 QScrollBar::add-page:vertical {
     background-color: transparent;
-}
+} */

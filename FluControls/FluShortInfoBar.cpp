@@ -1,4 +1,4 @@
-#include "FluShortInfoBar.h"
+﻿#include "FluShortInfoBar.h"
 #include "FluInfoBarMgr.h"
 #include <QPointer>
 
@@ -149,15 +149,6 @@ void FluShortInfoBar::paintEvent(QPaintEvent* event)
 
 void FluShortInfoBar::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Light));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluShortInfoBar.qss", this);
-    }
-    else if (FluThemeUtils::isDarkTheme())
-    {
-        m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluShortInfoBar.qss", this);
-    }
+    m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUitls::setQssByFileName("FluShortInfoBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

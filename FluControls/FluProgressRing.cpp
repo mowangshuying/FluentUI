@@ -1,4 +1,4 @@
-#include "FluProgressRing.h"
+﻿#include "FluProgressRing.h"
 
 FluProgressRing::FluProgressRing(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bTransparentTrack(true)
 {
@@ -56,6 +56,9 @@ void FluProgressRing::paintEvent(QPaintEvent* event)
     if (FluThemeUtils::isDarkTheme())
         pen.setColor(QColor(118, 185, 237));
 
+    if (FluThemeUtils::isAtomOneDarkTheme())
+        pen.setColor(QColor(82, 139, 255));
+
     painter.setPen(pen);
     if (!m_bWorking)
     {
@@ -71,7 +74,7 @@ void FluProgressRing::paintEvent(QPaintEvent* event)
         // drawText
         pen.setWidth(1);
         pen.setColor(Qt::black);
-        if (FluThemeUtils::isDarkTheme())
+        if (FluThemeUtils::isDarkTheme() || FluThemeUtils::isAtomOneDarkTheme())
             pen.setColor(Qt::white);
 
         painter.setPen(pen);

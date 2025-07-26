@@ -17,7 +17,7 @@ QPixmap FluEmoijUtils::getSvgPixmap(QString svgPath)
 
 QPixmap FluEmoijUtils::getSvgPixmap(FluEmoijType type)
 {
-// #ifndef USE_QRC
+    // #ifndef USE_QRC
     QString typeName = EnumTypeToQString(type);
     typeName += ".svg";
 

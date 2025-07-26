@@ -37,14 +37,13 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
     FluVNavigationView* navView = nullptr;
     if (!items.empty())
     {
-        //navView = items[0]->getRootItem()->getParentView();
+        // navView = items[0]->getRootItem()->getParentView();
         auto rootItem = items[0]->getRootItem();
         if (rootItem != nullptr)
             navView = rootItem->getParentView();
-       // emit navView->keyChanged();
+        // emit navView->keyChanged();
     }
 
-    
     for (auto item : items)
     {
         auto newItem = new FluVNavigationIconTextItem(item);
@@ -66,10 +65,10 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
     // connect;
     for (auto item : allitems)
     {
-         connect(item, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
+        connect(item, &FluVNavigationIconTextItem::itemClicked, this, [=]() {
             if (navView != nullptr)
                 emit navView->keyChanged(item->getKey());
-            
+
             if (item->isLeaf())
             {
                 close();
@@ -98,7 +97,6 @@ void FluVNavigationFlyIconTextItem::adjustItemHeight()
 
 void FluVNavigationFlyIconTextItem::adjustItemWidth()
 {
-
     for (auto item : m_items)
     {
         item->adjustItemWidth(item);

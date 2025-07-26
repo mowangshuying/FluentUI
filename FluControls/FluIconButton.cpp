@@ -3,7 +3,7 @@
 FluIconButton::FluIconButton(QWidget* parent /*= nullptr*/) : QPushButton(parent), m_type1(FluAwesomeType::None), m_type2(FluAwesomeType::None), m_type(FluAwesomeType::None)
 {
     // set fixed size
-    //setFixedSize(30, 30);
+    // setFixedSize(30, 30);
     setIconSize(QSize(20, 20));
     setNoBorder(false);
 

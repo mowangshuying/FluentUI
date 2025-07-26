@@ -32,4 +32,3 @@ class FluTerminalWidget : public QTextEdit
     void onReadyReadStandardOutput();
     void onReadyReadStandardError();
 };
-

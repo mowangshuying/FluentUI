@@ -31,7 +31,7 @@ FluVNavigationView* FluVNavigationItem::getParentView()
     return m_parentView;
 }
 
-FluVNavigationFlyIconTextItem * FluVNavigationItem::getFlyItem()
+FluVNavigationFlyIconTextItem* FluVNavigationItem::getFlyItem()
 {
     if (m_itemType == FluVNavigationItemType::IconText)
     {
@@ -41,7 +41,7 @@ FluVNavigationFlyIconTextItem * FluVNavigationItem::getFlyItem()
         return item->m_flyItem;
     }
     return nullptr;
-    //return m_flyItem;
+    // return m_flyItem;
 }
 
 void FluVNavigationItem::setParentFlyItem(FluVNavigationFlyIconTextItem* flyItem)

@@ -175,8 +175,9 @@ void FluAllSamplesPage::makeLayoutCards()
     stackPanelCard->setKey("StackPanelPage");
     m_cards.push_back(stackPanelCard);
 
-    auto variableSizedWrapGridCard =
-        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")), tr("VariableSizedWrapGrid"), tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."));
+    auto variableSizedWrapGridCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")),
+                                                  tr("VariableSizedWrapGrid"),
+                                                  tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."));
     variableSizedWrapGridCard->setKey("VariableSizedWrapGridPage");
     m_cards.push_back(variableSizedWrapGridCard);
 
@@ -231,8 +232,9 @@ void FluAllSamplesPage::makeMenusAndToolbars()
     appBarSeparatorCard->setKey("AppBarSeparatorPage");
     m_cards.push_back(appBarSeparatorCard);
 
-    auto appBarToggleButtonCard =
-        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AppBarToggleButton.png")), tr("AppBarToggleButton"), tr("A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI."));
+    auto appBarToggleButtonCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AppBarToggleButton.png")),
+                                               tr("AppBarToggleButton"),
+                                               tr("A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI."));
     appBarToggleButtonCard->setKey("AppBarToggleButtonPage");
     m_cards.push_back(appBarToggleButtonCard);
 
@@ -252,7 +254,8 @@ void FluAllSamplesPage::makeMenusAndToolbars()
     menuFlyoutCard->setKey("MenuFlyoutPage");
     m_cards.push_back(menuFlyoutCard);
 
-    auto standUICommandCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/StandardUICommand.png")), tr("StandardUICommand"), tr("A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g.'save'."));
+    auto standUICommandCard =
+        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/StandardUICommand.png")), tr("StandardUICommand"), tr("A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g.'save'."));
     standUICommandCard->setKey("StandardUICommandPage");
     m_cards.push_back(standUICommandCard);
 
@@ -303,7 +306,8 @@ void FluAllSamplesPage::makeScrollingCards()
     scrollViewerCard->setKey("ScrollViewerPage");
     m_cards.push_back(scrollViewerCard);
 
-    auto semanticZoomCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/SemanticZoom.png")), tr("SemanticZoom"), tr("Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items.."));
+    auto semanticZoomCard =
+        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/SemanticZoom.png")), tr("SemanticZoom"), tr("Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items.."));
     semanticZoomCard->setKey("SemanticZoomPage");
     m_cards.push_back(semanticZoomCard);
 }

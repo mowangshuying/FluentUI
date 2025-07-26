@@ -130,7 +130,7 @@ void FluMenuBarPage::addRoundMenu()
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A Round Menu"));
     displayBox->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode3.md");
-    
+
     auto btn = new FluPushButton;
     btn->setText(tr("show menu"));
     btn->setFixedWidth(120);
@@ -161,16 +161,16 @@ void FluMenuBarPage::addRoundMenu()
     roundMenu->addSeparator();
 
     auto selectAllAction = new FluAction(tr("Select all"));
-    //selectAllAction->setShortcut(QKeySequence("Ctrl+A"));
+    // selectAllAction->setShortcut(QKeySequence("Ctrl+A"));
     roundMenu->addAction(selectAllAction);
 
     auto settingAction = new FluAction(FluAwesomeType::Settings, tr("Setting"));
     auto helpAction = new FluAction(FluAwesomeType::Help, tr("Help"));
     auto feedbackAction = new FluAction(FluAwesomeType::Feedback, tr("Feedback"));
 
-    //settingAction->setShortcut(QKeySequence("Ctrl+S"));
-    //helpAction->setShortcut(QKeySequence("Ctrl+H"));
-    //feedbackAction->setShortcut(QKeySequence("Ctrl+F"));
+    // settingAction->setShortcut(QKeySequence("Ctrl+S"));
+    // helpAction->setShortcut(QKeySequence("Ctrl+H"));
+    // feedbackAction->setShortcut(QKeySequence("Ctrl+F"));
 
     roundMenu->addAction(settingAction);
     roundMenu->addAction(helpAction);
@@ -178,12 +178,11 @@ void FluMenuBarPage::addRoundMenu()
 
     displayBox->getBodyLayout()->addWidget(btn);
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    
-    connect(btn, &FluPushButton::clicked, this, [=]() {
-        auto gp = btn->mapToGlobal(QPoint(btn->width()+5, -100));
-        roundMenu->exec(gp, true, FluMenuAniType::dropDown);
-        });
 
+    connect(btn, &FluPushButton::clicked, this, [=]() {
+        auto gp = btn->mapToGlobal(QPoint(btn->width() + 5, -100));
+        roundMenu->exec(gp, true, FluMenuAniType::dropDown);
+    });
 }
 
 void FluMenuBarPage::onThemeChanged()

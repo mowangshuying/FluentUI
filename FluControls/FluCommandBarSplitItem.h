@@ -4,10 +4,9 @@
 
 class FluCommandBarSplitItem : public FluCommandBarItem
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	  FluCommandBarSplitItem(QWidget* parent = nullptr) : FluCommandBarItem(parent)
-	  {
-
-	  }
+    FluCommandBarSplitItem(QWidget* parent = nullptr) : FluCommandBarItem(parent)
+    {
+    }
 };

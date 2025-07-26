@@ -6,7 +6,7 @@
 
 class FluIndicatorRoundMenu : public FluRoundMenu
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
     FluIndicatorRoundMenu(QWidget* parent = nullptr);
 

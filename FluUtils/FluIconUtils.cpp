@@ -43,7 +43,7 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor,
     painter.begin(&tmpPixMap);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     painter.setPen(penColor);
-    //tmpFont.setPointSize(15);
+    // tmpFont.setPointSize(15);
     painter.setFont(tmpFont);
     painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar((unsigned int)nType));
     painter.end();

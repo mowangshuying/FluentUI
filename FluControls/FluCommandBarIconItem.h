@@ -11,35 +11,36 @@
 
 class FluCommandBarIconItem : public FluCommandBarItem
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-      FluCommandBarIconItem(QWidget* parent = nullptr);
+    FluCommandBarIconItem(QWidget* parent = nullptr);
 
-      FluCommandBarIconItem(FluAwesomeType type, QWidget* parent = nullptr);
+    FluCommandBarIconItem(FluAwesomeType type, QWidget* parent = nullptr);
 
-      FluRoundMenu* getRoundMenu();
+    FluRoundMenu* getRoundMenu();
 
-      void setRoundMenu(FluRoundMenu* menu);
+    void setRoundMenu(FluRoundMenu* menu);
 
-      void showAtBottomRight();
+    void showAtBottomRight();
 
-      void showAtBottomCenter();
+    void showAtBottomCenter();
 
-      void mouseReleaseEvent(QMouseEvent* event);
+    void mouseReleaseEvent(QMouseEvent* event);
 
-      void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
 
-    signals:
-      void clicked();
-    public slots:
-        void onThemeChanged()
-        {
-            FluStyleSheetUitls::setQssByFileName("FluCommandBarIconItem.qss", this, FluThemeUtils::getUtils()->getTheme());
-        }
-    protected:
-      QHBoxLayout* m_hMainLayout;
-      QPushButton* m_iconBtn;
-      FluAwesomeType m_awesomeType;
+  signals:
+    void clicked();
+  public slots:
+    void onThemeChanged()
+    {
+        FluStyleSheetUitls::setQssByFileName("FluCommandBarIconItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    }
 
-      FluRoundMenu* m_roundMenu;
+  protected:
+    QHBoxLayout* m_hMainLayout;
+    QPushButton* m_iconBtn;
+    FluAwesomeType m_awesomeType;
+
+    FluRoundMenu* m_roundMenu;
 };

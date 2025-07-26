@@ -33,7 +33,6 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     m_appThemeSelectBox->getComboBox()->addItem(tr("AtomOneDark"));
     m_appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
     connect(m_appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
-
         if (index == (int)FluThemeUtils::getUtils()->getTheme())
             return;
 

@@ -38,15 +38,15 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_titleBar->setFixedHeight(36);
 
 #ifndef Q_OS_MACOS
-    auto hLayout = (QHBoxLayout*)m_titleBar->layout();
-    auto vLayout = (QVBoxLayout*)hLayout->itemAt(1)->layout();
+    auto hLayout = (QHBoxLayout *)m_titleBar->layout();
+    auto vLayout = (QVBoxLayout *)hLayout->itemAt(1)->layout();
     auto hButtonLayout = (QHBoxLayout *)vLayout->itemAt(0)->layout();
     auto themeButton = new FluThemeButton;
     hButtonLayout->insertWidget(0, themeButton);
     FramelessWidgetsHelper::get(this)->setHitTestVisible(themeButton);
 
-    connect(themeButton, &FluThemeButton::clickedThemeButton, this, [=]() { 
-        auto settingsPages = (FluSettingPage*)m_sLayout->getWidget("SettingPage");
+    connect(themeButton, &FluThemeButton::clickedThemeButton, this, [=]() {
+        auto settingsPages = (FluSettingPage *)m_sLayout->getWidget("SettingPage");
         settingsPages->updateThemeSelectBox();
     });
 #endif
@@ -113,9 +113,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     connect(m_navView, &FluVNavigationView::searchKeyChanged, this, [=](QString text) { m_sLayout->setCurrentWidget(text); });
-    connect(m_navView, &FluVNavigationView::keyChanged, this, [=](QString key) { 
-        m_sLayout->setCurrentWidget(key); 
-    });
+    connect(m_navView, &FluVNavigationView::keyChanged, this, [=](QString key) { m_sLayout->setCurrentWidget(key); });
 
 #if (QT_VERSION <= QT_VERSION_CHECK(6, 0, 0))
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
@@ -159,11 +157,11 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem(FluAwesomeType::Emoji, tr("Emoijs"), item);
 
     FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("2-level"), item);
-    
+
     FluVNavigationIconTextItem *item41 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("3-level"), item4);
     FluVNavigationIconTextItem *item42 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("3-level"), item4);
     FluVNavigationIconTextItem *item43 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("3-level"), item4);
-    
+
     FluVNavigationIconTextItem *item421 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
     FluVNavigationIconTextItem *item422 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
     FluVNavigationIconTextItem *item423 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("4-level"), item42);
@@ -172,17 +170,16 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     FluVNavigationIconTextItem *item5232 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("5-level"), item42);
     FluVNavigationIconTextItem *item5233 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("5-level"), item42);
     FluVNavigationIconTextItem *item5234 = new FluVNavigationIconTextItem(FluAwesomeType::Airplane, tr("5-level"), item42);
-   
+
     item1->setKey("TypographyPage");
 
     item->addItem(item1);
 
     item2->setKey("IconsPage");
-    
+
     // LOG_DEBUG << "item2 depth Before:" << item2->getDepth();
     item->addItem(item2);
     // LOG_DEBUG << "item2 depth After:" << item2->getDepth();
-
 
     item3->setKey("EmoijsPage");
     item->addItem(item3);
@@ -204,16 +201,14 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
     item423->addItem(item5233);
     item423->addItem(item5234);
 
-
     // LOG_DEBUG << "item421 depth:" << item421->getDepth();
     // LOG_DEBUG << "item422 depth:" << item422->getDepth();
     // LOG_DEBUG << "item423 depth:" << item423->getDepth();
-    
+
     item->addItem(item4);
-    
+
     // item->addItem(item3);
     m_navView->addItemToMidLayout(item);
-
 
     auto typographyPage = new FluTypeographyPage;
     m_sLayout->addWidget("TypographyPage", typographyPage);
@@ -226,9 +221,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
 
     auto emoijsPage = new FluEmoijsPage;
     m_sLayout->addWidget("EmoijsPage", emoijsPage);
-    connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { 
-        m_sLayout->setCurrentWidget("EmoijsPage");
-    });
+    connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("EmoijsPage"); });
 }
 
 void FluGalleryWindow::makeSamplesNavItem()

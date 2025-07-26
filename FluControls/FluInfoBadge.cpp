@@ -3,7 +3,7 @@
 FluInfoBadge::FluInfoBadge(QWidget* parent /*= nullptr*/) : QLabel(parent)
 {
     setWordWrap(true);
-    //setAlignment(Qt::AlignCenter);
+    // setAlignment(Qt::AlignCenter);
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_TransparentForMouseEvents);
     setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
@@ -11,9 +11,7 @@ FluInfoBadge::FluInfoBadge(QWidget* parent /*= nullptr*/) : QLabel(parent)
     m_parent = nullptr;
     m_target = nullptr;
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluInfoBadge::setParent(QWidget* parent)
@@ -87,7 +85,7 @@ void FluInfoBadge::paintEvent(QPaintEvent* event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(Qt::NoPen);
     painter.setBrush(getBadgeColor());
-    //int nR = height() / 2;
+    // int nR = height() / 2;
     painter.drawRoundedRect(rect(), height() / 2, height() / 2);
     QLabel::paintEvent(event);
 }

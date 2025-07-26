@@ -104,9 +104,7 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
             awesomeTypeKeyLabel->setText("");
             awesomeTypeValueLabel->setText("");
         });
-        
     }
-
 
     connect(m_searchEdit, &FluSearchLineEdit::onSearchBtnClicked, [=]() {
         QString searchText = m_searchEdit->getText();

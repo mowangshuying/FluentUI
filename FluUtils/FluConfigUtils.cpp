@@ -44,7 +44,7 @@ void FluConfigUtils::setTheme(FluTheme theme)
     {
         m_settings->setValue("theme", "AtomOneDark");
     }
-    
+
     m_settings->endGroup();
 }
 

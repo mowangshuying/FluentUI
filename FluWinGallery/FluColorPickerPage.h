@@ -4,11 +4,11 @@
 
 class FluColorPickerPage : public FluAEmptyPage
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-        FluColorPickerPage(QWidget* parent = nullptr);
-	signals:
-          void clickedHCard();
-    public slots:
-          void onThemeChanged();
+    FluColorPickerPage(QWidget* parent = nullptr);
+  signals:
+    void clickedHCard();
+  public slots:
+    void onThemeChanged();
 };

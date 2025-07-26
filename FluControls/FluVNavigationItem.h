@@ -14,14 +14,15 @@ enum class FluVNavigationItemType
     Setting,
 };
 
-enum class FluVNavigationState {
-  None,
-  Collapsing,
-  Expanding,
-  Collapsed,
-  Expanded,
-  // Long,
-  // Short,
+enum class FluVNavigationState
+{
+    None,
+    Collapsing,
+    Expanding,
+    Collapsed,
+    Expanded,
+    // Long,
+    // Short,
 };
 
 class FluVNavigationItem : public FluWidget
@@ -36,7 +37,7 @@ class FluVNavigationItem : public FluWidget
     void setParentView(FluVNavigationView* view);
     FluVNavigationView* getParentView();
 
-    FluVNavigationFlyIconTextItem * getFlyItem();
+    FluVNavigationFlyIconTextItem* getFlyItem();
 
     void setParentFlyItem(FluVNavigationFlyIconTextItem* flyItem);
 

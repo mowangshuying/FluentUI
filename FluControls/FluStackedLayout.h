@@ -28,5 +28,5 @@ class FluStackedLayout : public QStackedLayout
 
   protected:
     QMap<QString, QWidget *> m_widgetMap;
-    //QPropertyAnimation *m_animation;
+    // QPropertyAnimation *m_animation;
 };

@@ -15,8 +15,9 @@ FluMenuAndToolBarsPage::FluMenuAndToolBarsPage(QWidget* parent /*= nullptr*/) : 
     getFWScrollView()->getMainLayout()->addWidget(appBarSeparatorCard);
     connect(appBarSeparatorCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto appBarToggleButtonCard =
-        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AppBarToggleButton.png")), tr("AppBarToggleButton"), tr("A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI."));
+    auto appBarToggleButtonCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AppBarToggleButton.png")),
+                                               tr("AppBarToggleButton"),
+                                               tr("A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI."));
     appBarToggleButtonCard->setKey("AppBarToggleButtonPage");
     getFWScrollView()->getMainLayout()->addWidget(appBarToggleButtonCard);
     connect(appBarToggleButtonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
@@ -41,7 +42,8 @@ FluMenuAndToolBarsPage::FluMenuAndToolBarsPage(QWidget* parent /*= nullptr*/) : 
     getFWScrollView()->getMainLayout()->addWidget(menuFlyoutCard);
     connect(menuFlyoutCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto standUICommandCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/StandardUICommand.png")), tr("StandardUICommand"), tr("A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g.'save'."));
+    auto standUICommandCard =
+        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/StandardUICommand.png")), tr("StandardUICommand"), tr("A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g.'save'."));
     standUICommandCard->setKey(tr("StandardUICommandPage"));
     getFWScrollView()->getMainLayout()->addWidget(standUICommandCard);
     connect(standUICommandCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });

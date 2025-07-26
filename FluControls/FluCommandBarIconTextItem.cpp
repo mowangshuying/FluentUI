@@ -21,11 +21,10 @@ FluCommandBarIconTextItem::FluCommandBarIconTextItem(QWidget* parent) : FluComma
     m_textLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_textLabel->setObjectName("textLabel");
     m_hMainLayout->addWidget(m_textLabel);
-    
+
     setFixedHeight(36);
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 FluCommandBarIconTextItem::FluCommandBarIconTextItem(FluAwesomeType type, QString text, QWidget* parent) : FluCommandBarIconTextItem(parent)

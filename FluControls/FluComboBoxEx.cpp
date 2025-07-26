@@ -61,7 +61,7 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         }
 
         setIndex(nIndex);
-       // emit currentIndexChanged(nIndex);
+        // emit currentIndexChanged(nIndex);
     });
 
     onThemeChanged();

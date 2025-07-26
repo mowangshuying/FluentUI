@@ -39,9 +39,9 @@ class FluDisplayIconBox : public FluWidget
     void onThemeChanged();
 
   protected:
-      // true: display awesometype;
+    // true: display awesometype;
     bool m_bUseAwesomeType;
-    
+
     FluAwesomeType m_awesomeType;
     FluEmoijType m_emoijType;
     QLabel* m_iconLabel;

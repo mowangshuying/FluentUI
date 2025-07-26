@@ -5,7 +5,7 @@
 
 class FluGifBoxDemo : public FluTemplateDemo
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-        FluGifBoxDemo(QWidget* parent = nullptr);
+    FluGifBoxDemo(QWidget* parent = nullptr);
 };

@@ -10,7 +10,6 @@ class FluEmoijUtils
     ~FluEmoijUtils();
 
   public:
-
     static QPixmap getSvgPixmap(QString svgPath);
     static QPixmap getSvgPixmap(FluEmoijType type);
     static QIcon getSvgIcon(QString svgPath);

@@ -5,16 +5,14 @@
 #include "../FluUtils/FluUtils.h"
 #include <QApplication>
 
-
 using namespace wangwenx190::FramelessHelper::Global;
 using namespace wangwenx190::FramelessHelper;
 
- FluFrameLessTitleBar::FluFrameLessTitleBar(QWidget* parent /*= nullptr*/) : QWidget(parent)
+FluFrameLessTitleBar::FluFrameLessTitleBar(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
     m_titleBarLayout = new QHBoxLayout(this);
     m_titleBarLayout->setSpacing(0);
     m_titleBarLayout->setContentsMargins(0, 0, 0, 0);
-
 
     m_vSystemButtonsOuterLayout = new QVBoxLayout(this);
     m_hSystemButtonsInnerLayout = new QHBoxLayout(this);
@@ -35,9 +33,8 @@ using namespace wangwenx190::FramelessHelper;
             window()->showNormal();
         else
             window()->showMaximized();
-
     });
-    
+
     m_closeButton = new QPushButton(this);
     m_closeButton->setObjectName("closeButton");
     m_closeButton->setIconSize(QSize(20, 20));
@@ -49,7 +46,7 @@ using namespace wangwenx190::FramelessHelper;
             window()->hide();
         else
             window()->close();
-        });
+    });
     m_hSystemButtonsInnerLayout->setSpacing(0);
     m_hSystemButtonsInnerLayout->setContentsMargins(0, 0, 0, 0);
     m_hSystemButtonsInnerLayout->addWidget(m_minimizeButton);
@@ -72,9 +69,7 @@ using namespace wangwenx190::FramelessHelper;
     window()->installEventFilter(this);
 
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 QRect FluFrameLessTitleBar::windowIconRect() const
@@ -103,7 +98,7 @@ QRect FluFrameLessTitleBar::windowIconRect() const
             const int centeredX = std::round(qreal(titleBarWidth - labelWidth) / qreal(2));
             return (centeredX - kDefaultTitleBarContentsMargin - size.width());
         }
-        //WARNING << "The alignment for the title label is not set!";
+        // WARNING << "The alignment for the title label is not set!";
         return 0;
     }();
 #else   // !Q_OS_MACOS
@@ -156,7 +151,7 @@ int FluFrameLessTitleBar::titleLabelMaxWidth() const
 #else
     static constexpr const int chromeButtonAreaWidth = 70;
 #endif
-    //Q_Q(const StandardTitleBar);
+    // Q_Q(const StandardTitleBar);
     int textMaxWidth = width();
     if ((m_labelAlignment & Qt::AlignLeft) || (m_labelAlignment & Qt::AlignRight))
     {
@@ -176,9 +171,9 @@ int FluFrameLessTitleBar::titleLabelMaxWidth() const
 void FluFrameLessTitleBar::updateMaximizeButton()
 {
 #if !defined(Q_OS_MACOS)
-    //const bool max = window->isMaximized();
-    //m_maximizeButton->setButtonType(max ? SystemButtonType::Restore : SystemButtonType::Maximize);
-    //m_maximizeButton->setToolTip(max ? tr("Restore") : tr("Maximize"));
+    // const bool max = window->isMaximized();
+    // m_maximizeButton->setButtonType(max ? SystemButtonType::Restore : SystemButtonType::Maximize);
+    // m_maximizeButton->setToolTip(max ? tr("Restore") : tr("Maximize"));
 #endif
 }
 
@@ -196,9 +191,9 @@ void FluFrameLessTitleBar::updateChromeButtonColor()
 void FluFrameLessTitleBar::retranslateUi()
 {
 #ifdef Q_OS_LINUX
-    //m_minimizeButton->setToolTip(tr("Minimize"));
-    //m_maximizeButton->setToolTip(window->isMaximized() ? tr("Restore") : tr("Maximize"));
-    //m_closeButton->setToolTip(tr("Close"));
+    // m_minimizeButton->setToolTip(tr("Minimize"));
+    // m_maximizeButton->setToolTip(window->isMaximized() ? tr("Restore") : tr("Maximize"));
+    // m_closeButton->setToolTip(tr("Close"));
 #endif
 }
 
@@ -213,7 +208,7 @@ bool FluFrameLessTitleBar::mouseEventHandler(QMouseEvent* event)
     {
         return false;
     }
-    //Q_Q(const StandardTitleBar);
+    // Q_Q(const StandardTitleBar);
     const Qt::MouseButton button = event->button();
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
     const QPoint scenePos = event->scenePosition().toPoint();
@@ -269,7 +264,7 @@ bool FluFrameLessTitleBar::mouseEventHandler(QMouseEvent* event)
             {
                 m_closeTriggered = true;
                 close();
-                
+
                 // Eat this event, we have handled it here.
                 event->accept();
                 return true;
@@ -296,7 +291,6 @@ bool FluFrameLessTitleBar::eventFilter(QObject* object, QEvent* event)
     {
         return QWidget::eventFilter(object, event);
     }
-
 
     switch (event->type())
     {
@@ -372,9 +366,9 @@ void FluFrameLessTitleBar::setHideWhenClose(const bool value)
     Q_EMIT extendedChanged();
 }
 
-//ChromePalette* FluFrameLessTitleBar::chromePalette() const
+// ChromePalette* FluFrameLessTitleBar::chromePalette() const
 //{
-//}
+// }
 
 bool FluFrameLessTitleBar::titleLabelVisible() const
 {
@@ -498,7 +492,7 @@ void FluFrameLessTitleBar::emulateLeaveEvent(QWidget* widget)
 
 void FluFrameLessTitleBar::paintEvent(QPaintEvent* event)
 {
-    //LOG_DEBUG << "called";
+    // LOG_DEBUG << "called";
     Q_ASSERT(event);
     if (!event)
     {
@@ -520,7 +514,7 @@ void FluFrameLessTitleBar::paintEvent(QPaintEvent* event)
             painter.setPen(foregroundColor);
             painter.setFont(m_titleFont.value_or(defaultFont()));
             const auto pos = [this]() -> QPoint {
-                const FontMetrics labelSize =titleLabelSize();
+                const FontMetrics labelSize = titleLabelSize();
                 const int titleBarWidth = width();
                 int x = 0;
                 if (m_labelAlignment & Qt::AlignLeft)
@@ -542,8 +536,8 @@ void FluFrameLessTitleBar::paintEvent(QPaintEvent* event)
                 {
                     LOG_WARN << "The alignment for the title label is not set!";
                 }
-                int y = std::round((qreal(height() - labelSize.height) / qreal(2))+ qreal(labelSize.ascent));
-                //y = 20;
+                int y = std::round((qreal(height() - labelSize.height) / qreal(2)) + qreal(labelSize.ascent));
+                // y = 20;
                 return {x, y};
             }();
             const int textMaxWidth = titleLabelMaxWidth();

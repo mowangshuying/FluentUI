@@ -8,23 +8,24 @@
 
 class FluCommandBarIconTextItem : public FluCommandBarItem
 {
-	Q_OBJECT
+    Q_OBJECT
 
   public:
-        FluCommandBarIconTextItem(QWidget* parent = nullptr);
+    FluCommandBarIconTextItem(QWidget* parent = nullptr);
 
-        FluCommandBarIconTextItem(FluAwesomeType type, QString text, QWidget* parent = nullptr);
+    FluCommandBarIconTextItem(FluAwesomeType type, QString text, QWidget* parent = nullptr);
 
-        void mouseReleaseEvent(QMouseEvent* event);
+    void mouseReleaseEvent(QMouseEvent* event);
 
-      void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
   signals:
-      void clicked();
+    void clicked();
   public slots:
-      void onThemeChanged();
+    void onThemeChanged();
+
   protected:
-      QHBoxLayout* m_hMainLayout;
-	  QPushButton* m_iconBtn;
-      QLabel* m_textLabel;
-      FluAwesomeType m_awesomeType;
+    QHBoxLayout* m_hMainLayout;
+    QPushButton* m_iconBtn;
+    QLabel* m_textLabel;
+    FluAwesomeType m_awesomeType;
 };

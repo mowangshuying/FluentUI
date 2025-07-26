@@ -7,8 +7,8 @@
 #endif
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
-//#include <FramelessHelper/Widgets/standardsystembutton.h>
-//#include <FramelessHelper/Widgets/standardtitlebar.h>
+// #include <FramelessHelper/Widgets/standardsystembutton.h>
+// #include <FramelessHelper/Widgets/standardtitlebar.h>
 #include <QtWidgets/qboxlayout.h>
 #include <QtWidgets/qfileiconprovider.h>
 #include <QtWidgets/qlabel.h>
@@ -60,11 +60,11 @@ void FluFrameLessWidgetEx::initialize()
 
     FramelessWidgetsHelper *helper = FramelessWidgetsHelper::get(this);
     helper->setTitleBarWidget(m_titleBar);
-//#ifndef Q_OS_MACOS
-//    helper->setSystemButton(m_titleBar->minimizeButton(), SystemButtonType::Minimize);
-//    helper->setSystemButton(m_titleBar->maximizeButton(), SystemButtonType::Maximize);
-//    helper->setSystemButton(m_titleBar->closeButton(), SystemButtonType::Close);
-//#endif  // Q_OS_MACOS
+    // #ifndef Q_OS_MACOS
+    //     helper->setSystemButton(m_titleBar->minimizeButton(), SystemButtonType::Minimize);
+    //     helper->setSystemButton(m_titleBar->maximizeButton(), SystemButtonType::Maximize);
+    //     helper->setSystemButton(m_titleBar->closeButton(), SystemButtonType::Close);
+    // #endif  // Q_OS_MACOS
 }
 
 void FluFrameLessWidgetEx::updateStyleSheet()

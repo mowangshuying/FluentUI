@@ -46,7 +46,7 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-    //onThemeChanged();
+    // onThemeChanged();
 }
 
 void FluTemplateDemo::contextMenuEvent(QContextMenuEvent* event)

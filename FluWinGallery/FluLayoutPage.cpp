@@ -50,8 +50,9 @@ FluLayoutPage::FluLayoutPage(QWidget* parent /*= nullptr*/) : FluATitlePage(pare
     getFWScrollView()->getMainLayout()->addWidget(stackPanelCard);
     connect(stackPanelCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto variableSizedWrapGridCard =
-        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")), tr("VariableSizedWrapGrid"), tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."));
+    auto variableSizedWrapGridCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")),
+                                                  tr("VariableSizedWrapGrid"),
+                                                  tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."));
     variableSizedWrapGridCard->setKey("VariableSizedWrapGridPage");
     getFWScrollView()->getMainLayout()->addWidget(variableSizedWrapGridCard);
     connect(variableSizedWrapGridCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });

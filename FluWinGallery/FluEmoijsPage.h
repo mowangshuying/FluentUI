@@ -13,7 +13,7 @@
 
 class FluEmoijsPage : public FluAEmptyPage
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
     FluEmoijsPage(QWidget* parent = nullptr);
 
@@ -21,7 +21,7 @@ class FluEmoijsPage : public FluAEmptyPage
     void onThemeChanged();
 
   protected:
-    //QColor m_penColor;
+    // QColor m_penColor;
     QLabel* m_iconLabel;
 
     QLabel* m_searchLabel;

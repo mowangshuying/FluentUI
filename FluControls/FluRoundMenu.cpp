@@ -588,6 +588,18 @@ void FluRoundMenu::mouseMoveEvent(QMouseEvent* event)
     if (!m_bSubMenu)
         return;
 
+    if (!m_parentMenu)
+        return;
+
     QPoint pos = event->globalPos();
     FluRoundMenuView* view = m_parentMenu->getView();
+
+    QMargins margins = view->viewport()->contentsMargins();
+    QRect rect = view->visualItemRect(m_menuItem).translated(view->mapToGlobal(QPoint(0, 0)));
+    if ( (m_parentMenu->geometry().contains(pos)) && (!rect.contains(pos)) && (!geometry().contains(pos)))
+    {
+        view->clearSelection();
+        hideMenu(false);
+    }
+
 }

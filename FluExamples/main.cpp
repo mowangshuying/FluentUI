@@ -72,6 +72,7 @@
 #include "../FluControls/FluTerminalWidget.h"
 #include "FluMainWidgetDemo.h"
 #include "FluGifBoxDemo.h"
+#include "FluSystemTrayIconDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -377,7 +378,10 @@ int main(int argc, char **argv)
     // FluGifBoxDemo demo;
     // demo.show();
 
-    FluRoundMenuDemo demo;
+    //FluRoundMenuDemo demo;
+    //demo.show();
+
+    FluSystemTrayIconDemo demo;
     demo.show();
 
     return app.exec();

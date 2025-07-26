@@ -4,9 +4,8 @@
 #include "FluMenuAniMgr.h"
 #include "FluAction.h"
 
-FluRoundMenu::FluRoundMenu(QWidget* parent /*= nullptr*/)
+FluRoundMenu::FluRoundMenu(QWidget* parent /*= nullptr*/) : FluRoundMenu("", FluAwesomeType::None, parent)
 {
-    FluRoundMenu("", FluAwesomeType::None, parent);
 }
 
 FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* parent /*= nullptr*/) : QMenu(parent)

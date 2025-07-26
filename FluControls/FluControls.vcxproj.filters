@@ -542,6 +542,12 @@
     <ClCompile Include="FluGifBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluSystemTrayMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FluSystemTrayIcon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -1048,6 +1054,9 @@
     <QtMoc Include="FluGifBox.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="FluSystemTrayIcon.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FluFlowLayout.h">
@@ -1076,6 +1085,9 @@
     </ClInclude>
     <ClInclude Include="FluCommandBarItemType.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FluSystemTrayMenu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

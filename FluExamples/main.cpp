@@ -374,7 +374,11 @@ int main(int argc, char **argv)
     //FluMainWidgetDemo demo;
     //demo.show();
     
-    FluGifBoxDemo demo;
+    // FluGifBoxDemo demo;
+    // demo.show();
+
+    FluRoundMenuDemo demo;
     demo.show();
+
     return app.exec();
 }

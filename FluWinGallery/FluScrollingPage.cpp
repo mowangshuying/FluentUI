@@ -26,7 +26,8 @@ FluScrollingPage::FluScrollingPage(QWidget* parent /*= nullptr*/) : FluATitlePag
     getFWScrollView()->getMainLayout()->addWidget(scrollViewerCard);
     connect(scrollViewerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
-    auto semanticZoomCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/SemanticZoom.png")), tr("SemanticZoom"), tr("Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items.."));
+    auto semanticZoomCard =
+        new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/SemanticZoom.png")), tr("SemanticZoom"), tr("Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items.."));
     semanticZoomCard->setKey("SemanticZoomPage");
     getFWScrollView()->getMainLayout()->addWidget(semanticZoomCard);
     connect(semanticZoomCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });

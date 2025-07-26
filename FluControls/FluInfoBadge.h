@@ -62,10 +62,11 @@ class FluInfoBadge : public QLabel
   public:
     void paintEvent(QPaintEvent* event);
   public slots:
-      void onThemeChanged()
-      {
-          FluStyleSheetUitls::setQssByFileName("FluInfoBadge.qss", this, FluThemeUtils::getUtils()->getTheme());
-      }
+    void onThemeChanged()
+    {
+        FluStyleSheetUitls::setQssByFileName("FluInfoBadge.qss", this, FluThemeUtils::getUtils()->getTheme());
+    }
+
   protected:
     QWidget* m_parent;
     QWidget* m_target;

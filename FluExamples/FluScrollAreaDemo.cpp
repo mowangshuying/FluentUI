@@ -2,7 +2,7 @@
 
 FluScrollAreaDemo::FluScrollAreaDemo(QWidget* parent /*= nullptr*/) : FluScrollArea(parent)
 {
-    //QPixmap img("../res/SampleMedia/LandscapeImage9.jpg"));
+    // QPixmap img("../res/SampleMedia/LandscapeImage9.jpg"));
     auto imgBox = new FluImageBox(FluIconUtils::getPixmap("../res/SampleMedia/LandscapeImage9.jpg"), this);
     imgBox->setFixedSize(2000, 2000);
     setWidget(imgBox);

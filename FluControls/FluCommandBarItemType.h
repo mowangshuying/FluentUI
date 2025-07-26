@@ -2,7 +2,7 @@
 
 enum class FluCommandBarItemType
 {
-	icon,
-	iconText,
-	more,
+    icon,
+    iconText,
+    more,
 };

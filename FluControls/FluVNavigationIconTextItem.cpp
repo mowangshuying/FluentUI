@@ -206,18 +206,17 @@ int FluVNavigationIconTextItem::calcItemW1Width()
     if (m_items.empty())
         nArrowWidth = 0;
 
-    //LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
-    //LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
-    //LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
-    //LOG_DEBUG << "nIconWidth:" << nIconWidth;
-    //LOG_DEBUG << "nSpacing:" << nSpacing;
-    //LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
-    //LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
-    //LOG_DEBUG << "getDepth:" << getDepth();
-
+    // LOG_DEBUG << "Text:" << m_label->text() << "==========================================";
+    // LOG_DEBUG << "margins left:" << margins.left() << ",margins right:" << margins.right();
+    // LOG_DEBUG << "nIndicatorWidth:" << nIndicatorWidth;
+    // LOG_DEBUG << "nIconWidth:" << nIconWidth;
+    // LOG_DEBUG << "nSpacing:" << nSpacing;
+    // LOG_DEBUG << "nLabelWidth:" << nLabelWidth;
+    // LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
+    // LOG_DEBUG << "getDepth:" << getDepth();
 
     int nCurentWidth = margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 36 * getDepth();
-    //LOG_DEBUG << "W1 width:" << nCurentWidth;
+    // LOG_DEBUG << "W1 width:" << nCurentWidth;
     return nCurentWidth;
 }
 
@@ -268,7 +267,7 @@ void FluVNavigationIconTextItem::adjustItemWidth(FluVNavigationIconTextItem *ite
         return;
     }
 
-    //LOG_DEBUG << "item:" << item->getLabel();
+    // LOG_DEBUG << "item:" << item->getLabel();
     int nMaxWidth = calcItemWidth();
     item->setItemWidth(nMaxWidth);
     adjustItemWidth(item->m_parentItem);
@@ -314,7 +313,7 @@ int FluVNavigationIconTextItem::getDepth()
     return nDepth;
 }
 
-void FluVNavigationIconTextItem::updateDepth(FluVNavigationIconTextItem  *item)
+void FluVNavigationIconTextItem::updateDepth(FluVNavigationIconTextItem *item)
 {
     if (item == nullptr)
         return;
@@ -322,12 +321,12 @@ void FluVNavigationIconTextItem::updateDepth(FluVNavigationIconTextItem  *item)
     int nDepth = item->getDepth();
     item->m_emptyWidget->setFixedWidth(36 * nDepth);
 
-     // get sub items and update depth
-     for (auto tmpItem : item->getItems())
-     {
-         tmpItem->m_emptyWidget->setFixedWidth(36 * tmpItem->getDepth());
-         updateDepth(tmpItem);
-     }
+    // get sub items and update depth
+    for (auto tmpItem : item->getItems())
+    {
+        tmpItem->m_emptyWidget->setFixedWidth(36 * tmpItem->getDepth());
+        updateDepth(tmpItem);
+    }
 }
 
 FluVNavigationIconTextItem *FluVNavigationIconTextItem::getRootItem()
@@ -421,13 +420,13 @@ void FluVNavigationIconTextItem::onItemClicked()
     LOG_WARN << "get root item.";
     auto navView = rootItem->getParentView();
     auto flyItem = rootItem->getFlyItem();
-    //LOG_WARN << "bDown:" << m_bDown << "nav long:" << navView->isLong();
+    // LOG_WARN << "bDown:" << m_bDown << "nav long:" << navView->isLong();
 
     if ((navView != nullptr && m_bDown && navView->isLong()) || (navView == nullptr && isLong() && m_bDown))
     {
         setState(FluVNavigationState::Expanding);
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronUp, FluThemeUtils::getUtils()->getTheme()));
-        
+
         // adjust height ---
         // display child
         if (m_items.size() > 0)
@@ -453,15 +452,15 @@ void FluVNavigationIconTextItem::onItemClicked()
         {
             if (getState() == FluVNavigationState::Expanding)
             {
-                //int nMaxW = calcItemWidth();
-                //for (int i = 0; i < m_vLayout1->count(); i++)
+                // int nMaxW = calcItemWidth();
+                // for (int i = 0; i < m_vLayout1->count(); i++)
                 //{
-                //    auto tmpItem = (FluVNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
-                //    tmpItem->getWrapWidget1()->setFixedWidth(nMaxW);
-                //    tmpItem->getWrapWidget2()->setFixedWidth(nMaxW);
-                //    tmpItem->setFixedWidth(nMaxW);
-                //}
-                //adjustItemWidth(m_parentItem);
+                //     auto tmpItem = (FluVNavigationIconTextItem *)m_vLayout1->itemAt(i)->widget();
+                //     tmpItem->getWrapWidget1()->setFixedWidth(nMaxW);
+                //     tmpItem->getWrapWidget2()->setFixedWidth(nMaxW);
+                //     tmpItem->setFixedWidth(nMaxW);
+                // }
+                // adjustItemWidth(m_parentItem);
 
                 if (getLabel()->text() == tr("3-level"))
                 {

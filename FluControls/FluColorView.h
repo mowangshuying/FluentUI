@@ -40,7 +40,7 @@ class FluColorView : public QDialog
 
         setWindowFlags(Qt::FramelessWindowHint);
         setAttribute(Qt::WA_TranslucentBackground);
-        
+
         if (m_parentWidget != nullptr)
         {
             setGeometry(0, 0, m_parentWidget->width(), m_parentWidget->height());
@@ -147,16 +147,16 @@ class FluColorView : public QDialog
 
         // limit edit value;
 
-        connect(okBtn, &FluStyleButton::clicked, this, [=]() { 
+        connect(okBtn, &FluStyleButton::clicked, this, [=]() {
             if (m_parentWidget == nullptr)
                 return;
-            accept(); 
+            accept();
         });
 
-        connect(cancelBtn, &FluPushButton::clicked, this, [=]() { 
+        connect(cancelBtn, &FluPushButton::clicked, this, [=]() {
             if (m_parentWidget == nullptr)
                 return;
-            reject(); 
+            reject();
         });
 
         connect(colorViewGradient, &FluColorViewGradient::colorChanged, [=](QColor color) { colorViewHHandle->setColor(color); });
@@ -212,7 +212,7 @@ class FluColorView : public QDialog
     void resizeEvent(QResizeEvent* event)
     {
         QDialog::resizeEvent(event);
-        if(m_parentWidget  != nullptr)
+        if (m_parentWidget != nullptr)
         {
             m_windowMask->resize(m_parentWidget->size());
             resize(m_parentWidget->size());

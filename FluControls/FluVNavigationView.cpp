@@ -8,7 +8,7 @@
 
 FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_nViewWidth = 320; // default width
+    m_nViewWidth = 320;  // default width
     m_vLayout = new QVBoxLayout(this);
     m_vLayout->setContentsMargins(4, 8, 4, 8);
     m_topWrapWidget = new QWidget(this);
@@ -78,7 +78,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     });
 
     connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() {
-       // LOG_DEBUG << "ValueObject value:" << m_valueObject->getValue();
+        // LOG_DEBUG << "ValueObject value:" << m_valueObject->getValue();
         setFixedWidth(m_valueObject->getValue());
         update();
     });
@@ -453,7 +453,7 @@ void FluVNavigationView::onMenuItemClicked()
     {
         collapseDownView();
 
-        //LOG_DEBUG << width();
+        // LOG_DEBUG << width();
         m_valueObject->setValue(width());
         m_animation->setStartValue(width());
         m_animation->setEndValue(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());

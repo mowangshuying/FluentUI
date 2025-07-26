@@ -5,33 +5,33 @@
 
 class FluColorPickerButton : public QPushButton
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-        FluColorPickerButton(QWidget* parent = nullptr) : QPushButton(parent)
-        {
-            setFixedSize(30, 30);
-            onThemeChanged();
-        }
+    FluColorPickerButton(QWidget* parent = nullptr) : QPushButton(parent)
+    {
+        setFixedSize(30, 30);
+        onThemeChanged();
+    }
 
-        void setColor(QColor color)
-        {
-            std::map<QString, QString> kvmap;
-            m_color = color;
-            kvmap["color"] = QString::asprintf("rgb(%d,%d,%d)", color.red(), color.green(), color.blue());
-            FluStyleSheetUitls::setQssByFileName(kvmap, "FluColorPickerButton.qss", this, FluThemeUtils::getUtils()->getTheme());
-        }
+    void setColor(QColor color)
+    {
+        std::map<QString, QString> kvmap;
+        m_color = color;
+        kvmap["color"] = QString::asprintf("rgb(%d,%d,%d)", color.red(), color.green(), color.blue());
+        FluStyleSheetUitls::setQssByFileName(kvmap, "FluColorPickerButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    }
 
-        QColor getColor()
-        {
-            return m_color;
-        }
+    QColor getColor()
+    {
+        return m_color;
+    }
 
   public slots:
-      void onThemeChanged()
-      {
-          setColor(m_color);
-      }
+    void onThemeChanged()
+    {
+        setColor(m_color);
+    }
 
   protected:
-      QColor m_color;
+    QColor m_color;
 };

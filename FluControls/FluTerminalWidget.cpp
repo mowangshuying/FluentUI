@@ -4,13 +4,13 @@
 
 FluTerminalWidget::FluTerminalWidget()
 {
-    //setStyleSheet("background-color:rgb(0,0,0); color:rgb(255,255,255); border:0px;");
+    // setStyleSheet("background-color:rgb(0,0,0); color:rgb(255,255,255); border:0px;");
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     resize(1000, 700);
     setWindowTitle("Terminal");
-    //m_font.setFamily("Times New Roman");
-    //m_font.setPixelSize(14);
+    // m_font.setFamily("Times New Roman");
+    // m_font.setPixelSize(14);
     setFont(m_font);
 
     m_process = new QProcess();
@@ -76,7 +76,6 @@ void FluTerminalWidget::onReadyReadStandardOutput()
 
         if (FluThemeUtils::isLightTheme())
             setTextColor(Qt::black);
-            
 
         append(output.trimmed());
         moveCursor(QTextCursor::End);

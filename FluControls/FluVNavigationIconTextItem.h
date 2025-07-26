@@ -79,7 +79,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
             m_arrow->show();
     }
 
-    FluVNavigationIconTextItem* getParentItem()
+    FluVNavigationIconTextItem *getParentItem()
     {
         return m_parentItem;
     }
@@ -100,14 +100,14 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
     void adjustItemWidth(FluVNavigationIconTextItem *item);
     void adjustItemHeight(FluVNavigationIconTextItem *item);
 
-    void adjustFlyItemHeight(FluVNavigationFlyIconTextItem* flyItem);
+    void adjustFlyItemHeight(FluVNavigationFlyIconTextItem *flyItem);
 
-    void adjustFlyItemWidth(FluVNavigationFlyIconTextItem* flyItem);
+    void adjustFlyItemWidth(FluVNavigationFlyIconTextItem *flyItem);
 
     int getDepth();
 
-    void updateDepth(FluVNavigationIconTextItem  *item);
-    
+    void updateDepth(FluVNavigationIconTextItem *item);
+
     FluVNavigationIconTextItem *getRootItem();
 
     void clearAllItemsSelectState()

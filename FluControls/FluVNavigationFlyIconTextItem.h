@@ -27,7 +27,7 @@ class FluVNavigationFlyIconTextItem : public FluWidget
     // to enable qss
     void paintEvent(QPaintEvent* event);
 
-signals:
+  signals:
     void itemClicked(QString key);
   public slots:
     void onThemeChanged();

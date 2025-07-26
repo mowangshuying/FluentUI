@@ -6,11 +6,8 @@ FluGifBox::FluGifBox(QString lightGifPath, QString darkGifPath, QWidget* parent)
     m_darkMovie = new QMovie(darkGifPath);
     onThemeChanged();
 
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
-
 
 void FluGifBox::onThemeChanged()
 {

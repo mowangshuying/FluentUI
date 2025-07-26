@@ -93,7 +93,7 @@ class FluVNavigationView : public FluWidget
     FluVNavigationSearchItem *m_searchItem;
     bool m_bLong;
 
-    //view width
+    // view width
     int m_nViewWidth;
 
     // animation;

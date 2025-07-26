@@ -32,7 +32,7 @@ void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widg
 {
     QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
     // QString absolutePath = QDir("../").absolutePath();
-    
+
 #ifdef USE_QRC
     doForQrcQssText(qss);
 #endif
@@ -151,7 +151,7 @@ void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *pain
     }
 
     painter->fillPath(path, brush);
-}           
+}
 
 void FluStyleSheetUitls::doForQrcQssText(QString &data)
 {

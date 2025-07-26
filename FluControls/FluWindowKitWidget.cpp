@@ -18,7 +18,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
 
     auto agent = new QWK::WidgetWindowAgent(this);
     agent->setup(this);
-   // agent->setWindowAttribute("dwm-blur", true);
+    // agent->setWindowAttribute("dwm-blur", true);
 
     m_titleLabel = new FluLabel;
     m_titleLabel->setAlignment(Qt::AlignCenter);
@@ -94,16 +94,16 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
 
 #ifndef Q_OS_MAC
     connect(m_titleBar, &FluWindowKitTitleBar::pinRequested, this, [=](bool pin) {
-       // if (isHidden() || isMinimized() || isMaximized() || isFullScreen())
-       // {
-       //     return;
-       // }
+        // if (isHidden() || isMinimized() || isMaximized() || isFullScreen())
+        // {
+        //     return;
+        // }
 
-       // auto window = windowHandle();
-       // window->setFlag(Qt::WindowStaysOnTopHint, pin);
-       // setWindowFlag(Qt::WindowStaysOnTopHint, pin);
-       // show();
-       // m_pinButton->setChecked(pin);
+        // auto window = windowHandle();
+        // window->setFlag(Qt::WindowStaysOnTopHint, pin);
+        // setWindowFlag(Qt::WindowStaysOnTopHint, pin);
+        // show();
+        // m_pinButton->setChecked(pin);
     });
 
     connect(m_titleBar, &FluWindowKitTitleBar::minimizeRequested, this, &QWidget::showMinimized);

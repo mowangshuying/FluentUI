@@ -17,7 +17,6 @@ class FluCodeBox : public QTextEdit
 
     void setCodeText(QString code);
 
-
     void wheelEvent(QWheelEvent* event)
     {
         event->ignore();
@@ -25,7 +24,7 @@ class FluCodeBox : public QTextEdit
 
     void resizeEvent(QResizeEvent*);
 
-    //bool eventFilter(QObject* object, QEvent *event);
+    // bool eventFilter(QObject* object, QEvent *event);
   signals:
     void sizeChanged();
 

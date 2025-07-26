@@ -7,16 +7,13 @@ class FluSystemTrayMenu : public FluRoundMenu
   public:
     FluSystemTrayMenu(QWidget* parent = nullptr) : FluRoundMenu(parent)
     {
-
     }
 
+    FluSystemTrayMenu(QString title, FluAwesomeType iconType = FluAwesomeType::None, QWidget* parent = nullptr) : FluRoundMenu(title, iconType, parent)
+    {
+    }
 
-     FluSystemTrayMenu(QString title, FluAwesomeType iconType = FluAwesomeType::None, QWidget* parent = nullptr) : FluRoundMenu(title, iconType, parent)
-     {
-
-     }
-
-public:
+  public:
     QSize sizeHint()
     {
         auto margins = layout()->contentsMargins();

@@ -5,7 +5,7 @@
 
 class FluQrCodeDemo : public FluTemplateDemo
 {
-public:
+  public:
     FluQrCodeDemo(QWidget* parent = nullptr) : FluTemplateDemo(parent)
     {
         auto qrCodeLabel = new QLabel(this);

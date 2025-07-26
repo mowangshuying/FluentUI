@@ -337,49 +337,47 @@ int main(int argc, char **argv)
     // FluPaginationDemo demo;
     // demo.show();
 
-    //FluVNavigationViewDemo demo;
-    //demo.show();
+    // FluVNavigationViewDemo demo;
+    // demo.show();
 
     // FluColorViewDemo demo;
     // demo.show();
 
-    //FluQrCodeDemo demo;
-    //demo.show();
-
+    // FluQrCodeDemo demo;
+    // demo.show();
 
     // FluCommandBarDemo demo;
     // demo.show();
 
-    //FluTabBarDemo demo;
-    //demo.show();
-    
+    // FluTabBarDemo demo;
+    // demo.show();
+
     // FluWindowKitWidget demo;
     // demo.show();
 
-    //FluHNavigationViewDemo demo;
-    //demo.show();
+    // FluHNavigationViewDemo demo;
+    // demo.show();
 
-    //FluLineSeriesDemo demo;
-    //demo.show();
+    // FluLineSeriesDemo demo;
+    // demo.show();
 
     // FluPieSeriesDemo demo;
     // demo.show();
-    
-    //FluFrameLessWidgetEx demo;
-    //demo.show();
-    
 
-    //FluTerminalWidget widget;
-    //widget.show();
+    // FluFrameLessWidgetEx demo;
+    // demo.show();
 
-    //FluMainWidgetDemo demo;
-    //demo.show();
-    
+    // FluTerminalWidget widget;
+    // widget.show();
+
+    // FluMainWidgetDemo demo;
+    // demo.show();
+
     // FluGifBoxDemo demo;
     // demo.show();
 
-    //FluRoundMenuDemo demo;
-    //demo.show();
+    // FluRoundMenuDemo demo;
+    // demo.show();
 
     FluSystemTrayIconDemo demo;
     demo.show();

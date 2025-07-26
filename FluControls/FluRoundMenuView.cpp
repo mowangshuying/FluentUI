@@ -123,7 +123,6 @@ bool FluRoundMenuView::getBTSpacing()
 void FluRoundMenuView::setBTSpacing(bool bBTSpacing)
 {
     m_bBTSpacing = bBTSpacing;
-
 }
 
 void FluRoundMenuView::hockEvent(QEvent* event)

@@ -33,6 +33,7 @@ set(QSS_FILES
     "../StyleSheet/light/FluMenuDemo.qss"
     "../StyleSheet/light/FluTemplateDemo.qss"
     "../StyleSheet/dark/FluTemplateDemo.qss"
+    "../StyleSheet/atomOneDark/FluTemplateDemo.qss"
     "../StyleSheet/dark/FluMainWidgetDemo.qss"
     "../StyleSheet/light/FluMainWidgetDemo.qss"
 )

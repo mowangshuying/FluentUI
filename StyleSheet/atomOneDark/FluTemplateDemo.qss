@@ -1,8 +1,8 @@
 FluTemplateDemo {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(40, 44, 52);
 }
 
 #titleBar {
     color: white;
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(40, 44, 52);
 }

@@ -37,12 +37,18 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
     auto darkAction = new FluAction;
     darkAction->setText("dark");
 
+    auto atomOneDarkAction = new FluAction;
+    atomOneDarkAction->setText("atomOneDark");
+
     m_contextMenu->addAction(lightAction);
     m_contextMenu->addAction(darkAction);
+    m_contextMenu->addAction(atomOneDarkAction);
 
     connect(lightAction, &FluAction::triggered, this, [=]() { FluThemeUtils::getUtils()->setTheme(FluTheme::Light); });
 
     connect(darkAction, &FluAction::triggered, this, [=]() { FluThemeUtils::getUtils()->setTheme(FluTheme::Dark); });
+
+    connect(atomOneDarkAction, &FluAction::triggered, this, [=]() { FluThemeUtils::getUtils()->setTheme(FluTheme::AtomOneDark); });
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
@@ -69,7 +75,7 @@ void FluTemplateDemo::onThemeChanged()
 #endif
         m_titleBar->show();
     }
-    else
+    else if(FluThemeUtils::isDarkTheme () || FluThemeUtils::isAtomOneDarkTheme())
     {
         m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);

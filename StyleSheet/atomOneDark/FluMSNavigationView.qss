@@ -1,7 +1,7 @@
 FluMSNavigationView {
     /* background-color: transparent; */
     /* background-color: blueviolet; */
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(40, 44, 52);
 }
 
 #topWrapWidget,

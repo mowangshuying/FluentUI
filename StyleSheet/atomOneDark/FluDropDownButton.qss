@@ -15,7 +15,7 @@ FluDropDownButton:hover {
 FluDropDownButton:pressed {
     background-color: rgb(50, 54, 60);
     ;
-    /* border: 1px solid rgb(32, 32, 32); */
+    /* border: 1px solid rgb(40, 44, 52); */
 }
 
 #textBtn {

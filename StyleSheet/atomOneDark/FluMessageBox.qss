@@ -7,7 +7,7 @@ FluMessageBox {
 }
 
 #centerWidget {
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
     border-radius: 8px;
 }
 
@@ -25,7 +25,7 @@ FluMessageBox {
 }
 
 #btnWidget {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
 
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;

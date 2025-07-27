@@ -30,7 +30,7 @@ FluFWScrollView {
 #wrapWidget {
     /* background-color: aqua; */
     border-radius: 4px;
-    border: 1px solid rgb(71,74,79);
+    border: 1px solid rgb(71, 74, 79);
 }
 
 #wrapWidget1 {
@@ -42,7 +42,7 @@ FluFWScrollView {
     /* background-color: aqua; */
     /* border-radius: 4px; */
     border: 1px solid transparent;
-    border-left: 1px solid rgb(71,74,79);
+    border-left: 1px solid rgb(71, 74, 79);
     background-color: rgb(40, 44, 52);
 }
 

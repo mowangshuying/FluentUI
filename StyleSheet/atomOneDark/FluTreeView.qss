@@ -1,5 +1,5 @@
 FluTreeView {
-    background-color: rgb(40,44, 52);
+    background-color: rgb(40, 44, 52);
     border: 1px solid rgb(71, 74, 79);
     /* border-radius: 4px; */
     outline: none;
@@ -10,8 +10,8 @@ FluTreeView {
     qproperty-textColorEx: white;
 
     qproperty-unCheckedPenColorEx: rgb(71, 74, 79);
-    qproperty-unCheckedBrushColorEx: rgb(50,54,60);
-    
+    qproperty-unCheckedBrushColorEx: rgb(50, 54, 60);
+
     qproperty-checkedPenColorEx: rgb(82, 139, 255);
     qproperty-checkedBrushColorEx: rgb(82, 139, 255);
 }
@@ -48,6 +48,6 @@ QTreeView::branch:has-children {
     image: url("../res/ControlResImages/ChevronRight-Dark.png");
 }
 
-QTreeView::branch:open:has-children{
+QTreeView::branch:open:has-children {
     image: url("../res/ControlResImages/ChevronDown-Dark.png");
 }

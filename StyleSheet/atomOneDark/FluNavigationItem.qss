@@ -1,12 +1,12 @@
 FluNavigationItem {
     /* background-color: blueviolet; */
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(40, 44, 52);
     border-radius: 4px;
 }
 
 #wrapWidget1 {
     /* background-color: blueviolet; */
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(40, 44, 52);
     border-radius: 4px;
     /* border-radius: 0px; */
 }

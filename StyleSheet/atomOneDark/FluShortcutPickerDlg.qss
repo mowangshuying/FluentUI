@@ -26,7 +26,7 @@ FluShortcutPickerDlg {
 }
 
 #btnWidget {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(40, 44, 52);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }

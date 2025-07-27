@@ -1,7 +1,7 @@
 FluRoundMenuView {
-    border: 1px solid rgb(71,74,79);
+    border: 1px solid rgb(71, 74, 79);
     border-radius: 9px;
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
     outline: none;
     font: 14px;
 }
@@ -36,16 +36,16 @@ FluRoundMenuView::item:disabled {
 }
 
 FluRoundMenuView::item:hover {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
     color: white;
 }
 
 FluRoundMenuView::item:selected {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
     color: white;
 }
 
 FluRoundMenuView::item:selected:active {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
     color: white;
 }

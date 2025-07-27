@@ -1,10 +1,10 @@
 FluVCard {
     border-radius: 8px;
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
 }
 
 FluVCard:hover {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
 }
 
 #titleLabel {

@@ -24,7 +24,7 @@ QSlider::add-page:horizontal {
 
 QSlider::handle:horizontal {
     background-color: rgb(82, 139, 255);
-    border: 5px solid rgb(44,48,54);
+    border: 5px solid rgb(44, 48, 54);
     width: 9px;
     margin: -7px 0;
     border-radius: 9px
@@ -32,7 +32,7 @@ QSlider::handle:horizontal {
 
 QSlider::handle:horizontal:hover {
     background-color: rgb(82, 139, 255);
-    border: 4px solid rgb(50,54,60);
+    border: 4px solid rgb(50, 54, 60);
     width: 11px;
     margin: -7px 0;
     border-radius: 9px
@@ -40,7 +40,7 @@ QSlider::handle:horizontal:hover {
 
 QSlider::handle:horizontal:pressed {
     background-color: rgb(82, 139, 255);
-    border: 6px solid rgb(50,54,60);
+    border: 6px solid rgb(50, 54, 60);
     width: 7px;
     margin: -7px 0;
     border-radius: 9px
@@ -73,7 +73,7 @@ QSlider::add-page:vertical {
 
 QSlider::handle:vertical {
     background-color: rgb(82, 139, 255);
-    border: 5px solid rgb(44,48,54);
+    border: 5px solid rgb(44, 48, 54);
     height: 9px;
     margin: 0px -7px;
     border-radius: 9px;
@@ -81,7 +81,7 @@ QSlider::handle:vertical {
 
 QSlider::handle:vertical:hover {
     background-color: rgb(82, 139, 255);
-    border: 4px solid rgb(50,54,60);
+    border: 4px solid rgb(50, 54, 60);
     height: 11px;
     margin: 0px -7px;
     border-radius: 9px
@@ -89,7 +89,7 @@ QSlider::handle:vertical:hover {
 
 QSlider::handle:vertical:pressed {
     background-color: rgb(82, 139, 255);
-    border: 6px solid rgb(50,54,60);
+    border: 6px solid rgb(50, 54, 60);
     height: 7px;
     margin: 0px -7px;
     border-radius: 9px

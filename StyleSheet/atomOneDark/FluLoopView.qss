@@ -1,5 +1,5 @@
 QListWidget {
-    background: rgb(44,48,54);
+    background: rgb(44, 48, 54);
     outline: none;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -10,7 +10,7 @@ QListWidget {
 
 QListWidget::item {
     color: white;
-    background: rgb(44,48,54);
+    background: rgb(44, 48, 54);
     /* border: 1px solid blue; */
     height: 35px;
     margin-top: 3px;
@@ -18,18 +18,18 @@ QListWidget::item {
 }
 
 QListWidget::item:hover {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
 }
 
 
 #scrollDownBtn {
-    background: rgb(44,48,54);
+    background: rgb(44, 48, 54);
     border: 1px solid transparent;
     border-radius: 4px;
 }
 
 #scrollUpBtn {
-    background: rgb(44,48,54);
+    background: rgb(44, 48, 54);
     border: 1px solid transparent;
     border-radius: 4px;
 }

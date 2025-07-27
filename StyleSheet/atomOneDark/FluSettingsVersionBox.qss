@@ -4,26 +4,26 @@ FluSettingsVersionBox {
 }
 
 #wrap1[down=true] {
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
     border-radius: 4px;
     border: 1px solid rgb(71, 74, 79);
 }
 
 #wrap1[down=true]:hover {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
 }
 
 #wrap1[down=false] {
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
     border: 1px solid rgb(71, 74, 79);
     border-radius: 4px;
-    border-bottom: 1px solid rgb(44,48,54);
+    border-bottom: 1px solid rgb(44, 48, 54);
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
 
 #wrap2[down=false] {
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 4px;

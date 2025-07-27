@@ -8,12 +8,12 @@ FluStyleButton {
 }
 
 FluStyleButton:hover {
-    border: 1px solid rgb(78,106,189);
-    border-bottom: 1px solid rgb(78,106,189);
-    background-color: rgb(78,106,189);
+    border: 1px solid rgb(78, 106, 189);
+    border-bottom: 1px solid rgb(78, 106, 189);
+    background-color: rgb(78, 106, 189);
 }
 
 FluStyleButton:pressed {
-    border: 1px solid rgb(90,116,194);
-    background-color: rgb(90,116,194);
+    border: 1px solid rgb(90, 116, 194);
+    background-color: rgb(90, 116, 194);
 }

@@ -9,16 +9,16 @@ QCheckBox::indicator {
     height: 18px;
     border-radius: 4px;
     border: 1px solid rgb(153, 153, 153);
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
     margin-right: 4px;
 }
 
 QCheckBox::indicator:hover {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
 }
 
 QCheckBox::indicator:pressed {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
 }
 
 QCheckBox::indicator:checked {

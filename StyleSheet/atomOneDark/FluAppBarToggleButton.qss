@@ -15,7 +15,7 @@ FluAppBarToggleButton[toggled=true] {
 }
 
 FluAppBarToggleButton[toggled=true]:hover {
-    background-color: rgb(78,106,189);
+    background-color: rgb(78, 106, 189);
 }
 
 #iconBtn[toggled=false] {

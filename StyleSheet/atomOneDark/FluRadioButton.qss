@@ -8,19 +8,19 @@ QRadioButton::indicator {
     width: 20px;
     height: 20px;
     border-radius: 11px;
-    border: 1px solid rgb(71,74,79);
+    border: 1px solid rgb(71, 74, 79);
     color: white;
-    background-color: rgb(44,48,54);
+    background-color: rgb(44, 48, 54);
     margin-left: 5px;
 }
 
 QRadioButton::indicator:hover {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
 }
 
 QRadioButton::indicator:pressed {
-    background-color: rgb(50,54,60);
-    border: 1px solid rgb(71,74,79);
+    background-color: rgb(50, 54, 60);
+    border: 1px solid rgb(71, 74, 79);
     /*when pressed it set png*/
     image: url("../res/ControlResImages/RadioButton-Black.png");
 }

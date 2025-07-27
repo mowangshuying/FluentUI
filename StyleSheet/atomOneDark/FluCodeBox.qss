@@ -1,9 +1,9 @@
 FluCodeBox {
-    background-color: rgb(44,48,54);
-    border: 1px solid rgb(71,74,79);
+    background-color: rgb(44, 48, 54);
+    border: 1px solid rgb(71, 74, 79);
     font-size: 14px;
     border-radius: 4px;
-    selection-background-color: rgb(62,68,81);
+    selection-background-color: rgb(62, 68, 81);
     selection-color: rgb(255, 255, 255);
     color: white;
 }

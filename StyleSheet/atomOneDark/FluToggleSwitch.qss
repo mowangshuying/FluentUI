@@ -10,8 +10,8 @@ FluToggleSwitch::indicator {
     width: 22px;
     height: 22px;
     border-radius: 12px;
-    border: 1px solid rgb(71,74,79);
-    background-color: rgb(44,48,54);
+    border: 1px solid rgb(71, 74, 79);
+    background-color: rgb(44, 48, 54);
     image: url("../res/ControlResImages/ToggleSwitchOff-Dark.png");
     margin-right: 5px;
     padding-right: 25px;
@@ -19,12 +19,12 @@ FluToggleSwitch::indicator {
 }
 
 FluToggleSwitch::indicator:hover {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
     image: url("../res/ControlResImages/ToggleSwitchOffHover-Dark.png");
 }
 
 FluToggleSwitch::indicator:pressed {
-    background-color: rgb(50,54,60);
+    background-color: rgb(50, 54, 60);
     width: 26px;
     padding-right: 21px;
     image: url("../res/ControlResImages/ToggleSwitchOffPressed-Dark.png");
@@ -40,7 +40,7 @@ FluToggleSwitch::indicator:checked {
 }
 
 FluToggleSwitch::indicator:checked:hover {
-    background-color: rgb(78,106,189);
+    background-color: rgb(78, 106, 189);
     image: url("../res/ControlResImages/ToggleSwitchOnHover-Dark.png");
 }
 

@@ -220,8 +220,8 @@ int main(int argc, char **argv)
     // FluTabBarDemo demo;
     // demo.show();
 
-    //  FluTabViewDemo demo;
-    //  demo.show();
+      FluTabViewDemo demo;
+      demo.show();
 
     // FluFrameLessDemo demo;
     // demo.show();
@@ -370,8 +370,8 @@ int main(int argc, char **argv)
     // FluTerminalWidget widget;
     // widget.show();
 
-    // FluMainWidgetDemo demo;
-    // demo.show();
+     //FluMainWidgetDemo demo;
+     //demo.show();
 
     // FluGifBoxDemo demo;
     // demo.show();
@@ -379,8 +379,8 @@ int main(int argc, char **argv)
     // FluRoundMenuDemo demo;
     // demo.show();
 
-    FluSystemTrayIconDemo demo;
-    demo.show();
+    //FluSystemTrayIconDemo demo;
+    //demo.show();
 
     return app.exec();
 }

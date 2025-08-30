@@ -73,6 +73,7 @@
 #include "FluMainWidgetDemo.h"
 #include "FluGifBoxDemo.h"
 #include "FluSystemTrayIconDemo.h"
+#include "FluMVDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -220,8 +221,8 @@ int main(int argc, char **argv)
     // FluTabBarDemo demo;
     // demo.show();
 
-      FluTabViewDemo demo;
-      demo.show();
+      //FluTabViewDemo demo;
+      //demo.show();
 
     // FluFrameLessDemo demo;
     // demo.show();
@@ -381,6 +382,9 @@ int main(int argc, char **argv)
 
     //FluSystemTrayIconDemo demo;
     //demo.show();
+
+    FluMVDemo demo;
+    demo.show();
 
     return app.exec();
 }

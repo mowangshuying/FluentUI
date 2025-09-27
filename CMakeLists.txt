@@ -4,6 +4,8 @@ project(FluWinGallery VERSION 1.0.0 LANGUAGES CXX)
 
 
 option(USE_QRC "Build With qrc" TRUE)
+option(BUILD_ICONTOOL "Build Icon Tool" FALSE)
+option(BUILD_WINGALLERY "Build WinGallery" TRUE)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -36,9 +38,16 @@ endif()
 add_subdirectory("3rdparty")
 add_subdirectory("FluControls")
 add_subdirectory("FluExamples")
+
+if (BUILD_ICONTOOL)
 add_subdirectory("FluIconTool")
+endif()
+
 add_subdirectory("FluUtils")
+
+if (BUILD_WINGALLERY)
 add_subdirectory("FluWinGallery")
+endif()
 # add_subdirectory("res")
 # add_subdirectory("StyleSheet")
 

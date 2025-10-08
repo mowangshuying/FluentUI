@@ -390,7 +390,13 @@ int main(int argc, char **argv)
     //FluDockDemo demo;
     //demo.show();
 
-    FluScintillaDemo demo;
+    //FluScintillaDemo demo;
+    //demo.show();
+
+    //FluMainWidgetDemo demo;
+    //demo.show();
+
+    FluAnimationDemo demo;
     demo.show();
 
     return app.exec();

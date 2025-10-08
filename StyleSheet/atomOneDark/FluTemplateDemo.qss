@@ -4,5 +4,5 @@ FluTemplateDemo {
 
 #titleBar {
     color: white;
-    background-color: rgb(40, 44, 52);
+    background-color: rgb(51, 56, 66);
 }

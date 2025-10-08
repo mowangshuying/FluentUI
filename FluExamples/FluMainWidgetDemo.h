@@ -35,7 +35,7 @@ class FluMainWidgetDemo : public FluFrameLessWidget
 #endif
             m_titleBar->show();
         }
-        else
+        else if (FluThemeUtils::isDarkTheme() || FluThemeUtils::isAtomOneDarkTheme())
         {
             m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
             m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);

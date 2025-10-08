@@ -10,6 +10,7 @@
 #include "../FluControls/FluHNavigationSettingsItem.h"
 #include "../FluControls/FluThemeButton.h"
 #include <QContextMenuEvent>
+#include "../FluControls/FluMenuBar.h"
 
 
 FRAMELESSHELPER_USE_NAMESPACE
@@ -43,6 +44,22 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
     auto themeButton = new FluThemeButton;
     hButtonLayout->insertWidget(0, themeButton);
     FramelessWidgetsHelper::get(this)->setHitTestVisible(themeButton);
+
+    // add menuBar
+    //auto menuBar = new FluMenuBar;
+    //auto newFileAction = new FluAction("New");
+    //auto openFileAction = new FluAction("Open");
+    //auto saveFileAction = new FluAction("Save");
+    //auto saveAsFileAction = new FluAction("Save As");
+    //auto exitAction = new FluAction("Exit");
+
+    //auto fileMenu = new FluMenu(menuBar);
+    //fileMenu->addAction(newFileAction);
+    //fileMenu->addAction(openFileAction);
+    //fileMenu->addAction(saveFileAction);
+    //fileMenu->addAction(saveAsFileAction);
+
+
 #endif
 
 #endif

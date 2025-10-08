@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluTemplateDemo.h"
 #include "../FluControls/FluScrollDelegate.h"
@@ -10,4 +10,9 @@ class FluScintillaDemo : public FluTemplateDemo
     Q_OBJECT
   public:
     FluScintillaDemo(QWidget* parent = nullptr);
+  public slots:
+    void onThemeChanged();
+
+  protected:
+    QsciScintilla* m_edit;
 };

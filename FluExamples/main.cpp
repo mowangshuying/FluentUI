@@ -387,7 +387,10 @@ int main(int argc, char **argv)
     //FluMVDemo demo;
     //demo.show();
 
-    FluDockDemo demo;
+    //FluDockDemo demo;
+    //demo.show();
+
+    FluScintillaDemo demo;
     demo.show();
 
     return app.exec();

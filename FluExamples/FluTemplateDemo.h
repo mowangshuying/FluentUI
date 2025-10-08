@@ -14,11 +14,11 @@ class FluTemplateDemo : public FluFrameLessWidget
   public:
     FluTemplateDemo(QWidget* parent = nullptr);
 
-    void contextMenuEvent(QContextMenuEvent* event);
+    //void contextMenuEvent(QContextMenuEvent* event);
 
   public slots:
     void onThemeChanged();
 
   protected:
-    FluMenu* m_contextMenu;
+    //FluMenu* m_contextMenu;
 };

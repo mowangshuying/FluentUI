@@ -33,22 +33,24 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType)
 
 QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h)
 {
-    QFont tmpFont = getInstance()->m_fluentFont;
-    // 移除 tmpFont.setPointSize(15);
-    tmpFont.setPixelSize(qMin(w, h) * 0.8);  // 自适应图标大小
+    const qreal dpr = qApp->devicePixelRatio();
+    const int realW = qRound(w * dpr);
+    const int realH = qRound(h * dpr);
 
-    QPixmap tmpPixMap(w, h);
-    tmpPixMap.fill(Qt::transparent);
-    QPainter painter;
-    painter.begin(&tmpPixMap);
+    QFont font = getInstance()->m_fluentFont;
+
+    QPixmap pixmap(realW, realH);
+    pixmap.fill(Qt::transparent);
+
+    QPainter painter(&pixmap);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     painter.setPen(penColor);
-    // tmpFont.setPointSize(15);
-    painter.setFont(tmpFont);
-    painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar((unsigned int)nType));
+    font.setPointSize(qRound(18 * dpr));
+    painter.setFont(font);
+    painter.drawText(QRect(0, 0, realW, realH), Qt::AlignCenter, QChar((uint)nType));
     painter.end();
-    // tmpPixMap.save("tmp.png"));
-    return tmpPixMap;
+
+    return pixmap;
 }
 
 QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor)

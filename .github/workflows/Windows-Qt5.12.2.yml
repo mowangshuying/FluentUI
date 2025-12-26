@@ -16,7 +16,7 @@ on:
       - 'FluWinGallery/**'
       - 'res/**'
       - 'StyleSheet/**'
-      - '.github/workflows/Windows-Qt6.5.1.yml'
+      - '.github/workflows/Windows-Qt5.12.2.yml'
   pull_request:
     paths:
       - '*.sln'

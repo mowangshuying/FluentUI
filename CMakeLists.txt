@@ -7,15 +7,6 @@ option(USE_QRC "Build With qrc" TRUE)
 option(BUILD_ICONTOOL "Build Icon Tool" FALSE)
 option(BUILD_WINGALLERY "Build WinGallery" TRUE)
 
-if(MSVC)
-    # Windows MSVC 特定优化
-    add_compile_options(/Zm200)  # 增加编译器堆大小
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zm500")
-elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    # Linux/macOS GCC/Clang 优化
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ftemplate-depth=1024")
-endif()
-
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)

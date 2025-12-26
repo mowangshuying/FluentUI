@@ -1,4 +1,4 @@
-#include "FluLineSeriesDemo.h"
+ï»¿#include "FluLineSeriesDemo.h"
 
 FluLineSeriesDemo::FluLineSeriesDemo(QWidget *parent /*= nullptr*/)
 {
@@ -36,8 +36,8 @@ FluLineSeriesDemo::FluLineSeriesDemo(QWidget *parent /*= nullptr*/)
     s2->setPointLabelsColor(Qt::black);
 
     // set point labels font
-    s1->setPointLabelsFont(QFont("Î¢ÈíÑÅºÚ"));
-    s2->setPointLabelsFont(QFont("Î¢ÈíÑÅºÚ"));
+    s1->setPointLabelsFont(QFont("Î¢ï¿½ï¿½ï¿½Åºï¿½"));
+    s2->setPointLabelsFont(QFont("Î¢ï¿½ï¿½ï¿½Åºï¿½"));
 
     // point labels setttings
     // set point labels format
@@ -126,7 +126,7 @@ FluLineSeriesDemo::FluLineSeriesDemo(QWidget *parent /*= nullptr*/)
 
     chart->setTitle("Simple line chart example");
     chart->setTitleBrush(QBrush(Qt::black));
-    chart->setTitleFont(QFont("Î¢ÈíÑÅºÚ", 18));
+    chart->setTitleFont(QFont("å¾®è½¯é›…é»‘", 18));
 
     // chart->legend()->setVisible(true);
     // chart->legend()->setAlignment(Qt::AlignBottom);
@@ -149,7 +149,7 @@ FluLineSeriesDemo::FluLineSeriesDemo(QWidget *parent /*= nullptr*/)
     // chart->legend()->setFont(font);
     // font.setPointSizeF(12);
     // chart->legend()->setFont(font);
-    // chart->legend()->setFont(QFont("Î¢ÈíÑÅºÚ"));
+    // chart->legend()->setFont(QFont("Î¢ï¿½ï¿½ï¿½Åºï¿½"));
 
     QChartView *chartView = new QChartView(chart);
     chartView->setContentsMargins(0, 0, 0, 0);

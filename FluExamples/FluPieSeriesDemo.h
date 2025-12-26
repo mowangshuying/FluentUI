@@ -3,6 +3,11 @@
 #include "FluTemplateDemo.h"
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QChartView>
+#include <QChart>
+
+#if QT_VERSION <= QT_VERSION_CHECK(6, 0, 0)
+using namespace QtCharts;
+#endif
 
 class FluPieSeriesDemo : public FluTemplateDemo
 {

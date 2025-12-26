@@ -27,6 +27,8 @@ endif()
 
 
 if(USE_QRC)
+
+if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 set(QSS_FILES
     "../StyleSheet/dark/FluMenuDemo.qss"
     "../StyleSheet/light/FluHNavigationDemo.qss"
@@ -45,12 +47,18 @@ qt_add_resources(${TGT} "FluExamplesQss"
     FILES
     ${QSS_FILES}
 )
+else()
+target_sources(${TGT} PUBLIC FluExamplesQss.qrc)
 endif()
+
+endif() ### end for use qrc
 
 if (USE_QRC)
     add_definitions(-DUSE_QRC)
 endif()
 
+
+if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 target_link_libraries(${TGT}
     PRIVATE
     FluControls
@@ -59,3 +67,13 @@ target_link_libraries(${TGT}
     Qt${QT_VERSION_MAJOR}::Charts
     Qt${QT_VERSION_MAJOR}::Core5Compat
 )
+
+else()
+target_link_libraries(${TGT}
+    PRIVATE
+    FluControls
+    qscintilla
+    qrcode
+    Qt${QT_VERSION_MAJOR}::Charts
+)
+endif()

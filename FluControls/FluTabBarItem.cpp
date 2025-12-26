@@ -39,7 +39,8 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
+    //FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
+    onThemeChanged();
 }
 
 void FluTabBarItem::setSelected(bool bSel)
@@ -91,4 +92,9 @@ void FluTabBarItem::paintEvent(QPaintEvent* event)
     opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+}
+
+void FluTabBarItem::onThemeChanged()
+{
+    FluStyleSheetUitls::setQssByFileName("FluTabBarItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

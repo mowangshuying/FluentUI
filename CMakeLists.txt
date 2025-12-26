@@ -18,9 +18,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "${PROJECT_BINARY_DIR}/bin")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${PROJECT_BINARY_DIR}/bin")
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Svg Charts Core5Compat)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Svg Charts Core5Compat)
-
+if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
+find_package(QT NAMES Qt6 REQUIRED COMPONENTS Widgets Svg Charts Core5Compat)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Svg Charts Core5Compat)
 if (USE_QRC)
 if (MSVC_IDE)
 	message(STATUS "Qt6Widgets_LIBRARIES: ${Qt6Widgets_LIBRARIES}")
@@ -32,6 +32,12 @@ if (MSVC_IDE)
 	message(STATUS "CMAKE_VS_DEBUGGER_ENVIRONMENT: ${CMAKE_VS_DEBUGGER_ENVIRONMENT}")
 endif()
 endif()
+else()
+find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets Svg Charts)
+find_package(Qt5 REQUIRED COMPONENTS Widgets Svg Charts)
+endif()
+
+
 
 # qt_standard_project_setup()
 

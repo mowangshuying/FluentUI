@@ -14,5 +14,5 @@ QScrollArea {
 }
 
 #addTabBtn:hover {
-    background-color: rgb(234, 234, 234);
+    background-color: transparent;
 }

@@ -27,7 +27,10 @@ else()
     )
 endif()
 
+
 if (USE_QRC)
+
+if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 set(QSS_FILES
     "../StyleSheet/dark/FluAmPmView.qss"
     "../StyleSheet/dark/FluAppBarButton.qss"
@@ -797,12 +800,19 @@ BASE ".."
 FILES
 ${RES_FILES}
 )
-endif()
+else()
+target_sources(${TGT} PUBLIC "FluControlsQss.qrc" "FluControlsRes.qrc")
+endif() ### end for qt version.
+
+
+endif() #### end for use_qrc;
 
 if (USE_QRC)
     add_definitions(-DUSE_QRC)
 endif()
 
+
+if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 target_link_libraries(${TGT}
     PUBLIC
     framelesshelper
@@ -810,3 +820,11 @@ target_link_libraries(${TGT}
     qwindowkit
     Qt${QT_VERSION_MAJOR}::Core5Compat
 )
+else()
+target_link_libraries(${TGT}
+    PUBLIC
+    framelesshelper
+    FluUtils
+    qwindowkit
+)
+endif()

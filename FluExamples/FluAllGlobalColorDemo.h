@@ -6,7 +6,5 @@ class FluAllGlobalColorDemo : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAllGlobalColorDemo(QWidget *parent = nullptr) : FluWidget(parent)
-    {
-    }
+    FluAllGlobalColorDemo(QWidget *parent = nullptr);
 };

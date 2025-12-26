@@ -28,6 +28,7 @@ else()
 endif()
 
 if(USE_QRC)
+if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 set(RES_FILES
     "../res/Segoe_Fluent_Icons.ttf"
 )
@@ -2124,7 +2125,6 @@ set(EMOIJ_FILES
     "../res/Emoij/PirateFlagColor.svg"
     "../res/Emoij/PiscesColor.svg"
     "../res/Emoij/PizzaColor.svg"
-    "../res/Emoij/PiñataColor.svg"
     "../res/Emoij/PlacardColor.svg"
     "../res/Emoij/PlaceOfWorshipColor.svg"
     "../res/Emoij/PlayButtonColor.svg"
@@ -3195,7 +3195,11 @@ qt_add_resources(${TGT} "FluUtilsEmoijs"
     FILES
     ${EMOIJ_FILES}
 )
+else()
+target_sources(${TGT} PUBLIC "FluUtilsFonts.qrc" "FluUtilsEmoijs.qrc")
 endif()
+
+endif() ##end for use qrc
 
 if (USE_QRC)
     add_definitions(-DUSE_QRC)

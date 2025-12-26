@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QPushButton>
@@ -38,6 +38,8 @@ class FluTabBarItem : public FluWidget
     void sizeChanged();
     void clickedCloseBtn(FluTabBarItem* item);
 
+  public slots:
+    void onThemeChanged();
   protected:
     QHBoxLayout* m_hMainLayout;
     QPushButton* m_iconBtn;

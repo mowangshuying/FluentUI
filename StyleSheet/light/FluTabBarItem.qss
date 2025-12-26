@@ -1,5 +1,5 @@
 FluTabBarItem {
-    background-color: rgb(118, 185, 237);
+    background-color: rgb(243, 243, 243);
     border: 1px solid transparent;
     /* border-left: 1px solid rgb(234, 234, 234); */
     /* border-right: 1px solid rgb(234, 234, 234); */
@@ -11,7 +11,7 @@ FluTabBarItem {
 }
 
 FluTabBarItem:hover {
-    background-color: rgb(113, 178, 228);
+    background-color: rgb(233, 233, 233);
 }
 
 FluTabBarItem[selected=true] {
@@ -34,7 +34,7 @@ FluTabBarItem[selected=true] {
 }
 
 #closeBtn[selected=true]:hover {
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(240, 240, 240);
     border: 1px solid transparent;
     border-radius: 4px;
 }

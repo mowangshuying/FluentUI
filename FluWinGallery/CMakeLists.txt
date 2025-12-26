@@ -29,6 +29,7 @@ else()
 endif()
 
 if(USE_QRC)
+if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 set(RES_FILES
     "../res/badgelogo.scale-100.png"
     "../res/badgelogo.scale-140.png"
@@ -728,6 +729,12 @@ qt_add_resources(${TGT} "FluWinGalleryI18n"
     FILES
     ${I18N_FILES}
 )
+else()
+target_sources(${TGT} PUBLIC "FluWinGalleryRes.qrc" 
+    "FluWinGalleryCode.qrc" 
+    "FluWinGalleryQss.qrc" 
+    "FluWinGalleryI18n.qrc")
+endif()
 
 endif()
 

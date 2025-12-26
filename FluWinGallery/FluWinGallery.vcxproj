@@ -73,6 +73,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>USE_WINDOWKIT_WIDGET</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

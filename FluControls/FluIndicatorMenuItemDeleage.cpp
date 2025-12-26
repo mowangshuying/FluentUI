@@ -25,7 +25,6 @@ void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionVie
     else if (FluThemeUtils::isAtomOneDarkTheme())
         painter->setBrush(QColor(82, 139, 255));
 
-
     painter->drawRoundedRect(6, 9 + option.rect.y(), 3, 15, 1.5, 1.5);
     painter->restore();
 }

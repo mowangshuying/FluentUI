@@ -4,7 +4,7 @@
 #include <QStringListModel>
 #include "FluTemplateDemo.h"
 #include <QWidget>
-//#include "../FluControls/FluListView.h"
+// #include "../FluControls/FluListView.h"
 
 // just for test use model view;
 class FluMVDemo : public FluTemplateDemo
@@ -15,7 +15,6 @@ class FluMVDemo : public FluTemplateDemo
     ~FluMVDemo();
 
   private:
-
     QListView* m_listView;
     QStringListModel* m_model;
 

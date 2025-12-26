@@ -3205,6 +3205,12 @@ if (USE_QRC)
     add_definitions(-DUSE_QRC)
 endif()
 
+# 添加编译选项 /Zm256
+# if(MSVC)
+if(USE_QRC)
+target_compile_options(${TGT} PUBLIC /Zm256)
+endif()
+# endif()
 target_link_libraries(${TGT}
     PUBLIC
     Qt${QT_VERSION_MAJOR}::Widgets

@@ -23,7 +23,6 @@ void FluTreeViewItemDelegate::initStyleOption(QStyleOptionViewItem* option, cons
 
     option->palette.setColor(QPalette::Text, m_textColorEx);
     option->palette.setColor(QPalette::HighlightedText, m_textColorEx);
-
 }
 
 void FluTreeViewItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
@@ -82,25 +81,25 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
     }
     else
     {
-       // if (FluThemeUtils::isLightTheme())
-       // {
-            // painter->setBrush(QColor(0, 90, 158));
-            // painter->setPen(QColor(0, 90, 158));
-            painter->setBrush(m_checkedBrushColorEx);
-            painter->setPen(m_checkedPenColorEx);
-            painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
-            if (nChecked == Qt::CheckState::Checked)
-            {
-                QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, FluThemeUtils::getUtils()->getTheme());
-                painter->drawPixmap(checkBoxRect, pixmap);
-            }
-            else if (nChecked == Qt::CheckState::PartiallyChecked)
-            {
-                QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::SubtractBold, FluThemeUtils::getUtils()->getTheme());
-                painter->drawPixmap(checkBoxRect, pixmap);
-            }
-       // }
-        //else if (FluThemeUtils::isDarkTheme())
+        // if (FluThemeUtils::isLightTheme())
+        // {
+        // painter->setBrush(QColor(0, 90, 158));
+        // painter->setPen(QColor(0, 90, 158));
+        painter->setBrush(m_checkedBrushColorEx);
+        painter->setPen(m_checkedPenColorEx);
+        painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
+        if (nChecked == Qt::CheckState::Checked)
+        {
+            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, FluThemeUtils::getUtils()->getTheme());
+            painter->drawPixmap(checkBoxRect, pixmap);
+        }
+        else if (nChecked == Qt::CheckState::PartiallyChecked)
+        {
+            QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::SubtractBold, FluThemeUtils::getUtils()->getTheme());
+            painter->drawPixmap(checkBoxRect, pixmap);
+        }
+        // }
+        // else if (FluThemeUtils::isDarkTheme())
         //{
         //    // painter->setBrush(QColor(118, 185, 237));
         //    // painter->setPen(QColor(118, 185, 237));

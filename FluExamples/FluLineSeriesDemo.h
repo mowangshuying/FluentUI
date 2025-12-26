@@ -6,11 +6,11 @@
 #include "../FluUtils/FluUtils.h"
 #include <QValueAxis>
 
- //#include <QtCharts>
+// #include <QtCharts>
 
 #if QT_VERSION <= QT_VERSION_CHECK(6, 0, 0)
- using namespace QtCharts;
- #endif
+using namespace QtCharts;
+#endif
 
 class FluLineSeriesDemo : public FluTemplateDemo
 {

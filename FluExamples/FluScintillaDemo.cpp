@@ -19,7 +19,6 @@ FluScintillaDemo::FluScintillaDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     m_edit->setMarginLineNumbers(0, true);
     m_edit->setMarginWidth(0, 30);
 
-
     m_edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     m_edit->setScrollWidth(5);
     m_edit->setScrollWidthTracking(true);
@@ -27,7 +26,6 @@ FluScintillaDemo::FluScintillaDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     // no border;
     m_edit->setFrameStyle(QFrame::NoFrame);
     m_edit->setStyleSheet("QsciScintilla { border: none; padding: 0px; margin: 0px; color: black; }");
-
 
     auto delegate = new FluScrollDelegate(m_edit);
     onThemeChanged();
@@ -39,9 +37,8 @@ void FluScintillaDemo::onThemeChanged()
     FluTemplateDemo::onThemeChanged();
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
+        m_edit->setPaper(QColor(232, 232, 232));
 
-        m_edit->setPaper(QColor(232, 232, 232)); 
-        
         // set line number background color;
         m_edit->setMarginsBackgroundColor(QColor(232, 232, 232));
         // set line number text color;
@@ -50,13 +47,11 @@ void FluScintillaDemo::onThemeChanged()
         // set text color;
         m_edit->setColor(Qt::black);
 
-
         // set caret color;
         m_edit->setCaretForegroundColor(Qt::black);
     }
     else if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Dark)
     {
-
         m_edit->setPaper(QColor(39, 39, 39));
 
         // set line number background color;
@@ -72,7 +67,6 @@ void FluScintillaDemo::onThemeChanged()
     }
     else if (FluThemeUtils::getUtils()->getTheme() == FluTheme::AtomOneDark)
     {
-
         m_edit->setPaper(QColor(40, 44, 52));
         // set line number background color;
         m_edit->setMarginsBackgroundColor(QColor(40, 44, 52));
@@ -85,5 +79,4 @@ void FluScintillaDemo::onThemeChanged()
         //  set caret color;
         m_edit->setCaretForegroundColor(Qt::white);
     }
-
 }

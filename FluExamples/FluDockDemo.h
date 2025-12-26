@@ -12,46 +12,39 @@
 
 class FluDockDemo : public QMainWindow
 {
-	Q_OBJECT
-public:
-	FluDockDemo(QWidget* parent = nullptr);
+    Q_OBJECT
+  public:
+    FluDockDemo(QWidget* parent = nullptr);
 
     void open()
     {
-
     }
 
     void copy()
     {
-
     }
 
     void save()
     {
-
     }
 
     void paste()
     {
-
     }
 
     void cut()
     {
-
     }
 
     void del()
     {
-
     }
 
     void about()
     {
-        QMessageBox::about(this, "About Fluent UI",
-            "The <b>Fluent UI</b> example demonstrates how to use the Fluent UI widgets.");
+        QMessageBox::about(this, "About Fluent UI", "The <b>Fluent UI</b> example demonstrates how to use the Fluent UI widgets.");
     }
 
- protected:
+  protected:
     QTextEdit* m_textEdit;
 };

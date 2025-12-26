@@ -12,9 +12,8 @@
 #include <QContextMenuEvent>
 #include "../FluControls/FluMenuBar.h"
 
-
 FRAMELESSHELPER_USE_NAMESPACE
-FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
+FluTemplateDemo::FluTemplateDemo(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
     setWindowTitle("CppQt WinUI3 Template Demo Dev");
 #ifndef _DEBUG
@@ -26,9 +25,7 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
     setWindowIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
 #endif
 
-
     m_titleBar->setObjectName("titleBar");
-
 
 #if !defined USE_WINDOWKIT_WIDGET
     m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
@@ -46,19 +43,18 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
     FramelessWidgetsHelper::get(this)->setHitTestVisible(themeButton);
 
     // add menuBar
-    //auto menuBar = new FluMenuBar;
-    //auto newFileAction = new FluAction("New");
-    //auto openFileAction = new FluAction("Open");
-    //auto saveFileAction = new FluAction("Save");
-    //auto saveAsFileAction = new FluAction("Save As");
-    //auto exitAction = new FluAction("Exit");
+    // auto menuBar = new FluMenuBar;
+    // auto newFileAction = new FluAction("New");
+    // auto openFileAction = new FluAction("Open");
+    // auto saveFileAction = new FluAction("Save");
+    // auto saveAsFileAction = new FluAction("Save As");
+    // auto exitAction = new FluAction("Exit");
 
-    //auto fileMenu = new FluMenu(menuBar);
-    //fileMenu->addAction(newFileAction);
-    //fileMenu->addAction(openFileAction);
-    //fileMenu->addAction(saveFileAction);
-    //fileMenu->addAction(saveAsFileAction);
-
+    // auto fileMenu = new FluMenu(menuBar);
+    // fileMenu->addAction(newFileAction);
+    // fileMenu->addAction(openFileAction);
+    // fileMenu->addAction(saveFileAction);
+    // fileMenu->addAction(saveAsFileAction);
 
 #endif
 
@@ -68,7 +64,6 @@ FluTemplateDemo::FluTemplateDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWi
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     // onThemeChanged();
 }
-
 
 void FluTemplateDemo::onThemeChanged()
 {
@@ -85,7 +80,7 @@ void FluTemplateDemo::onThemeChanged()
 #endif
         m_titleBar->show();
     }
-    else if(FluThemeUtils::isDarkTheme () || FluThemeUtils::isAtomOneDarkTheme())
+    else if (FluThemeUtils::isDarkTheme() || FluThemeUtils::isAtomOneDarkTheme())
     {
         m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);

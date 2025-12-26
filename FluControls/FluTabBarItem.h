@@ -40,6 +40,7 @@ class FluTabBarItem : public FluWidget
 
   public slots:
     void onThemeChanged();
+
   protected:
     QHBoxLayout* m_hMainLayout;
     QPushButton* m_iconBtn;

@@ -128,29 +128,6 @@ FluLineSeriesDemo::FluLineSeriesDemo(QWidget *parent /*= nullptr*/)
     chart->setTitleBrush(QBrush(Qt::black));
     chart->setTitleFont(QFont("微软雅黑", 18));
 
-    // chart->legend()->setVisible(true);
-    // chart->legend()->setAlignment(Qt::AlignBottom);
-    // chart->legend()->detachFromChart();
-    // chart->legend()->setBackgroundVisible(true);
-    // chart->legend()->setAutoFillBackground(true);
-    // chart->legend()->setColor(QColor(255,128,128,128));
-    // chart->legend()->setContentsMargins(10,10,10,10);
-    // chart->legend()->setLabelColor(QColor(255,128,255));
-    // chart->legend()->setVisible(true);
-    // chart->legend()->setMaximumHeight(50);
-    // chart->legend()->setMaximumWidth(120);
-    // chart->legend()->setMaximumSize(10000);
-    // chart->legend()->setGeometry(50,50,120,50);
-    // chart->legend()->setBrush(QBrush(QColor(128,128,128,128)));
-    // chart->legend()->setPen(QPen(QColor(192,192, 192,192)));
-    // chart->legend()->setBorderColor(QColor(255,255,170,185));
-    // QFont font = chart->legend()->font();
-    // font.setItalic(!font.italic());
-    // chart->legend()->setFont(font);
-    // font.setPointSizeF(12);
-    // chart->legend()->setFont(font);
-    // chart->legend()->setFont(QFont("΢���ź�"));
-
     QChartView *chartView = new QChartView(chart);
     chartView->setContentsMargins(0, 0, 0, 0);
     chartView->setRenderHint(QPainter::Antialiasing);

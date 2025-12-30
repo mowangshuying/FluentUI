@@ -11,6 +11,7 @@
 #include "FluWindowKitTitleBar.h"
 #include "FluLabel.h"
 #include "FluWindowkitButton.h"
+#include "FluThemeButton.h"
 
 class FluWindowKitWidget : public QWidget
 {
@@ -26,6 +27,9 @@ class FluWindowKitWidget : public QWidget
     FluWindowKitTitleBar *m_titleBar;
     FluLabel *m_titleLabel;
     FluWindowkitButton *m_iconButton;
+
+
+    FluThemeButton *m_themeButton;
     FluWindowkitButton *m_pinButton;
     FluWindowkitButton *m_minButton;
     FluWindowkitButton *m_maxButton;

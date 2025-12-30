@@ -9,6 +9,7 @@
 #include <QWindow>
 
 #include <QStyleOption>
+#include "FluThemeButton.h"
 
 FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(parent)
 {
@@ -37,6 +38,10 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_pinButton->setIconChecked(FluIconUtils::getFluentIcon(FluAwesomeType::PinFill, FluThemeUtils::getUtils()->getTheme()));
     m_pinButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
+    m_themeButton = new FluThemeButton;
+    m_themeButton->setObjectName("themeButton");
+    m_themeButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+
     m_minButton = new FluWindowkitButton;
     m_minButton->setObjectName("minButton");
     m_minButton->setProperty("systemButton", true);
@@ -62,6 +67,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_titleBar->setFixedHeight(35);
 #ifndef Q_OS_MAC
     m_titleBar->setIconButton(m_iconButton);
+    m_titleBar->setThemeButton(m_themeButton);
     m_titleBar->setPinButton(m_pinButton);
     m_titleBar->setMinButton(m_minButton);
     m_titleBar->setMaxButton(m_maxButton);
@@ -85,6 +91,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     setLayout(m_vMainLayout);
 
 #ifndef Q_OS_MAC
+    agent->setHitTestVisible(m_themeButton, true);
     agent->setHitTestVisible(m_pinButton, true);
     agent->setSystemButton(QWK::WindowAgentBase::WindowIcon, m_iconButton);
     agent->setSystemButton(QWK::WindowAgentBase::Minimize, m_minButton);
@@ -131,6 +138,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     // style()->polish(this);
 #endif
     setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea);
+    //setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 }
 
 void FluWindowKitWidget::emulateLeaveEvent(QWidget *widget)

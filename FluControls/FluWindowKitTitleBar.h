@@ -17,6 +17,7 @@ class FluWindowKitTitleBar : public QFrame
         MenuWidget,
         TitleLabel,
 
+        ThemeButton,
         PinButton,
 
         MinimumButton,
@@ -41,6 +42,7 @@ class FluWindowKitTitleBar : public QFrame
 
     QLabel* titleLabel() const;
 
+    QPushButton* themeButton();
     QPushButton* pinButton();
 
     QPushButton* minButton() const;
@@ -53,6 +55,7 @@ class FluWindowKitTitleBar : public QFrame
 
     void setIconButton(QPushButton* btn);
 
+    void setThemeButton(QPushButton* bin);
     void setPinButton(QPushButton* btn);
 
     void setMinButton(QPushButton* btn);
@@ -65,6 +68,7 @@ class FluWindowKitTitleBar : public QFrame
 
     QPushButton* takeIconButton();
 
+    QPushButton* takeThemeButton(); 
     QPushButton* takePinButton();
 
     QPushButton* takeMinButton();

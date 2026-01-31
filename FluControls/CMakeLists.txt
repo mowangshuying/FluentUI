@@ -819,6 +819,7 @@ target_link_libraries(${TGT}
     FluUtils
     qwindowkit
     Qt${QT_VERSION_MAJOR}::Core5Compat
+    cmark
 )
 else()
 target_link_libraries(${TGT}
@@ -826,5 +827,6 @@ target_link_libraries(${TGT}
     framelesshelper
     FluUtils
     qwindowkit
+    cmark
 )
 endif()

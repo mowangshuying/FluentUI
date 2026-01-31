@@ -1,6 +1,12 @@
 ﻿#include "FluCodeBox.h"
+#include <cmark.h>
+#include <QRegularExpression>
+#include <QTextCharFormat>
+#include <QTextCursor>
+#include <QTextDocumentFragment>
+#include "FluCodeSyntaxHighlighter.h"
 
-FluCodeBox::FluCodeBox(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
+FluCodeBox::FluCodeBox(QWidget* parent /*= nullptr*/) : QTextEdit(parent), m_syntaxHighlighter(nullptr)
 {
     setReadOnly(true);
     setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
@@ -14,7 +20,17 @@ FluCodeBox::FluCodeBox(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
 
 void FluCodeBox::setCodeText(QString code)
 {
-    setMarkdown(code);
+    char* buf = cmark_markdown_to_html(code.toStdString().c_str(), code.toStdString().size(), CMARK_OPT_UNSAFE);
+    QByteArray out(buf);
+    free(buf);
+
+    QString html = QString::fromUtf8(out);
+    
+    setHtml(html);
+    
+    if (!m_syntaxHighlighter) {
+        m_syntaxHighlighter = new FluCodeSyntaxHighlighter(document());
+    }
 }
 
 void FluCodeBox::resizeEvent(QResizeEvent*)
@@ -24,7 +40,7 @@ void FluCodeBox::resizeEvent(QResizeEvent*)
     setFixedHeight(newHeight);
 }
 
-// bool FluCodeBox::eventFilter(QObject* object, QEvent* event)
+// bool FluCodeBox::eventFilter(QObject* object, QEvent *event);
 // {
 //     if (event->type() == QEvent::Wheel)
 //     {

@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 #include "../FluUtils/FluUtils.h"
 #include <QSyntaxHighlighter>
 #include <QFile>
@@ -8,6 +8,9 @@
 #include <vector>
 #include <utility>
 #include <QWheelEvent>
+#include <QPointer>
+
+class FluCodeSyntaxHighlighter;
 
 class FluCodeBox : public QTextEdit
 {
@@ -25,11 +28,16 @@ class FluCodeBox : public QTextEdit
     void resizeEvent(QResizeEvent*);
 
     // bool eventFilter(QObject* object, QEvent *event);
+    
+  protected:
+    void setHtmlWithSyntaxHighlighting(const QString& html);
+
   signals:
     void sizeChanged();
 
   public slots:
     void onThemeChanged();
 
-  protected:
+  private:
+    QPointer<FluCodeSyntaxHighlighter> m_syntaxHighlighter;
 };

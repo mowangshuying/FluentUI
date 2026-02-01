@@ -14,6 +14,9 @@ FluCodeBox::FluCodeBox(QWidget* parent /*= nullptr*/) : QTextEdit(parent), m_syn
     setFocusPolicy(Qt::FocusPolicy::NoFocus);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    
+    // set high light.
+    m_syntaxHighlighter = new FluCodeSyntaxHighlighter(document());
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
@@ -25,12 +28,7 @@ void FluCodeBox::setCodeText(QString code)
     free(buf);
 
     QString html = QString::fromUtf8(out);
-    
     setHtml(html);
-    
-    if (!m_syntaxHighlighter) {
-        m_syntaxHighlighter = new FluCodeSyntaxHighlighter(document());
-    }
 }
 
 void FluCodeBox::resizeEvent(QResizeEvent*)

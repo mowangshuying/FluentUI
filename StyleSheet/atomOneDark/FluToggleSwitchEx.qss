@@ -6,8 +6,8 @@ FluToggleSwitchEx {
 }
 
 FluToggleSwitchEx[checked=true] {
-    qproperty-borderColor: rgb(0, 90, 158);
-    qproperty-backgroundColor: rgb(0, 90, 158);
+    qproperty-borderColor: rgb(82,139,255);
+    qproperty-backgroundColor: rgb(82,139,255);
     qproperty-indicatorBorderColor: rgb(255, 255, 255);
     qproperty-indicatorBackgroundColor: rgb(255, 255, 255);
 }

@@ -235,7 +235,7 @@ void FluGalleryWindow::makeSamplesNavItem()
     connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("AllSamplesPage"); });
 
     connect(allSamplesPage, &FluAllSamplesPage::clickedHCard, [=](QString key) {
-        LOG_DEBUG << key;
+        //LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -339,7 +339,7 @@ void FluGalleryWindow::makeBasicInputNavItem()
     connect(item15, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ToggleSwitchPage"); });
 
     connect(basicInputPage, &FluBasicInputPage::clickedHCard, [=](QString key) {
-        LOG_DEBUG << key;
+        //LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -407,7 +407,7 @@ void FluGalleryWindow::makeCollectionsNavItem()
     connect(item8, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TableViewPage"); });
 
     connect(collectionsPage, &FluCollectionsPage::clickedHCard, [=](QString key) {
-        LOG_DEBUG << key;
+        //LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -461,7 +461,7 @@ void FluGalleryWindow::makDateTimeNavItem()
     connect(item4, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TimePickerPage"); });
 
     connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, [=](QString key) {
-        LOG_DEBUG << key;
+        //LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -817,7 +817,7 @@ void FluGalleryWindow::makeStatusInfoNavItem()
     item5->setKey("ProgressRingPage");
 
     connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, [=](QString key) {
-        LOG_DEBUG << key;
+        //LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -877,7 +877,7 @@ void FluGalleryWindow::makeTextNavItem()
     connect(item7, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextBoxPage"); });
 
     connect(textPage, &FluTextPage::clickedHCard, [=](QString key) {
-        LOG_DEBUG << key;
+        //LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {

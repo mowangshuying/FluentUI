@@ -19,7 +19,7 @@ class FluTmpAniObj : public QObject
 
     void setTmp(float tmp)
     {
-        LOG_DEBUG << "Tmp = " << tmp;
+        //LOG_DEBUG << "Tmp = " << tmp;
         m_tmp = tmp;
     }
 

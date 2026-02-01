@@ -56,7 +56,7 @@ void FluAppBarButton::setShortCut(QKeySequence keySequence)
     m_shortCut->setContext(Qt::ApplicationShortcut);
     connect(m_shortCut, &QShortcut::activated, [=]() {
         emit clicked();
-        LOG_DEBUG << "called";
+        //LOG_DEBUG << "called";
     });
 }
 

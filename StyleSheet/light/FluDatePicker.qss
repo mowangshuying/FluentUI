@@ -8,13 +8,13 @@ FluDatePicker {
 #monthBtn {
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(229, 229, 229);
+    /* border-right: 1px solid rgb(229, 229, 229); */
 }
 
 #dayBtn {
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(229, 229, 229);
+    /* border-right: 1px solid rgb(229, 229, 229); */
 }
 
 #yearBtn {

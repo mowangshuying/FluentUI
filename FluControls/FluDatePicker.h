@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QPushButton>
@@ -16,6 +16,8 @@ class FluDatePicker : public FluWidget
     Q_OBJECT
   public:
     FluDatePicker(QWidget* parent = nullptr);
+
+    FluDatePicker(bool bYMD, QWidget* parent = nullptr);
 
     void mouseReleaseEvent(QMouseEvent* event);
 

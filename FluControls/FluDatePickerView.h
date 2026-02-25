@@ -22,6 +22,9 @@ class FluDatePickerView : public FluWidget
   public:
     FluDatePickerView(QWidget* parent = nullptr);
 
+    FluDatePickerView(bool bYMD, QWidget* parent = nullptr);
+
+
     void setMaskBackgroundColorEx(QColor color)
     {
         m_mask->setBackgroundColorEx(color);
@@ -93,4 +96,6 @@ class FluDatePickerView : public FluWidget
     int m_year;
 
     bool m_bFirstShow;
+
+    bool m_bYMD;
 };

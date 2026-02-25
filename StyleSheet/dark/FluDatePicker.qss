@@ -9,14 +9,14 @@ FluDatePicker {
     color: white;
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(60, 60, 60);
+    /* border-right: 1px solid rgb(60, 60, 60); */
 }
 
 #dayBtn {
     color: white;
     background-color: transparent;
     border: 1px solid transparent;
-    border-right: 1px solid rgb(60, 60, 60);
+    /* border-right: 1px solid rgb(60, 60, 60); */
 }
 
 #yearBtn {

@@ -66,6 +66,7 @@ target_link_libraries(${TGT}
     qrcode
     Qt${QT_VERSION_MAJOR}::Charts
     Qt${QT_VERSION_MAJOR}::Core5Compat
+    qtadvanceddocking-qt6
 )
 
 else()
@@ -75,5 +76,6 @@ target_link_libraries(${TGT}
     qscintilla
     qrcode
     Qt${QT_VERSION_MAJOR}::Charts
+    qtadvanceddocking-qt5
 )
 endif()

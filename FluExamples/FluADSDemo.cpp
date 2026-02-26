@@ -17,7 +17,6 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : QMainWindow(parent)
     centralDockArea->setAllowedAreas(ads::DockWidgetArea::OuterDockAreas);
 
     QTableWidget* table1 = new QTableWidget();
-    // 去掉table的外边框
     table1->setColumnCount(3);
     table1->setRowCount(10);
 

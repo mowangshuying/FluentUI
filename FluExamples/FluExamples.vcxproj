@@ -69,11 +69,11 @@
     <ClCompile>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>_DEBUG_QSS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include;$(SolutionDir)3rdparty\qrcode\include;$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include;$(SolutionDir)3rdparty\qrcode\include;$(SolutionDir)3rdparty\Qt-Advanced-Docking-System\include\linux;$(SolutionDir)3rdparty\Qt-Advanced-Docking-System\include;$(SolutionDir)3rdparty\framelesshelper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\qrcode\lib\debug;$(SolutionDir)3rdparty\qscintilla\lib\debug;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>FluUtils.lib;FluControls.lib;qscintilla2_qt6d.lib;qrcoded.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\qrcode\lib\debug;$(SolutionDir)3rdparty\Qt-Advanced-Docking-System\lib\debug;$(SolutionDir)3rdparty\qscintilla\lib\debug;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FluUtils.lib;FluControls.lib;qscintilla2_qt6d.lib;qrcoded.lib;qtadvanceddocking-qt6d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -114,6 +114,7 @@
     <QtMoc Include="FluChangeBgDemo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FluADSDemo.cpp" />
     <ClCompile Include="FluAnimationDemo.cpp" />
     <ClCompile Include="FluBusyProgressRingDemo.cpp" />
     <ClCompile Include="FluButtonDemo.cpp" />
@@ -212,6 +213,7 @@
     <QtMoc Include="FluSettingsVersionBoxDemo.h" />
     <QtMoc Include="FluColorViewDemo.h" />
     <QtMoc Include="FluIntructionsDemo.h" />
+    <QtMoc Include="FluADSDemo.h" />
     <ClInclude Include="FluBusyProgressRingDemo.h" />
     <QtMoc Include="FluScrollAreaDemo.h" />
     <QtMoc Include="FluTreeViewDemo.h" />

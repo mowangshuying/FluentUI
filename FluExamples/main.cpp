@@ -75,6 +75,7 @@
 #include "FluSystemTrayIconDemo.h"
 #include "FluMVDemo.h"
 #include "FluDockDemo.h"
+#include "FluADSDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -387,8 +388,8 @@ int main(int argc, char **argv)
     // FluMVDemo demo;
     // demo.show();
 
-     FluDockDemo demo;
-     demo.show();
+     //FluDockDemo demo;
+     //demo.show();
 
     //FluScintillaDemo demo;
     //demo.show();
@@ -401,6 +402,9 @@ int main(int argc, char **argv)
 
      //FluWindowKitWidget demo;
      //demo.show();
+
+     FluADSDemo adsDemo;
+     adsDemo.show();
 
     return app.exec();
 }

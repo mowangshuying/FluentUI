@@ -8,6 +8,16 @@ endif (POLICY CMP0091)
 set(ADS_VERSION "4.5.0")
 set(VERSION_SHORT "4.5.0")
 set(VERSION_SONAME "4")
+
+# 设置PROJECT_VERSION相关变量以支持资源文件生成
+set(PROJECT_VERSION_MAJOR 4)
+set(PROJECT_VERSION_MINOR 5)
+set(PROJECT_VERSION_PATCH 0)
+set(PROJECT_VERSION_STRING "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
+set(PROJECT_GIT_HASH "unknown")
+set(PROJECT_GIT_HASH_SHORT "unknown")
+set(PROJECT_NAME "QtAdvancedDockingSystem")
+
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 
 # By default, the version information is extracted from the git index. However,

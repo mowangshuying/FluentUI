@@ -7,8 +7,10 @@
 #include <QPlainTextEdit>
 #include <QMainWindow>
 #include <QTableWidget>
+#include "../FluControls/FluWindowKitWindow.h"
+#include "../FluControls/FluTableView.h"
 
-class FluADSDemo : public QMainWindow
+class FluADSDemo : public FluWindowKitWindow
 {
 	Q_OBJECT
 public:

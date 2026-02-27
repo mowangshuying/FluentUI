@@ -26,7 +26,7 @@ FluWindowKitWindow::FluWindowKitWindow(QWidget* parent) : QMainWindow(parent)
     m_titleLabel = new FluLabel;
     m_titleLabel->setAlignment(Qt::AlignCenter);
     m_titleLabel->setObjectName("titleLabel");
-    m_titleLabel->setText("WindowKit Widget.");
+    m_titleLabel->setText("WindowKit Window.");
 
 #ifndef Q_OS_MAC
     m_iconButton = new FluWindowkitButton;

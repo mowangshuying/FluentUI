@@ -292,6 +292,7 @@
     <ClCompile Include="FluWindowkitButton.cpp" />
     <ClCompile Include="FluWindowKitTitleBar.cpp" />
     <ClCompile Include="FluWindowKitWidget.cpp" />
+    <ClCompile Include="FluWindowKitWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluDef.h" />
@@ -303,6 +304,7 @@
     <QtMoc Include="FluTabWidget.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="FluWindowKitWindow.h" />
     <QtMoc Include="FluSystemTrayIcon.h" />
     <QtMoc Include="FluCodeSyntaxHighlighter.h" />
     <ClInclude Include="FluSystemTrayMenu.h" />

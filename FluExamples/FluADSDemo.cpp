@@ -1,39 +1,17 @@
 ﻿#include "FluADSDemo.h"
-//#include "../FluControls/FluTextEdit.h"
-//#include <Qsci/qsciscintilla.h>
-//#include <Qsci/qscilexercpp.h>
 
 FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(parent)
 {
     setWindowTitle("ADS demo");
+    //delete statusBar();
+    setStatusBar(nullptr);
 
-    ads::CDockManager::setConfigFlag(ads::CDockManager::OpaqueSplitterResize, true);
-    ads::CDockManager::setConfigFlag(ads::CDockManager::XmlCompressionEnabled, false);
-    ads::CDockManager::setConfigFlag(ads::CDockManager::FocusHighlighting, true);
+    //ads::CDockManager::setConfigFlag(ads::CDockManager::OpaqueSplitterResize, true);
+    //ads::CDockManager::setConfigFlag(ads::CDockManager::XmlCompressionEnabled, false);
+    //ads::CDockManager::setConfigFlag(ads::CDockManager::FocusHighlighting, true);
 
     auto dockMgr = new ads::CDockManager(this);
-
-    //auto plainTextEdit = new FluTextEdit();
-    //plainTextEdit->setPlaceholderText("This is the central editor. Enter your text here.");
-
     auto edit = new FluScintilla;
-    //edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    ////m_contentLayout->addWidget(m_edit);
-
-    //// show line number;
-    //edit->setMarginType(0, QsciScintilla::NumberMargin);
-    //edit->setMarginLineNumbers(0, true);
-    //edit->setMarginWidth(0, 30);
-
-    //edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    //edit->setScrollWidth(5);
-    //edit->setScrollWidthTracking(true);
-
-    //// no border;
-    //edit->setFrameStyle(QFrame::NoFrame);
-    //edit->setStyleSheet("QsciScintilla { border: none; padding: 0px; margin: 0px; color: black; }");
-
-    //auto delegate = new FluScrollDelegate(edit);
     
     auto centralDockWidget = dockMgr->createDockWidget("CentralWidget");
     centralDockWidget->setWidget(edit);
@@ -43,8 +21,8 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     auto table1 = new FluTableView;
     table1->setWordWrap(false);
     table1->setColumnCount(3);
-    table1->setRowCount(10);
-    table1->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    //table1->setRowCount(10);
+    table1->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     table1->setColumnWidth(0, 30);
     //table1->setRowHeight()
     for (int i = 1; i < 3; i++)
@@ -74,8 +52,8 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     auto table2 = new FluTableView;
     table2->setColumnCount(5);
-    table2->setRowCount(1024);
-    table2->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    //table2->setRowCount(1024);
+    table2->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     table2->setColumnWidth(0, 30);
     for (int i = 1; i < 5; i++)
     {
@@ -105,11 +83,9 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     auto propertiesTable = new FluTableView();
     propertiesTable->setColumnCount(3);
-    propertiesTable->setRowCount(10);
-    propertiesTable->setColumnWidth(0, 30);
 
-     propertiesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
-    propertiesTable->setColumnWidth(0, 60);
+     propertiesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    propertiesTable->setColumnWidth(0, 30);
     for (int i = 1; i < 3; i++)
     {
         propertiesTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
@@ -132,7 +108,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     ads::CDockWidget* propertiesDockWidget = dockMgr->createDockWidget("Properties");
     propertiesDockWidget->setWidget(propertiesTable);
     propertiesDockWidget->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
-    propertiesDockWidget->resize(250, 150);
+    //propertiesDockWidget->resize(250, 150);
     propertiesDockWidget->setMinimumSize(200, 150);
     dockMgr->addDockWidget(ads::DockWidgetArea::RightDockWidgetArea, propertiesDockWidget, centralDockArea);
 }

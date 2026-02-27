@@ -823,6 +823,7 @@ target_link_libraries(${TGT}
     qwindowkit
     Qt${QT_VERSION_MAJOR}::Core5Compat
     cmark
+    qtadvanceddocking-qt6
 )
 else()
 target_link_libraries(${TGT}
@@ -831,5 +832,6 @@ target_link_libraries(${TGT}
     FluUtils
     qwindowkit
     cmark
+    qtadvanceddocking-qt5
 )
 endif()

@@ -9,6 +9,8 @@
 #include <QTableWidget>
 #include "../FluControls/FluWindowKitWindow.h"
 #include "../FluControls/FluTableView.h"
+#include "../FluControls/FluScintilla.h"
+#include "../FluControls/FluTextEdit.h"
 
 class FluADSDemo : public FluWindowKitWindow
 {

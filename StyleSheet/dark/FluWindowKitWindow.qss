@@ -1,3 +1,4 @@
 FluWindowKitWindow {
     background-color: rgb(32, 32, 32);
+    padding: 0px;
 }

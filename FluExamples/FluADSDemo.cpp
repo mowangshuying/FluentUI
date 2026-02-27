@@ -4,16 +4,45 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 {
     setWindowTitle("ADS demo");
     //delete statusBar();
-    setStatusBar(nullptr);
+    //setStatusBar(nullptr);
+    //setMenuBar(nullptr);
 
-    //ads::CDockManager::setConfigFlag(ads::CDockManager::OpaqueSplitterResize, true);
-    //ads::CDockManager::setConfigFlag(ads::CDockManager::XmlCompressionEnabled, false);
-    //ads::CDockManager::setConfigFlag(ads::CDockManager::FocusHighlighting, true);
+    ads::CDockManager::setConfigFlag(ads::CDockManager::OpaqueSplitterResize, true);
+    ads::CDockManager::setConfigFlag(ads::CDockManager::XmlCompressionEnabled, false);
+    ads::CDockManager::setConfigFlag(ads::CDockManager::FocusHighlighting, true);
+
+    //auto edit = new FluScintilla;
+    //setCentralWidget(edit);
 
     auto dockMgr = new ads::CDockManager(this);
+    //dockMgr->setContentsMargins(0, 0, 0, 0);
+    //dockMgr->setStyleSheet("background-color: rgb(32, 32, 32);");
+
+    /*auto onThemeChanged = [=](FluTheme theme) {
+        if (theme == FluTheme::Light)
+        {
+            dockMgr->setStyleSheet("CDockManager{background-color: rgb(243, 243, 243);}");
+        }
+        else if (theme == FluTheme::Dark)
+        {
+            dockMgr->setStyleSheet("CDockManager{background-color: rgb(32, 32, 32);}");
+        }
+        else
+        {
+            dockMgr->setStyleSheet("CDockManager{background-color: rgb(40, 44, 52);}");
+        }
+    };*/
+
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
+
+
     auto edit = new FluScintilla;
-    
-    auto centralDockWidget = dockMgr->createDockWidget("CentralWidget");
+    //
+    auto centralDockWidget = dockMgr->createDockWidget("CentralWidget", this);
+    //centralDockWidget->setStyleSheet("background-color: pink;");
     centralDockWidget->setWidget(edit);
     auto centralDockArea = dockMgr->setCentralWidget(centralDockWidget);
     centralDockArea->setAllowedAreas(ads::DockWidgetArea::OuterDockAreas);
@@ -75,7 +104,12 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     
     auto tableDockWidget2 = dockMgr->createDockWidget("Table 2");
-    tableDockWidget2->setWidget(table2);
+    tableDockWidget2->setStyleSheet("border: 1px solid pink;");
+    // background transparency
+    //tableDockWidget2->setBackgroundTransparent(true);
+    //tableDockWidget2->setStyleSheet("");
+
+    //tableDockWidget2->setWidget(table2);
     tableDockWidget2->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
     tableDockWidget2->resize(250, 150);
     tableDockWidget2->setMinimumSize(200, 150);
@@ -111,4 +145,21 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     //propertiesDockWidget->resize(250, 150);
     propertiesDockWidget->setMinimumSize(200, 150);
     dockMgr->addDockWidget(ads::DockWidgetArea::RightDockWidgetArea, propertiesDockWidget, centralDockArea);
+}
+
+void FluADSDemo::onThemeChanged()
+{
+    //if (theme == FluTheme::Light)
+    //{
+    //    dockMgr->setStyleSheet("CDockManager{background-color: rgb(243, 243, 243);}");
+    //}
+    //else if (theme == FluTheme::Dark)
+    //{
+    //    dockMgr->setStyleSheet("CDockManager{background-color: rgb(32, 32, 32);}");
+    //}
+    //else
+    //{
+    //    dockMgr->setStyleSheet("CDockManager{background-color: rgb(40, 44, 52);}");
+    //}
+    FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

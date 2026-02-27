@@ -1,4 +1,4 @@
-#include "FluScintilla.h"
+﻿#include "FluScintilla.h"
 
 FluScintilla::FluScintilla(QWidget* parent) : QsciScintilla(parent)
 {
@@ -16,8 +16,8 @@ FluScintilla::FluScintilla(QWidget* parent) : QsciScintilla(parent)
     setScrollWidthTracking(true);
 
     // no border;
-    setFrameStyle(QFrame::NoFrame);
-    // setStyleSheet("QsciScintilla { border: none; padding: 0px; margin: 0px; color: black; }");
+    //setFrameStyle(QFrame::NoFrame);
+     //setStyleSheet("QsciScintilla { border: none; padding: 0px; margin: 0px; color: black; }");
     m_delegate = new FluScrollDelegate(this);
 
     onThemeChanged();

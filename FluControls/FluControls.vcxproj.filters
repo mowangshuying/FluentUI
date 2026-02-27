@@ -551,6 +551,9 @@
     <ClCompile Include="FluCodeSyntaxHighlighter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluWindowKitWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -1061,6 +1064,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluCodeSyntaxHighlighter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluWindowKitWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

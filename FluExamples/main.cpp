@@ -404,11 +404,11 @@ int main(int argc, char **argv)
      //FluWindowKitWidget demo;
      //demo.show();
 
-     //FluADSDemo adsDemo;
-     //adsDemo.show();
+     FluADSDemo adsDemo;
+     adsDemo.show();
 
-     FluWindowKitWindow window;
-    window.show();
+     //FluWindowKitWindow window;
+    //window.show();
 
     return app.exec();
 }

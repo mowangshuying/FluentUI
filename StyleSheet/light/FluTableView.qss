@@ -1,10 +1,10 @@
 QTableView {
-    background: transparent;
+    background: rgb(249, 249, 249);
     outline: none;
     border: 1px solid rgb(200, 200, 200);
     border-right: 0px;
-    selection-background-color: transparent;
-    alternate-background-color: transparent;
+    selection-background-color: rgb(249, 249, 249);
+    alternate-background-color: rgb(249, 249, 249);
 }
 
 QTableView::item {

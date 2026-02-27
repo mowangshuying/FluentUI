@@ -46,7 +46,7 @@ QWidget *FluTableItemDelegate::createEditor(QWidget *parent, const QStyleOptionV
 void FluTableItemDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QRect tmpRect = option.rect;
-    int nX = std::max(8, tmpRect.x());
+    int nX = std::max(4, tmpRect.x());
     int nY = tmpRect.y() + (tmpRect.height() - editor->height()) / 2;
     int nW = tmpRect.width();
     if (index.column() == 0)

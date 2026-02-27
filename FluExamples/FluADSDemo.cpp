@@ -1,7 +1,7 @@
 ﻿#include "FluADSDemo.h"
-#include "../FluControls/FluTextEdit.h"
-#include <Qsci/qsciscintilla.h>
-#include <Qsci/qscilexercpp.h>
+//#include "../FluControls/FluTextEdit.h"
+//#include <Qsci/qsciscintilla.h>
+//#include <Qsci/qscilexercpp.h>
 
 FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(parent)
 {
@@ -16,24 +16,24 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     //auto plainTextEdit = new FluTextEdit();
     //plainTextEdit->setPlaceholderText("This is the central editor. Enter your text here.");
 
-    auto edit = new QsciScintilla;
-    edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    //m_contentLayout->addWidget(m_edit);
+    auto edit = new FluScintilla;
+    //edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ////m_contentLayout->addWidget(m_edit);
 
-    // show line number;
-    edit->setMarginType(0, QsciScintilla::NumberMargin);
-    edit->setMarginLineNumbers(0, true);
-    edit->setMarginWidth(0, 30);
+    //// show line number;
+    //edit->setMarginType(0, QsciScintilla::NumberMargin);
+    //edit->setMarginLineNumbers(0, true);
+    //edit->setMarginWidth(0, 30);
 
-    edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    edit->setScrollWidth(5);
-    edit->setScrollWidthTracking(true);
+    //edit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    //edit->setScrollWidth(5);
+    //edit->setScrollWidthTracking(true);
 
-    // no border;
-    edit->setFrameStyle(QFrame::NoFrame);
-    edit->setStyleSheet("QsciScintilla { border: none; padding: 0px; margin: 0px; color: black; }");
+    //// no border;
+    //edit->setFrameStyle(QFrame::NoFrame);
+    //edit->setStyleSheet("QsciScintilla { border: none; padding: 0px; margin: 0px; color: black; }");
 
-    auto delegate = new FluScrollDelegate(edit);
+    //auto delegate = new FluScrollDelegate(edit);
     
     auto centralDockWidget = dockMgr->createDockWidget("CentralWidget");
     centralDockWidget->setWidget(edit);

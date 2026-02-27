@@ -12,38 +12,40 @@ set(_VERSIONING_MODULE_DIR "${CMAKE_CURRENT_LIST_DIR}" CACHE INTERNAL "Versionin
 # ------------------------------------------------------------
 
 # Get tag (expected: v1.2.3 or 1.2.3 or 1.2.3-12-gHASH)
-execute_process(
-    COMMAND git describe --tags --dirty
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    OUTPUT_VARIABLE GIT_DESC_RAW
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
+# execute_process(
+#     COMMAND git describe --tags --dirty
+#     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+#     OUTPUT_VARIABLE GIT_DESC_RAW
+#     OUTPUT_STRIP_TRAILING_WHITESPACE
+# )
 
 # Remove leading "v" if present
-string(REGEX REPLACE "^v" "" GIT_DESC "${GIT_DESC_RAW}")
+# string(REGEX REPLACE "^v" "" GIT_DESC "${GIT_DESC_RAW}")
 
 # Extract major.minor.patch
-string(REGEX MATCH "^([0-9]+)\\.([0-9]+)\\.([0-9]+)" _ "${GIT_DESC}")
-set(PROJECT_VERSION_MAJOR "${CMAKE_MATCH_1}")
-set(PROJECT_VERSION_MINOR "${CMAKE_MATCH_2}")
-set(PROJECT_VERSION_PATCH "${CMAKE_MATCH_3}")
+# string(REGEX MATCH "^([0-9]+)\\.([0-9]+)\\.([0-9]+)" _ "${GIT_DESC}")
+set(PROJECT_VERSION_MAJOR "4")
+set(PROJECT_VERSION_MINOR "5")
+set(PROJECT_VERSION_PATCH "0")
+set(PROJECT_GIT_HASH "unknown")
+set(PROJECT_GIT_HASH_SHORT "unknown")
 
-set(PROJECT_VERSION_STRING
-    "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}"
-)
+# set(PROJECT_VERSION_STRING
+#     "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}"
+# )
 
-# Commit hash (full + short)
-execute_process(
-    COMMAND git rev-parse HEAD
-    OUTPUT_VARIABLE PROJECT_GIT_HASH
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
+# # Commit hash (full + short)
+# execute_process(
+#     COMMAND git rev-parse HEAD
+#     OUTPUT_VARIABLE PROJECT_GIT_HASH
+#     OUTPUT_STRIP_TRAILING_WHITESPACE
+# )
 
-execute_process(
-    COMMAND git rev-parse --short HEAD
-    OUTPUT_VARIABLE PROJECT_GIT_HASH_SHORT
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
+# execute_process(
+#     COMMAND git rev-parse --short HEAD
+#     OUTPUT_VARIABLE PROJECT_GIT_HASH_SHORT
+#     OUTPUT_STRIP_TRAILING_WHITESPACE
+# )
 
 # Export variables to parent scope
 set(PROJECT_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}" PARENT_SCOPE)

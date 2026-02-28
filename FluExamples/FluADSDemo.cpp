@@ -8,17 +8,17 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     //setStatusBar(nullptr);
     //setMenuBar(nullptr);
 
-    ads::CDockManager::setConfigFlag(ads::CDockManager::OpaqueSplitterResize, true);
-    ads::CDockManager::setConfigFlag(ads::CDockManager::XmlCompressionEnabled, false);
-    ads::CDockManager::setConfigFlag(ads::CDockManager::FocusHighlighting, true);
+   FluDockManager::setConfigFlag(FluDockManager::OpaqueSplitterResize, true);
+   FluDockManager::setConfigFlag(FluDockManager::XmlCompressionEnabled, false);
+   FluDockManager::setConfigFlag(FluDockManager::FocusHighlighting, true);
 
-    m_dockMgr = new ads::CDockManager(this);
+    m_dockMgr = new FluDockManager(this);
     // m_dockMgr->setObjectName("dockManager");
 
-    onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    //onThemeChanged();
+    //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+    //    onThemeChanged();
+    //});
 
 
     auto edit = new FluScintilla;
@@ -129,7 +129,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     m_dockMgr->addDockWidget(ads::DockWidgetArea::RightDockWidgetArea, propertiesDockWidget, centralDockArea);
 }
 
-void FluADSDemo::onThemeChanged()
-{
-    FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", m_dockMgr, FluThemeUtils::getUtils()->getTheme());
-}
+//void FluADSDemo::onThemeChanged()
+//{
+//    FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", m_dockMgr, FluThemeUtils::getUtils()->getTheme());
+//}

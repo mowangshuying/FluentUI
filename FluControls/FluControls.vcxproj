@@ -70,13 +70,13 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\framelesshelper\include;$(SolutionDir)3rdparty\cmark\include\;$(SolutionDir)3rdparty\qscintilla\include;$(SolutionDir)3rdparty\qwindowkit\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\qscintilla\include\src;$(SolutionDir)3rdparty\qscintilla\include\src\Qsci;$(SolutionDir)3rdparty\framelesshelper\include;$(SolutionDir)3rdparty\cmark\include\;$(SolutionDir)3rdparty\qscintilla\include;$(SolutionDir)3rdparty\qwindowkit\include\;$(SolutionDir)3rdparty\Qt-Advanced-Docking-System\include;$(SolutionDir)3rdparty\Qt-Advanced-Docking-System\include\linux;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>QSCINTILLA_DLL</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
-      <AdditionalDependencies>FramelessHelperCore64d.lib;FramelessHelperQuick64d.lib;FramelessHelperWidgets64d.lib;QWKCored.lib;QWKWidgetsd.lib;cmark.lib;qscintilla2_qt6d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\framelesshelper\lib\debug;$(SolutionDir)3rdparty\cmark\lib\debug;$(SolutionDir)3rdparty\qwindowkit\lib\debug;$(SolutionDir)3rdparty\qscintilla\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FramelessHelperCore64d.lib;FramelessHelperQuick64d.lib;FramelessHelperWidgets64d.lib;QWKCored.lib;QWKWidgetsd.lib;cmark.lib;qscintilla2_qt6d.lib;qtadvanceddocking-qt6d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)3rdparty\framelesshelper\lib\debug;$(SolutionDir)3rdparty\cmark\lib\debug;$(SolutionDir)3rdparty\qwindowkit\lib\debug;$(SolutionDir)3rdparty\Qt-Advanced-Docking-System\lib\debug;$(SolutionDir)3rdparty\qscintilla\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -152,6 +152,7 @@
     <ClCompile Include="FluDatePickerView.cpp" />
     <ClCompile Include="FluDatePickerViewMask.cpp" />
     <ClCompile Include="FluDisplayBoxEx.cpp" />
+    <ClCompile Include="FluDockManager.cpp" />
     <ClCompile Include="FluDoubleSpinBox.cpp" />
     <ClCompile Include="FluFrameLessTitleBar.cpp" />
     <ClCompile Include="FluFrameLessWidget.cpp" />
@@ -310,6 +311,7 @@
     <QtMoc Include="FluSystemTrayIcon.h" />
     <QtMoc Include="FluCodeSyntaxHighlighter.h" />
     <QtMoc Include="FluScintilla.h" />
+    <QtMoc Include="FluDockManager.h" />
     <ClInclude Include="FluSystemTrayMenu.h" />
     <QtMoc Include="FluTerminalWidget.h" />
     <QtMoc Include="FluThemeButton.h" />

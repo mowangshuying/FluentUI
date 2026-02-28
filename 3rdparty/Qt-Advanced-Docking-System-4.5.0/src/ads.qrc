@@ -23,5 +23,7 @@
         <file>images/minimize-button.svg</file>
         <file>images/minimize-button-focused.svg</file>
         <file>images/vs-pin-button-disabled.svg</file>
+        <file>images/detach-button-focused.svg</file>
+        <file>images/tabs-menu-button-focused.svg</file>
     </qresource>
 </RCC>

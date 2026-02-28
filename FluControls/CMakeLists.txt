@@ -62,6 +62,7 @@ set(QSS_FILES
     "../StyleSheet/dark/FluDisplayBox.qss"
     "../StyleSheet/dark/FluDisplayBoxEx.qss"
     "../StyleSheet/dark/FluDisplayIconBox.qss"
+    "../StyleSheet/dark/FluDockManager.qss"
     "../StyleSheet/dark/FluDoubleSpinBox.qss"
     "../StyleSheet/dark/FluDropDownButton.qss"
     "../StyleSheet/dark/FluExpander.qss"
@@ -161,6 +162,7 @@ set(QSS_FILES
     "../StyleSheet/light/FluDisplayBox.qss"
     "../StyleSheet/light/FluDisplayBoxEx.qss"
     "../StyleSheet/light/FluDisplayIconBox.qss"
+    "../StyleSheet/light/FluDockManager.qss"
     "../StyleSheet/light/FluDoubleSpinBox.qss"
     "../StyleSheet/light/FluDropDownButton.qss"
     "../StyleSheet/light/FluExpander.qss"
@@ -283,6 +285,7 @@ set(QSS_FILES
     "../StyleSheet/atomOneDark/FluDisplayBox.qss"
     "../StyleSheet/atomOneDark/FluDisplayBoxEx.qss"
     "../StyleSheet/atomOneDark/FluDisplayIconBox.qss"
+    "../StyleSheet/atomOneDark/FluDockManager.qss"
     "../StyleSheet/atomOneDark/FluDoubleSpinBox.qss"
     "../StyleSheet/atomOneDark/FluDropDownButton.qss"
     "../StyleSheet/atomOneDark/FluExpander.qss"
@@ -824,6 +827,7 @@ target_link_libraries(${TGT}
     Qt${QT_VERSION_MAJOR}::Core5Compat
     cmark
     qscintilla
+    qtadvanceddocking-qt6
 )
 else()
 target_link_libraries(${TGT}
@@ -833,5 +837,6 @@ target_link_libraries(${TGT}
     qwindowkit
     cmark
     qscintilla
+    qtadvanceddocking-qt5
 )
 endif()

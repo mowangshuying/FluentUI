@@ -11,27 +11,8 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     ads::CDockManager::setConfigFlag(ads::CDockManager::XmlCompressionEnabled, false);
     ads::CDockManager::setConfigFlag(ads::CDockManager::FocusHighlighting, true);
 
-    //auto edit = new FluScintilla;
-    //setCentralWidget(edit);
-
-    auto dockMgr = new ads::CDockManager(this);
-    //dockMgr->setContentsMargins(0, 0, 0, 0);
-    //dockMgr->setStyleSheet("background-color: rgb(32, 32, 32);");
-
-    /*auto onThemeChanged = [=](FluTheme theme) {
-        if (theme == FluTheme::Light)
-        {
-            dockMgr->setStyleSheet("CDockManager{background-color: rgb(243, 243, 243);}");
-        }
-        else if (theme == FluTheme::Dark)
-        {
-            dockMgr->setStyleSheet("CDockManager{background-color: rgb(32, 32, 32);}");
-        }
-        else
-        {
-            dockMgr->setStyleSheet("CDockManager{background-color: rgb(40, 44, 52);}");
-        }
-    };*/
+    m_dockMgr = new ads::CDockManager(this);
+    // m_dockMgr->setObjectName("dockManager");
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
@@ -41,10 +22,10 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     auto edit = new FluScintilla;
     //
-    auto centralDockWidget = dockMgr->createDockWidget("CentralWidget", this);
+    auto centralDockWidget = m_dockMgr->createDockWidget("CentralWidget", this);
     //centralDockWidget->setStyleSheet("background-color: pink;");
     centralDockWidget->setWidget(edit);
-    auto centralDockArea = dockMgr->setCentralWidget(centralDockWidget);
+    auto centralDockArea = m_dockMgr->setCentralWidget(centralDockWidget);
     centralDockArea->setAllowedAreas(ads::DockWidgetArea::OuterDockAreas);
 
     auto table1 = new FluTableView;
@@ -72,12 +53,12 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     table1->verticalHeader()->setVisible(false);
     table1->horizontalHeader()->setVisible(false);
 
-    auto tableDockWidget1 = dockMgr->createDockWidget("Table 1");
+    auto tableDockWidget1 = m_dockMgr->createDockWidget("Table 1");
     tableDockWidget1->setWidget(table1);
     tableDockWidget1->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
     tableDockWidget1->resize(250, 150);
     tableDockWidget1->setMinimumSize(200, 150);
-    auto tableArea1 = dockMgr->addDockWidget(ads::DockWidgetArea::LeftDockWidgetArea, tableDockWidget1);
+    auto tableArea1 = m_dockMgr->addDockWidget(ads::DockWidgetArea::LeftDockWidgetArea, tableDockWidget1);
 
     auto table2 = new FluTableView;
     table2->setColumnCount(5);
@@ -103,7 +84,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     table2->horizontalHeader()->setVisible(false);
 
     
-    auto tableDockWidget2 = dockMgr->createDockWidget("Table 2");
+    auto tableDockWidget2 = m_dockMgr->createDockWidget("Table 2");
     tableDockWidget2->setStyleSheet("border: 1px solid pink;");
     // background transparency
     //tableDockWidget2->setBackgroundTransparent(true);
@@ -113,7 +94,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     tableDockWidget2->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
     tableDockWidget2->resize(250, 150);
     tableDockWidget2->setMinimumSize(200, 150);
-    dockMgr->addDockWidget(ads::DockWidgetArea::BottomDockWidgetArea, tableDockWidget2, tableArea1);
+    m_dockMgr->addDockWidget(ads::DockWidgetArea::BottomDockWidgetArea, tableDockWidget2, tableArea1);
 
     auto propertiesTable = new FluTableView();
     propertiesTable->setColumnCount(3);
@@ -139,27 +120,15 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     propertiesTable->horizontalHeader()->setVisible(false);
 
 
-    ads::CDockWidget* propertiesDockWidget = dockMgr->createDockWidget("Properties");
+    ads::CDockWidget* propertiesDockWidget = m_dockMgr->createDockWidget("Properties");
     propertiesDockWidget->setWidget(propertiesTable);
     propertiesDockWidget->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
     //propertiesDockWidget->resize(250, 150);
     propertiesDockWidget->setMinimumSize(200, 150);
-    dockMgr->addDockWidget(ads::DockWidgetArea::RightDockWidgetArea, propertiesDockWidget, centralDockArea);
+    m_dockMgr->addDockWidget(ads::DockWidgetArea::RightDockWidgetArea, propertiesDockWidget, centralDockArea);
 }
 
 void FluADSDemo::onThemeChanged()
 {
-    //if (theme == FluTheme::Light)
-    //{
-    //    dockMgr->setStyleSheet("CDockManager{background-color: rgb(243, 243, 243);}");
-    //}
-    //else if (theme == FluTheme::Dark)
-    //{
-    //    dockMgr->setStyleSheet("CDockManager{background-color: rgb(32, 32, 32);}");
-    //}
-    //else
-    //{
-    //    dockMgr->setStyleSheet("CDockManager{background-color: rgb(40, 44, 52);}");
-    //}
-    FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", m_dockMgr, FluThemeUtils::getUtils()->getTheme());
 }

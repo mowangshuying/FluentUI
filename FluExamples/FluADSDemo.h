@@ -22,4 +22,5 @@ public slots:
 
 protected:
     //ads::CDockManager* m_dockManager;
+	ads::CDockManager* m_dockMgr;
 };

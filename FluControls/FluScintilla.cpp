@@ -16,7 +16,7 @@ FluScintilla::FluScintilla(QWidget* parent) : QsciScintilla(parent)
     setScrollWidthTracking(true);
 
     // no border;
-    //setFrameStyle(QFrame::NoFrame);
+    setFrameStyle(QFrame::NoFrame);
      //setStyleSheet("QsciScintilla { border: none; padding: 0px; margin: 0px; color: black; }");
     m_delegate = new FluScrollDelegate(this);
 

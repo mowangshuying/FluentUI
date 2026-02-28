@@ -46,12 +46,17 @@
  ads--CTitleBarButton:pressed {
      background: rgba(0, 0, 0, 48);
  }
- 
+ l
  QScrollArea#dockWidgetScrollArea {
      padding: 0px;
      border: none;
  }
  
+#tabsMenuButton {
+    qproperty-icon: url(:/ads/images/tabs-menu-button-focused.svg)  ;
+    qproperty-iconSize: 16px;
+}
+
  #tabsMenuButton::menu-indicator {
      image: none;
  }
@@ -63,7 +68,7 @@
  }
  
  #detachGroupButton {
-     qproperty-icon: url(:/ads/images/detach-button.svg), url(:/ads/images/detach-button-disabled.svg) disabled;
+     qproperty-icon: url(:/ads/images/detach-button-focused.svg), url(:/ads/images/detach-button-disabled.svg) disabled;
      qproperty-iconSize: 16px;	
  }
  

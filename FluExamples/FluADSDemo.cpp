@@ -1,5 +1,6 @@
 ﻿#include "FluADSDemo.h"
 
+//#fill:#000000;
 FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(parent)
 {
     setWindowTitle("ADS demo");
@@ -85,7 +86,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     
     auto tableDockWidget2 = m_dockMgr->createDockWidget("Table 2");
-    tableDockWidget2->setStyleSheet("border: 1px solid pink;");
+    //tableDockWidget2->setStyleSheet("border: 1px solid pink;");
     // background transparency
     //tableDockWidget2->setBackgroundTransparent(true);
     //tableDockWidget2->setStyleSheet("");

@@ -38,6 +38,9 @@ set(QSS_FILES
     "../StyleSheet/atomOneDark/FluTemplateDemo.qss"
     "../StyleSheet/dark/FluMainWidgetDemo.qss"
     "../StyleSheet/light/FluMainWidgetDemo.qss"
+    "../StyleSheet/light/FluADSDemo.qss"
+    "../StyleSheet/dark/FluADSDemo.qss"
+    "../StyleSheet/atomOneDark/FluADSDemo.qss"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

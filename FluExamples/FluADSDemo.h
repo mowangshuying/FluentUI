@@ -11,16 +11,17 @@
 #include "../FluControls/FluTableView.h"
 #include "../FluControls/FluScintilla.h"
 #include "../FluControls/FluTextEdit.h"
+#include "../FluControls/FluDockManager.h"
 
 class FluADSDemo : public FluWindowKitWindow
 {
 	Q_OBJECT
 public:
 	FluADSDemo(QWidget* parent = nullptr);
-public slots:
-    void onThemeChanged();
+//public slots:
+//    void onThemeChanged();
 
 protected:
     //ads::CDockManager* m_dockManager;
-	ads::CDockManager* m_dockMgr;
+  FluDockManager* m_dockMgr;
 };

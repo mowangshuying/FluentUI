@@ -557,6 +557,9 @@
     <ClCompile Include="FluScintilla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FluDockManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="FluPushButton.h">
@@ -1073,6 +1076,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="FluScintilla.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="FluDockManager.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

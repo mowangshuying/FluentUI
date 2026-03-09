@@ -1,6 +1,6 @@
 ﻿#include "FluWindowKitWindow.h"
 
-#include "FluWindowKitWidget.h"
+//#include "FluWindowKitWidget.h"
 #include <QWKWidgets/widgetwindowagent.h>
 
 #include <QLabel>
@@ -22,6 +22,9 @@ FluWindowKitWindow::FluWindowKitWindow(QWidget* parent) : QMainWindow(parent)
     auto agent = new QWK::WidgetWindowAgent(this);
     agent->setup(this);
     // agent->setWindowAttribute("dwm-blur", true);
+
+    m_menuBar = new FluMenuBar;
+    //m_menuBar->setMinimumWidth(0);
 
     m_titleLabel = new FluLabel;
     m_titleLabel->setAlignment(Qt::AlignCenter);
@@ -75,6 +78,8 @@ FluWindowKitWindow::FluWindowKitWindow(QWidget* parent) : QMainWindow(parent)
     m_titleBar->setMaxButton(m_maxButton);
     m_titleBar->setCloseButton(m_closeButton);
 #endif
+
+    m_titleBar->setMenuBar(m_menuBar);
     m_titleBar->setTitleLabel(m_titleLabel);
     m_titleBar->setHostWidget(this);
     agent->setTitleBar(m_titleBar);
@@ -93,6 +98,7 @@ FluWindowKitWindow::FluWindowKitWindow(QWidget* parent) : QMainWindow(parent)
     //setLayout(m_vMainLayout);
 
 #ifndef Q_OS_MAC
+    agent->setHitTestVisible(m_menuBar, true);
     agent->setHitTestVisible(m_themeButton, true);
     agent->setHitTestVisible(m_pinButton, true);
     agent->setSystemButton(QWK::WindowAgentBase::WindowIcon, m_iconButton);

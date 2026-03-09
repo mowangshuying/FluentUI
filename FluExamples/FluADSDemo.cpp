@@ -1,4 +1,7 @@
 ﻿#include "FluADSDemo.h"
+#include "../FluControls/FluMenuBar.h"
+#include "../FluControls/FluAction.h"
+#include "../FluControls/FluMenu.h"
 
 //#fill:#000000;
 FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(parent)
@@ -11,6 +14,50 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
    FluDockManager::setConfigFlag(FluDockManager::OpaqueSplitterResize, true);
    FluDockManager::setConfigFlag(FluDockManager::XmlCompressionEnabled, false);
    FluDockManager::setConfigFlag(FluDockManager::FocusHighlighting, true);
+
+
+      //auto menuBar = new FluMenuBar;
+   //m_agent->setHitTestVisible(menuBar);
+   //m_titleBar->setMenuBar(menuBar);
+   //  menuBar->move(50, 50);
+
+   auto newFileAction = new FluAction("new");
+   auto openFileAction = new FluAction("Open");
+   auto saveFileAction = new FluAction("Save");
+   auto exitFileAction = new FluAction("Exit");
+
+   auto fileMenu = new FluMenu(m_menuBar);
+   fileMenu->setTitle("File(&F)");
+   fileMenu->addAction(newFileAction);
+   fileMenu->addAction(openFileAction);
+   fileMenu->addAction(saveFileAction);
+   fileMenu->addAction(exitFileAction);
+
+   m_menuBar->addAction(fileMenu->menuAction());
+
+   // undo cut copy paste
+   auto undoEditAction = new FluAction("Undo");
+   auto cutEditAction = new FluAction("Cut");
+   auto copyEditAction = new FluAction("Copy");
+   auto pasteEditAction = new FluAction("Paste");
+
+   auto editMenu = new FluMenu(m_menuBar);
+   editMenu->setTitle("Edit(&E)");
+   editMenu->addAction(undoEditAction);
+   editMenu->addAction(cutEditAction);
+   editMenu->addAction(copyEditAction);
+   editMenu->addAction(pasteEditAction);
+   // menuBar->addMenu(editMenu);
+   m_menuBar->addAction(editMenu->menuAction());
+
+   // Help
+   auto aboutAction = new FluAction("About");
+   auto helpMenu = new FluMenu(m_menuBar);
+   helpMenu->setTitle("Help(&H)");
+   helpMenu->addAction(aboutAction);
+   // menuBar->addMenu(helpMenu);
+   m_menuBar->addAction(helpMenu->menuAction());
+
 
     m_dockMgr = new FluDockManager(this);
     // m_dockMgr->setObjectName("dockManager");

@@ -25,6 +25,11 @@ void FluWindowKitTitleBar::init()
 
 void FluWindowKitTitleBar::insertDefaultSpace(int nIndex)
 {
+    //if (nIndex == FluWKTitleBarItem::MenuWidget)
+    //{
+    //    m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0, QSizePolicy::Maximum));
+    //    return;
+    //}
     m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0));
 }
 
@@ -49,7 +54,7 @@ void FluWindowKitTitleBar::setWidgetAt(int nIndex, QWidget* widget)
     }
     else
     {
-        m_hMainLayout->insertWidget(nIndex, widget);
+        m_hMainLayout->insertWidget(nIndex, widget, nIndex == FluWKTitleBarItem::TitleLabel);
     }
 }
 
@@ -70,6 +75,11 @@ QWidget* FluWindowKitTitleBar::takeWidgetAt(int nIndex)
 QPushButton* FluWindowKitTitleBar::iconButton() const
 {
     return static_cast<QPushButton*>(widgetAt(IconButton));
+}
+
+QMenuBar* FluWindowKitTitleBar::menuBar()
+{
+    return static_cast<QMenuBar*>(widgetAt(MenuWidget));
 }
 
 QLabel* FluWindowKitTitleBar::titleLabel() const
@@ -100,6 +110,18 @@ QPushButton* FluWindowKitTitleBar::maxButton() const
 QPushButton* FluWindowKitTitleBar::closeButton() const
 {
     return static_cast<QPushButton*>(widgetAt(CloseButton));
+}
+
+void FluWindowKitTitleBar::setMenuBar(QMenuBar* menu)
+{
+    auto org = takeWidgetAt(MenuWidget);
+    if (org)
+    {
+        org->deleteLater();
+    }
+    if (!menu)
+        return;
+    setWidgetAt(MenuWidget, menu);
 }
 
 void FluWindowKitTitleBar::setTitleLabel(QLabel* label)
@@ -205,6 +227,11 @@ void FluWindowKitTitleBar::setCloseButton(QPushButton* btn)
 
     setWidgetAt(CloseButton, btn);
     connect(btn, &QPushButton::clicked, this, &FluWindowKitTitleBar::closeRequested);
+}
+
+QMenuBar* FluWindowKitTitleBar::takeMenuBar()
+{
+    return static_cast<QMenuBar*>(takeWidgetAt(MenuWidget));
 }
 
 QLabel* FluWindowKitTitleBar::takeTitleLabel()

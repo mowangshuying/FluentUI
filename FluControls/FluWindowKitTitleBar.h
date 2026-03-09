@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QEvent>
+#include <QMenuBar>
 
 class FluWindowKitTitleBar : public QFrame
 {
@@ -40,6 +41,8 @@ class FluWindowKitTitleBar : public QFrame
 
     QPushButton* iconButton() const;
 
+    QMenuBar* menuBar();
+
     QLabel* titleLabel() const;
 
     QPushButton* themeButton();
@@ -50,6 +53,8 @@ class FluWindowKitTitleBar : public QFrame
     QPushButton* maxButton() const;
 
     QPushButton* closeButton() const;
+
+    void setMenuBar(QMenuBar* menu);
 
     void setTitleLabel(QLabel* label);
 
@@ -63,6 +68,8 @@ class FluWindowKitTitleBar : public QFrame
     void setMaxButton(QPushButton* btn);
 
     void setCloseButton(QPushButton* btn);
+
+    QMenuBar* takeMenuBar();
 
     QLabel* takeTitleLabel();
 

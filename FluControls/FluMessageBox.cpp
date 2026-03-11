@@ -145,6 +145,16 @@ bool FluMessageBox::eventFilter(QObject* obj, QEvent* event)
     return QDialog::eventFilter(obj, event);
 }
 
+void FluMessageBox::onTitleChanged(QString title)
+{
+    setTitle(title);
+}
+
+void FluMessageBox::onInfoChanged(QString info)
+{
+    setInfo(info);
+}
+
 void FluMessageBox::onThemeChanged()
 {
     FluStyleSheetUitls::setQssByFileName("FluMessageBox.qss", this, FluThemeUtils::getUtils()->getTheme());

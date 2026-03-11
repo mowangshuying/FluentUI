@@ -63,3 +63,8 @@ void FluConfigUtils::setLanguage(QString language)
     m_settings->setValue("language", language);
     m_settings->endGroup();
 }
+
+QSettings* FluConfigUtils::getSettings()
+{
+    return m_settings;
+}

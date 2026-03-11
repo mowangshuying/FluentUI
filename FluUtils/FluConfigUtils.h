@@ -25,6 +25,7 @@ class FluConfigUtils : public QObject
 
     void setLanguage(QString language);
 
+    QSettings* getSettings();
   protected:
     QSettings* m_settings;
 

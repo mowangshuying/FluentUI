@@ -14,6 +14,7 @@ FluConfigUtils::~FluConfigUtils()
 FluTheme FluConfigUtils::getTheme()
 {
     FluTheme theme = FluTheme::Light;
+    m_settings->sync();
     m_settings->beginGroup("config");
     QString themeStr = m_settings->value("theme", "Light").toString();
     m_settings->endGroup();
@@ -30,6 +31,7 @@ FluTheme FluConfigUtils::getTheme()
 void FluConfigUtils::setTheme(FluTheme theme)
 {
     // config/theme
+    m_settings->sync();
     m_settings->beginGroup("config");
 
     if (theme == FluTheme::Light)
@@ -50,6 +52,7 @@ void FluConfigUtils::setTheme(FluTheme theme)
 
 QString FluConfigUtils::getLanguage()
 {
+    m_settings->sync();
     m_settings->beginGroup("config");
     QString languageStr = m_settings->value("language", "en-US").toString();
     m_settings->endGroup();
@@ -59,6 +62,7 @@ QString FluConfigUtils::getLanguage()
 
 void FluConfigUtils::setLanguage(QString language)
 {
+    m_settings->sync();
     m_settings->beginGroup("config");
     m_settings->setValue("language", language);
     m_settings->endGroup();
@@ -66,5 +70,6 @@ void FluConfigUtils::setLanguage(QString language)
 
 QSettings* FluConfigUtils::getSettings()
 {
+    m_settings->sync();
     return m_settings;
 }

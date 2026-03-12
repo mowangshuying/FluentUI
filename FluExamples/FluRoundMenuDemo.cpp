@@ -3,7 +3,8 @@
 FluRoundMenuDemo::FluRoundMenuDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
     // FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);
-    m_label = new QLabel("Right click your mouse!", this);
+    m_label = new FluLabel;
+    m_label->setText("Right click your mouse!");
     m_label->setAlignment(Qt::AlignCenter);
     m_contentLayout->addWidget(m_label);
     resize(400, 400);

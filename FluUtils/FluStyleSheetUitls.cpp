@@ -1,6 +1,7 @@
 ﻿#include "FluStyleSheetUitls.h"
 // #include <QFileInfo>
 // #include <QDir>
+//#include <QGraphicsDropShadowEffect>
 
 FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
 FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
@@ -151,6 +152,16 @@ void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *pain
     }
 
     painter->fillPath(path, brush);
+}
+
+void FluStyleSheetUitls::drawShadowEffect(QWidget *widget, int blurRadius, QPoint offset, QColor color)
+{
+    auto shadowEffect = new QGraphicsDropShadowEffect(widget);
+    shadowEffect->setBlurRadius(blurRadius);
+    shadowEffect->setOffset(offset);
+    shadowEffect->setColor(color);
+    widget->setGraphicsEffect(nullptr);
+    widget->setGraphicsEffect(shadowEffect);
 }
 
 void FluStyleSheetUitls::doForQrcQssText(QString &data)

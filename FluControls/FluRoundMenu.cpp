@@ -35,7 +35,8 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
     m_timer->setInterval(400);
     connect(m_timer, &QTimer::timeout, this, &FluRoundMenu::onShowMenuTimeOut);
 
-    // setShadowEffect();
+    FluStyleSheetUitls::drawShadowEffect(m_roundMenuView, 30, QPoint(0, 8), QColor(0, 0, 0, 30));
+
     m_hBoxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
     m_hBoxLayout->setContentsMargins(12, 8, 12, 20);
 
@@ -65,16 +66,6 @@ FluRoundMenuView* FluRoundMenu::getView()
 {
     return m_roundMenuView;
 }
-
-// void FluRoundMenu::setShadowEffect(int blurRadius /*= 30*/, QPoint offset /*= QPoint(0, 8)*/, QColor color /*= QColor(0, 0, 0, 30)*/)
-// {
-//     m_shadowEffect = new QGraphicsDropShadowEffect(m_roundMenuView);
-//     m_shadowEffect->setBlurRadius(blurRadius);
-//     m_shadowEffect->setOffset(offset);
-//     m_shadowEffect->setColor(color);
-//     m_roundMenuView->setGraphicsEffect(nullptr);
-//     m_roundMenuView->setGraphicsEffect(m_shadowEffect);
-// }
 
 void FluRoundMenu::setParentMenu(FluRoundMenu* menu, QListWidgetItem* item)
 {

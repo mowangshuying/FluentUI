@@ -7,6 +7,7 @@
 #include <QContextMenuEvent>
 #include "FluTemplateDemo.h"
 #include "../FluControls/FluAction.h"
+#include "../FluControls/FluLabel.h"
 
 class FluRoundMenuDemo : public FluTemplateDemo
 {
@@ -17,5 +18,5 @@ class FluRoundMenuDemo : public FluTemplateDemo
     void contextMenuEvent(QContextMenuEvent* event);
 
   private:
-    QLabel* m_label;
+    FluLabel* m_label;
 };

@@ -12,7 +12,7 @@ FluRoundMenuView::FluRoundMenuView(QWidget* parent /*= nullptr*/) : QListWidget(
     setTextElideMode(Qt::ElideNone);
     setDragEnabled(false);
     setMouseTracking(true);
-    setIconSize(QSize(14, 14));
+    setIconSize(QSize(20, 20));
     setItemDelegate(new FluShortcutMenuItemDelegate(this));
     m_scrollDelegate = new FluScrollDelegate(this);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

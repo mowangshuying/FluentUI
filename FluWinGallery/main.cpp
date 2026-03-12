@@ -26,12 +26,24 @@ int main(int argc, char **argv)
             app.installTranslator(&translator);
         }
     }
-    else
+    else if(FluConfigUtils::getUtils()->getLanguage() == "en-US")
     {
 #ifndef USE_QRC
         bool bLoad = translator.load("../i18n/en-US.qm");
 #else
         bool bLoad = translator.load(":/i18n/en-US.qm");
+#endif
+        if (bLoad)
+        {
+            app.installTranslator(&translator);
+        }
+    }
+    else if (FluConfigUtils::getUtils()->getLanguage() == "ja")
+    {
+#ifndef USE_QRC
+        bool bLoad = translator.load("../i18n/ja.qm");
+#else
+        bool bLoad = translator.load(":/i18n/ja.qm");
 #endif
         if (bLoad)
         {

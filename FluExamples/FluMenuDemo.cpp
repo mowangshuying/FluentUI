@@ -35,7 +35,7 @@ FluMenuDemo::FluMenuDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     action7->setShortcut(QKeySequence::Delete);
     subMenu->addAction(action7);
 
-    setStyleSheet("background-color:white;");
+    //setStyleSheet("background-color:white;");
 }
 
 void FluMenuDemo::contextMenuEvent(QContextMenuEvent* event)

@@ -28,7 +28,7 @@ void FluShortcutMenuItemDelegate::paint(QPainter *painter, const QStyleOptionVie
     painter->setFont(font);
 
     QColor penColor;
-    if (FluThemeUtils::isDarkTheme())
+    if (FluThemeUtils::isDarkTheme() || FluThemeUtils::isAtomOneDarkTheme())
     {
         penColor = QColor(255, 255, 255, 200);
     }

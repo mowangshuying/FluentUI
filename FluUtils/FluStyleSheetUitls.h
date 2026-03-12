@@ -16,6 +16,7 @@
 #include <QPainterPath>
 #include <QFileInfo>
 #include <QDir>
+#include <QGraphicsDropShadowEffect>
 
 class FluStyleSheetUitls : public QObject
 {
@@ -54,6 +55,9 @@ class FluStyleSheetUitls : public QObject
     static void replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet);
 
     static void drawBottomLineIndicator(QWidget *widget, QPainter *painter);
+
+    static void drawShadowEffect(QWidget* widget,  int blurRadius, QPoint offset, QColor color);
+
 
     static void doForQrcQssText(QString &data);
 

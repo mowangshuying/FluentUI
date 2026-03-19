@@ -28,6 +28,8 @@ target_link_libraries(${TGT}
 
 add_subdirectory("qscintilla")
 add_subdirectory("qrcode")
+
+set(BUILD_TESTING OFF)
 add_subdirectory("cmark")
 add_subdirectory("Qt-Advanced-Docking-System")
 

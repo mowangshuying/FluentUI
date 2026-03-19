@@ -9,7 +9,7 @@ FluCompleterMenu::FluCompleterMenu(FluAutoSuggestBox* autoSuggestBox, QWidget* p
     m_autoSuggestBox = autoSuggestBox;
     getView()->setItemDelegate(new FluIndicatorMenuItemDeleage);
     installEventFilter(this);
-    setItemHeight(30);
+    setItemHeight(26);
 }
 
 FluCompleterMenu::FluCompleterMenu(QString title, FluAwesomeType iconType, QWidget* parent /*= nullptr*/) : FluRoundMenu(title, iconType, parent)

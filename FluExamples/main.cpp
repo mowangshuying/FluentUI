@@ -317,8 +317,8 @@ int main(int argc, char **argv)
     // FluSplitterDemo demo;
     // demo.show();
 
-     FluRoundMenuDemo demo;
-     demo.show();
+     //FluRoundMenuDemo demo;
+     //demo.show();
 
     // FluShortcutPickerDemo demo;
     // demo.show();
@@ -350,8 +350,8 @@ int main(int argc, char **argv)
     // FluQrCodeDemo demo;
     // demo.show();
 
-    // FluCommandBarDemo demo;
-    // demo.show();
+     FluCommandBarDemo demo;
+     demo.show();
 
     // FluTabBarDemo demo;
     // demo.show();

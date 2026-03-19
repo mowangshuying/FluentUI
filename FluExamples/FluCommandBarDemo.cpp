@@ -5,7 +5,7 @@ FluCommandBarDemo::FluCommandBarDemo(QWidget* parent /*= nullptr*/) : FluTemplat
     // m_contentLayout->setAlignment(Qt::AlignCenter);
 
     auto commandBar = new FluCommandBar(this);
-    commandBar->setHasMoreBtn(true);
+    commandBar->setHasMoreBtn(false);
     commandBar->move(200, 200);
 
     auto addBarItem = new FluCommandBarIconTextItem(FluAwesomeType::Add, tr("Add"), commandBar);
@@ -23,7 +23,7 @@ FluCommandBarDemo::FluCommandBarDemo(QWidget* parent /*= nullptr*/) : FluTemplat
     auto shareBarItem = new FluCommandBarIconTextItem(FluAwesomeType::Share, tr("Share"), commandBar);
     commandBar->addBarItem(shareBarItem);
 
-    auto roundMenu = commandBar->getMoreBtn()->getRoundMenu();
+    auto roundMenu = addBarItem->getRoundMenu();
     auto settingsAction = new FluAction(FluAwesomeType::Settings, tr("Settings"));
     settingsAction->setShortcut(QKeySequence("Ctrl+l"));
     roundMenu->addAction(settingsAction);

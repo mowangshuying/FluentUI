@@ -1,0 +1,13 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+include("${CMAKE_CURRENT_LIST_DIR}/qmsetupTargets.cmake")
+
+include("${CMAKE_CURRENT_LIST_DIR}/cmake/QMSetupAPI.cmake")
+
+if ("All" IN_LIST qmsetup_FIND_COMPONENTS)
+    qm_import_all()
+else()
+    qm_import(${qmsetup_FIND_COMPONENTS})
+endif()

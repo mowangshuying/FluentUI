@@ -8,20 +8,20 @@ FluCommandBarIconItem::FluCommandBarIconItem(QWidget* parent) : FluCommandBarIte
     setLayout(m_hMainLayout);
 
     m_iconBtn = new QPushButton;
-    m_iconBtn->setIconSize(QSize(25, 25));
+    m_iconBtn->setIconSize(QSize(16, 16));
     m_iconBtn->setObjectName("iconBtn");
     m_hMainLayout->addWidget(m_iconBtn);
 
     m_roundMenu = new FluRoundMenu("", FluAwesomeType::None, this);
 
-    setFixedHeight(36);
+    setFixedHeight(26);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     connect(this, &FluCommandBarIconItem::clicked, this, [=]() {
         if (m_roundMenu->actions().isEmpty())
             return;
 
-        showAtBottomCenter();
+        showAtBottomLeft();
     });
 
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit clicked(); });
@@ -42,6 +42,13 @@ void FluCommandBarIconItem::setRoundMenu(FluRoundMenu* menu)
 {
     m_roundMenu->deleteLater();
     m_roundMenu = menu;
+}
+
+void FluCommandBarIconItem::showAtBottomLeft()
+{
+    QPoint leftBottomPos = rect().bottomLeft();
+    leftBottomPos = mapToGlobal(leftBottomPos);
+    m_roundMenu->exec(leftBottomPos);
 }
 
 void FluCommandBarIconItem::showAtBottomRight()

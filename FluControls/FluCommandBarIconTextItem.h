@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include "../FluUtils/FluUtils.h"
+#include "FluRoundMenu.h"
 
 class FluCommandBarIconTextItem : public FluCommandBarItem
 {
@@ -14,6 +15,20 @@ class FluCommandBarIconTextItem : public FluCommandBarItem
     FluCommandBarIconTextItem(QWidget* parent = nullptr);
 
     FluCommandBarIconTextItem(FluAwesomeType type, QString text, QWidget* parent = nullptr);
+
+    FluRoundMenu* getRoundMenu()
+    {
+        return m_roundMenu;
+    }
+
+    void setRoundMenu(FluRoundMenu* menu)
+    {
+        m_roundMenu = menu;
+    }
+
+    void showAtBottomLeft();
+    void showAtBottomRight();
+    void showAtBottomCenter();
 
     void mouseReleaseEvent(QMouseEvent* event);
 
@@ -28,4 +43,6 @@ class FluCommandBarIconTextItem : public FluCommandBarItem
     QPushButton* m_iconBtn;
     QLabel* m_textLabel;
     FluAwesomeType m_awesomeType;
+
+    FluRoundMenu* m_roundMenu;
 };

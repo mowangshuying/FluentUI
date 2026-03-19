@@ -21,6 +21,7 @@ class FluCommandBarIconItem : public FluCommandBarItem
 
     void setRoundMenu(FluRoundMenu* menu);
 
+    void showAtBottomLeft();
     void showAtBottomRight();
 
     void showAtBottomCenter();

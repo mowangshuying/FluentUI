@@ -44,7 +44,6 @@ class ChromePalette;
 class StandardTitleBar;
 class FRAMELESSHELPER_WIDGETS_API StandardTitleBarPrivate : public QObject
 {
-    Q_OBJECT
     FRAMELESSHELPER_PRIVATE_QT_CLASS(StandardTitleBar)
 
 public:
@@ -80,7 +79,7 @@ public:
     StandardSystemButton *maximizeButton = nullptr;
     StandardSystemButton *closeButton = nullptr;
 #endif
-    QPointer<QWidget> window = nullptr;
+    QPointer<QWidget> window; // Initializing it with nullptr causes compilation errors on MinGW toolchain and old Qt versions (< 5.15).
     bool extended = false;
     Qt::Alignment labelAlignment = {};
     bool hideWhenClose = false;

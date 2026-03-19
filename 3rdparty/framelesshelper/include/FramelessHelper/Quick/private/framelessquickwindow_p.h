@@ -25,6 +25,7 @@
 #pragma once
 
 #include <FramelessHelper/Quick/framelesshelperquick_global.h>
+#include <memory>
 
 #if (FRAMELESSHELPER_CONFIG(private_qt) && FRAMELESSHELPER_CONFIG(window))
 
@@ -35,7 +36,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class FramelessQuickWindowPrivate;
 class FRAMELESSHELPER_QUICK_API FramelessQuickWindow : public QQuickWindowQmlImpl
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(FramelessQuickWindow)
 #ifdef QML_NAMED_ELEMENT
     QML_NAMED_ELEMENT(FramelessWindow)

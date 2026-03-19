@@ -27,6 +27,7 @@
 #include <FramelessHelper/Core/framelesshelpercore_global.h>
 #include <QtCore/qvariant.h>
 #include <optional>
+#include <memory>
 
 #ifdef Q_OS_WINDOWS
 
@@ -59,7 +60,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 
 class FRAMELESSHELPER_CORE_API RegistryKey : public QObject
 {
-    Q_OBJECT
     FRAMELESSHELPER_QT_CLASS(RegistryKey)
 
 public:
@@ -86,9 +86,9 @@ private:
     Global::RegistryRootKey m_rootKey = Global::RegistryRootKey::CurrentUser;
     QString m_subKey = {};
 #if REGISTRYKEY_QWINREGISTRYKEY
-    QScopedPointer<QWinRegistryKey> m_registryKey;
+    std::unique_ptr<QWinRegistryKey> m_registryKey;
 #else
-    QScopedPointer<QSettings> m_settings;
+    std::unique_ptr<QSettings> m_settings;
 #endif
 };
 

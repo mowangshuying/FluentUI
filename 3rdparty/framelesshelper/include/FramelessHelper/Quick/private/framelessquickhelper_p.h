@@ -25,6 +25,7 @@
 #pragma once
 
 #include <FramelessHelper/Quick/framelesshelperquick_global.h>
+#include <QtCore/qtimer.h>
 #include <optional>
 
 QT_BEGIN_NAMESPACE
@@ -43,7 +44,6 @@ class QuickWindowBorder;
 class FramelessQuickHelper;
 class FRAMELESSHELPER_QUICK_API FramelessQuickHelperPrivate : public QObject
 {
-    Q_OBJECT
     FRAMELESSHELPER_PRIVATE_QT_CLASS(FramelessQuickHelper)
 
 public:
@@ -67,7 +67,8 @@ public:
 
     Q_NODISCARD static FramelessQuickHelper *findOrCreateFramelessHelper(QObject *object);
 
-    void repaintAllChildren(const quint32 delay = 0) const;
+    void repaintAllChildren();
+    Q_INVOKABLE void doRepaintAllChildren();
 
     Q_NODISCARD quint32 readyWaitTime() const;
     void setReadyWaitTime(const quint32 time);
@@ -84,6 +85,7 @@ public:
     std::optional<bool> extendIntoTitleBar = std::nullopt;
     bool qpaReady = false;
     quint32 qpaWaitTime = 0;
+    QTimer repaintTimer{};
 };
 
 FRAMELESSHELPER_END_NAMESPACE

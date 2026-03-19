@@ -2,7 +2,7 @@
 set(FRAMELESSHELPER_BUILD_STATIC ON)
 set(FRAMELESSHELPER_BUILD_QUICK OFF)
 set(FRAMELESSHELPER_NO_INSTALL ON)
-add_subdirectory("framelesshelper-2.5.0")
+add_subdirectory("framelesshelper")
 
 set(TGT framelesshelper)
 add_library(framelesshelper INTERFACE)
@@ -16,7 +16,7 @@ target_link_libraries(${TGT}
 set(QWINDOWKIT_BUILD_STATIC ON)
 set(QWINDOWKIT_BUILD_QUICK OFF)
 set(QWINDOWKIT_INSTALL OFF)
-add_subdirectory("qwindowkit-1.3.2")
+add_subdirectory("qwindowkit")
 
 set(TGT qwindowkit)
 add_library(qwindowkit INTERFACE)
@@ -26,8 +26,8 @@ target_link_libraries(${TGT}
     QWKWidgets
 )
 
-add_subdirectory("qscintilla-2.14.0")
-add_subdirectory("qrcode-1.4.0")
-add_subdirectory("cmark-0.31.1")
-add_subdirectory("Qt-Advanced-Docking-System-4.5.0")
+add_subdirectory("qscintilla")
+add_subdirectory("qrcode")
+add_subdirectory("cmark")
+add_subdirectory("Qt-Advanced-Docking-System")
 

@@ -25,6 +25,7 @@
 #pragma once
 
 #include <FramelessHelper/Core/framelesshelpercore_global.h>
+#include <memory>
 
 #if FRAMELESSHELPER_CONFIG(titlebar)
 
@@ -33,7 +34,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class ChromePalettePrivate;
 class FRAMELESSHELPER_CORE_API ChromePalette : public QObject
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(ChromePalette)
 
     Q_PROPERTY(QColor titleBarActiveBackgroundColor READ titleBarActiveBackgroundColor

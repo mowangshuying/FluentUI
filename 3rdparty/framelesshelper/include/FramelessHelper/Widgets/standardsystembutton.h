@@ -26,6 +26,7 @@
 
 #include <FramelessHelper/Widgets/framelesshelperwidgets_global.h>
 #include <QtWidgets/qpushbutton.h>
+#include <memory>
 
 #if FRAMELESSHELPER_CONFIG(system_button)
 
@@ -34,7 +35,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class StandardSystemButtonPrivate;
 class FRAMELESSHELPER_WIDGETS_API StandardSystemButton : public QPushButton
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(StandardSystemButton)
     Q_PROPERTY(Global::SystemButtonType buttonType READ buttonType WRITE setButtonType NOTIFY buttonTypeChanged FINAL)
     Q_PROPERTY(QString glyph READ glyph WRITE setGlyph NOTIFY glyphChanged FINAL)

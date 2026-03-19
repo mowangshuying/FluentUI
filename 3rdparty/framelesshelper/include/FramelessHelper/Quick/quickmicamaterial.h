@@ -26,6 +26,7 @@
 
 #include <FramelessHelper/Quick/framelesshelperquick_global.h>
 #include <QtQuick/qquickpainteditem.h>
+#include <memory>
 
 #if FRAMELESSHELPER_CONFIG(mica_material)
 
@@ -34,7 +35,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class QuickMicaMaterialPrivate;
 class FRAMELESSHELPER_QUICK_API QuickMicaMaterial : public QQuickPaintedItem
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(QuickMicaMaterial)
 #ifdef QML_NAMED_ELEMENT
     QML_NAMED_ELEMENT(MicaMaterial)

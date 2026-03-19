@@ -26,6 +26,7 @@
 
 #include <FramelessHelper/Widgets/framelesshelperwidgets_global.h>
 #include <QtWidgets/qdialog.h>
+#include <memory>
 
 #if FRAMELESSHELPER_CONFIG(window)
 
@@ -34,7 +35,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class FramelessDialogPrivate;
 class FRAMELESSHELPER_WIDGETS_API FramelessDialog : public QDialog
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(FramelessDialog)
 
 public:

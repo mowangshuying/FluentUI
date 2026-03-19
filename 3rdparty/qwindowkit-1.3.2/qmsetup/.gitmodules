@@ -1,4 +1,0 @@
-[submodule "syscmdline"]
-	path = src/syscmdline
-	url = ../../SineStriker/syscmdline.git
-	branch = main

@@ -27,6 +27,7 @@
 #include <FramelessHelper/Quick/framelesshelperquick_global.h>
 #include <QtQuick/qquickitem.h>
 #include <QtQuick/qquickwindow.h>
+#include <memory>
 
 FRAMELESSHELPER_BEGIN_NAMESPACE
 
@@ -40,7 +41,6 @@ class QuickWindowBorder;
 class FramelessQuickHelperPrivate;
 class FRAMELESSHELPER_QUICK_API FramelessQuickHelper : public QQuickItem
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(FramelessQuickHelper)
 #ifdef QML_NAMED_ELEMENT
     QML_NAMED_ELEMENT(FramelessHelper)

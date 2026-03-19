@@ -25,6 +25,7 @@
 #pragma once
 
 #include <FramelessHelper/Core/framelesshelpercore_global.h>
+#include <memory>
 
 #if FRAMELESSHELPER_CONFIG(mica_material)
 
@@ -33,7 +34,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class MicaMaterialPrivate;
 class FRAMELESSHELPER_CORE_API MicaMaterial : public QObject
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(MicaMaterial)
 
     Q_PROPERTY(QColor tintColor READ tintColor WRITE setTintColor NOTIFY tintColorChanged FINAL)

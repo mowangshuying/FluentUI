@@ -25,6 +25,7 @@
 #pragma once
 
 #include <FramelessHelper/Widgets/framelesshelperwidgets_global.h>
+#include <memory>
 
 #if FRAMELESSHELPER_CONFIG(titlebar)
 
@@ -39,7 +40,6 @@ FRAMELESSHELPER_BEGIN_NAMESPACE
 class StandardTitleBarPrivate;
 class FRAMELESSHELPER_WIDGETS_API StandardTitleBar : public QWidget
 {
-    Q_OBJECT
     FRAMELESSHELPER_PUBLIC_QT_CLASS(StandardTitleBar)
     Q_PROPERTY(Qt::Alignment titleLabelAlignment READ titleLabelAlignment WRITE setTitleLabelAlignment NOTIFY titleLabelAlignmentChanged FINAL)
 #if (!defined(Q_OS_MACOS) && FRAMELESSHELPER_CONFIG(system_button))

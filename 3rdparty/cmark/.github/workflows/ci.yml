@@ -1,0 +1,145 @@
+name: CI tests
+
+on:
+  push:
+    branches-ignore:
+      - 'dependabot/**'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+
+  linter:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v6
+    - name: Install clang-tidy
+      run: |
+        sudo apt-get install -y clang-tidy
+    - name: lint with clang-tidy
+      run: |
+        make lint
+      env:
+        CC: clang
+        CXX: clang++
+
+  posix:
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [linux, macos]
+        cc: [clang, gcc]
+        build_type: [shared, static]
+        sanitizers: ['', ASan]
+
+        include:
+          # Translate human readable labels
+          - os: 'linux'
+            image: 'ubuntu-latest'
+          - os: 'macos'
+            image: 'macos-latest'
+          - cc: 'clang'
+            cxx: 'clang++'
+          - cc: 'gcc'
+            cxx: 'g++'
+          - build_type: 'shared'
+            cmake_shared: 'YES'
+          - build_type: 'static'
+            cmake_shared: 'NO'
+          - sanitizers: 'ASan'
+            san_cflags: '-fsanitize=address,undefined -fno-sanitize-recover=all'
+
+          # When building shared libraries, they will be loaded
+          # dynamically from Python when testing. This means that
+          # we have to use a preloaded shared libasan.
+          - sanitizers: 'ASan'
+            os: 'linux'
+            cc: 'gcc'
+            build_type: 'shared'
+            test_env: 'LD_PRELOAD=$(gcc -print-file-name=libasan.so)'
+          - sanitizers: 'ASan'
+            os: 'linux'
+            cc: 'clang'
+            build_type: 'shared'
+            # clang defaults to -static-libsasn
+            asan_cflags: '-shared-libasan'
+            test_env: 'LD_PRELOAD=$(clang -print-file-name=libclang_rt.asan-x86_64.so)'
+
+          # We have to disable LeakSanitizer in shared library builds
+          # because we get false positives from Python.
+          - sanitizers: 'ASan'
+            build_type: 'shared'
+            asan_opts: 'detect_leaks=0'
+
+          # The static build can run with LeakSanitizer.
+          # gcc defaults to -shared-libasan and needs -static-libasan
+          - sanitizers: 'ASan'
+            cc: 'gcc'
+            build_type: 'static'
+            asan_cflags: '-static-libasan'
+
+        exclude:
+          # gcc is just an alias for clang on macOS
+          - os: 'macos'
+            cc: 'gcc'
+          # Shared libasan doesn't work with macOS system Python.
+          - os: 'macos'
+            sanitizers: 'ASan'
+            build_type: 'shared'
+
+    runs-on: ${{ matrix.image }}
+
+    env:
+       ASAN_OPTIONS: ${{ matrix.asan_opts }}
+       CC: ${{ matrix.cc }}
+       CXX: ${{ matrix.cxx }}
+       CFLAGS: '${{ matrix.san_cflags }} ${{ matrix.asan_cflags }}'
+       CXXFLAGS: '${{ matrix.san_cflags }} ${{ matrix.asan_cflags }}'
+
+    steps:
+    - uses: actions/checkout@v6
+    - name: Build and test
+      run: |
+         cmake \
+            -DBUILD_SHARED_LIBS=${{ matrix.cmake_shared }} \
+            -DCMAKE_BUILD_TYPE=Debug \
+            -S . -B build
+         cmake --build build
+         ${{ matrix.test_env }} ctest --test-dir build --output-on-failure
+
+  windows:
+
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [shared, static]
+        include:
+          - build_type: 'shared'
+            cmake_shared: 'YES'
+          - build_type: 'static'
+            cmake_shared: 'NO'
+
+    steps:
+    - uses: actions/checkout@v6
+    - uses: ilammy/msvc-dev-cmd@v1
+    - name: Build and test
+      run: |
+        cmake ^
+            -DBUILD_SHARED_LIBS=${{ matrix.cmake_shared }} ^
+            -DCMAKE_BUILD_TYPE=Debug ^
+            -S . -B build
+        cmake --build build
+        ctest --test-dir build -C Debug --output-on-failure
+      shell: cmd
+    - name: Upload artifact
+      if: ${{ matrix.build_type == 'static' }}
+      uses: actions/upload-artifact@v6
+      with:
+        name: cmark windows ${{ matrix.build_type }}
+        path: build/src/Debug/cmark.exe
+        if-no-files-found: error

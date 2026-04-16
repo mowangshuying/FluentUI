@@ -8,6 +8,7 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QEnterEvent>
+#include "FluHSplitLine.h"
 
 class FluTabBarItem : public FluWidget
 {
@@ -42,10 +43,11 @@ class FluTabBarItem : public FluWidget
     void onThemeChanged();
 
   protected:
+    FluHSplitLine* m_hspL;
     QHBoxLayout* m_hMainLayout;
     QPushButton* m_iconBtn;
     QPushButton* m_textBtn;
     QPushButton* m_closeBtn;
-
+    FluHSplitLine* m_hspR;
     bool m_bSel;
 };

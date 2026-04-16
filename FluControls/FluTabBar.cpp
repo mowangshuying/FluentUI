@@ -14,12 +14,12 @@ FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_tabBarContent->resize(0, height());
     m_hMainLayout->addWidget(m_tabBarContent);
 
-    m_hMainLayout->addSpacing(8);
+    m_hMainLayout->addSpacing(0);
 
     m_addTabBtn = new QPushButton(this);
     m_addTabBtn->setFixedSize(30, 30);
     m_addTabBtn->setIconSize(QSize(20, 20));
-    m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add));
+    m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add, FluThemeUtils::getUtils()->getTheme(), 20, 20));
     m_addTabBtn->setObjectName("addTabBtn");
 
     onThemeChanged();
@@ -80,7 +80,7 @@ void FluTabBar::adjustAddTabBtnPosition()
             nTmp += items[i]->width();
         }
 
-        int nX = nTmp + 20;
+        int nX = nTmp + 10;
         int nY = 5;
 
         if (nX + 40 > width())

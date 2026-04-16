@@ -1,6 +1,6 @@
 #include "FluTabViewDemo.h"
 
-FluTabViewDemo::FluTabViewDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluTabViewDemo::FluTabViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
     auto tabView = new FluTabView;
     auto vMainLayout = new QVBoxLayout;

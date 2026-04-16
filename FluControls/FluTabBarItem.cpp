@@ -1,4 +1,5 @@
 ﻿#include "FluTabBarItem.h"
+#include "FluHSplitLine.h"
 
 FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
 {
@@ -11,18 +12,16 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     m_textBtn = new QPushButton(this);
     m_closeBtn = new QPushButton(this);
 
-    m_iconBtn->setFixedSize(30, 30);
+    m_iconBtn->setFixedSize(20, 20);
     m_closeBtn->setFixedSize(24, 16);
 
-    m_iconBtn->setIconSize(QSize(25, 25));
+    m_iconBtn->setIconSize(QSize(20, 20));
     m_closeBtn->setIconSize(QSize(12, 12));
     m_textBtn->setFixedHeight(30);
     m_textBtn->setText("Document");
 
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document));
-
-    QIcon closeIcon = FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose).scaled(12, 12);
-    m_closeBtn->setIcon(closeIcon);
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
 
     m_iconBtn->setObjectName("iconBtn");
     m_textBtn->setObjectName("textBtn");
@@ -31,15 +30,13 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     m_hMainLayout->addWidget(m_iconBtn, 0);
     m_hMainLayout->addWidget(m_textBtn, 1);
     m_hMainLayout->addWidget(m_closeBtn, 0);
+
     m_hMainLayout->addSpacing(5);
 
     setFixedHeight(35);
-    //   setFixedWidth(240);
-
     connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarItem.qss", this);
     onThemeChanged();
 }
 
@@ -49,6 +46,12 @@ void FluTabBarItem::setSelected(bool bSel)
     setProperty("selected", bSel);
     m_closeBtn->setProperty("selected", bSel);
     m_closeBtn->style()->polish(m_closeBtn);
+
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None));
+    if (bSel)
+    {
+        m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
+    }
 }
 
 bool FluTabBarItem::getSelected()
@@ -59,6 +62,8 @@ bool FluTabBarItem::getSelected()
 void FluTabBarItem::setText(QString text)
 {
     m_textBtn->setText(text);
+    //m_textBtn->adjustSize();
+    m_textBtn->setFixedSize(m_textBtn->sizeHint());
 }
 
 QString FluTabBarItem::getText()
@@ -74,11 +79,17 @@ void FluTabBarItem::resizeEvent(QResizeEvent* event)
 void FluTabBarItem::enterEvent(QEnterEvent* event)
 {
     // m_closeBtn->setProperty("tabBarItemHover", true);
+
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
 }
 
 void FluTabBarItem::leaveEvent(QEvent* event)
 {
     // m_closeBtn->setProperty("tabBarItemHover", false);
+    if (m_bSel)
+        return;
+
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None));
 }
 
 void FluTabBarItem::mouseReleaseEvent(QMouseEvent* event)
@@ -91,7 +102,7 @@ void FluTabBarItem::paintEvent(QPaintEvent* event)
     QStyleOption opt;
     opt.initFrom(this);
     QPainter painter(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this); 
 }
 
 void FluTabBarItem::onThemeChanged()

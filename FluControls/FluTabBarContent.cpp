@@ -22,13 +22,13 @@ FluTabBarContent::FluTabBarContent(QWidget* parent /*= nullptr*/) : QScrollArea(
     m_hMidLayout->setSpacing(0);
 
     m_hMidLayout->setAlignment(Qt::AlignLeft);
-    m_hMidLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
+    //m_hMidLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
     m_hMainLayout->addLayout(m_hMidLayout);
     m_hMainLayout->addStretch();
 
     m_hMainWidget->setFixedHeight(40);
     setFixedHeight(40);
-    FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBarContent.qss", this);
+    FluStyleSheetUitls::setQssByFileName("FluTabBarContent.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluTabBarContent::addBarItem(FluTabBarItem* item)
@@ -52,6 +52,14 @@ void FluTabBarContent::insertTabBarItem(int nPos, FluTabBarItem* item)
     m_hMidLayout->insertWidget(nPos, item);
     m_tabBarItems.insert(m_tabBarItems.begin() + nPos, item);
 
+    item->setSelected(false);
+    if (m_tabBarItems.size() == 1)
+    {
+        item->setSelected(true);
+    }
+
+    /// insert success adjust size;
+
     connect(item, &FluTabBarItem::clicked, [=]() {
         for (auto itemIter = m_tabBarItems.begin(); itemIter != m_tabBarItems.end(); itemIter++)
         {
@@ -73,6 +81,22 @@ void FluTabBarContent::removeTabBarItem(FluTabBarItem* item)
         m_tabBarItems.erase(itf);
     }
     item->deleteLater();
+
+    bool bHasSelected = false;
+    for (auto itemIter = m_tabBarItems.begin(); itemIter != m_tabBarItems.end(); itemIter++)
+    {
+        if ((*itemIter)->getSelected())
+        {
+            bHasSelected = true;
+            break;
+        }
+    }
+
+    if (!bHasSelected && m_tabBarItems.size() > 0)
+    {
+        m_tabBarItems[0]->setSelected(true);
+        m_tabBarItems[0]->style()->polish(m_tabBarItems[0]);
+    }
 }
 
 int FluTabBarContent::getSelectedTabBarItemIndex()

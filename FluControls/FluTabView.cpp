@@ -22,7 +22,11 @@ FluTabView::FluTabView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_sWidgt->setLayout(m_sLayout);
 
     connect(m_tabBar, &FluTabBar::addTabBtnClicked, [=]() { emit addTabBtnClicked(); });
-    FluStyleSheetUitls::setQssByFileName("FluTabView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    //FluStyleSheetUitls::setQssByFileName("FluTabView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 }
 
 void FluTabView::addTab(QString tabString, QWidget* tabWidget)

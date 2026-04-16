@@ -31,10 +31,7 @@ class FluTabBar : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        if (FluThemeUtils::isLightTheme())
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTabBar.qss", this);
-        else if (FluThemeUtils::isDarkTheme())
-            FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTabBar.qss", this);
+         FluStyleSheetUitls::setQssByFileName("FluTabBar.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

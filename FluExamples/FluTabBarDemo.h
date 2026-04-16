@@ -5,8 +5,9 @@
 #include <QVBoxLayout>
 #include "../FluControls/FluTabBarItem.h"
 #include "../FluControls/FluTabBar.h"
+#include "../FluExamples/FluTemplateDemo.h"
 
-class FluTabBarDemo : public FluWidget
+class FluTabBarDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:

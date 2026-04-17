@@ -27,9 +27,9 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     m_textBtn->setObjectName("textBtn");
     m_closeBtn->setObjectName("closeBtn");
 
-    m_hMainLayout->addWidget(m_iconBtn, 0);
-    m_hMainLayout->addWidget(m_textBtn, 1);
-    m_hMainLayout->addWidget(m_closeBtn, 0);
+    m_hMainLayout->addWidget(m_iconBtn);
+    m_hMainLayout->addWidget(m_textBtn);
+    m_hMainLayout->addWidget(m_closeBtn);
 
     m_hMainLayout->addSpacing(5);
 
@@ -62,13 +62,25 @@ bool FluTabBarItem::getSelected()
 void FluTabBarItem::setText(QString text)
 {
     m_textBtn->setText(text);
-    //m_textBtn->adjustSize();
-    m_textBtn->setFixedSize(m_textBtn->sizeHint());
 }
 
 QString FluTabBarItem::getText()
 {
     return m_textBtn->text();
+    adjustWidgetSize();
+}
+
+void FluTabBarItem::adjustWidgetSize()
+{
+    // get text width
+    QFontMetrics metrics(m_textBtn->font());
+    QRect textRect = metrics.boundingRect(m_textBtn->text());
+    int textWidth = textRect.width();
+    m_textBtn->setFixedWidth(textWidth);
+
+    // adjust the whole widget width
+    int totalWidth = m_iconBtn->width() + m_textBtn->width() + m_closeBtn->width() + m_hMainLayout->spacing() * 2 + 5;
+    setFixedWidth(totalWidth);
 }
 
 void FluTabBarItem::resizeEvent(QResizeEvent* event)

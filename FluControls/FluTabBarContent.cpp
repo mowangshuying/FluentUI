@@ -97,6 +97,12 @@ void FluTabBarContent::removeTabBarItem(FluTabBarItem* item)
         m_tabBarItems[0]->setSelected(true);
         m_tabBarItems[0]->style()->polish(m_tabBarItems[0]);
     }
+
+    ///*for (auto iter = m_tabBarItems.begin(); iter != m_tabBarItems.end(); iter++)
+    //{
+    //    (*iter)->adjustWidgetSize();
+    //}*/
+    
 }
 
 int FluTabBarContent::getSelectedTabBarItemIndex()

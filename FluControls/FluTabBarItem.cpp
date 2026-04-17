@@ -20,8 +20,8 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     m_textBtn->setFixedHeight(30);
     m_textBtn->setText("Document");
 
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document));
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document, FluThemeUtils::getUtils()->getTheme()));
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 
     m_iconBtn->setObjectName("iconBtn");
     m_textBtn->setObjectName("textBtn");
@@ -38,6 +38,9 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
     onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
+        onThemeChanged();
+    });
 }
 
 void FluTabBarItem::setSelected(bool bSel)
@@ -47,10 +50,10 @@ void FluTabBarItem::setSelected(bool bSel)
     m_closeBtn->setProperty("selected", bSel);
     m_closeBtn->style()->polish(m_closeBtn);
 
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None));
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
     if (bSel)
     {
-        m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
+        m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
     }
 }
 
@@ -92,7 +95,7 @@ void FluTabBarItem::enterEvent(QEnterEvent* event)
 {
     // m_closeBtn->setProperty("tabBarItemHover", true);
 
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose));
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 }
 
 void FluTabBarItem::leaveEvent(QEvent* event)
@@ -101,7 +104,7 @@ void FluTabBarItem::leaveEvent(QEvent* event)
     if (m_bSel)
         return;
 
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None));
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
 }
 
 void FluTabBarItem::mouseReleaseEvent(QMouseEvent* event)
@@ -120,4 +123,6 @@ void FluTabBarItem::paintEvent(QPaintEvent* event)
 void FluTabBarItem::onThemeChanged()
 {
     FluStyleSheetUitls::setQssByFileName("FluTabBarItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document, FluThemeUtils::getUtils()->getTheme()));
+    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 }

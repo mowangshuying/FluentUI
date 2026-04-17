@@ -1,0 +1,40 @@
+FluTabBarItem {
+    background-color: rgb(32,32,32);
+    border: 1px solid transparent;
+    border-radius: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    /*max-width: 180px;*/
+}
+
+FluTabBarItem:hover {
+    background-color: rgb(45,45,45);
+}
+
+FluTabBarItem[selected=true] {
+    background-color: rgb(40,40,40);
+    border: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+
+#iconBtn {
+	color:white;
+    background-color: transparent;
+}
+
+#textBtn {
+	color:white;
+    background-color: transparent;
+    text-align: left;
+}
+
+#closeBtn {
+	color:white;
+    background-color: transparent;
+}
+
+#closeBtn[selected=true]:hover {
+    background-color: rgb(45,45,45);
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

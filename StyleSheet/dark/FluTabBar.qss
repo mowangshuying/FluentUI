@@ -6,8 +6,8 @@ FluTabBar {
     /*border-top-left-radius: 8px;*/
     /*border-top-right-radius: 8px;*/
     /* border-radius: 0px; */
-    border-bottom: 1px solid rgb(71, 74, 79);
-    background-color: rgb(40, 44, 52);
+    border-bottom: 1px solid rgb(36, 36, 36);
+    background-color: rgb(32, 32, 32);
 }
 
 #addTabBtn {

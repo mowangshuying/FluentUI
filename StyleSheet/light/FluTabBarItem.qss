@@ -1,19 +1,19 @@
 FluTabBarItem {
     background-color: rgb(243, 243, 243);
     border: 1px solid transparent;
-    border-radius: 0px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 5px;
+    /* border-top-left-radius: 8px; */
+    /* border-top-right-radius: 8px; */
     /*max-width: 180px;*/
 }
 
 FluTabBarItem:hover {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(223, 223, 223);
 }
 
 FluTabBarItem[selected=true] {
-    background-color: rgb(249, 249, 249);
-    border: 1px solid rgb(234, 234, 234);
+    background-color: rgb(223, 223, 223);
+    border: 1px solid rgb(223, 223, 223);
     border-top: 1px solid transparent;
 }
 
@@ -23,6 +23,7 @@ FluTabBarItem[selected=true] {
 
 #textBtn {
     background-color: transparent;
+    border: 1px solid transparent;
     text-align: left;
 }
 
@@ -31,7 +32,7 @@ FluTabBarItem[selected=true] {
 }
 
 #closeBtn[selected=true]:hover {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(223, 223, 223);
     border: 1px solid transparent;
     border-radius: 4px;
 }

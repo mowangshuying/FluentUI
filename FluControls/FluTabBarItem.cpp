@@ -64,26 +64,31 @@ bool FluTabBarItem::getSelected()
 
 void FluTabBarItem::setText(QString text)
 {
+    adjustWidgetSize();
     m_textBtn->setText(text);
 }
 
 QString FluTabBarItem::getText()
 {
     return m_textBtn->text();
-    adjustWidgetSize();
+    //adjustWidgetSize();
+}
+
+int FluTabBarItem::getWidgetWidth()
+{
+    QFontMetrics metrics(m_textBtn->font());
+    QRect textRect = metrics.boundingRect(m_textBtn->text());
+    int textWidth = textRect.width();
+    //m_textBtn->setFixedWidth(textWidth);
+
+    // adjust the whole widget width
+    int totalWidth = m_iconBtn->width() + textWidth + m_closeBtn->width() + m_hMainLayout->spacing() * 2 + 5;
+    return totalWidth;
 }
 
 void FluTabBarItem::adjustWidgetSize()
 {
-    // get text width
-    QFontMetrics metrics(m_textBtn->font());
-    QRect textRect = metrics.boundingRect(m_textBtn->text());
-    int textWidth = textRect.width();
-    m_textBtn->setFixedWidth(textWidth);
-
-    // adjust the whole widget width
-    int totalWidth = m_iconBtn->width() + m_textBtn->width() + m_closeBtn->width() + m_hMainLayout->spacing() * 2 + 5;
-    setFixedWidth(totalWidth);
+    setFixedWidth(getWidgetWidth());
 }
 
 void FluTabBarItem::resizeEvent(QResizeEvent* event)

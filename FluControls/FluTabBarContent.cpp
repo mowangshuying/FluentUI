@@ -59,6 +59,7 @@ void FluTabBarContent::insertTabBarItem(int nPos, FluTabBarItem* item)
     }
 
     /// insert success adjust size;
+    item->adjustWidgetSize();
 
     connect(item, &FluTabBarItem::clicked, [=]() {
         for (auto itemIter = m_tabBarItems.begin(); itemIter != m_tabBarItems.end(); itemIter++)
@@ -102,6 +103,13 @@ void FluTabBarContent::removeTabBarItem(FluTabBarItem* item)
     //{
     //    (*iter)->adjustWidgetSize();
     //}*/
+
+    /// calc tabbar item size
+    //int nTotalWidth = 0;
+    //for (auto iter = m_tabBarItems.begin(); iter != m_tabBarItems.end(); iter++)
+    //{
+    //    nTotalWidth += (*iter)->width();
+    //}
     
 }
 

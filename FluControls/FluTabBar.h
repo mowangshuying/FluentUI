@@ -29,10 +29,7 @@ class FluTabBar : public FluWidget
   signals:
     void addTabBtnClicked();
   public slots:
-    void onThemeChanged()
-    {
-         FluStyleSheetUitls::setQssByFileName("FluTabBar.qss", this, FluThemeUtils::getUtils()->getTheme());
-    }
+    void onThemeChanged();
 
   protected:
     QHBoxLayout* m_hMainLayout;

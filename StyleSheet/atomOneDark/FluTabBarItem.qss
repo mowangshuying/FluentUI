@@ -1,9 +1,9 @@
 FluTabBarItem {
     background-color: rgb(40,44,52);
     border: 1px solid transparent;
-    border-radius: 0px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 5px;
+    /* border-top-left-radius: 8px; */
+    /* border-top-right-radius: 8px; */
     /*max-width: 180px;*/
 }
 
@@ -24,6 +24,7 @@ FluTabBarItem[selected=true] {
 
 #textBtn {
 	color:white;
+    border: 1px solid transparent;
     background-color: transparent;
     text-align: left;
 }

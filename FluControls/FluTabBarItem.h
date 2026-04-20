@@ -24,6 +24,8 @@ class FluTabBarItem : public FluWidget
 
     QString getText();
 
+    int getWidgetWidth();
+
     void adjustWidgetSize();
 
     void resizeEvent(QResizeEvent* event);

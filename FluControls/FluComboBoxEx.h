@@ -18,6 +18,11 @@ class FluComboBoxEx : public FluWidget
 
     QPushButton* getIconBtn();
 
+    void setMaxVisibleItems(int num)
+    {
+        m_menu->setMaxVisibleItems(num);
+    }
+
     void setIcon(FluAwesomeType type);
 
     void setIndex(int index);

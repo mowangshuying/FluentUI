@@ -1,0 +1,18 @@
+FluDialog {
+    background-color: transparent;
+}
+
+#windowMask {
+    background-color: rgba(74, 74, 74, 0.44);
+}
+
+#centerWidget {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+#btnWidget {
+    background-color: rgb(243, 243, 243);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

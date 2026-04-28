@@ -74,7 +74,7 @@
  
  
  ads--CDockAreaWidget[focused="true"] ads--CDockAreaTitleBar {
-     border-bottom: 2px solid palette(highlight);
+     border-bottom: 2px solid transparent;
  }
  
  

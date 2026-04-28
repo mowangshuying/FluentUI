@@ -77,6 +77,7 @@
 #include "FluDockDemo.h"
 #include "FluADSDemo.h"
 #include "../FluControls/FluWindowKitWindow.h"
+#include "FluDialogDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -404,11 +405,12 @@ int main(int argc, char **argv)
      //FluWindowKitWidget demo;
      //demo.show();
 
-     FluADSDemo adsDemo;
-     adsDemo.show();
+     //FluADSDemo adsDemo;
+     //adsDemo.show();
 
      //FluWindowKitWindow window;
     //window.show();
-
+    FluDialogDemo demo;
+    demo.show();
     return app.exec();
 }

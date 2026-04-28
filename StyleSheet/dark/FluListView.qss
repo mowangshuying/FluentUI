@@ -6,3 +6,7 @@ FluListView {
     qproperty-indicatorColorEx: rgb(118, 185, 237);
     qproperty-textColorEx: white;
 }
+
+FluListView[noBorder=true] {
+    border: 1px solid transparent;
+}

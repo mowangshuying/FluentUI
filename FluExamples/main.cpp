@@ -221,8 +221,8 @@ int main(int argc, char **argv)
      //FluTimePickerDemo demo;
      //demo.show();
 
-     FluTabBarDemo demo;
-     demo.show();
+    //  FluTabBarDemo demo;
+    //  demo.show();
 
     // FluTabViewDemo demo;
     // demo.show();
@@ -404,8 +404,8 @@ int main(int argc, char **argv)
      //FluWindowKitWidget demo;
      //demo.show();
 
-     //FluADSDemo adsDemo;
-     //adsDemo.show();
+     FluADSDemo adsDemo;
+     adsDemo.show();
 
      //FluWindowKitWindow window;
     //window.show();

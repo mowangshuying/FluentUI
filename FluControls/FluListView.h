@@ -16,6 +16,12 @@ class FluListView : public QListWidget
   public:
     FluListView(QWidget* parent = nullptr);
 
+    void setNoBorder(bool b)
+    {
+        setProperty("noBorder", b);
+        style()->polish(this);
+    }
+
     // QColor;
     QColor getBackgroundColorEx() const
     {

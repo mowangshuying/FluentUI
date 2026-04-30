@@ -828,7 +828,7 @@ if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 target_link_libraries(${TGT}
     PUBLIC
     framelesshelper
-    FluUtils
+    FluentUI::Utils
     qwindowkit
     Qt${QT_VERSION_MAJOR}::Core5Compat
     cmark
@@ -839,10 +839,12 @@ else()
 target_link_libraries(${TGT}
     PUBLIC
     framelesshelper
-    FluUtils
+    FluentUI::Utils
     qwindowkit
     cmark
     qscintilla
     qtadvanceddocking-qt5
 )
 endif()
+
+add_library(FluentUI::Controls ALIAS ${TGT})

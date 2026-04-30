@@ -64,7 +64,7 @@ endif()
 if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 target_link_libraries(${TGT}
     PRIVATE
-    FluControls
+    FluentUI::Controls
     qscintilla
     qrcode
     Qt${QT_VERSION_MAJOR}::Charts
@@ -75,7 +75,7 @@ target_link_libraries(${TGT}
 else()
 target_link_libraries(${TGT}
     PRIVATE
-    FluControls
+    FluentUI::Controls
     qscintilla
     qrcode
     Qt${QT_VERSION_MAJOR}::Charts

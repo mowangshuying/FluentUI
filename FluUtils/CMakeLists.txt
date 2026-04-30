@@ -3210,3 +3210,6 @@ target_link_libraries(${TGT}
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Svg
 )
+
+### alias
+add_library(FluentUI::Utils ALIAS ${TGT})

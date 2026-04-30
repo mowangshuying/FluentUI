@@ -10,9 +10,12 @@ FluRoundMenu::FluRoundMenu(QWidget* parent /*= nullptr*/) : FluRoundMenu("", Flu
 
 FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* parent /*= nullptr*/) : QMenu(parent)
 {
+    //Q_D(QMenu)
+
     // m_title = title;
     // m_icon = QPixmap();
     m_mainAction = new FluAction(iconType, title);
+    //setDefaultAction(m_mainAction);
     m_bSubMenu = false;
     m_parentMenu = nullptr;
     m_menuItem = nullptr;
@@ -42,6 +45,8 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
 
     connect(m_roundMenuView, &FluRoundMenuView::itemClicked, this, &FluRoundMenu::onItemClicked);
     connect(m_roundMenuView, &FluRoundMenuView::itemEntered, this, &FluRoundMenu::onItemEntered);
+
+    //connect(m_mainAction, &QAction::triggered, this, &FluRoundMenu::)
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
@@ -106,6 +111,11 @@ QString FluRoundMenu::getTitle()
 void FluRoundMenu::setTitle(QString title)
 {
     m_mainAction->setText(title);
+}
+
+QAction* FluRoundMenu::menuAction()
+{
+    return m_mainAction;
 }
 
 void FluRoundMenu::clear()

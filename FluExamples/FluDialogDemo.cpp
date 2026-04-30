@@ -8,12 +8,7 @@
 
 FluDialogDemo::FluDialogDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
-    /*FluDialog dlg;
-    auto comboxBox = new FluComboBoxEx;
-    comboxBox->addItem(tr("Option 1"));
-    comboxBox->addItem(tr("Option 2"));
-    comboxBox->addItem(tr("Option 3"));*/
-
+    m_contentLayout->setAlignment(Qt::AlignCenter);
     auto btn = new FluPushButton;
     btn->setText(tr("Show Dialog"));
 
@@ -21,12 +16,7 @@ FluDialogDemo::FluDialogDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
 
     connect(btn, &FluPushButton::clicked, [=]() {
         FluDialog dlg(window());
-        //dlg.resize(400, 300);
-        dlg.getWidget()->setFixedSize(400, 300);
-        //auto comboxBox = new FluComboBoxEx;
-        //comboxBox->addItem(tr("Option 1"));
-        //comboxBox->addItem(tr("Option 2"));
-        //comboxBox->addItem(tr("Option 3"));
+        dlg.setWidgetFixedSize(400, 300);
 
         {
             auto hLayout = new QHBoxLayout;

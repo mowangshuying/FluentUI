@@ -21,13 +21,10 @@ class FluDialog : public QDialog
   public:
     FluDialog(QWidget* parent = nullptr);
 
-    //QString getTitle();
-
-    //void setTitle(QString title);
-
-    //QString getInfo();
-
-    //void setInfo(QString info);
+    void setWidgetFixedSize(int width, int height)
+    {
+        m_widget->setFixedSize(width, height);
+    }
 
     QWidget* getWidget()
     {

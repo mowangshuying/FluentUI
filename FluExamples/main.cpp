@@ -77,6 +77,7 @@
 #include "FluDockDemo.h"
 #include "FluADSDemo.h"
 #include "../FluControls/FluWindowKitWindow.h"
+#include "FluDialogDemo.h"
 
 int main(int argc, char **argv)
 {
@@ -194,8 +195,8 @@ int main(int argc, char **argv)
     // FluSpinBoxDemo demo;
     // demo.show();
 
-     FluMenuBarDemo demo;
-     demo.show();
+    // FluMenuBarDemo demo;
+    // demo.show();
 
     // FluInfoBarDemo demo;
     // demo.show();
@@ -221,8 +222,8 @@ int main(int argc, char **argv)
      //FluTimePickerDemo demo;
      //demo.show();
 
-     //FluTabBarDemo demo;
-     //demo.show();
+    //  FluTabBarDemo demo;
+    //  demo.show();
 
     // FluTabViewDemo demo;
     // demo.show();
@@ -409,6 +410,7 @@ int main(int argc, char **argv)
 
      //FluWindowKitWindow window;
     //window.show();
-
+    FluDialogDemo demo;
+    demo.show();
     return app.exec();
 }

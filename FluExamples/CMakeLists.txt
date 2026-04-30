@@ -18,7 +18,7 @@ message(")")
 if (${QT_VERSION_MAJOR} LESS 6)
     add_executable(${TGT}
         ${DIR_SRCS}
-    )
+     "FluDialogDemo.h")
 else()
     qt_add_executable(${TGT}
         ${DIR_SRCS}

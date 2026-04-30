@@ -36,6 +36,8 @@ class FluRoundMenu : public QMenu
     QString getTitle();
     void setTitle(QString title);
 
+    QAction* menuAction();
+
     void clear();
 
     void addAction(QAction* action);

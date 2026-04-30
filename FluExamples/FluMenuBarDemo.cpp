@@ -1,6 +1,7 @@
 #include "FluMenuBarDemo.h"
+#include "../FluControls/FluRoundMenu.h"
 
-FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
     // auto menuBar = new QMenuBar(this);
     //  menuBar->move(50, 50);
@@ -17,8 +18,8 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent
     auto saveFileAction = new FluAction("Save");
     auto exitFileAction = new FluAction("Exit");
 
-    auto fileMenu = new FluMenu(menuBar);
-    fileMenu->setTitle("File");
+    auto fileMenu = new FluRoundMenu(menuBar);
+    fileMenu->setTitle("File(&F)");
     fileMenu->addAction(newFileAction);
     fileMenu->addAction(openFileAction);
     fileMenu->addAction(saveFileAction);
@@ -33,7 +34,7 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent
     auto pasteEditAction = new FluAction("Paste");
 
     auto editMenu = new FluMenu(menuBar);
-    editMenu->setTitle("Edit");
+    editMenu->setTitle("Edit(&E)");
     editMenu->addAction(undoEditAction);
     editMenu->addAction(cutEditAction);
     editMenu->addAction(copyEditAction);
@@ -44,7 +45,7 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent
     // Help
     auto aboutAction = new FluAction("About");
     auto helpMenu = new FluMenu(menuBar);
-    helpMenu->setTitle("Help");
+    helpMenu->setTitle("Help(&H)");
     helpMenu->addAction(aboutAction);
     // menuBar->addMenu(helpMenu);
     menuBar->addAction(helpMenu->menuAction());
@@ -53,9 +54,10 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     // menuBar->show();
 
-    auto vLayout = new QVBoxLayout;
-    setLayout(vLayout);
+    //auto vLayout = new QVBoxLayout;
+    //setLayout(vLayout);
 
-    vLayout->addWidget(menuBar);
+    //vLayout->addWidget(menuBar);
+    m_contentLayout->addWidget(menuBar);
     resize(600, 400);
 }

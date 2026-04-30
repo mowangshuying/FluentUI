@@ -28,6 +28,6 @@ class FluAction : public QAction
     void onThemeChanged();
 
   protected:
-    QListWidgetItem* m_listWidgetItem;
-    FluAwesomeType m_awesomeType;
+    QListWidgetItem* m_listWidgetItem = nullptr;
+    FluAwesomeType m_awesomeType = FluAwesomeType::None;
 };

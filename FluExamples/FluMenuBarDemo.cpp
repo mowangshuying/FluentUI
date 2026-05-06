@@ -3,16 +3,7 @@
 
 FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
-    // auto menuBar = new QMenuBar(this);
-    //  menuBar->move(50, 50);
-
-    // menuBar->addMenu("&Flile");
-    // menuBar->addMenu("&Eidt");
-    // menuBar->addMenu("&Help");
-
     auto menuBar = new FluMenuBar;
-    //  menuBar->move(50, 50);
-
     auto newFileAction = new FluAction("new");
     newFileAction->setAwesomeType(FluAwesomeType::FileExplorer);
     newFileAction->setShortcut(QKeySequence::New);
@@ -23,7 +14,6 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(
     saveFileAction->setShortcut(QKeySequence::Save);
     openFileAction->setAwesomeType(FluAwesomeType::Save);
     auto exitFileAction = new FluAction("Exit");
-    //exitFileAction->setAwesomeType(FluAwesomeType:);
     exitFileAction->setShortcut(QKeySequence::Quit);
 
     auto fileMenu = new FluMenu(menuBar);
@@ -47,7 +37,6 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(
     editMenu->addAction(cutEditAction);
     editMenu->addAction(copyEditAction);
     editMenu->addAction(pasteEditAction);
-    // menuBar->addMenu(editMenu);
     menuBar->addAction(editMenu->menuAction());
 
     // Help
@@ -55,17 +44,8 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(
     auto helpMenu = new FluMenu(menuBar);
     helpMenu->setTitle("Help(&H)");
     helpMenu->addAction(aboutAction);
-    // menuBar->addMenu(helpMenu);
+
     menuBar->addAction(helpMenu->menuAction());
-
-    //  FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluMenuBar.qss", menuBar);
-
-    // menuBar->show();
-
-    //auto vLayout = new QVBoxLayout;
-    //setLayout(vLayout);
-
-    //vLayout->addWidget(menuBar);
     m_contentLayout->addWidget(menuBar);
     resize(600, 400);
 }

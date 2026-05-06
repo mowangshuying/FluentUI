@@ -195,8 +195,8 @@ int main(int argc, char **argv)
     // FluSpinBoxDemo demo;
     // demo.show();
 
-    // FluMenuBarDemo demo;
-    // demo.show();
+     FluMenuBarDemo demo;
+     demo.show();
 
     // FluInfoBarDemo demo;
     // demo.show();
@@ -410,7 +410,7 @@ int main(int argc, char **argv)
 
      //FluWindowKitWindow window;
     //window.show();
-    FluDialogDemo demo;
-    demo.show();
+    //FluDialogDemo demo;
+    //demo.show();
     return app.exec();
 }

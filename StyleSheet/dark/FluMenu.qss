@@ -2,9 +2,9 @@ QMenu {
     background-color: rgb(44, 44, 44);
     border: 1px solid rgb(28, 28, 28);
     border-radius: 4px;
-    padding: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 2px;
+    /* padding-left: 4px; */
+    /* padding-right: 4px; */
 }
 
 QMenu::title {
@@ -17,7 +17,9 @@ QMenu::item {
     background-color: rgb(44, 44, 44);
     color: white;
     height: 30px;
-    min-width: 96px;
+    /* min-width: 96px; */
+    /* padding: 0px 8px; */
+    min-width: 60px;
     font-size: 12px;
     border-radius: 4px;
     /* padding-left: 36px; */

@@ -14,11 +14,19 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(
     //  menuBar->move(50, 50);
 
     auto newFileAction = new FluAction("new");
+    newFileAction->setAwesomeType(FluAwesomeType::FileExplorer);
+    newFileAction->setShortcut(QKeySequence::New);
     auto openFileAction = new FluAction("Open");
+    openFileAction->setShortcut(QKeySequence::Open);
+    openFileAction->setAwesomeType(FluAwesomeType::OpenFile);
     auto saveFileAction = new FluAction("Save");
+    saveFileAction->setShortcut(QKeySequence::Save);
+    openFileAction->setAwesomeType(FluAwesomeType::Save);
     auto exitFileAction = new FluAction("Exit");
+    //exitFileAction->setAwesomeType(FluAwesomeType:);
+    exitFileAction->setShortcut(QKeySequence::Quit);
 
-    auto fileMenu = new FluRoundMenu(menuBar);
+    auto fileMenu = new FluMenu(menuBar);
     fileMenu->setTitle("File(&F)");
     fileMenu->addAction(newFileAction);
     fileMenu->addAction(openFileAction);

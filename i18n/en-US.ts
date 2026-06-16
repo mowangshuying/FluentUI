@@ -1818,6 +1818,19 @@
     </message>
 </context>
 <context>
+    <name>FluDialog</name>
+    <message>
+        <location filename="../Controls/FluDialog.cpp" line="34"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Controls/FluDialog.cpp" line="35"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FluDialogsAndFlyoutsPage</name>
     <message>
         <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="6"/>
@@ -2573,6 +2586,22 @@
 <context>
     <name>FluHomePage</name>
     <message>
+        <location filename="../Gallery/FluHomePage.cpp" line="16"/>
+        <source>Recently added samples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluHomePage.cpp" line="23"/>
+        <location filename="../Gallery/FluHomePage.cpp" line="47"/>
+        <source>AnimatedIcon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluHomePage.cpp" line="23"/>
+        <source>An element that displays and controls an icon that animates when the user interacts with the controls.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../Gallery/FluHomePage.cpp" line="27"/>
         <source>InfoBadge</source>
         <translation type="unfinished"></translation>
@@ -2605,22 +2634,6 @@
     <message>
         <location filename="../Gallery/FluHomePage.cpp" line="41"/>
         <source>Recently updated samples</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluHomePage.cpp" line="23"/>
-        <location filename="../Gallery/FluHomePage.cpp" line="47"/>
-        <source>AnimatedIcon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluHomePage.cpp" line="16"/>
-        <source>Recently added samples</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluHomePage.cpp" line="23"/>
-        <source>An element that displays and controls an icon that animates when the user interacts with the controls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -5,11 +5,8 @@
 #include <QProcess>
 #include <QTranslator>
 
-// #include <FramelessHelper/Core/private/framelessconfig_p.h>
-
 int main(int argc, char **argv)
 {
-    // wangwenx190::FramelessHelper::FramelessHelperWidgetsInitialize();
     QApplication app(argc, argv);
 
     FluLogUtils::__init();
@@ -32,18 +29,6 @@ int main(int argc, char **argv)
         bool bLoad = translator.load("../i18n/en-US.qm");
 #else
         bool bLoad = translator.load(":/i18n/en-US.qm");
-#endif
-        if (bLoad)
-        {
-            app.installTranslator(&translator);
-        }
-    }
-    else if (FluConfigUtils::getUtils()->getLanguage() == "ja")
-    {
-#ifndef USE_QRC
-        bool bLoad = translator.load("../i18n/ja.qm");
-#else
-        bool bLoad = translator.load(":/i18n/ja.qm");
 #endif
         if (bLoad)
         {

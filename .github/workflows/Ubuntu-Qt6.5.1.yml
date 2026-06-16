@@ -29,7 +29,7 @@ on:
       - 'Examples/**'
       - 'IconTool/**'
       - 'Utils/**'
-      - 'Gallery/**'
+      - 'Gallery
       - 'res/**'
       - 'StyleSheet/**'
       - '.github/workflows/Ubuntu-Qt6.5.1.yml'
@@ -44,7 +44,7 @@ jobs:
         qt_ver: [6.5.1]
         qt_arch: [gcc_64]
     env:
-      targetName: FluWinGallery
+      targetName: Gallery
     steps:
       - name: Check out repository
         uses: actions/checkout@v3

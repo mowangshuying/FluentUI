@@ -34,7 +34,7 @@ set(RES_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${RES_FILES})
 
-qt_add_resources(${TGT} "FluUtilsFonts"
+qt_add_resources(${TGT} "UtilsFonts"
     PREFIX "/"
     BASE ".."
     FILES
@@ -3189,14 +3189,14 @@ set(EMOIJ_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${EMOIJ_FILES})
 
-qt_add_resources(${TGT} "FluUtilsEmoijs"
+qt_add_resources(${TGT} "UtilsEmoijs"
     PREFIX "/"
     BASE ".."
     FILES
     ${EMOIJ_FILES}
 )
 else()
-target_sources(${TGT} PUBLIC "FluUtilsFonts.qrc" "FluUtilsEmoijs.qrc")
+target_sources(${TGT} PUBLIC "UtilsFonts.qrc" "UtilsEmoijs.qrc")
 endif()
 
 endif() ##end for use qrc

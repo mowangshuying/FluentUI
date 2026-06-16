@@ -15,7 +15,7 @@ cp  -r %curDir%\StyleSheet							%curDir%\FluGalleryWin64Msvc
 cp  -r %curDir%\code							%curDir%\FluGalleryWin64Msvc
 cp  -r %curDir%\i18n								%curDir%\FluGalleryWin64Msvc
 cp  -r %curDir%\config							%curDir%\FluGalleryWin64Msvc
-cp  %curDir%\x64\Release\FluWinGallery.exe 					%curDir%\FluGalleryWin64Msvc\package
+cp  %curDir%\x64\Release\Gallery.exe 					%curDir%\FluGalleryWin64Msvc\package
 cp  %curDir%\3rdparty\framelesshelper\bin\release\FramelessHelperCore64.dll 		%curDir%\FluGalleryWin64Msvc\package
 cp  %curDir%\3rdparty\framelesshelper\bin\release\FramelessHelperQuick64.dll 		%curDir%\FluGalleryWin64Msvc\package
 cp  %curDir%\3rdparty\framelesshelper\bin\release\FramelessHelperWidgets64.dll 		%curDir%\FluGalleryWin64Msvc\package

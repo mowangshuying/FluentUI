@@ -380,7 +380,7 @@ set(QSS_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 
-qt_add_resources(${TGT} "FluControlsQss"
+qt_add_resources(${TGT} "ControlsQss"
 PREFIX "/"
 BASE ".."
 FILES
@@ -806,14 +806,14 @@ set(RES_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${RES_FILES})
 
-qt_add_resources(${TGT} "FluControlsRes"
+qt_add_resources(${TGT} "ControlsRes"
 PREFIX "/"
 BASE ".."
 FILES
 ${RES_FILES}
 )
 else()
-target_sources(${TGT} PUBLIC "FluControlsQss.qrc" "FluControlsRes.qrc")
+target_sources(${TGT} PUBLIC "ControlsQss.qrc" "ControlsRes.qrc")
 endif() ### end for qt version.
 
 

@@ -47,8 +47,8 @@ jobs:
             msvc_arch: x64
             qt_arch_install: msvc2019_64  
     env:
-      targetName: FluWinGallery.exe
-      fileName: FluWinGallery
+      targetName: Gallery.exe
+      fileName: Gallery
     steps:
       - name: Check out repository
         uses: actions/checkout@v3

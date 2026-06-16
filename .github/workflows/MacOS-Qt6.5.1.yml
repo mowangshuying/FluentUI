@@ -43,7 +43,7 @@ jobs:
         qt_ver: [6.5.1]
         qt_arch: [clang_64]
     env:
-      targetName: FluWinGallery
+      targetName: Gallery
     steps:
       - name: Check out repository
         uses: actions/checkout@v3

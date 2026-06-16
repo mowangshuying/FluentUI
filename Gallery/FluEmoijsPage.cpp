@@ -72,7 +72,7 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
     for (int i = 0; i < metaEnum.keyCount(); i++)
     {
 #ifdef _DEBUG
-        if (i >= 512)
+        if (i >= 256)
             continue;
 #endif
         auto displayIconBox = new FluDisplayIconBox((FluEmoijType)metaEnum.value(i));

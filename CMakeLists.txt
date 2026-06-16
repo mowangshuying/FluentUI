@@ -44,17 +44,17 @@ endif()
 # qt_standard_project_setup()
 
 add_subdirectory("3rdparty")
-add_subdirectory("FluControls")
-add_subdirectory("FluExamples")
+add_subdirectory("Controls")
+add_subdirectory("Examples")
 
 if (BUILD_ICONTOOL)
-add_subdirectory("FluIconTool")
+add_subdirectory("IconTool")
 endif()
 
-add_subdirectory("FluUtils")
+add_subdirectory("Utils")
 
 if (BUILD_WINGALLERY)
-add_subdirectory("FluWinGallery")
+add_subdirectory("Gallery")
 endif()
 # add_subdirectory("res")
 # add_subdirectory("StyleSheet")

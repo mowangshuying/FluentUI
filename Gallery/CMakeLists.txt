@@ -454,7 +454,7 @@ set(RES_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${RES_FILES})
 
-qt_add_resources(${TGT} "FluWinGalleryRes"
+qt_add_resources(${TGT} "GalleryRes"
     PREFIX "/"
     BASE ".."
     FILES
@@ -518,7 +518,7 @@ set(CODE_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${CODE_FILES})
 
-qt_add_resources(${TGT} "FluWinGalleryCode"
+qt_add_resources(${TGT} "GalleryCode"
     PREFIX "/"
     BASE ".."
     FILES
@@ -710,7 +710,7 @@ set(QSS_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 
-qt_add_resources(${TGT} "FluWinGalleryQss"
+qt_add_resources(${TGT} "GalleryQss"
     PREFIX "/"
     BASE ".."
     FILES
@@ -724,17 +724,17 @@ set(I18N_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${I18N_FILES})
 
-qt_add_resources(${TGT} "FluWinGalleryI18n"
+qt_add_resources(${TGT} "GalleryI18n"
     PREFIX "/"
     BASE ".."
     FILES
     ${I18N_FILES}
 )
 else()
-target_sources(${TGT} PUBLIC "FluWinGalleryRes.qrc" 
-    "FluWinGalleryCode.qrc" 
-    "FluWinGalleryQss.qrc" 
-    "FluWinGalleryI18n.qrc")
+target_sources(${TGT} PUBLIC "GalleryRes.qrc" 
+    "GalleryCode.qrc" 
+    "GalleryQss.qrc" 
+    "GalleryI18n.qrc")
 endif()
 
 endif()

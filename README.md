@@ -42,7 +42,7 @@ English | <a href="README_zh_CN.md">简体中文</a>
   >
   >2.build it!
   >
-  >3.set start up project to FluWinGallery and run it!
+  >3.set start up project to Gallery and run it!
 
 ### Build With Qt Creator
 

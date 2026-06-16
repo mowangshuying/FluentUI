@@ -4,7 +4,7 @@ FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEm
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("CalendarView"));
-    // m_subTitleLabel->setText("FluentUI.FluControls.FluCalendarView");
+    // m_subTitleLabel->setText("FluentUI.Controls.FluCalendarView");
     m_infoLabel->setText(tr("CalendarView shows a larger view for showing and selecting dates. DatePicker by contrast has a compact view with inline selection."));
 
     auto displayBox = new FluDisplayBox;

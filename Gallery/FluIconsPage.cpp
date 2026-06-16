@@ -104,7 +104,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     for (int i = 0; i < metaEnum.keyCount(); i++)
     {
 #ifdef _DEBUG
-        if (i >= 512)
+        if (i >= 256)
             continue;
 #endif
         // addIcon((FluAwesomeType)metaEnum.value(i));

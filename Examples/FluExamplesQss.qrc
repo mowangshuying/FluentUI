@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="StyleSheet/dark/FluMenuDemo.qss">../StyleSheet/dark/FluMenuDemo.qss</file>
+    <file alias="StyleSheet/light/FluHNavigationDemo.qss">../StyleSheet/light/FluHNavigationDemo.qss</file>
+    <file alias="StyleSheet/light/FluMenuDemo.qss">../StyleSheet/light/FluMenuDemo.qss</file>
+    <file alias="StyleSheet/light/FluTemplateDemo.qss">../StyleSheet/light/FluTemplateDemo.qss</file>
+    <file alias="StyleSheet/dark/FluTemplateDemo.qss">../StyleSheet/dark/FluTemplateDemo.qss</file>
+    <file alias="StyleSheet/atomOneDark/FluTemplateDemo.qss">../StyleSheet/atomOneDark/FluTemplateDemo.qss</file>
+    <file alias="StyleSheet/dark/FluMainWidgetDemo.qss">../StyleSheet/dark/FluMainWidgetDemo.qss</file>
+    <file alias="StyleSheet/light/FluMainWidgetDemo.qss">../StyleSheet/light/FluMainWidgetDemo.qss</file>
+  </qresource>
+</RCC>
+

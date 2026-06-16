@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="i18n/zh-CN.qm">../i18n/zh-CN.qm</file>
+    <file alias="i18n/en-US.qm">../i18n/en-US.qm</file>
+  </qresource>
+</RCC>
+

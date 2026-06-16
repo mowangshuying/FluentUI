@@ -1,0 +1,16 @@
+﻿#pragma once
+
+#include "../Controls/FluWidget.h"
+#include <QMenuBar>
+#include "../Controls/FluMenu.h"
+#include "../Controls/FluMenuBar.h"
+#include "../Utils/FluStyleSheetUitls.h"
+#include "FluTemplateDemo.h"
+#include <QMenu>
+
+class FluMenuBarDemo : public FluTemplateDemo
+{
+    Q_OBJECT
+  public:
+    FluMenuBarDemo(QWidget* parent = nullptr);
+};

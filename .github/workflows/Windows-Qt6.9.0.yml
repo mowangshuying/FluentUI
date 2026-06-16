@@ -43,9 +43,9 @@ jobs:
         os: [windows-2025]
         include:
           - qt_ver: 6.9.0        
-            qt_arch: win64_msvc2022_64
+            qt_arch: win64_msvc2026_64
             msvc_arch: x64
-            qt_arch_install: msvc2022_64  
+            qt_arch_install: msvc2026_64  
     env:
       targetName: Gallery.exe
       fileName: Gallery
@@ -89,7 +89,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./build/FluGalleryWin64Msvc.zip
+          file: ./build/Gallery.zip
           asset_name: ${{ env.fileName }}_${{ github.ref_name }}_${{ matrix.qt_arch }}_Qt${{ matrix.qt_ver }}.zip
           tag: ${{ github.ref }}
           overwrite: true 

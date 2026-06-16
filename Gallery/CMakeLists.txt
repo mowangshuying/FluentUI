@@ -720,7 +720,6 @@ qt_add_resources(${TGT} "GalleryQss"
 set(I18N_FILES
     "../i18n/zh-CN.qm"
     "../i18n/en-US.qm"
-    "../i18n/ja.qm"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${I18N_FILES})
 

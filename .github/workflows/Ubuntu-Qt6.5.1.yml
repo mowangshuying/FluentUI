@@ -1,6 +1,5 @@
 name: Ubuntu-Qt6.5.1
 on: 
-  workflow_dispatch:
   push:
     paths:
       - '*.txt'
@@ -29,7 +28,7 @@ on:
       - 'Examples/**'
       - 'IconTool/**'
       - 'Utils/**'
-      - 'Gallery
+      - 'Gallery/**'
       - 'res/**'
       - 'StyleSheet/**'
       - '.github/workflows/Ubuntu-Qt6.5.1.yml'

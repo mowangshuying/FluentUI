@@ -5,7 +5,7 @@ project(FluentUI VERSION 1.0.0 LANGUAGES CXX)
 
 option(USE_QRC "Build With qrc" TRUE)
 option(BUILD_ICONTOOL "Build Icon Tool" FALSE)
-option(BUILD_WINGALLERY "Build WinGallery" TRUE)
+option(BUILD_GALLERY "Build Gallery" TRUE)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -53,7 +53,7 @@ endif()
 
 add_subdirectory("Utils")
 
-if (BUILD_WINGALLERY)
+if (BUILD_GALLERY)
 add_subdirectory("Gallery")
 endif()
 # add_subdirectory("res")
@@ -99,7 +99,7 @@ install(DIRECTORY i18n
 )
 endif()
 
-set(CPACK_PACKAGE_FILE_NAME "FluGalleryWin64Msvc")
+set(CPACK_PACKAGE_FILE_NAME "Gallery")
 set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)
 
 include(InstallRequiredSystemLibraries)

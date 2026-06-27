@@ -44,14 +44,14 @@ set(QSS_FILES
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 
-qt_add_resources(${TGT} "FluExamplesQss"
+qt_add_resources(${TGT} "ExamplesQss"
     PREFIX "/"
     BASE ".."
     FILES
     ${QSS_FILES}
 )
 else()
-target_sources(${TGT} PUBLIC FluExamplesQss.qrc)
+target_sources(${TGT} PUBLIC ExamplesQss.qrc)
 endif()
 
 endif() ### end for use qrc

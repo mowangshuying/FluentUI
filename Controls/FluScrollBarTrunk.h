@@ -45,10 +45,7 @@ class FluScrollBarTrunk : public QWidget
 
   public:
     void drawTrunkBackground(QPainter* painter);
-
     void paintEvent(QPaintEvent* event);
-    // public slots:
-    // void onThemeChanged();
 
   protected:
     QColor m_trunkBackgoundColor;

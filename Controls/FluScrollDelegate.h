@@ -2,7 +2,6 @@
 
 #include <QObject>
 
-// class FluScrollArea;
 class QAbstractScrollArea;
 class FluScrollBar;
 

@@ -11,6 +11,7 @@
 #include <QScrollBar>
 #include <QAbstractScrollArea>
 #include "FluWidget.h"
+#include <QPropertyAnimation>
 
 class FluScrollArea;
 class FluScrollBarHandle;
@@ -18,7 +19,7 @@ class FluScrollBarHandle;
 class FluScrollBar : public FluWidget
 {
     Q_OBJECT
-    Q_PROPERTY(int value READ getCurrentValue WRITE setCurrrentValue)
+    Q_PROPERTY(int value READ getValue WRITE setValue)
     Q_PROPERTY(QColor trunkBackgroundColor READ getTrunkBackgoundColor WRITE setTrunkBackgoundColor)
     Q_PROPERTY(QColor handleBackgroundColor READ getHandleBackgroundColor WRITE setHandleBackgroundColor)
   public:
@@ -41,6 +42,10 @@ class FluScrollBar : public FluWidget
     void setCurrrentValue(int nValue);
 
     void scrollCurrentValue(int nValue);
+
+    int getValue();
+
+    void setValue(int nValue);
 
     int getPadding();
 
@@ -102,7 +107,7 @@ class FluScrollBar : public FluWidget
 
     void OnPageDown();
 
-    void onCurrentValueChanged(int nValue);
+    //void onCurrentValueChanged(int nValue);
 
     void expand();
 
@@ -122,10 +127,13 @@ class FluScrollBar : public FluWidget
     Qt::Orientation m_orientation;
 
     QTimer* m_timer;
+    QPropertyAnimation* m_valueAnimation;
+
 
     int m_nMaxValue;
     int m_nMinValue;
     int m_nCurrentValue;
+    int m_nValue; // use for animation; update current value;
 
     int m_nPadding;
 

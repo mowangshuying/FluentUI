@@ -23,6 +23,5 @@ class FluScrollBarArrowButton : public QPushButton
     void paintEvent(QPaintEvent* event);
 
   protected:
-    // FluScrollBarArrowButtonType m_arrowType;
     FluAwesomeType m_aweSomeType;
 };

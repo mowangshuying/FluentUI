@@ -200,6 +200,7 @@ set(QSS_FILES
     "../StyleSheet/light/FluPivot.qss"
     "../StyleSheet/light/FluPivotTitleBar.qss"
     "../StyleSheet/light/FluPivotTitleBarItem.qss"
+    "../StyleSheet/light/FluPPushButton.qss"
     "../StyleSheet/light/FluProgressBar.qss"
     "../StyleSheet/light/FluPushButton.qss"
     "../StyleSheet/light/FluRadioButton.qss"
@@ -377,6 +378,11 @@ set(QSS_FILES
     "../StyleSheet/atomOneDark/FluHNavigationMoreItem.qss"
     "../StyleSheet/atomOneDark/FluHNavigationSettingsItem.qss"
     "../StyleSheet/atomOneDark/FluHNavigationView.qss"
+    "../StyleSheet/atomOneDark/FluPPushButton.qss"
+    "../StyleSheet/dark/FluPPushButton.qss"
+    "../StyleSheet/light/FluScaleButton.qss"
+    "../StyleSheet/atomOneDark/FluScaleButton.qss"
+    "../StyleSheet/dark/FluScaleButton.qss"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

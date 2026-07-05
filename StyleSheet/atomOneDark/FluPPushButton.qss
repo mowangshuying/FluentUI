@@ -1,0 +1,20 @@
+FluPPushButton {
+	qproperty-ppBackgroundColor: rgb(44, 48, 54);
+	qproperty-ppBorderColor: rgb(71, 74, 79);
+	qproperty-ppBottomBorderColor: rgb(71, 74, 79);
+	qproperty-ppTextColor: rgb(255, 255, 255);
+}
+
+FluPPushButton[ppMouseState="Hover"] {
+	qproperty-ppBackgroundColor: rgb(50, 54, 60);
+	qproperty-ppBorderColor: rgb(50, 54, 60);
+	qproperty-ppBottomBorderColor: rgb(71, 74, 79);
+	qproperty-ppTextColor: rgb(255, 255, 255);
+}
+
+FluPPushButton[ppMouseState="Pressed"] {
+	qproperty-ppBackgroundColor: rgb(50, 54, 60);
+	qproperty-ppBorderColor: rgb(71, 74, 79);
+	qproperty-ppBottomBorderColor: rgb(71, 74, 79);
+	qproperty-ppTextColor: rgb(255, 255, 255);
+}

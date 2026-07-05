@@ -10,7 +10,7 @@ public:
 	FluPMenuBarStyle(QStyle *parent = nullptr);
 	~FluPMenuBarStyle();
 
-	void drawMenuBarItem(const QStyleOption *option, QPainter *painter, const QWidget *widget = nullptr);
+	void drawMenuBarItem(const QStyleOption *option, QPainter *painter, const QWidget *widget = nullptr) const;
 
 	/// draw Primitive
 	/// static draw;
@@ -21,6 +21,9 @@ public:
     void drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget = nullptr) const override;
 
 protected:
-	QColor m_menuBarItemBackgroundColor;
+    QColor m_menuBarItemNormalBackgroundColor;
+	QColor m_menuBarItemSelectedBackgroundColor;
+    QColor m_menuBarItemPressedBackgroundColor;
+    QColor m_menuBarItemDisabledBackgroundColor;
 };
 

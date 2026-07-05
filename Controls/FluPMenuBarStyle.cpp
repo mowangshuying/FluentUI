@@ -14,7 +14,7 @@ FluPMenuBarStyle::~FluPMenuBarStyle()
 {
 }
 
-void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *painter, const QWidget *widget)
+void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *painter, const QWidget *widget) const
 {
 	QStyleOptionMenuItem* opt = (QStyleOptionMenuItem*)option;
 	if (opt->menuItemType == QStyleOptionMenuItem::Separator)
@@ -43,7 +43,7 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
 		}
         else if (opt->state & QStyle::State_Selected)
 		{
-			menuBarItemBackgroundColor = m_menuBarItemHoverBackgroundColor;
+            menuBarItemBackgroundColor = m_menuBarItemSelectedBackgroundColor;
 		}
 	}
 	else

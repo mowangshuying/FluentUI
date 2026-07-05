@@ -1,97 +1,16 @@
 #include "FluPPushButton.h"
+#include <QStyle>
 
-FluPPushButton::FluPPushButton(QWidget* parent /*= nullptr*/) : QPushButton(parent), m_mouseState(FluMouseState::Normal)
+FluPPushButton::FluPPushButton(QWidget* parent /*= nullptr*/) : QPushButton(parent), m_mouseState(FluPPUtils::PPMouseState::Normal)
 {
     setMouseTracking(true);
-    setFixedHeight(30);
-
-    // updateColorNormal();
-    updateColor();
     installEventFilter(this);
-
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=]() { updateColor(); });
-}
-
-void FluPPushButton::updateColor()
-{
-    updateColorNormal();
-    updateColorHover();
-    updateColorPressed();
-    update();
-}
-
-void FluPPushButton::updateColorNormal()
-{
-    if (m_mouseState != FluMouseState::Normal)
-        return;
-
-    if (FluThemeUtils::isLightTheme())
-    {
-        setBackgroundColor(QColor(251, 251, 251));
-        setBorderColor(QColor(229, 229, 229));
-        setBottomBorderColor(QColor(204, 204, 204));
-        setTextColor(Qt::black);
-        return;
-    }
-
-    if (FluThemeUtils::isDarkTheme())
-    {
-        setBackgroundColor(QColor(45, 45, 45));
-        setBorderColor(QColor(53, 53, 53));
-        setBottomBorderColor(QColor(48, 48, 48));
-        setTextColor(Qt::white);
-        return;
-    }
-}
-
-void FluPPushButton::updateColorHover()
-{
-    if (m_mouseState != FluMouseState::Hover)
-        return;
-
-    if (FluThemeUtils::isLightTheme())
-    {
-        setBackgroundColor(QColor(246, 246, 246));
-        setBorderColor(QColor(229, 229, 229));
-        setBottomBorderColor(QColor(204, 204, 204));
-        setTextColor(Qt::black);
-        return;
-    }
-
-    if (FluThemeUtils::isDarkTheme())
-    {
-        setBackgroundColor(QColor(50, 50, 50));
-        setBorderColor(QColor(53, 53, 53));
-        setBottomBorderColor(QColor(48, 48, 48));
-        setTextColor(Qt::white);
-        return;
-    }
-}
-
-void FluPPushButton::updateColorPressed()
-{
-    if (m_mouseState != FluMouseState::Pressed)
-    {
-        return;
-    }
-
-    if (FluThemeUtils::isLightTheme())
-    {
-        setBackgroundColor(QColor(245, 245, 245));
-        setBorderColor(QColor(229, 229, 229));
-        setBottomBorderColor(QColor(229, 229, 229));
-        setTextColor(Qt::black);
-        return;
-    }
-
-    if (FluThemeUtils::isDarkTheme())
-    {
-        setBackgroundColor(QColor(39, 39, 39));
-        setBorderColor(QColor(53, 53, 53));
-        setBottomBorderColor(QColor(39, 39, 39));
-        setTextColor(Qt::white);
-        return;
-    }
+    setFixedHeight(30);
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=]() 
+        { 
+            onThemeChanged();
+        });
 }
 
 QColor FluPPushButton::getBackgroundColor()
@@ -116,6 +35,12 @@ void FluPPushButton::setBorderColor(QColor color)
     update();
 }
 
+QColor FluPPushButton::getBottomBorderColor()
+{
+    return m_bottomBorderColor;
+}
+
+
 void FluPPushButton::setBottomBorderColor(QColor color)
 {
     m_bottomBorderColor = color;
@@ -125,7 +50,6 @@ void FluPPushButton::setBottomBorderColor(QColor color)
 QColor FluPPushButton::getTextColor()
 {
     return m_textColor;
-    update();
 }
 
 void FluPPushButton::setTextColor(QColor color)
@@ -164,24 +88,29 @@ bool FluPPushButton::eventFilter(QObject* watched, QEvent* event)
     switch (event->type())
     {
         case QEvent::Enter:
-            m_mouseState = FluMouseState::Hover;
-            updateColor();
+            FluPPUtils::setPPMouseState(this, FluPPUtils::PPMouseState::Hover);
+            style()->polish(this);
             break;
         case QEvent::Leave:
-            m_mouseState = FluMouseState::Normal;
-            updateColor();
+            FluPPUtils::setPPMouseState(this, FluPPUtils::PPMouseState::Normal);
+            style()->polish(this);
             break;
         case QEvent::MouseButtonPress:
-            m_mouseState = FluMouseState::Pressed;
-            updateColor();
+            FluPPUtils::setPPMouseState(this, FluPPUtils::PPMouseState::Pressed);
+            style()->polish(this);
             break;
         case QEvent::MouseButtonRelease:
-            m_mouseState = FluMouseState::Hover;
-            updateColor();
+            FluPPUtils::setPPMouseState(this, FluPPUtils::PPMouseState::Hover);
+            style()->polish(this);
             break;
         default:
             break;
     }
 
     return bFilter;
+}
+
+void FluPPushButton::onThemeChanged()
+{
+    FluStyleSheetUitls::setQssByFileName("FluPPushButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

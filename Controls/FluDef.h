@@ -18,15 +18,22 @@ template <typename EnumType>
 static QString EnumTypeToQString(EnumType type)
 {
     QMetaEnum metaEnum = QMetaEnum::fromType<EnumType>();
-    return metaEnum.valueToKey((int)(type));
+    QString typeString = metaEnum.valueToKey((int)(type));
+    return typeString;
 }
 
-enum class FluMouseState
+template <typename EnumType>
+static void setEnumProperty(QObject* obj, QString key, EnumType enumType)
 {
-    Normal,
-    Hover,
-    Pressed,
-};
+    obj->setProperty(key.toStdString().data(), EnumTypeToQString(enumType));
+}
+
+template <typename EnumType>
+static EnumType getEnumProperty(QObject* obj, QString key)
+{
+    QString str = obj->property(key.toStdString().data()).toString();
+    return QStringToEnum<EnumType>(str);
+}
 
 namespace FluAwesomeTypeNameSpace
 {

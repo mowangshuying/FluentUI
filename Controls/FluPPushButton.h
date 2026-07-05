@@ -9,16 +9,12 @@
 class FluPPushButton : public QPushButton
 {
     Q_OBJECT
+    Q_PROPERTY(QColor ppBackgroundColor READ getBackgroundColor WRITE setBackgroundColor)
+    Q_PROPERTY(QColor ppBorderColor READ getBorderColor WRITE setBorderColor)
+    Q_PROPERTY(QColor ppBottomBorderColor READ getBottomBorderColor WRITE setBottomBorderColor)
+    Q_PROPERTY(QColor ppTextColor READ getTextColor WRITE setTextColor)
   public:
     FluPPushButton(QWidget* parent = nullptr);
-
-    void updateColor();
-
-    void updateColorNormal();
-
-    void updateColorHover();
-
-    void updateColorPressed();
 
     QColor getBackgroundColor();
 
@@ -28,6 +24,7 @@ class FluPPushButton : public QPushButton
 
     void setBorderColor(QColor color);
 
+    QColor getBottomBorderColor();
     void setBottomBorderColor(QColor color);
 
     QColor getTextColor();
@@ -38,12 +35,13 @@ class FluPPushButton : public QPushButton
 
   protected:
     bool eventFilter(QObject* watched, QEvent* event) override;
-
+  public slots:
+    void onThemeChanged();
   protected:
     QColor m_backgroundColor;
     QColor m_borderColor;
     QColor m_textColor;
     QColor m_bottomBorderColor;
 
-    FluMouseState m_mouseState;
+    FluPPUtils::PPMouseState m_mouseState;
 };

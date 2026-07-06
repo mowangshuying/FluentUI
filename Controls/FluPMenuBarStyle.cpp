@@ -65,14 +65,14 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
 			/// icon & text;
             //QColor penColor;
             QPixmap icon;
-			int nWH = 16;
+			// int nWH = 16;
 			if (action->getAwesomeType() != FluAwesomeType::None)
 			{
                 icon = FluIconUtils::getFluentIconPixmap(action->getAwesomeType(), FluThemeUtils::getUtils()->getTheme());
 			}
 			else if (!opt->icon.isNull())
 			{
-                icon = opt->icon.pixmap(QSize(nWH, nWH));
+                icon = opt->icon.pixmap(QSize(m_menuBarItemIconWH, m_menuBarItemIconWH));
 			}
 
 			QString text = opt->text;
@@ -93,17 +93,17 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
 			{
 				QRect  rect;
 				rect.setX(opt->rect.x());
-				rect.setY(opt->rect.y() + (opt->rect.height() - nWH) / 2);
-                rect.setWidth(nWH);
-                rect.setHeight(nWH);
+				rect.setY(opt->rect.y() + (opt->rect.height() - m_menuBarItemIconWH) / 2);
+                rect.setWidth(m_menuBarItemIconWH);
+                rect.setHeight(m_menuBarItemIconWH);
                 painter->drawPixmap(rect, icon);
 
 				// text
                 painter->save();
                 painter->setPen(m_menuBarItemForegroundColor);
-				rect.setX(opt->rect.x() + nWH);
+				rect.setX(opt->rect.x() + m_menuBarItemIconWH);
 				rect.setY(opt->rect.y());
-                rect.setWidth(opt->rect.width() - nWH);
+                rect.setWidth(opt->rect.width() - m_menuBarItemIconWH);
                 rect.setHeight(opt->rect.height());
                 painter->drawText(rect, Qt::AlignCenter, text);
 				painter->restore();
@@ -126,3 +126,25 @@ void FluPMenuBarStyle::drawControl(ControlElement element, const QStyleOption *o
         return QProxyStyle::drawControl(element, option, painter, widget);
 }
 
+QSize FluPMenuBarStyle::sizeFromContents(ContentsType type, const QStyleOption *option, const QSize &size, const QWidget *widget) const
+{
+    if (type == QStyle::CT_MenuBar)
+	{
+		QSize menuBarSize = QProxyStyle::sizeFromContents(type, option, size, widget);
+		menuBarSize.setHeight(menuBarSize.height());
+		return menuBarSize;
+
+	}
+	else if (type == QStyle::CT_MenuBarItem)
+	{
+		QStyleOptionMenuItem* opt = (QStyleOptionMenuItem*)option;
+		QSize menuItemSize = QProxyStyle::sizeFromContents(type, option, size, widget);
+		menuItemSize.setWidth(menuItemSize.width() + 2 * m_menuBarItemMargin);
+		if (!opt->icon.isNull())
+		{
+			menuItemSize.setWidth(menuItemSize.width() + m_menuBarItemIconWH);
+		}
+		return menuItemSize;
+	}
+	return QProxyStyle::sizeFromContents(type, option, size, widget);
+}

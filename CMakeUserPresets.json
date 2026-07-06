@@ -44,7 +44,6 @@
         "strategy": "external",
         "value": "x86"
       },
-      "generator": "Ninja",
       "vendor": {
         "qt-project.org/Version": {
           "checksum": "Dyj5AhIL8RKJEzpb8MZZ6CAhBrE="
@@ -62,7 +61,7 @@
         "strategy": "external",
         "value": "x64"
       },
-      "generator": "Ninja",
+      
       "vendor": {
         "qt-project.org/Version": {
           "checksum": "e2VZU7zYyOUwSCH077aia3t5U+0="
@@ -80,7 +79,7 @@
         "strategy": "external",
         "value": "x64"
       },
-      "generator": "Ninja",
+      
       "vendor": {
         "qt-project.org/Version": {
           "checksum": "2mV27zLzBlZ3kWw44NwwtPiyBj4="
@@ -98,7 +97,7 @@
         "strategy": "external",
         "value": "x64"
       },
-      "generator": "Ninja",
+      
       "vendor": {
         "qt-project.org/Version": {
           "checksum": "4WbYvCM6b8dT/pjw0BLR90C/2t8="
@@ -116,7 +115,7 @@
         "strategy": "external",
         "value": "x64"
       },
-      "generator": "Ninja",
+      
       "vendor": {
         "qt-project.org/Version": {
           "checksum": "0X7kSDd3C95HKJJRoo4Xvj3hBG4="

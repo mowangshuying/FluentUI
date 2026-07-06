@@ -21,9 +21,10 @@ public:
     void drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget = nullptr) const override;
 
 protected:
-    QColor m_menuBarItemNormalBackgroundColor;
-	QColor m_menuBarItemSelectedBackgroundColor;
-    QColor m_menuBarItemPressedBackgroundColor;
+    QColor m_menuBarItemNormalBackgroundColor = Qt::white;
+	QColor m_menuBarItemSelectedBackgroundColor = QColor(234, 234, 234);
+    QColor m_menuBarItemPressedBackgroundColor = QColor(234, 234, 234);
     QColor m_menuBarItemDisabledBackgroundColor;
+	QColor m_menuBarItemForegroundColor = Qt::black;
 };
 

@@ -59,11 +59,11 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
 	/// draw icon;
 	if (menuBar != nullptr)
 	{
-		FluAction* action = (FluAction*)menuBar->actionAt(option->rect.center());
+		FluAction* action = qobject_cast<FluAction*>(menuBar->actionAt(option->rect.center()));
 		if (action != nullptr)
 		{
 			/// icon & text;
-            QColor penColor;
+            //QColor penColor;
             QPixmap icon;
 			int nWH = 16;
 			if (action->getAwesomeType() != FluAwesomeType::None)
@@ -85,7 +85,7 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
             else if (!text.isEmpty() && icon.isNull())
 			{
 				painter->save();
-				painter->setPen(penColor);
+				painter->setPen(m_menuBarItemForegroundColor);
 				painter->drawText(opt->rect, Qt::AlignCenter, text);
 				painter->restore();
 			}
@@ -100,7 +100,7 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
 
 				// text
                 painter->save();
-                painter->setPen(penColor);
+                painter->setPen(m_menuBarItemForegroundColor);
 				rect.setX(opt->rect.x() + nWH);
 				rect.setY(opt->rect.y());
                 rect.setWidth(opt->rect.width() - nWH);
@@ -114,6 +114,7 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
 
 void FluPMenuBarStyle::drawPrimitive(PrimitiveElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
 {
+    return QProxyStyle::drawPrimitive(element, option, painter, widget);
 }
 
 void FluPMenuBarStyle::drawControl(ControlElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const
@@ -122,6 +123,6 @@ void FluPMenuBarStyle::drawControl(ControlElement element, const QStyleOption *o
 	{
         return drawMenuBarItem(option, painter, widget);
 	}
-
+        return QProxyStyle::drawControl(element, option, painter, widget);
 }
 

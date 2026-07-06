@@ -413,7 +413,10 @@ int main(int argc, char **argv)
     //FluDialogDemo demo;
     //demo.show();
 
-    FluButtonDemo demo;
+    //FluButtonDemo demo;
+    //demo.show();
+
+    FluMenuBarDemo demo;
     demo.show();
     return app.exec();
 }

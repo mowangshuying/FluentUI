@@ -1,7 +1,13 @@
 ﻿#include "FluMenuBarDemo.h"
 #include "../Controls/FluRoundMenu.h"
+#include "../Controls/FluPMenuBar.h"
 
 FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
+{
+    ppMenuBar();
+}
+
+void FluMenuBarDemo::normalMenuBar()
 {
     auto menuBar = new FluMenuBar;
     auto newFileAction = new FluAction("new");
@@ -47,5 +53,26 @@ FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(
 
     menuBar->addAction(helpMenu->menuAction());
     m_contentLayout->addWidget(menuBar);
+    resize(600, 400);
+}
+
+void FluMenuBarDemo::ppMenuBar()
+{
+    auto menuBar = new FluPMenuBar;
+    menuBar->setFixedHeight(30);
+
+    auto fileAction = new FluAction("File");
+    fileAction->setAwesomeType(FluAwesomeType::FileExplorer);
+    menuBar->addAction(fileAction);
+
+    auto editAction = new FluAction("Edit");
+    menuBar->addAction(editAction);
+
+    // Help
+    auto helpAction = new FluAction("Help");
+    menuBar->addAction(helpAction);
+    //m_contentLayout->addWidget(menuBar);
+
+    m_vMainLayout->insertWidget(1, menuBar, Qt::AlignTop);
     resize(600, 400);
 }

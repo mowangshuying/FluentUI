@@ -13,4 +13,7 @@ class FluMenuBarDemo : public FluTemplateDemo
     Q_OBJECT
   public:
     FluMenuBarDemo(QWidget* parent = nullptr);
+
+    void normalMenuBar();
+    void ppMenuBar();
 };

@@ -383,6 +383,9 @@ set(QSS_FILES
     "../StyleSheet/light/FluScaleButton.qss"
     "../StyleSheet/atomOneDark/FluScaleButton.qss"
     "../StyleSheet/dark/FluScaleButton.qss"
+    "../StyleSheet/light/FluPMenuBar.qss"
+    "../StyleSheet/atomOneDark/FluPMenuBar.qss"
+    "../StyleSheet/dark/FluPMenuBar.qss"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

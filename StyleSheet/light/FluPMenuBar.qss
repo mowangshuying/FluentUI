@@ -1,0 +1,10 @@
+FluPMenuBar {
+    qproperty-ppMenuBarItemNormalBackgroundColor: rgb(243, 243, 243);
+    qproperty-ppMenuBarItemSelectedBackgroundColor:rgb(234, 234, 234);
+    qproperty-ppMenuBarItemPressedBackgroundColor: rgb(234, 234, 234);
+    qproperty-ppMenuBarItemDisabledBackgroundColor: rgb(243, 243, 243);
+	qproperty-ppMenuBarItemForegroundColor: rgb(0, 0, 0);
+	qproperty-ppMenuBarItemMargin:2;
+	qproperty-ppMenuBarItemIconWH:20;
+	qproperty-ppMenuBarItemHeight:24;
+}

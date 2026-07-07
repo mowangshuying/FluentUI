@@ -1,6 +1,7 @@
 ﻿#include "FluMenuBarDemo.h"
 #include "../Controls/FluRoundMenu.h"
 #include "../Controls/FluPMenuBar.h"
+#include "../Controls/FluPMenu.h"
 
 FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
@@ -92,7 +93,7 @@ void FluMenuBarDemo::ppMenuBar1()
     auto exitFileAction = new FluAction("Exit");
     exitFileAction->setShortcut(QKeySequence::Quit);
 
-    auto fileMenu = new FluMenu(menuBar);
+    auto fileMenu = new FluPMenu(menuBar);
     fileMenu->setTitle("File(&F)");
     fileMenu->addAction(newFileAction);
     fileMenu->addAction(openFileAction);
@@ -107,7 +108,7 @@ void FluMenuBarDemo::ppMenuBar1()
     auto copyEditAction = new FluAction("Copy");
     auto pasteEditAction = new FluAction("Paste");
 
-    auto editMenu = new FluMenu(menuBar);
+    auto editMenu = new FluPMenu(menuBar);
     editMenu->setTitle("Edit(&E)");
     editMenu->addAction(undoEditAction);
     editMenu->addAction(cutEditAction);
@@ -117,7 +118,7 @@ void FluMenuBarDemo::ppMenuBar1()
 
     // Help
     auto aboutAction = new FluAction("About");
-    auto helpMenu = new FluMenu(menuBar);
+    auto helpMenu = new FluPMenu(menuBar);
     helpMenu->setTitle("Help(&H)");
     helpMenu->addAction(aboutAction);
 
@@ -126,7 +127,7 @@ void FluMenuBarDemo::ppMenuBar1()
 
      m_vMainLayout->insertWidget(1, menuBar, 0, Qt::AlignTop);
 
-     QWidget* w = new QWidget;
-     m_contentLayout->addWidget(w, 1);
+    //  QWidget* w = new QWidget;
+    //  m_contentLayout->addWidget(w, 1);
     resize(600, 400);
 }

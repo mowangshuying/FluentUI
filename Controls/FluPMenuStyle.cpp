@@ -11,8 +11,8 @@ void FluPMenuStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* 
         painter->save();
         painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
 
-        painter->setPen(QColor(224, 224, 224));
-        painter->setBrush(QColor(251, 251, 251));
+        painter->setPen(QColor(200, 200, 200));
+        painter->setBrush(QColor(243, 243, 243));
         painter->drawRoundedRect(option->rect, 6, 6);
         painter->restore();
         return;
@@ -44,11 +44,11 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
             /// background;
             menuItemRect =  menuItemRect.adjusted(2, 2, -2, -2);
 
-
+            //bool bSelect = false;
             if (true)
             {
-                QColor normalBackgroundColor = QColor(251, 251, 251);
-                QColor hoverBackgroundColor = QColor(246, 246, 246);
+                QColor normalBackgroundColor = QColor(243, 243, 243);
+                QColor hoverBackgroundColor = QColor(230, 230, 230);
                 QColor disableBackgroundColor;
 
                 QColor backgroundColor = normalBackgroundColor;
@@ -57,6 +57,7 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                     if ( (menuItem->state & QStyle::State_MouseOver) || (menuItem->state & QStyle::State_Selected) )
                     {
                         backgroundColor = hoverBackgroundColor;
+                        //bSelect = true;
                     }
                 }
                 else
@@ -84,12 +85,17 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
             }
 
             /// text;
+            QColor textColor = Qt::black;
+            //if (bSelect)
+            //{
+            //    textColor = Qt::white;
+            //}
             if (true)
             {
                 QStringList texts = menuItem->text.split("\t");
                 painter->save();
                 painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-                painter->setPen(QColor(0, 0, 0));
+                painter->setPen(textColor);
                 if (texts.size() == 2)
                 {
                     QRect textRect;
@@ -205,7 +211,7 @@ QSize FluPMenuStyle::sizeFromContents(ContentsType type, const QStyleOption* opt
             
             contentsSize.setHeight(m_nMenuItemHeight);
 
-            if (menu->hasChildMenu())
+            if (menu != nullptr && menu->hasChildMenu())
             {
                 m_hasMenu = true;
                 contentsSize.setWidth(contentsSize.width() + 20);

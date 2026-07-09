@@ -2,9 +2,13 @@
 #include "../Controls/FluRoundMenu.h"
 #include "../Controls/FluPMenuBar.h"
 #include "../Controls/FluPMenu.h"
+#include <FramelessHelper/Widgets/standardtitlebar.h>
+#include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 
+FRAMELESSHELPER_USE_NAMESPACE
 FluMenuBarDemo::FluMenuBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
+    setWindowTitle("");
     // ppMenuBar0();
     ppMenuBar1();
 }
@@ -81,12 +85,14 @@ void FluMenuBarDemo::ppMenuBar0()
 void FluMenuBarDemo::ppMenuBar1()
 {
     auto menuBar = new FluPMenuBar;
+    auto hLayout = (QHBoxLayout *)m_titleBar->layout();
+    hLayout->insertSpacing(0, 30);
+    hLayout->insertWidget(1, menuBar, 1, Qt::AlignLeft | Qt::AlignTop);
+     FramelessWidgetsHelper::get(this)->setHitTestVisible(menuBar);
+
     auto newFileAction = new FluAction("New");
     newFileAction->setShortcut(QKeySequence::New);
 
-    //auto openFileAction = new FluAction("Open");
-    //openFileAction->setShortcut(QKeySequence::Open);
-    
     auto openFileMenu = new FluPMenu(menuBar);
     openFileMenu->setTitle("Open");
     auto openFileAction1 = new FluAction("OpenFile1");
@@ -101,12 +107,12 @@ void FluMenuBarDemo::ppMenuBar1()
     openFileAction5->setShortcut(QKeySequence::Open);
     openFileMenu->addAction(openFileAction5);
     
-
-    
     auto saveFileAction = new FluAction("Save");
     saveFileAction->setShortcut(QKeySequence::Save);
+    saveFileAction->setAwesomeType(FluAwesomeType::Save);
     auto exitFileAction = new FluAction("Exit");
     exitFileAction->setShortcut(QKeySequence::Quit);
+    exitFileAction->setAwesomeType(FluAwesomeType::QuarentinedItems);
 
     auto fileMenu = new FluPMenu(menuBar);
     fileMenu->setTitle("File(&F)");
@@ -119,9 +125,13 @@ void FluMenuBarDemo::ppMenuBar1()
 
     // undo cut copy paste
     auto undoEditAction = new FluAction("Undo");
+    undoEditAction->setShortcut(QKeySequence::Undo);
     auto cutEditAction = new FluAction("Cut");
+    cutEditAction->setShortcut(QKeySequence::Cut);
     auto copyEditAction = new FluAction("Copy");
+    copyEditAction->setShortcut(QKeySequence::Copy);
     auto pasteEditAction = new FluAction("Paste");
+    pasteEditAction->setShortcut(QKeySequence::Paste);
 
     auto editMenu = new FluPMenu(menuBar);
     editMenu->setTitle("Edit(&E)");
@@ -138,7 +148,5 @@ void FluMenuBarDemo::ppMenuBar1()
     helpMenu->addAction(aboutAction);
 
     menuBar->addAction(helpMenu->menuAction());
-
-     m_vMainLayout->insertWidget(1, menuBar, 0, Qt::AlignTop);
     resize(600, 400);
 }

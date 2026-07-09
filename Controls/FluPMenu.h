@@ -8,8 +8,10 @@ class FluPMenu : public QMenu
 {
     Q_OBJECT
 public:
-    FluPMenu(QWidget *parent = nullptr)
+    FluPMenu(QWidget *parent = nullptr) : QMenu(parent)
     {
+        setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
+        setAttribute(Qt::WA_TranslucentBackground);
         setStyle(new FluPMenuStyle);
     }
 

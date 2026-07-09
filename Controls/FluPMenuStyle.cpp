@@ -4,6 +4,18 @@
 
 void FluPMenuStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
 {
+    if (element == PE_PanelMenu)
+    {
+        painter->save();
+        painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
+
+        painter->setPen(QColor(224, 224, 224));
+        painter->setBrush(QColor(251, 0, 251));
+        painter->drawRoundedRect(option->rect, 4, 4);
+        painter->restore();
+        return;
+    }
+    return QProxyStyle::drawPrimitive(element, option, painter, widget);
 }
 
 void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
@@ -17,7 +29,7 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
             if (menuItem->menuItemType == QStyleOptionMenuItem::Separator)
             {
                 // Draw separator
-                QColor separatorColor;
+                QColor separatorColor = QColor(0, 255, 0);
                 painter->save();
                 painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
                 painter->setPen(QPen(separatorColor, 1));
@@ -28,10 +40,12 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
 
             QRect menuItemRect = menuItem->rect;
             /// background;
+            menuItemRect =  menuItemRect.adjusted(4, 4, -4, -4);
+
 
             if (true)
             {
-                QColor normalBackgroundColor = QColor(243, 0, 243);
+                QColor normalBackgroundColor = QColor(251, 251, 251);
                 QColor hoverBackgroundColor;
                 QColor disableBackgroundColor;
 
@@ -49,9 +63,10 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                 }
 
                 painter->save();
+                painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
                 painter->setPen(Qt::NoPen);
                 painter->setBrush(backgroundColor);
-                painter->drawRect(menuItemRect);
+                painter->drawRoundedRect(menuItemRect, 4, 4);
                 painter->restore();
             }
             /// icon;
@@ -69,7 +84,7 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                 painter->save();
                 painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
                 painter->setPen(QColor(0, 0, 0));// text color
-                painter->drawText(menuItemRect, Qt::AlignLeft | Qt::AlignVCenter, texts[0]);
+                painter->drawText(menuItemRect, Qt::AlignCenter, texts[0]);
                 painter->restore();
             }
 
@@ -79,11 +94,12 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
 
             }
 
+            return;
         }
 
         return QProxyStyle::drawControl(element, option, painter, widget);
     }
-    return QProxyStyle::drawControl(element, option, painter, widget);
+    //return QProxyStyle::drawControl(element, option, painter, widget);
 }
 
 int FluPMenuStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, const QWidget* widget) const

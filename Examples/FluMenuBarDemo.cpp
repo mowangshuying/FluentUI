@@ -95,6 +95,12 @@ void FluMenuBarDemo::ppMenuBar1()
     openFileMenu->addAction(openFileAction2);
     auto openFIleAction3 = new FluAction("OpenFile3");
     openFileMenu->addAction(openFIleAction3);
+    auto openFileAction4 = new FluAction("OpenFile4");
+    openFileMenu->addAction(openFileAction4);
+    auto openFileAction5 = new FluAction("OpenFile5");
+    openFileAction5->setShortcut(QKeySequence::Open);
+    openFileMenu->addAction(openFileAction5);
+    
 
     
     auto saveFileAction = new FluAction("Save");

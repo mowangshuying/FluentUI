@@ -18,4 +18,6 @@ public:
 
 protected:
     int m_nMenuItemHeight = 30;
+    mutable bool m_hasIcon = false;
+    mutable bool m_hasMenu = false;
 };

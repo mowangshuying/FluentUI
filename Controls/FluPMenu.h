@@ -33,7 +33,7 @@ public:
         return menu;
     }
 
-    bool hasChildMenu()
+    bool hasChildMenu() const
     {
         for (auto action : actions())
         {
@@ -46,17 +46,17 @@ public:
         return false;
     }
 
-    bool hasChildIcon()
+    bool hasChildIcon() const
     {
         for (auto action : actions())
         {
-            if (action->icon().isNull())
+            if (!action->icon().isNull())
             {
-                return false;
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
 

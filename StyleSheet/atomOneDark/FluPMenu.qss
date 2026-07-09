@@ -1,0 +1,11 @@
+FluPMenu {
+    qproperty-ppMenuBackgroundColor: rgb(44, 48, 54);
+	qproperty-ppMenuBorderColor: rgb(7, 31, 70);
+    qproperty-ppMenuItemNormalBackgroundColor: rgb(44, 48, 54);
+    qproperty-ppMenuItemSelectedBackgroundColor:rgb(50, 54, 60);
+    qproperty-ppMenuItemDisabledBackgroundColor: rgb(44, 48, 54);
+	qproperty-ppMenuItemForegroundColor: white;
+	qproperty-ppMenuItemSpacing:2;
+	qproperty-ppMenuItemIconWH:20;
+	qproperty-ppMenuItemHeight:30;
+}

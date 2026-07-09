@@ -4,15 +4,18 @@
 #include "FluPMenu.h"
 #include "../Utils/FluUtils.h"
 
+FluPMenuStyle::FluPMenuStyle(QStyle* baseStyle) : QProxyStyle(baseStyle)
+{
+}
+
 void FluPMenuStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget) const
 {
     if (element == PE_PanelMenu)
     {
         painter->save();
         painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-
-        painter->setPen(QColor(200, 200, 200));
-        painter->setBrush(QColor(243, 243, 243));
+        painter->setPen(m_menuBoderColor);
+        painter->setBrush(m_menuBackgroundColor);
         painter->drawRoundedRect(option->rect, 6, 6);
         painter->restore();
         return;
@@ -30,39 +33,31 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
             // Custom drawing code for menu items
             if (menuItem->menuItemType == QStyleOptionMenuItem::Separator)
             {
-                // Draw separator
-                QColor separatorColor = QColor(0, 255, 0);
                 painter->save();
                 painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-                painter->setPen(QPen(separatorColor, 1));
+                painter->setPen(QPen(m_menuBoderColor, 1));
                 painter->drawLine(menuItem->rect.topLeft(), menuItem->rect.topRight());
                 painter->restore();
                 return;
             }
 
             QRect menuItemRect = menuItem->rect;
-            /// background;
-            menuItemRect =  menuItemRect.adjusted(2, 2, -2, -2);
 
-            //bool bSelect = false;
+            /// background;
+            menuItemRect =  menuItemRect.adjusted(m_nMenuItemSpacing, m_nMenuItemSpacing, -m_nMenuItemSpacing, -m_nMenuItemSpacing);
             if (true)
             {
-                QColor normalBackgroundColor = QColor(243, 243, 243);
-                QColor hoverBackgroundColor = QColor(230, 230, 230);
-                QColor disableBackgroundColor;
-
-                QColor backgroundColor = normalBackgroundColor;
+                QColor backgroundColor = m_menuItemNormalBackgroundColor;
                 if (menuItem->state & QStyle::State_Enabled)
                 {
                     if ( (menuItem->state & QStyle::State_MouseOver) || (menuItem->state & QStyle::State_Selected) )
                     {
-                        backgroundColor = hoverBackgroundColor;
-                        //bSelect = true;
+                        backgroundColor = m_menuItemSelectedBackgroundColor;
                     }
                 }
                 else
                 {
-                    backgroundColor = disableBackgroundColor;
+                    backgroundColor = m_menuItemDisabledBackgroundColor;
                 }
 
                 painter->save();
@@ -73,64 +68,63 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                 painter->restore();
             }
 
-            //bool hasIcon = false;
-            /// icon;
             if (!menuItem->icon.isNull())
             {
                 QRect iconRect;
-                iconRect.setX(menuItemRect.x() + 2);
-                iconRect.setY(menuItemRect.y() + (menuItemRect.height() - 20) / 2);
-                painter->drawPixmap(iconRect, menuItem->icon.pixmap(20, 20));
-                //hasIcon = true;
+                iconRect.setX(menuItemRect.x() + m_nMenuItemSpacing);
+                iconRect.setY(menuItemRect.y() + (menuItemRect.height() - m_nMenuItemIconWH) / 2);
+                painter->drawPixmap(iconRect, menuItem->icon.pixmap(m_nMenuItemIconWH, m_nMenuItemIconWH));
             }
 
-            /// text;
-            QColor textColor = Qt::black;
-            //if (bSelect)
-            //{
-            //    textColor = Qt::white;
-            //}
             if (true)
             {
                 QStringList texts = menuItem->text.split("\t");
                 painter->save();
                 painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-                painter->setPen(textColor);
+                painter->setPen(m_menuItemForegroundColor);
                 if (texts.size() == 2)
                 {
                     QRect textRect;
                     if (m_hasIcon)
                     {
-                        textRect.setX(menuItemRect.x() + 2 + 20 + 2);
+                        textRect.setX(menuItemRect.x() + m_nMenuItemSpacing + m_nMenuItemIconWH + m_nMenuItemSpacing);
                         textRect.setY(menuItemRect.y());
-                        textRect.setWidth(menuItemRect.width() - 2 - 2 - 20 - 2);
+                        textRect.setWidth(menuItemRect.width() - (m_nMenuItemSpacing + m_nMenuItemIconWH + m_nMenuItemSpacing + m_nMenuItemSpacing));
                         if (m_hasMenu)
                         {
-                            textRect.setWidth(textRect.width() - 20 - 2 -2);
+                            textRect.setWidth(textRect.width() - (m_nMenuItemSpacing + m_nMenuItemIconWH));
                         }
 
                         textRect.setHeight(menuItemRect.height());
                         painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, texts[0]);
 
                         QRect shortCutRect = textRect;
-                        shortCutRect.setLeft(textRect.right() - menuItem->tabWidth - 4);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+                        shortCutRect.setLeft(textRect.right() - menuItem->tabWidth);
+#else
+                        shortCutRect.setLeft(textRect.right() - menuItem->reservedShortcutWidth);
+#endif
                         painter->drawText(shortCutRect, Qt::AlignLeft | Qt::AlignVCenter, texts[1]);
                     }
                     else
                     {
-                        textRect.setX(menuItemRect.x() + 2);
+                        textRect.setX(menuItemRect.x() + m_nMenuItemSpacing);
                         textRect.setY(menuItemRect.y());
-                        textRect.setWidth(menuItemRect.width() - 2);
+                        textRect.setWidth(menuItemRect.width() - (m_nMenuItemSpacing + m_nMenuItemSpacing));
                         if (m_hasMenu)
                         {
-                            textRect.setWidth(textRect.width() - 20 - 2 - 2);
+                            textRect.setWidth(textRect.width() - (m_nMenuItemSpacing + m_nMenuItemIconWH));
                         }
 
                         textRect.setHeight(menuItemRect.height());
                         painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, texts[0]);
 
                         QRect shortCutRect = textRect;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                         shortCutRect.setLeft(textRect.right() - menuItem->tabWidth);
+#else
+                        shortCutRect.setLeft(textRect.right() - menuItem->reservedShortcutWidth);
+#endif
                         painter->drawText(shortCutRect, Qt::AlignLeft | Qt::AlignVCenter, texts[1]);
                     }
                 }
@@ -139,12 +133,12 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                     if (m_hasIcon)
                     {
                         QRect textRect;
-                        textRect.setX(menuItemRect.x() + 2 + 20 + 2);
+                        textRect.setX(menuItemRect.x() + m_nMenuItemSpacing + m_nMenuItemIconWH + m_nMenuItemSpacing);
                         textRect.setY(menuItemRect.y());
-                        textRect.setWidth(menuItemRect.width() - 2);
+                        textRect.setWidth(menuItemRect.width() - (m_nMenuItemSpacing + m_nMenuItemIconWH + m_nMenuItemSpacing + m_nMenuItemSpacing));
                         if (m_hasMenu)
                         {
-                            textRect.setWidth(textRect.width() - 20 - 2 - 2);
+                            textRect.setWidth(textRect.width() - (m_nMenuItemSpacing + m_nMenuItemIconWH));
                         }
 
                         textRect.setHeight(menuItemRect.height());
@@ -153,12 +147,12 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                     else
                     {
                         QRect textRect;
-                        textRect.setX(menuItemRect.x() + 2);
+                        textRect.setX(menuItemRect.x() + m_nMenuItemSpacing);
                         textRect.setY(menuItemRect.y());
-                        textRect.setWidth(menuItemRect.width() - 2);
+                        textRect.setWidth(menuItemRect.width() - m_nMenuItemSpacing);
                         if (m_hasMenu)
                         {
-                            textRect.setWidth(textRect.width() - 20 - 2 - 2);
+                            textRect.setWidth(textRect.width() - (m_nMenuItemIconWH + m_nMenuItemSpacing));
                         }
 
                         textRect.setHeight(menuItemRect.height());
@@ -175,8 +169,8 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                 {
                     painter->save();
                     painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-                    painter->drawPixmap(menuItemRect.right() - 22, menuItemRect.y() + (menuItemRect.height() - 20) / 2,
-                        FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronRight, QColor(8,8,8), 20, 20));
+                    painter->drawPixmap(menuItemRect.right() - (m_nMenuItemIconWH + m_nMenuItemSpacing), menuItemRect.y() + (menuItemRect.height() - m_nMenuItemIconWH) / 2,
+                                        FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronRight, FluThemeUtils::getUtils()->getTheme(), m_nMenuItemIconWH, m_nMenuItemIconWH));
                     painter->restore();
                 }
             }
@@ -186,7 +180,6 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
 
         return QProxyStyle::drawControl(element, option, painter, widget);
     }
-    //return QProxyStyle::drawControl(element, option, painter, widget);
 }
 
 int FluPMenuStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, const QWidget* widget) const
@@ -214,7 +207,7 @@ QSize FluPMenuStyle::sizeFromContents(ContentsType type, const QStyleOption* opt
             if (menu != nullptr && menu->hasChildMenu())
             {
                 m_hasMenu = true;
-                contentsSize.setWidth(contentsSize.width() + 20);
+                contentsSize.setWidth(contentsSize.width() + m_nMenuItemSpacing + m_nMenuItemIconWH);
             }
 
             return contentsSize;

@@ -81,22 +81,31 @@ void FluMenuBarDemo::ppMenuBar0()
 void FluMenuBarDemo::ppMenuBar1()
 {
     auto menuBar = new FluPMenuBar;
-    auto newFileAction = new FluAction("new");
-    newFileAction->setAwesomeType(FluAwesomeType::FileExplorer);
+    auto newFileAction = new FluAction("New");
     newFileAction->setShortcut(QKeySequence::New);
-    auto openFileAction = new FluAction("Open");
-    openFileAction->setShortcut(QKeySequence::Open);
-    openFileAction->setAwesomeType(FluAwesomeType::OpenFile);
+
+    //auto openFileAction = new FluAction("Open");
+    //openFileAction->setShortcut(QKeySequence::Open);
+    
+    auto openFileMenu = new FluPMenu(menuBar);
+    openFileMenu->setTitle("Open");
+    auto openFileAction1 = new FluAction("OpenFile1");
+    openFileMenu->addAction(openFileAction1);
+    auto openFileAction2 = new FluAction("OpenFile2");
+    openFileMenu->addAction(openFileAction2);
+    auto openFIleAction3 = new FluAction("OpenFile3");
+    openFileMenu->addAction(openFIleAction3);
+
+    
     auto saveFileAction = new FluAction("Save");
     saveFileAction->setShortcut(QKeySequence::Save);
-    openFileAction->setAwesomeType(FluAwesomeType::Save);
     auto exitFileAction = new FluAction("Exit");
     exitFileAction->setShortcut(QKeySequence::Quit);
 
     auto fileMenu = new FluPMenu(menuBar);
     fileMenu->setTitle("File(&F)");
     fileMenu->addAction(newFileAction);
-    fileMenu->addAction(openFileAction);
+    fileMenu->addAction(openFileMenu->menuAction());
     fileMenu->addAction(saveFileAction);
     fileMenu->addAction(exitFileAction);
 
@@ -123,11 +132,7 @@ void FluMenuBarDemo::ppMenuBar1()
     helpMenu->addAction(aboutAction);
 
     menuBar->addAction(helpMenu->menuAction());
-    // m_contentLayout->addWidget(menuBar);
 
      m_vMainLayout->insertWidget(1, menuBar, 0, Qt::AlignTop);
-
-    //  QWidget* w = new QWidget;
-    //  m_contentLayout->addWidget(w, 1);
     resize(600, 400);
 }

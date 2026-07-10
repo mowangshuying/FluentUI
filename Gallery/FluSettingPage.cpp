@@ -59,22 +59,17 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     languageSelectBox->setIcon(FluAwesomeType::Globe);
     languageSelectBox->getComboBox()->addItem(tr("en-US"));
     languageSelectBox->getComboBox()->addItem(tr("zh-CN"));
-    // languageSelectBox->getComboBox()->addItem(tr("ja"));
 
     if (FluConfigUtils::getUtils()->getLanguage() == "en-US")
         languageSelectBox->getComboBox()->setIndex(0);
     else if (FluConfigUtils::getUtils()->getLanguage() == "zh-CN")
         languageSelectBox->getComboBox()->setIndex(1);
-    // else if (FluConfigUtils::getUtils()->getLanguage() == "ja")
-    //     languageSelectBox->getComboBox()->setIndex(2);
 
     connect(languageSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == 0)
             FluConfigUtils::getUtils()->setLanguage("en-US");
         else if (index == 1)
             FluConfigUtils::getUtils()->setLanguage("zh-CN");
-        // else if (index == 2)
-        //     FluConfigUtils::getUtils()->setLanguage("ja");
     });
 
     m_vScrollView->getMainLayout()->addWidget(languageSelectBox);
@@ -88,10 +83,9 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
 
     // version;
     auto settingsVersionBox = new FluSettingsVersionBox;
-
     settingsVersionBox->getTitleLabel()->setText(tr("FluentUI Gallery(Cpp & Qt)."));
     settingsVersionBox->getInfoLabel()->setText(tr("@2023-2026 FluentUI For Qt & Cpp. All rights reserved."));
-    settingsVersionBox->getVersionLabel()->setText(tr("1.0.7"));
+    settingsVersionBox->getVersionLabel()->setText(tr("1.0.8"));
 
 #ifndef USE_QRC
     QIcon icon = QIcon("../res/Tiles/GalleryIcon.ico");

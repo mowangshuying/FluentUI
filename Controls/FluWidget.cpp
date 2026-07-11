@@ -1,5 +1,6 @@
 ﻿#include "FluWidget.h"
 #include "../Utils/FluUtils.h"
+#include <QStyleOption>
 
 FluWidget::FluWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
@@ -23,6 +24,14 @@ FluWidget::FluWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
         FluObjectPtrUtils::getUtils()->remove((int64_t)(this));
 #endif
     });
+}
+
+  void FluWidget::paintEvent(QPaintEvent* event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 void FluWidget::showEvent(QShowEvent* event)

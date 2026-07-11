@@ -3,12 +3,14 @@
 FluLabel::FluLabel(QWidget* parent /*= nullptr*/) : QLabel(parent)
 {
     m_style = FluLabelStyle::CaptionTextBlockSylte;
+    setLabelStyle(m_style);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 FluLabel::FluLabel(FluLabelStyle style, QWidget* parent /*= nullptr*/) : QLabel(parent), m_style(style)
 {
+    setLabelStyle(style);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }

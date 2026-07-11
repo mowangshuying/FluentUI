@@ -271,6 +271,16 @@ void FluVNavigationView::updateSearchKeys()
     m_searchItem->updateSearchKeys(keys);
 }
 
+void FluVNavigationView::hideMenuItem()
+{
+    m_menuButtonItem->hide();
+}
+
+void FluVNavigationView::hideSearchItem()
+{
+    m_searchItem->hide();
+}
+
 inline void FluVNavigationView::expandView()
 {
     // LOG_DEBUG << "called.";

@@ -29,10 +29,10 @@ void FluScintilla::onThemeChanged()
 {
     if (FluThemeUtils::getUtils()->getTheme() == FluTheme::Light)
     {
-        setPaper(QColor(232, 232, 232));
+        setPaper(QColor(249, 249, 249));
 
         // set line number background color;
-        setMarginsBackgroundColor(QColor(243, 243, 243));
+        setMarginsBackgroundColor(QColor(249, 249, 249));
         // set line number text color;
         setMarginsForegroundColor(Qt::black);
 

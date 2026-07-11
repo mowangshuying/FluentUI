@@ -32,7 +32,7 @@ void FluScintilla::onThemeChanged()
         setPaper(QColor(232, 232, 232));
 
         // set line number background color;
-        setMarginsBackgroundColor(QColor(232, 232, 232));
+        setMarginsBackgroundColor(QColor(243, 243, 243));
         // set line number text color;
         setMarginsForegroundColor(Qt::black);
 

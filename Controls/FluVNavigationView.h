@@ -63,6 +63,10 @@ class FluVNavigationView : public FluWidget
     FluVNavigationItem *getItemByText(QString text);
     void updateSearchKeys();
 
+    void hideMenuItem();
+
+    void hideSearchItem();
+
     void expandView();
 
     void collapseView();

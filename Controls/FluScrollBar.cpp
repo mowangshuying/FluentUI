@@ -25,7 +25,11 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scr
     connect(m_scrollBarTrunk->getPreBtn(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageUp);
     connect(m_scrollBarTrunk->getLstBtn(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageDown);
     connect(m_scrollBar, &QScrollBar::rangeChanged, this, [=](int nMinValue, int nMaxValue) { setRangeValue(nMinValue, nMaxValue); });
-    //connect(m_scrollBar, &QScrollBar::valueChanged, this, &FluScrollBar::onCurrentValueChanged);
+    connect(m_scrollBar, &QScrollBar::valueChanged, this, [=](int nValue) {
+        m_nValue = nValue;
+        m_nCurrentValue = nValue;
+        adjustHandlePos();
+    });
     connect(this, &FluScrollBar::currentValueChanged, m_scrollBar, [=](int nValue) { m_scrollBar->setValue(nValue); });
     connect(m_scrollBarTrunk->getAnimation(), &QPropertyAnimation::valueChanged, this, &FluScrollBar::onOpacityAnimationChanged);
     onThemeChanged();

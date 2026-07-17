@@ -4,6 +4,7 @@
 #include "../Utils/FluUtils.h"
 #include <QTextDocument>
 #include <QWidget>
+#include "FluScrollDelegate.h"
 
 class FluTextEditWrap;
 class FluTextEdit : public QTextEdit
@@ -21,6 +22,7 @@ class FluTextEdit : public QTextEdit
     void onThemeChanged();
 
   protected:
+    FluScrollDelegate *m_delegate;
     FluTextEditWrap* m_wrap;
     bool m_bAutoAdjustSize;
 };

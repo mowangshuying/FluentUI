@@ -6,6 +6,7 @@ FluTextEdit::FluTextEdit(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
     m_wrap = new FluTextEditWrap(this);
 
     m_bAutoAdjustSize = false;
+    m_delegate = new FluScrollDelegate(this);
 
     connect(document(), &QTextDocument::contentsChanged, this, [=]() {
         if (!m_bAutoAdjustSize)

@@ -1,1 +1,2 @@
-C:\Qt\6.5.1\msvc2019_64\bin\lupdate.exe ./Controls ./Utils ./Gallery -ts i18n/en-US.ts i18n/zh-CN.ts
+C:\Qt\6.5.1\msvc2019_64\bin\lupdate.exe .\Controls\  -ts .\i18n\Controls.en-US.ts .\i18n\Controls.zh-CN.ts
+C:\Qt\6.5.1\msvc2019_64\bin\lupdate.exe .\Gallery\  -ts .\i18n\Gallery.en-US.ts .\i18n\Gallery.zh-CN.ts

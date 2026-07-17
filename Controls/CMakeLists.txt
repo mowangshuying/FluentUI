@@ -824,8 +824,23 @@ BASE ".."
 FILES
 ${RES_FILES}
 )
+
+set(I18N_FILES
+    "../i18n/Controls.en-US.qm"
+    "../i18n/Controls.zh-CN.qm"
+)
+
+source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${I18N_FILES})
+
+qt_add_resources(${TGT} "ControlsI18n"
+    PREFIX "/"
+    BASE ".."
+    FILES
+    ${I18N_FILES}
+)
+
 else()
-target_sources(${TGT} PUBLIC "ControlsQss.qrc" "ControlsRes.qrc")
+target_sources(${TGT} PUBLIC "ControlsQss.qrc" "ControlsRes.qrc" "ControlsI18n.qrc")
 endif() ### end for qt version.
 
 

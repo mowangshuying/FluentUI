@@ -27,6 +27,8 @@ class FluComboBoxEx : public FluWidget
 
     void setIndex(int index);
 
+    void setIndexByText(QString text);
+
     void setText(QString text);
 
     void addItem(QString text);

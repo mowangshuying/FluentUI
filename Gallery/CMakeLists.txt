@@ -717,23 +717,23 @@ qt_add_resources(${TGT} "GalleryQss"
     ${QSS_FILES}
 )
 
-set(I18N_FILES
-    "../i18n/zh-CN.qm"
-    "../i18n/en-US.qm"
-)
-source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${I18N_FILES})
+# set(I18N_FILES
+#     "../i18n/zh-CN.qm"
+#     "../i18n/en-US.qm"
+# )
+# source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${I18N_FILES})
 
-qt_add_resources(${TGT} "GalleryI18n"
-    PREFIX "/"
-    BASE ".."
-    FILES
-    ${I18N_FILES}
-)
+# qt_add_resources(${TGT} "GalleryI18n"
+#     PREFIX "/"
+#     BASE ".."
+#     FILES
+#     ${I18N_FILES}
+# )
 else()
 target_sources(${TGT} PUBLIC "GalleryRes.qrc" 
     "GalleryCode.qrc" 
-    "GalleryQss.qrc" 
-    "GalleryI18n.qrc")
+    "GalleryQss.qrc" )
+    # "GalleryI18n.qrc")
 endif()
 
 endif()

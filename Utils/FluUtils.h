@@ -8,5 +8,6 @@
 #include "FluConfigUtils.h"
 #include "FluEmoijUtils.h"
 #include "FluPPUtils.h"
+#include "FluTranslatorUtils.h"
 
 //using namespace FluPPUtils;

@@ -13,27 +13,8 @@ int main(int argc, char **argv)
     QTranslator translator;
     if (FluConfigUtils::getUtils()->getLanguage() == "zh-CN")
     {
-#ifndef USE_QRC
-        bool bLoad = translator.load("../i18n/zh-CN.qm");
-#else
-        bool bLoad = translator.load(":/i18n/zh-CN.qm");
-#endif
-        if (bLoad)
-        {
-            app.installTranslator(&translator);
-        }
-    }
-    else if(FluConfigUtils::getUtils()->getLanguage() == "en-US")
-    {
-#ifndef USE_QRC
-        bool bLoad = translator.load("../i18n/en-US.qm");
-#else
-        bool bLoad = translator.load(":/i18n/en-US.qm");
-#endif
-        if (bLoad)
-        {
-            app.installTranslator(&translator);
-        }
+        FluTranslatorUtils::installTranslator(&app, "Controls.zh-CN");
+        FluTranslatorUtils::installTranslator(&app, "Gallery.zh-CN");
     }
 
     FluGalleryWindow w;

@@ -11,6 +11,11 @@ class FluProgressRing : public FluWidget
   public:
     FluProgressRing(QWidget* parent = nullptr);
 
+    ~FluProgressRing() 
+    {
+        m_workingTimer->stop();
+    }
+
     void paintEvent(QPaintEvent* event);
 
     void setMinMaxValue(int minValue, int maxValue);

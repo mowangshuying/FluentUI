@@ -104,6 +104,18 @@ void FluComboBoxEx::setIndex(int index)
     emit currentTextChanged(text);
 }
 
+void FluComboBoxEx::setIndexByText(QString text)
+{
+    for (int i = 0; i < m_menu->actions().size(); i++)
+    {
+        if (m_menu->actions()[i]->text() == text)
+        {
+            setIndex(i);
+            return;
+        }
+    }
+}
+
 void FluComboBoxEx::setText(QString text)
 {
     m_textBtn->setText(text);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="zh_CN">
 <context>
     <name>FluAEmptyPage</name>
     <message>
@@ -3862,7 +3862,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="5"/>
         <source>Typography</source>
-        <translation></translation>
+        <translation>排版</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="11"/>
@@ -3892,7 +3892,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>Caption</source>
-        <translation>标题</translation>
+        <translation>字幕</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
@@ -3902,7 +3902,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>12/16 epx</source>
-        <translation>12月16日到期</translation>
+        <translation>12/16 epx</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
@@ -3929,12 +3929,12 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
         <source>BodyStrongTextBlockStyle</source>
-        <translation>身体强健文本块样式</translation>
+        <translation>粗体文本样式</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
         <source>Body Strong</source>
-        <translation>身体强壮</translation>
+        <translation>粗体</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
@@ -3944,7 +3944,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
         <source>Subtitle</source>
-        <translation>字幕</translation>
+        <translation>子标题</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
@@ -3962,7 +3962,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
         <source>SubtitleTextBlockStyle</source>
-        <translation>字幕文本块样式</translation>
+        <translation>子标题文本块样式</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
@@ -3972,7 +3972,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
         <source>28/36 epx</source>
-        <translation>28/36 环氧树脂</translation>
+        <translation>28/36 epx</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
@@ -3982,7 +3982,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
         <source>Title Large</source>
-        <translation>标题 大</translation>
+        <translation>大标题</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
@@ -4002,7 +4002,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
         <source>68/92 epx</source>
-        <translation>68/92 环氧树脂</translation>
+        <translation>68/92 epx</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>

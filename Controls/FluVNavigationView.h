@@ -29,6 +29,8 @@ class FluVNavigationView : public FluWidget
   public:
     FluVNavigationView(QWidget *parent = nullptr);
 
+    void setOnlyCollapseView(bool bHideMenuAndSearch);
+
     void addItemToTopLayout(QWidget *item);
 
     void addItemToMidLayout(QWidget *item);
@@ -64,8 +66,10 @@ class FluVNavigationView : public FluWidget
     void updateSearchKeys();
 
     void hideMenuItem();
+    void showMenuItem();
 
     void hideSearchItem();
+    void showSearchItem();
 
     void expandView();
 

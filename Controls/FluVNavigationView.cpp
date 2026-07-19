@@ -93,6 +93,34 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     onThemeChanged();
 }
 
+void FluVNavigationView::setOnlyCollapseView(bool bHideMenuAndSearch)
+{
+    if (bHideMenuAndSearch)
+    {
+        hideMenuItem();
+        hideSearchItem();
+    }
+    else
+    {
+        showMenuItem();
+        showSearchItem();
+       /* m_searchItem->hideSearchEdit();*/
+    }
+
+    collapseDownView();
+    /*collapseView();*/
+    //setViewWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    /*setFixedWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());*/
+    m_bLong = false;
+    collapseView();
+    setFixedWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    //if (!bHideMenuAndSearch)
+    //{
+        //m_searchItem->setFixedWidth(m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right()));
+        //m_searchItem->hideSearchEdit();
+    //}
+}
+
 void FluVNavigationView::addItemToTopLayout(QWidget *item)
 {
     m_vTopWrapLayout->addWidget(item, 0, Qt::AlignTop);
@@ -250,7 +278,6 @@ FluVNavigationItem *FluVNavigationView::getItemByText(QString text)
         if (item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)item;
-            // texts.push_back(iconTextItem->getLabel()->text());
             if (iconTextItem->getLabel()->text() == text)
                 return item;
         }
@@ -276,9 +303,19 @@ void FluVNavigationView::hideMenuItem()
     m_menuButtonItem->hide();
 }
 
+void FluVNavigationView::showMenuItem()
+{
+    m_menuButtonItem->show();
+}
+
 void FluVNavigationView::hideSearchItem()
 {
     m_searchItem->hide();
+}
+
+void FluVNavigationView::showSearchItem()
+{
+    m_searchItem->show();
 }
 
 inline void FluVNavigationView::expandView()
@@ -474,6 +511,7 @@ void FluVNavigationView::onMenuItemClicked()
     {
         expandView();
 
+        m_valueObject->setValue(width());
         m_animation->setStartValue(width());
         m_animation->setEndValue(m_nViewWidth);
         m_animation->start();

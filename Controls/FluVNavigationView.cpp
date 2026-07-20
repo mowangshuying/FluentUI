@@ -8,7 +8,7 @@
 
 FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_nViewWidth = 320;  // default width
+    m_nViewWidth = 300;  // default width
     m_vLayout = new QVBoxLayout(this);
     m_vLayout->setContentsMargins(4, 8, 4, 8);
     m_topWrapWidget = new QWidget(this);

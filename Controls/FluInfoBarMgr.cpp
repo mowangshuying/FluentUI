@@ -7,56 +7,33 @@ FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
     m_timer = new QTimer(this);
     m_timer->setInterval(1);
 
-    connect(m_timer, &QTimer::timeout, [&]() {
-        // if the first elem not at spec pos move it.
-        // when move it , should move others.
-        // top at 75;
-        // the spcing fix 15
-        // move infobar.
-
-        //   if (m_infoBarMap.empty())
-        //       m_timer->stop();
+    connect(m_timer, &QTimer::timeout, this, [&]() {
 
         for (auto itMap = m_infoBarMap.begin(); itMap != m_infoBarMap.end(); itMap++)
         {
             for (auto itList = itMap->second.begin(); itList != itMap->second.end(); itList++)
             {
-                // the first move.
                 if (itList == itMap->second.begin())
                 {
                     if ((*itList)->y() > 75)
                     {
-                        (*itList)->move((*itList)->x(), (*itList)->y() - 1);
+                        (*itList)->move((*itList)->x(), (*itList)->y() - 8);
                     }
-
-                    // the first;
-                    //(*itList)->setDisappearDuration()
 
                     (*itList)->disappear();
                     continue;
                 }
 
-                //(*itList)->show();
-                // other.
-
-                //  LOG_DEBUG << "Runing";
                 auto itPrevList = itList;
                 itPrevList--;
-
-                //  LOG_DEBUG << "Y1:" << (*itList)->y();
-                //  LOG_DEBUG << "Y2:" << (*itPrevList)->y();
-                //  LOG_DEBUG << "H:" << (*itPrevList)->height();
-
                 if ((*itList)->y() - ((*itPrevList)->y() + (*itPrevList)->height()) > 15)
                 {
-                    (*itList)->move((*itList)->x(), (*itList)->y() - 1);
+                    (*itList)->move((*itList)->x(), (*itList)->y() - 8);
                 }
             }
         }
     });
 
-    // to start timer.
-    // m_timer->start();
     m_timer->start();
     m_infoBarMap.clear();
 }

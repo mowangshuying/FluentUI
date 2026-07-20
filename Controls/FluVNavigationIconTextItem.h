@@ -86,6 +86,8 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     void setItemWidth(int nWidth);
 
+    void setItemHeight(int nHeight);
+
     std::vector<FluVNavigationIconTextItem *> getItems();
     void getAllItems(std::vector<FluVNavigationIconTextItem *> &totalItems);
     std::vector<FluVNavigationIconTextItem *> getAllItems();

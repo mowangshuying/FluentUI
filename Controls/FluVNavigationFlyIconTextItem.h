@@ -19,6 +19,10 @@ class FluVNavigationFlyIconTextItem : public FluWidget
 
     ~FluVNavigationFlyIconTextItem();
 
+    void setItemWidth(int nWidth);
+
+    void setItemHeight(int nHeight);
+
     void setIconTextItems(std::vector<FluVNavigationIconTextItem*> items);
 
     void adjustItemHeight();
@@ -37,4 +41,7 @@ class FluVNavigationFlyIconTextItem : public FluWidget
 
     FluVScrollView* m_vScrollView;
     std::vector<FluVNavigationIconTextItem*> m_items;
+
+    int m_nItemHeight;
+    int m_nItemWidth;
 };

@@ -30,6 +30,16 @@ FluVNavigationFlyIconTextItem::~FluVNavigationFlyIconTextItem()
     // LOG_DEBUG << "called";
 }
 
+void FluVNavigationFlyIconTextItem::setItemWidth(int nWidth)
+{
+
+}
+
+void FluVNavigationFlyIconTextItem::setItemHeight(int nHeight)
+{
+
+}
+
 void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationIconTextItem*> items)
 {
     // copy items;

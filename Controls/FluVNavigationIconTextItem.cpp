@@ -147,15 +147,29 @@ void FluVNavigationIconTextItem::setItemWidth(int nWidth)
     // set child item width
     for (auto item : m_items)
     {
-        item->getWrapWidget1()->setFixedWidth(nWidth);
-        item->getWrapWidget2()->setFixedWidth(nWidth);
-        item->setFixedWidth(nWidth);
+        //item->getWrapWidget1()->setFixedWidth(nWidth);
+        //item->getWrapWidget2()->setFixedWidth(nWidth);
+        //item->setFixedWidth(nWidth);
+        item->setItemWidth(nWidth);
     }
 
     // set self width
     m_wrapWidget1->setFixedWidth(nWidth);
     m_wrapWidget2->setFixedWidth(nWidth);
     setFixedWidth(nWidth);
+}
+
+void FluVNavigationIconTextItem::setItemHeight(int nHeight)
+{
+    int nItemHeight = nHeight - m_vMainLayout->contentsMargins().top() - m_vMainLayout->contentsMargins().bottom();
+    for (auto item : m_items)
+    {
+        item->setItemHeight(nHeight);
+    }
+
+    m_wrapWidget1->setFixedHeight(nItemHeight);
+    m_wrapWidget2->setFixedHeight(nItemHeight);
+    setFixedHeight(nHeight);
 }
 
 std::vector<FluVNavigationIconTextItem *> FluVNavigationIconTextItem::getItems()

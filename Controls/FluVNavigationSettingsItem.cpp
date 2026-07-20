@@ -45,6 +45,16 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(FluAwesomeType awesomeTyp
     m_icon->setAwesomeType(awesomeType);
 }
 
+void FluVNavigationSettingsItem::setItemWidth(int nWidth)
+{
+    setFixedWidth(nWidth);
+}
+
+void FluVNavigationSettingsItem::setItemHeight(int nHeight)
+{
+    setFixedHeight(nHeight);
+}
+
 QLabel* FluVNavigationSettingsItem::getLabel()
 {
     return m_label;

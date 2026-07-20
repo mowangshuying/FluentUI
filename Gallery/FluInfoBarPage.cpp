@@ -9,10 +9,7 @@ FluInfoBarPage::FluInfoBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
            "break user flow."));
 
     addClosableInfoBar();
-
     addDynamicInfoBar();
-
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluInfoBarPage.qss", this);
     onThemeChanged();
 }
 

@@ -8,7 +8,6 @@ FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
     m_timer->setInterval(1);
 
     connect(m_timer, &QTimer::timeout, this, [&]() {
-
         for (auto itMap = m_infoBarMap.begin(); itMap != m_infoBarMap.end(); itMap++)
         {
             for (auto itList = itMap->second.begin(); itList != itMap->second.end(); itList++)

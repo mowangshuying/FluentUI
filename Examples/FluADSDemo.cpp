@@ -3,75 +3,72 @@
 #include "../Controls/FluAction.h"
 #include "../Controls/FluMenu.h"
 
-//#fill:#000000;
+// #fill:#000000;
 FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(parent)
 {
     setWindowTitle("ADS demo");
-    //delete statusBar();
-    //setStatusBar(nullptr);
-    //setMenuBar(nullptr);
+    // delete statusBar();
+    // setStatusBar(nullptr);
+    // setMenuBar(nullptr);
 
-   FluDockManager::setConfigFlag(FluDockManager::OpaqueSplitterResize, true);
-   FluDockManager::setConfigFlag(FluDockManager::XmlCompressionEnabled, false);
-   FluDockManager::setConfigFlag(FluDockManager::FocusHighlighting, true);
+    FluDockManager::setConfigFlag(FluDockManager::OpaqueSplitterResize, true);
+    FluDockManager::setConfigFlag(FluDockManager::XmlCompressionEnabled, false);
+    FluDockManager::setConfigFlag(FluDockManager::FocusHighlighting, true);
 
+    // auto menuBar = new FluMenuBar;
+    // m_agent->setHitTestVisible(menuBar);
+    // m_titleBar->setMenuBar(menuBar);
+    //   menuBar->move(50, 50);
 
-      //auto menuBar = new FluMenuBar;
-   //m_agent->setHitTestVisible(menuBar);
-   //m_titleBar->setMenuBar(menuBar);
-   //  menuBar->move(50, 50);
+    auto newFileAction = new FluAction("new");
+    auto openFileAction = new FluAction("Open");
+    auto saveFileAction = new FluAction("Save");
+    auto exitFileAction = new FluAction("Exit");
 
-   auto newFileAction = new FluAction("new");
-   auto openFileAction = new FluAction("Open");
-   auto saveFileAction = new FluAction("Save");
-   auto exitFileAction = new FluAction("Exit");
+    auto fileMenu = new FluMenu(m_menuBar);
+    fileMenu->setTitle("File(&F)");
+    fileMenu->addAction(newFileAction);
+    fileMenu->addAction(openFileAction);
+    fileMenu->addAction(saveFileAction);
+    fileMenu->addAction(exitFileAction);
 
-   auto fileMenu = new FluMenu(m_menuBar);
-   fileMenu->setTitle("File(&F)");
-   fileMenu->addAction(newFileAction);
-   fileMenu->addAction(openFileAction);
-   fileMenu->addAction(saveFileAction);
-   fileMenu->addAction(exitFileAction);
+    m_menuBar->addAction(fileMenu->menuAction());
 
-   m_menuBar->addAction(fileMenu->menuAction());
+    // undo cut copy paste
+    auto undoEditAction = new FluAction("Undo");
+    auto cutEditAction = new FluAction("Cut");
+    auto copyEditAction = new FluAction("Copy");
+    auto pasteEditAction = new FluAction("Paste");
 
-   // undo cut copy paste
-   auto undoEditAction = new FluAction("Undo");
-   auto cutEditAction = new FluAction("Cut");
-   auto copyEditAction = new FluAction("Copy");
-   auto pasteEditAction = new FluAction("Paste");
+    auto editMenu = new FluMenu(m_menuBar);
+    editMenu->setTitle("Edit(&E)");
+    editMenu->addAction(undoEditAction);
+    editMenu->addAction(cutEditAction);
+    editMenu->addAction(copyEditAction);
+    editMenu->addAction(pasteEditAction);
+    // menuBar->addMenu(editMenu);
+    m_menuBar->addAction(editMenu->menuAction());
 
-   auto editMenu = new FluMenu(m_menuBar);
-   editMenu->setTitle("Edit(&E)");
-   editMenu->addAction(undoEditAction);
-   editMenu->addAction(cutEditAction);
-   editMenu->addAction(copyEditAction);
-   editMenu->addAction(pasteEditAction);
-   // menuBar->addMenu(editMenu);
-   m_menuBar->addAction(editMenu->menuAction());
-
-   // Help
-   auto aboutAction = new FluAction("About");
-   auto helpMenu = new FluMenu(m_menuBar);
-   helpMenu->setTitle("Help(&H)");
-   helpMenu->addAction(aboutAction);
-   // menuBar->addMenu(helpMenu);
-   m_menuBar->addAction(helpMenu->menuAction());
-
+    // Help
+    auto aboutAction = new FluAction("About");
+    auto helpMenu = new FluMenu(m_menuBar);
+    helpMenu->setTitle("Help(&H)");
+    helpMenu->addAction(aboutAction);
+    // menuBar->addMenu(helpMenu);
+    m_menuBar->addAction(helpMenu->menuAction());
 
     m_dockMgr = new FluDockManager(this);
     // m_dockMgr->setObjectName("dockManager");
 
-    //onThemeChanged();
-    //connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-    //    onThemeChanged();
-    //});
-
+    // onThemeChanged();
+    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) {
+    //     onThemeChanged();
+    // });
 
     auto edit = new FluScintilla;
     //
     auto centralDockWidget = m_dockMgr->createDockWidget("CentralWidget", this);
-    //centralDockWidget->setStyleSheet("background-color: pink;");
+    // centralDockWidget->setStyleSheet("background-color: pink;");
     centralDockWidget->setWidget(edit);
     auto centralDockArea = m_dockMgr->setCentralWidget(centralDockWidget);
     centralDockArea->setAllowedAreas(ads::DockWidgetArea::OuterDockAreas);
@@ -79,10 +76,10 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     auto table1 = new FluTableView;
     table1->setWordWrap(false);
     table1->setColumnCount(3);
-    //table1->setRowCount(10);
+    // table1->setRowCount(10);
     table1->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     table1->setColumnWidth(0, 30);
-    //table1->setRowHeight()
+    // table1->setRowHeight()
     for (int i = 1; i < 3; i++)
     {
         table1->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
@@ -110,7 +107,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     auto table2 = new FluTableView;
     table2->setColumnCount(5);
-    //table2->setRowCount(1024);
+    // table2->setRowCount(1024);
     table2->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     table2->setColumnWidth(0, 30);
     for (int i = 1; i < 5; i++)
@@ -131,14 +128,13 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     table2->verticalHeader()->setVisible(false);
     table2->horizontalHeader()->setVisible(false);
 
-    
     auto tableDockWidget2 = m_dockMgr->createDockWidget("Table 2");
-    //tableDockWidget2->setStyleSheet("border: 1px solid pink;");
-    // background transparency
-    //tableDockWidget2->setBackgroundTransparent(true);
-    //tableDockWidget2->setStyleSheet("");
+    // tableDockWidget2->setStyleSheet("border: 1px solid pink;");
+    //  background transparency
+    // tableDockWidget2->setBackgroundTransparent(true);
+    // tableDockWidget2->setStyleSheet("");
 
-    //tableDockWidget2->setWidget(table2);
+    // tableDockWidget2->setWidget(table2);
     tableDockWidget2->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
     tableDockWidget2->resize(250, 150);
     tableDockWidget2->setMinimumSize(200, 150);
@@ -147,36 +143,35 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     auto propertiesTable = new FluTableView();
     propertiesTable->setColumnCount(3);
 
-     propertiesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    propertiesTable->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     propertiesTable->setColumnWidth(0, 30);
     for (int i = 1; i < 3; i++)
     {
         propertiesTable->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
     }
 
-     for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
-         int nRowCount = propertiesTable->rowCount();
+        int nRowCount = propertiesTable->rowCount();
         propertiesTable->insertRow(nRowCount);
 
-         propertiesTable->setRowHeight(i, 30);
-         auto item = new QTableWidgetItem(QString::asprintf("%d", i + 1));
-         propertiesTable->setItem(i, 0, item);
+        propertiesTable->setRowHeight(i, 30);
+        auto item = new QTableWidgetItem(QString::asprintf("%d", i + 1));
+        propertiesTable->setItem(i, 0, item);
     }
 
     propertiesTable->verticalHeader()->setVisible(false);
     propertiesTable->horizontalHeader()->setVisible(false);
 
-
     ads::CDockWidget* propertiesDockWidget = m_dockMgr->createDockWidget("Properties");
     propertiesDockWidget->setWidget(propertiesTable);
     propertiesDockWidget->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
-    //propertiesDockWidget->resize(250, 150);
+    // propertiesDockWidget->resize(250, 150);
     propertiesDockWidget->setMinimumSize(200, 150);
     m_dockMgr->addDockWidget(ads::DockWidgetArea::RightDockWidgetArea, propertiesDockWidget, centralDockArea);
 }
 
-//void FluADSDemo::onThemeChanged()
+// void FluADSDemo::onThemeChanged()
 //{
-//    FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", m_dockMgr, FluThemeUtils::getUtils()->getTheme());
-//}
+//     FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", m_dockMgr, FluThemeUtils::getUtils()->getTheme());
+// }

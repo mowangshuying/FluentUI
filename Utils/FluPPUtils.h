@@ -37,10 +37,9 @@ static PPMouseState getPPMouseState(QObject* obj, QString ext)
     return getEnumProperty<PPMouseState>(obj, ext + "_ppMouseState");
 }
 
-
 /// others;
 static void setProperty(QObject* obj, QString name, QVariant value)
 {
     obj->setProperty(name.toStdString().c_str(), value);
 }
-}
+}  // namespace FluPPUtils

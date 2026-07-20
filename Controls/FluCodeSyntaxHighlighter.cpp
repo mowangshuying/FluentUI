@@ -1,10 +1,8 @@
 ﻿#include "FluCodeSyntaxHighlighter.h"
 #include <QDebug>
 
-FluCodeSyntaxHighlighter::FluCodeSyntaxHighlighter(QTextDocument *parent)
-    : QSyntaxHighlighter(parent)
+FluCodeSyntaxHighlighter::FluCodeSyntaxHighlighter(QTextDocument *parent) : QSyntaxHighlighter(parent)
 {
-
     keywordFormat.setForeground(QColor(189, 120, 188));
     keywordFormat.setFontWeight(QFont::Bold);
     QStringList keywordPatterns;
@@ -34,40 +32,41 @@ FluCodeSyntaxHighlighter::FluCodeSyntaxHighlighter(QTextDocument *parent)
                     << "\\btry\\b" << "\\btypeid\\b" << "\\btypename\\b"
                     << "\\busing\\b" << "\\bvirtual\\b" << "\\bvolatile\\b"
                     << "\\bwchar_t\\b";
-    
-    for (const QString &pattern : keywordPatterns) {
+
+    for (const QString &pattern : keywordPatterns)
+    {
         HighlightingRule rule(QRegularExpression(pattern), keywordFormat);
         highlightingRules.append(rule);
     }
 
-        // func name
+    // func name
     functionFormat.setForeground(QColor(97, 175, 239));
     HighlightingRule rule = HighlightingRule(QRegularExpression("\\b[A-Za-z0-9_]+(?=\\s*\\()"), functionFormat);
     highlightingRules.append(rule);
 
     classFormat.setForeground(QColor(229, 192, 123));
     classFormat.setFontWeight(QFont::Bold);
-    // 
+    //
     rule = HighlightingRule(QRegularExpression("\\bQ[A-Za-z]+\\b"), classFormat);
     highlightingRules.append(rule);
-    
-    // 
+
+    //
     HighlightingRule fluRule(QRegularExpression("\\bFlu[A-Za-z]+\\b"), classFormat);
     highlightingRules.append(fluRule);
 
-    singleLineCommentFormat.setForeground(QColor(92, 99, 112));  
+    singleLineCommentFormat.setForeground(QColor(92, 99, 112));
     rule = HighlightingRule(QRegularExpression("//[^\n]*"), singleLineCommentFormat);
     highlightingRules.append(rule);
 
     // ""
-    quotationFormat.setForeground(QColor(152,184,89));  
+    quotationFormat.setForeground(QColor(152, 184, 89));
     rule = HighlightingRule(QRegularExpression("\".*\""), quotationFormat);
     highlightingRules.append(rule);
-    
+
     rule = HighlightingRule(QRegularExpression("\'.\'"), quotationFormat);
     highlightingRules.append(rule);
 
-    numberFormat.setForeground(QColor(199, 154, 96)); 
+    numberFormat.setForeground(QColor(199, 154, 96));
     rule = HighlightingRule(QRegularExpression("\\b[0-9]+\\b"), numberFormat);
     highlightingRules.append(rule);
 
@@ -77,9 +76,11 @@ FluCodeSyntaxHighlighter::FluCodeSyntaxHighlighter(QTextDocument *parent)
 
 void FluCodeSyntaxHighlighter::highlightBlock(const QString &text)
 {
-    for (const HighlightingRule &rule : qAsConst(highlightingRules)) {
+    for (const HighlightingRule &rule : qAsConst(highlightingRules))
+    {
         QRegularExpressionMatchIterator matchIterator = rule.pattern.globalMatch(text);
-        while (matchIterator.hasNext()) {
+        while (matchIterator.hasNext())
+        {
             QRegularExpressionMatch match = matchIterator.next();
             setFormat(match.capturedStart(), match.capturedLength(), rule.format);
         }
@@ -88,18 +89,23 @@ void FluCodeSyntaxHighlighter::highlightBlock(const QString &text)
     setCurrentBlockState(0);
 
     int startIndex = 0;
-    if (previousBlockState() != 1) {
+    if (previousBlockState() != 1)
+    {
         startIndex = text.indexOf(commentStartExpression);
     }
 
-    while (startIndex >= 0) {
+    while (startIndex >= 0)
+    {
         QRegularExpressionMatch match = commentEndExpression.match(text, startIndex);
         int endIndex = match.capturedStart();
         int commentLength = 0;
-        if (endIndex == -1) {
+        if (endIndex == -1)
+        {
             setCurrentBlockState(1);
             commentLength = text.length() - startIndex;
-        } else {
+        }
+        else
+        {
             commentLength = endIndex - startIndex + match.capturedLength();
         }
         setFormat(startIndex, commentLength, multiLineCommentFormat);

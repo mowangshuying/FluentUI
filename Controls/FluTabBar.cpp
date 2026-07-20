@@ -58,7 +58,7 @@ void FluTabBar::paintEvent(QPaintEvent* event)
     opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    //adjustAddTabBtnPosition();
+    // adjustAddTabBtnPosition();
 }
 
 void FluTabBar::adjustAddTabBtnPosition()
@@ -78,7 +78,7 @@ void FluTabBar::adjustAddTabBtnPosition()
         int nTmp = 0;
         for (int i = 0; i < items.size(); i++)
         {
-            //items[i]->show();
+            // items[i]->show();
             nTmp += items[i]->getWidgetWidth();
         }
 
@@ -101,19 +101,19 @@ void FluTabBar::adjustAddTabBtnPosition()
 
         if (nTotalWidth > (width() - 50))
         {
-             float fScale = (float)(width() - 50) / (float)nTotalWidth;
-             for (int i = 0; i < items.size(); i++)
-             {
-                 items[i]->setFixedWidth((int)(fScale * items[i]->getWidgetWidth()));
-                 //nX += totalWidths[i] * fScale;
-             }
+            float fScale = (float)(width() - 50) / (float)nTotalWidth;
+            for (int i = 0; i < items.size(); i++)
+            {
+                items[i]->setFixedWidth((int)(fScale * items[i]->getWidgetWidth()));
+                // nX += totalWidths[i] * fScale;
+            }
         }
         else
         {
             for (int i = 0; i < items.size(); i++)
-             {
-                 items[i]->setFixedWidth(items[i]->getWidgetWidth());
-             }
+            {
+                items[i]->setFixedWidth(items[i]->getWidgetWidth());
+            }
         }
 
         m_addTabBtn->move(nX, nY);

@@ -42,6 +42,7 @@ class FluMessageBox : public QDialog
 
     void onTitleChanged(QString title);
     void onInfoChanged(QString info);
+
   protected:
     QWidget* m_parentWidget;
 

@@ -22,7 +22,7 @@ class FluTextEdit : public QTextEdit
     void onThemeChanged();
 
   protected:
-    FluScrollDelegate *m_delegate;
+    FluScrollDelegate* m_delegate;
     FluTextEditWrap* m_wrap;
     bool m_bAutoAdjustSize;
 };

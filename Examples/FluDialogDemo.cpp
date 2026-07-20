@@ -57,7 +57,6 @@ FluDialogDemo::FluDialogDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
             dlg.getContentWidgetLayout()->addLayout(hLayout);
         }
 
-        
         {
             auto hLayout = new QHBoxLayout;
             auto label = new FluLabel(FluLabelStyle::BodyTextBlockStyle);
@@ -71,10 +70,7 @@ FluDialogDemo::FluDialogDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
             dlg.getContentWidgetLayout()->addLayout(hLayout);
         }
 
-
-
-        //dlg.getContentWidgetLayout()->addWidget(comboxBox);
+        // dlg.getContentWidgetLayout()->addWidget(comboxBox);
         dlg.exec();
     });
-
 }

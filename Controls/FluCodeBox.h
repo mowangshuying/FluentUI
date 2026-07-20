@@ -28,7 +28,7 @@ class FluCodeBox : public QTextEdit
     void resizeEvent(QResizeEvent*);
 
     // bool eventFilter(QObject* object, QEvent *event);
-    
+
   protected:
     void setHtmlWithSyntaxHighlighting(const QString& html);
 

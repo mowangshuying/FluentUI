@@ -26,7 +26,7 @@ FluWidget::FluWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
     });
 }
 
-  void FluWidget::paintEvent(QPaintEvent* event)
+void FluWidget::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
     opt.initFrom(this);

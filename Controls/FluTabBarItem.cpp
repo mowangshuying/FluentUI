@@ -38,9 +38,7 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
     connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { 
-        onThemeChanged();
-    });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluTabBarItem::setSelected(bool bSel)
@@ -71,7 +69,7 @@ void FluTabBarItem::setText(QString text)
 QString FluTabBarItem::getText()
 {
     return m_textBtn->text();
-    //adjustWidgetSize();
+    // adjustWidgetSize();
 }
 
 int FluTabBarItem::getWidgetWidth()
@@ -79,7 +77,7 @@ int FluTabBarItem::getWidgetWidth()
     QFontMetrics metrics(m_textBtn->font());
     QRect textRect = metrics.boundingRect(m_textBtn->text());
     int textWidth = textRect.width();
-    //m_textBtn->setFixedWidth(textWidth);
+    // m_textBtn->setFixedWidth(textWidth);
 
     // adjust the whole widget width
     int totalWidth = m_iconBtn->width() + textWidth + m_closeBtn->width() + m_hMainLayout->spacing() * 2 + 5;
@@ -122,7 +120,7 @@ void FluTabBarItem::paintEvent(QPaintEvent* event)
     QStyleOption opt;
     opt.initFrom(this);
     QPainter painter(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this); 
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 void FluTabBarItem::onThemeChanged()

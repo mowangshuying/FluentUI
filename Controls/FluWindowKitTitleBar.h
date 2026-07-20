@@ -75,7 +75,7 @@ class FluWindowKitTitleBar : public QFrame
 
     QPushButton* takeIconButton();
 
-    QPushButton* takeThemeButton(); 
+    QPushButton* takeThemeButton();
     QPushButton* takePinButton();
 
     QPushButton* takeMinButton();

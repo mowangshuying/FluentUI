@@ -24,7 +24,6 @@ class FluDatePickerView : public FluWidget
 
     FluDatePickerView(bool bYMD, QWidget* parent = nullptr);
 
-
     void setMaskBackgroundColorEx(QColor color)
     {
         m_mask->setBackgroundColorEx(color);

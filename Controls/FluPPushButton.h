@@ -37,6 +37,7 @@ class FluPPushButton : public QPushButton
     bool eventFilter(QObject* watched, QEvent* event) override;
   public slots:
     void onThemeChanged();
+
   protected:
     QColor m_backgroundColor;
     QColor m_borderColor;

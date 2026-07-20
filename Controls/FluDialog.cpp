@@ -25,8 +25,8 @@ FluDialog::FluDialog(QWidget* parent) : QDialog(parent)
     m_vContentWidgetLayout->setContentsMargins(24, 35, 24, 0);
     m_contentWidget->setLayout(m_vContentWidgetLayout);
 
-    //m_titleLabel = new QLabel;
-    //m_infoLabel = new QLabel;
+    // m_titleLabel = new QLabel;
+    // m_infoLabel = new QLabel;
 
     m_okBtn = new FluStyleButton;
     m_cancelBtn = new FluPushButton;
@@ -34,17 +34,17 @@ FluDialog::FluDialog(QWidget* parent) : QDialog(parent)
     m_okBtn->setText(tr("OK"));
     m_cancelBtn->setText(tr("Cancel"));
 
-    //m_titleLabel->setText(title);
-    //m_infoLabel->setText(info);
+    // m_titleLabel->setText(title);
+    // m_infoLabel->setText(info);
 
-    //m_titleLabel->setWordWrap(true);
-    //m_infoLabel->setWordWrap(true);
+    // m_titleLabel->setWordWrap(true);
+    // m_infoLabel->setWordWrap(true);
 
     m_okBtn->setFixedWidth(130);
     m_cancelBtn->setFixedWidth(130);
 
-    //m_titleLabel->setObjectName("titleLabel");
-    //m_infoLabel->setObjectName("infoLabel");
+    // m_titleLabel->setObjectName("titleLabel");
+    // m_infoLabel->setObjectName("infoLabel");
 
     // m_titleLabel->setText("This is a Title");
     // m_infoLabel->setText("This is a Content.");
@@ -55,8 +55,8 @@ FluDialog::FluDialog(QWidget* parent) : QDialog(parent)
     // m_vWidgetLayout->addWidget(m_infoLabel, 1);
 
     m_vWidgetLayout->addWidget(m_contentWidget, 1);
-    //m_vContentWidgetLayout->addWidget(m_titleLabel);
-    //m_vContentWidgetLayout->addWidget(m_infoLabel, 1);
+    // m_vContentWidgetLayout->addWidget(m_titleLabel);
+    // m_vContentWidgetLayout->addWidget(m_infoLabel, 1);
 
     // m_vWidgetLayout->addStretch();
     m_btnWidget = new QWidget;
@@ -90,25 +90,25 @@ FluDialog::FluDialog(QWidget* parent) : QDialog(parent)
     m_parentWidget->installEventFilter(this);
 }
 
-//QString FluDialog::getTitle()
+// QString FluDialog::getTitle()
 //{
-//    return m_titleLabel->text();
-//}
+//     return m_titleLabel->text();
+// }
 //
-//void FluDialog::setTitle(QString title)
+// void FluDialog::setTitle(QString title)
 //{
-//    m_titleLabel->setText(title);
-//}
+//     m_titleLabel->setText(title);
+// }
 //
-//QString FluDialog::getInfo()
+// QString FluDialog::getInfo()
 //{
-//    return m_infoLabel->text();
-//}
+//     return m_infoLabel->text();
+// }
 //
-//void FluDialog::setInfo(QString info)
+// void FluDialog::setInfo(QString info)
 //{
-//    m_infoLabel->setText(info);
-//}
+//     m_infoLabel->setText(info);
+// }
 
 void FluDialog::showEvent(QShowEvent* event)
 {
@@ -145,15 +145,15 @@ bool FluDialog::eventFilter(QObject* obj, QEvent* event)
     return QDialog::eventFilter(obj, event);
 }
 
-//void FluDialog::onTitleChanged(QString title)
+// void FluDialog::onTitleChanged(QString title)
 //{
-//    setTitle(title);
-//}
+//     setTitle(title);
+// }
 
-//void FluDialog::onInfoChanged(QString info)
+// void FluDialog::onInfoChanged(QString info)
 //{
-//    setInfo(info);
-//}
+//     setInfo(info);
+// }
 
 void FluDialog::onThemeChanged()
 {

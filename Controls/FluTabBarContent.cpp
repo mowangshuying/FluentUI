@@ -22,7 +22,7 @@ FluTabBarContent::FluTabBarContent(QWidget* parent /*= nullptr*/) : QScrollArea(
     m_hMidLayout->setSpacing(0);
 
     m_hMidLayout->setAlignment(Qt::AlignLeft);
-    //m_hMidLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
+    // m_hMidLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
     m_hMainLayout->addLayout(m_hMidLayout);
     m_hMainLayout->addStretch();
 
@@ -105,12 +105,11 @@ void FluTabBarContent::removeTabBarItem(FluTabBarItem* item)
     //}*/
 
     /// calc tabbar item size
-    //int nTotalWidth = 0;
-    //for (auto iter = m_tabBarItems.begin(); iter != m_tabBarItems.end(); iter++)
+    // int nTotalWidth = 0;
+    // for (auto iter = m_tabBarItems.begin(); iter != m_tabBarItems.end(); iter++)
     //{
-    //    nTotalWidth += (*iter)->width();
-    //}
-    
+    //     nTotalWidth += (*iter)->width();
+    // }
 }
 
 int FluTabBarContent::getSelectedTabBarItemIndex()

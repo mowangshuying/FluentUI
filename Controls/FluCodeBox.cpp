@@ -14,7 +14,7 @@ FluCodeBox::FluCodeBox(QWidget* parent /*= nullptr*/) : QTextEdit(parent), m_syn
     setFocusPolicy(Qt::FocusPolicy::NoFocus);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    
+
     // set high light.
     m_syntaxHighlighter = new FluCodeSyntaxHighlighter(document());
     onThemeChanged();

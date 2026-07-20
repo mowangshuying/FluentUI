@@ -1,6 +1,6 @@
 ﻿#include "FluWindowKitWindow.h"
 
-//#include "FluWindowKitWidget.h"
+// #include "FluWindowKitWidget.h"
 #include <QWKWidgets/widgetwindowagent.h>
 
 #include <QLabel>
@@ -24,7 +24,7 @@ FluWindowKitWindow::FluWindowKitWindow(QWidget* parent) : QMainWindow(parent)
     // agent->setWindowAttribute("dwm-blur", true);
 
     m_menuBar = new FluMenuBar;
-    //m_menuBar->setMinimumWidth(0);
+    // m_menuBar->setMinimumWidth(0);
 
     m_titleLabel = new FluLabel;
     m_titleLabel->setAlignment(Qt::AlignCenter);
@@ -85,17 +85,17 @@ FluWindowKitWindow::FluWindowKitWindow(QWidget* parent) : QMainWindow(parent)
     agent->setTitleBar(m_titleBar);
 
     //// contentLayout;
-    //m_contentLayout = new QHBoxLayout;
-    //m_contentLayout->setContentsMargins(0, 0, 0, 0);
-    //m_contentLayout->setSpacing(0);
+    // m_contentLayout = new QHBoxLayout;
+    // m_contentLayout->setContentsMargins(0, 0, 0, 0);
+    // m_contentLayout->setSpacing(0);
 
     //// mainLayout;
-    //m_vMainLayout = new QVBoxLayout(this);
-    //m_vMainLayout->setSpacing(0);
-    //m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    //m_vMainLayout->addWidget(m_titleBar, 0, Qt::AlignTop);
-    //m_vMainLayout->addLayout(m_contentLayout, 1);
-    //setLayout(m_vMainLayout);
+    // m_vMainLayout = new QVBoxLayout(this);
+    // m_vMainLayout->setSpacing(0);
+    // m_vMainLayout->setContentsMargins(0, 0, 0, 0);
+    // m_vMainLayout->addWidget(m_titleBar, 0, Qt::AlignTop);
+    // m_vMainLayout->addLayout(m_contentLayout, 1);
+    // setLayout(m_vMainLayout);
 
 #ifndef Q_OS_MAC
     agent->setHitTestVisible(m_menuBar, true);

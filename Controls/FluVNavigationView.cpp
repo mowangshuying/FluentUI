@@ -104,20 +104,20 @@ void FluVNavigationView::setOnlyCollapseView(bool bHideMenuAndSearch)
     {
         showMenuItem();
         showSearchItem();
-       /* m_searchItem->hideSearchEdit();*/
+        /* m_searchItem->hideSearchEdit();*/
     }
 
     collapseDownView();
     /*collapseView();*/
-    //setViewWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    // setViewWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
     /*setFixedWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());*/
     m_bLong = false;
     collapseView();
     setFixedWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
-    //if (!bHideMenuAndSearch)
+    // if (!bHideMenuAndSearch)
     //{
-        //m_searchItem->setFixedWidth(m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right()));
-        //m_searchItem->hideSearchEdit();
+    // m_searchItem->setFixedWidth(m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right()));
+    // m_searchItem->hideSearchEdit();
     //}
 }
 

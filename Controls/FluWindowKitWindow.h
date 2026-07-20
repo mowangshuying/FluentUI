@@ -8,17 +8,17 @@
 #include <QScreen>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-//#include <QWKWidgets/widgetwindowagent.h>
+// #include <QWKWidgets/widgetwindowagent.h>
 #include "FluWindowKitTitleBar.h"
 #include "FluLabel.h"
 #include "FluWindowkitButton.h"
 #include "FluThemeButton.h"
 #include <QMainWindow>
 #include "FluMenuBar.h"
-//#include <QWKWidgets/widgetwindowagent.h>
-//#include "QWKWidgets/widgetwindowagent.h"
+// #include <QWKWidgets/widgetwindowagent.h>
+// #include "QWKWidgets/widgetwindowagent.h"
 
-//class QWK::WidgetWindowAgent;
+// class QWK::WidgetWindowAgent;
 class FluWindowKitWindow : public QMainWindow
 {
     Q_OBJECT
@@ -30,7 +30,7 @@ class FluWindowKitWindow : public QMainWindow
     void onThemeChanged();
 
   protected:
-    //QWK::WidgetWindowAgent *agent;
+    // QWK::WidgetWindowAgent *agent;
     FluWindowKitTitleBar *m_titleBar;
 
     FluMenuBar *m_menuBar;
@@ -42,6 +42,6 @@ class FluWindowKitWindow : public QMainWindow
     FluWindowkitButton *m_minButton;
     FluWindowkitButton *m_maxButton;
     FluWindowkitButton *m_closeButton;
-    //QVBoxLayout *m_vMainLayout;
-    //QHBoxLayout *m_contentLayout;
+    // QVBoxLayout *m_vMainLayout;
+    // QHBoxLayout *m_contentLayout;
 };

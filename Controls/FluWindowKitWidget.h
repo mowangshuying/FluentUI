@@ -28,7 +28,6 @@ class FluWindowKitWidget : public QWidget
     FluLabel *m_titleLabel;
     FluWindowkitButton *m_iconButton;
 
-
     FluThemeButton *m_themeButton;
     FluWindowkitButton *m_pinButton;
     FluWindowkitButton *m_minButton;

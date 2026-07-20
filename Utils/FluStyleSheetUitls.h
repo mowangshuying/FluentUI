@@ -56,8 +56,7 @@ class FluStyleSheetUitls : public QObject
 
     static void drawBottomLineIndicator(QWidget *widget, QPainter *painter);
 
-    static void drawShadowEffect(QWidget* widget,  int blurRadius, QPoint offset, QColor color);
-
+    static void drawShadowEffect(QWidget *widget, int blurRadius, QPoint offset, QColor color);
 
     static void doForQrcQssText(QString &data);
 

@@ -9,17 +9,14 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scr
     m_scrollBarHandle = new FluScrollBarHandle(orientation, this);
     m_timer = new QTimer(this);
 
-    //m_nValue = 0;
+    // m_nValue = 0;
     m_valueAnimation = new QPropertyAnimation(this, "value");
-    //m_valueAnimation->setDuration(300);
-
+    // m_valueAnimation->setDuration(300);
 
     m_scrollBar = getOriginalScrollBar();
     hideOriginalScrollBar();
     adjustScrollBarPosAndSize(m_scrollArea->size());
     setRangeValue(0, 0);
-
-    
 
     m_scrollArea->installEventFilter(this);
     connect(m_scrollBarTrunk->getPreBtn(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageUp);
@@ -98,9 +95,9 @@ void FluScrollBar::setCurrrentValue(int nValue)
     else if (nValue > m_nMaxValue)
         nValue = m_nMaxValue;
 
-    //m_nCurrentValue = nValue;
-    //adjustHandlePos();
-    //emit currentValueChanged(m_nCurrentValue);
+    // m_nCurrentValue = nValue;
+    // adjustHandlePos();
+    // emit currentValueChanged(m_nCurrentValue);
     m_valueAnimation->setStartValue(m_nCurrentValue);
     m_valueAnimation->setEndValue(nValue);
     m_valueAnimation->setEasingCurve(QEasingCurve::InSine);
@@ -110,7 +107,7 @@ void FluScrollBar::setCurrrentValue(int nValue)
 
 void FluScrollBar::scrollCurrentValue(int nValue)
 {
-    //m_nCurrentValue += nValue;
+    // m_nCurrentValue += nValue;
     int nTmpValue = m_nCurrentValue + nValue;
     setCurrrentValue(nTmpValue);
 }
@@ -126,9 +123,8 @@ void FluScrollBar::setValue(int nValue)
     m_nValue = nValue;
     m_nCurrentValue = nValue;
     adjustHandlePos();
-    emit currentValueChanged(nValue); 
+    emit currentValueChanged(nValue);
 }
-
 
 int FluScrollBar::getPadding()
 {
@@ -403,10 +399,10 @@ void FluScrollBar::OnPageDown()
     setCurrrentValue(getCurrentValue() + getPageStep());
 }
 
-//void FluScrollBar::onCurrentValueChanged(int nValue)
+// void FluScrollBar::onCurrentValueChanged(int nValue)
 //{
-//    setCurrrentValue(nValue);
-//}
+//     setCurrrentValue(nValue);
+// }
 
 void FluScrollBar::expand()
 {

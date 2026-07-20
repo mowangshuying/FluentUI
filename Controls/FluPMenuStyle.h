@@ -6,7 +6,7 @@
 class FluPMenuStyle : public QProxyStyle
 {
     Q_OBJECT
-public:
+  public:
     FluPMenuStyle(QStyle* baseStyle = nullptr);
 
     QColor getMenuBackgroundColor() const
@@ -14,7 +14,7 @@ public:
         return m_menuBackgroundColor;
     }
 
-    void setMenuBackgroundColor(const QColor &color)
+    void setMenuBackgroundColor(const QColor& color)
     {
         m_menuBackgroundColor = color;
     }
@@ -24,18 +24,17 @@ public:
         return m_menuBoderColor;
     }
 
-    void setMenuBoderColor(const QColor &color)
+    void setMenuBoderColor(const QColor& color)
     {
         m_menuBoderColor = color;
     }
-
 
     QColor getMenuItemNormalBackgroundColor() const
     {
         return m_menuItemNormalBackgroundColor;
     }
 
-    void setMenuItemNormalBackgroundColor(const QColor &color)
+    void setMenuItemNormalBackgroundColor(const QColor& color)
     {
         m_menuItemNormalBackgroundColor = color;
     }
@@ -45,7 +44,7 @@ public:
         return m_menuItemSelectedBackgroundColor;
     }
 
-    void setMenuItemSelectedBackgroundColor(const QColor &color)
+    void setMenuItemSelectedBackgroundColor(const QColor& color)
     {
         m_menuItemSelectedBackgroundColor = color;
     }
@@ -55,7 +54,7 @@ public:
         return m_menuItemDisabledBackgroundColor;
     }
 
-    void setMenuItemDisabledBackgroundColor(const QColor &color)
+    void setMenuItemDisabledBackgroundColor(const QColor& color)
     {
         m_menuItemDisabledBackgroundColor = color;
     }
@@ -65,7 +64,7 @@ public:
         return m_menuItemForegroundColor;
     }
 
-    void setMenuItemForegroundColor(const QColor &color)
+    void setMenuItemForegroundColor(const QColor& color)
     {
         m_menuItemForegroundColor = color;
     }
@@ -105,7 +104,7 @@ public:
     int pixelMetric(PixelMetric metric, const QStyleOption* option = nullptr, const QWidget* widget = nullptr) const override;
     QSize sizeFromContents(ContentsType type, const QStyleOption* option, const QSize& size, const QWidget* widget) const override;
 
-protected:
+  protected:
     QColor m_menuBackgroundColor = QColor(243, 243, 243);
     QColor m_menuBoderColor = QColor(200, 200, 200);
 

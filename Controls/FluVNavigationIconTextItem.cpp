@@ -147,9 +147,9 @@ void FluVNavigationIconTextItem::setItemWidth(int nWidth)
     // set child item width
     for (auto item : m_items)
     {
-        //item->getWrapWidget1()->setFixedWidth(nWidth);
-        //item->getWrapWidget2()->setFixedWidth(nWidth);
-        //item->setFixedWidth(nWidth);
+        // item->getWrapWidget1()->setFixedWidth(nWidth);
+        // item->getWrapWidget2()->setFixedWidth(nWidth);
+        // item->setFixedWidth(nWidth);
         item->setItemWidth(nWidth);
     }
 

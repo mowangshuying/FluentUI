@@ -4,6 +4,6 @@
 
 class FluTranslatorUtils
 {
-public:
+  public:
     static void installTranslator(QApplication *app, QString lang);
 };

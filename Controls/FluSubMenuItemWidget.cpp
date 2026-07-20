@@ -23,7 +23,7 @@ void FluSubMenuItemWidget::paintEvent(QPaintEvent* event)
 
     int nW = m_menu->getView()->iconSize().width();
     int nH = m_menu->getView()->iconSize().height();
-    painter.drawPixmap(QRect(width() - nW , height() / 2 - nH / 2, nW, nH), FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronRight, FluThemeUtils::getUtils()->getTheme()));
+    painter.drawPixmap(QRect(width() - nW, height() / 2 - nH / 2, nW, nH), FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronRight, FluThemeUtils::getUtils()->getTheme()));
 }
 
 QListWidgetItem* FluSubMenuItemWidget::getItem()

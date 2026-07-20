@@ -44,13 +44,11 @@ class FluDialog : public QDialog
 
     bool eventFilter(QObject* obj, QEvent* event);
 
-
-
   public slots:
     void onThemeChanged();
 
-    //void onTitleChanged(QString title);
-    //void onInfoChanged(QString info);
+    // void onTitleChanged(QString title);
+    // void onInfoChanged(QString info);
 
   protected:
     QWidget* m_parentWidget;
@@ -63,8 +61,8 @@ class FluDialog : public QDialog
 
     QWidget* m_contentWidget;
     QVBoxLayout* m_vContentWidgetLayout;
-    //QLabel* m_titleLabel;
-    //QLabel* m_infoLabel;
+    // QLabel* m_titleLabel;
+    // QLabel* m_infoLabel;
 
     QWidget* m_btnWidget;
     QHBoxLayout* m_hBtnLayout;

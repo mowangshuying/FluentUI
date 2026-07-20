@@ -9,11 +9,11 @@ FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
         tabBar->addBarItem(tabBarItem);
     }
 
-   // m_vMainLayout = new QVBoxLayout;
-    //setLayout(m_vMainLayout);
+    // m_vMainLayout = new QVBoxLayout;
+    // setLayout(m_vMainLayout);
 
-    //m_vMainLayout->addWidget(tabBar);
-    //m_vMainLayout->addStretch(1);
+    // m_vMainLayout->addWidget(tabBar);
+    // m_vMainLayout->addStretch(1);
 
     connect(tabBar, &FluTabBar::addTabBtnClicked, [=]() {
         auto tmpTabBarItem = new FluTabBarItem;
@@ -22,7 +22,7 @@ FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
         tabBar->addBarItem(tmpTabBarItem);
     });
 
-    //m_contentLayout->addWidget(tabBar);
+    // m_contentLayout->addWidget(tabBar);
 
     auto vLayout = new QVBoxLayout;
     vLayout->addWidget(tabBar);

@@ -4,28 +4,27 @@
 #include <QTextCharFormat>
 #include <QRegularExpression>
 
-
 class FluCodeSyntaxHighlighter : public QSyntaxHighlighter
 {
     Q_OBJECT
 
-
-public:
+  public:
     explicit FluCodeSyntaxHighlighter(QTextDocument *parent = nullptr);
 
-protected:
+  protected:
     void highlightBlock(const QString &text) override;
 
-private:
+  private:
     class HighlightingRule
     {
       public:
-          HighlightingRule(QRegularExpression p, QTextCharFormat f)
-          {
-              pattern = p;
-              format = f;
-          }
-     public:
+        HighlightingRule(QRegularExpression p, QTextCharFormat f)
+        {
+            pattern = p;
+            format = f;
+        }
+
+      public:
         QRegularExpression pattern;
         QTextCharFormat format;
     };
@@ -38,7 +37,7 @@ private:
     QTextCharFormat quotationFormat;
     QTextCharFormat functionFormat;
     QTextCharFormat numberFormat;
-    
+
     QRegularExpression commentStartExpression;
     QRegularExpression commentEndExpression;
 };

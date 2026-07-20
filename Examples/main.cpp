@@ -195,8 +195,8 @@ int main(int argc, char **argv)
     // FluSpinBoxDemo demo;
     // demo.show();
 
-     //FluMenuBarDemo demo;
-     //demo.show();
+    // FluMenuBarDemo demo;
+    // demo.show();
 
     // FluInfoBarDemo demo;
     // demo.show();
@@ -219,8 +219,8 @@ int main(int argc, char **argv)
     // FluLoopViewDemo demo;
     // demo.show();
 
-     //FluTimePickerDemo demo;
-     //demo.show();
+    // FluTimePickerDemo demo;
+    // demo.show();
 
     //  FluTabBarDemo demo;
     //  demo.show();
@@ -318,8 +318,8 @@ int main(int argc, char **argv)
     // FluSplitterDemo demo;
     // demo.show();
 
-     //FluRoundMenuDemo demo;
-     //demo.show();
+    // FluRoundMenuDemo demo;
+    // demo.show();
 
     // FluShortcutPickerDemo demo;
     // demo.show();
@@ -351,8 +351,8 @@ int main(int argc, char **argv)
     // FluQrCodeDemo demo;
     // demo.show();
 
-     //FluCommandBarDemo demo;
-     //demo.show();
+    // FluCommandBarDemo demo;
+    // demo.show();
 
     // FluTabBarDemo demo;
     // demo.show();
@@ -390,11 +390,11 @@ int main(int argc, char **argv)
     // FluMVDemo demo;
     // demo.show();
 
-     //FluDockDemo demo;
-     //demo.show();
+    // FluDockDemo demo;
+    // demo.show();
 
-    //FluScintillaDemo demo;
-    //demo.show();
+    // FluScintillaDemo demo;
+    // demo.show();
 
     // FluMainWidgetDemo demo;
     // demo.show();
@@ -402,19 +402,19 @@ int main(int argc, char **argv)
     // FluAnimationDemo demo;
     // demo.show();
 
-     //FluWindowKitWidget demo;
-     //demo.show();
+    // FluWindowKitWidget demo;
+    // demo.show();
 
-     //FluADSDemo adsDemo;
-     //adsDemo.show();
+    // FluADSDemo adsDemo;
+    // adsDemo.show();
 
-     //FluWindowKitWindow window;
-    //window.show();
-    //FluDialogDemo demo;
-    //demo.show();
+    // FluWindowKitWindow window;
+    // window.show();
+    // FluDialogDemo demo;
+    // demo.show();
 
-    //FluButtonDemo demo;
-    //demo.show();
+    // FluButtonDemo demo;
+    // demo.show();
 
     FluMenuBarDemo demo;
     demo.show();

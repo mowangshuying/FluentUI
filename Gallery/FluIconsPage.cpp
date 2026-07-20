@@ -1,4 +1,6 @@
 ﻿#include "FluIconsPage.h"
+#include "../Controls/FluPMenu.h"
+#include "../Controls/FluAction.h"
 
 FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -118,7 +120,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
         wrapWidget1->getMainLayout()->addWidget(displayIconBox);
         m_iconBoxMap[(FluAwesomeType)metaEnum.value(i)] = displayIconBox;
 
-        connect(displayIconBox, &FluDisplayIconBox::clicked, [=]() {
+        connect(displayIconBox, &FluDisplayIconBox::clicked, this, [=]() {
             if (m_sDisplayIconBox != nullptr)
             {
                 m_sDisplayIconBox->setSelected(false);
@@ -138,6 +140,20 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
             // awesomeTypeValueLabel->setText("FluAwesomeType::" + EnumTypeToQString(displayIconBox->getAwesomeType()));
             awesomeTypeKeyLabel->setText("");
             awesomeTypeValueLabel->setText("");
+        });
+
+        displayIconBox->setContextMenuPolicy(Qt::CustomContextMenu);
+        connect(displayIconBox, &FluDisplayIconBox::customContextMenuRequested, this, [=](const QPoint& pos) { 
+            FluPMenu* pMenu = new FluPMenu;
+            auto saveIconAction = new FluAction(tr("Save Icon"));
+            pMenu->addAction(saveIconAction);
+
+            QString outputFilePath = QString("./output/%1.png").arg(EnumTypeToQString(displayIconBox->getAwesomeType()));
+            connect(saveIconAction, &FluAction::triggered, this, [=](bool bChecked) { 
+                FluIconUtils::saveFluentPng(displayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme(), outputFilePath); 
+            });
+
+            pMenu->exec(displayIconBox->mapToGlobal(pos));
         });
     }
 

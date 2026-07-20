@@ -15,13 +15,13 @@
 
 class FluADSDemo : public FluWindowKitWindow
 {
-	Q_OBJECT
-public:
-	FluADSDemo(QWidget* parent = nullptr);
-//public slots:
-//    void onThemeChanged();
+    Q_OBJECT
+  public:
+    FluADSDemo(QWidget* parent = nullptr);
+    // public slots:
+    //     void onThemeChanged();
 
-protected:
-    //ads::CDockManager* m_dockManager;
-  FluDockManager* m_dockMgr;
+  protected:
+    // ads::CDockManager* m_dockManager;
+    FluDockManager* m_dockMgr;
 };

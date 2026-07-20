@@ -5,9 +5,9 @@
 
 class FluDialogDemo : public FluTemplateDemo
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-	FluDialogDemo(QWidget* parent = nullptr);
- // public slots:
-	//void onThemeChanged();
+    FluDialogDemo(QWidget* parent = nullptr);
+    // public slots:
+    // void onThemeChanged();
 };

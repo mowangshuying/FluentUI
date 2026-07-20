@@ -17,7 +17,7 @@ class FluPMenu : public QMenu
     Q_PROPERTY(int ppMenuItemSpacing READ getMenuItemSpacing WRITE setMenuItemSpacing)
     Q_PROPERTY(int ppMenuItemIconWH READ getMenuItemIconWH WRITE setMenuItemIconWH)
     Q_PROPERTY(int ppMenuItemHeight READ getMenuItemHeight WRITE setMenuItemHeight)
-public:
+  public:
     FluPMenu(QWidget *parent = nullptr);
 
     FluPMenu(const QString &title, QWidget *parent = nullptr);
@@ -102,7 +102,6 @@ public:
         m_style->setMenuItemIconWH(iconWH);
     }
 
-
     int getMenuItemHeight() const
     {
         return m_style->getMenuItemHeight();
@@ -113,16 +112,15 @@ public:
         m_style->setMenuItemHeight(height);
     }
 
-
-    QAction* addMenu(QMenu *menu)
+    QAction *addMenu(QMenu *menu)
     {
         return QMenu::addMenu(menu);
     }
 
-    QMenu* addMenu(const QString &title)
+    QMenu *addMenu(const QString &title)
     {
         // return QMenu::addMenu(title);
-        FluPMenu* menu = new FluPMenu(title, this);
+        FluPMenu *menu = new FluPMenu(title, this);
         QMenu::addAction(menu->menuAction());
         return menu;
     }
@@ -153,9 +151,9 @@ public:
         return false;
     }
 
-public slots:
+  public slots:
     void onThemeChanged();
 
-protected:
-    FluPMenuStyle* m_style = nullptr;
+  protected:
+    FluPMenuStyle *m_style = nullptr;
 };

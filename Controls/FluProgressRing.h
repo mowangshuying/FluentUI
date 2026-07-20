@@ -11,7 +11,7 @@ class FluProgressRing : public FluWidget
   public:
     FluProgressRing(QWidget* parent = nullptr);
 
-    ~FluProgressRing() 
+    ~FluProgressRing()
     {
         m_workingTimer->stop();
     }

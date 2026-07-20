@@ -143,15 +143,13 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
         });
 
         displayIconBox->setContextMenuPolicy(Qt::CustomContextMenu);
-        connect(displayIconBox, &FluDisplayIconBox::customContextMenuRequested, this, [=](const QPoint& pos) { 
+        connect(displayIconBox, &FluDisplayIconBox::customContextMenuRequested, this, [=](const QPoint& pos) {
             FluPMenu* pMenu = new FluPMenu;
             auto saveIconAction = new FluAction(tr("Save Icon"));
             pMenu->addAction(saveIconAction);
 
             QString outputFilePath = QString("./output/%1.png").arg(EnumTypeToQString(displayIconBox->getAwesomeType()));
-            connect(saveIconAction, &FluAction::triggered, this, [=](bool bChecked) { 
-                FluIconUtils::saveFluentPng(displayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme(), outputFilePath); 
-            });
+            connect(saveIconAction, &FluAction::triggered, this, [=](bool bChecked) { FluIconUtils::saveFluentPng(displayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme(), outputFilePath); });
 
             pMenu->exec(displayIconBox->mapToGlobal(pos));
         });

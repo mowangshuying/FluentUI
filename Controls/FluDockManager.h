@@ -7,10 +7,10 @@
 
 class FluDockManager : public ads::CDockManager
 {
-	Q_OBJECT
+    Q_OBJECT
   public:
-        FluDockManager(QWidget* parent = nullptr);
+    FluDockManager(QWidget* parent = nullptr);
 
   public slots:
-       void onThemeChanged();
+    void onThemeChanged();
 };

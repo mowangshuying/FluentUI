@@ -44,13 +44,13 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
             QRect menuItemRect = menuItem->rect;
 
             /// background;
-            menuItemRect =  menuItemRect.adjusted(m_nMenuItemSpacing, m_nMenuItemSpacing, -m_nMenuItemSpacing, -m_nMenuItemSpacing);
+            menuItemRect = menuItemRect.adjusted(m_nMenuItemSpacing, m_nMenuItemSpacing, -m_nMenuItemSpacing, -m_nMenuItemSpacing);
             if (true)
             {
                 QColor backgroundColor = m_menuItemNormalBackgroundColor;
                 if (menuItem->state & QStyle::State_Enabled)
                 {
-                    if ( (menuItem->state & QStyle::State_MouseOver) || (menuItem->state & QStyle::State_Selected) )
+                    if ((menuItem->state & QStyle::State_MouseOver) || (menuItem->state & QStyle::State_Selected))
                     {
                         backgroundColor = m_menuItemSelectedBackgroundColor;
                     }
@@ -169,7 +169,8 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                 {
                     painter->save();
                     painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-                    painter->drawPixmap(menuItemRect.right() - (m_nMenuItemIconWH + m_nMenuItemSpacing), menuItemRect.y() + (menuItemRect.height() - m_nMenuItemIconWH) / 2,
+                    painter->drawPixmap(menuItemRect.right() - (m_nMenuItemIconWH + m_nMenuItemSpacing),
+                                        menuItemRect.y() + (menuItemRect.height() - m_nMenuItemIconWH) / 2,
                                         FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronRight, FluThemeUtils::getUtils()->getTheme(), m_nMenuItemIconWH, m_nMenuItemIconWH));
                     painter->restore();
                 }
@@ -194,14 +195,14 @@ QSize FluPMenuStyle::sizeFromContents(ContentsType type, const QStyleOption* opt
         const QStyleOptionMenuItem* menuItemOption = qstyleoption_cast<const QStyleOptionMenuItem*>(option);
         if (menuItemOption != nullptr && menuItemOption->menuItemType != QStyleOptionMenuItem::Separator)
         {
-            QSize contentsSize =  QProxyStyle::sizeFromContents(type, menuItemOption, size, widget);
-            
+            QSize contentsSize = QProxyStyle::sizeFromContents(type, menuItemOption, size, widget);
+
             const FluPMenu* menu = qobject_cast<const FluPMenu*>(widget);
             if (menu != nullptr && (menu->hasChildIcon() || menuItemOption->menuHasCheckableItems))
             {
                 m_hasIcon = true;
             }
-            
+
             contentsSize.setHeight(m_nMenuItemHeight);
 
             if (menu != nullptr && menu->hasChildMenu())

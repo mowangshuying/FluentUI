@@ -138,7 +138,7 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     // style()->polish(this);
 #endif
     setAttribute(Qt::WA_ContentsMarginsRespectsSafeArea);
-    //setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
+    // setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
 }
 
 void FluWindowKitWidget::emulateLeaveEvent(QWidget *widget)

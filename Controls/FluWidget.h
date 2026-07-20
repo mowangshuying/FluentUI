@@ -13,7 +13,6 @@ class FluWidget : public QWidget
     {
     }
 
-
     void paintEvent(QPaintEvent* event);
     void showEvent(QShowEvent* event);
   public slots:

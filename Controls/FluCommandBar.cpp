@@ -9,9 +9,7 @@ FluCommandBar::FluCommandBar(QWidget* parent) : QFrame(parent)
     m_moreItem = new FluCommandBarIconItem(FluAwesomeType::More, this);
     m_moreItem->hide();
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) {
-        onThemeChanged();
-        });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluCommandBar::setSpacing(int nSpacing)

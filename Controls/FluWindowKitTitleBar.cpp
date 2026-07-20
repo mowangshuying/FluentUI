@@ -25,11 +25,11 @@ void FluWindowKitTitleBar::init()
 
 void FluWindowKitTitleBar::insertDefaultSpace(int nIndex)
 {
-    //if (nIndex == FluWKTitleBarItem::MenuWidget)
+    // if (nIndex == FluWKTitleBarItem::MenuWidget)
     //{
-    //    m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0, QSizePolicy::Maximum));
-    //    return;
-    //}
+    //     m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0, QSizePolicy::Maximum));
+    //     return;
+    // }
     m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0));
 }
 

@@ -10,8 +10,9 @@ class FluScintilla : public QsciScintilla
     Q_OBJECT
   public:
     FluScintilla(QWidget* parent = nullptr);
-   public slots:
+  public slots:
     void onThemeChanged();
-   protected:
-       FluScrollDelegate* m_delegate;
+
+  protected:
+    FluScrollDelegate* m_delegate;
 };

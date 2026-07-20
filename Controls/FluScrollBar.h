@@ -107,7 +107,7 @@ class FluScrollBar : public FluWidget
 
     void OnPageDown();
 
-    //void onCurrentValueChanged(int nValue);
+    // void onCurrentValueChanged(int nValue);
 
     void expand();
 
@@ -129,11 +129,10 @@ class FluScrollBar : public FluWidget
     QTimer* m_timer;
     QPropertyAnimation* m_valueAnimation;
 
-
     int m_nMaxValue;
     int m_nMinValue;
     int m_nCurrentValue;
-    int m_nValue; // use for animation; update current value;
+    int m_nValue;  // use for animation; update current value;
 
     int m_nPadding;
 

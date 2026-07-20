@@ -85,10 +85,10 @@ void FluMenuBarDemo::ppMenuBar0()
 void FluMenuBarDemo::ppMenuBar1()
 {
     auto menuBar = new FluPMenuBar;
-    auto hLayout = (QHBoxLayout *)m_titleBar->layout();
+    auto hLayout = (QHBoxLayout*)m_titleBar->layout();
     hLayout->insertSpacing(0, 30);
     hLayout->insertWidget(1, menuBar, 1, Qt::AlignLeft | Qt::AlignTop);
-     FramelessWidgetsHelper::get(this)->setHitTestVisible(menuBar);
+    FramelessWidgetsHelper::get(this)->setHitTestVisible(menuBar);
 
     auto newFileAction = new FluAction("New");
     newFileAction->setShortcut(QKeySequence::New);
@@ -106,7 +106,7 @@ void FluMenuBarDemo::ppMenuBar1()
     auto openFileAction5 = new FluAction("OpenFile5");
     openFileAction5->setShortcut(QKeySequence::Open);
     openFileMenu->addAction(openFileAction5);
-    
+
     auto saveFileAction = new FluAction("Save");
     saveFileAction->setShortcut(QKeySequence::Save);
     saveFileAction->setAwesomeType(FluAwesomeType::Save);

@@ -7,10 +7,7 @@ FluPPushButton::FluPPushButton(QWidget* parent /*= nullptr*/) : QPushButton(pare
     installEventFilter(this);
     setFixedHeight(30);
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=]() 
-        { 
-            onThemeChanged();
-        });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=]() { onThemeChanged(); });
 }
 
 QColor FluPPushButton::getBackgroundColor()
@@ -39,7 +36,6 @@ QColor FluPPushButton::getBottomBorderColor()
 {
     return m_bottomBorderColor;
 }
-
 
 void FluPPushButton::setBottomBorderColor(QColor color)
 {

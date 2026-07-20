@@ -27,6 +27,16 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     connect(m_autoSuggestBox, &FluAutoSuggestBox::currentTextChanged, this, [=](QString text) { emit currentTextChanged(text); });
 }
 
+void FluVNavigationSearchItem::setItemWidth(int nWidth)
+{
+    setFixedWidth(nWidth);
+}
+
+void FluVNavigationSearchItem::setItemHeight(int nHeight)
+{
+    setFixedHeight(nHeight);
+}
+
 void FluVNavigationSearchItem::hideSearchButton()
 {
     m_searchButton->hide();
@@ -64,16 +74,7 @@ void FluVNavigationSearchItem::onItemClicked()
 
 void FluVNavigationSearchItem::onThemeChanged()
 {
-    if (FluThemeUtils::isLightTheme())
-    {
-        m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, QColor(8, 8, 8)));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluVNavigationSearchItem.qss", this);
-    }
-    else
-    {
-        m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, QColor(239, 239, 239)));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluVNavigationSearchItem.qss", this);
-    }
-
+    QIcon icon = FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme());
+    m_searchButton->setIcon(icon);
     FluStyleSheetUitls::setQssByFileName("FluVNavigationSearchItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

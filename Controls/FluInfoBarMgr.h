@@ -8,14 +8,6 @@
 
 class FluShortInfoBar;
 enum class FluShortInfoBarType;
-
-// class FluInfoBarList
-//{
-//   public:
-//     QWidget* parentWidget;
-//     std::list<FluShortInfoBar*> infoBarList;
-// };
-
 class FluInfoBarMgr : public QObject
 {
     Q_OBJECT
@@ -35,11 +27,6 @@ class FluInfoBarMgr : public QObject
     void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int nDisappearDuration = 800);
 
     void removeInfoBar(FluShortInfoBar* infoBar);
-
-    // void stopTimer()
-    // {
-    //     m_timer->stop();
-    //  }
 
     bool eventFilter(QObject* watched, QEvent* event);
 

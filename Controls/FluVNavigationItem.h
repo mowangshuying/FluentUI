@@ -60,6 +60,11 @@ class FluVNavigationItem : public FluWidget
         setFixedWidth(nWidth);
     }
 
+    virtual void setItemHeight(int nHeight)
+    {
+        setFixedHeight(nHeight);
+    }
+
     bool isLong();
 
     QString getKey();

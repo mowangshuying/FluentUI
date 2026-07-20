@@ -116,11 +116,11 @@ void FluShortInfoBar::disappear()
     if (m_nDisappearDuration > 0 && !m_bDisappearing)
     {
         m_bDisappearing = true;
-        QTimer::singleShot(m_nDisappearDuration, [=]() {
+        QTimer::singleShot(m_nDisappearDuration, this, [=]() {
             if (ptr == nullptr)
                 return;
 
-            m_opacityAni->setDuration(500);
+            m_opacityAni->setDuration(100);
             m_opacityAni->setStartValue(1);
             m_opacityAni->setEndValue(0);
             connect(m_opacityAni, &QPropertyAnimation::finished, [=]() { m_closeBtn->clicked(); });

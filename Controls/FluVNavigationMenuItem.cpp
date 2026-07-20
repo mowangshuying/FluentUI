@@ -44,6 +44,20 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
     onThemeChanged();
 }
 
+void FluVNavigationMenuItem::setItemWidth(int nWidth)
+{
+    setFixedWidth(nWidth);
+}
+
+void FluVNavigationMenuItem::setItemHeight(int nHeight)
+{
+    //setFixedHeight(nHeight);
+    int nItemHeight = nHeight - m_hLayout->contentsMargins().top() - m_hLayout->contentsMargins().bottom();
+    m_wrapWidget1->setFixedHeight(nItemHeight);
+    m_wrapWidget2->setFixedHeight(nItemHeight);
+    setFixedHeight(nHeight);
+}
+
 void FluVNavigationMenuItem::paintEvent(QPaintEvent *event)
 {
     QStyleOption opt;

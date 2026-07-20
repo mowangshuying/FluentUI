@@ -14,6 +14,12 @@ class FluVNavigationMenuItem : public FluVNavigationItem
   public:
     FluVNavigationMenuItem(QWidget *parent = nullptr);
 
+
+    void setItemWidth(int nWidth);
+
+    void setItemHeight(int nHeight);
+
+
     void paintEvent(QPaintEvent *event);
 
   signals:

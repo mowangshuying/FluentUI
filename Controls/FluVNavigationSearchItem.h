@@ -14,6 +14,10 @@ class FluVNavigationSearchItem : public FluVNavigationItem
   public:
     FluVNavigationSearchItem(QWidget* parent = nullptr);
 
+    void setItemWidth(int nWidth) override;
+    void setItemHeight(int nHeight) override;
+
+
     void hideSearchButton();
 
     void hideSearchEdit();

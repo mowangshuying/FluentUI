@@ -298,77 +298,77 @@
 <context>
     <name>FluDatePicker</name>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="17"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="16"/>
         <source>month</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="21"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="20"/>
         <source>day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="25"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="24"/>
         <source>year</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>January</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>February</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>March</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>April</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>May</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>June</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>July</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>August</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>September</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>October</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>November</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../Controls/FluDatePicker.cpp" line="65"/>
         <source>December</source>
         <translation type="unfinished"></translation>
     </message>
@@ -376,62 +376,62 @@
 <context>
     <name>FluDatePickerView</name>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>January</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>February</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>March</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>April</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>May</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>June</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>July</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>August</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>September</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>October</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>November</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../Controls/FluDatePickerView.cpp" line="41"/>
         <source>December</source>
         <translation type="unfinished"></translation>
     </message>
@@ -581,7 +581,7 @@
 <context>
     <name>FluVNavigationIconTextItem</name>
     <message>
-        <location filename="../Controls/FluVNavigationIconTextItem.cpp" line="465"/>
+        <location filename="../Controls/FluVNavigationIconTextItem.cpp" line="479"/>
         <source>3-level</source>
         <translation type="unfinished"></translation>
     </message>

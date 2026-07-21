@@ -119,7 +119,7 @@ int FluScrollBar::getValue()
 
 void FluScrollBar::setValue(int nValue)
 {
-    LOG_DEBUG << nValue;
+    // LOG_DEBUG << nValue;
     m_nValue = nValue;
     m_nCurrentValue = nValue;
     adjustHandlePos();

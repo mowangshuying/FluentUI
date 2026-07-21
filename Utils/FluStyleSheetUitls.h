@@ -8,6 +8,8 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
+#include <QMap>
+#include <QString>
 #include <map>
 #include <QWidget>
 #include <QTimer>
@@ -41,12 +43,6 @@ class FluStyleSheetUitls : public QObject
     // dir/theme/filename
     static void setQssByFileName(const QString &filename, QWidget *widget, FluTheme theme)
     {
-#ifdef _DEBUG
-        // log styleSheetDir;
-        // QString absolutePath = QDir(m_styleSheetDir).absolutePath();
-        // LOG_DEBUG << "styleSheetDir: " << absolutePath;
-#endif
-
         QString qssFileName = getUtils()->getStyleSheetDir() + FluThemeUtils::getThemeName() + "/" + filename;
         setQssByFileName(qssFileName, widget);
     }
@@ -62,9 +58,7 @@ class FluStyleSheetUitls : public QObject
 
     static FluStyleSheetUitls *getUtils();
 
-    // #ifdef _DEBUG_QSS
     static QTimer *getTimer();
-    // #endif
 
     static void __init();
 
@@ -74,12 +68,18 @@ class FluStyleSheetUitls : public QObject
 
     QString getStyleSheetDir();
 
+    static bool isBatching();
+    static void setBatching(bool on);
+    static void applyBatchedUpdates();
+    static void scheduleBatchUpdate(QWidget* widget, const QString& qss);
+
   protected:
     QString m_styleSheetDir;
-    // #ifdef _DEBUG_QSS
-    //   update stylesheet by timer
     QTimer *m_timer;
-    // #endif
+    bool m_batching;
+    QMap<QWidget*, QString> m_pendingUpdates;
+    QMap<QWidget*, QString> m_lastAppliedQss;
+    QTimer* m_batchTimer;
   private:
     static FluStyleSheetUitls *m_styleSheetUtils;
 };

@@ -21,11 +21,6 @@ class FluThemeButton : public QPushButton
         setAttribute(Qt::WA_Hover);
 
         connect(this, &FluThemeButton::clicked, this, [=]() {
-            // if (FluThemeUtils::isDarkTheme())
-            //{
-            //     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
-            // }
-
             if (FluThemeUtils::isLightTheme())
             {
                 FluThemeUtils::getUtils()->setTheme(FluTheme::Dark);

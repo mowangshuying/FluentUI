@@ -1,5 +1,8 @@
 ﻿#include "FluThemeUtils.h"
 #include "FluConfigUtils.h"
+#include "FluStyleSheetUitls.h"
+#include <QTimer>
+#include <QApplication>
 
 FluThemeUtils* FluThemeUtils::m_themeUtils = nullptr;
 FluThemeUtils::FluThemeUtils(QObject* object /*= nullptr*/) : QObject(object)
@@ -20,7 +23,13 @@ void FluThemeUtils::setTheme(FluTheme theme)
 {
     m_theme = theme;
     FluConfigUtils::getUtils()->setTheme(theme);
-    emit themeChanged(m_theme);
+
+    QTimer::singleShot(0, qApp, [this]() {
+        FluStyleSheetUitls::setBatching(true);
+        emit themeChanged(m_theme);
+        FluStyleSheetUitls::setBatching(false);
+        FluStyleSheetUitls::applyBatchedUpdates();
+    });
 }
 
 QString FluThemeUtils::getThemeName()

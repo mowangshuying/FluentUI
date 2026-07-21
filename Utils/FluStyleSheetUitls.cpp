@@ -1,15 +1,15 @@
 ﻿#include "FluStyleSheetUitls.h"
-// #include <QFileInfo>
-// #include <QDir>
-// #include <QGraphicsDropShadowEffect>
+#include <QApplication>
 
 FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
 FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
 {
-    // #ifdef _DEBUG_QSS
     m_timer = new QTimer;
     m_timer->start(5000);
-    // #endif
+    m_batching = false;
+    m_batchTimer = new QTimer(this);
+    m_batchTimer->setSingleShot(true);
+    connect(m_batchTimer, &QTimer::timeout, this, []() { applyBatchedUpdates(); });
     m_styleSheetDir = "../StyleSheet/";
 #ifdef USE_QRC
     m_styleSheetDir = ":/StyleSheet/";
@@ -32,7 +32,6 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
 void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
 {
     QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
-    // QString absolutePath = QDir("../").absolutePath();
 
 #ifdef USE_QRC
     doForQrcQssText(qss);
@@ -40,7 +39,7 @@ void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widg
 
     if (widget != nullptr)
     {
-        widget->setStyleSheet(qss);
+        scheduleBatchUpdate(widget, qss);
     }
 }
 
@@ -56,7 +55,7 @@ void FluStyleSheetUitls::setQssByFileName(const QString &jsonVar, const QString 
     QString qss = FluStyleSheetUitls::getQssByFileName(jsonVar, fileName);
     if (widget != nullptr)
     {
-        widget->setStyleSheet(qss);
+        scheduleBatchUpdate(widget, qss);
     }
 }
 
@@ -72,7 +71,7 @@ void FluStyleSheetUitls::setQssByFileName(const std::map<QString, QString> &kvMa
     QString qss = FluStyleSheetUitls::getQssByFileName(kvMap, fileName);
     if (widget != nullptr)
     {
-        widget->setStyleSheet(qss);
+        scheduleBatchUpdate(widget, qss);
     }
 }
 
@@ -87,7 +86,6 @@ void FluStyleSheetUitls::replaceVar(const QString &jsonVars, QString &styleSheet
         LOG_ERR << jsonError.errorString();
         return;
     }
-    //[{key:k1,value:v1},{key:k2,value:v2}]
     std::map<QString, QString> KVMap;
     QJsonArray jsonArray = jsonDoc.array();
     for (int i = 0; i < jsonArray.size(); i++)
@@ -122,8 +120,6 @@ void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *pain
 {
     painter->setPen(Qt::NoPen);
     painter->setRenderHints(QPainter::Antialiasing);
-    // if (!property("isFocused").toBool())
-    //     return;
 
     QMargins margins = widget->contentsMargins();
 
@@ -166,7 +162,6 @@ void FluStyleSheetUitls::drawShadowEffect(QWidget *widget, int blurRadius, QPoin
 
 void FluStyleSheetUitls::doForQrcQssText(QString &data)
 {
-    // inner do for qss text;
     data.replace("../res/", ":/res/");
 }
 
@@ -204,4 +199,71 @@ void FluStyleSheetUitls::setStyleSheetDir(QString styleSheetDir)
 QString FluStyleSheetUitls::getStyleSheetDir()
 {
     return m_styleSheetDir;
+}
+
+bool FluStyleSheetUitls::isBatching()
+{
+    return getUtils()->m_batching;
+}
+
+void FluStyleSheetUitls::setBatching(bool on)
+{
+    getUtils()->m_batching = on;
+}
+
+void FluStyleSheetUitls::scheduleBatchUpdate(QWidget *widget, const QString &qss)
+{
+    FluStyleSheetUitls *inst = getUtils();
+    if (!widget)
+        return;
+
+    if (inst->m_batching)
+    {
+        QMap<QWidget*, QString>::const_iterator it = inst->m_lastAppliedQss.constFind(widget);
+        if (it != inst->m_lastAppliedQss.constEnd() && it.value() == qss)
+            return;
+
+        inst->m_pendingUpdates[widget] = qss;
+    }
+    else
+    {
+        widget->setStyleSheet(qss);
+        inst->m_lastAppliedQss[widget] = qss;
+    }
+}
+
+void FluStyleSheetUitls::applyBatchedUpdates()
+{
+    FluStyleSheetUitls *inst = getUtils();
+    if (inst->m_pendingUpdates.isEmpty())
+        return;
+
+    QWidget *activeWindow = qApp->activeWindow();
+    if (activeWindow)
+        activeWindow->setUpdatesEnabled(false);
+
+    QMap<QWidget*, QString> updates = inst->m_pendingUpdates;
+    inst->m_pendingUpdates.clear();
+
+    for (auto it = updates.begin(); it != updates.end(); ++it)
+    {
+        QWidget *w = it.key();
+        if (!w)
+            continue;
+
+        if (!w->isVisible())
+        {
+            inst->m_lastAppliedQss[w] = it.value();
+            continue;
+        }
+
+        w->setStyleSheet(it.value());
+        inst->m_lastAppliedQss[w] = it.value();
+    }
+
+    if (activeWindow)
+    {
+        activeWindow->setUpdatesEnabled(true);
+        activeWindow->update();
+    }
 }

@@ -9,24 +9,24 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
     m_searchLabel = new QLabel;
     m_searchLabel->setObjectName("searchLabel");
     m_searchLabel->setText(tr("Fluent Emoij Library."));
-    m_vScrollView->getMainLayout()->addWidget(m_searchLabel);
+    m_scrollView->getMainLayout()->addWidget(m_searchLabel);
 
-    m_vScrollView->getMainLayout()->addSpacing(5);
+    m_scrollView->getMainLayout()->addSpacing(5);
 
     m_searchEdit = new FluSearchLineEdit;
     m_searchEdit->setFixedWidth(300);
-    m_vScrollView->getMainLayout()->addWidget(m_searchEdit);
+    m_scrollView->getMainLayout()->addWidget(m_searchEdit);
 
     auto wrapWidget = new QWidget;
     wrapWidget->setObjectName("wrapWidget");
 
     auto wrapLayout = new QHBoxLayout;
     wrapWidget->setLayout(wrapLayout);
-    m_vScrollView->getMainLayout()->addWidget(wrapWidget, 1);
+    m_scrollView->getMainLayout()->addWidget(wrapWidget, 1);
 
     auto wrapWidget1 = new FluFWScrollView;
     wrapWidget1->setObjectName("wrapWidget1");
-    // m_vScrollView->getMainLayout()->addWidget(wrapWidget1, 1);
+    // m_scrollView->getMainLayout()->addWidget(wrapWidget1, 1);
     wrapLayout->addWidget(wrapWidget1);
 
     auto wrapWidget2 = new QWidget;
@@ -66,7 +66,7 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
     wrapWidget2->setLayout(wrapWidget2Layout);
     wrapLayout->addWidget(wrapWidget2);
 
-    m_sDisplayIconBox = nullptr;
+    m_displayIconBox = nullptr;
 
     QMetaEnum metaEnum = QMetaEnum::fromType<FluEmoijType>();
     for (int i = 0; i < metaEnum.keyCount(); i++)
@@ -78,7 +78,7 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
         auto displayIconBox = new FluDisplayIconBox((FluEmoijType)metaEnum.value(i));
         if (i == 0)
         {
-            m_sDisplayIconBox = displayIconBox;
+            m_displayIconBox = displayIconBox;
         }
 
         // flowLayout->addWidget(displayIconBox);
@@ -86,13 +86,13 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
         m_iconBoxMap[(FluEmoijType)metaEnum.value(i)] = displayIconBox;
 
         connect(displayIconBox, &FluDisplayIconBox::clicked, [=]() {
-            if (m_sDisplayIconBox != nullptr)
+            if (m_displayIconBox != nullptr)
             {
-                m_sDisplayIconBox->setSelected(false);
-                m_sDisplayIconBox->style()->polish(m_sDisplayIconBox);
+                m_displayIconBox->setSelected(false);
+                m_displayIconBox->style()->polish(m_displayIconBox);
             }
 
-            m_sDisplayIconBox = displayIconBox;
+            m_displayIconBox = displayIconBox;
             displayIconBox->setSelected(true);
             displayIconBox->style()->polish(displayIconBox);
 
@@ -106,7 +106,7 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
         });
     }
 
-    connect(m_searchEdit, &FluSearchLineEdit::onSearchBtnClicked, [=]() {
+    connect(m_searchEdit, &FluSearchLineEdit::onSearchButtonClicked, [=]() {
         QString searchText = m_searchEdit->getText();
         for (auto itMap = m_iconBoxMap.begin(); itMap != m_iconBoxMap.end(); itMap++)
         {
@@ -122,8 +122,8 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
         }
     });
 
-    if (m_sDisplayIconBox != nullptr)
-        emit m_sDisplayIconBox->clicked();
+    if (m_displayIconBox != nullptr)
+        emit m_displayIconBox->clicked();
 
     onThemeChanged();
 }

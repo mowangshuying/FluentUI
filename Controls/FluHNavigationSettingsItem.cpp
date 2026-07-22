@@ -2,16 +2,16 @@
 
 FluHNavigationSettingsItem::FluHNavigationSettingsItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
 
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
 
     m_icon = new FluRotationButton(FluAwesomeType::Settings);
     m_icon->setFixedSize(40, 40);
     m_icon->setIconSize(QSize(24, 24));
     m_icon->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Settings));
-    m_hMainLayout->addWidget(m_icon);
+    m_mainLayout->addWidget(m_icon);
 
     onThemeChanged();
 }

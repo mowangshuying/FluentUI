@@ -20,9 +20,9 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_bodyWidget->setObjectName("bodyWidget");
     m_mainLayout->addWidget(m_bodyWidget, 1);
 
-    m_vBodyLayout = new QVBoxLayout;
-    m_bodyWidget->setLayout(m_vBodyLayout);
-    m_vBodyLayout->setAlignment(Qt::AlignTop);
+    m_bodyLayout = new QVBoxLayout;
+    m_bodyWidget->setLayout(m_bodyLayout);
+    m_bodyLayout->setAlignment(Qt::AlignTop);
 
     m_codeExpander = new FluCodeExpander;
     m_codeExpander->setTopRadius0(true);
@@ -39,7 +39,7 @@ void FluDisplayBox::setTitle(QString title)
 
 QVBoxLayout* FluDisplayBox::getBodyLayout()
 {
-    return m_vBodyLayout;
+    return m_bodyLayout;
 }
 QWidget* FluDisplayBox::getBodyWidget()
 {
@@ -51,9 +51,9 @@ FluCodeExpander* FluDisplayBox::getCodeExpander()
     return m_codeExpander;
 }
 
-void FluDisplayBox::setBodyWidgetFixedHeight(int nHeight)
+void FluDisplayBox::setBodyWidgetFixedHeight(int height)
 {
-    m_bodyWidget->setFixedHeight(nHeight);
+    m_bodyWidget->setFixedHeight(height);
 }
 
 void FluDisplayBox::paintEvent(QPaintEvent* event)

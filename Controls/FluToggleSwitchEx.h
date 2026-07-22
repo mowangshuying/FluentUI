@@ -25,30 +25,30 @@ class FluToggleSwitchEx : public FluWidget
         setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         setAttribute(Qt::WA_Hover);
 
-        m_bChecked = false;
-        m_bMouseDown = false;
+        m_isChecked = false;
+        m_isMouseDown = false;
 
         setFixedSize(FluToggleSwitchWidth, FluToggleSwitchHeight);
         onThemeChanged();
     }
 
-    void setChecked(bool bChecked)
+    void setChecked(bool isChecked)
     {
-        m_bChecked = bChecked;
-        emit toggled(m_bChecked);
-        setProperty("checked", m_bChecked);
+        m_isChecked = isChecked;
+        emit toggled(m_isChecked);
+        setProperty("checked", m_isChecked);
         style()->polish(this);
         update();
     }
 
     bool getChecked()
     {
-        return m_bChecked;
+        return m_isChecked;
     }
 
     void toggle()
     {
-        setChecked(!m_bChecked);
+        setChecked(!m_isChecked);
     }
 
     void setBorderColor(QColor color)
@@ -114,7 +114,7 @@ class FluToggleSwitchEx : public FluWidget
 
         // draw indicator;
         QRect indicatorRect;
-        if (m_bChecked)
+        if (m_isChecked)
         {
             // 90,90,90
             indicatorRect = QRect(width() - 5 - 12, 5, 12, 12);
@@ -134,7 +134,7 @@ class FluToggleSwitchEx : public FluWidget
     {
         if (event->button() == Qt::LeftButton)
         {
-            m_bMouseDown = true;
+            m_isMouseDown = true;
         }
     }
 
@@ -142,11 +142,11 @@ class FluToggleSwitchEx : public FluWidget
     {
         if (!isEnabled())
             return;
-        if (event->button() == Qt::LeftButton && m_bMouseDown)
+        if (event->button() == Qt::LeftButton && m_isMouseDown)
         {
-            m_bMouseDown = false;
+            m_isMouseDown = false;
             toggle();
-            emit checked(m_bChecked);
+            emit checked(m_isChecked);
         }
     }
 
@@ -155,8 +155,8 @@ class FluToggleSwitchEx : public FluWidget
 
     // }
   signals:
-    void checked(bool bChecked);
-    void toggled(bool bChecked);
+    void checked(bool isChecked);
+    void toggled(bool isChecked);
 
   public slots:
     void onThemeChanged()
@@ -165,8 +165,8 @@ class FluToggleSwitchEx : public FluWidget
     }
 
   protected:
-    bool m_bChecked;
-    bool m_bMouseDown;
+    bool m_isChecked;
+    bool m_isMouseDown;
 
     // feature;
     QColor m_indicatorBorderColor;

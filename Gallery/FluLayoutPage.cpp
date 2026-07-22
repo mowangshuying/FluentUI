@@ -2,7 +2,7 @@
 
 FluLayoutPage::FluLayoutPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+    m_mainLayout->setContentsMargins(35, 35, 0, 35);
     m_titleLabel->setText(tr("Layout"));
 
     auto borderCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/Border.png")), tr("Border"), tr("A container control that draws a boundary line, background, or both, around another object."));

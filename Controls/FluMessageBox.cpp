@@ -5,34 +5,34 @@ FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDi
 {
     m_parentWidget = parent;
 
-    m_hBoxLayout = new QHBoxLayout(this);
+    m_boxLayout = new QHBoxLayout(this);
     m_windowMask = new QWidget(this);
     m_windowMask->setObjectName("windowMask");
 
     m_widget = new QFrame(this);
     m_widget->setObjectName("centerWidget");
     m_widget->setFixedSize(318, 218);
-    m_hBoxLayout->addWidget(m_widget, 1, Qt::AlignCenter);
+    m_boxLayout->addWidget(m_widget, 1, Qt::AlignCenter);
 
-    m_vWidgetLayout = new QVBoxLayout;
-    m_vWidgetLayout->setAlignment(Qt::AlignTop);
-    m_widget->setLayout(m_vWidgetLayout);
+    m_widgetLayout = new QVBoxLayout;
+    m_widgetLayout->setAlignment(Qt::AlignTop);
+    m_widget->setLayout(m_widgetLayout);
 
     m_contentWidget = new QWidget;
 
-    m_vContentWidgetLayout = new QVBoxLayout;
-    m_vContentWidgetLayout->setSpacing(0);
-    m_vContentWidgetLayout->setContentsMargins(24, 35, 24, 0);
-    m_contentWidget->setLayout(m_vContentWidgetLayout);
+    m_contentWidgetLayout = new QVBoxLayout;
+    m_contentWidgetLayout->setSpacing(0);
+    m_contentWidgetLayout->setContentsMargins(24, 35, 24, 0);
+    m_contentWidget->setLayout(m_contentWidgetLayout);
 
     m_titleLabel = new QLabel;
     m_infoLabel = new QLabel;
 
-    m_okBtn = new FluStyleButton;
-    m_cancelBtn = new FluPushButton;
+    m_okButton = new FluStyleButton;
+    m_cancelButton = new FluPushButton;
 
-    m_okBtn->setText(tr("OK"));
-    m_cancelBtn->setText(tr("Cancel"));
+    m_okButton->setText(tr("OK"));
+    m_cancelButton->setText(tr("Cancel"));
 
     m_titleLabel->setText(title);
     m_infoLabel->setText(info);
@@ -40,8 +40,8 @@ FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDi
     m_titleLabel->setWordWrap(true);
     m_infoLabel->setWordWrap(true);
 
-    m_okBtn->setFixedWidth(130);
-    m_cancelBtn->setFixedWidth(130);
+    m_okButton->setFixedWidth(130);
+    m_cancelButton->setFixedWidth(130);
 
     m_titleLabel->setObjectName("titleLabel");
     m_infoLabel->setObjectName("infoLabel");
@@ -49,31 +49,31 @@ FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDi
     // m_titleLabel->setText("This is a Title");
     // m_infoLabel->setText("This is a Content.");
 
-    m_vWidgetLayout->setContentsMargins(0, 0, 0, 0);
-    m_vWidgetLayout->setSpacing(0);
-    // m_vWidgetLayout->addWidget(m_titleLabel);
-    // m_vWidgetLayout->addWidget(m_infoLabel, 1);
+    m_widgetLayout->setContentsMargins(0, 0, 0, 0);
+    m_widgetLayout->setSpacing(0);
+    // m_widgetLayout->addWidget(m_titleLabel);
+    // m_widgetLayout->addWidget(m_infoLabel, 1);
 
-    m_vWidgetLayout->addWidget(m_contentWidget);
-    m_vContentWidgetLayout->addWidget(m_titleLabel);
-    m_vContentWidgetLayout->addWidget(m_infoLabel, 1);
+    m_widgetLayout->addWidget(m_contentWidget);
+    m_contentWidgetLayout->addWidget(m_titleLabel);
+    m_contentWidgetLayout->addWidget(m_infoLabel, 1);
 
-    // m_vWidgetLayout->addStretch();
-    m_btnWidget = new QWidget;
-    m_btnWidget->setObjectName("btnWidget");
-    m_btnWidget->setFixedHeight(80);
-    m_hBtnLayout = new QHBoxLayout;
-    m_btnWidget->setLayout(m_hBtnLayout);
+    // m_widgetLayout->addStretch();
+    m_buttonWidget = new QWidget;
+    m_buttonWidget->setObjectName("btnWidget");
+    m_buttonWidget->setFixedHeight(80);
+    m_buttonLayout = new QHBoxLayout;
+    m_buttonWidget->setLayout(m_buttonLayout);
 
-    // m_hBtnLayout->setSpacing(10);
-    m_hBtnLayout->setSpacing(0);
-    m_hBtnLayout->setContentsMargins(24, 0, 24, 0);
-    m_hBtnLayout->addWidget(m_okBtn);
-    m_hBtnLayout->addSpacing(10);
-    m_hBtnLayout->addWidget(m_cancelBtn);
+    // m_buttonLayout->setSpacing(10);
+    m_buttonLayout->setSpacing(0);
+    m_buttonLayout->setContentsMargins(24, 0, 24, 0);
+    m_buttonLayout->addWidget(m_okButton);
+    m_buttonLayout->addSpacing(10);
+    m_buttonLayout->addWidget(m_cancelButton);
 
-    m_vWidgetLayout->addWidget(new FluVSplitLine);
-    m_vWidgetLayout->addWidget(m_btnWidget);
+    m_widgetLayout->addWidget(new FluVSplitLine);
+    m_widgetLayout->addWidget(m_buttonWidget);
 
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -82,9 +82,9 @@ FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDi
     setGeometry(0, 0, m_parentWidget->width(), m_parentWidget->height());
     m_windowMask->resize(m_parentWidget->size());
 
-    connect(m_okBtn, &FluStyleButton::clicked, [=]() { accept(); });
+    connect(m_okButton, &FluStyleButton::clicked, [=]() { accept(); });
 
-    connect(m_cancelBtn, &QPushButton::clicked, [=]() { reject(); });
+    connect(m_cancelButton, &QPushButton::clicked, [=]() { reject(); });
 
     onThemeChanged();
     m_parentWidget->installEventFilter(this);

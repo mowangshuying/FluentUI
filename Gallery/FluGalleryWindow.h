@@ -116,5 +116,5 @@ class FluGalleryWindow : public FluWindowKitWidget
 
   protected:
     FluVNavigationView *m_navView;
-    FluStackedLayout *m_sLayout;
+    FluStackedLayout *m_layout;
 };

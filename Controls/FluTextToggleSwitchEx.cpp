@@ -2,22 +2,22 @@
 
 FluTextToggleSwitchEx::FluTextToggleSwitchEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    setLayout(m_mainLayout);
 
     m_toggleSwitchEx = new FluToggleSwitchEx;
     m_textLabel = new FluLabel;
     m_textLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
     m_textLabel->setWordWrap(true);
 
-    m_hMainLayout->addWidget(m_toggleSwitchEx);
-    m_hMainLayout->addWidget(m_textLabel);
+    m_mainLayout->addWidget(m_toggleSwitchEx);
+    m_mainLayout->addWidget(m_textLabel);
 
     setText(tr("on"), tr("off"));
     m_textLabel->setText(m_offText);
-    connect(m_toggleSwitchEx, &FluToggleSwitchEx::toggled, [=](bool bChecked) {
-        if (bChecked)
+    connect(m_toggleSwitchEx, &FluToggleSwitchEx::toggled, [=](bool isChecked) {
+        if (isChecked)
         {
             m_textLabel->setText(m_onText);
         }
@@ -26,7 +26,7 @@ FluTextToggleSwitchEx::FluTextToggleSwitchEx(QWidget* parent /*= nullptr*/) : Fl
             m_textLabel->setText(m_offText);
         }
 
-        emit stateChanged(bChecked);
+        emit stateChanged(isChecked);
     });
 
     onThemeChanged();

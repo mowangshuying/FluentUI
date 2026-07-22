@@ -25,7 +25,7 @@ class FluAppBarToggleButton : public FluWidget
 
     QString getText();
 
-    void setToggled(bool bToggled);
+    void setToggled(bool isToggled);
 
     bool getToggled();
 
@@ -40,9 +40,9 @@ class FluAppBarToggleButton : public FluWidget
     void onThemeChanged();
 
   protected:
-    bool m_bToggled;
+    bool m_isToggled;
     FluAwesomeType m_awesomeType;
-    QVBoxLayout* m_vMainLayout;
-    QPushButton* m_iconBtn;
+    QVBoxLayout* m_mainLayout;
+    QPushButton* m_iconButton;
     QLabel* m_textLabel;
 };

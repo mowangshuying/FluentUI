@@ -14,7 +14,7 @@ class FluCircleDot : public FluWidget
   public:
     FluCircleDot(QWidget* parent = nullptr);
 
-    void setTopRightMargin(int nMarginTop, int nMarginRight);
+    void setTopRightMargin(int marginTop, int marginRight);
 
     void moveTopRight();
 
@@ -22,7 +22,7 @@ class FluCircleDot : public FluWidget
 
     bool eventFilter(QObject* watched, QEvent* event);
 
-    static void setCircleDot(QWidget* target, int nMarginTop, int nMarginRight);
+    static void setCircleDot(QWidget* target, int marginTop, int marginRight);
     QString qssFileName() override
     {
         return "FluCircleDot.qss";
@@ -31,6 +31,6 @@ class FluCircleDot : public FluWidget
   protected:
     QWidget* m_target;
 
-    int m_nMarginTop;
-    int m_nMarginRight;
+    int m_marginTop;
+    int m_marginRight;
 };

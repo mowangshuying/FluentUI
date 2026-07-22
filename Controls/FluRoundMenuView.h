@@ -22,9 +22,9 @@ class FluRoundMenuView : public QListWidget
 
     void adjustSize(QPoint pos = QPoint(), FluMenuAniType aniType = FluMenuAniType::none);
 
-    void setItemHeight(int nHeight);
+    void setItemHeight(int height);
 
-    void setMaxVisibleItems(int nNum);
+    void setMaxVisibleItems(int num);
 
     int getMaxVisibleItems();
 
@@ -34,7 +34,7 @@ class FluRoundMenuView : public QListWidget
 
     bool getBTSpacing();
 
-    void setBTSpacing(bool bBTSpacing);
+    void setBTSpacing(bool isBTSpacing);
 
     void hockEvent(QEvent* event);
   public slots:
@@ -44,6 +44,6 @@ class FluRoundMenuView : public QListWidget
     int m_itemHeight;
     int m_maxVisibleItem;
 
-    bool m_bBTSpacing;
+    bool m_isBTSpacing;
     FluScrollDelegate* m_scrollDelegate;
 };

@@ -19,9 +19,9 @@ class FluVNavigationFlyIconTextItem : public FluWidget
 
     ~FluVNavigationFlyIconTextItem();
 
-    void setItemWidth(int nWidth);
+    void setItemWidth(int width);
 
-    void setItemHeight(int nHeight);
+    void setItemHeight(int height);
 
     void setIconTextItems(std::vector<FluVNavigationIconTextItem*> items);
 
@@ -37,11 +37,11 @@ class FluVNavigationFlyIconTextItem : public FluWidget
     void onThemeChanged();
 
   protected:
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
 
-    FluVScrollView* m_vScrollView;
+    FluVScrollView* m_scrollView;
     std::vector<FluVNavigationIconTextItem*> m_items;
 
-    int m_nItemHeight;
-    int m_nItemWidth;
+    int m_itemHeight;
+    int m_itemWidth;
 };

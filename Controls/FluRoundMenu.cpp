@@ -16,15 +16,15 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
     // m_icon = QPixmap();
     m_mainAction = new FluAction(iconType, title);
     // setDefaultAction(m_mainAction);
-    m_bSubMenu = false;
+    m_isSubMenu = false;
     m_parentMenu = nullptr;
     m_menuItem = nullptr;
     m_lastHoverItem = nullptr;
     m_lastHoverSubMenuItem = nullptr;
-    m_bHideBySystem = true;
+    m_isHideBySystem = true;
     m_itemHeight = 28;
 
-    m_hBoxLayout = new QHBoxLayout(this);
+    m_boxLayout = new QHBoxLayout(this);
     m_roundMenuView = new FluRoundMenuView(this);
 
     m_aniMgr = nullptr;
@@ -40,8 +40,8 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
 
     FluStyleSheetUtils::drawShadowEffect(m_roundMenuView, 30, QPoint(0, 8), QColor(0, 0, 0, 30));
 
-    m_hBoxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
-    m_hBoxLayout->setContentsMargins(12, 8, 12, 20);
+    m_boxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
+    m_boxLayout->setContentsMargins(12, 8, 12, 20);
 
     connect(m_roundMenuView, &FluRoundMenuView::itemClicked, this, &FluRoundMenu::onItemClicked);
     connect(m_roundMenuView, &FluRoundMenuView::itemEntered, this, &FluRoundMenu::onItemEntered);
@@ -78,17 +78,17 @@ void FluRoundMenu::setParentMenu(FluRoundMenu* menu, QListWidgetItem* item)
     m_menuItem = item;
 
     if (menu == nullptr)
-        m_bSubMenu = false;
+        m_isSubMenu = false;
     else
-        m_bSubMenu = true;
+        m_isSubMenu = true;
 }
 
 void FluRoundMenu::adjustSize()
 {
     QMargins contentMargins = layout()->contentsMargins();
-    int nW = m_roundMenuView->width() + contentMargins.left() + contentMargins.right();
-    int nH = m_roundMenuView->height() + contentMargins.top() + contentMargins.bottom();
-    setFixedSize(nW, nH);
+    int w = m_roundMenuView->width() + contentMargins.left() + contentMargins.right();
+    int h = m_roundMenuView->height() + contentMargins.top() + contentMargins.bottom();
+    setFixedSize(w, h);
 }
 
 QPixmap FluRoundMenu::getIcon()
@@ -179,20 +179,20 @@ int FluRoundMenu::adjustItemText(QListWidgetItem* item, QAction* action)
             spaceForShortCut += 22;
     }
 
-    int nW = 0;
+    int w = 0;
     if (!hasMenuItemIcon())
     {
         item->setText(action->text());
-        nW = 40 + m_roundMenuView->fontMetrics().horizontalAdvance(item->text()) + spaceForShortCut;
+        w = 40 + m_roundMenuView->fontMetrics().horizontalAdvance(item->text()) + spaceForShortCut;
     }
     else
     {
         item->setText(" " + action->text());
-        nW = 60 + m_roundMenuView->fontMetrics().horizontalAdvance(item->text()) + spaceForShortCut;
+        w = 60 + m_roundMenuView->fontMetrics().horizontalAdvance(item->text()) + spaceForShortCut;
     }
 
-    item->setSizeHint(QSize(nW, m_itemHeight));
-    return nW;
+    item->setSizeHint(QSize(w, m_itemHeight));
+    return w;
 }
 
 int FluRoundMenu::calcShortcutWidth()
@@ -200,15 +200,15 @@ int FluRoundMenu::calcShortcutWidth()
     QFont font;
     font.setPixelSize(12);
     QFontMetrics fontMetrics = QFontMetrics(font);
-    int nMax = 0;
+    int max = 0;
     for (auto itList = m_actions.begin(); itList != m_actions.end(); itList++)
     {
         QString shortCut = (*itList)->shortcut().toString();
-        int nShortCutWidth = fontMetrics.horizontalAdvance(shortCut);
-        if (nShortCutWidth > nMax)
-            nMax = nShortCutWidth;
+        int shortCutWidth = fontMetrics.horizontalAdvance(shortCut);
+        if (shortCutWidth > max)
+            max = shortCutWidth;
     }
-    return nMax;
+    return max;
 }
 
 QIcon FluRoundMenu::makeItemIcon(QAction* action)
@@ -310,13 +310,13 @@ void FluRoundMenu::removeAction(QAction* action)
     if (itf == m_actions.end())
         return;
 
-    int nIndex = itf - m_actions.begin();
+    int index = itf - m_actions.begin();
     m_actions.erase(itf);
 
     auto fluAction = (FluAction*)action;
     fluAction->setListWidgetItem(nullptr);
 
-    QListWidgetItem* item = m_roundMenuView->takeItem(nIndex);
+    QListWidgetItem* item = m_roundMenuView->takeItem(index);
     item->setData(Qt::UserRole, QVariant::fromValue(nullptr));
 
     QWidget* widget = m_roundMenuView->itemWidget(item);
@@ -330,16 +330,16 @@ void FluRoundMenu::setDefaultAction(QAction* action)
     if (itf == m_actions.end())
         return;
 
-    int nIndex = itf - m_actions.begin();
-    m_roundMenuView->setCurrentRow(nIndex);
+    int index = itf - m_actions.begin();
+    m_roundMenuView->setCurrentRow(index);
 }
 
-void FluRoundMenu::setDefaultAction(int nIndex)
+void FluRoundMenu::setDefaultAction(int index)
 {
-    if (nIndex < 0 || nIndex >= m_actions.size())
+    if (index < 0 || index >= m_actions.size())
         return;
 
-    m_roundMenuView->setCurrentRow(nIndex);
+    m_roundMenuView->setCurrentRow(index);
 }
 
 void FluRoundMenu::setDefaultAction(QString text)
@@ -377,8 +377,8 @@ void FluRoundMenu::insertMenu(QAction* before, FluRoundMenu* menu)
     auto fluAction = (FluAction*)before;
     QListWidgetItem* beforeItem = fluAction->getListWidgetItem();
 
-    int nRow = m_roundMenuView->row(beforeItem);
-    m_roundMenuView->insertItem(nRow, item);
+    int row = m_roundMenuView->row(beforeItem);
+    m_roundMenuView->insertItem(row, item);
     m_roundMenuView->setItemWidget(item, widget);
     adjustSize();
 }
@@ -387,14 +387,14 @@ FluSubMenuItemWidget* FluRoundMenu::createSubMenuItem(FluRoundMenu* menu)
 {
     m_subMenus.append(menu);
     QListWidgetItem* item = new QListWidgetItem(makeItemIcon(menu), menu->getTitle());
-    int nW = 0;
+    int w = 0;
     if (!hasMenuItemIcon())
-        nW = 60 + m_roundMenuView->fontMetrics().horizontalAdvance(menu->getTitle());
+        w = 60 + m_roundMenuView->fontMetrics().horizontalAdvance(menu->getTitle());
     else
-        nW = 72 + m_roundMenuView->fontMetrics().horizontalAdvance(item->text());
+        w = 72 + m_roundMenuView->fontMetrics().horizontalAdvance(item->text());
 
     menu->setParentMenu(this, item);
-    item->setSizeHint(QSize(nW, m_itemHeight));
+    item->setSizeHint(QSize(w, m_itemHeight));
     item->setData(Qt::UserRole, QVariant::fromValue(menu));
 
     FluSubMenuItemWidget* subMenuItemWidget = new FluSubMenuItemWidget(menu, item, this);
@@ -406,21 +406,21 @@ FluSubMenuItemWidget* FluRoundMenu::createSubMenuItem(FluRoundMenu* menu)
 void FluRoundMenu::addSeparator()
 {
     QMargins viewMargins = m_roundMenuView->viewport()->contentsMargins();
-    int nW = m_roundMenuView->width() - viewMargins.left() - viewMargins.right();
+    int w = m_roundMenuView->width() - viewMargins.left() - viewMargins.right();
 
     QListWidgetItem* item = new QListWidgetItem(m_roundMenuView);
     item->setFlags(Qt::NoItemFlags);
-    item->setSizeHint(QSize(nW, 9));
+    item->setSizeHint(QSize(w, 9));
     m_roundMenuView->addItem(item);
     item->setData(Qt::DecorationRole, "separator");
     adjustSize();
 }
 
-void FluRoundMenu::hideMenu(bool bHideBySystem /*= false*/)
+void FluRoundMenu::hideMenu(bool isHideBySystem /*= false*/)
 {
-    m_bHideBySystem = bHideBySystem;
+    m_isHideBySystem = isHideBySystem;
     m_roundMenuView->clearSelection();
-    if (m_bSubMenu)
+    if (m_isSubMenu)
         hide();
     else
         close();
@@ -445,27 +445,27 @@ void FluRoundMenu::adjustPosition()
 {
     QMargins margins = layout()->contentsMargins();
     QRect screenRect = QApplication::screenAt(QCursor::pos())->availableGeometry();
-    int nW = layout()->sizeHint().width() + 5;
-    int nH = layout()->sizeHint().height();
+    int w = layout()->sizeHint().width() + 5;
+    int h = layout()->sizeHint().height();
 
-    int nX = qMin(x() - margins.left(), screenRect.right() - nW);
-    int nY = y();
+    int x = qMin(this->x() - margins.left(), screenRect.right() - w);
+    int y = this->y();
 
-    if (nY > screenRect.bottom() - nH)
+    if (y > screenRect.bottom() - h)
     {
-        nY = y() - nH + margins.bottom();
+        y = this->y() - h + margins.bottom();
     }
 
-    move(nX, nY);
+    move(x, y);
 }
 
-void FluRoundMenu::exec(QPoint pos, bool bAni /*= true*/, FluMenuAniType aniType /*= FluMenuAniType::DROP_DOWN*/)
+void FluRoundMenu::exec(QPoint pos, bool isAni /*= true*/, FluMenuAniType aniType /*= FluMenuAniType::DROP_DOWN*/)
 {
     m_aniMgr = FluMenuAniMgr::make(this, aniType);
     m_aniMgr->exec(pos);
     show();
 
-    if (m_bSubMenu)
+    if (m_isSubMenu)
         m_menuItem->setSelected(true);
 }
 
@@ -499,7 +499,7 @@ void FluRoundMenu::onItemClicked(QListWidgetItem* item)
 
     hideMenu(false);
 
-    if (!m_bSubMenu)
+    if (!m_isSubMenu)
     {
         action->trigger();
         emit FluRoundMenu::triggered(action);
@@ -562,10 +562,10 @@ void FluRoundMenu::onThemeChanged()
 
 void FluRoundMenu::hideEvent(QHideEvent* event)
 {
-    if (m_bHideBySystem && m_bSubMenu)
+    if (m_isHideBySystem && m_isSubMenu)
         closeParentMenu();
 
-    m_bHideBySystem = true;
+    m_isHideBySystem = true;
     event->accept();
 }
 
@@ -585,7 +585,7 @@ void FluRoundMenu::mousePressEvent(QMouseEvent* event)
 
 void FluRoundMenu::mouseMoveEvent(QMouseEvent* event)
 {
-    if (!m_bSubMenu)
+    if (!m_isSubMenu)
         return;
 
     if (!m_parentMenu)

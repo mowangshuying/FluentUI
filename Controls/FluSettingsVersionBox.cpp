@@ -13,7 +13,7 @@ FluSettingsVersionBox::FluSettingsVersionBox(QWidget* parent /*= nullptr*/) : Fl
     m_iconLabel->setFixedSize(40, 40);
 
     // title & info
-    m_vLayout = new QVBoxLayout;
+    m_layout = new QVBoxLayout;
     m_titleLabel = new QLabel;
     m_infoLabel = new QLabel;
 
@@ -27,11 +27,11 @@ FluSettingsVersionBox::FluSettingsVersionBox(QWidget* parent /*= nullptr*/) : Fl
     m_versionLabel->setObjectName("versionLabel");
     m_iconLabel->setObjectName("iconLabel");
 
-    m_vLayout->addWidget(m_titleLabel);
-    m_vLayout->addWidget(m_infoLabel);
+    m_layout->addWidget(m_titleLabel);
+    m_layout->addWidget(m_infoLabel);
 
     getWrap1Layout()->addWidget(m_iconLabel);
-    getWrap1Layout()->addLayout(m_vLayout, 1);
+    getWrap1Layout()->addLayout(m_layout, 1);
     getWrap1Layout()->addWidget(m_versionLabel);
     getWrap1Layout()->setContentsMargins(10, 10, 40, 10);
 

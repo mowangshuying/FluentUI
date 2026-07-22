@@ -2,7 +2,7 @@
 
 FluBasicInputPage::FluBasicInputPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+    m_mainLayout->setContentsMargins(35, 35, 0, 35);
     m_titleLabel->setText(tr("Basic input"));
 
     auto buttonCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/Button.png")), tr("Button"), tr("A control that responds to user input and raises a Click event."));

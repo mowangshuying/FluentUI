@@ -2,22 +2,22 @@
 
 FluTimeLineItem::FluTimeLineItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
-    m_hMainLayout->setContentsMargins(0, 20, 0, 20);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
+    m_mainLayout->setContentsMargins(0, 20, 0, 20);
 
-    m_vIconLayout = new QVBoxLayout;
-    m_vIconLayout->setAlignment(Qt::AlignTop);
-    m_vIconLayout->setContentsMargins(0, 0, 0, 0);
+    m_iconLayout = new QVBoxLayout;
+    m_iconLayout->setAlignment(Qt::AlignTop);
+    m_iconLayout->setContentsMargins(0, 0, 0, 0);
 
-    m_vItemLayout = new QVBoxLayout;
-    m_vItemLayout->setContentsMargins(0, 0, 0, 0);
+    m_itemLayout = new QVBoxLayout;
+    m_itemLayout->setContentsMargins(0, 0, 0, 0);
 
     m_icon = new FluTimeLineIcon;
-    m_vIconLayout->addWidget(m_icon, 0, Qt::AlignTop);
+    m_iconLayout->addWidget(m_icon, 0, Qt::AlignTop);
 
-    m_hMainLayout->addLayout(m_vIconLayout);
-    m_hMainLayout->addLayout(m_vItemLayout);
+    m_mainLayout->addLayout(m_iconLayout);
+    m_mainLayout->addLayout(m_itemLayout);
     setMinimumHeight(40);
 }
 
@@ -28,16 +28,16 @@ void FluTimeLineItem::addTextItem(QString text)
     label->setLabelStyle(FluLabelStyle::CaptionTextBlockStyle);
     label->setText(text);
     label->setMinimumHeight(40);
-    m_vItemLayout->addWidget(label);
-    setMinimumHeight(m_vItemLayout->count() * 40);
+    m_itemLayout->addWidget(label);
+    setMinimumHeight(m_itemLayout->count() * 40);
 }
 
-FluLabel* FluTimeLineItem::getLabelAt(int nIndex)
+FluLabel* FluTimeLineItem::getLabelAt(int index)
 {
-    if (nIndex < 0 || nIndex >= m_vItemLayout->count())
+    if (index < 0 || index >= m_itemLayout->count())
         return nullptr;
 
-    return static_cast<FluLabel*>(m_vItemLayout->itemAt(nIndex)->widget());
+    return static_cast<FluLabel*>(m_itemLayout->itemAt(index)->widget());
 }
 
 void FluTimeLineItem::paintEvent(QPaintEvent* event)

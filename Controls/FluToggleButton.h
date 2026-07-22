@@ -12,10 +12,10 @@ class FluToggleButton : public QPushButton
     FluToggleButton(QWidget* parent = nullptr) : QPushButton(parent)
     {
         setFixedSize(120, 30);
-        m_bToggled = false;
+        m_isToggled = false;
         setProperty("toggled", false);
 
-        connect(this, &FluToggleButton::clicked, [=](bool bChecked) { onToggled(); });
+        connect(this, &FluToggleButton::clicked, [=](bool isChecked) { onToggled(); });
 
         onThemeChanged();
         connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
@@ -23,19 +23,19 @@ class FluToggleButton : public QPushButton
 
     bool getToggled()
     {
-        return m_bToggled;
+        return m_isToggled;
     }
 
-    void setToggled(bool bToggled)
+    void setToggled(bool isToggled)
     {
-        m_bToggled = bToggled;
+        m_isToggled = isToggled;
     }
 
   public slots:
     void onToggled()
     {
-        m_bToggled = !m_bToggled;
-        setProperty("toggled", m_bToggled);
+        m_isToggled = !m_isToggled;
+        setProperty("toggled", m_isToggled);
         style()->polish(this);
         update();
     }
@@ -46,5 +46,5 @@ class FluToggleButton : public QPushButton
     }
 
   protected:
-    bool m_bToggled;
+    bool m_isToggled;
 };

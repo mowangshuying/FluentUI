@@ -15,7 +15,7 @@ FluCalendarDatePickerPage::FluCalendarDatePickerPage(QWidget* parent /*= nullptr
     auto calendarView = new FluCalendarDatePicker(displayBox);
     calendarView->move(50, 50);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

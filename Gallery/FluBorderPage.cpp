@@ -38,7 +38,7 @@ FluBorderPage::FluBorderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     displayBox->getBodyRightLayout()->addWidget(group);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     FluStyleSheetUtils::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 

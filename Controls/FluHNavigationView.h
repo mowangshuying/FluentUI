@@ -63,15 +63,15 @@ class FluHNavigationView : public FluWidget
     std::vector<FluHNavigationIconTextItem*> m_items;
     std::vector<FluHNavigationIconTextItem*> m_hideItems;
 
-    QHBoxLayout* m_hLayout;
+    QHBoxLayout* m_layout;
     QWidget* m_leftWrapWidget;
     // FluHScrollView* m_midHScrollView;
     QWidget* m_MidWrapWidget;
     QWidget* m_rightWrapWidget;
 
-    QHBoxLayout* m_hLeftWrapLayout;
-    // QHBoxLayout* m_hMidWrapLayout;
-    QHBoxLayout* m_hRightWrapLayout;
+    QHBoxLayout* m_leftWrapLayout;
+    // QHBoxLayout* m_midWrapLayout;
+    QHBoxLayout* m_rightWrapLayout;
 
     FluHNavigationMoreItem* m_moreItem;
 

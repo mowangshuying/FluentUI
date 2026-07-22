@@ -24,7 +24,7 @@ class FluChangeBgDemo : public FluWidget
     void paintEvent(QPaintEvent *event);
 
   private:
-    bool m_bHover;
+    bool m_isHover;
     QColor m_normalBgColor;
     QColor m_hoverBgColor;
 };

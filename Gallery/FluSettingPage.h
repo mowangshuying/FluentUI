@@ -38,5 +38,5 @@ class FluSettingPage : public FluWidget
     QLabel* m_aboutLabel;
 
     FluSettingsSelectBox* m_appThemeSelectBox;
-    FluVScrollView* m_vScrollView;
+    FluVScrollView* m_scrollView;
 };

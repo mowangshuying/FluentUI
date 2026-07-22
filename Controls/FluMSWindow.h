@@ -22,5 +22,5 @@ class FluMSWindow : public FluFrameLessWidget
 
   protected:
     FluMSNavigationView* m_navView;
-    FluStackedLayout* m_sLayout;
+    FluStackedLayout* m_layout;
 };

@@ -3,19 +3,19 @@
 
 FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/)
 {
-    m_vScrollView = new FluVScrollView;
-    m_vScrollView->setObjectName("centerWidget");
+    m_scrollView = new FluVScrollView;
+    m_scrollView->setObjectName("centerWidget");
 
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(5, 5, 5, 5);
-    m_vMainLayout->setSpacing(0);
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setContentsMargins(5, 5, 5, 5);
+    m_mainLayout->setSpacing(0);
+    setLayout(m_mainLayout);
 
-    // m_vScrollView->setContentsMargins(0, 0, 0, 0);
-    m_vScrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
-    m_vScrollView->getMainLayout()->setSpacing(0);
-    m_vScrollView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_vMainLayout->addWidget(m_vScrollView);
+    // m_scrollView->setContentsMargins(0, 0, 0, 0);
+    m_scrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
+    m_scrollView->getMainLayout()->setSpacing(0);
+    m_scrollView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_mainLayout->addWidget(m_scrollView);
 
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -37,7 +37,7 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
         newItem->setParentIsNavigationView(false);
         newItem->setParentFlyIconTextItem(this);
 
-        m_vScrollView->getMainLayout()->addWidget(newItem);
+        m_scrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
     }
 
@@ -46,34 +46,34 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
 
 void FluHNavigationFlyIconTextItem::adjustItemWidth()
 {
-    int nMaxWidth = 0;
+    int maxWidth = 0;
     for (auto item : m_items)
     {
-        int nWidth = item->calcItemW1Width();
-        if (nWidth > nMaxWidth)
+        int width = item->calcItemW1Width();
+        if (width > maxWidth)
         {
-            nMaxWidth = nWidth;
+            maxWidth = width;
         }
     }
 
     for (auto item : m_items)
     {
-        item->getWrapWidget1()->setFixedWidth(nMaxWidth);
-        item->getWrapWidget2()->setFixedWidth(nMaxWidth);
-        item->setFixedWidth(nMaxWidth);
+        item->getWrapWidget1()->setFixedWidth(maxWidth);
+        item->getWrapWidget2()->setFixedWidth(maxWidth);
+        item->setFixedWidth(maxWidth);
         item->setFixedHeight(36);
     }
-    setFixedWidth(nMaxWidth + m_vScrollView->getMainLayout()->contentsMargins().left() + m_vScrollView->getMainLayout()->contentsMargins().right());
+    setFixedWidth(maxWidth + m_scrollView->getMainLayout()->contentsMargins().left() + m_scrollView->getMainLayout()->contentsMargins().right());
 }
 
 QVBoxLayout* FluHNavigationFlyIconTextItem::getMainLayout()
 {
-    return m_vMainLayout;
+    return m_mainLayout;
 }
 
 FluVScrollView* FluHNavigationFlyIconTextItem::getVScrollView()
 {
-    return m_vScrollView;
+    return m_scrollView;
 }
 
 void FluHNavigationFlyIconTextItem::clearAllItemsSelectState()
@@ -107,16 +107,16 @@ FluHNavigationView* FluHNavigationFlyIconTextItem::getNavView()
 
 void FluHNavigationFlyIconTextItem::getCloseByClickedItem(bool b)
 {
-    m_bCloseByClickedItem = b;
+    m_isCloseByClickedItem = b;
 }
 
 bool FluHNavigationFlyIconTextItem::setCloseByClickedItem()
 {
-    return m_bCloseByClickedItem;
+    return m_isCloseByClickedItem;
 }
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()
 {
-    FluStyleSheetUtils::setQssByFileName("FluHNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHNavigationFlyIconTextItem.qss", m_scrollView, FluThemeUtils::getUtils()->getTheme());
     FluStyleSheetUtils::setQssByFileName("FluHNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -34,8 +34,8 @@ class FluIntValidator : public QIntValidator
             //     return QIntValidator::Invalid;
             // }
 
-            // int nValue = input.toInt();
-            // bool b = nValue >= 0 && nValue <= 255;
+            // int value = input.toInt();
+            // bool b = value >= 0 && value <= 255;
             // if (!b)
             //{
             //     return QIntValidator::Invalid;

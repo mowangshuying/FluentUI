@@ -23,7 +23,7 @@ class FluIconButton : public QPushButton
 
     void setType2(FluAwesomeType type);
 
-    void setNoBorder(bool bNoBorder);
+    void setNoBorder(bool isNoBorder);
 
   public slots:
     void onThemeChanged();
@@ -35,5 +35,5 @@ class FluIconButton : public QPushButton
     QColor m_penColor;
 
     QTimer* m_timer;
-    bool m_bClicked;
+    bool m_isClicked;
 };

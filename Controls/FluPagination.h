@@ -14,14 +14,14 @@ class FluPagination : public QWidget
 {
     Q_OBJECT
   public:
-    FluPagination(int nPageCurrent, int nPageButtonCount, int nItemCount, QWidget* parent = nullptr);
+    FluPagination(int pageCurrent, int pageButtonCount, int itemCount, QWidget* parent = nullptr);
 
     void updateByPageCurrent();
 
     void paintEvent(QPaintEvent* event) override;
   signals:
-    void currentPageChange(int nCurrentPage);
-    void requestPage(int nPage, int nCount);
+    void currentPageChange(int currentPage);
+    void requestPage(int page, int count);
   public slots:
 
     void onThemeChanged()
@@ -30,13 +30,13 @@ class FluPagination : public QWidget
     }
 
   protected:
-    QHBoxLayout* m_hMainLayout;
-    int m_nPageCurrent;
-    int m_nItemCount;
-    int m_nPageButtonCount;
-    int m_nPageCount;
-    int m_nItemPerPage;
-    int m_nPageButtonHalf;
+    QHBoxLayout* m_mainLayout;
+    int m_pageCurrent;
+    int m_itemCount;
+    int m_pageButtonCount;
+    int m_pageCount;
+    int m_itemPerPage;
+    int m_pageButtonHalf;
 
     std::vector<FluPaginationItem*> m_numVcts;
 };

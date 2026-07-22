@@ -4,43 +4,43 @@
 
 FluHNavigationMoreItem::FluHNavigationMoreItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    setLayout(m_mainLayout);
 
-    m_hIconBtnLayout = new QHBoxLayout;
-    m_hIconBtnLayout->setContentsMargins(0, 0, 0, 0);
-    m_hIconBtnLayout->setAlignment(Qt::AlignHCenter);
+    m_iconButtonLayout = new QHBoxLayout;
+    m_iconButtonLayout->setContentsMargins(0, 0, 0, 0);
+    m_iconButtonLayout->setAlignment(Qt::AlignHCenter);
 
-    m_iconBtn = new QPushButton;
-    m_iconBtn->setFixedSize(36, 36);
-    m_iconBtn->setIconSize(QSize(24, 24));
-    m_iconBtn->setObjectName("iconBtn");
+    m_iconButton = new QPushButton;
+    m_iconButton->setFixedSize(36, 36);
+    m_iconButton->setIconSize(QSize(24, 24));
+    m_iconButton->setObjectName("iconBtn");
 
-    m_hIconBtnLayout->addWidget(m_iconBtn);
+    m_iconButtonLayout->addWidget(m_iconButton);
 
-    m_hIndicatorWrap = new QWidget;
-    m_hIndicatorWrap->setObjectName("hIndicatorWrap");
-    m_hIndicatorWrap->setFixedHeight(4);
+    m_horizontalIndicatorWrap = new QWidget;
+    m_horizontalIndicatorWrap->setObjectName("hIndicatorWrap");
+    m_horizontalIndicatorWrap->setFixedHeight(4);
 
-    m_hIndicator = new QWidget;
-    m_hIndicator->setFixedHeight(4);
-    m_hIndicator->setFixedWidth(18);
-    m_hIndicator->setObjectName("hIndicator");
+    m_horizontalIndicator = new QWidget;
+    m_horizontalIndicator->setFixedHeight(4);
+    m_horizontalIndicator->setFixedWidth(18);
+    m_horizontalIndicator->setObjectName("hIndicator");
 
-    m_hIndicatorLayout = new QHBoxLayout;
-    m_hIndicatorLayout->setContentsMargins(0, 0, 0, 0);
-    m_hIndicatorLayout->setAlignment(Qt::AlignHCenter);
-    m_hIndicatorWrap->setLayout(m_hIndicatorLayout);
+    m_horizontalIndicatorLayout = new QHBoxLayout;
+    m_horizontalIndicatorLayout->setContentsMargins(0, 0, 0, 0);
+    m_horizontalIndicatorLayout->setAlignment(Qt::AlignHCenter);
+    m_horizontalIndicatorWrap->setLayout(m_horizontalIndicatorLayout);
 
-    m_hIndicatorLayout->addWidget(m_hIndicator);
+    m_horizontalIndicatorLayout->addWidget(m_horizontalIndicator);
 
-    m_vMainLayout->addLayout(m_hIconBtnLayout);
-    m_vMainLayout->addWidget(m_hIndicatorWrap);
+    m_mainLayout->addLayout(m_iconButtonLayout);
+    m_mainLayout->addWidget(m_horizontalIndicatorWrap);
 
-    // m_hIndicatorWrap->hide();
+    // m_horizontalIndicatorWrap->hide();
 
-    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
+    connect(m_iconButton, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(this, &FluHNavigationMoreItem::itemClicked, this, [=]() { onItemClicked(); });
 
     onThemeChanged();
@@ -54,16 +54,16 @@ void FluHNavigationMoreItem::clearAllItemsSelectState()
 void FluHNavigationMoreItem::updateAllItemsStyleSheet()
 {
     style()->polish(this);
-    m_iconBtn->style()->polish(m_iconBtn);
-    m_hIndicator->style()->polish(m_hIndicator);
+    m_iconButton->style()->polish(m_iconButton);
+    m_horizontalIndicator->style()->polish(m_horizontalIndicator);
 }
 
 void FluHNavigationMoreItem::updateSelected(bool b)
 {
-    m_bSelected = b;
+    m_isSelected = b;
     setProperty("selected", b);
-    m_iconBtn->setProperty("selected", b);
-    m_hIndicator->setProperty("selected", b);
+    m_iconButton->setProperty("selected", b);
+    m_horizontalIndicator->setProperty("selected", b);
 }
 
 void FluHNavigationMoreItem::mouseReleaseEvent(QMouseEvent* event)
@@ -109,12 +109,12 @@ void FluHNavigationMoreItem::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Light));
+        m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Light));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluHNavigationMoreItem.qss", this);
     }
     else
     {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Dark));
+        m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Dark));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluHNavigationMoreItem.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluHNavigationMoreItem.qss", this, FluThemeUtils::getUtils()->getTheme());

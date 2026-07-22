@@ -70,25 +70,25 @@ void FluInfoBarPage::addClosableInfoBar()
                 break;
         }
         sInfoBar->setFixedWidth(270);
-        sInfoBar->getCloseBtn()->hide();
+        sInfoBar->getCloseButton()->hide();
         if (isClosableCheckBox->isChecked())
         {
-            sInfoBar->getCloseBtn()->show();
+            sInfoBar->getCloseButton()->show();
         }
 
         displayBox->getBodyContentLayout()->addWidget(sInfoBar);
     });
 
-    connect(isClosableCheckBox, &FluCheckBox::stateChanged, this, [=](int nState) {
+    connect(isClosableCheckBox, &FluCheckBox::stateChanged, this, [=](int state) {
         auto sInfoBar = (FluShortInfoBar*)(displayBox->getBodyContentLayout()->itemAt(0)->widget());
-        if (nState == Qt::Checked)
-            sInfoBar->getCloseBtn()->show();
+        if (state == Qt::Checked)
+            sInfoBar->getCloseButton()->show();
         else
-            sInfoBar->getCloseBtn()->hide();
+            sInfoBar->getCloseButton()->hide();
     });
 
     displayBox->getBodyRightLayout()->addWidget(comboBox, 0, Qt::AlignTop);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluInfoBarPage::addDynamicInfoBar()
@@ -122,7 +122,7 @@ void FluInfoBarPage::addDynamicInfoBar()
     displayBox->getBodyLayout()->addWidget(sucBtn);
     displayBox->getBodyLayout()->addWidget(warnBtn);
     displayBox->getBodyLayout()->addWidget(errorBtn);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluInfoBarPage::onThemeChanged()

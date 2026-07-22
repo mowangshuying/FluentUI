@@ -26,7 +26,7 @@ class FluDisplayBoxEx : public FluWidget
 
     FluCodeExpander* getCodeExpander();
 
-    void setBodyWidgetFixedHeight(int nHeight);
+    void setBodyWidgetFixedHeight(int height);
 
     void paintEvent(QPaintEvent* event);
 
@@ -34,17 +34,17 @@ class FluDisplayBoxEx : public FluWidget
     void onThemeChanged();
 
   protected:
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
     QLabel* m_titleLabel;
 
     QWidget* m_bodyWidget;
-    QHBoxLayout* m_hBodyLayout;
+    QHBoxLayout* m_bodyLayout;
 
     QWidget* m_bodyContentWidget;
     QWidget* m_bodyRightWidget;
 
-    QVBoxLayout* m_vBodyContentLayout;
-    QVBoxLayout* m_vBodyRightLayout;
+    QVBoxLayout* m_bodyContentLayout;
+    QVBoxLayout* m_bodyRightLayout;
 
     FluCodeExpander* m_codeExpander;
 };

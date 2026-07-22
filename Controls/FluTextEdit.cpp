@@ -5,11 +5,11 @@ FluTextEdit::FluTextEdit(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
 {
     m_wrap = new FluTextEditWrap(this);
 
-    m_bAutoAdjustSize = false;
+    m_isAutoAdjustSize = false;
     m_delegate = new FluScrollDelegate(this);
 
     connect(document(), &QTextDocument::contentsChanged, this, [=]() {
-        if (!m_bAutoAdjustSize)
+        if (!m_isAutoAdjustSize)
             return;
 
         setFixedHeight(this->document()->size().height() + 6);
@@ -20,12 +20,12 @@ FluTextEdit::FluTextEdit(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
 
 bool FluTextEdit::getAutoAdjustSize()
 {
-    return m_bAutoAdjustSize;
+    return m_isAutoAdjustSize;
 }
 
-void FluTextEdit::setAutoAdjustSize(bool bAdjustSize)
+void FluTextEdit::setAutoAdjustSize(bool isAdjustSize)
 {
-    m_bAutoAdjustSize = bAdjustSize;
+    m_isAutoAdjustSize = isAdjustSize;
     document()->contentsChanged();
 }
 

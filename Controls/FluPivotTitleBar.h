@@ -17,5 +17,5 @@ class FluPivotTitleBar : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
 };

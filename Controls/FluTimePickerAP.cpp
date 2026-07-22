@@ -2,59 +2,59 @@
 
 FluTimePickerAP::FluTimePickerAP(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_hMainLayout->setSpacing(0);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setSpacing(0);
+    setLayout(m_mainLayout);
 
-    m_hourBtn = new QPushButton;
-    m_hourBtn->setText(tr("hour"));
-    m_hourBtn->setObjectName("hourBtn");
+    m_hourButton = new QPushButton;
+    m_hourButton->setText(tr("hour"));
+    m_hourButton->setObjectName("hourBtn");
 
-    m_minuteBtn = new QPushButton;
-    m_minuteBtn->setText(tr("minute"));
-    m_minuteBtn->setObjectName("minuteBtn");
+    m_minuteButton = new QPushButton;
+    m_minuteButton->setText(tr("minute"));
+    m_minuteButton->setObjectName("minuteBtn");
 
-    m_apBtn = new QPushButton;
-    m_apBtn->setText(tr("AM"));
-    m_apBtn->setObjectName("apBtn");
+    m_apButton = new QPushButton;
+    m_apButton->setText(tr("AM"));
+    m_apButton->setObjectName("apBtn");
 
-    m_hourBtn->setFixedHeight(30);
-    m_minuteBtn->setFixedHeight(30);
-    m_apBtn->setFixedHeight(30);
+    m_hourButton->setFixedHeight(30);
+    m_minuteButton->setFixedHeight(30);
+    m_apButton->setFixedHeight(30);
 
-    m_hMainLayout->addWidget(m_hourBtn);
-    m_hMainLayout->addWidget(m_minuteBtn);
-    m_hMainLayout->addWidget(m_apBtn);
+    m_mainLayout->addWidget(m_hourButton);
+    m_mainLayout->addWidget(m_minuteButton);
+    m_mainLayout->addWidget(m_apButton);
 
     m_timerPickerApView = new FluTimePickerAPView;
     // m_timerPickerApView->setFixedWidth(240);
     m_timerPickerApView->hide();
 
     setFixedSize(240, 30);
-    connect(m_hourBtn, &QPushButton::clicked, [=]() { emit clicked(); });
-    connect(m_minuteBtn, &QPushButton::clicked, [=]() { emit clicked(); });
+    connect(m_hourButton, &QPushButton::clicked, [=]() { emit clicked(); });
+    connect(m_minuteButton, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(this, &FluTimePickerAP::clicked, [=]() {
         // get current time
         // LOG_DEBUG << "Called";
         // show FluTimerPickerView
 
-        int nX = -8;
-        int nY = height() / 2 - 180;
-        QPoint gPoint = mapToGlobal(QPoint(nX, nY));
+        int x = -8;
+        int y = height() / 2 - 180;
+        QPoint gPoint = mapToGlobal(QPoint(x, y));
         m_timerPickerApView->move(gPoint.x(), gPoint.y());
         m_timerPickerApView->show();
     });
 
     connect(m_timerPickerApView, &FluTimePickerAPView::clickedOk, [=]() {
         QString sHour = QString::asprintf("%02d", m_timerPickerApView->getHour());
-        m_hourBtn->setText(sHour);
+        m_hourButton->setText(sHour);
 
         QString sMinute = QString::asprintf("%02d", m_timerPickerApView->getMinute());
-        m_minuteBtn->setText(sMinute);
+        m_minuteButton->setText(sMinute);
 
         QString sAmOrPm = m_timerPickerApView->isAm() ? tr("AM") : tr("PM");
-        m_apBtn->setText(sAmOrPm);
+        m_apButton->setText(sAmOrPm);
     });
 
     onThemeChanged();

@@ -26,9 +26,9 @@ class FluTimePicker24H : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
-    QPushButton* m_hourBtn;
-    QPushButton* m_minuteBtn;
+    QHBoxLayout* m_mainLayout;
+    QPushButton* m_hourButton;
+    QPushButton* m_minuteButton;
 
     FluTimePicker24HView* m_timerPicker24HView;
 };

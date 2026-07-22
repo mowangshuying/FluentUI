@@ -46,19 +46,19 @@ class FluMessageBox : public QDialog
   protected:
     QWidget* m_parentWidget;
 
-    QHBoxLayout* m_hBoxLayout;
+    QHBoxLayout* m_boxLayout;
     QWidget* m_windowMask;
 
     QFrame* m_widget;
-    QVBoxLayout* m_vWidgetLayout;
+    QVBoxLayout* m_widgetLayout;
 
     QWidget* m_contentWidget;
-    QVBoxLayout* m_vContentWidgetLayout;
+    QVBoxLayout* m_contentWidgetLayout;
     QLabel* m_titleLabel;
     QLabel* m_infoLabel;
 
-    QWidget* m_btnWidget;
-    QHBoxLayout* m_hBtnLayout;
-    FluPushButton* m_cancelBtn;
-    FluStyleButton* m_okBtn;
+    QWidget* m_buttonWidget;
+    QHBoxLayout* m_buttonLayout;
+    FluPushButton* m_cancelButton;
+    FluStyleButton* m_okButton;
 };

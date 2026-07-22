@@ -13,13 +13,13 @@ class FluATitlePage : public FluWidget
 
     FluFWScrollView* getFWScrollView()
     {
-        return m_vScrollView;
+        return m_scrollView;
     }
 
     void paintEvent(QPaintEvent* event);
 
   protected:
     QLabel* m_titleLabel;
-    QVBoxLayout* m_vMainLayout;
-    FluFWScrollView* m_vScrollView;
+    QVBoxLayout* m_mainLayout;
+    FluFWScrollView* m_scrollView;
 };

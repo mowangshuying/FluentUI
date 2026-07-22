@@ -26,15 +26,15 @@ class FluProgressRing : public FluWidget
 
     bool getWorking();
 
-    void setWorking(bool bWorking);
+    void setWorking(bool isWorking);
 
-    void setShowText(bool bShowText);
+    void setShowText(bool isShowText);
 
     bool getShowText();
 
     bool getTransparentTrack();
 
-    void setTransparentTrack(bool bTransparentTrack);
+    void setTransparentTrack(bool isTransparentTrack);
 
   protected:
     int m_minValue;
@@ -42,8 +42,8 @@ class FluProgressRing : public FluWidget
     int m_curValue;
 
     int m_workStartValue;
-    bool m_bWorking;
-    bool m_bShowText;
-    bool m_bTransparentTrack;
+    bool m_isWorking;
+    bool m_isShowText;
+    bool m_isTransparentTrack;
     QTimer* m_workingTimer;
 };

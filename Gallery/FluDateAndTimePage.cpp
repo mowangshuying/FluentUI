@@ -2,7 +2,7 @@
 
 FluDateAndTimePage::FluDateAndTimePage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+    m_mainLayout->setContentsMargins(35, 35, 0, 35);
     m_titleLabel->setText(tr("Date & Time"));
 
     auto calendarDatePickerCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/CalendarDatePicker.png")), tr("CalendarDatePicker"), tr("A control that lets users pick a date value using a calendar."));

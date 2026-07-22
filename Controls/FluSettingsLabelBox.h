@@ -25,7 +25,7 @@ class FluSettingsLabelBox : public FluWidget
 
   protected:
     QHBoxLayout* m_mainLayout;
-    QVBoxLayout* m_vLayout;
+    QVBoxLayout* m_layout;
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;
     QLabel* m_infoLabel;

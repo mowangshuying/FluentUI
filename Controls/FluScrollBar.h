@@ -29,31 +29,31 @@ class FluScrollBar : public FluWidget
 
     int getMaxValue();
 
-    void setMaxValue(int nValue);
+    void setMaxValue(int value);
 
     int getMinValue();
 
-    void setMinValue(int nValue);
+    void setMinValue(int value);
 
-    void setRangeValue(int nMinValue, int nMaxValue);
+    void setRangeValue(int minValue, int maxValue);
 
     int getCurrentValue();
 
-    void setCurrentValue(int nValue);
+    void setCurrentValue(int value);
 
-    void scrollCurrentValue(int nValue);
+    void scrollCurrentValue(int value);
 
     int getValue();
 
-    void setValue(int nValue);
+    void setValue(int value);
 
     int getPadding();
 
-    void setPadding(int nPadding);
+    void setPadding(int padding);
 
     int getPageStep();
 
-    void setPageStep(int nPageStep);
+    void setPageStep(int pageStep);
 
     int getTrunkLen();
 
@@ -61,7 +61,7 @@ class FluScrollBar : public FluWidget
 
     int getSlideWayLen();
 
-    void setHideScrollBar(bool bHideScrollBar);
+    void setHideScrollBar(bool isHideScrollBar);
 
     bool isHideScrollBar();
 
@@ -100,14 +100,14 @@ class FluScrollBar : public FluWidget
 
     void wheelEvent(QWheelEvent* event);
   signals:
-    void valueRangeChanged(int nMinValue, int nMaxValue);
-    void currentValueChanged(int nValue);
+    void valueRangeChanged(int minValue, int maxValue);
+    void currentValueChanged(int value);
   public slots:
     void OnPageUp();
 
     void OnPageDown();
 
-    // void onCurrentValueChanged(int nValue);
+    // void onCurrentValueChanged(int value);
 
     void expand();
 
@@ -129,20 +129,20 @@ class FluScrollBar : public FluWidget
     QTimer* m_timer;
     QPropertyAnimation* m_valueAnimation;
 
-    int m_nMaxValue;
-    int m_nMinValue;
-    int m_nCurrentValue;
-    int m_nValue;  // use for animation; update current value;
+    int m_maxValue;
+    int m_minValue;
+    int m_currentValue;
+    int m_value;  // use for animation; update current value;
 
-    int m_nPadding;
+    int m_padding;
 
-    int m_nPageStep;
+    int m_pageStep;
 
-    bool m_bExpanded;
-    bool m_bEnter;
+    bool m_isExpanded;
+    bool m_isEnter;
 
     QPoint m_pressedPoint;
-    bool m_bPressed;
+    bool m_isPressed;
 
-    bool m_bHideScrollBar;
+    bool m_isHideScrollBar;
 };

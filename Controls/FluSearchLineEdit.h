@@ -31,12 +31,12 @@ class FluSearchLineEdit : public FluWidget
 
     void setEnabled(bool enabled);
   signals:
-    void onSearchBtnClicked();
+    void onSearchButtonClicked();
   public slots:
     void onThemeChanged();
 
   protected:
     QLineEdit* m_edit;
-    QPushButton* m_btn;
-    QHBoxLayout* m_hLayout;
+    QPushButton* m_button;
+    QHBoxLayout* m_layout;
 };

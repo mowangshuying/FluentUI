@@ -18,7 +18,7 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     hFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/LandscapeImage8.jpg")));
     hFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/sunset.jpg")));
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle("vertical FlipView");
@@ -32,7 +32,7 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     vFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/LandscapeImage8.jpg")));
     vFlipView->addPixmap(FluIconUtils::getPixmap(("../res/SampleMedia/sunset.jpg")));
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

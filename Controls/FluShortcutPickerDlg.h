@@ -19,7 +19,7 @@ class FluShortcutPickerDlg : public FluMessageBox
 
     void clearLabels();
 
-    QString keyToString(int nKey, bool bShift = false);
+    QString keyToString(int key, bool isShift = false);
 
     void keyPressEvent(QKeyEvent* event);
   public slots:
@@ -27,6 +27,6 @@ class FluShortcutPickerDlg : public FluMessageBox
 
   protected:
     std::vector<QString> m_keyTexts;
-    QHBoxLayout* m_hKeysLayout;
+    QHBoxLayout* m_keysLayout;
     QWidget* m_KeysWidget;
 };

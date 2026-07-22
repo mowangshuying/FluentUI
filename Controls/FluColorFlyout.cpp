@@ -45,9 +45,9 @@ void FluColorFlyout::showEvent(QShowEvent* event)
         return;
 
     QPoint targetPos = m_targetWidget->mapToGlobal(QPoint(0, 0));
-    int nX = targetPos.x();
-    int nY = targetPos.y() + m_targetWidget->height() + 5;
-    move(nX, nY);
+    int x = targetPos.x();
+    int y = targetPos.y() + m_targetWidget->height() + 5;
+    move(x, y);
 }
 
 void FluColorFlyout::paintEvent(QPaintEvent* event)

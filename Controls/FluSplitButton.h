@@ -27,7 +27,7 @@ class FluSplitButton : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
-    QPushButton* m_dropDownBtn;
-    QPushButton* m_textBtn;
+    QHBoxLayout* m_mainLayout;
+    QPushButton* m_dropDownButton;
+    QPushButton* m_textButton;
 };

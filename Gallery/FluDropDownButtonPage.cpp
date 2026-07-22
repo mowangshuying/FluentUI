@@ -20,7 +20,7 @@ FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : Fl
     dropDownButton1->addTextItem(tr("Reply All"));
 
     displayBox1->getBodyLayout()->addWidget(dropDownButton1);
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("DropDownButton with Icons"));
@@ -35,7 +35,7 @@ FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : Fl
     dropDownButton2->addIconTextItem(FluAwesomeType::MailReplyAll, tr("Reply All"));
 
     displayBox2->getBodyLayout()->addWidget(dropDownButton2);
-    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

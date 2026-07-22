@@ -2,14 +2,14 @@
 
 FluCalendarDatePicker::FluCalendarDatePicker(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
+    m_mainLayout = new QHBoxLayout;
     m_textButton = new QPushButton;
     m_iconButton = new QPushButton;
 
     m_textButton->setObjectName("textButton");
     m_iconButton->setObjectName("iconButton");
 
-    setLayout(m_hMainLayout);
+    setLayout(m_mainLayout);
 
     setFixedSize(120, 30);
     m_textButton->setText(tr("Pick a date"));
@@ -18,9 +18,9 @@ FluCalendarDatePicker::FluCalendarDatePicker(QWidget* parent /*= nullptr*/) : QP
     m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar));
     m_iconButton->setFixedWidth(30);
 
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_hMainLayout->addWidget(m_textButton);
-    m_hMainLayout->addWidget(m_iconButton);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->addWidget(m_textButton);
+    m_mainLayout->addWidget(m_iconButton);
 
     m_calendarView = new FluCalendarView(window());
     m_calendarView->setWindowFlag(Qt::Popup);
@@ -57,12 +57,12 @@ void FluCalendarDatePicker::setCurDate(QDate date)
 void FluCalendarDatePicker::onClicked()
 {
     // the pos
-    int nX = width() / 2;
-    int nY = height() + 5;
+    int x = width() / 2;
+    int y = height() + 5;
 
-    // LOG_DEBUG << "nX:" << nX << ",nY:" << nY;
+    // LOG_DEBUG << "x:" << x << ",y:" << y;
     // LOG_DEBUG << m_calendarView->width();
-    QPoint gPoint = mapToGlobal(QPoint(nX, nY));
+    QPoint gPoint = mapToGlobal(QPoint(x, y));
     // LOG_DEBUG << gPoint;
     m_calendarView->move(gPoint.x() - m_calendarView->width() / 2, gPoint.y());
     m_calendarView->show();

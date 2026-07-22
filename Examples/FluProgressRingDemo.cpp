@@ -11,11 +11,11 @@ FluProgressRingDemo::FluProgressRingDemo(QWidget* parent /*= nullptr*/) : FluWid
     timer->setInterval(100);
     timer->start();
 
-    m_nTimes = 0;
+    m_times = 0;
     connect(timer, &QTimer::timeout, [=]() {
-        m_nTimes++;
-        m_nTimes = m_nTimes %= 100;
-        progressRing1->setCurValue(m_nTimes);
+        m_times++;
+        m_times = m_times %= 100;
+        progressRing1->setCurValue(m_times);
     });
 
     auto progressRing2 = new FluProgressRing(this);

@@ -41,7 +41,7 @@ FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEm
     displayBox->getBodyLayout()->addWidget(borderGroup, 0, Qt::AlignTop);
     displayBox->getBodyLayout()->addWidget(border, 0, Qt::AlignTop);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

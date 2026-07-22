@@ -11,14 +11,14 @@ class FluScrollDelegate : public QObject
   public:
     FluScrollDelegate(QAbstractScrollArea* scrollArea = nullptr);
 
-    FluScrollBar* getVScrollBar();
+    FluScrollBar* getVerticalScrollBar();
 
-    FluScrollBar* getHScrollBar();
+    FluScrollBar* getHorizontalScrollBar();
 
     bool eventFilter(QObject* watched, QEvent* event);
 
   protected:
     QAbstractScrollArea* m_scrollArea;
-    FluScrollBar* m_vScrollBar;
-    FluScrollBar* m_hScrollBar;
+    FluScrollBar* m_verticalScrollBar;
+    FluScrollBar* m_horizontalScrollBar;
 };

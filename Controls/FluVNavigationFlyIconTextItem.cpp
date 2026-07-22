@@ -5,18 +5,18 @@
 
 FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_vScrollView = new FluVScrollView;
-    m_vScrollView->setContentsMargins(0, 0, 0, 0);
-    m_vScrollView->setObjectName("centerWidget");
+    m_scrollView = new FluVScrollView;
+    m_scrollView->setContentsMargins(0, 0, 0, 0);
+    m_scrollView->setObjectName("centerWidget");
 
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->setSpacing(0);
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setSpacing(0);
+    setLayout(m_mainLayout);
 
-    m_vScrollView->getMainLayout()->setContentsMargins(4, 4, 4, 4);
-    m_vScrollView->getMainLayout()->setSpacing(5);
-    m_vMainLayout->addWidget(m_vScrollView);
+    m_scrollView->getMainLayout()->setContentsMargins(4, 4, 4, 4);
+    m_scrollView->getMainLayout()->setSpacing(5);
+    m_mainLayout->addWidget(m_scrollView);
 
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
@@ -30,11 +30,11 @@ FluVNavigationFlyIconTextItem::~FluVNavigationFlyIconTextItem()
     // LOG_DEBUG << "called";
 }
 
-void FluVNavigationFlyIconTextItem::setItemWidth(int nWidth)
+void FluVNavigationFlyIconTextItem::setItemWidth(int width)
 {
 }
 
-void FluVNavigationFlyIconTextItem::setItemHeight(int nHeight)
+void FluVNavigationFlyIconTextItem::setItemHeight(int height)
 {
 }
 
@@ -56,7 +56,7 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
     {
         auto newItem = new FluVNavigationIconTextItem(item);
         newItem->setParentFlyItem(this);
-        m_vScrollView->getMainLayout()->addWidget(newItem);
+        m_scrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
     }
 
@@ -89,18 +89,18 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
 
 void FluVNavigationFlyIconTextItem::adjustItemHeight()
 {
-    int nH = 0;
+    int h = 0;
     for (auto item : m_items)
     {
-        nH += item->height();
+        h += item->height();
     }
-    nH += m_vScrollView->getMainLayout()->spacing() * (m_items.size() - 1) + m_vScrollView->getMainLayout()->contentsMargins().top() + m_vScrollView->getMainLayout()->contentsMargins().bottom();
-    if (nH > 450)
-        nH = 450;
+    h += m_scrollView->getMainLayout()->spacing() * (m_items.size() - 1) + m_scrollView->getMainLayout()->contentsMargins().top() + m_scrollView->getMainLayout()->contentsMargins().bottom();
+    if (h > 450)
+        h = 450;
 
-    m_vScrollView->setFixedHeight(nH);
-    nH += m_vMainLayout->contentsMargins().top() + m_vMainLayout->contentsMargins().bottom();
-    setFixedHeight(nH);
+    m_scrollView->setFixedHeight(h);
+    h += m_mainLayout->contentsMargins().top() + m_mainLayout->contentsMargins().bottom();
+    setFixedHeight(h);
 }
 
 void FluVNavigationFlyIconTextItem::adjustItemWidth()
@@ -110,25 +110,25 @@ void FluVNavigationFlyIconTextItem::adjustItemWidth()
         item->adjustItemWidth(item);
     }
 
-    int nMaxWidth = 0;
+    int maxWidth = 0;
     for (auto item : m_items)
     {
-        int nWidth = item->calcItemWidth();
-        if (nWidth > nMaxWidth)
+        int width = item->calcItemWidth();
+        if (width > maxWidth)
         {
-            nMaxWidth = nWidth;
+            maxWidth = width;
         }
     }
 
     for (auto item : m_items)
     {
-        item->getWrapWidget1()->setFixedWidth(nMaxWidth);
-        item->setFixedWidth(nMaxWidth);
+        item->getWrapWidget1()->setFixedWidth(maxWidth);
+        item->setFixedWidth(maxWidth);
     }
 
-    int nTotalMargins = m_vScrollView->contentsMargins().left() + m_vScrollView->contentsMargins().right() + m_vScrollView->getMainLayout()->contentsMargins().left() + m_vScrollView->getMainLayout()->contentsMargins().left();
-    m_vScrollView->setFixedWidth(nMaxWidth + nTotalMargins);
-    setFixedWidth(nMaxWidth + nTotalMargins);
+    int totalMargins = m_scrollView->contentsMargins().left() + m_scrollView->contentsMargins().right() + m_scrollView->getMainLayout()->contentsMargins().left() + m_scrollView->getMainLayout()->contentsMargins().left();
+    m_scrollView->setFixedWidth(maxWidth + totalMargins);
+    setFixedWidth(maxWidth + totalMargins);
 }
 
 void FluVNavigationFlyIconTextItem::paintEvent(QPaintEvent* event)
@@ -141,6 +141,6 @@ void FluVNavigationFlyIconTextItem::paintEvent(QPaintEvent* event)
 
 void FluVNavigationFlyIconTextItem::onThemeChanged()
 {
-    FluStyleSheetUtils::setQssByFileName("FluVNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVNavigationFlyIconTextItem.qss", m_scrollView, FluThemeUtils::getUtils()->getTheme());
     FluStyleSheetUtils::setQssByFileName("FluVNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

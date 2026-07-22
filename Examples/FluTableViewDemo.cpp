@@ -15,8 +15,8 @@ FluTableViewDemo::FluTableViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     hLayout->addWidget(deleteFirstRowBtn);
 
     connect(deleteFirstRowBtn, &FluPushButton::clicked, [=]() {
-        int nRowCount = widget->rowCount();
-        if (nRowCount > 0)
+        int rowCount = widget->rowCount();
+        if (rowCount > 0)
         {
             widget->removeRow(0);
         }
@@ -27,10 +27,10 @@ FluTableViewDemo::FluTableViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     hLayout->addWidget(deleteLastRowBtn);
 
     connect(deleteLastRowBtn, &FluPushButton::clicked, [=]() {
-        int nRowCount = widget->rowCount();
-        if (nRowCount > 0)
+        int rowCount = widget->rowCount();
+        if (rowCount > 0)
         {
-            widget->removeRow(nRowCount - 1);
+            widget->removeRow(rowCount - 1);
         }
     });
 
@@ -40,14 +40,14 @@ FluTableViewDemo::FluTableViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
 
     connect(deleteCurrentRowBtn, &FluPushButton::clicked, [=]() {
         auto items = widget->selectedItems();
-        int nCount = items.count();
-        int nCurrentRow = 0;
-        if (nCount > 0)
+        int count = items.count();
+        int currentRow = 0;
+        if (count > 0)
         {
-            nCurrentRow = widget->row(items.at(0));
-            widget->removeRow(nCurrentRow);
+            currentRow = widget->row(items.at(0));
+            widget->removeRow(currentRow);
         }
-        // LOG_DEBUG << "click:" << nCurrentRow;
+        // LOG_DEBUG << "click:" << currentRow;
     });
 
     m_contentLayout->addLayout(vLayout);
@@ -80,8 +80,8 @@ FluTableViewDemo::FluTableViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
     // insert items;
     for (int i = 0; i < 100; i++)
     {
-        int nRowCount = widget->rowCount();
-        widget->insertRow(nRowCount);
+        int rowCount = widget->rowCount();
+        widget->insertRow(rowCount);
 
         auto item1 = new QTableWidgetItem(QString::asprintf("%d", i + 1));
         widget->setItem(i, 0, item1);

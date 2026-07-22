@@ -25,7 +25,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     colorLabel->setFixedSize(100, 30);
     colorLabel->move(50, 90);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
     connect(comboBox, &FluComboBoxEx::currentTextChanged, [=](const QString& text) {
         colorLabel->setProperty("color", text);
@@ -45,7 +45,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     comboBox2->addItem(tr("Cherry"));
     comboBox2->addItem(tr("Grape"));
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

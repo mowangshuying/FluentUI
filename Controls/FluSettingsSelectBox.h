@@ -31,7 +31,7 @@ class FluSettingsSelectBox : public FluWidget
 
   protected:
     QHBoxLayout* m_mainLayout;
-    QVBoxLayout* m_vLayout;
+    QVBoxLayout* m_layout;
 
     FluAwesomeType m_iconAwesomeType;
     QLabel* m_iconLabel;

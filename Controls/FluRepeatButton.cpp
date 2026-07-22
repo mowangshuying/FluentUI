@@ -2,22 +2,22 @@
 
 FluRepeatButton::FluRepeatButton(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
-    m_nClickedCount = 0;
+    m_clickedCount = 0;
     setFixedSize(200, 30);
-    connect(this, &FluRepeatButton::clicked, [=](bool bChecked) { m_nClickedCount++; });
+    connect(this, &FluRepeatButton::clicked, [=](bool isChecked) { m_clickedCount++; });
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
-void FluRepeatButton::setClickCount(int nCount)
+void FluRepeatButton::setClickCount(int count)
 {
-    m_nClickedCount = nCount;
-    emit clickedCountChanged(nCount);
+    m_clickedCount = count;
+    emit clickedCountChanged(count);
 }
 
 int FluRepeatButton::getClickCount()
 {
-    return m_nClickedCount;
+    return m_clickedCount;
 }
 
 void FluRepeatButton::onThemeChanged()

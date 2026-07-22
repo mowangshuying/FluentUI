@@ -14,7 +14,7 @@ FluRatingControlPage::FluRatingControlPage(QWidget* parent /*= nullptr*/) : FluA
     auto ratingControl = new FluRatingControl;
     displayBox->getBodyLayout()->addWidget(ratingControl);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

@@ -99,8 +99,8 @@ class FluFrameLessTitleBar : public QWidget
 
   protected:
     QHBoxLayout* m_titleBarLayout;
-    QVBoxLayout* m_vSystemButtonsOuterLayout;
-    QHBoxLayout* m_hSystemButtonsInnerLayout;
+    QVBoxLayout* m_systemButtonsOuterLayout;
+    QHBoxLayout* m_systemButtonsInnerLayout;
 
     //// icons;
     // QLabel* m_iconLabel;
@@ -113,13 +113,13 @@ class FluFrameLessTitleBar : public QWidget
     QPushButton* m_maximizeButton;
     QPushButton* m_closeButton;
 
-    bool m_bExtended;
+    bool m_isExtended;
     Qt::Alignment m_labelAlignment = Qt::AlignLeft | Qt::AlignVCenter;
-    bool m_bHideWhenClose = false;
+    bool m_isHideWhenClose = false;
 
-    bool m_bTitleLabelVisible = true;
+    bool m_isTitleLabelVisible = true;
     std::optional<QSize> m_windowIconSize = std::nullopt;
-    bool m_bWindowIconVisible = false;
+    bool m_isWindowIconVisible = false;
     std::optional<QFont> m_titleFont = std::nullopt;
     bool m_closeTriggered = false;
 };

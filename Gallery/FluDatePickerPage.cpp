@@ -14,7 +14,7 @@ FluDatePickerPage::FluDatePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
     auto datePicker = new FluDatePicker;
     displayBox1->getBodyLayout()->addWidget(datePicker);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

@@ -24,15 +24,15 @@ class FluTabBar : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
-    void adjustAddTabBtnPosition();
+    void adjustAddTabButtonPosition();
 
   signals:
-    void addTabBtnClicked();
+    void addTabButtonClicked();
   public slots:
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     FluTabBarContent* m_tabBarContent;
-    QPushButton* m_addTabBtn;
+    QPushButton* m_addTabButton;
 };

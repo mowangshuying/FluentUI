@@ -18,5 +18,5 @@ class FluFWScrollView : public FluScrollArea
 
   protected:
     QWidget* m_contextWidget;
-    FluFlowLayout* m_vMainLayout;
+    FluFlowLayout* m_mainLayout;
 };

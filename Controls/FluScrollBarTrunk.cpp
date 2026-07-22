@@ -21,16 +21,16 @@ void FluScrollBarTrunk::initVertical(Qt::Orientation orientation)
         return;
 
     setFixedWidth(12);
-    m_preBtn = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowUp);
-    m_lstBtn = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowDown);
+    m_preButton = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowUp);
+    m_lstButton = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowDown);
 
     m_Layout = new QVBoxLayout(this);
     setLayout(m_Layout);
 
     auto vLayout = (QVBoxLayout*)m_Layout;
-    vLayout->addWidget(m_preBtn, 0, Qt::AlignHCenter);
+    vLayout->addWidget(m_preButton, 0, Qt::AlignHCenter);
     vLayout->addStretch(1);
-    vLayout->addWidget(m_lstBtn, 0, Qt::AlignHCenter);
+    vLayout->addWidget(m_lstButton, 0, Qt::AlignHCenter);
     vLayout->setContentsMargins(0, 3, 0, 3);
 }
 
@@ -40,15 +40,15 @@ void FluScrollBarTrunk::initHorizontal(Qt::Orientation orientation)
         return;
     setFixedHeight(12);
 
-    m_preBtn = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowLeft);
-    m_lstBtn = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowRight);
+    m_preButton = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowLeft);
+    m_lstButton = new FluScrollBarArrowButton(FluScrollBarArrowButtonType::ArrowRight);
     m_Layout = new QHBoxLayout(this);
     setLayout(m_Layout);
 
     auto hLayout = (QHBoxLayout*)m_Layout;
-    hLayout->addWidget(m_preBtn, 0, Qt::AlignVCenter);
+    hLayout->addWidget(m_preButton, 0, Qt::AlignVCenter);
     hLayout->addStretch(1);
-    hLayout->addWidget(m_lstBtn, 0, Qt::AlignVCenter);
+    hLayout->addWidget(m_lstButton, 0, Qt::AlignVCenter);
     hLayout->setContentsMargins(3, 0, 3, 0);
 }
 
@@ -60,14 +60,14 @@ void FluScrollBarTrunk::initOpacityAnimation()
     m_effect->setOpacity(0);
 }
 
-FluScrollBarArrowButton* FluScrollBarTrunk::getPreBtn()
+FluScrollBarArrowButton* FluScrollBarTrunk::getPreButton()
 {
-    return m_preBtn;
+    return m_preButton;
 }
 
-FluScrollBarArrowButton* FluScrollBarTrunk::getLstBtn()
+FluScrollBarArrowButton* FluScrollBarTrunk::getLstButton()
 {
-    return m_lstBtn;
+    return m_lstButton;
 }
 
 void FluScrollBarTrunk::setTrunkBackgroundColor(QColor color)

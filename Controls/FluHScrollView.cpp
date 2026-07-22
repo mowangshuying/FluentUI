@@ -10,7 +10,7 @@ FluHScrollView::FluHScrollView(QWidget* parent /*= nullptr*/) : QScrollArea(pare
     m_contextWidget = new QWidget(this);
     setWidget(m_contextWidget);
 
-    m_hMainLayout = new QHBoxLayout(m_contextWidget);
+    m_mainLayout = new QHBoxLayout(m_contextWidget);
     m_contextWidget->setObjectName("contextWidget");
 
     onThemeChanged();
@@ -23,7 +23,7 @@ FluHScrollView::~FluHScrollView()
 
 QHBoxLayout* FluHScrollView::getMainLayout()
 {
-    return m_hMainLayout;
+    return m_mainLayout;
 }
 
 void FluHScrollView::wheelEvent(QWheelEvent* event)

@@ -17,5 +17,5 @@ class FluTeachingTipContent : public FluWidget
 
     FluTeachingTipPosition m_TipPos;
 
-    int m_nSpacing;
+    int m_spacing;
 };

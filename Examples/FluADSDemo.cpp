@@ -75,8 +75,8 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     for (int i = 0; i < 10; i++)
     {
-        int nRowCount = table1->rowCount();
-        table1->insertRow(nRowCount);
+        int rowCount = table1->rowCount();
+        table1->insertRow(rowCount);
 
         table1->setRowHeight(0, 30);
         auto item = new QTableWidgetItem(QString::asprintf("%d", i + 1));
@@ -104,8 +104,8 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     for (int i = 0; i < 1024; i++)
     {
-        int nRowCount = table2->rowCount();
-        table2->insertRow(nRowCount);
+        int rowCount = table2->rowCount();
+        table2->insertRow(rowCount);
 
         table2->setRowHeight(0, 30);
         auto item = new QTableWidgetItem(QString::asprintf("%d", i + 1));
@@ -134,8 +134,8 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     for (int i = 0; i < 10; i++)
     {
-        int nRowCount = propertiesTable->rowCount();
-        propertiesTable->insertRow(nRowCount);
+        int rowCount = propertiesTable->rowCount();
+        propertiesTable->insertRow(rowCount);
 
         propertiesTable->setRowHeight(i, 30);
         auto item = new QTableWidgetItem(QString::asprintf("%d", i + 1));

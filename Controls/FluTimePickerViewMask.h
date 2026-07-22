@@ -13,8 +13,8 @@ class FluTimePickerViewMaskItem
 
   public:
     QString m_text;
-    int m_nWidth;
-    int m_nHeight;
+    int m_width;
+    int m_height;
 };
 
 class FluTimePickerViewMask : public QWidget
@@ -42,9 +42,9 @@ class FluTimePickerViewMask : public QWidget
         return m_textColorEx;
     }
 
-    void addItem(QString text, int nW, int nH);
+    void addItem(QString text, int w, int h);
 
-    void setItemText(int nIndex, QString text);
+    void setItemText(int index, QString text);
 
     void paintBackground(QPainter& painter);
 
@@ -55,13 +55,13 @@ class FluTimePickerViewMask : public QWidget
 
     void paintEvent(QPaintEvent* event);
   signals:
-    void enterChanged(int nIndex, QEnterEvent* event);
-    void leaveChanged(int nIndex, QEvent* event);
-    void wheelChanged(int nIndex, QWheelEvent* event);
+    void enterChanged(int index, QEnterEvent* event);
+    void leaveChanged(int index, QEvent* event);
+    void wheelChanged(int index, QWheelEvent* event);
 
   protected:
     std::vector<FluTimePickerViewMaskItem> m_items;
-    int m_nCurIndex;
+    int m_curIndex;
 
     QColor m_backgroundColorEx;
     QColor m_textColorEx;

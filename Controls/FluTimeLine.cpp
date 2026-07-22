@@ -2,8 +2,8 @@
 
 FluTimeLine::FluTimeLine(QWidget* parent /*= nullptr*/) : FluVScrollView(parent)
 {
-    m_vMainLayout->setSpacing(0);
-    m_vMainLayout->setAlignment(Qt::AlignTop);
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setAlignment(Qt::AlignTop);
 }
 
 void FluTimeLine::addTimeLineItem(QString text)
@@ -11,29 +11,29 @@ void FluTimeLine::addTimeLineItem(QString text)
     addTimeLineItem(-1, text);
 }
 
-void FluTimeLine::addTimeLineItem(int nIndex, QString text)
+void FluTimeLine::addTimeLineItem(int index, QString text)
 {
-    if (nIndex == -1)
+    if (index == -1)
     {
         if (m_itemsMap.empty())
         {
-            nIndex = 0;
+            index = 0;
         }
         else
         {
             auto iter = m_itemsMap.rbegin();
-            nIndex = iter->first + 1;
+            index = iter->first + 1;
         }
 
         auto timeLineItem = new FluTimeLineItem;
         timeLineItem->addTextItem(text);
-        m_itemsMap[nIndex] = timeLineItem;
-        m_vMainLayout->addWidget(timeLineItem, 0, Qt::AlignTop);
+        m_itemsMap[index] = timeLineItem;
+        m_mainLayout->addWidget(timeLineItem, 0, Qt::AlignTop);
         return;
     }
     else
     {
-        auto itf = m_itemsMap.find(nIndex);
+        auto itf = m_itemsMap.find(index);
         if (itf != m_itemsMap.end())
         {
             itf->second->addTextItem(text);

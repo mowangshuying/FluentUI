@@ -14,9 +14,9 @@ class FluTableItemDelegate : public QStyledItemDelegate
   public:
     FluTableItemDelegate(FluTableView* parent);
 
-    void setHoverRow(int nHoverRow);
+    void setHoverRow(int hoverRow);
 
-    void setPressedRow(int nPressedRow);
+    void setPressedRow(int pressedRow);
 
     void setSelectedRows(std::list<QModelIndex> indexList);
 
@@ -38,9 +38,9 @@ class FluTableItemDelegate : public QStyledItemDelegate
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
   protected:
-    int m_nMargin;
-    int m_nHoverRow;
-    int m_nPressedRow;
+    int m_margin;
+    int m_hoverRow;
+    int m_pressedRow;
     std::set<int> m_selectedRows;
     FluTableView* m_tableView;
 };

@@ -13,7 +13,7 @@ class FluCalendarSelectMonthView : public FluWidget
   public:
     FluCalendarSelectMonthView(QWidget* parent = nullptr);
 
-    void setYearMonth(int nYear, int nMonth);
+    void setYearMonth(int year, int month);
 
     void updateStyleSheet();
 
@@ -25,13 +25,13 @@ class FluCalendarSelectMonthView : public FluWidget
 
     void gotoNextYear();
 
-    FluCalendarItem* getItem(int nIndex);
+    FluCalendarItem* getItem(int index);
 
   public slots:
     void onThemeChanged();
 
   protected:
-    QGridLayout* m_gMainLayout;
+    QGridLayout* m_mainLayout;
     QList<FluCalendarItem*> m_labelList;
     // QDate m_curYear;
     FluCalendarView* m_parentView;

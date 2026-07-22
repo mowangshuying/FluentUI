@@ -3,9 +3,9 @@
 
 FluShortcutPicker::FluShortcutPicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setSpacing(10);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setSpacing(10);
+    setLayout(m_mainLayout);
 
     updateKeys();
     setFixedHeight(48);
@@ -38,20 +38,20 @@ void FluShortcutPicker::updateKeys()
         label->setText(text);
         label->setObjectName("keyLabel");
         label->setAlignment(Qt::AlignCenter);
-        m_hMainLayout->addWidget(label);
+        m_mainLayout->addWidget(label);
     }
 
     // set icon;
     auto label = new QLabel;
     label->setFixedSize(32, 32);
     label->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::PenWorkspace, FluThemeUtils::getUtils()->getTheme()));
-    m_hMainLayout->addWidget(label);
+    m_mainLayout->addWidget(label);
 }
 
 void FluShortcutPicker::clearLabels()
 {
     QLayoutItem* child;
-    while ((child = m_hMainLayout->takeAt(0)) != nullptr)
+    while ((child = m_mainLayout->takeAt(0)) != nullptr)
     {
         if (child->widget())
         {

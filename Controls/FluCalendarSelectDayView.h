@@ -26,7 +26,7 @@ class FluCalendarViewWeakTitle : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_weekTitleLayout;
 };
 
 class FluCalendarMonthView : public FluWidget
@@ -62,7 +62,7 @@ class FluCalendarMonthView : public FluWidget
     void onThemeChanged();
 
   protected:
-    QGridLayout* m_gMainLayout;
+    QGridLayout* m_monthLayout;
     QList<FluCalendarItem*> m_labelList;
     FluCalendarView* m_calendarView;
 };
@@ -87,7 +87,7 @@ class FluCalendarSelectDayView : public FluWidget
 
   public slots:
   protected:
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
 
     FluCalendarViewWeakTitle* m_weekTitle;  // weakTitle;
     FluCalendarMonthView* m_monthView;      // monthView;

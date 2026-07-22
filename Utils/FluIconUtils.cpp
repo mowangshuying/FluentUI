@@ -26,84 +26,84 @@ FluIconUtils *FluIconUtils::getInstance()
     return &utils;
 }
 
-QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType)
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType type)
 {
-    return getFluentIconPixmap(nType, QColor(8, 8, 8));
+    return getFluentIconPixmap(type, QColor(8, 8, 8));
 }
 
-QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h)
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType type, QColor penColor, int w, int h)
 {
-    QFont tmpFont = getInstance()->m_fluentFont;
-    tmpFont.setPixelSize(qMin(w, h) * 0.7);
+    QFont tempFont = getInstance()->m_fluentFont;
+    tempFont.setPixelSize(qMin(w, h) * 0.7);
 
-    QPixmap tmpPixMap(w, h);
-    tmpPixMap.fill(Qt::transparent);
+    QPixmap tempPixmap(w, h);
+    tempPixmap.fill(Qt::transparent);
     QPainter painter;
-    painter.begin(&tmpPixMap);
+    painter.begin(&tempPixmap);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(penColor);
-    painter.setFont(tmpFont);
-    painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar((unsigned int)nType));
+    painter.setFont(tempFont);
+    painter.drawText(tempPixmap.rect(), Qt::AlignCenter, QChar((unsigned int)type));
     painter.end();
-    return tmpPixMap;
+    return tempPixmap;
 }
 
-QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor)
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType type, QColor penColor)
 {
-    return getFluentIconPixmap(nType, penColor, 30, 30);
+    return getFluentIconPixmap(type, penColor, 30, 30);
 }
 
-QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType)
+QIcon FluIconUtils::getFluentIcon(FluAwesomeType type)
 {
-    return QIcon(getFluentIconPixmap(nType));
+    return QIcon(getFluentIconPixmap(type));
 }
 
-QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, FluTheme theme)
-{
-    if (theme == FluTheme::Light)
-        return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8));
-
-    if (theme == FluTheme::Dark)
-        return FluIconUtils::getFluentIconPixmap(nType, QColor(239, 239, 239));
-
-    if (theme == FluTheme::AtomOneDark)
-        return FluIconUtils::getFluentIconPixmap(nType, QColor(Qt::white));
-
-    return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8));
-}
-
-QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, FluTheme theme, int w, int h)
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType type, FluTheme theme)
 {
     if (theme == FluTheme::Light)
-        return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8), w, h);
+        return FluIconUtils::getFluentIconPixmap(type, QColor(8, 8, 8));
 
     if (theme == FluTheme::Dark)
-        return FluIconUtils::getFluentIconPixmap(nType, QColor(239, 239, 239), w, h);
+        return FluIconUtils::getFluentIconPixmap(type, QColor(239, 239, 239));
 
     if (theme == FluTheme::AtomOneDark)
-        return FluIconUtils::getFluentIconPixmap(nType, QColor(Qt::white), w, h);
+        return FluIconUtils::getFluentIconPixmap(type, QColor(Qt::white));
 
-    return FluIconUtils::getFluentIconPixmap(nType, QColor(8, 8, 8), w, h);
+    return FluIconUtils::getFluentIconPixmap(type, QColor(8, 8, 8));
 }
 
-QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType, FluTheme theme)
+QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType type, FluTheme theme, int w, int h)
 {
-    return QIcon(getFluentIconPixmap(nType, theme));
+    if (theme == FluTheme::Light)
+        return FluIconUtils::getFluentIconPixmap(type, QColor(8, 8, 8), w, h);
+
+    if (theme == FluTheme::Dark)
+        return FluIconUtils::getFluentIconPixmap(type, QColor(239, 239, 239), w, h);
+
+    if (theme == FluTheme::AtomOneDark)
+        return FluIconUtils::getFluentIconPixmap(type, QColor(Qt::white), w, h);
+
+    return FluIconUtils::getFluentIconPixmap(type, QColor(8, 8, 8), w, h);
 }
 
-QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType, FluTheme theme, int w, int h)
+QIcon FluIconUtils::getFluentIcon(FluAwesomeType type, FluTheme theme)
 {
-    return QIcon(getFluentIconPixmap(nType, theme, w, h));
+    return QIcon(getFluentIconPixmap(type, theme));
 }
 
-QIcon FluIconUtils::getFluentIcon(FluAwesomeType nType, QColor penColor)
+QIcon FluIconUtils::getFluentIcon(FluAwesomeType type, FluTheme theme, int w, int h)
 {
-    return QIcon(getFluentIconPixmap(nType, penColor));
+    return QIcon(getFluentIconPixmap(type, theme, w, h));
 }
 
-void FluIconUtils::saveFluentPng(FluAwesomeType nType, FluTheme theme, QString filename)
+QIcon FluIconUtils::getFluentIcon(FluAwesomeType type, QColor penColor)
 {
-    auto pixmap = getFluentIconPixmap(nType, theme);
+    return QIcon(getFluentIconPixmap(type, penColor));
+}
+
+void FluIconUtils::saveFluentPng(FluAwesomeType type, FluTheme theme, QString filename)
+{
+    auto pixmap = getFluentIconPixmap(type, theme);
     pixmap.save(filename);
 }
 

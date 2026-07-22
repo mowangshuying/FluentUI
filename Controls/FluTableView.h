@@ -16,15 +16,15 @@ class FluTableView : public QTableWidget
 
     void setCurrentCell(int row, int column, QItemSelectionModel::SelectionFlags command);
 
-    void setHoverRow(int nRow);
+    void setHoverRow(int row);
 
-    void setPressedRow(int nRow);
+    void setPressedRow(int row);
 
     void setSelectedRows(std::list<QModelIndex> indexList);
 
     std::set<int> getReadOnlySet();
 
-    bool judgeReadOnlyCol(int nCol);
+    bool judgeReadOnlyCol(int col);
 
     void setReadOnlySet(std::set<int> readOnlySet);
 

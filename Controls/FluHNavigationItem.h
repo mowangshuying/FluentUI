@@ -42,6 +42,6 @@ class FluHNavigationItem : public FluWidget
   protected:
     FluHNavigationItemType m_itemType;
     FluHNavigationView* m_parentView;
-    bool m_bLong;
+    bool m_isLong;
     QString m_key;
 };

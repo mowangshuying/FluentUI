@@ -71,7 +71,7 @@ void FluProgressRingPage::addIndeterminateProgressRing()
     displayBox->getBodyRightLayout()->addWidget(progressOptionsLabel, 0, Qt::AlignTop);
     displayBox->getBodyRightLayout()->addWidget(comboBox, 0, Qt::AlignTop);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluProgressRingPage::addIndeterminateRing()
@@ -90,15 +90,15 @@ void FluProgressRingPage::addIndeterminateRing()
     timer->setInterval(100);
     timer->start();
 
-    m_nTimes = 0;
+    m_times = 0;
     connect(timer, &QTimer::timeout, [=]() {
-        m_nTimes++;
-        m_nTimes = m_nTimes %= 100;
-        progressRing->setCurValue(m_nTimes);
+        m_times++;
+        m_times = m_times %= 100;
+        progressRing->setCurValue(m_times);
     });
 
     // displayBox1->getBodyLayout()->addWidget(checkBox);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluProgressRingPage::addBusyRing()
@@ -112,7 +112,7 @@ void FluProgressRingPage::addBusyRing()
     busyRing->move(50, 50);
 
     // displayBox1->getBodyLayout()->addWidget(checkBox);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluProgressRingPage::onThemeChanged()

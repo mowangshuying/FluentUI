@@ -8,43 +8,43 @@
 
 FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_nViewWidth = 300;  // default width
-    m_vLayout = new QVBoxLayout(this);
-    m_vLayout->setContentsMargins(4, 4, 4, 4);
+    m_viewWidth = 300;  // default width
+    m_layout = new QVBoxLayout(this);
+    m_layout->setContentsMargins(4, 4, 4, 4);
     m_topWrapWidget = new QWidget(this);
     m_midVScrollView = new FluVScrollView(this);
     m_bottomWrapWidget = new QWidget(this);
 
-    m_vTopWrapLayout = new QVBoxLayout(m_topWrapWidget);
-    m_vBottomLayout = new QVBoxLayout(m_bottomWrapWidget);
+    m_topWrapLayout = new QVBoxLayout(m_topWrapWidget);
+    m_bottomLayout = new QVBoxLayout(m_bottomWrapWidget);
 
-    m_vTopWrapLayout->setContentsMargins(0, 0, 0, 0);
+    m_topWrapLayout->setContentsMargins(0, 0, 0, 0);
     m_midVScrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
-    m_vBottomLayout->setContentsMargins(0, 0, 0, 0);
+    m_bottomLayout->setContentsMargins(0, 0, 0, 0);
 
-    m_vTopWrapLayout->setSpacing(5);
-    m_vBottomLayout->setSpacing(5);
+    m_topWrapLayout->setSpacing(5);
+    m_bottomLayout->setSpacing(5);
 
-    m_vTopWrapLayout->setAlignment(Qt::AlignTop);
+    m_topWrapLayout->setAlignment(Qt::AlignTop);
     m_midVScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
-    m_vBottomLayout->setAlignment(Qt::AlignTop);
+    m_bottomLayout->setAlignment(Qt::AlignTop);
 
-    m_vLayout->addWidget(m_topWrapWidget);
-    m_vLayout->addWidget(m_midVScrollView, 1);
-    m_vLayout->addWidget(m_bottomWrapWidget);
+    m_layout->addWidget(m_topWrapWidget);
+    m_layout->addWidget(m_midVScrollView, 1);
+    m_layout->addWidget(m_bottomWrapWidget);
 
     m_topWrapWidget->setObjectName("widget1");
     m_midVScrollView->setObjectName("widget2");
     m_bottomWrapWidget->setObjectName("widget3");
 
     m_menuButtonItem = new FluVNavigationMenuItem(this);
-    m_vTopWrapLayout->addWidget(m_menuButtonItem);
+    m_topWrapLayout->addWidget(m_menuButtonItem);
 
     m_searchItem = new FluVNavigationSearchItem;
-    m_vTopWrapLayout->addWidget(m_searchItem);
+    m_topWrapLayout->addWidget(m_searchItem);
 
-    m_bLong = true;
-    setFixedWidth(m_nViewWidth);
+    m_isLong = true;
+    setFixedWidth(m_viewWidth);
 
     m_animation = new QPropertyAnimation;
     m_animation->setDuration(250);
@@ -83,16 +83,16 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     });
 
     connect(m_animation, &QPropertyAnimation::finished, this, [=]() {
-        if (!m_bLong)
+        if (!m_isLong)
             collapseView();
     });
 
     onThemeChanged();
 }
 
-void FluVNavigationView::setOnlyCollapseView(bool bHideMenuAndSearch)
+void FluVNavigationView::setOnlyCollapseView(bool isHideMenuAndSearch)
 {
-    if (bHideMenuAndSearch)
+    if (isHideMenuAndSearch)
     {
         hideMenuItem();
         hideSearchItem();
@@ -105,12 +105,12 @@ void FluVNavigationView::setOnlyCollapseView(bool bHideMenuAndSearch)
 
     collapseDownView();
     collapseView();
-    setFixedWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    setFixedWidth(40 + m_layout->contentsMargins().left() + m_layout->contentsMargins().right());
 }
 
 void FluVNavigationView::addItemToTopLayout(QWidget *item)
 {
-    m_vTopWrapLayout->addWidget(item, 0, Qt::AlignTop);
+    m_topWrapLayout->addWidget(item, 0, Qt::AlignTop);
 }
 
 void FluVNavigationView::addItemToMidLayout(QWidget *item)
@@ -123,7 +123,7 @@ void FluVNavigationView::addItemToMidLayout(QWidget *item)
 
 void FluVNavigationView::addItemToBottomLayout(QWidget *item)
 {
-    m_vBottomLayout->addWidget(item);
+    m_bottomLayout->addWidget(item);
     auto tmpItem = (FluVNavigationItem *)item;
     tmpItem->setParentView(this);
 }
@@ -136,9 +136,9 @@ void FluVNavigationView::clearAllItemsSelectState()
         curItem->clearAllItemsSelectState();
     }
 
-    for (int i = 0; i < m_vBottomLayout->count(); i++)
+    for (int i = 0; i < m_bottomLayout->count(); i++)
     {
-        auto curItem = (FluVNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
+        auto curItem = (FluVNavigationItem *)m_bottomLayout->itemAt(i)->widget();
         curItem->clearAllItemsSelectState();
     }
 }
@@ -152,25 +152,25 @@ void FluVNavigationView::updateAllItemsStyleSheet()
         curItem->update();
     }
 
-    for (int i = 0; i < m_vBottomLayout->count(); i++)
+    for (int i = 0; i < m_bottomLayout->count(); i++)
     {
-        auto curItem = (FluVNavigationItem *)m_vBottomLayout->itemAt(i)->widget();
+        auto curItem = (FluVNavigationItem *)m_bottomLayout->itemAt(i)->widget();
         curItem->updateAllItemsStyleSheet();
     }
 }
 
 void FluVNavigationView::setViewWidth(int width)
 {
-    m_nViewWidth = width;
-    int nItemWidth = m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    m_viewWidth = width;
+    int itemWidth = m_viewWidth - (m_layout->contentsMargins().left() + m_layout->contentsMargins().right());
 
     // update all items width;
     auto allitems = getAllItems();
     for (auto item : allitems)
     {
-        item->setItemWidth(nItemWidth);
+        item->setItemWidth(itemWidth);
     }
-    setFixedWidth(m_nViewWidth);
+    setFixedWidth(m_viewWidth);
 }
 
 std::vector<FluVNavigationItem *> FluVNavigationView::getAllItems()
@@ -324,7 +324,7 @@ inline void FluVNavigationView::expandView()
         itemVct.push_back(m_bottomWrapWidget->layout()->itemAt(i)->widget());
     }
 
-    int nItemWidth = m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+    int itemWidth = m_viewWidth - (m_layout->contentsMargins().left() + m_layout->contentsMargins().right());
     for (auto itemW : itemVct)
     {
         auto item = (FluVNavigationItem *)(itemW);
@@ -336,8 +336,8 @@ inline void FluVNavigationView::expandView()
         if (item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->setFixedWidth(nItemWidth);
-            iconTextItem->getWrapWidget1()->setFixedWidth(nItemWidth);
+            iconTextItem->setFixedWidth(itemWidth);
+            iconTextItem->getWrapWidget1()->setFixedWidth(itemWidth);
             iconTextItem->showLabelArrow();
         }
 
@@ -346,7 +346,7 @@ inline void FluVNavigationView::expandView()
             auto settingsItem = (FluVNavigationSettingsItem *)(item);
             if (settingsItem != nullptr)
             {
-                settingsItem->setFixedWidth(nItemWidth);
+                settingsItem->setFixedWidth(itemWidth);
                 settingsItem->showLabel();
             }
         }
@@ -356,7 +356,7 @@ inline void FluVNavigationView::expandView()
             auto searchItem = (FluVNavigationSearchItem *)(item);
             if (searchItem != nullptr)
             {
-                searchItem->setFixedWidth(nItemWidth);
+                searchItem->setFixedWidth(itemWidth);
                 searchItem->hideSearchButton();
             }
         }
@@ -477,16 +477,16 @@ void FluVNavigationView::paintEvent(QPaintEvent *event)
 void FluVNavigationView::onMenuItemClicked()
 {
     // LOG_DEBUG << "called.";
-    if (m_bLong)
+    if (m_isLong)
     {
         collapseDownView();
 
         // LOG_DEBUG << width();
         m_valueObject->setValue(width());
         m_animation->setStartValue(width());
-        m_animation->setEndValue(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
+        m_animation->setEndValue(40 + m_layout->contentsMargins().left() + m_layout->contentsMargins().right());
         m_animation->start();
-        m_bLong = false;
+        m_isLong = false;
     }
     else
     {
@@ -494,9 +494,9 @@ void FluVNavigationView::onMenuItemClicked()
 
         m_valueObject->setValue(width());
         m_animation->setStartValue(width());
-        m_animation->setEndValue(m_nViewWidth);
+        m_animation->setEndValue(m_viewWidth);
         m_animation->start();
-        m_bLong = true;
+        m_isLong = true;
     }
 }
 

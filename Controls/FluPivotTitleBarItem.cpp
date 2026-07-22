@@ -2,19 +2,19 @@
 
 FluPivotTitleBarItem::FluPivotTitleBarItem(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
-    m_vMainLayout = new QVBoxLayout;
-    setLayout(m_vMainLayout);
-    m_vMainLayout->setContentsMargins(5, 5, 5, 5);
+    m_mainLayout = new QVBoxLayout;
+    setLayout(m_mainLayout);
+    m_mainLayout->setContentsMargins(5, 5, 5, 5);
 
     m_textLabel = new QLabel;
     m_textLabel->setWordWrap(true);
     m_textLabel->setObjectName("textLabel");
-    m_vMainLayout->addWidget(m_textLabel);
-    m_vMainLayout->addWidget(m_textLabel, 1);
+    m_mainLayout->addWidget(m_textLabel);
+    m_mainLayout->addWidget(m_textLabel, 1);
 
     m_indicatorLabel = new QLabel;
     m_indicatorLabel->setObjectName("indicatorLabel");
-    m_vMainLayout->addWidget(m_indicatorLabel);
+    m_mainLayout->addWidget(m_indicatorLabel);
 
     m_indicatorLabel->setFixedHeight(4);
     setSelected(false);
@@ -24,11 +24,11 @@ FluPivotTitleBarItem::FluPivotTitleBarItem(QWidget* parent /*= nullptr*/) : QPus
     adjustItemSize();
 }
 
-void FluPivotTitleBarItem::setSelected(bool bSelected)
+void FluPivotTitleBarItem::setSelected(bool isSelected)
 {
-    setProperty("selected", bSelected);
-    m_textLabel->setProperty("selected", bSelected);
-    m_indicatorLabel->setProperty("selected", bSelected);
+    setProperty("selected", isSelected);
+    m_textLabel->setProperty("selected", isSelected);
+    m_indicatorLabel->setProperty("selected", isSelected);
 
     m_textLabel->style()->polish(m_textLabel);
     m_indicatorLabel->style()->polish(m_indicatorLabel);
@@ -50,9 +50,9 @@ QString FluPivotTitleBarItem::getKey()
 void FluPivotTitleBarItem::adjustItemSize()
 {
     m_textLabel->show();
-    int nLabelWidth = m_textLabel->sizeHint().width();
-    m_textLabel->setFixedWidth(nLabelWidth);
-    setFixedWidth(nLabelWidth + 10);
+    int labelWidth = m_textLabel->sizeHint().width();
+    m_textLabel->setFixedWidth(labelWidth);
+    setFixedWidth(labelWidth + 10);
 }
 
 void FluPivotTitleBarItem::onThemeChanged()

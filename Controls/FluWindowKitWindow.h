@@ -36,6 +36,6 @@ class FluWindowKitWindow : public QMainWindow
     FluWindowkitButton *m_minButton;
     FluWindowkitButton *m_maxButton;
     FluWindowkitButton *m_closeButton;
-    // QVBoxLayout *m_vMainLayout;
+    // QVBoxLayout *m_mainLayout;
     // QHBoxLayout *m_contentLayout;
 };

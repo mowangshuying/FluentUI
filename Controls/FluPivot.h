@@ -23,7 +23,7 @@ class FluPivot : public FluWidget
     void onThemeChanged();
 
   protected:
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
     FluPivotTitleBar* m_titleBar;
-    FluStackedLayout* m_sLayout;
+    FluStackedLayout* m_layout;
 };

@@ -2,27 +2,27 @@
 
 FluAppBarButton::FluAppBarButton(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(awesomeType), m_shortCut(nullptr)
 {
-    m_vMainLayout = new QVBoxLayout;
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    setLayout(m_mainLayout);
 
-    // m_vMainLayout->setContentsMargins(5, 5, 5, 5);
-    m_vMainLayout->setAlignment(Qt::AlignHCenter);
+    // m_mainLayout->setContentsMargins(5, 5, 5, 5);
+    m_mainLayout->setAlignment(Qt::AlignHCenter);
 
     setFixedSize(70, 50);
 
     // icon and text;
-    m_iconBtn = new QPushButton;
-    // m_iconBtn->setFixedSize(25, 25);
-    m_iconBtn->setIconSize(QSize(20, 20));
-    m_iconBtn->setObjectName("iconBtn");
-    m_vMainLayout->addWidget(m_iconBtn);
+    m_iconButton = new QPushButton;
+    // m_iconButton->setFixedSize(25, 25);
+    m_iconButton->setIconSize(QSize(20, 20));
+    m_iconButton->setObjectName("iconBtn");
+    m_mainLayout->addWidget(m_iconButton);
 
     m_textLabel = new QLabel;
     m_textLabel->setAlignment(Qt::AlignHCenter);
     m_textLabel->setObjectName("textLabel");
-    m_vMainLayout->addWidget(m_textLabel);
+    m_mainLayout->addWidget(m_textLabel);
 
-    m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
     onThemeChanged();
 }
 
@@ -78,13 +78,13 @@ void FluAppBarButton::paintEvent(QPaintEvent* event)
 
 void FluAppBarButton::onThemeChanged()
 {
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUtils::setQssByFileName("FluAppBarButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluAppBarButton::setEnabled(bool enabled)
 {
     QWidget::setEnabled(enabled);
-    m_iconBtn->setEnabled(enabled);
+    m_iconButton->setEnabled(enabled);
     m_textLabel->setEnabled(enabled);
 }

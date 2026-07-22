@@ -8,11 +8,11 @@ FluScrollArea::FluScrollArea(QWidget* parent /*= nullptr*/) : QScrollArea(parent
 void FluScrollArea::hideVScrollBar()
 {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_scrollDelegate->getVScrollBar()->setHideScrollBar(true);
+    m_scrollDelegate->getVerticalScrollBar()->setHideScrollBar(true);
 }
 
 void FluScrollArea::hideHScrollBar()
 {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_scrollDelegate->getHScrollBar()->setHideScrollBar(true);
+    m_scrollDelegate->getHorizontalScrollBar()->setHideScrollBar(true);
 }

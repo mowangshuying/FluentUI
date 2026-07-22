@@ -109,7 +109,7 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
 
     if (true)
     {
-        int nMenuBarHeight = menuBar->height();
+        int menuBarHeight = menuBar->height();
         QRect newRect = option->rect;
         painter->save();
         painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
@@ -119,9 +119,9 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
         painter->restore();
     }
 
-    int nMenuBarHeight = menuBar->height();
+    int menuBarHeight = menuBar->height();
     QRect newRect = option->rect;
-    newRect.setY((nMenuBarHeight - m_menuBarItemHeight) / 2);
+    newRect.setY((menuBarHeight - m_menuBarItemHeight) / 2);
     newRect.setHeight(m_menuBarItemHeight);
     if (true)
     {
@@ -179,10 +179,10 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
             else if (!text.isEmpty() && !icon.isNull())
             {
                 int textLength = opt->fontMetrics.horizontalAdvance(text);
-                int nSpace = (newRect.width() - (2 * m_menuBarItemMargin + m_menuBarItemIconWH) - textLength) / 2;
+                int space = (newRect.width() - (2 * m_menuBarItemMargin + m_menuBarItemIconWH) - textLength) / 2;
 
                 QRect rect;
-                rect.setX(newRect.x() + m_menuBarItemMargin + nSpace);
+                rect.setX(newRect.x() + m_menuBarItemMargin + space);
                 rect.setY(newRect.y() + (newRect.height() - m_menuBarItemIconWH) / 2);
                 rect.setWidth(m_menuBarItemIconWH);
                 rect.setHeight(m_menuBarItemIconWH);
@@ -191,9 +191,9 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
                 // text
                 painter->save();
                 painter->setPen(m_menuBarItemForegroundColor);
-                rect.setX(newRect.x() + m_menuBarItemIconWH + m_menuBarItemMargin + nSpace);
+                rect.setX(newRect.x() + m_menuBarItemIconWH + m_menuBarItemMargin + space);
                 rect.setY(newRect.y());
-                rect.setWidth(newRect.width() - m_menuBarItemIconWH - 2 * m_menuBarItemMargin - nSpace);
+                rect.setWidth(newRect.width() - m_menuBarItemIconWH - 2 * m_menuBarItemMargin - space);
                 rect.setHeight(newRect.height());
 
                 // calc text length

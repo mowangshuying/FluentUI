@@ -13,19 +13,19 @@ class FluColorViewHHandle : public FluWidget
   public:
     FluColorViewHHandle(QWidget* parent = nullptr);
 
-    void setMaxV(int nV);
+    void setMaxValue(int value);
 
-    int getMaxV();
+    int getMaxValue();
 
-    void setMinV(int nV);
+    void setMinValue(int value);
 
-    int getMinV();
+    int getMinValue();
 
-    float getV();
+    float getValue();
 
-    void setV(float v);
+    void setValue(float value);
 
-    void updateVByMouseOper(int nX, bool bEmitSignal = true);
+    void updateValueByMouseOperation(int xPosition, bool shouldEmitSignal = true);
 
     void setFixedSize(int w, int h);
 
@@ -50,9 +50,9 @@ class FluColorViewHHandle : public FluWidget
     QColor m_color;
     QPoint m_circleP;
 
-    int m_nMaxV;
-    int m_nMinV;
-    float m_fV;
+    int m_maxValue;
+    int m_minValue;
+    float m_value;
 
-    bool m_bPressed;
+    bool m_isPressed;
 };

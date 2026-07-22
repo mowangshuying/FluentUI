@@ -9,13 +9,13 @@ FluShortcutPickerDlg::FluShortcutPickerDlg(QWidget* parent /*= nullptr*/) : FluM
 
     m_KeysWidget = new QWidget;
     m_KeysWidget->setFixedHeight(50);
-    m_hKeysLayout = new QHBoxLayout;
-    m_KeysWidget->setLayout(m_hKeysLayout);
-    m_hKeysLayout->setAlignment(Qt::AlignCenter);
-    m_hKeysLayout->setSpacing(10);
-    m_vContentWidgetLayout->addWidget(m_KeysWidget);
+    m_keysLayout = new QHBoxLayout;
+    m_KeysWidget->setLayout(m_keysLayout);
+    m_keysLayout->setAlignment(Qt::AlignCenter);
+    m_keysLayout->setSpacing(10);
+    m_contentWidgetLayout->addWidget(m_KeysWidget);
 
-    m_btnWidget->setFixedHeight(60);
+    m_buttonWidget->setFixedHeight(60);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
@@ -44,20 +44,20 @@ void FluShortcutPickerDlg::updateKeys()
         label->setText(text);
         label->setObjectName("keyLabel");
         label->setAlignment(Qt::AlignCenter);
-        m_hKeysLayout->addWidget(label);
+        m_keysLayout->addWidget(label);
     }
 
     // set icon;
     // auto label = new QLabel;
     // label->setFixedSize(32, 32);
     // label->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::PenWorkspace));
-    // m_hKeysLayout->addWidget(label);
+    // m_keysLayout->addWidget(label);
 }
 
 void FluShortcutPickerDlg::clearLabels()
 {
     QLayoutItem* child;
-    while ((child = m_hKeysLayout->takeAt(0)) != nullptr)
+    while ((child = m_keysLayout->takeAt(0)) != nullptr)
     {
         if (child->widget())
         {
@@ -68,54 +68,54 @@ void FluShortcutPickerDlg::clearLabels()
     }
 }
 
-QString FluShortcutPickerDlg::keyToString(int nKey, bool bShift /*= false*/)
+QString FluShortcutPickerDlg::keyToString(int key, bool isShift /*= false*/)
 {
-    switch (nKey)
+    switch (key)
     {
         case Qt::Key_Period:
             return ".";
         case Qt::Key_Greater:
-            return bShift ? ">" : ".";
+            return isShift ? ">" : ".";
         case Qt::Key_Comma:
             return ",";
         case Qt::Key_Less:
-            return bShift ? "<" : ",";
+            return isShift ? "<" : ",";
         case Qt::Key_Slash:
             return "/";
         case Qt::Key_Question:
-            return bShift ? "?" : "/";
+            return isShift ? "?" : "/";
         case Qt::Key_Semicolon:
             return ";";
         case Qt::Key_Colon:
-            return bShift ? ":" : ";";
+            return isShift ? ":" : ";";
         case Qt::Key_Apostrophe:
             return "'";
         case Qt::Key_QuoteDbl:
-            return bShift ? "'" : "\"";
+            return isShift ? "'" : "\"";
         case Qt::Key_QuoteLeft:
             return "`";
         case Qt::Key_AsciiTilde:
-            return bShift ? "~" : "`";
+            return isShift ? "~" : "`";
         case Qt::Key_Minus:
             return "-";
         case Qt::Key_Underscore:
-            return bShift ? "_" : "-";
+            return isShift ? "_" : "-";
         case Qt::Key_Equal:
             return "=";
         case Qt::Key_Plus:
-            return bShift ? "+" : "=";
+            return isShift ? "+" : "=";
         case Qt::Key_BracketLeft:
             return "[";
         case Qt::Key_BraceLeft:
-            return bShift ? "{" : "[";
+            return isShift ? "{" : "[";
         case Qt::Key_BracketRight:
             return "]";
         case Qt::Key_BraceRight:
-            return bShift ? "}" : "]";
+            return isShift ? "}" : "]";
         case Qt::Key_Backslash:
             return "\\";
         case Qt::Key_Bar:
-            return bShift ? "|" : "\\";
+            return isShift ? "|" : "\\";
         case Qt::Key_Up:
             return "Up";
         case Qt::Key_Down:
@@ -151,25 +151,25 @@ QString FluShortcutPickerDlg::keyToString(int nKey, bool bShift /*= false*/)
         case Qt::Key_9:
             return "9";
         case Qt::Key_Exclam:
-            return bShift ? "!" : "1";
+            return isShift ? "!" : "1";
         case Qt::Key_At:
-            return bShift ? "@" : "2";
+            return isShift ? "@" : "2";
         case Qt::Key_NumberSign:
-            return bShift ? "#" : "3";
+            return isShift ? "#" : "3";
         case Qt::Key_Dollar:
-            return bShift ? "$" : "4";
+            return isShift ? "$" : "4";
         case Qt::Key_Percent:
-            return bShift ? "%" : "5";
+            return isShift ? "%" : "5";
         case Qt::Key_AsciiCircum:
-            return bShift ? "^" : "6";
+            return isShift ? "^" : "6";
         case Qt::Key_Ampersand:
-            return bShift ? "&" : "7";
+            return isShift ? "&" : "7";
         case Qt::Key_Asterisk:
-            return bShift ? "*" : "8";
+            return isShift ? "*" : "8";
         case Qt::Key_ParenLeft:
-            return bShift ? "(" : "9";
+            return isShift ? "(" : "9";
         case Qt::Key_ParenRight:
-            return bShift ? ")" : "0";
+            return isShift ? ")" : "0";
         case Qt::Key_A:
             return "A";
         case Qt::Key_B:

@@ -23,7 +23,7 @@ void FluNumberBoxPage::addSpinBox()
     auto spinBox = new FluSpinBox(this);
     spinBox->setFixedWidth(150);
     displayBox->getBodyLayout()->addWidget(spinBox);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluNumberBoxPage::addDoubleSpinBox()
@@ -36,7 +36,7 @@ void FluNumberBoxPage::addDoubleSpinBox()
     auto doubleSpinBox = new FluDoubleSpinBox(this);
     doubleSpinBox->setFixedWidth(150);
     displayBox->getBodyLayout()->addWidget(doubleSpinBox);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluNumberBoxPage::onThemeChanged()

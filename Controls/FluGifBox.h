@@ -11,11 +11,11 @@ class FluGifBox : public QLabel
   public:
     FluGifBox(QString lightGifPath, QString darkGifPath, QWidget* parent = nullptr);
 
-    void setFixedSize(int nH, int nW)
+    void setFixedSize(int h, int w)
     {
-        QLabel::setFixedSize(nH, nW);
-        m_lightMovie->setScaledSize(QSize(nH, nW));
-        m_darkMovie->setScaledSize(QSize(nH, nW));
+        QLabel::setFixedSize(h, w);
+        m_lightMovie->setScaledSize(QSize(h, w));
+        m_darkMovie->setScaledSize(QSize(h, w));
     }
   public slots:
     void onThemeChanged();

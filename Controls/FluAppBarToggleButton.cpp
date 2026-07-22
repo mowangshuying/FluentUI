@@ -1,34 +1,34 @@
 ﻿#include "FluAppBarToggleButton.h"
 
-FluAppBarToggleButton::FluAppBarToggleButton(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(awesomeType), m_bToggled(false)
+FluAppBarToggleButton::FluAppBarToggleButton(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(awesomeType), m_isToggled(false)
 {
-    m_vMainLayout = new QVBoxLayout;
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    setLayout(m_mainLayout);
 
-    // m_vMainLayout->setContentsMargins(5, 5, 5, 5);
-    m_vMainLayout->setAlignment(Qt::AlignHCenter);
+    // m_mainLayout->setContentsMargins(5, 5, 5, 5);
+    m_mainLayout->setAlignment(Qt::AlignHCenter);
 
     setFixedSize(70, 50);
 
     // icon and text;
-    m_iconBtn = new QPushButton;
-    // m_iconBtn->setFixedSize(25, 25);
-    m_iconBtn->setIconSize(QSize(20, 20));
-    m_iconBtn->setObjectName("iconBtn");
-    m_vMainLayout->addWidget(m_iconBtn);
+    m_iconButton = new QPushButton;
+    // m_iconButton->setFixedSize(25, 25);
+    m_iconButton->setIconSize(QSize(20, 20));
+    m_iconButton->setObjectName("iconBtn");
+    m_mainLayout->addWidget(m_iconButton);
 
     m_textLabel = new QLabel;
     m_textLabel->setObjectName("textLabel");
-    m_vMainLayout->addWidget(m_textLabel);
+    m_mainLayout->addWidget(m_textLabel);
 
-    m_iconBtn->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIconPixmap(awesomeType, FluThemeUtils::getUtils()->getTheme()));
 
-    setToggled(m_bToggled);
+    setToggled(m_isToggled);
 
-    connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
+    connect(m_iconButton, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(this, &FluAppBarToggleButton::clicked, [=]() {
-        m_bToggled = !m_bToggled;
-        setToggled(m_bToggled);
+        m_isToggled = !m_isToggled;
+        setToggled(m_isToggled);
 
         updateIcon();
 
@@ -42,24 +42,24 @@ void FluAppBarToggleButton::updateIcon()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        if (m_bToggled)
+        if (m_isToggled)
         {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
+            m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
         }
         else
         {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
+            m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
         }
     }
     else
     {
-        if (m_bToggled)
+        if (m_isToggled)
         {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
+            m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
         }
         else
         {
-            m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
+            m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
         }
     }
 }
@@ -84,21 +84,21 @@ QString FluAppBarToggleButton::getText()
     return m_textLabel->text();
 }
 
-void FluAppBarToggleButton::setToggled(bool bToggled)
+void FluAppBarToggleButton::setToggled(bool isToggled)
 {
-    m_bToggled = bToggled;
+    m_isToggled = isToggled;
 
-    setProperty("toggled", m_bToggled);
-    m_textLabel->setProperty("toggled", m_bToggled);
-    m_iconBtn->setProperty("toggled", m_bToggled);
+    setProperty("toggled", m_isToggled);
+    m_textLabel->setProperty("toggled", m_isToggled);
+    m_iconButton->setProperty("toggled", m_isToggled);
     style()->polish(this);
     m_textLabel->style()->polish(m_textLabel);
-    m_iconBtn->style()->polish(m_iconBtn);
+    m_iconButton->style()->polish(m_iconButton);
 }
 
 bool FluAppBarToggleButton::getToggled()
 {
-    return m_bToggled;
+    return m_isToggled;
 }
 
 void FluAppBarToggleButton::mouseReleaseEvent(QMouseEvent* event)
@@ -126,6 +126,6 @@ void FluAppBarToggleButton::onThemeChanged()
 void FluAppBarToggleButton::setEnabled(bool enabled)
 {
     QWidget::setEnabled(enabled);
-    m_iconBtn->setEnabled(enabled);
+    m_iconButton->setEnabled(enabled);
     m_textLabel->setEnabled(enabled);
 }

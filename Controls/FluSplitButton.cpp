@@ -2,34 +2,34 @@
 
 FluSplitButton::FluSplitButton(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
-    m_hMainLayout->setSpacing(0);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
+    m_mainLayout->setSpacing(0);
 
-    m_dropDownBtn = new QPushButton;
-    m_textBtn = new QPushButton;
+    m_dropDownButton = new QPushButton;
+    m_textButton = new QPushButton;
 
-    m_dropDownBtn->setObjectName("dropDownBtn");
-    m_dropDownBtn->setIconSize(QSize(20, 20));
-    m_dropDownBtn->setFixedSize(30, 30);
-    m_textBtn->setObjectName("textBtn");
+    m_dropDownButton->setObjectName("dropDownBtn");
+    m_dropDownButton->setIconSize(QSize(20, 20));
+    m_dropDownButton->setFixedSize(30, 30);
+    m_textButton->setObjectName("textBtn");
 
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
 
-    m_hMainLayout->addWidget(m_textBtn);
-    m_hMainLayout->addWidget(m_dropDownBtn);
+    m_mainLayout->addWidget(m_textButton);
+    m_mainLayout->addWidget(m_dropDownButton);
 
     setFixedHeight(30);
 
-    connect(m_textBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
-    connect(m_dropDownBtn, &QPushButton::clicked, [=](bool b) { emit clicked(); });
+    connect(m_textButton, &QPushButton::clicked, [=](bool b) { emit clicked(); });
+    connect(m_dropDownButton, &QPushButton::clicked, [=](bool b) { emit clicked(); });
 
     onThemeChanged();
 }
 
 void FluSplitButton::setText(QString text)
 {
-    m_textBtn->setText(text);
+    m_textButton->setText(text);
 }
 
 void FluSplitButton::mouseReleaseEvent(QMouseEvent* event)
@@ -50,13 +50,13 @@ void FluSplitButton::paintEvent(QPaintEvent* event)
 
 void FluSplitButton::onThemeChanged()
 {
-    m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
+    m_dropDownButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUtils::setQssByFileName("FluSplitButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluSplitButton::setEnabled(bool enabled)
 {
     QWidget::setEnabled(enabled);
-    m_textBtn->setEnabled(enabled);
-    m_dropDownBtn->setEnabled(enabled);
+    m_textButton->setEnabled(enabled);
+    m_dropDownButton->setEnabled(enabled);
 }

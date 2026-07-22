@@ -71,32 +71,32 @@ class FluPMenuStyle : public QProxyStyle
 
     int getMenuItemSpacing() const
     {
-        return m_nMenuItemSpacing;
+        return m_menuItemSpacing;
     }
 
     void setMenuItemSpacing(int spacing)
     {
-        m_nMenuItemSpacing = spacing;
+        m_menuItemSpacing = spacing;
     }
 
     int getMenuItemIconWH() const
     {
-        return m_nMenuItemIconWH;
+        return m_menuItemIconWH;
     }
 
     void setMenuItemIconWH(int iconWH)
     {
-        m_nMenuItemIconWH = iconWH;
+        m_menuItemIconWH = iconWH;
     }
 
     int getMenuItemHeight() const
     {
-        return m_nMenuItemHeight;
+        return m_menuItemHeight;
     }
 
     void setMenuItemHeight(int height)
     {
-        m_nMenuItemHeight = height;
+        m_menuItemHeight = height;
     }
 
     void drawPrimitive(PrimitiveElement element, const QStyleOption* option, QPainter* painter, const QWidget* widget = nullptr) const override;
@@ -114,9 +114,9 @@ class FluPMenuStyle : public QProxyStyle
     QColor m_menuItemDisabledBackgroundColor = QColor(243, 243, 243);
     QColor m_menuItemForegroundColor = Qt::black;
 
-    int m_nMenuItemSpacing = 2;
-    int m_nMenuItemIconWH = 20;
-    int m_nMenuItemHeight = 30;
+    int m_menuItemSpacing = 2;
+    int m_menuItemIconWH = 20;
+    int m_menuItemHeight = 30;
 
     mutable bool m_hasIcon = false;
     mutable bool m_hasMenu = false;

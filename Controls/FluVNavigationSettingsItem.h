@@ -19,8 +19,8 @@ class FluVNavigationSettingsItem : public FluVNavigationItem
 
     FluVNavigationSettingsItem(FluAwesomeType awesomeType, QString text, QWidget* parent);
 
-    void setItemWidth(int nWidth) override;
-    void setItemHeight(int nHeight) override;
+    void setItemWidth(int width) override;
+    void setItemHeight(int height) override;
 
     QLabel* getLabel();
 
@@ -48,10 +48,10 @@ class FluVNavigationSettingsItem : public FluVNavigationItem
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     FluVNavigationIndicator* m_indicator;
     FluRotationButton* m_icon;
     QLabel* m_label;
 
-    bool m_bSelected;
+    bool m_isSelected;
 };

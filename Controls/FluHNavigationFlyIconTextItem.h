@@ -58,10 +58,10 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     void onThemeChanged();
 
   protected:
-    bool m_bCloseByClickedItem;
+    bool m_isCloseByClickedItem;
 
-    QVBoxLayout* m_vMainLayout;
-    FluVScrollView* m_vScrollView;
+    QVBoxLayout* m_mainLayout;
+    FluVScrollView* m_scrollView;
     FluHNavigationView* m_NavView;
     std::vector<FluHNavigationIconTextItem*> m_items;
 };

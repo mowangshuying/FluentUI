@@ -27,7 +27,7 @@ QColor FluColorViewGradient::getColor()
 bool FluColorViewGradient::findColor(QColor color, QPoint& point)
 {
     // LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
-    bool bFind = false;
+    bool isFind = false;
 
     // std::vector<QColor> colors;
     for (int i = 0; i < 256; i++)
@@ -41,7 +41,7 @@ bool FluColorViewGradient::findColor(QColor color, QPoint& point)
             {
                 point.setX(i);
                 point.setY(j);
-                bFind = true;
+                isFind = true;
                 break;
             }
         }
@@ -63,12 +63,12 @@ bool FluColorViewGradient::findColor(QColor color, QPoint& point)
     //     LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
     // }
 
-    return bFind;
+    return isFind;
 }
 
-bool FluColorViewGradient::atRange(int i, int j, int nRadius)
+bool FluColorViewGradient::atRange(int i, int j, int radius)
 {
-    if (i >= j - nRadius && i <= j + nRadius)
+    if (i >= j - radius && i <= j + radius)
         return true;
     return false;
 }
@@ -76,8 +76,8 @@ bool FluColorViewGradient::atRange(int i, int j, int nRadius)
 void FluColorViewGradient::circleMoveToPoint(QColor color)
 {
     QPoint point;
-    auto bFind = findColor(color, point);
-    if (bFind)
+    auto isFind = findColor(color, point);
+    if (isFind)
     {
         m_circleP = point;
         m_color = m_pixmap.toImage().pixelColor(m_circleP);
@@ -88,7 +88,7 @@ void FluColorViewGradient::circleMoveToPoint(QColor color)
 
 void FluColorViewGradient::mouseMoveEvent(QMouseEvent* event)
 {
-    if (m_bPressed)
+    if (m_isPressed)
     {
         m_circleP = QPoint(event->pos().x(), event->pos().y());
         if (event->pos().x() < 8)
@@ -109,7 +109,7 @@ void FluColorViewGradient::mouseMoveEvent(QMouseEvent* event)
             m_circleP.setY(rect().height() - 8);
         }
 
-        m_bPressed = true;
+        m_isPressed = true;
         m_color = m_pixmap.toImage().pixelColor(m_circleP);
         colorChanged(m_color);
         update();
@@ -137,7 +137,7 @@ void FluColorViewGradient::mousePressEvent(QMouseEvent* event)
         m_circleP.setY(rect().height() - 8);
     }
 
-    m_bPressed = true;
+    m_isPressed = true;
     m_color = m_pixmap.toImage().pixelColor(m_circleP);
 #ifdef _DEBUG
     // LOG_DEBUG << "color r:" << m_color.red();
@@ -150,7 +150,7 @@ void FluColorViewGradient::mousePressEvent(QMouseEvent* event)
 
 void FluColorViewGradient::mouseReleaseEvent(QMouseEvent* event)
 {
-    m_bPressed = false;
+    m_isPressed = false;
 }
 
 void FluColorViewGradient::paintEvent(QPaintEvent* event)

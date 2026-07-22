@@ -29,5 +29,5 @@ class FluShortcutPicker : public FluWidget
 
   protected:
     std::vector<QString> m_keyTexts;
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
 };

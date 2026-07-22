@@ -13,7 +13,7 @@ class FluTimeLine : public FluVScrollView
 
     void addTimeLineItem(QString text);
 
-    void addTimeLineItem(int nIndex, QString text);
+    void addTimeLineItem(int index, QString text);
 
     // void paintEvent(QPaintEvent* event)
     //{

@@ -28,7 +28,7 @@ class FluSettingsVersionBox : public FluExpander
 
   protected:
     FluAwesomeType m_iconAwesomeType;
-    QVBoxLayout* m_vLayout;
+    QVBoxLayout* m_layout;
 
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;

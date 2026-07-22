@@ -2,24 +2,24 @@
 
 FluPasswordBox::FluPasswordBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hLayout = new QHBoxLayout(this);
-    setLayout(m_hLayout);
-    m_hLayout->setContentsMargins(1, 0, 1, 0);
-    m_hLayout->setSpacing(0);
-    m_hLayout->setAlignment(Qt::AlignHCenter);
+    m_layout = new QHBoxLayout(this);
+    setLayout(m_layout);
+    m_layout->setContentsMargins(1, 0, 1, 0);
+    m_layout->setSpacing(0);
+    m_layout->setAlignment(Qt::AlignHCenter);
 
     m_edit = new QLineEdit(this);
-    m_btn = new QPushButton(this);
-    m_btn->setFixedSize(30, 20);
-    m_btn->setIconSize(QSize(18, 18));
-    m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye));
+    m_button = new QPushButton(this);
+    m_button->setFixedSize(30, 20);
+    m_button->setIconSize(QSize(18, 18));
+    m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye));
 
     //  m_edit->setFixedWidth(120);
     m_edit->setFixedHeight(30);
 
-    m_hLayout->addWidget(m_edit, 1);
-    m_hLayout->addWidget(m_btn);
-    m_hLayout->addSpacing(4);
+    m_layout->addWidget(m_edit, 1);
+    m_layout->addWidget(m_button);
+    m_layout->addSpacing(4);
 
     // setFixedWidth(155);
     setFixedHeight(32);
@@ -27,7 +27,7 @@ FluPasswordBox::FluPasswordBox(QWidget* parent /*= nullptr*/) : FluWidget(parent
     m_edit->installEventFilter(this);
     m_edit->setFocusPolicy(Qt::ClickFocus);
 
-    m_btn->installEventFilter(this);
+    m_button->installEventFilter(this);
 
     m_edit->setEchoMode(QLineEdit::Password);
 
@@ -60,7 +60,7 @@ bool FluPasswordBox::eventFilter(QObject* watched, QEvent* event)
         }
     }
 
-    if (watched == m_btn)
+    if (watched == m_button)
     {
         if (event->type() == QEvent::MouseButtonPress)
         {
@@ -94,12 +94,12 @@ void FluPasswordBox::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Light));
+        m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Light));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
     }
     else
     {
-        m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Dark));
+        m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Dark));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluPasswordBox.qss", this);
     }
 
@@ -110,5 +110,5 @@ void FluPasswordBox::setEnabled(bool enabled)
 {
     QWidget::setEnabled(enabled);
     m_edit->setEnabled(enabled);
-    m_btn->setEnabled(enabled);
+    m_button->setEnabled(enabled);
 }

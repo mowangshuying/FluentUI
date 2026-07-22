@@ -17,7 +17,7 @@ FluRepeatButtonPage::FluRepeatButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
     repeatButton->setFixedSize(120, 30);
     repeatButton->setText(tr("Click and hold"));
     displayBox->getBodyLayout()->addWidget(repeatButton);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

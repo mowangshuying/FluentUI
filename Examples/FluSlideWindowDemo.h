@@ -24,5 +24,5 @@ class FluSlideWindowDemo : public FluWidget
     QWidget* m_page2;
     QWidget* m_page3;
     // QStackedLayout* m_sLayout;
-    QHBoxLayout* m_hLayout;
+    QHBoxLayout* m_layout;
 };

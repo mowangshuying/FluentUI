@@ -40,7 +40,7 @@ FluPivotPage::FluPivotPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
     displayBox->getBodyLayout()->addWidget(pivot);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

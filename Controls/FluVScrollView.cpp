@@ -9,7 +9,7 @@ FluVScrollView::FluVScrollView(QWidget* parent /*= nullptr*/) : FluScrollArea(pa
 
     m_contextWidget = new QWidget(this);
     setWidget(m_contextWidget);
-    m_vMainLayout = new QVBoxLayout(m_contextWidget);
+    m_mainLayout = new QVBoxLayout(m_contextWidget);
     m_contextWidget->setObjectName("contextWidget");
 
     onThemeChanged();
@@ -22,7 +22,7 @@ FluVScrollView::~FluVScrollView()
 
 QVBoxLayout* FluVScrollView::getMainLayout()
 {
-    return m_vMainLayout;
+    return m_mainLayout;
 }
 
 void FluVScrollView::onThemeChanged()

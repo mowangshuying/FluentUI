@@ -14,14 +14,14 @@ FluTimePickerPage::FluTimePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
     auto timePickerAp = new FluTimePickerAP;
     displayBox1->getBodyLayout()->addWidget(timePickerAp);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A TimePicker using a 24-hour clock."));
     displayBox2->getCodeExpander()->setCodeByPath("../code/TimePickerPageCode2.md");
     auto timePicker24H = new FluTimePicker24H;
     displayBox2->getBodyLayout()->addWidget(timePicker24H);
-    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

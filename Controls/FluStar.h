@@ -18,5 +18,5 @@ class FluStar : public QLabel
     void onThemeChanged();
 
   protected:
-    bool m_bSolid;
+    bool m_isSolid;
 };

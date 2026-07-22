@@ -22,7 +22,7 @@ class FluAutoSuggestBox : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAutoSuggestBox(bool bSearch = false, QWidget* parent = nullptr);
+    FluAutoSuggestBox(bool isSearch = false, QWidget* parent = nullptr);
 
     void setKeys(std::vector<QString> keys);
 
@@ -42,7 +42,7 @@ class FluAutoSuggestBox : public FluWidget
 
     QString getPlaceholderText();
 
-    void setSearch(bool bSearch);
+    void setSearch(bool isSearch);
     bool getSearch();
 
     void hockEvent(QEvent* event);
@@ -53,9 +53,9 @@ class FluAutoSuggestBox : public FluWidget
 
     void setEnabled(bool enabled);
   signals:
-    void searchBtnClicked();
+    void searchButtonClicked();
     void currentTextChanged(QString text);
-    void currentIndexChanged(int nIndex);
+    void currentIndexChanged(int index);
 
   public slots:
 
@@ -63,13 +63,13 @@ class FluAutoSuggestBox : public FluWidget
     void onThemeChanged();
 
   protected:
-    bool m_bSearch;
+    bool m_isSearch;
 
     std::vector<QString> m_keys;
 
     QLineEdit* m_lineEdit;
-    QPushButton* m_btn;
-    QHBoxLayout* m_hMainLayout;
+    QPushButton* m_searchButton;
+    QHBoxLayout* m_mainLayout;
 
     FluCompleterMenu* m_completerMenu;
 };

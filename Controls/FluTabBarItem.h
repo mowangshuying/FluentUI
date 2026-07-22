@@ -16,7 +16,7 @@ class FluTabBarItem : public FluWidget
   public:
     FluTabBarItem(QWidget* parent = nullptr);
 
-    void setSelected(bool bSel);
+    void setSelected(bool isSel);
 
     bool getSelected();
 
@@ -41,17 +41,17 @@ class FluTabBarItem : public FluWidget
   signals:
     void clicked();
     void sizeChanged();
-    void clickedCloseBtn(FluTabBarItem* item);
+    void clickedCloseButton(FluTabBarItem* item);
 
   public slots:
     void onThemeChanged();
 
   protected:
     FluHSplitLine* m_hspL;
-    QHBoxLayout* m_hMainLayout;
-    QPushButton* m_iconBtn;
-    QPushButton* m_textBtn;
-    QPushButton* m_closeBtn;
+    QHBoxLayout* m_mainLayout;
+    QPushButton* m_iconButton;
+    QPushButton* m_textButton;
+    QPushButton* m_closeButton;
     FluHSplitLine* m_hspR;
-    bool m_bSel;
+    bool m_isSel;
 };

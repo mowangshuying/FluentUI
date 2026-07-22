@@ -2,7 +2,7 @@
 
 FluAllSamplesPage::FluAllSamplesPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+    m_mainLayout->setContentsMargins(35, 35, 0, 35);
 
     m_titleLabel->setText(tr("All Samples"));
 

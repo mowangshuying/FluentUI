@@ -11,36 +11,36 @@ FluWindowKitTitleBar::FluWindowKitTitleBar(QWidget* parent /*= nullptr*/) : QFra
 
 void FluWindowKitTitleBar::init()
 {
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(QMargins());
-    m_hMainLayout->setSpacing(0);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setContentsMargins(QMargins());
+    m_mainLayout->setSpacing(0);
 
     for (int i = FluWKTitleBarItem::IconButton; i <= FluWKTitleBarItem::CloseButton; i++)
     {
         insertDefaultSpace(i);
     }
 
-    setLayout(m_hMainLayout);
+    setLayout(m_mainLayout);
 }
 
-void FluWindowKitTitleBar::insertDefaultSpace(int nIndex)
+void FluWindowKitTitleBar::insertDefaultSpace(int index)
 {
-    // if (nIndex == FluWKTitleBarItem::MenuWidget)
+    // if (index == FluWKTitleBarItem::MenuWidget)
     //{
-    //     m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0, QSizePolicy::Maximum));
+    //     m_mainLayout->insertSpacerItem(index, new QSpacerItem(0, 0, QSizePolicy::Maximum));
     //     return;
     // }
-    m_hMainLayout->insertSpacerItem(nIndex, new QSpacerItem(0, 0));
+    m_mainLayout->insertSpacerItem(index, new QSpacerItem(0, 0));
 }
 
-QWidget* FluWindowKitTitleBar::widgetAt(int nIndex) const
+QWidget* FluWindowKitTitleBar::widgetAt(int index) const
 {
-    return m_hMainLayout->itemAt(nIndex)->widget();
+    return m_mainLayout->itemAt(index)->widget();
 }
 
-void FluWindowKitTitleBar::setWidgetAt(int nIndex, QWidget* widget)
+void FluWindowKitTitleBar::setWidgetAt(int index, QWidget* widget)
 {
-    auto item = m_hMainLayout->takeAt(nIndex);
+    auto item = m_mainLayout->takeAt(index);
     auto orgWidget = item->widget();
     if (orgWidget)
     {
@@ -50,23 +50,23 @@ void FluWindowKitTitleBar::setWidgetAt(int nIndex, QWidget* widget)
 
     if (!widget)
     {
-        insertDefaultSpace(nIndex);
+        insertDefaultSpace(index);
     }
     else
     {
-        m_hMainLayout->insertWidget(nIndex, widget, nIndex == FluWKTitleBarItem::TitleLabel);
+        m_mainLayout->insertWidget(index, widget, index == FluWKTitleBarItem::TitleLabel);
     }
 }
 
-QWidget* FluWindowKitTitleBar::takeWidgetAt(int nIndex)
+QWidget* FluWindowKitTitleBar::takeWidgetAt(int index)
 {
-    auto item = m_hMainLayout->itemAt(nIndex);
+    auto item = m_mainLayout->itemAt(index);
     auto orgWidget = item->widget();
     if (orgWidget)
     {
-        item = m_hMainLayout->takeAt(nIndex);
+        item = m_mainLayout->takeAt(index);
         delete item;
-        insertDefaultSpace(nIndex);
+        insertDefaultSpace(index);
     }
 
     return orgWidget;
@@ -315,14 +315,14 @@ bool FluWindowKitTitleBar::eventFilter(QObject* watched, QEvent* event)
     auto w = m_w;
     if (watched == w)
     {
-        QAbstractButton* iconBtn = iconButton();
-        QLabel* label = titleLabel();
-        QAbstractButton* maxBtn = maxButton();
+        QAbstractButton* iconBtn = this->iconButton();
+        QLabel* label = this->titleLabel();
+        QAbstractButton* maxBtn = this->maxButton();
         switch (event->type())
         {
             case QEvent::WindowIconChange:
             {
-                if (m_autoIcon && iconButton())
+                if (m_autoIcon && iconBtn)
                 {
                     iconBtn->setIcon(w->windowIcon());
                     iconChanged(w->windowIcon());
@@ -340,9 +340,9 @@ bool FluWindowKitTitleBar::eventFilter(QObject* watched, QEvent* event)
             }
             case QEvent::WindowStateChange:
             {
-                if (maxButton())
+                if (maxBtn)
                 {
-                    maxButton()->setChecked(w->isMaximized());
+                    maxBtn->setChecked(w->isMaximized());
                 }
                 break;
             }

@@ -23,7 +23,7 @@ class FluSegmented : public FluWidget
 
     void addWidget(FluSegmentedItem* item);
 
-    void insertWidget(int nIndex, FluSegmentedItem* item);
+    void insertWidget(int index, FluSegmentedItem* item);
 
     void paintEvent(QPaintEvent* event);
 
@@ -33,7 +33,7 @@ class FluSegmented : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     FluSegmentedItem* m_currentItem;
 
     // ani;

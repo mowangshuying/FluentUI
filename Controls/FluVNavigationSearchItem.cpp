@@ -4,9 +4,9 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
 {
     m_itemType = FluVNavigationItemType::Search;
 
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(0, 2, 0, 2);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setContentsMargins(0, 2, 0, 2);
+    setLayout(m_mainLayout);
 
     m_autoSuggestBox = new FluAutoSuggestBox(true);
     m_autoSuggestBox->setFixedHeight(26);
@@ -17,9 +17,9 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     m_searchButton->setIconSize(QSize(20, 20));
     m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme()));
 
-    m_hMainLayout->addWidget(m_searchButton);
-    m_hMainLayout->addSpacing(8);
-    m_hMainLayout->addWidget(m_autoSuggestBox);
+    m_mainLayout->addWidget(m_searchButton);
+    m_mainLayout->addSpacing(8);
+    m_mainLayout->addWidget(m_autoSuggestBox);
     hideSearchButton();
 
     setFixedHeight(30);
@@ -28,14 +28,14 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     connect(m_autoSuggestBox, &FluAutoSuggestBox::currentTextChanged, this, [=](QString text) { emit currentTextChanged(text); });
 }
 
-void FluVNavigationSearchItem::setItemWidth(int nWidth)
+void FluVNavigationSearchItem::setItemWidth(int width)
 {
-    setFixedWidth(nWidth);
+    setFixedWidth(width);
 }
 
-void FluVNavigationSearchItem::setItemHeight(int nHeight)
+void FluVNavigationSearchItem::setItemHeight(int height)
 {
-    setFixedHeight(nHeight);
+    setFixedHeight(height);
 }
 
 void FluVNavigationSearchItem::hideSearchButton()

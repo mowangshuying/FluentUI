@@ -2,7 +2,7 @@
 
 FluTextPage::FluTextPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+    m_mainLayout->setContentsMargins(35, 35, 0, 35);
     m_titleLabel->setText(tr("Text"));
 
     auto autoSuggestBoxCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AutoSuggestBox.png")), tr("AutoSuggestBox"), tr("A control to provide suggestions as a user is typing."));

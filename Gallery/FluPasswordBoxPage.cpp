@@ -16,7 +16,7 @@ FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     passwordBox1->setFixedWidth(240);
     displayBox1->setBodyWidgetFixedHeight(96);
     displayBox1->getBodyLayout()->addWidget(passwordBox1);
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     // maskC
     auto displayBox2 = new FluDisplayBox;
@@ -28,7 +28,7 @@ FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     passwordBox2->setFixedWidth(240);
     displayBox2->setBodyWidgetFixedHeight(96);
     displayBox2->getBodyLayout()->addWidget(passwordBox2);
-    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

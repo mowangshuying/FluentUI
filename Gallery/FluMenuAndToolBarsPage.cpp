@@ -2,7 +2,7 @@
 
 FluMenuAndToolBarsPage::FluMenuAndToolBarsPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setAlignment(Qt::AlignTop);
+    m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("Menus & toolbars"));
 
     auto appBarButtonCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AppBarButton.png")), tr("AppBarButton"), tr("A button that's styled for use in a CommandBar."));

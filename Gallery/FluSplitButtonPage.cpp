@@ -53,7 +53,7 @@ void FluSplitButtonPage::addSplitButtonWithText()
 
     displayBox->getBodyLayout()->addWidget(splitButton);
     displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluSplitButtonPage::onThemeChanged()

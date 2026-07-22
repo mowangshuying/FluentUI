@@ -6,10 +6,10 @@
 FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     // QLabel* m_label = new QLabel("Su");
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(10, 0, 10, 0);
-    m_hMainLayout->setSpacing(0);
-    setLayout(m_hMainLayout);
+    m_weekTitleLayout = new QHBoxLayout;
+    m_weekTitleLayout->setContentsMargins(10, 0, 10, 0);
+    m_weekTitleLayout->setSpacing(0);
+    setLayout(m_weekTitleLayout);
 
     QList<QString> weekTexts = {tr("Su"), tr("Mo"), tr("Tu"), tr("We"), tr("Th"), tr("Fr"), tr("Sa")};
     for (int i = 0; i < weekTexts.size(); i++)
@@ -21,7 +21,7 @@ FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/
         label->setAlignment(Qt::AlignCenter);
         label->setText(weekTexts.at(i));
 
-        m_hMainLayout->addWidget(label);
+        m_weekTitleLayout->addWidget(label);
     }
 
     setFixedHeight(30);
@@ -43,11 +43,11 @@ void FluCalendarViewWeakTitle::onThemeChanged()
 
 FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_gMainLayout = new QGridLayout;
-    m_gMainLayout->setContentsMargins(10, 0, 10, 0);
-    m_gMainLayout->setSpacing(0);
-    m_gMainLayout->setVerticalSpacing(5);
-    setLayout(m_gMainLayout);
+    m_monthLayout = new QGridLayout;
+    m_monthLayout->setContentsMargins(10, 0, 10, 0);
+    m_monthLayout->setSpacing(0);
+    m_monthLayout->setVerticalSpacing(5);
+    setLayout(m_monthLayout);
 
     for (int i = 0; i < 6; i++)
     {
@@ -62,7 +62,7 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
             label->setProperty("today", false);
 
             m_labelList.append(label);
-            m_gMainLayout->addWidget(label, i, j);
+            m_monthLayout->addWidget(label, i, j);
 
             label->setProperty("selected", false);
             connect(label, &FluCalendarItem::clicked, [=]() {
@@ -243,17 +243,17 @@ void FluCalendarMonthView::onThemeChanged()
 FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_parentView = (FluCalendarView*)parent;
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->setSpacing(0);
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setSpacing(0);
+    setLayout(m_mainLayout);
 
     m_weekTitle = new FluCalendarViewWeakTitle(this);
-    m_vMainLayout->addWidget(m_weekTitle);
+    m_mainLayout->addWidget(m_weekTitle);
 
     m_monthView = new FluCalendarMonthView(this);
     m_monthView->setCalendarView(m_parentView);
-    m_vMainLayout->addWidget(m_monthView);
+    m_mainLayout->addWidget(m_monthView);
 
     QDate curDate = m_parentView->getCurDate();
     //  LOG_DEBUG << curDate;

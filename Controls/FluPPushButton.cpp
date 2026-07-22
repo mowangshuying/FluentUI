@@ -79,7 +79,7 @@ void FluPPushButton::paintEvent(QPaintEvent* event)
 
 bool FluPPushButton::eventFilter(QObject* watched, QEvent* event)
 {
-    bool bFilter = QPushButton::eventFilter(watched, event);
+    bool isFilter = QPushButton::eventFilter(watched, event);
 
     switch (event->type())
     {
@@ -103,7 +103,7 @@ bool FluPPushButton::eventFilter(QObject* watched, QEvent* event)
             break;
     }
 
-    return bFilter;
+    return isFilter;
 }
 
 void FluPPushButton::onThemeChanged()

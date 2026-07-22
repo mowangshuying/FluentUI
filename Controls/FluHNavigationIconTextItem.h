@@ -48,9 +48,9 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
         return m_wrapWidget2;
     }
 
-    QPushButton* getIconBtn()
+    QPushButton* getIconButton()
     {
-        return m_iconBtn;
+        return m_iconButton;
     }
 
     QLabel* getLabel()
@@ -70,45 +70,45 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     bool getHideIcon()
     {
-        return m_bHideIcon;
+        return m_isHideIcon;
     }
 
-    void setHideIcon(bool bHideIcon)
+    void setHideIcon(bool isHideIcon)
     {
-        m_bHideIcon = bHideIcon;
+        m_isHideIcon = isHideIcon;
     }
 
     bool parentIsFlyIconTextItem()
     {
-        return m_bParentIsFlyIconTextItem;
+        return m_isParentIsFlyIconTextItem;
     }
 
     bool parentIsNavigationView()
     {
-        return m_bParentIsNavigationView;
+        return m_isParentIsNavigationView;
     }
 
-    void setParentIsFlyIconTextItem(bool bParent)
+    void setParentIsFlyIconTextItem(bool isParent)
     {
-        m_bParentIsFlyIconTextItem = bParent;
+        m_isParentIsFlyIconTextItem = isParent;
     }
 
-    void setParentIsNavigationView(bool bParent)
+    void setParentIsNavigationView(bool isParent)
     {
-        if (bParent)
+        if (isParent)
         {
-            m_hIndicator->show();
+            m_horizontalIndicator->show();
         }
         else
         {
-            m_hIndicatorWrap->hide();
+            m_horizontalIndicatorWrap->hide();
         }
-        m_bParentIsNavigationView = bParent;
+        m_isParentIsNavigationView = isParent;
     }
 
     void setParentFlyIconTextItem(FluHNavigationFlyIconTextItem* parentFlyIconTextItem)
     {
-        // m_hIndicator->show();
+        // m_horizontalIndicator->show();
         m_parentFlyIconTextItem = parentFlyIconTextItem;
     }
 
@@ -127,13 +127,13 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void adjustItemHeight(FluHNavigationIconTextItem* item);
 
-    void adjustItemWidth(FluHNavigationIconTextItem* item, int& nMaxWidth, int& nCallHierarchy);
+    void adjustItemWidth(FluHNavigationIconTextItem* item, int& maxWidth, int& callHierarchy);
 
-    void setItemFixedWidth(int nMaxWidth);
+    void setItemFixedWidth(int maxWidth);
 
-    void setArrowBtnToChevronUp();
+    void setArrowButtonToChevronUp();
 
-    void setArrowBtnToChevronDown();
+    void setArrowButtonToChevronDown();
 
     int getDepth();
 
@@ -158,9 +158,9 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void updateSelected(bool b);
 
-    QWidget* getVIndicator()
+    QWidget* getVerticalIndicator()
     {
-        return m_vIndicator;
+        return m_verticalIndicator;
     }
 
     void mouseReleaseEvent(QMouseEvent* event);
@@ -185,29 +185,29 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     QWidget* m_emptyWidget;
 
-    QWidget* m_hIndicatorWrap;
-    QHBoxLayout* m_hIndicatorLayout;
-    QWidget* m_hIndicator;
+    QWidget* m_horizontalIndicatorWrap;
+    QHBoxLayout* m_horizontalIndicatorLayout;
+    QWidget* m_horizontalIndicator;
 
-    QWidget* m_vIndicator;
-    QPushButton* m_iconBtn;
+    QWidget* m_verticalIndicator;
+    QPushButton* m_iconButton;
     QLabel* m_label;
     QPushButton* m_arrow;
-    QHBoxLayout* m_hLayout1;
+    QHBoxLayout* m_horizontalLayout1;
 
     std::vector<FluHNavigationIconTextItem*> m_items;
 
-    QVBoxLayout* m_vMainLayout;
-    QVBoxLayout* m_vLayout1;
+    QVBoxLayout* m_mainLayout;
+    QVBoxLayout* m_verticalLayout1;
 
     FluHNavigationIconTextItem* m_parentItem;
     FluHNavigationFlyIconTextItem* m_parentFlyIconTextItem;
     FluAwesomeType m_awesomeType;
 
-    bool m_bHideIcon;
-    bool m_bSelected;
-    bool m_bDown;
+    bool m_isHideIcon;
+    bool m_isSelected;
+    bool m_isDown;
 
-    bool m_bParentIsFlyIconTextItem;
-    bool m_bParentIsNavigationView;
+    bool m_isParentIsFlyIconTextItem;
+    bool m_isParentIsNavigationView;
 };

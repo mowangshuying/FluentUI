@@ -24,20 +24,20 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
            "All glyphs in Segoe Fluent Icons have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other."));
 
     // instructions->addEnd();
-    m_vScrollView->getMainLayout()->addWidget(instructions, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(instructions, 0, Qt::AlignTop);
 
-    m_vScrollView->getMainLayout()->addSpacing(15);
+    m_scrollView->getMainLayout()->addSpacing(15);
 
     m_searchLabel = new QLabel;
     m_searchLabel->setObjectName("searchLabel");
     m_searchLabel->setText(tr("Fluent Icons Library."));
-    m_vScrollView->getMainLayout()->addWidget(m_searchLabel);
+    m_scrollView->getMainLayout()->addWidget(m_searchLabel);
 
-    m_vScrollView->getMainLayout()->addSpacing(5);
+    m_scrollView->getMainLayout()->addSpacing(5);
 
     m_searchEdit = new FluSearchLineEdit;
     m_searchEdit->setFixedWidth(300);
-    m_vScrollView->getMainLayout()->addWidget(m_searchEdit);
+    m_scrollView->getMainLayout()->addWidget(m_searchEdit);
 
     auto wrapWidget = new QWidget;
     // wrapWidget->setFixedHeight(1000);
@@ -45,11 +45,11 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
     auto wrapLayout = new QHBoxLayout;
     wrapWidget->setLayout(wrapLayout);
-    m_vScrollView->getMainLayout()->addWidget(wrapWidget, 1);
+    m_scrollView->getMainLayout()->addWidget(wrapWidget, 1);
 
     auto wrapWidget1 = new FluFWScrollView;
     wrapWidget1->setObjectName("wrapWidget1");
-    // m_vScrollView->getMainLayout()->addWidget(wrapWidget1, 1);
+    // m_scrollView->getMainLayout()->addWidget(wrapWidget1, 1);
     wrapLayout->addWidget(wrapWidget1);
 
     auto wrapWidget2 = new QWidget;
@@ -96,9 +96,9 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     // auto wrapScrollView = new FluVScrollView;
 
     // wrapScrollView->getMainLayout()->addWidget(wrapWidget1);
-    // m_vScrollView->getMainLayout()->addWidget(wrapScrollView, 1);
+    // m_scrollView->getMainLayout()->addWidget(wrapScrollView, 1);
 
-    m_sDisplayIconBox = nullptr;
+    m_displayIconBox = nullptr;
 
     // m_penColor = QColor(8, 8, 8);
     // add icons to display it!
@@ -113,7 +113,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
         auto displayIconBox = new FluDisplayIconBox((FluAwesomeType)metaEnum.value(i));
         if (i == 0)
         {
-            m_sDisplayIconBox = displayIconBox;
+            m_displayIconBox = displayIconBox;
         }
 
         // flowLayout->addWidget(displayIconBox);
@@ -121,13 +121,13 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
         m_iconBoxMap[(FluAwesomeType)metaEnum.value(i)] = displayIconBox;
 
         connect(displayIconBox, &FluDisplayIconBox::clicked, this, [=]() {
-            if (m_sDisplayIconBox != nullptr)
+            if (m_displayIconBox != nullptr)
             {
-                m_sDisplayIconBox->setSelected(false);
-                m_sDisplayIconBox->style()->polish(m_sDisplayIconBox);
+                m_displayIconBox->setSelected(false);
+                m_displayIconBox->style()->polish(m_displayIconBox);
             }
 
-            m_sDisplayIconBox = displayIconBox;
+            m_displayIconBox = displayIconBox;
             displayIconBox->setSelected(true);
             displayIconBox->style()->polish(displayIconBox);
 
@@ -149,13 +149,13 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
             pMenu->addAction(saveIconAction);
 
             QString outputFilePath = QString("./output/%1.png").arg(EnumTypeToQString(displayIconBox->getAwesomeType()));
-            connect(saveIconAction, &FluAction::triggered, this, [=](bool bChecked) { FluIconUtils::saveFluentPng(displayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme(), outputFilePath); });
+            connect(saveIconAction, &FluAction::triggered, this, [=](bool isChecked) { FluIconUtils::saveFluentPng(displayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme(), outputFilePath); });
 
             pMenu->exec(displayIconBox->mapToGlobal(pos));
         });
     }
 
-    connect(m_searchEdit, &FluSearchLineEdit::onSearchBtnClicked, [=]() {
+    connect(m_searchEdit, &FluSearchLineEdit::onSearchButtonClicked, [=]() {
         QString searchText = m_searchEdit->getText();
         for (auto itMap = m_iconBoxMap.begin(); itMap != m_iconBoxMap.end(); itMap++)
         {
@@ -171,8 +171,8 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
         }
     });
 
-    if (m_sDisplayIconBox != nullptr)
-        emit m_sDisplayIconBox->clicked();
+    if (m_displayIconBox != nullptr)
+        emit m_displayIconBox->clicked();
 
     // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
     onThemeChanged();
@@ -180,7 +180,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
 void FluIconsPage::onThemeChanged()
 {
-    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme());
+    QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_displayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme());
     pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     m_iconLabel->setPixmap(pixmap);
     FluStyleSheetUtils::setQssByFileName("FluIconsPage.qss", this, FluThemeUtils::getUtils()->getTheme());

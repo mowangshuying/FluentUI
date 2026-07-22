@@ -25,7 +25,7 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     //   displayBox1->getBodyRightLayout()->setAlignment(Qt::AlignTop);
     displayBox1->getBodyRightLayout()->addWidget(checkBox);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A Button with grapical content."));
@@ -34,7 +34,7 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     btn2->setIcon(FluIconUtils::getPixmap(("../res/Slices.png")));
     displayBox2->setBodyWidgetFixedHeight(96);
     displayBox2->getBodyLayout()->addWidget(btn2);
-    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
     // m_mainLayout->addStretch();
 
     auto displayBox3 = new FluDisplayBox;
@@ -50,7 +50,7 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     btn3_->setText(tr("Accent style button."));
     displayBox3->getBodyLayout()->addWidget(btn3_);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

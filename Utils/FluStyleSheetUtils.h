@@ -27,7 +27,7 @@ class FluStyleSheetUtils : public QObject
 
   public:
     static QString getQssByFileName(const QString &fileName);
-    static void setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss = false);
+    static void setQssByFileName(const QString &fileName, QWidget *widget, bool isDebugQss = false);
 
     static QString getQssByFileName(const QString &jsonVars, const QString &fileName);
     static void setQssByFileName(const QString &jsonVar, const QString &fileName, QWidget *widget);

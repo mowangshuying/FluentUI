@@ -2,7 +2,7 @@
 
 FluCommandBar::FluCommandBar(QWidget* parent) : QFrame(parent)
 {
-    m_nSpacing = 5;
+    m_spacing = 5;
     setFixedHeight(30);
     onThemeChanged();
 
@@ -12,47 +12,47 @@ FluCommandBar::FluCommandBar(QWidget* parent) : QFrame(parent)
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
-void FluCommandBar::setSpacing(int nSpacing)
+void FluCommandBar::setSpacing(int spacing)
 {
-    m_nSpacing = nSpacing;
+    m_spacing = spacing;
 }
 
 int FluCommandBar::getSpacing()
 {
-    return m_nSpacing;
+    return m_spacing;
 }
 
-void FluCommandBar::setHasMoreBtn(bool bHasMoreBtn)
+void FluCommandBar::setHasMoreButton(bool hasMoreButton)
 {
-    m_bHasMoreBtn = bHasMoreBtn;
-    if (!bHasMoreBtn)
+    m_hasMoreButton = hasMoreButton;
+    if (!hasMoreButton)
         m_moreItem->hide();
     else
         m_moreItem->show();
 }
 
-bool FluCommandBar::getHasMoreBtn()
+bool FluCommandBar::getHasMoreButton()
 {
-    return m_bHasMoreBtn;
+    return m_hasMoreButton;
 }
 
-FluCommandBarIconItem* FluCommandBar::getMoreBtn()
+FluCommandBarIconItem* FluCommandBar::getMoreButton()
 {
     return m_moreItem;
 }
 
-void FluCommandBar::insertBarItem(int nIndex, FluCommandBarItem* barItem)
+void FluCommandBar::insertBarItem(int index, FluCommandBarItem* barItem)
 {
     barItem->setParent(this);
     barItem->show();
 
-    if (nIndex < 0 || nIndex >= m_widgets.size())
+    if (index < 0 || index >= m_widgets.size())
     {
         m_widgets.push_back(barItem);
     }
     else
     {
-        m_widgets.insert(m_widgets.begin() + nIndex, barItem);
+        m_widgets.insert(m_widgets.begin() + index, barItem);
     }
     adjustBarItemPositon();
 }
@@ -76,20 +76,20 @@ void FluCommandBar::removeBarItem(FluCommandBarItem* barItem)
 
 void FluCommandBar::adjustBarItemPositon()
 {
-    int nX = contentsMargins().left();
+    int x = contentsMargins().left();
     for (auto iter = m_widgets.begin(); iter != m_widgets.end(); iter++)
     {
-        (*iter)->move(nX, (height() - (*iter)->height()) / 2);
-        nX += (*iter)->width() + getSpacing();
+        (*iter)->move(x, (height() - (*iter)->height()) / 2);
+        x += (*iter)->width() + getSpacing();
     }
 
-    if (getHasMoreBtn())
+    if (getHasMoreButton())
     {
-        m_moreItem->move(nX, (height() - m_moreItem->height()) / 2);
-        nX += m_moreItem->width() + getSpacing();
+        m_moreItem->move(x, (height() - m_moreItem->height()) / 2);
+        x += m_moreItem->width() + getSpacing();
     }
 
-    nX += contentsMargins().right();
+    x += contentsMargins().right();
 
-    setFixedWidth(nX);
+    setFixedWidth(x);
 }

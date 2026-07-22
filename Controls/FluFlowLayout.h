@@ -1,4 +1,4 @@
-#ifndef FLOWLAYOUT_H
+﻿#ifndef FLOWLAYOUT_H
 #define FLOWLAYOUT_H
 
 #include <QLayout>
@@ -34,8 +34,8 @@ class FluFlowLayout : public QLayout
     int smartSpacing(QStyle::PixelMetric pm) const;
 
     QList<QLayoutItem *> itemList;
-    int m_hSpace;
-    int m_vSpace;
+    int m_horizontalSpace;
+    int m_verticalSpace;
 };
 //! [0]
 

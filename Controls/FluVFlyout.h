@@ -40,11 +40,11 @@ class FluVFlyout : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     QWidget* m_shadowWidget;
     QGraphicsDropShadowEffect* m_shadowEffect;
 
-    QVBoxLayout* m_vShadowLayout;
+    QVBoxLayout* m_shadowLayout;
     QWidget* m_targetWidget;
     FluFlyoutPosition m_position;
 };

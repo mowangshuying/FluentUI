@@ -2,7 +2,7 @@
 
 FluComboBoxTextItem::FluComboBoxTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hBoxLayout = new QHBoxLayout;
+    m_boxLayout = new QHBoxLayout;
     m_indicatorLabel = new QLabel;
     m_textLabel = new QLabel;
 
@@ -12,13 +12,13 @@ FluComboBoxTextItem::FluComboBoxTextItem(QWidget* parent /*= nullptr*/) : FluWid
     m_indicatorLabel->setObjectName("indicatorLabel");
     m_textLabel->setText("textLabel");
 
-    m_hBoxLayout->setContentsMargins(0, 0, 0, 0);
-    m_hBoxLayout->setSpacing(0);
+    m_boxLayout->setContentsMargins(0, 0, 0, 0);
+    m_boxLayout->setSpacing(0);
 
-    m_hBoxLayout->addWidget(m_indicatorLabel);
-    m_hBoxLayout->addWidget(m_textLabel);
+    m_boxLayout->addWidget(m_indicatorLabel);
+    m_boxLayout->addWidget(m_textLabel);
 
-    setLayout(m_hBoxLayout);
+    setLayout(m_boxLayout);
 
 #ifdef _DEBUG
     m_indicatorLabel->setText("0000");

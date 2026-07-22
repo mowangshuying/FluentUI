@@ -21,5 +21,5 @@ class FluHRadioGroupBox : public QGroupBox
     void onThemeChanged();
 
   protected:
-    QVBoxLayout* m_hMainLayout;
+    QVBoxLayout* m_mainLayout;
 };

@@ -23,5 +23,5 @@ class FluHScrollView : public QScrollArea
 
   protected:
     QWidget* m_contextWidget;
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
 };

@@ -62,7 +62,7 @@ void FluMenuBarPage::addSimpleMenuBar()
     menuBar->addMenu(helpMenu);
 
     displayBox1->getBodyLayout()->addWidget(menuBar);
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 }
 
 void FluMenuBarPage::addMenuBarWithAccelerators()
@@ -122,7 +122,7 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
     menuBar->addMenu(helpMenu);
 
     displayBox1->getBodyLayout()->addWidget(menuBar);
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 }
 
 void FluMenuBarPage::addRoundMenu()
@@ -177,7 +177,7 @@ void FluMenuBarPage::addRoundMenu()
     roundMenu->addAction(feedbackAction);
 
     displayBox->getBodyLayout()->addWidget(btn);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
     connect(btn, &FluPushButton::clicked, this, [=]() {
         auto gp = btn->mapToGlobal(QPoint(btn->width() + 5, -100));

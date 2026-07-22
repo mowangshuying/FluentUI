@@ -5,9 +5,9 @@ FluRotationButton::FluRotationButton(QWidget* parent /*= nullptr*/) : QPushButto
     m_timer = new QTimer(this);
     m_timer->start();
     m_timer->setInterval(1000 / 60);
-    m_bRotation = false;
-    m_nAngle = 0;
-    m_nReserveAngle = 0;
+    m_isRotation = false;
+    m_angle = 0;
+    m_reserveAngle = 0;
 
     connect(m_timer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
@@ -26,26 +26,26 @@ void FluRotationButton::setAwesomeType(FluAwesomeType awesomeType)
 
 void FluRotationButton::setRotation(bool b)
 {
-    m_bRotation = b;
+    m_isRotation = b;
 }
 
-void FluRotationButton::setReserveAngle(int nReserveAngle)
+void FluRotationButton::setReserveAngle(int reserveAngle)
 {
-    m_nReserveAngle = nReserveAngle;
+    m_reserveAngle = reserveAngle;
     m_timer->start();
 }
 
 void FluRotationButton::onTimeOut()
 {
-    if (m_nReserveAngle <= 0)
+    if (m_reserveAngle <= 0)
     {
         m_timer->stop();
-        m_nReserveAngle = 0;
+        m_reserveAngle = 0;
         return;
     }
 
     QTransform transform;
-    transform.rotate(m_nAngle);
+    transform.rotate(m_angle);
 
     // QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, m_penColor);
     QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_awesomeType, FluThemeUtils::getUtils()->getTheme());
@@ -53,8 +53,8 @@ void FluRotationButton::onTimeOut()
     QIcon icon(pixmap);
     setIcon(icon);
 
-    m_nReserveAngle--;
-    m_nAngle += 90;
+    m_reserveAngle--;
+    m_angle += 90;
 }
 
 void FluRotationButton::onThemeChanged()

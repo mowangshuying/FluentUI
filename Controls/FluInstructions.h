@@ -18,31 +18,31 @@ class FluInstructions : public FluExpander
 
     void setTitleLabelText(QString text);
 
-    void addTitleContent(QString title, QString content, bool bAdd = true);
+    void addTitleContent(QString title, QString content, bool isAdd = true);
 
-    void addVSplitLine(bool bAdd = true);
+    void addVSplitLine(bool isAdd = true);
 
     int getAutoH()
     {
-        int nAutoH = 0;
+        int autoH = 0;
         for (int i = 0; i < getWrap2Layout()->count(); i++)
         {
             auto widget = getWrap2Layout()->itemAt(i)->widget();
             if (widget->objectName() != "wrap2SplitLine")
             {
                 auto label = (FluLabel*)widget;
-                nAutoH += label->heightForWidth(m_wrap2->width() - getWrap2Layout()->contentsMargins().left() - getWrap2Layout()->contentsMargins().right());
+                autoH += label->heightForWidth(m_wrap2->width() - getWrap2Layout()->contentsMargins().left() - getWrap2Layout()->contentsMargins().right());
             }
             else
             {
-                nAutoH += widget->height();
+                autoH += widget->height();
             }
 
-            nAutoH += getWrap2Layout()->spacing();
+            autoH += getWrap2Layout()->spacing();
         }
 
-        nAutoH += getWrap2Layout()->contentsMargins().top() + getWrap2Layout()->contentsMargins().bottom();
-        return nAutoH;
+        autoH += getWrap2Layout()->contentsMargins().top() + getWrap2Layout()->contentsMargins().bottom();
+        return autoH;
     }
 
     void resizeEvent(QResizeEvent* event);

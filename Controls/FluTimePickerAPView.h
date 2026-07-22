@@ -53,7 +53,7 @@ class FluTimePickerAPView : public FluWidget
 
     bool isAm();
 
-    void setAm(bool bAm);
+    void setAm(bool isAm);
 
     void updateTime();
 
@@ -72,12 +72,12 @@ class FluTimePickerAPView : public FluWidget
 
   protected:
     QFrame* m_mainView;
-    QHBoxLayout* m_hMainViewLayout;
+    QHBoxLayout* m_mainViewLayout;
     QGraphicsDropShadowEffect* m_shadowEffect;
 
-    QVBoxLayout* m_vMainLayout;
-    QHBoxLayout* m_hViewLayout;
-    QHBoxLayout* m_hBtnLayout;
+    QVBoxLayout* m_mainLayout;
+    QHBoxLayout* m_viewLayout;
+    QHBoxLayout* m_buttonLayout;
 
     FluTimePickerViewMask* m_mask;
 
@@ -85,12 +85,12 @@ class FluTimePickerAPView : public FluWidget
     FluLoopView* m_minuteView;
     FluAmPmView* m_ampmView;
 
-    QPushButton* m_okBtn;
-    QPushButton* m_cancelBtn;
+    QPushButton* m_okButton;
+    QPushButton* m_cancelButton;
 
     int m_hour;
     int m_minute;
-    bool m_bAm;
+    bool m_isAm;
 
-    bool m_bFirstShow;
+    bool m_isFirstShow;
 };

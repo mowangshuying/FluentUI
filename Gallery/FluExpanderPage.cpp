@@ -37,7 +37,7 @@ void FluExpanderPage::addExpanderDemo1()
     //  layout()->addWidget(expander);
 
     displayBox->getBodyLayout()->addWidget(expander);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluExpanderPage::addExpanderDemo2()
@@ -61,7 +61,7 @@ void FluExpanderPage::addExpanderDemo2()
     expander->getWrap2Layout()->addWidget(pushBtn);
 
     displayBox->getBodyLayout()->addWidget(expander);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluExpanderPage::addExpanderDemo3()
@@ -86,7 +86,7 @@ void FluExpanderPage::addExpanderDemo3()
     // layout()->addWidget(expander);
 
     displayBox->getBodyLayout()->addWidget(expander);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluExpanderPage::onThemeChanged()

@@ -21,5 +21,5 @@ class FluHNavigationSettingsItem : public FluHNavigationItem
   protected:
     FluAwesomeType m_awesomeType;
     FluRotationButton* m_icon;
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
 };

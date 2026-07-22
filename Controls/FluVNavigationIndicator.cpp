@@ -7,6 +7,7 @@ FluVNavigationIndicator::FluVNavigationIndicator(QWidget *parent /*= nullptr*/) 
     setMaximumHeight(16);
     m_heightAnimation = new QPropertyAnimation(this, "indicatorHeight", this);
     m_heightAnimation->setDuration(200);
+    m_heightAnimation->setEasingCurve(QEasingCurve::OutCubic);
 }
 
 bool FluVNavigationIndicator::isSelected() const

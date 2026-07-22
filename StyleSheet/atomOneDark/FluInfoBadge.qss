@@ -7,3 +7,27 @@ FluInfoBadge {
     min-height: 18px;
     min-width: 18px;
 }
+
+FluInfoBadge[level="Info"] {
+    padding: 1px 3px 1px 3px;
+    color: black;
+    qproperty-badgeColor: rgb(82, 139, 255);
+}
+
+FluInfoBadge[level="Suc"] {
+    padding: 1px 3px 1px 3px;
+    color: black;
+    qproperty-badgeColor: rgb(108, 203, 95);
+}
+
+FluInfoBadge[level="Warn"] {
+    padding: 1px 3px 1px 3px;
+    color: black;
+    qproperty-badgeColor: rgb(252, 225, 0);
+}
+
+FluInfoBadge[level="Error"] {
+    padding: 1px 3px 1px 3px;
+    color: black;
+    qproperty-badgeColor: rgb(255, 153, 164);
+}

@@ -440,10 +440,12 @@ void FluComboBoxEx::setChevronRotation(qreal rotation)
 
     m_chevronRotation = rotation;
 
-    QPixmap originalPixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme());
+    if (m_chevronPixmap.isNull())
+        m_chevronPixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme());
+
     QTransform transform;
     transform.rotate(rotation);
-    QPixmap rotatedPixmap = originalPixmap.transformed(transform, Qt::SmoothTransformation);
+    QPixmap rotatedPixmap = m_chevronPixmap.transformed(transform, Qt::SmoothTransformation);
 
     m_iconBtn->setIcon(rotatedPixmap);
     emit chevronRotationChanged(rotation);
@@ -451,6 +453,7 @@ void FluComboBoxEx::setChevronRotation(qreal rotation)
 
 void FluComboBoxEx::onThemeChanged()
 {
+    m_chevronPixmap = QPixmap();
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
     if (m_textAwesomeType != FluAwesomeType::None)
         m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluThemeUtils::getUtils()->getTheme()));

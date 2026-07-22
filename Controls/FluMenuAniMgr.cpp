@@ -6,7 +6,7 @@ FluMenuAniMgr::FluMenuAniMgr(FluRoundMenu* menu, FluMenuAniType aniType) : QObje
     m_menu = menu;
     m_posAni = new QPropertyAnimation((QObject*)menu, "pos", (QObject*)menu);
     m_posAni->setDuration(250);
-    m_posAni->setEasingCurve(QEasingCurve::OutQuad);
+    m_posAni->setEasingCurve(QEasingCurve::OutCubic);
 
     connect(m_posAni, &QPropertyAnimation::valueChanged, this, &FluMenuAniMgr::onValueChanged);
     connect(m_posAni, &QPropertyAnimation::valueChanged, this, &FluMenuAniMgr::updateMenuViewport);

@@ -1,11 +1,14 @@
 ﻿#include "FluStackedLayout.h"
+#include <QGraphicsOpacityEffect>
 
 FluStackedLayout::FluStackedLayout() : QStackedLayout()
 {
-    // m_animation = new QPropertyAnimation;
-    // m_animation->setPropertyName("pos");
-    // m_animation->setDuration(500);
-    // m_animation->setEasingCurve(QEasingCurve::OutBounce);
+    m_opacityAnimation = new QPropertyAnimation(this, "value");
+    m_opacityAnimation->setDuration(300);
+    m_opacityAnimation->setEasingCurve(QEasingCurve::OutCubic);
+
+    m_valueObject = new FluValueObject;
+    m_opacityAnimation->setTargetObject(m_valueObject);
 }
 
 FluStackedLayout::FluStackedLayout(QWidget *parent) : QStackedLayout(parent)
@@ -45,11 +48,18 @@ void FluStackedLayout::setCurrentWidget(QString str)
 
     QStackedLayout::setCurrentWidget(itf.value());
 
-    // m_animation->setTargetObject(itf.value());
-    //  m_animation->setStartValue(itf.value()->pos());
-    // m_animation->setKeyValueAt(0.5, itf.value()->pos() + QPoint(0, 50));
-    // m_animation->setEndValue(itf.value()->pos());
-    //  m_animation->start();
+    auto effect = qobject_cast<QGraphicsOpacityEffect *>(itf.value()->graphicsEffect());
+    if (!effect)
+    {
+        effect = new QGraphicsOpacityEffect(itf.value());
+        itf.value()->setGraphicsEffect(effect);
+    }
+
+    m_opacityAnimation->setTargetObject(effect);
+    m_opacityAnimation->setPropertyName("opacity");
+    m_opacityAnimation->setStartValue(0.0);
+    m_opacityAnimation->setEndValue(1.0);
+    m_opacityAnimation->start();
 }
 
 QWidget *FluStackedLayout::getWidget(QString str)

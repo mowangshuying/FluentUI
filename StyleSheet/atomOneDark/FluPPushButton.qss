@@ -7,7 +7,7 @@ FluPPushButton {
 
 FluPPushButton[ppMouseState="Hover"] {
 	qproperty-ppBackgroundColor: rgb(50, 54, 60);
-	qproperty-ppBorderColor: rgb(50, 54, 60);
+	qproperty-ppBorderColor: rgb(71, 74, 79);
 	qproperty-ppBottomBorderColor: rgb(71, 74, 79);
 	qproperty-ppTextColor: rgb(255, 255, 255);
 }

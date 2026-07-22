@@ -22,10 +22,17 @@ void FluStar::setEmptyStar()
 void FluStar::setSolidStar()
 {
     m_isSolid = true;
-    setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(0, 90, 158)));
     if (FluThemeUtils::isDarkTheme())
     {
         setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(118, 185, 237)));
+    }
+    else if (FluThemeUtils::isAtomOneDarkTheme())
+    {
+        setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(82, 139, 255)));
+    }
+    else
+    {
+        setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(0, 90, 158)));
     }
 }
 

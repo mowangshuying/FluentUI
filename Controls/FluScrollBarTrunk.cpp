@@ -56,6 +56,7 @@ void FluScrollBarTrunk::initOpacityAnimation()
 {
     m_effect = new QGraphicsOpacityEffect(this);
     m_animation = new QPropertyAnimation(m_effect, "opacity", this);
+    m_animation->setEasingCurve(QEasingCurve::InOutCubic);
     setGraphicsEffect(m_effect);
     m_effect->setOpacity(0);
 }

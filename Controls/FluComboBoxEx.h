@@ -92,4 +92,5 @@ class FluComboBoxEx : public FluWidget
     bool m_editable;
     QPropertyAnimation* m_chevronAni;
     qreal m_chevronRotation;
+    QPixmap m_chevronPixmap;
 };

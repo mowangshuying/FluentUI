@@ -4,7 +4,6 @@ project(FluentUI VERSION 1.0.0 LANGUAGES CXX)
 
 
 option(USE_QRC "Build With qrc" TRUE)
-option(BUILD_ICONTOOL "Build Icon Tool" FALSE)
 option(BUILD_GALLERY "Build Gallery" TRUE)
 
 set(CMAKE_AUTOUIC ON)
@@ -46,10 +45,6 @@ endif()
 add_subdirectory("3rdparty")
 add_subdirectory("Controls")
 add_subdirectory("Examples")
-
-if (BUILD_ICONTOOL)
-add_subdirectory("IconTool")
-endif()
 
 add_subdirectory("Utils")
 

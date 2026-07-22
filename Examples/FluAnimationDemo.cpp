@@ -12,8 +12,6 @@ FluAnimationDemo::FluAnimationDemo(QWidget* parent /*= nullptr*/) : FluTemplateD
 
     addShakeAni();
 
-    // addStateMachineAni();
-
     addTmpAni();
 }
 
@@ -29,21 +27,14 @@ void FluAnimationDemo::addPosAni()
     animation->setKeyValueAt(0.5, QPoint(100, 500));
     animation->setEndValue(QPoint(100, 100));
 
-    // animation total time.
     animation->setDuration(10000);
 
-    // animation->setEasingCurve(QEasingCurve::OutBounce);
     animation->setEasingCurve(QEasingCurve::InCurve);
     connect(btn, &FluPushButton::clicked, [=]() {
         animation->start();
-        // LOG_DEBUG << "Animation Start.";
     });
 
     connect(animation, &QPropertyAnimation::valueChanged, [=](QVariant value) {});
-    // connect(animation, &QPropertyAnimation::finished, [=]() {
-    // LOG_DEBUG << "Animation Finished.";
-    //    animation->deleteLater();
-    //});
 }
 
 void FluAnimationDemo::addOpacityAni()
@@ -63,10 +54,6 @@ void FluAnimationDemo::addOpacityAni()
     btn->move(300, 100);
 
     connect(btn, &FluPushButton::clicked, [=]() { animation->start(); });
-
-    // connect(animation, &QPropertyAnimation::finished, [=]() {
-    //    animation->deleteLater();
-    //});
 }
 
 void FluAnimationDemo::addShakeAni()
@@ -97,8 +84,6 @@ void FluAnimationDemo::addShakeAni()
 
         animation->start();
     });
-
-    // connect(animation, &QPropertyAnimation::finished, [=]() { animation->deleteLater(); });
 }
 
 // void FluAnimationDemo::addStateMachineAni()

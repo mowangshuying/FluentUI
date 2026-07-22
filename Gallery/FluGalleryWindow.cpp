@@ -120,10 +120,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     QTimer::singleShot(500, [=]() { m_navView->onThemeChanged(); });
 #endif
 
-    // resize
     resize(1200, 900);
     setMinimumWidth(850);
-    // m_navView->onMenuItemClicked();
     m_navView->setViewWidth(300);
     m_navView->setOnlyCollapseView(false);
     onThemeChanged();
@@ -383,10 +381,6 @@ void FluGalleryWindow::makeCollectionsNavItem()
     m_sLayout->addWidget("FlipViewPage", flipViewPage);
     connect(item1, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("FlipViewPage"); });
 
-    // FluNavigationIconTextItem *item2 = new FluNavigationIconTextItem("GridView", item);
-    // FluNavigationIconTextItem *item3 = new FluNavigationIconTextItem("ItemsView", item);
-    // FluNavigationIconTextItem *item4 = new FluNavigationIconTextItem("ListBox", item);
-
     FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem(tr("ListView"), item);
     item5->setKey("ListViewPage");
 
@@ -394,7 +388,6 @@ void FluGalleryWindow::makeCollectionsNavItem()
     m_sLayout->addWidget("ListViewPage", listViewPage);
     connect(item5, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("ListViewPage"); });
 
-    // FluNavigationIconTextItem *item6 = new FluNavigationIconTextItem("PullToRefresh", item);
     FluVNavigationIconTextItem *item7 = new FluVNavigationIconTextItem(tr("TreeView"), item);
     item7->setKey("TreeViewPage");
     auto treeViewPage = new FluTreeViewPage;
@@ -408,7 +401,6 @@ void FluGalleryWindow::makeCollectionsNavItem()
     connect(item8, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TableViewPage"); });
 
     connect(collectionsPage, &FluCollectionsPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -419,11 +411,7 @@ void FluGalleryWindow::makeCollectionsNavItem()
     });
 
     item->addItem(item1);
-    // item->addItem(item2);
-    // item->addItem(item3);
-    // item->addItem(item4);
     item->addItem(item5);
-    // item->addItem(item6);
     item->addItem(item7);
     item->addItem(item8);
     m_navView->addItemToMidLayout(item);
@@ -506,7 +494,6 @@ void FluGalleryWindow::makeDialogsFlyouts()
     item3->setKey("TeachingTipPage");
 
     connect(dialogAndFlyoutPage, &FluDialogsAndFlyoutsPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -678,7 +665,6 @@ void FluGalleryWindow::makeMenuToolBarsNavItem()
     item10->setKey("SwipeControlPage");
 
     connect(menusAndToolBarsPage, &FluMenuAndToolBarsPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -688,8 +674,6 @@ void FluGalleryWindow::makeMenuToolBarsNavItem()
         }
     });
 
-    // item->addItem(item1);
-    //  item->addItem(item2);
     item->addItem(item3);
     item->addItem(item4);
     item->addItem(item5);
@@ -725,7 +709,6 @@ void FluGalleryWindow::makeNavigationNavItem()
     item4->setKey("TabViewPage");
 
     connect(navigationPage, &FluNavigationPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -818,7 +801,6 @@ void FluGalleryWindow::makeStatusInfoNavItem()
     item5->setKey("ProgressRingPage");
 
     connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -878,7 +860,6 @@ void FluGalleryWindow::makeTextNavItem()
     connect(item7, &FluVNavigationIconTextItem::itemClicked, [=]() { m_sLayout->setCurrentWidget("TextBoxPage"); });
 
     connect(textPage, &FluTextPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
         auto item = m_navView->getItemByKey(key);
         if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
         {
@@ -900,17 +881,6 @@ void FluGalleryWindow::makeTextNavItem()
 
 void FluGalleryWindow::resizeEvent(QResizeEvent *event)
 {
-    // if (width() > 1000)
-    //{
-    //     // check it
-    //     if (!m_navView->isLong())
-    //         m_navView->onMenuItemClicked();
-    // }
-    // else
-    //{
-    //     if (m_navView->isLong())
-    //         m_navView->onMenuItemClicked();
-    // }
 }
 
 void FluGalleryWindow::closeEvent(QCloseEvent *event)

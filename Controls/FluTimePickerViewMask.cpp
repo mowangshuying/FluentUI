@@ -57,24 +57,9 @@ void FluTimePickerViewMask::mouseMoveEvent(QMouseEvent* event)
         if (x >= m_items[i].m_nWidth)
         {
             x -= m_items[i].m_nWidth;
-
-            // QPointF localP;
-            // QPointF senceP;
-            // QPointF globalP;
-            // QEnterEvent tmpEvent(localP, senceP, globalP);
-            // emit enterChanged(i, &tmpEvent);
         }
         else
         {
-            // QEvent tmpEvent(QEvent::None);
-            //  emit leaveChanged(i, &tmpEvent);
-            // break;
-
-            ///* QPointF localP;
-            // QPointF senceP;
-            // QPointF globalP;
-            // QEnterEvent tmpEvent(localP, senceP, globalP);*/
-            // emit enterChanged(i, &tmpEvent);
             nTmpIndex = i;
             break;
         }

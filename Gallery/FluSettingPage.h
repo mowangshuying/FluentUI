@@ -24,7 +24,7 @@ class FluSettingPage : public FluWidget
 
     void updateThemeSelectBox()
     {
-        m_appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
+        m_appThemeSelectBox->getComboBox()->setCurrentIndex((int)FluThemeUtils::getUtils()->getTheme());
     }
 
   public slots:

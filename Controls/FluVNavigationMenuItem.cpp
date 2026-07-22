@@ -12,30 +12,33 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
     m_wrapWidget2 = new QWidget;
 
     m_hWrapWidgetLayout1 = new QHBoxLayout;
+    m_hWrapWidgetLayout1->setSpacing(0);
     m_wrapWidget1->setLayout(m_hWrapWidgetLayout1);
-    m_hWrapWidgetLayout1->setContentsMargins(0, 4, 0, 4);
+    m_hWrapWidgetLayout1->setContentsMargins(4, 2, 4, 2);
 
     m_wrapWidget1->setObjectName("wrapWidget1");
     m_wrapWidget2->setObjectName("wrapWidget2");
 
     m_menuButton = new QPushButton;
     m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton));
-    m_menuButton->setIconSize(QSize(24, 24));
-    m_menuButton->setFixedSize(44, 32);
+    m_menuButton->setIconSize(QSize(20, 20));
+    m_menuButton->setFixedSize(24, 24);
+    m_wrapWidget1->setFixedWidth(40);
 
     m_hWrapWidgetLayout1->addWidget(m_menuButton);
 
     m_hLayout->setSpacing(0);
     m_hLayout->addWidget(m_wrapWidget1);
+    m_hLayout->addSpacing(12);
     m_hLayout->addWidget(m_wrapWidget2, 1);
     // m_hLayout->setSpacing(0);
     // m_hLayout->setContentsMargins(0, 4, 0, 4);
     m_hLayout->setContentsMargins(0, 0, 0, 0);
 
-    m_wrapWidget1->setFixedHeight(40);
-    m_wrapWidget2->setFixedHeight(40);
-    setFixedHeight(40);
-    setFixedWidth(320);
+    m_wrapWidget1->setFixedHeight(30);
+    m_wrapWidget2->setFixedHeight(30);
+    setFixedHeight(30);
+    setFixedWidth(180);
 
     m_menuButton->setObjectName("menuButton");
 

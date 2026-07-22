@@ -1,9 +1,9 @@
 FluRoundMenuView {
-    border: 1px solid rgba(248, 248, 248, 0.08);
-    border-radius: 5px;
-    background-color: rgb(48, 48, 48);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background-color: rgb(44, 44, 44);
     outline: none;
-    font: 14px;
+    font: 14px "Segoe UI Variable", "Segoe UI", sans-serif;
 }
 
 FluRoundMenuView[radiusType="NoTopRadius"] {
@@ -12,21 +12,17 @@ FluRoundMenuView[radiusType="NoTopRadius"] {
 }
 
 FluRoundMenuView[radiusType="NoBottomRadius"] {
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
-
 FluRoundMenuView::item {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    margin-left: 6px;
-    margin-right: 6px;
-    /* margin-top: 2px;
-    margin-bottom: 2px; */
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 4px;
+    margin: 2px 4px;
     border: none;
-    color: white;
+    color: #ffffff;
 }
 
 FluRoundMenuView::item[btSpacing=true] {
@@ -35,24 +31,19 @@ FluRoundMenuView::item[btSpacing=true] {
 }
 
 FluRoundMenuView::item:disabled {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    border: none;
-    color: rgba(248, 248, 248, 0.8);
+    color: rgba(255, 255, 255, 0.36);
 }
 
 FluRoundMenuView::item:hover {
-    background-color: rgba(248, 248, 248, 8);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 FluRoundMenuView::item:selected {
-    background-color: rgba(248, 248, 248, 8);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
 }
 
 FluRoundMenuView::item:selected:active {
-    background-color: rgba(248, 248, 248.08);
-    color: rgba(248, 248, 248, 0.8);
+    background-color: rgba(255, 255, 255, 0.10);
+    color: #ffffff;
 }

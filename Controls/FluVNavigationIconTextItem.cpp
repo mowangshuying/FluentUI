@@ -37,7 +37,7 @@ setFixedSize(180, 30);
     //  m_vMainLayout->addWidget(m_wrapWidget1);
 
     m_vLayout1 = new QVBoxLayout(m_wrapWidget2);
-    m_hLayout1->setContentsMargins(4, 4, 4, 4);
+    m_hLayout1->setContentsMargins(4, 3, 4, 3);
     m_indicator = new FluVNavigationIndicator(this);
     m_iconBtn = new QPushButton(this);
     m_label = new QLabel("Home");

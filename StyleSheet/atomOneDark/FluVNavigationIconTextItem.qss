@@ -9,7 +9,7 @@ FluVNavigationIconTextItem {
 }
 
 #wrapWidget1[selected=true] {
-    background-color: rgb(50, 55, 65);
+    background-color: rgba(255, 255, 255, 0.06);
     border-radius: 4px;
 }
 
@@ -18,7 +18,7 @@ FluVNavigationIconTextItem {
 }
 
 #wrapWidget1:hover {
-    background-color: rgb(42, 47, 55);
+    background-color: rgba(255, 255, 255, 0.04);
     border-radius: 4px;
 }
 
@@ -33,16 +33,16 @@ FluVNavigationIconTextItem {
 
 #label {
     background-color: transparent;
-    color: rgb(171, 178, 191);
-    font-size: 13px;
+    font-size: 14px;
+    color: #ab3ab2;
 }
 
 #label[selected=true] {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
 }
 
 #label[enableThisItem=false] {
-    color: rgb(92, 99, 112);
+    color: #5c6370;
 }
 
 #arrow {

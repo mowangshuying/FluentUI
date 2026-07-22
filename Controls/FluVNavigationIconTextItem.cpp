@@ -10,7 +10,7 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
 {
     m_itemType = FluVNavigationItemType::IconText;
     m_bHideIcon = false;
-    setFixedSize(320, 40);
+setFixedSize(180, 30);
     m_wrapWidget1 = new QWidget(this);
     m_wrapWidget2 = new QWidget(this);
 
@@ -27,13 +27,13 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
 
     m_vMainLayout = new QVBoxLayout(this);
     m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->setSpacing(5);
+    m_vMainLayout->setSpacing(2);
     m_vMainLayout->addWidget(m_wrapWidget1);
     m_vMainLayout->addWidget(m_wrapWidget2);
     m_wrapWidget2->hide();
 
     m_hLayout1 = new QHBoxLayout(m_wrapWidget1);
-    m_wrapWidget1->setFixedSize(320, 40);
+    m_wrapWidget1->setFixedSize(180, 30);
     //  m_vMainLayout->addWidget(m_wrapWidget1);
 
     m_vLayout1 = new QVBoxLayout(m_wrapWidget2);
@@ -49,28 +49,28 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
     m_hLayout1->addWidget(m_emptyWidget);
     m_hLayout1->addWidget(m_indicator);
     m_hLayout1->addWidget(m_iconBtn);
-    m_hLayout1->addSpacing(8);
+    m_hLayout1->addSpacing(12);
     m_hLayout1->addWidget(m_label, 1);
     m_hLayout1->addWidget(m_arrow);
     //  m_hLayout1->addSpacing(4);
 
     // m_hLayout1->setSpacing(0);
 
-    m_iconBtn->setFixedSize(30, 30);
+    m_iconBtn->setFixedSize(24, 24);
     // m_label->setWordWrap(true);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
-    m_vLayout1->setSpacing(5);
+    m_vLayout1->setSpacing(2);
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
 
-    m_iconBtn->setIconSize(QSize(24, 24));
+    m_iconBtn->setIconSize(QSize(20, 20));
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Home, FluThemeUtils::getUtils()->getTheme()));
 
-    m_arrow->setIconSize(QSize(18, 18));
+    m_arrow->setIconSize(QSize(16, 16));
     m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
-    m_arrow->setFixedWidth(25);
+    m_arrow->setFixedWidth(20);
     m_bDown = true;
     m_bLong = true;
     m_arrow->hide();
@@ -209,7 +209,7 @@ int FluVNavigationIconTextItem::calcItemW1Width()
     if (m_bHideIcon)
         nIconWidth = 0;
 
-    int nSpacing = 8;
+    int nSpacing = 12;
     // m_label->show();
     int nLabelWidth = m_label->fontMetrics().horizontalAdvance(m_label->text());
     int nArrowWidth = m_arrow->width();
@@ -226,7 +226,7 @@ int FluVNavigationIconTextItem::calcItemW1Width()
     // LOG_DEBUG << "nArrowWidth:" << nArrowWidth;
     // LOG_DEBUG << "getDepth:" << getDepth();
 
-    int nCurentWidth = margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 36 * getDepth();
+    int nCurentWidth = margins.left() + nIndicatorWidth + nIconWidth + nSpacing + nLabelWidth + nArrowWidth + margins.right() + 32 * getDepth();
     // LOG_DEBUG << "W1 width:" << nCurentWidth;
     return nCurentWidth;
 }
@@ -263,7 +263,7 @@ int FluVNavigationIconTextItem::calcItemW2Height(FluVNavigationIconTextItem *ite
         auto tmpItem = (FluVNavigationIconTextItem *)item->m_vLayout1->itemAt(i)->widget();
         nH += tmpItem->height();
     }
-    nH = nH + 5 * (nLayoutCount - 1) + m_vLayout1->contentsMargins().top() + m_vLayout1->contentsMargins().bottom();
+    nH = nH + 2 * (nLayoutCount - 1) + m_vLayout1->contentsMargins().top() + m_vLayout1->contentsMargins().bottom();
     return nH;
 }
 
@@ -330,12 +330,12 @@ void FluVNavigationIconTextItem::updateDepth(FluVNavigationIconTextItem *item)
         return;
 
     int nDepth = item->getDepth();
-    item->m_emptyWidget->setFixedWidth(36 * nDepth);
+    item->m_emptyWidget->setFixedWidth(32 * nDepth);
 
     // get sub items and update depth
     for (auto tmpItem : item->getItems())
     {
-        tmpItem->m_emptyWidget->setFixedWidth(36 * tmpItem->getDepth());
+        tmpItem->m_emptyWidget->setFixedWidth(32 * tmpItem->getDepth());
         updateDepth(tmpItem);
     }
 }
@@ -491,7 +491,7 @@ void FluVNavigationIconTextItem::onItemClicked()
     {
         setState(FluVNavigationState::Collapsing);
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
-        setFixedHeight(40);
+        setFixedHeight(30);
         if (m_items.size() > 0)
         {
             m_wrapWidget2->hide();

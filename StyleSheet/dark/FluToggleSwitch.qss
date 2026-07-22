@@ -52,7 +52,7 @@ FluToggleSwitch::indicator:checked:pressed {
 }
 
 FluToggleSwitch:disabled {
-    color: rgba(0, 0, 0, 110);
+    color: rgba(255, 255, 255, 80);
 }
 
 #toggleSwitch::indicator:disabled {

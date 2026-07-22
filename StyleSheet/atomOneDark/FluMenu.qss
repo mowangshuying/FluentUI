@@ -9,7 +9,7 @@ QMenu {
 
 QMenu::title {
     /* color: rgb(26, 26, 26); */
-    color: blue;
+    color: rgb(200, 200, 200);
     font-size: 12px;
 }
 
@@ -40,5 +40,5 @@ QMenu::right-arrow {
 QMenu::separator {
     height: 1px;
     margin: 4px 0px;
-    color: white;
+    background: rgb(71, 74, 79);
 }

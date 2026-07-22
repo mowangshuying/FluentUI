@@ -4,6 +4,7 @@
 #include <QMap>
 #include "FluWidget.h"
 #include <QPropertyAnimation>
+#include "FluValueObject.h"
 
 // use it only contains widgets
 // when use it, please just use addWidget , removeWidget
@@ -28,5 +29,6 @@ class FluStackedLayout : public QStackedLayout
 
   protected:
     QMap<QString, QWidget *> m_widgetMap;
-    // QPropertyAnimation *m_animation;
+    QPropertyAnimation *m_opacityAnimation;
+    FluValueObject *m_valueObject;
 };

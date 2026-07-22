@@ -31,7 +31,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_expandAni = new QPropertyAnimation(this, "contentHeight");
     m_expandAni->setDuration(300);
-    m_expandAni->setEasingCurve(QEasingCurve::InCurve);
+    m_expandAni->setEasingCurve(QEasingCurve::OutCubic);
 
     connect(m_downOrUpButton, &QPushButton::clicked, [=](bool b) { onClicked(); });
 

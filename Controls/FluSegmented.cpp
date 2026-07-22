@@ -10,6 +10,8 @@ FluSegmented::FluSegmented(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_animation = new QPropertyAnimation;
     m_animation->setPropertyName("value");
+    m_animation->setDuration(250);
+    m_animation->setEasingCurve(QEasingCurve::OutCubic);
 
     m_valueObject = new FluValueObject;
     m_animation->setTargetObject(m_valueObject);

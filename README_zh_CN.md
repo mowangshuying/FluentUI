@@ -88,12 +88,14 @@
 
 ## 第三方库
 
-+ [framelesshelper](https://github.com/nicehash/framelesshelper) - 无边框窗口辅助库
-+ [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) - 高级停靠系统
-+ [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) - 代码编辑器组件
-+ [qrcode](https://github.com/nicehash/qrcode) - 二维码生成
-+ [cmark](https://github.com/commonmark/cmark) - CommonMark 解析器
-+ [qwindowkit](https://github.com/nicehash/qwindowkit) - 窗口工具包
+| 库 | 许可证 | 说明 |
+|-----|--------|------|
+| [framelesshelper](https://github.com/nicehash/framelesshelper) | MIT | 无边框窗口辅助库 |
+| [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) | LGPL v2.1 | 高级停靠系统 |
+| [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) | GPL v3 | 代码编辑器组件 |
+| [qrcode](https://github.com/nicehash/qrcode) | MIT | 二维码生成 |
+| [cmark](https://github.com/commonmark/cmark) | BSD 2-Clause | CommonMark 解析器 |
+| [qwindowkit](https://github.com/nicehash/qwindowkit) | Apache 2.0 | 窗口工具包 |
 
 > 所有第三方库以源代码形式集成在 `3rdparty/` 目录中。
 

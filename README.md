@@ -88,12 +88,14 @@ English | <a href="README_zh_CN.md">简体中文</a>
 
 ## Third-Party Libraries
 
-+ [framelesshelper](https://github.com/nicehash/framelesshelper) - Frameless window helper
-+ [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) - Advanced docking system
-+ [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) - Code editor component
-+ [qrcode](https://github.com/nicehash/qrcode) - QR code generation
-+ [cmark](https://github.com/commonmark/cmark) - CommonMark parser
-+ [qwindowkit](https://github.com/nicehash/qwindowkit) - Window kit
+| Library | License | Description |
+|---------|---------|-------------|
+| [framelesshelper](https://github.com/nicehash/framelesshelper) | MIT | Frameless window helper |
+| [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) | LGPL v2.1 | Advanced docking system |
+| [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) | GPL v3 | Code editor component |
+| [qrcode](https://github.com/nicehash/qrcode) | MIT | QR code generation |
+| [cmark](https://github.com/commonmark/cmark) | BSD 2-Clause | CommonMark parser |
+| [qwindowkit](https://github.com/nicehash/qwindowkit) | Apache 2.0 | Window kit |
 
 > All third-party libraries are integrated as source code in the `3rdparty/` directory.
 

@@ -25,9 +25,9 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     m_titleBar->setFixedHeight(36);
 
     // new
-    m_vMainLayout->setAlignment(Qt::AlignTop);
+    m_mainLayout->setAlignment(Qt::AlignTop);
     m_navView = new FluHNavigationView;
-    m_vMainLayout->insertWidget(1, m_navView, 0, Qt::AlignTop);
+    m_mainLayout->insertWidget(1, m_navView, 0, Qt::AlignTop);
 
     // add home item;
     auto item1 = new FluHNavigationIconTextItem(FluAwesomeType::Home, "Home");

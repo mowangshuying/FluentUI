@@ -9,7 +9,7 @@ FluTabViewDemo::FluTabViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(
     vMainLayout->addWidget(tabView);
 
     static int PAGENUM = 1;
-    connect(tabView, &FluTabView::addTabBtnClicked, [=]() {
+    connect(tabView, &FluTabView::addTabButtonClicked, [=]() {
         QString keyString = QString::asprintf("Page%d", PAGENUM);
         QString valueString = QString::asprintf("Page%d: This is page%d", PAGENUM, PAGENUM);
 

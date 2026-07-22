@@ -15,7 +15,7 @@ FluMainWidgetDemo::FluMainWidgetDemo(QWidget* parent) : FluFrameLessWidget(paren
     m_titleBar->setObjectName("titleBar");
 
     m_menuBar = new FluMenuBar();
-    m_vMainLayout->insertWidget(1, m_menuBar);
+    m_mainLayout->insertWidget(1, m_menuBar);
 
     __initMenuBar();
 

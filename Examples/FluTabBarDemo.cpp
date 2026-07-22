@@ -15,7 +15,7 @@ FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
     // m_mainLayout->addWidget(tabBar);
     // m_mainLayout->addStretch(1);
 
-    connect(tabBar, &FluTabBar::addTabBtnClicked, [=]() {
+    connect(tabBar, &FluTabBar::addTabButtonClicked, [=]() {
         auto tmpTabBarItem = new FluTabBarItem;
         QString text = QString::asprintf("Document %d ----------------", tabBar->getTabBarItems().size() + 1);
         tmpTabBarItem->setText(text);

@@ -43,3 +43,10 @@ QComboBox QAbstractItemView::item:selected {
     color: white;
     background-color: rgb(56, 56, 56);
 }
+
+QComboBox:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(39, 39, 39);
+    background-color: rgb(35, 35, 35);
+}

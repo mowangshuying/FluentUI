@@ -28,7 +28,6 @@ void FluIndicatorRoundMenu::popup(QPoint pos)
     }
 
     // getView()->setProperty("radiusType", "NoTopRadius");
-    getView()->style()->polish(getView());
     getView()->setFocusPolicy(Qt::NoFocus);
     setFocusPolicy(Qt::NoFocus);
     exec(pos);

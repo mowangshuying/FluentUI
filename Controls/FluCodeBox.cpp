@@ -50,5 +50,5 @@ void FluCodeBox::resizeEvent(QResizeEvent*)
 
 void FluCodeBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCodeBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCodeBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

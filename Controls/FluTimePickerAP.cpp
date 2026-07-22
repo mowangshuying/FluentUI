@@ -1,4 +1,4 @@
-#include "FluTimePickerAP.h"
+﻿#include "FluTimePickerAP.h"
 
 FluTimePickerAP::FluTimePickerAP(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -75,5 +75,5 @@ void FluTimePickerAP::paintEvent(QPaintEvent* event)
 
 void FluTimePickerAP::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTimePickerAP.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTimePickerAP.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -1,5 +1,5 @@
 ﻿#include "FluTerminalWidget.h"
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include <QDebug>
 
 FluTerminalWidget::FluTerminalWidget()
@@ -31,7 +31,7 @@ FluTerminalWidget::FluTerminalWidget()
     editCursor.setBlockFormat(textBlockFormat);
     setTextCursor(editCursor);
 
-    FluStyleSheetUitls::setQssByFileName("FluTerminalWidget.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTerminalWidget.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluTerminalWidget::keyPressEvent(QKeyEvent* e)

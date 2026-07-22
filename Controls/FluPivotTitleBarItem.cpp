@@ -1,4 +1,4 @@
-#include "FluPivotTitleBarItem.h"
+﻿#include "FluPivotTitleBarItem.h"
 
 FluPivotTitleBarItem::FluPivotTitleBarItem(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
@@ -57,5 +57,5 @@ void FluPivotTitleBarItem::adjustItemSize()
 
 void FluPivotTitleBarItem::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPivotTitleBarItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPivotTitleBarItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

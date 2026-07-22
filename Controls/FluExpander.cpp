@@ -107,7 +107,7 @@ void FluExpander::paintEvent(QPaintEvent* event)
 
 void FluExpander::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluExpander.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluExpander.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluExpander::onClicked()

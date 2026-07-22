@@ -130,5 +130,5 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
 
 void FluEmoijsPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluEmoijsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluEmoijsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

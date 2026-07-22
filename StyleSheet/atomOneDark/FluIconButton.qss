@@ -18,3 +18,14 @@ FluIconButton[noBorder=true] {
 FluIconButton[noBorder=true]:hover {
     background-color: rgb(50, 54, 60);
 }
+
+FluIconButton:disabled {
+    background-color: rgb(38, 42, 48);
+    border: 1px solid rgb(60, 63, 68);
+    border-bottom: 1px solid rgb(60, 63, 68);
+}
+
+FluIconButton[noBorder=true]:disabled {
+    background-color: transparent;
+    border: none;
+}

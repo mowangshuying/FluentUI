@@ -24,5 +24,5 @@ FluDialogsAndFlyoutsPage::FluDialogsAndFlyoutsPage(QWidget* parent /*= nullptr*/
 
 void FluDialogsAndFlyoutsPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDialogsAndFlyoutsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDialogsAndFlyoutsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

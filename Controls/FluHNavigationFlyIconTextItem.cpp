@@ -1,4 +1,4 @@
-#include "FluHNavigationFlyIconTextItem.h"
+﻿#include "FluHNavigationFlyIconTextItem.h"
 #include "FluHNavigationIconTextItem.h"
 
 FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/)
@@ -117,6 +117,6 @@ bool FluHNavigationFlyIconTextItem::setCloseByClickedItem()
 
 void FluHNavigationFlyIconTextItem::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
-    FluStyleSheetUitls::setQssByFileName("FluHNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

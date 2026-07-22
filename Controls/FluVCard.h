@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include "FluWidget.h"
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include <QStyleOption>
 #include <QPainter>
 #include <QVBoxLayout>

@@ -10,7 +10,7 @@
 #include <QPainter>
 #include "../Utils/FluUtils.h"
 
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 class FluHCard : public FluWidget
 {
     Q_OBJECT

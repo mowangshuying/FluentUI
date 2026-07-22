@@ -25,6 +25,6 @@ class FluTextToggleSwitchEx : public FluWidget
     QString m_offText;
 
     QHBoxLayout* m_hMainLayout;
-    FluToggleSwitchEx* m_toggleSwithEx;
+    FluToggleSwitchEx* m_toggleSwitchEx;
     FluLabel* m_textLabel;
 };

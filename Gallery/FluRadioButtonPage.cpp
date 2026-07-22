@@ -1,4 +1,4 @@
-#include "FluRadioButtonPage.h"
+﻿#include "FluRadioButtonPage.h"
 
 FluRadioButtonPage::FluRadioButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -31,5 +31,5 @@ FluRadioButtonPage::FluRadioButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
 void FluRadioButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRadioButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRadioButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

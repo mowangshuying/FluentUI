@@ -15,3 +15,10 @@ QTextEdit:focus {
     background-color: rgb(50, 54, 60);
     border-bottom: 2px solid rgb(82, 139, 255);
 }
+
+QTextEdit:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(60, 63, 68);
+    border-bottom: 1px solid rgb(60, 63, 68);
+    background-color: rgb(38, 42, 48);
+}

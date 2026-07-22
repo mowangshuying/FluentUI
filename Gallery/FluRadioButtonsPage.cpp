@@ -47,5 +47,5 @@ FluRadioButtonsPage::FluRadioButtonsPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluRadioButtonsPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRadioButtonsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRadioButtonsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

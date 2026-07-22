@@ -88,7 +88,7 @@ int FluScrollBar::getCurrentValue()
     return m_nCurrentValue;
 }
 
-void FluScrollBar::setCurrrentValue(int nValue)
+void FluScrollBar::setCurrentValue(int nValue)
 {
     if (nValue < m_nMinValue)
         nValue = m_nMinValue;
@@ -109,7 +109,7 @@ void FluScrollBar::scrollCurrentValue(int nValue)
 {
     // m_nCurrentValue += nValue;
     int nTmpValue = m_nCurrentValue + nValue;
-    setCurrrentValue(nTmpValue);
+    setCurrentValue(nTmpValue);
 }
 
 int FluScrollBar::getValue()
@@ -269,14 +269,14 @@ void FluScrollBar::adjustHandleSize()
     }
 }
 
-QColor FluScrollBar::getTrunkBackgoundColor()
+QColor FluScrollBar::getTrunkBackgroundColor()
 {
-    return m_scrollBarTrunk->getTrunkBackgoundColor();
+    return m_scrollBarTrunk->getTrunkBackgroundColor();
 }
 
-void FluScrollBar::setTrunkBackgoundColor(QColor color)
+void FluScrollBar::setTrunkBackgroundColor(QColor color)
 {
-    m_scrollBarTrunk->setTrunkBackgoundColor(color);
+    m_scrollBarTrunk->setTrunkBackgroundColor(color);
 }
 
 QColor FluScrollBar::getHandleBackgroundColor()
@@ -335,7 +335,7 @@ void FluScrollBar::mouseMoveEvent(QMouseEvent* event)
     }
 
     nDv = 1.0 * nDv / getSlideWayLen() * (m_nMaxValue - m_nMinValue);
-    FluScrollBar::setCurrrentValue(getCurrentValue() + nDv);
+    FluScrollBar::setCurrentValue(getCurrentValue() + nDv);
     m_pressedPoint = event->pos();
 }
 
@@ -372,7 +372,7 @@ void FluScrollBar::mousePressEvent(QMouseEvent* event)
         }
     }
 
-    setCurrrentValue(1.0 * nValue / qMax(getSlideWayLen(), 1) * (m_nMaxValue - m_nMinValue));
+    setCurrentValue(1.0 * nValue / qMax(getSlideWayLen(), 1) * (m_nMaxValue - m_nMinValue));
 }
 
 void FluScrollBar::mouseReleaseEvent(QMouseEvent* event)
@@ -391,17 +391,17 @@ void FluScrollBar::wheelEvent(QWheelEvent* event)
 
 void FluScrollBar::OnPageUp()
 {
-    setCurrrentValue(getCurrentValue() - getPageStep());
+    setCurrentValue(getCurrentValue() - getPageStep());
 }
 
 void FluScrollBar::OnPageDown()
 {
-    setCurrrentValue(getCurrentValue() + getPageStep());
+    setCurrentValue(getCurrentValue() + getPageStep());
 }
 
 // void FluScrollBar::onCurrentValueChanged(int nValue)
 //{
-//     setCurrrentValue(nValue);
+//     setCurrentValue(nValue);
 // }
 
 void FluScrollBar::expand()
@@ -438,7 +438,7 @@ void FluScrollBar::onOpacityAnimationChanged(const QVariant& value)
 
 void FluScrollBar::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluScrollBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluScrollBar.qss", this, FluThemeUtils::getUtils()->getTheme());
     m_scrollBarHandle->update();
     m_scrollBarTrunk->update();
     update();

@@ -1,4 +1,4 @@
-#include "FluCalendarSelectDayView.h"
+﻿#include "FluCalendarSelectDayView.h"
 #include <QLabel>
 #include "FluCalendarView.h"
 #include "FluCalendarViewTitle.h"
@@ -38,7 +38,7 @@ void FluCalendarViewWeakTitle::paintEvent(QPaintEvent* event)
 
 void FluCalendarViewWeakTitle::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCalendarViewWeakTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarViewWeakTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -89,7 +89,7 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
     // m_calendar.init();
 
     setFixedHeight(270);
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
     onThemeChanged();
 }
 
@@ -237,7 +237,7 @@ void FluCalendarMonthView::gotoPreMonth()
 
 void FluCalendarMonthView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCalendarMonthView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarMonthView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 FluCalendarSelectDayView::FluCalendarSelectDayView(QWidget* parent /*= nullptr*/) : FluWidget(parent)

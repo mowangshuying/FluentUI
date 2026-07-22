@@ -1,4 +1,4 @@
-#include "FluBorderPage.h"
+﻿#include "FluBorderPage.h"
 
 FluBorderPage::FluBorderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -24,22 +24,22 @@ FluBorderPage::FluBorderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     group->addRadioButton(btn2);
     group->addRadioButton(btn3);
     connect(btn1, &FluRadioButton::toggled, [=]() {
-        m_border->setTExtColor(Qt::white);
+        m_border->setTextColor(Qt::white);
         m_border->setBackGroundColor(tr("green"));
     });
     connect(btn2, &FluRadioButton::toggled, [=]() {
-        m_border->setTExtColor(Qt::white);
+        m_border->setTextColor(Qt::white);
         m_border->setBackGroundColor(tr("pink"));
     });
     connect(btn3, &FluRadioButton::toggled, [=]() {
-        m_border->setTExtColor(Qt::white);
+        m_border->setTextColor(Qt::white);
         m_border->setBackGroundColor(tr("blue"));
     });
 
     displayBox->getBodyRightLayout()->addWidget(group);
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluBorderPage::onThemeChanged()
@@ -47,15 +47,15 @@ void FluBorderPage::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         if (m_border->isTransparentBackground())
-            m_border->setTExtColor(Qt::black);
+            m_border->setTextColor(Qt::black);
         else
-            m_border->setTExtColor(Qt::white);
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
+            m_border->setTextColor(Qt::white);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
     }
     else
     {
-        m_border->setTExtColor(Qt::white);
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluBorderPage.qss", this);
+        m_border->setTextColor(Qt::white);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluBorderPage.qss", this);
     }
-    FluStyleSheetUitls::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

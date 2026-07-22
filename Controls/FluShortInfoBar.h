@@ -36,7 +36,7 @@ class FluShortInfoBar : public FluWidget
 
     void disappear();
 
-    void setDisappearDurartion(int disappearDuration);
+    void setDisappearDuration(int disappearDuration);
 
     QPushButton* getCloseBtn();
 

@@ -12,5 +12,5 @@ FluSegmentedItem::FluSegmentedItem(QWidget* parent /*= nullptr*/) : QPushButton(
 
 void FluSegmentedItem::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSegmentedItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSegmentedItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

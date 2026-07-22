@@ -1,8 +1,8 @@
-﻿#include "FluStyleSheetUitls.h"
+﻿#include "FluStyleSheetUtils.h"
 #include <QApplication>
 
-FluStyleSheetUitls *FluStyleSheetUitls::m_styleSheetUtils = nullptr;
-FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(object)
+FluStyleSheetUtils *FluStyleSheetUtils::m_styleSheetUtils = nullptr;
+FluStyleSheetUtils::FluStyleSheetUtils(QObject *object /*= nullptr*/) : QObject(object)
 {
     m_timer = new QTimer;
     m_timer->start(5000);
@@ -16,7 +16,7 @@ FluStyleSheetUitls::FluStyleSheetUitls(QObject *object /*= nullptr*/) : QObject(
 #endif
 }
 
-QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
+QString FluStyleSheetUtils::getQssByFileName(const QString &fileName)
 {
     QFile file(fileName);
     if (file.open(QIODevice::ReadOnly))
@@ -29,9 +29,9 @@ QString FluStyleSheetUitls::getQssByFileName(const QString &fileName)
     return "";
 }
 
-void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
+void FluStyleSheetUtils::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
 {
-    QString qss = FluStyleSheetUitls::getQssByFileName(fileName);
+    QString qss = FluStyleSheetUtils::getQssByFileName(fileName);
 
 #ifdef USE_QRC
     doForQrcQssText(qss);
@@ -43,39 +43,39 @@ void FluStyleSheetUitls::setQssByFileName(const QString &fileName, QWidget *widg
     }
 }
 
-QString FluStyleSheetUitls::getQssByFileName(const QString &jsonVars, const QString &fileName)
+QString FluStyleSheetUtils::getQssByFileName(const QString &jsonVars, const QString &fileName)
 {
     QString styleSheet = getQssByFileName(fileName);
     replaceVar(jsonVars, styleSheet);
     return styleSheet;
 }
 
-void FluStyleSheetUitls::setQssByFileName(const QString &jsonVar, const QString &fileName, QWidget *widget)
+void FluStyleSheetUtils::setQssByFileName(const QString &jsonVar, const QString &fileName, QWidget *widget)
 {
-    QString qss = FluStyleSheetUitls::getQssByFileName(jsonVar, fileName);
+    QString qss = FluStyleSheetUtils::getQssByFileName(jsonVar, fileName);
     if (widget != nullptr)
     {
         scheduleBatchUpdate(widget, qss);
     }
 }
 
-QString FluStyleSheetUitls::getQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName)
+QString FluStyleSheetUtils::getQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName)
 {
     QString styleSheet = getQssByFileName(fileName);
     replaceVar(kvMap, styleSheet);
     return styleSheet;
 }
 
-void FluStyleSheetUitls::setQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName, QWidget *widget)
+void FluStyleSheetUtils::setQssByFileName(const std::map<QString, QString> &kvMap, const QString &fileName, QWidget *widget)
 {
-    QString qss = FluStyleSheetUitls::getQssByFileName(kvMap, fileName);
+    QString qss = FluStyleSheetUtils::getQssByFileName(kvMap, fileName);
     if (widget != nullptr)
     {
         scheduleBatchUpdate(widget, qss);
     }
 }
 
-void FluStyleSheetUitls::replaceVar(const QString &jsonVars, QString &styleSheet)
+void FluStyleSheetUtils::replaceVar(const QString &jsonVars, QString &styleSheet)
 {
     QJsonParseError jsonError;
     QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonVars.toUtf8(), &jsonError);
@@ -106,7 +106,7 @@ void FluStyleSheetUitls::replaceVar(const QString &jsonVars, QString &styleSheet
     replaceVar(KVMap, styleSheet);
 }
 
-void FluStyleSheetUitls::replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet)
+void FluStyleSheetUtils::replaceVar(const std::map<QString, QString> &kvMap, QString &styleSheet)
 {
     for (auto itMap = kvMap.begin(); itMap != kvMap.end(); itMap++)
     {
@@ -116,7 +116,7 @@ void FluStyleSheetUitls::replaceVar(const std::map<QString, QString> &kvMap, QSt
     }
 }
 
-void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *painter)
+void FluStyleSheetUtils::drawBottomLineIndicator(QWidget *widget, QPainter *painter)
 {
     painter->setPen(Qt::NoPen);
     painter->setRenderHints(QPainter::Antialiasing);
@@ -150,7 +150,7 @@ void FluStyleSheetUitls::drawBottomLineIndicator(QWidget *widget, QPainter *pain
     painter->fillPath(path, brush);
 }
 
-void FluStyleSheetUitls::drawShadowEffect(QWidget *widget, int blurRadius, QPoint offset, QColor color)
+void FluStyleSheetUtils::drawShadowEffect(QWidget *widget, int blurRadius, QPoint offset, QColor color)
 {
     auto shadowEffect = new QGraphicsDropShadowEffect(widget);
     shadowEffect->setBlurRadius(blurRadius);
@@ -160,30 +160,30 @@ void FluStyleSheetUitls::drawShadowEffect(QWidget *widget, int blurRadius, QPoin
     widget->setGraphicsEffect(shadowEffect);
 }
 
-void FluStyleSheetUitls::doForQrcQssText(QString &data)
+void FluStyleSheetUtils::doForQrcQssText(QString &data)
 {
     data.replace("../res/", ":/res/");
 }
 
-FluStyleSheetUitls *FluStyleSheetUitls::getUtils()
+FluStyleSheetUtils *FluStyleSheetUtils::getUtils()
 {
     if (m_styleSheetUtils == nullptr)
-        m_styleSheetUtils = new FluStyleSheetUitls;
+        m_styleSheetUtils = new FluStyleSheetUtils;
     return m_styleSheetUtils;
 }
 
-QTimer *FluStyleSheetUitls::getTimer()
+QTimer *FluStyleSheetUtils::getTimer()
 {
-    return FluStyleSheetUitls::getUtils()->m_timer;
+    return FluStyleSheetUtils::getUtils()->m_timer;
 }
 
-void FluStyleSheetUitls::__init()
+void FluStyleSheetUtils::__init()
 {
     getUtils();
-    FluStyleSheetUitls::getUtils()->setStyleSheetDir("../StyleSheet/light/");
+    FluStyleSheetUtils::getUtils()->setStyleSheetDir("../StyleSheet/light/");
 }
 
-void FluStyleSheetUitls::__deInit()
+void FluStyleSheetUtils::__deInit()
 {
     if (m_styleSheetUtils == nullptr)
         return;
@@ -191,29 +191,29 @@ void FluStyleSheetUitls::__deInit()
     m_styleSheetUtils = nullptr;
 }
 
-void FluStyleSheetUitls::setStyleSheetDir(QString styleSheetDir)
+void FluStyleSheetUtils::setStyleSheetDir(QString styleSheetDir)
 {
     m_styleSheetDir = styleSheetDir;
 }
 
-QString FluStyleSheetUitls::getStyleSheetDir()
+QString FluStyleSheetUtils::getStyleSheetDir()
 {
     return m_styleSheetDir;
 }
 
-bool FluStyleSheetUitls::isBatching()
+bool FluStyleSheetUtils::isBatching()
 {
     return getUtils()->m_batching;
 }
 
-void FluStyleSheetUitls::setBatching(bool on)
+void FluStyleSheetUtils::setBatching(bool on)
 {
     getUtils()->m_batching = on;
 }
 
-void FluStyleSheetUitls::scheduleBatchUpdate(QWidget *widget, const QString &qss)
+void FluStyleSheetUtils::scheduleBatchUpdate(QWidget *widget, const QString &qss)
 {
-    FluStyleSheetUitls *inst = getUtils();
+    FluStyleSheetUtils *inst = getUtils();
     if (!widget)
         return;
 
@@ -232,9 +232,9 @@ void FluStyleSheetUitls::scheduleBatchUpdate(QWidget *widget, const QString &qss
     }
 }
 
-void FluStyleSheetUitls::applyBatchedUpdates()
+void FluStyleSheetUtils::applyBatchedUpdates()
 {
-    FluStyleSheetUitls *inst = getUtils();
+    FluStyleSheetUtils *inst = getUtils();
     if (inst->m_pendingUpdates.isEmpty())
         return;
 

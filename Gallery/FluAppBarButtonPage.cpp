@@ -1,4 +1,4 @@
-#include "FluAppBarButtonPage.h"
+﻿#include "FluAppBarButtonPage.h"
 
 FluAppBarButtonPage::FluAppBarButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -47,5 +47,5 @@ void FluAppBarButtonPage::addKeyboardAcceleratorAppBarButton()
 
 void FluAppBarButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluAppBarButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAppBarButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

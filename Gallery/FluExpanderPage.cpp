@@ -1,4 +1,4 @@
-#include "FluExpanderPage.h"
+﻿#include "FluExpanderPage.h"
 
 FluExpanderPage::FluExpanderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -91,5 +91,5 @@ void FluExpanderPage::addExpanderDemo3()
 
 void FluExpanderPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluExpanderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluExpanderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

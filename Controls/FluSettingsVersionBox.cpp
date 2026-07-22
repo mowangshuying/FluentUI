@@ -1,4 +1,4 @@
-#include "FluSettingsVersionBox.h"
+﻿#include "FluSettingsVersionBox.h"
 
 FluSettingsVersionBox::FluSettingsVersionBox(QWidget* parent /*= nullptr*/) : FluExpander(parent)
 {
@@ -75,5 +75,5 @@ void FluSettingsVersionBox::addWidget(QWidget* widget)
 
 void FluSettingsVersionBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSettingsVersionBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSettingsVersionBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

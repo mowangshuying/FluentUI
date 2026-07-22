@@ -1,4 +1,4 @@
-#include "FluAutoSuggestBox.h"
+﻿#include "FluAutoSuggestBox.h"
 
 FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -125,6 +125,9 @@ void FluAutoSuggestBox::hockEvent(QEvent* event)
 
 bool FluAutoSuggestBox::eventFilter(QObject* watched, QEvent* event)
 {
+    if (!isEnabled())
+        return QWidget::eventFilter(watched, event);
+
     if (watched == m_lineEdit)
     {
         if (event->type() == QEvent::FocusIn)
@@ -151,7 +154,7 @@ void FluAutoSuggestBox::paintEvent(QPaintEvent* event)
     if (!property("isFocused").toBool())
         return;
 
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }
 
 void FluAutoSuggestBox::onTextEdited(QString text)
@@ -208,5 +211,12 @@ void FluAutoSuggestBox::onTextEdited(QString text)
 void FluAutoSuggestBox::onThemeChanged()
 {
     m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluAutoSuggestBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAutoSuggestBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+void FluAutoSuggestBox::setEnabled(bool enabled)
+{
+    QWidget::setEnabled(enabled);
+    m_lineEdit->setEnabled(enabled);
+    m_btn->setEnabled(enabled);
 }

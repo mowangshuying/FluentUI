@@ -1,4 +1,4 @@
-#include "FluComboBoxPage.h"
+﻿#include "FluComboBoxPage.h"
 
 FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -31,10 +31,26 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
         colorLabel->setProperty("color", text);
         colorLabel->style()->polish(colorLabel);
     });
+
+    auto displayBox2 = new FluDisplayBox;
+    displayBox2->setTitle(tr("A ComboBox with placeholder text and initial selection."));
+    displayBox2->setBodyWidgetFixedHeight(96);
+
+    auto comboBox2 = new FluComboBoxEx(displayBox2);
+    comboBox2->setFixedWidth(200);
+    comboBox2->move(50, 50);
+    comboBox2->setPlaceholderText(tr("Select a fruit..."));
+    comboBox2->addItem(tr("Apple"));
+    comboBox2->addItem(tr("Banana"));
+    comboBox2->addItem(tr("Cherry"));
+    comboBox2->addItem(tr("Grape"));
+
+    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+
     onThemeChanged();
 }
 
 void FluComboBoxPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluComboBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluComboBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

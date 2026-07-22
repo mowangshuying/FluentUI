@@ -21,3 +21,7 @@ FluCommandBarIconTextItem:pressed {
 #textLabel {
     color: white;
 }
+
+FluCommandBarIconTextItem:disabled {
+    opacity: 0.4;
+}

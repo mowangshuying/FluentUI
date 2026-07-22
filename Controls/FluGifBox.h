@@ -2,7 +2,7 @@
 
 #include <QLabel>
 #include "../Utils/FluThemeUtils.h"
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include <QMovie>
 
 class FluGifBox : public QLabel

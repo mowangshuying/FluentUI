@@ -73,5 +73,5 @@ void FluHCard::paintEvent(QPaintEvent* event)
 
 void FluHCard::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHCard.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHCard.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

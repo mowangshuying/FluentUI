@@ -1,4 +1,4 @@
-#include "FluVFlipView.h"
+﻿#include "FluVFlipView.h"
 #include <QScrollBar>
 
 FluVFlipView::FluVFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
@@ -72,7 +72,7 @@ FluVFlipView::FluVFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
         }
     });
 
-    FluStyleSheetUitls::setQssByFileName("FluVFlipView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVFlipView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluVFlipView::addPixmap(QPixmap pixmap)

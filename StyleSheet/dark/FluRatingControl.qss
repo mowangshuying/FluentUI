@@ -1,0 +1,8 @@
+FluRatingControl {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+FluRatingControl:disabled {
+    opacity: 0.4;
+}

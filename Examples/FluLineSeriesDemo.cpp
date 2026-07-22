@@ -140,5 +140,5 @@ FluLineSeriesDemo::FluLineSeriesDemo(QWidget *parent /*= nullptr*/)
 
 void FluLineSeriesDemo::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluLineSeriesDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluLineSeriesDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

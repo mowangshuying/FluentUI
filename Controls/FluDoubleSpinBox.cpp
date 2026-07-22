@@ -1,4 +1,4 @@
-#include "FluDoubleSpinBox.h"
+﻿#include "FluDoubleSpinBox.h"
 
 FluDoubleSpinBox::FluDoubleSpinBox(QWidget* parent /*= nullptr*/) : QDoubleSpinBox(parent)
 {
@@ -13,10 +13,10 @@ void FluDoubleSpinBox::paintEvent(QPaintEvent* event)
         return;
 
     QPainter painter(this);
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }
 
 void FluDoubleSpinBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDoubleSpinBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDoubleSpinBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

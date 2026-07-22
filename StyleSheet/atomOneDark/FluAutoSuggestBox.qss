@@ -30,3 +30,18 @@ QPushButton:hover {
     border-radius: 4px;
     border: none;
 }
+
+FluAutoSuggestBox:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(60, 63, 68);
+    border-bottom: 1px solid rgb(60, 63, 68);
+    background-color: rgb(38, 42, 48);
+}
+
+FluAutoSuggestBox:disabled QLineEdit {
+    color: rgba(255, 255, 255, 80);
+}
+
+FluAutoSuggestBox:disabled QPushButton {
+    background-color: transparent;
+}

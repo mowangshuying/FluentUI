@@ -1,4 +1,4 @@
-#include "FluCalendarSelectYearView.h"
+﻿#include "FluCalendarSelectYearView.h"
 #include "FluCalendarView.h"
 
 FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidget(parent)
@@ -180,5 +180,5 @@ void FluCalendarSelectYearView::getRange(int nYear, int& nStartYear, int& nEndYe
 
 void FluCalendarSelectYearView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCalendarSelectYearView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarSelectYearView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

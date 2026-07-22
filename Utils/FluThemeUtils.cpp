@@ -1,6 +1,6 @@
 ﻿#include "FluThemeUtils.h"
 #include "FluConfigUtils.h"
-#include "FluStyleSheetUitls.h"
+#include "FluStyleSheetUtils.h"
 #include <QTimer>
 #include <QApplication>
 
@@ -25,10 +25,10 @@ void FluThemeUtils::setTheme(FluTheme theme)
     FluConfigUtils::getUtils()->setTheme(theme);
 
     QTimer::singleShot(0, qApp, [this]() {
-        FluStyleSheetUitls::setBatching(true);
+        FluStyleSheetUtils::setBatching(true);
         emit themeChanged(m_theme);
-        FluStyleSheetUitls::setBatching(false);
-        FluStyleSheetUitls::applyBatchedUpdates();
+        FluStyleSheetUtils::setBatching(false);
+        FluStyleSheetUtils::applyBatchedUpdates();
     });
 }
 

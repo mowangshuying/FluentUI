@@ -1,4 +1,4 @@
-#include "FluPMenu.h"
+﻿#include "FluPMenu.h"
 
 FluPMenu::FluPMenu(QWidget* parent) : QMenu(parent)
 {
@@ -18,6 +18,5 @@ FluPMenu::FluPMenu(const QString& title, QWidget* parent) : FluPMenu(parent)
 
 void FluPMenu::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
-    style()->polish(this);
+    FluStyleSheetUtils::setQssByFileName("FluPMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -23,3 +23,11 @@ FluPivotTitleBarItem {
 #indicatorLabel[selected=true] {
     background-color: rgb(82, 139, 255);
 }
+
+FluPivotTitleBarItem:disabled #textLabel {
+    color: rgba(166, 166, 166, 100);
+}
+
+FluPivotTitleBarItem:disabled #indicatorLabel[selected=true] {
+    background-color: rgba(82, 139, 255, 100);
+}

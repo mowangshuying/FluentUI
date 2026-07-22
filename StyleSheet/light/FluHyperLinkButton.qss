@@ -11,3 +11,7 @@ FluHyperLinkButton:hover {
     background-color: rgb(234, 234, 234);
     color: rgb(29, 62, 87);
 }
+
+FluHyperLinkButton:disabled {
+    color: rgba(0, 66, 117, 100);
+}

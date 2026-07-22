@@ -32,10 +32,10 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     typeRampWrapLayout->addLayout(imgLabelLayout);
     imgLabelLayout->addWidget(m_imgLabel, 0, Qt::AlignTop | Qt::AlignLeft);
 
-    auto row1 = addARow(FluLabelStyle::CaptionTextBlockSylte, tr("Example"), tr("Variable Font"), tr("Size"), tr("Style"), 60);
+    auto row1 = addARow(FluLabelStyle::CaptionTextBlockStyle, tr("Example"), tr("Variable Font"), tr("Size"), tr("Style"), 60);
     typeRampWrapLayout->addWidget(row1, 0, Qt::AlignTop);
 
-    auto row2 = addARow(FluLabelStyle::CaptionTextBlockSylte, tr("Caption"), tr("Text,Regular"), tr("12/16 epx"), tr("CaptionTextBlockSylte"), 60);
+    auto row2 = addARow(FluLabelStyle::CaptionTextBlockStyle, tr("Caption"), tr("Text,Regular"), tr("12/16 epx"), tr("CaptionTextBlockStyle"), 60);
     typeRampWrapLayout->addWidget(row2, 0, Qt::AlignTop);
 
     auto row3 = addARow(FluLabelStyle::BodyTextBlockStyle, tr("Body"), tr("Text,SemiBold"), tr("14/20 epx"), tr("BodyStrongTextBlockStyle"), 60);
@@ -59,7 +59,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     auto expander = new FluCodeExpander;
     // expander->setWrap2Height(60);
     //     expander->setFixedHeight(50);
-    QString code = tr("auto label = new FluLabel;label->setStyle(FluLabelStyle::CaptionTextBlockSylte);");
+    QString code = tr("auto label = new FluLabel;label->setStyle(FluLabelStyle::CaptionTextBlockStyle);");
     expander->setCodeText(code);
     m_vScrollView->getMainLayout()->addWidget(expander);
 
@@ -114,5 +114,5 @@ void FluTypeographyPage::onThemeChanged()
         pixmap = pixmap.scaled(740, 450, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
         m_imgLabel->setPixmap(pixmap);
     }
-    FluStyleSheetUitls::setQssByFileName("FluTypeographyPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTypeographyPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

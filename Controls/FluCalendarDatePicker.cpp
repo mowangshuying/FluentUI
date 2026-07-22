@@ -1,4 +1,4 @@
-#include "FluCalendarDatePicker.h"
+﻿#include "FluCalendarDatePicker.h"
 
 FluCalendarDatePicker::FluCalendarDatePicker(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
@@ -79,5 +79,5 @@ void FluCalendarDatePicker::onThemeChanged()
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Calendar, FluTheme::Dark));
     }
 
-    FluStyleSheetUitls::setQssByFileName("FluCalendarDatePicker.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarDatePicker.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

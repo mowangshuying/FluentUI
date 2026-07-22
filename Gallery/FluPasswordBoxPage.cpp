@@ -1,4 +1,4 @@
-#include "FluPasswordBoxPage.h"
+﻿#include "FluPasswordBoxPage.h"
 
 FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -35,5 +35,5 @@ FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
 void FluPasswordBoxPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPasswordBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPasswordBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

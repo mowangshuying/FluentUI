@@ -42,7 +42,7 @@ class FluToggleButton : public QPushButton
 
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluToggleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluToggleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

@@ -1,4 +1,4 @@
-#include "FluHNavigationIconTextItem.h"
+﻿#include "FluHNavigationIconTextItem.h"
 #include "FluHNavigationFlyIconTextItem.h"
 #include <QThread>
 #include "FluHNavigationView.h"
@@ -752,14 +752,14 @@ void FluHNavigationIconTextItem::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluHNavigationIconTextItem.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluHNavigationIconTextItem.qss", this);
         setArrowBtnToChevronDown();
     }
     else
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluHNavigationIconTextItem.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluHNavigationIconTextItem.qss", this);
         setArrowBtnToChevronUp();
     }
-    FluStyleSheetUitls::setQssByFileName("FluHNavigationIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHNavigationIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

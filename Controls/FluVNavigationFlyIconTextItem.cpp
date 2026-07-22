@@ -1,6 +1,6 @@
 ﻿#include "FluVNavigationFlyIconTextItem.h"
 #include "FluVNavigationIconTextItem.h"
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include "FluVNavigationView.h"
 
 FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -141,6 +141,6 @@ void FluVNavigationFlyIconTextItem::paintEvent(QPaintEvent* event)
 
 void FluVNavigationFlyIconTextItem::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluVNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
-    FluStyleSheetUitls::setQssByFileName("FluVNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVNavigationFlyIconTextItem.qss", m_vScrollView, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVNavigationFlyIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

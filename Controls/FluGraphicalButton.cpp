@@ -1,4 +1,4 @@
-#include "FluGraphicalButton.h"
+﻿#include "FluGraphicalButton.h"
 
 FluGraphicalButton::FluGraphicalButton(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
@@ -11,5 +11,5 @@ FluGraphicalButton::FluGraphicalButton(QWidget* parent /*= nullptr*/) : QPushBut
 
 void FluGraphicalButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluGraphicalButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluGraphicalButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -1,4 +1,4 @@
-#include "FluRepeatButton.h"
+﻿#include "FluRepeatButton.h"
 
 FluRepeatButton::FluRepeatButton(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
@@ -22,5 +22,5 @@ int FluRepeatButton::getClickCount()
 
 void FluRepeatButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRepeatButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRepeatButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

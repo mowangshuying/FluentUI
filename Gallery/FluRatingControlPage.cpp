@@ -1,4 +1,4 @@
-#include "FluRatingControlPage.h"
+﻿#include "FluRatingControlPage.h"
 
 FluRatingControlPage::FluRatingControlPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -20,5 +20,5 @@ FluRatingControlPage::FluRatingControlPage(QWidget* parent /*= nullptr*/) : FluA
 
 void FluRatingControlPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRatingControlPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRatingControlPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

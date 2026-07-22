@@ -28,3 +28,14 @@ FluDropDownButton:pressed {
     background-color: transparent;
     border: 1px solid transparent;
 }
+
+FluDropDownButton:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(60, 63, 68);
+    border-bottom: 1px solid rgb(60, 63, 68);
+    background-color: rgb(38, 42, 48);
+}
+
+FluDropDownButton:disabled #textBtn {
+    color: rgba(255, 255, 255, 80);
+}

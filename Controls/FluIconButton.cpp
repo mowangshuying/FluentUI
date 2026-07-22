@@ -83,6 +83,6 @@ void FluIconButton::setNoBorder(bool bNoBorder)
 
 void FluIconButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluIconButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluIconButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     setType(m_type);
 }

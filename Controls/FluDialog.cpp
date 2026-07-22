@@ -1,4 +1,4 @@
-#include "FluDialog.h"
+﻿#include "FluDialog.h"
 #include <QThread>
 
 FluDialog::FluDialog(QWidget* parent) : QDialog(parent)
@@ -157,5 +157,5 @@ bool FluDialog::eventFilter(QObject* obj, QEvent* event)
 
 void FluDialog::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDialog.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDialog.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

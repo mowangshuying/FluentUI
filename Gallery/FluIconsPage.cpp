@@ -10,7 +10,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     m_infoLabel->setText(tr("With the release of Windows 11, Segoe Fluent Icons is the remmended icon font."));
 
     // instructions
-    auto instructions = new FluIntructions;
+    auto instructions = new FluInstructions;
     instructions->setTitleLabelText(tr("Instructions on how to use Segoe Fluent Icons"));
     instructions->addTitleContent(tr("How to get the font"), tr("On Windows 11: There's nothing you need to do, the font comes with Windows.\nOn Windows 10: Segoe Fluent Icons is not included by default on Windows 10. You can download it here."));
 
@@ -174,7 +174,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     if (m_sDisplayIconBox != nullptr)
         emit m_sDisplayIconBox->clicked();
 
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
     onThemeChanged();
 }
 
@@ -183,5 +183,5 @@ void FluIconsPage::onThemeChanged()
     QPixmap pixmap = FluIconUtils::getFluentIconPixmap(m_sDisplayIconBox->getAwesomeType(), FluThemeUtils::getUtils()->getTheme());
     pixmap = pixmap.scaled(50, 50, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     m_iconLabel->setPixmap(pixmap);
-    FluStyleSheetUitls::setQssByFileName("FluIconsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluIconsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

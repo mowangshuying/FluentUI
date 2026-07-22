@@ -19,6 +19,8 @@ class FluSplitButton : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
+    void setEnabled(bool enabled);
+
   signals:
     void clicked();
   public slots:

@@ -1,4 +1,4 @@
-#include "FluPasswordBox.h"
+﻿#include "FluPasswordBox.h"
 
 FluPasswordBox::FluPasswordBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -41,6 +41,9 @@ void FluPasswordBox::setMaskC(unsigned maskC)
 
 bool FluPasswordBox::eventFilter(QObject* watched, QEvent* event)
 {
+    if (!isEnabled())
+        return QWidget::eventFilter(watched, event);
+
     if (watched == m_edit)
     {
         if (event->type() == QEvent::FocusIn)
@@ -84,7 +87,7 @@ void FluPasswordBox::paintEvent(QPaintEvent* event)
     if (!property("isFocused").toBool())
         return;
 
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }
 
 void FluPasswordBox::onThemeChanged()
@@ -92,13 +95,20 @@ void FluPasswordBox::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Light));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
     }
     else
     {
         m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluPasswordBox.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluPasswordBox.qss", this);
     }
 
-    FluStyleSheetUitls::setQssByFileName("FluPasswordBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPasswordBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+void FluPasswordBox::setEnabled(bool enabled)
+{
+    QWidget::setEnabled(enabled);
+    m_edit->setEnabled(enabled);
+    m_btn->setEnabled(enabled);
 }

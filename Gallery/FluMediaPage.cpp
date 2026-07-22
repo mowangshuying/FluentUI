@@ -50,5 +50,5 @@ FluMediaPage::FluMediaPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent
 
 void FluMediaPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluMediaPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluMediaPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

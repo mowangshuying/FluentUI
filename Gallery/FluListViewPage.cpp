@@ -42,5 +42,5 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluListViewPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluListViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluListViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

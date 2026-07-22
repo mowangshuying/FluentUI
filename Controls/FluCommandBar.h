@@ -33,7 +33,7 @@ class FluCommandBar : public QFrame
   public slots:
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluCommandBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluCommandBar.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

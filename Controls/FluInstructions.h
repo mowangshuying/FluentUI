@@ -8,11 +8,11 @@
 #include <vector>
 #include <QWidget>
 
-class FluIntructions : public FluExpander
+class FluInstructions : public FluExpander
 {
     Q_OBJECT
   public:
-    FluIntructions(QWidget* parent = nullptr);
+    FluInstructions(QWidget* parent = nullptr);
 
     QLabel* getTitleLabel();
 

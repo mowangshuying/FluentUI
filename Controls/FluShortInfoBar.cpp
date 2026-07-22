@@ -52,7 +52,6 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     m_bDisappearing = false;
 
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 FluShortInfoBar::~FluShortInfoBar()
@@ -129,7 +128,7 @@ void FluShortInfoBar::disappear()
     }
 }
 
-void FluShortInfoBar::setDisappearDurartion(int disappearDuration)
+void FluShortInfoBar::setDisappearDuration(int disappearDuration)
 {
     m_nDisappearDuration = disappearDuration;
 }
@@ -150,5 +149,5 @@ void FluShortInfoBar::paintEvent(QPaintEvent* event)
 void FluShortInfoBar::onThemeChanged()
 {
     m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluShortInfoBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluShortInfoBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

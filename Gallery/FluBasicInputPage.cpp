@@ -88,5 +88,5 @@ FluBasicInputPage::FluBasicInputPage(QWidget* parent /*= nullptr*/) : FluATitleP
 
 void FluBasicInputPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluBasicInputPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluBasicInputPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

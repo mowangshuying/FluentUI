@@ -25,7 +25,7 @@ void FluTimeLineItem::addTextItem(QString text)
 {
     auto label = new FluLabel;
     label->setWordWrap(true);
-    label->setLabelStyle(FluLabelStyle::CaptionTextBlockSylte);
+    label->setLabelStyle(FluLabelStyle::CaptionTextBlockStyle);
     label->setText(text);
     label->setMinimumHeight(40);
     m_vItemLayout->addWidget(label);

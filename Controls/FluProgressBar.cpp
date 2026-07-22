@@ -1,4 +1,4 @@
-#include "FluProgressBar.h"
+﻿#include "FluProgressBar.h"
 
 FluProgressBar::FluProgressBar(QWidget* parent /*= nullptr*/) : QProgressBar(parent)
 {
@@ -9,5 +9,5 @@ FluProgressBar::FluProgressBar(QWidget* parent /*= nullptr*/) : QProgressBar(par
 
 void FluProgressBar::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluProgressBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluProgressBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

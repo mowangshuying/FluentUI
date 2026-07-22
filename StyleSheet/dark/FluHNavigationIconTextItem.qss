@@ -1,0 +1,83 @@
+FluHNavigationIconTextItem {
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#wrapWidget1 {
+    background-color: rgb(32, 32, 32);
+    border-radius: 4px;
+}
+
+#wrapWidget1[selected=true] {
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#wrapWidget1[enableThisItem=false] {
+    background-color: transparent;
+    background-color: rgb(32, 32, 32);
+}
+
+#wrapWidget1:hover {
+    background-color: rgb(50, 50, 50);
+    border-radius: 4px;
+}
+
+#wrapWidget1[enableThisItem=false]:hover {
+    background-color: rgb(32, 32, 32);
+}
+
+#wrapWidget1[fly=true][selected=true] {
+    background-color: rgb(45, 45, 45);
+}
+
+#wrapWidget1[fly=true]:hover {
+    background-color: rgb(40, 40, 40);
+}
+
+#hIndicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#hIndicator[selected=true] {
+    background-color: rgb(118, 185, 237);
+}
+
+#indicator {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#indicator[selected=true] {
+    background-color: rgb(118, 185, 237);
+    border-radius: 2px;
+}
+
+#indicator[enableThisItem=false] {
+    background-color: transparent;
+    border-radius: 2px;
+}
+
+#icon {
+    border: none;
+    background-color: transparent;
+}
+
+#label {
+    background-color: transparent;
+    font-size: 12px;
+}
+
+#label[enableThisItem=false] {
+    color: rgb(128, 128, 128);
+}
+
+#arrow {
+    border: none;
+    background-color: transparent;
+}
+
+#wrapWidget2 {
+    background-color: transparent;
+}

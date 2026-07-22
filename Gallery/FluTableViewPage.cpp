@@ -50,5 +50,5 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
 void FluTableViewPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTableViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTableViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

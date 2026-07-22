@@ -3,7 +3,7 @@ FluLabel {
     color: rgb(255, 255, 255);
 }
 
-FluLabel[labelStyle="CaptionTextBlockSylte"] {
+FluLabel[labelStyle="CaptionTextBlockStyle"] {
     font-size: 12px;
 }
 

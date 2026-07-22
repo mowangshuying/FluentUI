@@ -1,4 +1,4 @@
-
+﻿
 #include "FluDisplayBox.h"
 
 FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -66,5 +66,5 @@ void FluDisplayBox::paintEvent(QPaintEvent* event)
 
 void FluDisplayBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDisplayBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDisplayBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

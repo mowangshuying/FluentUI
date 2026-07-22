@@ -1,4 +1,4 @@
-#include "FluComboBox.h"
+﻿#include "FluComboBox.h"
 
 FluComboBox::FluComboBox(QWidget* parent /*= nullptr*/) : QComboBox(parent)
 {
@@ -12,5 +12,5 @@ FluComboBox::FluComboBox(QWidget* parent /*= nullptr*/) : QComboBox(parent)
 
 void FluComboBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluComboBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluComboBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

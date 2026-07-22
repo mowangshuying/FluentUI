@@ -1,4 +1,4 @@
-#include "FluTextEditWrap.h"
+﻿#include "FluTextEditWrap.h"
 
 FluTextEditWrap::FluTextEditWrap(FluTextEdit* parent /*= nullptr*/) : QWidget(parent), m_textEdit(parent)
 {
@@ -24,5 +24,5 @@ void FluTextEditWrap::paintEvent(QPaintEvent* event)
         return;
 
     QPainter painter(this);
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }

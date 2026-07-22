@@ -20,10 +20,10 @@
 #include <QDir>
 #include <QGraphicsDropShadowEffect>
 
-class FluStyleSheetUitls : public QObject
+class FluStyleSheetUtils : public QObject
 {
   private:
-    FluStyleSheetUitls(QObject *object = nullptr);
+    FluStyleSheetUtils(QObject *object = nullptr);
 
   public:
     static QString getQssByFileName(const QString &fileName);
@@ -56,7 +56,7 @@ class FluStyleSheetUitls : public QObject
 
     static void doForQrcQssText(QString &data);
 
-    static FluStyleSheetUitls *getUtils();
+    static FluStyleSheetUtils *getUtils();
 
     static QTimer *getTimer();
 
@@ -81,5 +81,5 @@ class FluStyleSheetUitls : public QObject
     QMap<QWidget*, QString> m_lastAppliedQss;
     QTimer* m_batchTimer;
   private:
-    static FluStyleSheetUitls *m_styleSheetUtils;
+    static FluStyleSheetUtils *m_styleSheetUtils;
 };

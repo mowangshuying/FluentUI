@@ -18,3 +18,10 @@ FluScaleButton:pressed {
     border-bottom: 1px solid rgb(53, 53, 53);
     background-color: rgb(39, 39, 39);
 }
+
+FluScaleButton:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(39, 39, 39);
+    background-color: rgb(35, 35, 35);
+}

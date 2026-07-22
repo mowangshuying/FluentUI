@@ -521,5 +521,5 @@ void FluVNavigationView::onMenuItemClicked()
 
 void FluVNavigationView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluVNavigationView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVNavigationView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

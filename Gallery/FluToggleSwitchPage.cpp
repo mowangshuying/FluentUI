@@ -1,4 +1,4 @@
-#include "FluToggleSwitchPage.h"
+﻿#include "FluToggleSwitchPage.h"
 
 FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -21,5 +21,5 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluToggleSwitchPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluToggleSwitchPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluToggleSwitchPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

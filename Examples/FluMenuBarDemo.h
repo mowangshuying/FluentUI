@@ -4,7 +4,7 @@
 #include <QMenuBar>
 #include "../Controls/FluMenu.h"
 #include "../Controls/FluMenuBar.h"
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include "FluTemplateDemo.h"
 #include <QMenu>
 

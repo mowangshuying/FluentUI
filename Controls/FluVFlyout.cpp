@@ -1,4 +1,4 @@
-#include "FluVFlyout.h"
+﻿#include "FluVFlyout.h"
 
 FluVFlyout::FluVFlyout(QWidget* target, FluFlyoutPosition position /*= FluFlyoutPosition::Top*/) : FluWidget(nullptr), m_targetWidget(target), m_position(position)
 {
@@ -95,5 +95,5 @@ void FluVFlyout::paintEvent(QPaintEvent* event)
 
 void FluVFlyout::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluVFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -3911,7 +3911,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
-        <source>CaptionTextBlockSylte</source>
+        <source>CaptionTextBlockStyle</source>
         <translation>字幕文本块样式</translation>
     </message>
     <message>
@@ -4016,8 +4016,8 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../Gallery/FluTypeographyPage.cpp" line="62"/>
-        <source>auto label = new FluLabel;label-&gt;setStyle(FluLabelStyle::CaptionTextBlockSylte);</source>
-        <translation>auto label = new FluLabel;label-&gt;setStyle(FluLabelStyle::CaptionTextBlockSylte);</translation>
+        <source>auto label = new FluLabel;label-&gt;setStyle(FluLabelStyle::CaptionTextBlockStyle);</source>
+        <translation>auto label = new FluLabel;label-&gt;setStyle(FluLabelStyle::CaptionTextBlockStyle);</translation>
     </message>
 </context>
 </TS>

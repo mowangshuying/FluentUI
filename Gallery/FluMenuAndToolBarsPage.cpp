@@ -58,5 +58,5 @@ FluMenuAndToolBarsPage::FluMenuAndToolBarsPage(QWidget* parent /*= nullptr*/) : 
 
 void FluMenuAndToolBarsPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluMenuAndToolBarsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluMenuAndToolBarsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

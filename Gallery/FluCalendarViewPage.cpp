@@ -1,4 +1,4 @@
-#include "FluCalendarViewPage.h"
+﻿#include "FluCalendarViewPage.h"
 
 FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -21,5 +21,5 @@ FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluCalendarViewPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCalendarViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -1,7 +1,7 @@
-﻿#include "FluIntructions.h"
+﻿#include "FluInstructions.h"
 #include <QResizeEvent>
 
-FluIntructions::FluIntructions(QWidget* parent /*= nullptr*/) : FluExpander(parent)
+FluInstructions::FluInstructions(QWidget* parent /*= nullptr*/) : FluExpander(parent)
 {
     m_wrap1->setFixedHeight(70);
     // setFixedHeight(70);
@@ -19,17 +19,17 @@ FluIntructions::FluIntructions(QWidget* parent /*= nullptr*/) : FluExpander(pare
     getWrap2Layout()->setSpacing(5);
 }
 
-QLabel* FluIntructions::getTitleLabel()
+QLabel* FluInstructions::getTitleLabel()
 {
     return m_titleLabel;
 }
 
-void FluIntructions::setTitleLabelText(QString text)
+void FluInstructions::setTitleLabelText(QString text)
 {
     m_titleLabel->setText(text);
 }
 
-void FluIntructions::addTitleContent(QString title, QString content, bool bAdd /*= true*/)
+void FluInstructions::addTitleContent(QString title, QString content, bool bAdd /*= true*/)
 {
     auto titleLabel = new FluLabel(this);
     titleLabel->setObjectName("wrap2TitleLabel");
@@ -50,14 +50,14 @@ void FluIntructions::addTitleContent(QString title, QString content, bool bAdd /
     getWrap2Layout()->addWidget(contentLabel, 0, Qt::AlignTop);
 }
 
-void FluIntructions::addVSplitLine(bool bAdd /*= true*/)
+void FluInstructions::addVSplitLine(bool bAdd /*= true*/)
 {
     auto vSplitLine = new FluVSplitLine;
     vSplitLine->setObjectName("wrap2SplitLine");
     getWrap2Layout()->addWidget(vSplitLine);
 }
 
-void FluIntructions::resizeEvent(QResizeEvent* event)
+void FluInstructions::resizeEvent(QResizeEvent* event)
 {
     if (!m_bDown && m_expandAni->state() != QPropertyAnimation::Running)
     {
@@ -90,12 +90,12 @@ void FluIntructions::resizeEvent(QResizeEvent* event)
     m_downOrUpButton->move(nX, nY);
 }
 
-void FluIntructions::paintEvent(QPaintEvent* event)
+void FluInstructions::paintEvent(QPaintEvent* event)
 {
     FluExpander::paintEvent(event);
 }
 
-void FluIntructions::onClicked()
+void FluInstructions::onClicked()
 {
     int nAutoH = getAutoH();
     LOG_DEBUG << "nAutoH:" << nAutoH;

@@ -57,5 +57,5 @@ FluButtonPage::FluButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
 void FluButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

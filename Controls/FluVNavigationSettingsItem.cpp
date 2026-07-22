@@ -126,5 +126,5 @@ void FluVNavigationSettingsItem::onItemClicked()
 
 void FluVNavigationSettingsItem::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluVNavigationSettingsItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVNavigationSettingsItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

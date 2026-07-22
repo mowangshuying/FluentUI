@@ -14,3 +14,10 @@ FluLineEdit:focus {
     color: white;
     border-bottom: 2px solid rgb(118, 185, 237);
 }
+
+FluLineEdit:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(39, 39, 39);
+    background-color: rgb(35, 35, 35);
+}

@@ -5,7 +5,7 @@
 enum class FluTeachingTipPosition
 {
     Top,
-    Botton,
+    Bottom,
     Left,
     Right,
 };

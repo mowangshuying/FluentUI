@@ -1,4 +1,4 @@
-#include "FluHRadioGroupBox.h"
+﻿#include "FluHRadioGroupBox.h"
 
 FluHRadioGroupBox::FluHRadioGroupBox(QWidget* parent /*= nullptr*/) : QGroupBox(parent)
 {
@@ -25,5 +25,5 @@ void FluHRadioGroupBox::addRadioButton(FluRadioButton* radioButton)
 
 void FluHRadioGroupBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHRadioGroupBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHRadioGroupBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

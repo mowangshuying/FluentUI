@@ -74,5 +74,5 @@ void FluDisplayIconBox::onThemeChanged()
     else
         m_iconLabel->setPixmap(FluEmoijUtils::getSvgPixmap(m_emoijType));
 
-    FluStyleSheetUitls::setQssByFileName("FluDisplayIconBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDisplayIconBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

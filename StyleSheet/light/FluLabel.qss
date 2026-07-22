@@ -4,7 +4,7 @@ FluLabel {
     background-color: transparent;
 }
 
-FluLabel[labelStyle="CaptionTextBlockSylte"] {
+FluLabel[labelStyle="CaptionTextBlockStyle"] {
     font-size: 12px;
 }
 

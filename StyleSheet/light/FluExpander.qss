@@ -31,3 +31,8 @@ FluExpander {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
+
+FluExpander:disabled #wrap1,
+FluExpander:disabled #wrap2 {
+    opacity: 0.4;
+}

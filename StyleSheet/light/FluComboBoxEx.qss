@@ -12,15 +12,24 @@ FluComboBoxEx:hover {
 }
 
 FluComboBoxEx:pressed {
-    background-color: rgb(245, 0, 0);
-    /* border: 1px solid rgb(229, 229, 229); */
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(200, 200, 200);
+}
+
+FluComboBoxEx:disabled {
+    background-color: rgb(249, 249, 249);
+    border: 1px solid rgb(241, 241, 241);
 }
 
 #textBtn {
-    color: black;
+    color: rgb(57, 57, 57);
     text-align: left;
     background-color: transparent;
     border: 1px solid transparent;
+}
+
+#textBtn[isPlaceholder="true"] {
+    color: rgb(155, 155, 155);
 }
 
 #iconBtn {

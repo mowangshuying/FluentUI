@@ -1,4 +1,4 @@
-#include "FluDisplayBoxEx.h"
+﻿#include "FluDisplayBoxEx.h"
 
 FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
 {
@@ -85,5 +85,5 @@ void FluDisplayBoxEx::paintEvent(QPaintEvent* event)
 
 void FluDisplayBoxEx::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDisplayBoxEx.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDisplayBoxEx.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

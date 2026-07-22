@@ -23,3 +23,7 @@ FluSegmentedItem[isSelected=true]:hover {
 FluSegmentedItem[isSelected=true]:pressed {
     background-color: transparent;
 }
+
+FluSegmentedItem:disabled {
+    color: rgba(255, 255, 255, 80);
+}

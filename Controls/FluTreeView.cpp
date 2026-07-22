@@ -1,6 +1,6 @@
 ﻿#include "FluTreeView.h"
 #include <QHeaderView>
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 
 FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
 {
@@ -25,5 +25,5 @@ void FluTreeView::drawBranches(QPainter *painter, const QRect &rect, const QMode
 
 void FluTreeView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTreeView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTreeView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

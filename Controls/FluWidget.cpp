@@ -18,6 +18,7 @@ FluWidget::FluWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
         LOG_DEBUG << "ClassName:" << this->metaObject()->className();
 #endif
 
+        m_theme = theme;
         onThemeChanged();
 
 #ifdef FluCheckObjects
@@ -37,9 +38,10 @@ void FluWidget::paintEvent(QPaintEvent* event)
 void FluWidget::showEvent(QShowEvent* event)
 {
     QWidget::showEvent(event);
-    if (m_theme != FluThemeUtils::getUtils()->getTheme())
+    FluTheme currentTheme = FluThemeUtils::getUtils()->getTheme();
+    if (m_theme != currentTheme)
     {
+        m_theme = currentTheme;
         onThemeChanged();
-        m_theme = FluThemeUtils::getUtils()->getTheme();
     }
 }

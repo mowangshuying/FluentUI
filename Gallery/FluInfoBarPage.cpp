@@ -1,4 +1,4 @@
-#include "FluInfoBarPage.h"
+﻿#include "FluInfoBarPage.h"
 
 FluInfoBarPage::FluInfoBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -127,5 +127,5 @@ void FluInfoBarPage::addDynamicInfoBar()
 
 void FluInfoBarPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluInfoBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluInfoBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

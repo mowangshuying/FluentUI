@@ -30,13 +30,13 @@ class FluCommandBarIconItem : public FluCommandBarItem
 
     void paintEvent(QPaintEvent* event);
 
+    QString qssFileName() override
+    {
+        return "FluCommandBarIconItem.qss";
+    }
+
   signals:
     void clicked();
-  public slots:
-    void onThemeChanged()
-    {
-        FluStyleSheetUitls::setQssByFileName("FluCommandBarIconItem.qss", this, FluThemeUtils::getUtils()->getTheme());
-    }
 
   protected:
     QHBoxLayout* m_hMainLayout;

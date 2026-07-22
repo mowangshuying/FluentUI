@@ -1,0 +1,12 @@
+FluHNavigationDemo {
+    background-color: rgb(32, 32, 32);
+}
+
+#titleBar {
+    background-color: rgb(32, 32, 32);
+}
+
+#bodyWidget {
+    background-color: rgb(45, 45, 45);
+    border: 1px solid rgb(53, 53, 53);
+}

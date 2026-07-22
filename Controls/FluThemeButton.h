@@ -61,7 +61,7 @@ class FluThemeButton : public QPushButton
             setIcon(FluIconUtils::getFluentIcon(m_lightType, FluThemeUtils::getUtils()->getTheme()));
         }
 
-        FluStyleSheetUitls::setQssByFileName("FluThemeButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluThemeButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

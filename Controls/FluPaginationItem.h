@@ -81,7 +81,7 @@ class FluPaginationItem : public QPushButton
   public slots:
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluPaginationItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluPaginationItem.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

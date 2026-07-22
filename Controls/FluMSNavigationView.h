@@ -117,7 +117,7 @@ class FluMSNavigationView : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluMSNavigationView.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluMSNavigationView.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

@@ -1,4 +1,4 @@
-#include "FluHyperLinkButton.h"
+﻿#include "FluHyperLinkButton.h"
 
 FluHyperLinkButton::FluHyperLinkButton(QString linkUrl, QWidget* parent /* = nullptr*/) : QPushButton(parent), m_linkUrl(linkUrl)
 {
@@ -15,5 +15,5 @@ void FluHyperLinkButton::setLinkUrl(QString linkUrl)
 
 void FluHyperLinkButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHyperLinkButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHyperLinkButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

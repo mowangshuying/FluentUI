@@ -24,7 +24,7 @@ FluHomePageTitle::FluHomePageTitle(QWidget* parent /*= nullptr*/) : FluWidget(pa
 
     m_color1 = QColor(206, 216, 228);
     m_color2 = QColor(223, 231, 240);
-    // QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluHomePageTitle.qss");
+    // QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluHomePageTitle.qss");
     // setStyleSheet(qss);
     onThemeChanged();
 }

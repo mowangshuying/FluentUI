@@ -1,4 +1,4 @@
-#include "FluProgressBarPage.h"
+﻿#include "FluProgressBarPage.h"
 
 FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -25,5 +25,5 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
 void FluProgressBarPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluProgressBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluProgressBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

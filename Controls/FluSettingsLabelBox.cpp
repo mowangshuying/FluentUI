@@ -1,4 +1,4 @@
-#include "FluSettingsLabelBox.h"
+﻿#include "FluSettingsLabelBox.h"
 
 FluSettingsLabelBox::FluSettingsLabelBox(QWidget* parent /*= nullptr*/)
 {
@@ -57,5 +57,5 @@ void FluSettingsLabelBox::paintEvent(QPaintEvent* event)
 
 void FluSettingsLabelBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSettingsLabelBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSettingsLabelBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

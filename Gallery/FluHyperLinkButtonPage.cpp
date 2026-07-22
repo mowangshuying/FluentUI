@@ -1,4 +1,4 @@
-#include "FluHyperLinkButtonPage.h"
+﻿#include "FluHyperLinkButtonPage.h"
 
 FluHyperLinkButtonPage::FluHyperLinkButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -25,5 +25,5 @@ FluHyperLinkButtonPage::FluHyperLinkButtonPage(QWidget* parent /*= nullptr*/) : 
 
 void FluHyperLinkButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHyperLinkButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHyperLinkButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

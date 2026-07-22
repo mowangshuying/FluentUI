@@ -62,6 +62,8 @@ void FluAppBarButton::setShortCut(QKeySequence keySequence)
 
 void FluAppBarButton::mouseReleaseEvent(QMouseEvent* event)
 {
+    if (!isEnabled())
+        return;
     QWidget::mouseReleaseEvent(event);
     emit clicked();
 }
@@ -77,5 +79,12 @@ void FluAppBarButton::paintEvent(QPaintEvent* event)
 void FluAppBarButton::onThemeChanged()
 {
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluAppBarButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAppBarButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+void FluAppBarButton::setEnabled(bool enabled)
+{
+    QWidget::setEnabled(enabled);
+    m_iconBtn->setEnabled(enabled);
+    m_textLabel->setEnabled(enabled);
 }

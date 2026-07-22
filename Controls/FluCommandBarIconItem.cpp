@@ -16,7 +16,6 @@ FluCommandBarIconItem::FluCommandBarIconItem(QWidget* parent) : FluCommandBarIte
 
     setFixedHeight(26);
     onThemeChanged();
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     connect(this, &FluCommandBarIconItem::clicked, this, [=]() {
         if (m_roundMenu->actions().isEmpty())
             return;

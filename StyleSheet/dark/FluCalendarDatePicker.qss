@@ -24,3 +24,14 @@ FluCalendarDatePicker:pressed {
     background-color: transparent;
     border: 1px solid transparent;
 }
+
+FluCalendarDatePicker:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(39, 39, 39);
+    background-color: rgb(35, 35, 35);
+}
+
+FluCalendarDatePicker:disabled #iconButton {
+    color: rgba(255, 255, 255, 80);
+}

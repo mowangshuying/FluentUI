@@ -31,7 +31,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     m_appThemeSelectBox->getComboBox()->addItem(tr("Light"));
     m_appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
     m_appThemeSelectBox->getComboBox()->addItem(tr("AtomOneDark"));
-    m_appThemeSelectBox->getComboBox()->setIndex((int)FluThemeUtils::getUtils()->getTheme());
+    m_appThemeSelectBox->getComboBox()->setCurrentIndex((int)FluThemeUtils::getUtils()->getTheme());
     connect(m_appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == (int)FluThemeUtils::getUtils()->getTheme())
             return;
@@ -61,9 +61,9 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     languageSelectBox->getComboBox()->addItem(tr("zh-CN"));
 
     if (FluConfigUtils::getUtils()->getLanguage() == "en-US")
-        languageSelectBox->getComboBox()->setIndex(0);
+        languageSelectBox->getComboBox()->setCurrentIndex(0);
     else if (FluConfigUtils::getUtils()->getLanguage() == "zh-CN")
-        languageSelectBox->getComboBox()->setIndex(1);
+        languageSelectBox->getComboBox()->setCurrentIndex(1);
 
     connect(languageSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
         if (index == 0)
@@ -151,5 +151,5 @@ void FluSettingPage::paintEvent(QPaintEvent* event)
 
 void FluSettingPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSettingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSettingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

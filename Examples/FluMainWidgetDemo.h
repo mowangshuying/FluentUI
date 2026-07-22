@@ -49,7 +49,7 @@ class FluMainWidgetDemo : public FluFrameLessWidget
 #endif
             m_titleBar->show();
         }
-        FluStyleSheetUitls::setQssByFileName("FluMainWidgetDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluMainWidgetDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

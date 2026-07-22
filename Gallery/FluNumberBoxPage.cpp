@@ -1,4 +1,4 @@
-#include "FluNumberBoxPage.h"
+﻿#include "FluNumberBoxPage.h"
 
 FluNumberBoxPage::FluNumberBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -41,5 +41,5 @@ void FluNumberBoxPage::addDoubleSpinBox()
 
 void FluNumberBoxPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluNumberBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluNumberBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

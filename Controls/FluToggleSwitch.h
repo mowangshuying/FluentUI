@@ -64,7 +64,7 @@ class FluToggleSwitch : public QCheckBox
   public slots:
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluToggleSwitch.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluToggleSwitch.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

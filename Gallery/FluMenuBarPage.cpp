@@ -187,5 +187,5 @@ void FluMenuBarPage::addRoundMenu()
 
 void FluMenuBarPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluMenuBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluMenuBarPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

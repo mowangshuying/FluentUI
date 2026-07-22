@@ -1,4 +1,4 @@
-#include "FluSlider.h"
+﻿#include "FluSlider.h"
 
 FluSlider::FluSlider(QWidget* parent /*= nullptr*/) : QSlider(parent)
 {
@@ -14,5 +14,5 @@ FluSlider::FluSlider(Qt::Orientation orientation, QWidget* parent /*= nullptr*/)
 
 void FluSlider::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSlider.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSlider.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

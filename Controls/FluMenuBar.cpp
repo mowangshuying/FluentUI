@@ -1,4 +1,4 @@
-#include "FluMenuBar.h"
+﻿#include "FluMenuBar.h"
 
 FluMenuBar::FluMenuBar(QWidget* parent /*= nullptr*/) : QMenuBar(parent)
 {
@@ -9,5 +9,5 @@ FluMenuBar::FluMenuBar(QWidget* parent /*= nullptr*/) : QMenuBar(parent)
 
 void FluMenuBar::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluMenuBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluMenuBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

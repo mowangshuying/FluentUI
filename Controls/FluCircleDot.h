@@ -23,9 +23,10 @@ class FluCircleDot : public FluWidget
     bool eventFilter(QObject* watched, QEvent* event);
 
     static void setCircleDot(QWidget* target, int nMarginTop, int nMarginRight);
-  public slots:
-
-    void onThemeChanged();
+    QString qssFileName() override
+    {
+        return "FluCircleDot.qss";
+    }
 
   protected:
     QWidget* m_target;

@@ -3,7 +3,7 @@
 #include "FluWidget.h"
 // #include <QScrollArea>
 #include <QVBoxLayout>
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include "../Utils/FluUtils.h"
 #include "FluScrollArea.h"
 

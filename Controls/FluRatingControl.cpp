@@ -1,4 +1,4 @@
-#include "FluRatingControl.h"
+﻿#include "FluRatingControl.h"
 
 FluRatingControl::FluRatingControl(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -61,5 +61,5 @@ void FluRatingControl::paintEvent(QPaintEvent* event)
 
 void FluRatingControl::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRatingControl.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRatingControl.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

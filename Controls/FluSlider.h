@@ -12,6 +12,6 @@ class FluSlider : public QSlider
 
     FluSlider(Qt::Orientation orientation, QWidget* parent = nullptr);
 
-  public slots:
+  protected:
     void onThemeChanged();
 };

@@ -356,5 +356,5 @@ bool FluWindowKitTitleBar::eventFilter(QObject* watched, QEvent* event)
 
 void FluWindowKitTitleBar::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluWindowKitTitleBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluWindowKitTitleBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

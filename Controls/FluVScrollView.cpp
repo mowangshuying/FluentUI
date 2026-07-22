@@ -27,5 +27,5 @@ QVBoxLayout* FluVScrollView::getMainLayout()
 
 void FluVScrollView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluVScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

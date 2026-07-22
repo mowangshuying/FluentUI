@@ -30,5 +30,5 @@ FluCollectionsPage::FluCollectionsPage(QWidget* parent /*= nullptr*/) : FluATitl
 
 void FluCollectionsPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCollectionsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCollectionsPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

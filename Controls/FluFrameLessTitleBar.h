@@ -82,9 +82,8 @@ class FluFrameLessTitleBar : public QWidget
     Q_NODISCARD QFont titleFont() const;
     void setTitleFont(const QFont& value);
 
-    virtual void emulateLeaveEvent(QWidget* widget);
-
   protected:
+    void onThemeChanged();
     void paintEvent(QPaintEvent* event) override;
     void mouseReleaseEvent(QMouseEvent* event) override;
     void mouseDoubleClickEvent(QMouseEvent* event) override;
@@ -97,8 +96,6 @@ class FluFrameLessTitleBar : public QWidget
     void windowIconSizeChanged();
     void windowIconVisibleChanged();
     void titleFontChanged();
-  public slots:
-    void onThemeChanged();
 
   protected:
     QHBoxLayout* m_titleBarLayout;

@@ -11,6 +11,6 @@ class FluCheckBox : public QCheckBox
 
     explicit FluCheckBox(const QString& text, QWidget* parent = nullptr);
 
-  public slots:
+  protected:
     void onThemeChanged();
 };

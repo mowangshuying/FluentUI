@@ -1,8 +1,8 @@
-#include "FluIntructionsDemo.h"
+﻿#include "FluInstructionsDemo.h"
 
-FluIntructionsDemo::FluIntructionsDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
+FluInstructionsDemo::FluInstructionsDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
-    auto instructions = new FluIntructions(this);
+    auto instructions = new FluInstructions(this);
     instructions->setFixedWidth(400);
     instructions->move(200, 200);
     instructions->setTitleLabelText("Instructions on how to use Segoe Fluent Icons");

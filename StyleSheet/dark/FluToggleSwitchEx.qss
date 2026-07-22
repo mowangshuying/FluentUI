@@ -11,3 +11,17 @@ FluToggleSwitchEx[checked=true] {
     qproperty-indicatorBorderColor: rgb(0, 0, 0);
     qproperty-indicatorBackgroundColor: rgb(0, 0, 0);
 }
+
+FluToggleSwitchEx:disabled {
+    qproperty-borderColor: rgb(60, 60, 60);
+    qproperty-backgroundColor: rgb(35, 35, 35);
+    qproperty-indicatorBorderColor: rgb(80, 80, 80);
+    qproperty-indicatorBackgroundColor: rgb(80, 80, 80);
+}
+
+FluToggleSwitchEx[checked=true]:disabled {
+    qproperty-borderColor: rgba(118, 185, 237, 80);
+    qproperty-backgroundColor: rgba(118, 185, 237, 80);
+    qproperty-indicatorBorderColor: rgba(0, 0, 0, 80);
+    qproperty-indicatorBackgroundColor: rgba(0, 0, 0, 80);
+}

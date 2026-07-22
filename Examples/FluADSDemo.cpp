@@ -173,5 +173,5 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
 // void FluADSDemo::onThemeChanged()
 //{
-//     FluStyleSheetUitls::setQssByFileName("FluADSDemo.qss", m_dockMgr, FluThemeUtils::getUtils()->getTheme());
+//     FluStyleSheetUtils::setQssByFileName("FluADSDemo.qss", m_dockMgr, FluThemeUtils::getUtils()->getTheme());
 // }

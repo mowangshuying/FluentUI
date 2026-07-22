@@ -4,7 +4,7 @@
 
 FluWindowkitButton::FluWindowkitButton(QWidget *parent /*= nullptr*/) : QPushButton(parent)
 {
-    // FluStyleSheetUitls::setQssByFileName("FluWindowkitButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    // FluStyleSheetUtils::setQssByFileName("FluWindowkitButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluWindowkitButton::init()

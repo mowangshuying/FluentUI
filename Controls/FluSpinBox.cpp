@@ -1,4 +1,4 @@
-#include "FluSpinBox.h"
+﻿#include "FluSpinBox.h"
 
 FluSpinBox::FluSpinBox(QWidget* parent /*= nullptr*/) : QSpinBox(parent)
 {
@@ -13,10 +13,10 @@ void FluSpinBox::paintEvent(QPaintEvent* event)
         return;
 
     QPainter painter(this);
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }
 
 void FluSpinBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSpinBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSpinBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

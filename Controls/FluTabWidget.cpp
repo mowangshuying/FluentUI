@@ -1,7 +1,7 @@
-#include "FluTabWidget.h"
+﻿#include "FluTabWidget.h"
 
 FluTabWidget::FluTabWidget(QWidget *parent /*= nullptr*/) : QTabWidget(parent)
 {
-    QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluTabWidget.qss");
+    QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluTabWidget.qss");
     setStyleSheet(qss);
 }

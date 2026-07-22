@@ -17,3 +17,15 @@ FluTimePicker24H {
     background-color: transparent;
     border: 1px solid transparent;
 }
+
+FluTimePicker24H:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(39, 39, 39);
+    background-color: rgb(35, 35, 35);
+}
+
+FluTimePicker24H:disabled #hourBtn,
+FluTimePicker24H:disabled #minuteBtn {
+    color: rgba(255, 255, 255, 80);
+}

@@ -69,5 +69,5 @@ void FluVNavigationMenuItem::paintEvent(QPaintEvent *event)
 void FluVNavigationMenuItem::onThemeChanged()
 {
     m_menuButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::GlobalNavButton, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluVNavigationMenuItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVNavigationMenuItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

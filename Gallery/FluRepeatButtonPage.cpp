@@ -24,5 +24,5 @@ FluRepeatButtonPage::FluRepeatButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
 
 void FluRepeatButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRepeatButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRepeatButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

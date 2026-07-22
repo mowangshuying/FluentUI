@@ -19,14 +19,14 @@ class FluPMenuStyle : public QProxyStyle
         m_menuBackgroundColor = color;
     }
 
-    QColor getMenuBoderColor() const
+    QColor getMenuBorderColor() const
     {
-        return m_menuBoderColor;
+        return m_menuBorderColor;
     }
 
-    void setMenuBoderColor(const QColor& color)
+    void setMenuBorderColor(const QColor& color)
     {
-        m_menuBoderColor = color;
+        m_menuBorderColor = color;
     }
 
     QColor getMenuItemNormalBackgroundColor() const
@@ -106,7 +106,7 @@ class FluPMenuStyle : public QProxyStyle
 
   protected:
     QColor m_menuBackgroundColor = QColor(243, 243, 243);
-    QColor m_menuBoderColor = QColor(200, 200, 200);
+    QColor m_menuBorderColor = QColor(200, 200, 200);
 
     // menu item;
     QColor m_menuItemNormalBackgroundColor = QColor(243, 243, 243);

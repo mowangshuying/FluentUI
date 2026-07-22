@@ -26,5 +26,5 @@ FluScrollViewPage::FluScrollViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
 void FluScrollViewPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluScrollViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluScrollViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

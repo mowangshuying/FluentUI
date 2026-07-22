@@ -5,7 +5,7 @@
 #include <QHBoxLayout>
 #include <QPropertyAnimation>
 #include "FluIconButton.h"
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include <QStyleOption>
 #include <QPainter>
 

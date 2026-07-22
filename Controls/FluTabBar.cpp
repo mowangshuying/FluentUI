@@ -24,7 +24,6 @@ FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     onThemeChanged();
     connect(m_addTabBtn, &QPushButton::clicked, [=]() { emit addTabBtnClicked(); });
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 std::vector<FluTabBarItem*> FluTabBar::getTabBarItems()
@@ -122,6 +121,6 @@ void FluTabBar::adjustAddTabBtnPosition()
 
 void FluTabBar::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTabBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTabBar.qss", this, FluThemeUtils::getUtils()->getTheme());
     m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add, FluThemeUtils::getUtils()->getTheme()));
 }

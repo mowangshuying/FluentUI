@@ -26,7 +26,7 @@ void FluMSPage::paintEvent(QPaintEvent* event)
 
 void FluMSPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluMSPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluMSPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 FluMSWindowDemo::FluMSWindowDemo(QWidget* parent /*= nullptr*/) : FluMSWindow(parent)

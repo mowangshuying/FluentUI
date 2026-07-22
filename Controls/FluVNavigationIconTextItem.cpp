@@ -38,7 +38,7 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
 
     m_vLayout1 = new QVBoxLayout(m_wrapWidget2);
     m_hLayout1->setContentsMargins(4, 4, 4, 4);
-    m_indicator = new QWidget(this);
+    m_indicator = new FluVNavigationIndicator(this);
     m_iconBtn = new QPushButton(this);
     m_label = new QLabel("Home");
     m_label->setWordWrap(false);
@@ -56,14 +56,11 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
 
     // m_hLayout1->setSpacing(0);
 
-    m_indicator->setFixedHeight(18);
-    m_indicator->setFixedWidth(4);
     m_iconBtn->setFixedSize(30, 30);
     // m_label->setWordWrap(true);
 
     m_vLayout1->setContentsMargins(0, 0, 0, 0);
     m_vLayout1->setSpacing(5);
-    m_indicator->setObjectName("indicator");
     m_iconBtn->setObjectName("icon");
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
@@ -363,7 +360,7 @@ void FluVNavigationIconTextItem::clearItemsSelectState(FluVNavigationIconTextIte
     item->m_bSelected = false;
     item->setProperty("selected", false);
     item->m_wrapWidget1->setProperty("selected", false);
-    item->m_indicator->setProperty("selected", false);
+    item->m_indicator->setSelected(false);
     for (int i = 0; i < item->m_vLayout1->count(); i++)
     {
         auto tmpItem = (FluVNavigationIconTextItem *)item->m_vLayout1->itemAt(i)->widget();
@@ -396,7 +393,7 @@ void FluVNavigationIconTextItem::updateSelected(bool b)
     m_bSelected = b;
     setProperty("selected", b);
     m_wrapWidget1->setProperty("selected", b);
-    m_indicator->setProperty("selected", b);
+    m_indicator->setSelected(b);
     m_label->setProperty("selected", b);
 }
 

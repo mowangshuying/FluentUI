@@ -11,10 +11,12 @@
 #include <QVBoxLayout>
 #include "FluWidget.h"
 #include "FluVNavigationItem.h"
+#include "FluVNavigationIndicator.h"
 #include "../Utils/FluUtils.h"
 #include <stack>
 
 class FluVNavigationView;
+
 class FluVNavigationIconTextItem : public FluVNavigationItem
 {
     Q_OBJECT
@@ -200,7 +202,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     QWidget *m_emptyWidget;
 
-    QWidget *m_indicator;
+    FluVNavigationIndicator *m_indicator;
     QPushButton *m_iconBtn;
     QLabel *m_label;
     QPushButton *m_arrow;

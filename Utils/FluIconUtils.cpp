@@ -34,13 +34,13 @@ QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType)
 QPixmap FluIconUtils::getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h)
 {
     QFont tmpFont = getInstance()->m_fluentFont;
-    tmpFont.setPixelSize(qMin(w, h) * 0.8);
+    tmpFont.setPixelSize(qMin(w, h) * 0.7);
 
     QPixmap tmpPixMap(w, h);
     tmpPixMap.fill(Qt::transparent);
     QPainter painter;
     painter.begin(&tmpPixMap);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
+    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(penColor);
     painter.setFont(tmpFont);
     painter.drawText(tmpPixMap.rect(), Qt::AlignCenter, QChar((unsigned int)nType));

@@ -78,7 +78,7 @@ void FluMenuBarDemo::ppMenuBar0()
     auto helpAction = new FluAction("帮助(&H)");
     menuBar->addAction(helpAction);
 
-    m_vMainLayout->insertWidget(1, menuBar, Qt::AlignTop);
+    m_mainLayout->insertWidget(1, menuBar, Qt::AlignTop);
     resize(600, 400);
 }
 

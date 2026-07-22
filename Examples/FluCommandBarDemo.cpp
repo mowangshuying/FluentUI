@@ -5,7 +5,7 @@ FluCommandBarDemo::FluCommandBarDemo(QWidget* parent /*= nullptr*/) : FluTemplat
     // m_contentLayout->setAlignment(Qt::AlignCenter);
 
     auto commandBar = new FluCommandBar(this);
-    commandBar->setHasMoreBtn(false);
+    commandBar->setHasMoreButton(false);
     commandBar->move(200, 200);
 
     auto addBarItem = new FluCommandBarIconTextItem(FluAwesomeType::Add, tr("Add"), commandBar);

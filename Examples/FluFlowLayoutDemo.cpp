@@ -15,6 +15,6 @@ FluFlowLayoutDemo::FluFlowLayoutDemo(QWidget* parent /*= nullptr*/) : FluVScroll
     flowLayout->addWidget(btn5);
     // setLayout(flowLayout);
 
-    m_vMainLayout->addLayout(flowLayout);
+    m_mainLayout->addLayout(flowLayout);
     setWindowTitle(tr("Flow Layout"));
 }

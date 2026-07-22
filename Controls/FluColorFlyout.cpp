@@ -40,7 +40,7 @@ void FluColorFlyout::addColorButton(FluColorButton* colorBtn)
 
 void FluColorFlyout::showEvent(QShowEvent* event)
 {
-    FluWidget::showEvent(event);
+    QWidget::showEvent(event);
     if (m_targetWidget == nullptr)
         return;
 

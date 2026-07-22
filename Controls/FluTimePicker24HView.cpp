@@ -179,7 +179,7 @@ void FluTimePicker24HView::paintEvent(QPaintEvent* event)
 
 void FluTimePicker24HView::showEvent(QShowEvent* event)
 {
-    FluWidget::showEvent(event);
+    QWidget::showEvent(event);
     // LOG_DEBUG << "size:" << size();
     if (!m_bFirstShow)
         return;

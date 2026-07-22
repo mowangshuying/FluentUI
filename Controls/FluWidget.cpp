@@ -33,13 +33,4 @@ void FluWidget::paintEvent(QPaintEvent* event)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
-void FluWidget::showEvent(QShowEvent* event)
-{
-    QWidget::showEvent(event);
-    FluTheme currentTheme = FluThemeUtils::getUtils()->getTheme();
-    if (m_theme != currentTheme)
-    {
-        m_theme = currentTheme;
-        onThemeChanged();
-    }
-}
+

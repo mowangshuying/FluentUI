@@ -35,7 +35,7 @@ class FluBusyProgressRing : public FluWidget
 
   protected:
     QTimer* m_workingTimer;
-    int m_nTimes;
+    int m_times;
     int m_workAngle;
     QPointF m_point;
 

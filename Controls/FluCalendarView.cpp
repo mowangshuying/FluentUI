@@ -10,35 +10,33 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
     setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
-    m_curDate = QDate::currentDate();
-    // LOG_DEBUG << m_curDate;
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(1, 1, 1, 1);
-    m_vMainLayout->setSpacing(0);
+    m_currentDate = QDate::currentDate();
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setContentsMargins(1, 1, 1, 1);
+    m_mainLayout->setSpacing(0);
 
-    setLayout(m_vMainLayout);
+    setLayout(m_mainLayout);
     m_title = new FluCalendarViewTitle(this);
-    m_vMainLayout->addWidget(m_title);
+    m_mainLayout->addWidget(m_title);
 
-    m_vMainLayout->addWidget(new FluVSplitLine, 0, Qt::AlignTop);
+    m_mainLayout->addWidget(new FluVSplitLine, 0, Qt::AlignTop);
 
-    m_sLayout = new QStackedLayout;
-    m_vMainLayout->addLayout(m_sLayout);
+    m_viewSwitchLayout = new QStackedLayout;
+    m_mainLayout->addLayout(m_viewSwitchLayout);
 
     m_selectDayView = new FluCalendarSelectDayView(this);
-    m_sLayout->addWidget(m_selectDayView);
+    m_viewSwitchLayout->addWidget(m_selectDayView);
 
     m_selectMonthView = new FluCalendarSelectMonthView(this);
-    m_sLayout->addWidget(m_selectMonthView);
+    m_viewSwitchLayout->addWidget(m_selectMonthView);
 
     m_selectYearView = new FluCalendarSelectYearView(this);
-    m_sLayout->addWidget(m_selectYearView);
+    m_viewSwitchLayout->addWidget(m_selectYearView);
 
     m_viewState = FluCVS_SelectDayView;
 
-    // LOG_DEBUG << m_curDate;
-    m_curDate = QDate::currentDate();
-    m_title->setYearMonth(m_curDate.year(), m_curDate.month());
+    m_currentDate = QDate::currentDate();
+    m_title->setYearMonth(m_currentDate.year(), m_currentDate.month());
     connect(m_title->getYearMonthBtn(), &FluPushButton::clicked, [=](bool bClicked) {
         switch (m_viewState)
         {
@@ -57,18 +55,18 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
         }
     });
 
-    connect(m_title->getPreBtn(), &FluIconButton::clicked, [=](bool bClicked) {
+    connect(m_title->getPreviousButton(), &FluIconButton::clicked, [=](bool bClicked) {
         if (m_viewState == FluCVS_SelectDayView)
         {
             m_selectDayView->gotoPreMonth();
-            m_title->setYearMonth(m_curDate.year(), m_curDate.month());
+            m_title->setYearMonth(m_currentDate.year(), m_currentDate.month());
             return;
         }
 
         if (m_viewState == FluCVS_SelectMonthView)
         {
             m_selectMonthView->gotoPreYear();
-            m_title->setYearMonth(m_curDate.year(), m_curDate.month());
+            m_title->setYearMonth(m_currentDate.year(), m_currentDate.month());
             return;
         }
 
@@ -78,12 +76,12 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
 
             int nStartYears = 0;
             int nEndYears = 0;
-            m_selectYearView->getRange(m_curDate.year(), nStartYears, nEndYears);
+            m_selectYearView->getRange(m_currentDate.year(), nStartYears, nEndYears);
             m_title->setYearMonth(nStartYears, nEndYears);
         }
     });
 
-    connect(m_title->getNextBtn(), &FluIconButton::clicked, [=](bool bClicked) {
+    connect(m_title->getNextButton(), &FluIconButton::clicked, [=](bool bClicked) {
         if (m_viewState == FluCVS_SelectDayView)
         {
             m_selectDayView->gotoNextMonth();
@@ -95,7 +93,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
         if (m_viewState == FluCVS_SelectMonthView)
         {
             m_selectMonthView->gotoNextYear();
-            m_title->setYearMonth(m_curDate.year(), m_curDate.month());
+            m_title->setYearMonth(m_currentDate.year(), m_currentDate.month());
             return;
         }
 
@@ -104,7 +102,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
             m_selectYearView->gotoNextYears();
             int nStartYears = 0;
             int nEndYears = 0;
-            m_selectYearView->getRange(m_curDate.year(), nStartYears, nEndYears);
+            m_selectYearView->getRange(m_currentDate.year(), nStartYears, nEndYears);
             m_title->setYearMonth(nStartYears, nEndYears);
         }
     });
@@ -140,9 +138,9 @@ void FluCalendarView::switchSelectDayView()
 void FluCalendarView::switchSelectMonthView()
 {
     m_viewState = FluCVS_SelectMonthView;
-    m_selectMonthView->setYearMonth(m_curDate.year(), m_curDate.month());
-    m_title->setYearMonth(m_curDate.year(), m_curDate.month());
-    m_sLayout->setCurrentWidget(m_selectMonthView);
+    m_selectMonthView->setYearMonth(m_currentDate.year(), m_currentDate.month());
+    m_title->setYearMonth(m_currentDate.year(), m_currentDate.month());
+    m_viewSwitchLayout->setCurrentWidget(m_selectMonthView);
 }
 
 void FluCalendarView::switchSelectYearView()
@@ -152,10 +150,10 @@ void FluCalendarView::switchSelectYearView()
     int nStartYear = 0;
     int nEndYear = 0;
 
-    m_selectYearView->getRange(m_curDate.year(), nStartYear, nEndYear);
+    m_selectYearView->getRange(m_currentDate.year(), nStartYear, nEndYear);
     m_title->setYearMonth(nStartYear, nEndYear);
-    m_selectYearView->setYears(m_curDate.year(), m_curDate.month());
-    m_sLayout->setCurrentWidget(m_selectYearView);
+    m_selectYearView->setYears(m_currentDate.year(), m_currentDate.month());
+    m_viewSwitchLayout->setCurrentWidget(m_selectYearView);
 }
 
 FluCalendarSelectDayView* FluCalendarView::getSelectDayView()
@@ -180,12 +178,12 @@ FluCalendarViewTitle* FluCalendarView::getViewTitle()
 
 QDate FluCalendarView::getCurDate()
 {
-    return m_curDate;
+    return m_currentDate;
 }
 
 void FluCalendarView::setCurDate(QDate date)
 {
-    m_curDate = date;
+    m_currentDate = date;
 }
 
 FluCalendarViewState FluCalendarView::getViewState()

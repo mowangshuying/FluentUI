@@ -11,8 +11,8 @@ class FluDatePickerViewMaskItem
 
   public:
     QString m_text;
-    int m_nWidth;
-    int m_nHeight;
+    int m_width;
+    int m_height;
 };
 
 class FluDatePickerViewMask : public QWidget
@@ -39,9 +39,9 @@ class FluDatePickerViewMask : public QWidget
         return m_textColorEx;
     }
 
-    void addItem(QString text, int nW, int nH);
+    void addItem(QString text, int width, int height);
 
-    void setItemText(int nIndex, QString text);
+    void setItemText(int index, QString text);
 
     void paintBackground(QPainter& painter);
 
@@ -62,7 +62,7 @@ class FluDatePickerViewMask : public QWidget
 
   protected:
     std::vector<FluDatePickerViewMaskItem> m_items;
-    int m_nCurIndex;
+    int m_currentIndex;
 
     QColor m_backgroundColorEx;
     QColor m_textColorEx;

@@ -17,7 +17,7 @@ class FluAmPmView : public FluWidget
 {
     Q_OBJECT
   public:
-    FluAmPmView(int nFixedW = 80, QWidget* parent = nullptr);
+    FluAmPmView(int fixedWidth = 80, QWidget* parent = nullptr);
 
     QString getCurrentText();
 
@@ -46,12 +46,12 @@ class FluAmPmView : public FluWidget
     void onThemeChanged();
 
   protected:
-    QVBoxLayout* m_vMainLayout;
-    QListWidget* m_apView;
+    QVBoxLayout* m_mainLayout;
+    QListWidget* m_amPmListView;
 
-    QPushButton* m_scrollDownBtn;
-    QPushButton* m_scrollUpBtn;
+    QPushButton* m_scrollDownButton;
+    QPushButton* m_scrollUpButton;
 
-    bool m_bAm;
-    int m_nFixedW;
+    bool m_isAm;
+    int m_fixedWidth;
 };

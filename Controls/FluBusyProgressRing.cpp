@@ -3,7 +3,7 @@
 FluBusyProgressRing::FluBusyProgressRing(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedSize(60, 60);
-    m_nTimes = 0;
+    m_times = 0;
 
     m_workingTimer = new QTimer(parent);
     m_workingTimer->setInterval(12);
@@ -13,10 +13,8 @@ FluBusyProgressRing::FluBusyProgressRing(QWidget* parent /*= nullptr*/) : FluWid
     setCircleColor(QColor(0, 90, 158));
     onThemeChanged();
     connect(m_workingTimer, &QTimer::timeout, [=]() {
-        // m_workAngle--;
-
-        m_nTimes %= 16;
-        if (m_workDatas.size() < 6 && m_nTimes == 0)
+        m_times %= 16;
+        if (m_workDatas.size() < 6 && m_times == 0)
         {
             WorkData wd;
             wd.m_workAngle = 270;
@@ -32,7 +30,7 @@ FluBusyProgressRing::FluBusyProgressRing(QWidget* parent /*= nullptr*/) : FluWid
             m_workDatas[i].m_point = getPoint(m_workDatas[i].m_workAngle);
         }
 
-        m_nTimes++;
+        m_times++;
         update();
     });
 }
@@ -59,16 +57,16 @@ QPointF FluBusyProgressRing::getPoint(int angle)
 
 int FluBusyProgressRing::getSpeed(int angle)
 {
-    int nCurI = 0;
+    int currentSpeedIndex = 0;
     for (int i = 0; i < 8; i++)
     {
         if (angle >= 45 * i && angle < 45 * (i + 1))
         {
-            nCurI = i;
+            currentSpeedIndex = i;
         }
     }
 
-    switch (nCurI)
+    switch (currentSpeedIndex)
     {
         case 0:
             return 4;
@@ -86,8 +84,6 @@ int FluBusyProgressRing::getSpeed(int angle)
             return 1;
         case 7:
             return 2;
-            // default:
-            //     return 0;
     }
 
     return 1;

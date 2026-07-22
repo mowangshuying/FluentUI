@@ -13,24 +13,24 @@ class FluCalendarViewTitle : public FluWidget
   public:
     FluCalendarViewTitle(QWidget* parent = nullptr);
 
-    FluPushButton* getYearMonthBtn();
+    FluPushButton* getYearMonthButton();
 
-    FluIconButton* getNextBtn();
+    FluIconButton* getNextButton();
 
-    FluIconButton* getPreBtn();
+    FluIconButton* getPreviousButton();
 
-    void setYearMonth(int nYear, int nMonth);
+    void setYearMonth(int year, int month);
 
     void paintEvent(QPaintEvent* event);
   public slots:
     void onThemeChanged();
 
   protected:
-    FluPushButton* m_yearMonthBtn;
-    FluIconButton* m_preBtn;
-    FluIconButton* m_nextBtn;
+    FluPushButton* m_yearMonthButton;
+    FluIconButton* m_previousMonthButton;
+    FluIconButton* m_nextMonthButton;
 
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_titleLayout;
 
     FluCalendarView* m_parentView;
 };

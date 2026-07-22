@@ -5,25 +5,25 @@
 FluDatePickerViewMaskItem::FluDatePickerViewMaskItem(QString text, int width, int height)
 {
     m_text = text;
-    m_nWidth = width;
-    m_nHeight = height;
+    m_width = width;
+    m_height = height;
 }
 
 FluDatePickerViewMask::FluDatePickerViewMask(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
-    m_nCurIndex = -1;
+    m_currentIndex = -1;
     setMouseTracking(true);
 }
 
-void FluDatePickerViewMask::addItem(QString text, int nW, int nH)
+void FluDatePickerViewMask::addItem(QString text, int width, int height)
 {
-    FluDatePickerViewMaskItem item(text, nW, nH);
+    FluDatePickerViewMaskItem item(text, width, height);
     m_items.push_back(item);
 }
 
-void FluDatePickerViewMask::setItemText(int nIndex, QString text)
+void FluDatePickerViewMask::setItemText(int index, QString text)
 {
-    m_items[nIndex].m_text = text;
+    m_items[index].m_text = text;
 }
 
 void FluDatePickerViewMask::paintBackground(QPainter& painter)
@@ -37,12 +37,12 @@ void FluDatePickerViewMask::paintText(QPainter& painter)
 {
     painter.setPen(getTextColorEx());
 
-    int nX = 0;
-    int nY = 0;
+    int currentX = 0;
+    int currentY = 0;
     for (auto item : m_items)
     {
-        painter.drawText(QRect(nX, nY, item.m_nWidth, item.m_nHeight), Qt::AlignCenter, item.m_text);
-        nX += item.m_nWidth;
+        painter.drawText(QRect(currentX, currentY, item.m_width, item.m_height), Qt::AlignCenter, item.m_text);
+        currentX += item.m_width;
     }
 }
 
@@ -80,46 +80,45 @@ void FluDatePickerViewMask::mouseMoveEvent(QMouseEvent* event)
 {
     // LOG_DEBUG << "called";
     int x = mapFromGlobal(QCursor().pos()).x();
-    // LOG_DEBUG << "x:" << x;
 
-    int nTmpIndex = -1;
+    int temporaryIndex = -1;
     for (int i = 0; i < m_items.size(); i++)
     {
-        if (x >= m_items[i].m_nWidth)
+        if (x >= m_items[i].m_width)
         {
-            x -= m_items[i].m_nWidth;
+            x -= m_items[i].m_width;
         }
         else
         {
-            nTmpIndex = i;
+            temporaryIndex = i;
             break;
         }
     }
 
-    if (m_nCurIndex == -1 || m_nCurIndex == nTmpIndex)
+    if (m_currentIndex == -1 || m_currentIndex == temporaryIndex)
     {
-        m_nCurIndex = nTmpIndex;
+        m_currentIndex = temporaryIndex;
 
-        QPointF localP;
-        QPointF senceP;
-        QPointF globalP;
-        QEnterEvent tmpEvent(localP, senceP, globalP);
-        emit enterChanged(m_nCurIndex, &tmpEvent);
+        QPointF localPoint;
+        QPointF scenePoint;
+        QPointF globalPoint;
+        QEnterEvent hoverEnterEvent(localPoint, scenePoint, globalPoint);
+        emit enterChanged(m_currentIndex, &hoverEnterEvent);
         return;
     }
 
-    if (m_nCurIndex != nTmpIndex)
+    if (m_currentIndex != temporaryIndex)
     {
-        QEvent tmpLeaveEvent(QEvent::Leave);
-        emit leaveChanged(m_nCurIndex, &tmpLeaveEvent);
+        QEvent hoverLeaveEvent(QEvent::Leave);
+        emit leaveChanged(m_currentIndex, &hoverLeaveEvent);
 
-        QPointF localP;
-        QPointF senceP;
-        QPointF globalP;
-        QEnterEvent tmpEnterEvent(localP, senceP, globalP);
-        emit enterChanged(nTmpIndex, &tmpEnterEvent);
+        QPointF localPoint;
+        QPointF scenePoint;
+        QPointF globalPoint;
+        QEnterEvent hoverEnterEvent(localPoint, scenePoint, globalPoint);
+        emit enterChanged(temporaryIndex, &hoverEnterEvent);
 
-        m_nCurIndex = nTmpIndex;
+        m_currentIndex = temporaryIndex;
     }
 }
 
@@ -128,9 +127,9 @@ void FluDatePickerViewMask::wheelEvent(QWheelEvent* event)
     int x = mapFromGlobal(QCursor().pos()).x();
     for (int i = 0; i < m_items.size(); i++)
     {
-        if (x >= m_items[i].m_nWidth)
+        if (x >= m_items[i].m_width)
         {
-            x -= m_items[i].m_nWidth;
+            x -= m_items[i].m_width;
         }
         else
         {

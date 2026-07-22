@@ -60,11 +60,11 @@ class FluCalendarView : public FluWidget
     void onThemeChanged();
 
   protected:
-    QDate m_curDate;
+    QDate m_currentDate;
     FluCalendarViewState m_viewState;
 
-    QVBoxLayout* m_vMainLayout;
-    QStackedLayout* m_sLayout;
+    QVBoxLayout* m_mainLayout;
+    QStackedLayout* m_viewSwitchLayout;
 
     FluCalendarViewTitle* m_title;
     FluCalendarSelectDayView* m_selectDayView;

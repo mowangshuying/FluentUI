@@ -34,7 +34,7 @@ FluVNavigationIconTextItem {
 #label {
     background-color: transparent;
     font-size: 14px;
-    color: #ab3ab2;
+    color: #ffffff;
 }
 
 #label[selected=true] {

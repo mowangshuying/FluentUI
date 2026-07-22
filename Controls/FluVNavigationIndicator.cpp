@@ -56,7 +56,7 @@ void FluVNavigationIndicator::paintEvent(QPaintEvent *event)
     painter.setPen(Qt::NoPen);
     painter.setBrush(color);
 
-    int radius = qMin(m_indicatorHeight / 2, 2);
+    int radius = width() / 2;
     QRect r = rect();
     r.setTop((16 - m_indicatorHeight) / 2);
     r.setHeight(m_indicatorHeight);

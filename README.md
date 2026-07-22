@@ -89,11 +89,27 @@ English | <a href="README_zh_CN.md">简体中文</a>
 ## Third-Party Libraries
 
 + [framelesshelper](https://github.com/nicehash/framelesshelper) - Frameless window helper
-+ [Qt-Advanced-Docking-System](https://github.com/nicehash/framelesshelper) - Advanced docking system
++ [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) - Advanced docking system
 + [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) - Code editor component
-+ [qrcode](https://github.com/nicehash/framelesshelper) - QR code generation
++ [qrcode](https://github.com/nicehash/qrcode) - QR code generation
 + [cmark](https://github.com/commonmark/cmark) - CommonMark parser
-+ [qwindowkit](https://github.com/nicehash/framelesshelper) - Window kit
++ [qwindowkit](https://github.com/nicehash/qwindowkit) - Window kit
+
+> All third-party libraries are integrated as source code in the `3rdparty/` directory.
+
+## Project Structure
+
+```
+FluentUI/
+├── Controls/       # 200+ Fluent Design controls
+├── Examples/       # Control demos and examples
+├── Gallery/        # Full demo application
+├── Utils/          # Utility classes
+├── 3rdparty/       # Third-party libraries (source)
+├── i18n/           # Internationalization files
+├── docs/           # Documentation and screenshots
+└── StyleSheet/     # QSS stylesheets
+```
 
 ## Documentation
 

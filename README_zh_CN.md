@@ -89,11 +89,27 @@
 ## 第三方库
 
 + [framelesshelper](https://github.com/nicehash/framelesshelper) - 无边框窗口辅助库
-+ [Qt-Advanced-Docking-System](https://github.com/nicehash/framelesshelper) - 高级停靠系统
++ [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) - 高级停靠系统
 + [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) - 代码编辑器组件
-+ [qrcode](https://github.com/nicehash/framelesshelper) - 二维码生成
++ [qrcode](https://github.com/nicehash/qrcode) - 二维码生成
 + [cmark](https://github.com/commonmark/cmark) - CommonMark 解析器
-+ [qwindowkit](https://github.com/nicehash/framelesshelper) - 窗口工具包
++ [qwindowkit](https://github.com/nicehash/qwindowkit) - 窗口工具包
+
+> 所有第三方库以源代码形式集成在 `3rdparty/` 目录中。
+
+## 项目结构
+
+```
+FluentUI/
+├── Controls/       # 200+ Fluent Design 控件
+├── Examples/       # 控件示例演示
+├── Gallery/        # 完整演示应用
+├── Utils/          # 工具类
+├── 3rdparty/       # 第三方库（源码）
+├── i18n/           # 国际化文件
+├── docs/           # 文档和截图
+└── StyleSheet/     # QSS 样式表
+```
 
 ## 文档
 

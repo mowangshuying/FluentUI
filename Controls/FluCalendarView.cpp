@@ -7,7 +7,7 @@
 
 FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    setWindowFlags(/* Qt::Popup | */ Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
 
     m_curDate = QDate::currentDate();
@@ -60,7 +60,6 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
     connect(m_title->getPreBtn(), &FluIconButton::clicked, [=](bool bClicked) {
         if (m_viewState == FluCVS_SelectDayView)
         {
-            // m_selectDayView
             m_selectDayView->gotoPreMonth();
             m_title->setYearMonth(m_curDate.year(), m_curDate.month());
             return;
@@ -87,7 +86,6 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
     connect(m_title->getNextBtn(), &FluIconButton::clicked, [=](bool bClicked) {
         if (m_viewState == FluCVS_SelectDayView)
         {
-            // m_selectDayView
             m_selectDayView->gotoNextMonth();
             QDate date = m_selectDayView->getCurMonth();
             m_title->setYearMonth(date.year(), date.month());
@@ -111,7 +109,6 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
         }
     });
 
-    // setFixedWidth(300);
     setFixedSize(300, 360);
     onThemeChanged();
 }

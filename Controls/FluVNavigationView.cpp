@@ -46,7 +46,6 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     m_bLong = true;
     setFixedWidth(m_nViewWidth);
 
-    // ani;
     m_animation = new QPropertyAnimation;
     m_animation->setDuration(250);
     m_animation->setEasingCurve(QEasingCurve::OutCubic);
@@ -79,7 +78,6 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     });
 
     connect(m_animation, &QPropertyAnimation::valueChanged, this, [=]() {
-        // LOG_DEBUG << "ValueObject value:" << m_valueObject->getValue();
         setFixedWidth(m_valueObject->getValue());
         update();
     });
@@ -87,8 +85,6 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
     connect(m_animation, &QPropertyAnimation::finished, this, [=]() {
         if (!m_bLong)
             collapseView();
-        // else
-        //     expandView();
     });
 
     onThemeChanged();
@@ -105,21 +101,11 @@ void FluVNavigationView::setOnlyCollapseView(bool bHideMenuAndSearch)
     {
         showMenuItem();
         showSearchItem();
-        /* m_searchItem->hideSearchEdit();*/
     }
 
     collapseDownView();
-    /*collapseView();*/
-    // setViewWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
-    /*setFixedWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());*/
-    m_bLong = false;
     collapseView();
     setFixedWidth(40 + m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right());
-    // if (!bHideMenuAndSearch)
-    //{
-    // m_searchItem->setFixedWidth(m_nViewWidth - (m_vLayout->contentsMargins().left() + m_vLayout->contentsMargins().right()));
-    // m_searchItem->hideSearchEdit();
-    //}
 }
 
 void FluVNavigationView::addItemToTopLayout(QWidget *item)
@@ -345,7 +331,6 @@ inline void FluVNavigationView::expandView()
         if (item != nullptr)
         {
             item->setLong(true);
-            // item->setFixedWidth(40);
         }
 
         if (item->getItemType() == FluVNavigationItemType::IconText)
@@ -403,16 +388,11 @@ inline void FluVNavigationView::collapseView()
         if (item != nullptr)
         {
             item->setLong(false);
-            // item->setFixedWidth(40);
         }
 
         if (item->getItemType() == FluVNavigationItemType::IconText)
         {
             auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            //  if (!iconTextItem->isDown())
-            // {
-            //     iconTextItem->onItemClicked();
-            // }
             iconTextItem->setFixedWidth(40);
             iconTextItem->getWrapWidget1()->setFixedWidth(40);
             iconTextItem->hideLabelArrow();

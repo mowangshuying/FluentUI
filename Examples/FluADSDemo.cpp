@@ -7,10 +7,6 @@
 FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(parent)
 {
     setWindowTitle("ADS demo");
-    // delete statusBar();
-    // setStatusBar(nullptr);
-    // setMenuBar(nullptr);
-
     FluDockManager::setConfigFlag(FluDockManager::OpaqueSplitterResize, true);
     FluDockManager::setConfigFlag(FluDockManager::XmlCompressionEnabled, false);
     FluDockManager::setConfigFlag(FluDockManager::FocusHighlighting, true);
@@ -25,7 +21,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     auto saveFileAction = new FluAction("Save");
     auto exitFileAction = new FluAction("Exit");
 
-    auto fileMenu = new FluMenu(m_menuBar);
+    auto fileMenu = new FluMenu();
     fileMenu->setTitle("File(&F)");
     fileMenu->addAction(newFileAction);
     fileMenu->addAction(openFileAction);
@@ -46,7 +42,6 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     editMenu->addAction(cutEditAction);
     editMenu->addAction(copyEditAction);
     editMenu->addAction(pasteEditAction);
-    // menuBar->addMenu(editMenu);
     m_menuBar->addAction(editMenu->menuAction());
 
     // Help
@@ -54,16 +49,9 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     auto helpMenu = new FluMenu(m_menuBar);
     helpMenu->setTitle("Help(&H)");
     helpMenu->addAction(aboutAction);
-    // menuBar->addMenu(helpMenu);
     m_menuBar->addAction(helpMenu->menuAction());
 
     m_dockMgr = new FluDockManager(this);
-    // m_dockMgr->setObjectName("dockManager");
-
-    // onThemeChanged();
-    // connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) {
-    //     onThemeChanged();
-    // });
 
     auto edit = new FluScintilla;
     //
@@ -80,7 +68,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     table1->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     table1->setColumnWidth(0, 30);
     // table1->setRowHeight()
-    for (int i = 1; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
         table1->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
     }
@@ -90,7 +78,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
         int nRowCount = table1->rowCount();
         table1->insertRow(nRowCount);
 
-        table1->setRowHeight(i, 30);
+        table1->setRowHeight(0, 30);
         auto item = new QTableWidgetItem(QString::asprintf("%d", i + 1));
         table1->setItem(i, 0, item);
     }
@@ -107,7 +95,6 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
 
     auto table2 = new FluTableView;
     table2->setColumnCount(5);
-    // table2->setRowCount(1024);
     table2->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     table2->setColumnWidth(0, 30);
     for (int i = 1; i < 5; i++)
@@ -120,7 +107,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
         int nRowCount = table2->rowCount();
         table2->insertRow(nRowCount);
 
-        table2->setRowHeight(i, 30);
+        table2->setRowHeight(0, 30);
         auto item = new QTableWidgetItem(QString::asprintf("%d", i + 1));
         table2->setItem(i, 0, item);
     }
@@ -129,12 +116,7 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     table2->horizontalHeader()->setVisible(false);
 
     auto tableDockWidget2 = m_dockMgr->createDockWidget("Table 2");
-    // tableDockWidget2->setStyleSheet("border: 1px solid pink;");
-    //  background transparency
-    // tableDockWidget2->setBackgroundTransparent(true);
-    // tableDockWidget2->setStyleSheet("");
 
-    // tableDockWidget2->setWidget(table2);
     tableDockWidget2->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
     tableDockWidget2->resize(250, 150);
     tableDockWidget2->setMinimumSize(200, 150);
@@ -166,7 +148,6 @@ FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(paren
     ads::CDockWidget* propertiesDockWidget = m_dockMgr->createDockWidget("Properties");
     propertiesDockWidget->setWidget(propertiesTable);
     propertiesDockWidget->setMinimumSizeHintMode(ads::CDockWidget::MinimumSizeHintFromDockWidget);
-    // propertiesDockWidget->resize(250, 150);
     propertiesDockWidget->setMinimumSize(200, 150);
     m_dockMgr->addDockWidget(ads::DockWidgetArea::RightDockWidgetArea, propertiesDockWidget, centralDockArea);
 }

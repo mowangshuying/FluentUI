@@ -16,11 +16,12 @@
 
 ## 特性
 
-+ Fluent Design 风格的 Qt C++ 控件
-+ 支持明暗主题切换
++ **187+ Fluent Design 控件**，基于 Qt C++ (C++17)
++ **3 套内置主题**：Light、Dark、Atom One Dark
++ **2300+ 图标**，基于 Segoe Fluent Icons 字体
++ 实时主题切换（信号槽机制）
 + 国际化支持（i18n）：中文（zh-CN）、英文（en-US）
 + 跨平台：Windows、Linux、macOS
-+ 200+ 开箱即用的控件
 + Gallery 示例应用，附带代码示例
 
 ## 环境要求
@@ -103,15 +104,42 @@
 
 ```
 FluentUI/
-├── Controls/       # 200+ Fluent Design 控件
-├── Examples/       # 控件示例演示
-├── Gallery/        # 完整演示应用
-├── Utils/          # 工具类
-├── 3rdparty/       # 第三方库（源码）
-├── i18n/           # 国际化文件
+├── Controls/       # 187+ Fluent Design 控件（静态库）
+├── Examples/       # 75 个控件演示（可执行文件）
+├── Gallery/        # 完整演示应用（58 个页面）
+├── Utils/          # 主题/图标/配置工具类（静态库）
+├── 3rdparty/       # 6 个第三方库（源码集成）
+├── StyleSheet/     # 566 个 QSS 文件（3 套主题）
+├── i18n/           # 国际化（zh-CN, en-US）
+├── code/           # Markdown 代码示例（54 个文件）
+├── res/            # 图片、字体、Emoji SVG
 ├── docs/           # 文档和截图
-└── StyleSheet/     # QSS 样式表
+└── config/         # 运行时配置
 ```
+
+## 架构
+
+```
+Gallery / Examples
+  └── FluentUI::Controls（静态库）
+        ├── FluWidget          # 基类，提供主题感知
+        ├── FluFrameLessWidget # 无边框窗口（framelesshelper）
+        ├── FluWindowKitWidget # 窗口工具包集成
+        └── FluentUI::Utils    # 主题/图标/配置管理
+```
+
+### 控件分类
+
+| 分类 | 控件 |
+|------|------|
+| **按钮** | FluPushButton、FluToggleButton、FluSplitButton、FluDropDownButton、FluAppBarButton... |
+| **输入** | FluLineEdit、FluSearchLineEdit、FluPasswordBox、FluSpinBox、FluAutoSuggestBox... |
+| **选择** | FluCheckBox、FluRadioButton、FluToggleSwitch、FluComboBox、FluSegmented... |
+| **导航** | FluVNavigationView、FluHNavigationView、FluMSNavigationView... |
+| **对话框** | FluDialog、FluMessageBox、FluConfirmFlyout、FluTeachingTip、FluInfoBar... |
+| **日期/时间** | FluCalendarView、FluCalendarDatePicker、FluDatePicker、FluTimePicker... |
+| **布局** | FluExpander、FluPivot、FluStackedLayout、FluFlowLayout... |
+| **代码编辑** | FluCodeBox、FluScintilla、FluTerminalWidget... |
 
 ## 文档
 

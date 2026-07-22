@@ -16,11 +16,12 @@ English | <a href="README_zh_CN.md">简体中文</a>
 
 ## Features
 
-+ Fluent Design style controls for Qt C++
-+ Supports Light and Dark themes
++ **187+ Fluent Design controls** for Qt C++ (C++17)
++ **3 built-in themes**: Light, Dark, Atom One Dark
++ **2300+ icons** via Segoe Fluent Icons font
++ Real-time theme switching with signal-slot mechanism
 + Internationalization (i18n): zh-CN, en-US
 + Cross-platform: Windows, Linux, macOS
-+ 200+ ready-to-use controls
 + Gallery demo application with code examples
 
 ## Requirements
@@ -103,15 +104,42 @@ English | <a href="README_zh_CN.md">简体中文</a>
 
 ```
 FluentUI/
-├── Controls/       # 200+ Fluent Design controls
-├── Examples/       # Control demos and examples
-├── Gallery/        # Full demo application
-├── Utils/          # Utility classes
-├── 3rdparty/       # Third-party libraries (source)
-├── i18n/           # Internationalization files
+├── Controls/       # 187+ Fluent Design controls (static library)
+├── Examples/       # 75 control demos (executable)
+├── Gallery/        # Full demo application (58 pages)
+├── Utils/          # Theme/Icon/Config utilities (static library)
+├── 3rdparty/       # 6 third-party libraries (source)
+├── StyleSheet/     # 566 QSS files (3 themes)
+├── i18n/           # Internationalization (zh-CN, en-US)
+├── code/           # Markdown code examples (54 files)
+├── res/            # Images, fonts, emoji SVGs
 ├── docs/           # Documentation and screenshots
-└── StyleSheet/     # QSS stylesheets
+└── config/         # Runtime configuration
 ```
+
+## Architecture
+
+```
+Gallery / Examples
+  └── FluentUI::Controls (static library)
+        ├── FluWidget          # Base widget with theme awareness
+        ├── FluFrameLessWidget # Frameless window (framelesshelper)
+        ├── FluWindowKitWidget # Window kit integration
+        └── FluentUI::Utils    # Theme/Icon/Config management
+```
+
+### Control Categories
+
+| Category | Controls |
+|----------|----------|
+| **Buttons** | FluPushButton, FluToggleButton, FluSplitButton, FluDropDownButton, FluAppBarButton... |
+| **Input** | FluLineEdit, FluSearchLineEdit, FluPasswordBox, FluSpinBox, FluAutoSuggestBox... |
+| **Selection** | FluCheckBox, FluRadioButton, FluToggleSwitch, FluComboBox, FluSegmented... |
+| **Navigation** | FluVNavigationView, FluHNavigationView, FluMSNavigationView... |
+| **Dialogs** | FluDialog, FluMessageBox, FluConfirmFlyout, FluTeachingTip, FluInfoBar... |
+| **Date/Time** | FluCalendarView, FluCalendarDatePicker, FluDatePicker, FluTimePicker... |
+| **Layout** | FluExpander, FluPivot, FluStackedLayout, FluFlowLayout... |
+| **Code Editor** | FluCodeBox, FluScintilla, FluTerminalWidget... |
 
 ## Documentation
 

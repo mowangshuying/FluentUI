@@ -357,7 +357,7 @@ void FluDatePickerView::paintEvent(QPaintEvent* event)
 
 void FluDatePickerView::showEvent(QShowEvent* event)
 {
-    FluWidget::showEvent(event);
+    QWidget::showEvent(event);
     if (!m_bFirstShow)
         return;
 

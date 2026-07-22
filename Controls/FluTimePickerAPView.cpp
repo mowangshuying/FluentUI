@@ -203,7 +203,7 @@ void FluTimePickerAPView::paintEvent(QPaintEvent* event)
 
 void FluTimePickerAPView::showEvent(QShowEvent* event)
 {
-    FluWidget::showEvent(event);
+    QWidget::showEvent(event);
     if (m_bFirstShow)
     {
         m_bFirstShow = false;

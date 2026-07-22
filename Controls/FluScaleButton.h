@@ -26,6 +26,6 @@ class FluScaleButton : public QPushButton
     FluAwesomeType m_iconType;
     QTimer* m_timer;
     float m_currentPercentage;
-    bool m_bToBig;
-    bool m_bPressed;
+    bool m_isToBig;
+    bool m_isPressed;
 };

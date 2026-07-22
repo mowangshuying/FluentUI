@@ -18,7 +18,7 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto checkBox = new FluCheckBox(tr("Two-State CheckBox"), this);
     displayBox1->getBodyLayout()->addWidget(checkBox);
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A 3-state CheckBox"));
@@ -28,7 +28,7 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     auto checkBox2 = new FluCheckBox(tr("Three-state CheckBox"), this);
     checkBox2->setTristate(true);
     displayBox2->getBodyLayout()->addWidget(checkBox2);
-    m_vScrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

@@ -10,5 +10,5 @@ class FluProgressRingDemo : public FluWidget
     FluProgressRingDemo(QWidget* parent = nullptr);
 
   protected:
-    int m_nTimes;
+    int m_times;
 };

@@ -15,7 +15,7 @@ FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : Fl
     autoSuggestBox->setKeys({tr("a"), tr("ab"), tr("abc"), tr("abcd"), tr("abcde")});
     displayBox->getBodyLayout()->addWidget(autoSuggestBox);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
     // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
     onThemeChanged();

@@ -2,28 +2,28 @@
 
 FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
-    m_hMainLayout->setAlignment(Qt::AlignLeft);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
+    m_mainLayout->setAlignment(Qt::AlignLeft);
 
-    m_hMainLayout->setSpacing(0);
-    m_hMainLayout->setContentsMargins(10, 0, 40, 0);
-    m_hMainLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setContentsMargins(10, 0, 40, 0);
+    m_mainLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
 
     m_tabBarContent = new FluTabBarContent;
     m_tabBarContent->resize(0, height());
-    m_hMainLayout->addWidget(m_tabBarContent);
+    m_mainLayout->addWidget(m_tabBarContent);
 
-    m_hMainLayout->addSpacing(0);
+    m_mainLayout->addSpacing(0);
 
-    m_addTabBtn = new QPushButton(this);
-    m_addTabBtn->setFixedSize(30, 30);
-    m_addTabBtn->setIconSize(QSize(20, 20));
-    m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add, FluThemeUtils::getUtils()->getTheme()));
-    m_addTabBtn->setObjectName("addTabBtn");
+    m_addTabButton = new QPushButton(this);
+    m_addTabButton->setFixedSize(30, 30);
+    m_addTabButton->setIconSize(QSize(20, 20));
+    m_addTabButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add, FluThemeUtils::getUtils()->getTheme()));
+    m_addTabButton->setObjectName("addTabBtn");
 
     onThemeChanged();
-    connect(m_addTabBtn, &QPushButton::clicked, [=]() { emit addTabBtnClicked(); });
+    connect(m_addTabButton, &QPushButton::clicked, [=]() { emit addTabButtonClicked(); });
 }
 
 std::vector<FluTabBarItem*> FluTabBar::getTabBarItems()
@@ -34,21 +34,21 @@ std::vector<FluTabBarItem*> FluTabBar::getTabBarItems()
 void FluTabBar::addBarItem(FluTabBarItem* item)
 {
     m_tabBarContent->addBarItem(item);
-    adjustAddTabBtnPosition();
-    connect(item, &FluTabBarItem::sizeChanged, [=]() { adjustAddTabBtnPosition(); });
-    connect(item, &FluTabBarItem::clickedCloseBtn, [this, item]() { removeTabBarItem(item); });
+    adjustAddTabButtonPosition();
+    connect(item, &FluTabBarItem::sizeChanged, [=]() { adjustAddTabButtonPosition(); });
+    connect(item, &FluTabBarItem::clickedCloseButton, [this, item]() { removeTabBarItem(item); });
 }
 
 void FluTabBar::removeTabBarItem(FluTabBarItem* item)
 {
     m_tabBarContent->removeTabBarItem(item);
-    adjustAddTabBtnPosition();
+    adjustAddTabButtonPosition();
 }
 
 void FluTabBar::resizeEvent(QResizeEvent* event)
 {
     QWidget::resizeEvent(event);
-    adjustAddTabBtnPosition();
+    adjustAddTabButtonPosition();
 }
 
 void FluTabBar::paintEvent(QPaintEvent* event)
@@ -57,54 +57,54 @@ void FluTabBar::paintEvent(QPaintEvent* event)
     opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    // adjustAddTabBtnPosition();
+    // adjustAddTabButtonPosition();
 }
 
-void FluTabBar::adjustAddTabBtnPosition()
+void FluTabBar::adjustAddTabButtonPosition()
 {
     std::vector<FluTabBarItem*> items = getTabBarItems();
     if (items.size() == 0)
     {
-        int nX = 10;
-        int nY = 5;
-        m_addTabBtn->move(nX, nY);
+        int x = 10;
+        int y = 5;
+        m_addTabButton->move(x, y);
         return;
     }
     else
     {
         auto tailItem = items[items.size() - 1];
 
-        int nTmp = 0;
+        int tmp = 0;
         for (int i = 0; i < items.size(); i++)
         {
             // items[i]->show();
-            nTmp += items[i]->getWidgetWidth();
+            tmp += items[i]->getWidgetWidth();
         }
 
-        int nX = nTmp + 10;
-        int nY = 5;
+        int x = tmp + 10;
+        int y = 5;
 
-        if (nX + 40 > width())
+        if (x + 40 > width())
         {
-            nX = width() - 40;
+            x = width() - 40;
         }
 
         // total width
-        int nTotalWidth = 0;
+        int totalWidth = 0;
         std::vector<int> totalWidths;
         for (int i = 0; i < items.size(); i++)
         {
             totalWidths.push_back(items[i]->getWidgetWidth());
-            nTotalWidth += items[i]->getWidgetWidth();
+            totalWidth += items[i]->getWidgetWidth();
         }
 
-        if (nTotalWidth > (width() - 50))
+        if (totalWidth > (width() - 50))
         {
-            float fScale = (float)(width() - 50) / (float)nTotalWidth;
+            float fScale = (float)(width() - 50) / (float)totalWidth;
             for (int i = 0; i < items.size(); i++)
             {
                 items[i]->setFixedWidth((int)(fScale * items[i]->getWidgetWidth()));
-                // nX += totalWidths[i] * fScale;
+                // x += totalWidths[i] * fScale;
             }
         }
         else
@@ -115,12 +115,12 @@ void FluTabBar::adjustAddTabBtnPosition()
             }
         }
 
-        m_addTabBtn->move(nX, nY);
+        m_addTabButton->move(x, y);
     }
 }
 
 void FluTabBar::onThemeChanged()
 {
     FluStyleSheetUtils::setQssByFileName("FluTabBar.qss", this, FluThemeUtils::getUtils()->getTheme());
-    m_addTabBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add, FluThemeUtils::getUtils()->getTheme()));
+    m_addTabButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add, FluThemeUtils::getUtils()->getTheme()));
 }

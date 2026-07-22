@@ -22,9 +22,9 @@ class FluInfoBarMgr : public QObject
         return &mgr;
     }
 
-    static void showInfoBar(QWidget* parentWidget, FluShortInfoBarType type, QString text, bool bCloseable = true);
+    static void showInfoBar(QWidget* parentWidget, FluShortInfoBarType type, QString text, bool isCloseable = true);
 
-    void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int nDisappearDuration = 800);
+    void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int disappearDuration = 800);
 
     void removeInfoBar(FluShortInfoBar* infoBar);
 

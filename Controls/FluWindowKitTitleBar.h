@@ -31,13 +31,13 @@ class FluWindowKitTitleBar : public QFrame
 
     void init();
 
-    void insertDefaultSpace(int nIndex);
+    void insertDefaultSpace(int index);
 
-    QWidget* widgetAt(int nIndex) const;
+    QWidget* widgetAt(int index) const;
 
-    void setWidgetAt(int nIndex, QWidget* widget);
+    void setWidgetAt(int index, QWidget* widget);
 
-    QWidget* takeWidgetAt(int nIndex);
+    QWidget* takeWidgetAt(int index);
 
     QPushButton* iconButton() const;
 
@@ -107,7 +107,7 @@ class FluWindowKitTitleBar : public QFrame
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     QWidget* m_w;
 
     bool m_autoTitle;

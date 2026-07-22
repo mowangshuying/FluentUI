@@ -13,6 +13,6 @@ class FluHNavigationViewDemo : public FluFrameLessWidget
     void onThemeChanged();
 
   protected:
-    FluHNavigationView* m_hNavView;
+    FluHNavigationView* m_navView;
     // QVBoxLayout* m_vMainLayout;
 };

@@ -8,17 +8,17 @@ FluCircleDot::FluCircleDot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
 }
 
-void FluCircleDot::setTopRightMargin(int nMarginTop, int nMarginRight)
+void FluCircleDot::setTopRightMargin(int marginTop, int marginRight)
 {
-    m_nMarginTop = nMarginTop;
-    m_nMarginRight = nMarginRight;
+    m_marginTop = marginTop;
+    m_marginRight = marginRight;
 }
 
 void FluCircleDot::moveTopRight()
 {
-    int nX = m_target->width() - m_nMarginRight - width() / 2;
-    int nY = m_nMarginTop - height() / 2;
-    move(nX, nY);
+    int x = m_target->width() - m_marginRight - width() / 2;
+    int y = m_marginTop - height() / 2;
+    move(x, y);
 }
 
 void FluCircleDot::paintEvent(QPaintEvent* event)
@@ -45,13 +45,13 @@ bool FluCircleDot::eventFilter(QObject* watched, QEvent* event)
     return FluWidget::eventFilter(watched, event);
 }
 
-void FluCircleDot::setCircleDot(QWidget* target, int nMarginTop, int nMarginRight)
+void FluCircleDot::setCircleDot(QWidget* target, int marginTop, int marginRight)
 {
     if (target == nullptr)
         return;
 
     FluCircleDot* circleDot = new FluCircleDot(target);
-    circleDot->setTopRightMargin(nMarginTop, nMarginRight);
+    circleDot->setTopRightMargin(marginTop, marginRight);
     target->installEventFilter(circleDot);
 
     circleDot->moveTopRight();

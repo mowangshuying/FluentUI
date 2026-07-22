@@ -14,9 +14,9 @@ class FluVNavigationMenuItem : public FluVNavigationItem
   public:
     FluVNavigationMenuItem(QWidget *parent = nullptr);
 
-    void setItemWidth(int nWidth);
+    void setItemWidth(int width);
 
-    void setItemHeight(int nHeight);
+    void setItemHeight(int height);
 
     void paintEvent(QPaintEvent *event);
 
@@ -27,9 +27,9 @@ class FluVNavigationMenuItem : public FluVNavigationItem
 
   protected:
     QPushButton *m_menuButton;
-    QHBoxLayout *m_hLayout;
+    QHBoxLayout *m_layout;
 
     QWidget *m_wrapWidget1;
-    QHBoxLayout *m_hWrapWidgetLayout1;
+    QHBoxLayout *m_wrapWidgetLayout1;
     QWidget *m_wrapWidget2;
 };

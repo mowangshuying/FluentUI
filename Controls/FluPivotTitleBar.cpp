@@ -2,25 +2,25 @@
 
 FluPivotTitleBar::FluPivotTitleBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
 
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_hMainLayout->setAlignment(Qt::AlignLeft);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setAlignment(Qt::AlignLeft);
 
     onThemeChanged();
 }
 
 void FluPivotTitleBar::addTitleBarItem(FluPivotTitleBarItem* item)
 {
-    m_hMainLayout->addWidget(item);
+    m_mainLayout->addWidget(item);
 }
 
 void FluPivotTitleBar::setCurTitleBarItem(FluPivotTitleBarItem* titleBarItem)
 {
-    for (int i = 0; i < m_hMainLayout->count(); i++)
+    for (int i = 0; i < m_mainLayout->count(); i++)
     {
-        QLayoutItem* item = m_hMainLayout->itemAt(i);
+        QLayoutItem* item = m_mainLayout->itemAt(i);
         if (item == nullptr)
             continue;
 

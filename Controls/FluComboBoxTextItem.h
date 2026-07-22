@@ -27,5 +27,5 @@ class FluComboBoxTextItem : public FluWidget
     QListWidgetItem* m_listItem;
     QLabel* m_indicatorLabel;
     QLabel* m_textLabel;
-    QHBoxLayout* m_hBoxLayout;
+    QHBoxLayout* m_boxLayout;
 };

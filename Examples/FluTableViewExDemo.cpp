@@ -24,8 +24,8 @@ FluTableViewExDemo::FluTableViewExDemo(QWidget* parent /*= nullptr*/) : FluTempl
     // insert items;
     for (int i = 0; i < 100; i++)
     {
-        int nRowCount = m_tableView->rowCount();
-        m_tableView->insertRow(nRowCount);
+        int rowCount = m_tableView->rowCount();
+        m_tableView->insertRow(rowCount);
 
         auto item1 = new QTableWidgetItem(QString::asprintf("%d", i + 1));
         m_tableView->setItem(i, 0, item1);

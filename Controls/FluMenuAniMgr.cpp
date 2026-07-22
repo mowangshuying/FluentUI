@@ -20,17 +20,17 @@ QSize FluMenuAniMgr::availableViewSize(QPoint pos)
         QSize viewSize;
         viewSize.setWidth(screenRect.width() - 100);
 
-        int nHeight = qMax(screenRect.bottom() - pos.y() - 10, 1);
-        viewSize.setHeight(nHeight);
+        int height = qMax(screenRect.bottom() - pos.y() - 10, 1);
+        viewSize.setHeight(height);
         return viewSize;
     }
     else if (m_menuAniType == FluMenuAniType::pullUp)
     {
         QRect screenRect = QApplication::screenAt(QCursor::pos())->availableGeometry();
 
-        int nW = screenRect.width() - 100;
-        int nH = qMax(pos.y() - 28, 1);
-        return QSize(nW, nH);
+        int w = screenRect.width() - 100;
+        int h = qMax(pos.y() - 28, 1);
+        return QSize(w, h);
     }
 
     QRect screenRect = QApplication::screenAt(QCursor::pos())->availableGeometry();
@@ -45,30 +45,30 @@ QPoint FluMenuAniMgr::calcFinalPos(QPoint pos)
     {
         FluRoundMenu* roundMenu = m_menu;
         QRect screenRect = QApplication::screenAt(QCursor::pos())->availableGeometry();
-        int nW = roundMenu->width() + 5;
-        int nH = roundMenu->height();
+        int w = roundMenu->width() + 5;
+        int h = roundMenu->height();
 
-        int nX = qMin(pos.x() - roundMenu->layout()->contentsMargins().left(), screenRect.height() - nW);
-        int nY = qMax(pos.y() - nH + 13, 4);
-        return QPoint(nX, nY);
+        int x = qMin(pos.x() - roundMenu->layout()->contentsMargins().left(), screenRect.height() - w);
+        int y = qMax(pos.y() - h + 13, 4);
+        return QPoint(x, y);
     }
 
     QRect screenRect = QApplication::screenAt(QCursor::pos())->availableGeometry();
-    int nMenuW = m_menu->width() + 5;
-    int nMenuH = m_menu->height();
+    int menuW = m_menu->width() + 5;
+    int menuH = m_menu->height();
 
-    int nX = qMin(pos.x() - m_menu->layout()->contentsMargins().left(), screenRect.right() - nMenuW);
-    int nY = qMin(pos.y() - 4, screenRect.bottom() - nMenuH);
+    int x = qMin(pos.x() - m_menu->layout()->contentsMargins().left(), screenRect.right() - menuW);
+    int y = qMin(pos.y() - 4, screenRect.bottom() - menuH);
 
-    return QPoint(nX, nY);
+    return QPoint(x, y);
 }
 
 QSize FluMenuAniMgr::getMenuSize()
 {
     QMargins contentMargins = m_menu->layout()->contentsMargins();
-    int nW = m_menu->getView()->width() + contentMargins.left() + contentMargins.right() + 120;
-    int nH = m_menu->getView()->height() + contentMargins.top() + contentMargins.bottom() + 20;
-    return QSize(nW, nH);
+    int w = m_menu->getView()->width() + contentMargins.left() + contentMargins.right() + 120;
+    int h = m_menu->getView()->height() + contentMargins.top() + contentMargins.bottom() + 20;
+    return QSize(w, h);
 }
 
 void FluMenuAniMgr::exec(QPoint pos)
@@ -76,9 +76,9 @@ void FluMenuAniMgr::exec(QPoint pos)
     if (m_menuAniType == FluMenuAniType::dropDown)
     {
         QPoint endPos = calcFinalPos(pos);
-        int nH = m_menu->height() + 5;
+        int h = m_menu->height() + 5;
 
-        m_posAni->setStartValue(endPos - QPoint(0, nH / 2));
+        m_posAni->setStartValue(endPos - QPoint(0, h / 2));
         m_posAni->setEndValue(endPos);
         m_posAni->start();
         return;
@@ -86,8 +86,8 @@ void FluMenuAniMgr::exec(QPoint pos)
     else if (m_menuAniType == FluMenuAniType::pullUp)
     {
         QPoint endPos = calcFinalPos(pos);
-        int nH = m_menu->height() + 5;
-        m_posAni->setStartValue(endPos + QPoint(0, nH / 2));
+        int h = m_menu->height() + 5;
+        m_posAni->setStartValue(endPos + QPoint(0, h / 2));
         m_posAni->setEndValue(endPos);
         m_posAni->start();
     }
@@ -107,16 +107,16 @@ void FluMenuAniMgr::onValueChanged()
         int menuW = getMenuSize().width();
         int menuH = getMenuSize().height();
 
-        int nY = m_posAni->endValue().toPoint().y() - m_posAni->currentValue().toPoint().y();
-        m_menu->setMask(QRegion(0, nY, menuW, menuH));
+        int y = m_posAni->endValue().toPoint().y() - m_posAni->currentValue().toPoint().y();
+        m_menu->setMask(QRegion(0, y, menuW, menuH));
         return;
     }
     else if (m_menuAniType == FluMenuAniType::pullUp)
     {
-        int nW = getMenuSize().width();
-        int nH = getMenuSize().height();
-        int nY = m_posAni->endValue().toPoint().y() - m_posAni->currentValue().toPoint().y();
-        m_menu->setMask(QRegion(0, nY, nW, nH - 28));
+        int w = getMenuSize().width();
+        int h = getMenuSize().height();
+        int y = m_posAni->endValue().toPoint().y() - m_posAni->currentValue().toPoint().y();
+        m_menu->setMask(QRegion(0, y, w, h - 28));
         return;
     }
 }

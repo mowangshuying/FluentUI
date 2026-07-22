@@ -11,7 +11,7 @@ class FluPivotTitleBarItem : public QPushButton
   public:
     FluPivotTitleBarItem(QWidget* parent = nullptr);
 
-    void setSelected(bool bSelected);
+    void setSelected(bool isSelected);
 
     void setKey(QString key);
 
@@ -26,5 +26,5 @@ class FluPivotTitleBarItem : public QPushButton
     QString m_key;
     QLabel* m_textLabel;
     QLabel* m_indicatorLabel;
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
 };

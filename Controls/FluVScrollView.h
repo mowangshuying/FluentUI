@@ -22,5 +22,5 @@ class FluVScrollView : public FluScrollArea
 
   protected:
     QWidget* m_contextWidget;
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
 };

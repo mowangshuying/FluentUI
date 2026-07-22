@@ -16,13 +16,13 @@ class FluTimeLineItem : public FluWidget
 
     void addTextItem(QString text);
 
-    FluLabel* getLabelAt(int nIndex);
+    FluLabel* getLabelAt(int index);
 
     void paintEvent(QPaintEvent* event);
 
   protected:
     FluTimeLineIcon* m_icon;
-    QHBoxLayout* m_hMainLayout;
-    QVBoxLayout* m_vItemLayout;
-    QVBoxLayout* m_vIconLayout;
+    QHBoxLayout* m_mainLayout;
+    QVBoxLayout* m_itemLayout;
+    QVBoxLayout* m_iconLayout;
 };

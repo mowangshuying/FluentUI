@@ -3,10 +3,10 @@
 FluSegmented::FluSegmented(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedHeight(32);
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(1, 1, 1, 1);
-    m_hMainLayout->setSpacing(0);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setContentsMargins(1, 1, 1, 1);
+    m_mainLayout->setSpacing(0);
+    setLayout(m_mainLayout);
 
     m_animation = new QPropertyAnimation;
     m_animation->setPropertyName("value");
@@ -31,9 +31,9 @@ void FluSegmented::setCurrentItem(FluSegmentedItem* item)
 
     m_currentItem = item;
 
-    for (int i = 0; i < m_hMainLayout->layout()->count(); i++)
+    for (int i = 0; i < m_mainLayout->layout()->count(); i++)
     {
-        auto item = (FluSegmentedItem*)m_hMainLayout->layout()->itemAt(i)->widget();
+        auto item = (FluSegmentedItem*)m_mainLayout->layout()->itemAt(i)->widget();
         if (item != nullptr)
         {
             item->setProperty("isSelected", false);
@@ -48,9 +48,9 @@ void FluSegmented::setCurrentItem(FluSegmentedItem* item)
 
 void FluSegmented::setCurrentItem(QString text)
 {
-    for (int i = 0; i < m_hMainLayout->layout()->count(); i++)
+    for (int i = 0; i < m_mainLayout->layout()->count(); i++)
     {
-        auto item = (FluSegmentedItem*)m_hMainLayout->layout()->itemAt(i)->widget();
+        auto item = (FluSegmentedItem*)m_mainLayout->layout()->itemAt(i)->widget();
         if (item->text() == text)
         {
             setCurrentItem(item);
@@ -69,10 +69,10 @@ void FluSegmented::addWidget(FluSegmentedItem* item)
     insertWidget(-1, item);
 }
 
-void FluSegmented::insertWidget(int nIndex, FluSegmentedItem* item)
+void FluSegmented::insertWidget(int index, FluSegmentedItem* item)
 {
     connect(item, &FluSegmentedItem::ItemClicked, this, &FluSegmented::onItemClicked);
-    m_hMainLayout->insertWidget(nIndex, item);
+    m_mainLayout->insertWidget(index, item);
 }
 
 void FluSegmented::paintEvent(QPaintEvent* event)

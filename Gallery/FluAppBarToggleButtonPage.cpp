@@ -23,7 +23,7 @@ void FluAppBarToggleButtonPage::addSymbolIconAppBarButton()
     displayBox->getBodyLayout()->addWidget(appBarButton);
     // connect(appBarButton, &FluAppBarToggleButton::clicked, [=]() { LOG_DEBUG << "called"; });
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluAppBarToggleButtonPage::onThemeChanged()

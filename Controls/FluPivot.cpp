@@ -2,17 +2,17 @@
 
 FluPivot::FluPivot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_vMainLayout = new QVBoxLayout;
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    setLayout(m_mainLayout);
 
-    m_vMainLayout->setSpacing(5);
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setSpacing(5);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
 
     m_titleBar = new FluPivotTitleBar;
-    m_vMainLayout->addWidget(m_titleBar);
+    m_mainLayout->addWidget(m_titleBar);
 
-    m_sLayout = new FluStackedLayout;
-    m_vMainLayout->addLayout(m_sLayout);
+    m_layout = new FluStackedLayout;
+    m_mainLayout->addLayout(m_layout);
 
     onThemeChanged();
 }
@@ -29,7 +29,7 @@ void FluPivot::addPivotItem(FluPivotTitleBarItem* item, QWidget* widget)
     connect(item, &FluPivotTitleBarItem::clicked, [=]() { pivotItemChanged(item); });
 
     m_titleBar->addTitleBarItem(item);
-    m_sLayout->addWidget(item->getKey(), widget);
+    m_layout->addWidget(item->getKey(), widget);
 }
 
 void FluPivot::pivotItemChanged(FluPivotTitleBarItem* item)
@@ -37,7 +37,7 @@ void FluPivot::pivotItemChanged(FluPivotTitleBarItem* item)
     // change bar
     m_titleBar->setCurTitleBarItem(item);
     // change sLayout;
-    m_sLayout->setCurrentWidget(item->getKey());
+    m_layout->setCurrentWidget(item->getKey());
 }
 
 void FluPivot::onThemeChanged()

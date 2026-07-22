@@ -15,7 +15,7 @@ class FluHFlipView : public QScrollArea
 
     void addPixmap(QPixmap pixmap);
 
-    void hideOrShowRLBtn(bool bEnter);
+    void hideOrShowRLButton(bool isEnter);
 
     void enterEvent(QEnterEvent* event);
 
@@ -25,10 +25,10 @@ class FluHFlipView : public QScrollArea
 
   protected:
     QWidget* m_contextWidget;
-    QHBoxLayout* m_hLayout;
+    QHBoxLayout* m_layout;
 
-    QPushButton* m_lBtn;
-    QPushButton* m_rBtn;
+    QPushButton* m_lButton;
+    QPushButton* m_rButton;
 
-    int m_nImgBoxIndex;
+    int m_imgBoxIndex;
 };

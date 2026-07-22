@@ -9,23 +9,23 @@ FluTabBarContent::FluTabBarContent(QWidget* parent /*= nullptr*/) : QScrollArea(
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    m_hMainWidget = new QWidget(this);
-    setWidget(m_hMainWidget);
+    m_mainWidget = new QWidget(this);
+    setWidget(m_mainWidget);
 
-    m_hMainWidget->setObjectName("mainWidget");
+    m_mainWidget->setObjectName("mainWidget");
 
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainWidget->setLayout(m_hMainLayout);
-    m_hMainLayout->setContentsMargins(0, 4, 0, 0);
+    m_mainLayout = new QHBoxLayout;
+    m_mainWidget->setLayout(m_mainLayout);
+    m_mainLayout->setContentsMargins(0, 4, 0, 0);
 
-    m_hMidLayout = new QHBoxLayout;
-    m_hMidLayout->setSpacing(0);
+    m_midLayout = new QHBoxLayout;
+    m_midLayout->setSpacing(0);
 
-    m_hMidLayout->setAlignment(Qt::AlignLeft);
-    m_hMainLayout->addLayout(m_hMidLayout);
-    m_hMainLayout->addStretch();
+    m_midLayout->setAlignment(Qt::AlignLeft);
+    m_mainLayout->addLayout(m_midLayout);
+    m_mainLayout->addStretch();
 
-    m_hMainWidget->setFixedHeight(40);
+    m_mainWidget->setFixedHeight(40);
     setFixedHeight(40);
     FluStyleSheetUtils::setQssByFileName("FluTabBarContent.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
@@ -35,21 +35,21 @@ void FluTabBarContent::addBarItem(FluTabBarItem* item)
     insertTabBarItem(-1, item);
 }
 
-void FluTabBarContent::insertTabBarItem(int nPos, FluTabBarItem* item)
+void FluTabBarContent::insertTabBarItem(int pos, FluTabBarItem* item)
 {
-    if ((nPos < -1) && (nPos > (int)(m_tabBarItems.size())))
+    if ((pos < -1) && (pos > (int)(m_tabBarItems.size())))
     {
         return;
     }
 
-    if (nPos == -1)
+    if (pos == -1)
     {
-        nPos = m_tabBarItems.size();
+        pos = m_tabBarItems.size();
     }
 
     // insert to widget
-    m_hMidLayout->insertWidget(nPos, item);
-    m_tabBarItems.insert(m_tabBarItems.begin() + nPos, item);
+    m_midLayout->insertWidget(pos, item);
+    m_tabBarItems.insert(m_tabBarItems.begin() + pos, item);
 
     item->setSelected(false);
     if (m_tabBarItems.size() == 1)
@@ -73,7 +73,7 @@ void FluTabBarContent::insertTabBarItem(int nPos, FluTabBarItem* item)
 
 void FluTabBarContent::removeTabBarItem(FluTabBarItem* item)
 {
-    m_hMidLayout->removeWidget(item);
+    m_midLayout->removeWidget(item);
     auto itf = std::find(m_tabBarItems.begin(), m_tabBarItems.end(), item);
     if (itf != m_tabBarItems.end())
     {
@@ -81,17 +81,17 @@ void FluTabBarContent::removeTabBarItem(FluTabBarItem* item)
     }
     item->deleteLater();
 
-    bool bHasSelected = false;
+    bool isHasSelected = false;
     for (auto itemIter = m_tabBarItems.begin(); itemIter != m_tabBarItems.end(); itemIter++)
     {
         if ((*itemIter)->getSelected())
         {
-            bHasSelected = true;
+            isHasSelected = true;
             break;
         }
     }
 
-    if (!bHasSelected && m_tabBarItems.size() > 0)
+    if (!isHasSelected && m_tabBarItems.size() > 0)
     {
         m_tabBarItems[0]->setSelected(true);
         m_tabBarItems[0]->style()->polish(m_tabBarItems[0]);
@@ -128,22 +128,22 @@ std::vector<FluTabBarItem*> FluTabBarContent::getTabBarItems()
 
 int FluTabBarContent::getTabBarItemMaxWidth()
 {
-    return m_nTabBarItemMaxWidth;
+    return m_tabBarItemMaxWidth;
 }
 
-void FluTabBarContent::setTabBarItemMaxWidth(int nW)
+void FluTabBarContent::setTabBarItemMaxWidth(int w)
 {
-    m_nTabBarItemMaxWidth = nW;
+    m_tabBarItemMaxWidth = w;
 }
 
 int FluTabBarContent::getTabBarItemMinWidth()
 {
-    return m_nTabBarItemMinWidth;
+    return m_tabBarItemMinWidth;
 }
 
-void FluTabBarContent::setTabBarItemMinWidth(int nW)
+void FluTabBarContent::setTabBarItemMinWidth(int w)
 {
-    m_nTabBarItemMinWidth = nW;
+    m_tabBarItemMinWidth = w;
 }
 
 void FluTabBarContent::wheelEvent(QWheelEvent* event)

@@ -19,5 +19,5 @@ class FluVRadioGroupBox : public QGroupBox
     void onThemeChanged();
 
   protected:
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
 };

@@ -8,20 +8,17 @@ FluTriangle::FluTriangle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
 QList<QPoint> FluTriangle::getPointsByOrient(FluTriangleOrient orient)
 {
-    int nTop = 2;
-    int nBottom = height() - 2;
-    int nLeft = 2;
-    int nRight = width() - 2;
-
-    int nWidth = width();
-    int nHeight = height();
+    int top = 2;
+    int bottom = this->height() - 2;
+    int left = 2;
+    int right = this->width() - 2;
 
     QList<QPoint> pos;
     if (orient == FluTriangleOrient::Top)
     {
-        QPoint po1 = QPoint(nLeft, nBottom);
-        QPoint po2 = QPoint(nRight, nBottom);
-        QPoint po3 = QPoint(nWidth / 2, nTop);
+        QPoint po1 = QPoint(left, bottom);
+        QPoint po2 = QPoint(right, bottom);
+        QPoint po3 = QPoint(this->width() / 2, top);
 
         pos.push_back(po1);
         pos.push_back(po2);

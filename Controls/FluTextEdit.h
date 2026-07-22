@@ -15,7 +15,7 @@ class FluTextEdit : public QTextEdit
 
     bool getAutoAdjustSize();
 
-    void setAutoAdjustSize(bool bAdjustSize);
+    void setAutoAdjustSize(bool isAdjustSize);
 
     void paintEvent(QPaintEvent* event);
   public slots:
@@ -24,5 +24,5 @@ class FluTextEdit : public QTextEdit
   protected:
     FluScrollDelegate* m_delegate;
     FluTextEditWrap* m_wrap;
-    bool m_bAutoAdjustSize;
+    bool m_isAutoAdjustSize;
 };

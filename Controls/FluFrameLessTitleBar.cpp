@@ -14,8 +14,8 @@ FluFrameLessTitleBar::FluFrameLessTitleBar(QWidget* parent /*= nullptr*/) : QWid
     m_titleBarLayout->setSpacing(0);
     m_titleBarLayout->setContentsMargins(0, 0, 0, 0);
 
-    m_vSystemButtonsOuterLayout = new QVBoxLayout(this);
-    m_hSystemButtonsInnerLayout = new QHBoxLayout(this);
+    m_systemButtonsOuterLayout = new QVBoxLayout(this);
+    m_systemButtonsInnerLayout = new QHBoxLayout(this);
 #ifndef Q_OS_MACOS
     m_minimizeButton = new QPushButton(this);
     m_minimizeButton->setObjectName("minButton");
@@ -27,7 +27,7 @@ FluFrameLessTitleBar::FluFrameLessTitleBar(QWidget* parent /*= nullptr*/) : QWid
     m_maximizeButton->setObjectName("maxButton");
     m_maximizeButton->setIconSize(QSize(20, 20));
     m_maximizeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeMaximize, FluThemeUtils::getUtils()->getTheme()));
-    connect(m_maximizeButton, &QPushButton::clicked, this, [=](bool bClicked) {
+    connect(m_maximizeButton, &QPushButton::clicked, this, [=](bool isClicked) {
         LOG_DEBUG << "clicked maximize button";
         if (window()->isMaximized())
             window()->showNormal();
@@ -42,20 +42,20 @@ FluFrameLessTitleBar::FluFrameLessTitleBar(QWidget* parent /*= nullptr*/) : QWid
 
     connect(m_closeButton, &QPushButton::clicked, this, [this]() {
         LOG_DEBUG << "click close button";
-        if (m_bHideWhenClose)
+        if (m_isHideWhenClose)
             window()->hide();
         else
             window()->close();
     });
-    m_hSystemButtonsInnerLayout->setSpacing(0);
-    m_hSystemButtonsInnerLayout->setContentsMargins(0, 0, 0, 0);
-    m_hSystemButtonsInnerLayout->addWidget(m_minimizeButton);
-    m_hSystemButtonsInnerLayout->addWidget(m_maximizeButton);
-    m_hSystemButtonsInnerLayout->addWidget(m_closeButton);
+    m_systemButtonsInnerLayout->setSpacing(0);
+    m_systemButtonsInnerLayout->setContentsMargins(0, 0, 0, 0);
+    m_systemButtonsInnerLayout->addWidget(m_minimizeButton);
+    m_systemButtonsInnerLayout->addWidget(m_maximizeButton);
+    m_systemButtonsInnerLayout->addWidget(m_closeButton);
 
-    m_vSystemButtonsOuterLayout->addLayout(m_hSystemButtonsInnerLayout);
+    m_systemButtonsOuterLayout->addLayout(m_systemButtonsInnerLayout);
     m_titleBarLayout->addStretch();
-    m_titleBarLayout->addLayout(m_vSystemButtonsOuterLayout);
+    m_titleBarLayout->addLayout(m_systemButtonsOuterLayout);
 
     FramelessWidgetsHelper::get(this)->setHitTestVisible(m_minimizeButton);
     FramelessWidgetsHelper::get(this)->setHitTestVisible(m_maximizeButton);
@@ -110,7 +110,7 @@ QRect FluFrameLessTitleBar::windowIconRect() const
 
 bool FluFrameLessTitleBar::windowIconVisible_real() const
 {
-    return m_bWindowIconVisible && !windowIcon().isNull();
+    return m_isWindowIconVisible && !windowIcon().isNull();
 }
 
 bool FluFrameLessTitleBar::isInTitleBarIconArea(const QPoint& pos) const
@@ -342,27 +342,27 @@ QPushButton* FluFrameLessTitleBar::closeButton() const
 
 bool FluFrameLessTitleBar::isExtended() const
 {
-    return m_bExtended;
+    return m_isExtended;
 }
 
 void FluFrameLessTitleBar::setExtended(const bool value)
 {
-    m_bExtended = value;
-    setFixedHeight(m_bExtended ? kDefaultExtendedTitleBarHeight : kDefaultTitleBarHeight);
+    m_isExtended = value;
+    setFixedHeight(m_isExtended ? kDefaultExtendedTitleBarHeight : kDefaultTitleBarHeight);
     Q_EMIT extendedChanged();
 }
 
 bool FluFrameLessTitleBar::isHideWhenClose() const
 {
-    return m_bHideWhenClose;
+    return m_isHideWhenClose;
 }
 
 void FluFrameLessTitleBar::setHideWhenClose(const bool value)
 {
-    if (m_bHideWhenClose == value)
+    if (m_isHideWhenClose == value)
         return;
 
-    m_bHideWhenClose = value;
+    m_isHideWhenClose = value;
     Q_EMIT extendedChanged();
 }
 
@@ -372,17 +372,17 @@ void FluFrameLessTitleBar::setHideWhenClose(const bool value)
 
 bool FluFrameLessTitleBar::titleLabelVisible() const
 {
-    return m_bTitleLabelVisible;
+    return m_isTitleLabelVisible;
 }
 
 void FluFrameLessTitleBar::setTitleLabelVisible(const bool value)
 {
-    if (m_bTitleLabelVisible == value)
+    if (m_isTitleLabelVisible == value)
     {
         return;
     }
 
-    m_bTitleLabelVisible = value;
+    m_isTitleLabelVisible = value;
     update();
     Q_EMIT titleLabelVisibleChanged();
 }
@@ -410,16 +410,16 @@ void FluFrameLessTitleBar::setWindowIconSize(const QSize& value)
 
 Q_NODISCARD bool FluFrameLessTitleBar::windowIconVisible() const
 {
-    return m_bWindowIconVisible;
+    return m_isWindowIconVisible;
 }
 
 void FluFrameLessTitleBar::setWindowIconVisible(const bool value)
 {
-    if (m_bWindowIconVisible == value)
+    if (m_isWindowIconVisible == value)
     {
         return;
     }
-    m_bWindowIconVisible = value;
+    m_isWindowIconVisible = value;
     update();
     Q_EMIT windowIconVisibleChanged();
 #ifndef Q_OS_MACOS
@@ -467,7 +467,7 @@ void FluFrameLessTitleBar::paintEvent(QPaintEvent* event)
     painter.save();
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
     painter.fillRect(QRect(QPoint(0, 0), size()), backgroundColor);
-    if (m_bTitleLabelVisible)
+    if (m_isTitleLabelVisible)
     {
         const QString text = window()->windowTitle();
         if (!text.isEmpty())
@@ -510,7 +510,7 @@ void FluFrameLessTitleBar::paintEvent(QPaintEvent* event)
             }
         }
     }
-    if (m_bWindowIconVisible)
+    if (m_isWindowIconVisible)
     {
         const QIcon icon = window()->windowIcon();
         if (!icon.isNull())

@@ -3,9 +3,9 @@
 
 FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
 {
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->setAlignment(Qt::AlignTop);
-    m_vMainLayout->setSpacing(45);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setAlignment(Qt::AlignTop);
+    m_mainLayout->setSpacing(45);
     //   setLayout(vMainLayout);
 
     auto titleWidget = new FluHomePageTitle();
@@ -64,11 +64,11 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     connect(buttonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     recentlyUpdatedSamplesLayout->addWidget(buttonCard);
 
-    m_vMainLayout->addWidget(titleWidget);
-    m_vMainLayout->addWidget(recentlyAddedSamplesLabel);
-    m_vMainLayout->addWidget(recentlyAddedSamplesLayoutWrap);
-    m_vMainLayout->addWidget(recentlyUpdatedSamplesLabel);
-    m_vMainLayout->addWidget(recentlyUpdatedSamplesWrap);
+    m_mainLayout->addWidget(titleWidget);
+    m_mainLayout->addWidget(recentlyAddedSamplesLabel);
+    m_mainLayout->addWidget(recentlyAddedSamplesLayoutWrap);
+    m_mainLayout->addWidget(recentlyUpdatedSamplesLabel);
+    m_mainLayout->addWidget(recentlyUpdatedSamplesWrap);
 
     titleWidget->setObjectName("titleWidget");
     titleWidget->setFixedHeight(350);

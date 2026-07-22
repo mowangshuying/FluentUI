@@ -19,6 +19,6 @@ class FluAEmptyPage : public FluWidget
     //  QLabel* m_subTitleLabel;
 
     QVBoxLayout* m_mainLayout;
-    FluVScrollView* m_vScrollView;
+    FluVScrollView* m_scrollView;
     QLabel* m_infoLabel;
 };

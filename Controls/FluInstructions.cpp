@@ -29,7 +29,7 @@ void FluInstructions::setTitleLabelText(QString text)
     m_titleLabel->setText(text);
 }
 
-void FluInstructions::addTitleContent(QString title, QString content, bool bAdd /*= true*/)
+void FluInstructions::addTitleContent(QString title, QString content, bool isAdd /*= true*/)
 {
     auto titleLabel = new FluLabel(this);
     titleLabel->setObjectName("wrap2TitleLabel");
@@ -50,7 +50,7 @@ void FluInstructions::addTitleContent(QString title, QString content, bool bAdd 
     getWrap2Layout()->addWidget(contentLabel, 0, Qt::AlignTop);
 }
 
-void FluInstructions::addVSplitLine(bool bAdd /*= true*/)
+void FluInstructions::addVSplitLine(bool isAdd /*= true*/)
 {
     auto vSplitLine = new FluVSplitLine;
     vSplitLine->setObjectName("wrap2SplitLine");
@@ -59,35 +59,35 @@ void FluInstructions::addVSplitLine(bool bAdd /*= true*/)
 
 void FluInstructions::resizeEvent(QResizeEvent* event)
 {
-    if (!m_bDown && m_expandAni->state() != QPropertyAnimation::Running)
+    if (!m_isDown && m_expandAni->state() != QPropertyAnimation::Running)
     {
-        int nAutoH = getAutoH();
+        int autoH = getAutoH();
 
-        m_wrap2->setMinimumHeight(nAutoH);
-        m_wrap2->setFixedHeight(nAutoH);
-        setContentHeight(nAutoH);
+        m_wrap2->setMinimumHeight(autoH);
+        m_wrap2->setFixedHeight(autoH);
+        setContentHeight(autoH);
         m_wrap1->resize(event->size().width(), m_wrap1->height());
         m_wrap1->move(0, 0);
-        m_wrap2->resize(event->size().width(), nAutoH);
+        m_wrap2->resize(event->size().width(), autoH);
         m_wrap2->move(0, m_wrap1->height());
 
-        int nX = m_wrap1->width() - m_downOrUpButton->width() - 5;
-        int nY = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
-        m_downOrUpButton->move(nX, nY);
+        int x = m_wrap1->width() - m_downOrUpButton->width() - 5;
+        int y = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
+        m_downOrUpButton->move(x, y);
 
         return;
     }
 
-    int nAutoH = getAutoH();
+    int autoH = getAutoH();
     m_wrap1->resize(event->size().width(), m_wrap1->height());
     m_wrap1->move(0, 0);
-    m_wrap2->resize(event->size().width(), nAutoH);
+    m_wrap2->resize(event->size().width(), autoH);
     // LOG_DEBUG << "sizeHint height:" << m_wrap2->sizeHint().height();
-    m_wrap2->move(0, m_wrap1->height() + getContentHeight() - nAutoH);
+    m_wrap2->move(0, m_wrap1->height() + getContentHeight() - autoH);
 
-    int nX = m_wrap1->width() - m_downOrUpButton->width() - 5;
-    int nY = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
-    m_downOrUpButton->move(nX, nY);
+    int x = m_wrap1->width() - m_downOrUpButton->width() - 5;
+    int y = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
+    m_downOrUpButton->move(x, y);
 }
 
 void FluInstructions::paintEvent(QPaintEvent* event)
@@ -97,21 +97,21 @@ void FluInstructions::paintEvent(QPaintEvent* event)
 
 void FluInstructions::onClicked()
 {
-    int nAutoH = getAutoH();
-    LOG_DEBUG << "nAutoH:" << nAutoH;
-    m_wrap2->setMinimumHeight(nAutoH);
-    m_wrap2->setFixedHeight(nAutoH);
-    if (m_bDown)
+    int autoH = getAutoH();
+    LOG_DEBUG << "autoH:" << autoH;
+    m_wrap2->setMinimumHeight(autoH);
+    m_wrap2->setFixedHeight(autoH);
+    if (m_isDown)
     {
         m_expandAni->setStartValue(0);
-        m_expandAni->setEndValue(nAutoH);
+        m_expandAni->setEndValue(autoH);
         m_expandAni->start();
 
         m_downOrUpButton->setType1(FluAwesomeType::ChevronUp);
     }
     else
     {
-        m_expandAni->setStartValue(nAutoH);
+        m_expandAni->setStartValue(autoH);
         m_expandAni->setEndValue(0);
         m_expandAni->start();
         m_downOrUpButton->setType1(FluAwesomeType::ChevronDown);

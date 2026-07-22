@@ -9,17 +9,17 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluW
     m_iconLabel->setFixedSize(40, 40);
     m_mainLayout->addWidget(m_iconLabel, 0);
 
-    m_vLayout = new QVBoxLayout;
+    m_layout = new QVBoxLayout;
     m_titleLabel = new QLabel;
     m_infoLabel = new QLabel;
 
     m_titleLabel->setObjectName("titleLabel");
     m_infoLabel->setObjectName("infoLabel");
 
-    m_vLayout->addWidget(m_titleLabel);
-    m_vLayout->addWidget(m_infoLabel);
+    m_layout->addWidget(m_titleLabel);
+    m_layout->addWidget(m_infoLabel);
 
-    m_mainLayout->addLayout(m_vLayout, 1);
+    m_mainLayout->addLayout(m_layout, 1);
     m_comboBoxEx = new FluComboBoxEx;
     m_comboBoxEx->setFixedWidth(120);
     m_mainLayout->addWidget(m_comboBoxEx);

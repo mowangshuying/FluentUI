@@ -75,9 +75,9 @@ void FluIconButton::setType2(FluAwesomeType type)
     setType(m_type2);
 }
 
-void FluIconButton::setNoBorder(bool bNoBorder)
+void FluIconButton::setNoBorder(bool isNoBorder)
 {
-    setProperty("noBorder", bNoBorder);
+    setProperty("noBorder", isNoBorder);
     style()->polish(this);
 }
 

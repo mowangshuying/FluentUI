@@ -16,10 +16,10 @@ FluMSWindow::FluMSWindow(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(par
     m_titleBar->setFixedHeight(36);
 
     m_navView = new FluMSNavigationView(this);
-    m_sLayout = new FluStackedLayout;
+    m_layout = new FluStackedLayout;
 
     m_contentLayout->addWidget(m_navView);
-    m_contentLayout->addLayout(m_sLayout, 1);
+    m_contentLayout->addLayout(m_layout, 1);
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=]() { onThemeChanged(); });
@@ -35,8 +35,8 @@ void FluMSWindow::addWidget(FluAwesomeType awesomeType, QString text, QString ke
 
     auto navItem = new FluMSNavigationItem(awesomeType, text, key, m_navView);
     m_navView->addItem(navItem, position);
-    m_sLayout->addWidget(key, page);
-    connect(navItem, &FluMSNavigationItem::clicked, this, [=]() { m_sLayout->setCurrentWidget(key); });
+    m_layout->addWidget(key, page);
+    connect(navItem, &FluMSNavigationItem::clicked, this, [=]() { m_layout->setCurrentWidget(key); });
 }
 
 void FluMSWindow::onThemeChanged()

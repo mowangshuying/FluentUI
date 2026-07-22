@@ -29,7 +29,7 @@ QString FluStyleSheetUtils::getQssByFileName(const QString &fileName)
     return "";
 }
 
-void FluStyleSheetUtils::setQssByFileName(const QString &fileName, QWidget *widget, bool bDebugQss)
+void FluStyleSheetUtils::setQssByFileName(const QString &fileName, QWidget *widget, bool isDebugQss)
 {
     QString qss = FluStyleSheetUtils::getQssByFileName(fileName);
 
@@ -123,14 +123,14 @@ void FluStyleSheetUtils::drawBottomLineIndicator(QWidget *widget, QPainter *pain
 
     QMargins margins = widget->contentsMargins();
 
-    int nW = widget->width() - (margins.left() + margins.right());
-    int nH = widget->height();
+    int w = widget->width() - (margins.left() + margins.right());
+    int h = widget->height();
 
     QPainterPath path;
-    path.addRoundedRect(QRectF(margins.left(), nH - 10, nW - margins.right(), 10), 5, 5);
+    path.addRoundedRect(QRectF(margins.left(), h - 10, w - margins.right(), 10), 5, 5);
 
     QPainterPath clipPath;
-    clipPath.addRect(margins.left(), nH - 10, nW - margins.right(), 7);
+    clipPath.addRect(margins.left(), h - 10, w - margins.right(), 7);
     path = path.subtracted(clipPath);
 
     QBrush brush;

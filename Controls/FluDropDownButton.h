@@ -15,9 +15,9 @@ class FluDropDownButton : public FluWidget
   public:
     FluDropDownButton(QWidget* parent = nullptr);
 
-    QPushButton* getTextBtn();
+    QPushButton* getTextButton();
 
-    QPushButton* getIconBtn();
+    QPushButton* getIconButton();
 
     void setIcon(FluAwesomeType type);
 
@@ -49,8 +49,8 @@ class FluDropDownButton : public FluWidget
     void onThemeChanged();
 
   protected:
-    QPushButton* m_textBtn;
-    QPushButton* m_iconBtn;  // dropdown button;
+    QPushButton* m_textButton;
+    QPushButton* m_iconButton;  // dropdown button;
 
     FluAwesomeType m_textAwesomeType;
     //  FluAwesomeType* m_iconAwesomeType;
@@ -58,6 +58,6 @@ class FluDropDownButton : public FluWidget
     QString m_svgLightPath;
     QString m_svgDarkPath;
 
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     FluMenu* m_menu;
 };

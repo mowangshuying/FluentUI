@@ -10,19 +10,19 @@ class FluStyleButton : public QPushButton
   public:
     FluStyleButton(QWidget* parent = nullptr);
 
-    void setPill(bool bPill)
+    void setPill(bool isPill)
     {
-        m_bPill = bPill;
+        m_isPill = isPill;
     }
 
     bool getPill()
     {
-        return m_bPill;
+        return m_isPill;
     }
 
   public slots:
     void onThemeChanged();
 
   protected:
-    bool m_bPill;
+    bool m_isPill;
 };

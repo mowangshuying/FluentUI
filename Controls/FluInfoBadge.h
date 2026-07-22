@@ -57,7 +57,7 @@ class FluInfoBadge : public QLabel
 
     bool eventFilter(QObject* watched, QEvent* event);
 
-    static void setInfoBadge(QWidget* parent, QWidget* target, FluInfoBadgeLevel level, int nVlaue = 0);
+    static void setInfoBadge(QWidget* parent, QWidget* target, FluInfoBadgeLevel level, int value = 0);
 
   public:
     void paintEvent(QPaintEvent* event);

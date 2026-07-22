@@ -10,9 +10,9 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_wrap1->setMinimumHeight(48);  // the wrap1 set fixed height 48.
     setMinimumHeight(m_wrap1->minimumHeight());
 
-    m_hWrap1Layout = new QHBoxLayout;
-    m_wrap1->setLayout(m_hWrap1Layout);
-    m_hWrap1Layout->setContentsMargins(5, 5, 5, 5);
+    m_wrap1Layout = new QHBoxLayout;
+    m_wrap1->setLayout(m_wrap1Layout);
+    m_wrap1Layout->setContentsMargins(5, 5, 5, 5);
 
     m_downOrUpButton = new FluIconButton(FluAwesomeType::ChevronDown, m_wrap1);
     m_downOrUpButton->setNoBorder(true);
@@ -21,11 +21,11 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_wrap2->setObjectName("wrap2");
     m_wrap2->stackUnder(m_wrap1);
 
-    m_vWrap2Layout = new QVBoxLayout;
-    m_vWrap2Layout->setContentsMargins(5, 5, 5, 5);
-    m_wrap2->setLayout(m_vWrap2Layout);
+    m_wrap2Layout = new QVBoxLayout;
+    m_wrap2Layout->setContentsMargins(5, 5, 5, 5);
+    m_wrap2->setLayout(m_wrap2Layout);
 
-    // m_bDown = true;
+    // m_isDown = true;
     setDown(true);
     setTopRadius0(false);
 
@@ -35,32 +35,32 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     connect(m_downOrUpButton, &QPushButton::clicked, [=](bool b) { onClicked(); });
 
-    connect(m_expandAni, &QPropertyAnimation::finished, [=](void) { setDown(!m_bDown); });
+    connect(m_expandAni, &QPropertyAnimation::finished, [=](void) { setDown(!m_isDown); });
 
     onThemeChanged();
 }
 
 bool FluExpander::getDown()
 {
-    return m_bDown;
+    return m_isDown;
 }
 
-void FluExpander::setDown(bool bDown)
+void FluExpander::setDown(bool isDown)
 {
-    m_bDown = bDown;
-    setProperty("down", bDown);
-    m_wrap1->setProperty("down", bDown);
-    m_wrap2->setProperty("down", bDown);
+    m_isDown = isDown;
+    setProperty("down", isDown);
+    m_wrap1->setProperty("down", isDown);
+    m_wrap2->setProperty("down", isDown);
 
     style()->polish(this);
     m_wrap1->style()->polish(m_wrap1);
     m_wrap2->style()->polish(m_wrap2);
 }
 
-void FluExpander::setTopRadius0(bool bTopRadius0)
+void FluExpander::setTopRadius0(bool isTopRadius0)
 {
-    m_wrap1->setProperty("topRadius0", bTopRadius0);
-    setProperty("topRadius0", bTopRadius0);
+    m_wrap1->setProperty("topRadius0", isTopRadius0);
+    setProperty("topRadius0", isTopRadius0);
 
     style()->polish(this);
     m_wrap1->style()->polish(m_wrap1);
@@ -68,12 +68,12 @@ void FluExpander::setTopRadius0(bool bTopRadius0)
 
 QHBoxLayout* FluExpander::getWrap1Layout()
 {
-    return m_hWrap1Layout;
+    return m_wrap1Layout;
 }
 
 QVBoxLayout* FluExpander::getWrap2Layout()
 {
-    return m_vWrap2Layout;
+    return m_wrap2Layout;
 }
 
 void FluExpander::resizeEvent(QResizeEvent* event)
@@ -83,9 +83,9 @@ void FluExpander::resizeEvent(QResizeEvent* event)
     m_wrap2->resize(event->size().width(), m_wrap2->sizeHint().height());
     m_wrap2->move(0, m_wrap1->height() + m_contentHeight - m_wrap2->sizeHint().height());
 
-    int nX = m_wrap1->width() - m_downOrUpButton->width() - 5;
-    int nY = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
-    m_downOrUpButton->move(nX, nY);
+    int x = m_wrap1->width() - m_downOrUpButton->width() - 5;
+    int y = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
+    m_downOrUpButton->move(x, y);
 }
 
 bool FluExpander::eventFilter(QObject* watched, QEvent* event)
@@ -112,7 +112,7 @@ void FluExpander::onThemeChanged()
 
 void FluExpander::onClicked()
 {
-    if (m_bDown)
+    if (m_isDown)
     {
         m_expandAni->setStartValue(0);
         m_expandAni->setEndValue(m_wrap2->sizeHint().height());

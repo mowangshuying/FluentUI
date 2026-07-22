@@ -83,12 +83,12 @@ FluWindowKitWidget::FluWindowKitWidget(QWidget *parent /*= nullptr*/) : QWidget(
     m_contentLayout->setSpacing(0);
 
     // mainLayout;
-    m_vMainLayout = new QVBoxLayout(this);
-    m_vMainLayout->setSpacing(0);
-    m_vMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->addWidget(m_titleBar, 0, Qt::AlignTop);
-    m_vMainLayout->addLayout(m_contentLayout, 1);
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout(this);
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->addWidget(m_titleBar, 0, Qt::AlignTop);
+    m_mainLayout->addLayout(m_contentLayout, 1);
+    setLayout(m_mainLayout);
 
 #ifndef Q_OS_MAC
     agent->setHitTestVisible(m_themeButton, true);

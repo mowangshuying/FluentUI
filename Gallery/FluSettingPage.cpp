@@ -13,16 +13,16 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     m_titleLabel->setText(tr("Settings"));
     m_mainLayout->addWidget(m_titleLabel);
 
-    m_vScrollView = new FluVScrollView;
-    m_vScrollView->setObjectName("vScrollView");
-    m_mainLayout->addWidget(m_vScrollView, 1);
+    m_scrollView = new FluVScrollView;
+    m_scrollView->setObjectName("vScrollView");
+    m_mainLayout->addWidget(m_scrollView, 1);
 
-    m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
+    m_scrollView->getMainLayout()->setAlignment(Qt::AlignTop);
 
     m_appBehaviorLabel = new QLabel;
     m_appBehaviorLabel->setObjectName("appBehaviorLabel");
     m_appBehaviorLabel->setText(tr("Appearance & behavior"));
-    m_vScrollView->getMainLayout()->addWidget(m_appBehaviorLabel);
+    m_scrollView->getMainLayout()->addWidget(m_appBehaviorLabel);
 
     m_appThemeSelectBox = new FluSettingsSelectBox;
     m_appThemeSelectBox->setTitleInfo(tr("App theme"), tr("Select which app theme to display."));
@@ -44,7 +44,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
             FluThemeUtils::getUtils()->setTheme(FluTheme::AtomOneDark);
     });
 
-    m_vScrollView->getMainLayout()->addWidget(m_appThemeSelectBox);
+    m_scrollView->getMainLayout()->addWidget(m_appThemeSelectBox);
 
     auto navStyleSelectBox = new FluSettingsSelectBox;
     navStyleSelectBox->hideInfoLabel();
@@ -52,7 +52,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     navStyleSelectBox->setIcon(FluAwesomeType::HolePunchLandscapeLeft);
     navStyleSelectBox->getComboBox()->addItem(tr("Left"));
     navStyleSelectBox->getComboBox()->addItem(tr("Top"));
-    m_vScrollView->getMainLayout()->addWidget(navStyleSelectBox);
+    m_scrollView->getMainLayout()->addWidget(navStyleSelectBox);
 
     auto languageSelectBox = new FluSettingsSelectBox;
     languageSelectBox->setTitleInfo(tr("Language"), tr("Select which language to display."));
@@ -72,14 +72,14 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
             FluConfigUtils::getUtils()->setLanguage("zh-CN");
     });
 
-    m_vScrollView->getMainLayout()->addWidget(languageSelectBox);
+    m_scrollView->getMainLayout()->addWidget(languageSelectBox);
 
-    m_vScrollView->getMainLayout()->addSpacing(30);
+    m_scrollView->getMainLayout()->addSpacing(30);
 
     m_aboutLabel = new QLabel;
     m_aboutLabel->setObjectName("aboutLabel");
     m_aboutLabel->setText(tr("About"));
-    m_vScrollView->getMainLayout()->addWidget(m_aboutLabel);
+    m_scrollView->getMainLayout()->addWidget(m_aboutLabel);
 
     // version;
     auto settingsVersionBox = new FluSettingsVersionBox;
@@ -136,7 +136,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     settingsVersionBox->addWidget(framelesshelperRef);
     settingsVersionBox->addWidget(qwindowkitRef);
 
-    m_vScrollView->getMainLayout()->addWidget(settingsVersionBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(settingsVersionBox, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

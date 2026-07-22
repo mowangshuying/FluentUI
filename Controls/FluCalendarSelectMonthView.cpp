@@ -8,11 +8,11 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
 {
     m_parentView = (FluCalendarView*)parent;
 
-    m_gMainLayout = new QGridLayout;
-    m_gMainLayout->setContentsMargins(10, 0, 10, 0);
-    m_gMainLayout->setSpacing(0);
-    m_gMainLayout->setVerticalSpacing(5);
-    setLayout(m_gMainLayout);
+    m_mainLayout = new QGridLayout;
+    m_mainLayout->setContentsMargins(10, 0, 10, 0);
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setVerticalSpacing(5);
+    setLayout(m_mainLayout);
 
     QList<QString> monthTexts = {tr("Jan"), tr("Feb"), tr("Mar"), tr("Apr"), tr("May"), tr("Jun"), tr("Jul"), tr("Aug"), tr("Sep"), tr("Oct"), tr("Nov"), tr("Dec")};
     for (int i = 0; i < 4; i++)
@@ -28,7 +28,7 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
             label->setProperty("today", false);
 
             m_labelList.append(label);
-            m_gMainLayout->addWidget(label, i, j);
+            m_mainLayout->addWidget(label, i, j);
 
             connect(getItem(i * 4 + j), &FluCalendarItem::clicked, [=]() {
                 QDate itemDate = getItem(i * 4 + j)->getCurDate();
@@ -49,28 +49,28 @@ FluCalendarSelectMonthView::FluCalendarSelectMonthView(QWidget* parent /*= nullp
     onThemeChanged();
 }
 
-void FluCalendarSelectMonthView::setYearMonth(int nYear, int nMonth)
+void FluCalendarSelectMonthView::setYearMonth(int year, int month)
 {
     QDate tody = QDate::currentDate();
-    if (nYear < 1924 || nYear > 2124)
+    if (year < 1924 || year > 2124)
         return;
 
-    if (nMonth < 0 && nMonth > 12)
+    if (month < 0 && month > 12)
         return;
 
-    QDate date(nYear, 1, 1);
+    QDate date(year, 1, 1);
     for (int i = 0; i < 16; i++)
     {
         getItem(i)->setInfoText("");
         if (i == 0)
         {
-            QString infoText = QString::asprintf("%d", nYear);
+            QString infoText = QString::asprintf("%d", year);
             getItem(i)->setInfoText(infoText);
         }
 
         if (i == 12)
         {
-            QString infoText = QString::asprintf("%d", nYear + 1);
+            QString infoText = QString::asprintf("%d", year + 1);
             getItem(i)->setInfoText(infoText);
         }
 
@@ -128,9 +128,9 @@ void FluCalendarSelectMonthView::gotoNextYear()
     setYearMonth(date.year(), date.month());
 }
 
-FluCalendarItem* FluCalendarSelectMonthView::getItem(int nIndex)
+FluCalendarItem* FluCalendarSelectMonthView::getItem(int index)
 {
-    return m_labelList.at(nIndex);
+    return m_labelList.at(index);
 }
 
 void FluCalendarSelectMonthView::onThemeChanged()

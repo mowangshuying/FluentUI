@@ -20,12 +20,12 @@ int main(int argc, char **argv)
     FluGalleryWindow w;
     w.show();
 
-    int nExec = app.exec();
-    if (nExec == 931)
+    int exec = app.exec();
+    if (exec == 931)
     {
         QProcess::startDetached(qApp->applicationFilePath());
-        return nExec;
+        return exec;
     }
 
-    return nExec;
+    return exec;
 }

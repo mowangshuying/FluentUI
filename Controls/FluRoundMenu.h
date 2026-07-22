@@ -66,7 +66,7 @@ class FluRoundMenu : public QMenu
 
     void setDefaultAction(QAction* action);
 
-    void setDefaultAction(int nIndex);
+    void setDefaultAction(int index);
 
     void setDefaultAction(QString text);
 
@@ -78,7 +78,7 @@ class FluRoundMenu : public QMenu
 
     void addSeparator();
 
-    void hideMenu(bool bHideBySystem = false);
+    void hideMenu(bool isHideBySystem = false);
 
     void closeParentMenu();
 
@@ -86,7 +86,7 @@ class FluRoundMenu : public QMenu
 
     void adjustPosition();
 
-    void exec(QPoint pos, bool bAni = true, FluMenuAniType aniType = FluMenuAniType::dropDown);
+    void exec(QPoint pos, bool isAni = true, FluMenuAniType aniType = FluMenuAniType::dropDown);
 
   signals:
     void closed();
@@ -114,8 +114,8 @@ class FluRoundMenu : public QMenu
     void mouseMoveEvent(QMouseEvent* event);
 
   protected:
-    bool m_bSubMenu;
-    bool m_bHideBySystem;
+    bool m_isSubMenu;
+    bool m_isHideBySystem;
     int m_itemHeight;
 
     FluAction* m_mainAction;
@@ -126,7 +126,7 @@ class FluRoundMenu : public QMenu
     QListWidgetItem* m_lastHoverItem;
     QListWidgetItem* m_lastHoverSubMenuItem;
 
-    QHBoxLayout* m_hBoxLayout;
+    QHBoxLayout* m_boxLayout;
     FluRoundMenuView* m_roundMenuView;
     FluMenuAniMgr* m_aniMgr;
 

@@ -14,8 +14,8 @@ class FluVNavigationSearchItem : public FluVNavigationItem
   public:
     FluVNavigationSearchItem(QWidget* parent = nullptr);
 
-    void setItemWidth(int nWidth) override;
-    void setItemHeight(int nHeight) override;
+    void setItemWidth(int width) override;
+    void setItemHeight(int height) override;
 
     void hideSearchButton();
 
@@ -36,7 +36,7 @@ class FluVNavigationSearchItem : public FluVNavigationItem
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     FluAutoSuggestBox* m_autoSuggestBox;
     QPushButton* m_searchButton;
 };

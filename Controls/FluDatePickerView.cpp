@@ -5,30 +5,30 @@ FluDatePickerView::FluDatePickerView(QWidget* parent /*= nullptr*/) : FluDatePic
 {
 }
 
-FluDatePickerView::FluDatePickerView(bool bYMD, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bFirstShow(true), m_mask(nullptr)
+FluDatePickerView::FluDatePickerView(bool isYMD, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_isFirstShow(true), m_mask(nullptr)
 {
-    m_bYMD = bYMD;
+    m_isYMD = isYMD;
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setMouseTracking(true);
 
-    m_hMainViewLayout = new QHBoxLayout;
-    setLayout(m_hMainViewLayout);
-    m_hMainViewLayout->setContentsMargins(8, 8, 8, 8);
+    m_mainViewLayout = new QHBoxLayout;
+    setLayout(m_mainViewLayout);
+    m_mainViewLayout->setContentsMargins(8, 8, 8, 8);
 
     m_mainView = new QFrame;
     m_mainView->setObjectName("mainView");
-    m_hMainViewLayout->addWidget(m_mainView);
+    m_mainViewLayout->addWidget(m_mainView);
 
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setContentsMargins(4, 4, 4, 4);
-    m_vMainLayout->setSpacing(0);
-    m_mainView->setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setContentsMargins(4, 4, 4, 4);
+    m_mainLayout->setSpacing(0);
+    m_mainView->setLayout(m_mainLayout);
 
-    m_hViewLayout = new QHBoxLayout;
-    m_hViewLayout->setSpacing(0);
-    m_hViewLayout->setContentsMargins(0, 0, 0, 0);
-    m_vMainLayout->addLayout(m_hViewLayout);
+    m_viewLayout = new QHBoxLayout;
+    m_viewLayout->setSpacing(0);
+    m_viewLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->addLayout(m_viewLayout);
 
     m_monthView = new FluLoopView(140);
     m_dayView = new FluLoopView(80);
@@ -58,51 +58,51 @@ FluDatePickerView::FluDatePickerView(bool bYMD, QWidget* parent /*= nullptr*/) :
     }
     m_yearView->setAllItems(datas);
 
-    m_hViewLayout->setSpacing(0);
+    m_viewLayout->setSpacing(0);
 
-    if (!bYMD)
+    if (!isYMD)
     {
-        m_hViewLayout->addWidget(m_monthView);
-        m_hViewLayout->addWidget(new FluHSplitLine);
-        m_hViewLayout->addWidget(m_dayView);
-        m_hViewLayout->addWidget(new FluHSplitLine);
-        m_hViewLayout->addWidget(m_yearView);
+        m_viewLayout->addWidget(m_monthView);
+        m_viewLayout->addWidget(new FluHSplitLine);
+        m_viewLayout->addWidget(m_dayView);
+        m_viewLayout->addWidget(new FluHSplitLine);
+        m_viewLayout->addWidget(m_yearView);
     }
     else
     {
-        m_hViewLayout->addWidget(m_yearView);
-        m_hViewLayout->addWidget(new FluHSplitLine);
-        m_hViewLayout->addWidget(m_monthView);
-        m_hViewLayout->addWidget(new FluHSplitLine);
-        m_hViewLayout->addWidget(m_dayView);
+        m_viewLayout->addWidget(m_yearView);
+        m_viewLayout->addWidget(new FluHSplitLine);
+        m_viewLayout->addWidget(m_monthView);
+        m_viewLayout->addWidget(new FluHSplitLine);
+        m_viewLayout->addWidget(m_dayView);
     }
 
-    m_hBtnLayout = new QHBoxLayout;
-    m_hBtnLayout->setContentsMargins(4, 4, 4, 4);
+    m_buttonLayout = new QHBoxLayout;
+    m_buttonLayout->setContentsMargins(4, 4, 4, 4);
 
-    m_okBtn = new QPushButton;
-    m_cancelBtn = new QPushButton;
+    m_okButton = new QPushButton;
+    m_cancelButton = new QPushButton;
 
-    m_okBtn->setObjectName("okBtn");
-    m_cancelBtn->setObjectName("cancelBtn");
+    m_okButton->setObjectName("okBtn");
+    m_cancelButton->setObjectName("cancelBtn");
 
-    m_okBtn->setFixedHeight(40);
-    m_cancelBtn->setFixedHeight(40);
+    m_okButton->setFixedHeight(40);
+    m_cancelButton->setFixedHeight(40);
 
-    m_okBtn->setIconSize(QSize(25, 25));
-    m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept));
+    m_okButton->setIconSize(QSize(25, 25));
+    m_okButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept));
 
-    m_cancelBtn->setIconSize(QSize(25, 25));
-    m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel));
+    m_cancelButton->setIconSize(QSize(25, 25));
+    m_cancelButton->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel));
 
-    m_hBtnLayout->addWidget(m_okBtn);
-    m_hBtnLayout->addWidget(m_cancelBtn);
+    m_buttonLayout->addWidget(m_okButton);
+    m_buttonLayout->addWidget(m_cancelButton);
 
-    m_vMainLayout->addWidget(new FluVSplitLine);
-    m_vMainLayout->addLayout(m_hBtnLayout);
+    m_mainLayout->addWidget(new FluVSplitLine);
+    m_mainLayout->addLayout(m_buttonLayout);
 
     m_mask = new FluDatePickerViewMask(m_mainView);
-    if (!m_bYMD)
+    if (!m_isYMD)
     {
         m_mask->addItem("", 140, 40);
         m_mask->addItem("", 80, 40);
@@ -120,20 +120,20 @@ FluDatePickerView::FluDatePickerView(bool bYMD, QWidget* parent /*= nullptr*/) :
     setYear(0 + 100);
 
     setShadowEffect();
-    connect(m_okBtn, &QPushButton::clicked, [=]() {
+    connect(m_okButton, &QPushButton::clicked, [=]() {
         updateTime();
         emit clickedOk();
         close();
     });
-    connect(m_cancelBtn, &QPushButton::clicked, [=]() {
+    connect(m_cancelButton, &QPushButton::clicked, [=]() {
         emit clickedCancel();
         close();
     });
 
-    connect(m_monthView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) {
-        int nDays = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
+    connect(m_monthView, &FluLoopView::visibaleMidIndexChanged, [=](int index) {
+        int days = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
         std::vector<QString> datas;
-        for (int i = 0; i < nDays; i++)
+        for (int i = 0; i < days; i++)
         {
             QString str = QString::asprintf("%02d", i + 1);
             datas.push_back(str);
@@ -143,23 +143,23 @@ FluDatePickerView::FluDatePickerView(bool bYMD, QWidget* parent /*= nullptr*/) :
         m_dayView->setAllItems(datas);
         m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
 
-        if (!m_bYMD)
+        if (!m_isYMD)
             m_mask->setItemText(0, m_monthView->getCurrentText());
         else
             m_mask->setItemText(1, m_monthView->getCurrentText());
     });
 
-    connect(m_dayView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) {
-        if (!m_bYMD)
+    connect(m_dayView, &FluLoopView::visibaleMidIndexChanged, [=](int index) {
+        if (!m_isYMD)
             m_mask->setItemText(1, m_dayView->getCurrentText());
         else
             m_mask->setItemText(2, m_dayView->getCurrentText());
     });
 
-    connect(m_yearView, &FluLoopView::visibaleMidIndexChanged, [=](int nIndex) {
-        int nDays = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
+    connect(m_yearView, &FluLoopView::visibaleMidIndexChanged, [=](int index) {
+        int days = getMonthDays(m_yearView->getVisibleMidIndex() + 1924, m_monthView->getVisibleMidIndex() + 1);
         std::vector<QString> datas;
-        for (int i = 0; i < nDays; i++)
+        for (int i = 0; i < days; i++)
         {
             QString str = QString::asprintf("%02d", i + 1);
             datas.push_back(str);
@@ -169,75 +169,75 @@ FluDatePickerView::FluDatePickerView(bool bYMD, QWidget* parent /*= nullptr*/) :
         m_dayView->setAllItems(datas);
         m_dayView->setVisibaleMidIndex(m_dayView->getVisibleMidIndex());
 
-        if (!m_bYMD)
+        if (!m_isYMD)
             m_mask->setItemText(2, m_yearView->getCurrentText());
         else
             m_mask->setItemText(0, m_yearView->getCurrentText());
     });
 
-    connect(m_mask, &FluDatePickerViewMask::wheelChanged, [=](int nIndex, QWheelEvent* wheelEvent) {
-        // LOG_DEBUG << "nIndex:" << nIndex;
+    connect(m_mask, &FluDatePickerViewMask::wheelChanged, [=](int index, QWheelEvent* wheelEvent) {
+        // LOG_DEBUG << "index:" << index;
 
-        if (!m_bYMD)
+        if (!m_isYMD)
         {
-            if (nIndex == 0)
+            if (index == 0)
                 QApplication::sendEvent(m_monthView->viewport(), wheelEvent);
-            else if (nIndex == 1)
+            else if (index == 1)
                 QApplication::sendEvent(m_dayView->viewport(), wheelEvent);
             else
                 QApplication::sendEvent(m_yearView->viewport(), wheelEvent);
         }
         else
         {
-            if (nIndex == 1)
+            if (index == 1)
                 QApplication::sendEvent(m_monthView->viewport(), wheelEvent);
-            else if (nIndex == 2)
+            else if (index == 2)
                 QApplication::sendEvent(m_dayView->viewport(), wheelEvent);
             else
                 QApplication::sendEvent(m_yearView->viewport(), wheelEvent);
         }
     });
 
-    connect(m_mask, &FluDatePickerViewMask::enterChanged, [=](int nIndex, QEnterEvent* event) {
-        if (!m_bYMD)
+    connect(m_mask, &FluDatePickerViewMask::enterChanged, [=](int index, QEnterEvent* event) {
+        if (!m_isYMD)
         {
-            // LOG_DEBUG << "nIndex:" << nIndex;
-            if (nIndex == 0)
+            // LOG_DEBUG << "index:" << index;
+            if (index == 0)
                 QApplication::sendEvent(m_monthView, event);
-            else if (nIndex == 1)
+            else if (index == 1)
                 QApplication::sendEvent(m_dayView, event);
             else
                 QApplication::sendEvent(m_yearView, event);
         }
         else
         {
-            // LOG_DEBUG << "nIndex:" << nIndex;
-            if (nIndex == 1)
+            // LOG_DEBUG << "index:" << index;
+            if (index == 1)
                 QApplication::sendEvent(m_monthView, event);
-            else if (nIndex == 2)
+            else if (index == 2)
                 QApplication::sendEvent(m_dayView, event);
             else
                 QApplication::sendEvent(m_yearView, event);
         }
     });
 
-    connect(m_mask, &FluDatePickerViewMask::leaveChanged, [=](int nIndex, QEvent* event) {
-        if (!bYMD)
+    connect(m_mask, &FluDatePickerViewMask::leaveChanged, [=](int index, QEvent* event) {
+        if (!isYMD)
         {
-            // LOG_DEBUG << "nIndex:" << nIndex;
-            if (nIndex == 0)
+            // LOG_DEBUG << "index:" << index;
+            if (index == 0)
                 QApplication::sendEvent(m_monthView, event);
-            else if (nIndex == 1)
+            else if (index == 1)
                 QApplication::sendEvent(m_dayView, event);
             else
                 QApplication::sendEvent(m_yearView, event);
         }
         else
         {
-            // LOG_DEBUG << "nIndex:" << nIndex;
-            if (nIndex == 1)
+            // LOG_DEBUG << "index:" << index;
+            if (index == 1)
                 QApplication::sendEvent(m_monthView, event);
-            else if (nIndex == 2)
+            else if (index == 2)
                 QApplication::sendEvent(m_dayView, event);
             else
                 QApplication::sendEvent(m_yearView, event);
@@ -268,7 +268,7 @@ void FluDatePickerView::setMonth(int month)
     m_monthView->setVisibaleMidIndex(month);
     if (m_mask != nullptr)
     {
-        if (!m_bYMD)
+        if (!m_isYMD)
         {
             m_mask->setItemText(0, m_monthView->getCurrentText());
         }
@@ -285,7 +285,7 @@ void FluDatePickerView::setDay(int day)
     m_dayView->setVisibaleMidIndex(day);
     if (m_mask != nullptr)
     {
-        if (!m_bYMD)
+        if (!m_isYMD)
         {
             m_mask->setItemText(1, m_dayView->getCurrentText());
         }
@@ -304,7 +304,7 @@ void FluDatePickerView::setYear(int year)
     m_yearView->setVisibaleMidIndex(year);
     if (m_mask != nullptr)
     {
-        if (!m_bYMD)
+        if (!m_isYMD)
             m_mask->setItemText(2, m_yearView->getCurrentText());
         else
             m_mask->setItemText(0, m_yearView->getCurrentText());
@@ -358,10 +358,10 @@ void FluDatePickerView::paintEvent(QPaintEvent* event)
 void FluDatePickerView::showEvent(QShowEvent* event)
 {
     QWidget::showEvent(event);
-    if (!m_bFirstShow)
+    if (!m_isFirstShow)
         return;
 
-    m_bFirstShow = false;
+    m_isFirstShow = false;
     m_monthView->scrollTo(m_month);
     m_dayView->scrollTo(m_day);
     m_yearView->scrollTo(m_year);
@@ -375,7 +375,7 @@ void FluDatePickerView::resizeEvent(QResizeEvent* event)
 
 void FluDatePickerView::onThemeChanged()
 {
-    m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluThemeUtils::getUtils()->getTheme()));
-    m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluThemeUtils::getUtils()->getTheme()));
+    m_okButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluThemeUtils::getUtils()->getTheme()));
+    m_cancelButton->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUtils::setQssByFileName("FluDatePickerView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

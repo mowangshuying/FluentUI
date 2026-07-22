@@ -38,7 +38,7 @@ class FluShortInfoBar : public FluWidget
 
     void setDisappearDuration(int disappearDuration);
 
-    QPushButton* getCloseBtn();
+    QPushButton* getCloseButton();
 
     void paintEvent(QPaintEvent* event);
 
@@ -46,16 +46,16 @@ class FluShortInfoBar : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     QLabel* m_iconLabel;
     QLabel* m_infoLabel;
-    QPushButton* m_closeBtn;
+    QPushButton* m_closeButton;
 
     QGraphicsOpacityEffect* m_opacityEffect;
     QPropertyAnimation* m_opacityAni;
 
-    int m_nDisappearDuration;
-    bool m_bDisappearing;
+    int m_disappearDuration;
+    bool m_isDisappearing;
 #ifdef _DEBUG
     static int m_count;
 #endif

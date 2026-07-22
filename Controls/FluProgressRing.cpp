@@ -1,12 +1,12 @@
 ﻿#include "FluProgressRing.h"
 
-FluProgressRing::FluProgressRing(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bTransparentTrack(true)
+FluProgressRing::FluProgressRing(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_isTransparentTrack(true)
 {
     m_minValue = 0;
     m_maxValue = 100;
     m_curValue = 0;
-    m_bWorking = false;
-    m_bShowText = false;
+    m_isWorking = false;
+    m_isShowText = false;
     setFixedSize(60, 60);
 
     m_workingTimer = new QTimer(parent);
@@ -15,11 +15,11 @@ FluProgressRing::FluProgressRing(QWidget* parent /*= nullptr*/) : FluWidget(pare
     m_workingTimer->start();
 
     connect(m_workingTimer, &QTimer::timeout, [=]() {
-        // m_nTimes++;
-        // m_nTimes = m_nTimes %= 100;
-        // progressRing->setCurValue(m_nTimes);
+        // m_times++;
+        // m_times = m_times %= 100;
+        // progressRing->setCurValue(m_times);
 
-        if (!m_bWorking)
+        if (!m_isWorking)
             return;
 
         m_workStartValue -= 1;
@@ -45,7 +45,7 @@ void FluProgressRing::paintEvent(QPaintEvent* event)
     if (FluThemeUtils::isDarkTheme())
         pen.setColor(QColor(154, 154, 154));
 
-    if (m_bTransparentTrack)
+    if (m_isTransparentTrack)
         pen.setColor(Qt::transparent);
 
     painter.setPen(pen);
@@ -60,7 +60,7 @@ void FluProgressRing::paintEvent(QPaintEvent* event)
         pen.setColor(QColor(82, 139, 255));
 
     painter.setPen(pen);
-    if (!m_bWorking)
+    if (!m_isWorking)
     {
         painter.drawArc(outerC, 90 * 16, -360 * 16 * (m_curValue * 1.0 / (m_maxValue - m_minValue)));
     }
@@ -69,7 +69,7 @@ void FluProgressRing::paintEvent(QPaintEvent* event)
         painter.drawArc(outerC, m_workStartValue * 16, -360 * 16 * 0.25);
     }
 
-    if (!m_bWorking && m_bShowText)
+    if (!m_isWorking && m_isShowText)
     {
         // drawText
         pen.setWidth(1);
@@ -103,33 +103,33 @@ int FluProgressRing::getCurValue()
 
 bool FluProgressRing::getWorking()
 {
-    return m_bWorking;
+    return m_isWorking;
 }
 
-void FluProgressRing::setWorking(bool bWorking)
+void FluProgressRing::setWorking(bool isWorking)
 {
-    m_bWorking = bWorking;
+    m_isWorking = isWorking;
     update();
 }
 
-void FluProgressRing::setShowText(bool bShowText)
+void FluProgressRing::setShowText(bool isShowText)
 {
-    m_bShowText = bShowText;
+    m_isShowText = isShowText;
     update();
 }
 
 bool FluProgressRing::getShowText()
 {
-    return m_bShowText;
+    return m_isShowText;
 }
 
 bool FluProgressRing::getTransparentTrack()
 {
-    return m_bTransparentTrack;
+    return m_isTransparentTrack;
 }
 
-void FluProgressRing::setTransparentTrack(bool bTransparentTrack)
+void FluProgressRing::setTransparentTrack(bool isTransparentTrack)
 {
-    m_bTransparentTrack = bTransparentTrack;
+    m_isTransparentTrack = isTransparentTrack;
     update();
 }

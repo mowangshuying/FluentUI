@@ -6,7 +6,7 @@ FluRoundMenuView::FluRoundMenuView(QWidget* parent /*= nullptr*/) : QListWidget(
 {
     m_itemHeight = 28;
     m_maxVisibleItem = -1;
-    m_bBTSpacing = false;
+    m_isBTSpacing = false;
 
     setViewportMargins(0, 6, 0, 6);
     setTextElideMode(Qt::ElideNone);
@@ -57,17 +57,17 @@ void FluRoundMenuView::adjustSize(QPoint pos /*= QPoint()*/, FluMenuAniType aniT
     wndSize += QSize(margins.left() + margins.right() + 2, margins.top() + margins.bottom() + 3);
     if (m_maxVisibleItem > 0)
     {
-        int nH = qMin(wndSize.height(), m_maxVisibleItem * m_itemHeight + margins.top() + margins.bottom() + 3);
-        wndSize.setHeight(nH);
+        int h = qMin(wndSize.height(), m_maxVisibleItem * m_itemHeight + margins.top() + margins.bottom() + 3);
+        wndSize.setHeight(h);
     }
 
     setFixedSize(wndSize);
     updateGeometries();
 }
 
-void FluRoundMenuView::setItemHeight(int nHeight)
+void FluRoundMenuView::setItemHeight(int height)
 {
-    if (nHeight == m_itemHeight)
+    if (height == m_itemHeight)
         return;
 
     for (int i = 0; i < count(); i++)
@@ -75,16 +75,16 @@ void FluRoundMenuView::setItemHeight(int nHeight)
         QListWidgetItem* pItem = item(i);
         QWidget* pWidget = itemWidget(pItem);
         if (pWidget == nullptr)
-            pItem->setSizeHint(QSize(pItem->sizeHint().width(), nHeight));
+            pItem->setSizeHint(QSize(pItem->sizeHint().width(), height));
     }
 
-    m_itemHeight = nHeight;
+    m_itemHeight = height;
     adjustSize();
 }
 
-void FluRoundMenuView::setMaxVisibleItems(int nNum)
+void FluRoundMenuView::setMaxVisibleItems(int num)
 {
-    m_maxVisibleItem = nNum;
+    m_maxVisibleItem = num;
     adjustSize();
 }
 
@@ -95,34 +95,34 @@ int FluRoundMenuView::getMaxVisibleItems()
 
 int FluRoundMenuView::heightForAnimation(QPoint pos, FluMenuAniType aniType)
 {
-    int nH = itemsHeight();
-    return nH;
+    int h = itemsHeight();
+    return h;
 }
 
 int FluRoundMenuView::itemsHeight()
 {
-    int nVisibleItemCount = count();
+    int visibleItemCount = count();
     if (m_maxVisibleItem > 0 && m_maxVisibleItem < count())
-        nVisibleItemCount = m_maxVisibleItem;
+        visibleItemCount = m_maxVisibleItem;
 
-    int nH = 0;
+    int h = 0;
     for (int i = 0; i < count(); i++)
     {
-        nH += item(i)->sizeHint().height();
+        h += item(i)->sizeHint().height();
     }
 
-    nH += viewportMargins().top() + viewportMargins().bottom();
-    return nH;
+    h += viewportMargins().top() + viewportMargins().bottom();
+    return h;
 }
 
 bool FluRoundMenuView::getBTSpacing()
 {
-    return m_bBTSpacing;
+    return m_isBTSpacing;
 }
 
-void FluRoundMenuView::setBTSpacing(bool bBTSpacing)
+void FluRoundMenuView::setBTSpacing(bool isBTSpacing)
 {
-    m_bBTSpacing = bBTSpacing;
+    m_isBTSpacing = isBTSpacing;
 }
 
 void FluRoundMenuView::hockEvent(QEvent* event)

@@ -2,7 +2,7 @@
 
 FluScrollingPage::FluScrollingPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setAlignment(Qt::AlignTop);
+    m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("Scrolling"));
 
     auto annotatedScrollBarCard =

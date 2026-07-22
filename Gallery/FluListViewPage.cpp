@@ -36,7 +36,7 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     displayBox1->getBodyLayout()->addWidget(listView);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

@@ -30,15 +30,15 @@ void FluTableView::setCurrentCell(int row, int column, QItemSelectionModel::Sele
     QTableWidget::setCurrentCell(row, column, command);
 }
 
-void FluTableView::setHoverRow(int nRow)
+void FluTableView::setHoverRow(int row)
 {
-    m_tableItemDelegate->setHoverRow(nRow);
+    m_tableItemDelegate->setHoverRow(row);
     viewport()->update();
 }
 
-void FluTableView::setPressedRow(int nRow)
+void FluTableView::setPressedRow(int row)
 {
-    m_tableItemDelegate->setPressedRow(nRow);
+    m_tableItemDelegate->setPressedRow(row);
     viewport()->update();
 }
 
@@ -53,9 +53,9 @@ std::set<int> FluTableView::getReadOnlySet()
     return m_readOnlySet;
 }
 
-bool FluTableView::judgeReadOnlyCol(int nCol)
+bool FluTableView::judgeReadOnlyCol(int col)
 {
-    return m_readOnlySet.find(nCol) != m_readOnlySet.end();
+    return m_readOnlySet.find(col) != m_readOnlySet.end();
 }
 
 void FluTableView::setReadOnlySet(std::set<int> readOnlySet)

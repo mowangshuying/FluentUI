@@ -56,13 +56,13 @@ bool FluInfoBadge::eventFilter(QObject* watched, QEvent* event)
     return QLabel::eventFilter(watched, event);
 }
 
-void FluInfoBadge::setInfoBadge(QWidget* parent, QWidget* target, FluInfoBadgeLevel level, int nVlaue /*= 0*/)
+void FluInfoBadge::setInfoBadge(QWidget* parent, QWidget* target, FluInfoBadgeLevel level, int value /*= 0*/)
 {
     if (parent == nullptr || target == nullptr)
         return;
 
-    QString valueText = QString::asprintf("%d", nVlaue);
-    if (nVlaue > 99)
+    QString valueText = QString::asprintf("%d", value);
+    if (value > 99)
     {
         valueText = QString::asprintf("%d+", 99);
     }
@@ -85,7 +85,7 @@ void FluInfoBadge::paintEvent(QPaintEvent* event)
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter.setPen(Qt::NoPen);
     painter.setBrush(getBadgeColor());
-    // int nR = height() / 2;
+    // int r = height() / 2;
     painter.drawRoundedRect(rect(), height() / 2, height() / 2);
     QLabel::paintEvent(event);
 }

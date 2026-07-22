@@ -25,7 +25,7 @@ class FluIconsPage : public FluAEmptyPage
 
     QLabel* m_searchLabel;
     FluSearchLineEdit* m_searchEdit;
-    FluDisplayIconBox* m_sDisplayIconBox;
+    FluDisplayIconBox* m_displayIconBox;
 
     std::map<FluAwesomeType, FluDisplayIconBox*> m_iconBoxMap;
 };

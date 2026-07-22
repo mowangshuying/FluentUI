@@ -39,7 +39,7 @@ class FluMSNavigationItem : public FluWidget
 
     QString getKey();
 
-    void setSelected(bool bSelected);
+    void setSelected(bool isSelected);
 
     bool getSelected();
 
@@ -60,12 +60,12 @@ class FluMSNavigationItem : public FluWidget
   protected:
     FluMSNavigationView* m_parentView;
     FluAwesomeType m_awesomeType;
-    QHBoxLayout* m_hMainLayout;
-    QVBoxLayout* m_vLayout;
+    QHBoxLayout* m_mainLayout;
+    QVBoxLayout* m_layout;
     QLabel* m_indicatorLabel;
-    QPushButton* m_iconBtn;
+    QPushButton* m_iconButton;
     QLabel* m_textLabel;
 
     QString m_Key;
-    bool m_bSelected;
+    bool m_isSelected;
 };

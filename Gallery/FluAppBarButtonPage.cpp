@@ -27,7 +27,7 @@ void FluAppBarButtonPage::addSymbolIconAppBarButton()
     displayBox->getBodyLayout()->addWidget(appBarButton);
     // connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluAppBarButtonPage::addKeyboardAcceleratorAppBarButton()
@@ -42,7 +42,7 @@ void FluAppBarButtonPage::addKeyboardAcceleratorAppBarButton()
     displayBox->getBodyLayout()->addWidget(appBarButton);
     // connect(appBarButton, &FluAppBarButton::clicked, [=]() { LOG_DEBUG << "called"; });
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluAppBarButtonPage::onThemeChanged()

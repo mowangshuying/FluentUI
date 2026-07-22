@@ -20,7 +20,7 @@ class FluRotationButton : public QPushButton
 
     void setRotation(bool b);
 
-    void setReserveAngle(int nReserveAngle);
+    void setReserveAngle(int reserveAngle);
 
   public slots:
     void onTimeOut();
@@ -31,7 +31,7 @@ class FluRotationButton : public QPushButton
     FluAwesomeType m_awesomeType;
     QTimer* m_timer;
     QColor m_penColor;
-    int m_nAngle;
-    int m_nReserveAngle;
-    bool m_bRotation;
+    int m_angle;
+    int m_reserveAngle;
+    bool m_isRotation;
 };

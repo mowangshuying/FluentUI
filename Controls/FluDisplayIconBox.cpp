@@ -3,22 +3,22 @@
 FluDisplayIconBox::FluDisplayIconBox(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(FluAwesomeType::None)
 {
     setFixedSize(48, 48);
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setSpacing(0);
-    m_vMainLayout->setContentsMargins(5, 5, 5, 5);
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setContentsMargins(5, 5, 5, 5);
+    setLayout(m_mainLayout);
 
     m_iconLabel = new QLabel(this);
     m_iconLabel->setFixedSize(30, 30);
-    m_vMainLayout->addWidget(m_iconLabel, 0, Qt::AlignHCenter);
+    m_mainLayout->addWidget(m_iconLabel, 0, Qt::AlignHCenter);
 
     m_textLable = new QLabel(this);
-    m_vMainLayout->addWidget(m_textLable, 0, Qt::AlignHCenter);
+    m_mainLayout->addWidget(m_textLable, 0, Qt::AlignHCenter);
 
     m_iconLabel->setObjectName("iconLabel");
     m_textLable->setObjectName("textLabel");
 
-    m_bUseAwesomeType = true;
+    m_useAwesomeType = true;
     onThemeChanged();
 }
 
@@ -37,9 +37,9 @@ FluDisplayIconBox::FluDisplayIconBox(FluEmoijType type, QWidget* parent) : FluDi
     m_iconLabel->setPixmap(FluEmoijUtils::getSvgPixmap(type));
 }
 
-void FluDisplayIconBox::setSelected(bool bSelected)
+void FluDisplayIconBox::setSelected(bool isSelected)
 {
-    setProperty("selected", bSelected);
+    setProperty("selected", isSelected);
     update();
 }
 
@@ -69,7 +69,7 @@ void FluDisplayIconBox::paintEvent(QPaintEvent* event)
 
 void FluDisplayIconBox::onThemeChanged()
 {
-    if (m_bUseAwesomeType)
+    if (m_useAwesomeType)
         m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
     else
         m_iconLabel->setPixmap(FluEmoijUtils::getSvgPixmap(m_emoijType));

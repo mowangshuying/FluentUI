@@ -39,8 +39,8 @@ class FluCommandBarIconItem : public FluCommandBarItem
     void clicked();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
-    QPushButton* m_iconBtn;
+    QHBoxLayout* m_mainLayout;
+    QPushButton* m_iconButton;
     FluAwesomeType m_awesomeType;
 
     FluRoundMenu* m_roundMenu;

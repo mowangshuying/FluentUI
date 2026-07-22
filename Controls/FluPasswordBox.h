@@ -21,7 +21,7 @@ class FluPasswordBox : public FluWidget
 
     void resizeEvent(QResizeEvent* event)
     {
-        // m_edit->resize(width() - m_btn->width() - m_hLayout->contentsMargins().left() - m_hLayout->contentsMargins().right() - 4, m_edit->height());
+        // m_edit->resize(width() - m_button->width() - m_layout->contentsMargins().left() - m_layout->contentsMargins().right() - 4, m_edit->height());
     }
 
     void paintEvent(QPaintEvent* event);
@@ -33,8 +33,8 @@ class FluPasswordBox : public FluWidget
 
   protected:
     QLineEdit* m_edit;
-    QPushButton* m_btn;
-    QHBoxLayout* m_hLayout;
+    QPushButton* m_button;
+    QHBoxLayout* m_layout;
 
     unsigned int m_maskC;
 };

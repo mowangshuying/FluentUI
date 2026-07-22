@@ -24,7 +24,7 @@ class FluColorViewGradient : public FluWidget
 
     bool findColor(QColor color, QPoint& point);
 
-    bool atRange(int i, int j, int nRadius);
+    bool atRange(int i, int j, int radius);
 
     void circleMoveToPoint(QColor color);
 
@@ -43,5 +43,5 @@ class FluColorViewGradient : public FluWidget
 
     QColor m_color;
     QPoint m_circleP;
-    bool m_bPressed;
+    bool m_isPressed;
 };

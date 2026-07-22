@@ -67,8 +67,8 @@ class FluHomePageTitle : public FluWidget
     }
 
   protected:
-    QVBoxLayout* m_vMainLayout;
-    QHBoxLayout* m_hLayout;
+    QVBoxLayout* m_mainLayout;
+    QHBoxLayout* m_layout;
     FluVCard* m_githubCard;
     QLabel* m_titleLabel1;
     QLabel* m_titleLabel2;

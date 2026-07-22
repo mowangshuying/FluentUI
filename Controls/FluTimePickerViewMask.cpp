@@ -3,25 +3,25 @@
 FluTimePickerViewMaskItem::FluTimePickerViewMaskItem(QString text, int width, int height)
 {
     m_text = text;
-    m_nWidth = width;
-    m_nHeight = height;
+    m_width = width;
+    m_height = height;
 }
 
 FluTimePickerViewMask::FluTimePickerViewMask(QWidget* parent /*= nullptr*/) : QWidget(parent)
 {
-    m_nCurIndex = -1;
+    m_curIndex = -1;
     setMouseTracking(true);
 }
 
-void FluTimePickerViewMask::addItem(QString text, int nW, int nH)
+void FluTimePickerViewMask::addItem(QString text, int w, int h)
 {
-    FluTimePickerViewMaskItem item(text, nW, nH);
+    FluTimePickerViewMaskItem item(text, w, h);
     m_items.push_back(item);
 }
 
-void FluTimePickerViewMask::setItemText(int nIndex, QString text)
+void FluTimePickerViewMask::setItemText(int index, QString text)
 {
-    m_items[nIndex].m_text = text;
+    m_items[index].m_text = text;
 }
 
 void FluTimePickerViewMask::paintBackground(QPainter& painter)
@@ -36,12 +36,12 @@ void FluTimePickerViewMask::paintText(QPainter& painter)
 {
     painter.setPen(getTextColorEx());
 
-    int nX = 0;
-    int nY = 0;
+    int x = 0;
+    int y = 0;
     for (auto item : m_items)
     {
-        painter.drawText(QRect(nX, nY, item.m_nWidth, item.m_nHeight), Qt::AlignCenter, item.m_text);
-        nX += item.m_nWidth;
+        painter.drawText(QRect(x, y, item.m_width, item.m_height), Qt::AlignCenter, item.m_text);
+        x += item.m_width;
     }
 }
 
@@ -51,44 +51,44 @@ void FluTimePickerViewMask::mouseMoveEvent(QMouseEvent* event)
     int x = mapFromGlobal(QCursor().pos()).x();
     // LOG_DEBUG << "x:" << x;
 
-    int nTmpIndex = -1;
+    int tmpIndex = -1;
     for (int i = 0; i < m_items.size(); i++)
     {
-        if (x >= m_items[i].m_nWidth)
+        if (x >= m_items[i].m_width)
         {
-            x -= m_items[i].m_nWidth;
+            x -= m_items[i].m_width;
         }
         else
         {
-            nTmpIndex = i;
+            tmpIndex = i;
             break;
         }
     }
 
-    if (m_nCurIndex == -1 || m_nCurIndex == nTmpIndex)
+    if (m_curIndex == -1 || m_curIndex == tmpIndex)
     {
-        m_nCurIndex = nTmpIndex;
+        m_curIndex = tmpIndex;
 
         QPointF localP;
         QPointF senceP;
         QPointF globalP;
         QEnterEvent tmpEvent(localP, senceP, globalP);
-        emit enterChanged(m_nCurIndex, &tmpEvent);
+        emit enterChanged(m_curIndex, &tmpEvent);
         return;
     }
 
-    if (m_nCurIndex != nTmpIndex)
+    if (m_curIndex != tmpIndex)
     {
         QEvent tmpLeaveEvent(QEvent::Leave);
-        emit leaveChanged(m_nCurIndex, &tmpLeaveEvent);
+        emit leaveChanged(m_curIndex, &tmpLeaveEvent);
 
         QPointF localP;
         QPointF senceP;
         QPointF globalP;
         QEnterEvent tmpEnterEvent(localP, senceP, globalP);
-        emit enterChanged(nTmpIndex, &tmpEnterEvent);
+        emit enterChanged(tmpIndex, &tmpEnterEvent);
 
-        m_nCurIndex = nTmpIndex;
+        m_curIndex = tmpIndex;
     }
 }
 
@@ -97,8 +97,8 @@ void FluTimePickerViewMask::wheelEvent(QWheelEvent* event)
     int x = mapFromGlobal(QCursor().pos()).x();
     for (int i = 0; i < m_items.size(); i++)
     {
-        if (x >= m_items[i].m_nWidth)
-            x -= m_items[i].m_nWidth;
+        if (x >= m_items[i].m_width)
+            x -= m_items[i].m_width;
         else
         {
             emit wheelChanged(i, event);

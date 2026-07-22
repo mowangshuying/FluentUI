@@ -1,15 +1,15 @@
-#include <QtWidgets>
+﻿#include <QtWidgets>
 
 #include "FluFlowLayout.h"
 //! [1]
-FluFlowLayout::FluFlowLayout(QWidget *parent, int margin, int hSpacing, int vSpacing) : QLayout(parent), m_hSpace(hSpacing), m_vSpace(vSpacing)
+FluFlowLayout::FluFlowLayout(QWidget *parent, int margin, int hSpacing, int vSpacing) : QLayout(parent), m_horizontalSpace(hSpacing), m_verticalSpace(vSpacing)
 {
-    //	m_hSpace = 10;
-    //	m_vSpace = 10;
+    //	m_horizontalSpace = 10;
+    //	m_verticalSpace = 10;
     setContentsMargins(margin, margin, margin, margin);
 }
 
-FluFlowLayout::FluFlowLayout(int margin, int hSpacing, int vSpacing) : m_hSpace(hSpacing), m_vSpace(vSpacing)
+FluFlowLayout::FluFlowLayout(int margin, int hSpacing, int vSpacing) : m_horizontalSpace(hSpacing), m_verticalSpace(vSpacing)
 {
     setContentsMargins(margin, margin, margin, margin);
 }
@@ -32,8 +32,8 @@ void FluFlowLayout::addItem(QLayoutItem *item)
 
 void FluFlowLayout::setSpacing(int hSpace, int vSpace)
 {
-    m_hSpace = hSpace;
-    m_vSpace = vSpace;
+    m_horizontalSpace = hSpace;
+    m_verticalSpace = vSpace;
 }
 
 //! [3]
@@ -41,9 +41,9 @@ void FluFlowLayout::setSpacing(int hSpace, int vSpace)
 //! [4]
 int FluFlowLayout::horizontalSpacing() const
 {
-    if (m_hSpace >= 0)
+    if (m_horizontalSpace >= 0)
     {
-        return m_hSpace;
+        return m_horizontalSpace;
     }
     else
     {
@@ -53,9 +53,9 @@ int FluFlowLayout::horizontalSpacing() const
 
 int FluFlowLayout::verticalSpacing() const
 {
-    if (m_vSpace >= 0)
+    if (m_verticalSpace >= 0)
     {
-        return m_vSpace;
+        return m_verticalSpace;
     }
     else
     {

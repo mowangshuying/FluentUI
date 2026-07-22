@@ -17,6 +17,6 @@ class FluFrameLessDemo : public FluFrameLessWidget
     //}
 
   protected:
-    QHBoxLayout* m_hThemeSwitchLayout;
+    QHBoxLayout* m_themeSwitchLayout;
     FluToggleSwitch* m_themeSwitch;
 };

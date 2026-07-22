@@ -30,8 +30,8 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     // insert items;
     for (int i = 0; i < 100; i++)
     {
-        int nRowCount = tableView->rowCount();
-        tableView->insertRow(nRowCount);
+        int rowCount = tableView->rowCount();
+        tableView->insertRow(rowCount);
 
         auto item1 = new QTableWidgetItem(QString::asprintf("%d", i + 1));
         tableView->setItem(i, 0, item1);
@@ -44,7 +44,7 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     }
 
     displayBox->getBodyLayout()->addWidget(tableView);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

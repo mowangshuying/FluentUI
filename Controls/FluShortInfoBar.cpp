@@ -14,42 +14,42 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
 #endif
     setFixedHeight(50);
 
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
 
     m_iconLabel = new QLabel;
     m_iconLabel->setFixedSize(18, 18);
     m_iconLabel->setAlignment(Qt::AlignCenter);
     m_iconLabel->setObjectName("iconLabel");
     m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, QColor(239, 239, 239), 18, 18));
-    m_hMainLayout->addWidget(m_iconLabel);
+    m_mainLayout->addWidget(m_iconLabel);
 
     m_infoLabel = new QLabel;
     m_infoLabel->setWordWrap(true);
     m_infoLabel->setText(tr("A Short Essential app Message."));
     m_infoLabel->setObjectName("infoLabel");
-    m_hMainLayout->addWidget(m_infoLabel, 1);
+    m_mainLayout->addWidget(m_infoLabel, 1);
 
-    m_closeBtn = new QPushButton;
-    m_closeBtn->setFixedSize(30, 30);
-    m_closeBtn->setIconSize(QSize(15, 15));
-    m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose));
+    m_closeButton = new QPushButton;
+    m_closeButton->setFixedSize(30, 30);
+    m_closeButton->setIconSize(QSize(15, 15));
+    m_closeButton->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose));
 
-    m_closeBtn->setObjectName("closeBtn");
-    m_hMainLayout->addWidget(m_closeBtn);
+    m_closeButton->setObjectName("closeBtn");
+    m_mainLayout->addWidget(m_closeButton);
 
     m_opacityEffect = new QGraphicsOpacityEffect(this);
     m_opacityAni = new QPropertyAnimation(m_opacityEffect, "opacity", this);
 
-    connect(m_closeBtn, &QPushButton::clicked, [=]() {
+    connect(m_closeButton, &QPushButton::clicked, [=]() {
         FluInfoBarMgr::getInstance()->removeInfoBar(this);
         close();
         deleteLater();
     });
 
     updateInfoBarTypeProperty(infobarType);
-    m_nDisappearDuration = -1;
-    m_bDisappearing = false;
+    m_disappearDuration = -1;
+    m_isDisappearing = false;
 
     onThemeChanged();
 }
@@ -69,11 +69,11 @@ void FluShortInfoBar::setInfoBarTypeProperty(QString infoBarType)
     setProperty("infoBarType", infoBarType);
     m_iconLabel->setProperty("infoBarType", infoBarType);
     m_infoLabel->setProperty("infoBarType", infoBarType);
-    m_closeBtn->setProperty("infoBarType", infoBarType);
+    m_closeButton->setProperty("infoBarType", infoBarType);
     style()->polish(this);
     m_iconLabel->style()->polish(m_iconLabel);
     m_infoLabel->style()->polish(m_infoLabel);
-    m_closeBtn->style()->polish(m_closeBtn);
+    m_closeButton->style()->polish(m_closeButton);
 }
 
 void FluShortInfoBar::setInfoBarType(FluShortInfoBarType type)
@@ -112,17 +112,17 @@ void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
 void FluShortInfoBar::disappear()
 {
     QPointer<FluShortInfoBar> ptr(this);
-    if (m_nDisappearDuration > 0 && !m_bDisappearing)
+    if (m_disappearDuration > 0 && !m_isDisappearing)
     {
-        m_bDisappearing = true;
-        QTimer::singleShot(m_nDisappearDuration, this, [=]() {
+        m_isDisappearing = true;
+        QTimer::singleShot(m_disappearDuration, this, [=]() {
             if (ptr == nullptr)
                 return;
 
             m_opacityAni->setDuration(100);
             m_opacityAni->setStartValue(1);
             m_opacityAni->setEndValue(0);
-            connect(m_opacityAni, &QPropertyAnimation::finished, [=]() { m_closeBtn->clicked(); });
+            connect(m_opacityAni, &QPropertyAnimation::finished, [=]() { m_closeButton->clicked(); });
             m_opacityAni->start();
         });
     }
@@ -130,12 +130,12 @@ void FluShortInfoBar::disappear()
 
 void FluShortInfoBar::setDisappearDuration(int disappearDuration)
 {
-    m_nDisappearDuration = disappearDuration;
+    m_disappearDuration = disappearDuration;
 }
 
-QPushButton* FluShortInfoBar::getCloseBtn()
+QPushButton* FluShortInfoBar::getCloseButton()
 {
-    return m_closeBtn;
+    return m_closeButton;
 }
 
 void FluShortInfoBar::paintEvent(QPaintEvent* event)
@@ -148,6 +148,6 @@ void FluShortInfoBar::paintEvent(QPaintEvent* event)
 
 void FluShortInfoBar::onThemeChanged()
 {
-    m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
+    m_closeButton->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUtils::setQssByFileName("FluShortInfoBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

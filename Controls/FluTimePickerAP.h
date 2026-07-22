@@ -26,10 +26,10 @@ class FluTimePickerAP : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
-    QPushButton* m_hourBtn;
-    QPushButton* m_minuteBtn;
-    QPushButton* m_apBtn;
+    QHBoxLayout* m_mainLayout;
+    QPushButton* m_hourButton;
+    QPushButton* m_minuteButton;
+    QPushButton* m_apButton;
 
     FluTimePickerAPView* m_timerPickerApView;
 };

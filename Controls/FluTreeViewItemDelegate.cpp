@@ -39,10 +39,10 @@ void FluTreeViewItemDelegate::drawBackground(QPainter* painter, const QStyleOpti
     painter->save();
     painter->setPen(Qt::NoPen);
 
-    bool bSelected = option.state & QStyle::State_Selected;
-    bool bHover = option.state & QStyle::State_MouseOver;
+    bool isSelected = option.state & QStyle::State_Selected;
+    bool isHover = option.state & QStyle::State_MouseOver;
 
-    if (!bSelected && !bHover)
+    if (!isSelected && !isHover)
     {
         painter->restore();
         return;
@@ -66,18 +66,18 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
         return;
     }
 
-    int nX = option.rect.x() + 20 + 2;
-    int nY = option.rect.center().y() - 8;
-    int nRadius = 4;
+    int x = option.rect.x() + 20 + 2;
+    int y = option.rect.center().y() - 8;
+    int radius = 4;
 
-    QRect checkBoxRect(nX, nY, 20, 20);
-    int nChecked = index.data(Qt::CheckStateRole).toInt();
+    QRect checkBoxRect(x, y, 20, 20);
+    int checked = index.data(Qt::CheckStateRole).toInt();
 
-    if (nChecked == Qt::CheckState::Unchecked)
+    if (checked == Qt::CheckState::Unchecked)
     {
         painter->setBrush(m_unCheckedBrushColorEx);
         painter->setPen(m_unCheckedPenColorEx);
-        painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
+        painter->drawRoundedRect(checkBoxRect, radius, radius);
     }
     else
     {
@@ -87,13 +87,13 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
         // painter->setPen(QColor(0, 90, 158));
         painter->setBrush(m_checkedBrushColorEx);
         painter->setPen(m_checkedPenColorEx);
-        painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
-        if (nChecked == Qt::CheckState::Checked)
+        painter->drawRoundedRect(checkBoxRect, radius, radius);
+        if (checked == Qt::CheckState::Checked)
         {
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, FluThemeUtils::getUtils()->getTheme());
             painter->drawPixmap(checkBoxRect, pixmap);
         }
-        else if (nChecked == Qt::CheckState::PartiallyChecked)
+        else if (checked == Qt::CheckState::PartiallyChecked)
         {
             QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::SubtractBold, FluThemeUtils::getUtils()->getTheme());
             painter->drawPixmap(checkBoxRect, pixmap);
@@ -105,13 +105,13 @@ void FluTreeViewItemDelegate::drawCheckBox(QPainter* painter, const QStyleOption
         //    // painter->setPen(QColor(118, 185, 237));
         //    painter->setBrush(m_checkedBrushColorEx);
         //    painter->setPen(m_checkedPenColorEx);
-        //    painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
-        //    if (nChecked == Qt::CheckState::Checked)
+        //    painter->drawRoundedRect(checkBoxRect, radius, radius);
+        //    if (checked == Qt::CheckState::Checked)
         //    {
         //        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, FluThemeUtils::getUtils()->getTheme());
         //        painter->drawPixmap(checkBoxRect, pixmap);
         //    }
-        //    else if (nChecked == Qt::CheckState::PartiallyChecked)
+        //    else if (checked == Qt::CheckState::PartiallyChecked)
         //    {
         //        QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::SubtractBold, FluThemeUtils::getUtils()->getTheme());
         //        painter->drawPixmap(checkBoxRect, pixmap);
@@ -126,9 +126,9 @@ void FluTreeViewItemDelegate::drawIndicator(QPainter* painter, const QStyleOptio
     painter->save();
     painter->setPen(Qt::NoPen);
 
-    bool bSelected = option.state & QStyle::State_Selected;
+    bool isSelected = option.state & QStyle::State_Selected;
 
-    if (!bSelected)
+    if (!isSelected)
     {
         painter->restore();
         return;

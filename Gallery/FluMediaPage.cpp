@@ -2,7 +2,7 @@
 
 FluMediaPage::FluMediaPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setAlignment(Qt::AlignTop);
+    m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("Media"));
 
     auto animatedVisualPlayerCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AnimatedVisualPlayer.png")), tr("AnimatedVisualPlayer"), tr("An element to render and control playback of motion graphics."));

@@ -31,15 +31,15 @@ class FluHNavigationMoreItem : public FluHNavigationItem
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hIconBtnLayout;
-    QPushButton* m_iconBtn;
-    // QHBoxLayout* m_hIconLayout;
+    QHBoxLayout* m_iconButtonLayout;
+    QPushButton* m_iconButton;
+    // QHBoxLayout* m_iconLayout;
 
-    QWidget* m_hIndicatorWrap;
-    QHBoxLayout* m_hIndicatorLayout;
-    QWidget* m_hIndicator;
+    QWidget* m_horizontalIndicatorWrap;
+    QHBoxLayout* m_horizontalIndicatorLayout;
+    QWidget* m_horizontalIndicator;
 
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
 
-    bool m_bSelected;
+    bool m_isSelected;
 };

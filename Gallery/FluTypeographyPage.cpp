@@ -11,11 +11,11 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     typeRampLabel->setText(tr("Type ramp"));
     typeRampLabel->setWordWrap(true);
     typeRampLabel->setObjectName("typeRampLabel");
-    m_vScrollView->getMainLayout()->addWidget(typeRampLabel);
+    m_scrollView->getMainLayout()->addWidget(typeRampLabel);
 
     auto typeRampWrap = new QWidget;
     typeRampWrap->setObjectName("typeRampWrap");
-    m_vScrollView->getMainLayout()->addWidget(typeRampWrap);
+    m_scrollView->getMainLayout()->addWidget(typeRampWrap);
 
     auto typeRampWrapLayout = new QVBoxLayout;
     typeRampWrapLayout->setAlignment(Qt::AlignTop);
@@ -61,12 +61,12 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     //     expander->setFixedHeight(50);
     QString code = tr("auto label = new FluLabel;label->setStyle(FluLabelStyle::CaptionTextBlockStyle);");
     expander->setCodeText(code);
-    m_vScrollView->getMainLayout()->addWidget(expander);
+    m_scrollView->getMainLayout()->addWidget(expander);
 
     onThemeChanged();
 }
 
-QWidget* FluTypeographyPage::addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int nHeight)
+QWidget* FluTypeographyPage::addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int height)
 {
     auto label1 = new FluLabel;
     auto label2 = new FluLabel;
@@ -86,7 +86,7 @@ QWidget* FluTypeographyPage::addARow(FluLabelStyle labelStyle, QString text1, QS
     label4->setFixedWidth(160);
 
     auto labelsWrap = new QWidget;
-    labelsWrap->setFixedHeight(nHeight);
+    labelsWrap->setFixedHeight(height);
     labelsWrap->setObjectName("labelsWrap");
     auto labelsWrapLayout = new QHBoxLayout;
     labelsWrapLayout->setAlignment(Qt::AlignLeft);

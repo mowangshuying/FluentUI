@@ -37,7 +37,7 @@ FluCalendarView::FluCalendarView(QWidget* parent /*= nullptr*/) : FluWidget(pare
 
     m_currentDate = QDate::currentDate();
     m_title->setYearMonth(m_currentDate.year(), m_currentDate.month());
-    connect(m_title->getYearMonthBtn(), &FluPushButton::clicked, [=](bool bClicked) {
+    connect(m_title->getYearMonthButton(), &FluPushButton::clicked, [=](bool bClicked) {
         switch (m_viewState)
         {
             case FluCVS_SelectDayView:
@@ -132,7 +132,7 @@ void FluCalendarView::switchSelectViewState(FluCalendarViewState state)
 void FluCalendarView::switchSelectDayView()
 {
     m_viewState = FluCVS_SelectDayView;
-    m_sLayout->setCurrentWidget(m_selectDayView);
+    m_viewSwitchLayout->setCurrentWidget(m_selectDayView);
 }
 
 void FluCalendarView::switchSelectMonthView()

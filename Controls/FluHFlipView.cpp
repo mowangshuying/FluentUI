@@ -19,57 +19,57 @@ FluHFlipView::FluHFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
     // m_contextWidget->setFixedSize(size());
     // LOG_DEBUG << "contextWidget size:" << m_contextWidget->size();
 
-    m_hLayout = new QHBoxLayout;
-    //  m_hLayout->insertSpacing(0, -11);
-    m_contextWidget->setLayout(m_hLayout);
-    m_hLayout->setSpacing(0);
-    m_hLayout->setContentsMargins(0, 0, 0, 0);
-    m_hLayout->setAlignment(Qt::AlignLeft);
+    m_layout = new QHBoxLayout;
+    //  m_layout->insertSpacing(0, -11);
+    m_contextWidget->setLayout(m_layout);
+    m_layout->setSpacing(0);
+    m_layout->setContentsMargins(0, 0, 0, 0);
+    m_layout->setAlignment(Qt::AlignLeft);
 
-    // m_hLayout->
+    // m_layout->
     m_contextWidget->setContentsMargins(0, 0, 0, 0);
 
     m_contextWidget->setObjectName("contextWidget");
 
-    m_lBtn = new QPushButton(this);
-    m_rBtn = new QPushButton(this);
-    m_lBtn->setFixedSize(18, 38);
-    m_rBtn->setFixedSize(18, 38);
+    m_lButton = new QPushButton(this);
+    m_rButton = new QPushButton(this);
+    m_lButton->setFixedSize(18, 38);
+    m_rButton->setFixedSize(18, 38);
 
-    m_lBtn->setObjectName("lBtn");
-    m_rBtn->setObjectName("rBtn");
+    m_lButton->setObjectName("lBtn");
+    m_rButton->setObjectName("rBtn");
 
-    m_lBtn->setIconSize(QSize(15, 15));
-    m_lBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidLeft)));
+    m_lButton->setIconSize(QSize(15, 15));
+    m_lButton->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidLeft)));
 
-    m_rBtn->setIconSize(QSize(15, 15));
-    m_rBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidRight)));
-    m_nImgBoxIndex = 0;
+    m_rButton->setIconSize(QSize(15, 15));
+    m_rButton->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidRight)));
+    m_imgBoxIndex = 0;
 
-    m_rBtn->hide();
-    m_lBtn->hide();
-    connect(m_rBtn, &QPushButton::clicked, [=](bool bClicked) {
+    m_rButton->hide();
+    m_lButton->hide();
+    connect(m_rButton, &QPushButton::clicked, [=](bool isClicked) {
         // horizontalScrollBar()->setValue(width());
-        if (m_nImgBoxIndex <= m_hLayout->count())
+        if (m_imgBoxIndex <= m_layout->count())
         {
-            m_nImgBoxIndex += 1;
-            hideOrShowRLBtn(true);
+            m_imgBoxIndex += 1;
+            hideOrShowRLButton(true);
 
-            horizontalScrollBar()->setValue(width() * m_nImgBoxIndex);
+            horizontalScrollBar()->setValue(width() * m_imgBoxIndex);
         }
     });
 
-    connect(m_lBtn, &QPushButton::clicked, [=](bool bClicked) {
-        if (m_nImgBoxIndex > 0)
+    connect(m_lButton, &QPushButton::clicked, [=](bool isClicked) {
+        if (m_imgBoxIndex > 0)
         {
-            m_nImgBoxIndex -= 1;
+            m_imgBoxIndex -= 1;
 
-            // m_lBtn->show();
-            m_rBtn->show();
+            // m_lButton->show();
+            m_rButton->show();
 
-            hideOrShowRLBtn(true);
+            hideOrShowRLButton(true);
 
-            horizontalScrollBar()->setValue(width() * m_nImgBoxIndex);
+            horizontalScrollBar()->setValue(width() * m_imgBoxIndex);
         }
     });
 
@@ -83,37 +83,37 @@ void FluHFlipView::addPixmap(QPixmap pixmap)
     // LOG_DEBUG << "context widget margins:" << m_contextWidget->contentsMargins();
     auto imageBox = new FluImageBox(pixmap, m_contextWidget);
     imageBox->setFixedSize(size());
-    m_hLayout->addWidget(imageBox, 0, Qt::AlignHCenter);
+    m_layout->addWidget(imageBox, 0, Qt::AlignHCenter);
     imageBox->setObjectName("imageBox");
 }
 
-void FluHFlipView::hideOrShowRLBtn(bool bEnter)
+void FluHFlipView::hideOrShowRLButton(bool isEnter)
 {
-    if (bEnter)
+    if (isEnter)
     {
-        m_lBtn->show();
-        m_rBtn->show();
-        if (m_nImgBoxIndex == 0)
-            m_lBtn->hide();
+        m_lButton->show();
+        m_rButton->show();
+        if (m_imgBoxIndex == 0)
+            m_lButton->hide();
 
-        if (m_nImgBoxIndex == m_hLayout->count() - 1)
-            m_rBtn->hide();
+        if (m_imgBoxIndex == m_layout->count() - 1)
+            m_rButton->hide();
     }
     else
     {
-        m_lBtn->hide();
-        m_rBtn->hide();
+        m_lButton->hide();
+        m_rButton->hide();
     }
 }
 
 void FluHFlipView::enterEvent(QEnterEvent* event)
 {
-    hideOrShowRLBtn(true);
+    hideOrShowRLButton(true);
 }
 
 void FluHFlipView::leaveEvent(QEvent* event)
 {
-    hideOrShowRLBtn(false);
+    hideOrShowRLButton(false);
 }
 
 void FluHFlipView::resizeEvent(QResizeEvent* event)
@@ -123,15 +123,15 @@ void FluHFlipView::resizeEvent(QResizeEvent* event)
     // get height
     // get width
 
-    int nH = height();
-    int nW = width();
+    int h = height();
+    int w = width();
 
-    int nLY = nH / 2 - m_lBtn->height() / 2;
-    int nLX = 5;
+    int lY = h / 2 - m_lButton->height() / 2;
+    int lX = 5;
 
-    m_lBtn->move(nLX, nLY);
+    m_lButton->move(lX, lY);
 
-    int nRX = nW - m_lBtn->width() - 5;
-    int nRY = nH / 2 - m_lBtn->height() / 2;
-    m_rBtn->move(nRX, nRY);
+    int rX = w - m_lButton->width() - 5;
+    int rY = h / 2 - m_lButton->height() / 2;
+    m_rButton->move(rX, rY);
 }

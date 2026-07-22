@@ -9,26 +9,26 @@ FluConfirmFlyout::FluConfirmFlyout(QWidget* target, FluFlyoutPosition position /
     m_infoLabel->setWordWrap(true);
     m_infoLabel->setLabelStyle(FluLabelStyle::BodyTextBlockStyle);
 
-    m_vShadowLayout->addWidget(m_titleLabel);
-    m_vShadowLayout->addWidget(m_infoLabel);
+    m_shadowLayout->addWidget(m_titleLabel);
+    m_shadowLayout->addWidget(m_infoLabel);
 
-    m_hBtnLayout = new QHBoxLayout;
-    m_vShadowLayout->addLayout(m_hBtnLayout);
+    m_buttonLayout = new QHBoxLayout;
+    m_shadowLayout->addLayout(m_buttonLayout);
 
-    m_okBtn = new FluStyleButton;
-    m_cancelBtn = new FluPushButton;
-    m_hBtnLayout->addWidget(m_okBtn);
-    m_hBtnLayout->addWidget(m_cancelBtn);
+    m_okButton = new FluStyleButton;
+    m_cancelButton = new FluPushButton;
+    m_buttonLayout->addWidget(m_okButton);
+    m_buttonLayout->addWidget(m_cancelButton);
 
-    m_cancelBtn->setFixedWidth(100);
-    m_okBtn->setFixedWidth(100);
+    m_cancelButton->setFixedWidth(100);
+    m_okButton->setFixedWidth(100);
     setFixedWidth(260);
 
-    m_okBtn->setText(tr("Ok"));
-    m_cancelBtn->setText(tr("Cancel"));
+    m_okButton->setText(tr("Ok"));
+    m_cancelButton->setText(tr("Cancel"));
 
-    connect(m_okBtn, &FluStyleButton::clicked, [=]() { close(); });
-    connect(m_cancelBtn, &FluPushButton::clicked, [=]() { close(); });
+    connect(m_okButton, &FluStyleButton::clicked, [=]() { close(); });
+    connect(m_cancelButton, &FluPushButton::clicked, [=]() { close(); });
     onThemeChanged();
 }
 
@@ -44,12 +44,12 @@ void FluConfirmFlyout::setInfo(QString info)
 
 void FluConfirmFlyout::setOk(QString ok)
 {
-    m_okBtn->setText(ok);
+    m_okButton->setText(ok);
 }
 
 void FluConfirmFlyout::setCancel(QString cancel)
 {
-    m_cancelBtn->setText(cancel);
+    m_cancelButton->setText(cancel);
 }
 
 void FluConfirmFlyout::paintEvent(QPaintEvent* event)

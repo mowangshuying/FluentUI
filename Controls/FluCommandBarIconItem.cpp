@@ -3,14 +3,14 @@
 FluCommandBarIconItem::FluCommandBarIconItem(QWidget* parent) : FluCommandBarItem(parent)
 {
     m_itemType = FluCommandBarItemType::icon;
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setSpacing(0);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setSpacing(0);
+    setLayout(m_mainLayout);
 
-    m_iconBtn = new QPushButton;
-    m_iconBtn->setIconSize(QSize(16, 16));
-    m_iconBtn->setObjectName("iconBtn");
-    m_hMainLayout->addWidget(m_iconBtn);
+    m_iconButton = new QPushButton;
+    m_iconButton->setIconSize(QSize(16, 16));
+    m_iconButton->setObjectName("iconBtn");
+    m_mainLayout->addWidget(m_iconButton);
 
     m_roundMenu = new FluRoundMenu("", FluAwesomeType::None, this);
 
@@ -23,13 +23,13 @@ FluCommandBarIconItem::FluCommandBarIconItem(QWidget* parent) : FluCommandBarIte
         showAtBottomLeft();
     });
 
-    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit clicked(); });
+    connect(m_iconButton, &QPushButton::clicked, this, [=]() { emit clicked(); });
 }
 
 FluCommandBarIconItem::FluCommandBarIconItem(FluAwesomeType type, QWidget* parent) : FluCommandBarIconItem(parent)
 {
     m_awesomeType = type;
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
 }
 
 FluRoundMenu* FluCommandBarIconItem::getRoundMenu()

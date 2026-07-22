@@ -3,54 +3,54 @@
 FluColorViewHHandle::FluColorViewHHandle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_circleP = QPoint(10, 8);
-    m_bPressed = false;
+    m_isPressed = false;
 
     m_color = QColor(110, 98, 251);
 
-    m_nMinV = 0;
-    m_nMaxV = 100;
-    m_fV = 0;
+    m_minValue = 0;
+    m_maxValue = 100;
+    m_value = 0;
 }
 
-void FluColorViewHHandle::setMaxV(int nV)
+void FluColorViewHHandle::setMaxValue(int value)
 {
-    m_nMaxV = nV;
+    m_maxValue = value;
 }
 
-int FluColorViewHHandle::getMaxV()
+int FluColorViewHHandle::getMaxValue()
 {
-    return m_nMaxV;
+    return m_maxValue;
 }
 
-void FluColorViewHHandle::setMinV(int nV)
+void FluColorViewHHandle::setMinValue(int value)
 {
-    m_nMinV = nV;
+    m_minValue = value;
 }
 
-int FluColorViewHHandle::getMinV()
+int FluColorViewHHandle::getMinValue()
 {
-    return m_nMinV;
+    return m_minValue;
 }
 
-float FluColorViewHHandle::getV()
+float FluColorViewHHandle::getValue()
 {
-    return m_fV;
+    return m_value;
 }
 
-void FluColorViewHHandle::setV(float v)
+void FluColorViewHHandle::setValue(float value)
 {
-    m_fV = v;
+    m_value = value;
     // update circleP;
-    m_circleP.setX((width() - 20) * m_fV + 10);
-    updateVByMouseOper(m_circleP.x(), false);
-    // emit valueChanged(v);
+    m_circleP.setX((width() - 20) * m_value + 10);
+    updateValueByMouseOperation(m_circleP.x(), false);
+    // emit valueChanged(value);
 }
 
-void FluColorViewHHandle::updateVByMouseOper(int nX, bool bEmitSignal /*= true*/)
+void FluColorViewHHandle::updateValueByMouseOperation(int xPosition, bool shouldEmitSignal /*= true*/)
 {
-    m_fV = ((nX - 10) * 1.0) / (width() - 20);
-    if (bEmitSignal)
-        emit valueChanged(m_fV);
+    m_value = ((xPosition - 10) * 1.0) / (width() - 20);
+    if (shouldEmitSignal)
+        emit valueChanged(m_value);
     update();
 }
 
@@ -60,13 +60,13 @@ void FluColorViewHHandle::setFixedSize(int w, int h)
     update();
 }
 
-void FluColorViewHHandle::setColor(QColor color, bool bEmitSignal /*= true*/)
+void FluColorViewHHandle::setColor(QColor color, bool shouldEmitSignal /*= true*/)
 {
     m_color = color;
-    if (bEmitSignal)
+    if (shouldEmitSignal)
     {
         emit colorChanged(m_color);
-        emit valueChanged(m_fV);
+        emit valueChanged(m_value);
     }
     update();
 }
@@ -78,7 +78,7 @@ QColor FluColorViewHHandle::getColor()
 
 void FluColorViewHHandle::mouseMoveEvent(QMouseEvent* event)
 {
-    if (m_bPressed)
+    if (m_isPressed)
     {
         m_circleP = QPoint(event->pos().x(), 8);
         if (event->pos().x() > rect().width() - 10)
@@ -90,9 +90,7 @@ void FluColorViewHHandle::mouseMoveEvent(QMouseEvent* event)
             m_circleP = QPoint(10, 8);
         }
 
-        updateVByMouseOper(m_circleP.x());
-        // LOG_DEBUG << "Value Changed:" << m_nV;
-        // update();
+        updateValueByMouseOperation(m_circleP.x());
     }
 }
 
@@ -108,20 +106,17 @@ void FluColorViewHHandle::mousePressEvent(QMouseEvent* event)
         m_circleP = QPoint(10, 8);
     }
 
-    m_bPressed = true;
+    m_isPressed = true;
     emit pressed();
-    updateVByMouseOper(m_circleP.x());
+    updateValueByMouseOperation(m_circleP.x());
 
     // float percentage = (m_circleP.x() - 10) / (rect().width() - 20);
     // emit valueChanged(percentage);
-    // LOG_DEBUG << "Value Changed:" << m_nV;
-    // update();
 }
 
 void FluColorViewHHandle::mouseReleaseEvent(QMouseEvent* event)
 {
-    m_bPressed = false;
-    // emit pressed();
+    m_isPressed = false;
 }
 
 void FluColorViewHHandle::paintEvent(QPaintEvent* event)

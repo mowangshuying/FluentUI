@@ -5,10 +5,10 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text,
 {
     m_itemType = FluVNavigationItemType::Setting;
     setFixedSize(180, 30);
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
 
-    m_hMainLayout->setContentsMargins(0, 2, 0, 2);
+    m_mainLayout->setContentsMargins(0, 2, 0, 2);
 
     m_indicator = new FluVNavigationIndicator(this);
     m_icon = new FluRotationButton(this);
@@ -27,12 +27,12 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text,
     m_icon->setObjectName("icon");
     m_label->setObjectName("label");
 
-    m_hMainLayout->addSpacing(4);
-    m_hMainLayout->addWidget(m_indicator);
-    m_hMainLayout->addWidget(m_icon);
-    m_hMainLayout->addSpacing(12);
-    m_hMainLayout->addWidget(m_label, 1);
-    m_hMainLayout->setSpacing(0);
+    m_mainLayout->addSpacing(4);
+    m_mainLayout->addWidget(m_indicator);
+    m_mainLayout->addWidget(m_icon);
+    m_mainLayout->addSpacing(12);
+    m_mainLayout->addWidget(m_label, 1);
+    m_mainLayout->setSpacing(0);
 
     onThemeChanged();
     connect(m_icon, &FluRotationButton::clicked, [=](bool b) { emit itemClicked(); });
@@ -45,14 +45,14 @@ FluVNavigationSettingsItem::FluVNavigationSettingsItem(FluAwesomeType awesomeTyp
     m_icon->setAwesomeType(awesomeType);
 }
 
-void FluVNavigationSettingsItem::setItemWidth(int nWidth)
+void FluVNavigationSettingsItem::setItemWidth(int width)
 {
-    setFixedWidth(nWidth);
+    setFixedWidth(width);
 }
 
-void FluVNavigationSettingsItem::setItemHeight(int nHeight)
+void FluVNavigationSettingsItem::setItemHeight(int height)
 {
-    setFixedHeight(nHeight);
+    setFixedHeight(height);
 }
 
 QLabel* FluVNavigationSettingsItem::getLabel()
@@ -84,7 +84,7 @@ void FluVNavigationSettingsItem::updateItemsStyleSheet()
 
 void FluVNavigationSettingsItem::updateSelected(bool b)
 {
-    m_bSelected = b;
+    m_isSelected = b;
     setProperty("selected", b);
     m_indicator->setSelected(b);
     m_label->setProperty("selected", b);

@@ -13,14 +13,14 @@ class FluToggleSwitch : public QCheckBox
         m_onText = tr("On");
         m_offText = tr("Off");
 
-        m_bEmptyText = false;
+        m_isEmptyText = false;
 
         setText(m_offText);
-        connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
-            if (m_bEmptyText)
+        connect(this, &FluToggleSwitch::clicked, [=](bool isChecked) {
+            if (m_isEmptyText)
                 return;
 
-            if (bChecked)
+            if (isChecked)
                 setText(m_onText);
             else
                 setText(m_offText);
@@ -36,11 +36,11 @@ class FluToggleSwitch : public QCheckBox
         m_offText = "Off";
 
         setText(m_offText);
-        connect(this, &FluToggleSwitch::clicked, [=](bool bChecked) {
-            if (m_bEmptyText)
+        connect(this, &FluToggleSwitch::clicked, [=](bool isChecked) {
+            if (m_isEmptyText)
                 return;
 
-            if (bChecked)
+            if (isChecked)
                 setText(m_onText);
             else
                 setText(m_offText);
@@ -56,9 +56,9 @@ class FluToggleSwitch : public QCheckBox
         m_offText = offText;
     }
 
-    void setEmptyText(bool bEmpty)
+    void setEmptyText(bool isEmpty)
     {
-        m_bEmptyText = bEmpty;
+        m_isEmptyText = isEmpty;
     }
 
   public slots:
@@ -68,7 +68,7 @@ class FluToggleSwitch : public QCheckBox
     }
 
   protected:
-    bool m_bEmptyText;
+    bool m_isEmptyText;
     QString m_onText;
     QString m_offText;
 };

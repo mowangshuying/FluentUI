@@ -15,18 +15,18 @@ void FluScrollBarHandle::paintEvent(QPaintEvent* event)
     painter.setRenderHints(QPainter::Antialiasing);
     painter.setPen(Qt::NoPen);
     //
-    int nR = 0;
+    int r = 0;
     if (m_orientation == Qt::Vertical)
     {
-        nR = width() / 2;
+        r = width() / 2;
     }
     else
     {
-        nR = height() / 2;
+        r = height() / 2;
     }
 
     // QColor color;
 
     painter.setBrush(QBrush(m_handleBackgroundColor));
-    painter.drawRoundedRect(rect(), nR, nR);
+    painter.drawRoundedRect(rect(), r, r);
 }

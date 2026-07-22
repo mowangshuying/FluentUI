@@ -14,7 +14,7 @@ class FluTypeographyPage : public FluAEmptyPage
   public:
     FluTypeographyPage(QWidget* parent = nullptr);
 
-    QWidget* addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int nHeight);
+    QWidget* addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int height);
   public slots:
     void onThemeChanged();
 

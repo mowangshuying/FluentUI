@@ -24,8 +24,8 @@ class FluPaginationItem : public QPushButton
         m_awesomeType = FluAwesomeType::None;
         setItemType(FluPaginationItemType::Num);
         setChecked(false);
-        m_nPageNum = -1;
-        m_nIndex = -1;
+        m_pageNum = -1;
+        m_index = -1;
         setFixedHeight(30);
         setMinimumWidth(30);
         onThemeChanged();
@@ -49,32 +49,32 @@ class FluPaginationItem : public QPushButton
 
     int getPageNum()
     {
-        return m_nPageNum;
+        return m_pageNum;
     }
 
-    void setPageNum(int nPageNum)
+    void setPageNum(int pageNum)
     {
-        m_nPageNum = nPageNum;
+        m_pageNum = pageNum;
     }
 
     int getIndex()
     {
-        return m_nIndex;
+        return m_index;
     }
 
-    void setIndex(int nIndex)
+    void setIndex(int index)
     {
-        m_nIndex = nIndex;
+        m_index = index;
     }
 
     bool getChecked()
     {
-        return m_bChecked;
+        return m_isChecked;
     }
 
-    void setChecked(bool bChecked)
+    void setChecked(bool isChecked)
     {
-        m_bChecked = bChecked;
+        m_isChecked = isChecked;
         style()->polish(this);
     }
 
@@ -87,7 +87,7 @@ class FluPaginationItem : public QPushButton
   protected:
     FluPaginationItemType m_itemType;
     FluAwesomeType m_awesomeType;
-    bool m_bChecked;
-    int m_nPageNum;
-    int m_nIndex;
+    bool m_isChecked;
+    int m_pageNum;
+    int m_index;
 };

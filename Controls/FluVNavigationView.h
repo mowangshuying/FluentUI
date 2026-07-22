@@ -29,7 +29,7 @@ class FluVNavigationView : public FluWidget
   public:
     FluVNavigationView(QWidget *parent = nullptr);
 
-    void setOnlyCollapseView(bool bHideMenuAndSearch);
+    void setOnlyCollapseView(bool isHideMenuAndSearch);
 
     void addItemToTopLayout(QWidget *item);
 
@@ -42,19 +42,19 @@ class FluVNavigationView : public FluWidget
 
     void setLong(bool b)
     {
-        m_bLong = b;
+        m_isLong = b;
     }
 
     bool isLong()
     {
-        return m_bLong;
+        return m_isLong;
     }
 
     void setViewWidth(int width);
 
     int getViewWidth()
     {
-        return m_nViewWidth;
+        return m_viewWidth;
     }
 
     std::vector<FluVNavigationItem *> getAllItems();
@@ -88,21 +88,21 @@ class FluVNavigationView : public FluWidget
     void onThemeChanged();
 
   protected:
-    QVBoxLayout *m_vLayout;
+    QVBoxLayout *m_layout;
 
     QWidget *m_topWrapWidget;
     FluVScrollView *m_midVScrollView;
     QWidget *m_bottomWrapWidget;
 
-    QVBoxLayout *m_vTopWrapLayout;
-    QVBoxLayout *m_vBottomLayout;
+    QVBoxLayout *m_topWrapLayout;
+    QVBoxLayout *m_bottomLayout;
 
     FluVNavigationMenuItem *m_menuButtonItem;
     FluVNavigationSearchItem *m_searchItem;
-    bool m_bLong;
+    bool m_isLong;
 
     // view width
-    int m_nViewWidth;
+    int m_viewWidth;
 
     // animation;
     QPropertyAnimation *m_animation;

@@ -22,7 +22,7 @@ class FluDatePickerView : public FluWidget
   public:
     FluDatePickerView(QWidget* parent = nullptr);
 
-    FluDatePickerView(bool bYMD, QWidget* parent = nullptr);
+    FluDatePickerView(bool isYMD, QWidget* parent = nullptr);
 
     void setMaskBackgroundColorEx(QColor color)
     {
@@ -75,26 +75,26 @@ class FluDatePickerView : public FluWidget
 
   protected:
     QFrame* m_mainView;
-    QHBoxLayout* m_hMainViewLayout;
+    QHBoxLayout* m_mainViewLayout;
     QGraphicsDropShadowEffect* m_shadowEffect;
 
-    QVBoxLayout* m_vMainLayout;
-    QHBoxLayout* m_hViewLayout;
-    QHBoxLayout* m_hBtnLayout;
+    QVBoxLayout* m_mainLayout;
+    QHBoxLayout* m_viewLayout;
+    QHBoxLayout* m_buttonLayout;
 
     FluDatePickerViewMask* m_mask;
     FluLoopView* m_monthView;
     FluLoopView* m_dayView;
     FluLoopView* m_yearView;
 
-    QPushButton* m_okBtn;
-    QPushButton* m_cancelBtn;
+    QPushButton* m_okButton;
+    QPushButton* m_cancelButton;
 
     int m_month;
     int m_day;
     int m_year;
 
-    bool m_bFirstShow;
+    bool m_isFirstShow;
 
-    bool m_bYMD;
+    bool m_isYMD;
 };

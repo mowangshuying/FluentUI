@@ -8,7 +8,7 @@ FluVNavigationItem::FluVNavigationItem(QWidget* parent /*= nullptr*/) : FluWidge
     m_parentView = nullptr;
     m_flyItem = nullptr;
     m_state = FluVNavigationState::None;
-    m_bLong = true;
+    m_isLong = true;
 }
 
 void FluVNavigationItem::setState(FluVNavigationState state)
@@ -64,16 +64,16 @@ int FluVNavigationItem::getItemHeight()  // to easy get item height
     return 0;
 }
 
-void FluVNavigationItem::setLong(bool bLong)
+void FluVNavigationItem::setLong(bool isLong)
 {
-    setProperty("isLong", QVariant::fromValue(bLong));
-    m_bLong = bLong;
+    setProperty("isLong", QVariant::fromValue(isLong));
+    m_isLong = isLong;
     style()->polish(this);
 }
 
 bool FluVNavigationItem::isLong()
 {
-    return m_bLong;
+    return m_isLong;
 }
 
 QString FluVNavigationItem::getKey()

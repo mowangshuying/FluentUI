@@ -21,9 +21,9 @@ class FluScrollBarTrunk : public QWidget
 
     void initOpacityAnimation();
 
-    FluScrollBarArrowButton* getPreBtn();
+    FluScrollBarArrowButton* getPreButton();
 
-    FluScrollBarArrowButton* getLstBtn();
+    FluScrollBarArrowButton* getLstButton();
 
     void setTrunkBackgroundColor(QColor color);
 
@@ -49,8 +49,8 @@ class FluScrollBarTrunk : public QWidget
 
   protected:
     QColor m_trunkBackgroundColor;
-    FluScrollBarArrowButton* m_preBtn;
-    FluScrollBarArrowButton* m_lstBtn;
+    FluScrollBarArrowButton* m_preButton;
+    FluScrollBarArrowButton* m_lstButton;
 
     QLayout* m_Layout;
 

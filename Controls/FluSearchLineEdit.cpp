@@ -2,23 +2,23 @@
 
 FluSearchLineEdit::FluSearchLineEdit(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hLayout = new QHBoxLayout;
-    setLayout(m_hLayout);
-    m_hLayout->setContentsMargins(1, 0, 1, 0);
-    m_hLayout->setSpacing(0);
-    m_hLayout->setAlignment(Qt::AlignHCenter);
+    m_layout = new QHBoxLayout;
+    setLayout(m_layout);
+    m_layout->setContentsMargins(1, 0, 1, 0);
+    m_layout->setSpacing(0);
+    m_layout->setAlignment(Qt::AlignHCenter);
 
     m_edit = new QLineEdit(this);
-    m_btn = new QPushButton(this);
-    m_btn->setFixedSize(30, 20);
-    m_btn->setIconSize(QSize(18, 18));
-    m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search));
+    m_button = new QPushButton(this);
+    m_button->setFixedSize(30, 20);
+    m_button->setIconSize(QSize(18, 18));
+    m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search));
 
     m_edit->setFixedHeight(30);
 
-    m_hLayout->addWidget(m_edit, 1);
-    m_hLayout->addWidget(m_btn);
-    m_hLayout->addSpacing(4);
+    m_layout->addWidget(m_edit, 1);
+    m_layout->addWidget(m_button);
+    m_layout->addSpacing(4);
 
     // setFixedWidth(155);
     setFixedHeight(32);
@@ -26,7 +26,7 @@ FluSearchLineEdit::FluSearchLineEdit(QWidget* parent /*= nullptr*/) : FluWidget(
     m_edit->installEventFilter(this);
     m_edit->setFocusPolicy(Qt::ClickFocus);
 
-    connect(m_btn, &QPushButton::clicked, [=]() { emit onSearchBtnClicked(); });
+    connect(m_button, &QPushButton::clicked, [=]() { emit onSearchButtonClicked(); });
 
     onThemeChanged();
 }
@@ -75,7 +75,7 @@ bool FluSearchLineEdit::eventFilter(QObject* watched, QEvent* event)
             QKeyEvent* keyEvent = (QKeyEvent*)event;
             if (keyEvent->key() == Qt::Key_Return)
             {
-                emit onSearchBtnClicked();
+                emit onSearchButtonClicked();
             }
         }
     }
@@ -100,12 +100,12 @@ void FluSearchLineEdit::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
+        m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
     }
     else
     {
-        m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
+        m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluSearchLineEdit.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluSearchLineEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
@@ -115,5 +115,5 @@ void FluSearchLineEdit::setEnabled(bool enabled)
 {
     QWidget::setEnabled(enabled);
     m_edit->setEnabled(enabled);
-    m_btn->setEnabled(enabled);
+    m_button->setEnabled(enabled);
 }

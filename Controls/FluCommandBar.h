@@ -12,17 +12,17 @@ class FluCommandBar : public QFrame
   public:
     FluCommandBar(QWidget* parent = nullptr);
 
-    void setSpacing(int nSpacing);
+    void setSpacing(int spacing);
 
     int getSpacing();
 
-    void setHasMoreBtn(bool bHasMoreBtn);
+    void setHasMoreButton(bool hasMoreButton);
 
-    bool getHasMoreBtn();
+    bool getHasMoreButton();
 
-    FluCommandBarIconItem* getMoreBtn();
+    FluCommandBarIconItem* getMoreButton();
 
-    void insertBarItem(int nIndex, FluCommandBarItem* barItem);
+    void insertBarItem(int index, FluCommandBarItem* barItem);
 
     void addBarItem(FluCommandBarItem* barItem);
 
@@ -39,6 +39,6 @@ class FluCommandBar : public QFrame
   protected:
     std::vector<FluCommandBarItem*> m_widgets;
     FluCommandBarIconItem* m_moreItem;
-    int m_nSpacing;
-    bool m_bHasMoreBtn;
+    int m_spacing;
+    bool m_hasMoreButton;
 };

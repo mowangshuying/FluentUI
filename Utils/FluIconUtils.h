@@ -7,8 +7,8 @@
 #include "../Controls/FluDef.h"
 #include "../Utils/FluThemeUtils.h"
 
-#define FluGetIcon(nType) FluIconUtils::GetFluentIcon(nType)
-#define FluGetIconPixmap(nType) FluIconUtils::GetFluentIconPixmap(nType)
+#define FluGetIcon(type) FluIconUtils::GetFluentIcon(type)
+#define FluGetIconPixmap(type) FluIconUtils::GetFluentIconPixmap(type)
 
 class FluIconUtils
 {
@@ -18,19 +18,19 @@ class FluIconUtils
 
   public:
     static FluIconUtils *getInstance();
-    static QPixmap getFluentIconPixmap(FluAwesomeType nType);
-    static QIcon getFluentIcon(FluAwesomeType nType);
+    static QPixmap getFluentIconPixmap(FluAwesomeType type);
+    static QIcon getFluentIcon(FluAwesomeType type);
 
-    static QPixmap getFluentIconPixmap(FluAwesomeType nType, FluTheme theme);
-    static QPixmap getFluentIconPixmap(FluAwesomeType nType, FluTheme theme, int w, int h);
-    static QIcon getFluentIcon(FluAwesomeType nType, FluTheme theme);
-    static QIcon getFluentIcon(FluAwesomeType nType, FluTheme theme, int w, int h);
+    static QPixmap getFluentIconPixmap(FluAwesomeType type, FluTheme theme);
+    static QPixmap getFluentIconPixmap(FluAwesomeType type, FluTheme theme, int w, int h);
+    static QIcon getFluentIcon(FluAwesomeType type, FluTheme theme);
+    static QIcon getFluentIcon(FluAwesomeType type, FluTheme theme, int w, int h);
 
-    static QPixmap getFluentIconPixmap(FluAwesomeType nType, QColor penColor, int w, int h);
-    static QPixmap getFluentIconPixmap(FluAwesomeType nType, QColor penColor);
-    static QIcon getFluentIcon(FluAwesomeType nType, QColor penColor);
+    static QPixmap getFluentIconPixmap(FluAwesomeType type, QColor penColor, int w, int h);
+    static QPixmap getFluentIconPixmap(FluAwesomeType type, QColor penColor);
+    static QIcon getFluentIcon(FluAwesomeType type, QColor penColor);
 
-    static void saveFluentPng(FluAwesomeType nType, FluTheme theme, QString filename);
+    static void saveFluentPng(FluAwesomeType type, FluTheme theme, QString filename);
 
     static QPixmap getSvgPixmap(QString svgPath);
     static QIcon getSvgIcon(QString svgPath);

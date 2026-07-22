@@ -17,7 +17,7 @@ class FluDatePicker : public FluWidget
   public:
     FluDatePicker(QWidget* parent = nullptr);
 
-    FluDatePicker(bool bYMD, QWidget* parent = nullptr);
+    FluDatePicker(bool isYMD, QWidget* parent = nullptr);
 
     void mouseReleaseEvent(QMouseEvent* event);
 
@@ -28,10 +28,10 @@ class FluDatePicker : public FluWidget
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
-    QPushButton* m_monthBtn;
-    QPushButton* m_dayBtn;
-    QPushButton* m_yearBtn;
+    QHBoxLayout* m_mainLayout;
+    QPushButton* m_monthButton;
+    QPushButton* m_dayButton;
+    QPushButton* m_yearButton;
 
     FluDatePickerView* m_datePickerView;
 };

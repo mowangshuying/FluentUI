@@ -2,7 +2,7 @@
 
 FluNavigationPage::FluNavigationPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setAlignment(Qt::AlignTop);
+    m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("Navigation"));
 
     auto breadcrumbBarCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/BreadcrumbBar.png")), tr("BreadcrumbBar"), tr("Shows the trail of navigation taken to the current location.."));

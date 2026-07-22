@@ -30,8 +30,8 @@ class FluConfirmFlyout : public FluVFlyout
   protected:
     FluLabel* m_titleLabel;
     FluLabel* m_infoLabel;
-    FluStyleButton* m_okBtn;
-    FluPushButton* m_cancelBtn;
+    FluStyleButton* m_okButton;
+    FluPushButton* m_cancelButton;
 
-    QHBoxLayout* m_hBtnLayout;
+    QHBoxLayout* m_buttonLayout;
 };

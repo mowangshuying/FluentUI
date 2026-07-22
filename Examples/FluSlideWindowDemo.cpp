@@ -4,8 +4,8 @@ FluSlideWindowDemo::FluSlideWindowDemo(QWidget* parent /*= nullptr*/) : FluWidge
 {
     // m_sLayout = new QStackedLayout;
     setFixedSize(600, 400);
-    m_hLayout = new QHBoxLayout;
-    setLayout(m_hLayout);
+    m_layout = new QHBoxLayout;
+    setLayout(m_layout);
 
     m_page1 = new QWidget(this);
     m_page1->setFixedSize(600, 400);
@@ -37,9 +37,9 @@ FluSlideWindowDemo::FluSlideWindowDemo(QWidget* parent /*= nullptr*/) : FluWidge
     m_page3->setLayout(layout3);
     layout3->addWidget(label3);
 
-    // m_hLayout->addWidget(m_page1);
-    // m_hLayout->addWidget(m_page2);
-    // m_hLayout->addWidget(m_page3);
+    // m_layout->addWidget(m_page1);
+    // m_layout->addWidget(m_page2);
+    // m_layout->addWidget(m_page3);
 }
 
 void FluSlideWindowDemo::slideIt()
@@ -51,7 +51,7 @@ void FluSlideWindowDemo::slideIt()
     curAnimation->setEndValue(QPoint(-width(), 0));
     curAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 
-    // m_hLayout->setCurrentWidget(nextWidget);
+    // m_layout->setCurrentWidget(nextWidget);
 
     // next widget
     QPropertyAnimation* nextAnimation = new QPropertyAnimation(m_page2, "pos");

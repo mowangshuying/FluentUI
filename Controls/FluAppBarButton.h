@@ -39,8 +39,8 @@ class FluAppBarButton : public FluWidget
 
   protected:
     FluAwesomeType m_awesomeType;
-    QVBoxLayout* m_vMainLayout;
-    QPushButton* m_iconBtn;
+    QVBoxLayout* m_mainLayout;
+    QPushButton* m_iconButton;
     QLabel* m_textLabel;
 
     QShortcut* m_shortCut;

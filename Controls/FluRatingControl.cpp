@@ -2,8 +2,8 @@
 
 FluRatingControl::FluRatingControl(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
 
     addStar();
     setFixedSize(170, 45);
@@ -17,13 +17,13 @@ void FluRatingControl::addStar()
         auto star = new FluStar(this);
         star->installEventFilter(this);
         m_stars.push_back(star);
-        m_hMainLayout->addWidget(star);
+        m_mainLayout->addWidget(star);
     }
 }
 
 int FluRatingControl::getNum()
 {
-    return m_nNum;
+    return m_num;
 }
 
 bool FluRatingControl::eventFilter(QObject* watched, QEvent* event)
@@ -43,7 +43,7 @@ bool FluRatingControl::eventFilter(QObject* watched, QEvent* event)
 
                 m_stars[j]->setSolidStar();
             }
-            m_nNum = i;
+            m_num = i;
             break;
         }
     }

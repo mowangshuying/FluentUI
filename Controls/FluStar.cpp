@@ -15,13 +15,13 @@ FluStar::FluStar(QWidget* parent /*= nullptr*/) : QLabel(parent)
 
 void FluStar::setEmptyStar()
 {
-    m_bSolid = false;
+    m_isSolid = false;
     setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStar, FluThemeUtils::getUtils()->getTheme()));
 }
 
 void FluStar::setSolidStar()
 {
-    m_bSolid = true;
+    m_isSolid = true;
     setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::FavoriteStarFill, QColor(0, 90, 158)));
     if (FluThemeUtils::isDarkTheme())
     {
@@ -33,7 +33,7 @@ void FluStar::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        if (m_bSolid)
+        if (m_isSolid)
         {
             setSolidStar();
         }
@@ -44,7 +44,7 @@ void FluStar::onThemeChanged()
     }
     else
     {
-        if (m_bSolid)
+        if (m_isSolid)
         {
             setSolidStar();
         }

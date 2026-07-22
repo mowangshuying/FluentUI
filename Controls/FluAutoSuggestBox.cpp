@@ -1,25 +1,25 @@
 ﻿#include "FluAutoSuggestBox.h"
 
-FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluAutoSuggestBox::FluAutoSuggestBox(bool isSearch /*=false*/, QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
-    m_hMainLayout->setContentsMargins(1, 0, 1, 0);
-    m_hMainLayout->setSpacing(0);
-    m_hMainLayout->setAlignment(Qt::AlignHCenter);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
+    m_mainLayout->setContentsMargins(1, 0, 1, 0);
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setAlignment(Qt::AlignHCenter);
 
     m_lineEdit = new QLineEdit;
-    m_btn = new QPushButton;
-    m_btn->setFixedSize(30, 20);
-    m_btn->setIconSize(QSize(18, 18));
-    m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search));
+    m_searchButton = new QPushButton;
+    m_searchButton->setFixedSize(30, 20);
+    m_searchButton->setIconSize(QSize(18, 18));
+    m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search));
 
     m_lineEdit->setFixedHeight(30);
     m_lineEdit->setFocusPolicy(Qt::FocusPolicy::StrongFocus);
 
-    m_hMainLayout->addWidget(m_lineEdit, 1);
-    m_hMainLayout->addWidget(m_btn);
-    m_hMainLayout->addSpacing(4);
+    m_mainLayout->addWidget(m_lineEdit, 1);
+    m_mainLayout->addWidget(m_searchButton);
+    m_mainLayout->addSpacing(4);
 
     setFixedHeight(32);
 
@@ -33,7 +33,7 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
 
     connect(m_completerMenu, &FluRoundMenu::triggered, [=](QAction* action) {
         m_lineEdit->setText(action->text());
-        int nIndex = 0;
+        int index = 0;
         for (auto tmpAct : m_completerMenu->actions())
         {
             if (tmpAct == action)
@@ -41,14 +41,14 @@ FluAutoSuggestBox::FluAutoSuggestBox(bool bSearch /*=false*/, QWidget* parent /*
                 break;
             }
 
-            nIndex++;
+            index++;
         }
         emit currentTextChanged(action->text());
-        emit currentIndexChanged(nIndex);
+        emit currentIndexChanged(index);
     });
 
-    setSearch(m_bSearch);
-    connect(m_btn, &QPushButton::clicked, [=]() { emit searchBtnClicked(); });
+    setSearch(m_isSearch);
+    connect(m_searchButton, &QPushButton::clicked, [=]() { emit searchButtonClicked(); });
     onThemeChanged();
 }
 
@@ -104,18 +104,18 @@ QString FluAutoSuggestBox::getPlaceholderText()
     return m_lineEdit->placeholderText();
 }
 
-void FluAutoSuggestBox::setSearch(bool bSearch)
+void FluAutoSuggestBox::setSearch(bool isSearch)
 {
-    m_bSearch = bSearch;
-    if (m_bSearch)
-        m_btn->show();
+    m_isSearch = isSearch;
+    if (m_isSearch)
+        m_searchButton->show();
     else
-        m_btn->hide();
+        m_searchButton->hide();
 }
 
 bool FluAutoSuggestBox::getSearch()
 {
-    return m_bSearch;
+    return m_isSearch;
 }
 
 void FluAutoSuggestBox::hockEvent(QEvent* event)
@@ -180,24 +180,24 @@ void FluAutoSuggestBox::onTextEdited(QString text)
         actionkeys.push_back(action->text());
     }
 
-    bool bSameKeys = true;
+    bool isSameKeys = true;
     if (actionkeys.size() == keys.size())
     {
         for (int i = 0; i < keys.size(); i++)
         {
             if (actionkeys[i] != keys[i])
             {
-                bSameKeys = false;
+                isSameKeys = false;
                 break;
             }
         }
     }
     else
     {
-        bSameKeys = false;
+        isSameKeys = false;
     }
 
-    if (!bSameKeys || m_completerMenu->isHidden())
+    if (!isSameKeys || m_completerMenu->isHidden())
     {
         QPoint pos = rect().bottomLeft();
         pos = mapToGlobal(pos);
@@ -210,7 +210,7 @@ void FluAutoSuggestBox::onTextEdited(QString text)
 
 void FluAutoSuggestBox::onThemeChanged()
 {
-    m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme()));
+    m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUtils::setQssByFileName("FluAutoSuggestBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
@@ -218,5 +218,5 @@ void FluAutoSuggestBox::setEnabled(bool enabled)
 {
     QWidget::setEnabled(enabled);
     m_lineEdit->setEnabled(enabled);
-    m_btn->setEnabled(enabled);
+    m_searchButton->setEnabled(enabled);
 }

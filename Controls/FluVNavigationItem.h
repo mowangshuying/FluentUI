@@ -53,16 +53,16 @@ class FluVNavigationItem : public FluWidget
 
     virtual int getItemHeight();  // to easy get item height
 
-    virtual void setLong(bool bLong);
+    virtual void setLong(bool isLong);
 
-    virtual void setItemWidth(int nWidth)
+    virtual void setItemWidth(int width)
     {
-        setFixedWidth(nWidth);
+        setFixedWidth(width);
     }
 
-    virtual void setItemHeight(int nHeight)
+    virtual void setItemHeight(int height)
     {
-        setFixedHeight(nHeight);
+        setFixedHeight(height);
     }
 
     bool isLong();
@@ -76,6 +76,6 @@ class FluVNavigationItem : public FluWidget
     FluVNavigationView* m_parentView;
     FluVNavigationFlyIconTextItem* m_flyItem;  // for fly item
     FluVNavigationState m_state;
-    bool m_bLong;
+    bool m_isLong;
     QString m_key;
 };

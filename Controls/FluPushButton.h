@@ -15,16 +15,16 @@ class FluPushButton : public QPushButton
 
     FluPushButton(const QString &text, QWidget *parent = nullptr);
 
-    void setPill(bool bPill)
+    void setPill(bool isPill)
     {
-        m_bPill = bPill;
+        m_isPill = isPill;
     }
 
     bool getPill()
     {
-        return m_bPill;
+        return m_isPill;
     }
   protected:
     void onThemeChanged();
-    bool m_bPill;
+    bool m_isPill;
 };

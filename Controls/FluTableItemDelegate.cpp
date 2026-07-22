@@ -6,14 +6,14 @@ FluTableItemDelegate::FluTableItemDelegate(FluTableView *parent) : QStyledItemDe
     m_tableView = parent;
 }
 
-void FluTableItemDelegate::setHoverRow(int nHoverRow)
+void FluTableItemDelegate::setHoverRow(int hoverRow)
 {
-    m_nHoverRow = nHoverRow;
+    m_hoverRow = hoverRow;
 }
 
-void FluTableItemDelegate::setPressedRow(int nPressedRow)
+void FluTableItemDelegate::setPressedRow(int pressedRow)
 {
-    m_nPressedRow = nPressedRow;
+    m_pressedRow = pressedRow;
 }
 
 void FluTableItemDelegate::setSelectedRows(std::list<QModelIndex> indexList)
@@ -22,7 +22,7 @@ void FluTableItemDelegate::setSelectedRows(std::list<QModelIndex> indexList)
     for (auto index : indexList)
     {
         m_selectedRows.insert(index.row());
-        if (index.row() == m_nPressedRow)
+        if (index.row() == m_pressedRow)
             setPressedRow(-1);
     }
 }
@@ -30,7 +30,7 @@ void FluTableItemDelegate::setSelectedRows(std::list<QModelIndex> indexList)
 QSize FluTableItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QSize tmpSize = QStyledItemDelegate::sizeHint(option, index);
-    tmpSize = tmpSize.grownBy(QMargins(0, m_nMargin, 0, m_nMargin));
+    tmpSize = tmpSize.grownBy(QMargins(0, m_margin, 0, m_margin));
     return tmpSize;
 }
 
@@ -46,14 +46,14 @@ QWidget *FluTableItemDelegate::createEditor(QWidget *parent, const QStyleOptionV
 void FluTableItemDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     QRect tmpRect = option.rect;
-    int nX = std::max(4, tmpRect.x());
-    int nY = tmpRect.y() + (tmpRect.height() - editor->height()) / 2;
-    int nW = tmpRect.width();
+    int x = std::max(4, tmpRect.x());
+    int y = tmpRect.y() + (tmpRect.height() - editor->height()) / 2;
+    int w = tmpRect.width();
     if (index.column() == 0)
-        nW -= 8;
+        w -= 8;
 
-    int nH = tmpRect.height();
-    editor->setGeometry(nX, nY, nW, nH - 4);
+    int h = tmpRect.height();
+    editor->setGeometry(x, y, w, h - 4);
 }
 
 void FluTableItemDelegate::initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const
@@ -72,30 +72,30 @@ void FluTableItemDelegate::drawSelfIndicator(QPainter *painter, const QStyleOpti
 {
     int marginH = 0.257 * option.rect.height();
 
-    int nX = 4;
-    int nY = option.rect.y() + marginH;
-    int nW = 3;
-    int nH = option.rect.height() - 2 * marginH;
+    int x = 4;
+    int y = option.rect.y() + marginH;
+    int w = 3;
+    int h = option.rect.height() - 2 * marginH;
 
     if (FluThemeUtils::isLightTheme())
         painter->setBrush(QColor(0, 90, 158));
     else if (FluThemeUtils::isDarkTheme())
         painter->setBrush(QColor(118, 185, 237));
-    painter->drawRoundedRect(nX, nY, nW, nH, 1.5, 1.5);
+    painter->drawRoundedRect(x, y, w, h, 1.5, 1.5);
 }
 
 void FluTableItemDelegate::drawSelfBackground(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    int nR = 5;
+    int r = 5;
     if (index.column() == 0)
     {
-        QRect tmpRect = option.rect.adjusted(4, 0, nR + 1, 0);
-        painter->drawRoundedRect(tmpRect, nR, nR);
+        QRect tmpRect = option.rect.adjusted(4, 0, r + 1, 0);
+        painter->drawRoundedRect(tmpRect, r, r);
     }
     else if (index.column() == index.model()->columnCount(index.parent()) - 1)
     {
-        QRect tmpRect = option.rect.adjusted(-nR - 1, 0, -4, 0);
-        painter->drawRoundedRect(tmpRect, nR, nR);
+        QRect tmpRect = option.rect.adjusted(-r - 1, 0, -4, 0);
+        painter->drawRoundedRect(tmpRect, r, r);
     }
     else
     {
@@ -116,13 +116,13 @@ void FluTableItemDelegate::drawSelfCheckBox(QPainter *painter, const QStyleOptio
         return;
     }
 
-    int nX = option.rect.x() + 20 + 2;
-    int nY = option.rect.center().y() - 8;
-    int nRadius = 4;
+    int x = option.rect.x() + 20 + 2;
+    int y = option.rect.center().y() - 8;
+    int radius = 4;
 
-    QRect checkBoxRect(nX, nY, 20, 20);
-    int nChecked = index.data(Qt::CheckStateRole).toInt();
-    if (nChecked == 2)
+    QRect checkBoxRect(x, y, 20, 20);
+    int checked = index.data(Qt::CheckStateRole).toInt();
+    if (checked == 2)
     {
         QPen pen;
         pen.setWidth(1);
@@ -140,12 +140,12 @@ void FluTableItemDelegate::drawSelfCheckBox(QPainter *painter, const QStyleOptio
         else if (FluThemeUtils::isDarkTheme())
             painter->setBrush(QColor(118, 185, 237));
 
-        painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
+        painter->drawRoundedRect(checkBoxRect, radius, radius);
 
         QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::CheckMark, Qt::white);
         painter->drawPixmap(checkBoxRect, pixmap);
     }
-    else if (nChecked == 1)
+    else if (checked == 1)
     {
         QPen pen;
         pen.setWidth(1);
@@ -162,7 +162,7 @@ void FluTableItemDelegate::drawSelfCheckBox(QPainter *painter, const QStyleOptio
         else if (FluThemeUtils::isDarkTheme())
             painter->setBrush(QColor(118, 185, 237));
 
-        painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
+        painter->drawRoundedRect(checkBoxRect, radius, radius);
 
         QPixmap pixmap = FluIconUtils::getFluentIconPixmap(FluAwesomeType::SubtractBold, Qt::white);
         painter->drawPixmap(checkBoxRect, pixmap);
@@ -183,7 +183,7 @@ void FluTableItemDelegate::drawSelfCheckBox(QPainter *painter, const QStyleOptio
         else if (FluThemeUtils::isDarkTheme())
             painter->setBrush(QColor(0, 0, 0, 26));
 
-        painter->drawRoundedRect(checkBoxRect, nRadius, nRadius);
+        painter->drawRoundedRect(checkBoxRect, radius, radius);
     }
 
     painter->restore();
@@ -199,37 +199,37 @@ void FluTableItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     painter->setClipping(true);
     painter->setClipRect(option.rect);
 
-    option.rect.adjusted(0, m_nMargin, 0, -m_nMargin);
+    option.rect.adjusted(0, m_margin, 0, -m_margin);
 
-    bool bHover = m_nHoverRow == index.row();
-    bool bPressed = m_nPressedRow == index.row();
-    bool bAlternate = index.row() % 2 == 0 && m_tableView->alternatingRowColors();
-    bool bSelected = std::find(m_selectedRows.begin(), m_selectedRows.end(), index.row()) != m_selectedRows.end();
+    bool isHover = m_hoverRow == index.row();
+    bool isPressed = m_pressedRow == index.row();
+    bool isAlternate = index.row() % 2 == 0 && m_tableView->alternatingRowColors();
+    bool isSelected = std::find(m_selectedRows.begin(), m_selectedRows.end(), index.row()) != m_selectedRows.end();
 
     if (FluThemeUtils::isLightTheme())
     {
-        if (!bSelected)
+        if (!isSelected)
         {
-            if (bPressed)
+            if (isPressed)
             {
                 painter->setBrush(QColor(0, 0, 0, 6));
             }
-            else if (bHover)
+            else if (isHover)
             {
                 painter->setBrush(QColor(0, 0, 0, 12));
             }
-            else if (bAlternate)
+            else if (isAlternate)
             {
                 painter->setBrush(QColor(0, 0, 0, 5));
             }
         }
         else
         {
-            if (bPressed)
+            if (isPressed)
             {
                 painter->setBrush(QColor(0, 0, 0, 9));
             }
-            else if (bHover)
+            else if (isHover)
             {
                 painter->setBrush(QColor(0, 0, 0, 25));
             }
@@ -241,28 +241,28 @@ void FluTableItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     }
     else if (FluThemeUtils::isDarkTheme())
     {
-        if (!bSelected)
+        if (!isSelected)
         {
-            if (bPressed)
+            if (isPressed)
             {
                 painter->setBrush(QColor(255, 255, 255, 9));
             }
-            else if (bHover)
+            else if (isHover)
             {
                 painter->setBrush(QColor(255, 255, 255, 12));
             }
-            else if (bAlternate)
+            else if (isAlternate)
             {
                 painter->setBrush(QColor(255, 255, 255, 5));
             }
         }
         else
         {
-            if (bPressed)
+            if (isPressed)
             {
                 painter->setBrush(QColor(255, 255, 255, 15));
             }
-            else if (bHover)
+            else if (isHover)
             {
                 painter->setBrush(QColor(255, 255, 255, 25));
             }
@@ -274,7 +274,7 @@ void FluTableItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &
     }
 
     drawSelfBackground(painter, option, index);
-    if (bSelected && index.column() == 0 && m_tableView->horizontalScrollBar()->value() == 0)
+    if (isSelected && index.column() == 0 && m_tableView->horizontalScrollBar()->value() == 0)
     {
         drawSelfIndicator(painter, option, index);
     }

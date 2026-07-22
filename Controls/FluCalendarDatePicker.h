@@ -29,7 +29,7 @@ class FluCalendarDatePicker : public QPushButton
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     QPushButton* m_textButton;
     QPushButton* m_iconButton;
 

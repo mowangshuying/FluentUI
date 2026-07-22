@@ -6,15 +6,15 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
 {
     m_itemType = FluVNavigationItemType::Menu;
 
-    m_hLayout = new QHBoxLayout(this);
+    m_layout = new QHBoxLayout(this);
 
     m_wrapWidget1 = new QWidget;
     m_wrapWidget2 = new QWidget;
 
-    m_hWrapWidgetLayout1 = new QHBoxLayout;
-    m_hWrapWidgetLayout1->setSpacing(0);
-    m_wrapWidget1->setLayout(m_hWrapWidgetLayout1);
-    m_hWrapWidgetLayout1->setContentsMargins(4, 2, 4, 2);
+    m_wrapWidgetLayout1 = new QHBoxLayout;
+    m_wrapWidgetLayout1->setSpacing(0);
+    m_wrapWidget1->setLayout(m_wrapWidgetLayout1);
+    m_wrapWidgetLayout1->setContentsMargins(4, 2, 4, 2);
 
     m_wrapWidget1->setObjectName("wrapWidget1");
     m_wrapWidget2->setObjectName("wrapWidget2");
@@ -25,15 +25,15 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
     m_menuButton->setFixedSize(24, 24);
     m_wrapWidget1->setFixedWidth(40);
 
-    m_hWrapWidgetLayout1->addWidget(m_menuButton);
+    m_wrapWidgetLayout1->addWidget(m_menuButton);
 
-    m_hLayout->setSpacing(0);
-    m_hLayout->addWidget(m_wrapWidget1);
-    m_hLayout->addSpacing(12);
-    m_hLayout->addWidget(m_wrapWidget2, 1);
-    // m_hLayout->setSpacing(0);
-    // m_hLayout->setContentsMargins(0, 4, 0, 4);
-    m_hLayout->setContentsMargins(0, 0, 0, 0);
+    m_layout->setSpacing(0);
+    m_layout->addWidget(m_wrapWidget1);
+    m_layout->addSpacing(12);
+    m_layout->addWidget(m_wrapWidget2, 1);
+    // m_layout->setSpacing(0);
+    // m_layout->setContentsMargins(0, 4, 0, 4);
+    m_layout->setContentsMargins(0, 0, 0, 0);
 
     m_wrapWidget1->setFixedHeight(30);
     m_wrapWidget2->setFixedHeight(30);
@@ -47,18 +47,18 @@ FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : 
     onThemeChanged();
 }
 
-void FluVNavigationMenuItem::setItemWidth(int nWidth)
+void FluVNavigationMenuItem::setItemWidth(int width)
 {
-    setFixedWidth(nWidth);
+    setFixedWidth(width);
 }
 
-void FluVNavigationMenuItem::setItemHeight(int nHeight)
+void FluVNavigationMenuItem::setItemHeight(int height)
 {
-    // setFixedHeight(nHeight);
-    int nItemHeight = nHeight - m_hLayout->contentsMargins().top() - m_hLayout->contentsMargins().bottom();
-    m_wrapWidget1->setFixedHeight(nItemHeight);
-    m_wrapWidget2->setFixedHeight(nItemHeight);
-    setFixedHeight(nHeight);
+    // setFixedHeight(height);
+    int itemHeight = height - m_layout->contentsMargins().top() - m_layout->contentsMargins().bottom();
+    m_wrapWidget1->setFixedHeight(itemHeight);
+    m_wrapWidget2->setFixedHeight(itemHeight);
+    setFixedHeight(height);
 }
 
 void FluVNavigationMenuItem::paintEvent(QPaintEvent *event)

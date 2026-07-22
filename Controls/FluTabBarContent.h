@@ -15,7 +15,7 @@ class FluTabBarContent : public QScrollArea
 
     void addBarItem(FluTabBarItem* item);
 
-    void insertTabBarItem(int nPos, FluTabBarItem* item);
+    void insertTabBarItem(int pos, FluTabBarItem* item);
 
     void removeTabBarItem(FluTabBarItem* item);
 
@@ -27,29 +27,29 @@ class FluTabBarContent : public QScrollArea
 
     int getTabBarItemMaxWidth();
 
-    void setTabBarItemMaxWidth(int nW);
+    void setTabBarItemMaxWidth(int w);
 
     int getTabBarItemMinWidth();
 
-    void setTabBarItemMinWidth(int nW);
+    void setTabBarItemMinWidth(int w);
 
     void wheelEvent(QWheelEvent* event);
 
     void resizeEvent(QResizeEvent* event);
 
   protected:
-    QWidget* m_hMainWidget;
-    QHBoxLayout* m_hMainLayout;
-    QHBoxLayout* m_hLeftLayout;
-    QHBoxLayout* m_hMidLayout;
-    QHBoxLayout* m_hRightLayout;
+    QWidget* m_mainWidget;
+    QHBoxLayout* m_mainLayout;
+    QHBoxLayout* m_leftLayout;
+    QHBoxLayout* m_midLayout;
+    QHBoxLayout* m_rightLayout;
 
-    QPushButton* m_addTabBtn;
+    QPushButton* m_addTabButton;
 
-    int m_nTabBarItemMaxWidth;
-    int m_nTabBarItemMinWidth;
+    int m_tabBarItemMaxWidth;
+    int m_tabBarItemMinWidth;
 
     QPoint m_dragPoint;
-    bool m_bDraging;
+    bool m_isDraging;
     std::vector<FluTabBarItem*> m_tabBarItems;
 };

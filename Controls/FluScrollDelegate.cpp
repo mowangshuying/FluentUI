@@ -7,8 +7,8 @@
 FluScrollDelegate::FluScrollDelegate(QAbstractScrollArea* scrollArea /*= nullptr*/) : QObject(scrollArea)
 {
     m_scrollArea = scrollArea;
-    m_vScrollBar = new FluScrollBar(Qt::Vertical, scrollArea);
-    m_hScrollBar = new FluScrollBar(Qt::Horizontal, scrollArea);
+    m_verticalScrollBar = new FluScrollBar(Qt::Vertical, scrollArea);
+    m_horizontalScrollBar = new FluScrollBar(Qt::Horizontal, scrollArea);
 
     auto itemView = qobject_cast<QAbstractItemView*>(scrollArea);
     if (itemView != nullptr)
@@ -20,14 +20,14 @@ FluScrollDelegate::FluScrollDelegate(QAbstractScrollArea* scrollArea /*= nullptr
     m_scrollArea->viewport()->installEventFilter(this);
 }
 
-FluScrollBar* FluScrollDelegate::getVScrollBar()
+FluScrollBar* FluScrollDelegate::getVerticalScrollBar()
 {
-    return m_vScrollBar;
+    return m_verticalScrollBar;
 }
 
-FluScrollBar* FluScrollDelegate::getHScrollBar()
+FluScrollBar* FluScrollDelegate::getHorizontalScrollBar()
 {
-    return m_hScrollBar;
+    return m_horizontalScrollBar;
 }
 
 bool FluScrollDelegate::eventFilter(QObject* watched, QEvent* event)
@@ -37,11 +37,11 @@ bool FluScrollDelegate::eventFilter(QObject* watched, QEvent* event)
         QWheelEvent* wheelEvent = (QWheelEvent*)(event);
         if (wheelEvent->angleDelta().y() != 0)
         {
-            m_vScrollBar->scrollCurrentValue(-wheelEvent->angleDelta().y());
+            m_verticalScrollBar->scrollCurrentValue(-wheelEvent->angleDelta().y());
         }
         else
         {
-            m_hScrollBar->scrollCurrentValue(-wheelEvent->angleDelta().x());
+            m_horizontalScrollBar->scrollCurrentValue(-wheelEvent->angleDelta().x());
         }
         event->setAccepted(true);
         return true;

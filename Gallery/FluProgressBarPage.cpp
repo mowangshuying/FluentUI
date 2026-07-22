@@ -19,7 +19,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
     // progressRing1->setWorking(true);
 
-    m_vScrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

@@ -2,19 +2,19 @@
 
 FluVFlyout::FluVFlyout(QWidget* target, FluFlyoutPosition position /*= FluFlyoutPosition::Top*/) : FluWidget(nullptr), m_targetWidget(target), m_position(position)
 {
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setSpacing(0);
-    m_hMainLayout->setContentsMargins(10, 10, 10, 10);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setContentsMargins(10, 10, 10, 10);
+    setLayout(m_mainLayout);
 
     m_shadowWidget = new QWidget(this);
     m_shadowWidget->setObjectName("shadowWidget");
 
-    m_hMainLayout->addWidget(m_shadowWidget);
+    m_mainLayout->addWidget(m_shadowWidget);
 
-    m_vShadowLayout = new QVBoxLayout;
-    m_shadowWidget->setLayout(m_vShadowLayout);
-    m_vShadowLayout->setContentsMargins(8, 8, 8, 8);
+    m_shadowLayout = new QVBoxLayout;
+    m_shadowWidget->setLayout(m_shadowLayout);
+    m_shadowLayout->setContentsMargins(8, 8, 8, 8);
 
     setFixedWidth(360);
     setMinimumHeight(96);
@@ -41,41 +41,41 @@ void FluVFlyout::setShadowEffect()
 
 void FluVFlyout::showEvent(QShowEvent* event)
 {
-    int nX = 0;
-    int nY = 0;
+    int x = 0;
+    int y = 0;
 
     QPoint targetPos = m_targetWidget->mapToGlobal(QPoint(0, 0));
     switch (m_position)
     {
         case FluFlyoutPosition::Top:
         {
-            nX = targetPos.x() + (m_targetWidget->width() - width()) / 2;
-            nY = targetPos.y() - height() + 5;
+            x = targetPos.x() + (m_targetWidget->width() - width()) / 2;
+            y = targetPos.y() - height() + 5;
         }
         break;
         case FluFlyoutPosition::Bottom:
         {
-            nX = targetPos.x() + (m_targetWidget->width() - width()) / 2;
-            nY = targetPos.y() + m_targetWidget->height() - 5;
+            x = targetPos.x() + (m_targetWidget->width() - width()) / 2;
+            y = targetPos.y() + m_targetWidget->height() - 5;
         }
         break;
         case FluFlyoutPosition::Left:
         {
-            nX = targetPos.x() - width() + 5;
-            nY = targetPos.y() - (height() - m_targetWidget->height()) / 2;
+            x = targetPos.x() - width() + 5;
+            y = targetPos.y() - (height() - m_targetWidget->height()) / 2;
         }
         break;
         case FluFlyoutPosition::Right:
         {
-            nX = targetPos.x() + m_targetWidget->width() - 5;
-            nY = targetPos.y() - (height() - m_targetWidget->height()) / 2;
+            x = targetPos.x() + m_targetWidget->width() - 5;
+            y = targetPos.y() - (height() - m_targetWidget->height()) / 2;
         }
         break;
         default:
             break;
     }
 
-    move(nX, nY);
+    move(x, y);
 }
 
 void FluVFlyout::closeEvent(QCloseEvent* event)

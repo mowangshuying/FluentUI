@@ -11,7 +11,7 @@ class FluLoopView : public QListWidget
 {
     Q_OBJECT
   public:
-    FluLoopView(int nFixedW = 80, QWidget* parent = nullptr);
+    FluLoopView(int fixedW = 80, QWidget* parent = nullptr);
 
     void setAllItems(const std::vector<QString>& datas);
 
@@ -19,17 +19,17 @@ class FluLoopView : public QListWidget
 
     int getMaxVisibleNum();
 
-    void setMaxVisibleNum(int nNum);
+    void setMaxVisibleNum(int num);
 
     int getVisibleMidIndex();
 
-    void setVisibaleMidIndex(int nMidIndex);
+    void setVisibaleMidIndex(int midIndex);
 
     void scrollDown();
 
     void scrollUp();
 
-    void scrollTo(int nIndex);
+    void scrollTo(int index);
 
     void enterEvent(QEnterEvent* event);
 
@@ -39,23 +39,23 @@ class FluLoopView : public QListWidget
 
     void keyPressEvent(QKeyEvent* event);
   signals:
-    void visibaleMidIndexChanged(int nIndex);
+    void visibaleMidIndexChanged(int index);
   public slots:
     void onThemeChanged();
 
   protected:
-    // int m_nItemHeight;
-    int m_nFixedW;
-    int m_nMaxVisibleNum;
+    // int m_itemHeight;
+    int m_fixedW;
+    int m_maxVisibleNum;
 
-    int m_nTotalItemCount;  // the total item count;
-    int m_nTotalVisibleCount;
+    int m_totalItemCount;  // the total item count;
+    int m_totalVisibleCount;
 
-    int m_nVisibleMidIndex;
+    int m_visibleMidIndex;
 
-    int m_nTopIndex;
+    int m_topIndex;
     std::vector<QString> m_datas;
 
-    QPushButton* m_scrollDownBtn;
-    QPushButton* m_scrollUpBtn;
+    QPushButton* m_scrollDownButton;
+    QPushButton* m_scrollUpButton;
 };

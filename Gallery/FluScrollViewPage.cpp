@@ -19,7 +19,7 @@ FluScrollViewPage::FluScrollViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
     scrollArea->setFixedSize(400, 300);
 
     displayBox->getBodyLayout()->addWidget(scrollArea);
-    m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

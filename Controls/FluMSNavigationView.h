@@ -13,36 +13,36 @@ class FluMSNavigationView : public FluWidget
   public:
     FluMSNavigationView(QWidget* parent = nullptr) : FluWidget(parent)
     {
-        m_vLayout = new QVBoxLayout;
-        setLayout(m_vLayout);
+        m_layout = new QVBoxLayout;
+        setLayout(m_layout);
 
         m_topWrapWidget = new QWidget(this);
-        m_vScrollView = new FluVScrollView(this);
+        m_scrollView = new FluVScrollView(this);
         m_bottomWrapWidget = new QWidget(this);
 
-        m_vTopLayout = new QVBoxLayout;
-        m_topWrapWidget->setLayout(m_vTopLayout);
+        m_topLayout = new QVBoxLayout;
+        m_topWrapWidget->setLayout(m_topLayout);
 
-        m_vBottomLayout = new QVBoxLayout;
-        m_bottomWrapWidget->setLayout(m_vBottomLayout);
+        m_bottomLayout = new QVBoxLayout;
+        m_bottomWrapWidget->setLayout(m_bottomLayout);
 
-        m_vLayout->addWidget(m_topWrapWidget);
-        m_vLayout->addWidget(m_vScrollView);
-        m_vLayout->addWidget(m_bottomWrapWidget);
+        m_layout->addWidget(m_topWrapWidget);
+        m_layout->addWidget(m_scrollView);
+        m_layout->addWidget(m_bottomWrapWidget);
 
         m_topWrapWidget->setObjectName("topWrapWidget");
-        m_vScrollView->setObjectName("vScrollView");
+        m_scrollView->setObjectName("vScrollView");
         m_bottomWrapWidget->setObjectName("bottomWrapWidget");
 
-        m_vLayout->setContentsMargins(0, 4, 0, 4);
-        m_vTopLayout->setContentsMargins(4, 0, 4, 0);
-        m_vScrollView->getMainLayout()->setContentsMargins(4, 0, 4, 0);
-        m_vBottomLayout->setContentsMargins(4, 0, 4, 0);
+        m_layout->setContentsMargins(0, 4, 0, 4);
+        m_topLayout->setContentsMargins(4, 0, 4, 0);
+        m_scrollView->getMainLayout()->setContentsMargins(4, 0, 4, 0);
+        m_bottomLayout->setContentsMargins(4, 0, 4, 0);
 
-        m_vLayout->setAlignment(Qt::AlignTop);
-        m_vTopLayout->setAlignment(Qt::AlignTop);
-        m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
-        m_vBottomLayout->setAlignment(Qt::AlignBottom);
+        m_layout->setAlignment(Qt::AlignTop);
+        m_topLayout->setAlignment(Qt::AlignTop);
+        m_scrollView->getMainLayout()->setAlignment(Qt::AlignTop);
+        m_bottomLayout->setAlignment(Qt::AlignBottom);
 
         setFixedWidth(75);
         onThemeChanged();
@@ -69,36 +69,36 @@ class FluMSNavigationView : public FluWidget
 
     void addItemToTopLayout(QWidget* item)
     {
-        m_vTopLayout->addWidget(item, 0, Qt::AlignTop);
+        m_topLayout->addWidget(item, 0, Qt::AlignTop);
     }
 
     void addItemToMidLayout(QWidget* item)
     {
-        m_vScrollView->getMainLayout()->addWidget(item, 0, Qt::AlignTop);
+        m_scrollView->getMainLayout()->addWidget(item, 0, Qt::AlignTop);
     }
 
     void addItemToBottomLayout(QWidget* item)
     {
-        m_vBottomLayout->addWidget(item, 0, Qt::AlignTop);
+        m_bottomLayout->addWidget(item, 0, Qt::AlignTop);
     }
 
     void setSelectedItem(FluMSNavigationItem* item)
     {
-        for (int i = 0; i < m_vTopLayout->count(); i++)
+        for (int i = 0; i < m_topLayout->count(); i++)
         {
-            auto curItem = (FluMSNavigationItem*)(m_vTopLayout->itemAt(i)->widget());
+            auto curItem = (FluMSNavigationItem*)(m_topLayout->itemAt(i)->widget());
             curItem->setSelected(false);
         }
 
-        for (int i = 0; i < m_vScrollView->getMainLayout()->count(); i++)
+        for (int i = 0; i < m_scrollView->getMainLayout()->count(); i++)
         {
-            auto curItem = (FluMSNavigationItem*)(m_vScrollView->getMainLayout()->itemAt(i)->widget());
+            auto curItem = (FluMSNavigationItem*)(m_scrollView->getMainLayout()->itemAt(i)->widget());
             curItem->setSelected(false);
         }
 
-        for (int i = 0; i < m_vBottomLayout->count(); i++)
+        for (int i = 0; i < m_bottomLayout->count(); i++)
         {
-            auto curItem = (FluMSNavigationItem*)(m_vBottomLayout->itemAt(i)->widget());
+            auto curItem = (FluMSNavigationItem*)(m_bottomLayout->itemAt(i)->widget());
             curItem->setSelected(false);
         }
 
@@ -121,11 +121,11 @@ class FluMSNavigationView : public FluWidget
     }
 
   protected:
-    QVBoxLayout* m_vLayout;
+    QVBoxLayout* m_layout;
 
-    QVBoxLayout* m_vTopLayout;
+    QVBoxLayout* m_topLayout;
     QWidget* m_topWrapWidget;
-    FluVScrollView* m_vScrollView;
-    QVBoxLayout* m_vBottomLayout;
+    FluVScrollView* m_scrollView;
+    QVBoxLayout* m_bottomLayout;
     QWidget* m_bottomWrapWidget;
 };

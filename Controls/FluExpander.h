@@ -20,9 +20,9 @@ class FluExpander : public FluWidget
 
     bool getDown();
 
-    void setDown(bool bDown);
+    void setDown(bool isDown);
 
-    void setTopRadius0(bool bTopRadius0);
+    void setTopRadius0(bool isTopRadius0);
 
     // signals:
     //   void windowSizeChanged();
@@ -50,14 +50,14 @@ class FluExpander : public FluWidget
   protected:
     QPropertyAnimation* m_expandAni;
 
-    QHBoxLayout* m_hWrap1Layout;
-    QVBoxLayout* m_vWrap2Layout;
+    QHBoxLayout* m_wrap1Layout;
+    QVBoxLayout* m_wrap2Layout;
 
     FluIconButton* m_downOrUpButton;
 
     QWidget* m_wrap1;
     QWidget* m_wrap2;
-    bool m_bDown;
+    bool m_isDown;
 
   private:
     int m_contentHeight = 0;

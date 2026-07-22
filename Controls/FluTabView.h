@@ -25,12 +25,12 @@ class FluTabView : public FluWidget
     void paintEvent(QPaintEvent* event);
 
   signals:
-    void addTabBtnClicked();
+    void addTabButtonClicked();
 
   protected:
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
     FluTabBar* m_tabBar;
 
-    QWidget* m_sWidgt;
-    FluStackedLayout* m_sLayout;
+    QWidget* m_widgt;
+    FluStackedLayout* m_layout;
 };

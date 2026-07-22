@@ -2,7 +2,7 @@
 
 FluStatusAndInfoPage::FluStatusAndInfoPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+    m_mainLayout->setContentsMargins(35, 35, 0, 35);
     m_titleLabel->setText(tr("Status & Info"));
 
     auto infoBadgeCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/InfoBadge.png")), tr("InfoBadge"), tr("An Non-instrusive Ui to display notifications or bring focus to an area."));

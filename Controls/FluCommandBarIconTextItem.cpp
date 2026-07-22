@@ -8,26 +8,26 @@ FluCommandBarIconTextItem::FluCommandBarIconTextItem(QWidget* parent) : FluComma
 {
     m_itemType = FluCommandBarItemType::iconText;
 
-    m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_hMainLayout->setSpacing(5);
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setSpacing(5);
+    setLayout(m_mainLayout);
 
-    m_iconBtn = new QPushButton;
-    m_iconBtn->setIconSize(QSize(16, 16));
-    m_iconBtn->setObjectName("iconBtn");
-    m_hMainLayout->addWidget(m_iconBtn);
+    m_iconButton = new QPushButton;
+    m_iconButton->setIconSize(QSize(16, 16));
+    m_iconButton->setObjectName("iconBtn");
+    m_mainLayout->addWidget(m_iconButton);
 
     m_textLabel = new QLabel;
     m_textLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     m_textLabel->setObjectName("textLabel");
-    m_hMainLayout->addWidget(m_textLabel);
+    m_mainLayout->addWidget(m_textLabel);
 
     m_roundMenu = new FluRoundMenu("", FluAwesomeType::None, this);
 
     setFixedHeight(26);
     onThemeChanged();
-    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit clicked(); });
+    connect(m_iconButton, &QPushButton::clicked, this, [=]() { emit clicked(); });
     connect(this, &FluCommandBarIconTextItem::clicked, this, [=]() {
         if (m_roundMenu->actions().isEmpty())
             return;
@@ -39,7 +39,7 @@ FluCommandBarIconTextItem::FluCommandBarIconTextItem(QWidget* parent) : FluComma
 FluCommandBarIconTextItem::FluCommandBarIconTextItem(FluAwesomeType type, QString text, QWidget* parent) : FluCommandBarIconTextItem(parent)
 {
     m_awesomeType = type;
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
     m_textLabel->setText(text);
 }
 
@@ -87,6 +87,6 @@ void FluCommandBarIconTextItem::paintEvent(QPaintEvent* event)
 
 void FluCommandBarIconTextItem::onThemeChanged()
 {
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
     FluStyleSheetUtils::setQssByFileName("FluCommandBarIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

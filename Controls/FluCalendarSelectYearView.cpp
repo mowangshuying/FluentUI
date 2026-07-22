@@ -5,11 +5,11 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidge
 {
     m_parentView = (FluCalendarView*)parent;
 
-    m_gMainLayout = new QGridLayout;
-    m_gMainLayout->setContentsMargins(10, 0, 10, 0);
-    m_gMainLayout->setSpacing(0);
-    m_gMainLayout->setVerticalSpacing(5);
-    setLayout(m_gMainLayout);
+    m_mainLayout = new QGridLayout;
+    m_mainLayout->setContentsMargins(10, 0, 10, 0);
+    m_mainLayout->setSpacing(0);
+    m_mainLayout->setVerticalSpacing(5);
+    setLayout(m_mainLayout);
 
     for (int i = 0; i < 4; i++)
     {
@@ -40,7 +40,7 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidge
             });
 
             m_labelList.append(label);
-            m_gMainLayout->addWidget(label, i, j);
+            m_mainLayout->addWidget(label, i, j);
         }
     }
 
@@ -52,17 +52,17 @@ FluCalendarSelectYearView::FluCalendarSelectYearView(QWidget* parent) : FluWidge
     onThemeChanged();
 }
 
-FluCalendarItem* FluCalendarSelectYearView::getItem(int nIndex)
+FluCalendarItem* FluCalendarSelectYearView::getItem(int index)
 {
-    if (nIndex < 0 || nIndex >= m_labelList.size())
+    if (index < 0 || index >= m_labelList.size())
         return nullptr;
 
-    return m_labelList.at(nIndex);
+    return m_labelList.at(index);
 }
 
-void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
+void FluCalendarSelectYearView::setYears(int year, int month)
 {
-    if (nYear < 1924 || nYear > 2124)
+    if (year < 1924 || year > 2124)
         return;
 
     for (int i = 0; i < 16; i++)
@@ -71,12 +71,12 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
     }
 
     // 1930 - 1939
-    if (nYear < 1939)
+    if (year < 1939)
     {
-        int nStartYear = 1930;
-        int nEndYear = 1939;
+        int startYear = 1930;
+        int endYear = 1939;
 
-        m_parentView->setCurDate(QDate(nStartYear, 1, 1));  // update curDate
+        m_parentView->setCurDate(QDate(startYear, 1, 1));  // update curDate
         for (int i = 0; i < 16; i++)
         {
             getItem(i)->setText(QString::asprintf("%d", 1924 + i));
@@ -101,22 +101,22 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
     }
 
     // other;
-    int nStartYear = nYear - nYear % 10;
-    int nEndYear = nStartYear + 9;
-    if (nYear + 9 > 2124)
-        nEndYear = 2124;
+    int startYear = year - year % 10;
+    int endYear = startYear + 9;
+    if (year + 9 > 2124)
+        endYear = 2124;
 
-    m_parentView->setCurDate(QDate(nStartYear, 1, 1));  // update curDate
+    m_parentView->setCurDate(QDate(startYear, 1, 1));  // update curDate
 
     // the first year;
-    int nTheFirstYear = nStartYear - (nStartYear - 1924) % 4;
+    int theFirstYear = startYear - (startYear - 1924) % 4;
     for (int i = 0; i < 16; i++)
     {
-        if (nTheFirstYear + i > 2124)
+        if (theFirstYear + i > 2124)
             break;
 
-        getItem(i)->setText(QString::asprintf("%d", nTheFirstYear + i));
-        getItem(i)->setCurDate(QDate(nTheFirstYear + i, 1, 1));
+        getItem(i)->setText(QString::asprintf("%d", theFirstYear + i));
+        getItem(i)->setCurDate(QDate(theFirstYear + i, 1, 1));
 
         getItem(i)->setProperty("today", false);
         if (getItem(i)->getCurDate().year() == QDate::currentDate().year())
@@ -125,7 +125,7 @@ void FluCalendarSelectYearView::setYears(int nYear, int nMonth)
         }
 
         getItem(i)->setProperty("outRange", false);
-        if ((nTheFirstYear + i < nStartYear) || (nTheFirstYear + i > nEndYear))
+        if ((theFirstYear + i < startYear) || (theFirstYear + i > endYear))
         {
             getItem(i)->setProperty("outRange", true);
         }
@@ -159,23 +159,23 @@ void FluCalendarSelectYearView::gotoNextYears()
     setYears(curYear, 1);
 }
 
-void FluCalendarSelectYearView::getRange(int nYear, int& nStartYear, int& nEndYear)
+void FluCalendarSelectYearView::getRange(int year, int& startYear, int& endYear)
 {
-    if (nYear < 1924 || nYear > 2124)
+    if (year < 1924 || year > 2124)
         return;
 
-    if (nYear < 1939)
+    if (year < 1939)
     {
-        nStartYear = 1930;
-        nEndYear = 1939;
+        startYear = 1930;
+        endYear = 1939;
         return;
     }
 
-    nStartYear = nYear - nYear % 10;
+    startYear = year - year % 10;
 
-    nEndYear = nStartYear + 9;
-    if (nYear + 9 > 2124)
-        nEndYear = 2124;
+    endYear = startYear + 9;
+    if (year + 9 > 2124)
+        endYear = 2124;
 }
 
 void FluCalendarSelectYearView::onThemeChanged()

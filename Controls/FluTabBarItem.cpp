@@ -3,83 +3,83 @@
 
 FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
-    m_hMainLayout->setContentsMargins(0, 0, 0, 0);
-    m_hMainLayout->setSpacing(0);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
+    m_mainLayout->setContentsMargins(0, 0, 0, 0);
+    m_mainLayout->setSpacing(0);
 
-    m_iconBtn = new QPushButton(this);
-    m_textBtn = new QPushButton(this);
-    m_closeBtn = new QPushButton(this);
+    m_iconButton = new QPushButton(this);
+    m_textButton = new QPushButton(this);
+    m_closeButton = new QPushButton(this);
 
-    m_iconBtn->setFixedSize(20, 20);
-    m_closeBtn->setFixedSize(24, 16);
+    m_iconButton->setFixedSize(20, 20);
+    m_closeButton->setFixedSize(24, 16);
 
-    m_iconBtn->setIconSize(QSize(20, 20));
-    m_closeBtn->setIconSize(QSize(12, 12));
-    m_textBtn->setFixedHeight(30);
-    m_textBtn->setText("Document");
+    m_iconButton->setIconSize(QSize(20, 20));
+    m_closeButton->setIconSize(QSize(12, 12));
+    m_textButton->setFixedHeight(30);
+    m_textButton->setText("Document");
 
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document, FluThemeUtils::getUtils()->getTheme()));
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document, FluThemeUtils::getUtils()->getTheme()));
+    m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 
-    m_iconBtn->setObjectName("iconBtn");
-    m_textBtn->setObjectName("textBtn");
-    m_closeBtn->setObjectName("closeBtn");
+    m_iconButton->setObjectName("iconBtn");
+    m_textButton->setObjectName("textBtn");
+    m_closeButton->setObjectName("closeBtn");
 
-    m_hMainLayout->addWidget(m_iconBtn);
-    m_hMainLayout->addWidget(m_textBtn);
-    m_hMainLayout->addWidget(m_closeBtn);
+    m_mainLayout->addWidget(m_iconButton);
+    m_mainLayout->addWidget(m_textButton);
+    m_mainLayout->addWidget(m_closeButton);
 
-    m_hMainLayout->addSpacing(5);
+    m_mainLayout->addSpacing(5);
 
     setFixedHeight(35);
-    connect(m_iconBtn, &QPushButton::clicked, [=]() { emit clicked(); });
-    connect(m_textBtn, &QPushButton::clicked, [=]() { emit clicked(); });
-    connect(m_closeBtn, &QPushButton::clicked, [=]() { emit clickedCloseBtn(this); });
+    connect(m_iconButton, &QPushButton::clicked, [=]() { emit clicked(); });
+    connect(m_textButton, &QPushButton::clicked, [=]() { emit clicked(); });
+    connect(m_closeButton, &QPushButton::clicked, [=]() { emit clickedCloseButton(this); });
     onThemeChanged();
 }
 
-void FluTabBarItem::setSelected(bool bSel)
+void FluTabBarItem::setSelected(bool isSel)
 {
-    m_bSel = bSel;
-    setProperty("selected", bSel);
-    m_closeBtn->setProperty("selected", bSel);
-    m_closeBtn->style()->polish(m_closeBtn);
+    m_isSel = isSel;
+    setProperty("selected", isSel);
+    m_closeButton->setProperty("selected", isSel);
+    m_closeButton->style()->polish(m_closeButton);
 
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
-    if (bSel)
+    m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
+    if (isSel)
     {
-        m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
+        m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
     }
 }
 
 bool FluTabBarItem::getSelected()
 {
-    return m_bSel;
+    return m_isSel;
 }
 
 void FluTabBarItem::setText(QString text)
 {
     adjustWidgetSize();
-    m_textBtn->setText(text);
+    m_textButton->setText(text);
 }
 
 QString FluTabBarItem::getText()
 {
-    return m_textBtn->text();
+    return m_textButton->text();
     // adjustWidgetSize();
 }
 
 int FluTabBarItem::getWidgetWidth()
 {
-    QFontMetrics metrics(m_textBtn->font());
-    QRect textRect = metrics.boundingRect(m_textBtn->text());
+    QFontMetrics metrics(m_textButton->font());
+    QRect textRect = metrics.boundingRect(m_textButton->text());
     int textWidth = textRect.width();
-    // m_textBtn->setFixedWidth(textWidth);
+    // m_textButton->setFixedWidth(textWidth);
 
     // adjust the whole widget width
-    int totalWidth = m_iconBtn->width() + textWidth + m_closeBtn->width() + m_hMainLayout->spacing() * 2 + 5;
+    int totalWidth = m_iconButton->width() + textWidth + m_closeButton->width() + m_mainLayout->spacing() * 2 + 5;
     return totalWidth;
 }
 
@@ -95,18 +95,18 @@ void FluTabBarItem::resizeEvent(QResizeEvent* event)
 
 void FluTabBarItem::enterEvent(QEnterEvent* event)
 {
-    // m_closeBtn->setProperty("tabBarItemHover", true);
+    // m_closeButton->setProperty("tabBarItemHover", true);
 
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
+    m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 }
 
 void FluTabBarItem::leaveEvent(QEvent* event)
 {
-    // m_closeBtn->setProperty("tabBarItemHover", false);
-    if (m_bSel)
+    // m_closeButton->setProperty("tabBarItemHover", false);
+    if (m_isSel)
         return;
 
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
+    m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
 }
 
 void FluTabBarItem::mouseReleaseEvent(QMouseEvent* event)
@@ -125,6 +125,6 @@ void FluTabBarItem::paintEvent(QPaintEvent* event)
 void FluTabBarItem::onThemeChanged()
 {
     FluStyleSheetUtils::setQssByFileName("FluTabBarItem.qss", this, FluThemeUtils::getUtils()->getTheme());
-    m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document, FluThemeUtils::getUtils()->getTheme()));
-    m_closeBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
+    m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Document, FluThemeUtils::getUtils()->getTheme()));
+    m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 }

@@ -2,7 +2,7 @@
 
 FluDialogsAndFlyoutsPage::FluDialogsAndFlyoutsPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
-    m_vMainLayout->setContentsMargins(35, 35, 0, 35);
+    m_mainLayout->setContentsMargins(35, 35, 0, 35);
     m_titleLabel->setText(tr("Dialogs & flyouts"));
 
     auto contentDialogCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/ContentDialog.png")), tr("ContentDialog"), tr("A dialog box that can be customized to contain any XAML content."));

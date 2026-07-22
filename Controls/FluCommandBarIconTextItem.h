@@ -39,8 +39,8 @@ class FluCommandBarIconTextItem : public FluCommandBarItem
     void onThemeChanged();
 
   protected:
-    QHBoxLayout* m_hMainLayout;
-    QPushButton* m_iconBtn;
+    QHBoxLayout* m_mainLayout;
+    QPushButton* m_iconButton;
     QLabel* m_textLabel;
     FluAwesomeType m_awesomeType;
 

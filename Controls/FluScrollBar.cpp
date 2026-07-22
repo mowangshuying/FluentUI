@@ -3,13 +3,13 @@
 #include "FluScrollBarHandle.h"
 
 FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea /*= nullptr*/)
-    : FluWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_nMaxValue(0), m_nMinValue(0), m_nCurrentValue(0), m_nPadding(14), m_nPageStep(50), m_bHideScrollBar(false), m_bExpanded(false)
+    : FluWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_maxValue(0), m_minValue(0), m_currentValue(0), m_padding(14), m_pageStep(50), m_isHideScrollBar(false), m_isExpanded(false)
 {
     m_scrollBarTrunk = new FluScrollBarTrunk(orientation, this);
     m_scrollBarHandle = new FluScrollBarHandle(orientation, this);
     m_timer = new QTimer(this);
 
-    // m_nValue = 0;
+    // m_value = 0;
     m_valueAnimation = new QPropertyAnimation(this, "value");
     // m_valueAnimation->setDuration(300);
 
@@ -19,15 +19,15 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scr
     setRangeValue(0, 0);
 
     m_scrollArea->installEventFilter(this);
-    connect(m_scrollBarTrunk->getPreBtn(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageUp);
-    connect(m_scrollBarTrunk->getLstBtn(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageDown);
-    connect(m_scrollBar, &QScrollBar::rangeChanged, this, [=](int nMinValue, int nMaxValue) { setRangeValue(nMinValue, nMaxValue); });
-    connect(m_scrollBar, &QScrollBar::valueChanged, this, [=](int nValue) {
-        m_nValue = nValue;
-        m_nCurrentValue = nValue;
+    connect(m_scrollBarTrunk->getPreButton(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageUp);
+    connect(m_scrollBarTrunk->getLstButton(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageDown);
+    connect(m_scrollBar, &QScrollBar::rangeChanged, this, [=](int minValue, int maxValue) { setRangeValue(minValue, maxValue); });
+    connect(m_scrollBar, &QScrollBar::valueChanged, this, [=](int value) {
+        m_value = value;
+        m_currentValue = value;
         adjustHandlePos();
     });
-    connect(this, &FluScrollBar::currentValueChanged, m_scrollBar, [=](int nValue) { m_scrollBar->setValue(nValue); });
+    connect(this, &FluScrollBar::currentValueChanged, m_scrollBar, [=](int value) { m_scrollBar->setValue(value); });
     connect(m_scrollBarTrunk->getAnimation(), &QPropertyAnimation::valueChanged, this, &FluScrollBar::onOpacityAnimationChanged);
     onThemeChanged();
 }
@@ -39,125 +39,125 @@ Qt::Orientation FluScrollBar::getOrientation()
 
 int FluScrollBar::getMaxValue()
 {
-    return m_nMaxValue;
+    return m_maxValue;
 }
 
-void FluScrollBar::setMaxValue(int nValue)
+void FluScrollBar::setMaxValue(int value)
 {
-    if (nValue == m_nMaxValue)
+    if (value == m_maxValue)
         return;
 
-    m_nMaxValue = nValue;
-    emit valueRangeChanged(m_nMinValue, m_nMaxValue);
+    m_maxValue = value;
+    emit valueRangeChanged(m_minValue, m_maxValue);
 }
 
 int FluScrollBar::getMinValue()
 {
-    return m_nMinValue;
+    return m_minValue;
 }
 
-void FluScrollBar::setMinValue(int nValue)
+void FluScrollBar::setMinValue(int value)
 {
-    if (nValue == m_nMinValue)
+    if (value == m_minValue)
         return;
 
-    m_nMinValue = nValue;
-    emit valueRangeChanged(m_nMinValue, m_nMaxValue);
+    m_minValue = value;
+    emit valueRangeChanged(m_minValue, m_maxValue);
 }
 
-void FluScrollBar::setRangeValue(int nMinValue, int nMaxValue)
+void FluScrollBar::setRangeValue(int minValue, int maxValue)
 {
-    if (m_nMinValue == nMinValue && m_nMaxValue == nMaxValue)
+    if (m_minValue == minValue && m_maxValue == maxValue)
     {
-        if (nMaxValue == 0 || m_bHideScrollBar)
+        if (maxValue == 0 || m_isHideScrollBar)
             setVisible(false);
         return;
     }
 
-    m_nMinValue = nMinValue;
-    m_nMaxValue = nMaxValue;
+    m_minValue = minValue;
+    m_maxValue = maxValue;
 
     adjustHandleSize();
     adjustHandlePos();
-    setVisible(nMaxValue > 0 && !m_bHideScrollBar);
-    emit valueRangeChanged(m_nMinValue, m_nMaxValue);
+    setVisible(maxValue > 0 && !m_isHideScrollBar);
+    emit valueRangeChanged(m_minValue, m_maxValue);
 }
 
 int FluScrollBar::getCurrentValue()
 {
-    return m_nCurrentValue;
+    return m_currentValue;
 }
 
-void FluScrollBar::setCurrentValue(int nValue)
+void FluScrollBar::setCurrentValue(int value)
 {
-    if (nValue < m_nMinValue)
-        nValue = m_nMinValue;
-    else if (nValue > m_nMaxValue)
-        nValue = m_nMaxValue;
+    if (value < m_minValue)
+        value = m_minValue;
+    else if (value > m_maxValue)
+        value = m_maxValue;
 
-    // m_nCurrentValue = nValue;
+    // m_currentValue = value;
     // adjustHandlePos();
-    // emit currentValueChanged(m_nCurrentValue);
-    m_valueAnimation->setStartValue(m_nCurrentValue);
-    m_valueAnimation->setEndValue(nValue);
+    // emit currentValueChanged(m_currentValue);
+    m_valueAnimation->setStartValue(m_currentValue);
+    m_valueAnimation->setEndValue(value);
     m_valueAnimation->setEasingCurve(QEasingCurve::InSine);
     m_valueAnimation->setDuration(300);
     m_valueAnimation->start();
 }
 
-void FluScrollBar::scrollCurrentValue(int nValue)
+void FluScrollBar::scrollCurrentValue(int value)
 {
-    // m_nCurrentValue += nValue;
-    int nTmpValue = m_nCurrentValue + nValue;
-    setCurrentValue(nTmpValue);
+    // m_currentValue += value;
+    int tmpValue = m_currentValue + value;
+    setCurrentValue(tmpValue);
 }
 
 int FluScrollBar::getValue()
 {
-    return m_nValue;
+    return m_value;
 }
 
-void FluScrollBar::setValue(int nValue)
+void FluScrollBar::setValue(int value)
 {
-    // LOG_DEBUG << nValue;
-    m_nValue = nValue;
-    m_nCurrentValue = nValue;
+    // LOG_DEBUG << value;
+    m_value = value;
+    m_currentValue = value;
     adjustHandlePos();
-    emit currentValueChanged(nValue);
+    emit currentValueChanged(value);
 }
 
 int FluScrollBar::getPadding()
 {
-    return m_nPadding;
+    return m_padding;
 }
 
-void FluScrollBar::setPadding(int nPadding)
+void FluScrollBar::setPadding(int padding)
 {
-    m_nPadding = nPadding;
+    m_padding = padding;
 }
 
 int FluScrollBar::getPageStep()
 {
-    return m_nPageStep;
+    return m_pageStep;
 }
 
-void FluScrollBar::setPageStep(int nPageStep)
+void FluScrollBar::setPageStep(int pageStep)
 {
-    m_nPageStep = nPageStep;
+    m_pageStep = pageStep;
 }
 
 int FluScrollBar::getTrunkLen()
 {
     if (m_orientation == Qt::Vertical)
-        return height() - 2 * m_nPadding;
-    return width() - 2 * m_nPadding;
+        return height() - 2 * m_padding;
+    return width() - 2 * m_padding;
 }
 
 bool FluScrollBar::atTrunk(const QPoint& pos)
 {
     if (m_orientation == Qt::Vertical)
-        return pos.y() >= m_nPadding && pos.y() <= height() - m_nPadding;
-    return pos.x() >= m_nPadding && pos.x() <= width() - m_nPadding;
+        return pos.y() >= m_padding && pos.y() <= height() - m_padding;
+    return pos.x() >= m_padding && pos.x() <= width() - m_padding;
 }
 
 int FluScrollBar::getSlideWayLen()
@@ -167,14 +167,14 @@ int FluScrollBar::getSlideWayLen()
     return getTrunkLen() - m_scrollBarHandle->width();
 }
 
-void FluScrollBar::setHideScrollBar(bool bHideScrollBar)
+void FluScrollBar::setHideScrollBar(bool isHideScrollBar)
 {
-    m_bHideScrollBar = bHideScrollBar;
+    m_isHideScrollBar = isHideScrollBar;
 }
 
 bool FluScrollBar::isHideScrollBar()
 {
-    return m_bHideScrollBar;
+    return m_isHideScrollBar;
 }
 
 void FluScrollBar::adjustScrollBarPosAndSize(QSize scrollAreaSize)
@@ -219,25 +219,25 @@ void FluScrollBar::adjustHandlePos()
 {
     if (m_orientation == Qt::Vertical)
     {
-        int nTotal = m_nMaxValue - m_nMinValue;
-        if (nTotal < 1)
-            nTotal = 1;
-        int nDelta = 1.0 * getCurrentValue() / nTotal * getSlideWayLen();
+        int total = m_maxValue - m_minValue;
+        if (total < 1)
+            total = 1;
+        int delta = 1.0 * getCurrentValue() / total * getSlideWayLen();
 
-        int nX = width() - m_scrollBarHandle->width() - 3;
+        int x = width() - m_scrollBarHandle->width() - 3;
         // LOG_DEBUG << width() << "," << m_scrollBarHandle->width();
-        int nY = m_nPadding + nDelta;
-        m_scrollBarHandle->move(nX, nY);
+        int y = m_padding + delta;
+        m_scrollBarHandle->move(x, y);
     }
     else if (m_orientation == Qt::Horizontal)
     {
-        int nTotal = m_nMaxValue - m_nMinValue;
-        if (nTotal < 1)
-            nTotal = 1;
-        int nDelta = 1.0 * getCurrentValue() / nTotal * getSlideWayLen();
-        int nX = m_nPadding + nDelta;
-        int nY = height() - m_scrollBarHandle->height() - 3;
-        m_scrollBarHandle->move(nX, nY);
+        int total = m_maxValue - m_minValue;
+        if (total < 1)
+            total = 1;
+        int delta = 1.0 * getCurrentValue() / total * getSlideWayLen();
+        int x = m_padding + delta;
+        int y = height() - m_scrollBarHandle->height() - 3;
+        m_scrollBarHandle->move(x, y);
     }
 }
 
@@ -245,27 +245,27 @@ void FluScrollBar::adjustHandleSize()
 {
     if (m_orientation == Qt::Vertical)
     {
-        int nTotal = m_nMaxValue - m_nMinValue + m_scrollArea->height();
-        if (nTotal < 1)
-            nTotal = 1;
+        int total = m_maxValue - m_minValue + m_scrollArea->height();
+        if (total < 1)
+            total = 1;
 
-        int nHandleH = 1.0 * getTrunkLen() * m_scrollArea->height() / nTotal;
-        if (nHandleH < 30)
-            nHandleH = 30;
+        int handleH = 1.0 * getTrunkLen() * m_scrollArea->height() / total;
+        if (handleH < 30)
+            handleH = 30;
 
-        m_scrollBarHandle->setFixedHeight(nHandleH);
+        m_scrollBarHandle->setFixedHeight(handleH);
     }
     else if (m_orientation == Qt::Horizontal)
     {
-        int nTotal = m_nMaxValue - m_nMinValue + m_scrollArea->width();
-        if (nTotal < 1)
-            nTotal = 1;
+        int total = m_maxValue - m_minValue + m_scrollArea->width();
+        if (total < 1)
+            total = 1;
 
-        int nHanldeW = 1.0 * getTrunkLen() * m_scrollArea->width() / nTotal;
-        if (nHanldeW < 30)
-            nHanldeW = 30;
+        int hanldeW = 1.0 * getTrunkLen() * m_scrollArea->width() / total;
+        if (hanldeW < 30)
+            hanldeW = 30;
 
-        m_scrollBarHandle->setFixedWidth(nHanldeW);
+        m_scrollBarHandle->setFixedWidth(hanldeW);
     }
 }
 
@@ -301,14 +301,14 @@ bool FluScrollBar::eventFilter(QObject* watched, QEvent* event)
 
 void FluScrollBar::enterEvent(QEnterEvent* event)
 {
-    m_bEnter = true;
+    m_isEnter = true;
     m_timer->stop();
     m_timer->singleShot(200, this, &FluScrollBar::expand);
 }
 
 void FluScrollBar::leaveEvent(QEvent* event)
 {
-    m_bEnter = false;
+    m_isEnter = false;
     m_timer->stop();
     m_timer->singleShot(200, this, &FluScrollBar::collapse);
 }
@@ -321,64 +321,64 @@ void FluScrollBar::resizeEvent(QResizeEvent* event)
 void FluScrollBar::mouseMoveEvent(QMouseEvent* event)
 {
     QWidget::mouseMoveEvent(event);
-    if (!m_bPressed)
+    if (!m_isPressed)
         return;
 
-    int nDv = 0;
+    int dv = 0;
     if (m_orientation == Qt::Vertical)
     {
-        nDv = event->pos().y() - m_pressedPoint.y();
+        dv = event->pos().y() - m_pressedPoint.y();
     }
     else
     {
-        nDv = event->pos().x() - m_pressedPoint.x();
+        dv = event->pos().x() - m_pressedPoint.x();
     }
 
-    nDv = 1.0 * nDv / getSlideWayLen() * (m_nMaxValue - m_nMinValue);
-    FluScrollBar::setCurrentValue(getCurrentValue() + nDv);
+    dv = 1.0 * dv / getSlideWayLen() * (m_maxValue - m_minValue);
+    FluScrollBar::setCurrentValue(getCurrentValue() + dv);
     m_pressedPoint = event->pos();
 }
 
 void FluScrollBar::mousePressEvent(QMouseEvent* event)
 {
     QWidget::mousePressEvent(event);
-    m_bPressed = true;
+    m_isPressed = true;
     m_pressedPoint = event->pos();
 
     if (childAt(event->pos()) == m_scrollBarHandle || !atTrunk(m_pressedPoint))
         return;
 
-    int nValue = 0;
+    int value = 0;
     if (m_orientation == Qt::Vertical)
     {
         if (event->pos().y() > m_scrollBarHandle->geometry().bottom())
         {
-            nValue = event->pos().y() - m_scrollBarHandle->height() - m_nPadding;
+            value = event->pos().y() - m_scrollBarHandle->height() - m_padding;
         }
         else
         {
-            nValue = event->pos().y() - m_nPadding;
+            value = event->pos().y() - m_padding;
         }
     }
     else
     {
         if (event->pos().x() > m_scrollBarHandle->geometry().right())
         {
-            nValue = event->pos().x() - m_scrollBarHandle->width() - m_nPadding;
+            value = event->pos().x() - m_scrollBarHandle->width() - m_padding;
         }
         else
         {
-            nValue = event->pos().x() - m_nPadding;
+            value = event->pos().x() - m_padding;
         }
     }
 
-    setCurrentValue(1.0 * nValue / qMax(getSlideWayLen(), 1) * (m_nMaxValue - m_nMinValue));
+    setCurrentValue(1.0 * value / qMax(getSlideWayLen(), 1) * (m_maxValue - m_minValue));
 }
 
 void FluScrollBar::mouseReleaseEvent(QMouseEvent* event)
 {
     QWidget::mouseReleaseEvent(event);
-    m_bPressed = false;
+    m_isPressed = false;
 }
 
 void FluScrollBar::wheelEvent(QWheelEvent* event)
@@ -399,26 +399,26 @@ void FluScrollBar::OnPageDown()
     setCurrentValue(getCurrentValue() + getPageStep());
 }
 
-// void FluScrollBar::onCurrentValueChanged(int nValue)
+// void FluScrollBar::onCurrentValueChanged(int value)
 //{
-//     setCurrentValue(nValue);
+//     setCurrentValue(value);
 // }
 
 void FluScrollBar::expand()
 {
-    if (m_bExpanded || !m_bEnter)
+    if (m_isExpanded || !m_isEnter)
         return;
 
-    m_bExpanded = true;
+    m_isExpanded = true;
     m_scrollBarTrunk->expandTrunk();
 }
 
 void FluScrollBar::collapse()
 {
-    if (!m_bExpanded || m_bEnter)
+    if (!m_isExpanded || m_isEnter)
         return;
 
-    m_bExpanded = false;
+    m_isExpanded = false;
     m_scrollBarTrunk->collapseTrunk();
 }
 

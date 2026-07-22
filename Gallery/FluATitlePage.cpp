@@ -7,24 +7,24 @@
 
 FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
 {
-    m_vMainLayout = new QVBoxLayout;
-    m_vMainLayout->setAlignment(Qt::AlignTop);
-    setLayout(m_vMainLayout);
+    m_mainLayout = new QVBoxLayout;
+    m_mainLayout->setAlignment(Qt::AlignTop);
+    setLayout(m_mainLayout);
 
-    m_vMainLayout->setContentsMargins(35, 35, 35, 35);
+    m_mainLayout->setContentsMargins(35, 35, 35, 35);
 
     m_titleLabel = new QLabel;
     m_titleLabel->setObjectName("titleLabel");
     m_titleLabel->setText(tr("A Temp Title Label"));
-    m_vMainLayout->addWidget(m_titleLabel);
+    m_mainLayout->addWidget(m_titleLabel);
 
-    m_vMainLayout->addSpacing(20);
+    m_mainLayout->addSpacing(20);
 
-    m_vScrollView = new FluFWScrollView(this);
-    m_vScrollView->setObjectName("vScrollView");
-    m_vMainLayout->addWidget(m_vScrollView, 1);
+    m_scrollView = new FluFWScrollView(this);
+    m_scrollView->setObjectName("vScrollView");
+    m_mainLayout->addWidget(m_scrollView, 1);
 
-    m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
+    m_scrollView->getMainLayout()->setAlignment(Qt::AlignTop);
     FluStyleSheetUtils::setQssByFileName("FluATitlePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 

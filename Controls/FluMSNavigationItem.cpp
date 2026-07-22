@@ -3,33 +3,33 @@
 
 FluMSNavigationItem::FluMSNavigationItem(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(FluAwesomeType::None)
 {
-    m_hMainLayout = new QHBoxLayout;
-    setLayout(m_hMainLayout);
+    m_mainLayout = new QHBoxLayout;
+    setLayout(m_mainLayout);
 
-    m_hMainLayout->setAlignment(Qt::AlignHCenter);
-    m_hMainLayout->setSpacing(0);
+    m_mainLayout->setAlignment(Qt::AlignHCenter);
+    m_mainLayout->setSpacing(0);
     setFixedSize(65, 60);
 
     m_indicatorLabel = new QLabel;
     m_indicatorLabel->setObjectName("indicatorLabel");
     m_indicatorLabel->setFixedWidth(4);
     m_indicatorLabel->setFixedHeight(26);
-    m_hMainLayout->addWidget(m_indicatorLabel);
-    m_hMainLayout->addSpacing(3);
+    m_mainLayout->addWidget(m_indicatorLabel);
+    m_mainLayout->addSpacing(3);
 
-    m_vLayout = new QVBoxLayout;
-    m_hMainLayout->addLayout(m_vLayout);
+    m_layout = new QVBoxLayout;
+    m_mainLayout->addLayout(m_layout);
 
-    m_iconBtn = new QPushButton;
-    m_iconBtn->setFixedSize(40, 40);
-    m_iconBtn->setIconSize(QSize(40, 40));
-    m_iconBtn->setObjectName("iconBtn");
-    m_vLayout->addWidget(m_iconBtn);
+    m_iconButton = new QPushButton;
+    m_iconButton->setFixedSize(40, 40);
+    m_iconButton->setIconSize(QSize(40, 40));
+    m_iconButton->setObjectName("iconBtn");
+    m_layout->addWidget(m_iconButton);
 
     m_textLabel = new QLabel;
     m_textLabel->setAlignment(Qt::AlignHCenter);
     m_textLabel->setObjectName("textLabel");
-    m_vLayout->addWidget(m_textLabel);
+    m_layout->addWidget(m_textLabel);
 
     onThemeChanged();
     // connect(this, &FluMSNavigationItem::clicked, this, [=]() { onItemClicked(); });
@@ -42,7 +42,7 @@ FluMSNavigationItem::FluMSNavigationItem(FluAwesomeType awesomeType, QString tex
     setKey(key);
     onThemeChanged();
     connect(this, &FluMSNavigationItem::clicked, this, [=]() { onItemClicked(); });
-    connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit clicked(); });
+    connect(m_iconButton, &QPushButton::clicked, this, [=]() { emit clicked(); });
 }
 
 void FluMSNavigationItem::setAwesomeType(FluAwesomeType type)
@@ -75,11 +75,11 @@ QString FluMSNavigationItem::getKey()
     return m_Key;
 }
 
-void FluMSNavigationItem::setSelected(bool bSelected)
+void FluMSNavigationItem::setSelected(bool isSelected)
 {
-    m_bSelected = bSelected;
-    setProperty("selected", m_bSelected);
-    m_indicatorLabel->setProperty("selected", m_bSelected);
+    m_isSelected = isSelected;
+    setProperty("selected", m_isSelected);
+    m_indicatorLabel->setProperty("selected", m_isSelected);
 
     m_indicatorLabel->style()->polish(m_indicatorLabel);
     style()->polish(this);
@@ -87,7 +87,7 @@ void FluMSNavigationItem::setSelected(bool bSelected)
 
 bool FluMSNavigationItem::getSelected()
 {
-    return m_bSelected;
+    return m_isSelected;
 }
 
 void FluMSNavigationItem::setParentView(FluMSNavigationView* parentView)
@@ -128,12 +128,12 @@ void FluMSNavigationItem::onThemeChanged()
 {
     if (FluThemeUtils::isLightTheme())
     {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
+        m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluMSNavigationItem.qss", this);
     }
     else
     {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
+        m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
         // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluMSNavigationItem.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluMSNavigationItem.qss", this, FluThemeUtils::getUtils()->getTheme());

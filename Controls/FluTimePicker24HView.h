@@ -68,23 +68,23 @@ class FluTimePicker24HView : public FluWidget
 
   protected:
     QFrame* m_mainView;
-    QHBoxLayout* m_hMainViewLayout;
+    QHBoxLayout* m_mainViewLayout;
     QGraphicsDropShadowEffect* m_shadowEffect;
 
-    QVBoxLayout* m_vMainLayout;
-    QHBoxLayout* m_hViewLayout;
-    QHBoxLayout* m_hBtnLayout;
+    QVBoxLayout* m_mainLayout;
+    QHBoxLayout* m_viewLayout;
+    QHBoxLayout* m_buttonLayout;
 
     FluTimePickerViewMask* m_mask;
 
     FluLoopView* m_hourView;
     FluLoopView* m_minuteView;
 
-    QPushButton* m_okBtn;
-    QPushButton* m_cancelBtn;
+    QPushButton* m_okButton;
+    QPushButton* m_cancelButton;
 
     int m_hour;
     int m_minute;
 
-    bool m_bFirstShow;
+    bool m_isFirstShow;
 };

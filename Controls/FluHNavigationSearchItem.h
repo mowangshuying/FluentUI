@@ -10,6 +10,6 @@ class FluHNavigationSearchItem : public FluHNavigationItem
     FluHNavigationSearchItem(QWidget* parent = nullptr);
 
   protected:
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
     FluSearchLineEdit* m_searchLineEdit;
 };

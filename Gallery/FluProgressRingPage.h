@@ -26,5 +26,5 @@ class FluProgressRingPage : public FluAEmptyPage
     void onThemeChanged();
 
   protected:
-    int m_nTimes;
+    int m_times;
 };

@@ -48,9 +48,9 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
         return m_wrapWidget2;
     }
 
-    QPushButton *getIconBtn()
+    QPushButton *getIconButton()
     {
-        return m_iconBtn;
+        return m_iconButton;
     }
 
     QLabel *getLabel()
@@ -65,7 +65,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     bool getHideIcon()
     {
-        return m_bHideIcon;
+        return m_isHideIcon;
     }
 
     void hideLabelArrow()
@@ -86,9 +86,9 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
         return m_parentItem;
     }
 
-    void setItemWidth(int nWidth);
+    void setItemWidth(int width);
 
-    void setItemHeight(int nHeight);
+    void setItemHeight(int height);
 
     std::vector<FluVNavigationIconTextItem *> getItems();
     void getAllItems(std::vector<FluVNavigationIconTextItem *> &totalItems);
@@ -136,7 +136,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     bool isDown()
     {
-        return m_bDown;
+        return m_isDown;
     }
 
     bool isLeaf()
@@ -183,7 +183,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
         while (!itemStack.empty())
         {
             auto item = itemStack.top();
-            if ((item->m_bDown && !item->getItems().empty()) || item->getItems().empty())
+            if ((item->m_isDown && !item->getItems().empty()) || item->getItems().empty())
                 item->onItemClicked();
             itemStack.pop();
         }
@@ -191,7 +191,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
 
     void onThemeChanged()
     {
-        m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
+        m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
         FluStyleSheetUtils::setQssByFileName("FluVNavigationIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
@@ -203,22 +203,22 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
     QWidget *m_emptyWidget;
 
     FluVNavigationIndicator *m_indicator;
-    QPushButton *m_iconBtn;
+    QPushButton *m_iconButton;
     QLabel *m_label;
     QPushButton *m_arrow;
-    QHBoxLayout *m_hLayout1;
+    QHBoxLayout *m_horizontalLayout1;
     std::vector<FluVNavigationIconTextItem *> m_items;
 
-    QVBoxLayout *m_vMainLayout;
-    QVBoxLayout *m_vLayout1;
+    QVBoxLayout *m_mainLayout;
+    QVBoxLayout *m_verticalLayout1;
 
     FluVNavigationIconTextItem *m_parentItem;
 
     FluAwesomeType m_awesomeType;  // the icon display which
 
-    bool m_bHideIcon;
-    bool m_bDown;
-    bool m_bLong;
-    bool m_bSelected;
-    bool m_bEnableThisItem;
+    bool m_isHideIcon;
+    bool m_isDown;
+    bool m_isLong;
+    bool m_isSelected;
+    bool m_isEnableThisItem;
 };

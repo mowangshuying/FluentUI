@@ -9,11 +9,11 @@ FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
         tabBar->addBarItem(tabBarItem);
     }
 
-    // m_vMainLayout = new QVBoxLayout;
-    // setLayout(m_vMainLayout);
+    // m_mainLayout = new QVBoxLayout;
+    // setLayout(m_mainLayout);
 
-    // m_vMainLayout->addWidget(tabBar);
-    // m_vMainLayout->addStretch(1);
+    // m_mainLayout->addWidget(tabBar);
+    // m_mainLayout->addStretch(1);
 
     connect(tabBar, &FluTabBar::addTabBtnClicked, [=]() {
         auto tmpTabBarItem = new FluTabBarItem;

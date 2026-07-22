@@ -26,7 +26,7 @@ class FluRatingControl : public FluWidget
     void onThemeChanged();
 
   protected:
-    int m_nNum;
+    int m_num;
     std::vector<FluStar*> m_stars;
-    QHBoxLayout* m_hMainLayout;
+    QHBoxLayout* m_mainLayout;
 };

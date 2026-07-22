@@ -15,5 +15,5 @@ class FluTabBarDemo : public FluTemplateDemo
 
   protected:
     FluTabBar* tabBar;
-    QVBoxLayout* m_vMainLayout;
+    QVBoxLayout* m_mainLayout;
 };

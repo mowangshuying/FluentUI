@@ -5,15 +5,16 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     m_itemType = FluVNavigationItemType::Search;
 
     m_hMainLayout = new QHBoxLayout;
-    m_hMainLayout->setContentsMargins(0, 4, 0, 4);
+    m_hMainLayout->setContentsMargins(0, 2, 0, 2);
     setLayout(m_hMainLayout);
 
     m_autoSuggestBox = new FluAutoSuggestBox(true);
+    m_autoSuggestBox->setFixedHeight(26);
     m_autoSuggestBox->setObjectName("autoSuggestBox");
     m_searchButton = new QPushButton;
-    m_searchButton->setFixedSize(44, 40);
+    m_searchButton->setFixedSize(36, 26);
     m_searchButton->setObjectName("searchButton");
-    m_searchButton->setIconSize(QSize(24, 24));
+    m_searchButton->setIconSize(QSize(20, 20));
     m_searchButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme()));
 
     m_hMainLayout->addWidget(m_searchButton);
@@ -21,7 +22,7 @@ FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/
     m_hMainLayout->addWidget(m_autoSuggestBox);
     hideSearchButton();
 
-    setFixedHeight(40);
+    setFixedHeight(30);
     onThemeChanged();
     connect(m_searchButton, &QPushButton::clicked, [=]() { emit itemClicked(); });
     connect(m_autoSuggestBox, &FluAutoSuggestBox::currentTextChanged, this, [=](QString text) { emit currentTextChanged(text); });

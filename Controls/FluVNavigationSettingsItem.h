@@ -8,6 +8,7 @@
 #include <QStyleOption>
 #include <QPainter>
 #include "FluRotationButton.h"
+#include "FluVNavigationIndicator.h"
 #include "../Utils/FluUtils.h"
 
 class FluVNavigationSettingsItem : public FluVNavigationItem
@@ -48,7 +49,7 @@ class FluVNavigationSettingsItem : public FluVNavigationItem
 
   protected:
     QHBoxLayout* m_hMainLayout;
-    QWidget* m_indicator;
+    FluVNavigationIndicator* m_indicator;
     FluRotationButton* m_icon;
     QLabel* m_label;
 

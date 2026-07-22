@@ -4,23 +4,23 @@
 FluVNavigationSettingsItem::FluVNavigationSettingsItem(QIcon icon, QString text, QWidget* parent /*= nullptr*/) : FluVNavigationItem(parent)
 {
     m_itemType = FluVNavigationItemType::Setting;
-    setFixedSize(320, 40);
+    setFixedSize(180, 30);
     m_hMainLayout = new QHBoxLayout;
     setLayout(m_hMainLayout);
 
-    m_hMainLayout->setContentsMargins(0, 4, 0, 4);
+    m_hMainLayout->setContentsMargins(0, 2, 0, 2);
 
-    m_indicator = new QWidget(this);
+    m_indicator = new FluVNavigationIndicator(this);
     m_icon = new FluRotationButton(this);
     m_label = new QLabel;
     m_label->setText(text);
 
-    m_indicator->setFixedHeight(18);
-    m_indicator->setFixedWidth(4);
-    m_icon->setFixedSize(30, 30);
+    m_indicator->setFixedHeight(14);
+    m_indicator->setFixedWidth(3);
+    m_icon->setFixedSize(24, 24);
     m_label->setWordWrap(true);
 
-    m_icon->setIconSize(QSize(24, 24));
+    m_icon->setIconSize(QSize(20, 20));
     m_icon->setIcon(icon);
 
     m_indicator->setObjectName("indicator");
@@ -78,7 +78,6 @@ void FluVNavigationSettingsItem::updateAllItemsStyleSheet()
 void FluVNavigationSettingsItem::updateItemsStyleSheet()
 {
     style()->polish(this);
-    m_indicator->style()->polish(m_indicator);
     m_icon->style()->polish(m_icon);
     m_label->style()->polish(m_label);
 }
@@ -87,7 +86,7 @@ void FluVNavigationSettingsItem::updateSelected(bool b)
 {
     m_bSelected = b;
     setProperty("selected", b);
-    m_indicator->setProperty("selected", b);
+    m_indicator->setSelected(b);
     m_label->setProperty("selected", b);
 }
 

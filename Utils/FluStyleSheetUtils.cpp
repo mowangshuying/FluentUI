@@ -251,12 +251,6 @@ void FluStyleSheetUtils::applyBatchedUpdates()
         if (!w)
             continue;
 
-        if (!w->isVisible())
-        {
-            inst->m_lastAppliedQss[w] = it.value();
-            continue;
-        }
-
         w->setStyleSheet(it.value());
         inst->m_lastAppliedQss[w] = it.value();
     }

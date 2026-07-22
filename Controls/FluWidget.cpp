@@ -12,8 +12,6 @@ FluWidget::FluWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)
 #endif
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) {
-        if (!isVisible())
-            return;
 #ifdef FluCheckObjects
         LOG_DEBUG << "ClassName:" << this->metaObject()->className();
 #endif

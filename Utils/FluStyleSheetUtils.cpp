@@ -127,10 +127,10 @@ void FluStyleSheetUtils::drawBottomLineIndicator(QWidget *widget, QPainter *pain
     int h = widget->height();
 
     QPainterPath path;
-    path.addRoundedRect(QRectF(margins.left(), h - 10, w - margins.right(), 10), 5, 5);
+    path.addRoundedRect(QRectF(margins.left(), h - 10, w, 10), 5, 5);
 
     QPainterPath clipPath;
-    clipPath.addRect(margins.left(), h - 10, w - margins.right(), 7);
+    clipPath.addRect(margins.left(), h - 10, w, 7);
     path = path.subtracted(clipPath);
 
     QBrush brush;

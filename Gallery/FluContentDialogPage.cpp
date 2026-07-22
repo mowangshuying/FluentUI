@@ -1,4 +1,4 @@
-#include "FluContentDialogPage.h"
+﻿#include "FluContentDialogPage.h"
 
 FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -28,5 +28,5 @@ FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluA
 
 void FluContentDialogPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluContentDialogPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluContentDialogPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -9,8 +9,6 @@ class FluProgressBar : public QProgressBar
   public:
     FluProgressBar(QWidget* parent = nullptr);
 
-  public slots:
-    void onThemeChanged();
-
   protected:
+    void onThemeChanged();
 };

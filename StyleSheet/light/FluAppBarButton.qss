@@ -18,3 +18,15 @@ FluAppBarButton:hover {
     color: black;
     font-size: 8px;
 }
+
+FluAppBarButton:disabled {
+    background-color: transparent;
+}
+
+FluAppBarButton:disabled #iconBtn {
+    color: rgba(0, 0, 0, 110);
+}
+
+FluAppBarButton:disabled #textLabel {
+    color: rgba(0, 0, 0, 110);
+}

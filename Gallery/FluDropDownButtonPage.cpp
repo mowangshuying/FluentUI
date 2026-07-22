@@ -1,4 +1,4 @@
-#include "FluDropDownButtonPage.h"
+﻿#include "FluDropDownButtonPage.h"
 
 FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -42,5 +42,5 @@ FluDropDownButtonPage::FluDropDownButtonPage(QWidget* parent /*= nullptr*/) : Fl
 
 void FluDropDownButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDropDownButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDropDownButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

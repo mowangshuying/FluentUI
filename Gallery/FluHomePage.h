@@ -2,7 +2,7 @@
 
 #include "../Controls/FluWidget.h"
 
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include <QPainter>
 #include <QStyleOption>
 #include <QVBoxLayout>

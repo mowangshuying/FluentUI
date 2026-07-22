@@ -1,4 +1,4 @@
-#include "FluBusyProgressRing.h"
+﻿#include "FluBusyProgressRing.h"
 
 FluBusyProgressRing::FluBusyProgressRing(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -112,5 +112,5 @@ void FluBusyProgressRing::paintEvent(QPaintEvent* event)
 void FluBusyProgressRing::onThemeChanged()
 {
     // set Qss By theme;
-    FluStyleSheetUitls::setQssByFileName("FluBusyProgressRing.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluBusyProgressRing.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

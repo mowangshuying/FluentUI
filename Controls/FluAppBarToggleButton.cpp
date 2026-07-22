@@ -1,4 +1,4 @@
-#include "FluAppBarToggleButton.h"
+﻿#include "FluAppBarToggleButton.h"
 
 FluAppBarToggleButton::FluAppBarToggleButton(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(awesomeType), m_bToggled(false)
 {
@@ -103,6 +103,8 @@ bool FluAppBarToggleButton::getToggled()
 
 void FluAppBarToggleButton::mouseReleaseEvent(QMouseEvent* event)
 {
+    if (!isEnabled())
+        return;
     QWidget::mouseReleaseEvent(event);
     emit clicked();
 }
@@ -117,6 +119,13 @@ void FluAppBarToggleButton::paintEvent(QPaintEvent* event)
 
 void FluAppBarToggleButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluAppBarToggleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAppBarToggleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     updateIcon();
+}
+
+void FluAppBarToggleButton::setEnabled(bool enabled)
+{
+    QWidget::setEnabled(enabled);
+    m_iconBtn->setEnabled(enabled);
+    m_textLabel->setEnabled(enabled);
 }

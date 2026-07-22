@@ -1,4 +1,4 @@
-#include "FluDropDownButton.h"
+﻿#include "FluDropDownButton.h"
 
 FluDropDownButton::FluDropDownButton(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_svgDarkPath(""), m_svgLightPath("")
 {
@@ -100,6 +100,8 @@ void FluDropDownButton::addIconTextItem(QIcon type, QString text)
 
 void FluDropDownButton::mouseReleaseEvent(QMouseEvent* e)
 {
+    if (!isEnabled())
+        return;
     emit clicked();
 }
 
@@ -120,7 +122,7 @@ void FluDropDownButton::onThemeChanged()
             m_textBtn->setIcon(FluIconUtils::getFluentIcon(m_textAwesomeType, FluTheme::Light));
         if (m_svgLightPath != "")
             m_textBtn->setIcon(FluIconUtils::getSvgIcon(m_svgLightPath));
-        //  FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
+        //  FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluDropDownButton.qss", this);
     }
     else
     {
@@ -130,7 +132,14 @@ void FluDropDownButton::onThemeChanged()
         if (m_svgDarkPath != "")
             m_textBtn->setIcon(FluIconUtils::getSvgIcon(m_svgDarkPath));
 
-        //  FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluDropDownButton.qss", this);
+        //  FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluDropDownButton.qss", this);
     }
-    FluStyleSheetUitls::setQssByFileName("FluDropDownButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDropDownButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+void FluDropDownButton::setEnabled(bool enabled)
+{
+    QWidget::setEnabled(enabled);
+    m_textBtn->setEnabled(enabled);
+    m_iconBtn->setEnabled(enabled);
 }

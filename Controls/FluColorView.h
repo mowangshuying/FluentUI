@@ -292,7 +292,7 @@ class FluColorView : public QDialog
 
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluColorView.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluColorView.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

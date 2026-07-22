@@ -1,4 +1,4 @@
-#include "FluTimePicker24HView.h"
+﻿#include "FluTimePicker24HView.h"
 
 FluTimePicker24HView::FluTimePicker24HView(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_bFirstShow(true)
 {
@@ -202,13 +202,13 @@ void FluTimePicker24HView::onThemeChanged()
         m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Light));
         m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Light));
 
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluTimePicker24HView.qss", this);
     }
     else
     {
         m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Dark));
         m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluTimePicker24HView.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluTimePicker24HView.qss", this);
     }
-    FluStyleSheetUitls::setQssByFileName("FluTimePicker24HView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTimePicker24HView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

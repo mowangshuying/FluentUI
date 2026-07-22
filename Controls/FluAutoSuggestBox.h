@@ -50,6 +50,8 @@ class FluAutoSuggestBox : public FluWidget
     bool eventFilter(QObject* watched, QEvent* event);
 
     void paintEvent(QPaintEvent* event);
+
+    void setEnabled(bool enabled);
   signals:
     void searchBtnClicked();
     void currentTextChanged(QString text);

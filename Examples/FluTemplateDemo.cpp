@@ -80,5 +80,5 @@ void FluTemplateDemo::onThemeChanged()
     }
 
     // just do stylesheet;
-    FluStyleSheetUitls::setQssByFileName("FluTemplateDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTemplateDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

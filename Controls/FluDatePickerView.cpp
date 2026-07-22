@@ -377,5 +377,5 @@ void FluDatePickerView::onThemeChanged()
 {
     m_okBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluThemeUtils::getUtils()->getTheme()));
     m_cancelBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluDatePickerView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDatePickerView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

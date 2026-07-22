@@ -14,7 +14,7 @@ void FluPMenuStyle::drawPrimitive(PrimitiveElement element, const QStyleOption* 
     {
         painter->save();
         painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-        painter->setPen(m_menuBoderColor);
+        painter->setPen(m_menuBorderColor);
         painter->setBrush(m_menuBackgroundColor);
         painter->drawRoundedRect(option->rect, 6, 6);
         painter->restore();
@@ -35,7 +35,7 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
             {
                 painter->save();
                 painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-                painter->setPen(QPen(m_menuBoderColor, 1));
+                painter->setPen(QPen(m_menuBorderColor, 1));
                 painter->drawLine(menuItem->rect.topLeft(), menuItem->rect.topRight());
                 painter->restore();
                 return;

@@ -1,4 +1,4 @@
-#include "FluAppBarToggleButtonPage.h"
+﻿#include "FluAppBarToggleButtonPage.h"
 
 FluAppBarToggleButtonPage::FluAppBarToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -28,5 +28,5 @@ void FluAppBarToggleButtonPage::addSymbolIconAppBarButton()
 
 void FluAppBarToggleButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluAppBarToggleButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAppBarToggleButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

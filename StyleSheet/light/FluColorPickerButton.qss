@@ -7,3 +7,8 @@ FluColorPickerButton {
 FluColorPickerButton:hover {
     border: 2px solid rgb(20, 103, 166);
 }
+
+FluColorPickerButton:disabled {
+    border: 2px solid rgb(229, 229, 229);
+    opacity: 0.5;
+}

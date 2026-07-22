@@ -41,6 +41,8 @@ class FluDropDownButton : public FluWidget
     void mouseReleaseEvent(QMouseEvent* e);
 
     void paintEvent(QPaintEvent* event);
+
+    void setEnabled(bool enabled);
   signals:
     void clicked();
   public slots:

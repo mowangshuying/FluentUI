@@ -7,7 +7,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QGraphicsOpacityEffect>
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include "../Controls/FluVCard.h"
 
 class FluHomePageTitle : public FluWidget
@@ -53,7 +53,7 @@ class FluHomePageTitle : public FluWidget
             m_githubCard->setIcon(FluIconUtils::getPixmap(("../res/HomeHeaderTiles/github-mark.png")));
             m_color1 = QColor(206, 216, 228);
             m_color2 = QColor(223, 231, 240);
-            FluStyleSheetUitls::setQssByFileName("FluHomePageTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
+            FluStyleSheetUtils::setQssByFileName("FluHomePageTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
             update();
         }
         else if (FluThemeUtils::isDarkTheme() || FluThemeUtils::isAtomOneDarkTheme())
@@ -61,7 +61,7 @@ class FluHomePageTitle : public FluWidget
             m_githubCard->setIcon(FluIconUtils::getPixmap(("../res/HomeHeaderTiles/github-mark-white.png")));
             m_color1 = QColor(0, 0, 0);
             m_color2 = QColor(39, 39, 39);
-            FluStyleSheetUitls::setQssByFileName("FluHomePageTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
+            FluStyleSheetUtils::setQssByFileName("FluHomePageTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
             update();
         }
     }

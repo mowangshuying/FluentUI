@@ -89,7 +89,7 @@ class FluRoundMenu : public QMenu
     void exec(QPoint pos, bool bAni = true, FluMenuAniType aniType = FluMenuAniType::dropDown);
 
   signals:
-    void closedSignal();
+    void closed();
   public slots:
 
     void onShowMenuTimeOut();

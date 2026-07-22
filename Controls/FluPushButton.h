@@ -24,9 +24,7 @@ class FluPushButton : public QPushButton
     {
         return m_bPill;
     }
-  public slots:
-    void onThemeChanged();
-
   protected:
+    void onThemeChanged();
     bool m_bPill;
 };

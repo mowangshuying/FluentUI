@@ -52,7 +52,7 @@
 #include "FluAnimationDemo.h"
 #include "FluSettingsVersionBoxDemo.h"
 #include "FluColorViewDemo.h"
-#include "FluIntructionsDemo.h"
+#include "FluInstructionsDemo.h"
 #include "FluBusyProgressRingDemo.h"
 #include "FluScrollAreaDemo.h"
 #include "FluScintillaDemo.h"
@@ -276,7 +276,7 @@ int main(int argc, char **argv)
     // FluColorViewDemo demo;
     // demo.show();
 
-    // FluIntructionsDemo demo;
+    // FluInstructionsDemo demo;
     // demo.show();
 
     // FluBusyProgressRingDemo demo;
@@ -336,7 +336,7 @@ int main(int argc, char **argv)
     // FluToggleSwitchDemo demo;
     // demo.show();
 
-    // FluIntructionsDemo demo;
+    // FluInstructionsDemo demo;
     // demo.show();
 
     // FluPaginationDemo demo;
@@ -416,7 +416,10 @@ int main(int argc, char **argv)
     // FluButtonDemo demo;
     // demo.show();
 
-    FluMenuBarDemo demo;
+    // FluMenuBarDemo demo;
+    // demo.show();
+
+    FluComboBoxDemo demo;
     demo.show();
     return app.exec();
 }

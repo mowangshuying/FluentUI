@@ -17,3 +17,7 @@ FluCommandBarIconItem:hover {
 /* #textLabel {
     color: black;
 } */
+
+FluCommandBarIconItem:disabled {
+    opacity: 0.4;
+}

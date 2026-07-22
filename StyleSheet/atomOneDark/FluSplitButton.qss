@@ -26,3 +26,18 @@ FluSplitButton {
     width: 30px;
     height: 30px;
 }
+
+FluSplitButton:disabled {
+    color: rgba(255, 255, 255, 80);
+    border: 1px solid rgb(60, 63, 68);
+    border-bottom: 1px solid rgb(60, 63, 68);
+    background-color: rgb(38, 42, 48);
+}
+
+FluSplitButton:disabled #textBtn {
+    color: rgba(255, 255, 255, 80);
+}
+
+FluSplitButton:disabled #dropDownBtn {
+    border-left: 1px solid rgb(60, 63, 68);
+}

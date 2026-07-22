@@ -28,7 +28,6 @@ FluCommandBarIconTextItem::FluCommandBarIconTextItem(QWidget* parent) : FluComma
     setFixedHeight(26);
     onThemeChanged();
     connect(m_iconBtn, &QPushButton::clicked, this, [=]() { emit clicked(); });
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
     connect(this, &FluCommandBarIconTextItem::clicked, this, [=]() {
         if (m_roundMenu->actions().isEmpty())
             return;
@@ -89,5 +88,5 @@ void FluCommandBarIconTextItem::paintEvent(QPaintEvent* event)
 void FluCommandBarIconTextItem::onThemeChanged()
 {
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluCommandBarIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCommandBarIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -19,7 +19,7 @@ class FluBorder : public QLabel
 
     void setBorderColor(QColor borderColor);
 
-    void setTExtColor(QColor textColor);
+    void setTextColor(QColor textColor);
 
     bool isTransparentBackground();
 

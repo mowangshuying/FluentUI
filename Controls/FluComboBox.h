@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <QComboBox>
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include <QAbstractItemView>
 #include <QStyleOptionComplex>
 #include <QProxyStyle>

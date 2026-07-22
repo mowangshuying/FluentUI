@@ -83,5 +83,5 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 
 void FluTreeViewPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTreeViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTreeViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -15,7 +15,7 @@ FluTableView::FluTableView(QWidget* parent /*= nullptr*/) : QTableWidget(parent)
     verticalHeader()->setDefaultSectionSize(38);
     horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluTableView.qss", this);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
@@ -133,5 +133,5 @@ void FluTableView::mouseReleaseEvent(QMouseEvent* event)
 
 void FluTableView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTableView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTableView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

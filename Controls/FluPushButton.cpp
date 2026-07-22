@@ -15,5 +15,5 @@ FluPushButton::FluPushButton(const QString &text, QWidget *parent /*= nullptr*/)
 
 void FluPushButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPushButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPushButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

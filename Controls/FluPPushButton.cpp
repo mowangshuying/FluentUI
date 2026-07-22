@@ -1,4 +1,4 @@
-#include "FluPPushButton.h"
+﻿#include "FluPPushButton.h"
 #include <QStyle>
 
 FluPPushButton::FluPPushButton(QWidget* parent /*= nullptr*/) : QPushButton(parent), m_mouseState(FluPPUtils::PPMouseState::Normal)
@@ -108,5 +108,5 @@ bool FluPPushButton::eventFilter(QObject* watched, QEvent* event)
 
 void FluPPushButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPPushButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPPushButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

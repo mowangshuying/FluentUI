@@ -81,5 +81,5 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
 
 void FluHomePage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHomePage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHomePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

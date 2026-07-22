@@ -1,4 +1,4 @@
-#include "FluProgressRingPage.h"
+﻿#include "FluProgressRingPage.h"
 
 FluProgressRingPage::FluProgressRingPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -46,7 +46,7 @@ void FluProgressRingPage::addIndeterminateProgressRing()
     hBoxLayout->addWidget(progressRing3);
     displayBox->getBodyContentLayout()->addLayout(hBoxLayout);
 
-    auto progressOptionsLabel = new FluLabel(FluLabelStyle::CaptionTextBlockSylte);
+    auto progressOptionsLabel = new FluLabel(FluLabelStyle::CaptionTextBlockStyle);
     progressOptionsLabel->setText(tr("Track Background color"));
 
     auto comboBox = new FluComboBoxEx;
@@ -117,5 +117,5 @@ void FluProgressRingPage::addBusyRing()
 
 void FluProgressRingPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluProgressRingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluProgressRingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

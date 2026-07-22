@@ -1,4 +1,4 @@
-#include "FluTextBoxPage.h"
+﻿#include "FluTextBoxPage.h"
 
 FluTextBoxPage::FluTextBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -23,5 +23,5 @@ FluTextBoxPage::FluTextBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
 
 void FluTextBoxPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTextBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTextBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

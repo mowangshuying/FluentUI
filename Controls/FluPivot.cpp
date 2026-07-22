@@ -1,4 +1,4 @@
-#include "FluPivot.h"
+﻿#include "FluPivot.h"
 
 FluPivot::FluPivot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -42,5 +42,5 @@ void FluPivot::pivotItemChanged(FluPivotTitleBarItem* item)
 
 void FluPivot::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPivot.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPivot.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

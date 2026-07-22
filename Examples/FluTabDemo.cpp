@@ -26,7 +26,7 @@ void FluTabPage::paintEvent(QPaintEvent *event)
 
 void FluTabPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTabPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTabPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 FluTabDemo::FluTabDemo(QWidget *parent /*= nullptr*/) : FluTabWidget(parent)

@@ -1,4 +1,4 @@
-#include "FluRotationButton.h"
+﻿#include "FluRotationButton.h"
 
 FluRotationButton::FluRotationButton(QWidget* parent /*= nullptr*/) : QPushButton(parent)
 {
@@ -62,12 +62,12 @@ void FluRotationButton::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluRotationButton.qss", this);
     }
     else
     {
         setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluRotationButton.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluRotationButton.qss", this);
     }
-    FluStyleSheetUitls::setQssByFileName("FluRotationButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRotationButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

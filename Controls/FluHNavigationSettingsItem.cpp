@@ -1,4 +1,4 @@
-#include "FluHNavigationSettingsItem.h"
+﻿#include "FluHNavigationSettingsItem.h"
 
 FluHNavigationSettingsItem::FluHNavigationSettingsItem(QWidget* parent /*= nullptr*/) : FluHNavigationItem(parent)
 {
@@ -33,5 +33,5 @@ void FluHNavigationSettingsItem::paintEvent(QPaintEvent* event)
 
 void FluHNavigationSettingsItem::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHNavigationSettingsItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHNavigationSettingsItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

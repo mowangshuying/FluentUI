@@ -1,4 +1,4 @@
-#include "FluConfirmFlyout.h"
+﻿#include "FluConfirmFlyout.h"
 
 FluConfirmFlyout::FluConfirmFlyout(QWidget* target, FluFlyoutPosition position /*= FluFlyoutPosition::Top*/) : FluVFlyout(target, position)
 {
@@ -62,5 +62,5 @@ void FluConfirmFlyout::paintEvent(QPaintEvent* event)
 
 void FluConfirmFlyout::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluConfirmFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluConfirmFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

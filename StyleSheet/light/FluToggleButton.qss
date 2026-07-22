@@ -38,3 +38,17 @@ FluToggleButton[toggled=true]:pressed {
     border: 1px solid rgb(49, 121, 175);
     background-color: rgb(49, 121, 175);
 }
+
+FluToggleButton:disabled {
+    color: rgba(0, 0, 0, 110);
+    border: 1px solid rgb(241, 241, 241);
+    border-bottom: 1px solid rgb(241, 241, 241);
+    background-color: rgb(249, 249, 249);
+}
+
+FluToggleButton[toggled=true]:disabled {
+    color: rgba(255, 255, 255, 130);
+    border: 1px solid rgba(0, 90, 158, 100);
+    border-bottom: 1px solid rgba(0, 90, 158, 100);
+    background-color: rgba(0, 90, 158, 100);
+}

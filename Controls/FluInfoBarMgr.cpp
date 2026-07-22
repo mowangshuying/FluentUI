@@ -67,7 +67,7 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, 
     // infoBar->show();
     // infoBar->hide();
 
-    infoBar->setDisappearDurartion(nDisappearDuration);
+    infoBar->setDisappearDuration(nDisappearDuration);
     auto itf = m_infoBarMap.find(parentWidget);
     if (itf == m_infoBarMap.end())
     {

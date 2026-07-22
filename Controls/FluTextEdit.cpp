@@ -1,4 +1,4 @@
-#include "FluTextEdit.h"
+﻿#include "FluTextEdit.h"
 #include "FluTextEditWrap.h"
 
 FluTextEdit::FluTextEdit(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
@@ -36,10 +36,10 @@ void FluTextEdit::paintEvent(QPaintEvent* event)
         return;
 
     QPainter painter(viewport());
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }
 
 void FluTextEdit::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluTextEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTextEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

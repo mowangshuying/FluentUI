@@ -26,6 +26,8 @@ class FluPasswordBox : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
+    void setEnabled(bool enabled);
+
   public slots:
     void onThemeChanged();
 

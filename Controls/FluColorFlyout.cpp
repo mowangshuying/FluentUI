@@ -60,5 +60,5 @@ void FluColorFlyout::paintEvent(QPaintEvent* event)
 
 void FluColorFlyout::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluColorFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluColorFlyout.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

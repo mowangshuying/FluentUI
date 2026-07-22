@@ -90,5 +90,5 @@ void FluDatePicker::paintEvent(QPaintEvent* event)
 
 void FluDatePicker::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDatePicker.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDatePicker.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

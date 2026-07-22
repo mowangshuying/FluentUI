@@ -1,4 +1,4 @@
-#include "FluShortcutPicker.h"
+﻿#include "FluShortcutPicker.h"
 #include "FluShortcutPickerDlg.h"
 
 FluShortcutPicker::FluShortcutPicker(QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -79,6 +79,6 @@ void FluShortcutPicker::paintEvent(QPaintEvent* event)
 
 void FluShortcutPicker::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluShortcutPicker.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluShortcutPicker.qss", this, FluThemeUtils::getUtils()->getTheme());
     updateKeys();
 }

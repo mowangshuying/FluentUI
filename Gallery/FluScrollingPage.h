@@ -17,6 +17,6 @@ class FluScrollingPage : public FluATitlePage
   public slots:
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluScrollingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluScrollingPage.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 };

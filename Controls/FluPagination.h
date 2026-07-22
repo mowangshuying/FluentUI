@@ -26,7 +26,7 @@ class FluPagination : public QWidget
 
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluPagination.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluPagination.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

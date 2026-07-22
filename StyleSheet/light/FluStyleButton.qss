@@ -22,3 +22,10 @@ FluStyleButton:pressed {
     border: 1px solid rgb(49, 121, 175);
     background-color: rgb(49, 121, 175);
 }
+
+FluStyleButton:disabled {
+    color: rgba(255, 255, 255, 130);
+    border: 1px solid rgba(0, 90, 158, 100);
+    border-bottom: 1px solid rgba(0, 54, 95, 100);
+    background-color: rgba(0, 90, 158, 100);
+}

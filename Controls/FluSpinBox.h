@@ -10,6 +10,7 @@ class FluSpinBox : public QSpinBox
     FluSpinBox(QWidget* parent = nullptr);
 
     void paintEvent(QPaintEvent* event);
-  public slots:
+
+  protected:
     void onThemeChanged();
 };

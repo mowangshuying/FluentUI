@@ -18,3 +18,10 @@ FluPPushButton[ppMouseState="Pressed"] {
 	qproperty-ppBottomBorderColor: rgb(229, 229, 229);
 	qproperty-ppTextColor: rgb(0, 0, 0);
 }
+
+FluPPushButton:disabled {
+	qproperty-ppBackgroundColor: rgb(249, 249, 249);
+	qproperty-ppBorderColor: rgb(241, 241, 241);
+	qproperty-ppBottomBorderColor: rgb(241, 241, 241);
+	qproperty-ppTextColor: rgba(0, 0, 0, 110);
+}

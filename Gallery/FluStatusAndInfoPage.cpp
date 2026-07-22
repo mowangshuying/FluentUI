@@ -35,5 +35,5 @@ FluStatusAndInfoPage::FluStatusAndInfoPage(QWidget* parent /*= nullptr*/) : FluA
 
 void FluStatusAndInfoPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluStatusAndInfoPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluStatusAndInfoPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

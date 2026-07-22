@@ -1,4 +1,4 @@
-#include "FluPivotPage.h"
+﻿#include "FluPivotPage.h"
 
 FluPivotPage::FluPivotPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -46,5 +46,5 @@ FluPivotPage::FluPivotPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
 void FluPivotPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPivotPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPivotPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

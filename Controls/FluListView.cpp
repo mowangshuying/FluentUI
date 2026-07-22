@@ -12,5 +12,5 @@ FluListView::FluListView(QWidget* parent /*= nullptr*/) : QListWidget(parent)
 
 void FluListView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluListView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluListView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -1,4 +1,4 @@
-#include "FluBorder.h"
+﻿#include "FluBorder.h"
 
 FluBorder::FluBorder(QWidget* parent /*= nullptr*/) : QLabel(parent)
 {
@@ -14,8 +14,7 @@ void FluBorder::updateProperty(QString textColor, QString bgColor, QString borde
     m_map["BackGroundColor"] = bgColor;
     m_map["BorderWith"] = borderWidth;
     m_map["BorderColor"] = borderColor;
-    FluStyleSheetUitls::setQssByFileName(m_map, "FluBorder.qss", this, FluThemeUtils::getUtils()->getTheme());
-    style()->polish(this);
+    FluStyleSheetUtils::setQssByFileName(m_map, "FluBorder.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluBorder::setBackGroundColor(QColor bgColor)
@@ -36,7 +35,7 @@ void FluBorder::setBorderColor(QColor borderColor)
     updateProperty(m_map["TextColor"], m_map["BackGroundColor"], m_map["BorderWith"], str);
 }
 
-void FluBorder::setTExtColor(QColor textColor)
+void FluBorder::setTextColor(QColor textColor)
 {
     QString str = QString::asprintf("rgb(%d,%d,%d)", textColor.red(), textColor.green(), textColor.blue());
     updateProperty(str, m_map["BackGroundColor"], m_map["BorderWith"], m_map["BorderColor"]);

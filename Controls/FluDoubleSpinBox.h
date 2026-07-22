@@ -11,6 +11,6 @@ class FluDoubleSpinBox : public QDoubleSpinBox
 
     void paintEvent(QPaintEvent* event);
 
-  public slots:
+  protected:
     void onThemeChanged();
 };

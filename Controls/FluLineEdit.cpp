@@ -1,4 +1,4 @@
-#include "FluLineEdit.h"
+﻿#include "FluLineEdit.h"
 
 FluLineEdit::FluLineEdit(QWidget* parent /*= nullptr*/) : QLineEdit(parent)
 {
@@ -16,10 +16,10 @@ void FluLineEdit::paintEvent(QPaintEvent* event)
     if (!hasFocus())
         return;
 
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }
 
 void FluLineEdit::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluLineEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluLineEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -132,5 +132,5 @@ void FluRoundMenuView::hockEvent(QEvent* event)
 
 void FluRoundMenuView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRoundMenuView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRoundMenuView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

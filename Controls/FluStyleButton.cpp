@@ -10,5 +10,5 @@ FluStyleButton::FluStyleButton(QWidget* parent /*= nullptr*/) : QPushButton(pare
 
 void FluStyleButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluStyleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluStyleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

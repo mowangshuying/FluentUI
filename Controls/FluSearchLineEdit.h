@@ -28,6 +28,8 @@ class FluSearchLineEdit : public FluWidget
     bool eventFilter(QObject* watched, QEvent* event);
 
     void paintEvent(QPaintEvent* event);
+
+    void setEnabled(bool enabled);
   signals:
     void onSearchBtnClicked();
   public slots:

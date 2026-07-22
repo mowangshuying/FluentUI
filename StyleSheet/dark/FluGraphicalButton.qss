@@ -13,3 +13,9 @@ FluGraphicalButton:pressed {
     background-color: rgb(39, 39, 39);
     border: 1px solid rgb(53, 53, 53);
 }
+
+FluGraphicalButton:disabled {
+    background-color: rgb(35, 35, 35);
+    border: 1px solid rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(39, 39, 39);
+}

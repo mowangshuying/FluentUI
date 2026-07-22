@@ -121,5 +121,5 @@ void FluSegmented::onItemClicked(FluSegmentedItem* item)
 
 void FluSegmented::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSegmented.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSegmented.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

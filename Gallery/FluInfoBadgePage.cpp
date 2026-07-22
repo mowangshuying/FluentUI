@@ -36,5 +36,5 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
 void FluInfoBadgePage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluInfoBadgePage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluInfoBadgePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

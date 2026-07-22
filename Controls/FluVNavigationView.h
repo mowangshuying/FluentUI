@@ -3,7 +3,7 @@
 #include "../Utils/FluIconUtils.h"
 #include "../Utils/FluLogUtils.h"
 #include "../Utils/FluUtils.h"
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include "FluDef.h"
 #include <QHBoxLayout>
 #include <QLabel>

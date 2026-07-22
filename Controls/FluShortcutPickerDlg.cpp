@@ -1,4 +1,4 @@
-#include "FluShortcutPickerDlg.h"
+﻿#include "FluShortcutPickerDlg.h"
 
 FluShortcutPickerDlg::FluShortcutPickerDlg(QWidget* parent /*= nullptr*/) : FluMessageBox("", "", parent)
 {
@@ -288,5 +288,5 @@ void FluShortcutPickerDlg::keyPressEvent(QKeyEvent* event)
 
 void FluShortcutPickerDlg::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluShortcutPickerDlg.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluShortcutPickerDlg.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

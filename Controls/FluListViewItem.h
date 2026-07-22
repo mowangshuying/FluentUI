@@ -2,6 +2,6 @@
 
 #include "FluWidget.h"
 
-class FliListViewItem : public QWidget
+class FluListViewItem : public QWidget
 {
 };

@@ -1,4 +1,4 @@
-#include "FluMessageBox.h"
+﻿#include "FluMessageBox.h"
 #include <QThread>
 
 FluMessageBox::FluMessageBox(QString title, QString info, QWidget* parent) : QDialog(parent)
@@ -157,5 +157,5 @@ void FluMessageBox::onInfoChanged(QString info)
 
 void FluMessageBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluMessageBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluMessageBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

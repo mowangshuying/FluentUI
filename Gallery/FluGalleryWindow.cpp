@@ -53,7 +53,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 
 #endif
 
-    // QString qss = FluStyleSheetUitls::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
+    // QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
     // setStyleSheet(qss);
 
     m_navView = new FluVNavigationView(this);
@@ -944,7 +944,7 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
     }
     else
     {
@@ -959,8 +959,8 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
     }
 #endif
-    FluStyleSheetUitls::setQssByFileName("FluGalleryWindow.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluGalleryWindow.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

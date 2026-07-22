@@ -38,5 +38,5 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluFlipViewPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluFlipViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluFlipViewPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

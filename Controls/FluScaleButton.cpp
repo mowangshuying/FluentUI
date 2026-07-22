@@ -1,4 +1,4 @@
-#include "FluScaleButton.h"
+﻿#include "FluScaleButton.h"
 
 FluScaleButton::FluScaleButton(FluAwesomeType awesomeType, QWidget* parent /*= nullptr*/) : QPushButton(parent), m_iconType(awesomeType)
 {
@@ -73,5 +73,5 @@ void FluScaleButton::mouseReleaseEvent(QMouseEvent* e)
 void FluScaleButton::onThemeChanged()
 {
     scaleByPercentage(m_currentPercentage);
-    FluStyleSheetUitls::setQssByFileName("FluScaleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluScaleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

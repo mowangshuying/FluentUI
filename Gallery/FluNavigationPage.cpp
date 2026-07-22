@@ -35,5 +35,5 @@ FluNavigationPage::FluNavigationPage(QWidget* parent /*= nullptr*/) : FluATitleP
 
 void FluNavigationPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluNavigationPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluNavigationPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

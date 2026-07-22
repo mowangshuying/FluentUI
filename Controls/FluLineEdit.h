@@ -14,6 +14,7 @@ class FluLineEdit : public QLineEdit
     FluLineEdit(QWidget* parent = nullptr);
 
     void paintEvent(QPaintEvent* event);
-  public slots:
-    virtual void onThemeChanged();
+
+  protected:
+    void onThemeChanged();
 };

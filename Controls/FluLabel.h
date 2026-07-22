@@ -2,12 +2,12 @@
 
 #include <QLabel>
 
-#include "../Utils/FluStyleSheetUitls.h"
+#include "../Utils/FluStyleSheetUtils.h"
 #include "../Utils/FluUtils.h"
 
 enum class FluLabelStyle
 {
-    CaptionTextBlockSylte,
+    CaptionTextBlockStyle,
     BodyTextBlockStyle,
     BodyStrongTextBlockStyle,
     SubTitleTextBlockStyle,
@@ -25,9 +25,7 @@ class FluLabel : public QLabel
     FluLabel(FluLabelStyle style, QWidget* parent = nullptr);
 
     void setLabelStyle(FluLabelStyle style);
-  public slots:
-    void onThemeChanged();
-
   protected:
+    void onThemeChanged();
     FluLabelStyle m_style;
 };

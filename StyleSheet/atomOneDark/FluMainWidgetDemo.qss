@@ -1,0 +1,7 @@
+FluMainWidgetDemo {
+    background-color: rgb(40, 44, 52);
+}
+
+#titleBar {
+    background-color: rgb(40, 44, 52);
+}

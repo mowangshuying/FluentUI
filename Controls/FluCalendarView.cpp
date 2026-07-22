@@ -1,4 +1,4 @@
-#include "FluCalendarView.h"
+﻿#include "FluCalendarView.h"
 #include "FluCalendarSelectDayView.h"
 #include "FluCalendarSelectMonthView.h"
 #include "FluCalendarSelectYearView.h"
@@ -211,5 +211,5 @@ void FluCalendarView::paintEvent(QPaintEvent* event)
 
 void FluCalendarView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCalendarView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

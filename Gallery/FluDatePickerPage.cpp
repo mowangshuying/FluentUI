@@ -1,4 +1,4 @@
-#include "FluDatePickerPage.h"
+﻿#include "FluDatePickerPage.h"
 
 FluDatePickerPage::FluDatePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -21,5 +21,5 @@ FluDatePickerPage::FluDatePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
 void FluDatePickerPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDatePickerPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDatePickerPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

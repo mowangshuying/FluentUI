@@ -25,7 +25,7 @@ FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
     m_vMainLayout->addWidget(m_vScrollView, 1);
 
     m_vScrollView->getMainLayout()->setAlignment(Qt::AlignTop);
-    FluStyleSheetUitls::setQssByFileName("FluATitlePage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluATitlePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluATitlePage::paintEvent(QPaintEvent* event)

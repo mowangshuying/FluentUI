@@ -1,4 +1,4 @@
-#include "FluFWScrollView.h"
+﻿#include "FluFWScrollView.h"
 
 FluFWScrollView::FluFWScrollView(QWidget* parent /*= nullptr*/) : FluScrollArea(parent)
 {
@@ -22,5 +22,5 @@ FluFlowLayout* FluFWScrollView::getMainLayout()
 
 void FluFWScrollView::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluFWScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluFWScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

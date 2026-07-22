@@ -70,14 +70,14 @@ FluScrollBarArrowButton* FluScrollBarTrunk::getLstBtn()
     return m_lstBtn;
 }
 
-void FluScrollBarTrunk::setTrunkBackgoundColor(QColor color)
+void FluScrollBarTrunk::setTrunkBackgroundColor(QColor color)
 {
-    m_trunkBackgoundColor = color;
+    m_trunkBackgroundColor = color;
 }
 
-QColor FluScrollBarTrunk::getTrunkBackgoundColor()
+QColor FluScrollBarTrunk::getTrunkBackgroundColor()
 {
-    return m_trunkBackgoundColor;
+    return m_trunkBackgroundColor;
 }
 
 void FluScrollBarTrunk::expandTrunk()
@@ -98,7 +98,7 @@ void FluScrollBarTrunk::collapseTrunk()
 
 void FluScrollBarTrunk::drawTrunkBackground(QPainter* painter)
 {
-    painter->setBrush(m_trunkBackgoundColor);
+    painter->setBrush(m_trunkBackgroundColor);
     painter->drawRoundedRect(rect(), 6, 6);
 }
 
@@ -112,13 +112,13 @@ void FluScrollBarTrunk::paintEvent(QPaintEvent* event)
 
 // void FluScrollBarTrunk::onThemeChanged()
 // {
-//     // m_trunkBackgoundColor = Qt::red;
+//     // m_trunkBackgroundColor = Qt::red;
 //     if (FluThemeUtils::isLightTheme())
 //     {
-//         m_trunkBackgoundColor = QColor(249, 249, 249);
+//         m_trunkBackgroundColor = QColor(249, 249, 249);
 //     }
 //     else if (FluThemeUtils::isDarkTheme())
 //     {
-//         m_trunkBackgoundColor = QColor(44, 44, 44);
+//         m_trunkBackgroundColor = QColor(44, 44, 44);
 //     }
 // }

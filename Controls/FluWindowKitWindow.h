@@ -1,11 +1,6 @@
 ﻿#pragma once
 
 #include <QWidget>
-#include <QCoreApplication>
-#include <QGuiApplication>
-#include <QHoverEvent>
-#include <QTimer>
-#include <QScreen>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 // #include <QWKWidgets/widgetwindowagent.h>
@@ -25,7 +20,6 @@ class FluWindowKitWindow : public QMainWindow
   public:
     FluWindowKitWindow(QWidget *parent = nullptr);
 
-    static void emulateLeaveEvent(QWidget *widget);
   public slots:
     void onThemeChanged();
 

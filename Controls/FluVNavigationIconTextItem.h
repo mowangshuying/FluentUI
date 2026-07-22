@@ -191,7 +191,7 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
     {
         m_iconBtn->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
         m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
-        FluStyleSheetUitls::setQssByFileName("FluVNavigationIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluVNavigationIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

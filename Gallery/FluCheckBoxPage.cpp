@@ -1,4 +1,4 @@
-#include "FluCheckBoxPage.h"
+﻿#include "FluCheckBoxPage.h"
 
 FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -35,5 +35,5 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
 void FluCheckBoxPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCheckBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCheckBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -32,6 +32,8 @@ class FluAppBarToggleButton : public FluWidget
     void mouseReleaseEvent(QMouseEvent* event);
 
     void paintEvent(QPaintEvent* event);
+
+    void setEnabled(bool enabled);
   signals:
     void clicked();
   public slots:

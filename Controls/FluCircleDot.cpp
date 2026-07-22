@@ -1,4 +1,4 @@
-#include "FluCircleDot.h"
+﻿#include "FluCircleDot.h"
 
 FluCircleDot::FluCircleDot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -6,7 +6,6 @@ FluCircleDot::FluCircleDot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     onThemeChanged();
     m_target = parent;
 
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
 }
 
 void FluCircleDot::setTopRightMargin(int nMarginTop, int nMarginRight)
@@ -56,9 +55,4 @@ void FluCircleDot::setCircleDot(QWidget* target, int nMarginTop, int nMarginRigh
     target->installEventFilter(circleDot);
 
     circleDot->moveTopRight();
-}
-
-void FluCircleDot::onThemeChanged()
-{
-    FluStyleSheetUitls::setQssByFileName("FluCircleDot.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -1,4 +1,4 @@
-#include "FluSettingsSelectBox.h"
+﻿#include "FluSettingsSelectBox.h"
 
 FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -74,5 +74,5 @@ void FluSettingsSelectBox::paintEvent(QPaintEvent* event)
 void FluSettingsSelectBox::onThemeChanged()
 {
     setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluSettingsSelectBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSettingsSelectBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

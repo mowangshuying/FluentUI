@@ -25,9 +25,9 @@ class FluScrollBarTrunk : public QWidget
 
     FluScrollBarArrowButton* getLstBtn();
 
-    void setTrunkBackgoundColor(QColor color);
+    void setTrunkBackgroundColor(QColor color);
 
-    QColor getTrunkBackgoundColor();
+    QColor getTrunkBackgroundColor();
 
     QPropertyAnimation* getAnimation()
     {
@@ -48,7 +48,7 @@ class FluScrollBarTrunk : public QWidget
     void paintEvent(QPaintEvent* event);
 
   protected:
-    QColor m_trunkBackgoundColor;
+    QColor m_trunkBackgroundColor;
     FluScrollBarArrowButton* m_preBtn;
     FluScrollBarArrowButton* m_lstBtn;
 

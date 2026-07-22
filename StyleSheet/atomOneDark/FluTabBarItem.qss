@@ -39,3 +39,15 @@ FluTabBarItem[selected=true] {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+
+FluTabBarItem:disabled {
+    background-color: rgb(35,38,43);
+}
+
+FluTabBarItem:disabled #textBtn {
+    color: rgba(255, 255, 255, 80);
+}
+
+FluTabBarItem:disabled #iconBtn {
+    color: rgba(255, 255, 255, 80);
+}

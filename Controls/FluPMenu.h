@@ -9,7 +9,7 @@ class FluPMenu : public QMenu
 {
     Q_OBJECT
     Q_PROPERTY(QColor ppMenuBackgroundColor READ getMenuBackgroundColor WRITE setMenuBackgroundColor)
-    Q_PROPERTY(QColor ppMenuBorderColor READ getMenuBoderColor WRITE setMenuBoderColor)
+    Q_PROPERTY(QColor ppMenuBorderColor READ getMenuBorderColor WRITE setMenuBorderColor)
     Q_PROPERTY(QColor ppMenuItemNormalBackgroundColor READ getMenuItemNormalBackgroundColor WRITE setMenuItemNormalBackgroundColor)
     Q_PROPERTY(QColor ppMenuItemSelectedBackgroundColor READ getMenuItemSelectedBackgroundColor WRITE setMenuItemSelectedBackgroundColor)
     Q_PROPERTY(QColor ppMenuItemDisabledBackgroundColor READ getMenuItemDisabledBackgroundColor WRITE setMenuItemDisabledBackgroundColor)
@@ -32,14 +32,14 @@ class FluPMenu : public QMenu
         m_style->setMenuBackgroundColor(color);
     }
 
-    QColor getMenuBoderColor() const
+    QColor getMenuBorderColor() const
     {
-        return m_style->getMenuBoderColor();
+        return m_style->getMenuBorderColor();
     }
 
-    void setMenuBoderColor(const QColor &color)
+    void setMenuBorderColor(const QColor &color)
     {
-        m_style->setMenuBoderColor(color);
+        m_style->setMenuBorderColor(color);
     }
 
     QColor getMenuItemNormalBackgroundColor() const

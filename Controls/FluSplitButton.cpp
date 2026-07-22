@@ -1,4 +1,4 @@
-#include "FluSplitButton.h"
+﻿#include "FluSplitButton.h"
 
 FluSplitButton::FluSplitButton(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -34,6 +34,8 @@ void FluSplitButton::setText(QString text)
 
 void FluSplitButton::mouseReleaseEvent(QMouseEvent* event)
 {
+    if (!isEnabled())
+        return;
     QWidget::mouseReleaseEvent(event);
     emit clicked();
 }
@@ -49,5 +51,12 @@ void FluSplitButton::paintEvent(QPaintEvent* event)
 void FluSplitButton::onThemeChanged()
 {
     m_dropDownBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, FluThemeUtils::getUtils()->getTheme()));
-    FluStyleSheetUitls::setQssByFileName("FluSplitButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSplitButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+void FluSplitButton::setEnabled(bool enabled)
+{
+    QWidget::setEnabled(enabled);
+    m_textBtn->setEnabled(enabled);
+    m_dropDownBtn->setEnabled(enabled);
 }

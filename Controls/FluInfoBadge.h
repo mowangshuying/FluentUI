@@ -64,7 +64,7 @@ class FluInfoBadge : public QLabel
   public slots:
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluInfoBadge.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluInfoBadge.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

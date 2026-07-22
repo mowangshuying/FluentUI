@@ -1,4 +1,4 @@
-#include "FluFlyoutPage.h"
+﻿#include "FluFlyoutPage.h"
 
 FluFlyoutPage::FluFlyoutPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -32,5 +32,5 @@ FluFlyoutPage::FluFlyoutPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
 void FluFlyoutPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluFlyoutPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluFlyoutPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

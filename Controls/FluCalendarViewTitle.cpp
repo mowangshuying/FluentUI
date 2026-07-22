@@ -1,4 +1,4 @@
-#include "FluCalendarViewTitle.h"
+﻿#include "FluCalendarViewTitle.h"
 #include "FluCalendarView.h"
 
 FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -73,8 +73,8 @@ void FluCalendarViewTitle::paintEvent(QPaintEvent* event)
 
 void FluCalendarViewTitle::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_yearMonthBtn, FluThemeUtils::getUtils()->getTheme());
-    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_preBtn, FluThemeUtils::getUtils()->getTheme());
-    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", m_nextBtn, FluThemeUtils::getUtils()->getTheme());
-    FluStyleSheetUitls::setQssByFileName("FluCalendarViewTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarViewTitle.qss", m_yearMonthBtn, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarViewTitle.qss", m_preBtn, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarViewTitle.qss", m_nextBtn, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCalendarViewTitle.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

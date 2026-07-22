@@ -20,7 +20,7 @@ class FluScrollBar : public FluWidget
 {
     Q_OBJECT
     Q_PROPERTY(int value READ getValue WRITE setValue)
-    Q_PROPERTY(QColor trunkBackgroundColor READ getTrunkBackgoundColor WRITE setTrunkBackgoundColor)
+    Q_PROPERTY(QColor trunkBackgroundColor READ getTrunkBackgroundColor WRITE setTrunkBackgroundColor)
     Q_PROPERTY(QColor handleBackgroundColor READ getHandleBackgroundColor WRITE setHandleBackgroundColor)
   public:
     FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea = nullptr);
@@ -39,7 +39,7 @@ class FluScrollBar : public FluWidget
 
     int getCurrentValue();
 
-    void setCurrrentValue(int nValue);
+    void setCurrentValue(int nValue);
 
     void scrollCurrentValue(int nValue);
 
@@ -75,9 +75,9 @@ class FluScrollBar : public FluWidget
 
     void adjustHandleSize();
 
-    QColor getTrunkBackgoundColor();
+    QColor getTrunkBackgroundColor();
 
-    void setTrunkBackgoundColor(QColor color);
+    void setTrunkBackgroundColor(QColor color);
 
     QColor getHandleBackgroundColor();
 

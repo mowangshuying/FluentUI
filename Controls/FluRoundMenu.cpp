@@ -38,7 +38,7 @@ FluRoundMenu::FluRoundMenu(QString title, FluAwesomeType iconType, QWidget* pare
     m_timer->setInterval(400);
     connect(m_timer, &QTimer::timeout, this, &FluRoundMenu::onShowMenuTimeOut);
 
-    FluStyleSheetUitls::drawShadowEffect(m_roundMenuView, 30, QPoint(0, 8), QColor(0, 0, 0, 30));
+    FluStyleSheetUtils::drawShadowEffect(m_roundMenuView, 30, QPoint(0, 8), QColor(0, 0, 0, 30));
 
     m_hBoxLayout->addWidget(m_roundMenuView, 1, Qt::AlignCenter);
     m_hBoxLayout->setContentsMargins(12, 8, 12, 20);
@@ -548,7 +548,7 @@ void FluRoundMenu::onShowSubMenu(QListWidgetItem* item)
 
 void FluRoundMenu::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRoundMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRoundMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
 
     for (auto action : actions())
     {
@@ -572,7 +572,7 @@ void FluRoundMenu::hideEvent(QHideEvent* event)
 void FluRoundMenu::closeEvent(QCloseEvent* event)
 {
     event->accept();
-    emit closedSignal();
+    emit closed();
     m_roundMenuView->clearSelection();
 }
 

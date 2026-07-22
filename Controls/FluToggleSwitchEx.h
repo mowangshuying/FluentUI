@@ -140,6 +140,8 @@ class FluToggleSwitchEx : public FluWidget
 
     void mouseReleaseEvent(QMouseEvent* event)
     {
+        if (!isEnabled())
+            return;
         if (event->button() == Qt::LeftButton && m_bMouseDown)
         {
             m_bMouseDown = false;
@@ -159,7 +161,7 @@ class FluToggleSwitchEx : public FluWidget
   public slots:
     void onThemeChanged()
     {
-        FluStyleSheetUitls::setQssByFileName("FluToggleSwitchEx.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName("FluToggleSwitchEx.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
   protected:

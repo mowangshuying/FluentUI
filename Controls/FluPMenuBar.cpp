@@ -1,4 +1,4 @@
-#include "FluPMenuBar.h"
+﻿#include "FluPMenuBar.h"
 #include "FluPMenuBarStyle.h"
 #include "../Utils/FluUtils.h"
 
@@ -25,6 +25,5 @@ void FluPMenuBar::setPMenuBarFontSize(int size)
 
 void FluPMenuBar::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPMenuBar.qss", this, FluThemeUtils::getUtils()->getTheme());
-    style()->polish(this);
+    FluStyleSheetUtils::setQssByFileName("FluPMenuBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

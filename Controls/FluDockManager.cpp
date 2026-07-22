@@ -1,4 +1,4 @@
-#include "FluDockManager.h"
+﻿#include "FluDockManager.h"
 
 FluDockManager::FluDockManager(QWidget* parent) : CDockManager(parent)
 {
@@ -9,5 +9,5 @@ FluDockManager::FluDockManager(QWidget* parent) : CDockManager(parent)
 // public slots:
 void FluDockManager::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDockManager.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDockManager.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

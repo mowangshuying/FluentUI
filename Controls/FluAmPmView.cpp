@@ -1,4 +1,4 @@
-#include "FluAmPmView.h"
+﻿#include "FluAmPmView.h"
 
 FluAmPmView::FluAmPmView(int nFixedW /*= 80*/, QWidget* parent /*= nullptr*/) : FluWidget(parent), m_nFixedW(nFixedW)
 {
@@ -202,5 +202,5 @@ void FluAmPmView::onThemeChanged()
 {
     m_scrollUpBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluThemeUtils::getUtils()->getTheme())));
     m_scrollDownBtn->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluThemeUtils::getUtils()->getTheme())));
-    FluStyleSheetUitls::setQssByFileName("FluAmPmView.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAmPmView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

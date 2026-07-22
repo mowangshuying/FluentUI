@@ -8,7 +8,7 @@
 #include "../Controls/FluFlowLayout.h"
 #include "../Controls/FluDisplayIconBox.h"
 #include "../Controls/FluFWScrollView.h"
-#include "../Controls/FluIntructions.h"
+#include "../Controls/FluInstructions.h"
 
 class FluIconsPage : public FluAEmptyPage
 {

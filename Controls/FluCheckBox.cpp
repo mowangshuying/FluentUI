@@ -1,4 +1,4 @@
-#include "FluCheckBox.h"
+﻿#include "FluCheckBox.h"
 
 FluCheckBox::FluCheckBox(QWidget* parent /*= nullptr*/) : QCheckBox(parent)
 {
@@ -14,5 +14,5 @@ FluCheckBox::FluCheckBox(const QString& text, QWidget* parent /*= nullptr*/) : Q
 
 void FluCheckBox::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluCheckBox.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluCheckBox.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

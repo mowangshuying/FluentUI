@@ -39,3 +39,15 @@ FluAppBarToggleButton[toggled=true]:hover {
     color: white;
     font-size: 8px;
 }
+
+FluAppBarToggleButton:disabled {
+    background-color: transparent;
+}
+
+FluAppBarToggleButton:disabled #iconBtn {
+    color: rgba(0, 0, 0, 110);
+}
+
+FluAppBarToggleButton:disabled #textLabel {
+    color: rgba(0, 0, 0, 110);
+}

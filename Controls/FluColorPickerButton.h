@@ -18,7 +18,7 @@ class FluColorPickerButton : public QPushButton
         std::map<QString, QString> kvmap;
         m_color = color;
         kvmap["color"] = QString::asprintf("rgb(%d,%d,%d)", color.red(), color.green(), color.blue());
-        FluStyleSheetUitls::setQssByFileName(kvmap, "FluColorPickerButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+        FluStyleSheetUtils::setQssByFileName(kvmap, "FluColorPickerButton.qss", this, FluThemeUtils::getUtils()->getTheme());
     }
 
     QColor getColor()

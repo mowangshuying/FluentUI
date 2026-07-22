@@ -1,4 +1,4 @@
-#include "FluTabBarContent.h"
+﻿#include "FluTabBarContent.h"
 
 FluTabBarContent::FluTabBarContent(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
 {
@@ -28,7 +28,7 @@ FluTabBarContent::FluTabBarContent(QWidget* parent /*= nullptr*/) : QScrollArea(
 
     m_hMainWidget->setFixedHeight(40);
     setFixedHeight(40);
-    FluStyleSheetUitls::setQssByFileName("FluTabBarContent.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluTabBarContent.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
 void FluTabBarContent::addBarItem(FluTabBarItem* item)

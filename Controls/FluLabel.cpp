@@ -1,8 +1,8 @@
-#include "FluLabel.h"
+﻿#include "FluLabel.h"
 
 FluLabel::FluLabel(QWidget* parent /*= nullptr*/) : QLabel(parent)
 {
-    m_style = FluLabelStyle::CaptionTextBlockSylte;
+    m_style = FluLabelStyle::CaptionTextBlockStyle;
     setLabelStyle(m_style);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
@@ -21,8 +21,8 @@ void FluLabel::setLabelStyle(FluLabelStyle style)
     QString styleString;
     switch (style)
     {
-        case FluLabelStyle::CaptionTextBlockSylte:
-            styleString = "CaptionTextBlockSylte";
+        case FluLabelStyle::CaptionTextBlockStyle:
+            styleString = "CaptionTextBlockStyle";
             break;
         case FluLabelStyle::BodyTextBlockStyle:
             styleString = "BodyTextBlockStyle";
@@ -54,5 +54,5 @@ void FluLabel::setLabelStyle(FluLabelStyle style)
 
 void FluLabel::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluLabel.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluLabel.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

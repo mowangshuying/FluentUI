@@ -8,7 +8,7 @@ FluSplitButtonPage::FluSplitButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
     addSplitButtonWithText();
 
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluSplitButtonPage.qss", this);
     onThemeChanged();
 }
 
@@ -58,5 +58,5 @@ void FluSplitButtonPage::addSplitButtonWithText()
 
 void FluSplitButtonPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluSplitButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSplitButtonPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

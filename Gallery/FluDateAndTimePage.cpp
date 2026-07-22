@@ -30,5 +30,5 @@ FluDateAndTimePage::FluDateAndTimePage(QWidget* parent /*= nullptr*/) : FluATitl
 
 void FluDateAndTimePage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluDateAndTimePage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluDateAndTimePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

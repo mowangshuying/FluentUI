@@ -1,4 +1,4 @@
-#include "FluAutoSuggestBoxPage.h"
+﻿#include "FluAutoSuggestBoxPage.h"
 
 FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -17,11 +17,11 @@ FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : Fl
 
     m_vScrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluAutoSuggestBoxPage.qss", this);
     onThemeChanged();
 }
 
 void FluAutoSuggestBoxPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluAutoSuggestBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAutoSuggestBoxPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

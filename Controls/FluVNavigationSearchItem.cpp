@@ -1,4 +1,4 @@
-#include "FluVNavigationSearchItem.h"
+﻿#include "FluVNavigationSearchItem.h"
 
 FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/) : FluVNavigationItem(parent)
 {
@@ -76,5 +76,5 @@ void FluVNavigationSearchItem::onThemeChanged()
 {
     QIcon icon = FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluThemeUtils::getUtils()->getTheme());
     m_searchButton->setIcon(icon);
-    FluStyleSheetUitls::setQssByFileName("FluVNavigationSearchItem.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluVNavigationSearchItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

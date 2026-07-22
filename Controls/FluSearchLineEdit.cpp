@@ -1,4 +1,4 @@
-#include "FluSearchLineEdit.h"
+﻿#include "FluSearchLineEdit.h"
 
 FluSearchLineEdit::FluSearchLineEdit(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -53,6 +53,9 @@ QString FluSearchLineEdit::getPlaceholderText()
 
 bool FluSearchLineEdit::eventFilter(QObject* watched, QEvent* event)
 {
+    if (!isEnabled())
+        return QWidget::eventFilter(watched, event);
+
     if (watched == m_edit)
     {
         if (event->type() == QEvent::FocusIn)
@@ -90,7 +93,7 @@ void FluSearchLineEdit::paintEvent(QPaintEvent* event)
     if (!property("isFocused").toBool())
         return;
 
-    FluStyleSheetUitls::drawBottomLineIndicator(this, &painter);
+    FluStyleSheetUtils::drawBottomLineIndicator(this, &painter);
 }
 
 void FluSearchLineEdit::onThemeChanged()
@@ -98,12 +101,19 @@ void FluSearchLineEdit::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
     }
     else
     {
         m_btn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
-        // FluStyleSheetUitls::setQssByFileName("../StyleSheet/dark/FluSearchLineEdit.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluSearchLineEdit.qss", this);
     }
-    FluStyleSheetUitls::setQssByFileName("FluSearchLineEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluSearchLineEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+void FluSearchLineEdit::setEnabled(bool enabled)
+{
+    QWidget::setEnabled(enabled);
+    m_edit->setEnabled(enabled);
+    m_btn->setEnabled(enabled);
 }

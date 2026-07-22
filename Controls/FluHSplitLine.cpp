@@ -1,4 +1,4 @@
-#include "FluHSplitLine.h"
+﻿#include "FluHSplitLine.h"
 
 FluHSplitLine::FluHSplitLine(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -16,5 +16,5 @@ void FluHSplitLine::paintEvent(QPaintEvent* event)
 
 void FluHSplitLine::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluHSplitLine.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHSplitLine.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

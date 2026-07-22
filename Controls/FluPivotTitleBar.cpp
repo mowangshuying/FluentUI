@@ -1,4 +1,4 @@
-#include "FluPivotTitleBar.h"
+﻿#include "FluPivotTitleBar.h"
 
 FluPivotTitleBar::FluPivotTitleBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -41,5 +41,5 @@ void FluPivotTitleBar::setCurTitleBarItem(FluPivotTitleBarItem* titleBarItem)
 
 void FluPivotTitleBar::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluPivotTitleBar.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluPivotTitleBar.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

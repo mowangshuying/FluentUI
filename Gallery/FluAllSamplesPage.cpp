@@ -26,7 +26,7 @@ FluAllSamplesPage::FluAllSamplesPage(QWidget* parent /*= nullptr*/) : FluATitleP
         connect(card, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     }
 
-    // FluStyleSheetUitls::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
     onThemeChanged();
 }
 
@@ -368,5 +368,5 @@ void FluAllSamplesPage::makeTextCards()
 
 void FluAllSamplesPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluAllSamplesPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluAllSamplesPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

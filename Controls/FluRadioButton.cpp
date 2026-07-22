@@ -1,4 +1,4 @@
-#include "FluRadioButton.h"
+﻿#include "FluRadioButton.h"
 
 FluRadioButton::FluRadioButton(QWidget* parent /*= nullptr*/) : QRadioButton(parent)
 {
@@ -14,5 +14,5 @@ FluRadioButton::FluRadioButton(const QString& text, QWidget* parent /*= nullptr*
 
 void FluRadioButton::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluRadioButton.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluRadioButton.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

@@ -22,5 +22,5 @@ FluColorPickerPage::FluColorPickerPage(QWidget* parent) : FluAEmptyPage(parent)
 
 void FluColorPickerPage::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluColorPickerPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluColorPickerPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

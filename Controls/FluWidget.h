@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <QWidget>
+#include "../Utils/FluStyleSheetUtils.h"
 #include "../Utils/FluThemeUtils.h"
 
 class FluWidget : public QWidget
@@ -15,9 +16,20 @@ class FluWidget : public QWidget
 
     void paintEvent(QPaintEvent* event);
     void showEvent(QShowEvent* event);
+
+    virtual QString qssFileName()
+    {
+        return QString();
+    }
+
   public slots:
     virtual void onThemeChanged()
     {
+        QString qss = qssFileName();
+        if (!qss.isEmpty())
+        {
+            FluStyleSheetUtils::setQssByFileName(qss, this, m_theme);
+        }
     }
 
   protected:

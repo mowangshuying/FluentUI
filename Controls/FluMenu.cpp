@@ -35,7 +35,7 @@ void FluMenu::paintEvent(QPaintEvent* event)
 
 void FluMenu::onThemeChanged()
 {
-    FluStyleSheetUitls::setQssByFileName("FluMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluMenu.qss", this, FluThemeUtils::getUtils()->getTheme());
     for (auto action : actions())
     {
         auto fluAction = (FluAction*)action;

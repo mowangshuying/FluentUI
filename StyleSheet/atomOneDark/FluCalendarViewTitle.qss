@@ -19,14 +19,14 @@ FluCalendarViewTitle {
     background-color: rgb(50, 54, 60);
 }
 
-#preBtn,
-#nextBtn {
+#previousMonthBtn,
+#nextMonthBtn {
     border: 1px solid transparent;
     border-radius: 4px;
     background-color: transparent;
 }
 
-#preBtn:hover,
-#nextBtn:hover {
+#previousMonthBtn:hover,
+#nextMonthBtn:hover {
     background-color: rgb(50, 54, 60);
 }

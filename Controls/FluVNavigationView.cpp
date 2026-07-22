@@ -10,7 +10,7 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 {
     m_nViewWidth = 300;  // default width
     m_vLayout = new QVBoxLayout(this);
-    m_vLayout->setContentsMargins(4, 8, 4, 8);
+    m_vLayout->setContentsMargins(4, 4, 4, 4);
     m_topWrapWidget = new QWidget(this);
     m_midVScrollView = new FluVScrollView(this);
     m_bottomWrapWidget = new QWidget(this);
@@ -48,7 +48,8 @@ FluVNavigationView::FluVNavigationView(QWidget *parent /*= nullptr*/) : FluWidge
 
     // ani;
     m_animation = new QPropertyAnimation;
-    m_animation->setDuration(100);
+    m_animation->setDuration(250);
+    m_animation->setEasingCurve(QEasingCurve::OutCubic);
     m_animation->setPropertyName("value");
 
     m_valueObject = new FluValueObject;

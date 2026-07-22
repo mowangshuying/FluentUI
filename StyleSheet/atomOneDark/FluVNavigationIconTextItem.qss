@@ -39,7 +39,6 @@ FluVNavigationIconTextItem {
 
 #label[selected=true] {
     color: rgb(255, 255, 255);
-    font-weight: 600;
 }
 
 #label[enableThisItem=false] {

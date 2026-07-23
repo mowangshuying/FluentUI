@@ -682,7 +682,7 @@ void FluHNavigationIconTextItem::onItemClicked()
 
                 setArrowButtonToChevronUp();
 
-                flyIconTextItem->setIconTextItems(getItems());
+                flyIconTextItem->setIconTextItems(getItems(), width());
                 flyIconTextItem->setPositionRelativeTo(this, height());
             }
             else

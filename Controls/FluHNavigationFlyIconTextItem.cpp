@@ -7,7 +7,7 @@ FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*=
     m_scrollView->setObjectName("centerWidget");
 
     m_mainLayout = new QVBoxLayout;
-    m_mainLayout->setContentsMargins(5, 5, 5, 5);
+    m_mainLayout->setContentsMargins(3, 3, 3, 3);
     m_mainLayout->setSpacing(0);
     setLayout(m_mainLayout);
 
@@ -29,8 +29,8 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
     for (auto item : items)
     {
         auto newItem = new FluHNavigationIconTextItem(item);
-        newItem->setFixedHeight(36);
-        newItem->getWrapWidget1()->setFixedHeight(36);
+        newItem->setFixedHeight(34);
+        newItem->getWrapWidget1()->setFixedHeight(34);
         newItem->getWrapWidget2()->hide();
 
         newItem->setParentIsFlyIconTextItem(true);
@@ -61,7 +61,7 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
         item->getWrapWidget1()->setFixedWidth(maxWidth);
         item->getWrapWidget2()->setFixedWidth(maxWidth);
         item->setFixedWidth(maxWidth);
-        item->setFixedHeight(36);
+        item->setFixedHeight(34);
     }
     setFixedWidth(maxWidth + m_scrollView->getMainLayout()->contentsMargins().left() + m_scrollView->getMainLayout()->contentsMargins().right());
 }

@@ -10,7 +10,7 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
 {
     m_itemType = FluVNavigationItemType::IconText;
     m_isHideIcon = false;
-setFixedSize(180, 30);
+    setFixedSize(180, 30);
     m_wrapWidget1 = new QWidget(this);
     m_wrapWidget2 = new QWidget(this);
 

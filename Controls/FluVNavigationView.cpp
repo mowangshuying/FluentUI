@@ -105,6 +105,7 @@ void FluVNavigationView::setOnlyCollapseView(bool isHideMenuAndSearch)
 
     collapseDownView();
     collapseView();
+    m_isLong = false;
     setFixedWidth(40 + m_layout->contentsMargins().left() + m_layout->contentsMargins().right());
 }
 

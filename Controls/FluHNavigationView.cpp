@@ -37,7 +37,7 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
     m_layout->addWidget(m_MidWrapWidget, 1);
     m_layout->addWidget(m_rightWrapWidget);
 
-    setFixedHeight(48);
+    setFixedHeight(36);
     onThemeChanged();
 }
 

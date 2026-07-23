@@ -66,7 +66,7 @@ FluHNavigationIconTextItem {
 
 #label {
     background-color: transparent;
-    font-size: 12px;
+    font-size: 11px;
     color: rgb(171, 178, 191);
 }
 

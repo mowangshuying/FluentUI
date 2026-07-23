@@ -62,6 +62,12 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_contentLayout->addWidget(m_navView);
     m_contentLayout->addLayout(m_layout, 1);
 
+    m_hNavView = new FluHNavigationView(this);
+    m_hNavView->setObjectName("horizontalNavView");
+    m_mainLayout->insertWidget(1, m_hNavView);
+    m_hNavView->hide();
+    m_isHorizontalNav = false;
+
     // home
     makeHomeNavItem();
 
@@ -115,6 +121,11 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     connect(m_navView, &FluVNavigationView::searchKeyChanged, this, [=](QString text) { m_layout->setCurrentWidget(text); });
     connect(m_navView, &FluVNavigationView::keyChanged, this, [=](QString key) { m_layout->setCurrentWidget(key); });
 
+    auto settingsPage = (FluSettingPage *)m_layout->getWidget("SettingPage");
+    if (settingsPage) {
+        connect(settingsPage, &FluSettingPage::navigationStyleChanged, this, &FluGalleryWindow::switchNavigationStyle);
+    }
+
 #if (QT_VERSION <= QT_VERSION_CHECK(6, 0, 0))
     FluThemeUtils::getUtils()->setTheme(FluTheme::Light);
     QTimer::singleShot(500, [=]() { m_navView->onThemeChanged(); });
@@ -125,6 +136,74 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_navView->setViewWidth(300);
     m_navView->setOnlyCollapseView(false);
     onThemeChanged();
+}
+
+void FluGalleryWindow::makeHNavigationItem(FluAwesomeType type, QString text, QString key)
+{
+    auto item = new FluHNavigationIconTextItem(type, text, m_hNavView);
+    item->setKey(key);
+    m_hNavView->addItemToMidLayout(item);
+    connect(item, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
+        m_layout->setCurrentWidget(key);
+    });
+}
+
+void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
+{
+    if (toHorizontal)
+    {
+        m_navView->setFixedWidth(m_navView->width());
+        auto vAnim = new QPropertyAnimation(m_navView, "maximumWidth", this);
+        vAnim->setDuration(200);
+        vAnim->setEasingCurve(QEasingCurve::OutCubic);
+        vAnim->setStartValue(m_navView->width());
+        vAnim->setEndValue(0);
+        connect(vAnim, &QPropertyAnimation::finished, this, [=]() {
+            m_navView->setVisible(false);
+            m_navView->setMaximumWidth(QWIDGETSIZE_MAX);
+        });
+        vAnim->start(QAbstractAnimation::DeleteWhenStopped);
+
+        m_hNavView->setFixedHeight(0);
+        m_hNavView->setVisible(true);
+        auto hAnim = new QPropertyAnimation(m_hNavView, "fixedHeight", this);
+        hAnim->setDuration(200);
+        hAnim->setEasingCurve(QEasingCurve::OutCubic);
+        hAnim->setStartValue(0);
+        hAnim->setEndValue(48);
+        hAnim->start(QAbstractAnimation::DeleteWhenStopped);
+    }
+    else
+    {
+        m_navView->setVisible(true);
+        auto vAnim = new QPropertyAnimation(m_navView, "maximumWidth", this);
+        vAnim->setDuration(200);
+        vAnim->setEasingCurve(QEasingCurve::OutCubic);
+        vAnim->setStartValue(0);
+        vAnim->setEndValue(300);
+        connect(vAnim, &QPropertyAnimation::finished, this, [=]() {
+            m_navView->setMaximumWidth(QWIDGETSIZE_MAX);
+            m_navView->setFixedWidth(300);
+        });
+        vAnim->start(QAbstractAnimation::DeleteWhenStopped);
+
+        auto hAnim = new QPropertyAnimation(m_hNavView, "fixedHeight", this);
+        hAnim->setDuration(200);
+        hAnim->setEasingCurve(QEasingCurve::OutCubic);
+        hAnim->setStartValue(48);
+        hAnim->setEndValue(0);
+        connect(hAnim, &QPropertyAnimation::finished, this, [=]() {
+            m_hNavView->setVisible(false);
+            m_hNavView->setFixedHeight(48);
+        });
+        hAnim->start(QAbstractAnimation::DeleteWhenStopped);
+    }
+}
+
+void FluGalleryWindow::switchNavigationStyle(int index)
+{
+    m_isHorizontalNav = (index == 1);
+    animateNavSwitch(m_isHorizontalNav);
 }
 
 void FluGalleryWindow::makeHomeNavItem()
@@ -146,6 +225,8 @@ void FluGalleryWindow::makeHomeNavItem()
             m_layout->setCurrentWidget(key);
         }
     });
+
+    makeHNavigationItem(FluAwesomeType::Home, tr("Home"), "HomePage");
 }
 
 void FluGalleryWindow::makeDesignGuidanceNavItem()
@@ -243,6 +324,8 @@ void FluGalleryWindow::makeSamplesNavItem()
             m_layout->setCurrentWidget(key);
         }
     });
+
+    makeHNavigationItem(FluAwesomeType::AllApps, tr("All samples"), "AllSamplesPage");
 }
 
 void FluGalleryWindow::makeBasicInputNavItem()
@@ -364,6 +447,8 @@ void FluGalleryWindow::makeBasicInputNavItem()
     item->addItem(item14);
     item->addItem(item15);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::CheckboxComposite, tr("Basic input"), "BasicInputPage");
 }
 
 void FluGalleryWindow::makeCollectionsNavItem()
@@ -415,6 +500,8 @@ void FluGalleryWindow::makeCollectionsNavItem()
     item->addItem(item7);
     item->addItem(item8);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::TiltDown, tr("Connections"), "ConnectionsPage");
 }
 
 void FluGalleryWindow::makDateTimeNavItem()
@@ -466,6 +553,8 @@ void FluGalleryWindow::makDateTimeNavItem()
     item->addItem(item4);
 
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::Calendar, tr("Date & time"), "DateAndTimePage");
 }
 
 void FluGalleryWindow::makeDialogsFlyouts()
@@ -507,6 +596,8 @@ void FluGalleryWindow::makeDialogsFlyouts()
     item->addItem(item2);
     item->addItem(item3);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::Comment, tr("Dialogs & flyouts"), "DialogsAndFlyoutsPage");
 }
 
 void FluGalleryWindow::makeLayoutNavItem()
@@ -582,6 +673,8 @@ void FluGalleryWindow::makeLayoutNavItem()
     item->addItem(item10);
     item->addItem(item11);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::PreviewLink, tr("Layout"), "LayoutPage");
 }
 
 void FluGalleryWindow::makeMediaNavItem()
@@ -608,6 +701,8 @@ void FluGalleryWindow::makeMediaNavItem()
     item->addItem(item6);
     item->addItem(item7);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::Calendar, tr("Media"), "MediaPage");
 }
 
 void FluGalleryWindow::makeSettingsNavItem()
@@ -619,6 +714,13 @@ void FluGalleryWindow::makeSettingsNavItem()
     auto settingsPage = new FluSettingPage;
     m_layout->addWidget("SettingPage", settingsPage);
     connect(item, &FluVNavigationSettingsItem::itemClicked, [=]() { m_layout->setCurrentWidget("SettingPage"); });
+
+    auto hSettingsItem = new FluHNavigationIconTextItem(FluAwesomeType::Settings, tr("Setting"), m_hNavView);
+    hSettingsItem->setKey("SettingPage");
+    m_hNavView->addItemToRightLayout(hSettingsItem);
+    connect(hSettingsItem, &FluHNavigationIconTextItem::itemClicked, [=]() {
+        m_layout->setCurrentWidget("SettingPage");
+    });
 }
 
 void FluGalleryWindow::makeMenuToolBarsNavItem()
@@ -683,6 +785,8 @@ void FluGalleryWindow::makeMenuToolBarsNavItem()
     item->addItem(item9);
     item->addItem(item10);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::BookmarksMirrored, tr("Navigation"), "NavigationPage");
 }
 
 void FluGalleryWindow::makeNavigationNavItem()
@@ -723,6 +827,8 @@ void FluGalleryWindow::makeNavigationNavItem()
     item->addItem(item3);
     item->addItem(item4);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::Save, tr("Menus & toolbars"), "MenusAndToolBarsPage");
 }
 
 void FluGalleryWindow::makeScrollingNavItem()
@@ -761,6 +867,8 @@ void FluGalleryWindow::makeScrollingNavItem()
     item->addItem(item4);
     item->addItem(item5);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::Sort, tr("Scrolling"), "ScrollingPage");
 }
 
 void FluGalleryWindow::makeStatusInfoNavItem()
@@ -816,6 +924,8 @@ void FluGalleryWindow::makeStatusInfoNavItem()
     item->addItem(item4);
     item->addItem(item5);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::Reminder, tr("Status & info"), "StatusAndInfoPage");
 }
 
 void FluGalleryWindow::makeTextNavItem()
@@ -877,6 +987,8 @@ void FluGalleryWindow::makeTextNavItem()
     item->addItem(item6);
     item->addItem(item7);
     m_navView->addItemToMidLayout(item);
+
+    makeHNavigationItem(FluAwesomeType::Font, tr("Text"), "TextPage");
 }
 
 void FluGalleryWindow::resizeEvent(QResizeEvent *event)

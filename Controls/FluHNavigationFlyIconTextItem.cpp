@@ -120,8 +120,12 @@ void FluHNavigationFlyIconTextItem::showWithAnimation(QPoint pos)
 
 void FluHNavigationFlyIconTextItem::setPositionRelativeTo(QWidget* parentItem, int navBarHeight)
 {
-    QPoint gPos = parentItem->mapToGlobal(QPoint(0, navBarHeight + 4));
-    showWithAnimation(gPos);
+    QPoint parentTopLeft = parentItem->mapToGlobal(QPoint(0, 0));
+    int parentCenterX = parentTopLeft.x() + parentItem->width() / 2;
+    int flyoutX = parentCenterX - width() / 2;
+    flyoutX = qMax(flyoutX, 4);
+    int flyoutY = parentTopLeft.y() + navBarHeight + 4;
+    showWithAnimation(QPoint(flyoutX, flyoutY));
 }
 
 QVBoxLayout* FluHNavigationFlyIconTextItem::getMainLayout()

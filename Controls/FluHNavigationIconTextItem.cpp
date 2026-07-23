@@ -164,6 +164,90 @@ std::vector<FluHNavigationIconTextItem*> FluHNavigationIconTextItem::getAllItems
     return totalItems;
 }
 
+std::vector<FluHNavigationIconTextItem*> FluHNavigationIconTextItem::getItems()
+{
+    return m_items;
+}
+
+QWidget* FluHNavigationIconTextItem::getWrapWidget1()
+{
+    return m_wrapWidget1;
+}
+
+QWidget* FluHNavigationIconTextItem::getWrapWidget2()
+{
+    return m_wrapWidget2;
+}
+
+QPushButton* FluHNavigationIconTextItem::getIconButton()
+{
+    return m_iconButton;
+}
+
+QLabel* FluHNavigationIconTextItem::getLabel()
+{
+    return m_label;
+}
+
+FluAwesomeType FluHNavigationIconTextItem::getAwesomeType()
+{
+    return m_awesomeType;
+}
+
+QString FluHNavigationIconTextItem::getText()
+{
+    return m_label->text();
+}
+
+bool FluHNavigationIconTextItem::getHideIcon()
+{
+    return m_isHideIcon;
+}
+
+void FluHNavigationIconTextItem::setHideIcon(bool isHideIcon)
+{
+    m_isHideIcon = isHideIcon;
+}
+
+bool FluHNavigationIconTextItem::parentIsFlyIconTextItem()
+{
+    return m_isParentIsFlyIconTextItem;
+}
+
+bool FluHNavigationIconTextItem::parentIsNavigationView()
+{
+    return m_isParentIsNavigationView;
+}
+
+void FluHNavigationIconTextItem::setParentIsFlyIconTextItem(bool isParent)
+{
+    m_isParentIsFlyIconTextItem = isParent;
+}
+
+void FluHNavigationIconTextItem::setParentIsNavigationView(bool isParent)
+{
+    if (isParent)
+    {
+        m_horizontalIndicator->show();
+    }
+    else
+    {
+        m_horizontalIndicatorWrap->hide();
+    }
+    m_isParentIsNavigationView = isParent;
+}
+
+void FluHNavigationIconTextItem::setParentFlyIconTextItem(FluHNavigationFlyIconTextItem* parentFlyIconTextItem)
+{
+    // m_horizontalIndicator->show();
+    m_parentFlyIconTextItem = parentFlyIconTextItem;
+}
+
+FluHNavigationFlyIconTextItem* FluHNavigationIconTextItem::getParentFlyIconTextItem()
+{
+    return m_parentFlyIconTextItem;
+}
+
 void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
 {
     item->m_parentItem = this;
@@ -437,6 +521,11 @@ FluHNavigationIconTextItem* FluHNavigationIconTextItem::getRootItem()
     return item;
 }
 
+bool FluHNavigationIconTextItem::isLeaf()
+{
+    return m_items.empty();
+}
+
 void FluHNavigationIconTextItem::expand()
 {
     LOG_DEBUG << "called";
@@ -626,6 +715,11 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
     update();
 }
 
+QWidget* FluHNavigationIconTextItem::getVerticalIndicator()
+{
+    return m_verticalIndicator;
+}
+
 void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
 {
     QPoint pos = event->pos();
@@ -633,6 +727,14 @@ void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
         return;
 
     emit itemClicked();
+}
+
+void FluHNavigationIconTextItem::paintEvent(QPaintEvent* event)
+{
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter painter(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
 void FluHNavigationIconTextItem::onItemClicked()

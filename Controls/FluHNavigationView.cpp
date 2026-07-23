@@ -41,28 +41,32 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
     onThemeChanged();
 }
 
-void FluHNavigationView::addItemToLeftLayout(QWidget* item)
+void FluHNavigationView::addItemToLayout(QWidget* item, FluHNavigationItemPosition pos)
 {
-    m_leftWrapLayout->addWidget(item, 0, Qt::AlignLeft);
-}
-
-void FluHNavigationView::addItemToMidLayout(QWidget* item)
-{
-    auto iconTextItem = (FluHNavigationIconTextItem*)item;
-    iconTextItem->setParentView(this);
-    item->setParent(m_MidWrapWidget);
-
-    iconTextItem->setParentIsFlyIconTextItem(false);
-    iconTextItem->setParentIsNavigationView(true);
-    m_items.push_back(iconTextItem);
-}
-
-void FluHNavigationView::addItemToRightLayout(QWidget* item)
-{
-    m_rightWrapLayout->addWidget(item, 0, Qt::AlignRight);
-    auto curItem = (FluHNavigationItem*)item;
-    curItem->setParentView(this);
-    curItem->setParent(m_rightWrapWidget);
+    switch (pos)
+    {
+        case FluHNavigationItemPosition::Left:
+            m_leftWrapLayout->addWidget(item, 0, Qt::AlignLeft);
+            break;
+        case FluHNavigationItemPosition::Mid:
+        {
+            auto iconTextItem = (FluHNavigationIconTextItem*)item;
+            iconTextItem->setParentView(this);
+            item->setParent(m_MidWrapWidget);
+            iconTextItem->setParentIsFlyIconTextItem(false);
+            iconTextItem->setParentIsNavigationView(true);
+            m_items.push_back(iconTextItem);
+            break;
+        }
+        case FluHNavigationItemPosition::Right:
+        {
+            m_rightWrapLayout->addWidget(item, 0, Qt::AlignRight);
+            auto curItem = (FluHNavigationItem*)item;
+            curItem->setParentView(this);
+            curItem->setParent(m_rightWrapWidget);
+            break;
+        }
+    }
 }
 
 // void FluHNavigationView::removeItemMidLayout(QWidget* item)

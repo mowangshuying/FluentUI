@@ -142,7 +142,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 void FluGalleryWindow::makeHNavigationGroup(FluAwesomeType type, QString text, std::vector<QPair<QString, QString>> items)
 {
     auto parent = new FluHNavigationIconTextItem(type, text, m_hNavView);
-    m_hNavView->addItemToMidLayout(parent);
+    m_hNavView->addItemToLayout(parent, FluHNavigationItemPosition::Mid);
     for (auto& pair : items)
     {
         auto child = new FluHNavigationIconTextItem(pair.first, parent);
@@ -160,7 +160,7 @@ void FluGalleryWindow::makeHNavigationItem(FluAwesomeType type, QString text, QS
 {
     auto item = new FluHNavigationIconTextItem(type, text, m_hNavView);
     item->setKey(key);
-    m_hNavView->addItemToMidLayout(item);
+    m_hNavView->addItemToLayout(item, FluHNavigationItemPosition::Mid);
     connect(item, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
         m_layout->setCurrentWidget(key);
     });
@@ -783,7 +783,7 @@ void FluGalleryWindow::makeSettingsNavItem()
 
     auto hSettingsItem = new FluHNavigationIconTextItem(FluAwesomeType::Settings, tr("Setting"), m_hNavView);
     hSettingsItem->setKey("SettingPage");
-    m_hNavView->addItemToRightLayout(hSettingsItem);
+    m_hNavView->addItemToLayout(hSettingsItem, FluHNavigationItemPosition::Right);
     connect(hSettingsItem, &FluHNavigationIconTextItem::itemClicked, [=]() {
         m_layout->setCurrentWidget("SettingPage");
     });

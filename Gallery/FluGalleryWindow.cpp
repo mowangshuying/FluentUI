@@ -138,6 +138,21 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     onThemeChanged();
 }
 
+void FluGalleryWindow::makeHNavigationGroup(FluAwesomeType type, QString text, std::vector<QPair<QString, QString>> items)
+{
+    auto parent = new FluHNavigationIconTextItem(type, text, m_hNavView);
+    m_hNavView->addItemToMidLayout(parent);
+    for (auto& pair : items)
+    {
+        auto child = new FluHNavigationIconTextItem(pair.first, parent);
+        child->setKey(pair.second);
+        parent->addItem(child);
+        connect(child, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
+            m_layout->setCurrentWidget(pair.second);
+        });
+    }
+}
+
 void FluGalleryWindow::makeHNavigationItem(FluAwesomeType type, QString text, QString key)
 {
     auto item = new FluHNavigationIconTextItem(type, text, m_hNavView);
@@ -457,7 +472,15 @@ void FluGalleryWindow::makeBasicInputNavItem()
     item->addItem(item15);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::CheckboxComposite, tr("Basic input"), "BasicInputPage");
+    makeHNavigationGroup(FluAwesomeType::CheckboxComposite, tr("Basic input"), {
+        {tr("InputValidation"), ""}, {tr("Button"), "ButtonPage"}, {tr("DropDownButton"), "DropDownButtonPage"},
+        {tr("HyperLinkButton"), "HyperLinkButtonPage"}, {tr("RepeatButton"), "RepeatButtonPage"},
+        {tr("ToggleButton"), "ToggleButtonPage"}, {tr("SplitButton"), "SplitButtonPage"},
+        {tr("ToggleSplitButton"), ""}, {tr("CheckBox"), "CheckBoxPage"}, {tr("ColorPicker"), "ColorPickerPage"},
+        {tr("ComboBox"), "ComboBoxPage"}, {tr("RadioButton"), "RadioButtonPage"},
+        {tr("RatingControl"), "RatingControlPage"}, {tr("Slider"), "SliderPage"},
+        {tr("ToggleSwitch"), "ToggleSwitchPage"}
+    });
 }
 
 void FluGalleryWindow::makeCollectionsNavItem()
@@ -510,7 +533,10 @@ void FluGalleryWindow::makeCollectionsNavItem()
     item->addItem(item8);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::TiltDown, tr("Connections"), "ConnectionsPage");
+    makeHNavigationGroup(FluAwesomeType::TiltDown, tr("Connections"), {
+        {tr("FlipView"), "FlipViewPage"}, {tr("ListView"), "ListViewPage"},
+        {tr("TreeView"), "TreeViewPage"}, {tr("TableView"), "TableViewPage"}
+    });
 }
 
 void FluGalleryWindow::makDateTimeNavItem()
@@ -563,7 +589,10 @@ void FluGalleryWindow::makDateTimeNavItem()
 
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::Calendar, tr("Date & time"), "DateAndTimePage");
+    makeHNavigationGroup(FluAwesomeType::Calendar, tr("Date & time"), {
+        {tr("CalendarDatePicker"), "CalendarDatePickerPage"}, {tr("CalendarView"), "CalendarViewPage"},
+        {tr("DatePicker"), "DatePickerPage"}, {tr("TimePicker"), "TimePickerPage"}
+    });
 }
 
 void FluGalleryWindow::makeDialogsFlyouts()
@@ -606,7 +635,10 @@ void FluGalleryWindow::makeDialogsFlyouts()
     item->addItem(item3);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::Comment, tr("Dialogs & flyouts"), "DialogsAndFlyoutsPage");
+    makeHNavigationGroup(FluAwesomeType::Comment, tr("Dialogs & flyouts"), {
+        {tr("ContentDialog"), "ContentDialogPage"}, {tr("Flyout"), "FlyoutPage"},
+        {tr("TeachingTip"), "TeachingTipPage"}
+    });
 }
 
 void FluGalleryWindow::makeLayoutNavItem()
@@ -683,7 +715,13 @@ void FluGalleryWindow::makeLayoutNavItem()
     item->addItem(item11);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::PreviewLink, tr("Layout"), "LayoutPage");
+    makeHNavigationGroup(FluAwesomeType::PreviewLink, tr("Layout"), {
+        {tr("Border"), "BorderPage"}, {tr("Canvas"), "CanvasPage"}, {tr("Expander"), "ExpanderPage"},
+        {tr("ItemsRepeater"), "ItemsRepeaterPage"}, {tr("Grid"), "GridPage"},
+        {tr("RadioButtons"), "RadioButtonsPage"}, {tr("RelativePanel"), "RelativePanelPage"},
+        {tr("SplitView"), "SplitViewPage"}, {tr("StackPanel"), "StackPanelPage"},
+        {tr("VariableSizedWrapGrid"), "VariableSizedWrapGridPage"}, {tr("Viewbox"), "ViewboxPage"}
+    });
 }
 
 void FluGalleryWindow::makeMediaNavItem()
@@ -795,7 +833,10 @@ void FluGalleryWindow::makeMenuToolBarsNavItem()
     item->addItem(item10);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::BookmarksMirrored, tr("Navigation"), "NavigationPage");
+    makeHNavigationGroup(FluAwesomeType::BookmarksMirrored, tr("Navigation"), {
+        {tr("BreadcrumbBar"), "BreadcrumbBarPage"}, {tr("NavigationView"), "NavigationViewPage"},
+        {tr("Pivot"), "PivotPage"}, {tr("TabView"), "TabViewPage"}
+    });
 }
 
 void FluGalleryWindow::makeNavigationNavItem()
@@ -837,7 +878,12 @@ void FluGalleryWindow::makeNavigationNavItem()
     item->addItem(item4);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::Save, tr("Menus & toolbars"), "MenusAndToolBarsPage");
+    makeHNavigationGroup(FluAwesomeType::Save, tr("Menus & toolbars"), {
+        {tr("AppBarButton"), "AppBarButtonPage"}, {tr("AppBarSeparator"), "AppBarSeparator"},
+        {tr("AppBarToggleButton"), "AppBarToggleButton"}, {tr("CommandBar"), "CommandBarPage"},
+        {tr("MenuBar"), "MenuBarPage"}, {tr("CommandBarFlyout"), "CommandBarFlyoutPage"},
+        {tr("MenuFlyout"), "MenuFlyoutPage"}, {tr("SwipeControl"), "SwipeControlPage"}
+    });
 }
 
 void FluGalleryWindow::makeScrollingNavItem()
@@ -877,7 +923,10 @@ void FluGalleryWindow::makeScrollingNavItem()
     item->addItem(item5);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::Sort, tr("Scrolling"), "ScrollingPage");
+    makeHNavigationGroup(FluAwesomeType::Sort, tr("Scrolling"), {
+        {tr("AnnotatedScrollBar"), ""}, {tr("PipsPager"), ""},
+        {tr("ScrollView"), "ScrollViewPage"}, {tr("ScrollViewer"), ""}, {tr("SemanticZoom"), ""}
+    });
 }
 
 void FluGalleryWindow::makeStatusInfoNavItem()
@@ -934,7 +983,11 @@ void FluGalleryWindow::makeStatusInfoNavItem()
     item->addItem(item5);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::Reminder, tr("Status & info"), "StatusAndInfoPage");
+    makeHNavigationGroup(FluAwesomeType::Reminder, tr("Status & info"), {
+        {tr("InfoBadge"), "InfoBadgePage"}, {tr("InfoBar"), "InfoBarPage"},
+        {tr("ProgressBar"), "ProgressBarPage"}, {tr("ProgressRing"), "ProgressRingPage"},
+        {tr("ToolTip"), "ProgressRingPage"}
+    });
 }
 
 void FluGalleryWindow::makeTextNavItem()
@@ -997,7 +1050,12 @@ void FluGalleryWindow::makeTextNavItem()
     item->addItem(item7);
     m_navView->addItemToMidLayout(item);
 
-    makeHNavigationItem(FluAwesomeType::Font, tr("Text"), "TextPage");
+    makeHNavigationGroup(FluAwesomeType::Font, tr("Text"), {
+        {tr("AutoSuggestBox"), "AutoSuggestBoxPage"}, {tr("NumberBox"), "NumberBoxPage"},
+        {tr("PasswordBox"), "PasswordBoxPage"}, {tr("RichEditBox"), "RichEditBoxPage"},
+        {tr("RichTextBlock"), "RichTextBlockPage"}, {tr("TextBlock"), "TextBlockPage"},
+        {tr("TextBox"), "TextBoxPage"}
+    });
 }
 
 void FluGalleryWindow::resizeEvent(QResizeEvent *event)

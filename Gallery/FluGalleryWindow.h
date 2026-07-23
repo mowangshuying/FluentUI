@@ -81,6 +81,7 @@ class FluGalleryWindow : public FluWindowKitWidget
 
     void switchNavigationStyle(int index);
     void makeHNavigationItem(FluAwesomeType type, QString text, QString key);
+    void makeHNavigationGroup(FluAwesomeType type, QString text, std::vector<QPair<QString, QString>> items);
     void animateNavSwitch(bool toHorizontal);
 
     void makeHomeNavItem();

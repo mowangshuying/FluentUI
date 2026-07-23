@@ -588,6 +588,11 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
     m_wrapWidget1->setProperty("selected", b);
     m_wrapWidget2->setProperty("selected", b);
 
+    if (!b)
+    {
+        FluWindowUtils::emulateLeaveEvent(m_wrapWidget1);
+    }
+
     if (parentIsNavigationView())
     {
         if (m_horizontalIndicator->width() > 0)

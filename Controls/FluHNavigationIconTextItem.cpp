@@ -587,7 +587,10 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
     {
         if (m_horizontalIndicator->width() > 0)
             m_horizontalIndicator->setFixedWidth(width() * 0.6);
-        m_horizontalIndicator->animateSelect(b);
+        if (b)
+            m_horizontalIndicator->animateSelect(true);
+        else
+            m_horizontalIndicator->setSelected(false);
         m_verticalIndicator->setProperty("selected", false);
     }
     else
@@ -595,12 +598,20 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
         auto rootItem = getRootItem();
         if (rootItem != nullptr && rootItem->parentIsFlyIconTextItem())
         {
-            m_horizontalIndicator->animateSelect(false);
+            if (b)
+                m_horizontalIndicator->animateSelect(true);
+            else
+                m_horizontalIndicator->setSelected(false);
             m_verticalIndicator->setProperty("selected", b);
         }
     }
 
     m_label->setProperty("selected", b);
+
+    style()->polish(this);
+    m_wrapWidget1->style()->polish(m_wrapWidget1);
+    m_wrapWidget2->style()->polish(m_wrapWidget2);
+    m_label->style()->polish(m_label);
 }
 
 void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)

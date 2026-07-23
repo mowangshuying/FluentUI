@@ -79,13 +79,20 @@ English | <a href="README_zh_CN.md">简体中文</a>
    cmake --build .
    ```
 
+### Quick Build (Windows)
+
+Run `build&pack.bat` to configure, build, and package with a single command (requires Visual Studio 2022 and Qt 6.5.1).
+
+   ```shell
+   build&pack.bat
+   ```
+
 ### CMake Options
 
 | Option | Default | Description |
 |--------|---------|-------------|
 | `USE_QRC` | `TRUE` | Build with Qt resource files (qrc) |
 | `BUILD_GALLERY` | `TRUE` | Build the Gallery demo application |
-| `BUILD_ICONTOOL` | `FALSE` | Build the Icon Tool |
 
 ## Third-Party Libraries
 
@@ -94,7 +101,9 @@ English | <a href="README_zh_CN.md">简体中文</a>
 | [framelesshelper](https://github.com/nicehash/framelesshelper) | MIT | Frameless window helper |
 | [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) | LGPL v2.1 | Advanced docking system |
 | [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) | GPL v3 | Code editor component |
-| [qrcode](https://github.com/nicehash/qrcode) | MIT | QR code generation |
+| [qrcode](https://github.com/nayuki/QR-Code-generator) | MIT | QR code generation |
+| [cmark](https://github.com/commonmark/cmark) | BSD 2-Clause | CommonMark parser |
+| [qwindowkit](https://github.com/stdware/qwindowkit) | Apache 2.0 | Window kit |
 | [cmark](https://github.com/commonmark/cmark) | BSD 2-Clause | CommonMark parser |
 | [qwindowkit](https://github.com/nicehash/qwindowkit) | Apache 2.0 | Window kit |
 

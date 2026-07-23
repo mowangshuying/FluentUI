@@ -79,13 +79,20 @@
    cmake --build .
    ```
 
+### 快速构建（Windows）
+
+运行 `build&pack.bat` 一键完成配置、构建和打包（需要 Visual Studio 2022 和 Qt 6.5.1）。
+
+   ```shell
+   build&pack.bat
+   ```
+
 ### CMake 选项
 
 | 选项 | 默认值 | 说明 |
 |------|--------|------|
 | `USE_QRC` | `TRUE` | 使用 Qt 资源文件（qrc）构建 |
 | `BUILD_GALLERY` | `TRUE` | 构建 Gallery 示例应用 |
-| `BUILD_ICONTOOL` | `FALSE` | 构建图标工具 |
 
 ## 第三方库
 
@@ -94,9 +101,9 @@
 | [framelesshelper](https://github.com/nicehash/framelesshelper) | MIT | 无边框窗口辅助库 |
 | [Qt-Advanced-Docking-System](https://github.com/nicehash/Qt-Advanced-Docking-System) | LGPL v2.1 | 高级停靠系统 |
 | [qscintilla](https://www.riverbankcomputing.com/software/qscintilla/) | GPL v3 | 代码编辑器组件 |
-| [qrcode](https://github.com/nicehash/qrcode) | MIT | 二维码生成 |
+| [qrcode](https://github.com/nayuki/QR-Code-generator) | MIT | 二维码生成 |
 | [cmark](https://github.com/commonmark/cmark) | BSD 2-Clause | CommonMark 解析器 |
-| [qwindowkit](https://github.com/nicehash/qwindowkit) | Apache 2.0 | 窗口工具包 |
+| [qwindowkit](https://github.com/stdware/qwindowkit) | Apache 2.0 | 窗口工具包 |
 
 > 所有第三方库以源代码形式集成在 `3rdparty/` 目录中。
 

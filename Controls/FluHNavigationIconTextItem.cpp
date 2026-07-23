@@ -683,11 +683,7 @@ void FluHNavigationIconTextItem::onItemClicked()
                 setArrowButtonToChevronUp();
 
                 flyIconTextItem->setIconTextItems(getItems());
-                flyIconTextItem->show();
-
-                // pos
-                QPoint gPoint = mapToGlobal(QPoint(0, height()));
-                flyIconTextItem->move(gPoint.x(), gPoint.y());
+                flyIconTextItem->setPositionRelativeTo(this, height());
             }
             else
             {

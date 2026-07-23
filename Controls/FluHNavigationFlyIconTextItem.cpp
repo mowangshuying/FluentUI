@@ -11,7 +11,6 @@ FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*=
     m_mainLayout->setSpacing(0);
     setLayout(m_mainLayout);
 
-    // m_scrollView->setContentsMargins(0, 0, 0, 0);
     m_scrollView->getMainLayout()->setContentsMargins(0, 0, 0, 0);
     m_scrollView->getMainLayout()->setSpacing(0);
     m_scrollView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -21,11 +20,20 @@ FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*=
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_DeleteOnClose);
 
+    m_opacityEffect = new QGraphicsOpacityEffect(this);
+    m_opacityEffect->setOpacity(0);
+    setGraphicsEffect(m_opacityEffect);
+
+    m_fadeAnimation = new QPropertyAnimation(m_opacityEffect, "opacity", this);
+    m_fadeAnimation->setDuration(200);
+    m_fadeAnimation->setEasingCurve(QEasingCurve::OutCubic);
+
     onThemeChanged();
 }
 
 void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationIconTextItem*> items)
 {
+    m_items.clear();
     for (auto item : items)
     {
         auto newItem = new FluHNavigationIconTextItem(item);
@@ -49,11 +57,9 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
     int maxWidth = 0;
     for (auto item : m_items)
     {
-        int width = item->calcItemW1Width();
-        if (width > maxWidth)
-        {
-            maxWidth = width;
-        }
+        int w = item->calcItemW1Width();
+        if (w > maxWidth)
+            maxWidth = w;
     }
 
     for (auto item : m_items)
@@ -63,7 +69,35 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth()
         item->setFixedWidth(maxWidth);
         item->setFixedHeight(34);
     }
-    setFixedWidth(maxWidth + m_scrollView->getMainLayout()->contentsMargins().left() + m_scrollView->getMainLayout()->contentsMargins().right());
+
+    int totalMargins = m_scrollView->getMainLayout()->contentsMargins().left()
+                     + m_scrollView->getMainLayout()->contentsMargins().right()
+                     + m_mainLayout->contentsMargins().left()
+                     + m_mainLayout->contentsMargins().right();
+    setFixedWidth(maxWidth + totalMargins);
+
+    int contentHeight = m_items.size() * 34;
+    int maxHeight = 400;
+    m_scrollView->setFixedHeight(qMin(contentHeight, maxHeight));
+    setFixedHeight(qMin(contentHeight + m_mainLayout->contentsMargins().top()
+                        + m_mainLayout->contentsMargins().bottom(), maxHeight + 6));
+}
+
+void FluHNavigationFlyIconTextItem::showWithAnimation(QPoint pos)
+{
+    move(pos);
+    m_opacityEffect->setOpacity(0);
+    QWidget::show();
+
+    m_fadeAnimation->setStartValue(0.0);
+    m_fadeAnimation->setEndValue(1.0);
+    m_fadeAnimation->start();
+}
+
+void FluHNavigationFlyIconTextItem::setPositionRelativeTo(QWidget* parentItem, int navBarHeight)
+{
+    QPoint gPos = parentItem->mapToGlobal(QPoint(0, navBarHeight));
+    showWithAnimation(gPos);
 }
 
 QVBoxLayout* FluHNavigationFlyIconTextItem::getMainLayout()

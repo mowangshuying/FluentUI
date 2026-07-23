@@ -1,8 +1,14 @@
- FluMenuAndToolBarsPage {
+﻿ FluMenuAndToolBarsPage {
      background-color: rgb(249, 249, 249);
      border-top-left-radius: 8px;
      border: 1px solid rgb(229, 229, 229);
  }
+FluMenuAndToolBarsPage[noBorder="true"] {
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 
  #titleLabel {
      font-size: 26px;

@@ -578,6 +578,11 @@ void FluHNavigationIconTextItem::updateAllItemsStyleSheet(FluHNavigationIconText
 
 void FluHNavigationIconTextItem::updateSelected(bool b)
 {
+    style()->unpolish(this);
+    m_wrapWidget1->style()->unpolish(m_wrapWidget1);
+    m_wrapWidget2->style()->unpolish(m_wrapWidget2);
+    m_label->style()->unpolish(m_label);
+
     m_isSelected = b;
     setProperty("selected", b);
     m_wrapWidget1->setProperty("selected", b);
@@ -612,6 +617,7 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
     m_wrapWidget1->style()->polish(m_wrapWidget1);
     m_wrapWidget2->style()->polish(m_wrapWidget2);
     m_label->style()->polish(m_label);
+    update();
 }
 
 void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)

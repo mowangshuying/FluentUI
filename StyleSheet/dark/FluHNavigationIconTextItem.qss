@@ -67,6 +67,7 @@ FluHNavigationIconTextItem {
 #label {
     background-color: transparent;
     font-size: 12px;
+    color: white;
 }
 
 #label[enableThisItem=false] {

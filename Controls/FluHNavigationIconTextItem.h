@@ -178,6 +178,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
     void onItemClicked();
 
     void onThemeChanged();
+    void updateIconTheme();
 
   protected:
     QWidget* m_wrapWidget1;

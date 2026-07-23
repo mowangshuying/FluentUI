@@ -747,19 +747,25 @@ void FluHNavigationIconTextItem::onItemClicked()
     }
 }
 
-void FluHNavigationIconTextItem::onThemeChanged()
+void FluHNavigationIconTextItem::updateIconTheme()
 {
-    if (FluThemeUtils::isLightTheme())
+    FluTheme theme = FluThemeUtils::getUtils()->getTheme();
+    m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, theme));
+    if (!m_items.empty())
     {
-        m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluHNavigationIconTextItem.qss", this);
-        setArrowButtonToChevronDown();
+        if (FluThemeUtils::isLightTheme())
+            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, theme));
+        else
+            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, theme));
     }
     else
     {
-        m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluHNavigationIconTextItem.qss", this);
-        setArrowButtonToChevronUp();
+        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, theme));
     }
+}
+
+void FluHNavigationIconTextItem::onThemeChanged()
+{
+    updateIconTheme();
     FluStyleSheetUtils::setQssByFileName("FluHNavigationIconTextItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

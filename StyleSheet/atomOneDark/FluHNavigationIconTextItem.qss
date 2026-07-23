@@ -35,15 +35,6 @@ FluHNavigationIconTextItem {
     background-color: rgb(55, 59, 66);
 }
 
-#hIndicator {
-    background-color: transparent;
-    border-radius: 2px;
-}
-
-#hIndicator[selected=true] {
-    background-color: rgb(82, 139, 255);
-}
-
 #indicator {
     background-color: transparent;
     border-radius: 2px;

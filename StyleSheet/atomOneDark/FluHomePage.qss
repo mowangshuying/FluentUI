@@ -1,7 +1,10 @@
 FluHomePage {
     background-color: rgb(40, 44, 52);
     border-radius: 8px;
-    /* margin-left: 20px; */
+}
+
+FluHomePage[noBorder="true"] {
+    border-radius: 0;
 }
 
 #contextWidget {

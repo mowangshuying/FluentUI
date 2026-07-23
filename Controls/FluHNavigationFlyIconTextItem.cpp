@@ -60,6 +60,11 @@ void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationI
         newItem->setParentIsNavigationView(false);
         newItem->setParentFlyIconTextItem(this);
 
+        connect(newItem, &FluHNavigationIconTextItem::itemClicked, this, [=]() {
+            if (!newItem->getKey().isEmpty())
+                emit itemSelected(newItem->getKey());
+        });
+
         m_scrollView->getMainLayout()->addWidget(newItem);
         m_items.push_back(newItem);
     }

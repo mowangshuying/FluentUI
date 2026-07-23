@@ -4,6 +4,13 @@ FluSettingPage {
     border: 1px solid rgb(71, 74, 79);
 }
 
+FluSettingPage[noBorder="true"] {
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 #titleLabel {
     font-size: 26px;
     color: rgb(255, 255, 255);

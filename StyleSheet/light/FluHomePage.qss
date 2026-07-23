@@ -3,6 +3,11 @@ FluHomePage {
     border: 1px solid rgb(229, 229, 229);
 }
 
+FluHomePage[noBorder="true"] {
+    border: none;
+    border-radius: 0;
+}
+
 
 /* set height cann't work*/
 

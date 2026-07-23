@@ -75,6 +75,26 @@ void FluHNavigationView::addItemToLayout(QWidget* item, FluHNavigationItemPositi
 //  auto itf = std::find(m_items.begin(), m_items.end)
 //}
 
+void FluHNavigationView::setLastSelectedItem(FluHNavigationItem* item)
+{
+    m_lastSelectedItem = item;
+}
+
+FluHNavigationItem* FluHNavigationView::getLastSelectedItem()
+{
+    return m_lastSelectedItem;
+}
+
+void FluHNavigationView::setFlyIconTextItem(FluHNavigationFlyIconTextItem* flyIconTextIcon)
+{
+    m_FlyIconTextItem = flyIconTextIcon;
+}
+
+FluHNavigationFlyIconTextItem* FluHNavigationView::getFlyIconTextIcon()
+{
+    return m_FlyIconTextItem;
+}
+
 std::vector<FluHNavigationIconTextItem*> FluHNavigationView::getHideItems()
 {
     return m_hideItems;

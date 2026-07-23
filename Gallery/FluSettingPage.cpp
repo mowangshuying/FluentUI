@@ -53,6 +53,9 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     navStyleSelectBox->getComboBox()->addItem(tr("Left"));
     navStyleSelectBox->getComboBox()->addItem(tr("Top"));
     m_scrollView->getMainLayout()->addWidget(navStyleSelectBox);
+    connect(navStyleSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, this, [=](int index) {
+        emit navigationStyleChanged(index);
+    });
 
     auto languageSelectBox = new FluSettingsSelectBox;
     languageSelectBox->setTitleInfo(tr("Language"), tr("Select which language to display."));

@@ -3,6 +3,8 @@
 #include "../Controls/FluFrameLessWidget.h"
 #include "../Controls/FluVNavigationView.h"
 #include "../Controls/FluVNavigationIconTextItem.h"
+#include "../Controls/FluHNavigationView.h"
+#include "../Controls/FluHNavigationIconTextItem.h"
 #include "FluHomePage.h"
 #include <QStackedLayout>
 #include "../Controls/FluStackedLayout.h"
@@ -77,6 +79,10 @@ class FluGalleryWindow : public FluWindowKitWidget
   public:
     FluGalleryWindow(QWidget *parent = nullptr);
 
+    void switchNavigationStyle(int index);
+    void makeHNavigationItem(FluAwesomeType type, QString text, QString key);
+    void animateNavSwitch(bool toHorizontal);
+
     void makeHomeNavItem();
 
     void makeDesignGuidanceNavItem();
@@ -116,5 +122,7 @@ class FluGalleryWindow : public FluWindowKitWidget
 
   protected:
     FluVNavigationView *m_navView;
+    FluHNavigationView *m_hNavView;
+    bool m_isHorizontalNav;
     FluStackedLayout *m_layout;
 };

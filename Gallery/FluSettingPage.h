@@ -27,6 +27,9 @@ class FluSettingPage : public FluWidget
         m_appThemeSelectBox->getComboBox()->setCurrentIndex((int)FluThemeUtils::getUtils()->getTheme());
     }
 
+  signals:
+    void navigationStyleChanged(int index);
+
   public slots:
     void onThemeChanged();
 

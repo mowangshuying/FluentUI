@@ -11,6 +11,7 @@
 #include "../Utils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
+#include "FluHNavigationIndicator.h"
 
 class FluHNavigationFlyIconTextItem;
 class FluHNavigationIconTextItem : public FluHNavigationItem
@@ -188,7 +189,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     QWidget* m_horizontalIndicatorWrap;
     QHBoxLayout* m_horizontalIndicatorLayout;
-    QWidget* m_horizontalIndicator;
+    FluHNavigationIndicator* m_horizontalIndicator;
 
     QWidget* m_verticalIndicator;
     QPushButton* m_iconButton;

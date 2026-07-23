@@ -24,15 +24,13 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_wrapWidget1->setObjectName("wrapWidget1");
     m_wrapWidget2->setObjectName("wrapWidget2");
 
-    m_horizontalIndicator = new QWidget;
-    m_horizontalIndicator->setFixedHeight(4);
+    m_horizontalIndicator = new FluHNavigationIndicator;
     m_horizontalIndicator->setFixedWidth(18);
-    m_horizontalIndicator->setObjectName("hIndicator");
 
     m_horizontalIndicatorWrap = new QWidget;
     m_horizontalIndicatorLayout = new QHBoxLayout;
     m_horizontalIndicatorLayout->setContentsMargins(0, 0, 0, 0);
-    m_horizontalIndicatorWrap->setFixedHeight(4);
+    m_horizontalIndicatorWrap->setFixedHeight(3);
     m_horizontalIndicatorLayout->setAlignment(Qt::AlignHCenter);
     m_horizontalIndicatorWrap->setLayout(m_horizontalIndicatorLayout);
 
@@ -51,7 +49,7 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_mainLayout->addWidget(m_horizontalIndicatorWrap);
 
     m_wrapWidget2->hide();
-    m_horizontalIndicator->hide();
+    m_horizontalIndicator->setVisible(false);
 
     m_horizontalLayout1 = new QHBoxLayout;
     m_wrapWidget1->setLayout(m_horizontalLayout1);
@@ -567,7 +565,6 @@ void FluHNavigationIconTextItem::updateAllItemsStyleSheet(FluHNavigationIconText
     item->m_wrapWidget1->style()->polish(item->m_wrapWidget1);
     item->m_wrapWidget2->style()->polish(item->m_wrapWidget2);
     item->m_verticalIndicator->style()->polish(item->m_verticalIndicator);
-    item->m_horizontalIndicator->style()->polish(item->m_horizontalIndicator);
     item->m_iconButton->style()->polish(item->m_iconButton);
     item->m_label->style()->polish(item->m_label);
     item->m_arrow->style()->polish(item->m_arrow);
@@ -589,18 +586,16 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
 
     if (parentIsNavigationView())
     {
-        m_horizontalIndicator->setProperty("selected", b);
+        m_horizontalIndicator->setSelected(b);
         m_verticalIndicator->setProperty("selected", false);
-        // LOG_DEBUG << "item(parent is NavView):" << getText() << ", selected:" << b;
     }
     else
     {
         auto rootItem = getRootItem();
         if (rootItem != nullptr && rootItem->parentIsFlyIconTextItem())
         {
-            m_horizontalIndicator->setProperty("selected", false);
+            m_horizontalIndicator->setSelected(false);
             m_verticalIndicator->setProperty("selected", b);
-            // LOG_DEBUG << "item(parent is Not NavView):" << getText() << ", selected:" << b;
         }
     }
 

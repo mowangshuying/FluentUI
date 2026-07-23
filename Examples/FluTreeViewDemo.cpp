@@ -18,7 +18,7 @@ FluTreeViewDemo::FluTreeViewDemo(FluWidget* parent /*= nullptr*/) : FluTemplateD
     featureScheduleItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     featureScheduleItem->setCheckState(0, Qt::Unchecked);
 
-    auto overallProjectPlanItem = new QTreeWidgetItem({"Overal Project Plan"});
+    auto overallProjectPlanItem = new QTreeWidgetItem({"Overall Project Plan"});
     overallProjectPlanItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     overallProjectPlanItem->setCheckState(0, Qt::Unchecked);
 
@@ -38,7 +38,7 @@ FluTreeViewDemo::FluTreeViewDemo(FluWidget* parent /*= nullptr*/) : FluTemplateD
     paintColorSchemeItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     paintColorSchemeItem->setCheckState(0, Qt::Unchecked);
 
-    auto flooringWoodgrainTypeItem = new QTreeWidgetItem({"Flooring woodgrain type"});
+    auto flooringWoodgrainTypeItem = new QTreeWidgetItem({"Flooring Woodgrain Type"});
     flooringWoodgrainTypeItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     flooringWoodgrainTypeItem->setCheckState(0, Qt::Unchecked);
 
@@ -58,6 +58,10 @@ FluTreeViewDemo::FluTreeViewDemo(FluWidget* parent /*= nullptr*/) : FluTemplateD
 
     m_treeView->addTopLevelItem(workDocumentsItem);
     m_treeView->addTopLevelItem(personalDocumentsItem);
+
+    m_treeView->setDragEnabled(true);
+    m_treeView->setAcceptDrops(true);
+    m_treeView->setDragDropMode(QAbstractItemView::InternalMove);
 
     m_treeView->resize(400, 300);
     m_treeView->move(50, 100);

@@ -59,6 +59,9 @@ class FluHNavigationView : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
+  signals:
+    void keyChanged(QString key);
+
   protected:
     std::vector<FluHNavigationIconTextItem*> m_items;
     std::vector<FluHNavigationIconTextItem*> m_hideItems;

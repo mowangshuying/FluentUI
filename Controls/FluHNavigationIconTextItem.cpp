@@ -131,6 +131,7 @@ void FluHNavigationIconTextItem::itemClone(FluHNavigationIconTextItem* item)
     m_iconButton->setIcon(item->getIconButton()->icon());
     m_label->setText(item->getLabel()->text());
     m_awesomeType = item->getAwesomeType();
+    m_key = item->m_key;
 
     m_isHideIcon = item->getHideIcon();
     if (m_isHideIcon)
@@ -662,6 +663,11 @@ void FluHNavigationIconTextItem::onItemClicked()
                 // LOG_DEBUG << "item:" << getText() << ", isDown:" << m_isDown;
                 auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
                 flyIconTextItem->setNavView(navView);
+
+                connect(flyIconTextItem, &FluHNavigationFlyIconTextItem::itemSelected, this, [=](QString key) {
+                    if (!key.isEmpty() && navView)
+                        emit navView->keyChanged(key);
+                });
 
                 connect(flyIconTextItem, &FluHNavigationFlyIconTextItem::itemClose, this, [=]() {
                     // LOG_DEBUG << "clicked Item:" << getText() << ", close it.";

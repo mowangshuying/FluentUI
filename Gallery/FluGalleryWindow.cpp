@@ -120,6 +120,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     connect(m_navView, &FluVNavigationView::searchKeyChanged, this, [=](QString text) { m_layout->setCurrentWidget(text); });
     connect(m_navView, &FluVNavigationView::keyChanged, this, [=](QString key) { m_layout->setCurrentWidget(key); });
+    connect(m_hNavView, &FluHNavigationView::keyChanged, this, [=](QString key) { m_layout->setCurrentWidget(key); });
 
     auto settingsPage = (FluSettingPage *)m_layout->getWidget("SettingPage");
     if (settingsPage) {

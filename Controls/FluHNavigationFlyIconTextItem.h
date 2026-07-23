@@ -60,6 +60,7 @@ class FluHNavigationFlyIconTextItem : public FluWidget
 
   signals:
     void itemClose();
+    void itemSelected(QString key);
   public slots:
     void onThemeChanged();
 

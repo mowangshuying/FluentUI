@@ -1,7 +1,7 @@
-﻿FluEmoijsPage {
+FluEmoijsPage {
     background-color: rgb(39, 39, 39);
     border-top-left-radius: 8px;
-    border: 1px solid rgb(29, 29, 29);
+    border: 1px solid rgb(55, 55, 55);
 }
 FluEmoijsPage[noBorder="true"] {
     border: none;
@@ -12,7 +12,7 @@ FluEmoijsPage[noBorder="true"] {
 
 FluFWScrollView {
     border-radius: 4px;
-    border: 1px solid rgb(29, 29, 29);
+    border: 1px solid rgb(55, 55, 55);
 }
 
 #titleLabel {
@@ -60,7 +60,7 @@ FluFWScrollView {
 }
 
 #wIconLabel {
-    border: 1px solid rgb(29, 29, 29);
+    border: 1px solid rgb(55, 55, 55);
     border-radius: 4px;
     background-color: transparent;
 }

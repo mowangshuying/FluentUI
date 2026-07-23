@@ -165,16 +165,21 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
         vAnim->start(QAbstractAnimation::DeleteWhenStopped);
 
         m_hNavView->setFixedHeight(0);
+        m_hNavView->setMaximumHeight(0);
         m_hNavView->setVisible(true);
-        auto hAnim = new QPropertyAnimation(m_hNavView, "fixedHeight", this);
+        auto hAnim = new QPropertyAnimation(m_hNavView, "maximumHeight", this);
         hAnim->setDuration(200);
         hAnim->setEasingCurve(QEasingCurve::OutCubic);
         hAnim->setStartValue(0);
         hAnim->setEndValue(48);
+        connect(hAnim, &QPropertyAnimation::valueChanged, this, [=]() {
+            m_hNavView->setFixedHeight(m_hNavView->maximumHeight());
+        });
         hAnim->start(QAbstractAnimation::DeleteWhenStopped);
     }
     else
     {
+        m_navView->setFixedWidth(0);
         m_navView->setVisible(true);
         auto vAnim = new QPropertyAnimation(m_navView, "maximumWidth", this);
         vAnim->setDuration(200);
@@ -187,13 +192,17 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
         });
         vAnim->start(QAbstractAnimation::DeleteWhenStopped);
 
-        auto hAnim = new QPropertyAnimation(m_hNavView, "fixedHeight", this);
+        auto hAnim = new QPropertyAnimation(m_hNavView, "maximumHeight", this);
         hAnim->setDuration(200);
         hAnim->setEasingCurve(QEasingCurve::OutCubic);
         hAnim->setStartValue(48);
         hAnim->setEndValue(0);
+        connect(hAnim, &QPropertyAnimation::valueChanged, this, [=]() {
+            m_hNavView->setFixedHeight(m_hNavView->maximumHeight());
+        });
         connect(hAnim, &QPropertyAnimation::finished, this, [=]() {
             m_hNavView->setVisible(false);
+            m_hNavView->setMaximumHeight(48);
             m_hNavView->setFixedHeight(48);
         });
         hAnim->start(QAbstractAnimation::DeleteWhenStopped);

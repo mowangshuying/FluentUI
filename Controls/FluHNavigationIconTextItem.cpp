@@ -1,6 +1,7 @@
 ﻿#include "FluHNavigationIconTextItem.h"
 #include "FluHNavigationFlyIconTextItem.h"
 #include <QThread>
+#include <QCoreApplication>
 #include "FluHNavigationView.h"
 #include "FluVScrollView.h"
 
@@ -698,7 +699,10 @@ void FluHNavigationIconTextItem::onItemClicked()
                             auto navItem = (FluHNavigationIconTextItem*)target;
                             QPoint localPos = navItem->mapFromGlobal(globalPos);
                             if (navItem->getWrapWidget1()->rect().contains(localPos))
-                                QTimer::singleShot(0, navItem, [=]() { navItem->onItemClicked(); });
+                                QTimer::singleShot(0, navItem, [=]() {
+                                    QMouseEvent ev(QEvent::MouseButtonRelease, localPos, globalPos, Qt::LeftButton, Qt::NoButton, Qt::NoModifier);
+                                    QCoreApplication::sendEvent(navItem, &ev);
+                                });
                         }
                     }
                 });

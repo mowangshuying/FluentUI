@@ -1,8 +1,14 @@
- FluSliderPage {
+﻿ FluSliderPage {
      background-color: rgb(39, 39, 39);
      border-top-left-radius: 8px;
      border: 1px solid rgb(29, 29, 29);
  }
+FluSliderPage[noBorder="true"] {
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 
  #titleLabel {
      font-size: 26px;

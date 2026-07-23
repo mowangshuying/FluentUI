@@ -170,6 +170,17 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
     setProperty("horizontalNav", toHorizontal);
     style()->polish(this);
 
+    // toggle page borders via property
+    for (int i = 0; i < m_layout->count(); i++)
+    {
+        QWidget *page = m_layout->widget(i);
+        if (page)
+        {
+            page->setProperty("noBorder", toHorizontal);
+            page->style()->polish(page);
+        }
+    }
+
     if (toHorizontal)
     {
         m_navView->setFixedWidth(m_navView->width());

@@ -1,8 +1,14 @@
- FluInfoBarPage {
+﻿ FluInfoBarPage {
      background-color: rgb(40, 44, 52);
      border-top-left-radius: 8px; border-top-right-radius: 8px;
      border: 1px solid rgb(71, 74, 79);
  }
+FluInfoBarPage[noBorder="true"] {
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 
  #titleLabel {
      font-size: 26px;

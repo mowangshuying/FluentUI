@@ -23,25 +23,13 @@ class FluHNavigationView : public FluWidget
 
     void addItemToLayout(QWidget* item, FluHNavigationItemPosition pos);
 
-    void setLastSelectedItem(FluHNavigationItem* item)
-    {
-        m_lastSelectedItem = item;
-    }
+    void setLastSelectedItem(FluHNavigationItem* item);
 
-    FluHNavigationItem* getLastSelectedItem()
-    {
-        return m_lastSelectedItem;
-    }
+    FluHNavigationItem* getLastSelectedItem();
 
-    void setFlyIconTextItem(FluHNavigationFlyIconTextItem* flyIconTextIcon)
-    {
-        m_FlyIconTextItem = flyIconTextIcon;
-    }
+    void setFlyIconTextItem(FluHNavigationFlyIconTextItem* flyIconTextIcon);
 
-    FluHNavigationFlyIconTextItem* getFlyIconTextIcon()
-    {
-        return m_FlyIconTextItem;
-    }
+    FluHNavigationFlyIconTextItem* getFlyIconTextIcon();
 
     std::vector<FluHNavigationIconTextItem*> getHideItems();
 

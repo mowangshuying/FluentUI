@@ -31,7 +31,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
 
     // add home item;
     auto item1 = new FluHNavigationIconTextItem(FluAwesomeType::Home, "Home");
-    m_navView->addItemToMidLayout(item1);
+    m_navView->addItemToLayout(item1, FluHNavigationItemPosition::Mid);
 
     // add Design items;
     auto item2 = new FluHNavigationIconTextItem(FluAwesomeType::Design, "Design guidance", this);
@@ -60,11 +60,11 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     //   item241->addItem(item2412);
     //  item241->addItem(item2413);
 
-    m_navView->addItemToMidLayout(item2);
+    m_navView->addItemToLayout(item2, FluHNavigationItemPosition::Mid);
 
     // add All samples;
     auto item3 = new FluHNavigationIconTextItem(FluAwesomeType::AllApps, "All samples");
-    m_navView->addItemToMidLayout(item3);
+    m_navView->addItemToLayout(item3, FluHNavigationItemPosition::Mid);
 
     // Basic inputs;
     auto item4 = new FluHNavigationIconTextItem(FluAwesomeType::CheckboxComposite, "Basic input");
@@ -98,7 +98,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item4->addItem(item412);
     item4->addItem(item413);
 
-    m_navView->addItemToMidLayout(item4);
+    m_navView->addItemToLayout(item4, FluHNavigationItemPosition::Mid);
 
     // Connections;
     auto item5 = new FluHNavigationIconTextItem(FluAwesomeType::TiltDown, "Connections");
@@ -110,7 +110,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item5->addItem(item52);
     item5->addItem(item53);
 
-    m_navView->addItemToMidLayout(item5);
+    m_navView->addItemToLayout(item5, FluHNavigationItemPosition::Mid);
 
     auto item6 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Date & Time");
 
@@ -124,7 +124,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item6->addItem(item63);
     item6->addItem(item64);
 
-    m_navView->addItemToMidLayout(item6);
+    m_navView->addItemToLayout(item6, FluHNavigationItemPosition::Mid);
 
     auto item7 = new FluHNavigationIconTextItem(FluAwesomeType::Comment, "Dialogs & flyouts");
 
@@ -136,7 +136,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item7->addItem(item72);
     item7->addItem(item73);
 
-    m_navView->addItemToMidLayout(item7);
+    m_navView->addItemToLayout(item7, FluHNavigationItemPosition::Mid);
 
     auto item8 = new FluHNavigationIconTextItem(FluAwesomeType::PreviewLink, "Layout");
 
@@ -164,7 +164,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item8->addItem(item810);
     item8->addItem(item811);
 
-    m_navView->addItemToMidLayout(item8);
+    m_navView->addItemToLayout(item8, FluHNavigationItemPosition::Mid);
 
     auto item9 = new FluHNavigationIconTextItem(FluAwesomeType::Calendar, "Mendia");
 
@@ -184,7 +184,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item9->addItem(item96);
     item9->addItem(item97);
 
-    m_navView->addItemToMidLayout(item9);
+    m_navView->addItemToLayout(item9, FluHNavigationItemPosition::Mid);
 
     auto item10 = new FluHNavigationIconTextItem(FluAwesomeType::Save, "Menu & toolbars");
 
@@ -210,7 +210,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item10->addItem(item109);
     item10->addItem(item1010);
 
-    m_navView->addItemToMidLayout(item10);
+    m_navView->addItemToLayout(item10, FluHNavigationItemPosition::Mid);
 
     auto item11 = new FluHNavigationIconTextItem(FluAwesomeType::BookmarksMirrored, "Navigation");
 
@@ -224,7 +224,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item11->addItem(item113);
     item11->addItem(item114);
 
-    m_navView->addItemToMidLayout(item11);
+    m_navView->addItemToLayout(item11, FluHNavigationItemPosition::Mid);
 
     auto item12 = new FluHNavigationIconTextItem(FluAwesomeType::Sort, tr("Scrolling"));
 
@@ -240,7 +240,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item12->addItem(item124);
     item12->addItem(item125);
 
-    m_navView->addItemToMidLayout(item12);
+    m_navView->addItemToLayout(item12, FluHNavigationItemPosition::Mid);
 
     auto item13 = new FluHNavigationIconTextItem(FluAwesomeType::Reminder, "Status & info");
 
@@ -256,7 +256,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item13->addItem(item134);
     item13->addItem(item135);
 
-    m_navView->addItemToMidLayout(item13);
+    m_navView->addItemToLayout(item13, FluHNavigationItemPosition::Mid);
 
     auto item14 = new FluHNavigationIconTextItem(FluAwesomeType::Font, tr("Text"));
 
@@ -276,14 +276,14 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     item14->addItem(item146);
     item14->addItem(item147);
 
-    m_navView->addItemToMidLayout(item14);
+    m_navView->addItemToLayout(item14, FluHNavigationItemPosition::Mid);
 
     auto searchItem = new FluHNavigationSearchItem;
     searchItem->setFixedWidth(220);
-    m_navView->addItemToRightLayout(searchItem);
+    m_navView->addItemToLayout(searchItem, FluHNavigationItemPosition::Right);
 
     auto settingsItem = new FluHNavigationSettingsItem(FluAwesomeType::Settings);
-    m_navView->addItemToRightLayout(settingsItem);
+    m_navView->addItemToLayout(settingsItem, FluHNavigationItemPosition::Right);
 
     auto bodyWidget = new QWidget;
     bodyWidget->setObjectName("bodyWidget");

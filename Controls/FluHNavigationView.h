@@ -4,6 +4,7 @@
 #include <QHBoxLayout>
 
 #include "FluHScrollView.h"
+#include "FluHNavigationItem.h"
 
 #include <QStyleOption>
 #include <QPainter>
@@ -20,12 +21,7 @@ class FluHNavigationView : public FluWidget
   public:
     FluHNavigationView(QWidget* parent = nullptr);
 
-
-    void addItemToLeftLayout(QWidget* item);
-
-    void addItemToMidLayout(QWidget* item);
-
-    void addItemToRightLayout(QWidget* item);
+    void addItemToLayout(QWidget* item, FluHNavigationItemPosition pos);
 
     void setLastSelectedItem(FluHNavigationItem* item)
     {

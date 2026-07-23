@@ -217,10 +217,12 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
         vAnim->setDuration(200);
         vAnim->setEasingCurve(QEasingCurve::OutCubic);
         vAnim->setStartValue(0);
-        vAnim->setEndValue(300);
+
+        ///
+        vAnim->setEndValue(m_navView->calcViewWidthByIsLong());
         connect(vAnim, &QPropertyAnimation::finished, this, [=]() {
             m_navView->setMaximumWidth(QWIDGETSIZE_MAX);
-            m_navView->setFixedWidth(300);
+            m_navView->setFixedWidth(m_navView->calcViewWidthByIsLong());
         });
         vAnim->start(QAbstractAnimation::DeleteWhenStopped);
 

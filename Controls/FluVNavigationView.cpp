@@ -109,6 +109,13 @@ void FluVNavigationView::setOnlyCollapseView(bool isHideMenuAndSearch)
     setFixedWidth(40 + m_layout->contentsMargins().left() + m_layout->contentsMargins().right());
 }
 
+int FluVNavigationView::calcViewWidthByIsLong()
+{
+    if (!m_isLong)
+        return 40 + m_layout->contentsMargins().left() + m_layout->contentsMargins().right();
+    return m_viewWidth;
+}
+
 void FluVNavigationView::addItemToTopLayout(QWidget *item)
 {
     m_topWrapLayout->addWidget(item, 0, Qt::AlignTop);

@@ -45,11 +45,9 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
     FluVNavigationView* navView = nullptr;
     if (!items.empty())
     {
-        // navView = items[0]->getRootItem()->getParentView();
         auto rootItem = items[0]->getRootItem();
         if (rootItem != nullptr)
             navView = rootItem->getParentView();
-        // emit navView->keyChanged();
     }
 
     for (auto item : items)

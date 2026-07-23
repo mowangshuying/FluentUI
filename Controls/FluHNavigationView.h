@@ -12,11 +12,14 @@ class FluHNavigationIconTextItem;
 class FluHNavigationMoreItem;
 class FluHNavigationItem;
 class FluHNavigationFlyIconTextItem;
+
+
 class FluHNavigationView : public FluWidget
 {
     Q_OBJECT
   public:
     FluHNavigationView(QWidget* parent = nullptr);
+
 
     void addItemToLeftLayout(QWidget* item);
 
@@ -24,12 +27,6 @@ class FluHNavigationView : public FluWidget
 
     void addItemToRightLayout(QWidget* item);
 
-    //  void removeItemMidLayout(QWidget* item);
-
-    // QSize minimumSizeHint()
-    //{
-    //      return QSize(120, 40);
-    // }
     void setLastSelectedItem(FluHNavigationItem* item)
     {
         m_lastSelectedItem = item;
@@ -68,12 +65,10 @@ class FluHNavigationView : public FluWidget
 
     QHBoxLayout* m_layout;
     QWidget* m_leftWrapWidget;
-    // FluHScrollView* m_midHScrollView;
     QWidget* m_MidWrapWidget;
     QWidget* m_rightWrapWidget;
 
     QHBoxLayout* m_leftWrapLayout;
-    // QHBoxLayout* m_midWrapLayout;
     QHBoxLayout* m_rightWrapLayout;
 
     FluHNavigationMoreItem* m_moreItem;

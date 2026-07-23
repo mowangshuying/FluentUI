@@ -13,6 +13,13 @@ enum class FluHNavigationItemType
     Setting,
 };
 
+enum class FluHNavigationItemPosition
+{
+    Left,
+    Mid,
+    Right,
+};
+
 class FluHNavigationItem : public FluWidget
 {
     Q_OBJECT

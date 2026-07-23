@@ -637,7 +637,7 @@ void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
 
 void FluHNavigationIconTextItem::onItemClicked()
 {
-     LOG_DEBUG << getText() << " called";
+     //LOG_DEBUG << getText() << " called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -658,6 +658,7 @@ void FluHNavigationIconTextItem::onItemClicked()
 #endif
 
     auto navView = rootItem->getParentView();
+    emit navView->keyChanged(getKey());
     if (rootItem->parentIsFlyIconTextItem() && m_isDown)
     {
         expand();
@@ -771,18 +772,9 @@ void FluHNavigationIconTextItem::onItemClicked()
 void FluHNavigationIconTextItem::updateIconTheme()
 {
     FluTheme theme = FluThemeUtils::getUtils()->getTheme();
+    FluAwesomeType arrowIcon = m_items.empty() ? FluAwesomeType::None : FluAwesomeType::ChevronDown;
     m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, theme));
-    if (!m_items.empty())
-    {
-        if (FluThemeUtils::isLightTheme())
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, theme));
-        else
-            m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown, theme));
-    }
-    else
-    {
-        m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, theme));
-    }
+    m_arrow->setIcon(FluIconUtils::getFluentIcon(arrowIcon, theme));
 }
 
 void FluHNavigationIconTextItem::onThemeChanged()

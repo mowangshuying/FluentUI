@@ -7,6 +7,13 @@ FluGalleryWindow {
     background-color: rgb(33, 37, 43);
 }
 
+FluGalleryWindow[horizontalNav="true"] FluWidget {
+    border: none;
+    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 #horizontalNavView {
     background-color: rgb(40, 44, 52);
     border-bottom: 1px solid rgb(71, 74, 79);

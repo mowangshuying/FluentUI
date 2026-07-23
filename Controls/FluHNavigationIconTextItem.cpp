@@ -25,16 +25,14 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_wrapWidget2->setObjectName("wrapWidget2");
 
     m_horizontalIndicator = new FluHNavigationIndicator;
-    m_horizontalIndicator->setFixedWidth(18);
 
     m_horizontalIndicatorWrap = new QWidget;
     m_horizontalIndicatorLayout = new QHBoxLayout;
     m_horizontalIndicatorLayout->setContentsMargins(0, 0, 0, 0);
     m_horizontalIndicatorWrap->setFixedHeight(3);
-    m_horizontalIndicatorLayout->setAlignment(Qt::AlignHCenter);
     m_horizontalIndicatorWrap->setLayout(m_horizontalIndicatorLayout);
 
-    m_horizontalIndicatorLayout->addWidget(m_horizontalIndicator);
+    m_horizontalIndicatorLayout->addWidget(m_horizontalIndicator, 1);
 
     m_emptyWidget = new QWidget;
     m_emptyWidget->setFixedSize(0, 0);
@@ -586,7 +584,9 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
 
     if (parentIsNavigationView())
     {
-        m_horizontalIndicator->setSelected(b);
+        if (m_horizontalIndicator->width() > 0)
+            m_horizontalIndicator->setFixedWidth(width() * 0.6);
+        m_horizontalIndicator->animateSelect(b);
         m_verticalIndicator->setProperty("selected", false);
     }
     else
@@ -594,7 +594,7 @@ void FluHNavigationIconTextItem::updateSelected(bool b)
         auto rootItem = getRootItem();
         if (rootItem != nullptr && rootItem->parentIsFlyIconTextItem())
         {
-            m_horizontalIndicator->setSelected(false);
+            m_horizontalIndicator->animateSelect(false);
             m_verticalIndicator->setProperty("selected", b);
         }
     }

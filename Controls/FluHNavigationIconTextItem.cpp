@@ -55,7 +55,7 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
 
     m_horizontalLayout1 = new QHBoxLayout;
     m_wrapWidget1->setLayout(m_horizontalLayout1);
-    m_horizontalLayout1->setContentsMargins(4, 4, 4, 4);
+    m_horizontalLayout1->setContentsMargins(2, 2, 2, 2);
     m_horizontalLayout1->setSpacing(0);
 
     m_verticalLayout1 = new QVBoxLayout;
@@ -69,7 +69,7 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_horizontalLayout1->addWidget(m_emptyWidget);
     m_horizontalLayout1->addWidget(m_verticalIndicator);
     m_horizontalLayout1->addWidget(m_iconButton);
-    m_horizontalLayout1->addSpacing(8);
+    m_horizontalLayout1->addSpacing(4);
     m_horizontalLayout1->addWidget(m_label, 1);
     m_horizontalLayout1->addWidget(m_arrow);
 
@@ -85,20 +85,20 @@ FluHNavigationIconTextItem::FluHNavigationIconTextItem(QWidget* parent /*= nullp
     m_label->setObjectName("label");
     m_arrow->setObjectName("arrow");
 
-    m_iconButton->setIconSize(QSize(24, 24));
+    m_iconButton->setIconSize(QSize(16, 16));
     m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
-    m_iconButton->setFixedSize(30, 30);
+    m_iconButton->setFixedSize(20, 20);
 
-    m_arrow->setIconSize(QSize(18, 18));
+    m_arrow->setIconSize(QSize(12, 12));
     m_arrow->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::None, FluThemeUtils::getUtils()->getTheme()));
-    m_arrow->setFixedWidth(25);
+    m_arrow->setFixedWidth(16);
 
     connect(m_arrow, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(m_iconButton, &QPushButton::clicked, this, [=]() { emit itemClicked(); });
     connect(this, &FluHNavigationIconTextItem::itemClicked, this, [=]() { onItemClicked(); });
 
-    // fix height 40;
-    setFixedHeight(40);
+    // fix height 30;
+    setFixedHeight(30);
 }
 
 FluHNavigationIconTextItem::FluHNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget* parent /*= nullptr*/) : FluHNavigationIconTextItem(parent)

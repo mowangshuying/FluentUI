@@ -4,7 +4,7 @@ FluHNavigationIconTextItem {
 }
 
 #wrapWidget1 {
-    background-color: rgb(50, 54, 60);
+    background-color: rgb(33, 37, 43);
     border-radius: 4px;
 }
 
@@ -15,24 +15,24 @@ FluHNavigationIconTextItem {
 
 #wrapWidget1[enableThisItem=false] {
     background-color: transparent;
-    background-color: rgb(50, 54, 60);
+    background-color: rgb(33, 37, 43);
 }
 
 #wrapWidget1:hover {
-    background-color: rgb(60, 64, 72);
+    background-color: rgb(44, 48, 54);
     border-radius: 4px;
 }
 
 #wrapWidget1[enableThisItem=false]:hover {
-    background-color: rgb(50, 54, 60);
+    background-color: rgb(33, 37, 43);
 }
 
 #wrapWidget1[fly=true][selected=true] {
-    background-color: rgb(60, 64, 72);
+    background-color: rgb(44, 48, 54);
 }
 
 #wrapWidget1[fly=true]:hover {
-    background-color: rgb(55, 59, 66);
+    background-color: rgb(40, 44, 52);
 }
 
 #indicator {

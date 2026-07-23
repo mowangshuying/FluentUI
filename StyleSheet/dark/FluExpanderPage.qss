@@ -1,7 +1,7 @@
-﻿ FluExpanderPage {
+ FluExpanderPage {
      background-color: rgb(39, 39, 39);
      border-top-left-radius: 8px;
-     border: 1px solid rgb(29, 29, 29);
+     border: 1px solid rgb(55, 55, 55);
  }
 FluExpanderPage[noBorder="true"] {
     border: none;

@@ -31,6 +31,8 @@ class FluVNavigationView : public FluWidget
 
     void setOnlyCollapseView(bool isHideMenuAndSearch);
 
+    int calcViewWidthByIsLong();
+
     void addItemToTopLayout(QWidget *item);
 
     void addItemToMidLayout(QWidget *item);

@@ -29,7 +29,7 @@ FluTreeView::item:selected {
 }
 
 /*indicator*/
-FLuTreeView::indicator {
+FluTreeView::indicator {
     width: 18px;
     height: 18px;
     border-radius: 5px;

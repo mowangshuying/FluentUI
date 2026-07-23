@@ -31,7 +31,7 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
     featureScheduleItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     featureScheduleItem->setCheckState(0, Qt::Unchecked);
 
-    auto overallProjectPlanItem = new QTreeWidgetItem({tr("Overal Project Plan")});
+    auto overallProjectPlanItem = new QTreeWidgetItem({tr("Overall Project Plan")});
     overallProjectPlanItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     overallProjectPlanItem->setCheckState(0, Qt::Unchecked);
 
@@ -51,7 +51,7 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
     paintColorSchemeItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     paintColorSchemeItem->setCheckState(0, Qt::Unchecked);
 
-    auto flooringWoodgrainTypeItem = new QTreeWidgetItem({tr("Flooring woodgrain type")});
+    auto flooringWoodgrainTypeItem = new QTreeWidgetItem({tr("Flooring Woodgrain Type")});
     flooringWoodgrainTypeItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsAutoTristate);
     flooringWoodgrainTypeItem->setCheckState(0, Qt::Unchecked);
 
@@ -71,7 +71,10 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 
     treeView->addTopLevelItem(workDocumentsItem);
     treeView->addTopLevelItem(personalDocumentsItem);
-    treeView->setFixedWidth(400);
+    treeView->setDragEnabled(true);
+    treeView->setAcceptDrops(true);
+    treeView->setDragDropMode(QAbstractItemView::InternalMove);
+    treeView->setMinimumWidth(400);
     // end---
 
     displayBox->getBodyLayout()->addWidget(treeView);
@@ -79,6 +82,7 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
     //
     m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, &FluTreeViewPage::onThemeChanged);
 }
 
 void FluTreeViewPage::onThemeChanged()

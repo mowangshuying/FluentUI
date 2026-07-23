@@ -19,8 +19,8 @@ FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
 
 void FluTreeView::drawBranches(QPainter *painter, const QRect &rect, const QModelIndex &index) const
 {
-    QRect barcnchesRect(rect.x() + 16, rect.y(), rect.width(), rect.height());
-    QTreeWidget::drawBranches(painter, barcnchesRect, index);
+    QRect branchesRect(rect.x() + 16, rect.y(), rect.width(), rect.height());
+    QTreeWidget::drawBranches(painter, branchesRect, index);
 }
 
 void FluTreeView::onThemeChanged()

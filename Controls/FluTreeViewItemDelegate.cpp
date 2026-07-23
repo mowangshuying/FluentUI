@@ -39,8 +39,8 @@ void FluTreeViewItemDelegate::drawBackground(QPainter* painter, const QStyleOpti
     painter->save();
     painter->setPen(Qt::NoPen);
 
-    bool isSelected = option.state & QStyle::State_Selected;
-    bool isHover = option.state & QStyle::State_MouseOver;
+    bool isSelected = (option.state & QStyle::State_Selected) != 0;
+    bool isHover = (option.state & QStyle::State_MouseOver) != 0;
 
     if (!isSelected && !isHover)
     {
@@ -48,7 +48,6 @@ void FluTreeViewItemDelegate::drawBackground(QPainter* painter, const QStyleOpti
         return;
     }
 
-    int tmpH = option.rect.height() - 4;
     QColor tmpBrushC = m_backgroundColorEx;
     painter->setBrush(QBrush(tmpBrushC));
     painter->drawRoundedRect(4, option.rect.y() + 2, m_treeView->width() - 8, option.rect.height() - 4, 4, 4);
@@ -126,7 +125,7 @@ void FluTreeViewItemDelegate::drawIndicator(QPainter* painter, const QStyleOptio
     painter->save();
     painter->setPen(Qt::NoPen);
 
-    bool isSelected = option.state & QStyle::State_Selected;
+    bool isSelected = (option.state & QStyle::State_Selected) != 0;
 
     if (!isSelected)
     {
@@ -134,7 +133,6 @@ void FluTreeViewItemDelegate::drawIndicator(QPainter* painter, const QStyleOptio
         return;
     }
 
-    int tmpH = option.rect.height() - 4;
     QColor tmpBrushC;
     tmpBrushC = m_indicatorColorEx;
     painter->setBrush(QBrush(tmpBrushC));

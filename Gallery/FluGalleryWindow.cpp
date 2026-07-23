@@ -153,6 +153,31 @@ void FluGalleryWindow::makeHNavigationGroup(FluAwesomeType type, QString text, s
     }
 }
 
+void FluGalleryWindow::updatePageBorders(bool noBorder)
+{
+    static const QString borderOverride = "\n* { border: none; border-radius: 0; border-top-left-radius: 0; border-top-right-radius: 0; }";
+    for (int i = 0; i < m_layout->count(); i++)
+    {
+        QWidget *page = m_layout->widget(i);
+        if (!page)
+            continue;
+
+        if (noBorder)
+        {
+            QString qss = page->styleSheet();
+            if (!qss.contains(borderOverride))
+                page->setStyleSheet(qss + borderOverride);
+        }
+        else
+        {
+            QString qss = page->styleSheet();
+            qss.remove(borderOverride);
+            page->setStyleSheet(qss);
+            page->style()->polish(page);
+        }
+    }
+}
+
 void FluGalleryWindow::makeHNavigationItem(FluAwesomeType type, QString text, QString key)
 {
     auto item = new FluHNavigationIconTextItem(type, text, m_hNavView);
@@ -167,6 +192,7 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
 {
     if (toHorizontal)
     {
+        updatePageBorders(true);
         m_navView->setFixedWidth(m_navView->width());
         auto vAnim = new QPropertyAnimation(m_navView, "maximumWidth", this);
         vAnim->setDuration(200);
@@ -194,6 +220,7 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
     }
     else
     {
+        updatePageBorders(false);
         m_navView->setFixedWidth(0);
         m_navView->setVisible(true);
         auto vAnim = new QPropertyAnimation(m_navView, "maximumWidth", this);

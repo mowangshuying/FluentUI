@@ -625,7 +625,7 @@ void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
 
 void FluHNavigationIconTextItem::onItemClicked()
 {
-    // LOG_DEBUG << getText() << " called";
+     LOG_DEBUG << getText() << " called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -658,20 +658,9 @@ void FluHNavigationIconTextItem::onItemClicked()
     {
         if (!getItems().empty())
         {
-#ifdef _DEBUG
-            // static int clickedCount = 0;
-            // clickedCount++;
-            // if (clickedCount == 2)
-            // {
-            // QThread::sleep(0);
-            // }
-#endif
             if (m_isDown)
             {
                 m_isDown = !m_isDown;
-                // LOG_DEBUG << getText() << " called";
-
-                // LOG_DEBUG << "item:" << getText() << ", isDown:" << m_isDown;
                 auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
                 flyIconTextItem->setNavView(navView);
 
@@ -681,16 +670,25 @@ void FluHNavigationIconTextItem::onItemClicked()
                 });
 
                 connect(flyIconTextItem, &FluHNavigationFlyIconTextItem::itemClose, this, [=]() {
-                    // LOG_DEBUG << "clicked Item:" << getText() << ", close it.";
                     bool isOnItem = geometry().contains(parentWidget()->mapFromGlobal(QCursor::pos()));
-                    // LOG_DEBUG << getText() << "Item Close, "
-                    //           << "isOnItem:" << isOnItem << ", isDown:"<<m_isDown;
 
                     if (!m_isDown && !isOnItem)
                     {
                         m_isDown = !m_isDown;
                         rootItem->setArrowButtonToChevronDown();
                         navView->setLastSelectedItem(nullptr);
+
+                        QPoint globalPos = QCursor::pos();
+                        QWidget *target = navView->childAt(navView->mapFromGlobal(globalPos));
+                        while (target && !qobject_cast<FluHNavigationIconTextItem*>(target))
+                            target = target->parentWidget();
+                        if (target)
+                        {
+                            auto navItem = (FluHNavigationIconTextItem*)target;
+                            QPoint localPos = navItem->mapFromGlobal(globalPos);
+                            if (navItem->getWrapWidget1()->rect().contains(localPos))
+                                QTimer::singleShot(0, navItem, [=]() { navItem->onItemClicked(); });
+                        }
                     }
                 });
 

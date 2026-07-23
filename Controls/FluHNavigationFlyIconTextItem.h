@@ -9,6 +9,8 @@
 #include <QVBoxLayout>
 #include <vector>
 #include "FluVScrollView.h"
+#include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
 
 class FluHNavigationIconTextItem;
 class FluHNavigationView;
@@ -25,6 +27,10 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     QVBoxLayout* getMainLayout();
 
     FluVScrollView* getVScrollView();
+
+    void showWithAnimation(QPoint pos);
+
+    void setPositionRelativeTo(QWidget* parentItem, int navBarHeight);
 
     //
     void clearAllItemsSelectState();
@@ -64,4 +70,6 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     FluVScrollView* m_scrollView;
     FluHNavigationView* m_NavView;
     std::vector<FluHNavigationIconTextItem*> m_items;
+    QGraphicsOpacityEffect* m_opacityEffect;
+    QPropertyAnimation* m_fadeAnimation;
 };

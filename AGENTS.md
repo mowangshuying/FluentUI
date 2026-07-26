@@ -22,6 +22,18 @@ $env:PATH = "C:\Qt\6.5.1\msvc2019_64\bin;" + $env:PATH
 & "build\bin\Gallery.exe"
 ```
 
+## Python 绑定
+
+```bash
+# 构建 Python 绑定（需要 PySide6 6.8.3 + Shiboken6）
+cmake -DBUILD_PYTHON_BINDINGS=ON -DCMAKE_PREFIX_PATH=C:/Qt/6.8.1/msvc2022_64 -G"Visual Studio 17 2022" -A x64 ..
+cmake --build . --config Release --target FluentUI
+```
+
+> 产物：`build/python/Release/FluentUI.pyd`
+> 当前导出：`FluWidget`、`FluPushButton`、`FluIconButton`
+> 测试：`python python/test_bindings.py`
+
 ## CMake 选项
 
 | 选项 | 默认值 | 说明 |
@@ -29,6 +41,7 @@ $env:PATH = "C:\Qt\6.5.1\msvc2019_64\bin;" + $env:PATH
 | `USE_QRC` | `TRUE` | 使用 Qt 资源文件 |
 | `BUILD_GALLERY` | `TRUE` | 构建 Gallery 演示应用 |
 | `BUILD_ICONTOOL` | `FALSE` | 构建图标工具 |
+| `BUILD_PYTHON_BINDINGS` | `FALSE` | 构建 PySide6 Python 绑定 |
 
 ## 项目结构
 
@@ -36,6 +49,7 @@ $env:PATH = "C:\Qt\6.5.1\msvc2019_64\bin;" + $env:PATH
 - `Utils/` - 主题/图标/配置工具类（静态库 `FluentUI::Utils`）
 - `Gallery/` - 主演示应用（可执行文件）
 - `Examples/` - 单个控件演示（可执行文件）
+- `python/` - PySide6 Python 绑定（Shiboken6 生成）
 - `3rdparty/` - 源码集成的第三方库
 - `StyleSheet/` - 566 个 QSS 文件（Light/Dark/AtomOneDark 三套主题）
 - `code/` - Gallery 页面的 Markdown 代码示例
@@ -45,6 +59,7 @@ $env:PATH = "C:\Qt\6.5.1\msvc2019_64\bin;" + $env:PATH
 - Qt 6.5.1（安装路径：`C:/Qt`）
 - CMake >= 3.20，C++17
 - Qt 模块：Core、Widgets、Svg、Charts、Core5Compat
+- PySide6 6.8.3 + Shiboken6（仅 Python 绑定需要，pip 安装）
 
 ## 代码风格
 

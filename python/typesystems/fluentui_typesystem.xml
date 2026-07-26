@@ -194,4 +194,53 @@
     <object-type name="FluRatingControl" generate="yes">
         <include file-name="FluRatingControl.h" location="global"/>
     </object-type>
+    
+    <!-- Navigation Controls (simplified - complex nav views excluded due to cyclic deps) -->
+    <object-type name="FluTabBar" generate="yes">
+        <include file-name="FluTabBar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTabBarContent" generate="yes">
+        <include file-name="FluTabBarContent.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTabBarItem" generate="yes">
+        <include file-name="FluTabBarItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTabView" generate="yes">
+        <include file-name="FluTabView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTabWidget" generate="yes">
+        <include file-name="FluTabWidget.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPagination" generate="yes">
+        <include file-name="FluPagination.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPaginationItem" generate="yes">
+        <include file-name="FluPaginationItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPivot" generate="yes">
+        <include file-name="FluPivot.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPivotTitleBar" generate="yes">
+        <include file-name="FluPivotTitleBar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPivotTitleBarItem" generate="yes">
+        <include file-name="FluPivotTitleBarItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSegmented" generate="yes">
+        <include file-name="FluSegmented.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSegmentedItem" generate="yes">
+        <include file-name="FluSegmentedItem.h" location="global"/>
+    </object-type>
 </typesystem>

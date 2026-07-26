@@ -54,7 +54,7 @@ add_subdirectory("Gallery")
 endif()
 
 if (BUILD_PYTHON_BINDINGS)
-add_subdirectory("python")
+add_subdirectory("bindings/PySide6")
 endif()
 
 # add_subdirectory("res")

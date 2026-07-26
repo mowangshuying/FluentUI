@@ -57,6 +57,10 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     // QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
     // setStyleSheet(qss);
 
+    // 先读取导航样式配置
+    int navStyle = FluConfigUtils::getUtils()->getNavStyle();
+    m_isHorizontalNav = (navStyle == 1);
+
     m_navView = new FluVNavigationView(this);
     m_layout = new FluStackedLayout;
 
@@ -66,8 +70,15 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_hNavView = new FluHNavigationView(this);
     m_hNavView->setObjectName("horizontalNavView");
     m_mainLayout->insertWidget(1, m_hNavView);
-    m_hNavView->hide();
-    m_isHorizontalNav = false;
+    
+    // 根据配置初始化导航栏显示状态
+    if (m_isHorizontalNav) {
+        m_navView->hide();
+        m_hNavView->show();
+    } else {
+        m_navView->show();
+        m_hNavView->hide();
+    }
 
     // home
     makeHomeNavItem();
@@ -139,13 +150,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_navView->setViewWidth(navWidth > 0 ? navWidth : 300);
     m_navView->setOnlyCollapseView(false);
 
-    // 加载导航样式
-    int navStyle = FluConfigUtils::getUtils()->getNavStyle();
-    if (navStyle == 1)
-        switchNavigationStyle(1);
-
-    // 加载折叠状态
-    if (FluConfigUtils::getUtils()->getViewCollapsed())
+    // 加载折叠状态（仅垂直导航栏有效）
+    if (!m_isHorizontalNav && FluConfigUtils::getUtils()->getViewCollapsed())
         m_navView->collapseView();
 
     onThemeChanged();

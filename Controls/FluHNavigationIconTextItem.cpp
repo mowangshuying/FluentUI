@@ -760,7 +760,8 @@ void FluHNavigationIconTextItem::onItemClicked()
 #endif
 
     auto navView = rootItem->getParentView();
-    emit navView->keyChanged(getKey());
+    if (navView)
+        emit navView->keyChanged(getKey());
     if (rootItem->parentIsFlyIconTextItem() && m_isDown)
     {
         expand();

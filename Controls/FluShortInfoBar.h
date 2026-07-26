@@ -1,4 +1,4 @@
-﻿#pragma
+﻿#pragma once
 
 #include "FluWidget.h"
 #include <QLabel>

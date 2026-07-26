@@ -235,6 +235,10 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluSettingsLabelBox.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluSettingsSelectBox.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluSettingsVersionBox.h"
+    # Controls - Previously excluded (now fixed)
+    "${CMAKE_SOURCE_DIR}/Controls/FluGifBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluShortInfoBar.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluInfoBarMgr.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -369,6 +373,10 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flusettingslabelbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flusettingsselectbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flusettingsversionbox_wrapper.cpp
+    # Controls wrappers - Previously excluded (now fixed)
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flugifbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flushortinfobar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluinfobarmgr_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

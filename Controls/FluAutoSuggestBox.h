@@ -5,9 +5,6 @@
 #include "FluWidget.h"
 
 #include <vector>
-#include "FluMenu.h"
-// #include "FluRoundMenu.h"
-#include "FluCompleterMenu.h"
 #include <QLineEdit>
 #include <QPushButton>
 
@@ -17,6 +14,8 @@
 #include <QPainterPath>
 #include <QPushButton>
 #include <set>
+
+class FluCompleterMenu;
 
 class FluAutoSuggestBox : public FluWidget
 {

@@ -1,4 +1,5 @@
 ﻿#include "FluTextEditWrap.h"
+#include "FluTextEdit.h"
 
 FluTextEditWrap::FluTextEditWrap(FluTextEdit* parent /*= nullptr*/) : QWidget(parent), m_textEdit(parent)
 {

@@ -1,4 +1,5 @@
 ﻿#include "FluAutoSuggestBox.h"
+#include "FluCompleterMenu.h"
 
 FluAutoSuggestBox::FluAutoSuggestBox(bool isSearch /*=false*/, QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {

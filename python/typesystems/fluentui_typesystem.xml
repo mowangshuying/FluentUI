@@ -437,4 +437,65 @@
     <object-type name="FluWindowKitWindow" generate="yes">
         <include file-name="FluWindowKitWindow.h" location="global"/>
     </object-type>
+    
+    <!-- Other Controls -->
+    <object-type name="FluToggleSwitch" generate="yes">
+        <include file-name="FluToggleSwitch.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluToggleSwitchEx" generate="yes">
+        <include file-name="FluToggleSwitchEx.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTextToggleSwitchEx" generate="yes">
+        <include file-name="FluTextToggleSwitchEx.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluColorPickerButton" generate="yes">
+        <include file-name="FluColorPickerButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluColorButton" generate="yes">
+        <include file-name="FluColorButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVSplitLine" generate="yes">
+        <include file-name="FluVSplitLine.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHSplitLine" generate="yes">
+        <include file-name="FluHSplitLine.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVRadioGroupBox" generate="yes">
+        <include file-name="FluVRadioGroupBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHRadioGroupBox" generate="yes">
+        <include file-name="FluHRadioGroupBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCalendarView" generate="yes">
+        <include file-name="FluCalendarView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCalendarDatePicker" generate="yes">
+        <include file-name="FluCalendarDatePicker.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluDatePicker" generate="yes">
+        <include file-name="FluDatePicker.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSettingsLabelBox" generate="yes">
+        <include file-name="FluSettingsLabelBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSettingsSelectBox" generate="yes">
+        <include file-name="FluSettingsSelectBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSettingsVersionBox" generate="yes">
+        <include file-name="FluSettingsVersionBox.h" location="global"/>
+    </object-type>
 </typesystem>

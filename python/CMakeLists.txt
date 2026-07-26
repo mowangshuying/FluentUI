@@ -154,6 +154,19 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluIntValidator.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluSlider.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluRatingControl.h"
+    # Controls - Navigation (simplified)
+    "${CMAKE_SOURCE_DIR}/Controls/FluTabBar.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTabBarContent.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTabBarItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTabView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTabWidget.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPagination.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPaginationItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPivot.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPivotTitleBar.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPivotTitleBarItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluSegmented.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluSegmentedItem.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -207,6 +220,19 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluintvalidator_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluslider_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluratingcontrol_wrapper.cpp
+    # Controls wrappers - Navigation (simplified)
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabbar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabbarcontent_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabbaritem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabwidget_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupagination_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupaginationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupivot_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupivottitlebar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupivottitlebaritem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusegmented_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusegmenteditem_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

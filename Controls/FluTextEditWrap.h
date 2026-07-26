@@ -4,7 +4,8 @@
 #include <QEvent>
 #include <QResizeEvent>
 #include "../Utils/FluUtils.h"
-#include "FluTextEdit.h"
+
+class FluTextEdit;
 
 class FluTextEditWrap : public QWidget
 {

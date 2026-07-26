@@ -1,4 +1,5 @@
 ﻿#include "FluGifBox.h"
+#include <QMovie>
 
 FluGifBox::FluGifBox(QString lightGifPath, QString darkGifPath, QWidget* parent) : QLabel(parent)
 {
@@ -7,6 +8,13 @@ FluGifBox::FluGifBox(QString lightGifPath, QString darkGifPath, QWidget* parent)
     onThemeChanged();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
+}
+
+void FluGifBox::setFixedSize(int h, int w)
+{
+    QLabel::setFixedSize(h, w);
+    m_lightMovie->setScaledSize(QSize(h, w));
+    m_darkMovie->setScaledSize(QSize(h, w));
 }
 
 void FluGifBox::onThemeChanged()

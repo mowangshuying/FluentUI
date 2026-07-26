@@ -498,4 +498,18 @@
     <object-type name="FluSettingsVersionBox" generate="yes">
         <include file-name="FluSettingsVersionBox.h" location="global"/>
     </object-type>
+    
+    <!-- Previously excluded controls - now fixed -->
+    <object-type name="FluGifBox" generate="yes">
+        <include file-name="FluGifBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluShortInfoBar" generate="yes">
+        <include file-name="FluShortInfoBar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluInfoBarMgr" generate="yes">
+        <include file-name="FluInfoBarMgr.h" location="global"/>
+        <modify-field name="m_infoBarMap" remove="all"/>
+    </object-type>
 </typesystem>

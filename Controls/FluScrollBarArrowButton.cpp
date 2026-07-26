@@ -29,5 +29,5 @@ void FluScrollBarArrowButton::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-    painter.drawPixmap(rect(), FluIconUtils::getFluentIconPixmap(m_aweSomeType, FluThemeUtils::getUtils()->getTheme()));
+    painter.drawPixmap(rect(), FluIconUtils::getFluentIconPixmap(m_aweSomeType, FluThemeUtils::getUtils()->getTheme(), rect().width(), rect().height()));
 }

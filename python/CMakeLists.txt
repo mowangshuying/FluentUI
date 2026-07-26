@@ -215,6 +215,10 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluPMenuBar.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluIndicatorRoundMenu.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluCompleterMenu.h"
+    # Controls - Window (WindowKit-based only)
+    "${CMAKE_SOURCE_DIR}/Controls/FluWindowKitWidget.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluWindowKitTitleBar.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluWindowKitWindow.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -329,6 +333,10 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flupmenubar_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluindicatorroundmenu_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flucompletermenu_wrapper.cpp
+    # Controls wrappers - Window (WindowKit-based only)
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkitwidget_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkittitlebar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkitwindow_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

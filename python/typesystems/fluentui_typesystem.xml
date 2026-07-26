@@ -424,4 +424,17 @@
     <object-type name="FluCompleterMenu" generate="yes">
         <include file-name="FluCompleterMenu.h" location="global"/>
     </object-type>
+    
+    <!-- Window Controls (WindowKit-based only, FramelessHelper excluded) -->
+    <object-type name="FluWindowKitWidget" generate="yes">
+        <include file-name="FluWindowKitWidget.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluWindowKitTitleBar" generate="yes">
+        <include file-name="FluWindowKitTitleBar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluWindowKitWindow" generate="yes">
+        <include file-name="FluWindowKitWindow.h" location="global"/>
+    </object-type>
 </typesystem>

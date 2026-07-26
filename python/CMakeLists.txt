@@ -184,6 +184,24 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluTimeLine.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluTimeLineIcon.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluTimeLineItem.h"
+    # Controls - Container
+    "${CMAKE_SOURCE_DIR}/Controls/FluExpander.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluScrollArea.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVScrollView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHScrollView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTableView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluListView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTreeView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluStackedLayout.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluFlowLayout.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVCard.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHCard.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluBorder.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluCodeBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluCodeExpander.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluLoopView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHFlipView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVFlipView.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -267,6 +285,24 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flutimeline_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flutimelineicon_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flutimelineitem_wrapper.cpp
+    # Controls wrappers - Container
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluexpander_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluscrollarea_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvscrollview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhscrollview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutableview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulistview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutreeview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustackedlayout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluflowlayout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvcard_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhcard_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluborder_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucodebox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucodeexpander_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluloopview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhflipview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvflipview_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

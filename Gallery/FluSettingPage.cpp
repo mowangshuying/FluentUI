@@ -52,6 +52,8 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     navStyleSelectBox->setIcon(FluAwesomeType::HolePunchLandscapeLeft);
     navStyleSelectBox->getComboBox()->addItem(tr("Left"));
     navStyleSelectBox->getComboBox()->addItem(tr("Top"));
+    int currentNavStyle = FluConfigUtils::getUtils()->getNavStyle();
+    navStyleSelectBox->getComboBox()->setCurrentIndex(currentNavStyle);
     m_scrollView->getMainLayout()->addWidget(navStyleSelectBox);
     connect(navStyleSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, this, [=](int index) {
         emit navigationStyleChanged(index);

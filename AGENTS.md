@@ -14,6 +14,14 @@ cmake --build . --config Debug
 > Qt 6.5.1 安装路径：`C:/Qt/6.5.1/msvc2019_64`
 > 编译产物输出目录：`build/bin/`（包含 `Gallery.exe`、`Examples.exe` 等）
 
+## 运行 Gallery
+
+```powershell
+# 需要先将 Qt 动态库目录加入 PATH
+$env:PATH = "C:\Qt\6.5.1\msvc2019_64\bin;" + $env:PATH
+& "build\bin\Gallery.exe"
+```
+
 ## CMake 选项
 
 | 选项 | 默认值 | 说明 |

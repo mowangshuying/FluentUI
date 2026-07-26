@@ -9,6 +9,7 @@
 #include <QTimer>
 #include "../Controls/FluThemeButton.h"
 #include "FluEmoijsPage.h"
+#include "../Utils/FluConfigUtils.h"
 
 FRAMELESSHELPER_USE_NAMESPACE
 
@@ -134,8 +135,19 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 
     resize(1200, 900);
     setMinimumWidth(850);
-    m_navView->setViewWidth(300);
+    int navWidth = FluConfigUtils::getUtils()->getNavWidth();
+    m_navView->setViewWidth(navWidth > 0 ? navWidth : 300);
     m_navView->setOnlyCollapseView(false);
+
+    // 加载导航样式
+    int navStyle = FluConfigUtils::getUtils()->getNavStyle();
+    if (navStyle == 1)
+        switchNavigationStyle(1);
+
+    // 加载折叠状态
+    if (FluConfigUtils::getUtils()->getViewCollapsed())
+        m_navView->collapseView();
+
     onThemeChanged();
 }
 
@@ -247,6 +259,9 @@ void FluGalleryWindow::switchNavigationStyle(int index)
 {
     m_isHorizontalNav = (index == 1);
     animateNavSwitch(m_isHorizontalNav);
+
+    // 立即持久化导航样式
+    FluConfigUtils::getUtils()->setNavStyle(m_isHorizontalNav ? 1 : 0);
 }
 
 void FluGalleryWindow::makeHomeNavItem()
@@ -1092,7 +1107,10 @@ void FluGalleryWindow::closeEvent(QCloseEvent *event)
     }
     else if (exec == QDialog::Accepted)
     {
-        // event->accept();
+        // 保存导航栏状态
+        FluConfigUtils::getUtils()->setNavWidth(m_navView->getViewWidth());
+        FluConfigUtils::getUtils()->setNavStyle(m_isHorizontalNav ? 1 : 0);
+        FluConfigUtils::getUtils()->setViewCollapsed(!m_navView->isLong());
         QApplication::quit();
     }
 }

@@ -25,6 +25,18 @@ class FluConfigUtils : public QObject
 
     void setLanguage(QString language);
 
+    int getNavWidth();
+
+    void setNavWidth(int width);
+
+    int getNavStyle();
+
+    void setNavStyle(int style);
+
+    bool getViewCollapsed();
+
+    void setViewCollapsed(bool collapsed);
+
     QSettings* getSettings();
 
   protected:

@@ -68,6 +68,57 @@ void FluConfigUtils::setLanguage(QString language)
     m_settings->endGroup();
 }
 
+int FluConfigUtils::getNavWidth()
+{
+    m_settings->sync();
+    m_settings->beginGroup("config");
+    int width = m_settings->value("navWidth", 300).toInt();
+    m_settings->endGroup();
+    return width;
+}
+
+void FluConfigUtils::setNavWidth(int width)
+{
+    m_settings->sync();
+    m_settings->beginGroup("config");
+    m_settings->setValue("navWidth", width);
+    m_settings->endGroup();
+}
+
+int FluConfigUtils::getNavStyle()
+{
+    m_settings->sync();
+    m_settings->beginGroup("config");
+    int style = m_settings->value("navStyle", 0).toInt();
+    m_settings->endGroup();
+    return style;
+}
+
+void FluConfigUtils::setNavStyle(int style)
+{
+    m_settings->sync();
+    m_settings->beginGroup("config");
+    m_settings->setValue("navStyle", style);
+    m_settings->endGroup();
+}
+
+bool FluConfigUtils::getViewCollapsed()
+{
+    m_settings->sync();
+    m_settings->beginGroup("config");
+    bool collapsed = m_settings->value("viewCollapsed", false).toBool();
+    m_settings->endGroup();
+    return collapsed;
+}
+
+void FluConfigUtils::setViewCollapsed(bool collapsed)
+{
+    m_settings->sync();
+    m_settings->beginGroup("config");
+    m_settings->setValue("viewCollapsed", collapsed);
+    m_settings->endGroup();
+}
+
 QSettings* FluConfigUtils::getSettings()
 {
     m_settings->sync();

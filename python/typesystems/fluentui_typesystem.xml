@@ -243,4 +243,69 @@
     <object-type name="FluSegmentedItem" generate="yes">
         <include file-name="FluSegmentedItem.h" location="global"/>
     </object-type>
+    
+    <!-- Display Controls -->
+    <object-type name="FluLabel" generate="yes">
+        <include file-name="FluLabel.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluProgressBar" generate="yes">
+        <include file-name="FluProgressBar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluProgressRing" generate="yes">
+        <include file-name="FluProgressRing.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluBusyProgressRing" generate="yes">
+        <include file-name="FluBusyProgressRing.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluInfoBadge" generate="yes">
+        <include file-name="FluInfoBadge.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCircleDot" generate="yes">
+        <include file-name="FluCircleDot.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluImageBox" generate="yes">
+        <include file-name="FluImageBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluDisplayBox" generate="yes">
+        <include file-name="FluDisplayBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluDisplayBoxEx" generate="yes">
+        <include file-name="FluDisplayBoxEx.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluDisplayIconBox" generate="yes">
+        <include file-name="FluDisplayIconBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluInstructions" generate="yes">
+        <include file-name="FluInstructions.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTriangle" generate="yes">
+        <include file-name="FluTriangle.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluStar" generate="yes">
+        <include file-name="FluStar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTimeLine" generate="yes">
+        <include file-name="FluTimeLine.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTimeLineIcon" generate="yes">
+        <include file-name="FluTimeLineIcon.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTimeLineItem" generate="yes">
+        <include file-name="FluTimeLineItem.h" location="global"/>
+    </object-type>
 </typesystem>

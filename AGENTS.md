@@ -3,13 +3,16 @@
 ## 构建命令
 
 ```bash
-# CMake 构建（推荐使用 Ninja）
+# CMake 配置（使用 Visual Studio 17 2022 生成器）
 mkdir build && cd build
-cmake -DCMAKE_PREFIX_PATH=C:/Qt/6.5.1/msvc2019_64 -GNinja ..
-cmake --build .
+cmake -DCMAKE_PREFIX_PATH=C:/Qt/6.5.1/msvc2019_64 -G"Visual Studio 17 2022" -A x64 ..
+
+# 编译（默认使用 Debug 配置）
+cmake --build . --config Debug
 ```
 
 > Qt 6.5.1 安装路径：`C:/Qt/6.5.1/msvc2019_64`
+> 编译产物输出目录：`build/bin/`（包含 `Gallery.exe`、`Examples.exe` 等）
 
 ## CMake 选项
 

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<typesystem package="FluentUI">
+    <!-- Load Qt typesystems -->
+    <load-typesystem name="typesystem_core.xml" generate="no"/>
+    <load-typesystem name="typesystem_gui.xml" generate="no"/>
+    <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+    
+    <!-- Controls -->
+    <object-type name="FluWidget" generate="yes">
+        <include file-name="FluWidget.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPushButton" generate="yes">
+        <include file-name="FluPushButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluIconButton" generate="yes">
+        <include file-name="FluIconButton.h" location="global"/>
+    </object-type>
+</typesystem>

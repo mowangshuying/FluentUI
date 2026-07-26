@@ -5,6 +5,7 @@ project(FluentUI VERSION 1.0.0 LANGUAGES CXX)
 
 option(USE_QRC "Build With qrc" TRUE)
 option(BUILD_GALLERY "Build Gallery" TRUE)
+option(BUILD_PYTHON_BINDINGS "Build Python bindings for PySide6" OFF)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -51,6 +52,11 @@ add_subdirectory("Utils")
 if (BUILD_GALLERY)
 add_subdirectory("Gallery")
 endif()
+
+if (BUILD_PYTHON_BINDINGS)
+add_subdirectory("python")
+endif()
+
 # add_subdirectory("res")
 # add_subdirectory("StyleSheet")
 

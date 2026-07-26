@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "cmake>=3.20"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluentui-pyside6"
+version = "1.0.0"
+description = "Python bindings for FluentUI C++ library"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "LGPL-2.1"}
+authors = [
+    {name = "FluentUI Team"}
+]
+keywords = ["qt", "pyside6", "fluent", "ui", "widgets", "gui"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+]
+dependencies = [
+    "PySide6>=6.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-qt>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mowangshuying/FluentUI"
+Documentation = "https://github.com/mowangshuying/FluentUI/tree/main/python"
+Repository = "https://github.com/mowangshuying/FluentUI"
+Issues = "https://github.com/mowangshuying/FluentUI/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fluentui*"]

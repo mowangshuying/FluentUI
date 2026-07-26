@@ -138,4 +138,60 @@
     <object-type name="FluCommandBarSplitItem" generate="yes">
         <include file-name="FluCommandBarSplitItem.h" location="global"/>
     </object-type>
+    
+    <!-- Input Controls -->
+    <object-type name="FluLineEdit" generate="yes">
+        <include file-name="FluLineEdit.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTextEdit" generate="yes">
+        <include file-name="FluTextEdit.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSpinBox" generate="yes">
+        <include file-name="FluSpinBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluDoubleSpinBox" generate="yes">
+        <include file-name="FluDoubleSpinBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPasswordBox" generate="yes">
+        <include file-name="FluPasswordBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSearchLineEdit" generate="yes">
+        <include file-name="FluSearchLineEdit.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluAutoSuggestBox" generate="yes">
+        <include file-name="FluAutoSuggestBox.h" location="global"/>
+        <!-- Exclude std::vector overloads -->
+        <modify-function signature="setKeys(std::vector&lt;QString&gt;)" remove="all"/>
+        <modify-function signature="addKeys(std::vector&lt;QString&gt;)" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluComboBox" generate="yes">
+        <include file-name="FluComboBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluComboBoxEx" generate="yes">
+        <include file-name="FluComboBoxEx.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluComboBoxTextItem" generate="yes">
+        <include file-name="FluComboBoxTextItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluIntValidator" generate="yes">
+        <include file-name="FluIntValidator.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSlider" generate="yes">
+        <include file-name="FluSlider.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluRatingControl" generate="yes">
+        <include file-name="FluRatingControl.h" location="global"/>
+    </object-type>
 </typesystem>

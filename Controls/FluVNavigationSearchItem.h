@@ -1,12 +1,14 @@
 #pragma once
 
 #include "FluVNavigationItem.h"
-#include "FluAutoSuggestBox.h"
 #include <QHBoxLayout>
+#include <QPushButton>
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QStyle>
 #include <vector>
+
+class FluAutoSuggestBox;
 
 class FluVNavigationSearchItem : public FluVNavigationItem
 {

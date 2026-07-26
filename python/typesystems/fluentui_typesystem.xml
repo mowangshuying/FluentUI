@@ -512,4 +512,159 @@
         <include file-name="FluInfoBarMgr.h" location="global"/>
         <modify-field name="m_infoBarMap" remove="all"/>
     </object-type>
+    
+    <object-type name="FluTextEditWrap" generate="yes">
+        <include file-name="FluTextEditWrap.h" location="global"/>
+        <modify-field name="m_textEdit" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluAutoSuggestBox" generate="yes">
+        <include file-name="FluAutoSuggestBox.h" location="global"/>
+        <modify-function signature="setKeys(std::vector&lt;QString&gt;)" remove="all"/>
+        <modify-function signature="addKeys(std::vector&lt;QString&gt;)" remove="all"/>
+        <modify-field name="m_completerMenu" remove="all"/>
+        <modify-field name="m_keys" remove="all"/>
+    </object-type>
+    
+    <!-- Navigation Views (V) -->
+    <object-type name="FluVNavigationIndicator" generate="yes">
+        <include file-name="FluVNavigationIndicator.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVNavigationItem" generate="yes">
+        <include file-name="FluVNavigationItem.h" location="global"/>
+        <modify-field name="m_parentView" remove="all"/>
+        <modify-field name="m_flyItem" remove="all"/>
+        <modify-function signature="setParentView(FluVNavigationView *)" remove="all"/>
+        <modify-function signature="getParentView()" remove="all"/>
+        <modify-function signature="getFlyItem()" remove="all"/>
+        <modify-function signature="setParentFlyItem(FluVNavigationFlyIconTextItem *)" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluVNavigationIconTextItem" generate="yes">
+        <include file-name="FluVNavigationIconTextItem.h" location="global"/>
+        <modify-field name="m_items" remove="all"/>
+        <modify-field name="m_parentItem" remove="all"/>
+        <modify-field name="m_indicator" remove="all"/>
+        <modify-function signature="getItems()" remove="all"/>
+        <modify-function signature="getAllItems(std::vector&lt;FluVNavigationIconTextItem *&gt; &amp;)" remove="all"/>
+        <modify-function signature="getAllItems()" remove="all"/>
+        <modify-function signature="addItem(FluVNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="itemClone(FluVNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="getParentItem()" remove="all"/>
+        <modify-function signature="getRootItem()" remove="all"/>
+        <modify-function signature="calcItemW2Height(FluVNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="adjustItemHeight(FluVNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="adjustItemWidth(FluVNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="adjustFlyItemHeight(FluVNavigationFlyIconTextItem *)" remove="all"/>
+        <modify-function signature="adjustFlyItemWidth(FluVNavigationFlyIconTextItem *)" remove="all"/>
+        <modify-function signature="updateDepth(FluVNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="clearItemsSelectState(FluVNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="updateItemsStyleSheet(FluVNavigationIconTextItem *)" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluVNavigationFlyIconTextItem" generate="yes">
+        <include file-name="FluVNavigationFlyIconTextItem.h" location="global"/>
+        <modify-field name="m_items" remove="all"/>
+        <modify-field name="m_scrollView" remove="all"/>
+        <modify-function signature="setIconTextItems(std::vector&lt;FluVNavigationIconTextItem *&gt;)" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluVNavigationMenuItem" generate="yes">
+        <include file-name="FluVNavigationMenuItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVNavigationSearchItem" generate="yes">
+        <include file-name="FluVNavigationSearchItem.h" location="global"/>
+        <modify-field name="m_autoSuggestBox" remove="all"/>
+        <modify-function signature="updateSearchKeys(std::vector&lt;QString&gt;)" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluVNavigationSettingsItem" generate="yes">
+        <include file-name="FluVNavigationSettingsItem.h" location="global"/>
+        <modify-field name="m_indicator" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluVNavigationView" generate="yes">
+        <include file-name="FluVNavigationView.h" location="global"/>
+        <modify-field name="m_menuButtonItem" remove="all"/>
+        <modify-field name="m_searchItem" remove="all"/>
+        <modify-field name="m_midVScrollView" remove="all"/>
+        <modify-function signature="getAllItems()" remove="all"/>
+        <modify-function signature="getAllItemsKeys()" remove="all"/>
+        <modify-function signature="getItemByKey(QString)" remove="all"/>
+        <modify-function signature="getAllItemsTexts()" remove="all"/>
+        <modify-function signature="getItemByText(QString)" remove="all"/>
+    </object-type>
+    
+    <!-- Navigation Views (H) -->
+    <object-type name="FluHNavigationIndicator" generate="yes">
+        <include file-name="FluHNavigationIndicator.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHNavigationItem" generate="yes">
+        <include file-name="FluHNavigationItem.h" location="global"/>
+        <modify-field name="m_parentView" remove="all"/>
+        <modify-function signature="setParentView(FluHNavigationView *)" remove="all"/>
+        <modify-function signature="getParentView()" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluHNavigationIconTextItem" generate="yes">
+        <include file-name="FluHNavigationIconTextItem.h" location="global"/>
+        <modify-field name="m_items" remove="all"/>
+        <modify-field name="m_parentItem" remove="all"/>
+        <modify-field name="m_parentFlyIconTextItem" remove="all"/>
+        <modify-field name="m_horizontalIndicator" remove="all"/>
+        <modify-function signature="getItems()" remove="all"/>
+        <modify-function signature="getAllItems(std::vector&lt;FluHNavigationIconTextItem *&gt; &amp;)" remove="all"/>
+        <modify-function signature="getAllItems()" remove="all"/>
+        <modify-function signature="addItem(FluHNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="itemClone(FluHNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="getParentFlyIconTextItem()" remove="all"/>
+        <modify-function signature="setParentFlyIconTextItem(FluHNavigationFlyIconTextItem *)" remove="all"/>
+        <modify-function signature="getRootItem()" remove="all"/>
+        <modify-function signature="calcItemW2Height(FluHNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="adjustItemHeight(FluHNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="adjustItemWidth(FluHNavigationIconTextItem *, int &amp;, int &amp;)" remove="all"/>
+        <modify-function signature="clearAllItemsSelectState(FluHNavigationIconTextItem *)" remove="all"/>
+        <modify-function signature="updateAllItemsStyleSheet(FluHNavigationIconTextItem *)" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluHNavigationFlyIconTextItem" generate="yes">
+        <include file-name="FluHNavigationFlyIconTextItem.h" location="global"/>
+        <modify-field name="m_items" remove="all"/>
+        <modify-field name="m_NavView" remove="all"/>
+        <modify-field name="m_scrollView" remove="all"/>
+        <modify-function signature="setIconTextItems(std::vector&lt;FluHNavigationIconTextItem *&gt;, int)" remove="all"/>
+        <modify-function signature="setNavView(FluHNavigationView *)" remove="all"/>
+        <modify-function signature="getNavView()" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluHNavigationMoreItem" generate="yes">
+        <include file-name="FluHNavigationMoreItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHNavigationSearchItem" generate="yes">
+        <include file-name="FluHNavigationSearchItem.h" location="global"/>
+        <modify-field name="m_searchLineEdit" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluHNavigationSettingsItem" generate="yes">
+        <include file-name="FluHNavigationSettingsItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHNavigationView" generate="yes">
+        <include file-name="FluHNavigationView.h" location="global"/>
+        <modify-field name="m_items" remove="all"/>
+        <modify-field name="m_hideItems" remove="all"/>
+        <modify-field name="m_moreItem" remove="all"/>
+        <modify-field name="m_lastSelectedItem" remove="all"/>
+        <modify-field name="m_FlyIconTextItem" remove="all"/>
+        <modify-function signature="getHideItems()" remove="all"/>
+        <modify-function signature="setLastSelectedItem(FluHNavigationItem *)" remove="all"/>
+        <modify-function signature="getLastSelectedItem()" remove="all"/>
+        <modify-function signature="setFlyIconTextItem(FluHNavigationFlyIconTextItem *)" remove="all"/>
+        <modify-function signature="getFlyIconTextIcon()" remove="all"/>
+    </object-type>
+    
 </typesystem>

@@ -239,6 +239,26 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluGifBox.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluShortInfoBar.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluInfoBarMgr.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTextEditWrap.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluAutoSuggestBox.h"
+    # Controls - Navigation Views (V)
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationIndicator.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationFlyIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationMenuItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationSearchItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationSettingsItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationView.h"
+    # Controls - Navigation Views (H)
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationIndicator.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationFlyIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationMoreItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationSearchItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationSettingsItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationView.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -377,6 +397,26 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flugifbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flushortinfobar_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluinfobarmgr_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutexteditwrap_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluautosuggestbox_wrapper.cpp
+    # Controls wrappers - Navigation Views (V)
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationindicator_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationflyicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationmenuitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationsearchitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationsettingsitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationview_wrapper.cpp
+    # Controls wrappers - Navigation Views (H)
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationindicator_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationflyicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationmoreitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationsearchitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationsettingsitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationview_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6
@@ -386,7 +426,7 @@ add_custom_command(
         --no-suppress-warnings
         --avoid-protected-hack
         --enable-pyside-extensions
-        "--include-paths=${CMAKE_SOURCE_DIR}/Utils;${CMAKE_SOURCE_DIR}/Controls;${PYSIDE6_INCLUDE_DIR};${SHIBOKEN6_INCLUDE_DIR};${QT6_INCLUDE_PATHS}"
+        "--include-paths=${CMAKE_SOURCE_DIR}/Utils;${CMAKE_SOURCE_DIR}/Controls;${CMAKE_SOURCE_DIR}/3rdparty/framelesshelper/include;${CMAKE_BINARY_DIR}/3rdparty/framelesshelper;${PYSIDE6_INCLUDE_DIR};${SHIBOKEN6_INCLUDE_DIR};${QT6_INCLUDE_PATHS}"
         "--typesystem-paths=${CMAKE_CURRENT_SOURCE_DIR}/typesystems;${PYSIDE6_TYPESYSTEMS_DIR}"
         "--output-directory=${BINDINGS_OUTPUT_DIR}"
         ${FLUENTUI_HEADERS}
@@ -405,6 +445,7 @@ add_library(FluentUI_Python MODULE
 target_include_directories(FluentUI_Python PRIVATE
     ${CMAKE_SOURCE_DIR}/Utils
     ${CMAKE_SOURCE_DIR}/Controls
+    ${CMAKE_SOURCE_DIR}/3rdparty/framelesshelper/include
     ${Python_INCLUDE_DIRS}
     ${PYSIDE6_INCLUDE_DIR}
     ${PYSIDE6_INCLUDE_DIR}/QtCore

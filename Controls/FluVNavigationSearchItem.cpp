@@ -1,4 +1,5 @@
 ﻿#include "FluVNavigationSearchItem.h"
+#include "FluAutoSuggestBox.h"
 
 FluVNavigationSearchItem::FluVNavigationSearchItem(QWidget* parent /*= nullptr*/) : FluVNavigationItem(parent)
 {

@@ -308,4 +308,73 @@
     <object-type name="FluTimeLineItem" generate="yes">
         <include file-name="FluTimeLineItem.h" location="global"/>
     </object-type>
+    
+    <!-- Container Controls -->
+    <object-type name="FluExpander" generate="yes">
+        <include file-name="FluExpander.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluScrollArea" generate="yes">
+        <include file-name="FluScrollArea.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVScrollView" generate="yes">
+        <include file-name="FluVScrollView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHScrollView" generate="yes">
+        <include file-name="FluHScrollView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTableView" generate="yes">
+        <include file-name="FluTableView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluListView" generate="yes">
+        <include file-name="FluListView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTreeView" generate="yes">
+        <include file-name="FluTreeView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluStackedLayout" generate="yes">
+        <include file-name="FluStackedLayout.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluFlowLayout" generate="yes">
+        <include file-name="FluFlowLayout.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVCard" generate="yes">
+        <include file-name="FluVCard.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHCard" generate="yes">
+        <include file-name="FluHCard.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluBorder" generate="yes">
+        <include file-name="FluBorder.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCodeBox" generate="yes">
+        <include file-name="FluCodeBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCodeExpander" generate="yes">
+        <include file-name="FluCodeExpander.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluLoopView" generate="yes">
+        <include file-name="FluLoopView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHFlipView" generate="yes">
+        <include file-name="FluHFlipView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVFlipView" generate="yes">
+        <include file-name="FluVFlipView.h" location="global"/>
+    </object-type>
 </typesystem>

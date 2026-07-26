@@ -147,7 +147,6 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluDoubleSpinBox.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluPasswordBox.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluSearchLineEdit.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluAutoSuggestBox.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluComboBox.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluComboBoxEx.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluComboBoxTextItem.h"
@@ -192,8 +191,6 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluTableView.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluListView.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluTreeView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluStackedLayout.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluFlowLayout.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluVCard.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluHCard.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluBorder.h"
@@ -202,6 +199,22 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluLoopView.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluHFlipView.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluVFlipView.h"
+    # Controls - Popup/Dialog
+    "${CMAKE_SOURCE_DIR}/Controls/FluDialog.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluMessageBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluMenu.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluMenuBar.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluAction.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluRoundMenu.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluRoundMenuView.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTeachingTip.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTeachingTipContent.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluVFlyout.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluConfirmFlyout.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPMenu.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPMenuBar.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluIndicatorRoundMenu.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluCompleterMenu.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -248,7 +261,6 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fludoublespinbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flupasswordbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flusearchlineedit_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluautosuggestbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flucombobox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flucomboboxex_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flucomboboxtextitem_wrapper.cpp
@@ -293,8 +305,6 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flutableview_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flulistview_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flutreeview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustackedlayout_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluflowlayout_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvcard_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhcard_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluborder_wrapper.cpp
@@ -303,6 +313,22 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluloopview_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhflipview_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvflipview_wrapper.cpp
+    # Controls wrappers - Popup/Dialog
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludialog_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumessagebox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumenubar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluaction_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluroundmenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluroundmenuview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluteachingtip_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluteachingtipcontent_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvflyout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluconfirmflyout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupmenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupmenubar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluindicatorroundmenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucompletermenu_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

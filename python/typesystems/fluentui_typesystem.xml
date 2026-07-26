@@ -164,13 +164,6 @@
         <include file-name="FluSearchLineEdit.h" location="global"/>
     </object-type>
     
-    <object-type name="FluAutoSuggestBox" generate="yes">
-        <include file-name="FluAutoSuggestBox.h" location="global"/>
-        <!-- Exclude std::vector overloads -->
-        <modify-function signature="setKeys(std::vector&lt;QString&gt;)" remove="all"/>
-        <modify-function signature="addKeys(std::vector&lt;QString&gt;)" remove="all"/>
-    </object-type>
-    
     <object-type name="FluComboBox" generate="yes">
         <include file-name="FluComboBox.h" location="global"/>
     </object-type>
@@ -338,14 +331,6 @@
         <include file-name="FluTreeView.h" location="global"/>
     </object-type>
     
-    <object-type name="FluStackedLayout" generate="yes">
-        <include file-name="FluStackedLayout.h" location="global"/>
-    </object-type>
-    
-    <object-type name="FluFlowLayout" generate="yes">
-        <include file-name="FluFlowLayout.h" location="global"/>
-    </object-type>
-    
     <object-type name="FluVCard" generate="yes">
         <include file-name="FluVCard.h" location="global"/>
     </object-type>
@@ -360,6 +345,7 @@
     
     <object-type name="FluCodeBox" generate="yes">
         <include file-name="FluCodeBox.h" location="global"/>
+        <modify-function signature="setHtmlWithSyntaxHighlighting(const QString &amp;)" remove="all"/>
     </object-type>
     
     <object-type name="FluCodeExpander" generate="yes">
@@ -376,5 +362,66 @@
     
     <object-type name="FluVFlipView" generate="yes">
         <include file-name="FluVFlipView.h" location="global"/>
+    </object-type>
+    
+    <!-- Popup/Dialog Controls -->
+    <object-type name="FluDialog" generate="yes">
+        <include file-name="FluDialog.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluMessageBox" generate="yes">
+        <include file-name="FluMessageBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluMenu" generate="yes">
+        <include file-name="FluMenu.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluMenuBar" generate="yes">
+        <include file-name="FluMenuBar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluAction" generate="yes">
+        <include file-name="FluAction.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluRoundMenu" generate="yes">
+        <include file-name="FluRoundMenu.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluRoundMenuView" generate="yes">
+        <include file-name="FluRoundMenuView.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTeachingTip" generate="yes">
+        <include file-name="FluTeachingTip.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTeachingTipContent" generate="yes">
+        <include file-name="FluTeachingTipContent.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluVFlyout" generate="yes">
+        <include file-name="FluVFlyout.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluConfirmFlyout" generate="yes">
+        <include file-name="FluConfirmFlyout.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPMenu" generate="yes">
+        <include file-name="FluPMenu.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPMenuBar" generate="yes">
+        <include file-name="FluPMenuBar.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluIndicatorRoundMenu" generate="yes">
+        <include file-name="FluIndicatorRoundMenu.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCompleterMenu" generate="yes">
+        <include file-name="FluCompleterMenu.h" location="global"/>
     </object-type>
 </typesystem>

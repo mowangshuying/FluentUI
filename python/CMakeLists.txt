@@ -139,6 +139,21 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarIconItem.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarIconTextItem.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarSplitItem.h"
+    # Controls - Input
+    "${CMAKE_SOURCE_DIR}/Controls/FluLineEdit.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTextEdit.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluTextEditWrap.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluSpinBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluDoubleSpinBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPasswordBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluSearchLineEdit.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluAutoSuggestBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluComboBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluComboBoxEx.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluComboBoxTextItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluIntValidator.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluSlider.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluRatingControl.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -178,6 +193,20 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbariconitem_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbaricontextitem_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbarsplititem_wrapper.cpp
+    # Controls wrappers - Input
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulineedit_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutextedit_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluspinbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludoublespinbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupasswordbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusearchlineedit_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluautosuggestbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucombobox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucomboboxex_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucomboboxtextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluintvalidator_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluslider_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluratingcontrol_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

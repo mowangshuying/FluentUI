@@ -786,28 +786,14 @@ void FluHNavigationIconTextItem::onItemClicked()
                 });
 
                 connect(flyIconTextItem, &FluHNavigationFlyIconTextItem::itemClose, this, [=]() {
-                    bool isOnItem = geometry().contains(parentWidget()->mapFromGlobal(QCursor::pos()));
-
-                    if (!m_isDown && !isOnItem)
+                    if (!m_isDown)
                     {
                         m_isDown = !m_isDown;
                         rootItem->setArrowButtonToChevronDown();
+                    }
+                    if (navView->getFlyIconTextIcon() == flyIconTextItem)
+                    {
                         navView->setLastSelectedItem(nullptr);
-
-                        QPoint globalPos = QCursor::pos();
-                        QWidget *target = navView->childAt(navView->mapFromGlobal(globalPos));
-                        while (target && !qobject_cast<FluHNavigationIconTextItem*>(target))
-                            target = target->parentWidget();
-                        if (target)
-                        {
-                            auto navItem = (FluHNavigationIconTextItem*)target;
-                            QPoint localPos = navItem->mapFromGlobal(globalPos);
-                            if (navItem->getWrapWidget1()->rect().contains(localPos))
-                                QTimer::singleShot(0, navItem, [=]() {
-                                    QMouseEvent ev(QEvent::MouseButtonRelease, localPos, globalPos, Qt::LeftButton, Qt::NoButton, Qt::NoModifier);
-                                    QCoreApplication::sendEvent(navItem, &ev);
-                                });
-                        }
                     }
                 });
 

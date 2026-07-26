@@ -667,4 +667,61 @@
         <modify-function signature="getFlyIconTextIcon()" remove="all"/>
     </object-type>
     
+    <!-- CommandBar -->
+    <object-type name="FluCommandBar" generate="yes">
+        <include file-name="FluCommandBar.h" location="global"/>
+        <modify-field name="m_widgets" remove="all"/>
+    </object-type>
+    
+    <!-- Color -->
+    <object-type name="FluColorFlyout" generate="yes">
+        <include file-name="FluColorFlyout.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluColorLabel" generate="yes">
+        <include file-name="FluColorLabel.h" location="global"/>
+    </object-type>
+    
+    <!-- MS Navigation -->
+    <object-type name="FluMSNavigationItem" generate="yes">
+        <include file-name="FluMSNavigationItem.h" location="global"/>
+        <modify-field name="m_parentView" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluMSNavigationView" generate="yes">
+        <include file-name="FluMSNavigationView.h" location="global"/>
+        <modify-field name="m_scrollView" remove="all"/>
+    </object-type>
+    
+    <!-- ScrollView -->
+    <object-type name="FluFWScrollView" generate="yes">
+        <include file-name="FluFWScrollView.h" location="global"/>
+        <modify-field name="m_mainLayout" remove="all"/>
+    </object-type>
+    
+    <!-- Shortcut -->
+    <object-type name="FluShortcutPicker" generate="yes">
+        <include file-name="FluShortcutPicker.h" location="global"/>
+        <modify-field name="m_keyTexts" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluShortcutPickerDlg" generate="yes">
+        <include file-name="FluShortcutPickerDlg.h" location="global"/>
+        <modify-field name="m_keyTexts" remove="all"/>
+    </object-type>
+    
+    <!-- System Tray -->
+    <object-type name="FluSystemTrayIcon" generate="yes">
+        <include file-name="FluSystemTrayIcon.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSystemTrayMenu" generate="yes">
+        <include file-name="FluSystemTrayMenu.h" location="global"/>
+    </object-type>
+    
+    <!-- ListView Item -->
+    <object-type name="FluListViewItem" generate="yes">
+        <include file-name="FluListViewItem.h" location="global"/>
+    </object-type>
+    
 </typesystem>

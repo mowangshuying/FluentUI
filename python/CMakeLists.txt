@@ -259,6 +259,24 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationSearchItem.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationSettingsItem.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationView.h"
+    # Controls - CommandBar
+    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBar.h"
+    # Controls - Color
+    "${CMAKE_SOURCE_DIR}/Controls/FluColorFlyout.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluColorLabel.h"
+    # Controls - MS Navigation
+    "${CMAKE_SOURCE_DIR}/Controls/FluMSNavigationItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluMSNavigationView.h"
+    # Controls - ScrollView
+    "${CMAKE_SOURCE_DIR}/Controls/FluFWScrollView.h"
+    # Controls - Shortcut
+    "${CMAKE_SOURCE_DIR}/Controls/FluShortcutPicker.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluShortcutPickerDlg.h"
+    # Controls - System Tray
+    "${CMAKE_SOURCE_DIR}/Controls/FluSystemTrayIcon.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluSystemTrayMenu.h"
+    # Controls - ListView Item
+    "${CMAKE_SOURCE_DIR}/Controls/FluListViewItem.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -417,6 +435,24 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationsearchitem_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationsettingsitem_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationview_wrapper.cpp
+    # Controls wrappers - CommandBar
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbar_wrapper.cpp
+    # Controls wrappers - Color
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucolorflyout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucolorlabel_wrapper.cpp
+    # Controls wrappers - MS Navigation
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumsnavigationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumsnavigationview_wrapper.cpp
+    # Controls wrappers - ScrollView
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flufwscrollview_wrapper.cpp
+    # Controls wrappers - Shortcut
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flushortcutpicker_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flushortcutpickerdlg_wrapper.cpp
+    # Controls wrappers - System Tray
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusystemtrayicon_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusystemtraymenu_wrapper.cpp
+    # Controls wrappers - ListView Item
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulistviewitem_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

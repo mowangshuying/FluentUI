@@ -30,9 +30,9 @@ cmake -DBUILD_PYTHON_BINDINGS=ON -DCMAKE_PREFIX_PATH=C:/Qt/6.8.1/msvc2022_64 -G"
 cmake --build . --config Release --target FluentUI
 ```
 
-> 产物：`build/python/Release/FluentUI.pyd`
+> 产物：`build/bindings/PySide6/Release/FluentUI.pyd`
 > 当前导出：`FluWidget`、`FluPushButton`、`FluIconButton`
-> 测试：`python python/test_bindings.py`
+> 测试：`python bindings/PySide6/test_bindings.py`
 
 ## CMake 选项
 
@@ -49,7 +49,7 @@ cmake --build . --config Release --target FluentUI
 - `Utils/` - 主题/图标/配置工具类（静态库 `FluentUI::Utils`）
 - `Gallery/` - 主演示应用（可执行文件）
 - `Examples/` - 单个控件演示（可执行文件）
-- `python/` - PySide6 Python 绑定（Shiboken6 生成）
+- `bindings/PySide6/` - PySide6 Python 绑定（Shiboken6 生成）
 - `3rdparty/` - 源码集成的第三方库
 - `StyleSheet/` - 566 个 QSS 文件（Light/Dark/AtomOneDark 三套主题）
 - `code/` - Gallery 页面的 Markdown 代码示例

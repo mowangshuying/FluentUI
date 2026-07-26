@@ -5,6 +5,46 @@
     <load-typesystem name="typesystem_gui.xml" generate="no"/>
     <load-typesystem name="typesystem_widgets.xml" generate="no"/>
     
+    <!-- Utils -->
+    <object-type name="FluThemeUtils" generate="yes">
+        <include file-name="FluThemeUtils.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluConfigUtils" generate="yes">
+        <include file-name="FluConfigUtils.h" location="global"/>
+        <!-- Exclude protected members -->
+        <modify-field name="m_configUtils" remove="all"/>
+        <modify-field name="m_settings" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluStyleSheetUtils" generate="yes">
+        <include file-name="FluStyleSheetUtils.h" location="global"/>
+        <!-- Exclude std::map overloads -->
+        <modify-function signature="getQssByFileName(const std::map&lt;QString, QString&gt; &amp;, const QString &amp;)" remove="all"/>
+        <modify-function signature="setQssByFileName(const std::map&lt;QString, QString&gt; &amp;, const QString &amp;, QWidget *)" remove="all"/>
+        <modify-function signature="replaceVar(const std::map&lt;QString, QString&gt; &amp;, QString &amp;)" remove="all"/>
+    </object-type>
+    
+    <object-type name="FluIconUtils" generate="yes">
+        <include file-name="FluIconUtils.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluLogUtils" generate="yes">
+        <include file-name="FluLogUtils.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluTranslatorUtils" generate="yes">
+        <include file-name="FluTranslatorUtils.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluEmoijUtils" generate="yes">
+        <include file-name="FluEmoijUtils.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluObjectPtrUtils" generate="yes">
+        <include file-name="FluObjectPtrUtils.h" location="global"/>
+    </object-type>
+    
     <!-- Controls -->
     <object-type name="FluWidget" generate="yes">
         <include file-name="FluWidget.h" location="global"/>

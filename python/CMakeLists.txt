@@ -105,6 +105,16 @@ file(MAKE_DIRECTORY ${BINDINGS_OUTPUT_DIR})
 
 # Header files to process
 set(FLUENTUI_HEADERS
+    # Utils
+    "${CMAKE_SOURCE_DIR}/Utils/FluThemeUtils.h"
+    "${CMAKE_SOURCE_DIR}/Utils/FluConfigUtils.h"
+    "${CMAKE_SOURCE_DIR}/Utils/FluStyleSheetUtils.h"
+    "${CMAKE_SOURCE_DIR}/Utils/FluIconUtils.h"
+    "${CMAKE_SOURCE_DIR}/Utils/FluLogUtils.h"
+    "${CMAKE_SOURCE_DIR}/Utils/FluTranslatorUtils.h"
+    "${CMAKE_SOURCE_DIR}/Utils/FluEmoijUtils.h"
+    "${CMAKE_SOURCE_DIR}/Utils/FluObjectPtrUtils.h"
+    # Controls
     "${CMAKE_SOURCE_DIR}/Controls/FluWidget.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluPushButton.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluIconButton.h"
@@ -113,6 +123,16 @@ set(FLUENTUI_HEADERS
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
 set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluentui_module_wrapper.cpp
+    # Utils wrappers
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluthemeutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluconfigutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustylesheetutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluiconutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulogutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutranslatorutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluemoijutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluobjectptrutils_wrapper.cpp
+    # Controls wrappers
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwidget_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flupushbutton_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluiconbutton_wrapper.cpp

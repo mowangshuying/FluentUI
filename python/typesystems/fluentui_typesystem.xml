@@ -57,4 +57,85 @@
     <object-type name="FluIconButton" generate="yes">
         <include file-name="FluIconButton.h" location="global"/>
     </object-type>
+    
+    <!-- Button Controls -->
+    <object-type name="FluCheckBox" generate="yes">
+        <include file-name="FluCheckBox.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluRadioButton" generate="yes">
+        <include file-name="FluRadioButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluToggleButton" generate="yes">
+        <include file-name="FluToggleButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluDropDownButton" generate="yes">
+        <include file-name="FluDropDownButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluSplitButton" generate="yes">
+        <include file-name="FluSplitButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluRepeatButton" generate="yes">
+        <include file-name="FluRepeatButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluHyperLinkButton" generate="yes">
+        <include file-name="FluHyperLinkButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluAppBarButton" generate="yes">
+        <include file-name="FluAppBarButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluAppBarToggleButton" generate="yes">
+        <include file-name="FluAppBarToggleButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluStyleButton" generate="yes">
+        <include file-name="FluStyleButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluScaleButton" generate="yes">
+        <include file-name="FluScaleButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluRotationButton" generate="yes">
+        <include file-name="FluRotationButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluGraphicalButton" generate="yes">
+        <include file-name="FluGraphicalButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluThemeButton" generate="yes">
+        <include file-name="FluThemeButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluPPushButton" generate="yes">
+        <include file-name="FluPPushButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluWindowkitButton" generate="yes">
+        <include file-name="FluWindowkitButton.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCommandBarItem" generate="yes">
+        <include file-name="FluCommandBarItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCommandBarIconItem" generate="yes">
+        <include file-name="FluCommandBarIconItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCommandBarIconTextItem" generate="yes">
+        <include file-name="FluCommandBarIconTextItem.h" location="global"/>
+    </object-type>
+    
+    <object-type name="FluCommandBarSplitItem" generate="yes">
+        <include file-name="FluCommandBarSplitItem.h" location="global"/>
+    </object-type>
 </typesystem>

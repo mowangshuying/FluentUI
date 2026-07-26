@@ -114,10 +114,31 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/Utils/FluTranslatorUtils.h"
     "${CMAKE_SOURCE_DIR}/Utils/FluEmoijUtils.h"
     "${CMAKE_SOURCE_DIR}/Utils/FluObjectPtrUtils.h"
-    # Controls
+    # Controls - Base
     "${CMAKE_SOURCE_DIR}/Controls/FluWidget.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluPushButton.h"
     "${CMAKE_SOURCE_DIR}/Controls/FluIconButton.h"
+    # Controls - Buttons
+    "${CMAKE_SOURCE_DIR}/Controls/FluCheckBox.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluRadioButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluToggleButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluDropDownButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluSplitButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluRepeatButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluHyperLinkButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluAppBarButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluAppBarToggleButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluStyleButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluScaleButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluRotationButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluGraphicalButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluThemeButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluPPushButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluWindowkitButton.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarIconItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarSplitItem.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -132,10 +153,31 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flutranslatorutils_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluemoijutils_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluobjectptrutils_wrapper.cpp
-    # Controls wrappers
+    # Controls wrappers - Base
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwidget_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/flupushbutton_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/FluentUI/fluiconbutton_wrapper.cpp
+    # Controls wrappers - Buttons
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucheckbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluradiobutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutogglebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludropdownbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusplitbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flurepeatbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhyperlinkbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluappbarbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluappbartogglebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustylebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluscalebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flurotationbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flugraphicalbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluthemebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluppushbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkitbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbaritem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbariconitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbaricontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbarsplititem_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

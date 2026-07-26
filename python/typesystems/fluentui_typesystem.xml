@@ -724,4 +724,9 @@
         <include file-name="FluListViewItem.h" location="global"/>
     </object-type>
     
+    <!-- StackedLayout (wrapper to avoid Shiboken QLayout bug) -->
+    <object-type name="FluStackedLayoutWrap" generate="yes">
+        <include file-name="FluStackedLayoutWrap.h" location="global"/>
+    </object-type>
+    
 </typesystem>

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(PySide6FluentUI_Python VERSION 1.0.0 LANGUAGES CXX)
+project(PySide6FluentUI VERSION 1.0.0 LANGUAGES CXX)
 
 # Find Python
 find_package(Python REQUIRED COMPONENTS Interpreter Development)
@@ -478,11 +478,11 @@ add_custom_command(
 )
 
 # Create Python module
-add_library(PySide6FluentUI_Python MODULE
+add_library(PySide6FluentUI MODULE
     ${GENERATED_WRAPPER_FILES}
 )
 
-target_include_directories(PySide6FluentUI_Python PRIVATE
+target_include_directories(PySide6FluentUI PRIVATE
     ${CMAKE_SOURCE_DIR}/utils
     ${CMAKE_SOURCE_DIR}/controls
     ${CMAKE_SOURCE_DIR}/3rdparty/framelesshelper/include
@@ -505,11 +505,11 @@ execute_process(
     OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 
-target_link_directories(PySide6FluentUI_Python PRIVATE
+target_link_directories(PySide6FluentUI PRIVATE
     ${PYTHON_LIBDIR}
 )
 
-target_link_libraries(PySide6FluentUI_Python PRIVATE
+target_link_libraries(PySide6FluentUI PRIVATE
     FluentUI::Utils
     FluentUI::Controls
     ${PYSIDE6_LIBRARY}
@@ -518,14 +518,14 @@ target_link_libraries(PySide6FluentUI_Python PRIVATE
     Qt6::Widgets
 )
 
-set_target_properties(PySide6FluentUI_Python PROPERTIES
+set_target_properties(PySide6FluentUI PROPERTIES
     PREFIX ""
     OUTPUT_NAME "PySide6FluentUI"
     SUFFIX ".pyd"
 )
 
 # Install Python module
-install(TARGETS PySide6FluentUI_Python
+install(TARGETS PySide6FluentUI
     LIBRARY DESTINATION ${Python_SITEARCH}
     RUNTIME DESTINATION ${Python_SITEARCH}
 )

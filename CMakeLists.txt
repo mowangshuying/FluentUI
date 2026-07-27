@@ -43,6 +43,10 @@ endif()
 
 # qt_standard_project_setup()
 
+# FramelessHelper: build as static library
+set(FRAMELESSHELPER_BUILD_STATIC ON CACHE BOOL "" FORCE)
+set(FRAMELESSHELPER_BUILD_QUICK OFF CACHE BOOL "" FORCE)
+
 add_subdirectory("3rdparty")
 add_subdirectory("controls")
 add_subdirectory("examples")

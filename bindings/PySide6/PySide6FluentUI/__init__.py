@@ -11,9 +11,11 @@ Usage:
 import os
 import sys
 
-# Add DLL directories for Windows (Qt DLLs, PySide6, shiboken6)
+# Add DLL directories for Windows (Qt DLLs, PySide6, shiboken6, bundled DLLs)
 if sys.platform == "win32":
-    # PySide6 DLLs
+    # Bundled DLLs (e.g. qtadvanceddocking-qt6.dll)
+    os.add_dll_directory(os.path.dirname(os.path.abspath(__file__)))
+    # PySide6 DLLs (includes Qt6Core, Qt6Widgets, etc.)
     try:
         import PySide6
         os.add_dll_directory(os.path.dirname(PySide6.__file__))

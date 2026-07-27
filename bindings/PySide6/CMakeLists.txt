@@ -297,7 +297,6 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluColorViewVHandle.h"
     "${CMAKE_SOURCE_DIR}/controls/FluDatePickerView.h"
     "${CMAKE_SOURCE_DIR}/controls/FluDatePickerViewMask.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluDockManager.h"
     "${CMAKE_SOURCE_DIR}/controls/FluFlowLayout.h"
     "${CMAKE_SOURCE_DIR}/controls/FluIndicatorMenuItemDeleage.h"
     "${CMAKE_SOURCE_DIR}/controls/FluListViewItemDelegate.h"
@@ -519,7 +518,6 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorviewvhandle_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludatepickerview_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludatepickerviewmask_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludockmanager_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluflowlayout_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluindicatormenuitemdeleage_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulistviewitemdelegate_wrapper.cpp

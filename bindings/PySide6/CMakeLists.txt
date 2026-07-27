@@ -279,6 +279,10 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluListViewItem.h"
     # Controls - StackedLayout (wrapper)
     "${CMAKE_SOURCE_DIR}/controls/FluStackedLayoutWrap.h"
+    # Controls - Frameless Window
+    "${CMAKE_SOURCE_DIR}/controls/FluFrameLessTitleBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluFrameLessWidget.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluFrameLessWidgetEx.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -457,6 +461,10 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulistviewitem_wrapper.cpp
     # Controls wrappers - StackedLayout (wrapper)
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flustackedlayoutwrap_wrapper.cpp
+    # Controls wrappers - Frameless Window
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluframelesstitlebar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluframelesswidget_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluframelesswidgetex_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

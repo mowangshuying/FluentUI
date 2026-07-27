@@ -729,4 +729,18 @@
         <include file-name="FluStackedLayoutWrap.h" location="global"/>
     </object-type>
     
+    <!-- Frameless Window -->
+    <object-type name="FluFrameLessTitleBar">
+        <include file-name="FluFrameLessTitleBar.h" location="global"/>
+        <modify-function signature="mouseEventHandler(QMouseEvent*)" remove="all"/>
+        <modify-function signature="eventFilter(QObject*,QEvent*)" remove="all"/>
+    </object-type>
+    <object-type name="FluFrameLessWidget">
+        <include file-name="FluFrameLessWidget.h" location="global"/>
+        <modify-function signature="changeEvent(QEvent*)" remove="all"/>
+    </object-type>
+    <object-type name="FluFrameLessWidgetEx">
+        <include file-name="FluFrameLessWidgetEx.h" location="global"/>
+    </object-type>
+    
 </typesystem>

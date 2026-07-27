@@ -30,17 +30,17 @@ if(USE_QRC)
 
 if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 set(QSS_FILES
-    "../StyleSheet/dark/FluMenuDemo.qss"
-    "../StyleSheet/light/FluHNavigationDemo.qss"
-    "../StyleSheet/light/FluMenuDemo.qss"
-    "../StyleSheet/light/FluTemplateDemo.qss"
-    "../StyleSheet/dark/FluTemplateDemo.qss"
-    "../StyleSheet/atomOneDark/FluTemplateDemo.qss"
-    "../StyleSheet/dark/FluMainWidgetDemo.qss"
-    "../StyleSheet/light/FluMainWidgetDemo.qss"
-    # "../StyleSheet/light/FluADSDemo.qss"
-    # "../StyleSheet/dark/FluADSDemo.qss"
-    # "../StyleSheet/atomOneDark/FluADSDemo.qss"
+    "../stylesheet/dark/FluMenuDemo.qss"
+    "../stylesheet/light/FluHNavigationDemo.qss"
+    "../stylesheet/light/FluMenuDemo.qss"
+    "../stylesheet/light/FluTemplateDemo.qss"
+    "../stylesheet/dark/FluTemplateDemo.qss"
+    "../stylesheet/atomOneDark/FluTemplateDemo.qss"
+    "../stylesheet/dark/FluMainWidgetDemo.qss"
+    "../stylesheet/light/FluMainWidgetDemo.qss"
+    # "../stylesheet/light/FluADSDemo.qss"
+    # "../stylesheet/dark/FluADSDemo.qss"
+    # "../stylesheet/atomOneDark/FluADSDemo.qss"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 

@@ -44,13 +44,13 @@ endif()
 # qt_standard_project_setup()
 
 add_subdirectory("3rdparty")
-add_subdirectory("Controls")
-add_subdirectory("Examples")
+add_subdirectory("controls")
+add_subdirectory("examples")
 
-add_subdirectory("Utils")
+add_subdirectory("utils")
 
 if (BUILD_GALLERY)
-add_subdirectory("Gallery")
+add_subdirectory("gallery")
 endif()
 
 if (BUILD_PYTHON_BINDINGS)

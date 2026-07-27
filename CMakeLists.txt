@@ -58,7 +58,7 @@ add_subdirectory("bindings/PySide6")
 endif()
 
 # add_subdirectory("res")
-# add_subdirectory("StyleSheet")
+# add_subdirectory("stylesheet")
 
 if (NOT USE_QRC)
 add_custom_target(resource_copy
@@ -66,8 +66,8 @@ add_custom_target(resource_copy
     ${CMAKE_CURRENT_SOURCE_DIR}/res
     ${PROJECT_BINARY_DIR}/res
     COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
-    ${CMAKE_CURRENT_SOURCE_DIR}/StyleSheet
-    ${PROJECT_BINARY_DIR}/StyleSheet
+    ${CMAKE_CURRENT_SOURCE_DIR}/stylesheet
+    ${PROJECT_BINARY_DIR}/stylesheet
     COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different
     ${CMAKE_CURRENT_SOURCE_DIR}/code
     ${PROJECT_BINARY_DIR}/code
@@ -83,7 +83,7 @@ install(DIRECTORY res
     DESTINATION .
 )
 
-install(DIRECTORY StyleSheet
+install(DIRECTORY stylesheet
     DESTINATION .
 )
 

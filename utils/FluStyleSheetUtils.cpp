@@ -10,9 +10,9 @@ FluStyleSheetUtils::FluStyleSheetUtils(QObject *object /*= nullptr*/) : QObject(
     m_batchTimer = new QTimer(this);
     m_batchTimer->setSingleShot(true);
     connect(m_batchTimer, &QTimer::timeout, this, []() { applyBatchedUpdates(); });
-    m_styleSheetDir = "../StyleSheet/";
+    m_styleSheetDir = "../stylesheet/";
 #ifdef USE_QRC
-    m_styleSheetDir = ":/StyleSheet/";
+    m_styleSheetDir = ":/stylesheet/";
 #endif
 }
 
@@ -180,7 +180,7 @@ QTimer *FluStyleSheetUtils::getTimer()
 void FluStyleSheetUtils::__init()
 {
     getUtils();
-    FluStyleSheetUtils::getUtils()->setStyleSheetDir("../StyleSheet/light/");
+    FluStyleSheetUtils::getUtils()->setStyleSheetDir("../stylesheet/light/");
 }
 
 void FluStyleSheetUtils::__deInit()

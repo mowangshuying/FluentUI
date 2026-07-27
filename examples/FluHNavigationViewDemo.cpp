@@ -289,7 +289,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     bodyWidget->setObjectName("bodyWidget");
     m_contentLayout->addWidget(bodyWidget);
 
-    FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
+    FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluHNavigationDemo.qss", this);
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     resize(800, 600);
 }

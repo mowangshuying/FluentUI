@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt
 
-from FluentUI import (
+from PySide6FluentUI import (
     FluLineEdit, FluTextEdit, FluSpinBox, FluDoubleSpinBox,
     FluPasswordBox, FluSearchLineEdit, FluComboBox, FluComboBoxEx,
     FluSlider, FluRatingControl, FluAutoSuggestBox,

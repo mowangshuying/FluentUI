@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QLabel>
 #include "FluComboBoxEx.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluSettingsSelectBox : public FluWidget
 {

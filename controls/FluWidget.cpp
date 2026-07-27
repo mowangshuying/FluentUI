@@ -1,5 +1,5 @@
-﻿#include "FluWidget.h"
-#include "../Utils/FluUtils.h"
+#include "FluWidget.h"
+#include "../utils/FluUtils.h"
 #include <QStyleOption>
 
 FluWidget::FluWidget(QWidget* parent /*= nullptr*/) : QWidget(parent)

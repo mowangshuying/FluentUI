@@ -1,4 +1,4 @@
-﻿#include "FluFrameLessDemo.h"
+#include "FluFrameLessDemo.h"
 
 #include <QtCore/qdatetime.h>
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
@@ -14,7 +14,7 @@
 #include <QtWidgets/qfileiconprovider.h>
 #include <QtWidgets/qlabel.h>
 
-#include "../Controls/FluPushButton.h"
+#include "../controls/FluPushButton.h"
 
 FluFrameLessDemo::FluFrameLessDemo(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {

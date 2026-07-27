@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include <DockManager.h>
@@ -7,11 +7,11 @@
 #include <QPlainTextEdit>
 #include <QMainWindow>
 #include <QTableWidget>
-#include "../Controls/FluWindowKitWindow.h"
-#include "../Controls/FluTableView.h"
-#include "../Controls/FluScintilla.h"
-#include "../Controls/FluTextEdit.h"
-#include "../Controls/FluDockManager.h"
+#include "../controls/FluWindowKitWindow.h"
+#include "../controls/FluTableView.h"
+#include "../controls/FluScintilla.h"
+#include "../controls/FluTextEdit.h"
+#include "../controls/FluDockManager.h"
 
 class FluADSDemo : public FluWindowKitWindow
 {

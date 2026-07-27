@@ -1,4 +1,4 @@
-﻿#include "FluBorderPage.h"
+#include "FluBorderPage.h"
 
 FluBorderPage::FluBorderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -50,12 +50,12 @@ void FluBorderPage::onThemeChanged()
             m_border->setTextColor(Qt::black);
         else
             m_border->setTextColor(Qt::white);
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluBorderPage.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluBorderPage.qss", this);
     }
     else
     {
         m_border->setTextColor(Qt::white);
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluBorderPage.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluBorderPage.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluBorderPage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

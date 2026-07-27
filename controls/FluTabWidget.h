@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 #include <QTableWidget>
 
 class FluTabWidget : public QTabWidget

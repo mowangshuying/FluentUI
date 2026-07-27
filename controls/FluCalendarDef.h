@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QDateTime>
 #include <QObject>
 #include <QThread>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 enum FluCalendarViewState
 {

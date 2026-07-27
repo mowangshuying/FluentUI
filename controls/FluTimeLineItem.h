@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QHBoxLayout>
@@ -6,7 +6,7 @@
 #include "FluLabel.h"
 #include "FluTimeLineIcon.h"
 #include <QPainter>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluTimeLineItem : public FluWidget
 {

@@ -1,6 +1,6 @@
-﻿#include "FluMenuBarPage.h"
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluRoundMenu.h"
+#include "FluMenuBarPage.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluRoundMenu.h"
 
 FluMenuBarPage::FluMenuBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {

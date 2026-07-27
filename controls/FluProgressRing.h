@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QPainter>
 #include <QTimer>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluProgressRing : public FluWidget
 {

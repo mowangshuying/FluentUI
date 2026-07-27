@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include <QSplitter>
 #include <QVBoxLayout>
 #include <QFrame>
 #include "FluTemplateDemo.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluSplitterDemo : public FluTemplateDemo
 {

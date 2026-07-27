@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 // #include <QScrollArea>
 #include <QVBoxLayout>
-#include "../Utils/FluStyleSheetUtils.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluScrollArea.h"
 
 class FluVScrollView : public FluScrollArea

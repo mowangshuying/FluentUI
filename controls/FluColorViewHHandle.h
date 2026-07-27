@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include <QPainter>
 #include <QPainterPath>
 #include "FluWidget.h"
 #include <QMouseEvent>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QLinearGradient>
 
 class FluColorViewHHandle : public FluWidget

@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QPainter>
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include "FluTemplateDemo.h"
 
 class FluColorDemo : public FluTemplateDemo

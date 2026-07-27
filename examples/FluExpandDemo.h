@@ -1,17 +1,17 @@
-﻿#pragma once
+#pragma once
 
 #include <QHBoxLayout>
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QPropertyAnimation>
 #include <QStyleOption>
 #include <QPainter>
 
-#include "../Controls/FluExpander.h"
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluToggleButton.h"
-#include "../Controls/FluLabel.h"
+#include "../controls/FluExpander.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluToggleButton.h"
+#include "../controls/FluLabel.h"
 
 class FluExpandDemo : public FluWidget
 {

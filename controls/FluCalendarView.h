@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QCalendarWidget>
 #include "FluWidget.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPainter>
 #include <QStyleOption>
 #include <QPushButton>

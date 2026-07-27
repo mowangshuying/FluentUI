@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
-#include "../Controls/FluSettingsVersionBox.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluVSplitLine.h"
-#include "../Controls/FluHyperLinkButton.h"
+#include "../controls/FluSettingsVersionBox.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluVSplitLine.h"
+#include "../controls/FluHyperLinkButton.h"
 
 class FluSettingsVersionBoxDemo : public FluTemplateDemo
 {

@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include <QPainter>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluScrollBarHandle : public QWidget
 {

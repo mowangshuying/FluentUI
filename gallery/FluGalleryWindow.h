@@ -1,15 +1,15 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluFrameLessWidget.h"
-#include "../Controls/FluVNavigationView.h"
-#include "../Controls/FluVNavigationIconTextItem.h"
-#include "../Controls/FluHNavigationView.h"
-#include "../Controls/FluHNavigationIconTextItem.h"
+#include "../controls/FluFrameLessWidget.h"
+#include "../controls/FluVNavigationView.h"
+#include "../controls/FluVNavigationIconTextItem.h"
+#include "../controls/FluHNavigationView.h"
+#include "../controls/FluHNavigationIconTextItem.h"
 #include "FluHomePage.h"
 #include <QStackedLayout>
-#include "../Controls/FluStackedLayout.h"
+#include "../controls/FluStackedLayout.h"
 #include "FluTypeographyPage.h"
-#include "../Controls/FluVNavigationSettingsItem.h"
+#include "../controls/FluVNavigationSettingsItem.h"
 #include "FluIconsPage.h"
 #include "FluButtonPage.h"
 #include "FluToggleButtonPage.h"
@@ -30,7 +30,7 @@
 #include "FluCalendarDatePickerPage.h"
 #include "FluCollectionsPage.h"
 #include "FluPasswordBoxPage.h"
-#include "../Controls/FluMessageBox.h"
+#include "../controls/FluMessageBox.h"
 #include "FluComboBoxPage.h"
 #include "FluContentDialogPage.h"
 #include <QPainter>
@@ -65,7 +65,7 @@
 #include "FluScrollViewPage.h"
 #include "FluTableViewPage.h"
 #include "FluTreeViewPage.h"
-#include "../Controls/FluWindowKitWidget.h"
+#include "../controls/FluWindowKitWidget.h"
 #include "FluColorPickerPage.h"
 
 // #define USE_WINDOWKIT_WIDGET

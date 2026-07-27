@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluVNavigationView.h"
-#include "../Controls/FluVNavigationIconTextItem.h"
+#include "../controls/FluVNavigationView.h"
+#include "../controls/FluVNavigationIconTextItem.h"
 #include <QFrame>
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 
 class FluVNavigationViewDemo : public FluWidget
 {

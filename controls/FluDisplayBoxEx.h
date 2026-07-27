@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QLabel>
@@ -8,7 +8,7 @@
 #include <QStyleOption>
 #include <QPainter>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluDisplayBoxEx : public FluWidget
 {

@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluMenu.h"
-// #include "../Controls/FluMenuIconTextItem.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluMenu.h"
+// #include "../controls/FluMenuIconTextItem.h"
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QVBoxLayout>
 #include <QMenu>
 #include <QHBoxLayout>
@@ -14,7 +14,7 @@
 #include <QWidgetAction>
 #include <QContextMenuEvent>
 #include <QPropertyAnimation>
-// #include "../Controls/FluMenuIconTextAction.h"
+// #include "../controls/FluMenuIconTextAction.h"
 #include <QWidgetAction>
 
 class FluMenuDemo : public FluWidget

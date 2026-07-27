@@ -1,14 +1,14 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 #include <QStyleOption>
 #include <QPainter>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPushButton>
 #include <QIcon>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluVCard : public FluWidget
 {

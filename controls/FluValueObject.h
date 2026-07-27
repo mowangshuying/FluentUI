@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QPropertyAnimation>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluValueObject : public QObject
 {

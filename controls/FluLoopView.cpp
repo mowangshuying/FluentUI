@@ -1,4 +1,4 @@
-﻿#include "FluLoopView.h"
+#include "FluLoopView.h"
 
 FluLoopView::FluLoopView(int fixedW /*= 80*/, QWidget* parent /*= nullptr*/) : QListWidget(parent), m_fixedW(fixedW)
 {
@@ -218,13 +218,13 @@ void FluLoopView::onThemeChanged()
     {
         m_scrollUpButton->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Light)));
         m_scrollDownButton->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Light)));
-        //   FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluLoopView.qss", this);
+        //   FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluLoopView.qss", this);
     }
     else
     {
         m_scrollUpButton->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidUp, FluTheme::Dark)));
         m_scrollDownButton->setIcon(QIcon(FluIconUtils::getFluentIcon(FluAwesomeType::CaretSolidDown, FluTheme::Dark)));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluLoopView.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluLoopView.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluLoopView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

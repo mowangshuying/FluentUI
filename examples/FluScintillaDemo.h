@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
-#include "../Controls/FluScrollDelegate.h"
+#include "../controls/FluScrollDelegate.h"
 #include <Qsci/qsciscintilla.h>
 #include <Qsci/qscilexercpp.h>
 

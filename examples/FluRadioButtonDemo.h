@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluRadioButton.h"
-#include "../Controls/FluVRadioGroupBox.h"
-#include "../Controls/FluWidget.h"
+#include "../controls/FluRadioButton.h"
+#include "../controls/FluVRadioGroupBox.h"
+#include "../controls/FluWidget.h"
 #
 
 class FluRadioButtonDemo : public FluWidget

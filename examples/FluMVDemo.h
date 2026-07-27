@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include <QListView>
 #include <QStringListModel>
 #include "FluTemplateDemo.h"
 #include <QWidget>
-// #include "../Controls/FluListView.h"
+// #include "../controls/FluListView.h"
 
 // just for test use model view;
 class FluMVDemo : public FluTemplateDemo

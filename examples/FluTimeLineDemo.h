@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
-#include "../Controls/FluTimeLine.h"
+#include "../controls/FluTimeLine.h"
 
 class FluTimeLineDemo : public FluTemplateDemo
 {

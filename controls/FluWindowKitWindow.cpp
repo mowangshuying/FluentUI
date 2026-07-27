@@ -1,4 +1,4 @@
-﻿#include "FluWindowKitWindow.h"
+#include "FluWindowKitWindow.h"
 
 // #include "FluWindowKitWidget.h"
 #include <QWKWidgets/widgetwindowagent.h>
@@ -6,7 +6,7 @@
 #include <QLabel>
 #include "FluWindowkitButton.h"
 #include "FluWindowKitTitleBar.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluLabel.h"
 #include <QWindow>
 

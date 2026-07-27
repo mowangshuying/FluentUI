@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <QDialog>
 #include <QHBoxLayout>
@@ -8,7 +8,7 @@
 #include <QResizeEvent>
 #include <QLabel>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluPushButton.h"
 #include "FluStyleButton.h"
 #include "FluVSplitLine.h"

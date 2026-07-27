@@ -1,18 +1,18 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QStyleOption>
 #include <QPainter>
 
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluSettingsSelectBox.h"
-#include "../Controls/FluSettingsLabelBox.h"
-#include "../Controls/FluSettingsVersionBox.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluHyperLinkButton.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluSettingsSelectBox.h"
+#include "../controls/FluSettingsLabelBox.h"
+#include "../controls/FluSettingsVersionBox.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluHyperLinkButton.h"
 
 class FluSettingPage : public FluWidget
 {

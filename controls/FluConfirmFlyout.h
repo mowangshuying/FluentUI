@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "FluLabel.h"
 #include "FluVFlyout.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluStyleButton.h"
 #include "FluPushButton.h"
 #include <QHBoxLayout>

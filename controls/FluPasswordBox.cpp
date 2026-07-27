@@ -1,4 +1,4 @@
-﻿#include "FluPasswordBox.h"
+#include "FluPasswordBox.h"
 
 FluPasswordBox::FluPasswordBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -95,12 +95,12 @@ void FluPasswordBox::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Light));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluPasswordBox.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluPasswordBox.qss", this);
     }
     else
     {
         m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::RedEye, FluTheme::Dark));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluPasswordBox.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluPasswordBox.qss", this);
     }
 
     FluStyleSheetUtils::setQssByFileName("FluPasswordBox.qss", this, FluThemeUtils::getUtils()->getTheme());

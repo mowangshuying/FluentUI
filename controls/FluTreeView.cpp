@@ -1,6 +1,6 @@
-﻿#include "FluTreeView.h"
+#include "FluTreeView.h"
 #include <QHeaderView>
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 
 FluTreeView::FluTreeView(QWidget *parent /*= nullptr*/) : QTreeWidget(parent)
 {

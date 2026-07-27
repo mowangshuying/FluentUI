@@ -1,4 +1,4 @@
-﻿#include "FluCalendarSelectDayView.h"
+#include "FluCalendarSelectDayView.h"
 #include <QLabel>
 #include "FluCalendarView.h"
 #include "FluCalendarViewTitle.h"
@@ -89,7 +89,7 @@ FluCalendarMonthView::FluCalendarMonthView(QWidget* parent /*= nullptr*/) : FluW
     // m_calendar.init();
 
     setFixedHeight(270);
-    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluCalendarMonthView.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluCalendarMonthView.qss", this);
     onThemeChanged();
 }
 

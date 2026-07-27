@@ -1,7 +1,7 @@
-﻿#include "FluTreeViewPage.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluTreeView.h"
-#include "../Controls/FluVScrollView.h"
+#include "FluTreeViewPage.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluTreeView.h"
+#include "../controls/FluVScrollView.h"
 
 FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 {

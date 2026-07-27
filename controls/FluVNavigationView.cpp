@@ -1,7 +1,7 @@
-﻿#include "FluVNavigationView.h"
+#include "FluVNavigationView.h"
 #include "FluVNavigationIconTextItem.h"
 #include "FluVNavigationMenuItem.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluVNavigationSettingsItem.h"
 #include "FluVNavigationSearchItem.h"
 #include <QResizeEvent>

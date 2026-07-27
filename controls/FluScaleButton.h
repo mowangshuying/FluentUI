@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QPushButton>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluScaleButton : public QPushButton
 {

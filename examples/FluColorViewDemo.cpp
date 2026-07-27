@@ -1,6 +1,6 @@
-﻿#include "FluColorViewDemo.h"
-#include "../Controls/FluColorButton.h"
-#include "../Controls/FluColorPickerButton.h"
+#include "FluColorViewDemo.h"
+#include "../controls/FluColorButton.h"
+#include "../controls/FluColorPickerButton.h"
 
 FluColorViewDemo::FluColorViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {

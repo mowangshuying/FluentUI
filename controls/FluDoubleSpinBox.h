@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QDoubleSpinBox>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluDoubleSpinBox : public QDoubleSpinBox
 {

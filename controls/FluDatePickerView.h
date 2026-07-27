@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include "FluLoopView.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPushButton>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPainter>
 #include <QStyleOption>
 #include "FluHSplitLine.h"

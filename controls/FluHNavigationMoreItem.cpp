@@ -1,4 +1,4 @@
-﻿#include "FluHNavigationMoreItem.h"
+#include "FluHNavigationMoreItem.h"
 #include "FluHNavigationView.h"
 #include "FluHNavigationFlyIconTextItem.h"
 
@@ -110,12 +110,12 @@ void FluHNavigationMoreItem::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Light));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluHNavigationMoreItem.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluHNavigationMoreItem.qss", this);
     }
     else
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::More, FluTheme::Dark));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluHNavigationMoreItem.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluHNavigationMoreItem.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluHNavigationMoreItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

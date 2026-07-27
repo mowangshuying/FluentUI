@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluCommandBarItem.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPushButton>
 #include <QHBoxLayout>
 #include <QStyleOption>

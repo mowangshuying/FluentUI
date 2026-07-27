@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include <QLineEdit>
 
-#include "../Controls/FluLineEdit.h"
+#include "../controls/FluLineEdit.h"
 #include "FluDisplay16.h"
-#include "../Controls/FluSearchLineEdit.h"
-#include "../Controls/FluAutoSuggestBox.h"
+#include "../controls/FluSearchLineEdit.h"
+#include "../controls/FluAutoSuggestBox.h"
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QPainter>

@@ -1,7 +1,7 @@
-﻿#include "FluMenuBarDemo.h"
-#include "../Controls/FluRoundMenu.h"
-#include "../Controls/FluPMenuBar.h"
-#include "../Controls/FluPMenu.h"
+#include "FluMenuBarDemo.h"
+#include "../controls/FluRoundMenu.h"
+#include "../controls/FluPMenuBar.h"
+#include "../controls/FluPMenu.h"
 #include <FramelessHelper/Widgets/standardtitlebar.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 

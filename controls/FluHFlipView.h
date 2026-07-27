@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QVBoxLayout>
 #include <QScrollArea>
 #include <QPushButton>
 #include <QEnterEvent>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluHFlipView : public QScrollArea
 {

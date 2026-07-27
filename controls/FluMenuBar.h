@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QMenuBar>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPainter>
 #include <QStyleOption>
 #include <QHBoxLayout>

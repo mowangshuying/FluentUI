@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <Qsci/qsciscintilla.h>
 #include <Qsci/qscilexercpp.h>
 #include "FluScrollDelegate.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluScintilla : public QsciScintilla
 {

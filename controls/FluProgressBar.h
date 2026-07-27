@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QProgressBar>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluProgressBar : public QProgressBar
 {

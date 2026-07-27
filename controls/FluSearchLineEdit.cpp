@@ -1,4 +1,4 @@
-﻿#include "FluSearchLineEdit.h"
+#include "FluSearchLineEdit.h"
 
 FluSearchLineEdit::FluSearchLineEdit(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -101,12 +101,12 @@ void FluSearchLineEdit::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Light));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluSearchLineEdit.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluSearchLineEdit.qss", this);
     }
     else
     {
         m_button->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Search, FluTheme::Dark));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluSearchLineEdit.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluSearchLineEdit.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluSearchLineEdit.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

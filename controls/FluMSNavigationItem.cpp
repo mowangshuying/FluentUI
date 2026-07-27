@@ -1,4 +1,4 @@
-﻿#include "FluMSNavigationItem.h"
+#include "FluMSNavigationItem.h"
 #include "FluMSNavigationView.h"
 
 FluMSNavigationItem::FluMSNavigationItem(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_awesomeType(FluAwesomeType::None)
@@ -129,12 +129,12 @@ void FluMSNavigationItem::onThemeChanged()
     if (FluThemeUtils::isLightTheme())
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Light));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluMSNavigationItem.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluMSNavigationItem.qss", this);
     }
     else
     {
         m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluTheme::Dark));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluMSNavigationItem.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluMSNavigationItem.qss", this);
     }
     FluStyleSheetUtils::setQssByFileName("FluMSNavigationItem.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

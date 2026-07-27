@@ -1,11 +1,11 @@
-﻿#include "FluAEmptyPage.h"
-#include "../Utils/FluUtils.h"
+#include "FluAEmptyPage.h"
+#include "../utils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluIconButton.h"
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluDropDownButton.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluIconButton.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluDropDownButton.h"
 
 FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {

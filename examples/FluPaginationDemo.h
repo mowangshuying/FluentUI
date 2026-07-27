@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
-#include "../Controls/FluPagination.h"
+#include "../controls/FluPagination.h"
 class FluPaginationDemo : public FluTemplateDemo
 {
     Q_OBJECT

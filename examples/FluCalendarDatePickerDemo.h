@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluCalendarDatePicker.h"
+#include "../controls/FluCalendarDatePicker.h"
 #include "FluTemplateDemo.h"
 
 class FluCalendarDatePickerDemo : public FluTemplateDemo

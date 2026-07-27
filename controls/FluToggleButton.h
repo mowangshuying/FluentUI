@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QPushButton>
 #include <QStyle>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluToggleButton : public QPushButton
 {

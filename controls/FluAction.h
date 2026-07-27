@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QAction>
 #include "FluDef.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QListWidgetItem>
 
 class FluAction : public QAction

@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluSlider.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluSlider.h"
 
 class FluSliderDemo : public FluWidget
 {

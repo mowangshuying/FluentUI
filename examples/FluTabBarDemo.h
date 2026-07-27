@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluTabBarContent.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluTabBarContent.h"
 #include <QVBoxLayout>
-#include "../Controls/FluTabBarItem.h"
-#include "../Controls/FluTabBar.h"
+#include "../controls/FluTabBarItem.h"
+#include "../controls/FluTabBar.h"
 #include "../Examples/FluTemplateDemo.h"
 
 class FluTabBarDemo : public FluTemplateDemo

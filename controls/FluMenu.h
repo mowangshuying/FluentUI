@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QMenu>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluAction.h"
 
 class FluMenu : public QMenu

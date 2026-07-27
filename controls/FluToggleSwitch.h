@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QCheckBox>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluToggleSwitch : public QCheckBox
 {

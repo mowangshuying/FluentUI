@@ -1,13 +1,13 @@
-﻿#pragma once
+#pragma once
 
 #include <QTabWidget>
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 
-#include "../Controls/FluTabWidget.h"
+#include "../controls/FluTabWidget.h"
 #include "FluButtonDemo.h"
 #include "FluChangeBgDemo.h"
 #include "FluColorDemo.h"
-#include "../Controls/FluLabel.h"
+#include "../controls/FluLabel.h"
 
 class FluTabPage : public FluWidget
 {

@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QLabel>
 #include "FluDef.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluStar : public QLabel
 {

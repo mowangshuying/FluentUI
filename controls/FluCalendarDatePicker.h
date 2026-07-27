@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QHBoxLayout>
@@ -6,7 +6,7 @@
 #include <QPainter>
 #include <QStyleOption>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluCalendarDatePicker.h"
 #include "FluCalendarView.h"
 

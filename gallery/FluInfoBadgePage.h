@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluInfoBarMgr.h"
-#include "../Controls/FluInfoBadge.h"
+#include "../controls/FluInfoBarMgr.h"
+#include "../controls/FluInfoBadge.h"
 #include "FluAEmptyPage.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluVScrollView.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluVScrollView.h"
 
 class FluInfoBadgePage : public FluAEmptyPage
 {

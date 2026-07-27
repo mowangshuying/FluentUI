@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QPushButton>
@@ -7,7 +7,7 @@
 #include <QPainter>
 #include <QVBoxLayout>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluAppBarToggleButton : public FluWidget
 {

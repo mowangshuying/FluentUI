@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluProgressRing.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluProgressRing.h"
 #include <QTimer>
 
 class FluProgressRingDemo : public FluWidget

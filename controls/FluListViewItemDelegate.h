@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include <QStyledItemDelegate>
 #include <QPalette>
 #include <QPainter>
 #include <QColor>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluListViewItemDelegate : public QStyledItemDelegate
 {

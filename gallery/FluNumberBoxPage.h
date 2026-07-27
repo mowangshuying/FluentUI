@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluSpinBox.h"
-#include "../Controls/FluDoubleSpinBox.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluVScrollView.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluSpinBox.h"
+#include "../controls/FluDoubleSpinBox.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluVScrollView.h"
 
 class FluNumberBoxPage : public FluAEmptyPage
 {

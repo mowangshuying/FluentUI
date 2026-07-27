@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
 #include <QPropertyAnimation>
-#include "../Controls/FluPushButton.h"
-#include "../Utils/FluUtils.h"
+#include "../controls/FluPushButton.h"
+#include "../utils/FluUtils.h"
 // #include <QState>
 // #include <QStateMachine>
 

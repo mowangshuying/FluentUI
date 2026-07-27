@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluVFlyout.h"
+#include "../controls/FluVFlyout.h"
 #include <QGridLayout>
 #include <QStyleOption>
 #include <QPainter>

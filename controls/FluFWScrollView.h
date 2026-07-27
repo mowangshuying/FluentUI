@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QScrollArea>
 #include "FluFlowLayout.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluScrollArea.h"
 
 class FluFWScrollView : public FluScrollArea

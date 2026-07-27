@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QListWidget>
@@ -7,7 +7,7 @@
 #include <QKeyEvent>
 #include <QListWidgetItem>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluWidget.h"
 
 #include <QStyleOption>

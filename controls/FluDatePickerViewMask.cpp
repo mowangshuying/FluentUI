@@ -1,6 +1,6 @@
-﻿#include "FluDatePickerViewMask.h"
+#include "FluDatePickerViewMask.h"
 #include <QEnterEvent>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 FluDatePickerViewMaskItem::FluDatePickerViewMaskItem(QString text, int width, int height)
 {

@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QMenuBar>
-#include "../Controls/FluMenu.h"
-#include "../Controls/FluMenuBar.h"
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../controls/FluMenu.h"
+#include "../controls/FluMenuBar.h"
+#include "../utils/FluStyleSheetUtils.h"
 #include "FluTemplateDemo.h"
 #include <QMenu>
 

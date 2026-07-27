@@ -1,6 +1,6 @@
-﻿#include "FluVNavigationFlyIconTextItem.h"
+#include "FluVNavigationFlyIconTextItem.h"
 #include "FluVNavigationIconTextItem.h"
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 #include "FluVNavigationView.h"
 
 FluVNavigationFlyIconTextItem::FluVNavigationFlyIconTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)

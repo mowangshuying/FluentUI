@@ -1,17 +1,17 @@
-﻿#include "FluTemplateDemo.h"
+#include "FluTemplateDemo.h"
 
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 #include <FramelessHelper/Widgets/standardsystembutton.h>
 #include <FramelessHelper/Widgets/standardtitlebar.h>
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluHNavigationIconTextItem.h"
-#include "../Controls/FluHNavigationSearchItem.h"
-#include "../Controls/FluHNavigationSettingsItem.h"
-#include "../Controls/FluThemeButton.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluHNavigationIconTextItem.h"
+#include "../controls/FluHNavigationSearchItem.h"
+#include "../controls/FluHNavigationSettingsItem.h"
+#include "../controls/FluThemeButton.h"
 #include <QContextMenuEvent>
-#include "../Controls/FluMenuBar.h"
-// #include "../Controls/FluWindowKitWindow.h
+#include "../controls/FluMenuBar.h"
+// #include "../controls/FluWindowKitWindow.h
 
 FRAMELESSHELPER_USE_NAMESPACE
 FluTemplateDemo::FluTemplateDemo(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)

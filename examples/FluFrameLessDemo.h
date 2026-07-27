@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluFrameLessWidget.h"
-#include "../Controls/FluRadioButton.h"
-#include "../Controls/FluToggleSwitch.h"
+#include "../controls/FluFrameLessWidget.h"
+#include "../controls/FluRadioButton.h"
+#include "../controls/FluToggleSwitch.h"
 #include <QHBoxLayout>
 
 class FluFrameLessDemo : public FluFrameLessWidget

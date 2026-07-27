@@ -1,15 +1,15 @@
-﻿#include "FluGalleryWindow.h"
+#include "FluGalleryWindow.h"
 #include "FluAEmptyPage.h"
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 #include <FramelessHelper/Widgets/standardsystembutton.h>
 #include <FramelessHelper/Widgets/standardtitlebar.h>
-#include "../Controls/FluMessageBox.h"
+#include "../controls/FluMessageBox.h"
 #include <QApplication>
 #include <QTimer>
-#include "../Controls/FluThemeButton.h"
+#include "../controls/FluThemeButton.h"
 #include "FluEmoijsPage.h"
-#include "../Utils/FluConfigUtils.h"
+#include "../utils/FluConfigUtils.h"
 
 FRAMELESSHELPER_USE_NAMESPACE
 
@@ -54,7 +54,7 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
 
 #endif
 
-    // QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluGalleryWindow.qss");
+    // QString qss = FluStyleSheetUtils::getQssByFileName("../stylesheet/light/FluGalleryWindow.qss");
     // setStyleSheet(qss);
 
     // 先读取导航样式配置
@@ -1136,7 +1136,7 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluGalleryWindow.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluGalleryWindow.qss", this);
     }
     else
     {
@@ -1151,7 +1151,7 @@ void FluGalleryWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluGalleryWindow.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluGalleryWindow.qss", this);
     }
 #endif
     FluStyleSheetUtils::setQssByFileName("FluGalleryWindow.qss", this, FluThemeUtils::getUtils()->getTheme());

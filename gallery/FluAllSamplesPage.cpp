@@ -1,4 +1,4 @@
-﻿#include "FluAllSamplesPage.h"
+#include "FluAllSamplesPage.h"
 
 FluAllSamplesPage::FluAllSamplesPage(QWidget* parent /*= nullptr*/) : FluATitlePage(parent)
 {
@@ -26,7 +26,7 @@ FluAllSamplesPage::FluAllSamplesPage(QWidget* parent /*= nullptr*/) : FluATitleP
         connect(card, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     }
 
-    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluAllSamplesPage.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluAllSamplesPage.qss", this);
     onThemeChanged();
 }
 

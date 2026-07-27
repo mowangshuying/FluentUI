@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include <QStyledItemDelegate>
 #include <QPainter>
 #include <QStyleOptionViewItem>
 #include <QModelIndex>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluMenuItemDelegate : public QStyledItemDelegate
 {

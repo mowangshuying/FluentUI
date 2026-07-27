@@ -1,4 +1,4 @@
-﻿#include "FluHFlipView.h"
+#include "FluHFlipView.h"
 #include "FluImageBox.h"
 #include <QScrollBar>
 
@@ -73,7 +73,7 @@ FluHFlipView::FluHFlipView(QWidget* parent /*= nullptr*/) : QScrollArea(parent)
         }
     });
 
-    // QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluHFlipView.qss");
+    // QString qss = FluStyleSheetUtils::getQssByFileName("../stylesheet/light/FluHFlipView.qss");
     // setStyleSheet(qss);
     FluStyleSheetUtils::setQssByFileName("FluHFlipView.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

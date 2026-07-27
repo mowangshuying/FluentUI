@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QFrame>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <vector>
 #include "FluCommandBarItem.h"
 #include "FluCommandBarIconItem.h"

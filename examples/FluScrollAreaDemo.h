@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluScrollArea.h"
-#include "../Controls/FluImageBox.h"
+#include "../controls/FluScrollArea.h"
+#include "../controls/FluImageBox.h"
 
 class FluScrollAreaDemo : public FluScrollArea
 {

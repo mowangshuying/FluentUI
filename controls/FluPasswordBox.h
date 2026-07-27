@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include <QLineEdit>
 #include <QPushButton>
 #include <QHBoxLayout>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPaintEvent>
 #include <QStyleOption>
 #include <QPainter>

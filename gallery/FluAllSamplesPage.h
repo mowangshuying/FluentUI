@@ -1,15 +1,15 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QStyleOption>
 #include <QPainter>
 
-#include "../Controls/FluFWScrollView.h"
-#include "../Utils/FluUtils.h"
+#include "../controls/FluFWScrollView.h"
+#include "../utils/FluUtils.h"
 #include "FluATitlePage.h"
-#include "../Controls/FluHCard.h"
+#include "../controls/FluHCard.h"
 
 class FluAllSamplesPage : public FluATitlePage
 {

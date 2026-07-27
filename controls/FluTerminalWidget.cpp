@@ -1,5 +1,5 @@
-﻿#include "FluTerminalWidget.h"
-#include "../Utils/FluStyleSheetUtils.h"
+#include "FluTerminalWidget.h"
+#include "../utils/FluStyleSheetUtils.h"
 #include <QDebug>
 
 FluTerminalWidget::FluTerminalWidget()

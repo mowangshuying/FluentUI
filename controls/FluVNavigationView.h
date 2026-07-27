@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
-#include "../Utils/FluIconUtils.h"
-#include "../Utils/FluLogUtils.h"
-#include "../Utils/FluUtils.h"
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluIconUtils.h"
+#include "../utils/FluLogUtils.h"
+#include "../utils/FluUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 #include "FluDef.h"
 #include <QHBoxLayout>
 #include <QLabel>

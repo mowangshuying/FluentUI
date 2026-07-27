@@ -1,6 +1,6 @@
-﻿#include "FluWindowkitButton.h"
+#include "FluWindowkitButton.h"
 #include <QMouseEvent>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 FluWindowkitButton::FluWindowkitButton(QWidget *parent /*= nullptr*/) : QPushButton(parent)
 {

@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluShortInfoBar.h"
-#include "../Controls/FluWidget.h"
+#include "../controls/FluShortInfoBar.h"
+#include "../controls/FluWidget.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluInfoBarMgr.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluInfoBarMgr.h"
 #include "FluTemplateDemo.h"
 
 class FluInfoBarDemo : public FluTemplateDemo

@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluCalendarDatePicker.h"
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluVScrollView.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluCalendarDatePicker.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluVScrollView.h"
 
 class FluCalendarDatePickerPage : public FluAEmptyPage
 {

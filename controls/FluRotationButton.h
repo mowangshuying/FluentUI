@@ -1,12 +1,12 @@
-﻿#pragma once
+#pragma once
 
 #include <QPushButton>
 #include <QTimer>
 #include <QPainter>
 #include <qmatrix4x4.h>
 #include <QPixmap>
-#include "../Utils/FluIconUtils.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluIconUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluRotationButton : public QPushButton
 {

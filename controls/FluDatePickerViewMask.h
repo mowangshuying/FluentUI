@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include <QPaintEvent>
 #include <QPainter>
-#include "../Utils/FluThemeUtils.h"
+#include "../utils/FluThemeUtils.h"
 class FluDatePickerViewMaskItem
 {
   public:

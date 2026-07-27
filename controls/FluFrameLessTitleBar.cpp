@@ -1,8 +1,8 @@
-﻿#include "FluFrameLessTitleBar.h"
+#include "FluFrameLessTitleBar.h"
 #include <QTimer>
 #include <FramelessHelper/Core/Utils>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QApplication>
 
 using namespace wangwenx190::FramelessHelper::Global;

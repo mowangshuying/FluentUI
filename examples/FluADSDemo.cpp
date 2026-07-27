@@ -1,7 +1,7 @@
-﻿#include "FluADSDemo.h"
-#include "../Controls/FluMenuBar.h"
-#include "../Controls/FluAction.h"
-#include "../Controls/FluMenu.h"
+#include "FluADSDemo.h"
+#include "../controls/FluMenuBar.h"
+#include "../controls/FluAction.h"
+#include "../controls/FluMenu.h"
 
 // #fill:#000000;
 FluADSDemo::FluADSDemo(QWidget* parent /*= nullptr*/) : FluWindowKitWindow(parent)

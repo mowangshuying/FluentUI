@@ -1,4 +1,4 @@
-﻿#include "FluMSWindow.h"
+#include "FluMSWindow.h"
 #include "FluMSNavigationItem.h"
 
 FluMSWindow::FluMSWindow(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
@@ -53,7 +53,7 @@ void FluMSWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluMSWindow.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluMSWindow.qss", this);
     }
     else
     {
@@ -67,7 +67,7 @@ void FluMSWindow::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluMSWindow.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluMSWindow.qss", this);
     }
 
     FluStyleSheetUtils::setQssByFileName("FluMSWindow.qss", this, FluThemeUtils::getUtils()->getTheme());

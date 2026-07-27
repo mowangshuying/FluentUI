@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QListWidget>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QWheelEvent>
 #include <QPushButton>
 #include <QListWidgetItem>

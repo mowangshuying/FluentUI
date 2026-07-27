@@ -783,9 +783,6 @@
     <object-type name="FluDatePickerViewMask">
         <include file-name="FluDatePickerViewMask.h" location="global"/>
     </object-type>
-    <object-type name="FluDockManager">
-        <include file-name="FluDockManager.h" location="global"/>
-    </object-type>
     <object-type name="FluFlowLayout">
         <include file-name="FluFlowLayout.h" location="global"/>
     </object-type>

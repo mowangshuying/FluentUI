@@ -43,9 +43,11 @@ endif()
 
 # qt_standard_project_setup()
 
-# FramelessHelper: build as static library
+# Third-party libraries: build as static
 set(FRAMELESSHELPER_BUILD_STATIC ON CACHE BOOL "" FORCE)
 set(FRAMELESSHELPER_BUILD_QUICK OFF CACHE BOOL "" FORCE)
+set(QWINDOWKIT_BUILD_STATIC ON CACHE BOOL "" FORCE)
+set(BUILD_STATIC ON CACHE BOOL "" FORCE)  # Qt-Advanced-Docking-System
 
 add_subdirectory("3rdparty")
 add_subdirectory("controls")

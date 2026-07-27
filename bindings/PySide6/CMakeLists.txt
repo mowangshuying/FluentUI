@@ -283,7 +283,7 @@ set(FLUENTUI_HEADERS
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
 set(GENERATED_WRAPPER_FILES
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluentui_module_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/pyside6fluentui_module_wrapper.cpp
     # Utils wrappers
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluthemeutils_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluconfigutils_wrapper.cpp

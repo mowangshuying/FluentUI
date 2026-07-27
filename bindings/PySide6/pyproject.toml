@@ -45,4 +45,4 @@ where = ["."]
 include = ["PySide6FluentUI*"]
 
 [tool.setuptools.package-data]
-PySide6FluentUI = ["*.pyd", "*.so", "*.dylib", "*.dll"]
+PySide6FluentUI = ["*.pyd", "*.so", "*.dylib", "*.dll", "*.pyi"]

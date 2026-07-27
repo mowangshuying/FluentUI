@@ -15,7 +15,7 @@ if sys.platform == 'win32':
 sys.path.insert(0, r'E:\code\FluentUI-Master\build\python\Release')
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
-from FluentUI import FluPushButton, FluIconButton, FluWidget
+from PySide6FluentUI import FluPushButton, FluIconButton, FluWidget
 
 class TestWindow(QMainWindow):
     def __init__(self):

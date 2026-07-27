@@ -18,7 +18,7 @@ sys.path.insert(0, r'E:\code\FluentUI-Master\build\python\Release')
 from PySide6.QtWidgets import QApplication, QMainWindow, QHBoxLayout, QWidget, QLabel
 from PySide6.QtCore import Qt
 
-from FluentUI import (
+from PySide6FluentUI import (
     FluVNavigationView, FluVNavigationIconTextItem,
     FluVNavigationMenuItem, FluVNavigationSettingsItem,
     FluLabel, FluThemeUtils,

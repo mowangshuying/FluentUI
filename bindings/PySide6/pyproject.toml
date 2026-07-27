@@ -3,7 +3,7 @@ requires = ["setuptools>=45", "wheel", "cmake>=3.20"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "fluentui-pyside6"
+name = "pyside6-fluentui"
 version = "1.0.0"
 description = "Python bindings for FluentUI C++ library"
 readme = "README.md"
@@ -45,4 +45,4 @@ Issues = "https://github.com/mowangshuying/FluentUI/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["fluentui*"]
+include = ["PySide6FluentUI*"]

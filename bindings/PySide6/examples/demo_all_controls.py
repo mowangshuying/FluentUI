@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt
 
-from FluentUI import (
+from PySide6FluentUI import (
     # Buttons
     FluPushButton, FluIconButton, FluToggleButton, FluCheckBox,
     FluRadioButton, FluHyperLinkButton, FluRepeatButton,

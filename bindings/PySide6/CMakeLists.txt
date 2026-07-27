@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(FluentUI_Python VERSION 1.0.0 LANGUAGES CXX)
+project(PySide6FluentUI_Python VERSION 1.0.0 LANGUAGES CXX)
 
 # Find Python
 find_package(Python REQUIRED COMPONENTS Interpreter Development)
@@ -106,357 +106,357 @@ file(MAKE_DIRECTORY ${BINDINGS_OUTPUT_DIR})
 # Header files to process
 set(FLUENTUI_HEADERS
     # Utils
-    "${CMAKE_SOURCE_DIR}/Utils/FluThemeUtils.h"
-    "${CMAKE_SOURCE_DIR}/Utils/FluConfigUtils.h"
-    "${CMAKE_SOURCE_DIR}/Utils/FluStyleSheetUtils.h"
-    "${CMAKE_SOURCE_DIR}/Utils/FluIconUtils.h"
-    "${CMAKE_SOURCE_DIR}/Utils/FluLogUtils.h"
-    "${CMAKE_SOURCE_DIR}/Utils/FluTranslatorUtils.h"
-    "${CMAKE_SOURCE_DIR}/Utils/FluEmoijUtils.h"
-    "${CMAKE_SOURCE_DIR}/Utils/FluObjectPtrUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluThemeUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluConfigUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluStyleSheetUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluIconUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluLogUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluTranslatorUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluEmoijUtils.h"
+    "${CMAKE_SOURCE_DIR}/utils/FluObjectPtrUtils.h"
     # Controls - Base
-    "${CMAKE_SOURCE_DIR}/Controls/FluWidget.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPushButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluIconButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluWidget.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPushButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluIconButton.h"
     # Controls - Buttons
-    "${CMAKE_SOURCE_DIR}/Controls/FluCheckBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluRadioButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluToggleButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluDropDownButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSplitButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluRepeatButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHyperLinkButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluAppBarButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluAppBarToggleButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluStyleButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluScaleButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluRotationButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluGraphicalButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluThemeButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPPushButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluWindowkitButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarIconItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarIconTextItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBarSplitItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCheckBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluRadioButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluToggleButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDropDownButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSplitButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluRepeatButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHyperLinkButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluAppBarButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluAppBarToggleButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluStyleButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluScaleButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluRotationButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluGraphicalButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluThemeButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPPushButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluWindowkitButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCommandBarItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCommandBarIconItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCommandBarIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCommandBarSplitItem.h"
     # Controls - Input
-    "${CMAKE_SOURCE_DIR}/Controls/FluLineEdit.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTextEdit.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTextEditWrap.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSpinBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluDoubleSpinBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPasswordBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSearchLineEdit.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluComboBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluComboBoxEx.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluComboBoxTextItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluIntValidator.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSlider.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluRatingControl.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluLineEdit.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTextEdit.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTextEditWrap.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSpinBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDoubleSpinBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPasswordBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSearchLineEdit.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluComboBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluComboBoxEx.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluComboBoxTextItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluIntValidator.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSlider.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluRatingControl.h"
     # Controls - Navigation (simplified)
-    "${CMAKE_SOURCE_DIR}/Controls/FluTabBar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTabBarContent.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTabBarItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTabView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTabWidget.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPagination.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPaginationItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPivot.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPivotTitleBar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPivotTitleBarItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSegmented.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSegmentedItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTabBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTabBarContent.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTabBarItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTabView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTabWidget.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPagination.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPaginationItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPivot.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPivotTitleBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPivotTitleBarItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSegmented.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSegmentedItem.h"
     # Controls - Display
-    "${CMAKE_SOURCE_DIR}/Controls/FluLabel.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluProgressBar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluProgressRing.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluBusyProgressRing.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluInfoBadge.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCircleDot.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluImageBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluDisplayBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluDisplayBoxEx.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluDisplayIconBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluInstructions.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTriangle.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluStar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTimeLine.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTimeLineIcon.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTimeLineItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluLabel.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluProgressBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluProgressRing.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluBusyProgressRing.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluInfoBadge.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCircleDot.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluImageBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDisplayBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDisplayBoxEx.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDisplayIconBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluInstructions.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTriangle.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluStar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimeLine.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimeLineIcon.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimeLineItem.h"
     # Controls - Container
-    "${CMAKE_SOURCE_DIR}/Controls/FluExpander.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluScrollArea.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVScrollView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHScrollView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTableView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluListView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTreeView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVCard.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHCard.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluBorder.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCodeBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCodeExpander.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluLoopView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHFlipView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVFlipView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluExpander.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluScrollArea.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVScrollView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHScrollView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTableView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluListView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTreeView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVCard.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHCard.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluBorder.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCodeBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCodeExpander.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluLoopView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHFlipView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVFlipView.h"
     # Controls - Popup/Dialog
-    "${CMAKE_SOURCE_DIR}/Controls/FluDialog.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluMessageBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluMenu.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluMenuBar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluAction.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluRoundMenu.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluRoundMenuView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTeachingTip.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTeachingTipContent.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVFlyout.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluConfirmFlyout.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPMenu.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluPMenuBar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluIndicatorRoundMenu.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCompleterMenu.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDialog.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMessageBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMenu.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMenuBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluAction.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluRoundMenu.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluRoundMenuView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTeachingTip.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTeachingTipContent.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVFlyout.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluConfirmFlyout.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPMenu.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPMenuBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluIndicatorRoundMenu.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCompleterMenu.h"
     # Controls - Window (WindowKit-based only)
-    "${CMAKE_SOURCE_DIR}/Controls/FluWindowKitWidget.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluWindowKitTitleBar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluWindowKitWindow.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluWindowKitWidget.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluWindowKitTitleBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluWindowKitWindow.h"
     # Controls - Other
-    "${CMAKE_SOURCE_DIR}/Controls/FluToggleSwitch.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluToggleSwitchEx.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTextToggleSwitchEx.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluColorPickerButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluColorButton.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVSplitLine.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHSplitLine.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVRadioGroupBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHRadioGroupBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCalendarView.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluCalendarDatePicker.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluDatePicker.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSettingsLabelBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSettingsSelectBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSettingsVersionBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluToggleSwitch.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluToggleSwitchEx.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTextToggleSwitchEx.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorPickerButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVSplitLine.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHSplitLine.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVRadioGroupBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHRadioGroupBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCalendarView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCalendarDatePicker.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDatePicker.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSettingsLabelBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSettingsSelectBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSettingsVersionBox.h"
     # Controls - Previously excluded (now fixed)
-    "${CMAKE_SOURCE_DIR}/Controls/FluGifBox.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluShortInfoBar.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluInfoBarMgr.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluTextEditWrap.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluAutoSuggestBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluGifBox.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluShortInfoBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluInfoBarMgr.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTextEditWrap.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluAutoSuggestBox.h"
     # Controls - Navigation Views (V)
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationIndicator.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationIconTextItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationFlyIconTextItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationMenuItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationSearchItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationSettingsItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluVNavigationView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationIndicator.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationFlyIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationMenuItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationSearchItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationSettingsItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluVNavigationView.h"
     # Controls - Navigation Views (H)
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationIndicator.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationIconTextItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationFlyIconTextItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationMoreItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationSearchItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationSettingsItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluHNavigationView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationIndicator.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationFlyIconTextItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationMoreItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationSearchItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationSettingsItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluHNavigationView.h"
     # Controls - CommandBar
-    "${CMAKE_SOURCE_DIR}/Controls/FluCommandBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCommandBar.h"
     # Controls - Color
-    "${CMAKE_SOURCE_DIR}/Controls/FluColorFlyout.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluColorLabel.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorFlyout.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorLabel.h"
     # Controls - MS Navigation
-    "${CMAKE_SOURCE_DIR}/Controls/FluMSNavigationItem.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluMSNavigationView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMSNavigationItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMSNavigationView.h"
     # Controls - ScrollView
-    "${CMAKE_SOURCE_DIR}/Controls/FluFWScrollView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluFWScrollView.h"
     # Controls - Shortcut
-    "${CMAKE_SOURCE_DIR}/Controls/FluShortcutPicker.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluShortcutPickerDlg.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluShortcutPicker.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluShortcutPickerDlg.h"
     # Controls - System Tray
-    "${CMAKE_SOURCE_DIR}/Controls/FluSystemTrayIcon.h"
-    "${CMAKE_SOURCE_DIR}/Controls/FluSystemTrayMenu.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSystemTrayIcon.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSystemTrayMenu.h"
     # Controls - ListView Item
-    "${CMAKE_SOURCE_DIR}/Controls/FluListViewItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluListViewItem.h"
     # Controls - StackedLayout (wrapper)
-    "${CMAKE_SOURCE_DIR}/Controls/FluStackedLayoutWrap.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluStackedLayoutWrap.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
 set(GENERATED_WRAPPER_FILES
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluentui_module_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluentui_module_wrapper.cpp
     # Utils wrappers
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluthemeutils_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluconfigutils_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustylesheetutils_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluiconutils_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulogutils_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutranslatorutils_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluemoijutils_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluobjectptrutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluthemeutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluconfigutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flustylesheetutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluiconutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulogutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutranslatorutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluemoijutils_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluobjectptrutils_wrapper.cpp
     # Controls wrappers - Base
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwidget_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupushbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluiconbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluwidget_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupushbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluiconbutton_wrapper.cpp
     # Controls wrappers - Buttons
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucheckbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluradiobutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutogglebutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludropdownbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusplitbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flurepeatbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhyperlinkbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluappbarbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluappbartogglebutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustylebutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluscalebutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flurotationbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flugraphicalbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluthemebutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluppushbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkitbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbaritem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbariconitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbaricontextitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbarsplititem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucheckbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluradiobutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutogglebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludropdownbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusplitbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flurepeatbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhyperlinkbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluappbarbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluappbartogglebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flustylebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluscalebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flurotationbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flugraphicalbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluthemebutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluppushbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluwindowkitbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucommandbaritem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucommandbariconitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucommandbaricontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucommandbarsplititem_wrapper.cpp
     # Controls wrappers - Input
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulineedit_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutextedit_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluspinbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludoublespinbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupasswordbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusearchlineedit_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucombobox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucomboboxex_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucomboboxtextitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluintvalidator_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluslider_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluratingcontrol_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulineedit_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutextedit_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluspinbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludoublespinbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupasswordbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusearchlineedit_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucombobox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucomboboxex_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucomboboxtextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluintvalidator_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluslider_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluratingcontrol_wrapper.cpp
     # Controls wrappers - Navigation (simplified)
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabbar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabbarcontent_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabbaritem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutabwidget_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupagination_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupaginationitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupivot_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupivottitlebar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupivottitlebaritem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusegmented_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusegmenteditem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutabbar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutabbarcontent_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutabbaritem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutabview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutabwidget_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupagination_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupaginationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupivot_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupivottitlebar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupivottitlebaritem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusegmented_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusegmenteditem_wrapper.cpp
     # Controls wrappers - Display
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulabel_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluprogressbar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluprogressring_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flubusyprogressring_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluinfobadge_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucircledot_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluimagebox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludisplaybox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludisplayboxex_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludisplayiconbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluinstructions_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutriangle_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutimeline_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutimelineicon_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutimelineitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulabel_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluprogressbar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluprogressring_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flubusyprogressring_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluinfobadge_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucircledot_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluimagebox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludisplaybox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludisplayboxex_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludisplayiconbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluinstructions_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutriangle_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flustar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimeline_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimelineicon_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimelineitem_wrapper.cpp
     # Controls wrappers - Container
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluexpander_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluscrollarea_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvscrollview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhscrollview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutableview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulistview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutreeview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvcard_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhcard_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluborder_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucodebox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucodeexpander_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluloopview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhflipview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvflipview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluexpander_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluscrollarea_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvscrollview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhscrollview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutableview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulistview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutreeview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvcard_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhcard_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluborder_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucodebox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucodeexpander_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluloopview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhflipview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvflipview_wrapper.cpp
     # Controls wrappers - Popup/Dialog
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludialog_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumessagebox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumenu_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumenubar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluaction_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluroundmenu_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluroundmenuview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluteachingtip_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluteachingtipcontent_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvflyout_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluconfirmflyout_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupmenu_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flupmenubar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluindicatorroundmenu_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucompletermenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludialog_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumessagebox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumenubar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluaction_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluroundmenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluroundmenuview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluteachingtip_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluteachingtipcontent_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvflyout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluconfirmflyout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupmenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupmenubar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluindicatorroundmenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucompletermenu_wrapper.cpp
     # Controls wrappers - Window (WindowKit-based only)
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkitwidget_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkittitlebar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluwindowkitwindow_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluwindowkitwidget_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluwindowkittitlebar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluwindowkitwindow_wrapper.cpp
     # Controls wrappers - Other
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutoggleswitch_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutoggleswitchex_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutexttoggleswitchex_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucolorpickerbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucolorbutton_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvsplitline_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhsplitline_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvradiogroupbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhradiogroupbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucalendarview_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucalendardatepicker_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fludatepicker_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusettingslabelbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusettingsselectbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusettingsversionbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutoggleswitch_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutoggleswitchex_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutexttoggleswitchex_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorpickerbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvsplitline_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhsplitline_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvradiogroupbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhradiogroupbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucalendarview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucalendardatepicker_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludatepicker_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusettingslabelbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusettingsselectbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusettingsversionbox_wrapper.cpp
     # Controls wrappers - Previously excluded (now fixed)
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flugifbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flushortinfobar_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluinfobarmgr_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flutexteditwrap_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluautosuggestbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flugifbox_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flushortinfobar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluinfobarmgr_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutexteditwrap_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluautosuggestbox_wrapper.cpp
     # Controls wrappers - Navigation Views (V)
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationindicator_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationicontextitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationflyicontextitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationmenuitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationsearchitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationsettingsitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluvnavigationview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationindicator_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationflyicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationmenuitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationsearchitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationsettingsitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvnavigationview_wrapper.cpp
     # Controls wrappers - Navigation Views (H)
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationindicator_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationicontextitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationflyicontextitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationmoreitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationsearchitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationsettingsitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/fluhnavigationview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationindicator_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationflyicontextitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationmoreitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationsearchitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationsettingsitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluhnavigationview_wrapper.cpp
     # Controls wrappers - CommandBar
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucommandbar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucommandbar_wrapper.cpp
     # Controls wrappers - Color
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucolorflyout_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flucolorlabel_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorflyout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorlabel_wrapper.cpp
     # Controls wrappers - MS Navigation
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumsnavigationitem_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flumsnavigationview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumsnavigationitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumsnavigationview_wrapper.cpp
     # Controls wrappers - ScrollView
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flufwscrollview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flufwscrollview_wrapper.cpp
     # Controls wrappers - Shortcut
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flushortcutpicker_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flushortcutpickerdlg_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flushortcutpicker_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flushortcutpickerdlg_wrapper.cpp
     # Controls wrappers - System Tray
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusystemtrayicon_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flusystemtraymenu_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusystemtrayicon_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusystemtraymenu_wrapper.cpp
     # Controls wrappers - ListView Item
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flulistviewitem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulistviewitem_wrapper.cpp
     # Controls wrappers - StackedLayout (wrapper)
-    ${BINDINGS_OUTPUT_DIR}/FluentUI/flustackedlayoutwrap_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flustackedlayoutwrap_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6
@@ -466,7 +466,7 @@ add_custom_command(
         --no-suppress-warnings
         --avoid-protected-hack
         --enable-pyside-extensions
-        "--include-paths=${CMAKE_SOURCE_DIR}/Utils;${CMAKE_SOURCE_DIR}/Controls;${CMAKE_SOURCE_DIR}/3rdparty/framelesshelper/include;${CMAKE_BINARY_DIR}/3rdparty/framelesshelper;${PYSIDE6_INCLUDE_DIR};${SHIBOKEN6_INCLUDE_DIR};${QT6_INCLUDE_PATHS}"
+        "--include-paths=${CMAKE_SOURCE_DIR}/utils;${CMAKE_SOURCE_DIR}/controls;${CMAKE_SOURCE_DIR}/3rdparty/framelesshelper/include;${CMAKE_BINARY_DIR}/3rdparty/framelesshelper;${PYSIDE6_INCLUDE_DIR};${SHIBOKEN6_INCLUDE_DIR};${QT6_INCLUDE_PATHS}"
         "--typesystem-paths=${CMAKE_CURRENT_SOURCE_DIR}/typesystems;${PYSIDE6_TYPESYSTEMS_DIR}"
         "--output-directory=${BINDINGS_OUTPUT_DIR}"
         ${FLUENTUI_HEADERS}
@@ -478,13 +478,13 @@ add_custom_command(
 )
 
 # Create Python module
-add_library(FluentUI_Python MODULE
+add_library(PySide6FluentUI_Python MODULE
     ${GENERATED_WRAPPER_FILES}
 )
 
-target_include_directories(FluentUI_Python PRIVATE
-    ${CMAKE_SOURCE_DIR}/Utils
-    ${CMAKE_SOURCE_DIR}/Controls
+target_include_directories(PySide6FluentUI_Python PRIVATE
+    ${CMAKE_SOURCE_DIR}/utils
+    ${CMAKE_SOURCE_DIR}/controls
     ${CMAKE_SOURCE_DIR}/3rdparty/framelesshelper/include
     ${Python_INCLUDE_DIRS}
     ${PYSIDE6_INCLUDE_DIR}
@@ -505,11 +505,11 @@ execute_process(
     OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 
-target_link_directories(FluentUI_Python PRIVATE
+target_link_directories(PySide6FluentUI_Python PRIVATE
     ${PYTHON_LIBDIR}
 )
 
-target_link_libraries(FluentUI_Python PRIVATE
+target_link_libraries(PySide6FluentUI_Python PRIVATE
     FluentUI::Utils
     FluentUI::Controls
     ${PYSIDE6_LIBRARY}
@@ -518,14 +518,14 @@ target_link_libraries(FluentUI_Python PRIVATE
     Qt6::Widgets
 )
 
-set_target_properties(FluentUI_Python PROPERTIES
+set_target_properties(PySide6FluentUI_Python PROPERTIES
     PREFIX ""
-    OUTPUT_NAME "FluentUI"
+    OUTPUT_NAME "PySide6FluentUI"
     SUFFIX ".pyd"
 )
 
 # Install Python module
-install(TARGETS FluentUI_Python
+install(TARGETS PySide6FluentUI_Python
     LIBRARY DESTINATION ${Python_SITEARCH}
     RUNTIME DESTINATION ${Python_SITEARCH}
 )

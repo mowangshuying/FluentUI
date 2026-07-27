@@ -1,0 +1,7 @@
+# Build artifacts
+dist/
+*.egg-info/
+PySide6FluentUI/*.pyd
+PySide6FluentUI/*.so
+PySide6FluentUI/*.dylib
+build_wheel_temp/

@@ -1,48 +1,48 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "cmake>=3.20"]
+requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "PySide6FluentUI"
 version = "1.0.0"
-description = "Python bindings for FluentUI C++ library"
+description = "Fluent Design UI widgets for PySide6 - Python bindings for the FluentUI C++ library"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.13"
 license = {text = "LGPL-2.1"}
 authors = [
     {name = "FluentUI Team"}
 ]
-keywords = ["qt", "pyside6", "fluent", "ui", "widgets", "gui"]
+keywords = ["qt", "pyside6", "fluent", "ui", "widgets", "gui", "fluent-design"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
-    "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: User Interfaces",
 ]
 dependencies = [
-    "PySide6>=6.5.0",
+    "PySide6==6.8.3",
+    "shiboken6==6.8.3",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0",
     "pytest-qt>=4.0",
+    "build>=1.0",
 ]
 
 [project.urls]
 Homepage = "https://github.com/mowangshuying/FluentUI"
-Documentation = "https://github.com/mowangshuying/FluentUI/tree/main/python"
 Repository = "https://github.com/mowangshuying/FluentUI"
 Issues = "https://github.com/mowangshuying/FluentUI/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["PySide6FluentUI*"]
+
+[tool.setuptools.package-data]
+PySide6FluentUI = ["*.pyd", "*.so", "*.dylib"]

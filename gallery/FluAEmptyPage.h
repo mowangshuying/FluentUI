@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
-#include "../Controls/FluSearchLineEdit.h"
+#include "../controls/FluSearchLineEdit.h"
 
 class FluVScrollView;
 class FluAEmptyPage : public FluWidget

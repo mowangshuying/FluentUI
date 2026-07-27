@@ -1,13 +1,13 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include <QLabel>
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluRoundMenu.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluRoundMenu.h"
 #include <QContextMenuEvent>
 #include "FluTemplateDemo.h"
-#include "../Controls/FluAction.h"
-#include "../Controls/FluLabel.h"
+#include "../controls/FluAction.h"
+#include "../controls/FluLabel.h"
 
 class FluRoundMenuDemo : public FluTemplateDemo
 {

@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluLoopView.h"
-#include "../Controls/FluTimePicker24HView.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluLoopView.h"
+#include "../controls/FluTimePicker24HView.h"
 
-#include "../Controls/FluAmPmView.h"
+#include "../controls/FluAmPmView.h"
 
 class FluLoopViewDemo : public FluWidget
 {

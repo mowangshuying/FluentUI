@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluCalendarView.h"
+#include "../controls/FluCalendarView.h"
 #include "FluAEmptyPage.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluVScrollView.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluVScrollView.h"
 
 class FluCalendarViewPage : public FluAEmptyPage
 {

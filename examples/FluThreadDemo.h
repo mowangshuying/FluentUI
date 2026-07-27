@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluThread.h"
-#include "../Controls/FluWidget.h"
-#include "../Utils/FluUtils.h"
+#include "../controls/FluThread.h"
+#include "../controls/FluWidget.h"
+#include "../utils/FluUtils.h"
 
 class FluThreadDemo : public FluWidget
 {

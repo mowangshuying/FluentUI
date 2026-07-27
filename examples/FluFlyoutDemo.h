@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 
-#include "../Controls/FluVFlyout.h"
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluConfirmFlyout.h"
+#include "../controls/FluVFlyout.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluConfirmFlyout.h"
 
 class FluFlyoutDemo : public FluWidget
 {

@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include "FluTemplateDemo.h"
-#include "../Controls/FluInstructions.h"
+#include "../controls/FluInstructions.h"
 
 class FluInstructionsDemo : public FluTemplateDemo
 {

@@ -1,5 +1,5 @@
-﻿#include <QApplication>
-#include "../Controls/FluWidget.h"
+#include <QApplication>
+#include "../controls/FluWidget.h"
 
 #include "FluGalleryWindow.h"
 #include <QProcess>

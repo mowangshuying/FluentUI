@@ -1,8 +1,8 @@
-﻿#include "FluColorPickerPage.h"
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluDisplayBoxEx.h"
-#include "../Controls/FluColorView.h"
-#include "../Controls/FluVScrollView.h"
+#include "FluColorPickerPage.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluDisplayBoxEx.h"
+#include "../controls/FluColorView.h"
+#include "../controls/FluVScrollView.h"
 
 FluColorPickerPage::FluColorPickerPage(QWidget* parent) : FluAEmptyPage(parent)
 {

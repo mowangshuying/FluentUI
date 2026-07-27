@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
-#include "../Controls/FluTableView.h"
+#include "../controls/FluTableView.h"
 
 class FluTableViewExDemo : public FluTemplateDemo
 {

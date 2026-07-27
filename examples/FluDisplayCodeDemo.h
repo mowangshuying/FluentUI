@@ -1,13 +1,13 @@
-﻿#pragma once
+#pragma once
 
 #include <QPlainTextEdit>
 #include <QSyntaxHighlighter>
 #include <QRegularExpression>
 #include <QTextCharFormat>
 
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluCodeExpander.h"
-#include "../Controls/FluCodeBox.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluCodeExpander.h"
+#include "../controls/FluCodeBox.h"
 #include "FluTemplateDemo.h"
 
 class FluDisplayCodeDemo : public FluWidget

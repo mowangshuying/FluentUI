@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "FluRoundMenu.h"
 #include "FluIndicatorMenuItemDeleage.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluIndicatorRoundMenu : public FluRoundMenu
 {

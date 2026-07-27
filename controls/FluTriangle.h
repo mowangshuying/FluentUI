@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPaintEvent>
 #include <QPainter>
 #include <QStyleOption>

@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QRadioButton>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QProxyStyle>
 #include <QPainter>
 #include <QStyleOptionButton>

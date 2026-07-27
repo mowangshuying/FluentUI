@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include <QStyledItemDelegate>
 // #include <QTableView>
 #include <set>
 #include "FluLineEdit.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QScrollBar>
 
 class FluTableView;

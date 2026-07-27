@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QPushButton>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
 #include "FluIndicatorRoundMenu.h"

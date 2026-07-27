@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluMSWindow.h"
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluMSNavigationItem.h"
-#include "../Controls/FluMenu.h"
-#include "../Controls/FluAction.h"
-#include "../Controls/FluLabel.h"
+#include "../controls/FluMSWindow.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluMSNavigationItem.h"
+#include "../controls/FluMenu.h"
+#include "../controls/FluAction.h"
+#include "../controls/FluLabel.h"
 
 class FluMSPage : public FluWidget
 {

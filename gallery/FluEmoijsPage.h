@@ -1,15 +1,15 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
 #include "FluAEmptyPage.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QStyleOption>
 #include <QPainter>
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluFlowLayout.h"
-#include "../Controls/FluDisplayIconBox.h"
-#include "../Controls/FluFWScrollView.h"
-#include "../Controls/FluInstructions.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluFlowLayout.h"
+#include "../controls/FluDisplayIconBox.h"
+#include "../controls/FluFWScrollView.h"
+#include "../controls/FluInstructions.h"
 
 class FluEmoijsPage : public FluAEmptyPage
 {

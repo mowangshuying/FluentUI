@@ -1,13 +1,13 @@
-﻿#include "FluHNavigationViewDemo.h"
+#include "FluHNavigationViewDemo.h"
 
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 #include <FramelessHelper/Widgets/standardsystembutton.h>
 #include <FramelessHelper/Widgets/standardtitlebar.h>
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluHNavigationIconTextItem.h"
-#include "../Controls/FluHNavigationSearchItem.h"
-#include "../Controls/FluHNavigationSettingsItem.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluHNavigationIconTextItem.h"
+#include "../controls/FluHNavigationSearchItem.h"
+#include "../controls/FluHNavigationSettingsItem.h"
 
 #include <QLabel>
 FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
@@ -310,7 +310,7 @@ void FluHNavigationViewDemo::onThemeChanged()
         // m_titleBar->update();
         // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluHNavigationDemo.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }
@@ -328,7 +328,7 @@ void FluHNavigationViewDemo::onThemeChanged()
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluHNavigationDemo.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluHNavigationDemo.qss", this);
         // repaint();
         // QApplication::processEvents();
     }

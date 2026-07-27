@@ -1,7 +1,7 @@
-﻿#include "FluVNavigationIconTextItem.h"
+#include "FluVNavigationIconTextItem.h"
 #include "FluVNavigationMenuItem.h"
 #include <QStyle>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluVNavigationView.h"
 #include "FluVNavigationFlyIconTextItem.h"
 #include <QThread>
@@ -77,7 +77,7 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
 
     m_isEnableThisItem = true;
     m_awesomeType = FluAwesomeType::None;
-    //  QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluNavigationIconTextItem.qss");
+    //  QString qss = FluStyleSheetUtils::getQssByFileName("../stylesheet/light/FluNavigationIconTextItem.qss");
     //  setStyleSheet(qss);
 
     // m_currentWidth  = 320;

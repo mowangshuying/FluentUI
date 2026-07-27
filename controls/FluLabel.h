@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QLabel>
 
-#include "../Utils/FluStyleSheetUtils.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
+#include "../utils/FluUtils.h"
 
 enum class FluLabelStyle
 {

@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include "FluWidget.h"
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPaintEvent>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QStyle>
 
 #define FluToggleSwitchWidth 42

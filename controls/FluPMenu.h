@@ -3,7 +3,7 @@
 #include <QMenu>
 #include <QWidget>
 #include "FluPMenuStyle.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluPMenu : public QMenu
 {

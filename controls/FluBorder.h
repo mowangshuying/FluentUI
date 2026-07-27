@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QLabel>
 #include <map>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QStyle>
 
 class FluBorder : public QLabel

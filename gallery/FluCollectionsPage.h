@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QLabel>
-#include "../Controls/FluFWScrollView.h"
+#include "../controls/FluFWScrollView.h"
 #include "FluATitlePage.h"
 #include "FluATitlePage.h"
-#include "../Controls/FluHCard.h"
+#include "../controls/FluHCard.h"
 
 class FluCollectionsPage : public FluATitlePage
 {

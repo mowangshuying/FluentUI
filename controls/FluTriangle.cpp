@@ -1,9 +1,9 @@
-﻿#include "FluTriangle.h"
+#include "FluTriangle.h"
 
 FluTriangle::FluTriangle(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedSize(24, 14);
-    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluTriangle.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluTriangle.qss", this);
 }
 
 QList<QPoint> FluTriangle::getPointsByOrient(FluTriangleOrient orient)

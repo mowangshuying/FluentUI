@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QCheckBox>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluCheckBox : public QCheckBox
 {

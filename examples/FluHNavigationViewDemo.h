@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluFrameLessWidget.h"
-#include "../Controls/FluHNavigationView.h"
+#include "../controls/FluFrameLessWidget.h"
+#include "../controls/FluHNavigationView.h"
 
 class FluHNavigationViewDemo : public FluFrameLessWidget
 {

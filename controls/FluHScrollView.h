@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QScrollArea>
 #include <QWidget>
 #include <QHBoxLayout>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QWheelEvent>
 
 class FluHScrollView : public QScrollArea

@@ -1,16 +1,16 @@
-﻿#pragma once
+#pragma once
 
 #include <QFrame>
 
 #include "FluAEmptyPage.h"
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluGraphicalButton.h"
-#include "../Controls/FluStyleButton.h"
-#include "../Controls/FluDisplayBoxEx.h"
-#include "../Controls/FluCheckBox.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluGraphicalButton.h"
+#include "../controls/FluStyleButton.h"
+#include "../controls/FluDisplayBoxEx.h"
+#include "../controls/FluCheckBox.h"
 
 class FluButtonPage : public FluAEmptyPage
 {

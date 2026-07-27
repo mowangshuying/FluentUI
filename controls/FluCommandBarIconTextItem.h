@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include "FluCommandBarItem.h"
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QLabel>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluRoundMenu.h"
 
 class FluCommandBarIconTextItem : public FluCommandBarItem

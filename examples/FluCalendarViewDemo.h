@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluCalendarView.h"
-#include "../Controls/FluCalendarDef.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluCalendarView.h"
+#include "../controls/FluCalendarDef.h"
 #include "FluTemplateDemo.h"
 
 class FluCalendarViewDemo : public FluTemplateDemo

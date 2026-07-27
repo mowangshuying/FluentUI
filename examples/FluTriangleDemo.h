@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluTriangle.h"
+#include "../controls/FluTriangle.h"
 #include "FluTemplateDemo.h"
 
 class FluTriangleDemo : public FluTemplateDemo

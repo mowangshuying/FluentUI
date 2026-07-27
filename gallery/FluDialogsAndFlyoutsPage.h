@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
 #include "FluATitlePage.h"
-#include "../Controls/FluFWScrollView.h"
-#include "../Controls/FluHCard.h"
+#include "../controls/FluFWScrollView.h"
+#include "../controls/FluHCard.h"
 
 class FluDialogsAndFlyoutsPage : public FluATitlePage
 {

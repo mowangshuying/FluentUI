@@ -1,4 +1,4 @@
-﻿#include "FluComboBoxTextItem.h"
+#include "FluComboBoxTextItem.h"
 
 FluComboBoxTextItem::FluComboBoxTextItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {

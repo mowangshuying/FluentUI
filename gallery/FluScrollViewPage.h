@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluScrollArea.h"
-#include "../Controls/FluImageBox.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluScrollArea.h"
+#include "../controls/FluImageBox.h"
 
 class FluScrollViewPage : public FluAEmptyPage
 {

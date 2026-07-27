@@ -1,6 +1,6 @@
-﻿#include "FluPMenuBar.h"
+#include "FluPMenuBar.h"
 #include "FluPMenuBarStyle.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 FluPMenuBar::FluPMenuBar(QWidget *parent) : QMenuBar(parent)
 {

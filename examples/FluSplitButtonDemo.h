@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluSplitButton.h"
-#include "../Controls/FluColorFlyout.h"
-#include "../Controls/FluColorButton.h"
-#include "../Utils/FluUtils.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluSplitButton.h"
+#include "../controls/FluColorFlyout.h"
+#include "../controls/FluColorButton.h"
+#include "../utils/FluUtils.h"
 
 class FluSplitButtonDemo : public FluWidget
 {

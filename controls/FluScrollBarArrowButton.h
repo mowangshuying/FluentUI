@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QPushButton>
 #include <QPainter>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 enum class FluScrollBarArrowButtonType
 {

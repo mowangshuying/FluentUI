@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <vector>
@@ -7,7 +7,7 @@
 #include <QStyle>
 #include <QPainter>
 #include <QStyleOption>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluShortcutPicker : public FluWidget
 {

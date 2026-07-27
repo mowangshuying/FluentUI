@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include <QEvent>
 #include <QResizeEvent>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluTextEdit;
 

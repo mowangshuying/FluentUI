@@ -1,10 +1,10 @@
-﻿#include "FluDialogDemo.h"
-#include "../Controls/FluDialog.h"
-#include "../Controls/FluComboBoxEx.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluLineEdit.h"
+#include "FluDialogDemo.h"
+#include "../controls/FluDialog.h"
+#include "../controls/FluComboBoxEx.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluLineEdit.h"
 
 FluDialogDemo::FluDialogDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {

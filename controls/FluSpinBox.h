@@ -1,6 +1,6 @@
-﻿#pragma once
+#pragma once
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QSpinBox>
 
 class FluSpinBox : public QSpinBox

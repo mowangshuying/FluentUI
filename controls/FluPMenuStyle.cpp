@@ -2,7 +2,7 @@
 #include <QStyleOptionMenuItem>
 #include <QPainter>
 #include "FluPMenu.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 FluPMenuStyle::FluPMenuStyle(QStyle* baseStyle) : QProxyStyle(baseStyle)
 {

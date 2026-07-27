@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QButtonGroup>
 #include <QGroupBox>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QVBoxLayout>
 #include "FluRadioButton.h"
 class FluVRadioGroupBox : public QGroupBox

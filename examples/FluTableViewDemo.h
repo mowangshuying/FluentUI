@@ -1,12 +1,12 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
 #include <QTableWidget>
 #include <QHeaderView>
-#include "../Controls/FluScrollDelegate.h"
+#include "../controls/FluScrollDelegate.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include "../Controls/FluPushButton.h"
+#include "../controls/FluPushButton.h"
 
 class FluTableViewDemo : public FluTemplateDemo
 {

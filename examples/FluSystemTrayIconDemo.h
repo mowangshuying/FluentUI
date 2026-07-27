@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
 #include <QSystemTrayIcon>
-#include "../Controls/FluSystemTrayMenu.h"
-#include "../Controls/FluSystemTrayIcon.h"
+#include "../controls/FluSystemTrayMenu.h"
+#include "../controls/FluSystemTrayIcon.h"
 
 class FluSystemTrayIconDemo : public FluTemplateDemo
 {

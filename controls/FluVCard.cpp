@@ -1,4 +1,4 @@
-﻿#include "FluVCard.h"
+#include "FluVCard.h"
 
 FluVCard::FluVCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -28,7 +28,7 @@ FluVCard::FluVCard(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     vMainLaout->addWidget(m_contextLabel);
 
     setFixedSize(200, 220);
-    // QString qss = FluStyleSheetUtils::getQssByFileName("../StyleSheet/light/FluVCard.qss");
+    // QString qss = FluStyleSheetUtils::getQssByFileName("../stylesheet/light/FluVCard.qss");
     // setStyleSheet(qss);
     onThemeChanged();
 }

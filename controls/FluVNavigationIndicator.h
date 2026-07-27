@@ -3,7 +3,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QPropertyAnimation>
-#include "../Utils/FluThemeUtils.h"
+#include "../utils/FluThemeUtils.h"
 
 class FluVNavigationIndicator : public QWidget
 {

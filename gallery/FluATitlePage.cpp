@@ -1,9 +1,9 @@
-﻿#include "FluATitlePage.h"
+#include "FluATitlePage.h"
 #include <QPainter>
 #include <QStyleOption>
 
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluFWScrollView.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluFWScrollView.h"
 
 FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
 {

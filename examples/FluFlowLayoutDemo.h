@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluFlowLayout.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluFlowLayout.h"
 #include <QPushButton>
-#include "../Controls/FluVScrollView.h"
+#include "../controls/FluVScrollView.h"
 
 // take it from Qt examples
 class FluFlowLayoutDemo : public FluVScrollView

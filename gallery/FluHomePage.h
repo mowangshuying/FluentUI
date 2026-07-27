@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 #include <QPainter>
 #include <QStyleOption>
 #include <QVBoxLayout>
@@ -10,9 +10,9 @@
 #include <QLabel>
 #include <QFrame>
 #include "FluHomePageTitle.h"
-#include "../Controls/FluFlowLayout.h"
-#include "../Controls/FluHCard.h"
-#include "../Controls/FluVScrollView.h"
+#include "../controls/FluFlowLayout.h"
+#include "../controls/FluHCard.h"
+#include "../controls/FluVScrollView.h"
 
 class FluHomePage : public FluVScrollView
 {

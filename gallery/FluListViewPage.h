@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluListView.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluListView.h"
 
 class FluListViewPage : public FluAEmptyPage
 {

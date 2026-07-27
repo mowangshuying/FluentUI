@@ -1,12 +1,12 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluFrameLessWidget.h"
-#include "../Controls/FluStackedLayout.h"
-#include "../Controls/FluHNavigationView.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluFrameLessWidget.h"
+#include "../controls/FluStackedLayout.h"
+#include "../controls/FluHNavigationView.h"
 #include <QVBoxLayout>
-#include "../Controls/FluMenu.h"
-#include "../Controls/FluAction.h"
+#include "../controls/FluMenu.h"
+#include "../controls/FluAction.h"
 
 class FluTemplateDemo : public FluFrameLessWidget
 {

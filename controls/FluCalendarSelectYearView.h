@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QGridLayout>
 #include <QLabel>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluCalendarItem.h"
 
 class FluCalendarView;

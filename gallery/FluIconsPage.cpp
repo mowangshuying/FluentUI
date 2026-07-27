@@ -1,6 +1,6 @@
-﻿#include "FluIconsPage.h"
-#include "../Controls/FluPMenu.h"
-#include "../Controls/FluAction.h"
+#include "FluIconsPage.h"
+#include "../controls/FluPMenu.h"
+#include "../controls/FluAction.h"
 
 FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -174,7 +174,7 @@ FluIconsPage::FluIconsPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
     if (m_displayIconBox != nullptr)
         emit m_displayIconBox->clicked();
 
-    // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluIconsPage.qss", this);
+    // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluIconsPage.qss", this);
     onThemeChanged();
 }
 

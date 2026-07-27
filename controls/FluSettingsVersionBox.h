@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluExpander.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include "FluVSplitLine.h"

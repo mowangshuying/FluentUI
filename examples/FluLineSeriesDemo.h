@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QChartView>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QValueAxis>
 
 // #include <QtCharts>

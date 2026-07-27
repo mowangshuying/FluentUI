@@ -1,11 +1,11 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include "FluAEmptyPage.h"
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluExpander.h"
-#include "../Controls/FluCodeExpander.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluExpander.h"
+#include "../controls/FluCodeExpander.h"
 
 // a page to display label demo
 class FluTypeographyPage : public FluAEmptyPage

@@ -1,4 +1,4 @@
-﻿#include "FluTabWidget.h"
+#include "FluTabWidget.h"
 
 FluTabWidget::FluTabWidget(QWidget *parent /*= nullptr*/) : QTabWidget(parent)
 {

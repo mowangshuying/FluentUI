@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluHNavigationItem.h"
 #include <QPushButton>
@@ -6,7 +6,7 @@
 
 #include <QStyleOption>
 #include <QPainter>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluHNavigationMoreItem : public FluHNavigationItem
 {

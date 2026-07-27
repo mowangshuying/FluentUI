@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QPainter>
 #include <QLinearGradient>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QStyle>
 #include <QStyleOption>
 #include <QPainterPath>

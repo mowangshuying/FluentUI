@@ -1,5 +1,5 @@
-﻿#include "FluWindowKitTitleBar.h"
-#include "../Utils/FluUtils.h"
+#include "FluWindowKitTitleBar.h"
+#include "../utils/FluUtils.h"
 
 FluWindowKitTitleBar::FluWindowKitTitleBar(QWidget* parent /*= nullptr*/) : QFrame(parent)
 {

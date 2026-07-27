@@ -1,13 +1,13 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
-#include "../Controls/FluColorViewGradient.h"
-#include "../Controls/FluColorViewVHandle.h"
-#include "../Controls/FluColorViewHHandle.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluLineEdit.h"
-#include "../Controls/FluColorView.h"
-#include "../Controls/FluPushButton.h"
+#include "../controls/FluColorViewGradient.h"
+#include "../controls/FluColorViewVHandle.h"
+#include "../controls/FluColorViewHHandle.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluLineEdit.h"
+#include "../controls/FluColorView.h"
+#include "../controls/FluPushButton.h"
 
 class FluColorViewDemo : public FluTemplateDemo
 {

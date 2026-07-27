@@ -1,5 +1,5 @@
-﻿#include "FluPagination.h"
-#include "../Utils/FluUtils.h"
+#include "FluPagination.h"
+#include "../utils/FluUtils.h"
 #include <qmath.h>
 #include "FluPaginationItem.h"
 

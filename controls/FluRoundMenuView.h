@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <QListWidget>
 #include "FluMenuAniType.h"
 #include <QEvent>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluScrollDelegate.h"
 
 class FluRoundMenuView : public QListWidget

@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include "FluVScrollView.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QVBoxLayout>
 #include <QListWidget>
 #include "FluListViewItemDelegate.h"

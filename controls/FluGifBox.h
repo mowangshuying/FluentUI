@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QLabel>
-#include "../Utils/FluThemeUtils.h"
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluThemeUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 
 class QMovie;
 

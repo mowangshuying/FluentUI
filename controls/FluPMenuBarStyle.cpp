@@ -2,7 +2,7 @@
 #include <QStyleOptionMenuItem>
 #include <QPainter>
 #include "FluPMenuBar.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluAction.h"
 
 FluPMenuBarStyle::FluPMenuBarStyle(QStyle *parent /* = nullptr*/) : QProxyStyle(parent)

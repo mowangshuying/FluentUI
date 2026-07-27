@@ -1,9 +1,9 @@
-﻿#include "FluTreeViewItemDelegate.h"
+#include "FluTreeViewItemDelegate.h"
 #include "FluTreeView.h"
 #include <QColor>
 #include <QPalette>
 #include <QPainter>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QFont>
 
 FluTreeViewItemDelegate::FluTreeViewItemDelegate(FluTreeView* parent /*= nullptr*/) : QStyledItemDelegate(parent)

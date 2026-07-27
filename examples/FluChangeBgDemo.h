@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <QDebug>
 #include <QEvent>
@@ -6,7 +6,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QVBoxLayout>
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 
 class FluChangeBgDemo : public FluWidget
 {

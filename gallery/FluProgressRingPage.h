@@ -1,14 +1,14 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
-#include "../Controls/FluProgressRing.h"
-#include "../Utils/FluUtils.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluVScrollView.h"
-#include "../Controls/FluDisplayBoxEx.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluComboBoxEx.h"
-#include "../Controls/FluBusyProgressRing.h"
+#include "../controls/FluProgressRing.h"
+#include "../utils/FluUtils.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluVScrollView.h"
+#include "../controls/FluDisplayBoxEx.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluComboBoxEx.h"
+#include "../controls/FluBusyProgressRing.h"
 
 class FluProgressRingPage : public FluAEmptyPage
 {

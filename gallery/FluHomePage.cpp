@@ -1,5 +1,5 @@
-﻿#include "FluHomePage.h"
-#include "../Controls/FluCircleDot.h"
+#include "FluHomePage.h"
+#include "../controls/FluCircleDot.h"
 
 FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
 {

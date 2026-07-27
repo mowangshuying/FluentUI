@@ -1,16 +1,16 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QStyleOption>
 #include <QPainter>
 
-#include "../Controls/FluFWScrollView.h"
-#include "../Utils/FluUtils.h"
+#include "../controls/FluFWScrollView.h"
+#include "../utils/FluUtils.h"
 #include "FluATitlePage.h"
-#include "../Controls/FluHCard.h"
-#include "../Controls/FluCircleDot.h"
+#include "../controls/FluHCard.h"
+#include "../controls/FluCircleDot.h"
 
 class FluBasicInputPage : public FluATitlePage
 {

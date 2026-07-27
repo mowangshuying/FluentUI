@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
+#include "../controls/FluWidget.h"
 
-#include "../Controls/FluToggleSwitch.h"
-#include "../Controls/FluToggleSwitchEx.h"
-#include "../Controls/FluTextToggleSwitchEx.h"
+#include "../controls/FluToggleSwitch.h"
+#include "../controls/FluToggleSwitchEx.h"
+#include "../controls/FluTextToggleSwitchEx.h"
 #include "FluTemplateDemo.h"
 
 class FluToggleSwitchDemo : public FluTemplateDemo

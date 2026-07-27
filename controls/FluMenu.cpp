@@ -1,8 +1,8 @@
-﻿#include "FluMenu.h"
+#include "FluMenu.h"
 #include "FluDef.h"
-#include "../Utils/FluIconUtils.h"
+#include "../utils/FluIconUtils.h"
 #include <QGraphicsDropShadowEffect>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPainterPath>
 #include <QPainter>
 #include <QStyleOption>

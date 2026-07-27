@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluTimePicker24H.h"
-#include "../Controls/FluTimePickerAP.h"
-#include "../Controls/FluDatePicker.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluTimePicker24H.h"
+#include "../controls/FluTimePickerAP.h"
+#include "../controls/FluDatePicker.h"
 #include "FluTemplateDemo.h"
 
 class FluTimePickerDemo : public FluTemplateDemo

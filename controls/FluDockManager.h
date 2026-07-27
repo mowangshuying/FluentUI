@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include <DockManager.h>
 #include <DockAreaWidget.h>
 #include <DockWidget.h>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluDockManager : public ads::CDockManager
 {

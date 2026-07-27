@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluWidget.h"
-#include "../Controls/FluTreeView.h"
+#include "../controls/FluWidget.h"
+#include "../controls/FluTreeView.h"
 #include <QTreeWidgetItem>
 #include "FluTemplateDemo.h"
 

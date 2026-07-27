@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include <QPushButton>
 #include <QPainter>
 #include <QEvent>
 
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluPPushButton : public QPushButton
 {

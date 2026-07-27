@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluVNavigationItem.h"
 #include <QVBoxLayout>
@@ -9,7 +9,7 @@
 #include <QPainter>
 #include "FluRotationButton.h"
 #include "FluVNavigationIndicator.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluVNavigationSettingsItem : public FluVNavigationItem
 {

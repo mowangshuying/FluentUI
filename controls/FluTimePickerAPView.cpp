@@ -1,4 +1,4 @@
-﻿#include "FluTimePickerAPView.h"
+#include "FluTimePickerAPView.h"
 
 FluTimePickerAPView::FluTimePickerAPView(QWidget* parent /*= nullptr*/) : FluWidget(parent), m_isAm(true), m_hour(0), m_minute(0), m_isFirstShow(true), m_mask(nullptr)
 {
@@ -224,13 +224,13 @@ void FluTimePickerAPView::onThemeChanged()
     {
         m_okButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Light));
         m_cancelButton->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Light));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/light/FluTimePickerAPView.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluTimePickerAPView.qss", this);
     }
     else
     {
         m_okButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Accept, FluTheme::Dark));
         m_cancelButton->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Cancel, FluTheme::Dark));
-        // FluStyleSheetUtils::setQssByFileName("../StyleSheet/dark/FluTimePickerAPView.qss", this);
+        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluTimePickerAPView.qss", this);
     }
 
     FluStyleSheetUtils::setQssByFileName("FluTimePickerAPView.qss", this, FluThemeUtils::getUtils()->getTheme());

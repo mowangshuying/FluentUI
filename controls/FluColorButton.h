@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QPushButton>
-#include "../Utils/FluStyleSheetUtils.h"
+#include "../utils/FluStyleSheetUtils.h"
 
 class FluColorButton : public QPushButton
 {

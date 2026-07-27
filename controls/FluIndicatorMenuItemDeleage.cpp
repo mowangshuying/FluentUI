@@ -1,5 +1,5 @@
-﻿#include "FluIndicatorMenuItemDeleage.h"
-#include "../Utils/FluUtils.h"
+#include "FluIndicatorMenuItemDeleage.h"
+#include "../utils/FluUtils.h"
 
 FluIndicatorMenuItemDeleage::FluIndicatorMenuItemDeleage(QObject *parent /*= nullptr*/) : FluMenuItemDelegate(parent)
 {

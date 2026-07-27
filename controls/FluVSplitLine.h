@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 #include <QStyleOption>
 #include <QPainter>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluVSplitLine : public FluWidget
 {

@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include <QWidget>
 #include <QListWidgetItem>
 #include <QPainter>
 #include "FluRoundMenu.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 
 class FluSubMenuItemWidget : public QWidget
 {

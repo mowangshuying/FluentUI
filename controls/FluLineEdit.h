@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <QLineEdit>
 #include "FluDef.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QPainter>
 #include <QPainterPath>
 #include <QPaintEvent>

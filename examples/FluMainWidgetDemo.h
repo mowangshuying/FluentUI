@@ -1,15 +1,15 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluFrameLessWidget.h"
+#include "../controls/FluFrameLessWidget.h"
 
 #include <FramelessHelper/Core/framelessmanager.h>
 #include <FramelessHelper/Widgets/framelesswidgetshelper.h>
 #include <FramelessHelper/Widgets/standardsystembutton.h>
 #include <FramelessHelper/Widgets/standardtitlebar.h>
 
-#include "../Controls/FluMenuBar.h"
-#include "../Controls/FluAction.h"
-#include "../Controls/FluMenu.h"
+#include "../controls/FluMenuBar.h"
+#include "../controls/FluAction.h"
+#include "../controls/FluMenu.h"
 
 class FluMainWidgetDemo : public FluFrameLessWidget
 {

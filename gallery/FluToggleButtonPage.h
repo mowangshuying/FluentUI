@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 
 #include "FluAEmptyPage.h"
-#include "../Controls/FluPushButton.h"
-#include "../Controls/FluToggleButton.h"
-#include "../Controls/FluDisplayBox.h"
-#include "../Controls/FluVScrollView.h"
+#include "../controls/FluPushButton.h"
+#include "../controls/FluToggleButton.h"
+#include "../controls/FluDisplayBox.h"
+#include "../controls/FluVScrollView.h"
 
 class FluToggleButtonPage : public FluAEmptyPage
 {

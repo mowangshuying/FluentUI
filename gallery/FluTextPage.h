@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "FluATitlePage.h"
-#include "../Controls/FluHCard.h"
-#include "../Controls/FluFWScrollView.h"
+#include "../controls/FluHCard.h"
+#include "../controls/FluFWScrollView.h"
 
 class FluTextPage : public FluATitlePage
 {

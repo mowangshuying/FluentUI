@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
-#include "../Controls/FluInfoBadge.h"
-#include "../Controls/FluWidget.h"
+#include "../controls/FluInfoBadge.h"
+#include "../controls/FluWidget.h"
 #include <QHBoxLayout>
 
 class FluInfoBadgeDemo : public FluWidget

@@ -1,5 +1,5 @@
-﻿#include "FluMVDemo.h"
-#include "../Controls/FluPushButton.h"
+#include "FluMVDemo.h"
+#include "../controls/FluPushButton.h"
 
 FluMVDemo::FluMVDemo(QWidget* parent)
 {

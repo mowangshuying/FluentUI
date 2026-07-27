@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QPushButton>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QDesktopServices>
 
 class FluHyperLinkButton : public QPushButton

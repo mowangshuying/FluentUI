@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -12,7 +12,7 @@
 #include "FluWidget.h"
 #include "FluVNavigationItem.h"
 #include "FluVNavigationIndicator.h"
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <stack>
 
 class FluVNavigationView;

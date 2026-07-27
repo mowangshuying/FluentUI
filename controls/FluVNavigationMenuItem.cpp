@@ -1,5 +1,5 @@
-﻿#include "FluVNavigationMenuItem.h"
-#include "../Utils/FluUtils.h"
+#include "FluVNavigationMenuItem.h"
+#include "../utils/FluUtils.h"
 #include <QPropertyAnimation>
 
 FluVNavigationMenuItem::FluVNavigationMenuItem(QWidget *parent /*= nullptr*/) : FluVNavigationItem(parent)

@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 
 #include <QTextEdit>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include <QTextDocument>
 #include <QWidget>
 #include "FluScrollDelegate.h"

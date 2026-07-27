@@ -1,6 +1,6 @@
 #include "FluComboBoxDemo.h"
-#include "../Controls/FluLabel.h"
-#include "../Controls/FluPushButton.h"
+#include "../controls/FluLabel.h"
+#include "../controls/FluPushButton.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGridLayout>

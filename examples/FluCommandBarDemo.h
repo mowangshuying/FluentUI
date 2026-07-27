@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "FluTemplateDemo.h"
-#include "../Controls/FluCommandBar.h"
-#include "../Controls/FluCommandBarIconTextItem.h"
-#include "../Controls/FluCommandBarIconItem.h"
+#include "../controls/FluCommandBar.h"
+#include "../controls/FluCommandBarIconTextItem.h"
+#include "../controls/FluCommandBarIconItem.h"
 
 class FluCommandBarDemo : public FluTemplateDemo
 {

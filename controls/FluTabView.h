@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "FluWidget.h"
 
@@ -6,7 +6,7 @@
 #include "FluWidget.h"
 #include <QVBoxLayout>
 #include <QStackedLayout>
-#include "../Utils/FluUtils.h"
+#include "../utils/FluUtils.h"
 #include "FluWidget.h"
 #include "FluStackedLayout.h"
 #include <QStyleOption>

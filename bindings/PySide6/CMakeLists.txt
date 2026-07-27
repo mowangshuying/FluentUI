@@ -283,6 +283,46 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluFrameLessTitleBar.h"
     "${CMAKE_SOURCE_DIR}/controls/FluFrameLessWidget.h"
     "${CMAKE_SOURCE_DIR}/controls/FluFrameLessWidgetEx.h"
+    # Controls - Remaining classes
+    "${CMAKE_SOURCE_DIR}/controls/FluAmPmView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCalendarItem.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCalendarSelectDayView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCalendarSelectMonthView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCalendarSelectYearView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCalendarViewTitle.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluCodeSyntaxHighlighter.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorViewGradient.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorViewHHandle.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluColorViewVHandle.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDatePickerView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDatePickerViewMask.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDockManager.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluFlowLayout.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluIndicatorMenuItemDeleage.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluListViewItemDelegate.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMenuAniMgr.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMenuItemDelegate.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluMSWindow.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPMenuBarStyle.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluPMenuStyle.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluScrollBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluScrollBarArrowButton.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluScrollBarHandle.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluScrollBarTrunk.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluScrollDelegate.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluShortcutMenuItemDelegate.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluStackedLayout.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluSubMenuItemWidget.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTableItemDelegate.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluThread.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimePicker24H.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimePicker24HView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimePickerAP.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimePickerAPView.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTimePickerViewMask.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluTreeViewItemDelegate.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluValueObject.h"
 )
 
 # Expected generated wrapper files (Shiboken6 generates lowercase names)
@@ -465,6 +505,46 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluframelesstitlebar_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluframelesswidget_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluframelesswidgetex_wrapper.cpp
+    # Controls wrappers - Remaining classes
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluampmview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucalendaritem_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucalendarselectdayview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucalendarselectmonthview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucalendarselectyearview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucalendarviewtitle_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucodesyntaxhighlighter_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorviewgradient_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorviewhhandle_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorviewvhandle_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludatepickerview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludatepickerviewmask_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludockmanager_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluflowlayout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluindicatormenuitemdeleage_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flulistviewitemdelegate_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumenuanimgr_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumenuitemdelegate_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flumswindow_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupmenubarstyle_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupmenustyle_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluscrollbar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluscrollbararrowbutton_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluscrollbarhandle_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluscrollbartrunk_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluscrolldelegate_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flushortcutmenuitemdelegate_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flustackedlayout_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusubmenuitemwidget_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutableitemdelegate_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluthread_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimepicker24h_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimepicker24hview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimepickerap_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimepickerapview_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutimepickerviewmask_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutreeviewitemdelegate_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvalueobject_wrapper.cpp
 )
 
 # Generate bindings using Shiboken6

@@ -743,4 +743,123 @@
         <include file-name="FluFrameLessWidgetEx.h" location="global"/>
     </object-type>
     
+    <!-- Remaining classes -->
+    <object-type name="FluAmPmView">
+        <include file-name="FluAmPmView.h" location="global"/>
+    </object-type>
+    <object-type name="FluCalendarItem">
+        <include file-name="FluCalendarItem.h" location="global"/>
+    </object-type>
+    <object-type name="FluCalendarSelectDayView">
+        <include file-name="FluCalendarSelectDayView.h" location="global"/>
+    </object-type>
+    <object-type name="FluCalendarSelectMonthView">
+        <include file-name="FluCalendarSelectMonthView.h" location="global"/>
+    </object-type>
+    <object-type name="FluCalendarSelectYearView">
+        <include file-name="FluCalendarSelectYearView.h" location="global"/>
+    </object-type>
+    <object-type name="FluCalendarViewTitle">
+        <include file-name="FluCalendarViewTitle.h" location="global"/>
+    </object-type>
+    <object-type name="FluCodeSyntaxHighlighter">
+        <include file-name="FluCodeSyntaxHighlighter.h" location="global"/>
+    </object-type>
+    <object-type name="FluColorView">
+        <include file-name="FluColorView.h" location="global"/>
+    </object-type>
+    <object-type name="FluColorViewGradient">
+        <include file-name="FluColorViewGradient.h" location="global"/>
+    </object-type>
+    <object-type name="FluColorViewHHandle">
+        <include file-name="FluColorViewHHandle.h" location="global"/>
+    </object-type>
+    <object-type name="FluColorViewVHandle">
+        <include file-name="FluColorViewVHandle.h" location="global"/>
+    </object-type>
+    <object-type name="FluDatePickerView">
+        <include file-name="FluDatePickerView.h" location="global"/>
+    </object-type>
+    <object-type name="FluDatePickerViewMask">
+        <include file-name="FluDatePickerViewMask.h" location="global"/>
+    </object-type>
+    <object-type name="FluDockManager">
+        <include file-name="FluDockManager.h" location="global"/>
+    </object-type>
+    <object-type name="FluFlowLayout">
+        <include file-name="FluFlowLayout.h" location="global"/>
+    </object-type>
+    <object-type name="FluIndicatorMenuItemDeleage">
+        <include file-name="FluIndicatorMenuItemDeleage.h" location="global"/>
+    </object-type>
+    <object-type name="FluListViewItemDelegate">
+        <include file-name="FluListViewItemDelegate.h" location="global"/>
+    </object-type>
+    <object-type name="FluMenuAniMgr">
+        <include file-name="FluMenuAniMgr.h" location="global"/>
+    </object-type>
+    <object-type name="FluMenuItemDelegate">
+        <include file-name="FluMenuItemDelegate.h" location="global"/>
+    </object-type>
+    <object-type name="FluMSWindow">
+        <include file-name="FluMSWindow.h" location="global"/>
+    </object-type>
+    <object-type name="FluPMenuBarStyle">
+        <include file-name="FluPMenuBarStyle.h" location="global"/>
+    </object-type>
+    <object-type name="FluPMenuStyle">
+        <include file-name="FluPMenuStyle.h" location="global"/>
+    </object-type>
+    <object-type name="FluScrollBar">
+        <include file-name="FluScrollBar.h" location="global"/>
+    </object-type>
+    <object-type name="FluScrollBarArrowButton">
+        <include file-name="FluScrollBarArrowButton.h" location="global"/>
+    </object-type>
+    <object-type name="FluScrollBarHandle">
+        <include file-name="FluScrollBarHandle.h" location="global"/>
+    </object-type>
+    <object-type name="FluScrollBarTrunk">
+        <include file-name="FluScrollBarTrunk.h" location="global"/>
+    </object-type>
+    <object-type name="FluScrollDelegate">
+        <include file-name="FluScrollDelegate.h" location="global"/>
+    </object-type>
+    <object-type name="FluShortcutMenuItemDelegate">
+        <include file-name="FluShortcutMenuItemDelegate.h" location="global"/>
+    </object-type>
+    <object-type name="FluStackedLayout">
+        <include file-name="FluStackedLayout.h" location="global"/>
+    </object-type>
+    <object-type name="FluSubMenuItemWidget">
+        <include file-name="FluSubMenuItemWidget.h" location="global"/>
+    </object-type>
+    <object-type name="FluTableItemDelegate">
+        <include file-name="FluTableItemDelegate.h" location="global"/>
+    </object-type>
+    <object-type name="FluThread">
+        <include file-name="FluThread.h" location="global"/>
+    </object-type>
+    <object-type name="FluTimePicker24H">
+        <include file-name="FluTimePicker24H.h" location="global"/>
+    </object-type>
+    <object-type name="FluTimePicker24HView">
+        <include file-name="FluTimePicker24HView.h" location="global"/>
+    </object-type>
+    <object-type name="FluTimePickerAP">
+        <include file-name="FluTimePickerAP.h" location="global"/>
+    </object-type>
+    <object-type name="FluTimePickerAPView">
+        <include file-name="FluTimePickerAPView.h" location="global"/>
+    </object-type>
+    <object-type name="FluTimePickerViewMask">
+        <include file-name="FluTimePickerViewMask.h" location="global"/>
+    </object-type>
+    <object-type name="FluTreeViewItemDelegate">
+        <include file-name="FluTreeViewItemDelegate.h" location="global"/>
+    </object-type>
+    <object-type name="FluValueObject">
+        <include file-name="FluValueObject.h" location="global"/>
+    </object-type>
+    
 </typesystem>

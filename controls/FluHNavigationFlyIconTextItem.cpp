@@ -88,6 +88,28 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth(int minWidth)
     setFixedHeight(maxH + totalHMargins);
 }
 
+void FluHNavigationFlyIconTextItem::adjustItemHeight()
+{
+    auto vLayout = getVScrollView()->getMainLayout();
+
+    int h = 0;
+    for (int i = 0; i < vLayout->count(); i++)
+    {
+        auto tmpItem = (FluHNavigationIconTextItem*)(vLayout->itemAt(i)->widget());
+        h += tmpItem->height();
+    }
+
+    h += 15;
+    if (h > 400)
+        h = 400;
+
+    m_scrollView->setFixedHeight(h);
+
+    int totalHMargins = m_scrollView->getMainLayout()->contentsMargins().top() + m_scrollView->getMainLayout()->contentsMargins().bottom() + 
+        m_mainLayout->contentsMargins().top() + m_mainLayout->contentsMargins().bottom();
+    setFixedHeight(h + totalHMargins);
+}
+
 QVBoxLayout* FluHNavigationFlyIconTextItem::getMainLayout()
 {
     return m_mainLayout;

@@ -8,8 +8,10 @@
 #include "../controls/FluHNavigationIconTextItem.h"
 #include "../controls/FluHNavigationSearchItem.h"
 #include "../controls/FluHNavigationSettingsItem.h"
+#include "../controls/FluThemeButton.h"
 
 #include <QLabel>
+FRAMELESSHELPER_USE_NAMESPACE
 FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
     setWindowTitle("CppQt WinUI3  Navigation Demo Dev");
@@ -17,12 +19,17 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     setWindowTitle("CppQt WinUI3 Navigation Demo");
 #endif
 
-    setWindowIcon(QIcon("../res/Tiles/GalleryIcon.ico"));
-    m_titleBar->chromePalette()->setTitleBarActiveBackgroundColor(Qt::transparent);
-    m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
-    m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::black);
-    m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::black);
+    setWindowIcon(QIcon(":/res/Tiles/GalleryIcon.ico"));
     m_titleBar->setFixedHeight(36);
+
+#ifndef Q_OS_MACOS
+    auto hLayout = (QHBoxLayout *)m_titleBar->layout();
+    auto vLayout = (QVBoxLayout *)hLayout->itemAt(1)->layout();
+    auto hButtonLayout = (QHBoxLayout *)vLayout->itemAt(0)->layout();
+    auto themeButton = new FluThemeButton;
+    hButtonLayout->insertWidget(0, themeButton);
+    FramelessWidgetsHelper::get(this)->setHitTestVisible(themeButton);
+#endif
 
     // new
     m_mainLayout->setAlignment(Qt::AlignTop);
@@ -312,5 +319,5 @@ void FluHNavigationViewDemo::onThemeChanged()
         m_titleBar->show();
     }
 
-    FluStyleSheetUtils::setQssByFileName("FluHNavigationDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
+    FluStyleSheetUtils::setQssByFileName("FluHNavigationViewDemo.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

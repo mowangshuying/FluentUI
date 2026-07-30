@@ -55,6 +55,7 @@ void FluHNavigationView::addItemToLayout(QWidget* item, FluHNavigationItemPositi
             item->setParent(m_MidWrapWidget);
             iconTextItem->setParentIsFlyIconTextItem(false);
             iconTextItem->setParentIsNavigationView(true);
+            iconTextItem->setFixedWidth(iconTextItem->calcItemWidth());
             m_items.push_back(iconTextItem);
             break;
         }
@@ -145,7 +146,7 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
     for (int i = 0; i < m_items.size(); i++)
     {
         m_items[i]->show();
-        if (midWidth + m_items[i]->sizeHint().width() + m_moreItem->sizeHint().width() > m_MidWrapWidget->width())
+        if (midWidth + m_items[i]->width() + m_moreItem->width() > m_MidWrapWidget->width())
         {
             for (int j = i; j < m_items.size(); j++)
             {
@@ -157,7 +158,7 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
         else
         {
             m_items[i]->move(midWidth, 0);
-            midWidth += m_items[i]->sizeHint().width();
+            midWidth += m_items[i]->width();
             // LOG_DEBUG << "IconTextItem Move to x:" << midWidth;
         }
     }

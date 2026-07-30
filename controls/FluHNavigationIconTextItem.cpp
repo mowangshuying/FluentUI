@@ -257,7 +257,7 @@ void FluHNavigationIconTextItem::addItem(FluHNavigationIconTextItem* item)
     setArrowButtonToChevronDown();
 }
 
-int FluHNavigationIconTextItem::calcItemW1Width()
+int FluHNavigationIconTextItem::calcItemW1Width() const
 {
     QMargins margins = m_wrapWidget1->contentsMargins();
     int leftMargins = margins.left();
@@ -291,7 +291,12 @@ int FluHNavigationIconTextItem::calcItemW1Width()
     return w1Width;
 }
 
-int FluHNavigationIconTextItem::calcItemWidth()
+QSize FluHNavigationIconTextItem::sizeHint() const
+{
+    return QSize(calcItemWidth(), 34);
+}
+
+int FluHNavigationIconTextItem::calcItemWidth() const
 {
     if (m_isDown || isLeaf())
     {
@@ -521,7 +526,7 @@ FluHNavigationIconTextItem* FluHNavigationIconTextItem::getRootItem()
     return item;
 }
 
-bool FluHNavigationIconTextItem::isLeaf()
+bool FluHNavigationIconTextItem::isLeaf() const
 {
     return m_items.empty();
 }

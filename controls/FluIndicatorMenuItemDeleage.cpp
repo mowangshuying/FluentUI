@@ -11,9 +11,11 @@ void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionVie
     if (isSeparator(index))
         return;
 
+    //LOG_DEBUG << option.text;
     if (!(option.state & QStyle::State_Selected))
         return;
 
+    LOG_DEBUG << option.text;
     painter->save();
     painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
     painter->setPen(Qt::NoPen);
@@ -27,6 +29,6 @@ void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionVie
 
     //qreal height 
 
-    painter->drawRoundedRect(6, option.rect.height() * 0.2, 3, 15, 1.5, 1.5);
+    painter->drawRoundedRect(6, option.rect.y() + option.rect.height() * 0.2, 3, option.rect.height() * 0.6, 1.5, 1.5);
     painter->restore();
 }

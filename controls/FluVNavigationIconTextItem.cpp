@@ -92,6 +92,10 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
     onThemeChanged();
 }
 
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(QIcon icon, QString text, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(icon, text, "", parent)
+{
+}
+
 FluVNavigationIconTextItem::FluVNavigationIconTextItem(QIcon icon, QString text, QString key, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
 {
     m_iconButton->setIcon(icon);
@@ -112,6 +116,10 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QString key
     m_isHideIcon = true;
     m_label->setText(text);
     setKey(key);
+}
+
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(awesomeType, text, "", parent)
+{
 }
 
 FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QString key, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)

@@ -29,8 +29,7 @@ class FluAllSamplesPage : public FluATitlePage
     void makeScrollingCards();
     void makeStatusInfoCards();
     void makeTextCards();
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 

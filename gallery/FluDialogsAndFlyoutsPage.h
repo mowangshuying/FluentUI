@@ -12,8 +12,7 @@ class FluDialogsAndFlyoutsPage : public FluATitlePage
   public:
     FluDialogsAndFlyoutsPage(QWidget* parent = nullptr);
 
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

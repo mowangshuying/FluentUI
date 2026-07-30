@@ -13,8 +13,7 @@ class FluLayoutPage : public FluATitlePage
     Q_OBJECT
   public:
     FluLayoutPage(QWidget* parent = nullptr);
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

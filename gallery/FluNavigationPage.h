@@ -13,8 +13,7 @@ class FluNavigationPage : public FluATitlePage
   public:
     FluNavigationPage(QWidget* parent = nullptr);
 
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

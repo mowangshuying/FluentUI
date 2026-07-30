@@ -10,8 +10,7 @@ class FluStatusAndInfoPage : public FluATitlePage
     Q_OBJECT
   public:
     FluStatusAndInfoPage(QWidget* parent = nullptr);
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

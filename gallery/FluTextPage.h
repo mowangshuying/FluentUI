@@ -9,8 +9,7 @@ class FluTextPage : public FluATitlePage
     Q_OBJECT
   public:
     FluTextPage(QWidget* parent = nullptr);
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

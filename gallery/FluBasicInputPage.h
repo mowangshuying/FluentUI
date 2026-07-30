@@ -18,8 +18,6 @@ class FluBasicInputPage : public FluATitlePage
   public:
     FluBasicInputPage(QWidget* parent = nullptr);
 
-  signals:
-    void clickedHCard(QString key);
   public slots:
     void onThemeChanged();
 

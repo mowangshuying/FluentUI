@@ -23,11 +23,11 @@ class FluVNavigationIconTextItem : public FluVNavigationItem
   public:
     FluVNavigationIconTextItem(QWidget *parent = nullptr);
 
-    FluVNavigationIconTextItem(QIcon icon, QString text, QWidget *parent = nullptr);
+    FluVNavigationIconTextItem(QIcon icon, QString text,  QString key, QWidget *parent = nullptr);
 
-    FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent = nullptr);
+    FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QString key, QWidget *parent = nullptr);
 
-    FluVNavigationIconTextItem(QString text, QWidget *parent = nullptr);
+    FluVNavigationIconTextItem(QString text, QString key, QWidget *parent = nullptr);
 
     FluVNavigationIconTextItem(FluVNavigationIconTextItem *item, QWidget *parent = nullptr);
 

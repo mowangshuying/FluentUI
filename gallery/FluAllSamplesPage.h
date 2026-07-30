@@ -24,7 +24,6 @@ class FluAllSamplesPage : public FluATitlePage
 
     void makeLayoutCards();
     void makeMediaCards();
-    void makeMenusAndToolbars();
     void makeNavigationCards();
     void makeScrollingCards();
     void makeStatusInfoCards();
@@ -33,6 +32,4 @@ class FluAllSamplesPage : public FluATitlePage
   public slots:
     void onThemeChanged();
 
-  protected:
-    std::vector<FluHCard*> m_cards;
 };

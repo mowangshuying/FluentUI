@@ -720,6 +720,16 @@ QWidget* FluHNavigationIconTextItem::getVerticalIndicator()
     return m_verticalIndicator;
 }
 
+void FluHNavigationIconTextItem::hideHorizontalIndicator()
+{
+    m_horizontalIndicatorWrap->hide();
+}
+
+void FluHNavigationIconTextItem::showHorizontalIndicator()
+{
+    m_horizontalIndicatorWrap->show();
+}
+
 void FluHNavigationIconTextItem::mouseReleaseEvent(QMouseEvent* event)
 {
     QPoint pos = event->pos();
@@ -739,7 +749,7 @@ void FluHNavigationIconTextItem::paintEvent(QPaintEvent* event)
 
 void FluHNavigationIconTextItem::onItemClicked()
 {
-     //LOG_DEBUG << getText() << " called";
+     LOG_DEBUG << getText() << " called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -803,7 +813,13 @@ void FluHNavigationIconTextItem::onItemClicked()
                 setArrowButtonToChevronUp();
 
                 flyIconTextItem->setIconTextItems(getItems(), width());
-                flyIconTextItem->setPositionRelativeTo(this, height());
+
+                /// 
+                QPoint topLeft = mapToGlobal(QPoint(0, 0));
+                int nParentCenterX = topLeft.x() + width() / 2 - flyIconTextItem->width() / 2;
+                int nflyoutY = topLeft.y() + height() + 4;
+                flyIconTextItem->move(nParentCenterX, nflyoutY);
+                flyIconTextItem->show();
             }
             else
             {

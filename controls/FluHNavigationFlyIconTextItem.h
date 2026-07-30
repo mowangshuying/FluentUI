@@ -18,7 +18,6 @@ class FluHNavigationView;
 class FluHNavigationFlyIconTextItem : public FluWidget
 {
     Q_OBJECT
-    Q_PROPERTY(int dropHeight READ dropHeight WRITE setDropHeight)
   public:
     FluHNavigationFlyIconTextItem(QWidget* parent = nullptr);
 
@@ -30,13 +29,6 @@ class FluHNavigationFlyIconTextItem : public FluWidget
 
     FluVScrollView* getVScrollView();
 
-    void showWithAnimation(QPoint pos);
-
-    void setPositionRelativeTo(QWidget* parentItem, int navBarHeight);
-
-    int dropHeight() const { return m_dropHeight; }
-    void setDropHeight(int h);
-
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
 
@@ -44,14 +36,6 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     FluHNavigationView* getNavView();
     void getCloseByClickedItem(bool b);
     bool setCloseByClickedItem();
-
-    void paintEvent(QPaintEvent* event)
-    {
-        QStyleOption opt;
-        opt.initFrom(this);
-        QPainter painter(this);
-        style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-    }
 
     void closeEvent(QCloseEvent* event)
     {
@@ -70,11 +54,4 @@ class FluHNavigationFlyIconTextItem : public FluWidget
     FluVScrollView* m_scrollView;
     FluHNavigationView* m_NavView;
     std::vector<FluHNavigationIconTextItem*> m_items;
-
-    QGraphicsOpacityEffect* m_opacityEffect;
-    QPropertyAnimation* m_fadeAnimation;
-    QPropertyAnimation* m_dropAnimation;
-    QParallelAnimationGroup* m_showGroup;
-    int m_dropHeight;
-    int m_fullHeight;
 };

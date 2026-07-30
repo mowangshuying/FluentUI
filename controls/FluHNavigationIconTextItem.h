@@ -104,6 +104,9 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     QWidget* getVerticalIndicator();
 
+    void hideHorizontalIndicator();
+    void showHorizontalIndicator();
+
     void mouseReleaseEvent(QMouseEvent* event);
 
     void paintEvent(QPaintEvent* event);

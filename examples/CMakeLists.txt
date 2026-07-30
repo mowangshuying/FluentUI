@@ -31,7 +31,9 @@ if(USE_QRC)
 if(QT_VERSION VERSION_GREATER_EQUAL "6.2")
 set(QSS_FILES
     "../stylesheet/dark/FluMenuDemo.qss"
-    "../stylesheet/light/FluHNavigationDemo.qss"
+    "../stylesheet/light/FluHNavigationViewDemo.qss"
+    "../stylesheet/dark/FluHNavigationViewDemo.qss"
+    "../stylesheet/atomOneDark/FluHNavigationViewDemo.qss"
     "../stylesheet/light/FluMenuDemo.qss"
     "../stylesheet/light/FluTemplateDemo.qss"
     "../stylesheet/dark/FluTemplateDemo.qss"

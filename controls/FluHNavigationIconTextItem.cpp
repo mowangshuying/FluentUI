@@ -370,27 +370,15 @@ void FluHNavigationIconTextItem::adjustItemHeight(FluHNavigationIconTextItem* it
     item->m_wrapWidget2->setFixedHeight(h);
     item->setFixedHeight(item->m_wrapWidget1->height() + item->m_wrapWidget2->height());
 
-    adjustItemHeight(item->m_parentItem);
     if (item->parentIsFlyIconTextItem())
     {
         auto flyIconTextItem = item->getParentFlyIconTextItem();
-        auto vLayout = flyIconTextItem->getVScrollView()->getMainLayout();
-
-        int h = 0;
-        for (int i = 0; i < vLayout->count(); i++)
-        {
-            auto tmpItem = (FluHNavigationIconTextItem*)(vLayout->itemAt(i)->widget());
-            h += tmpItem->sizeHint().height();
-        }
-
-        // h += 15;
-        h += 15;
-        if (h > 600)
-            h = 600;
-
-        flyIconTextItem->setFixedHeight(h);
+        flyIconTextItem->adjustItemHeight();
         flyIconTextItem->show();
+        return;
     }
+
+    adjustItemHeight(item->m_parentItem);
 }
 
 void FluHNavigationIconTextItem::adjustItemWidth(FluHNavigationIconTextItem* item, int& maxWidth, int& callHierarchy)
@@ -575,8 +563,6 @@ void FluHNavigationIconTextItem::expand()
                 maxW = tmpWidth;
             }
         }
-
-        // LOG_DEBUG << "item H:" << h << ", item W:" << maxW;
 
         for (int i = 0; i < m_verticalLayout1->count(); i++)
         {
@@ -769,6 +755,11 @@ void FluHNavigationIconTextItem::onItemClicked()
     }
 
     if (getText() == "Screen reader support")
+    {
+        QThread::msleep(0);
+    }
+
+    if (getText() == "Text")
     {
         QThread::msleep(0);
     }

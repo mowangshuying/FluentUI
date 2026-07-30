@@ -365,5 +365,6 @@ FodyWeavers.xsd
 
 build/
 out/
+enc_temp_folder/
 CMakePresets.json
 CMakeUserPresets.json

@@ -419,10 +419,10 @@ int main(int argc, char **argv)
     // FluMenuBarDemo demo;
     // demo.show();
 
-    //FluComboBoxDemo demo;
-    //demo.show();
-
-    FluHNavigationViewDemo demo;
+    FluComboBoxDemo demo;
     demo.show();
+
+    //FluHNavigationViewDemo demo;
+    //demo.show();
     return app.exec();
 }

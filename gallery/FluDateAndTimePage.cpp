@@ -5,25 +5,13 @@ FluDateAndTimePage::FluDateAndTimePage(QWidget* parent /*= nullptr*/) : FluATitl
     m_mainLayout->setContentsMargins(35, 35, 0, 35);
     m_titleLabel->setText(tr("Date & Time"));
 
-    auto calendarDatePickerCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/CalendarDatePicker.png")), tr("CalendarDatePicker"), tr("A control that lets users pick a date value using a calendar."));
-    calendarDatePickerCard->setKey("CalendarDatePickerPage");
-    getFWScrollView()->getMainLayout()->addWidget(calendarDatePickerCard);
-    connect(calendarDatePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/CalendarDatePicker.png")), tr("CalendarDatePicker"), tr("A control that lets users pick a date value using a calendar."), "CalendarDatePickerPage");
 
-    auto calendarViewCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/CalendarView.png")), tr("CalendarView"), tr("A control that presents aa calendar for a user to choose a date from."));
-    calendarViewCard->setKey("CalendarViewPage");
-    getFWScrollView()->getMainLayout()->addWidget(calendarViewCard);
-    connect(calendarViewCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/CalendarView.png")), tr("CalendarView"), tr("A control that presents aa calendar for a user to choose a date from."), "CalendarViewPage");
 
-    auto datePickerCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/DatePicker.png")), tr("DatePicker"), tr("A control that lets a user pick a date value."));
-    datePickerCard->setKey("DatePickerPage");
-    getFWScrollView()->getMainLayout()->addWidget(datePickerCard);
-    connect(datePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/DatePicker.png")), tr("DatePicker"), tr("A control that lets a user pick a date value."), "DatePickerPage");
 
-    auto timePickerCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/TimePicker.png")), tr("TimePicker"), tr("A configurable control that lets a user pick a time value."));
-    timePickerCard->setKey("TimePickerPage");
-    getFWScrollView()->getMainLayout()->addWidget(timePickerCard);
-    connect(timePickerCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/TimePicker.png")), tr("TimePicker"), tr("A configurable control that lets a user pick a time value."), "TimePickerPage");
 
     onThemeChanged();
 }

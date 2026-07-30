@@ -12,8 +12,7 @@ class FluScrollingPage : public FluATitlePage
     Q_OBJECT
   public:
     FluScrollingPage(QWidget* parent = nullptr);
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged()
     {

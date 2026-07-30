@@ -13,8 +13,7 @@ class FluCollectionsPage : public FluATitlePage
   public:
     FluCollectionsPage(QWidget* parent = nullptr);
 
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

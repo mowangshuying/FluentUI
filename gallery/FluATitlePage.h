@@ -18,6 +18,9 @@ class FluATitlePage : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
+  signals:
+    void clickedHCard(QString key);
+
   protected:
     QLabel* m_titleLabel;
     QVBoxLayout* m_mainLayout;

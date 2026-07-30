@@ -17,8 +17,7 @@ class FluDateAndTimePage : public FluATitlePage
   public:
     FluDateAndTimePage(QWidget* parent = nullptr);
 
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

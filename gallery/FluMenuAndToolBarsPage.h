@@ -12,8 +12,7 @@ class FluMenuAndToolBarsPage : public FluATitlePage
     Q_OBJECT
   public:
     FluMenuAndToolBarsPage(QWidget* parent = nullptr);
-  signals:
-    void clickedHCard(QString key);
+
   public slots:
     void onThemeChanged();
 };

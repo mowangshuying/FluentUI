@@ -4,51 +4,36 @@ FluHNavigationIconTextItem {
 }
 
 #wrapWidget1 {
-    background-color: rgb(33, 37, 43);
+    background-color: transparent;
     border-radius: 4px;
 }
 
 #wrapWidget1[selected=true] {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.06);
     border-radius: 4px;
 }
 
 #wrapWidget1[enableThisItem=false] {
     background-color: transparent;
-    background-color: rgb(33, 37, 43);
 }
 
 #wrapWidget1:hover {
-    background-color: rgb(44, 48, 54);
+    background-color: rgba(255, 255, 255, 0.04);
     border-radius: 4px;
 }
 
 #wrapWidget1[enableThisItem=false]:hover {
-    background-color: rgb(33, 37, 43);
+     background-color: transparent;
 }
 
 #wrapWidget1[fly=true][selected=true] {
-    background-color: rgb(44, 48, 54);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 #wrapWidget1[fly=true]:hover {
-    background-color: rgb(40, 44, 52);
+    background-color: rgba(255, 255, 255, 0.04);
 }
 
-#indicator {
-    background-color: transparent;
-    border-radius: 2px;
-}
-
-#indicator[selected=true] {
-    background-color: rgb(82, 139, 255);
-    border-radius: 2px;
-}
-
-#indicator[enableThisItem=false] {
-    background-color: transparent;
-    border-radius: 2px;
-}
 
 #icon {
     border: none;
@@ -57,12 +42,16 @@ FluHNavigationIconTextItem {
 
 #label {
     background-color: transparent;
-    font-size: 11px;
-    color: rgb(171, 178, 191);
+    font-size: 14px;
+    color: #ffffff;
+}
+
+#label[selected=true] {
+    color: #ffffff;
 }
 
 #label[enableThisItem=false] {
-    color: rgb(92, 98, 110);
+    color: #5c6370;
 }
 
 #arrow {

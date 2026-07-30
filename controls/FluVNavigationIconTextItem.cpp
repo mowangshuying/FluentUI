@@ -99,7 +99,14 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QIcon icon, QString text,
     setKey(key);
 }
 
-FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QString key, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
+{
+    m_iconButton->hide();
+    m_isHideIcon = true;
+    m_label->setText(text);
+}
+
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QString key, QWidget *parent) : FluVNavigationIconTextItem(parent)
 {
     m_iconButton->hide();
     m_isHideIcon = true;

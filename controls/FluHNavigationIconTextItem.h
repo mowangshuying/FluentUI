@@ -66,9 +66,9 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void addItem(FluHNavigationIconTextItem* item);
 
-    int calcItemW1Width();
+    int calcItemW1Width() const;
 
-    int calcItemWidth();
+    int calcItemWidth() const;
 
     int calcItemW2Height(FluHNavigationIconTextItem* item);
 
@@ -86,7 +86,7 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     FluHNavigationIconTextItem* getRootItem();
 
-    bool isLeaf();
+    bool isLeaf() const;
 
     void expand();
 
@@ -106,6 +106,8 @@ class FluHNavigationIconTextItem : public FluHNavigationItem
 
     void hideHorizontalIndicator();
     void showHorizontalIndicator();
+
+    QSize sizeHint() const override;
 
     void mouseReleaseEvent(QMouseEvent* event);
 

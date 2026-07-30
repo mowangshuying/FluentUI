@@ -6,7 +6,7 @@
 #include "../controls/FluFWScrollView.h"
 #include "../controls/FluHCard.h"
 
-FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
+FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_mainLayout = new QVBoxLayout;
     m_mainLayout->setAlignment(Qt::AlignTop);

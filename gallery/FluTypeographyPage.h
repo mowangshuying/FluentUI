@@ -8,16 +8,18 @@
 #include "../controls/FluCodeExpander.h"
 
 // a page to display label demo
+class QVBoxLayout;
 class FluTypeographyPage : public FluAEmptyPage
 {
     Q_OBJECT
   public:
     FluTypeographyPage(QWidget* parent = nullptr);
 
-    QWidget* addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int height);
+    void addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int height);
   public slots:
     void onThemeChanged();
 
   protected:
     QLabel* m_imgLabel;
+    QVBoxLayout* m_typeRampWrapLayout;
 };

@@ -5,8 +5,6 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     m_titleLabel->setText(tr("Typography"));
     m_mainLayout->setAlignment(Qt::AlignTop);
 
-    // m_subTitleLabel->setText("FluentUI::FluTypeography");
-
     auto typeRampLabel = new QLabel;
     typeRampLabel->setText(tr("Type ramp"));
     typeRampLabel->setWordWrap(true);
@@ -17,9 +15,9 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     typeRampWrap->setObjectName("typeRampWrap");
     m_scrollView->getMainLayout()->addWidget(typeRampWrap);
 
-    auto typeRampWrapLayout = new QVBoxLayout;
-    typeRampWrapLayout->setAlignment(Qt::AlignTop);
-    typeRampWrap->setLayout(typeRampWrapLayout);
+    auto m_typeRampWrapLayout = new QVBoxLayout;
+    m_typeRampWrapLayout->setAlignment(Qt::AlignTop);
+    typeRampWrap->setLayout(m_typeRampWrapLayout);
 
     m_imgLabel = new QLabel;
     m_imgLabel->setObjectName("imgLabel");
@@ -29,36 +27,19 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     m_imgLabel->setPixmap(pixmap);
 
     auto imgLabelLayout = new QHBoxLayout;
-    typeRampWrapLayout->addLayout(imgLabelLayout);
+    m_typeRampWrapLayout->addLayout(imgLabelLayout);
     imgLabelLayout->addWidget(m_imgLabel, 0, Qt::AlignTop | Qt::AlignLeft);
 
-    auto row1 = addARow(FluLabelStyle::CaptionTextBlockStyle, tr("Example"), tr("Variable Font"), tr("Size"), tr("Style"), 60);
-    typeRampWrapLayout->addWidget(row1, 0, Qt::AlignTop);
-
-    auto row2 = addARow(FluLabelStyle::CaptionTextBlockStyle, tr("Caption"), tr("Text,Regular"), tr("12/16 epx"), tr("CaptionTextBlockStyle"), 60);
-    typeRampWrapLayout->addWidget(row2, 0, Qt::AlignTop);
-
-    auto row3 = addARow(FluLabelStyle::BodyTextBlockStyle, tr("Body"), tr("Text,SemiBold"), tr("14/20 epx"), tr("BodyStrongTextBlockStyle"), 60);
-    typeRampWrapLayout->addWidget(row3, 0, Qt::AlignTop);
-
-    auto row4 = addARow(FluLabelStyle::BodyStrongTextBlockStyle, tr("Body Strong"), tr("Text, SemiBold"), tr("14/20 epx"), tr("BodyStrongTextBlockStyle"), 60);
-    typeRampWrapLayout->addWidget(row4, 0, Qt::AlignTop);
-
-    auto row5 = addARow(FluLabelStyle::SubTitleTextBlockStyle, tr("Subtitle"), tr("Display, SemiBold"), tr("20/28 epx"), tr("SubtitleTextBlockStyle"), 60);
-    typeRampWrapLayout->addWidget(row5, 0, Qt::AlignTop);
-
-    auto row6 = addARow(FluLabelStyle::TitleTextBlockStyle, tr("Title"), tr("Display, SemiBold"), tr("28/36 epx"), tr("TitleTextBlockStyle"), 60);
-    typeRampWrapLayout->addWidget(row6, 0, Qt::AlignTop);
-
-    auto row7 = addARow(FluLabelStyle::TitleLargeTextBlockStyle, tr("Title Large"), tr("Display, SemiBold"), tr("40/52 epx"), tr("TitleLargeTextBlockStyle"), 80);
-    typeRampWrapLayout->addWidget(row7, 0, Qt::AlignTop);
-
-    auto row8 = addARow(FluLabelStyle::DisplayTextBlockStyle, tr("Display"), tr("Display, SemiBold"), tr("68/92 epx"), tr("DisplayTextBlockStyle"), 100);
-    typeRampWrapLayout->addWidget(row8, 0, Qt::AlignTop);
-
+    addARow(FluLabelStyle::CaptionTextBlockStyle, tr("Example"), tr("Variable Font"), tr("Size"), tr("Style"), 60);
+    addARow(FluLabelStyle::CaptionTextBlockStyle, tr("Caption"), tr("Text,Regular"), tr("12/16 epx"), tr("CaptionTextBlockStyle"), 60);
+    addARow(FluLabelStyle::BodyTextBlockStyle, tr("Body"), tr("Text,SemiBold"), tr("14/20 epx"), tr("BodyStrongTextBlockStyle"), 60);
+    addARow(FluLabelStyle::BodyStrongTextBlockStyle, tr("Body Strong"), tr("Text, SemiBold"), tr("14/20 epx"), tr("BodyStrongTextBlockStyle"), 60);
+    addARow(FluLabelStyle::SubTitleTextBlockStyle, tr("Subtitle"), tr("Display, SemiBold"), tr("20/28 epx"), tr("SubtitleTextBlockStyle"), 60);
+    addARow(FluLabelStyle::TitleTextBlockStyle, tr("Title"), tr("Display, SemiBold"), tr("28/36 epx"), tr("TitleTextBlockStyle"), 60);
+    addARow(FluLabelStyle::TitleLargeTextBlockStyle, tr("Title Large"), tr("Display, SemiBold"), tr("40/52 epx"), tr("TitleLargeTextBlockStyle"), 80);
+    addARow(FluLabelStyle::DisplayTextBlockStyle, tr("Display"), tr("Display, SemiBold"), tr("68/92 epx"), tr("DisplayTextBlockStyle"), 100);
+    
     auto expander = new FluCodeExpander;
-    // expander->setWrap2Height(60);
-    //     expander->setFixedHeight(50);
     QString code = tr("auto label = new FluLabel;label->setStyle(FluLabelStyle::CaptionTextBlockStyle);");
     expander->setCodeText(code);
     m_scrollView->getMainLayout()->addWidget(expander);
@@ -66,7 +47,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     onThemeChanged();
 }
 
-QWidget* FluTypeographyPage::addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int height)
+void FluTypeographyPage::addARow(FluLabelStyle labelStyle, QString text1, QString text2, QString text3, QString text4, int height)
 {
     auto label1 = new FluLabel;
     auto label2 = new FluLabel;
@@ -97,7 +78,7 @@ QWidget* FluTypeographyPage::addARow(FluLabelStyle labelStyle, QString text1, QS
     labelsWrapLayout->addWidget(label3);
     labelsWrapLayout->addWidget(label4);
 
-    return labelsWrap;
+    m_typeRampWrapLayout->addWidget(labelsWrap);
 }
 
 void FluTypeographyPage::onThemeChanged()

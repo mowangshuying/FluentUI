@@ -3,9 +3,14 @@
     border-radius: 4px;
 }
 
+FluHNavigationFlyIconTextItem {
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 4px;
+}
+
 QScrollArea {
     background-color: rgb(32, 32, 32);
-    border: 1px solid rgb(53, 53, 53);
+    border: none;
     border-radius: 4px;
 }
 

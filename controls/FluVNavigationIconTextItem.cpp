@@ -92,24 +92,27 @@ FluVNavigationIconTextItem::FluVNavigationIconTextItem(QWidget *parent /*= nullp
     onThemeChanged();
 }
 
-FluVNavigationIconTextItem::FluVNavigationIconTextItem(QIcon icon, QString text, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(QIcon icon, QString text, QString key, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
 {
     m_iconButton->setIcon(icon);
     m_label->setText(text);
+    setKey(key);
 }
 
-FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(QString text, QString key, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
 {
     m_iconButton->hide();
     m_isHideIcon = true;
     m_label->setText(text);
+    setKey(key);
 }
 
-FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
+FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluAwesomeType awesomeType, QString text, QString key, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)
 {
     m_awesomeType = awesomeType;
     m_iconButton->setIcon(FluIconUtils::getFluentIcon(m_awesomeType, FluThemeUtils::getUtils()->getTheme()));
     m_label->setText(text);
+    setKey(key);
 }
 
 FluVNavigationIconTextItem::FluVNavigationIconTextItem(FluVNavigationIconTextItem *item, QWidget *parent /*= nullptr*/) : FluVNavigationIconTextItem(parent)

@@ -39,26 +39,18 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     auto item22 = new FluHNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item2);
     auto item23 = new FluHNavigationIconTextItem(FluAwesomeType::Color, "Colors", item2);
     auto item24 = new FluHNavigationIconTextItem(FluAwesomeType::EaseOfAccess, "Accessibility", item2);
-    auto item241 = new FluHNavigationIconTextItem("Screen reader support", item24);
-    auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
-    auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
-
-    // auto item2411 = new FluHNavigationIconTextItem("The Other1--------xyz", item241);
-    // auto item2412 = new FluHNavigationIconTextItem("The Other2--------xyzxyz", item241);
-    // auto item2413 = new FluHNavigationIconTextItem("The Other3--------xyzxyzxyz", item241);
+    //auto item241 = new FluHNavigationIconTextItem("Screen reader support", item24);
+    //auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
+    //auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
 
     item2->addItem(item21);
     item2->addItem(item22);
     item2->addItem(item23);
     item2->addItem(item24);
 
-    item24->addItem(item241);
-    item24->addItem(item242);
-    item24->addItem(item243);
-
-    // item241->addItem(item2411);
-    //   item241->addItem(item2412);
-    //  item241->addItem(item2413);
+    //item24->addItem(item241);
+    //item24->addItem(item242);
+    //item24->addItem(item243);
 
     m_navView->addItemToLayout(item2, FluHNavigationItemPosition::Mid);
 
@@ -188,8 +180,6 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
 
     auto item10 = new FluHNavigationIconTextItem(FluAwesomeType::Save, "Menu & toolbars");
 
-    //  auto item101 = new FluHNavigationIconTextItem("XamlUICommand", item10);
-    //  auto item102 = new FluHNavigationIconTextItem("StandardUICommand", item10);
     auto item103 = new FluHNavigationIconTextItem("AppBarButton", item10);
     auto item104 = new FluHNavigationIconTextItem("AppBarSeparator", item10);
     auto item105 = new FluHNavigationIconTextItem("AppBarToggleButton", item10);
@@ -199,8 +189,6 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     auto item109 = new FluHNavigationIconTextItem("MenuFlyout", item10);
     auto item1010 = new FluHNavigationIconTextItem("SwipeControl", item10);
 
-    // item10->addItem(item101);
-    // item10->addItem(item102);
     item10->addItem(item103);
     item10->addItem(item104);
     item10->addItem(item105);
@@ -289,7 +277,7 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     bodyWidget->setObjectName("bodyWidget");
     m_contentLayout->addWidget(bodyWidget);
 
-    FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluHNavigationDemo.qss", this);
+    onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
     resize(800, 600);
 }
@@ -307,12 +295,7 @@ void FluHNavigationViewDemo::onThemeChanged()
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::black);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::black);
 #endif
-        // m_titleBar->update();
-        // m_titleBar->style()->polish(m_titleBar);
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluHNavigationDemo.qss", this);
-        // repaint();
-        // QApplication::processEvents();
     }
     else
     {
@@ -320,17 +303,13 @@ void FluHNavigationViewDemo::onThemeChanged()
         m_titleBar->chromePalette()->setTitleBarInactiveBackgroundColor(Qt::transparent);
         m_titleBar->chromePalette()->setTitleBarActiveForegroundColor(Qt::white);
         m_titleBar->chromePalette()->setTitleBarInactiveForegroundColor(Qt::white);
-        // m_titleBar->update();
-        // m_titleBar->style()->polish(m_titleBar);
+
 #ifndef Q_OS_MACOS
         m_titleBar->minimizeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->closeButton()->setActiveForegroundColor(Qt::white);
         m_titleBar->maximizeButton()->setActiveForegroundColor(Qt::white);
 #endif
         m_titleBar->show();
-        // FluStyleSheetUtils::setQssByFileName("../stylesheet/dark/FluHNavigationDemo.qss", this);
-        // repaint();
-        // QApplication::processEvents();
     }
 
     FluStyleSheetUtils::setQssByFileName("FluHNavigationDemo.qss", this, FluThemeUtils::getUtils()->getTheme());

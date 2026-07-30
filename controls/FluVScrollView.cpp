@@ -4,8 +4,11 @@ FluVScrollView::FluVScrollView(QWidget* parent /*= nullptr*/) : FluScrollArea(pa
 {
     setWidgetResizable(true);
     setMinimumSize(0, 0);
+    setFrameStyle(QFrame::NoFrame);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     hideHScrollBar();
+
+    setContentsMargins(0, 0, 0, 0);
 
     m_contextWidget = new QWidget(this);
     setWidget(m_contextWidget);

@@ -37,11 +37,3 @@ FluHCard* FluATitlePage::addHCard(QPixmap icon, QString title, QString context, 
     connect(card, &FluHCard::clicked, this, [=](QString k) { emit clickedHCard(k); });
     return card;
 }
-
-void FluATitlePage::paintEvent(QPaintEvent* event)
-{
-    QStyleOption opt;
-    opt.initFrom(this);
-    QPainter painter(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-}

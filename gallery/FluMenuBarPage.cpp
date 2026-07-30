@@ -161,16 +161,11 @@ void FluMenuBarPage::addRoundMenu()
     roundMenu->addSeparator();
 
     auto selectAllAction = new FluAction(tr("Select all"));
-    // selectAllAction->setShortcut(QKeySequence("Ctrl+A"));
     roundMenu->addAction(selectAllAction);
 
     auto settingAction = new FluAction(FluAwesomeType::Settings, tr("Setting"));
     auto helpAction = new FluAction(FluAwesomeType::Help, tr("Help"));
     auto feedbackAction = new FluAction(FluAwesomeType::Feedback, tr("Feedback"));
-
-    // settingAction->setShortcut(QKeySequence("Ctrl+S"));
-    // helpAction->setShortcut(QKeySequence("Ctrl+H"));
-    // feedbackAction->setShortcut(QKeySequence("Ctrl+F"));
 
     roundMenu->addAction(settingAction);
     roundMenu->addAction(helpAction);

@@ -8,6 +8,7 @@
 
 FluHNavigationFlyIconTextItem {
     border: 1px solid rgb(233, 233, 233);
+    background-color: rgb(243, 243, 243);
     border-radius: 8px;
 }
 

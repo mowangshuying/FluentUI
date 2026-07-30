@@ -6,6 +6,7 @@
 #include "../controls/FluIconButton.h"
 #include "../controls/FluVScrollView.h"
 #include "../controls/FluDropDownButton.h"
+#include "../controls/FluHCard.h"
 
 FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -74,6 +75,15 @@ FluAEmptyPage::FluAEmptyPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_scrollView->getMainLayout()->addWidget(m_infoLabel, 0, Qt::AlignTop);
     m_scrollView->getMainLayout()->addSpacing(20);
     FluStyleSheetUtils::setQssByFileName("FluAEmptyPage.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+FluHCard* FluAEmptyPage::addHCard(QPixmap icon, QString title, QString context, QString key)
+{
+    auto card = new FluHCard(icon, title, context, this);
+    card->setKey(key);
+    m_scrollView->getMainLayout()->addWidget(card);
+    connect(card, &FluHCard::clicked, this, [=](QString k) { emit clickedHCard(k); });
+    return card;
 }
 
 void FluAEmptyPage::paintEvent(QPaintEvent* event)

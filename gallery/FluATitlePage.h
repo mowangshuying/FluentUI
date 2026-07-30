@@ -19,8 +19,6 @@ class FluATitlePage : public FluWidget
 
     FluHCard* addHCard(QPixmap icon, QString title, QString context, QString key);
 
-    void paintEvent(QPaintEvent* event);
-
   signals:
     void clickedHCard(QString key);
 

@@ -21,8 +21,6 @@ void FluAppBarToggleButtonPage::addSymbolIconAppBarButton()
     auto appBarButton = new FluAppBarToggleButton(FluAwesomeType::Like);
     appBarButton->setText("SymbolIcon");
     displayBox->getBodyLayout()->addWidget(appBarButton);
-    // connect(appBarButton, &FluAppBarToggleButton::clicked, [=]() { LOG_DEBUG << "called"; });
-
     m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 

@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 
 class FluFWScrollView;
+class FluHCard;
 class FluATitlePage : public FluWidget
 {
     Q_OBJECT
@@ -15,6 +16,8 @@ class FluATitlePage : public FluWidget
     {
         return m_scrollView;
     }
+
+    FluHCard* addHCard(QPixmap icon, QString title, QString context, QString key);
 
     void paintEvent(QPaintEvent* event);
 

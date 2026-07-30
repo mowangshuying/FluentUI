@@ -4,6 +4,7 @@
 
 #include "../controls/FluVScrollView.h"
 #include "../controls/FluFWScrollView.h"
+#include "../controls/FluHCard.h"
 
 FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
 {
@@ -26,6 +27,15 @@ FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/)
 
     m_scrollView->getMainLayout()->setAlignment(Qt::AlignTop);
     FluStyleSheetUtils::setQssByFileName("FluATitlePage.qss", this, FluThemeUtils::getUtils()->getTheme());
+}
+
+FluHCard* FluATitlePage::addHCard(QPixmap icon, QString title, QString context, QString key)
+{
+    auto card = new FluHCard(icon, title, context, this);
+    card->setKey(key);
+    m_scrollView->getMainLayout()->addWidget(card);
+    connect(card, &FluHCard::clicked, this, [=](QString k) { emit clickedHCard(k); });
+    return card;
 }
 
 void FluATitlePage::paintEvent(QPaintEvent* event)

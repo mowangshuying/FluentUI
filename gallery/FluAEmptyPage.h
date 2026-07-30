@@ -6,13 +6,19 @@
 #include "../controls/FluSearchLineEdit.h"
 
 class FluVScrollView;
+class FluHCard;
 class FluAEmptyPage : public FluWidget
 {
     Q_OBJECT
   public:
     FluAEmptyPage(QWidget* parent = nullptr);
 
+    FluHCard* addHCard(QPixmap icon, QString title, QString context, QString key);
+
     void paintEvent(QPaintEvent* event);
+
+  signals:
+    void clickedHCard(QString key);
 
   protected:
     QLabel* m_titleLabel;

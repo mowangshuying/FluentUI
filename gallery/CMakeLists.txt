@@ -740,6 +740,7 @@ endif()
 
 if (USE_QRC)
     add_definitions(-DUSE_QRC)
+    # add_definitions(-DUSE_WINDOWKIT_WIDGET)
 endif()
 
 target_link_libraries(${TGT}

@@ -104,6 +104,7 @@ void FluComboBoxEx::setCurrentIndex(int index)
         return;
     m_currentIndex = index;
     updateText();
+    m_menu->setDefaultAction(m_currentIndex);
     emit currentIndexChanged(m_currentIndex);
     emit currentTextChanged(currentText());
 }
@@ -342,6 +343,8 @@ void FluComboBoxEx::updateText()
     if (m_currentIndex >= 0 && m_currentIndex < m_menu->actions().size())
     {
         m_textBtn->setText(m_menu->actions()[m_currentIndex]->text());
+        m_textBtn->setProperty("isPlaceholder", false);
+        m_textBtn->style()->polish(m_textBtn);
     }
     else if (!m_placeholderText.isEmpty())
     {

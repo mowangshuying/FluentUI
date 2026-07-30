@@ -15,7 +15,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     typeRampWrap->setObjectName("typeRampWrap");
     m_scrollView->getMainLayout()->addWidget(typeRampWrap);
 
-    auto m_typeRampWrapLayout = new QVBoxLayout;
+    m_typeRampWrapLayout = new QVBoxLayout;
     m_typeRampWrapLayout->setAlignment(Qt::AlignTop);
     typeRampWrap->setLayout(m_typeRampWrapLayout);
 

@@ -14,10 +14,10 @@ class FluComboBoxDemo : public FluTemplateDemo
 
   protected:
     FluComboBoxEx* m_basicCombo;
-    FluComboBoxEx* m_placeholderCombo;
-    FluComboBoxEx* m_programCombo;
-    FluComboBoxEx* m_enableCombo;
-    FluComboBoxEx* m_iconCombo;
-    FluLabel* m_resultLabel;
-    FluLabel* m_countLabel;
+  ///*  FluComboBoxEx* m_placeholderCombo;
+  //  FluComboBoxEx* m_programCombo;
+  //  FluComboBoxEx* m_enableCombo;
+  //  FluComboBoxEx* m_iconCombo;
+  //  FluLabel* m_resultLabel;
+  //  FluLabel* m_countLabel;*/
 };

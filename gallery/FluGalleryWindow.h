@@ -123,7 +123,7 @@ class FluGalleryWindow : public FluWindowKitWidget
     void onThemeChanged();
 
   protected:
-    FluVNavigationView *m_navView;
+    FluVNavigationView *m_vNavView;
     FluHNavigationView *m_hNavView;
     bool m_isHorizontalNav;
     FluStackedLayout *m_layout;

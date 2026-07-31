@@ -119,6 +119,7 @@ class FluGalleryWindow : public FluWindowKitWidget
     void closeEvent(QCloseEvent *event);
 
   public slots:
+    void onClickedHCard(QString key);
     void onThemeChanged();
 
   protected:

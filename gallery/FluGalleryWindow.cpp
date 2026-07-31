@@ -279,15 +279,7 @@ void FluGalleryWindow::makeHomeNavItem()
     m_layout->addWidget("HomePage", homePage);
     connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_layout->setCurrentWidget("HomePage"); });
 
-    connect(homePage, &FluHomePage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(homePage, &FluHomePage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     makeHNavigationItem(FluAwesomeType::Home, tr("Home"), "HomePage");
 }
@@ -369,16 +361,7 @@ void FluGalleryWindow::makeSamplesNavItem()
     m_layout->addWidget("AllSamplesPage", allSamplesPage);
     connect(item, &FluVNavigationIconTextItem::itemClicked, [=]() { m_layout->setCurrentWidget("AllSamplesPage"); });
 
-    connect(allSamplesPage, &FluAllSamplesPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(allSamplesPage, &FluAllSamplesPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     makeHNavigationItem(FluAwesomeType::AllApps, tr("All samples"), "AllSamplesPage");
 }
@@ -461,16 +444,7 @@ void FluGalleryWindow::makeBasicInputNavItem()
     m_layout->addWidget("ToggleSwitchPage", toggleSwitchPage);
     connect(item15, &FluVNavigationIconTextItem::itemClicked, [=]() { m_layout->setCurrentWidget("ToggleSwitchPage"); });
 
-    connect(basicInputPage, &FluBasicInputPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(basicInputPage, &FluBasicInputPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item2);
@@ -529,15 +503,7 @@ void FluGalleryWindow::makeCollectionsNavItem()
     m_layout->addWidget("TableViewPage", tableViewPage);
     connect(item8, &FluVNavigationIconTextItem::itemClicked, [=]() { m_layout->setCurrentWidget("TableViewPage"); });
 
-    connect(collectionsPage, &FluCollectionsPage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(collectionsPage, &FluCollectionsPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item5);
@@ -578,16 +544,7 @@ void FluGalleryWindow::makDateTimeNavItem()
     m_layout->addWidget("TimePickerPage", timePickerPage);
     connect(item4, &FluVNavigationIconTextItem::itemClicked, [=]() { m_layout->setCurrentWidget("TimePickerPage"); });
 
-    connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item2);
@@ -623,15 +580,7 @@ void FluGalleryWindow::makeDialogsFlyouts()
 
     FluVNavigationIconTextItem *item3 = new FluVNavigationIconTextItem(tr("TeachingTip"), "TeachingTipPage", item);
 
-    connect(dialogAndFlyoutPage, &FluDialogsAndFlyoutsPage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(dialogAndFlyoutPage, &FluDialogsAndFlyoutsPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item2);
@@ -682,16 +631,7 @@ void FluGalleryWindow::makeLayoutNavItem()
 
     FluVNavigationIconTextItem *item11 = new FluVNavigationIconTextItem(tr("Viewbox"), "ViewboxPage", item);
 
-    connect(layoutPage, &FluLayoutPage::clickedHCard, [=](QString key) {
-        // LOG_DEBUG << key;
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(layoutPage, &FluLayoutPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item2);
@@ -794,15 +734,7 @@ void FluGalleryWindow::makeMenuToolBarsNavItem()
 
     FluVNavigationIconTextItem *item10 = new FluVNavigationIconTextItem(tr("SwipeControl"), "SwipeControlPage", item);
 
-    connect(menusAndToolBarsPage, &FluMenuAndToolBarsPage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(menusAndToolBarsPage, &FluMenuAndToolBarsPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item3);
     item->addItem(item4);
@@ -877,15 +809,7 @@ void FluGalleryWindow::makeScrollingNavItem()
     m_layout->addWidget("ScrollViewPage", scrollViewPage);
     connect(item3, &FluVNavigationIconTextItem::itemClicked, [=]() { m_layout->setCurrentWidget("ScrollViewPage"); });
 
-    connect(scrollingPage, &FluScrollingPage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(scrollingPage, &FluScrollingPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem(tr("ScrollViewer"), item);
     FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem(tr("SemanticZoom"), item);
@@ -934,15 +858,7 @@ void FluGalleryWindow::makeStatusInfoNavItem()
 
     FluVNavigationIconTextItem *item5 = new FluVNavigationIconTextItem(tr("ToolTip"), "ProgressRingPage", item);
 
-    connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item2);
@@ -991,15 +907,7 @@ void FluGalleryWindow::makeTextNavItem()
     m_layout->addWidget("TextBoxPage", textBoxPage);
     connect(item7, &FluVNavigationIconTextItem::itemClicked, [=]() { m_layout->setCurrentWidget("TextBoxPage"); });
 
-    connect(textPage, &FluTextPage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(textPage, &FluTextPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item2);
@@ -1038,6 +946,17 @@ void FluGalleryWindow::closeEvent(QCloseEvent *event)
         FluConfigUtils::getUtils()->setNavStyle(m_isHorizontalNav ? 1 : 0);
         FluConfigUtils::getUtils()->setViewCollapsed(!m_navView->isLong());
         QApplication::quit();
+    }
+}
+
+void FluGalleryWindow::onClickedHCard(QString key)
+{
+    auto item = m_navView->getItemByKey(key);
+    if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
+    {
+        auto iconTextItem = (FluVNavigationIconTextItem *)(item);
+        iconTextItem->onItemClickedDirect();
+        m_layout->setCurrentWidget(key);
     }
 }
 

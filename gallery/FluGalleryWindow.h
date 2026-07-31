@@ -80,39 +80,67 @@ class FluGalleryWindow : public FluWindowKitWidget
     FluGalleryWindow(QWidget *parent = nullptr);
 
     void switchNavigationStyle(int index);
-    void makeHNavigationItem(FluAwesomeType type, QString text, QString key);
-    void makeHNavigationGroup(FluAwesomeType type, QString text, std::vector<QPair<QString, QString>> items);
     void animateNavSwitch(bool toHorizontal);
 
     void makeHomeNavItem();
+    void makeHomeHNavItem();
+    void makeHomeVNavItem();
 
     void makeDesignGuidanceNavItem();
+    void makeDesignGuidanceHNavItem();
+    void makeDesignGuidanceVNavItem();
 
     void makeSamplesNavItem();
+    void makeSamplesHNavItem();
+    void makeSamplesVNavItem();
 
     void makeBasicInputNavItem();
+    void makeBasicInputHNavItem();
+    void makeBasicInputVNavItem();
 
     void makeCollectionsNavItem();
+    void makeCollectionsHNavItem();
+    void makeCollectionsVNavItem();
 
     void makDateTimeNavItem();
+    void makDateTimeHNavItem();
+    void makDateTimeVNavItem();
 
     void makeDialogsFlyouts();
+    void makeDialogsFlyoutsHNavItem();
+    void makeDialogsFlyoutsVNavItem();
 
     void makeLayoutNavItem();
+    void makeLayoutHNavItem();
+    void makeLayoutVNavItem();
 
     void makeMediaNavItem();
+    void makeMediaHNavItem();
+    void makeMediaVNavItem();
 
     void makeSettingsNavItem();
+    void makeSettingsHNavItem();
+    void makeSettingsVNavItem();
 
     void makeMenuToolBarsNavItem();
+    void makeMenuToolBarsHNavItem();
+    void makeMenuToolBarsVNavItem();
 
     void makeNavigationNavItem();
+    void makeNavigationHNavItem();
+    void makeNavigationVNavItem();
 
     void makeScrollingNavItem();
+    void makeScrollingHNavItem();
+    void makeScrollingVNavItem();
 
     void makeStatusInfoNavItem();
+    void makeStatusInfoHNavItem();
+    void makeStatusInfoVNavItem();
 
     void makeTextNavItem();
+    void makeTextHNavItem();
+    void makeTextVNavItem();
 
     void resizeEvent(QResizeEvent *event);
 

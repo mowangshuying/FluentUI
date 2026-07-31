@@ -281,6 +281,17 @@ void FluGalleryWindow::makeDesignGuidanceHNavItem()
     m_hNavView->insertIconTextItem(FluAwesomeType::FontSize, tr("Typography"), "TypographyPage", "DesignGuidancePage");
     m_hNavView->insertIconTextItem(FluAwesomeType::EmojiTabSymbols, tr("Icons"), "IconsPage", "DesignGuidancePage");
     m_hNavView->insertIconTextItem(FluAwesomeType::Emoji, tr("Emoijs"), "EmoijsPage", "DesignGuidancePage");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("2.level"), "2.levelPage", "DesignGuidancePage");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level1"), "3.level1Page", "2.levelPage");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level2"), "3.level2Page", "2.levelPage");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level3"), "3.level3Page", "2.levelPage");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level1"), "4.level1Page", "3.level1Page");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level2"), "4.level2Page", "3.level1Page");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level3"), "4.level3Page", "3.level1Page");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level1"), "5.level1Page", "4.level3Page");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level2"), "5.level2Page", "4.level3Page");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level3"), "5.level3Page", "4.level3Page");
+    m_hNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level4"), "5.level4Page", "4.level3Page");
 }
 
 void FluGalleryWindow::makeDesignGuidanceVNavItem()

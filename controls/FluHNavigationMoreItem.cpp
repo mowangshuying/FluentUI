@@ -94,6 +94,10 @@ void FluHNavigationMoreItem::onItemClicked()
     auto flyIconTextItem = new FluHNavigationFlyIconTextItem;
     flyIconTextItem->setNavView(navView);
     flyIconTextItem->setIconTextItems(navView->getHideItems());
+    connect(flyIconTextItem, &FluHNavigationFlyIconTextItem::itemSelected, this, [=](QString key) {
+        if (!key.isEmpty())
+            emit navView->keyChanged(key);
+    });
     flyIconTextItem->show();
 
     QPoint gPoint = mapToGlobal(QPoint(width() - flyIconTextItem->width(), height()));

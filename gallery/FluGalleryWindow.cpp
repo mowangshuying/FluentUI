@@ -126,6 +126,16 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     // settings
     makeSettingsNavItem();
 
+    for (int i = 0; i < m_layout->count(); i++)
+    {
+        QWidget *page = m_layout->widget(i);
+        if (page)
+        {
+            page->setProperty("noBorder", m_isHorizontalNav);
+            page->style()->polish(page);
+        }
+    }
+
     m_vNavView->updateSearchKeys();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });

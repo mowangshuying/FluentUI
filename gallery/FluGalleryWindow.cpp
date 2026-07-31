@@ -61,10 +61,10 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     int navStyle = FluConfigUtils::getUtils()->getNavStyle();
     m_isHorizontalNav = (navStyle == 1);
 
-    m_navView = new FluVNavigationView(this);
+    m_vNavView = new FluVNavigationView(this);
     m_layout = new FluStackedLayout;
 
-    m_contentLayout->addWidget(m_navView);
+    m_contentLayout->addWidget(m_vNavView);
     m_contentLayout->addLayout(m_layout, 1);
 
     m_hNavView = new FluHNavigationView(this);
@@ -72,10 +72,10 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_mainLayout->insertWidget(1, m_hNavView);
     
     if (m_isHorizontalNav) {
-        m_navView->hide();
+        m_vNavView->hide();
         m_hNavView->show();
     } else {
-        m_navView->show();
+        m_vNavView->show();
         m_hNavView->hide();
     }
 
@@ -126,11 +126,11 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     // settings
     makeSettingsNavItem();
 
-    m_navView->updateSearchKeys();
+    m_vNavView->updateSearchKeys();
 
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, [=](FluTheme theme) { onThemeChanged(); });
-    connect(m_navView, &FluVNavigationView::searchKeyChanged, this, [=](QString text) { m_layout->setCurrentWidget(text); });
-    connect(m_navView, &FluVNavigationView::keyChanged, this, [=](QString key) { m_layout->setCurrentWidget(key); });
+    connect(m_vNavView, &FluVNavigationView::searchKeyChanged, this, [=](QString text) { m_layout->setCurrentWidget(text); });
+    connect(m_vNavView, &FluVNavigationView::keyChanged, this, [=](QString key) { m_layout->setCurrentWidget(key); });
     connect(m_hNavView, &FluHNavigationView::keyChanged, this, [=](QString key) { m_layout->setCurrentWidget(key); });
 
     auto settingsPage = (FluSettingPage *)m_layout->getWidget("SettingPage");
@@ -146,11 +146,11 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     resize(1200, 900);
     setMinimumWidth(850);
     int navWidth = FluConfigUtils::getUtils()->getNavWidth();
-    m_navView->setViewWidth(navWidth > 0 ? navWidth : 300);
-    m_navView->setOnlyCollapseView(false);
+    m_vNavView->setViewWidth(navWidth > 0 ? navWidth : 300);
+    m_vNavView->setOnlyCollapseView(false);
 
     if (!m_isHorizontalNav && FluConfigUtils::getUtils()->getViewCollapsed())
-        m_navView->collapseView();
+        m_vNavView->collapseView();
 
     onThemeChanged();
 }
@@ -200,15 +200,15 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
 
     if (toHorizontal)
     {
-        m_navView->setFixedWidth(m_navView->width());
-        auto vAnim = new QPropertyAnimation(m_navView, "maximumWidth", this);
+        m_vNavView->setFixedWidth(m_vNavView->width());
+        auto vAnim = new QPropertyAnimation(m_vNavView, "maximumWidth", this);
         vAnim->setDuration(200);
         vAnim->setEasingCurve(QEasingCurve::OutCubic);
-        vAnim->setStartValue(m_navView->width());
+        vAnim->setStartValue(m_vNavView->width());
         vAnim->setEndValue(0);
         connect(vAnim, &QPropertyAnimation::finished, this, [=]() {
-            m_navView->setVisible(false);
-            m_navView->setMaximumWidth(QWIDGETSIZE_MAX);
+            m_vNavView->setVisible(false);
+            m_vNavView->setMaximumWidth(QWIDGETSIZE_MAX);
         });
         vAnim->start(QAbstractAnimation::DeleteWhenStopped);
 
@@ -227,18 +227,18 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
     }
     else
     {
-        m_navView->setFixedWidth(0);
-        m_navView->setVisible(true);
-        auto vAnim = new QPropertyAnimation(m_navView, "maximumWidth", this);
+        m_vNavView->setFixedWidth(0);
+        m_vNavView->setVisible(true);
+        auto vAnim = new QPropertyAnimation(m_vNavView, "maximumWidth", this);
         vAnim->setDuration(200);
         vAnim->setEasingCurve(QEasingCurve::OutCubic);
         vAnim->setStartValue(0);
 
         ///
-        vAnim->setEndValue(m_navView->calcViewWidthByIsLong());
+        vAnim->setEndValue(m_vNavView->calcViewWidthByIsLong());
         connect(vAnim, &QPropertyAnimation::finished, this, [=]() {
-            m_navView->setMaximumWidth(QWIDGETSIZE_MAX);
-            m_navView->setFixedWidth(m_navView->calcViewWidthByIsLong());
+            m_vNavView->setMaximumWidth(QWIDGETSIZE_MAX);
+            m_vNavView->setFixedWidth(m_vNavView->calcViewWidthByIsLong());
         });
         vAnim->start(QAbstractAnimation::DeleteWhenStopped);
 
@@ -270,7 +270,7 @@ void FluGalleryWindow::switchNavigationStyle(int index)
 
 void FluGalleryWindow::makeHomeNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Home, tr("Home"), "HomePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Home, tr("Home"), "HomePage");
 
     auto homePage = new FluHomePage;
     m_layout->addWidget("HomePage", homePage);
@@ -282,25 +282,25 @@ void FluGalleryWindow::makeHomeNavItem()
 
 void FluGalleryWindow::makeDesignGuidanceNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Design, tr("Design guidance"), "DesignGuidancePage");
-    m_navView->insertIconTextItem(FluAwesomeType::FontSize, tr("Typography"), "TypographyPage", "DesignGuidancePage");
-    m_navView->insertIconTextItem(FluAwesomeType::EmojiTabSymbols, tr("Icons"), "IconsPage", "DesignGuidancePage");
-    m_navView->insertIconTextItem(FluAwesomeType::Emoji, tr("Emoijs"), "EmoijsPage", "DesignGuidancePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Design, tr("Design guidance"), "DesignGuidancePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::FontSize, tr("Typography"), "TypographyPage", "DesignGuidancePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::EmojiTabSymbols, tr("Icons"), "IconsPage", "DesignGuidancePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Emoji, tr("Emoijs"), "EmoijsPage", "DesignGuidancePage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("2.level"), "2.levelPage", "DesignGuidancePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("2.level"), "2.levelPage", "DesignGuidancePage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level1"), "3.level1Page", "2.levelPage");
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level2"), "3.level2Page", "2.levelPage");
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level3"), "3.level3Page", "2.levelPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level1"), "3.level1Page", "2.levelPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level2"), "3.level2Page", "2.levelPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("3.level3"), "3.level3Page", "2.levelPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level1"), "4.level1Page", "3.level1Page");
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level2"), "4.level2Page", "3.level1Page");
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level3"), "4.level3Page", "3.level1Page");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level1"), "4.level1Page", "3.level1Page");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level2"), "4.level2Page", "3.level1Page");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("4.level3"), "4.level3Page", "3.level1Page");
 
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level1"), "5.level1Page", "4.level3Page");
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level2"), "5.level2Page", "4.level3Page");
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level3"), "5.level3Page", "4.level3Page");
-    m_navView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level4"), "5.level4Page", "4.level3Page");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level1"), "5.level1Page", "4.level3Page");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level2"), "5.level2Page", "4.level3Page");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level3"), "5.level3Page", "4.level3Page");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Airplane, tr("5.level4"), "5.level4Page", "4.level3Page");
 
     auto typographyPage = new FluTypeographyPage;
     m_layout->addWidget("TypographyPage", typographyPage);
@@ -314,7 +314,7 @@ void FluGalleryWindow::makeDesignGuidanceNavItem()
 
 void FluGalleryWindow::makeSamplesNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::AllApps, tr("All samples"), "AllSamplesPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::AllApps, tr("All samples"), "AllSamplesPage");
 
     auto allSamplesPage = new FluAllSamplesPage;
     m_layout->addWidget("AllSamplesPage", allSamplesPage);
@@ -326,52 +326,52 @@ void FluGalleryWindow::makeSamplesNavItem()
 
 void FluGalleryWindow::makeBasicInputNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::CheckboxComposite, tr("Basic input"), "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::CheckboxComposite, tr("Basic input"), "BasicInputPage");
     auto basicInputPage = new FluBasicInputPage;
     m_layout->addWidget("BasicInputPage", basicInputPage);
 
-    auto *inputValidation = m_navView->insertIconTextItem(FluAwesomeType::None, tr("InputValidation"), "InputValidation", "BasicInputPage");
+    auto *inputValidation = m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("InputValidation"), "InputValidation", "BasicInputPage");
     inputValidation->enableThisItem(false);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Button"), "ButtonPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Button"), "ButtonPage", "BasicInputPage");
     m_layout->addWidget("ButtonPage", new FluButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("DropDownButton"), "DropDownButtonPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("DropDownButton"), "DropDownButtonPage", "BasicInputPage");
     m_layout->addWidget("DropDownButtonPage", new FluDropDownButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("HyperLinkButton"), "HyperLinkButtonPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("HyperLinkButton"), "HyperLinkButtonPage", "BasicInputPage");
     m_layout->addWidget("HyperLinkButtonPage", new FluHyperLinkButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("RepeatButton"), "RepeatButtonPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("RepeatButton"), "RepeatButtonPage", "BasicInputPage");
     m_layout->addWidget("RepeatButtonPage", new FluRepeatButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ToggleButton"), "ToggleButtonPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ToggleButton"), "ToggleButtonPage", "BasicInputPage");
     m_layout->addWidget("ToggleButtonPage", new FluToggleButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("SplitButton"), "SplitButtonPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("SplitButton"), "SplitButtonPage", "BasicInputPage");
     m_layout->addWidget("SplitButtonPage", new FluSplitButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ToggleSplitButton"), "ToggleSplitButton", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ToggleSplitButton"), "ToggleSplitButton", "BasicInputPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("CheckBox"), "CheckBoxPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("CheckBox"), "CheckBoxPage", "BasicInputPage");
     m_layout->addWidget("CheckBoxPage", new FluCheckBoxPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ColorPicker"), "ColorPickerPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ColorPicker"), "ColorPickerPage", "BasicInputPage");
     m_layout->addWidget("ColorPickerPage", new FluColorPickerPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ComboBox"), "ComboBoxPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ComboBox"), "ComboBoxPage", "BasicInputPage");
     m_layout->addWidget("ComboBoxPage", new FluComboBoxPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("RadioButton"), "RadioButtonPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("RadioButton"), "RadioButtonPage", "BasicInputPage");
     m_layout->addWidget("RadioButtonPage", new FluRadioButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("RatingControl"), "RatingControlPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("RatingControl"), "RatingControlPage", "BasicInputPage");
     m_layout->addWidget("RatingControlPage", new FluRatingControlPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Slider"), "SliderPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Slider"), "SliderPage", "BasicInputPage");
     m_layout->addWidget("SliderPage", new FluSliderPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ToggleSwitch"), "ToggleSwitchPage", "BasicInputPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ToggleSwitch"), "ToggleSwitchPage", "BasicInputPage");
     m_layout->addWidget("ToggleSwitchPage", new FluToggleSwitchPage);
 
     connect(basicInputPage, &FluBasicInputPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
@@ -389,20 +389,20 @@ void FluGalleryWindow::makeBasicInputNavItem()
 
 void FluGalleryWindow::makeCollectionsNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::TiltDown, tr("Connections"), "CollectionsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::TiltDown, tr("Connections"), "CollectionsPage");
     auto collectionsPage = new FluCollectionsPage;
     m_layout->addWidget("CollectionsPage", collectionsPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("FlipView"), "FlipViewPage", "CollectionsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("FlipView"), "FlipViewPage", "CollectionsPage");
     m_layout->addWidget("FlipViewPage", new FluFlipViewPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ListView"), "ListViewPage", "CollectionsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ListView"), "ListViewPage", "CollectionsPage");
     m_layout->addWidget("ListViewPage", new FluListViewPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("TreeView"), "TreeViewPage", "CollectionsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("TreeView"), "TreeViewPage", "CollectionsPage");
     m_layout->addWidget("TreeViewPage", new FluTreeViewPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("TableView"), "TableViewPage", "CollectionsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("TableView"), "TableViewPage", "CollectionsPage");
     m_layout->addWidget("TableViewPage", new FluTableViewPage);
 
     connect(collectionsPage, &FluCollectionsPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
@@ -415,20 +415,20 @@ void FluGalleryWindow::makeCollectionsNavItem()
 
 void FluGalleryWindow::makDateTimeNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Calendar, tr("Date & time"), "DateAndTimePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Calendar, tr("Date & time"), "DateAndTimePage");
     auto dateAndTimePage = new FluDateAndTimePage;
     m_layout->addWidget("DateAndTimePage", dateAndTimePage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("CalendarDatePicker"), "CalendarDatePickerPage", "DateAndTimePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("CalendarDatePicker"), "CalendarDatePickerPage", "DateAndTimePage");
     m_layout->addWidget("CalendarDatePickerPage", new FluCalendarDatePickerPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("CalendarView"), "CalendarViewPage", "DateAndTimePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("CalendarView"), "CalendarViewPage", "DateAndTimePage");
     m_layout->addWidget("CalendarViewPage", new FluCalendarViewPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("DatePicker"), "DatePickerPage", "DateAndTimePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("DatePicker"), "DatePickerPage", "DateAndTimePage");
     m_layout->addWidget("DatePickerPage", new FluDatePickerPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("TimePicker"), "TimePickerPage", "DateAndTimePage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("TimePicker"), "TimePickerPage", "DateAndTimePage");
     m_layout->addWidget("TimePickerPage", new FluTimePickerPage);
 
     connect(dateAndTimePage, &FluDateAndTimePage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
@@ -441,17 +441,17 @@ void FluGalleryWindow::makDateTimeNavItem()
 
 void FluGalleryWindow::makeDialogsFlyouts()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Comment, tr("Dialogs & flyouts"), "DialogsAndFlyoutsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Comment, tr("Dialogs & flyouts"), "DialogsAndFlyoutsPage");
     auto dialogAndFlyoutPage = new FluDialogsAndFlyoutsPage;
     m_layout->addWidget("DialogsAndFlyoutsPage", dialogAndFlyoutPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ContentDialog"), "ContentDialogPage", "DialogsAndFlyoutsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ContentDialog"), "ContentDialogPage", "DialogsAndFlyoutsPage");
     m_layout->addWidget("ContentDialogPage", new FluContentDialogPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Flyout"), "FlyoutPage", "DialogsAndFlyoutsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Flyout"), "FlyoutPage", "DialogsAndFlyoutsPage");
     m_layout->addWidget("FlyoutPage", new FluFlyoutPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("TeachingTip"), "TeachingTipPage", "DialogsAndFlyoutsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("TeachingTip"), "TeachingTipPage", "DialogsAndFlyoutsPage");
 
     connect(dialogAndFlyoutPage, &FluDialogsAndFlyoutsPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
@@ -463,34 +463,34 @@ void FluGalleryWindow::makeDialogsFlyouts()
 
 void FluGalleryWindow::makeLayoutNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::PreviewLink, tr("Layout"), "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::PreviewLink, tr("Layout"), "LayoutPage");
     auto layoutPage = new FluLayoutPage;
     m_layout->addWidget("LayoutPage", layoutPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Border"), "BorderPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Border"), "BorderPage", "LayoutPage");
     m_layout->addWidget("BorderPage", new FluBorderPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Canvas"), "CanvasPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Canvas"), "CanvasPage", "LayoutPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Expander"), "ExpanderPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Expander"), "ExpanderPage", "LayoutPage");
     m_layout->addWidget("ExpanderPage", new FluExpanderPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ItemsRepeater"), "ItemsRepeaterPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ItemsRepeater"), "ItemsRepeaterPage", "LayoutPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Grid"), "GridPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Grid"), "GridPage", "LayoutPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("RadioButtons"), "RadioButtonsPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("RadioButtons"), "RadioButtonsPage", "LayoutPage");
     m_layout->addWidget("RadioButtonsPage", new FluRadioButtonsPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("RelativePanel"), "RelativePanelPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("RelativePanel"), "RelativePanelPage", "LayoutPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("SplitView"), "SplitViewPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("SplitView"), "SplitViewPage", "LayoutPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("StackPanel"), "StackPanelPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("StackPanel"), "StackPanelPage", "LayoutPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("VariableSizedWrapGrid"), "VariableSizedWrapGridPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("VariableSizedWrapGrid"), "VariableSizedWrapGridPage", "LayoutPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Viewbox"), "ViewboxPage", "LayoutPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Viewbox"), "ViewboxPage", "LayoutPage");
 
     connect(layoutPage, &FluLayoutPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
@@ -505,16 +505,16 @@ void FluGalleryWindow::makeLayoutNavItem()
 
 void FluGalleryWindow::makeMediaNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Calendar, tr("Media"), "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Calendar, tr("Media"), "MediaPage");
     m_layout->addWidget("MediaPage", new FluMediaPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("AnimatedVisualPlayer"), "AnimatedVisualPlayer", "MediaPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Capture Element / Camera Preview"), "CaptureElement", "MediaPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Image"), "Image", "MediaPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("mediaPalyerElement"), "MediaPlayerElement", "MediaPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("PersonPicture"), "PersonPicture", "MediaPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Sound"), "Sound", "MediaPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("WebView2"), "WebView2", "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("AnimatedVisualPlayer"), "AnimatedVisualPlayer", "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Capture Element / Camera Preview"), "CaptureElement", "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Image"), "Image", "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("mediaPalyerElement"), "MediaPlayerElement", "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("PersonPicture"), "PersonPicture", "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Sound"), "Sound", "MediaPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("WebView2"), "WebView2", "MediaPage");
 
     makeHNavigationItem(FluAwesomeType::Calendar, tr("Media"), "MediaPage");
 }
@@ -523,7 +523,7 @@ void FluGalleryWindow::makeSettingsNavItem()
 {
     FluVNavigationSettingsItem *item = new FluVNavigationSettingsItem(FluAwesomeType::Settings, tr("Setting"), this);
     item->setKey("SettingPage");
-    m_navView->addItemToBottomLayout(item);
+    m_vNavView->addItemToBottomLayout(item);
 
     auto settingsPage = new FluSettingPage;
     m_layout->addWidget("SettingPage", settingsPage);
@@ -539,28 +539,28 @@ void FluGalleryWindow::makeSettingsNavItem()
 
 void FluGalleryWindow::makeMenuToolBarsNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Save, tr("Menus & toolbars"), "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Save, tr("Menus & toolbars"), "MenusAndToolBarsPage");
     auto menusAndToolBarsPage = new FluMenuAndToolBarsPage;
     m_layout->addWidget("MenusAndToolBarsPage", menusAndToolBarsPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("AppBarButton"), "AppBarButtonPage", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("AppBarButton"), "AppBarButtonPage", "MenusAndToolBarsPage");
     m_layout->addWidget("AppBarButtonPage", new FluAppBarButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("AppBarSeparator"), "AppBarSeparator", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("AppBarSeparator"), "AppBarSeparator", "MenusAndToolBarsPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("AppBarToggleButton"), "AppBarToggleButtonPage", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("AppBarToggleButton"), "AppBarToggleButtonPage", "MenusAndToolBarsPage");
     m_layout->addWidget("AppBarToggleButtonPage", new FluAppBarToggleButtonPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("CommandBar"), "CommandBarPage", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("CommandBar"), "CommandBarPage", "MenusAndToolBarsPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("MenuBar"), "MenuBarPage", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("MenuBar"), "MenuBarPage", "MenusAndToolBarsPage");
     m_layout->addWidget("MenuBarPage", new FluMenuBarPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("CommandBarFlyout"), "CommandBarFlyoutPage", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("CommandBarFlyout"), "CommandBarFlyoutPage", "MenusAndToolBarsPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("MenuFlyout"), "MenuFlyoutPage", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("MenuFlyout"), "MenuFlyoutPage", "MenusAndToolBarsPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("SwipeControl"), "SwipeControlPage", "MenusAndToolBarsPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("SwipeControl"), "SwipeControlPage", "MenusAndToolBarsPage");
 
     connect(menusAndToolBarsPage, &FluMenuAndToolBarsPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
@@ -572,18 +572,18 @@ void FluGalleryWindow::makeMenuToolBarsNavItem()
 
 void FluGalleryWindow::makeNavigationNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::BookmarksMirrored, tr("Navigation"), "NavigationPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::BookmarksMirrored, tr("Navigation"), "NavigationPage");
     auto navigationPage = new FluNavigationPage;
     m_layout->addWidget("NavigationPage", navigationPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("BreadcrumbBar"), "BreadcrumbBarPage", "NavigationPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("BreadcrumbBar"), "BreadcrumbBarPage", "NavigationPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("NavigationView"), "NavigationViewPage", "NavigationPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("NavigationView"), "NavigationViewPage", "NavigationPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("Pivot"), "PivotPage", "NavigationPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("Pivot"), "PivotPage", "NavigationPage");
     m_layout->addWidget("PivotPage", new FluPivotPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("TabView"), "TabViewPage", "NavigationPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("TabView"), "TabViewPage", "NavigationPage");
 
     connect(navigationPage, &FluNavigationPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
@@ -597,18 +597,18 @@ void FluGalleryWindow::makeNavigationNavItem()
 
 void FluGalleryWindow::makeScrollingNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Sort, tr("Scrolling"), "ScrollingPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Sort, tr("Scrolling"), "ScrollingPage");
     auto scrollingPage = new FluScrollingPage;
     m_layout->addWidget("ScrollingPage", scrollingPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("AnnotatedScrollBar"), "AnnotatedScrollBar", "ScrollingPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("PipsPager"), "PipsPager", "ScrollingPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("AnnotatedScrollBar"), "AnnotatedScrollBar", "ScrollingPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("PipsPager"), "PipsPager", "ScrollingPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ScrollView"), "ScrollViewPage", "ScrollingPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ScrollView"), "ScrollViewPage", "ScrollingPage");
     m_layout->addWidget("ScrollViewPage", new FluScrollViewPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ScrollViewer"), "ScrollViewer", "ScrollingPage");
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("SemanticZoom"), "SemanticZoom", "ScrollingPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ScrollViewer"), "ScrollViewer", "ScrollingPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("SemanticZoom"), "SemanticZoom", "ScrollingPage");
 
     connect(scrollingPage, &FluScrollingPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
@@ -620,23 +620,23 @@ void FluGalleryWindow::makeScrollingNavItem()
 
 void FluGalleryWindow::makeStatusInfoNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Reminder, tr("Status & info"), "StatusAndInfoPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Reminder, tr("Status & info"), "StatusAndInfoPage");
     auto statusAndInfoPage = new FluStatusAndInfoPage;
     m_layout->addWidget("StatusAndInfoPage", statusAndInfoPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("InfoBadge"), "InfoBadgePage", "StatusAndInfoPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("InfoBadge"), "InfoBadgePage", "StatusAndInfoPage");
     m_layout->addWidget("InfoBadgePage", new FluInfoBadgePage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("InfoBar"), "InfoBarPage", "StatusAndInfoPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("InfoBar"), "InfoBarPage", "StatusAndInfoPage");
     m_layout->addWidget("InfoBarPage", new FluInfoBarPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ProgressBar"), "ProgressBarPage", "StatusAndInfoPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ProgressBar"), "ProgressBarPage", "StatusAndInfoPage");
     m_layout->addWidget("ProgressBarPage", new FluProgressBarPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ProgressRing"), "ProgressRingPage", "StatusAndInfoPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ProgressRing"), "ProgressRingPage", "StatusAndInfoPage");
     m_layout->addWidget("ProgressRingPage", new FluProgressRingPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("ToolTip"), "ToolTip", "StatusAndInfoPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ToolTip"), "ToolTip", "StatusAndInfoPage");
 
     connect(statusAndInfoPage, &FluStatusAndInfoPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
@@ -649,26 +649,26 @@ void FluGalleryWindow::makeStatusInfoNavItem()
 
 void FluGalleryWindow::makeTextNavItem()
 {
-    m_navView->insertIconTextItem(FluAwesomeType::Font, tr("Text"), "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::Font, tr("Text"), "TextPage");
     auto textPage = new FluTextPage;
     m_layout->addWidget("TextPage", textPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("AutoSuggestBox"), "AutoSuggestBoxPage", "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("AutoSuggestBox"), "AutoSuggestBoxPage", "TextPage");
     m_layout->addWidget("AutoSuggestBoxPage", new FluAutoSuggestBoxPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("NumberBox"), "NumberBoxPage", "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("NumberBox"), "NumberBoxPage", "TextPage");
     m_layout->addWidget("NumberBoxPage", new FluNumberBoxPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("PasswordBox"), "PasswordBoxPage", "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("PasswordBox"), "PasswordBoxPage", "TextPage");
     m_layout->addWidget("PasswordBoxPage", new FluPasswordBoxPage);
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("RichEditBox"), "RichEditBoxPage", "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("RichEditBox"), "RichEditBoxPage", "TextPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("RichTextBlock"), "RichTextBlockPage", "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("RichTextBlock"), "RichTextBlockPage", "TextPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("TextBlock"), "TextBlockPage", "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("TextBlock"), "TextBlockPage", "TextPage");
 
-    m_navView->insertIconTextItem(FluAwesomeType::None, tr("TextBox"), "TextBoxPage", "TextPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("TextBox"), "TextBoxPage", "TextPage");
     m_layout->addWidget("TextBoxPage", new FluTextBoxPage);
 
     connect(textPage, &FluTextPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
@@ -697,16 +697,16 @@ void FluGalleryWindow::closeEvent(QCloseEvent *event)
     else if (exec == QDialog::Accepted)
     {
         // 保存导航栏状态
-        FluConfigUtils::getUtils()->setNavWidth(m_navView->getViewWidth());
+        FluConfigUtils::getUtils()->setNavWidth(m_vNavView->getViewWidth());
         FluConfigUtils::getUtils()->setNavStyle(m_isHorizontalNav ? 1 : 0);
-        FluConfigUtils::getUtils()->setViewCollapsed(!m_navView->isLong());
+        FluConfigUtils::getUtils()->setViewCollapsed(!m_vNavView->isLong());
         QApplication::quit();
     }
 }
 
 void FluGalleryWindow::onClickedHCard(QString key)
 {
-    auto item = m_navView->getItemByKey(key);
+    auto item = m_vNavView->getItemByKey(key);
     if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
     {
         auto iconTextItem = (FluVNavigationIconTextItem *)(item);

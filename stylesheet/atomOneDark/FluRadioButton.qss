@@ -1,17 +1,17 @@
 QRadioButton {
     color: white;
-    min-height: 28px;
-    max-height: 28px;
+    min-height: 22px;
+    max-height: 22px;
 }
 
 QRadioButton::indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 11px;
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
     border: 1px solid rgb(71, 74, 79);
     color: white;
     background-color: rgb(44, 48, 54);
-    margin-left: 5px;
+    margin-left: 4px;
 }
 
 QRadioButton::indicator:hover {
@@ -28,9 +28,9 @@ QRadioButton::indicator:pressed {
 QRadioButton::indicator:checked {
     background-color: rgb(82, 139, 255);
     border: 1px solid rgb(82, 139, 255);
-    width: 20px;
-    height: 20px;
-    border-radius: 11px;
+    width: 16px;
+    height: 16px;
+    border-radius: 9px;
     /*when checked it set png*/
     image: url("../res/ControlResImages/RadioButton-Black.png");
 }

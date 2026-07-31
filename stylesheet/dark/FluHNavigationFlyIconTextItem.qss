@@ -1,17 +1,18 @@
 #contextWidget {
     background-color: rgb(32, 32, 32);
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 FluHNavigationFlyIconTextItem {
     border: 1px solid rgb(53, 53, 53);
-    border-radius: 4px;
+    background-color: rgb(32, 32, 32);
+    border-radius: 8px;
 }
 
 QScrollArea {
     background-color: rgb(32, 32, 32);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 QScrollBar:vertical {

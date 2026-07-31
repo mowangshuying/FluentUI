@@ -71,7 +71,6 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_hNavView->setObjectName("horizontalNavView");
     m_mainLayout->insertWidget(1, m_hNavView);
     
-    // 根据配置初始化导航栏显示状态
     if (m_isHorizontalNav) {
         m_navView->hide();
         m_hNavView->show();
@@ -150,7 +149,6 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_navView->setViewWidth(navWidth > 0 ? navWidth : 300);
     m_navView->setOnlyCollapseView(false);
 
-    // 加载折叠状态（仅垂直导航栏有效）
     if (!m_isHorizontalNav && FluConfigUtils::getUtils()->getViewCollapsed())
         m_navView->collapseView();
 
@@ -770,15 +768,7 @@ void FluGalleryWindow::makeNavigationNavItem()
 
     FluVNavigationIconTextItem *item4 = new FluVNavigationIconTextItem(tr("TabView"), "TabViewPage", item);
 
-    connect(navigationPage, &FluNavigationPage::clickedHCard, [=](QString key) {
-        auto item = m_navView->getItemByKey(key);
-        if (item != nullptr && item->getItemType() == FluVNavigationItemType::IconText)
-        {
-            auto iconTextItem = (FluVNavigationIconTextItem *)(item);
-            iconTextItem->onItemClickedDirect();
-            m_layout->setCurrentWidget(key);
-        }
-    });
+    connect(navigationPage, &FluNavigationPage::clickedHCard, this, &FluGalleryWindow::onClickedHCard);
 
     item->addItem(item1);
     item->addItem(item2);

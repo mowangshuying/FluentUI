@@ -94,17 +94,17 @@
     {
       "hidden": true,
       "name": "Qt-Default",
-      "inherits": "6.5.1_msvc2019_64",
+      "inherits": "6.9.0_msvc2022_64",
       "vendor": {
         "qt-project.org/Default": {
-          "checksum": "YlBusb6P9ZKo2Gm3/TciotHBVa4="
+          "checksum": "p2g8qSfRuZwrHdoqsydD/azGQjs="
         }
       }
     }
   ],
   "vendor": {
     "qt-project.org/Presets": {
-      "checksum": "N6hNHO1UXi4ZhwdlIzUPc576T5I="
+      "checksum": "qGLJ9d+QtvybXe6+4v88S57a0Pk="
     }
   }
 }

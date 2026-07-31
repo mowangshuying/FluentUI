@@ -1,16 +1,16 @@
 QCheckBox {
-    min-height: 30px;
-    max-height: 30px;
+    min-height: 24px;
+    max-height: 24px;
     color: white;
 }
 
 QCheckBox::indicator {
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
     border: 1px solid rgb(153, 153, 153);
     background-color: rgb(44, 48, 54);
-    margin-right: 4px;
+    margin-right: 3px;
 }
 
 QCheckBox::indicator:hover {

@@ -3,18 +3,19 @@
 #contextWidget {
     /* background-color: rgb(136, 48, 224); */
     background-color: rgb(243, 243, 243);
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 FluHNavigationFlyIconTextItem {
     border: 1px solid rgb(233, 233, 233);
-    border-radius: 4px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 8px;
 }
 
 QScrollArea {
     background-color: rgb(243, 243, 243);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 QScrollBar:vertical {

@@ -2,7 +2,7 @@ FluDropDownButton {
     background-color: rgb(251, 251, 251);
     border: 1px solid rgb(229, 229, 229);
     border-bottom: 1px solid rgb(204, 204, 204);
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 FluDropDownButton:hover {

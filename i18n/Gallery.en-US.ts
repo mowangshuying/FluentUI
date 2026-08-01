@@ -4,17 +4,17 @@
 <context>
     <name>FluAEmptyPage</name>
     <message>
-        <location filename="../Gallery/FluAEmptyPage.cpp" line="39"/>
+        <location filename="../Gallery/FluAEmptyPage.cpp" line="40"/>
         <source>Documentation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAEmptyPage.cpp" line="46"/>
+        <location filename="../Gallery/FluAEmptyPage.cpp" line="47"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAEmptyPage.cpp" line="71"/>
+        <location filename="../Gallery/FluAEmptyPage.cpp" line="72"/>
         <source>Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px Semibold.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -22,7 +22,7 @@
 <context>
     <name>FluATitlePage</name>
     <message>
-        <location filename="../Gallery/FluATitlePage.cpp" line="18"/>
+        <location filename="../Gallery/FluATitlePage.cpp" line="19"/>
         <source>A Temp Title Label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -35,734 +35,644 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="27"/>
         <source>Button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="27"/>
         <source>A control that responds to user input and raises a Click event.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="28"/>
         <source>CheckBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="28"/>
         <source>A control that a user can select or clear.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="43"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="29"/>
         <source>ColorPicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="43"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="29"/>
         <source>A control that displays a selectable color spectrum.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="30"/>
         <source>ComboBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="30"/>
         <source>A drop-down list of items a user can select from.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="51"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="31"/>
         <source>DropDownButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="51"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="31"/>
         <source>A button that displays a flyout of choices when clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="32"/>
         <source>HyperlinkButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="32"/>
         <source>A button that appears as hyperlink text and can navigate to URI or handle a Click event.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="59"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="33"/>
         <source>RadioButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="59"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="33"/>
         <source>A control that allows a user to select a single option from a group of options.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="63"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="34"/>
         <source>RatingControl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="63"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="34"/>
         <source>Rate something 1 to 5 stars.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
         <source>RepeatButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
         <source>A button that raisers its Click event repeatedly from the time it&apos;s pressed until it&apos;s released.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="36"/>
         <source>Slider</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="36"/>
         <source>A control that lets the user select from a range of values by moving a Thumb control along a track.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="37"/>
         <source>SplitButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="37"/>
         <source>A two-part button that display a flyout when its secondary part is clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="78"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="38"/>
         <source>ToggleButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="78"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="38"/>
         <source>A button that can be switched between two states like a CheckBox.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
         <source>ToggleSplitButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
         <source>A version of the SplitButton where the activation target toggles on/off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="40"/>
         <source>ToggleSwitch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="40"/>
         <source>A switch that can be toggled between 2 states.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="93"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="45"/>
         <source>FlipView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="93"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="45"/>
         <source>Pressents a collection of items that the user can flip through, one item at a time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="46"/>
         <source>ListView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="46"/>
         <source>A control that presents a collection of items in a vertical list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="101"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
         <source>TreeView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="101"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
         <source>The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="108"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="52"/>
         <source>CalendarDatePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="108"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="52"/>
         <source>A control that lets users pick a date value using a calendar.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="53"/>
         <source>CalendarView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="53"/>
         <source>A control that presents aa calendar for a user to choose a date from.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="54"/>
         <source>DatePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="54"/>
         <source>A control that lets a user pick a date value.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="120"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
         <source>TimePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="120"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
         <source>A configurable control that lets a user pick a time value.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="60"/>
         <source>ContentDialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="60"/>
         <source>A dialog box that can be customized to contain any XAML content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="131"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="61"/>
         <source>Flyout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="131"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="61"/>
         <source>Shows contextual information and enables user interaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="135"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="62"/>
         <source>TeachingTip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="135"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="62"/>
         <source>A content-rich flyout for guiding users and enabling teaching moments.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="142"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
         <source>Border</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="142"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
         <source>A container control that draws a boundary line, background, or both, around another object.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="146"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="68"/>
         <source>Canvas</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="146"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="68"/>
         <source>A layout panel that supports absolute positioning of child elements relative to the top left corner of the canvas.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="150"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="69"/>
         <source>Expander</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="150"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="69"/>
         <source>A container with a header that can be expanded to show a body with more content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="154"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="70"/>
         <source>Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="154"/>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="158"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="70"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
         <source>A flexible, primitive control for data-driven layouts.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="158"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
         <source>ItemsRepeater</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="162"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="72"/>
         <source>RadioButtons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="162"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="72"/>
         <source>A control that displays a group of mutually exclusive options with keyboarding and accessibility support.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="166"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="73"/>
         <source>RelativePanel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="166"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="73"/>
         <source>A panel that users relationships between elements to define layout.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="170"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="74"/>
         <source>SplitView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="170"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="74"/>
         <source>A container that has 2 content areas, with multiple display options for the pane.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="174"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
         <source>StackPanel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="174"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
         <source>A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="179"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="76"/>
         <source>VariableSizedWrapGrid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="180"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="76"/>
         <source>A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="184"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="77"/>
         <source>Viewbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="184"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="77"/>
         <source>A container control that scales its content to a specified size.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="191"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
         <source>AnimatedVisualPlayer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="191"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
         <source>An element to render and control playback of motion graphics.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="195"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="83"/>
         <source>Capture Element / Camera Perview</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="195"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="83"/>
         <source>A sample for doing a camera preview.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="200"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="84"/>
         <source>Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="200"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="84"/>
         <source>A control to display image content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="204"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="85"/>
         <source>MapControl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="204"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="85"/>
         <source>Display a symbolic map of the Earth.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="208"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
         <source>MediaPlayerElement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="208"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
         <source>A control to display video and image content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="212"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="87"/>
         <source>PersonPicture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="212"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="87"/>
         <source>Displays the picture of a person/contact.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="216"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="88"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="216"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="88"/>
         <source>A code-behind only API that enables 2D and 3D UI sounds on all XAML controls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="220"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="89"/>
         <source>WebView2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="220"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="89"/>
         <source>A Microsoft Edge(Chrominum) based control that hosts HTML content in an app.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="227"/>
-        <source>AppBarButton</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="227"/>
-        <source>A button that&apos;s styled for use in a CommandBar.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="231"/>
-        <source>AppBarSeparator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="231"/>
-        <source>A vertical line that&apos;s used to visually separate groups of commands in an app bar.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="236"/>
-        <source>AppBarToggleButton</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="237"/>
-        <source>A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="241"/>
-        <source>CommandBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="241"/>
-        <source>A toolbar for displaying application-specific commands that hanles layout and resizing of its contents.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="245"/>
-        <source>CommandBarFlyout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="245"/>
-        <source>A mini-toolbar displaying proactive commands, and an optional menu of command.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="249"/>
-        <source>MenuBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="249"/>
-        <source>A classic menu, allowing the display of MenuItems containing MenuFlyoutItems.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="253"/>
-        <source>MenuFlyout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="253"/>
-        <source>Shows a contextual list of simple command or options.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="258"/>
-        <source>StandardUICommand</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="258"/>
-        <source>A StandardUICommand is a built-in &apos;XamlUICommand&apos; which represents a commonly used command, e.g.&apos;save&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="262"/>
-        <source>SwipeControl</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="262"/>
-        <source>Touch gesture for quick menu actions on items.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="269"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="94"/>
         <source>BreadcrumbBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="269"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="94"/>
         <source>Shows the trail of navigation taken to the current location..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="273"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="95"/>
         <source>NavigationView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="273"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="95"/>
         <source>Common vertical layout for top-level areas of your app via a collapsible navigation menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="277"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="96"/>
         <source>Pivot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="277"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="96"/>
         <source>Presents information from different sources in a tabbed view.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="281"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
         <source>SelectorBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="281"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
         <source>Presents information from a small set of different sources. The user can pick one of them.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="285"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="98"/>
         <source>TabView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="285"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="98"/>
         <source>A control that displays a collection of tabs that can be used to display several documents.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="293"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="103"/>
         <source>AnnotatedScrollBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="293"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="103"/>
         <source>A control that extends a regular vertical scrollbar&apos;s functionality for an easy navigation through large collections.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="297"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="104"/>
         <source>PipsPager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="297"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="104"/>
         <source>A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="301"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="105"/>
         <source>ScrollView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="301"/>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="305"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="105"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="106"/>
         <source>A container control that lets the user pan and zoom its content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="305"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="106"/>
         <source>ScrollViewer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="310"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="107"/>
         <source>SemanticZoom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="310"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="107"/>
         <source>Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="317"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
         <source>InfoBadge</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="317"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
         <source>An Non-instrusive Ui to display notifications or bring focus to an area.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="321"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="113"/>
         <source>InfoBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="321"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="113"/>
         <source>An inline message to display app-wide status change information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="325"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="114"/>
         <source>ProgressBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="325"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="114"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that doesn&apos;t block user interaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="329"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="115"/>
         <source>ProgressRing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="329"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="115"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that does block user interaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="333"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
         <source>ToolTip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="333"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
         <source>Displays information for element in a popup window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="340"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="121"/>
         <source>AutoSuggestBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="340"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="121"/>
         <source>A control to provide suggestions as a user is typing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="344"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="122"/>
         <source>NumberBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="344"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="122"/>
         <source>A text control used for numeric input and evaluation of algebraic equations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="348"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="123"/>
         <source>PasswordBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="348"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="123"/>
         <source>A control for entering passwords.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="352"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="124"/>
         <source>RichEditBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="352"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="124"/>
         <source>A rich text editing control that supports formatted text, hyperlinks and other rich content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="356"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="125"/>
         <source>RichTextBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="356"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="125"/>
         <source>A control that displays formatted text hyperlinks, inline images, and other rich content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="360"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="126"/>
         <source>TextBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="360"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="126"/>
         <source>A lightweight control for displaying small amounts of text.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="364"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
         <source>TextBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="364"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
         <source>A single-line or multi-line plain text field.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -877,132 +787,132 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="15"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="11"/>
         <source>CheckBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="15"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="11"/>
         <source>A control that a user can select or clear.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="14"/>
         <source>ColorPicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="14"/>
         <source>A control that displays a selectable color spectrum.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="27"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="16"/>
         <source>ComboBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="27"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="16"/>
         <source>A drop-down list of items a user can select from.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="32"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="18"/>
         <source>DropDownButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="32"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="18"/>
         <source>A button that displays a flyout of choices when clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="37"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="20"/>
         <source>HyperlinkButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="37"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="20"/>
         <source>A button that appears as hyperlink text and can navigate to URI or handle a Click event.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="42"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
         <source>RadioButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="42"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
         <source>A control that allows a user to select a single option from a group of options.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="47"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="24"/>
         <source>RatingControl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="47"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="24"/>
         <source>Rate something 1 to 5 stars.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="52"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="26"/>
         <source>RepeatButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="52"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="26"/>
         <source>A button that raisers its Click event repeatedly from the time it&apos;s pressed until it&apos;s released.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="57"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="28"/>
         <source>Slider</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="57"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="28"/>
         <source>A control that lets the user select from a range of values by moving a Thumb control along a track.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="64"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="31"/>
         <source>SplitButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="64"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="31"/>
         <source>A two-part button that display a flyout when its secondary part is clicked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="71"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="34"/>
         <source>ToggleButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="71"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="34"/>
         <source>A button that can be switched between two states like a CheckBox.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="76"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="36"/>
         <source>ToggleSplitButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="76"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="36"/>
         <source>A version of the SplitButton where the activation target toggles on/off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="81"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="38"/>
         <source>ToggleSwitch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="81"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="38"/>
         <source>A switch that can be toggled between 2 states.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1197,32 +1107,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="10"/>
         <source>ListView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="10"/>
         <source>A control that presents a collection of items in a vertical list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="12"/>
         <source>TreeView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="12"/>
         <source>The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="23"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="14"/>
         <source>TableView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="23"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="14"/>
         <source>A control taht presents a collection of items in rows and columns.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1282,6 +1192,36 @@
         <source>Yellow</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="36"/>
+        <source>A ComboBox with placeholder text and initial selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="42"/>
+        <source>Select a fruit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="43"/>
+        <source>Apple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="44"/>
+        <source>Banana</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="45"/>
+        <source>Cherry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="46"/>
+        <source>Grape</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FluContentDialogPage</name>
@@ -1334,32 +1274,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="13"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="10"/>
         <source>CalendarView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="13"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="10"/>
         <source>A control that presents aa calendar for a user to choose a date from.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="18"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="12"/>
         <source>DatePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="18"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="12"/>
         <source>A control that lets a user pick a date value.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="23"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="14"/>
         <source>TimePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="23"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="14"/>
         <source>A configurable control that lets a user pick a time value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1400,22 +1340,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="10"/>
         <source>Flyout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="10"/>
         <source>Shows contextual information and enables user interaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="12"/>
         <source>TeachingTip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="12"/>
         <source>A content-rich flyout for guiding users and enabling teaching moments.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1601,504 +1541,584 @@
 <context>
     <name>FluGalleryWindow</name>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="21"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="22"/>
         <source>CppQt WinUI3 Gallery Dev</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="24"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="25"/>
         <source>CppQt WinUI3 Gallery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="134"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="275"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="292"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="155"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="297"/>
         <source>Design guidance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="156"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="298"/>
         <source>Typography</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="157"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="299"/>
         <source>Icons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="158"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="300"/>
         <source>Emoijs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="160"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="302"/>
         <source>2-level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="162"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="163"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="164"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="304"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="305"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="306"/>
         <source>3-level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="166"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="167"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="168"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="308"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="309"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="310"/>
         <source>4-level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="170"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="171"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="172"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="173"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="312"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="313"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="314"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="315"/>
         <source>5-level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="230"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="365"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="383"/>
         <source>All samples</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="252"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="388"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="492"/>
         <source>Basic input</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="259"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="394"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="493"/>
         <source>InputValidation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="262"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="397"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="493"/>
         <source>Button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="268"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="402"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="493"/>
         <source>DropDownButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="274"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="407"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="494"/>
         <source>HyperLinkButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="280"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="412"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="494"/>
         <source>RepeatButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="286"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="417"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="495"/>
         <source>ToggleButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="292"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="422"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="495"/>
         <source>SplitButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="298"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="427"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="496"/>
         <source>ToggleSplitButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="300"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="429"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="496"/>
         <source>CheckBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="306"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="434"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="496"/>
         <source>ColorPicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="312"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="439"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="497"/>
         <source>ComboBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="318"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="444"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="497"/>
         <source>RadioButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="324"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="449"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="498"/>
         <source>RatingControl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="330"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="454"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="498"/>
         <source>Slider</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="336"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="459"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="499"/>
         <source>ToggleSwitch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="373"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="505"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="548"/>
         <source>Connections</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="379"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="510"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="549"/>
         <source>FlipView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="390"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="516"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="549"/>
         <source>ListView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="398"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="522"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="550"/>
         <source>TreeView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="404"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="527"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="550"/>
         <source>TableView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="434"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="556"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="599"/>
         <source>Date &amp; time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="440"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="561"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="600"/>
         <source>CalendarDatePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="446"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="566"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="600"/>
         <source>CalendarView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="452"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="571"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="601"/>
         <source>DatePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="458"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="576"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="601"/>
         <source>TimePicker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="485"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="607"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="641"/>
         <source>Dialogs &amp; flyouts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="491"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="612"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="642"/>
         <source>ContentDialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="498"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="618"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="642"/>
         <source>Flyout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="505"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="624"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="643"/>
         <source>TeachingTip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="527"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="649"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="709"/>
         <source>Layout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="533"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="654"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="710"/>
         <source>Border</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="539"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="659"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="710"/>
         <source>Canvas</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="542"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="661"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="710"/>
         <source>Expander</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="548"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="666"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="711"/>
         <source>ItemsRepeater</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="551"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="668"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="711"/>
         <source>Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="554"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="670"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="712"/>
         <source>RadioButtons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="560"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="675"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="712"/>
         <source>RelativePanel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="563"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="677"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="713"/>
         <source>SplitView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="566"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="679"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="713"/>
         <source>StackPanel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="569"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="681"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="714"/>
         <source>VariableSizedWrapGrid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="572"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="683"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="714"/>
         <source>Viewbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="602"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="720"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="742"/>
         <source>Media</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="608"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="725"/>
         <source>AnimatedVisualPlayer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="609"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="726"/>
         <source>Capture Element / Camera Preview</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="610"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="727"/>
         <source>Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="611"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="728"/>
         <source>mediaPalyerElement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="612"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="729"/>
         <source>PersonPicture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="613"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="730"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="614"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="731"/>
         <source>WebView2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="628"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="747"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="755"/>
         <source>Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="639"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="765"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="857"/>
         <source>Menus &amp; toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="647"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="772"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="858"/>
         <source>AppBarButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="653"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="777"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="858"/>
         <source>AppBarSeparator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="656"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="779"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="859"/>
         <source>AppBarToggleButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="662"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="784"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="859"/>
         <source>CommandBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="665"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="786"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="860"/>
         <source>MenuBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="671"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="791"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="860"/>
         <source>CommandBarFlyout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="674"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="793"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="861"/>
         <source>MenuFlyout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="677"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="795"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="861"/>
         <source>SwipeControl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="706"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="817"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="825"/>
         <source>Navigation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="712"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="818"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="830"/>
         <source>BreadcrumbBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="715"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="818"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="832"/>
         <source>NavigationView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="718"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="819"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="834"/>
         <source>Pivot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="724"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="819"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="839"/>
         <source>TabView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="747"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="867"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="900"/>
         <source>Scrolling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="753"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="872"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="901"/>
         <source>AnnotatedScrollBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="754"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="873"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="901"/>
         <source>PipsPager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="756"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="875"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="902"/>
         <source>ScrollView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="772"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="890"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="902"/>
         <source>ScrollViewer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="773"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="891"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="902"/>
         <source>SemanticZoom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="785"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="908"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="954"/>
         <source>Status &amp; info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="791"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="913"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="955"/>
         <source>InfoBadge</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="797"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="918"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="955"/>
         <source>InfoBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="804"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="924"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="956"/>
         <source>ProgressBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="810"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="929"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="956"/>
         <source>ProgressRing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="817"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="935"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="957"/>
         <source>ToolTip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="841"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="963"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1013"/>
         <source>Text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="847"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="968"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1014"/>
         <source>AutoSuggestBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="853"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="973"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1014"/>
         <source>NumberBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="859"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="978"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1015"/>
         <source>PasswordBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="865"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="983"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1015"/>
         <source>RichEditBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="868"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="985"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1016"/>
         <source>RichTextBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="871"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="987"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1016"/>
         <source>TextBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="874"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="989"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1017"/>
         <source>TextBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="918"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1027"/>
         <source>Close Gallery Window?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="918"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1027"/>
         <source>choose &quot;Ok&quot; to close. choose &quot;Cancel&quot; do nothing.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2397,98 +2417,98 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="13"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="10"/>
         <source>Canvas</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="13"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="10"/>
         <source>A layout panel that supports absolute positioning of child elements relative to the top left corner of the canvas.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="12"/>
         <source>Expander</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="12"/>
         <source>A container with a header that can be expanded to show a body with more content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="23"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="14"/>
         <source>Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="23"/>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="14"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="16"/>
         <source>A flexible, primitive control for data-driven layouts.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="16"/>
         <source>ItemsRepeater</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="33"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
         <source>RadioButtons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="33"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
         <source>A control that displays a group of mutually exclusive options with keyboarding and accessibility support.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="38"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="20"/>
         <source>RelativePanel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="38"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="20"/>
         <source>A panel that users relationships between elements to define layout.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="43"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="22"/>
         <source>SplitView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="43"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="22"/>
         <source>A container that has 2 content areas, with multiple display options for the pane.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="48"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="24"/>
         <source>StackPanel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="48"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="24"/>
         <source>A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="54"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="26"/>
         <source>VariableSizedWrapGrid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="55"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="26"/>
         <source>A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="60"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
         <source>Viewbox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="60"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
         <source>A container control that scales its content to a specified size.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2609,72 +2629,72 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="10"/>
         <source>Capture Element / Camera Perview</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="10"/>
         <source>A sample for doing a camera preview.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="12"/>
         <source>Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="12"/>
         <source>A control to display image content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="23"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="14"/>
         <source>MapControl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="23"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="14"/>
         <source>Display a symbolic map of the Earth.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="28"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="16"/>
         <source>MediaPlayerElement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="28"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="16"/>
         <source>A control to display video and image content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="33"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
         <source>PersonPicture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="33"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
         <source>Displays the picture of a person/contact.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="38"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="20"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="38"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="20"/>
         <source>A code-behind only API that enables 2D and 3D UI sounds on all XAML controls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="43"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="22"/>
         <source>WebView2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="43"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="22"/>
         <source>A Microsoft Edge(Chrominum) based control that hosts HTML content in an app.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2697,92 +2717,92 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="10"/>
         <source>AppBarSeparator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="10"/>
         <source>A vertical line that&apos;s used to visually separate groups of commands in an app bar.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="19"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="12"/>
         <source>AppBarToggleButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="20"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="12"/>
         <source>A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="25"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="14"/>
         <source>CommandBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="25"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="14"/>
         <source>A toolbar for displaying application-specific commands that hanles layout and resizing of its contents.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="30"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="16"/>
         <source>CommandBarFlyout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="30"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="16"/>
         <source>A mini-toolbar displaying proactive commands, and an optional menu of command.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="35"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="18"/>
         <source>MenuBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="35"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="18"/>
         <source>A classic menu, allowing the display of MenuItems containing MenuFlyoutItems.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="40"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="20"/>
         <source>MenuFlyout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="40"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="20"/>
         <source>Shows a contextual list of simple command or options.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="46"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="22"/>
         <source>StandardUICommand</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="46"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="22"/>
         <source>A StandardUICommand is a built-in &apos;XamlUICommand&apos; which represents a commonly used command, e.g.&apos;save&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="47"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="22"/>
         <source>StandardUICommandPage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="51"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="24"/>
         <source>SwipeControl</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="51"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="24"/>
         <source>Touch gesture for quick menu actions on items.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="52"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="24"/>
         <source>SwipeControlPage</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2876,7 +2896,7 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
     <message>
         <location filename="../Gallery/FluMenuBarPage.cpp" line="60"/>
         <location filename="../Gallery/FluMenuBarPage.cpp" line="120"/>
-        <location filename="../Gallery/FluMenuBarPage.cpp" line="168"/>
+        <location filename="../Gallery/FluMenuBarPage.cpp" line="167"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2921,12 +2941,12 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuBarPage.cpp" line="167"/>
+        <location filename="../Gallery/FluMenuBarPage.cpp" line="166"/>
         <source>Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuBarPage.cpp" line="169"/>
+        <location filename="../Gallery/FluMenuBarPage.cpp" line="168"/>
         <source>Feedback</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2949,42 +2969,42 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="13"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="10"/>
         <source>NavigationView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="13"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="10"/>
         <source>Common vertical layout for top-level areas of your app via a collapsible navigation menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="18"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="12"/>
         <source>Pivot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="18"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="12"/>
         <source>Presents information from different sources in a tabbed view..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="23"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="14"/>
         <source>SelectorBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="23"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="14"/>
         <source>Presents information from a small set of different sources. The user can pick one of them.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="28"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="16"/>
         <source>TabView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="28"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="16"/>
         <source>A control that displays a collection of tabs that can be used to display several documents.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3309,48 +3329,48 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="9"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="8"/>
         <source>AnnotatedScrollBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="9"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="8"/>
         <source>A control that extends a regular vertical scrollbar&apos;s functionality for an easy navigation through large collections.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="10"/>
         <source>PipsPager</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="10"/>
         <source>A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="19"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="12"/>
         <source>ScrollView</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="19"/>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="24"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="12"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
         <source>A container control that lets the user pan and zoom its content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="24"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
         <source>ScrollViewer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="30"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="16"/>
         <source>SemanticZoom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="30"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="16"/>
         <source>Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items..</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3408,77 +3428,77 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="58"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="63"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="58"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="63"/>
         <source>Select which language to display.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="60"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="65"/>
         <source>en-US</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="61"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="66"/>
         <source>zh-CN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="81"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="86"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="86"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="91"/>
         <source>FluentUI Gallery(Cpp &amp; Qt).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="87"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="92"/>
         <source>@2023-2026 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="88"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="93"/>
         <source>1.0.8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="101"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="106"/>
         <source>To clone thepository</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="112"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="117"/>
         <source>File a bug or Suggest a sample.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="115"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="120"/>
         <source>Get Start.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="123"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="128"/>
         <source>Dependencies &amp; references</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="126"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="131"/>
         <source>Microsoft/WinUI-Gallery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="129"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="134"/>
         <source>wangwenx190/framelesshelper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="132"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="137"/>
         <source>stdware/qwindowkit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3547,42 +3567,42 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="13"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="10"/>
         <source>InfoBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="13"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="10"/>
         <source>An inline message to display app-wide status change information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="18"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="12"/>
         <source>ProgressBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="18"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="12"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that doesn&apos;t block user interaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="23"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="14"/>
         <source>ProgressRing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="23"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="14"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that does block user interaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="28"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="16"/>
         <source>ToolTip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="28"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="16"/>
         <source>Displays information for element in a popup window.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3661,62 +3681,62 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="13"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="10"/>
         <source>NumberBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="13"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="10"/>
         <source>A text control used for numeric input and evaluation of algebraic equations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="12"/>
         <source>PasswordBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="12"/>
         <source>A control for entering passwords.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="23"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="14"/>
         <source>RichEditBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="23"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="14"/>
         <source>A rich text editing control that supports formatted text, hyperlinks and other rich content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="28"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="16"/>
         <source>RichTextBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="28"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="16"/>
         <source>A control that displays formatted text hyperlinks, inline images, and other rich content.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="33"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
         <source>TextBlock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="33"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
         <source>A lightweight control for displaying small amounts of text.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="20"/>
         <source>TextBox</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="20"/>
         <source>A single-line or multi-line plain text field.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3819,7 +3839,12 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../Gallery/FluTreeViewPage.cpp" line="34"/>
-        <source>Overal Project Plan</source>
+        <source>Overall Project Plan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluTreeViewPage.cpp" line="54"/>
+        <source>Flooring Woodgrain Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3843,11 +3868,6 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTreeViewPage.cpp" line="54"/>
-        <source>Flooring woodgrain type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../Gallery/FluTreeViewPage.cpp" line="58"/>
         <source>Kitchen cabinet style</source>
         <translation type="unfinished"></translation>
@@ -3861,152 +3881,152 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="11"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="9"/>
         <source>Type ramp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Example</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Variable Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Style</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>Caption</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>Text,Regular</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>12/16 epx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>CaptionTextBlockStyle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
         <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
         <source>Text,SemiBold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>14/20 epx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>BodyStrongTextBlockStyle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>Body Strong</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>Text, SemiBold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
         <source>Subtitle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>Display, SemiBold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
         <source>20/28 epx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
         <source>SubtitleTextBlockStyle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>28/36 epx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>TitleTextBlockStyle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
         <source>Title Large</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
         <source>40/52 epx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
         <source>TitleLargeTextBlockStyle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>68/92 epx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>DisplayTextBlockStyle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="62"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="43"/>
         <source>auto label = new FluLabel;label-&gt;setStyle(FluLabelStyle::CaptionTextBlockStyle);</source>
         <translation type="unfinished"></translation>
     </message>

@@ -4,17 +4,17 @@
 <context>
     <name>FluAEmptyPage</name>
     <message>
-        <location filename="../Gallery/FluAEmptyPage.cpp" line="39"/>
+        <location filename="../Gallery/FluAEmptyPage.cpp" line="40"/>
         <source>Documentation</source>
         <translation>文档</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAEmptyPage.cpp" line="46"/>
+        <location filename="../Gallery/FluAEmptyPage.cpp" line="47"/>
         <source>Source</source>
         <translation>来源</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAEmptyPage.cpp" line="71"/>
+        <location filename="../Gallery/FluAEmptyPage.cpp" line="72"/>
         <source>Type helps provide structure and hierarchy to UI. The default font for Windows is Segoe UI Variable. Best practice is to use Regular weight for most text, use Semibold for titles. The minimum values should be 12px Regular, 14px Semibold.</source>
         <translation>类型有助于为用户界面提供结构和层级。Windows 的默认字体是 Segoe UI Variable。最佳实践是：大多数文本使用常规字重，标题使用半粗体。最小字号应为：12px 常规、14px 半粗体。</translation>
     </message>
@@ -22,7 +22,7 @@
 <context>
     <name>FluATitlePage</name>
     <message>
-        <location filename="../Gallery/FluATitlePage.cpp" line="18"/>
+        <location filename="../Gallery/FluATitlePage.cpp" line="19"/>
         <source>A Temp Title Label</source>
         <translation>临时标题标签</translation>
     </message>
@@ -35,734 +35,716 @@
         <translation>所有示例</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="27"/>
         <source>Button</source>
         <translation>按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="27"/>
         <source>A control that responds to user input and raises a Click event.</source>
         <translation>一种响应用户输入并引发 Click 事件的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="28"/>
         <source>CheckBox</source>
         <translation>复选框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="28"/>
         <source>A control that a user can select or clear.</source>
         <translation>一种用户可选中或取消选中的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="43"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="29"/>
         <source>ColorPicker</source>
         <translation>颜色选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="43"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="29"/>
         <source>A control that displays a selectable color spectrum.</source>
         <translation>一种显示可供选择的颜色色谱的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="30"/>
         <source>ComboBox</source>
         <translation>组合框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="30"/>
         <source>A drop-down list of items a user can select from.</source>
         <translation>一种下拉列表，用户可从中选择项目。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="51"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="31"/>
         <source>DropDownButton</source>
         <translation>下拉按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="51"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="31"/>
         <source>A button that displays a flyout of choices when clicked.</source>
         <translation>一种点击后会显示选项浮出层的按钮。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="32"/>
         <source>HyperlinkButton</source>
         <translation>超链接按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="32"/>
         <source>A button that appears as hyperlink text and can navigate to URI or handle a Click event.</source>
         <translation>一种外观为超链接文本的按钮，可导航至 URI 或处理 Click 事件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="59"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="33"/>
         <source>RadioButton</source>
         <translation>单选按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="59"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="33"/>
         <source>A control that allows a user to select a single option from a group of options.</source>
         <translation>一种允许用户从一组选项中选择单一选项的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="63"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="34"/>
         <source>RatingControl</source>
         <translation>评分控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="63"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="34"/>
         <source>Rate something 1 to 5 stars.</source>
         <translation>为某项内容评分，从1到5星。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
         <source>RepeatButton</source>
         <translation>重复按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="35"/>
         <source>A button that raisers its Click event repeatedly from the time it&apos;s pressed until it&apos;s released.</source>
         <translation>一种按钮，从按下开始到松开为止会持续引发其Click事件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="36"/>
         <source>Slider</source>
         <translation>滑块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="36"/>
         <source>A control that lets the user select from a range of values by moving a Thumb control along a track.</source>
         <translation>一种控件，允许用户通过沿轨道移动Thumb控件来从一个值范围内进行选择。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="37"/>
         <source>SplitButton</source>
         <translation>拆分按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="37"/>
         <source>A two-part button that display a flyout when its secondary part is clicked.</source>
         <translation>一种由两部分组成的按钮，当单击其辅助部分时会显示一个浮出控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="78"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="38"/>
         <source>ToggleButton</source>
         <translation>切换按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="78"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="38"/>
         <source>A button that can be switched between two states like a CheckBox.</source>
         <translation>一种可在两种状态之间切换的按钮，类似于CheckBox。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
         <source>ToggleSplitButton</source>
         <translation>切换式拆分按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="39"/>
         <source>A version of the SplitButton where the activation target toggles on/off</source>
         <translation>一种特殊的SplitButton，其中的激活目标可实现开关功能。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="40"/>
         <source>ToggleSwitch</source>
         <translation>切换开关</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="40"/>
         <source>A switch that can be toggled between 2 states.</source>
         <translation>一种可在两种状态之间切换的开关。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="93"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="45"/>
         <source>FlipView</source>
         <translation>翻页视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="93"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="45"/>
         <source>Pressents a collection of items that the user can flip through, one item at a time.</source>
         <translation>呈现一个项目集合，用户可以逐个翻阅这些项目。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="46"/>
         <source>ListView</source>
         <translation>列表视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="46"/>
         <source>A control that presents a collection of items in a vertical list.</source>
         <translation>一种以垂直列表形式呈现项目集合的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="101"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
         <source>TreeView</source>
         <translation>树状视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="101"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="47"/>
         <source>The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.</source>
         <translation>TreeView控件是一种具有展开与折叠节点的层次化列表模式，节点中可包含嵌套的子项。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="108"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="52"/>
         <source>CalendarDatePicker</source>
         <translation>日历日期选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="108"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="52"/>
         <source>A control that lets users pick a date value using a calendar.</source>
         <translation>一个允许用户通过日历选择日期值的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="53"/>
         <source>CalendarView</source>
         <translation>日历视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="53"/>
         <source>A control that presents aa calendar for a user to choose a date from.</source>
         <translation>一个向用户提供日历以便从中选择日期的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="54"/>
         <source>DatePicker</source>
         <translation>日期选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="54"/>
         <source>A control that lets a user pick a date value.</source>
         <translation>一个允许用户选择日期值的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="120"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
         <source>TimePicker</source>
         <translation>时间选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="120"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="55"/>
         <source>A configurable control that lets a user pick a time value.</source>
         <translation>一个可配置的控件，允许用户选择时间值。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="60"/>
         <source>ContentDialog</source>
         <translation>内容对话框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="60"/>
         <source>A dialog box that can be customized to contain any XAML content.</source>
         <translation>一个可自定义的对话框，可用于承载任意 XAML 内容。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="131"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="61"/>
         <source>Flyout</source>
         <translation>浮出控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="131"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="61"/>
         <source>Shows contextual information and enables user interaction.</source>
         <translation>用于显示上下文信息并支持用户交互。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="135"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="62"/>
         <source>TeachingTip</source>
         <translation>教学提示</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="135"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="62"/>
         <source>A content-rich flyout for guiding users and enabling teaching moments.</source>
         <translation>一种内容丰富的浮出控件，用于引导用户并创造教学时机。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="142"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
         <source>Border</source>
         <translation>边框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="142"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="67"/>
         <source>A container control that draws a boundary line, background, or both, around another object.</source>
         <translation>一个容器控件，可在其他对象周围绘制边框线、背景，或同时具备两者。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="146"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="68"/>
         <source>Canvas</source>
         <translation>画布</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="146"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="68"/>
         <source>A layout panel that supports absolute positioning of child elements relative to the top left corner of the canvas.</source>
         <translation>一个布局面板，支持子元素相对于画布左上角的绝对定位。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="150"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="69"/>
         <source>Expander</source>
         <translation>折叠面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="150"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="69"/>
         <source>A container with a header that can be expanded to show a body with more content.</source>
         <translation>一个带有标题的容器，可通过展开显示包含更多内容的主体部分。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="154"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="70"/>
         <source>Grid</source>
         <translation>网格</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="154"/>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="158"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="70"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
         <source>A flexible, primitive control for data-driven layouts.</source>
         <translation>一种用于数据驱动布局的灵活且原始的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="158"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="71"/>
         <source>ItemsRepeater</source>
         <translation>项目重复器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="162"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="72"/>
         <source>RadioButtons</source>
         <translation>单选按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="162"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="72"/>
         <source>A control that displays a group of mutually exclusive options with keyboarding and accessibility support.</source>
         <translation>一种可显示一组互斥选项，并支持键盘操作和辅助功能的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="166"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="73"/>
         <source>RelativePanel</source>
         <translation>相对面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="166"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="73"/>
         <source>A panel that users relationships between elements to define layout.</source>
         <translation>一个通过定义元素之间的关系来确定布局的面板。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="170"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="74"/>
         <source>SplitView</source>
         <translation>拆分视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="170"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="74"/>
         <source>A container that has 2 content areas, with multiple display options for the pane.</source>
         <translation>一个包含两个内容区域的容器，其窗格支持多种显示方式。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="174"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
         <source>StackPanel</source>
         <translation>堆叠面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="174"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="75"/>
         <source>A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.</source>
         <translation>一个布局面板，它将子元素排列成一条可水平或垂直方向显示的单行。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="179"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="76"/>
         <source>VariableSizedWrapGrid</source>
         <translation>可变大小的流式网格</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="180"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="76"/>
         <source>A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns.</source>
         <translation>一个支持按行和列排列子元素的布局面板。每个子元素都可以跨越多行或多列。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="184"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="77"/>
         <source>Viewbox</source>
         <translation>视图框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="184"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="77"/>
         <source>A container control that scales its content to a specified size.</source>
         <translation>一个可将内容缩放到指定尺寸的容器控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="191"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
         <source>AnimatedVisualPlayer</source>
         <translation>动画视觉播放器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="191"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="82"/>
         <source>An element to render and control playback of motion graphics.</source>
         <translation>用于渲染并控制动态图形播放的元素。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="195"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="83"/>
         <source>Capture Element / Camera Perview</source>
         <translation>捕获元素/相机预览</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="195"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="83"/>
         <source>A sample for doing a camera preview.</source>
         <translation>一个用于实现相机预览的示例。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="200"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="84"/>
         <source>Image</source>
         <translation>图像</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="200"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="84"/>
         <source>A control to display image content.</source>
         <translation>用于显示图像内容的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="204"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="85"/>
         <source>MapControl</source>
         <translation>地图控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="204"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="85"/>
         <source>Display a symbolic map of the Earth.</source>
         <translation>显示地球的示意图。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="208"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
         <source>MediaPlayerElement</source>
         <translation>媒体播放器元素</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="208"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="86"/>
         <source>A control to display video and image content.</source>
         <translation>用于显示视频和图像内容的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="212"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="87"/>
         <source>PersonPicture</source>
         <translation>人物图片</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="212"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="87"/>
         <source>Displays the picture of a person/contact.</source>
         <translation>显示某个人或联系人的图片。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="216"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="88"/>
         <source>Sound</source>
         <translation>声音</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="216"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="88"/>
         <source>A code-behind only API that enables 2D and 3D UI sounds on all XAML controls.</source>
         <translation>一种仅限代码隐藏的 API，可在所有 XAML 控件上启用 2D 和 3D 用户界面音效。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="220"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="89"/>
         <source>WebView2</source>
         <translation>WebView2</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="220"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="89"/>
         <source>A Microsoft Edge(Chrominum) based control that hosts HTML content in an app.</source>
         <translation>一个基于 Microsoft Edge（Chromium）的控件，用于在应用程序中托管 HTML 内容。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="227"/>
         <source>AppBarButton</source>
-        <translation>应用栏按钮</translation>
+        <translation type="vanished">应用栏按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="227"/>
         <source>A button that&apos;s styled for use in a CommandBar.</source>
-        <translation>一个为在命令栏中使用而设计的按钮。</translation>
+        <translation type="vanished">一个为在命令栏中使用而设计的按钮。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="231"/>
         <source>AppBarSeparator</source>
-        <translation>应用程序栏分隔符</translation>
+        <translation type="vanished">应用程序栏分隔符</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="231"/>
         <source>A vertical line that&apos;s used to visually separate groups of commands in an app bar.</source>
-        <translation>用于在应用栏中视觉上分隔命令组的垂直线。</translation>
+        <translation type="vanished">用于在应用栏中视觉上分隔命令组的垂直线。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="236"/>
         <source>AppBarToggleButton</source>
-        <translation>应用程序栏切换按钮</translation>
+        <translation type="vanished">应用程序栏切换按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="237"/>
         <source>A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI.</source>
-        <translation>一种既可以处于选中、未选中状态，也可以处于不确定状态的按钮，类似于复选框，并且其外观样式适用于应用栏或其他专用界面。</translation>
+        <translation type="vanished">一种既可以处于选中、未选中状态，也可以处于不确定状态的按钮，类似于复选框，并且其外观样式适用于应用栏或其他专用界面。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="241"/>
         <source>CommandBar</source>
-        <translation>命令栏</translation>
+        <translation type="vanished">命令栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="241"/>
         <source>A toolbar for displaying application-specific commands that hanles layout and resizing of its contents.</source>
-        <translation>用于显示与应用程序相关的命令的工具栏，可管理其内容的布局和大小调整。</translation>
+        <translation type="vanished">用于显示与应用程序相关的命令的工具栏，可管理其内容的布局和大小调整。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="245"/>
         <source>CommandBarFlyout</source>
-        <translation>命令栏飞出式菜单</translation>
+        <translation type="vanished">命令栏飞出式菜单</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="245"/>
         <source>A mini-toolbar displaying proactive commands, and an optional menu of command.</source>
-        <translation>一个显示主动式命令的迷你工具栏，以及一个可选的命令菜单。</translation>
+        <translation type="vanished">一个显示主动式命令的迷你工具栏，以及一个可选的命令菜单。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="249"/>
         <source>MenuBar</source>
-        <translation>菜单栏</translation>
+        <translation type="vanished">菜单栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="249"/>
         <source>A classic menu, allowing the display of MenuItems containing MenuFlyoutItems.</source>
-        <translation>一个经典菜单，支持显示包含菜单项的弹出式菜单。</translation>
+        <translation type="vanished">一个经典菜单，支持显示包含菜单项的弹出式菜单。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="253"/>
         <source>MenuFlyout</source>
-        <translation>菜单浮出层</translation>
+        <translation type="vanished">菜单浮出层</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="253"/>
         <source>Shows a contextual list of simple command or options.</source>
-        <translation>显示一个包含简单命令或选项的上下文列表。</translation>
+        <translation type="vanished">显示一个包含简单命令或选项的上下文列表。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="258"/>
         <source>StandardUICommand</source>
-        <translation>标准用户界面命令</translation>
+        <translation type="vanished">标准用户界面命令</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="258"/>
         <source>A StandardUICommand is a built-in &apos;XamlUICommand&apos; which represents a commonly used command, e.g.&apos;save&apos;.</source>
-        <translation>StandardUICommand 是一种内置的“XamlUICommand”，用于表示常用命令，例如“保存”。</translation>
+        <translation type="vanished">StandardUICommand 是一种内置的“XamlUICommand”，用于表示常用命令，例如“保存”。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="262"/>
         <source>SwipeControl</source>
-        <translation>滑动控制</translation>
+        <translation type="vanished">滑动控制</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="262"/>
         <source>Touch gesture for quick menu actions on items.</source>
-        <translation>用于对项目执行快速菜单操作的触控手势。</translation>
+        <translation type="vanished">用于对项目执行快速菜单操作的触控手势。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="269"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="94"/>
         <source>BreadcrumbBar</source>
         <translation>面包屑导航栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="269"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="94"/>
         <source>Shows the trail of navigation taken to the current location..</source>
         <translation>显示到达当前位置的导航轨迹。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="273"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="95"/>
         <source>NavigationView</source>
         <translation>导航视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="273"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="95"/>
         <source>Common vertical layout for top-level areas of your app via a collapsible navigation menu.</source>
         <translation>通过可折叠的导航菜单，实现应用顶级区域的常见垂直布局。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="277"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="96"/>
         <source>Pivot</source>
         <translation>枢轴</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="277"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="96"/>
         <source>Presents information from different sources in a tabbed view.</source>
         <translation>以选项卡视图呈现来自不同来源的信息。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="281"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
         <source>SelectorBar</source>
         <translation>选择器栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="281"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="97"/>
         <source>Presents information from a small set of different sources. The user can pick one of them.</source>
         <translation>呈现来自少量不同来源的信息。用户可从中选择其一。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="285"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="98"/>
         <source>TabView</source>
         <translation>标签视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="285"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="98"/>
         <source>A control that displays a collection of tabs that can be used to display several documents.</source>
         <translation>一种控件，用于显示一组选项卡，可用于呈现多个文档。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="293"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="103"/>
         <source>AnnotatedScrollBar</source>
         <translation>带注释的滚动条</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="293"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="103"/>
         <source>A control that extends a regular vertical scrollbar&apos;s functionality for an easy navigation through large collections.</source>
         <translation>一种控件，扩展了常规垂直滚动条的功能，便于在大型数据集合中进行导航。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="297"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="104"/>
         <source>PipsPager</source>
         <translation>点数分页器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="297"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="104"/>
         <source>A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.</source>
         <translation>一个控件，用于在无需直观显示页码的情况下，让用户在分页集合中进行导航。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="301"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="105"/>
         <source>ScrollView</source>
         <translation>滚动视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="301"/>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="305"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="105"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="106"/>
         <source>A container control that lets the user pan and zoom its content.</source>
         <translation>一种容器控件，允许用户平移和缩放其内容。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="305"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="106"/>
         <source>ScrollViewer</source>
         <translation>滚动查看器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="310"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="107"/>
         <source>SemanticZoom</source>
         <translation>语义缩放</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="310"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="107"/>
         <source>Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items..</source>
         <translation>允许用户在集合的两种不同视图之间进行缩放切换，从而更轻松地浏览大型项目集合。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="317"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
         <source>InfoBadge</source>
         <translation>信息徽章</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="317"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="112"/>
         <source>An Non-instrusive Ui to display notifications or bring focus to an area.</source>
         <translation>一种非侵入式的用户界面，用于显示通知或将焦点聚焦到某个区域。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="321"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="113"/>
         <source>InfoBar</source>
         <translation>信息栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="321"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="113"/>
         <source>An inline message to display app-wide status change information.</source>
         <translation>用于显示应用全局状态变更信息的内联消息。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="325"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="114"/>
         <source>ProgressBar</source>
         <translation>进度条</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="325"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="114"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that doesn&apos;t block user interaction.</source>
         <translation>显示应用在某项任务中的进度，或表明应用正在执行不会阻断用户交互的持续性工作。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="329"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="115"/>
         <source>ProgressRing</source>
         <translation>进度环</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="329"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="115"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that does block user interaction.</source>
         <translation>显示应用在某项任务上的进度，或表明该应用正在执行持续性操作，且这些操作会阻止用户与界面交互。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="333"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
         <source>ToolTip</source>
         <translation>工具提示</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="333"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="116"/>
         <source>Displays information for element in a popup window.</source>
         <translation>在弹出窗口中显示元素的相关信息。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="340"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="121"/>
         <source>AutoSuggestBox</source>
         <translation>自动建议框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="340"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="121"/>
         <source>A control to provide suggestions as a user is typing.</source>
         <translation>一种在用户输入时提供建议的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="344"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="122"/>
         <source>NumberBox</source>
         <translation>数字框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="344"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="122"/>
         <source>A text control used for numeric input and evaluation of algebraic equations.</source>
         <translation>一种用于数值输入和代数方程求值的文本控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="348"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="123"/>
         <source>PasswordBox</source>
         <translation>密码框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="348"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="123"/>
         <source>A control for entering passwords.</source>
         <translation>用于输入密码的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="352"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="124"/>
         <source>RichEditBox</source>
         <translation>富文本编辑框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="352"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="124"/>
         <source>A rich text editing control that supports formatted text, hyperlinks and other rich content.</source>
         <translation>一个富文本编辑控件，支持格式化文本、超链接及其他富内容。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="356"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="125"/>
         <source>RichTextBlock</source>
         <translation>富文本块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="356"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="125"/>
         <source>A control that displays formatted text hyperlinks, inline images, and other rich content.</source>
         <translation>一种用于显示格式化文本超链接、内嵌图像及其他富内容的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="360"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="126"/>
         <source>TextBlock</source>
-        <translation></translation>
+        <translation>文本块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="360"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="126"/>
         <source>A lightweight control for displaying small amounts of text.</source>
         <translation>用于显示少量文本的轻量级控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="364"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
         <source>TextBox</source>
         <translation>文本框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluAllSamplesPage.cpp" line="364"/>
+        <location filename="../Gallery/FluAllSamplesPage.cpp" line="127"/>
         <source>A single-line or multi-line plain text field.</source>
         <translation>单行或多行纯文本字段。</translation>
     </message>
@@ -880,132 +862,132 @@
         <translation>一个响应用户输入并引发 Click 事件的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="15"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="11"/>
         <source>CheckBox</source>
         <translation>复选框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="15"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="11"/>
         <source>A control that a user can select or clear.</source>
         <translation>一种用户可选中或取消选中的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="14"/>
         <source>ColorPicker</source>
         <translation>颜色选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="14"/>
         <source>A control that displays a selectable color spectrum.</source>
         <translation>一个用于显示可选颜色色谱的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="27"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="16"/>
         <source>ComboBox</source>
         <translation>组合框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="27"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="16"/>
         <source>A drop-down list of items a user can select from.</source>
         <translation>用户可从中进行选择的下拉列表。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="32"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="18"/>
         <source>DropDownButton</source>
         <translation>下拉按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="32"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="18"/>
         <source>A button that displays a flyout of choices when clicked.</source>
         <translation>一个在单击时会显示选项弹出菜单的按钮。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="37"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="20"/>
         <source>HyperlinkButton</source>
-        <translation></translation>
+        <translation>超链接按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="37"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="20"/>
         <source>A button that appears as hyperlink text and can navigate to URI or handle a Click event.</source>
         <translation>一个显示为超链接文本的按钮，可导航至 URI 或处理 Click 事件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="42"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
         <source>RadioButton</source>
         <translation>单选按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="42"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="22"/>
         <source>A control that allows a user to select a single option from a group of options.</source>
         <translation>一种允许用户从一组选项中选择单个选项的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="47"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="24"/>
         <source>RatingControl</source>
         <translation>评分控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="47"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="24"/>
         <source>Rate something 1 to 5 stars.</source>
         <translation>给某物评1到5星。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="52"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="26"/>
         <source>RepeatButton</source>
         <translation>重复按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="52"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="26"/>
         <source>A button that raisers its Click event repeatedly from the time it&apos;s pressed until it&apos;s released.</source>
         <translation>一个按钮，从按下到释放期间会持续引发其 Click 事件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="57"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="28"/>
         <source>Slider</source>
         <translation>滑块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="57"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="28"/>
         <source>A control that lets the user select from a range of values by moving a Thumb control along a track.</source>
         <translation>一种控件，允许用户通过沿轨道移动滑块来从一组数值中进行选择。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="64"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="31"/>
         <source>SplitButton</source>
         <translation>分割按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="64"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="31"/>
         <source>A two-part button that display a flyout when its secondary part is clicked.</source>
         <translation>一个由两部分组成的按钮，当单击其辅助部分时会显示弹出菜单。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="71"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="34"/>
         <source>ToggleButton</source>
         <translation>切换按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="71"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="34"/>
         <source>A button that can be switched between two states like a CheckBox.</source>
         <translation>一个可以像复选框一样在两种状态之间切换的按钮。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="76"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="36"/>
         <source>ToggleSplitButton</source>
         <translation>切换拆分按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="76"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="36"/>
         <source>A version of the SplitButton where the activation target toggles on/off</source>
         <translation>一种分隔按钮的变体，其激活目标会在开启与关闭之间切换</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="81"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="38"/>
         <source>ToggleSwitch</source>
         <translation>切换开关</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluBasicInputPage.cpp" line="81"/>
+        <location filename="../Gallery/FluBasicInputPage.cpp" line="38"/>
         <source>A switch that can be toggled between 2 states.</source>
         <translation>一种可在两种状态之间切换的开关。</translation>
     </message>
@@ -1015,7 +997,7 @@
     <message>
         <location filename="../Gallery/FluBorderPage.cpp" line="6"/>
         <source>Border</source>
-        <translation>边境</translation>
+        <translation>边框</translation>
     </message>
     <message>
         <location filename="../Gallery/FluBorderPage.cpp" line="7"/>
@@ -1055,17 +1037,17 @@
     <message>
         <location filename="../Gallery/FluBorderPage.cpp" line="28"/>
         <source>green</source>
-        <translation>绿色</translation>
+        <translation>green</translation>
     </message>
     <message>
         <location filename="../Gallery/FluBorderPage.cpp" line="32"/>
         <source>pink</source>
-        <translation>粉色</translation>
+        <translation>pink</translation>
     </message>
     <message>
         <location filename="../Gallery/FluBorderPage.cpp" line="36"/>
         <source>blue</source>
-        <translation>蓝色</translation>
+        <translation>blue</translation>
     </message>
 </context>
 <context>
@@ -1200,32 +1182,32 @@
         <translation>呈现一个可供用户逐项翻阅的项目集合。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="10"/>
         <source>ListView</source>
         <translation>列表视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="10"/>
         <source>A control that presents a collection of items in a vertical list.</source>
         <translation>一种以垂直列表形式展示项目集合的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="12"/>
         <source>TreeView</source>
         <translation>树视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="12"/>
         <source>The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.</source>
         <translation>树视图控件是一种分层列表模式，支持展开与折叠包含嵌套项的节点。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="23"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="14"/>
         <source>TableView</source>
         <translation>表格视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluCollectionsPage.cpp" line="23"/>
+        <location filename="../Gallery/FluCollectionsPage.cpp" line="14"/>
         <source>A control taht presents a collection of items in rows and columns.</source>
         <translation>一种以行和列形式展示项目集合的控件。</translation>
     </message>
@@ -1285,6 +1267,36 @@
         <source>Yellow</source>
         <translation>黄色</translation>
     </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="36"/>
+        <source>A ComboBox with placeholder text and initial selection.</source>
+        <translation>一个带有占位符文本和初始选中项的组合框。</translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="42"/>
+        <source>Select a fruit...</source>
+        <translation>选择一种水果...</translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="43"/>
+        <source>Apple</source>
+        <translation>苹果</translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="44"/>
+        <source>Banana</source>
+        <translation>香蕉</translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="45"/>
+        <source>Cherry</source>
+        <translation>樱桃</translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluComboBoxPage.cpp" line="46"/>
+        <source>Grape</source>
+        <translation>葡萄</translation>
+    </message>
 </context>
 <context>
     <name>FluContentDialogPage</name>
@@ -1337,32 +1349,32 @@
         <translation>一种允许用户通过日历选择日期值的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="13"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="10"/>
         <source>CalendarView</source>
         <translation>日历视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="13"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="10"/>
         <source>A control that presents aa calendar for a user to choose a date from.</source>
         <translation>一种向用户提供日历以便从中选择日期的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="18"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="12"/>
         <source>DatePicker</source>
         <translation>日期选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="18"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="12"/>
         <source>A control that lets a user pick a date value.</source>
         <translation>一种允许用户选择日期值的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="23"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="14"/>
         <source>TimePicker</source>
         <translation>时间选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDateAndTimePage.cpp" line="23"/>
+        <location filename="../Gallery/FluDateAndTimePage.cpp" line="14"/>
         <source>A configurable control that lets a user pick a time value.</source>
         <translation>一个可配置的控件，允许用户选择时间值。</translation>
     </message>
@@ -1403,22 +1415,22 @@
         <translation>一个可自定义的对话框，可用于容纳任意 XAML 内容。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="10"/>
         <source>Flyout</source>
         <translation>飞出菜单</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="10"/>
         <source>Shows contextual information and enables user interaction.</source>
         <translation>显示上下文信息并支持用户交互。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="12"/>
         <source>TeachingTip</source>
         <translation>教学提示</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="18"/>
+        <location filename="../Gallery/FluDialogsAndFlyoutsPage.cpp" line="12"/>
         <source>A content-rich flyout for guiding users and enabling teaching moments.</source>
         <translation>一个内容丰富的悬浮菜单，用于引导用户并创造教学契机。</translation>
     </message>
@@ -1604,504 +1616,584 @@
 <context>
     <name>FluGalleryWindow</name>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="21"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="22"/>
         <source>CppQt WinUI3 Gallery Dev</source>
         <translation>CppQt WinUI3 示例库 开发版</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="24"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="25"/>
         <source>CppQt WinUI3 Gallery</source>
         <translation>CppQt WinUI3 示例库</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="134"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="275"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="292"/>
         <source>Home</source>
         <translation>首页</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="155"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="297"/>
         <source>Design guidance</source>
         <translation>设计指南</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="156"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="298"/>
         <source>Typography</source>
         <translation>排版</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="157"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="299"/>
         <source>Icons</source>
         <translation>图标</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="158"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="300"/>
         <source>Emoijs</source>
         <translation>表情符号</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="160"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="302"/>
         <source>2-level</source>
         <translation>二级</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="162"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="163"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="164"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="304"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="305"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="306"/>
         <source>3-level</source>
         <translation>三级</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="166"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="167"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="168"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="308"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="309"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="310"/>
         <source>4-level</source>
         <translation>四级</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="170"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="171"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="172"/>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="173"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="312"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="313"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="314"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="315"/>
         <source>5-level</source>
         <translation>五级</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="230"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="365"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="383"/>
         <source>All samples</source>
         <translation>全部示例</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="252"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="388"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="492"/>
         <source>Basic input</source>
         <translation>基础输入</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="259"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="394"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="493"/>
         <source>InputValidation</source>
         <translation>输入验证</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="262"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="397"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="493"/>
         <source>Button</source>
         <translation>按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="268"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="402"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="493"/>
         <source>DropDownButton</source>
         <translation>下拉按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="274"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="407"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="494"/>
         <source>HyperLinkButton</source>
         <translation>超链接按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="280"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="412"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="494"/>
         <source>RepeatButton</source>
         <translation>重复按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="286"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="417"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="495"/>
         <source>ToggleButton</source>
         <translation>切换按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="292"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="422"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="495"/>
         <source>SplitButton</source>
         <translation>拆分按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="298"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="427"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="496"/>
         <source>ToggleSplitButton</source>
         <translation>切换式拆分按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="300"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="429"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="496"/>
         <source>CheckBox</source>
         <translation>复选框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="306"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="434"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="496"/>
         <source>ColorPicker</source>
         <translation>颜色选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="312"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="439"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="497"/>
         <source>ComboBox</source>
         <translation>下拉组合框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="318"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="444"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="497"/>
         <source>RadioButton</source>
         <translation>单选按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="324"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="449"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="498"/>
         <source>RatingControl</source>
         <translation>评分控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="330"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="454"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="498"/>
         <source>Slider</source>
         <translation>滑块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="336"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="459"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="499"/>
         <source>ToggleSwitch</source>
         <translation>开关控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="373"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="505"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="548"/>
         <source>Connections</source>
         <translation>连接</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="379"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="510"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="549"/>
         <source>FlipView</source>
         <translation>翻页视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="390"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="516"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="549"/>
         <source>ListView</source>
         <translation>列表视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="398"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="522"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="550"/>
         <source>TreeView</source>
         <translation>树形视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="404"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="527"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="550"/>
         <source>TableView</source>
         <translation>表格视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="434"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="556"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="599"/>
         <source>Date &amp; time</source>
         <translation>日期与时间</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="440"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="561"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="600"/>
         <source>CalendarDatePicker</source>
         <translation>日历式日期选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="446"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="566"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="600"/>
         <source>CalendarView</source>
         <translation>日历视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="452"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="571"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="601"/>
         <source>DatePicker</source>
         <translation>日期选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="458"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="576"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="601"/>
         <source>TimePicker</source>
         <translation>时间选择器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="485"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="607"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="641"/>
         <source>Dialogs &amp; flyouts</source>
         <translation>对话框与浮出控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="491"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="612"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="642"/>
         <source>ContentDialog</source>
         <translation>内容对话框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="498"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="618"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="642"/>
         <source>Flyout</source>
         <translation>浮出控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="505"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="624"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="643"/>
         <source>TeachingTip</source>
         <translation>提示工具</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="527"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="649"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="709"/>
         <source>Layout</source>
         <translation>布局</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="533"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="654"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="710"/>
         <source>Border</source>
         <translation>边框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="539"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="659"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="710"/>
         <source>Canvas</source>
         <translation>画布</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="542"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="661"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="710"/>
         <source>Expander</source>
         <translation>折叠面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="548"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="666"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="711"/>
         <source>ItemsRepeater</source>
         <translation>项重复器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="551"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="668"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="711"/>
         <source>Grid</source>
         <translation>网格</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="554"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="670"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="712"/>
         <source>RadioButtons</source>
         <translation>单选按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="560"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="675"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="712"/>
         <source>RelativePanel</source>
         <translation>相对面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="563"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="677"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="713"/>
         <source>SplitView</source>
         <translation>拆分视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="566"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="679"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="713"/>
         <source>StackPanel</source>
         <translation>堆栈面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="569"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="681"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="714"/>
         <source>VariableSizedWrapGrid</source>
         <translation>可变大小的流式网格</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="572"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="683"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="714"/>
         <source>Viewbox</source>
         <translation>视图盒</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="602"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="720"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="742"/>
         <source>Media</source>
         <translation>媒体</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="608"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="725"/>
         <source>AnimatedVisualPlayer</source>
         <translation>动画视觉播放器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="609"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="726"/>
         <source>Capture Element / Camera Preview</source>
         <translation>捕获元素/相机预览</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="610"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="727"/>
         <source>Image</source>
         <translation>图像</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="611"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="728"/>
         <source>mediaPalyerElement</source>
         <translation>媒体播放器元素</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="612"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="729"/>
         <source>PersonPicture</source>
         <translation>人物图片</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="613"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="730"/>
         <source>Sound</source>
         <translation>声音</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="614"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="731"/>
         <source>WebView2</source>
         <translation>WebView2</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="628"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="747"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="755"/>
         <source>Setting</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="639"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="765"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="857"/>
         <source>Menus &amp; toolbars</source>
         <translation>菜单和工具栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="647"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="772"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="858"/>
         <source>AppBarButton</source>
         <translation>应用栏按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="653"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="777"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="858"/>
         <source>AppBarSeparator</source>
         <translation>应用程序栏分隔符</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="656"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="779"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="859"/>
         <source>AppBarToggleButton</source>
         <translation>应用程序栏切换按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="662"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="784"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="859"/>
         <source>CommandBar</source>
         <translation>命令栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="665"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="786"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="860"/>
         <source>MenuBar</source>
         <translation>菜单栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="671"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="791"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="860"/>
         <source>CommandBarFlyout</source>
         <translation>命令栏飞出式菜单</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="674"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="793"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="861"/>
         <source>MenuFlyout</source>
         <translation>菜单浮出层</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="677"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="795"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="861"/>
         <source>SwipeControl</source>
         <translation>滑动控制</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="706"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="817"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="825"/>
         <source>Navigation</source>
         <translation>导航</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="712"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="818"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="830"/>
         <source>BreadcrumbBar</source>
         <translation>面包屑导航栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="715"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="818"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="832"/>
         <source>NavigationView</source>
         <translation>导航视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="718"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="819"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="834"/>
         <source>Pivot</source>
         <translation>枢轴</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="724"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="819"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="839"/>
         <source>TabView</source>
         <translation>标签视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="747"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="867"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="900"/>
         <source>Scrolling</source>
         <translation>滚动</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="753"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="872"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="901"/>
         <source>AnnotatedScrollBar</source>
         <translation>带注释的滚动条</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="754"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="873"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="901"/>
         <source>PipsPager</source>
         <translation>分页器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="756"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="875"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="902"/>
         <source>ScrollView</source>
-        <translation>视图</translation>
+        <translation>滚动视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="772"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="890"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="902"/>
         <source>ScrollViewer</source>
         <translation>滚动查看器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="773"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="891"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="902"/>
         <source>SemanticZoom</source>
         <translation>语义化缩放</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="785"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="908"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="954"/>
         <source>Status &amp; info</source>
         <translation>状态与信息</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="791"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="913"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="955"/>
         <source>InfoBadge</source>
         <translation>信息徽章</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="797"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="918"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="955"/>
         <source>InfoBar</source>
         <translation>信息栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="804"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="924"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="956"/>
         <source>ProgressBar</source>
         <translation>进度条</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="810"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="929"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="956"/>
         <source>ProgressRing</source>
         <translation>进度环</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="817"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="935"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="957"/>
         <source>ToolTip</source>
         <translation>工具提示</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="841"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="963"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1013"/>
         <source>Text</source>
         <translation>文本</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="847"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="968"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1014"/>
         <source>AutoSuggestBox</source>
         <translation>自动建议框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="853"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="973"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1014"/>
         <source>NumberBox</source>
         <translation>数字输入框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="859"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="978"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1015"/>
         <source>PasswordBox</source>
         <translation>密码框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="865"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="983"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1015"/>
         <source>RichEditBox</source>
         <translation>富编辑框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="868"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="985"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1016"/>
         <source>RichTextBlock</source>
         <translation>富文本块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="871"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="987"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1016"/>
         <source>TextBlock</source>
         <translation>文本块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="874"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="989"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1017"/>
         <source>TextBox</source>
         <translation>文本框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="918"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1027"/>
         <source>Close Gallery Window?</source>
         <translation>关闭图库窗口？</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluGalleryWindow.cpp" line="918"/>
+        <location filename="../Gallery/FluGalleryWindow.cpp" line="1027"/>
         <source>choose &quot;Ok&quot; to close. choose &quot;Cancel&quot; do nothing.</source>
         <translation>选择“确定”以关闭。选择“取消”则不执行任何操作。</translation>
     </message>
@@ -2142,7 +2234,7 @@
     <message>
         <location filename="../Gallery/FluHomePage.cpp" line="33"/>
         <source>A control that presents a collection of items using various layouts</source>
-        <translation></translation>
+        <translation>一种使用多种布局呈现项目集合的控件。</translation>
     </message>
     <message>
         <location filename="../Gallery/FluHomePage.cpp" line="37"/>
@@ -2157,7 +2249,7 @@
     <message>
         <location filename="../Gallery/FluHomePage.cpp" line="41"/>
         <source>Recently updated samples</source>
-        <translation></translation>
+        <translation>最近更新的示例</translation>
     </message>
     <message>
         <location filename="../Gallery/FluHomePage.cpp" line="47"/>
@@ -2402,98 +2494,98 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation>一种容器控件，可在另一个对象周围绘制边框线、背景，或同时绘制两者。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="13"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="10"/>
         <source>Canvas</source>
         <translation>画布</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="13"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="10"/>
         <source>A layout panel that supports absolute positioning of child elements relative to the top left corner of the canvas.</source>
         <translation>一个支持子元素相对于画布左上角进行绝对定位的布局面板。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="12"/>
         <source>Expander</source>
         <translation>折叠面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="12"/>
         <source>A container with a header that can be expanded to show a body with more content.</source>
         <translation>一种带有标题的容器，可展开以显示包含更多内容的主体部分。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="23"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="14"/>
         <source>Grid</source>
         <translation>网格</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="23"/>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="14"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="16"/>
         <source>A flexible, primitive control for data-driven layouts.</source>
         <translation>一种灵活的、用于数据驱动型布局的原生控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="16"/>
         <source>ItemsRepeater</source>
         <translation>项目重复器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="33"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
         <source>RadioButtons</source>
         <translation>单选按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="33"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="18"/>
         <source>A control that displays a group of mutually exclusive options with keyboarding and accessibility support.</source>
         <translation>一种可显示一组互斥选项，并支持键盘操作和辅助功能的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="38"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="20"/>
         <source>RelativePanel</source>
         <translation>相对面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="38"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="20"/>
         <source>A panel that users relationships between elements to define layout.</source>
         <translation>一个通过定义元素之间的关系来确定布局的面板。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="43"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="22"/>
         <source>SplitView</source>
         <translation>拆分视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="43"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="22"/>
         <source>A container that has 2 content areas, with multiple display options for the pane.</source>
         <translation>一个包含两个内容区域的容器，其窗格支持多种显示方式。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="48"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="24"/>
         <source>StackPanel</source>
         <translation>堆叠面板</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="48"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="24"/>
         <source>A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically.</source>
         <translation>一个布局面板，它将子元素排列成一条可水平或垂直方向显示的单行。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="54"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="26"/>
         <source>VariableSizedWrapGrid</source>
         <translation>可变大小的流式网格</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="55"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="26"/>
         <source>A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns.</source>
         <translation>一个支持按行和列排列子元素的布局面板。每个子元素都可以跨越多行或多列。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="60"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
         <source>Viewbox</source>
         <translation>视图框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluLayoutPage.cpp" line="60"/>
+        <location filename="../Gallery/FluLayoutPage.cpp" line="28"/>
         <source>A container control that scales its content to a specified size.</source>
         <translation>一个可将内容缩放到指定尺寸的容器控件。</translation>
     </message>
@@ -2614,72 +2706,72 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation>用于渲染并控制动态图形播放的元素。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="10"/>
         <source>Capture Element / Camera Perview</source>
         <translation>捕获元素/相机预览</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="10"/>
         <source>A sample for doing a camera preview.</source>
         <translation>一个用于实现相机预览的示例。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="12"/>
         <source>Image</source>
         <translation>图像</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="12"/>
         <source>A control to display image content.</source>
         <translation>用于显示图像内容的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="23"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="14"/>
         <source>MapControl</source>
         <translation>地图控件</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="23"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="14"/>
         <source>Display a symbolic map of the Earth.</source>
         <translation>显示地球的示意图。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="28"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="16"/>
         <source>MediaPlayerElement</source>
         <translation>媒体播放器元素</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="28"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="16"/>
         <source>A control to display video and image content.</source>
         <translation>用于显示视频和图像内容的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="33"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
         <source>PersonPicture</source>
         <translation>人像</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="33"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="18"/>
         <source>Displays the picture of a person/contact.</source>
         <translation>显示某个人或联系人的图片。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="38"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="20"/>
         <source>Sound</source>
         <translation>声音</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="38"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="20"/>
         <source>A code-behind only API that enables 2D and 3D UI sounds on all XAML controls.</source>
         <translation>一种仅限代码隐藏的 API，可在所有 XAML 控件上启用 2D 和 3D 用户界面音效。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="43"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="22"/>
         <source>WebView2</source>
         <translation>WebView2</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMediaPage.cpp" line="43"/>
+        <location filename="../Gallery/FluMediaPage.cpp" line="22"/>
         <source>A Microsoft Edge(Chrominum) based control that hosts HTML content in an app.</source>
         <translation>一个基于 Microsoft Edge（Chromium 内核）的控件，用于在应用程序中承载 HTML 内容。</translation>
     </message>
@@ -2702,92 +2794,92 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation>一个为在命令栏中使用而设计的按钮。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="10"/>
         <source>AppBarSeparator</source>
         <translation>应用栏分隔符</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="13"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="10"/>
         <source>A vertical line that&apos;s used to visually separate groups of commands in an app bar.</source>
         <translation>用于在应用栏中视觉上分隔命令组的垂直线。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="19"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="12"/>
         <source>AppBarToggleButton</source>
         <translation>应用程序栏切换按钮</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="20"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="12"/>
         <source>A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI.</source>
         <translation>一种既可以处于选中、未选中状态，也可以显示为不确定状态的按钮，类似于复选框，并且其外观样式适用于应用栏或其他专用界面。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="25"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="14"/>
         <source>CommandBar</source>
         <translation>命令栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="25"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="14"/>
         <source>A toolbar for displaying application-specific commands that hanles layout and resizing of its contents.</source>
         <translation>用于显示与应用程序相关的命令的工具栏，可管理其内容的布局和大小调整。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="30"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="16"/>
         <source>CommandBarFlyout</source>
         <translation>命令栏飞出式菜单</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="30"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="16"/>
         <source>A mini-toolbar displaying proactive commands, and an optional menu of command.</source>
         <translation>一个显示主动式命令的迷你工具栏，以及一个可选的命令菜单。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="35"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="18"/>
         <source>MenuBar</source>
         <translation>菜单栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="35"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="18"/>
         <source>A classic menu, allowing the display of MenuItems containing MenuFlyoutItems.</source>
         <translation>一个经典菜单，支持显示包含菜单项的弹出式菜单。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="40"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="20"/>
         <source>MenuFlyout</source>
         <translation>菜单浮出层</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="40"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="20"/>
         <source>Shows a contextual list of simple command or options.</source>
         <translation>显示一个包含简单命令或选项的上下文列表。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="46"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="22"/>
         <source>StandardUICommand</source>
         <translation>标准用户界面命令</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="46"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="22"/>
         <source>A StandardUICommand is a built-in &apos;XamlUICommand&apos; which represents a commonly used command, e.g.&apos;save&apos;.</source>
         <translation>StandardUICommand 是一种内置的“XamlUICommand”，用于表示常用命令，例如“保存”。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="47"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="22"/>
         <source>StandardUICommandPage</source>
         <translation>标准用户界面命令页</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="51"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="24"/>
         <source>SwipeControl</source>
         <translation>滑动控制</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="51"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="24"/>
         <source>Touch gesture for quick menu actions on items.</source>
         <translation>用于对项目执行快速菜单操作的触控手势。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="52"/>
+        <location filename="../Gallery/FluMenuAndToolBarsPage.cpp" line="24"/>
         <source>SwipeControlPage</source>
         <translation>滑动控制页面</translation>
     </message>
@@ -2881,7 +2973,7 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
     <message>
         <location filename="../Gallery/FluMenuBarPage.cpp" line="60"/>
         <location filename="../Gallery/FluMenuBarPage.cpp" line="120"/>
-        <location filename="../Gallery/FluMenuBarPage.cpp" line="168"/>
+        <location filename="../Gallery/FluMenuBarPage.cpp" line="167"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
@@ -2926,12 +3018,12 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation>全选</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuBarPage.cpp" line="167"/>
+        <location filename="../Gallery/FluMenuBarPage.cpp" line="166"/>
         <source>Setting</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluMenuBarPage.cpp" line="169"/>
+        <location filename="../Gallery/FluMenuBarPage.cpp" line="168"/>
         <source>Feedback</source>
         <translation>反馈</translation>
     </message>
@@ -2954,42 +3046,42 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
         <translation>显示到达当前页面的完整路径。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="13"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="10"/>
         <source>NavigationView</source>
         <translation>导航视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="13"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="10"/>
         <source>Common vertical layout for top-level areas of your app via a collapsible navigation menu.</source>
         <translation>通过可折叠的导航菜单，为应用的各顶层区域提供常见的垂直布局。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="18"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="12"/>
         <source>Pivot</source>
         <translation>枢轴</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="18"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="12"/>
         <source>Presents information from different sources in a tabbed view..</source>
         <translation>以选项卡视图呈现来自不同来源的信息。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="23"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="14"/>
         <source>SelectorBar</source>
         <translation>选择器栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="23"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="14"/>
         <source>Presents information from a small set of different sources. The user can pick one of them.</source>
         <translation>呈现来自少量不同来源的信息。用户可从中选择其一。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="28"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="16"/>
         <source>TabView</source>
         <translation>标签视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluNavigationPage.cpp" line="28"/>
+        <location filename="../Gallery/FluNavigationPage.cpp" line="16"/>
         <source>A control that displays a collection of tabs that can be used to display several documents.</source>
         <translation>一种用于显示多个选项卡的控件，这些选项卡可用于呈现不同的文档。</translation>
     </message>
@@ -3318,48 +3410,48 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>滚动</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="9"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="8"/>
         <source>AnnotatedScrollBar</source>
         <translation>带注释的滚动条</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="9"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="8"/>
         <source>A control that extends a regular vertical scrollbar&apos;s functionality for an easy navigation through large collections.</source>
         <translation>一种控件，扩展了常规垂直滚动条的功能，便于在大型数据集合中进行导航。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="10"/>
         <source>PipsPager</source>
         <translation>点数分页器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="10"/>
         <source>A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.</source>
         <translation>一个控件，用于在无需直观显示页码的情况下，让用户在分页集合中进行导航。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="19"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="12"/>
         <source>ScrollView</source>
         <translation>滚动视图</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="19"/>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="24"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="12"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
         <source>A container control that lets the user pan and zoom its content.</source>
         <translation>一种容器控件，允许用户平移和缩放其内容。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="24"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="14"/>
         <source>ScrollViewer</source>
         <translation>滚动查看器</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="30"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="16"/>
         <source>SemanticZoom</source>
         <translation>语义缩放</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluScrollingPage.cpp" line="30"/>
+        <location filename="../Gallery/FluScrollingPage.cpp" line="16"/>
         <source>Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items..</source>
         <translation>允许用户在集合的两种不同视图之间进行缩放切换，从而更轻松地浏览大型项目集合。</translation>
     </message>
@@ -3394,7 +3486,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     <message>
         <location filename="../Gallery/FluSettingPage.cpp" line="32"/>
         <source>Dark</source>
-        <translation>黑色</translation>
+        <translation>深色</translation>
     </message>
     <message>
         <location filename="../Gallery/FluSettingPage.cpp" line="33"/>
@@ -3417,77 +3509,77 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>顶部</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="58"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="63"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="58"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="63"/>
         <source>Select which language to display.</source>
         <translation>选择要显示的语言。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="60"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="65"/>
         <source>en-US</source>
         <translation>英语</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="61"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="66"/>
         <source>zh-CN</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="81"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="86"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="86"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="91"/>
         <source>FluentUI Gallery(Cpp &amp; Qt).</source>
         <translation>FluentUI 图库（C++ 和 Qt）。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="87"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="92"/>
         <source>@2023-2026 FluentUI For Qt &amp; Cpp. All rights reserved.</source>
         <translation>@2023-2026 FluentUI for Qt &amp; C++。保留所有权利。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="88"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="93"/>
         <source>1.0.8</source>
         <translation>1.0.8</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="101"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="106"/>
         <source>To clone thepository</source>
         <translation>克隆仓库</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="112"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="117"/>
         <source>File a bug or Suggest a sample.</source>
         <translation>提交一个错误或建议一个示例。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="115"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="120"/>
         <source>Get Start.</source>
         <translation>开始使用。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="123"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="128"/>
         <source>Dependencies &amp; references</source>
         <translation>依赖与引用</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="126"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="131"/>
         <source>Microsoft/WinUI-Gallery</source>
         <translation>Microsoft/WinUI-Gallery</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="129"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="134"/>
         <source>wangwenx190/framelesshelper</source>
         <translation>wangwenx190/framelesshelper</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluSettingPage.cpp" line="132"/>
+        <location filename="../Gallery/FluSettingPage.cpp" line="137"/>
         <source>stdware/qwindowkit</source>
         <translation>stdware/qwindowkit</translation>
     </message>
@@ -3556,42 +3648,42 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>一种用于显示通知或聚焦特定区域的非侵入式界面元素。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="13"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="10"/>
         <source>InfoBar</source>
         <translation>信息栏</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="13"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="10"/>
         <source>An inline message to display app-wide status change information.</source>
         <translation>一种用于展示应用级状态变更信息的内联消息。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="18"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="12"/>
         <source>ProgressBar</source>
         <translation>进度条</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="18"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="12"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that doesn&apos;t block user interaction.</source>
         <translation>用于显示应用在某项任务中的进度，或表示应用正在执行不会阻断用户交互的后台工作。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="23"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="14"/>
         <source>ProgressRing</source>
         <translation>进度环</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="23"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="14"/>
         <source>Shows the apps progress on a task, or that the app is performing ongoing work that does block user interaction.</source>
         <translation>用于显示应用在某项任务中的进度，或表示应用正在执行会阻断用户交互的后台工作。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="28"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="16"/>
         <source>ToolTip</source>
         <translation>工具提示</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="28"/>
+        <location filename="../Gallery/FluStatusAndInfoPage.cpp" line="16"/>
         <source>Displays information for element in a popup window.</source>
         <translation>以弹出窗口的形式为某个元素显示相关信息。</translation>
     </message>
@@ -3670,62 +3762,62 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>一种在用户输入时提供建议的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="13"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="10"/>
         <source>NumberBox</source>
         <translation>数值框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="13"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="10"/>
         <source>A text control used for numeric input and evaluation of algebraic equations.</source>
         <translation>用于数值输入及代数表达式求值的文本控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="12"/>
         <source>PasswordBox</source>
         <translation>密码框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="12"/>
         <source>A control for entering passwords.</source>
         <translation>用于输入密码的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="23"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="14"/>
         <source>RichEditBox</source>
         <translation>富编辑框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="23"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="14"/>
         <source>A rich text editing control that supports formatted text, hyperlinks and other rich content.</source>
         <translation>一种支持格式化文本、超链接及其他富内容的富文本编辑控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="28"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="16"/>
         <source>RichTextBlock</source>
         <translation>富文本块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="28"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="16"/>
         <source>A control that displays formatted text hyperlinks, inline images, and other rich content.</source>
         <translation>一种用于显示格式化文本、超链接、内嵌图片及其他富内容的控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="33"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
         <source>TextBlock</source>
         <translation>文本块</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="33"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="18"/>
         <source>A lightweight control for displaying small amounts of text.</source>
         <translation>一种用于显示少量文本的轻量级控件。</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="20"/>
         <source>TextBox</source>
         <translation>文本框</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTextPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTextPage.cpp" line="20"/>
         <source>A single-line or multi-line plain text field.</source>
         <translation>单行或多行纯文本输入字段。</translation>
     </message>
@@ -3828,8 +3920,17 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../Gallery/FluTreeViewPage.cpp" line="34"/>
-        <source>Overal Project Plan</source>
+        <source>Overall Project Plan</source>
         <translation>项目总体计划</translation>
+    </message>
+    <message>
+        <location filename="../Gallery/FluTreeViewPage.cpp" line="54"/>
+        <source>Flooring Woodgrain Type</source>
+        <translation>地板木纹类型</translation>
+    </message>
+    <message>
+        <source>Overal Project Plan</source>
+        <translation type="vanished">项目总体计划</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTreeViewPage.cpp" line="38"/>
@@ -3852,9 +3953,8 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>油漆配色方案</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTreeViewPage.cpp" line="54"/>
         <source>Flooring woodgrain type</source>
-        <translation>地板木纹类型</translation>
+        <translation type="vanished">地板木纹类型</translation>
     </message>
     <message>
         <location filename="../Gallery/FluTreeViewPage.cpp" line="58"/>
@@ -3870,152 +3970,152 @@ Determinate - shows how much progress has been made on a known amount of work.</
         <translation>排版</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="11"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="9"/>
         <source>Type ramp</source>
         <translation>类型坡道</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Example</source>
         <translation>例子</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Variable Font</source>
         <translation>可变字体</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Size</source>
         <translation>尺寸</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="33"/>
         <source>Style</source>
         <translation>风格</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>Caption</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>Text,Regular</source>
         <translation>文本，常规</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>12/16 epx</source>
         <translation>12/16 epx</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="34"/>
         <source>CaptionTextBlockStyle</source>
         <translation>字幕文本块样式</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
         <source>Body</source>
         <translation>正文</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
         <source>Text,SemiBold</source>
         <translation>文本，半粗体</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>14/20 epx</source>
         <translation>14/20 epx</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="41"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="35"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>BodyStrongTextBlockStyle</source>
         <translation>粗体文本样式</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>Body Strong</source>
         <translation>粗体</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="44"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="36"/>
         <source>Text, SemiBold</source>
         <translation>文本，半粗体</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
         <source>Subtitle</source>
         <translation>子标题</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>Display, SemiBold</source>
         <translation>显示，半粗体</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
         <source>20/28 epx</source>
-        <translation>20/28 英寸</translation>
+        <translation>20/28 epx</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="47"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="37"/>
         <source>SubtitleTextBlockStyle</source>
         <translation>子标题文本块样式</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>Title</source>
         <translation>标题</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>28/36 epx</source>
         <translation>28/36 epx</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="50"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="38"/>
         <source>TitleTextBlockStyle</source>
         <translation>标题文本块样式</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
         <source>Title Large</source>
         <translation>大标题</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
         <source>40/52 epx</source>
         <translation>40/52 epx</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="53"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="39"/>
         <source>TitleLargeTextBlockStyle</source>
         <translation>标题大文本块样式</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>Display</source>
         <translation>显示</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>68/92 epx</source>
         <translation>68/92 epx</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="56"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="40"/>
         <source>DisplayTextBlockStyle</source>
         <translation>显示文本块样式</translation>
     </message>
     <message>
-        <location filename="../Gallery/FluTypeographyPage.cpp" line="62"/>
+        <location filename="../Gallery/FluTypeographyPage.cpp" line="43"/>
         <source>auto label = new FluLabel;label-&gt;setStyle(FluLabelStyle::CaptionTextBlockStyle);</source>
         <translation>auto label = new FluLabel;label-&gt;setStyle(FluLabelStyle::CaptionTextBlockStyle);</translation>
     </message>

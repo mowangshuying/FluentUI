@@ -436,6 +436,7 @@ BASE ".."
 FILES
 ${QSS_FILES}
 )
+flu_qrc_lowopt(ControlsQss)
 
 set(RES_FILES
     "../res/badgelogo.scale-100.png"
@@ -862,6 +863,7 @@ BASE ".."
 FILES
 ${RES_FILES}
 )
+flu_qrc_lowopt(ControlsRes)
 
 set(I18N_FILES
     "../i18n/Controls.en-US.qm"
@@ -876,6 +878,7 @@ qt_add_resources(${TGT} "ControlsI18n"
     FILES
     ${I18N_FILES}
 )
+flu_qrc_lowopt(ControlsI18n)
 
 else()
 target_sources(${TGT} PUBLIC "ControlsQss.qrc" "ControlsRes.qrc" "ControlsI18n.qrc")

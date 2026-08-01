@@ -460,6 +460,7 @@ qt_add_resources(${TGT} "GalleryRes"
     FILES
     ${RES_FILES}
 )
+flu_qrc_lowopt(GalleryRes)
 set(CODE_FILES
     "../code/AppBarButtonPageCode1.md"
     "../code/AppBarButtonPageCode2.md"
@@ -524,6 +525,7 @@ qt_add_resources(${TGT} "GalleryCode"
     FILES
     ${CODE_FILES}
 )
+flu_qrc_lowopt(GalleryCode)
 
 set(QSS_FILES
     "../stylesheet/dark/FluAEmptyPage.qss"
@@ -716,6 +718,7 @@ qt_add_resources(${TGT} "GalleryQss"
     FILES
     ${QSS_FILES}
 )
+flu_qrc_lowopt(GalleryQss)
 
 set(I18N_FILES
     "../i18n/Gallery.en-US.qm"
@@ -729,6 +732,7 @@ qt_add_resources(${TGT} "GalleryI18n"
     FILES
     ${I18N_FILES}
 )
+flu_qrc_lowopt(GalleryI18n)
 else()
 target_sources(${TGT} PUBLIC "GalleryRes.qrc" 
     "GalleryCode.qrc" 

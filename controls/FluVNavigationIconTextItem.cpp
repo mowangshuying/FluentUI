@@ -446,7 +446,7 @@ void FluVNavigationIconTextItem::onItemClicked()
     if (rootItem == nullptr)
         return;
 
-    LOG_WARN << "get root item.";
+    //LOG_WARN << "get root item.";
     auto navView = rootItem->getParentView();
     auto flyItem = rootItem->getFlyItem();
     // LOG_WARN << "isDown:" << m_isDown << "nav long:" << navView->isLong();

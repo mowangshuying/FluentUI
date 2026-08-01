@@ -118,6 +118,18 @@ install(DIRECTORY i18n
 )
 endif()
 
+# Third-party libraries (cmark, Qt-Advanced-Docking-System) install development
+# files (headers, static libs, pkgconfig, cmake package configs, man pages) into
+# include/ lib/ share/ which are only needed when building against them, not for
+# end users of the Gallery app. Strip them from the install/package content.
+install(CODE "
+    file(REMOVE_RECURSE
+        \"\${CMAKE_INSTALL_PREFIX}/include\"
+        \"\${CMAKE_INSTALL_PREFIX}/lib\"
+        \"\${CMAKE_INSTALL_PREFIX}/share\"
+    )
+")
+
 set(CPACK_PACKAGE_FILE_NAME "Gallery")
 set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)
 

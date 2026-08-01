@@ -147,7 +147,7 @@ void FluPMenuBarStyle::drawMenuBarItem(const QStyleOption *option, QPainter *pai
         }
 
         painter->setBrush(menuBarItemBackgroundColor);
-        painter->drawRoundedRect(newRect, 4, 4);
+        painter->drawRoundedRect(newRect, 8, 8);
         painter->restore();
     }
 

@@ -136,6 +136,34 @@ void FluVNavigationView::addItemToBottomLayout(QWidget *item)
     tmpItem->setParentView(this);
 }
 
+FluVNavigationIconTextItem *FluVNavigationView::insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key)
+{
+    auto *item = createIconTextItem(type, text, key, this);
+    addItemToMidLayout(item);
+    return item;
+}
+
+FluVNavigationIconTextItem *FluVNavigationView::insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key, const QString &parentItemKey)
+{
+    auto *parent = getItemByKey(parentItemKey);
+    if (parent == nullptr || parent->getItemType() != FluVNavigationItemType::IconText)
+    {
+        LOG_DEBUG << "insertIconTextItem: parent not found:" << parentItemKey;
+        return nullptr;
+    }
+    auto *parentItem = (FluVNavigationIconTextItem *)parent;
+    auto *item = createIconTextItem(type, text, key, parentItem);
+    parentItem->addItem(item);
+    return item;
+}
+
+FluVNavigationIconTextItem *FluVNavigationView::createIconTextItem(FluAwesomeType type, const QString &text, const QString &key, QWidget *parent)
+{
+    if (type == FluAwesomeType::None)
+        return new FluVNavigationIconTextItem(text, key, parent);
+    return new FluVNavigationIconTextItem(type, text, key, parent);
+}
+
 void FluVNavigationView::clearAllItemsSelectState()
 {
     for (int i = 0; i < m_midVScrollView->getMainLayout()->count(); i++)

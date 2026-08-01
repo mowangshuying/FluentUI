@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include "../Controls/FluDef.h"
+#include "../controls/FluDef.h"
 
 namespace FluPPUtils
 {

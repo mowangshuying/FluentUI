@@ -4,8 +4,8 @@
 #include <QIcon>
 #include <QPixmap>
 
-#include "../Controls/FluDef.h"
-#include "../Utils/FluThemeUtils.h"
+#include "../controls/FluDef.h"
+#include "../utils/FluThemeUtils.h"
 
 #define FluGetIcon(type) FluIconUtils::GetFluentIcon(type)
 #define FluGetIconPixmap(type) FluIconUtils::GetFluentIconPixmap(type)

@@ -2,7 +2,7 @@
 
 #include <QPixmap>
 #include <QString>
-#include "../Controls/FluDef.h"
+#include "../controls/FluDef.h"
 class FluEmoijUtils
 {
   private:

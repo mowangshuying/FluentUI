@@ -1,5 +1,5 @@
 ﻿#include "FluIconUtils.h"
-#include "../Controls/FluDef.h"
+#include "../controls/FluDef.h"
 #include <QFontDatabase>
 #include <QPainter>
 #include <QtSvg/QSvgRenderer>

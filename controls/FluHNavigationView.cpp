@@ -70,6 +70,60 @@ void FluHNavigationView::addItemToLayout(QWidget* item, FluHNavigationItemPositi
     }
 }
 
+FluHNavigationIconTextItem *FluHNavigationView::insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key, FluHNavigationItemPosition pos)
+{
+    auto *item = createIconTextItem(type, text, key, this);
+    addItemToLayout(item, pos);
+    return item;
+}
+
+FluHNavigationIconTextItem *FluHNavigationView::insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key, const QString &parentItemKey)
+{
+    auto *parent = getItemByKey(parentItemKey);
+    if (parent == nullptr || parent->getItemType() != FluHNavigationItemType::IconText)
+    {
+        LOG_DEBUG << "insertIconTextItem: parent not found:" << parentItemKey;
+        return nullptr;
+    }
+    auto *parentItem = (FluHNavigationIconTextItem *)parent;
+    auto *item = createIconTextItem(type, text, key, parentItem);
+    parentItem->addItem(item);
+    return item;
+}
+
+FluHNavigationItem *FluHNavigationView::getItemByKey(const QString &key)
+{
+    for (auto *item : m_items)
+    {
+        if (item->getKey() == key)
+            return item;
+        auto children = item->getAllItems();
+        for (auto *child : children)
+        {
+            if (child->getKey() == key)
+                return child;
+        }
+    }
+    for (int i = 0; i < m_rightWrapLayout->count(); i++)
+    {
+        auto *item = (FluHNavigationItem *)m_rightWrapLayout->itemAt(i)->widget();
+        if (item->getKey() == key)
+            return item;
+    }
+    return nullptr;
+}
+
+FluHNavigationIconTextItem *FluHNavigationView::createIconTextItem(FluAwesomeType type, const QString &text, const QString &key, QWidget *parent)
+{
+    FluHNavigationIconTextItem *item;
+    if (type == FluAwesomeType::None)
+        item = new FluHNavigationIconTextItem(text, parent);
+    else
+        item = new FluHNavigationIconTextItem(type, text, parent);
+    item->setKey(key);
+    return item;
+}
+
 // void FluHNavigationView::removeItemMidLayout(QWidget* item)
 //{
 //  m_midWrapLayout->removeWidget(item);

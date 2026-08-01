@@ -450,6 +450,8 @@ void FluVNavigationIconTextItem::onItemClicked()
     auto navView = rootItem->getParentView();
     auto flyItem = rootItem->getFlyItem();
     // LOG_WARN << "isDown:" << m_isDown << "nav long:" << navView->isLong();
+    if (navView)
+        emit navView->keyChanged(getKey());
 
     if ((navView != nullptr && m_isDown && navView->isLong()) || (navView == nullptr && isLong() && m_isDown))
     {

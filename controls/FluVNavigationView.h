@@ -39,6 +39,10 @@ class FluVNavigationView : public FluWidget
 
     void addItemToBottomLayout(QWidget *item);
 
+    FluVNavigationIconTextItem *insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key);
+
+    FluVNavigationIconTextItem *insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key, const QString &parentItemKey);
+
     void clearAllItemsSelectState();
     void updateAllItemsStyleSheet();
 
@@ -109,4 +113,6 @@ class FluVNavigationView : public FluWidget
     // animation;
     QPropertyAnimation *m_animation;
     FluValueObject *m_valueObject;
+
+    FluVNavigationIconTextItem *createIconTextItem(FluAwesomeType type, const QString &text, const QString &key, QWidget *parent);
 };

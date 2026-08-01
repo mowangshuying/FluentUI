@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(FluentUI VERSION 1.0.0 LANGUAGES CXX)
+project(FluentUI VERSION 1.0.8 LANGUAGES CXX)
 
 
 option(USE_QRC "Build With qrc" TRUE)

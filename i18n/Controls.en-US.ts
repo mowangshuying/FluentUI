@@ -4,12 +4,12 @@
 <context>
     <name>FluAmPmView</name>
     <message>
-        <location filename="../Controls/FluAmPmView.cpp" line="57"/>
+        <location filename="../Controls/FluAmPmView.cpp" line="56"/>
         <source>AM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Controls/FluAmPmView.cpp" line="57"/>
+        <location filename="../Controls/FluAmPmView.cpp" line="56"/>
         <source>PM</source>
         <translation type="unfinished"></translation>
     </message>
@@ -581,7 +581,7 @@
 <context>
     <name>FluVNavigationIconTextItem</name>
     <message>
-        <location filename="../Controls/FluVNavigationIconTextItem.cpp" line="479"/>
+        <location filename="../Controls/FluVNavigationIconTextItem.cpp" line="494"/>
         <source>3-level</source>
         <translation type="unfinished"></translation>
     </message>

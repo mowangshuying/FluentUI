@@ -52,6 +52,7 @@ qt_add_resources(${TGT} "ExamplesQss"
     FILES
     ${QSS_FILES}
 )
+flu_qrc_lowopt(ExamplesQss)
 else()
 target_sources(${TGT} PUBLIC ExamplesQss.qrc)
 endif()

@@ -43,6 +43,18 @@ endif()
 
 # qt_standard_project_setup()
 
+# Generated Qt resource files (qrc_*.cpp) are huge data-only translation units
+# (qrc_UtilsEmoijs.cpp is ~100 MB). Compiling them at -O2/-O3 can exhaust
+# memory on CI runners, so compile them with no optimization instead.
+function(flu_qrc_lowopt resource_name)
+    set_source_files_properties(
+        "${CMAKE_CURRENT_BINARY_DIR}/qrc_${resource_name}.cpp"
+        "${CMAKE_CURRENT_BINARY_DIR}/.qt/rcc/qrc_${resource_name}.cpp"
+        PROPERTIES
+        COMPILE_OPTIONS "$<$<CXX_COMPILER_ID:MSVC>:/Od>$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-O0>"
+    )
+endfunction()
+
 # Third-party libraries: build as static
 set(FRAMELESSHELPER_BUILD_STATIC ON CACHE BOOL "" FORCE)
 set(FRAMELESSHELPER_BUILD_QUICK OFF CACHE BOOL "" FORCE)

@@ -40,6 +40,7 @@ qt_add_resources(${TGT} "UtilsFonts"
     FILES
     ${RES_FILES}
 )
+flu_qrc_lowopt(UtilsFonts)
 
 set(EMOIJ_FILES
     "../res/Emoij/_1stPlaceMedalColor.svg"
@@ -3195,6 +3196,7 @@ qt_add_resources(${TGT} "UtilsEmoijs"
     FILES
     ${EMOIJ_FILES}
 )
+flu_qrc_lowopt(UtilsEmoijs)
 else()
 target_sources(${TGT} PUBLIC "UtilsFonts.qrc" "UtilsEmoijs.qrc")
 endif()

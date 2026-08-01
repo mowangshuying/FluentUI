@@ -5,21 +5,21 @@
 ```bash
 # CMake 配置（使用 Visual Studio 17 2022 生成器）
 mkdir build && cd build
-cmake -DCMAKE_PREFIX_PATH=C:/Qt/6.5.1/msvc2019_64 -G"Visual Studio 17 2022" -A x64 ..
+cmake -DCMAKE_PREFIX_PATH=C:/Qt/6.9.0/msvc2022_64 -G"Visual Studio 17 2022" -A x64 ..
 
 # 编译（默认使用 Debug 配置）
 cmake --build . --config Debug
 ```
 
-> Qt 6.5.1 安装路径：`C:/Qt/6.5.1/msvc2019_64`
-> 编译产物输出目录：`build/bin/`（包含 `Gallery.exe`、`Examples.exe` 等）
+> Qt 安装路径：`C:/Qt/6.9.0/msvc2022_64`
+> 编译产物输出目录：`build/debug/bin/`（包含 `Gallery.exe`、`Examples.exe` 等）
 
 ## 运行 Gallery
 
 ```powershell
 # 需要先将 Qt 动态库目录加入 PATH
-$env:PATH = "C:\Qt\6.5.1\msvc2019_64\bin;" + $env:PATH
-& "build\bin\Gallery.exe"
+$env:PATH = "C:\Qt\6.9.0\msvc2022_64\bin;" + $env:PATH
+& "build\debug\bin\Gallery.exe"
 ```
 
 ## Python 绑定
@@ -56,7 +56,7 @@ cmake --build . --config Release --target FluentUI
 
 ## 依赖
 
-- Qt 6.5.1（安装路径：`C:/Qt`）
+- Qt 6.9.0（安装路径：`C:/Qt`）
 - CMake >= 3.20，C++17
 - Qt 模块：Core、Widgets、Svg、Charts、Core5Compat
 - PySide6 6.8.3 + Shiboken6（仅 Python 绑定需要，pip 安装）

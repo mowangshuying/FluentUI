@@ -109,7 +109,7 @@
      margin-top: 2px;
      background: none;
      border: none;
-     padding: 0px -2px;
+     padding: 0px;
      qproperty-icon: url(:/ads/images/close-button-focused.svg), url(:/ads/images/close-button-disabled.svg) disabled;
      qproperty-iconSize: 16px;
  }

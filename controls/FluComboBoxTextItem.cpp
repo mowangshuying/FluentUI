@@ -23,7 +23,6 @@ FluComboBoxTextItem::FluComboBoxTextItem(QWidget* parent /*= nullptr*/) : FluWid
 #ifdef _DEBUG
     m_indicatorLabel->setText("0000");
 #endif
-    FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluComboBoxTextItem.qss", this);
 }
 
 QString FluComboBoxTextItem::getItemText()

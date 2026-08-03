@@ -8,7 +8,7 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
     m_mainLayout->setSpacing(0);
 
     m_titleLabel = new QLabel;
-    m_titleLabel->setFixedHeight(30);
+    m_titleLabel->setMinimumHeight(30);
     m_titleLabel->setWordWrap(true);
     m_titleLabel->setObjectName("titleLabel");
     m_titleLabel->setText(tr("A Title"));
@@ -17,6 +17,7 @@ FluDisplayBoxEx::FluDisplayBoxEx(QWidget* parent /*= nullptr*/)
 
     m_bodyWidget = new QWidget;
     m_bodyWidget->setObjectName("bodyWidget");
+    m_bodyWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
     m_mainLayout->addWidget(m_bodyWidget, 1);
 
     m_bodyLayout = new QHBoxLayout;

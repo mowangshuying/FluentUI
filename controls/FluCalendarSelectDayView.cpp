@@ -15,8 +15,7 @@ FluCalendarViewWeakTitle::FluCalendarViewWeakTitle(QWidget* parent /*= nullptr*/
     for (int i = 0; i < weekTexts.size(); i++)
     {
         QLabel* label = new QLabel;
-        // label->setFixedWidth(40);
-        label->setFixedSize(40, 40);
+        label->setFixedSize(40, 30);
         label->setObjectName("label");
         label->setAlignment(Qt::AlignCenter);
         label->setText(weekTexts.at(i));

@@ -2,6 +2,11 @@
 
 FluTabWidget::FluTabWidget(QWidget *parent /*= nullptr*/) : QTabWidget(parent)
 {
-    QString qss = FluStyleSheetUtils::getQssByFileName("../stylesheet/light/FluTabWidget.qss");
-    setStyleSheet(qss);
+    onThemeChanged();
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
+}
+
+void FluTabWidget::onThemeChanged()
+{
+    FluStyleSheetUtils::setQssByFileName("FluTabWidget.qss", this, FluThemeUtils::getUtils()->getTheme());
 }

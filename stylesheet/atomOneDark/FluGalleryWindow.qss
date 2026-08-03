@@ -7,7 +7,7 @@ FluGalleryWindow {
     background-color: rgb(33, 37, 43);
 }
 
-FluGalleryWindow[horizontalNav="true"] FluWidget {
+FluGalleryWindow[horizontalNav="true"] FluWidget[noBorder="true"] {
     border: none;
     border-radius: 0;
     border-top-left-radius: 0;

@@ -5,7 +5,6 @@ QTabWidget {
 QTabWidget::tab-bar {
     left: 0px;
     /* top: 8px; */
-    background-color: blue;
 }
 
 QTabBar {

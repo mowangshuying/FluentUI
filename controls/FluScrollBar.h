@@ -117,6 +117,8 @@ class FluScrollBar : public FluWidget
 
     void onThemeChanged();
 
+    void onTimerTimeout();
+
   protected:
     QAbstractScrollArea* m_scrollArea;
     FluScrollBarTrunk* m_scrollBarTrunk;
@@ -127,6 +129,7 @@ class FluScrollBar : public FluWidget
     Qt::Orientation m_orientation;
 
     QTimer* m_timer;
+    int m_pendingAction;  // 0=none, 1=expand, 2=collapse
     QPropertyAnimation* m_valueAnimation;
 
     int m_maxValue;

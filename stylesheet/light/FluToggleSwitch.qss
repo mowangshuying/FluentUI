@@ -56,6 +56,6 @@ FluToggleSwitch:disabled {
 }
 
 #toggleSwitch::indicator:disabled {
-    border: 2px solid #bbbbbb;
+    border: 2px solid rgb(187, 187, 187);
     image: url("../res/ControlResImages/ToggleSwitchDisabled-light.png");
 }

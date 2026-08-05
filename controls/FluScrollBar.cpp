@@ -3,7 +3,7 @@
 #include "FluScrollBarHandle.h"
 
 FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea /*= nullptr*/)
-    : FluWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_maxValue(0), m_minValue(0), m_currentValue(0), m_value(0), m_padding(14), m_pageStep(50), m_isHideScrollBar(false), m_isExpanded(false), m_isEnter(false), m_isPressed(false), m_pendingAction(0)
+    : FluWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_maxValue(0), m_minValue(0), m_value(0), m_padding(14), m_pageStep(50), m_isHideScrollBar(false), m_isExpanded(false), m_isEnter(false), m_isPressed(false), m_pendingAction(0), m_isFaded(false)
 {
     m_scrollBarTrunk = new FluScrollBarTrunk(orientation, this);
     m_scrollBarHandle = new FluScrollBarHandle(orientation, this);
@@ -12,9 +12,19 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scr
     m_timer->setInterval(200);
     connect(m_timer, &QTimer::timeout, this, &FluScrollBar::onTimerTimeout);
 
-    // m_value = 0;
     m_valueAnimation = new QPropertyAnimation(this, "value");
-    // m_valueAnimation->setDuration(300);
+
+    // C. Auto-hide + fade setup
+    m_opaEffect = new QGraphicsOpacityEffect(this);
+    m_opaEffect->setOpacity(1.0);
+    setGraphicsEffect(m_opaEffect);
+
+    m_fadeAnimation = new QPropertyAnimation(m_opaEffect, "opacity", this);
+
+    m_autoHideTimer = new QTimer(this);
+    m_autoHideTimer->setSingleShot(true);
+    m_autoHideTimer->setInterval(2000);
+    connect(m_autoHideTimer, &QTimer::timeout, this, &FluScrollBar::onAutoHideTimeout);
 
     m_scrollBar = getOriginalScrollBar();
     hideOriginalScrollBar();
@@ -26,12 +36,22 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scr
     connect(m_scrollBarTrunk->getLstButton(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageDown);
     connect(m_scrollBar, &QScrollBar::rangeChanged, this, [=](int minValue, int maxValue) { setRangeValue(minValue, maxValue); });
     connect(m_scrollBar, &QScrollBar::valueChanged, this, [=](int value) {
-        m_value = value;
-        m_currentValue = value;
-        adjustHandlePos();
+        if (m_value != value) {
+            m_value = value;
+            adjustHandlePos();
+            emit valueChanged(value);
+        }
     });
-    connect(this, &FluScrollBar::currentValueChanged, m_scrollBar, [=](int value) { m_scrollBar->setValue(value); });
+    connect(this, &FluScrollBar::valueChanged, m_scrollBar, [=](int value) {
+        if (m_scrollBar->value() != value) {
+            m_scrollBar->setValue(value);
+        }
+    });
     connect(m_scrollBarTrunk->getAnimation(), &QPropertyAnimation::valueChanged, this, &FluScrollBar::onOpacityAnimationChanged);
+
+    // C. Connect valueChanged for auto-hide fade-in + D. arrow button boundary
+    connect(this, &FluScrollBar::valueChanged, this, &FluScrollBar::onContentScrolled);
+
     onThemeChanged();
 }
 
@@ -86,33 +106,27 @@ void FluScrollBar::setRangeValue(int minValue, int maxValue)
     emit valueRangeChanged(m_minValue, m_maxValue);
 }
 
-int FluScrollBar::getCurrentValue()
+void FluScrollBar::animateToValue(int targetValue, int duration, QEasingCurve::Type curve)
 {
-    return m_currentValue;
+    targetValue = qBound(m_minValue, targetValue, m_maxValue);
+    if (m_valueAnimation->state() == QAbstractAnimation::Running)
+        m_valueAnimation->stop();
+    m_valueAnimation->setStartValue(m_value);
+    m_valueAnimation->setEndValue(targetValue);
+    m_valueAnimation->setEasingCurve(curve);
+    m_valueAnimation->setDuration(duration);
+    m_valueAnimation->start();
 }
 
-void FluScrollBar::setCurrentValue(int value)
+void FluScrollBar::scrollBy(int delta)
 {
-    if (value < m_minValue)
-        value = m_minValue;
-    else if (value > m_maxValue)
-        value = m_maxValue;
-
-    // m_currentValue = value;
-    // adjustHandlePos();
-    // emit currentValueChanged(m_currentValue);
-    m_valueAnimation->setStartValue(m_currentValue);
-    m_valueAnimation->setEndValue(value);
-    m_valueAnimation->setEasingCurve(QEasingCurve::InSine);
-    m_valueAnimation->setDuration(300);
-    m_valueAnimation->start();
+    int target = qBound(m_minValue, m_value + delta, m_maxValue);
+    setValue(target);
 }
 
 void FluScrollBar::scrollCurrentValue(int value)
 {
-    // m_currentValue += value;
-    int tmpValue = m_currentValue + value;
-    setCurrentValue(tmpValue);
+    scrollBy(value);
 }
 
 int FluScrollBar::getValue()
@@ -122,11 +136,11 @@ int FluScrollBar::getValue()
 
 void FluScrollBar::setValue(int value)
 {
-    // LOG_DEBUG << value;
+    if (m_value == value)
+        return;
     m_value = value;
-    m_currentValue = value;
     adjustHandlePos();
-    emit currentValueChanged(value);
+    emit valueChanged(value);
 }
 
 int FluScrollBar::getPadding()
@@ -225,10 +239,9 @@ void FluScrollBar::adjustHandlePos()
         int total = m_maxValue - m_minValue;
         if (total < 1)
             total = 1;
-        int delta = 1.0 * getCurrentValue() / total * getSlideWayLen();
+        int delta = 1.0 * m_value / total * getSlideWayLen();
 
         int x = width() - m_scrollBarHandle->width() - 3;
-        // LOG_DEBUG << width() << "," << m_scrollBarHandle->width();
         int y = m_padding + delta;
         m_scrollBarHandle->move(x, y);
     }
@@ -237,7 +250,7 @@ void FluScrollBar::adjustHandlePos()
         int total = m_maxValue - m_minValue;
         if (total < 1)
             total = 1;
-        int delta = 1.0 * getCurrentValue() / total * getSlideWayLen();
+        int delta = 1.0 * m_value / total * getSlideWayLen();
         int x = m_padding + delta;
         int y = height() - m_scrollBarHandle->height() - 3;
         m_scrollBarHandle->move(x, y);
@@ -292,6 +305,16 @@ void FluScrollBar::setHandleBackgroundColor(QColor color)
     m_scrollBarHandle->setHandleBackgroundColor(color);
 }
 
+QColor FluScrollBar::getHandleHoverColor()
+{
+    return m_scrollBarHandle->getHandleHoverColor();
+}
+
+void FluScrollBar::setHandleHoverColor(QColor color)
+{
+    m_scrollBarHandle->setHandleHoverColor(color);
+}
+
 bool FluScrollBar::eventFilter(QObject* watched, QEvent* event)
 {
     if (watched == m_scrollArea && event->type() == QEvent::Resize)
@@ -308,6 +331,8 @@ void FluScrollBar::enterEvent(QEnterEvent* event)
     m_timer->stop();
     m_pendingAction = 1;
     m_timer->start();
+    m_scrollBarHandle->setHovered(true);
+    fadeIn();
 }
 
 void FluScrollBar::leaveEvent(QEvent* event)
@@ -316,6 +341,7 @@ void FluScrollBar::leaveEvent(QEvent* event)
     m_timer->stop();
     m_pendingAction = 2;
     m_timer->start();
+    m_scrollBarHandle->setHovered(false);
 }
 
 void FluScrollBar::resizeEvent(QResizeEvent* event)
@@ -340,7 +366,12 @@ void FluScrollBar::mouseMoveEvent(QMouseEvent* event)
     }
 
     dv = 1.0 * dv / getSlideWayLen() * (m_maxValue - m_minValue);
-    FluScrollBar::setCurrentValue(getCurrentValue() + dv);
+    int newValue = qBound(m_minValue, m_value + dv, m_maxValue);
+    if (m_value != newValue) {
+        m_value = newValue;
+        adjustHandlePos();
+        emit valueChanged(newValue);
+    }
     m_pressedPoint = event->pos();
 }
 
@@ -377,7 +408,7 @@ void FluScrollBar::mousePressEvent(QMouseEvent* event)
         }
     }
 
-    setCurrentValue(1.0 * value / qMax(getSlideWayLen(), 1) * (m_maxValue - m_minValue));
+    animateToValue(1.0 * value / qMax(getSlideWayLen(), 1) * (m_maxValue - m_minValue));
 }
 
 void FluScrollBar::mouseReleaseEvent(QMouseEvent* event)
@@ -396,12 +427,12 @@ void FluScrollBar::wheelEvent(QWheelEvent* event)
 
 void FluScrollBar::OnPageUp()
 {
-    setCurrentValue(getCurrentValue() - getPageStep());
+    animateToValue(m_value - getPageStep(), 180, QEasingCurve::OutQuad);
 }
 
 void FluScrollBar::OnPageDown()
 {
-    setCurrentValue(getCurrentValue() + getPageStep());
+    animateToValue(m_value + getPageStep(), 180, QEasingCurve::OutQuad);
 }
 
 // void FluScrollBar::onCurrentValueChanged(int value)
@@ -439,14 +470,17 @@ void FluScrollBar::collapse()
 void FluScrollBar::onOpacityAnimationChanged(const QVariant& value)
 {
     qreal opacity = m_scrollBarTrunk->getEffect()->opacity();
-    if (m_orientation == Qt::Vertical)
+    if (!m_scrollBarHandle->isHovered())
     {
-        m_scrollBarHandle->setFixedWidth(3 + opacity * 3);
+        int baseThickness = 3 + opacity * 3;
+        m_scrollBarHandle->setThickness(baseThickness);
     }
-    else
-    {
-        m_scrollBarHandle->setFixedHeight(3 + opacity * 3);
-    }
+
+    // D. Arrow button visibility follows trunk opacity
+    bool showArrows = opacity > 0.1;
+    m_scrollBarTrunk->getPreButton()->setVisible(showArrows);
+    m_scrollBarTrunk->getLstButton()->setVisible(showArrows);
+
     adjustHandlePos();
 }
 
@@ -456,4 +490,43 @@ void FluScrollBar::onThemeChanged()
     m_scrollBarHandle->update();
     m_scrollBarTrunk->update();
     update();
+}
+
+void FluScrollBar::onAutoHideTimeout()
+{
+    m_fadeAnimation->stop();
+    m_fadeAnimation->setStartValue(m_opaEffect->opacity());
+    m_fadeAnimation->setEndValue(0.3);
+    m_fadeAnimation->setDuration(500);
+    m_fadeAnimation->setEasingCurve(QEasingCurve::InQuad);
+    m_fadeAnimation->start();
+    m_isFaded = true;
+}
+
+void FluScrollBar::onContentScrolled()
+{
+    fadeIn();
+
+    // D. Arrow button boundary detection
+    if (m_scrollBarTrunk)
+    {
+        m_scrollBarTrunk->getPreButton()->setAtBoundary(m_value <= m_minValue);
+        m_scrollBarTrunk->getLstButton()->setAtBoundary(m_value >= m_maxValue);
+    }
+}
+
+void FluScrollBar::fadeIn()
+{
+    m_autoHideTimer->stop();
+    if (m_isFaded || m_opaEffect->opacity() < 1.0)
+    {
+        m_fadeAnimation->stop();
+        m_fadeAnimation->setStartValue(m_opaEffect->opacity());
+        m_fadeAnimation->setEndValue(1.0);
+        m_fadeAnimation->setDuration(200);
+        m_fadeAnimation->setEasingCurve(QEasingCurve::OutQuad);
+        m_fadeAnimation->start();
+        m_isFaded = false;
+    }
+    m_autoHideTimer->start();
 }

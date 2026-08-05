@@ -12,6 +12,8 @@
 #include <QAbstractScrollArea>
 #include "FluWidget.h"
 #include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
+#include <QTimer>
 
 class FluScrollArea;
 class FluScrollBarHandle;
@@ -22,6 +24,7 @@ class FluScrollBar : public FluWidget
     Q_PROPERTY(int value READ getValue WRITE setValue)
     Q_PROPERTY(QColor trunkBackgroundColor READ getTrunkBackgroundColor WRITE setTrunkBackgroundColor)
     Q_PROPERTY(QColor handleBackgroundColor READ getHandleBackgroundColor WRITE setHandleBackgroundColor)
+    Q_PROPERTY(QColor handleHoverColor READ getHandleHoverColor WRITE setHandleHoverColor)
   public:
     FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea = nullptr);
 
@@ -29,19 +32,15 @@ class FluScrollBar : public FluWidget
 
     int getMaxValue();
 
-    void setMaxValue(int value);
-
     int getMinValue();
-
-    void setMinValue(int value);
 
     void setRangeValue(int minValue, int maxValue);
 
-    int getCurrentValue();
-
-    void setCurrentValue(int value);
-
     void scrollCurrentValue(int value);
+
+    void scrollBy(int delta);
+
+    void animateToValue(int targetValue, int duration = 200, QEasingCurve::Type curve = QEasingCurve::OutCubic);
 
     int getValue();
 
@@ -83,6 +82,10 @@ class FluScrollBar : public FluWidget
 
     void setHandleBackgroundColor(QColor color);
 
+    QColor getHandleHoverColor();
+
+    void setHandleHoverColor(QColor color);
+
   public:
     bool eventFilter(QObject* watched, QEvent* event);
 
@@ -101,7 +104,7 @@ class FluScrollBar : public FluWidget
     void wheelEvent(QWheelEvent* event);
   signals:
     void valueRangeChanged(int minValue, int maxValue);
-    void currentValueChanged(int value);
+    void valueChanged(int value);
   public slots:
     void OnPageUp();
 
@@ -119,6 +122,12 @@ class FluScrollBar : public FluWidget
 
     void onTimerTimeout();
 
+    void onAutoHideTimeout();
+
+    void onContentScrolled();
+
+    void fadeIn();
+
   protected:
     QAbstractScrollArea* m_scrollArea;
     FluScrollBarTrunk* m_scrollBarTrunk;
@@ -134,8 +143,7 @@ class FluScrollBar : public FluWidget
 
     int m_maxValue;
     int m_minValue;
-    int m_currentValue;
-    int m_value;  // use for animation; update current value;
+    int m_value;
 
     int m_padding;
 
@@ -148,4 +156,15 @@ class FluScrollBar : public FluWidget
     bool m_isPressed;
 
     bool m_isHideScrollBar;
+
+    // C. Auto-hide + fade
+    QTimer* m_autoHideTimer;
+    QPropertyAnimation* m_fadeAnimation;
+    QGraphicsOpacityEffect* m_opaEffect;
+    bool m_isFaded;
+
+  protected:
+    void setMaxValue(int value);
+
+    void setMinValue(int value);
 };

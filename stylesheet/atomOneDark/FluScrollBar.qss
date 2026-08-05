@@ -1,4 +1,11 @@
 FluScrollBar {
     qproperty-trunkBackgroundColor: rgb(40, 44, 52);
     qproperty-handleBackgroundColor: rgb(65, 72, 85);
+    qproperty-handleHoverColor: rgb(90, 115, 160);
+}
+
+FluScrollBarArrowButton {
+    qproperty-normalColor: rgb(90, 100, 120);
+    qproperty-hoverColor: rgb(130, 150, 190);
+    qproperty-boundaryColor: rgb(60, 65, 75);
 }

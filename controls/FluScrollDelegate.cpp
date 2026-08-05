@@ -18,6 +18,8 @@ FluScrollDelegate::FluScrollDelegate(QAbstractScrollArea* scrollArea /*= nullptr
     }
 
     m_scrollArea->viewport()->installEventFilter(this);
+    m_verticalScrollBar->installEventFilter(this);
+    m_horizontalScrollBar->installEventFilter(this);
 }
 
 FluScrollBar* FluScrollDelegate::getVerticalScrollBar()
@@ -34,17 +36,35 @@ bool FluScrollDelegate::eventFilter(QObject* watched, QEvent* event)
 {
     if (event->type() == QEvent::Wheel)
     {
-        QWheelEvent* wheelEvent = (QWheelEvent*)(event);
-        if (wheelEvent->angleDelta().y() != 0)
+        QWheelEvent* wheelEvent = static_cast<QWheelEvent*>(event);
+
+        // 如果是自定义 scrollbar 本身收到滚轮，直接更新对应原生 scrollbar
+        if (watched == m_verticalScrollBar || watched == m_horizontalScrollBar)
         {
-            m_verticalScrollBar->scrollCurrentValue(-wheelEvent->angleDelta().y());
+            auto* scrollbar = (watched == m_verticalScrollBar) ? m_verticalScrollBar : m_horizontalScrollBar;
+            auto* nativeBar = scrollbar->getOriginalScrollBar();
+            int delta = (wheelEvent->angleDelta().y() != 0) ? -wheelEvent->angleDelta().y() : -wheelEvent->angleDelta().x();
+            nativeBar->setValue(nativeBar->value() + delta);
+            event->accept();
+            return true;
         }
-        else
+
+        // viewport 滚轮，直接更新原生 scrollbar
+        if (watched == m_scrollArea->viewport())
         {
-            m_horizontalScrollBar->scrollCurrentValue(-wheelEvent->angleDelta().x());
+            if (wheelEvent->angleDelta().y() != 0)
+            {
+                auto* bar = m_scrollArea->verticalScrollBar();
+                bar->setValue(bar->value() - wheelEvent->angleDelta().y());
+            }
+            else if (wheelEvent->angleDelta().x() != 0)
+            {
+                auto* bar = m_scrollArea->horizontalScrollBar();
+                bar->setValue(bar->value() - wheelEvent->angleDelta().x());
+            }
+            event->accept();
+            return true;
         }
-        event->setAccepted(true);
-        return true;
     }
 
     return QObject::eventFilter(watched, event);

@@ -1,29 +1,24 @@
 FluInfoBadge {
     padding: 1px 3px 1px 3px;
     color: white;
-    /* qproperty-badgeColor: rgb(255, 77, 79); */
 }
 
 FluInfoBadge[level="Info"] {
-    padding: 1px 3px 1px 3px;
     color: white;
     qproperty-badgeColor: rgb(0, 90, 158);
 }
 
 FluInfoBadge[level="Suc"] {
-    padding: 1px 3px 1px 3px;
     color: white;
     qproperty-badgeColor: rgb(15, 123, 15);
 }
 
 FluInfoBadge[level="Warn"] {
-    padding: 1px 3px 1px 3px;
     color: white;
     qproperty-badgeColor: rgb(157, 93, 0);
 }
 
 FluInfoBadge[level="Error"] {
-    padding: 1px 3px 1px 3px;
     color: white;
     qproperty-badgeColor: rgb(196, 43, 28);
 }

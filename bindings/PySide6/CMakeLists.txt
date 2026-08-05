@@ -172,7 +172,7 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluProgressRing.h"
     "${CMAKE_SOURCE_DIR}/controls/FluBusyProgressRing.h"
     "${CMAKE_SOURCE_DIR}/controls/FluInfoBadge.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluCircleDot.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluDotInfoBadge.h"
     "${CMAKE_SOURCE_DIR}/controls/FluImageBox.h"
     "${CMAKE_SOURCE_DIR}/controls/FluDisplayBox.h"
     "${CMAKE_SOURCE_DIR}/controls/FluDisplayBoxEx.h"

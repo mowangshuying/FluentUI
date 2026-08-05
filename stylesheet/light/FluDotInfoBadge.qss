@@ -1,4 +1,4 @@
-FluCircleDot {
+FluDotInfoBadge {
     background-color: rgb(0, 120, 215);
     border: 1px solid rgb(0, 120, 215);
     border-radius: 5px;

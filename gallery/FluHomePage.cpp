@@ -1,5 +1,5 @@
 #include "FluHomePage.h"
-#include "../controls/FluCircleDot.h"
+#include "../controls/FluDotInfoBadge.h"
 
 FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
 {
@@ -21,21 +21,21 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     recentlyAddedSamplesLayout->setSpacing(10, 10);
 
     auto AnnotatedScrollBarCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/Placeholder.png")), tr("AnimatedIcon"), tr("An element that displays and controls an icon that animates when the user interacts with the controls."));
-    FluCircleDot::setCircleDot(AnnotatedScrollBarCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(AnnotatedScrollBarCard, 20, 20);
     recentlyAddedSamplesLayout->addWidget(AnnotatedScrollBarCard);
 
     auto infoBadgeCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/InfoBadge.png")), tr("InfoBadge"), tr("An non-instrusive Ui to display notifications or bring focus to an area"));
-    FluCircleDot::setCircleDot(infoBadgeCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(infoBadgeCard, 20, 20);
     infoBadgeCard->setKey("InfoBadgePage");
     recentlyAddedSamplesLayout->addWidget(infoBadgeCard);
     connect(infoBadgeCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
 
     auto itemsViewCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/ItemsView.png")), tr("ItemsView"), tr("A control that presents a collection of items using various layouts"));
-    FluCircleDot::setCircleDot(itemsViewCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(itemsViewCard, 20, 20);
     recentlyAddedSamplesLayout->addWidget(itemsViewCard);
 
     auto lineCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/Line.png")), tr("Line"), tr("Draws a straight line between two points"));
-    FluCircleDot::setCircleDot(lineCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(lineCard, 20, 20);
     recentlyAddedSamplesLayout->addWidget(lineCard);
 
     recentlyUpdatedSamplesLabel->setText(tr("Recently updated samples"));
@@ -45,21 +45,21 @@ FluHomePage::FluHomePage(QWidget *parent /*= nullptr*/) : FluVScrollView(parent)
     recentlyUpdatedSamplesLayout->setSpacing(10, 10);
 
     auto AnimatedIconCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AnimatedIcon.png")), tr("AnimatedIcon"), tr("An element that displays and controls and icon that animates when the user interacts with the control."));
-    FluCircleDot::setCircleDot(AnimatedIconCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(AnimatedIconCard, 20, 20);
     recentlyUpdatedSamplesLayout->addWidget(AnimatedIconCard);
 
     auto autoSuggestBoxCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/AutoSuggestBox.png")), tr("AutoSuggestBox"), tr("A control to provide suggestions as a user is typing."));
-    FluCircleDot::setCircleDot(autoSuggestBoxCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(autoSuggestBoxCard, 20, 20);
     autoSuggestBoxCard->setKey("AutoSuggestBoxPage");
     connect(autoSuggestBoxCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     recentlyUpdatedSamplesLayout->addWidget(autoSuggestBoxCard);
 
     auto breadcrumbBarCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/BreadcrumbBar.png")), tr("BreadcrumbBar"), tr("Shows the trail of navigation token to the current location."));
-    FluCircleDot::setCircleDot(breadcrumbBarCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(breadcrumbBarCard, 20, 20);
     recentlyUpdatedSamplesLayout->addWidget(breadcrumbBarCard);
 
     auto buttonCard = new FluHCard(FluIconUtils::getPixmap(("../res/ControlImages/Button.png")), tr("Button"), tr("A control that responds to user input and raises a Click event."));
-    FluCircleDot::setCircleDot(buttonCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(buttonCard, 20, 20);
     buttonCard->setKey("ButtonPage");
     connect(buttonCard, &FluHCard::clicked, [=](QString key) { emit clickedHCard(key); });
     recentlyUpdatedSamplesLayout->addWidget(buttonCard);

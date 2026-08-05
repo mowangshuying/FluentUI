@@ -4,7 +4,7 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 {
     m_mainLayout->setAlignment(Qt::AlignTop);
     m_titleLabel->setText(tr("InfoBadge"));
-    m_infoLabel->setText(tr("Badging is a non-instrusive and intuitive way to display notifications or bring focus to an area within an app - weheher that be for notifications, indicating new content, or showing an alert."));
+    m_infoLabel->setText(tr("Badging is a non-instrutive and intuitive way to display notifications or bring focus to an area within an app - weheher that be for notifications, indicating new content, or showing an alert."));
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("InfoBadge with Different Value."));
@@ -30,6 +30,24 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     FluInfoBadge::setInfoBadge(displayBox->getBodyWidget(), targetWidget3, FluInfoBadgeLevel::Error, 333);
 
     m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+
+    // Interactive value-change demo
+    auto interactiveBox = new FluDisplayBox;
+    interactiveBox->setTitle(tr("InfoBadge with Interactive Value."));
+    interactiveBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode2.md");
+    interactiveBox->setBodyWidgetFixedHeight(96);
+
+    auto targetBtn = new FluPushButton(tr("Click to Increment"), interactiveBox->getBodyWidget());
+    targetBtn->move(50, 30);
+    m_demoBadge = FluInfoBadge::setInfoBadge(interactiveBox->getBodyWidget(), targetBtn, FluInfoBadgeLevel::Suc, 1);
+    connect(targetBtn, &FluPushButton::clicked, this, [this]() {
+        if (m_demoBadge)
+        {
+            m_demoBadge->setValue(m_demoBadge->getValue() + 1);
+        }
+    });
+
+    m_scrollView->getMainLayout()->addWidget(interactiveBox, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

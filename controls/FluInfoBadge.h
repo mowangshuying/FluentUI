@@ -4,6 +4,7 @@
 #include "../utils/FluUtils.h"
 #include <QEvent>
 #include <QStyle>
+#include <QPropertyAnimation>
 
 enum class FluInfoBadgeLevel
 {
@@ -17,50 +18,39 @@ class FluInfoBadge : public QLabel
 {
     Q_OBJECT
     Q_PROPERTY(QColor badgeColor READ getBadgeColor WRITE setBadgeColor)
-  public:
-    FluInfoBadge(QWidget* parent = nullptr);
+    Q_PROPERTY(qreal animScale READ getAnimScale WRITE setAnimScale)
 
-    void setParent(QWidget* parent);
+  public:
+    enum class AnimState
+    {
+        Idle,
+        Scaling,
+    };
+
+    ~FluInfoBadge();
 
     void setTarget(QWidget* target);
+    QWidget* getTarget() const;
 
-    QWidget* getTarget();
-
-    QColor getBadgeColor();
-
+    QColor getBadgeColor() const;
     void setBadgeColor(QColor color);
 
-    void setLevel(FluInfoBadgeLevel level)
-    {
-        m_level = level;
-        QString levelString;
-        switch (level)
-        {
-            case FluInfoBadgeLevel::Info:
-                levelString = "Info";
-                break;
-            case FluInfoBadgeLevel::Suc:
-                levelString = "Suc";
-                break;
-            case FluInfoBadgeLevel::Warn:
-                levelString = "Warn";
-                break;
-            case FluInfoBadgeLevel::Error:
-                levelString = "Error";
-                break;
-            default:
-                break;
-        }
-        setProperty("level", levelString);
-        style()->polish(this);
-    }
+    int getValue() const;
+    void setValue(int value);
 
-    bool eventFilter(QObject* watched, QEvent* event);
+    FluInfoBadgeLevel getLevel() const;
+    void setLevel(FluInfoBadgeLevel level);
 
-    static void setInfoBadge(QWidget* parent, QWidget* target, FluInfoBadgeLevel level, int value = 0);
+    qreal getAnimScale() const;
+    void setAnimScale(qreal scale);
+
+    bool eventFilter(QObject* watched, QEvent* event) override;
+
+    static FluInfoBadge* setInfoBadge(QWidget* parent, QWidget* target, FluInfoBadgeLevel level, int value = 0);
 
   public:
-    void paintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event) override;
+
   public slots:
     void onThemeChanged()
     {
@@ -68,9 +58,19 @@ class FluInfoBadge : public QLabel
     }
 
   protected:
-    QWidget* m_parent;
-    QWidget* m_target;
+    void reposition();
+    void updateText();
+    void updateVisibility();
+    void updateLevelProperty();
 
+  private:
+    FluInfoBadge(QWidget* parent = nullptr);
+
+    QWidget* m_target = nullptr;
     QColor m_badgeColor;
-    FluInfoBadgeLevel m_level;
+    FluInfoBadgeLevel m_level = FluInfoBadgeLevel::Error;
+    int m_value = 0;
+
+    qreal m_animScale = 1.0;
+    QPropertyAnimation* m_valueAnimation = nullptr;
 };

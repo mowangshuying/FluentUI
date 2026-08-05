@@ -3,11 +3,14 @@
 #include "FluScrollBarHandle.h"
 
 FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea /*= nullptr*/)
-    : FluWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_maxValue(0), m_minValue(0), m_currentValue(0), m_padding(14), m_pageStep(50), m_isHideScrollBar(false), m_isExpanded(false)
+    : FluWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_maxValue(0), m_minValue(0), m_currentValue(0), m_value(0), m_padding(14), m_pageStep(50), m_isHideScrollBar(false), m_isExpanded(false), m_isEnter(false), m_isPressed(false), m_pendingAction(0)
 {
     m_scrollBarTrunk = new FluScrollBarTrunk(orientation, this);
     m_scrollBarHandle = new FluScrollBarHandle(orientation, this);
     m_timer = new QTimer(this);
+    m_timer->setSingleShot(true);
+    m_timer->setInterval(200);
+    connect(m_timer, &QTimer::timeout, this, &FluScrollBar::onTimerTimeout);
 
     // m_value = 0;
     m_valueAnimation = new QPropertyAnimation(this, "value");
@@ -209,10 +212,10 @@ QScrollBar* FluScrollBar::getOriginalScrollBar()
 
 void FluScrollBar::hideOriginalScrollBar()
 {
-    // if (m_orientation == Qt::Vertical)
-    m_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    // else if (m_orientation == Qt::Horizontal)
-    m_scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    if (m_orientation == Qt::Vertical)
+        m_scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    else if (m_orientation == Qt::Horizontal)
+        m_scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 void FluScrollBar::adjustHandlePos()
@@ -250,8 +253,8 @@ void FluScrollBar::adjustHandleSize()
             total = 1;
 
         int handleH = 1.0 * getTrunkLen() * m_scrollArea->height() / total;
-        if (handleH < 30)
-            handleH = 30;
+        int maxH = qMax(30, getTrunkLen());
+        handleH = qBound(30, handleH, maxH);
 
         m_scrollBarHandle->setFixedHeight(handleH);
     }
@@ -261,11 +264,11 @@ void FluScrollBar::adjustHandleSize()
         if (total < 1)
             total = 1;
 
-        int hanldeW = 1.0 * getTrunkLen() * m_scrollArea->width() / total;
-        if (hanldeW < 30)
-            hanldeW = 30;
+        int handleW = 1.0 * getTrunkLen() * m_scrollArea->width() / total;
+        int maxW = qMax(30, getTrunkLen());
+        handleW = qBound(30, handleW, maxW);
 
-        m_scrollBarHandle->setFixedWidth(hanldeW);
+        m_scrollBarHandle->setFixedWidth(handleW);
     }
 }
 
@@ -303,14 +306,16 @@ void FluScrollBar::enterEvent(QEnterEvent* event)
 {
     m_isEnter = true;
     m_timer->stop();
-    m_timer->singleShot(200, this, &FluScrollBar::expand);
+    m_pendingAction = 1;
+    m_timer->start();
 }
 
 void FluScrollBar::leaveEvent(QEvent* event)
 {
     m_isEnter = false;
     m_timer->stop();
-    m_timer->singleShot(200, this, &FluScrollBar::collapse);
+    m_pendingAction = 2;
+    m_timer->start();
 }
 
 void FluScrollBar::resizeEvent(QResizeEvent* event)
@@ -403,6 +408,15 @@ void FluScrollBar::OnPageDown()
 //{
 //     setCurrentValue(value);
 // }
+
+void FluScrollBar::onTimerTimeout()
+{
+    if (m_pendingAction == 1)
+        expand();
+    else if (m_pendingAction == 2)
+        collapse();
+    m_pendingAction = 0;
+}
 
 void FluScrollBar::expand()
 {

@@ -1,6 +1,6 @@
-﻿#include "FluCircleDot.h"
+﻿#include "FluDotInfoBadge.h"
 
-FluCircleDot::FluCircleDot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluDotInfoBadge::FluDotInfoBadge(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedSize(11, 11);
     onThemeChanged();
@@ -8,20 +8,20 @@ FluCircleDot::FluCircleDot(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
 }
 
-void FluCircleDot::setTopRightMargin(int marginTop, int marginRight)
+void FluDotInfoBadge::setTopRightMargin(int marginTop, int marginRight)
 {
     m_marginTop = marginTop;
     m_marginRight = marginRight;
 }
 
-void FluCircleDot::moveTopRight()
+void FluDotInfoBadge::moveTopRight()
 {
     int x = m_target->width() - m_marginRight - width() / 2;
     int y = m_marginTop - height() / 2;
     move(x, y);
 }
 
-void FluCircleDot::paintEvent(QPaintEvent* event)
+void FluDotInfoBadge::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
     opt.initFrom(this);
@@ -29,7 +29,7 @@ void FluCircleDot::paintEvent(QPaintEvent* event)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
-bool FluCircleDot::eventFilter(QObject* watched, QEvent* event)
+bool FluDotInfoBadge::eventFilter(QObject* watched, QEvent* event)
 {
     if (m_target == nullptr)
         return FluWidget::eventFilter(watched, event);
@@ -45,14 +45,14 @@ bool FluCircleDot::eventFilter(QObject* watched, QEvent* event)
     return FluWidget::eventFilter(watched, event);
 }
 
-void FluCircleDot::setCircleDot(QWidget* target, int marginTop, int marginRight)
+void FluDotInfoBadge::setDotInfoBadge(QWidget* target, int marginTop, int marginRight)
 {
     if (target == nullptr)
         return;
 
-    FluCircleDot* circleDot = new FluCircleDot(target);
-    circleDot->setTopRightMargin(marginTop, marginRight);
-    target->installEventFilter(circleDot);
+    FluDotInfoBadge* dotBadge = new FluDotInfoBadge(target);
+    dotBadge->setTopRightMargin(marginTop, marginRight);
+    target->installEventFilter(dotBadge);
 
-    circleDot->moveTopRight();
+    dotBadge->moveTopRight();
 }

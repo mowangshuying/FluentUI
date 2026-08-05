@@ -6,10 +6,10 @@ FluBasicInputPage::FluBasicInputPage(QWidget* parent /*= nullptr*/) : FluATitleP
     m_titleLabel->setText(tr("Basic input"));
 
     auto buttonCard = addHCard(FluIconUtils::getPixmap(("../res/ControlImages/Button.png")), tr("Button"), tr("A control that responds to user input and raises a Click event."), "ButtonPage");
-    FluCircleDot::setCircleDot(buttonCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(buttonCard, 20, 20);
 
     auto checkboxCard = addHCard(FluIconUtils::getPixmap(("../res/ControlImages/Checkbox.png")), tr("CheckBox"), tr("A control that a user can select or clear."), "CheckBoxPage");
-    FluCircleDot::setCircleDot(checkboxCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(checkboxCard, 20, 20);
 
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/ColorPicker.png")), tr("ColorPicker"), tr("A control that displays a selectable color spectrum."), "ColorPickerPage");
 
@@ -26,10 +26,10 @@ FluBasicInputPage::FluBasicInputPage(QWidget* parent /*= nullptr*/) : FluATitleP
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/RepeatButton.png")), tr("RepeatButton"), tr("A button that raisers its Click event repeatedly from the time it's pressed until it's released."), "RepeatButtonPage");
 
     auto sliderCard = addHCard(FluIconUtils::getPixmap(("../res/ControlImages/Slider.png")), tr("Slider"), tr("A control that lets the user select from a range of values by moving a Thumb control along a track."), "SliderPage");
-    FluCircleDot::setCircleDot(sliderCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(sliderCard, 20, 20);
 
     auto splitButtonCard = addHCard(FluIconUtils::getPixmap(("../res/ControlImages/SplitButton.png")), tr("SplitButton"), tr("A two-part button that display a flyout when its secondary part is clicked."), "SplitButtonPage");
-    FluCircleDot::setCircleDot(splitButtonCard, 20, 20);
+    FluDotInfoBadge::setDotInfoBadge(splitButtonCard, 20, 20);
 
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/ToggleButton.png")), tr("ToggleButton"), tr("A button that can be switched between two states like a CheckBox."), "ToggleButtonPage");
 

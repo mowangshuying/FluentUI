@@ -14,7 +14,7 @@
     <file alias="StyleSheet/dark/FluCalendarViewTitle.qss">../stylesheet/dark/FluCalendarViewTitle.qss</file>
     <file alias="StyleSheet/dark/FluCalendarViewWeakTitle.qss">../stylesheet/dark/FluCalendarViewWeakTitle.qss</file>
     <file alias="StyleSheet/dark/FluCheckBox.qss">../stylesheet/dark/FluCheckBox.qss</file>
-    <file alias="StyleSheet/dark/FluCircleDot.qss">../stylesheet/dark/FluCircleDot.qss</file>
+    <file alias="StyleSheet/dark/FluDotInfoBadge.qss">../stylesheet/dark/FluDotInfoBadge.qss</file>
     <file alias="StyleSheet/dark/FluCodeBox.qss">../stylesheet/dark/FluCodeBox.qss</file>
     <file alias="StyleSheet/dark/FluColorButton.qss">../stylesheet/dark/FluColorButton.qss</file>
     <file alias="StyleSheet/dark/FluColorFlyout.qss">../stylesheet/dark/FluColorFlyout.qss</file>
@@ -111,7 +111,7 @@
     <file alias="StyleSheet/light/FluCalendarViewTitle.qss">../stylesheet/light/FluCalendarViewTitle.qss</file>
     <file alias="StyleSheet/light/FluCalendarViewWeakTitle.qss">../stylesheet/light/FluCalendarViewWeakTitle.qss</file>
     <file alias="StyleSheet/light/FluCheckBox.qss">../stylesheet/light/FluCheckBox.qss</file>
-    <file alias="StyleSheet/light/FluCircleDot.qss">../stylesheet/light/FluCircleDot.qss</file>
+    <file alias="StyleSheet/light/FluDotInfoBadge.qss">../stylesheet/light/FluDotInfoBadge.qss</file>
     <file alias="StyleSheet/light/FluCodeBox.qss">../stylesheet/light/FluCodeBox.qss</file>
     <file alias="StyleSheet/light/FluColorButton.qss">../stylesheet/light/FluColorButton.qss</file>
     <file alias="StyleSheet/light/FluColorFlyout.qss">../stylesheet/light/FluColorFlyout.qss</file>
@@ -227,7 +227,7 @@
     <file alias="StyleSheet/atomOneDark/FluCalendarViewTitle.qss">../stylesheet/atomOneDark/FluCalendarViewTitle.qss</file>
     <file alias="StyleSheet/atomOneDark/FluCalendarViewWeakTitle.qss">../stylesheet/atomOneDark/FluCalendarViewWeakTitle.qss</file>
     <file alias="StyleSheet/atomOneDark/FluCheckBox.qss">../stylesheet/atomOneDark/FluCheckBox.qss</file>
-    <file alias="StyleSheet/atomOneDark/FluCircleDot.qss">../stylesheet/atomOneDark/FluCircleDot.qss</file>
+    <file alias="StyleSheet/atomOneDark/FluDotInfoBadge.qss">../stylesheet/atomOneDark/FluDotInfoBadge.qss</file>
     <file alias="StyleSheet/atomOneDark/FluCodeBox.qss">../stylesheet/atomOneDark/FluCodeBox.qss</file>
     <file alias="StyleSheet/atomOneDark/FluColorButton.qss">../stylesheet/atomOneDark/FluColorButton.qss</file>
     <file alias="StyleSheet/atomOneDark/FluColorFlyout.qss">../stylesheet/atomOneDark/FluColorFlyout.qss</file>

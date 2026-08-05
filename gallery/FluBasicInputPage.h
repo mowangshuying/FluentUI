@@ -10,7 +10,7 @@
 #include "../utils/FluUtils.h"
 #include "FluATitlePage.h"
 #include "../controls/FluHCard.h"
-#include "../controls/FluCircleDot.h"
+#include "../controls/FluDotInfoBadge.h"
 
 class FluBasicInputPage : public FluATitlePage
 {

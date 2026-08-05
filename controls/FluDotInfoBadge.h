@@ -8,11 +8,11 @@
 #include <QStyleOption>
 #include <QPainter>
 
-class FluCircleDot : public FluWidget
+class FluDotInfoBadge : public FluWidget
 {
     Q_OBJECT
   public:
-    FluCircleDot(QWidget* parent = nullptr);
+    FluDotInfoBadge(QWidget* parent = nullptr);
 
     void setTopRightMargin(int marginTop, int marginRight);
 
@@ -22,10 +22,10 @@ class FluCircleDot : public FluWidget
 
     bool eventFilter(QObject* watched, QEvent* event);
 
-    static void setCircleDot(QWidget* target, int marginTop, int marginRight);
+    static void setDotInfoBadge(QWidget* target, int marginTop, int marginRight);
     QString qssFileName() override
     {
-        return "FluCircleDot.qss";
+        return "FluDotInfoBadge.qss";
     }
 
   protected:

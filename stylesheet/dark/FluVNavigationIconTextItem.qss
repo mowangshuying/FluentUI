@@ -34,15 +34,15 @@ FluVNavigationIconTextItem {
 #label {
     background-color: transparent;
     font-size: 14px;
-    color: #cccccc;
+    color: rgb(204, 204, 204);
 }
 
 #label[selected=true] {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 #label[enableThisItem=false] {
-    color: #666666;
+    color: rgb(102, 102, 102);
 }
 
 #arrow {

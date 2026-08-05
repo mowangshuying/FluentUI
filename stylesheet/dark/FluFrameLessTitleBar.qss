@@ -55,5 +55,5 @@ FluFrameLessTitleBar {
 #closeButton:hover,
 #closeButton:pressed {
     border: none;
-    background-color: #e81123;
+    background-color: rgb(232, 17, 35);
 }

@@ -22,7 +22,7 @@ FluRoundMenuView::item {
     border-radius: 4px;
     margin: 2px 4px;
     border: none;
-    color: #abb2bf;
+    color: rgb(171, 178, 191);
 }
 
 FluRoundMenuView::item[btSpacing=true] {
@@ -40,10 +40,10 @@ FluRoundMenuView::item:hover {
 
 FluRoundMenuView::item:selected {
     background-color: rgba(255, 255, 255, 0.06);
-    color: #abb2bf;
+    color: rgb(171, 178, 191);
 }
 
 FluRoundMenuView::item:selected:active {
     background-color: rgba(255, 255, 255, 0.10);
-    color: #abb2bf;
+    color: rgb(171, 178, 191);
 }

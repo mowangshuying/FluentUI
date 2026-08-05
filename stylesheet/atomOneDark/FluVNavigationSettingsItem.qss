@@ -16,5 +16,5 @@ FluVNavigationSettingsItem:hover {
 #label {
     background-color: transparent;
     font-size: 14px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }

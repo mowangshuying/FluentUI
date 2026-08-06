@@ -12,6 +12,13 @@ enum class TextPosition
     Right,
 };
 
+enum class SwitchSize
+{
+    Normal,   // Default, full size
+    Medium,   // 0.8x Normal
+    Small,    // 0.6x Normal
+};
+
 class FluToggleSwitch : public FluWidget
 {
     Q_OBJECT
@@ -50,6 +57,10 @@ class FluToggleSwitch : public FluWidget
     // -- Layout --
     TextPosition getTextPosition() const;
     void setTextPosition(TextPosition pos);
+
+    // -- Size --
+    SwitchSize getSize() const;
+    void setSize(SwitchSize size);
 
     // -- Colors --
     QColor getBorderColor() const;
@@ -92,13 +103,16 @@ class FluToggleSwitch : public FluWidget
     void startKnobAnimation(qreal targetX);
     int getTrackWidth() const;
     int getTrackHeight() const;
+    void updateMetrics();       // Recalculate all size-dependent metrics based on m_size
+    qreal scaleFactor() const;  // Get scaling factor for current size
+    qreal scaleDim(int baseDim) const;  // Scale a base dimension by current size factor
 
   protected:
     bool m_checked = false;
     QString m_text;
-    QString m_onText = "On";
-    QString m_offText = "Off";
-    bool m_emptyText = false;
+    QString m_onText;
+    QString m_offText;
+    bool m_emptyText = true;
     TextPosition m_textPosition = TextPosition::Right;
 
     // Colors
@@ -109,19 +123,30 @@ class FluToggleSwitch : public FluWidget
     QColor m_textColor;
 
     // Animation
-    qreal m_knobX = 11.0;
-    qreal m_knobRadius = 6.0;
+    qreal m_knobX = kKnobOffX;
+    qreal m_knobRadius = kKnobRadius;
     QPropertyAnimation* m_knobAnimation = nullptr;
+
+    // Size state
+    SwitchSize m_size = SwitchSize::Medium;
+
+    // Dynamic metrics (recalculated when size changes)
+    qreal m_actualKnobOffX = kKnobOffX;
+    qreal m_actualKnobOnX = kKnobOnX;
+    qreal m_actualTrackWidth = kTrackWidth;
+    qreal m_actualTrackHeight = kTrackHeight;
 
     // Interaction
     bool m_isHovered = false;
     bool m_isPressed = false;
 
     // Constants
-    static constexpr int kTrackWidth = 42;
-    static constexpr int kTrackHeight = 20;
-    static constexpr int kKnobRadius = 6;
-    static constexpr int kKnobRadiusHover = 7;
+    static constexpr int kTrackWidth = 44;
+    static constexpr int kTrackHeight = 22;
+    static constexpr int kKnobRadius = 7;
+    static constexpr int kKnobRadiusHover = 8;
+    static constexpr int kKnobOffX = kKnobRadius;
+    static constexpr int kKnobOnX = kTrackWidth - kKnobRadius;
     static constexpr int kTextGap = 8;
-    static constexpr int kMinHeight = 22;
+    static constexpr int kMinHeight = kTrackHeight;
 };

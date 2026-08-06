@@ -9,8 +9,11 @@
 
 FluSlider::FluSlider(QWidget* parent) : QSlider(parent)
 {
-    m_valueTooltip = new QLabel(nullptr, Qt::ToolTip);
+    m_valueTooltip = new QLabel(nullptr, Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    m_valueTooltip->setObjectName("sliderValueTooltip");
     m_valueTooltip->setAttribute(Qt::WA_TransparentForMouseEvents);
+    m_valueTooltip->setAttribute(Qt::WA_StyledBackground, true);
+    m_valueTooltip->setAttribute(Qt::WA_TranslucentBackground);
 
     // Initialize handle scale animation
     m_scaleAnim = new QPropertyAnimation(this, "handleScale", this);
@@ -28,8 +31,11 @@ FluSlider::FluSlider(QWidget* parent) : QSlider(parent)
 
 FluSlider::FluSlider(Qt::Orientation orientation, QWidget* parent) : QSlider(orientation, parent)
 {
-    m_valueTooltip = new QLabel(nullptr, Qt::ToolTip);
+    m_valueTooltip = new QLabel(nullptr, Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+    m_valueTooltip->setObjectName("sliderValueTooltip");
     m_valueTooltip->setAttribute(Qt::WA_TransparentForMouseEvents);
+    m_valueTooltip->setAttribute(Qt::WA_StyledBackground, true);
+    m_valueTooltip->setAttribute(Qt::WA_TranslucentBackground);
 
     // Initialize handle scale animation
     m_scaleAnim = new QPropertyAnimation(this, "handleScale", this);
@@ -53,7 +59,30 @@ FluSlider::~FluSlider()
 void FluSlider::onThemeChanged()
 {
     FluStyleSheetUtils::setQssByFileName("FluSlider.qss", this, FluThemeUtils::getUtils()->getTheme());
+    updateTooltipStyle();
     update();
+}
+
+void FluSlider::updateTooltipStyle()
+{
+    if (!m_valueTooltip)
+        return;
+
+    FluTheme theme = FluThemeUtils::getUtils()->getTheme();
+    QString style;
+    if (theme == FluTheme::AtomOneDark)
+    {
+        style = "QLabel#sliderValueTooltip { background-color: rgb(44, 48, 54); color: white; border: 1px solid rgb(71, 74, 79); border-bottom: 1px solid rgb(71, 74, 79); border-radius: 4px; padding: 4px 8px; }";
+    }
+    else if (FluThemeUtils::isLightTheme())
+    {
+        style = "QLabel#sliderValueTooltip { background-color: rgb(251, 251, 251); color: black; border: 1px solid rgb(229, 229, 229); border-bottom: 1px solid rgb(204, 204, 204); border-radius: 4px; padding: 4px 8px; }";
+    }
+    else
+    {
+        style = "QLabel#sliderValueTooltip { background-color: rgb(45, 45, 45); color: white; border: 1px solid rgb(53, 53, 53); border-bottom: 1px solid rgb(48, 48, 48); border-radius: 4px; padding: 4px 8px; }";
+    }
+    m_valueTooltip->setStyleSheet(style);
 }
 
 // --- Handle scale property ---
@@ -125,6 +154,13 @@ void FluSlider::animateToValue(int target)
 void FluSlider::setTickMarkEnabled(bool enable)
 {
     m_tickMarkEnabled = enable;
+    if (enable)
+    {
+        if (orientation() == Qt::Horizontal)
+            setMinimumHeight(qMax(minimumHeight(), 64));
+        else
+            setMinimumWidth(qMax(minimumWidth(), 96));
+    }
     update();
 }
 
@@ -135,7 +171,7 @@ bool FluSlider::isTickMarkEnabled() const
 
 void FluSlider::setTickMarkInterval(int interval)
 {
-    m_tickMarkInterval = interval;
+    m_tickMarkInterval = qMax(1, interval);
     update();
 }
 
@@ -413,40 +449,94 @@ void FluSlider::paintEvent(QPaintEvent* event)
     qreal outerRadius = baseRadius * m_handleScale;
     qreal innerRadius = outerRadius - 3.0;
 
-    // Draw tick marks (optional), positioned just outside the track area
+    // Draw ruler-style tick marks (optional), aligned with the fixed handle travel range.
     if (m_tickMarkEnabled)
     {
-        // Match track gray tones per theme for visual cohesion
-        QColor tickColor = isLight ? QColor(134, 134, 134) : QColor(154, 154, 154);
+        QColor tickColor = isLight ? QColor(105, 105, 105) : QColor(185, 185, 185);
         if (isAtomDark)
-            tickColor = QColor(154, 154, 154);
+            tickColor = QColor(150, 156, 170);
         if (!isEnabled())
-            tickColor = isLight ? QColor(200, 200, 200) : QColor(60, 60, 60);
+            tickColor = isLight ? QColor(180, 180, 180) : QColor(95, 95, 95);
 
-        painter.setPen(QPen(tickColor, 1.5));
+        QPen tickPen(tickColor, 1.0);
+        tickPen.setCapStyle(Qt::RoundCap);
+        painter.setPen(tickPen);
+
+        const int interval = qMax(1, m_tickMarkInterval);
+        QFont tickFont = font();
+        if (tickFont.pointSizeF() > 0)
+            tickFont.setPointSizeF(qMax(7.0, tickFont.pointSizeF() - 1.0));
+        painter.setFont(tickFont);
+        QFontMetrics tickFm(tickFont);
+
+        int maxLabelWidth = 0;
+        for (int v = min; v <= max; v += interval)
+            maxLabelWidth = qMax(maxLabelWidth, tickFm.horizontalAdvance(QString::number(v)));
+        if ((max - min) % interval != 0)
+            maxLabelWidth = qMax(maxLabelWidth, tickFm.horizontalAdvance(QString::number(max)));
+
+        auto drawHorizontalTick = [&](int v) {
+            qreal ratio = (qreal)(v - min) / range;
+            const qreal travelStart = baseRadius;
+            const qreal travelEnd = width() - 1 - baseRadius;
+            int x = qRound(travelStart + ratio * (travelEnd - travelStart));
+
+            const bool isEndpoint = (v == min || v == max);
+            const int tickLen = isEndpoint ? 8 : 5;
+            const int tickTop = qRound(height() / 2.0 + 8);
+            painter.drawLine(x, tickTop, x, tickTop + tickLen);
+
+            QString label = QString::number(v);
+            int labelW = tickFm.horizontalAdvance(label);
+            int labelX = qBound(0, x - labelW / 2, qMax(0, width() - labelW));
+            int labelY = tickTop + tickLen + 3;
+            labelY = qMin(labelY, qMax(0, height() - tickFm.height()));
+            QRect labelRect(labelX, labelY, labelW, tickFm.height());
+            painter.drawText(labelRect, Qt::AlignCenter, label);
+        };
+
+        auto drawVerticalTick = [&](int v) {
+            qreal ratio = 1.0 - (qreal)(v - min) / range;
+            const qreal travelStart = baseRadius;
+            const qreal travelEnd = height() - 1 - baseRadius;
+            int y = qRound(travelStart + ratio * (travelEnd - travelStart));
+
+            const bool isEndpoint = (v == min || v == max);
+            const int tickLen = isEndpoint ? 8 : 5;
+            const int desiredTickLeft = qRound(width() / 2.0 + 8);
+            const int tickLeftMax = width() - tickLen - 4 - maxLabelWidth;
+            const int tickLeft = qBound(0, desiredTickLeft, qMax(0, tickLeftMax));
+            painter.drawLine(tickLeft, y, tickLeft + tickLen, y);
+
+            QString label = QString::number(v);
+            int labelW = tickFm.horizontalAdvance(label);
+            int labelX = tickLeft + tickLen + 4;
+            int labelY = qBound(0, y - tickFm.height() / 2, qMax(0, height() - tickFm.height()));
+            QRect labelRect(labelX, labelY, labelW, tickFm.height());
+            painter.drawText(labelRect, Qt::AlignVCenter | Qt::AlignLeft, label);
+        };
+
         if (orientation() == Qt::Horizontal)
         {
-            // Ticks placed below the track (track is centered vertically)
-            int tickTop = height() / 2 + 12;
-            for (int v = min; v <= max; v += m_tickMarkInterval)
+            int lastValue = min;
+            for (int v = min; v <= max; v += interval)
             {
-                qreal ratio = (qreal)(v - min) / range;
-                int x = (int)(ratio * (width() - 1));
-                x = qBound((int)outerRadius, x, (int)(width() - 1 - outerRadius));
-                painter.drawLine(x, tickTop, x, tickTop + 14);
+                drawHorizontalTick(v);
+                lastValue = v;
             }
+            if (lastValue != max)
+                drawHorizontalTick(max);
         }
         else
         {
-            // Ticks placed to the right of the track (track is centered horizontally)
-            int tickLeft = width() / 2 + 12;
-            for (int v = min; v <= max; v += m_tickMarkInterval)
+            int lastValue = min;
+            for (int v = min; v <= max; v += interval)
             {
-                qreal ratio = 1.0 - (qreal)(v - min) / range;
-                int y = (int)(ratio * (height() - 1));
-                y = qBound((int)outerRadius, y, (int)(height() - 1 - outerRadius));
-                painter.drawLine(tickLeft, y, tickLeft + 14, y);
+                drawVerticalTick(v);
+                lastValue = v;
             }
+            if (lastValue != max)
+                drawVerticalTick(max);
         }
     }
 

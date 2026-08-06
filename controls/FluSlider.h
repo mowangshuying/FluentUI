@@ -48,6 +48,7 @@ class FluSlider : public QSlider
   private:
     void showValueTooltip();
     void hideValueTooltip();
+    void updateTooltipStyle();
     void animateHandleTo(qreal target);
     void animateToValue(int target);
 

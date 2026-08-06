@@ -49,7 +49,7 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     tickSlider->setMaximum(100);
     tickSlider->setSingleStep(10);
     tickSlider->setTickMarkEnabled(true);
-    tickSlider->setTickMarkInterval(10);
+    tickSlider->setTickMarkInterval(20);
 
     tickSlider->move(50, 60);
     m_scrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);

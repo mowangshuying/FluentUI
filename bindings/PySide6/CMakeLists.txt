@@ -221,8 +221,6 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluWindowKitWindow.h"
     # Controls - Other
     "${CMAKE_SOURCE_DIR}/controls/FluToggleSwitch.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluToggleSwitchEx.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluTextToggleSwitchEx.h"
     "${CMAKE_SOURCE_DIR}/controls/FluColorPickerButton.h"
     "${CMAKE_SOURCE_DIR}/controls/FluColorButton.h"
     "${CMAKE_SOURCE_DIR}/controls/FluVSplitLine.h"

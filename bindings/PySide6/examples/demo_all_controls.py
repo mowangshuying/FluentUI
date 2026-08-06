@@ -27,7 +27,7 @@ from PySide6FluentUI import (
     FluPushButton, FluIconButton, FluToggleButton, FluCheckBox,
     FluRadioButton, FluHyperLinkButton, FluRepeatButton,
     FluDropDownButton, FluSplitButton, FluStyleButton,
-    FluToggleSwitch, FluToggleSwitchEx,
+    FluToggleSwitch,
     # Input
     FluLineEdit, FluTextEdit, FluSpinBox, FluDoubleSpinBox,
     FluPasswordBox, FluSearchLineEdit, FluComboBox, FluComboBoxEx,

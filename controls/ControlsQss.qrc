@@ -81,7 +81,6 @@
     <file alias="StyleSheet/dark/FluTimePickerAPView.qss">../stylesheet/dark/FluTimePickerAPView.qss</file>
     <file alias="StyleSheet/dark/FluToggleButton.qss">../stylesheet/dark/FluToggleButton.qss</file>
     <file alias="StyleSheet/dark/FluToggleSwitch.qss">../stylesheet/dark/FluToggleSwitch.qss</file>
-    <file alias="StyleSheet/dark/FluToggleSwitchEx.qss">../stylesheet/dark/FluToggleSwitchEx.qss</file>
     <file alias="StyleSheet/dark/FluTreeView.qss">../stylesheet/dark/FluTreeView.qss</file>
     <file alias="StyleSheet/dark/FluVCard.qss">../stylesheet/dark/FluVCard.qss</file>
     <file alias="StyleSheet/dark/FluVFlipView.qss">../stylesheet/dark/FluVFlipView.qss</file>
@@ -190,7 +189,6 @@
     <file alias="StyleSheet/light/FluTimePickerAPView.qss">../stylesheet/light/FluTimePickerAPView.qss</file>
     <file alias="StyleSheet/light/FluToggleButton.qss">../stylesheet/light/FluToggleButton.qss</file>
     <file alias="StyleSheet/light/FluToggleSwitch.qss">../stylesheet/light/FluToggleSwitch.qss</file>
-    <file alias="StyleSheet/light/FluToggleSwitchEx.qss">../stylesheet/light/FluToggleSwitchEx.qss</file>
     <file alias="StyleSheet/light/FluTreeView.qss">../stylesheet/light/FluTreeView.qss</file>
     <file alias="StyleSheet/light/FluVCard.qss">../stylesheet/light/FluVCard.qss</file>
     <file alias="StyleSheet/light/FluVFlipView.qss">../stylesheet/light/FluVFlipView.qss</file>
@@ -306,7 +304,6 @@
     <file alias="StyleSheet/atomOneDark/FluTimePickerAPView.qss">../stylesheet/atomOneDark/FluTimePickerAPView.qss</file>
     <file alias="StyleSheet/atomOneDark/FluToggleButton.qss">../stylesheet/atomOneDark/FluToggleButton.qss</file>
     <file alias="StyleSheet/atomOneDark/FluToggleSwitch.qss">../stylesheet/atomOneDark/FluToggleSwitch.qss</file>
-    <file alias="StyleSheet/atomOneDark/FluToggleSwitchEx.qss">../stylesheet/atomOneDark/FluToggleSwitchEx.qss</file>
     <file alias="StyleSheet/atomOneDark/FluTreeView.qss">../stylesheet/atomOneDark/FluTreeView.qss</file>
     <file alias="StyleSheet/atomOneDark/FluVCard.qss">../stylesheet/atomOneDark/FluVCard.qss</file>
     <file alias="StyleSheet/atomOneDark/FluVFlipView.qss">../stylesheet/atomOneDark/FluVFlipView.qss</file>

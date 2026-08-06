@@ -443,14 +443,6 @@
         <include file-name="FluToggleSwitch.h" location="global"/>
     </object-type>
     
-    <object-type name="FluToggleSwitchEx" generate="yes">
-        <include file-name="FluToggleSwitchEx.h" location="global"/>
-    </object-type>
-    
-    <object-type name="FluTextToggleSwitchEx" generate="yes">
-        <include file-name="FluTextToggleSwitchEx.h" location="global"/>
-    </object-type>
-    
     <object-type name="FluColorPickerButton" generate="yes">
         <include file-name="FluColorPickerButton.h" location="global"/>
     </object-type>

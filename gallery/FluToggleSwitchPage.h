@@ -5,8 +5,6 @@
 #include "../controls/FluDisplayBox.h"
 #include "../controls/FluVScrollView.h"
 #include "../controls/FluToggleSwitch.h"
-#include "../controls/FluToggleSwitchEx.h"
-#include "../controls/FluTextToggleSwitchEx.h"
 
 class FluToggleSwitchPage : public FluAEmptyPage
 {

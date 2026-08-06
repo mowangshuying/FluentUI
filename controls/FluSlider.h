@@ -6,6 +6,8 @@
 
 #include "../utils/FluUtils.h"
 
+class QLabel;
+
 class FluSlider : public QSlider
 {
     Q_OBJECT
@@ -14,6 +16,7 @@ class FluSlider : public QSlider
   public:
     FluSlider(QWidget* parent = nullptr);
     FluSlider(Qt::Orientation orientation, QWidget* parent = nullptr);
+    ~FluSlider() override;
 
     void setTooltipEnabled(bool enable);
     bool isTooltipEnabled() const;
@@ -53,6 +56,7 @@ class FluSlider : public QSlider
     bool m_tooltipEnabled = true;
     bool m_dragging = false;
     int m_lastValue = -1;
+    QLabel* m_valueTooltip = nullptr;
 
     // Tick mark state
     bool m_tickMarkEnabled = false;

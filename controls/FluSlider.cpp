@@ -1,13 +1,17 @@
 ﻿#include "FluSlider.h"
 
 #include <QKeyEvent>
+#include <QLabel>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QTimer>
-#include <QToolTip>
+#include <QStyle>
 
 FluSlider::FluSlider(QWidget* parent) : QSlider(parent)
 {
+    m_valueTooltip = new QLabel(nullptr, Qt::ToolTip);
+    m_valueTooltip->setAttribute(Qt::WA_TransparentForMouseEvents);
+
     // Initialize handle scale animation
     m_scaleAnim = new QPropertyAnimation(this, "handleScale", this);
     m_scaleAnim->setDuration(150);
@@ -24,6 +28,9 @@ FluSlider::FluSlider(QWidget* parent) : QSlider(parent)
 
 FluSlider::FluSlider(Qt::Orientation orientation, QWidget* parent) : QSlider(orientation, parent)
 {
+    m_valueTooltip = new QLabel(nullptr, Qt::ToolTip);
+    m_valueTooltip->setAttribute(Qt::WA_TransparentForMouseEvents);
+
     // Initialize handle scale animation
     m_scaleAnim = new QPropertyAnimation(this, "handleScale", this);
     m_scaleAnim->setDuration(150);
@@ -36,6 +43,11 @@ FluSlider::FluSlider(Qt::Orientation orientation, QWidget* parent) : QSlider(ori
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
+}
+
+FluSlider::~FluSlider()
+{
+    delete m_valueTooltip;
 }
 
 void FluSlider::onThemeChanged()
@@ -160,7 +172,7 @@ void FluSlider::showValueTooltip()
         return;
 
     const QString text = QString::number(value());
-    const qreal baseRadius = 8.0;
+    const qreal handleRadius = 8.0 * m_handleScale;
 
     // Compute knob center using the same qBound clamp as paintEvent
     qreal ratio = (qreal)(value() - min) / range;
@@ -168,42 +180,44 @@ void FluSlider::showValueTooltip()
     if (orientation() == Qt::Horizontal)
     {
         qreal x = ratio * (width() - 1);
-        x = qBound(baseRadius, x, (qreal)(width() - 1) - baseRadius);
+        x = qBound(handleRadius, x, (qreal)(width() - 1) - handleRadius);
         knobCenterX = x;
         knobCenterY = height() / 2.0;
     }
     else
     {
         qreal y = (1.0 - ratio) * (height() - 1);
-        y = qBound(baseRadius, y, (qreal)(height() - 1) - baseRadius);
+        y = qBound(handleRadius, y, (qreal)(height() - 1) - handleRadius);
         knobCenterX = width() / 2.0;
         knobCenterY = y;
     }
 
-    QPoint globalPos;
+    m_valueTooltip->setText(text);
+    m_valueTooltip->adjustSize();
+
+    QPoint globalCenter = mapToGlobal(QPoint(qRound(knobCenterX), qRound(knobCenterY)));
+    QPoint tooltipPos;
     if (orientation() == Qt::Horizontal)
     {
-        // Compute tooltip size from its font to allow precise placement
-        QFontMetrics fm(QToolTip::font());
-        QSize tipSize = fm.size(Qt::TextSingleLine, text);
-
-        // Center tooltip horizontally on knob midline, place 8px above knob top edge
-        int tipX = (int)(knobCenterX - tipSize.width() / 2.0);
-        int tipY = (int)(knobCenterY - baseRadius - 8 - tipSize.height());
-        globalPos = mapToGlobal(QPoint(tipX, tipY));
+        // Keep the tooltip 8px above the actual knob top and center it on the knob.
+        tooltipPos.setX(globalCenter.x() - m_valueTooltip->width() / 2);
+        tooltipPos.setY(globalCenter.y() - qRound(handleRadius) - 8 - m_valueTooltip->height());
     }
     else
     {
-        // Show tooltip to the right of the knob
-        globalPos = mapToGlobal(QPoint((int)(knobCenterX + baseRadius + 12), (int)knobCenterY));
+        // Keep vertical tooltip centered on the knob and to its right.
+        tooltipPos.setX(globalCenter.x() + qRound(handleRadius) + 12);
+        tooltipPos.setY(globalCenter.y() - m_valueTooltip->height() / 2);
     }
 
-    QToolTip::showText(globalPos, text, this);
+    m_valueTooltip->move(tooltipPos);
+    m_valueTooltip->show();
 }
 
 void FluSlider::hideValueTooltip()
 {
-    QToolTip::hideText();
+    if (m_valueTooltip)
+        m_valueTooltip->hide();
     m_lastValue = -1;
 }
 

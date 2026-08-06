@@ -1,74 +1,127 @@
 #pragma once
 
 #include "FluWidget.h"
-#include <QCheckBox>
+#include <QPainter>
+#include <QPropertyAnimation>
+#include <QEnterEvent>
 #include "../utils/FluUtils.h"
 
-class FluToggleSwitch : public QCheckBox
+enum class TextPosition
+{
+    Left,
+    Right,
+};
+
+class FluToggleSwitch : public FluWidget
 {
     Q_OBJECT
+    Q_PROPERTY(bool checked READ isChecked WRITE setChecked NOTIFY checkedChanged)
+    Q_PROPERTY(QString text READ getText WRITE setText)
+    Q_PROPERTY(QString onText READ getOnText WRITE setOnText)
+    Q_PROPERTY(QString offText READ getOffText WRITE setOffText)
+    Q_PROPERTY(QColor borderColor READ getBorderColor WRITE setBorderColor)
+    Q_PROPERTY(QColor fillColor READ getFillColor WRITE setFillColor)
+    Q_PROPERTY(QColor fillColorOn READ getFillColorOn WRITE setFillColorOn)
+    Q_PROPERTY(QColor knobColor READ getKnobColor WRITE setKnobColor)
+    Q_PROPERTY(QColor textColor READ getTextColor WRITE setTextColor)
+    // Animation property
+    Q_PROPERTY(qreal knobX READ getKnobX WRITE setKnobX)
+
   public:
-    FluToggleSwitch(QWidget* parent = nullptr) : QCheckBox(parent)
-    {
-        m_onText = tr("On");
-        m_offText = tr("Off");
+    FluToggleSwitch(QWidget* parent = nullptr);
+    FluToggleSwitch(const QString& text, QWidget* parent = nullptr);
 
-        m_isEmptyText = false;
+    // -- State --
+    bool isChecked() const;
+    void setChecked(bool checked);
+    void toggle();
 
-        setText(m_offText);
-        connect(this, &FluToggleSwitch::clicked, [=](bool isChecked) {
-            if (m_isEmptyText)
-                return;
+    // -- Text --
+    QString getText() const;
+    void setText(const QString& text);
+    QString getOnText() const;
+    void setOnText(const QString& text);
+    QString getOffText() const;
+    void setOffText(const QString& text);
+    void setOnOffText(const QString& onText, const QString& offText);
+    bool isEmptyText() const;
+    void setEmptyText(bool empty);
 
-            if (isChecked)
-                setText(m_onText);
-            else
-                setText(m_offText);
-        });
+    // -- Layout --
+    TextPosition getTextPosition() const;
+    void setTextPosition(TextPosition pos);
 
-        onThemeChanged();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    }
+    // -- Colors --
+    QColor getBorderColor() const;
+    void setBorderColor(QColor color);
+    QColor getFillColor() const;
+    void setFillColor(QColor color);
+    QColor getFillColorOn() const;
+    void setFillColorOn(QColor color);
+    QColor getKnobColor() const;
+    void setKnobColor(QColor color);
+    QColor getTextColor() const;
+    void setTextColor(QColor color);
 
-    FluToggleSwitch(QString text, QWidget* parent = nullptr) : QCheckBox(text, parent)
-    {
-        m_onText = "On";
-        m_offText = "Off";
+    // -- Animation property --
+    qreal getKnobX() const;
+    void setKnobX(qreal x);
 
-        setText(m_offText);
-        connect(this, &FluToggleSwitch::clicked, [=](bool isChecked) {
-            if (m_isEmptyText)
-                return;
+    // -- Backward compatibility aliases --
+    inline bool getChecked() const { return isChecked(); }
 
-            if (isChecked)
-                setText(m_onText);
-            else
-                setText(m_offText);
-        });
-
-        onThemeChanged();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    }
-
-    void setOnOffText(QString onText, QString offText)
-    {
-        m_onText = onText;
-        m_offText = offText;
-    }
-
-    void setEmptyText(bool isEmpty)
-    {
-        m_isEmptyText = isEmpty;
-    }
+  signals:
+    void checkedChanged(bool checked);
+    void toggled(bool checked);
 
   public slots:
-    void onThemeChanged()
-    {
-        FluStyleSheetUtils::setQssByFileName("FluToggleSwitch.qss", this, FluThemeUtils::getUtils()->getTheme());
-    }
+    void onThemeChanged() override;
 
   protected:
-    bool m_isEmptyText;
-    QString m_onText;
-    QString m_offText;
+    void paintEvent(QPaintEvent* event) override;
+    void mousePressEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
+    void enterEvent(QEnterEvent* event) override;
+    void leaveEvent(QEvent* event) override;
+    void keyPressEvent(QKeyEvent* event) override;
+    QSize sizeHint() const override;
+    QSize minimumSizeHint() const override;
+
+  private:
+    void updateSize();
+    void startKnobAnimation(qreal targetX);
+    int getTrackWidth() const;
+    int getTrackHeight() const;
+
+  protected:
+    bool m_checked = false;
+    QString m_text;
+    QString m_onText = "On";
+    QString m_offText = "Off";
+    bool m_emptyText = false;
+    TextPosition m_textPosition = TextPosition::Right;
+
+    // Colors
+    QColor m_borderColor;
+    QColor m_fillColor;
+    QColor m_fillColorOn;
+    QColor m_knobColor;
+    QColor m_textColor;
+
+    // Animation
+    qreal m_knobX = 11.0;
+    qreal m_knobRadius = 6.0;
+    QPropertyAnimation* m_knobAnimation = nullptr;
+
+    // Interaction
+    bool m_isHovered = false;
+    bool m_isPressed = false;
+
+    // Constants
+    static constexpr int kTrackWidth = 42;
+    static constexpr int kTrackHeight = 20;
+    static constexpr int kKnobRadius = 6;
+    static constexpr int kKnobRadiusHover = 7;
+    static constexpr int kTextGap = 8;
+    static constexpr int kMinHeight = 22;
 };

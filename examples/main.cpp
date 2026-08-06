@@ -162,11 +162,11 @@ int main(int argc, char **argv)
     // FluCheckBoxDemo demo;
     // demo.show();
 
-    // FluSliderDemo demo;
-    // demo.show();
+     FluSliderDemo demo;
+     demo.show();
 
-    //  FluToggleSwitchDemo demo;
-    //  demo.show();
+      //FluToggleSwitchDemo demo;
+      //demo.show();
 
     // FluProgressRingDemo demo;
     // demo.show();
@@ -419,8 +419,8 @@ int main(int argc, char **argv)
     // FluMenuBarDemo demo;
     // demo.show();
 
-    FluComboBoxDemo demo;
-    demo.show();
+    //FluComboBoxDemo demo;
+    //demo.show();
 
     //FluHNavigationViewDemo demo;
     //demo.show();

@@ -2,6 +2,7 @@
 #include <QPainterPath>
 #include <QMouseEvent>
 #include <QKeyEvent>
+#include <cmath>
 
 static QColor interpolateColor(const QColor& from, const QColor& to, qreal t)
 {
@@ -25,6 +26,7 @@ FluToggleSwitch::FluToggleSwitch(QWidget* parent) : FluWidget(parent)
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme) { onThemeChanged(); });
 
+    updateMetrics();
     updateSize();
 }
 
@@ -56,9 +58,7 @@ void FluToggleSwitch::setChecked(bool checked)
     }
 
     // Animate knob
-    const qreal offX = 11.0;
-    const qreal onX = 31.0;
-    startKnobAnimation(m_checked ? onX : offX);
+    startKnobAnimation(m_checked ? m_actualKnobOnX : m_actualKnobOffX);
 
     emit checkedChanged(m_checked);
     emit toggled(m_checked);
@@ -126,6 +126,10 @@ void FluToggleSwitch::setOnOffText(const QString& onText, const QString& offText
 {
     setOnText(onText);
     setOffText(offText);
+    m_emptyText = false;
+    m_text = m_checked ? m_onText : m_offText;
+    updateSize();
+    update();
 }
 
 bool FluToggleSwitch::isEmptyText() const
@@ -240,55 +244,72 @@ void FluToggleSwitch::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-    // Compute text metrics
+    if (!isEnabled())
+        painter.setOpacity(0.4);
+
+    // Text metrics: Small size omits text for legibility
     QFontMetrics fm(font());
-    bool hasText = !m_text.isEmpty();
+    bool hasText = !m_text.isEmpty() && m_size != SwitchSize::Small;
     int textWidth = hasText ? fm.horizontalAdvance(m_text) : 0;
     int textHeight = fm.height();
 
-    // Track dimensions
-    const int tw = kTrackWidth;
-    const int th = kTrackHeight;
-    const int trackY = (height() - th) / 2;
+    // Actual track dimensions (scaled by current size)
+    const qreal tw = m_actualTrackWidth;
+    const qreal th = m_actualTrackHeight;
+    const int trackY = (height() - qRound(th)) / 2;
 
-    // Track rect: positioned left or right of text
+    // Border pen width: thinner for Small size
+    const qreal pw = (m_size == SwitchSize::Small) ? 0.5 : 0.7;
+
+    // Track rect: positioned left or right of text, inset by pw/2 for pixel-aligned border
     QRectF trackRect;
     QRect textRect;
     if (m_textPosition == TextPosition::Left && hasText)
     {
         textRect = QRect(0, (height() - textHeight) / 2, textWidth, textHeight);
-        trackRect = QRectF(textWidth + kTextGap, trackY, tw, th);
+        trackRect = QRectF(textWidth + pw / 2 + kTextGap * scaleFactor(), trackY + pw / 2, tw - pw, th - pw);
     }
     else
     {
-        trackRect = QRectF(0, trackY, tw, th);
+        trackRect = QRectF(pw / 2, trackY + pw / 2, tw - pw, th - pw);
         if (hasText)
-            textRect = QRect(tw + kTextGap, (height() - textHeight) / 2, textWidth, textHeight);
+            textRect = QRect(qRound(tw) + qRound(kTextGap * scaleFactor()), (height() - textHeight) / 2, textWidth, textHeight);
     }
 
     // Interpolate track fill color based on knobX position (off -> on)
-    const qreal t = (m_knobX - 11.0) / (31.0 - 11.0);
+    const qreal t = (m_actualKnobOnX != m_actualKnobOffX)
+                        ? (m_knobX - m_actualKnobOffX) / (m_actualKnobOnX - m_actualKnobOffX)
+                        : 0.0;
     QColor trackFill = interpolateColor(m_fillColor, m_fillColorOn, t);
     QColor trackBorder = m_checked ? m_fillColorOn : m_borderColor;
 
     // Draw track (rounded rect)
-    QPainterPath trackPath;
-    trackPath.addRoundedRect(trackRect, th / 2.0, th / 2.0);
-
-    // Border (1px)
-    QPen borderPen(trackBorder, 1.0);
+    QPen borderPen(trackBorder, pw);
     painter.setPen(borderPen);
     painter.setBrush(trackFill);
     painter.drawRoundedRect(trackRect, th / 2.0, th / 2.0);
 
-    // Draw knob
-    const qreal knobRadius = m_isHovered ? kKnobRadiusHover : kKnobRadius;
-    const qreal knobCenterY = trackRect.center().y();
-    const qreal knobCenterX = trackRect.left() + m_knobX;
+    // Draw knob: hover radius steps up by 1px (integer step) and rounds to keep the circle crisp
+    const qreal normalRadius = m_knobRadius;
+    const qreal displayKnobRadius = m_isHovered ? std::ceil(normalRadius + 1.0) : normalRadius;
+    const qreal knobCenterY = std::round(trackY + th * 0.5);  // Integer-aligned for crisp circle
+    // Keep the knob inside the track even when it grows on hover
+    const qreal knobCenterX = static_cast<qreal>(qRound(qBound(trackRect.left() + displayKnobRadius, trackRect.left() + m_knobX, trackRect.right() - displayKnobRadius)));
 
+    // Knob drop shadow for boundary clarity (WinUI 3 style, scaled)
+    const QColor shadowColor(0, 0, 0, 40);
+    const qreal shadowOffset = 0.5 * scaleFactor();
+    const qreal shadowRadius = displayKnobRadius + 0.8 * scaleFactor();
     painter.setPen(Qt::NoPen);
+    painter.setBrush(shadowColor);
+    painter.drawEllipse(QPointF(knobCenterX, knobCenterY + shadowOffset), shadowRadius, shadowRadius);
+
+    // Knob body with 0.5px subtle border
+    QColor knobBorderColor = m_knobColor.darker(115);
+    QPen knobBorderPen(knobBorderColor, 0.5);
+    painter.setPen(knobBorderPen);
     painter.setBrush(m_knobColor);
-    painter.drawEllipse(QPointF(knobCenterX, knobCenterY), knobRadius, knobRadius);
+    painter.drawEllipse(QPointF(knobCenterX, knobCenterY), displayKnobRadius, displayKnobRadius);
 
     // Draw text
     if (hasText)
@@ -348,13 +369,14 @@ void FluToggleSwitch::keyPressEvent(QKeyEvent* event)
 QSize FluToggleSwitch::sizeHint() const
 {
     QFontMetrics fm(font());
-    int textWidth = m_text.isEmpty() ? 0 : fm.horizontalAdvance(m_text);
-    int w = kTrackWidth;
-    int h = kMinHeight;
+    bool showText = !m_text.isEmpty() && m_size != SwitchSize::Small;
+    int textWidth = showText ? fm.horizontalAdvance(m_text) : 0;
+    int w = qRound(m_actualTrackWidth);
+    int h = qMax(qRound(m_actualTrackHeight), kMinHeight);
 
-    if (textWidth > 0)
+    if (showText)
     {
-        w += kTextGap + textWidth;
+        w += qRound(kTextGap * scaleFactor()) + textWidth;
         h = qMax(h, fm.height() + 2);
     }
 
@@ -363,12 +385,63 @@ QSize FluToggleSwitch::sizeHint() const
 
 QSize FluToggleSwitch::minimumSizeHint() const
 {
-    return QSize(kTrackWidth, kMinHeight);
+    return QSize(qRound(m_actualTrackWidth), qMax(qRound(m_actualTrackHeight), kMinHeight));
 }
 
 void FluToggleSwitch::updateSize()
 {
     setFixedSize(sizeHint());
+}
+
+qreal FluToggleSwitch::scaleFactor() const
+{
+    switch (m_size)
+    {
+        case SwitchSize::Medium: return 0.8;
+        case SwitchSize::Small: return 0.6;
+        default: return 1.0;
+    }
+}
+
+qreal FluToggleSwitch::scaleDim(int baseDim) const
+{
+    return baseDim * scaleFactor();
+}
+
+void FluToggleSwitch::updateMetrics()
+{
+    qreal f = scaleFactor();
+    m_actualTrackWidth = kTrackWidth * f;
+    m_actualTrackHeight = kTrackHeight * f;
+    m_knobRadius = kKnobRadius * f;
+    m_actualKnobOffX = m_knobRadius;
+    m_actualKnobOnX = m_actualTrackWidth - m_knobRadius;
+}
+
+SwitchSize FluToggleSwitch::getSize() const
+{
+    return m_size;
+}
+
+void FluToggleSwitch::setSize(SwitchSize size)
+{
+    if (m_size == size)
+        return;
+
+    m_size = size;
+    updateMetrics();
+
+    // Stop any running animation and re-position knob to match new size
+    if (m_knobAnimation)
+        m_knobAnimation->stop();
+
+    if (m_checked)
+        m_knobX = m_actualKnobOnX;
+    else
+        m_knobX = m_actualKnobOffX;
+
+    updateSize();
+    update();
 }
 
 void FluToggleSwitch::startKnobAnimation(qreal targetX)

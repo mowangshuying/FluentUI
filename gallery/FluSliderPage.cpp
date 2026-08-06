@@ -37,6 +37,22 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
     vSlider->move(50, 50);
 
     m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+
+    auto displayBox3 = new FluDisplayBox;
+    displayBox3->setTitle(tr("A slider with tick marks."));
+    displayBox3->getCodeExpander()->setCodeByPath("../code/SliderPageCode3.md");
+    displayBox3->setBodyWidgetFixedHeight(96);
+
+    auto tickSlider = new FluSlider(displayBox3);
+    tickSlider->setOrientation(Qt::Horizontal);
+    tickSlider->setMinimum(0);
+    tickSlider->setMaximum(100);
+    tickSlider->setSingleStep(10);
+    tickSlider->setTickMarkEnabled(true);
+    tickSlider->setTickMarkInterval(10);
+
+    tickSlider->move(50, 60);
+    m_scrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

@@ -508,6 +508,7 @@ set(CODE_FILES
     "../code/ScrollViewPageCode1.md"
     "../code/SliderPageCode1.md"
     "../code/SliderPageCode2.md"
+    "../code/SliderPageCode3.md"
     "../code/SplitButtonPageCode1.md"
     "../code/TableViewPageCode1.md"
     "../code/TextBoxPageCode1.md"

@@ -28,10 +28,19 @@ class FluTabView : public FluWidget
 
     void resizeEvent(QResizeEvent* event);
 
-    FluTabBar* getTabBar() const { return m_tabBar; }
-    QWidget* getContentWidget() const { return m_widgt; }
+    FluTabBar* getTabBar() const
+    {
+        return m_tabBar;
+    }
+    QWidget* getContentWidget() const
+    {
+        return m_widgt;
+    }
 
-    QString qssFileName() override { return "FluTabView.qss"; }
+    QString qssFileName() override
+    {
+        return "FluTabView.qss";
+    }
 
     void updateJunctionOverlay();
 

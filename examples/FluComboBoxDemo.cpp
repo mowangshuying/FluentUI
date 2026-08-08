@@ -40,40 +40,40 @@ FluComboBoxDemo::FluComboBoxDemo(QWidget* parent /*= nullptr*/) : FluTemplateDem
         m_basicCombo->addItem("Red");
         m_basicCombo->addItem("Yellow");
 
-     /*   makeRow(1, "Placeholder:", m_placeholderCombo);
-        m_placeholderCombo->setPlaceholderText("Select a fruit...");
-        m_placeholderCombo->addItem("Apple");
-        m_placeholderCombo->addItem("Banana");
-        m_placeholderCombo->addItem("Cherry");
-        m_placeholderCombo->addItem("Grape");
+        /*   makeRow(1, "Placeholder:", m_placeholderCombo);
+           m_placeholderCombo->setPlaceholderText("Select a fruit...");
+           m_placeholderCombo->addItem("Apple");
+           m_placeholderCombo->addItem("Banana");
+           m_placeholderCombo->addItem("Cherry");
+           m_placeholderCombo->addItem("Grape");
 
-        makeRow(2, "With Icons:", m_iconCombo);
-        m_iconCombo->addItem(FluAwesomeType::Settings, "Settings");
-        m_iconCombo->addItem(FluAwesomeType::Delete, "Delete");
-        m_iconCombo->addItem(FluAwesomeType::Share, "Share");
-        m_iconCombo->addItem(FluAwesomeType::Copy, "Copy");
+           makeRow(2, "With Icons:", m_iconCombo);
+           m_iconCombo->addItem(FluAwesomeType::Settings, "Settings");
+           m_iconCombo->addItem(FluAwesomeType::Delete, "Delete");
+           m_iconCombo->addItem(FluAwesomeType::Share, "Share");
+           m_iconCombo->addItem(FluAwesomeType::Copy, "Copy");
 
-        makeRow(3, "Enabled:", m_enableCombo);
-        m_enableCombo->addItem("Option A");
-        m_enableCombo->addItem("Option B (disabled)");
-        m_enableCombo->addItem("Option C");
-        m_enableCombo->setItemEnabled(1, false);
+           makeRow(3, "Enabled:", m_enableCombo);
+           m_enableCombo->addItem("Option A");
+           m_enableCombo->addItem("Option B (disabled)");
+           m_enableCombo->addItem("Option C");
+           m_enableCombo->setItemEnabled(1, false);
 
-        m_resultLabel = new FluLabel(FluLabelStyle::BodyTextBlockStyle);
-        m_resultLabel->setText("Selected: (none)");
-        grid->addWidget(m_resultLabel, 0, 2);
+           m_resultLabel = new FluLabel(FluLabelStyle::BodyTextBlockStyle);
+           m_resultLabel->setText("Selected: (none)");
+           grid->addWidget(m_resultLabel, 0, 2);
 
-        auto* btnDisable = new FluPushButton;
-        btnDisable->setText("Toggle Enable");
-        btnDisable->setFixedWidth(110);
-        grid->addWidget(btnDisable, 3, 2);
-        connect(btnDisable, &FluPushButton::clicked, [=]() {
-            m_enableCombo->setEnabled(!m_enableCombo->isEnabled());
-        });
+           auto* btnDisable = new FluPushButton;
+           btnDisable->setText("Toggle Enable");
+           btnDisable->setFixedWidth(110);
+           grid->addWidget(btnDisable, 3, 2);
+           connect(btnDisable, &FluPushButton::clicked, [=]() {
+               m_enableCombo->setEnabled(!m_enableCombo->isEnabled());
+           });
 
-        connect(m_basicCombo, &FluComboBoxEx::currentTextChanged, [=](const QString& text) {
-            m_resultLabel->setText("Selected: " + text);
-        });*/
+           connect(m_basicCombo, &FluComboBoxEx::currentTextChanged, [=](const QString& text) {
+               m_resultLabel->setText("Selected: " + text);
+           });*/
 
         mainLayout->addLayout(grid);
     }

@@ -38,7 +38,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     addARow(FluLabelStyle::TitleTextBlockStyle, tr("Title"), tr("Display, SemiBold"), tr("28/36 epx"), tr("TitleTextBlockStyle"), 60);
     addARow(FluLabelStyle::TitleLargeTextBlockStyle, tr("Title Large"), tr("Display, SemiBold"), tr("40/52 epx"), tr("TitleLargeTextBlockStyle"), 80);
     addARow(FluLabelStyle::DisplayTextBlockStyle, tr("Display"), tr("Display, SemiBold"), tr("68/92 epx"), tr("DisplayTextBlockStyle"), 100);
-    
+
     auto expander = new FluCodeExpander;
     QString code = tr("auto label = new FluLabel;label->setStyle(FluLabelStyle::CaptionTextBlockStyle);");
     expander->setCodeText(code);

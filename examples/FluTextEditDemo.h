@@ -1,9 +1,10 @@
 #pragma once
 
-#include "../controls/FluWidget.h"
+// #include "../controls/FluWidget.h"
+#include "FluTemplateDemo.h"
 #include "../controls/FluTextEdit.h"
 
-class FluTextEditDemo : public FluWidget
+class FluTextEditDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:

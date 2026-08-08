@@ -219,7 +219,7 @@ void FluStyleSheetUtils::scheduleBatchUpdate(QWidget *widget, const QString &qss
 
     if (inst->m_batching)
     {
-        QMap<QWidget*, QString>::const_iterator it = inst->m_lastAppliedQss.constFind(widget);
+        QMap<QWidget *, QString>::const_iterator it = inst->m_lastAppliedQss.constFind(widget);
         if (it != inst->m_lastAppliedQss.constEnd() && it.value() == qss)
             return;
 
@@ -242,7 +242,7 @@ void FluStyleSheetUtils::applyBatchedUpdates()
     if (activeWindow)
         activeWindow->setUpdatesEnabled(false);
 
-    QMap<QWidget*, QString> updates = inst->m_pendingUpdates;
+    QMap<QWidget *, QString> updates = inst->m_pendingUpdates;
     inst->m_pendingUpdates.clear();
 
     for (auto it = updates.begin(); it != updates.end(); ++it)

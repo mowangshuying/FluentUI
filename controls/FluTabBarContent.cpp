@@ -22,11 +22,31 @@ class FluTabBarPaintLayer : public QWidget
             setFixedSize(parent->size());
     }
 
-    void setTabHoverColor(const QColor& c)    { m_hoverColor = c; update(); }
-    void setTabPressedColor(const QColor& c)  { m_pressedColor = c; update(); }
-    void setTabSelectedColor(const QColor& c) { m_selectedColor = c; update(); }
-    void setTabSeparatorColor(const QColor& c){ m_separatorColor = c; update(); }
-    void setTabSelectedStrokeColor(const QColor& c) { m_selectedStrokeColor = c; update(); }
+    void setTabHoverColor(const QColor& c)
+    {
+        m_hoverColor = c;
+        update();
+    }
+    void setTabPressedColor(const QColor& c)
+    {
+        m_pressedColor = c;
+        update();
+    }
+    void setTabSelectedColor(const QColor& c)
+    {
+        m_selectedColor = c;
+        update();
+    }
+    void setTabSeparatorColor(const QColor& c)
+    {
+        m_separatorColor = c;
+        update();
+    }
+    void setTabSelectedStrokeColor(const QColor& c)
+    {
+        m_selectedStrokeColor = c;
+        update();
+    }
 
   protected:
     void paintEvent(QPaintEvent* event) override
@@ -65,10 +85,9 @@ class FluTabBarPaintLayer : public QWidget
             p.setBrush(m_separatorColor);
             for (int i = 0; i < n - 1; i++)
             {
-                FluTabBarItem* cur  = items[i];
+                FluTabBarItem* cur = items[i];
                 FluTabBarItem* next = items[i + 1];
-                bool showSep = !cur->getSelected() && !cur->getHovered() && !cur->getPressed()
-                            && !next->getSelected() && !next->getHovered() && !next->getPressed();
+                bool showSep = !cur->getSelected() && !cur->getHovered() && !cur->getPressed() && !next->getSelected() && !next->getHovered() && !next->getPressed();
                 if (showSep)
                 {
                     QRect r = cur->geometry();
@@ -88,7 +107,7 @@ class FluTabBarPaintLayer : public QWidget
             QRect r = item->geometry();
             if (m_selectedColor.isValid())
                 drawSelectedTab(p, r, m_selectedColor);
-            break; // only one selected
+            break;  // only one selected
         }
     }
 
@@ -100,10 +119,10 @@ class FluTabBarPaintLayer : public QWidget
             return;
 
         const qreal rad = 8.0;
-        const qreal x1  = r.left();
-        const qreal y1  = r.top();
-        const qreal x2  = r.right() + 1.0;   // exclusive right
-        const qreal y2  = r.bottom() + 1.0;   // exclusive bottom
+        const qreal x1 = r.left();
+        const qreal y1 = r.top();
+        const qreal x2 = r.right() + 1.0;   // exclusive right
+        const qreal y2 = r.bottom() + 1.0;  // exclusive bottom
 
         QPainterPath path;
         path.moveTo(x1 + rad, y1);

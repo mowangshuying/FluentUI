@@ -11,7 +11,7 @@ void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionVie
     if (isSeparator(index))
         return;
 
-    //LOG_DEBUG << option.text;
+    // LOG_DEBUG << option.text;
     if (!(option.state & QStyle::State_Selected))
         return;
 
@@ -27,7 +27,7 @@ void FluIndicatorMenuItemDeleage::paint(QPainter *painter, const QStyleOptionVie
     else if (FluThemeUtils::isAtomOneDarkTheme())
         painter->setBrush(QColor(82, 139, 255));
 
-    //qreal height 
+    // qreal height
 
     painter->drawRoundedRect(6, option.rect.y() + option.rect.height() * 0.2, 3, option.rect.height() * 0.6, 1.5, 1.5);
     painter->restore();

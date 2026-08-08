@@ -162,17 +162,17 @@ int main(int argc, char **argv)
     // FluCheckBoxDemo demo;
     // demo.show();
 
-     //FluSliderDemo demo;
-     //demo.show();
+    // FluSliderDemo demo;
+    // demo.show();
 
-      //FluToggleSwitchDemo demo;
-      //demo.show();
+    // FluToggleSwitchDemo demo;
+    // demo.show();
 
     // FluProgressRingDemo demo;
     // demo.show();
 
-    // FluProgressBarDemo demo;
-    // demo.show();
+    FluProgressBarDemo demo;
+    demo.show();
 
     // FluCalendarViewDemo demo;
     // demo.show();
@@ -225,8 +225,8 @@ int main(int argc, char **argv)
     // FluTabBarDemo demo;
     // demo.show();
 
-    FluTabViewDemo demo;
-    demo.show();
+    // FluTabViewDemo demo;
+    // demo.show();
 
     // FluFrameLessDemo demo;
     // demo.show();
@@ -419,10 +419,10 @@ int main(int argc, char **argv)
     // FluMenuBarDemo demo;
     // demo.show();
 
-    //FluComboBoxDemo demo;
-    //demo.show();
+    // FluComboBoxDemo demo;
+    // demo.show();
 
-    //FluHNavigationViewDemo demo;
-    //demo.show();
+    // FluHNavigationViewDemo demo;
+    // demo.show();
     return app.exec();
 }

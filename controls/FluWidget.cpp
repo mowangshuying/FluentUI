@@ -32,5 +32,3 @@ void FluWidget::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
-
-

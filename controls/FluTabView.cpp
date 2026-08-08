@@ -17,7 +17,11 @@ class FluTabViewJunctionOverlay : public QWidget
         setAttribute(Qt::WA_TranslucentBackground);
     }
 
-    void setNotchColor(const QColor& c) { m_notchColor = c; update(); }
+    void setNotchColor(const QColor& c)
+    {
+        m_notchColor = c;
+        update();
+    }
 
   protected:
     void paintEvent(QPaintEvent*) override
@@ -55,20 +59,19 @@ class FluTabViewJunctionOverlay : public QWidget
         p.setRenderHint(QPainter::Antialiasing);
         p.setPen(Qt::NoPen);
 
-        const qreal R     = 4.0;
-        QColor selColor   = bar->getSelectedTabColor();
-        QColor bgColor    = m_notchColor;
+        const qreal R = 4.0;
+        QColor selColor = bar->getSelectedTabColor();
+        QColor bgColor = m_notchColor;
 
         // --- 1. Bridge: fill any vertical gap under the selected tab ---------
         if (selColor.isValid() && selColor.alpha() > 0)
         {
-            qreal bridgeTop    = selRect.bottom() + 1.0;
+            qreal bridgeTop = selRect.bottom() + 1.0;
             qreal bridgeBottom = junctionY + R + 1.0;
             if (bridgeBottom > bridgeTop)
             {
                 p.setBrush(selColor);
-                p.drawRect(QRectF(selRect.left(), bridgeTop,
-                                  selRect.width(), bridgeBottom - bridgeTop));
+                p.drawRect(QRectF(selRect.left(), bridgeTop, selRect.width(), bridgeBottom - bridgeTop));
             }
         }
 
@@ -81,8 +84,7 @@ class FluTabViewJunctionOverlay : public QWidget
             leftNotch.moveTo(selRect.left() + 0.5, junctionY - R);
             leftNotch.lineTo(selRect.left() + 0.5, junctionY + R);
             leftNotch.lineTo(selRect.left() + R + 0.5, junctionY + R);
-            leftNotch.arcTo(QRectF(selRect.left() + 0.5, junctionY - R, 2.0 * R, 2.0 * R),
-                            270.0, -90.0);
+            leftNotch.arcTo(QRectF(selRect.left() + 0.5, junctionY - R, 2.0 * R, 2.0 * R), 270.0, -90.0);
             leftNotch.lineTo(selRect.left() + 0.5, junctionY - R);
             leftNotch.closeSubpath();
             p.drawPath(leftNotch);
@@ -92,8 +94,7 @@ class FluTabViewJunctionOverlay : public QWidget
             rightNotch.moveTo(selRect.right() + 0.5, junctionY - R);
             rightNotch.lineTo(selRect.right() + 0.5, junctionY + R);
             rightNotch.lineTo(selRect.right() - R + 0.5, junctionY + R);
-            rightNotch.arcTo(QRectF(selRect.right() - 2.0 * R + 0.5, junctionY - R, 2.0 * R, 2.0 * R),
-                             270.0, 90.0);
+            rightNotch.arcTo(QRectF(selRect.right() - 2.0 * R + 0.5, junctionY - R, 2.0 * R, 2.0 * R), 270.0, 90.0);
             rightNotch.lineTo(selRect.right() + 0.5, junctionY - R);
             rightNotch.closeSubpath();
             p.drawPath(rightNotch);
@@ -102,7 +103,7 @@ class FluTabViewJunctionOverlay : public QWidget
 
   private:
     FluTabView* m_tabView;
-    QColor      m_notchColor;
+    QColor m_notchColor;
 };
 
 // ---------------------------------------------------------------------------
@@ -130,13 +131,10 @@ FluTabView::FluTabView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     // Junction overlay: child of FluTabView, NOT in any layout.
     m_junctionOverlay = new FluTabViewJunctionOverlay(this);
 
-    connect(m_tabBar, &FluTabBar::addTabButtonClicked, this, [=]() {
-        emit addTabButtonClicked();
-    });
+    connect(m_tabBar, &FluTabBar::addTabButtonClicked, this, [=]() { emit addTabButtonClicked(); });
 
     // Refresh overlay colors when the theme changes (QSS reloads asynchronously).
-    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this,
-            [this](FluTheme) { QTimer::singleShot(0, this, &FluTabView::updateJunctionOverlay); });
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [this](FluTheme) { QTimer::singleShot(0, this, &FluTabView::updateJunctionOverlay); });
 
     onThemeChanged();
 }
@@ -196,15 +194,14 @@ void FluTabView::updateJunctionOverlay()
         notchColor = QColor(249, 249, 249);
     else if (FluThemeUtils::isDarkTheme())
         notchColor = QColor(32, 32, 32);
-    else // AtomOneDark
+    else  // AtomOneDark
         notchColor = QColor(33, 37, 43);
     m_junctionOverlay->setNotchColor(notchColor);
 
     // Position the overlay as a strip centred on the tab-bar / content junction.
-    const int junctionY  = m_widgt->geometry().top();
-    const int stripHalf  = 6;                               // extend 6 px each side
-    m_junctionOverlay->setGeometry(0, junctionY - stripHalf,
-                                   width(), stripHalf * 2);
+    const int junctionY = m_widgt->geometry().top();
+    const int stripHalf = 6;  // extend 6 px each side
+    m_junctionOverlay->setGeometry(0, junctionY - stripHalf, width(), stripHalf * 2);
     m_junctionOverlay->raise();
     m_junctionOverlay->update();
 }

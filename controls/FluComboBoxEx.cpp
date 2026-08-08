@@ -68,9 +68,7 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
         startChevronAnimation(false);
     });
 
-    connect(m_menu, &FluRoundMenu::closed, [=]() {
-        startChevronAnimation(false);
-    });
+    connect(m_menu, &FluRoundMenu::closed, [=]() { startChevronAnimation(false); });
 
     onThemeChanged();
 }

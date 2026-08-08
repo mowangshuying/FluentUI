@@ -14,7 +14,6 @@ class FluHNavigationMoreItem;
 class FluHNavigationItem;
 class FluHNavigationFlyIconTextItem;
 
-
 class FluHNavigationView : public FluWidget
 {
     Q_OBJECT
@@ -23,11 +22,11 @@ class FluHNavigationView : public FluWidget
 
     void addItemToLayout(QWidget* item, FluHNavigationItemPosition pos);
 
-    FluHNavigationIconTextItem *insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key, FluHNavigationItemPosition pos = FluHNavigationItemPosition::Mid);
+    FluHNavigationIconTextItem* insertIconTextItem(FluAwesomeType type, const QString& text, const QString& key, FluHNavigationItemPosition pos = FluHNavigationItemPosition::Mid);
 
-    FluHNavigationIconTextItem *insertIconTextItem(FluAwesomeType type, const QString &text, const QString &key, const QString &parentItemKey);
+    FluHNavigationIconTextItem* insertIconTextItem(FluAwesomeType type, const QString& text, const QString& key, const QString& parentItemKey);
 
-    FluHNavigationItem *getItemByKey(const QString &key);
+    FluHNavigationItem* getItemByKey(const QString& key);
 
     void setLastSelectedItem(FluHNavigationItem* item);
 
@@ -66,5 +65,5 @@ class FluHNavigationView : public FluWidget
     FluHNavigationItem* m_lastSelectedItem;
     FluHNavigationFlyIconTextItem* m_FlyIconTextItem;
 
-    FluHNavigationIconTextItem *createIconTextItem(FluAwesomeType type, const QString &text, const QString &key, QWidget *parent);
+    FluHNavigationIconTextItem* createIconTextItem(FluAwesomeType type, const QString& text, const QString& key, QWidget* parent);
 };

@@ -1,7 +1,6 @@
 #include "FluHNavigationIndicator.h"
 
-FluHNavigationIndicator::FluHNavigationIndicator(QWidget *parent /*= nullptr*/)
-    : QWidget(parent), m_selected(false), m_indicatorWidth(0)
+FluHNavigationIndicator::FluHNavigationIndicator(QWidget *parent /*= nullptr*/) : QWidget(parent), m_selected(false), m_indicatorWidth(0)
 {
     setFixedHeight(3);
     m_widthAnimation = new QPropertyAnimation(this, "indicatorWidth", this);

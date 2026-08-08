@@ -23,7 +23,10 @@ FluLayoutPage::FluLayoutPage(QWidget* parent /*= nullptr*/) : FluATitlePage(pare
 
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/StackPanel.png")), tr("StackPanel"), tr("A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically."), "StackPanelPage");
 
-    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")), tr("VariableSizedWrapGrid"), tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."), "VariableSizedWrapGridPage");
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")),
+             tr("VariableSizedWrapGrid"),
+             tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."),
+             "VariableSizedWrapGridPage");
 
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/Viewbox.png")), tr("Viewbox"), tr("A container control that scales its content to a specified size."), "ViewboxPage");
 

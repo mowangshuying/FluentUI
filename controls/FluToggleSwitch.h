@@ -14,9 +14,9 @@ enum class TextPosition
 
 enum class SwitchSize
 {
-    Normal,   // Default, full size
-    Medium,   // 0.8x Normal
-    Small,    // 0.6x Normal
+    Normal,  // Default, full size
+    Medium,  // 0.8x Normal
+    Small,   // 0.6x Normal
 };
 
 class FluToggleSwitch : public FluWidget
@@ -79,7 +79,10 @@ class FluToggleSwitch : public FluWidget
     void setKnobX(qreal x);
 
     // -- Backward compatibility aliases --
-    inline bool getChecked() const { return isChecked(); }
+    inline bool getChecked() const
+    {
+        return isChecked();
+    }
 
   signals:
     void checkedChanged(bool checked);
@@ -103,8 +106,8 @@ class FluToggleSwitch : public FluWidget
     void startKnobAnimation(qreal targetX);
     int getTrackWidth() const;
     int getTrackHeight() const;
-    void updateMetrics();       // Recalculate all size-dependent metrics based on m_size
-    qreal scaleFactor() const;  // Get scaling factor for current size
+    void updateMetrics();               // Recalculate all size-dependent metrics based on m_size
+    qreal scaleFactor() const;          // Get scaling factor for current size
     qreal scaleDim(int baseDim) const;  // Scale a base dimension by current size factor
 
   protected:

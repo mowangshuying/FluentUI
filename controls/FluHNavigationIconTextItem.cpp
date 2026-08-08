@@ -740,7 +740,7 @@ void FluHNavigationIconTextItem::paintEvent(QPaintEvent* event)
 
 void FluHNavigationIconTextItem::onItemClicked()
 {
-     LOG_DEBUG << getText() << " called";
+    LOG_DEBUG << getText() << " called";
     auto rootItem = getRootItem();
     if (rootItem == nullptr)
     {
@@ -810,7 +810,7 @@ void FluHNavigationIconTextItem::onItemClicked()
 
                 flyIconTextItem->setIconTextItems(getItems(), width());
 
-                /// 
+                ///
                 QPoint topLeft = mapToGlobal(QPoint(0, 0));
                 int nParentCenterX = topLeft.x() + width() / 2 - flyIconTextItem->width() / 2;
                 int nflyoutY = topLeft.y() + height() + 4;

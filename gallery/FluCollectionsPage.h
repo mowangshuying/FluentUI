@@ -13,7 +13,6 @@ class FluCollectionsPage : public FluATitlePage
   public:
     FluCollectionsPage(QWidget* parent = nullptr);
 
-
   public slots:
     void onThemeChanged();
 };

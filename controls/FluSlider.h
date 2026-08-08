@@ -78,8 +78,8 @@ class FluSlider : public QSlider
     bool m_animatingValue = false;
 
     // Click vs drag distinction
-    QPoint m_pressMousePos;            // Mouse position when pressed
-    int m_pressValue = 0;              // Value when pressed
-    bool m_isClickOnly = false;        // True if press without significant movement
+    QPoint m_pressMousePos;                    // Mouse position when pressed
+    int m_pressValue = 0;                      // Value when pressed
+    bool m_isClickOnly = false;                // True if press without significant movement
     static constexpr int kClickThreshold = 4;  // Pixel threshold to distinguish click vs drag
 };

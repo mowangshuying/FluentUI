@@ -12,7 +12,6 @@ class FluDialogsAndFlyoutsPage : public FluATitlePage
   public:
     FluDialogsAndFlyoutsPage(QWidget* parent = nullptr);
 
-
   public slots:
     void onThemeChanged();
 };

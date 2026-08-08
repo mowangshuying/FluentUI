@@ -25,7 +25,7 @@ FluTabViewDemo::FluTabViewDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(
 
     connect(tabView, &FluTabView::addTabButtonClicked, this, [tabView]() {
         static int PAGENUM = 4;
-        QString key  = QString::asprintf("Page%d", PAGENUM);
+        QString key = QString::asprintf("Page%d", PAGENUM);
         QString text = QString::asprintf("Page%d: This is page%d", PAGENUM, PAGENUM);
         auto page = new QLabel;
         page->setText(text);

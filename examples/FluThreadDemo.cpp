@@ -1,6 +1,6 @@
 #include "FluThreadDemo.h"
 
-FluThreadDemo::FluThreadDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluThreadDemo::FluThreadDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
     m_thread.start([](FluThread* thread) { LOG_DEBUG << "Start..."; },
                    [](FluThread* thread) {

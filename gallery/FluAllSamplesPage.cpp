@@ -73,7 +73,10 @@ void FluAllSamplesPage::makeLayoutCards()
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/RelativePanel.png")), tr("RelativePanel"), tr("A panel that users relationships between elements to define layout."), "RelativePanelPage");
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/SplitView.png")), tr("SplitView"), tr("A container that has 2 content areas, with multiple display options for the pane."), "SplitViewPage");
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/StackPanel.png")), tr("StackPanel"), tr("A layout panel that arranges child elements into a single line that can be oriented horizontally or vertically."), "StackPanelPage");
-    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")), tr("VariableSizedWrapGrid"), tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."), "VariableSizedWrapGridPage");
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/VariableSizedWrapGrid.png")),
+             tr("VariableSizedWrapGrid"),
+             tr("A layout panel that supports arranging child elements in rows and columns. Each child element can span multiple rows and columns."),
+             "VariableSizedWrapGridPage");
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/Viewbox.png")), tr("Viewbox"), tr("A container control that scales its content to a specified size."), "ViewboxPage");
 }
 
@@ -100,11 +103,17 @@ void FluAllSamplesPage::makeNavigationCards()
 
 void FluAllSamplesPage::makeScrollingCards()
 {
-    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/AnnotatedScrollBar.png")), tr("AnnotatedScrollBar"), tr("A control that extends a regular vertical scrollbar's functionality for an easy navigation through large collections."), "AnnotatedScrollBarPage");
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/AnnotatedScrollBar.png")),
+             tr("AnnotatedScrollBar"),
+             tr("A control that extends a regular vertical scrollbar's functionality for an easy navigation through large collections."),
+             "AnnotatedScrollBarPage");
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/PipsPager.png")), tr("PipsPager"), tr("A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known."), "PipsPagerPage");
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/ScrollView.png")), tr("ScrollView"), tr("A container control that lets the user pan and zoom its content."), "ScrollViewPage");
     addHCard(FluIconUtils::getPixmap(("../res/ControlImages/ScrollViewer.png")), tr("ScrollViewer"), tr("A container control that lets the user pan and zoom its content."), "ScrollViewerPage");
-    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/SemanticZoom.png")), tr("SemanticZoom"), tr("Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items.."), "SemanticZoomPage");
+    addHCard(FluIconUtils::getPixmap(("../res/ControlImages/SemanticZoom.png")),
+             tr("SemanticZoom"),
+             tr("Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items.."),
+             "SemanticZoomPage");
 }
 
 void FluAllSamplesPage::makeStatusInfoCards()

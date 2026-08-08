@@ -3,7 +3,20 @@
 #include "FluScrollBarHandle.h"
 
 FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scrollArea /*= nullptr*/)
-    : FluWidget(scrollArea), m_scrollArea(scrollArea), m_orientation(orientation), m_maxValue(0), m_minValue(0), m_value(0), m_padding(14), m_pageStep(50), m_isHideScrollBar(false), m_isExpanded(false), m_isEnter(false), m_isPressed(false), m_pendingAction(0), m_isFaded(false)
+    : FluWidget(scrollArea),
+      m_scrollArea(scrollArea),
+      m_orientation(orientation),
+      m_maxValue(0),
+      m_minValue(0),
+      m_value(0),
+      m_padding(14),
+      m_pageStep(50),
+      m_isHideScrollBar(false),
+      m_isExpanded(false),
+      m_isEnter(false),
+      m_isPressed(false),
+      m_pendingAction(0),
+      m_isFaded(false)
 {
     m_scrollBarTrunk = new FluScrollBarTrunk(orientation, this);
     m_scrollBarHandle = new FluScrollBarHandle(orientation, this);
@@ -36,14 +49,16 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scr
     connect(m_scrollBarTrunk->getLstButton(), &FluScrollBarArrowButton::clicked, this, &FluScrollBar::OnPageDown);
     connect(m_scrollBar, &QScrollBar::rangeChanged, this, [=](int minValue, int maxValue) { setRangeValue(minValue, maxValue); });
     connect(m_scrollBar, &QScrollBar::valueChanged, this, [=](int value) {
-        if (m_value != value) {
+        if (m_value != value)
+        {
             m_value = value;
             adjustHandlePos();
             emit valueChanged(value);
         }
     });
     connect(this, &FluScrollBar::valueChanged, m_scrollBar, [=](int value) {
-        if (m_scrollBar->value() != value) {
+        if (m_scrollBar->value() != value)
+        {
             m_scrollBar->setValue(value);
         }
     });
@@ -367,7 +382,8 @@ void FluScrollBar::mouseMoveEvent(QMouseEvent* event)
 
     dv = 1.0 * dv / getSlideWayLen() * (m_maxValue - m_minValue);
     int newValue = qBound(m_minValue, m_value + dv, m_maxValue);
-    if (m_value != newValue) {
+    if (m_value != newValue)
+    {
         m_value = newValue;
         adjustHandlePos();
         emit valueChanged(newValue);

@@ -12,6 +12,8 @@
 #include <QStyleOption>
 #include <QPainter>
 
+class FluTabViewJunctionOverlay;
+
 class FluTabView : public FluWidget
 {
     Q_OBJECT
@@ -24,6 +26,15 @@ class FluTabView : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
+    void resizeEvent(QResizeEvent* event);
+
+    FluTabBar* getTabBar() const { return m_tabBar; }
+    QWidget* getContentWidget() const { return m_widgt; }
+
+    QString qssFileName() override { return "FluTabView.qss"; }
+
+    void updateJunctionOverlay();
+
   signals:
     void addTabButtonClicked();
 
@@ -33,4 +44,6 @@ class FluTabView : public FluWidget
 
     QWidget* m_widgt;
     FluStackedLayout* m_layout;
+
+    FluTabViewJunctionOverlay* m_junctionOverlay = nullptr;
 };

@@ -16,6 +16,8 @@ class FluTabBar : public FluWidget
 
     std::vector<FluTabBarItem*> getTabBarItems();
 
+    QColor getSelectedTabColor() const;
+
     void addBarItem(FluTabBarItem* item);
 
     void removeTabBarItem(FluTabBarItem* item);
@@ -31,8 +33,13 @@ class FluTabBar : public FluWidget
   public slots:
     void onThemeChanged();
 
+  private:
+    void animateItemIn(FluTabBarItem* item);
+    void animateItemOut(FluTabBarItem* item);
+
   protected:
     QHBoxLayout* m_mainLayout;
     FluTabBarContent* m_tabBarContent;
     QPushButton* m_addTabButton;
+    FluTabBarItem* m_animatingItem = nullptr;
 };

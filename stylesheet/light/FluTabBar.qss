@@ -1,16 +1,18 @@
-/*FluTabBar qss*/
-
 FluTabBar {
-    border: 1px solid transparent;
-    border-radius: 0px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    /* border-radius: 0px; */
-    /* border-bottom: 1px solid rgb(234, 234, 234); */
     background-color: rgb(243, 243, 243);
+    border-bottom: 1px solid rgba(0, 0, 0, 15);
 }
 
 #addTabBtn {
-    border: 1px solid transparent;
+    border: none;
+    border-radius: 4px;
     background-color: transparent;
+}
+
+#addTabBtn:hover {
+    background-color: rgba(0, 0, 0, 9);
+}
+
+#addTabBtn:pressed {
+    background-color: rgba(0, 0, 0, 6);
 }

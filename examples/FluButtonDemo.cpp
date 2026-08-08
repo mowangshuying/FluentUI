@@ -14,7 +14,7 @@
 FluButtonDemo::FluButtonDemo(QWidget *parent /*= nullptr*/) : FluDisplay16(parent)
 {
     auto btn1 = new FluPushButton(this);
-    btn1->setText("Standard XAML button");
+    btn1->setText("Push button");
     addDemo(btn1);
 
     auto btn2 = new FluIconButton(FluAwesomeType::Wifi, this);

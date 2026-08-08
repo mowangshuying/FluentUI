@@ -71,15 +71,16 @@ class FluStyleSheetUtils : public QObject
     static bool isBatching();
     static void setBatching(bool on);
     static void applyBatchedUpdates();
-    static void scheduleBatchUpdate(QWidget* widget, const QString& qss);
+    static void scheduleBatchUpdate(QWidget *widget, const QString &qss);
 
   protected:
     QString m_styleSheetDir;
     QTimer *m_timer;
     bool m_batching;
-    QMap<QWidget*, QString> m_pendingUpdates;
-    QMap<QWidget*, QString> m_lastAppliedQss;
-    QTimer* m_batchTimer;
+    QMap<QWidget *, QString> m_pendingUpdates;
+    QMap<QWidget *, QString> m_lastAppliedQss;
+    QTimer *m_batchTimer;
+
   private:
     static FluStyleSheetUtils *m_styleSheetUtils;
 };

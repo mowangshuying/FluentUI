@@ -1,6 +1,6 @@
 #include "FluTextEditDemo.h"
 
-FluTextEditDemo::FluTextEditDemo(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluTextEditDemo::FluTextEditDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
     auto textEdit = new FluTextEdit(this);
     textEdit->setFixedWidth(300);

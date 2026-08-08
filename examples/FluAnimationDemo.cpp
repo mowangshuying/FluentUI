@@ -30,9 +30,7 @@ void FluAnimationDemo::addPosAni()
     animation->setDuration(10000);
 
     animation->setEasingCurve(QEasingCurve::InCurve);
-    connect(btn, &FluPushButton::clicked, [=]() {
-        animation->start();
-    });
+    connect(btn, &FluPushButton::clicked, [=]() { animation->start(); });
 
     connect(animation, &QPropertyAnimation::valueChanged, [=](QVariant value) {});
 }

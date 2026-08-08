@@ -13,7 +13,6 @@ class FluNavigationPage : public FluATitlePage
   public:
     FluNavigationPage(QWidget* parent = nullptr);
 
-
   public slots:
     void onThemeChanged();
 };

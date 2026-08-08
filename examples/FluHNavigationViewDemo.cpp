@@ -12,7 +12,7 @@
 
 #include <QLabel>
 FRAMELESSHELPER_USE_NAMESPACE
-FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : FluFrameLessWidget(parent)
+FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget *parent /*= nullptr*/) : FluFrameLessWidget(parent)
 {
     setWindowTitle("CppQt WinUI3  Navigation Demo Dev");
 #ifndef _DEBUG
@@ -46,18 +46,18 @@ FluHNavigationViewDemo::FluHNavigationViewDemo(QWidget* parent /*= nullptr*/) : 
     auto item22 = new FluHNavigationIconTextItem(FluAwesomeType::EmojiTabSymbols, "Icons", item2);
     auto item23 = new FluHNavigationIconTextItem(FluAwesomeType::Color, "Colors", item2);
     auto item24 = new FluHNavigationIconTextItem(FluAwesomeType::EaseOfAccess, "Accessibility", item2);
-    //auto item241 = new FluHNavigationIconTextItem("Screen reader support", item24);
-    //auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
-    //auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
+    // auto item241 = new FluHNavigationIconTextItem("Screen reader support", item24);
+    // auto item242 = new FluHNavigationIconTextItem("Keyboard support", item24);
+    // auto item243 = new FluHNavigationIconTextItem("Color contrast", item24);
 
     item2->addItem(item21);
     item2->addItem(item22);
     item2->addItem(item23);
     item2->addItem(item24);
 
-    //item24->addItem(item241);
-    //item24->addItem(item242);
-    //item24->addItem(item243);
+    // item24->addItem(item241);
+    // item24->addItem(item242);
+    // item24->addItem(item243);
 
     m_navView->addItemToLayout(item2, FluHNavigationItemPosition::Mid);
 

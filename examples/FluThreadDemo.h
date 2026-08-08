@@ -1,10 +1,11 @@
 #pragma once
 
 #include "../controls/FluThread.h"
-#include "../controls/FluWidget.h"
+// #include "../controls/FluWidget.h"
 #include "../utils/FluUtils.h"
+#include "FluTemplateDemo.h"
 
-class FluThreadDemo : public FluWidget
+class FluThreadDemo : public FluTemplateDemo
 {
     Q_OBJECT
   public:

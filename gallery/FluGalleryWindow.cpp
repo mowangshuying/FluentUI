@@ -70,11 +70,14 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     m_hNavView = new FluHNavigationView(this);
     m_hNavView->setObjectName("horizontalNavView");
     m_mainLayout->insertWidget(1, m_hNavView);
-    
-    if (m_isHorizontalNav) {
+
+    if (m_isHorizontalNav)
+    {
         m_vNavView->hide();
         m_hNavView->show();
-    } else {
+    }
+    else
+    {
         m_vNavView->show();
         m_hNavView->hide();
     }
@@ -144,7 +147,8 @@ FluGalleryWindow::FluGalleryWindow(QWidget *parent /*= nullptr*/) : FluWindowKit
     connect(m_hNavView, &FluHNavigationView::keyChanged, this, [=](QString key) { m_layout->setCurrentWidget(key); });
 
     auto settingsPage = (FluSettingPage *)m_layout->getWidget("SettingPage");
-    if (settingsPage) {
+    if (settingsPage)
+    {
         connect(settingsPage, &FluSettingPage::navigationStyleChanged, this, &FluGalleryWindow::switchNavigationStyle);
     }
 
@@ -203,9 +207,7 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
         hAnim->setEasingCurve(QEasingCurve::OutCubic);
         hAnim->setStartValue(0);
         hAnim->setEndValue(40);
-        connect(hAnim, &QPropertyAnimation::valueChanged, this, [=]() {
-            m_hNavView->setFixedHeight(m_hNavView->maximumHeight());
-        });
+        connect(hAnim, &QPropertyAnimation::valueChanged, this, [=]() { m_hNavView->setFixedHeight(m_hNavView->maximumHeight()); });
         hAnim->start(QAbstractAnimation::DeleteWhenStopped);
     }
     else
@@ -230,9 +232,7 @@ void FluGalleryWindow::animateNavSwitch(bool toHorizontal)
         hAnim->setEasingCurve(QEasingCurve::OutCubic);
         hAnim->setStartValue(40);
         hAnim->setEndValue(0);
-        connect(hAnim, &QPropertyAnimation::valueChanged, this, [=]() {
-            m_hNavView->setFixedHeight(m_hNavView->maximumHeight());
-        });
+        connect(hAnim, &QPropertyAnimation::valueChanged, this, [=]() { m_hNavView->setFixedHeight(m_hNavView->maximumHeight()); });
         connect(hAnim, &QPropertyAnimation::finished, this, [=]() {
             m_hNavView->setVisible(false);
             m_hNavView->setMaximumHeight(40);

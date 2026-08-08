@@ -17,7 +17,6 @@ class FluDateAndTimePage : public FluATitlePage
   public:
     FluDateAndTimePage(QWidget* parent = nullptr);
 
-
   public slots:
     void onThemeChanged();
 };

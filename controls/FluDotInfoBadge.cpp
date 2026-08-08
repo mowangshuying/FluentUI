@@ -5,7 +5,6 @@ FluDotInfoBadge::FluDotInfoBadge(QWidget* parent /*= nullptr*/) : FluWidget(pare
     setFixedSize(11, 11);
     onThemeChanged();
     m_target = parent;
-
 }
 
 void FluDotInfoBadge::setTopRightMargin(int marginTop, int marginRight)

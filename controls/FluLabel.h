@@ -25,6 +25,7 @@ class FluLabel : public QLabel
     FluLabel(FluLabelStyle style, QWidget* parent = nullptr);
 
     void setLabelStyle(FluLabelStyle style);
+
   protected:
     void onThemeChanged();
     FluLabelStyle m_style;

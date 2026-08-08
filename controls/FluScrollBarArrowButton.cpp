@@ -1,6 +1,7 @@
 #include "FluScrollBarArrowButton.h"
 
-FluScrollBarArrowButton::FluScrollBarArrowButton(FluScrollBarArrowButtonType type /*= FluScrollBarArrowButtonType::ArrowUp*/, QWidget* parent /*= nullptr*/) : QPushButton(parent), m_normalColor(120, 120, 120), m_hoverColor(60, 60, 60), m_boundaryColor(200, 200, 200)
+FluScrollBarArrowButton::FluScrollBarArrowButton(FluScrollBarArrowButtonType type /*= FluScrollBarArrowButtonType::ArrowUp*/, QWidget* parent /*= nullptr*/)
+    : QPushButton(parent), m_normalColor(120, 120, 120), m_hoverColor(60, 60, 60), m_boundaryColor(200, 200, 200)
 {
     m_aweSomeType = getIconTypeByArrowType(type);
     setFixedSize(12, 12);

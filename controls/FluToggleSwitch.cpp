@@ -7,10 +7,7 @@
 static QColor interpolateColor(const QColor& from, const QColor& to, qreal t)
 {
     t = qBound(0.0, t, 1.0);
-    return QColor(
-        static_cast<int>(from.red() + (to.red() - from.red()) * t),
-        static_cast<int>(from.green() + (to.green() - from.green()) * t),
-        static_cast<int>(from.blue() + (to.blue() - from.blue()) * t));
+    return QColor(static_cast<int>(from.red() + (to.red() - from.red()) * t), static_cast<int>(from.green() + (to.green() - from.green()) * t), static_cast<int>(from.blue() + (to.blue() - from.blue()) * t));
 }
 
 FluToggleSwitch::FluToggleSwitch(QWidget* parent) : FluWidget(parent)
@@ -277,9 +274,7 @@ void FluToggleSwitch::paintEvent(QPaintEvent* event)
     }
 
     // Interpolate track fill color based on knobX position (off -> on)
-    const qreal t = (m_actualKnobOnX != m_actualKnobOffX)
-                        ? (m_knobX - m_actualKnobOffX) / (m_actualKnobOnX - m_actualKnobOffX)
-                        : 0.0;
+    const qreal t = (m_actualKnobOnX != m_actualKnobOffX) ? (m_knobX - m_actualKnobOffX) / (m_actualKnobOnX - m_actualKnobOffX) : 0.0;
     QColor trackFill = interpolateColor(m_fillColor, m_fillColorOn, t);
     QColor trackBorder = m_checked ? m_fillColorOn : m_borderColor;
 
@@ -397,9 +392,12 @@ qreal FluToggleSwitch::scaleFactor() const
 {
     switch (m_size)
     {
-        case SwitchSize::Medium: return 0.8;
-        case SwitchSize::Small: return 0.6;
-        default: return 1.0;
+        case SwitchSize::Medium:
+            return 0.8;
+        case SwitchSize::Small:
+            return 0.6;
+        default:
+            return 1.0;
     }
 }
 

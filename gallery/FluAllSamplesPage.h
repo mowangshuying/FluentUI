@@ -31,5 +31,4 @@ class FluAllSamplesPage : public FluATitlePage
 
   public slots:
     void onThemeChanged();
-
 };

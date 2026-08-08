@@ -23,7 +23,6 @@ FluHNavigationFlyIconTextItem::FluHNavigationFlyIconTextItem(QWidget* parent /*=
     onThemeChanged();
 }
 
-
 void FluHNavigationFlyIconTextItem::setIconTextItems(std::vector<FluHNavigationIconTextItem*> items, int parentWidth)
 {
     m_items.clear();
@@ -69,11 +68,10 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth(int minWidth)
         item->setFixedHeight(34);
     }
 
-    int totalWMargins = m_scrollView->getMainLayout()->contentsMargins().left() + m_scrollView->getMainLayout()->contentsMargins().right()
-                     + m_mainLayout->contentsMargins().left() + m_mainLayout->contentsMargins().right();
+    int totalWMargins = m_scrollView->getMainLayout()->contentsMargins().left() + m_scrollView->getMainLayout()->contentsMargins().right() + m_mainLayout->contentsMargins().left() + m_mainLayout->contentsMargins().right();
     setFixedWidth(maxWidth + totalWMargins);
 
-    //int contentHeight = m_items.size() * 34;
+    // int contentHeight = m_items.size() * 34;
     int contentHeight = 0;
     for (auto item : m_items)
     {
@@ -83,8 +81,7 @@ void FluHNavigationFlyIconTextItem::adjustItemWidth(int minWidth)
     int maxH = qMin(contentHeight, 400);
     m_scrollView->setFixedHeight(maxH);
 
-    int totalHMargins = m_scrollView->getMainLayout()->contentsMargins().top() + m_scrollView->getMainLayout()->contentsMargins().bottom()
-        + m_mainLayout->contentsMargins().top() + m_mainLayout->contentsMargins().bottom();
+    int totalHMargins = m_scrollView->getMainLayout()->contentsMargins().top() + m_scrollView->getMainLayout()->contentsMargins().bottom() + m_mainLayout->contentsMargins().top() + m_mainLayout->contentsMargins().bottom();
     setFixedHeight(maxH + totalHMargins);
 }
 
@@ -105,8 +102,7 @@ void FluHNavigationFlyIconTextItem::adjustItemHeight()
 
     m_scrollView->setFixedHeight(h);
 
-    int totalHMargins = m_scrollView->getMainLayout()->contentsMargins().top() + m_scrollView->getMainLayout()->contentsMargins().bottom() + 
-        m_mainLayout->contentsMargins().top() + m_mainLayout->contentsMargins().bottom();
+    int totalHMargins = m_scrollView->getMainLayout()->contentsMargins().top() + m_scrollView->getMainLayout()->contentsMargins().bottom() + m_mainLayout->contentsMargins().top() + m_mainLayout->contentsMargins().bottom();
     setFixedHeight(h + totalHMargins);
 }
 

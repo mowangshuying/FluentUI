@@ -2,7 +2,7 @@
 #include "FluHNavigationIconTextItem.h"
 #include "FluHNavigationMoreItem.h"
 
-FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidget(parent)
+FluHNavigationView::FluHNavigationView(QWidget *parent /*= nullptr*/) : FluWidget(parent)
 {
     m_lastSelectedItem = nullptr;
     m_FlyIconTextItem = nullptr;
@@ -41,7 +41,7 @@ FluHNavigationView::FluHNavigationView(QWidget* parent /*= nullptr*/) : FluWidge
     onThemeChanged();
 }
 
-void FluHNavigationView::addItemToLayout(QWidget* item, FluHNavigationItemPosition pos)
+void FluHNavigationView::addItemToLayout(QWidget *item, FluHNavigationItemPosition pos)
 {
     switch (pos)
     {
@@ -50,7 +50,7 @@ void FluHNavigationView::addItemToLayout(QWidget* item, FluHNavigationItemPositi
             break;
         case FluHNavigationItemPosition::Mid:
         {
-            auto iconTextItem = (FluHNavigationIconTextItem*)item;
+            auto iconTextItem = (FluHNavigationIconTextItem *)item;
             iconTextItem->setParentView(this);
             item->setParent(m_MidWrapWidget);
             iconTextItem->setParentIsFlyIconTextItem(false);
@@ -62,7 +62,7 @@ void FluHNavigationView::addItemToLayout(QWidget* item, FluHNavigationItemPositi
         case FluHNavigationItemPosition::Right:
         {
             m_rightWrapLayout->addWidget(item, 0, Qt::AlignRight);
-            auto curItem = (FluHNavigationItem*)item;
+            auto curItem = (FluHNavigationItem *)item;
             curItem->setParentView(this);
             curItem->setParent(m_rightWrapWidget);
             break;
@@ -130,27 +130,27 @@ FluHNavigationIconTextItem *FluHNavigationView::createIconTextItem(FluAwesomeTyp
 //  auto itf = std::find(m_items.begin(), m_items.end)
 //}
 
-void FluHNavigationView::setLastSelectedItem(FluHNavigationItem* item)
+void FluHNavigationView::setLastSelectedItem(FluHNavigationItem *item)
 {
     m_lastSelectedItem = item;
 }
 
-FluHNavigationItem* FluHNavigationView::getLastSelectedItem()
+FluHNavigationItem *FluHNavigationView::getLastSelectedItem()
 {
     return m_lastSelectedItem;
 }
 
-void FluHNavigationView::setFlyIconTextItem(FluHNavigationFlyIconTextItem* flyIconTextIcon)
+void FluHNavigationView::setFlyIconTextItem(FluHNavigationFlyIconTextItem *flyIconTextIcon)
 {
     m_FlyIconTextItem = flyIconTextIcon;
 }
 
-FluHNavigationFlyIconTextItem* FluHNavigationView::getFlyIconTextIcon()
+FluHNavigationFlyIconTextItem *FluHNavigationView::getFlyIconTextIcon()
 {
     return m_FlyIconTextItem;
 }
 
-std::vector<FluHNavigationIconTextItem*> FluHNavigationView::getHideItems()
+std::vector<FluHNavigationIconTextItem *> FluHNavigationView::getHideItems()
 {
     return m_hideItems;
 }
@@ -165,7 +165,7 @@ void FluHNavigationView::clearAllItemsSelectState()
 
     for (int i = 0; i < m_rightWrapLayout->count(); i++)
     {
-        auto curItem = (FluHNavigationItem*)(m_rightWrapLayout->itemAt(i)->widget());
+        auto curItem = (FluHNavigationItem *)(m_rightWrapLayout->itemAt(i)->widget());
         curItem->clearAllItemsSelectState();
     }
 
@@ -183,7 +183,7 @@ void FluHNavigationView::updateAllItemsStyleSheet()
 
     for (int i = 0; i < m_rightWrapLayout->count(); i++)
     {
-        auto curItem = (FluHNavigationItem*)(m_rightWrapLayout->itemAt(i)->widget());
+        auto curItem = (FluHNavigationItem *)(m_rightWrapLayout->itemAt(i)->widget());
         curItem->updateAllItemsStyleSheet();
         curItem->update();
     }
@@ -191,7 +191,7 @@ void FluHNavigationView::updateAllItemsStyleSheet()
     m_moreItem->updateAllItemsStyleSheet();
 }
 
-void FluHNavigationView::resizeEvent(QResizeEvent* event)
+void FluHNavigationView::resizeEvent(QResizeEvent *event)
 {
     // LOG_DEBUG << "called ----------";
 
@@ -229,7 +229,7 @@ void FluHNavigationView::resizeEvent(QResizeEvent* event)
     }
 }
 
-void FluHNavigationView::paintEvent(QPaintEvent* event)
+void FluHNavigationView::paintEvent(QPaintEvent *event)
 {
     QStyleOption opt;
     opt.initFrom(this);

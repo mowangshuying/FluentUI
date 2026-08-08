@@ -24,6 +24,7 @@ class FluPushButton : public QPushButton
     {
         return m_isPill;
     }
+
   protected:
     void onThemeChanged();
     bool m_isPill;

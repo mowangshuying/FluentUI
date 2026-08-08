@@ -1,13 +1,15 @@
 FluTabView {
     border: 1px solid transparent;
     border-radius: 8px;
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(32, 32, 32);
 }
 
 #sWidget {
-    background-color: rgb(45, 45, 45);
-    border: 1px solid rgb(53, 53, 53);
-    border-radius: 0px;
+    background-color: rgb(50, 50, 50);
+    border-left: 1px solid rgb(53, 53, 53);
+    border-right: 1px solid rgb(53, 53, 53);
+    border-bottom: 1px solid rgb(53, 53, 53);
+    border-top: none;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }

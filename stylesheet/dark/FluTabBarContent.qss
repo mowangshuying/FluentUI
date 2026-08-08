@@ -1,19 +1,13 @@
 QScrollArea {
     background-color: transparent;
     border: none;
+    qproperty-tabHoverColor: rgba(255, 255, 255, 15);
+    qproperty-tabPressedColor: rgba(58, 58, 58, 115);
+    qproperty-tabSelectedColor: rgb(50, 50, 50);
+    qproperty-tabSeparatorColor: rgba(255, 255, 255, 60);
+    qproperty-tabSelectedStrokeColor: rgba(255, 255, 255, 12);
 }
 
 #mainWidget {
-    background-color: transparent;
-}
-
-#addTabBtn {
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 4px;
-	color: white;
-}
-
-#addTabBtn:hover {
     background-color: transparent;
 }

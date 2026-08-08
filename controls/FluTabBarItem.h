@@ -8,11 +8,11 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QEnterEvent>
-#include "FluHSplitLine.h"
 
 class FluTabBarItem : public FluWidget
 {
     Q_OBJECT
+    Q_PROPERTY(int tabWidth READ tabWidth WRITE setTabWidth)
   public:
     FluTabBarItem(QWidget* parent = nullptr);
 
@@ -28,30 +28,41 @@ class FluTabBarItem : public FluWidget
 
     void adjustWidgetSize();
 
+    bool getHovered() const;
+
+    bool getPressed() const;
+
+    int tabWidth();
+    void setTabWidth(int w);
+
     void resizeEvent(QResizeEvent* event);
 
     void enterEvent(QEnterEvent* event);
 
     void leaveEvent(QEvent* event);
 
+    void mousePressEvent(QMouseEvent* event);
+
     void mouseReleaseEvent(QMouseEvent* event);
 
-    void paintEvent(QPaintEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event);
 
   signals:
     void clicked();
     void sizeChanged();
     void clickedCloseButton(FluTabBarItem* item);
+    void visualStateChanged();
 
   public slots:
     void onThemeChanged();
 
   protected:
-    FluHSplitLine* m_hspL;
     QHBoxLayout* m_mainLayout;
     QPushButton* m_iconButton;
     QPushButton* m_textButton;
     QPushButton* m_closeButton;
-    FluHSplitLine* m_hspR;
-    bool m_isSel;
+    bool m_isSel = false;
+    bool m_isHover = false;
+    bool m_isPressed = false;
+    QString m_text;
 };

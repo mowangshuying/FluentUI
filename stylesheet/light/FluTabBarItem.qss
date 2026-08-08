@@ -1,50 +1,64 @@
 FluTabBarItem {
-    background-color: rgb(243, 243, 243);
-    border: 1px solid transparent;
-    border-radius: 5px;
-    /* border-top-left-radius: 8px; */
-    /* border-top-right-radius: 8px; */
-    /*max-width: 180px;*/
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
 }
 
 FluTabBarItem:hover {
-    background-color: rgb(223, 223, 223);
+    background-color: transparent;
+}
+
+FluTabBarItem:pressed {
+    background-color: transparent;
+}
+
+FluTabBarItem:pressed #textBtn {
+    color: rgba(0, 0, 0, 114);
 }
 
 FluTabBarItem[selected=true] {
-    background-color: rgb(223, 223, 223);
-    border: 1px solid rgb(223, 223, 223);
-    border-top: 1px solid transparent;
+    background-color: transparent;
+}
+
+FluTabBarItem[selected=true]:hover {
+    background-color: transparent;
+}
+
+FluTabBarItem[selected=true] #textBtn {
+    color: rgba(0, 0, 0, 228);
+    font-weight: 600;
 }
 
 #iconBtn {
     background-color: transparent;
+    border: none;
 }
 
 #textBtn {
     background-color: transparent;
-    border: 1px solid transparent;
+    border: none;
     text-align: left;
+    color: rgba(0, 0, 0, 158);
 }
 
 #closeBtn {
     background-color: transparent;
-}
-
-#closeBtn[selected=true]:hover {
-    background-color: rgb(223, 223, 223);
-    border: 1px solid transparent;
+    border: none;
     border-radius: 4px;
 }
 
-FluTabBarItem:disabled {
-    background-color: rgb(249, 249, 249);
+#closeBtn:hover {
+    background-color: rgba(0, 0, 0, 6);
+}
+
+#closeBtn:pressed {
+    background-color: rgba(0, 0, 0, 9);
 }
 
 FluTabBarItem:disabled #textBtn {
-    color: rgba(0, 0, 0, 110);
+    color: rgba(0, 0, 0, 92);
 }
 
 FluTabBarItem:disabled #iconBtn {
-    color: rgba(0, 0, 0, 110);
+    color: rgba(0, 0, 0, 92);
 }

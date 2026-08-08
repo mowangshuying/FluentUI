@@ -2,7 +2,6 @@ FluPushButton {
     color: black;
     border: 1px solid rgb(229, 229, 229);
     border-radius: 4px;
-    border-bottom: 1px solid rgb(204, 204, 204);
     background-color: rgb(251, 251, 251);
     font-size: 15px;
 }
@@ -12,20 +11,18 @@ FluPushButton[pill=true] {
 }
 
 FluPushButton:hover {
-    border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(204, 204, 204);
-    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(220, 220, 220);
+    background-color: rgb(241, 241, 241);
 }
 
 FluPushButton:pressed {
-    border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(229, 229, 229);
-    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(210, 210, 210);
+    background-color: rgb(231, 231, 231);
+    color: rgba(0, 0, 0, 180);
 }
 
 FluPushButton:disabled {
-    color: rgba(0, 0, 0, 110);
-    border: 1px solid rgb(241, 241, 241);
-    border-bottom: 1px solid rgb(241, 241, 241);
+    color: rgba(0, 0, 0, 90);
+    border: 1px solid rgb(238, 238, 238);
     background-color: rgb(249, 249, 249);
 }

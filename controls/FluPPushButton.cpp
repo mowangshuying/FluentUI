@@ -67,11 +67,6 @@ void FluPPushButton::paintEvent(QPaintEvent* event)
     QRect backgroundRect = rect();
     painter.drawRoundedRect(backgroundRect, 4, 4);
 
-    pen.setWidth(1);
-    pen.setColor(m_bottomBorderColor);
-    painter.setPen(pen);
-    painter.drawLine(QPoint(2, rect().height()), QPoint(rect().width() - 2, rect().height()));
-
     pen.setColor(m_textColor);
     painter.setPen(pen);
     painter.drawText(rect(), Qt::AlignCenter, text());

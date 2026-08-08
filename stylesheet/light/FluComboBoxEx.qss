@@ -1,24 +1,22 @@
 FluComboBoxEx {
     background-color: rgb(251, 251, 251);
     border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(204, 204, 204);
     border-radius: 4px;
 }
 
 FluComboBoxEx:hover {
-    border: 1px solid rgb(229, 229, 229);
-    border-bottom: 1px solid rgb(204, 204, 204);
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgb(220, 220, 220);
 }
 
 FluComboBoxEx:pressed {
-    background-color: rgb(240, 240, 240);
-    border: 1px solid rgb(200, 200, 200);
+    background-color: rgb(231, 231, 231);
+    border: 1px solid rgb(210, 210, 210);
 }
 
 FluComboBoxEx:disabled {
     background-color: rgb(249, 249, 249);
-    border: 1px solid rgb(241, 241, 241);
+    border: 1px solid rgb(238, 238, 238);
 }
 
 #textBtn {
@@ -29,7 +27,7 @@ FluComboBoxEx:disabled {
 }
 
 #textBtn[isPlaceholder="true"] {
-    color: rgb(155, 155, 155);
+    color: rgb(117, 117, 117);
 }
 
 #iconBtn {

@@ -147,9 +147,7 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluDoubleSpinBox.h"
     "${CMAKE_SOURCE_DIR}/controls/FluPasswordBox.h"
     "${CMAKE_SOURCE_DIR}/controls/FluSearchLineEdit.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluComboBox.h"
     "${CMAKE_SOURCE_DIR}/controls/FluComboBoxEx.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluComboBoxTextItem.h"
     "${CMAKE_SOURCE_DIR}/controls/FluIntValidator.h"
     "${CMAKE_SOURCE_DIR}/controls/FluSlider.h"
     "${CMAKE_SOURCE_DIR}/controls/FluRatingControl.h"
@@ -366,9 +364,7 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludoublespinbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flupasswordbox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusearchlineedit_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucombobox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucomboboxex_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucomboboxtextitem_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluintvalidator_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluslider_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluratingcontrol_wrapper.cpp

@@ -7,6 +7,7 @@
 #include <QPainter>
 #include "FluIndicatorRoundMenu.h"
 #include <QIcon>
+#include <QStringList>
 #include <QPropertyAnimation>
 
 class FluComboBoxEx : public FluWidget
@@ -42,6 +43,7 @@ class FluComboBoxEx : public FluWidget
     void addItem(QString text);
     void addItem(FluAwesomeType type, QString text);
     void addItem(QIcon icon, QString text);
+    void addItems(const QStringList& texts);
     void addTextItem(QString text);
     void addIconTextItem(FluAwesomeType type, QString text);
     void insertItem(int index, QString text);
@@ -49,11 +51,15 @@ class FluComboBoxEx : public FluWidget
     void removeItem(int index);
     void clear();
 
+    void setItemText(int index, const QString& text);
+    void setItemIcon(int index, const QIcon& icon);
+
     void setCurrentIndex(int index);
     int findText(const QString& text) const;
 
     void setMaxVisibleItems(int num);
     void setPlaceholderText(const QString& text);
+    // 仅保存标志，未实现内嵌编辑（完整编辑功能超出当前范围）
     void setEditable(bool editable);
     void setEnabled(bool enabled);
     void setItemEnabled(int index, bool enabled);

@@ -24,7 +24,6 @@ FluComboBoxEx::FluComboBoxEx(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_iconBtn->setFixedSize(24, 24);
     m_textBtn->setFixedHeight(24);
 
-    m_iconBtn->setFixedSize(24, 24);
     m_iconBtn->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChevronDown));
 
     m_hMainLayout->addWidget(m_textBtn, 1);
@@ -220,20 +219,32 @@ void FluComboBoxEx::insertItem(int index, QString text)
     if (index < 0 || index > m_menu->actions().size())
         return;
 
+    QString oldText = currentText();
+
     if (index == m_menu->actions().size())
     {
-        addTextItem(text);
-        return;
+        m_menu->addAction(new FluAction(text));
+        if (m_menu->actions().size() == 1)
+        {
+            m_currentIndex = 0;
+            updateText();
+        }
+    }
+    else
+    {
+        auto before = m_menu->actions()[index];
+        auto action = new FluAction(text);
+        m_menu->insertAction(before, action);
+
+        if (m_currentIndex >= index)
+            m_currentIndex++;
+
+        updateText();
     }
 
-    auto before = m_menu->actions()[index];
-    auto action = new FluAction(text);
-    m_menu->insertAction(before, action);
-
-    if (m_currentIndex >= index)
-        m_currentIndex++;
-
-    updateText();
+    QString newText = currentText();
+    if (newText != oldText)
+        emit currentTextChanged(newText);
 }
 
 void FluComboBoxEx::insertItem(int index, FluAwesomeType type, QString text)
@@ -241,26 +252,40 @@ void FluComboBoxEx::insertItem(int index, FluAwesomeType type, QString text)
     if (index < 0 || index > m_menu->actions().size())
         return;
 
+    QString oldText = currentText();
+
     if (index == m_menu->actions().size())
     {
-        addIconTextItem(type, text);
-        return;
+        m_menu->addAction(new FluAction(type, text));
+        if (m_menu->actions().size() == 1)
+        {
+            m_currentIndex = 0;
+            updateText();
+        }
+    }
+    else
+    {
+        auto before = m_menu->actions()[index];
+        auto action = new FluAction(type, text);
+        m_menu->insertAction(before, action);
+
+        if (m_currentIndex >= index)
+            m_currentIndex++;
+
+        updateText();
     }
 
-    auto before = m_menu->actions()[index];
-    auto action = new FluAction(type, text);
-    m_menu->insertAction(before, action);
-
-    if (m_currentIndex >= index)
-        m_currentIndex++;
-
-    updateText();
+    QString newText = currentText();
+    if (newText != oldText)
+        emit currentTextChanged(newText);
 }
 
 void FluComboBoxEx::removeItem(int index)
 {
     if (index < 0 || index >= m_menu->actions().size())
         return;
+
+    QString oldText = currentText();
 
     auto action = m_menu->actions()[index];
     m_menu->removeAction(action);
@@ -279,13 +304,50 @@ void FluComboBoxEx::removeItem(int index)
     }
 
     updateText();
+
+    QString newText = currentText();
+    if (newText != oldText)
+        emit currentTextChanged(newText);
 }
 
 void FluComboBoxEx::clear()
 {
+    QString oldText = currentText();
     m_menu->clear();
     m_currentIndex = -1;
     updateText();
+
+    QString newText = currentText();
+    if (newText != oldText)
+        emit currentTextChanged(newText);
+}
+
+void FluComboBoxEx::setItemText(int index, const QString& text)
+{
+    if (index < 0 || index >= m_menu->actions().size())
+        return;
+
+    m_menu->actions()[index]->setText(text);
+
+    if (index == m_currentIndex)
+    {
+        updateText();
+        emit currentTextChanged(text);
+    }
+}
+
+void FluComboBoxEx::setItemIcon(int index, const QIcon& icon)
+{
+    if (index < 0 || index >= m_menu->actions().size())
+        return;
+
+    m_menu->actions()[index]->setIcon(icon);
+}
+
+void FluComboBoxEx::addItems(const QStringList& texts)
+{
+    for (const QString& text : texts)
+        addItem(text);
 }
 
 int FluComboBoxEx::findText(const QString& text) const
@@ -314,6 +376,7 @@ void FluComboBoxEx::setPlaceholderText(const QString& text)
 
 void FluComboBoxEx::setEditable(bool editable)
 {
+    // 仅保存标志，未实现内嵌编辑（完整编辑功能超出当前范围）
     m_editable = editable;
 }
 
@@ -370,6 +433,7 @@ void FluComboBoxEx::startChevronAnimation(bool expand)
 
 void FluComboBoxEx::mouseReleaseEvent(QMouseEvent* e)
 {
+    QWidget::mouseReleaseEvent(e);
     emit clicked();
 }
 

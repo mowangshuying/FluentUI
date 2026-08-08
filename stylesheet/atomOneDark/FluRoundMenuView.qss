@@ -35,15 +35,15 @@ FluRoundMenuView::item:disabled {
 }
 
 FluRoundMenuView::item:hover {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 FluRoundMenuView::item:selected {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.12);
     color: rgb(171, 178, 191);
 }
 
 FluRoundMenuView::item:selected:active {
-    background-color: rgba(255, 255, 255, 0.10);
+    background-color: rgba(255, 255, 255, 0.16);
     color: rgb(171, 178, 191);
 }

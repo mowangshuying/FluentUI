@@ -9,8 +9,8 @@ FluProgressRing::FluProgressRing(QWidget* parent /*= nullptr*/) : FluWidget(pare
     m_isShowText = false;
     setFixedSize(60, 60);
 
-    m_workingTimer = new QTimer(parent);
-    m_workingTimer->setInterval(3);
+    m_workingTimer = new QTimer(this);
+    m_workingTimer->setInterval(16);
     m_workStartValue = 90;
     m_workingTimer->start();
 

@@ -518,6 +518,7 @@ set(CODE_FILES
     "../code/TimePickerPageCode1.md"
     "../code/TimePickerPageCode2.md"
     "../code/ToggleButtonPageCode1.md"
+    "../code/ToggleButtonPageCode2.md"
     "../code/ToggleSwitchPageCode1.md"
     "../code/TreeViewPageCode1.md"
 )

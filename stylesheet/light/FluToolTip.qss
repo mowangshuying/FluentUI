@@ -1,0 +1,8 @@
+FluToolTip {
+    background-color: #F7F7F7;
+    color: rgba(0, 0, 0, 226);
+    border: 1px solid rgba(0, 0, 0, 40);
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 6px 9px 8px 9px;
+}

@@ -30,6 +30,7 @@
     <file alias="StyleSheet/dark/FluHyperLinkButtonPage.qss">../stylesheet/dark/FluHyperLinkButtonPage.qss</file>
     <file alias="StyleSheet/dark/FluIconsPage.qss">../stylesheet/dark/FluIconsPage.qss</file>
     <file alias="StyleSheet/dark/FluInfoBadgePage.qss">../stylesheet/dark/FluInfoBadgePage.qss</file>
+    <file alias="StyleSheet/dark/FluToolTipPage.qss">../stylesheet/dark/FluToolTipPage.qss</file>
     <file alias="StyleSheet/dark/FluInfoBarPage.qss">../stylesheet/dark/FluInfoBarPage.qss</file>
     <file alias="StyleSheet/dark/FluLayoutPage.qss">../stylesheet/dark/FluLayoutPage.qss</file>
     <file alias="StyleSheet/dark/FluListViewPage.qss">../stylesheet/dark/FluListViewPage.qss</file>
@@ -91,6 +92,7 @@
     <file alias="StyleSheet/light/FluHyperLinkButtonPage.qss">../stylesheet/light/FluHyperLinkButtonPage.qss</file>
     <file alias="StyleSheet/light/FluIconsPage.qss">../stylesheet/light/FluIconsPage.qss</file>
     <file alias="StyleSheet/light/FluInfoBadgePage.qss">../stylesheet/light/FluInfoBadgePage.qss</file>
+    <file alias="StyleSheet/light/FluToolTipPage.qss">../stylesheet/light/FluToolTipPage.qss</file>
     <file alias="StyleSheet/light/FluInfoBarPage.qss">../stylesheet/light/FluInfoBarPage.qss</file>
     <file alias="StyleSheet/light/FluLayoutPage.qss">../stylesheet/light/FluLayoutPage.qss</file>
     <file alias="StyleSheet/light/FluListViewPage.qss">../stylesheet/light/FluListViewPage.qss</file>
@@ -151,6 +153,7 @@
     <file alias="StyleSheet/atomOneDark/FluHyperLinkButtonPage.qss">../stylesheet/atomOneDark/FluHyperLinkButtonPage.qss</file>
     <file alias="StyleSheet/atomOneDark/FluIconsPage.qss">../stylesheet/atomOneDark/FluIconsPage.qss</file>
     <file alias="StyleSheet/atomOneDark/FluInfoBadgePage.qss">../stylesheet/atomOneDark/FluInfoBadgePage.qss</file>
+    <file alias="StyleSheet/atomOneDark/FluToolTipPage.qss">../stylesheet/atomOneDark/FluToolTipPage.qss</file>
     <file alias="StyleSheet/atomOneDark/FluInfoBarPage.qss">../stylesheet/atomOneDark/FluInfoBarPage.qss</file>
     <file alias="StyleSheet/atomOneDark/FluLayoutPage.qss">../stylesheet/atomOneDark/FluLayoutPage.qss</file>
     <file alias="StyleSheet/atomOneDark/FluListViewPage.qss">../stylesheet/atomOneDark/FluListViewPage.qss</file>

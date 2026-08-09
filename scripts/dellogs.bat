@@ -1,3 +1,3 @@
 @REM del logs.
-cd log
+cd /d "%~dp0..\log"
 del *.log

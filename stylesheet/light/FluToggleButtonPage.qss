@@ -26,3 +26,9 @@ FluToggleButtonPage[noBorder="true"] {
     font-size: 12px;
     color: rgb(26, 26, 26);
 }
+
+#stateLabel {
+    font-size: 15px;
+    color: rgb(26, 26, 26);
+    padding: 4px 0;
+}

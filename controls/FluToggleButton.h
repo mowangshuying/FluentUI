@@ -8,43 +8,22 @@
 class FluToggleButton : public QPushButton
 {
     Q_OBJECT
+    Q_PROPERTY(bool toggled READ getToggled WRITE setToggled NOTIFY toggledChanged)
   public:
-    FluToggleButton(QWidget* parent = nullptr) : QPushButton(parent)
-    {
-        setFixedSize(120, 30);
-        m_isToggled = false;
-        setProperty("toggled", false);
+    explicit FluToggleButton(QWidget* parent = nullptr);
 
-        connect(this, &FluToggleButton::clicked, [=](bool isChecked) { onToggled(); });
+    bool getToggled() const;
 
-        onThemeChanged();
-        connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
-    }
+    void setToggled(bool isToggled);
 
-    bool getToggled()
-    {
-        return m_isToggled;
-    }
-
-    void setToggled(bool isToggled)
-    {
-        m_isToggled = isToggled;
-    }
+  signals:
+    void toggledChanged(bool isToggled);
 
   public slots:
-    void onToggled()
-    {
-        m_isToggled = !m_isToggled;
-        setProperty("toggled", m_isToggled);
-        style()->polish(this);
-        update();
-    }
+    void onToggled();
 
-    void onThemeChanged()
-    {
-        FluStyleSheetUtils::setQssByFileName("FluToggleButton.qss", this, FluThemeUtils::getUtils()->getTheme());
-    }
+    void onThemeChanged();
 
   protected:
-    bool m_isToggled;
+    bool m_isToggled = false;
 };

@@ -56,6 +56,7 @@
     <file alias="code/TimePickerPageCode1.md">../code/TimePickerPageCode1.md</file>
     <file alias="code/TimePickerPageCode2.md">../code/TimePickerPageCode2.md</file>
     <file alias="code/ToggleButtonPageCode1.md">../code/ToggleButtonPageCode1.md</file>
+    <file alias="code/ToggleButtonPageCode2.md">../code/ToggleButtonPageCode2.md</file>
     <file alias="code/ToggleSwitchPageCode1.md">../code/ToggleSwitchPageCode1.md</file>
     <file alias="code/TreeViewPageCode1.md">../code/TreeViewPageCode1.md</file>
   </qresource>

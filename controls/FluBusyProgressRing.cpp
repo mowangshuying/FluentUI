@@ -5,7 +5,7 @@ FluBusyProgressRing::FluBusyProgressRing(QWidget* parent /*= nullptr*/) : FluWid
     setFixedSize(60, 60);
     m_times = 0;
 
-    m_workingTimer = new QTimer(parent);
+    m_workingTimer = new QTimer(this);
     m_workingTimer->setInterval(12);
     m_workingTimer->start();
     m_workAngle = 270;

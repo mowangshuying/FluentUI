@@ -25,62 +25,62 @@
 <context>
     <name>FluCalendarMonthView</name>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Jan</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Feb</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Mar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Apr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>May</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Jun</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Jul</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Aug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Sep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Oct</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Nov</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Dec</source>
         <translation type="unfinished"></translation>
     </message>
@@ -516,19 +516,6 @@
     </message>
 </context>
 <context>
-    <name>FluTextToggleSwitchEx</name>
-    <message>
-        <location filename="../controls/FluTextToggleSwitchEx.cpp" line="17"/>
-        <source>on</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../controls/FluTextToggleSwitchEx.cpp" line="17"/>
-        <source>off</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FluTimePicker24H</name>
     <message>
         <location filename="../controls/FluTimePicker24H.cpp" line="11"/>
@@ -566,22 +553,9 @@
     </message>
 </context>
 <context>
-    <name>FluToggleSwitch</name>
-    <message>
-        <location filename="../controls/FluToggleSwitch.h" line="13"/>
-        <source>On</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../controls/FluToggleSwitch.h" line="14"/>
-        <source>Off</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FluVNavigationIconTextItem</name>
     <message>
-        <location filename="../controls/FluVNavigationIconTextItem.cpp" line="494"/>
+        <location filename="../controls/FluVNavigationIconTextItem.cpp" line="496"/>
         <source>3-level</source>
         <translation type="unfinished"></translation>
     </message>

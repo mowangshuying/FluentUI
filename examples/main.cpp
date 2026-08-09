@@ -26,6 +26,7 @@
 #include "FluCalendarDatePickerDemo.h"
 #include "FluListViewDemo.h"
 #include "FluInfoBadgeDemo.h"
+#include "FluToolTipDemo.h"
 #include "FluPasswordBoxDemo.h"
 #include "FluSpinBoxDemo.h"
 #include "FluMenuDemo.h"

@@ -38,6 +38,7 @@
 #include "FluMenuBarPage.h"
 #include "FluNumberBoxPage.h"
 #include "FluInfoBadgePage.h"
+#include "FluToolTipPage.h"
 #include "FluInfoBarPage.h"
 #include "FluBorderPage.h"
 #include "FluRadioButtonsPage.h"

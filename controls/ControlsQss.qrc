@@ -42,6 +42,7 @@
     <file alias="StyleSheet/dark/FluHyperLinkButton.qss">../stylesheet/dark/FluHyperLinkButton.qss</file>
     <file alias="StyleSheet/dark/FluIconButton.qss">../stylesheet/dark/FluIconButton.qss</file>
     <file alias="StyleSheet/dark/FluInfoBadge.qss">../stylesheet/dark/FluInfoBadge.qss</file>
+    <file alias="StyleSheet/dark/FluToolTip.qss">../stylesheet/dark/FluToolTip.qss</file>
     <file alias="StyleSheet/dark/FluLabel.qss">../stylesheet/dark/FluLabel.qss</file>
     <file alias="StyleSheet/dark/FluLineEdit.qss">../stylesheet/dark/FluLineEdit.qss</file>
     <file alias="StyleSheet/dark/FluListView.qss">../stylesheet/dark/FluListView.qss</file>
@@ -144,6 +145,7 @@
     <file alias="StyleSheet/light/FluHyperLinkButton.qss">../stylesheet/light/FluHyperLinkButton.qss</file>
     <file alias="StyleSheet/light/FluIconButton.qss">../stylesheet/light/FluIconButton.qss</file>
     <file alias="StyleSheet/light/FluInfoBadge.qss">../stylesheet/light/FluInfoBadge.qss</file>
+    <file alias="StyleSheet/light/FluToolTip.qss">../stylesheet/light/FluToolTip.qss</file>
     <file alias="StyleSheet/light/FluLabel.qss">../stylesheet/light/FluLabel.qss</file>
     <file alias="StyleSheet/light/FluLineEdit.qss">../stylesheet/light/FluLineEdit.qss</file>
     <file alias="StyleSheet/light/FluListView.qss">../stylesheet/light/FluListView.qss</file>
@@ -259,6 +261,7 @@
     <file alias="StyleSheet/atomOneDark/FluHyperLinkButton.qss">../stylesheet/atomOneDark/FluHyperLinkButton.qss</file>
     <file alias="StyleSheet/atomOneDark/FluIconButton.qss">../stylesheet/atomOneDark/FluIconButton.qss</file>
     <file alias="StyleSheet/atomOneDark/FluInfoBadge.qss">../stylesheet/atomOneDark/FluInfoBadge.qss</file>
+    <file alias="StyleSheet/atomOneDark/FluToolTip.qss">../stylesheet/atomOneDark/FluToolTip.qss</file>
     <file alias="StyleSheet/atomOneDark/FluLabel.qss">../stylesheet/atomOneDark/FluLabel.qss</file>
     <file alias="StyleSheet/atomOneDark/FluLineEdit.qss">../stylesheet/atomOneDark/FluLineEdit.qss</file>
     <file alias="StyleSheet/atomOneDark/FluListView.qss">../stylesheet/atomOneDark/FluListView.qss</file>

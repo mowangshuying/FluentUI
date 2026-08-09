@@ -23,6 +23,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     // Indeterminate example
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("An indeterminate progress bar."));
+    displayBox2->getCodeExpander()->setCodeByPath("../code/ProgressBarPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(96);
 
     auto progressBar2 = new FluProgressBar(displayBox2);

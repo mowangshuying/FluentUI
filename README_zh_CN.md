@@ -162,7 +162,3 @@ Gallery / Examples
 ## 许可证
 
 本项目基于 [GNU 宽松通用公共许可证 v2.1](LICENSE.LGPL)。
-
-## 历史点赞
-
-![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/FluentUI&type=Date)

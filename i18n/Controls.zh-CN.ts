@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="zh_CN">
 <context>
     <name>FluAmPmView</name>
     <message>
-        <location filename="../controls/FluAmPmView.cpp" line="57"/>
+        <location filename="../controls/FluAmPmView.cpp" line="56"/>
         <source>AM</source>
         <translation>上午</translation>
     </message>
     <message>
-        <location filename="../controls/FluAmPmView.cpp" line="57"/>
+        <location filename="../controls/FluAmPmView.cpp" line="56"/>
         <source>PM</source>
         <translation>下午</translation>
     </message>
@@ -25,62 +25,62 @@
 <context>
     <name>FluCalendarMonthView</name>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Jan</source>
         <translation>1月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Feb</source>
         <translation>2月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Mar</source>
         <translation>3月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Apr</source>
         <translation>4月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>May</source>
         <translation>5月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Jun</source>
         <translation>6月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Jul</source>
         <translation>7月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Aug</source>
         <translation>8月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Sep</source>
         <translation>9月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Oct</source>
         <translation>10月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Nov</source>
         <translation>11月</translation>
     </message>
     <message>
-        <location filename="../controls/FluCalendarSelectDayView.cpp" line="177"/>
+        <location filename="../controls/FluCalendarSelectDayView.cpp" line="176"/>
         <source>Dec</source>
         <translation>12月</translation>
     </message>
@@ -298,77 +298,77 @@
 <context>
     <name>FluDatePicker</name>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="17"/>
+        <location filename="../controls/FluDatePicker.cpp" line="16"/>
         <source>month</source>
         <translation>月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="21"/>
+        <location filename="../controls/FluDatePicker.cpp" line="20"/>
         <source>day</source>
         <translation>日</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="25"/>
+        <location filename="../controls/FluDatePicker.cpp" line="24"/>
         <source>year</source>
         <translation>年</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>January</source>
         <translation>一月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>February</source>
         <translation>二月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>March</source>
         <translation>三月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>April</source>
         <translation>四月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>May</source>
         <translation>五月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>June</source>
         <translation>六月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>July</source>
         <translation>七月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>August</source>
         <translation>八月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>September</source>
         <translation>九月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>October</source>
         <translation>十月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>November</source>
         <translation>十一月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePicker.cpp" line="66"/>
+        <location filename="../controls/FluDatePicker.cpp" line="65"/>
         <source>December</source>
         <translation>十二月</translation>
     </message>
@@ -376,62 +376,62 @@
 <context>
     <name>FluDatePickerView</name>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>January</source>
         <translation>一月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>February</source>
         <translation>二月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>March</source>
         <translation>三月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>April</source>
         <translation>四月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>May</source>
         <translation>五月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>June</source>
         <translation>六月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>July</source>
         <translation>七月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>August</source>
         <translation>八月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>September</source>
         <translation>九月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>October</source>
         <translation>十月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>November</source>
         <translation>十一月</translation>
     </message>
     <message>
-        <location filename="../controls/FluDatePickerView.cpp" line="42"/>
+        <location filename="../controls/FluDatePickerView.cpp" line="41"/>
         <source>December</source>
         <translation>十二月</translation>
     </message>
@@ -518,14 +518,12 @@
 <context>
     <name>FluTextToggleSwitchEx</name>
     <message>
-        <location filename="../controls/FluTextToggleSwitchEx.cpp" line="17"/>
         <source>on</source>
-        <translation>开启</translation>
+        <translation type="vanished">开启</translation>
     </message>
     <message>
-        <location filename="../controls/FluTextToggleSwitchEx.cpp" line="17"/>
         <source>off</source>
-        <translation>关闭</translation>
+        <translation type="vanished">关闭</translation>
     </message>
 </context>
 <context>
@@ -568,20 +566,18 @@
 <context>
     <name>FluToggleSwitch</name>
     <message>
-        <location filename="../controls/FluToggleSwitch.h" line="13"/>
         <source>On</source>
-        <translation>开</translation>
+        <translation type="vanished">开</translation>
     </message>
     <message>
-        <location filename="../controls/FluToggleSwitch.h" line="14"/>
         <source>Off</source>
-        <translation>关</translation>
+        <translation type="vanished">关</translation>
     </message>
 </context>
 <context>
     <name>FluVNavigationIconTextItem</name>
     <message>
-        <location filename="../controls/FluVNavigationIconTextItem.cpp" line="465"/>
+        <location filename="../controls/FluVNavigationIconTextItem.cpp" line="496"/>
         <source>3-level</source>
         <translation>3级</translation>
     </message>

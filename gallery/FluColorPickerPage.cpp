@@ -12,6 +12,7 @@ FluColorPickerPage::FluColorPickerPage(QWidget* parent) : FluAEmptyPage(parent)
 
     auto displaybox1 = new FluDisplayBoxEx;
     displaybox1->setTitle(tr("ColorPicker Properties"));
+    displaybox1->getCodeExpander()->setCodeByPath("../code/ColorPickerPageCode1.md");
 
     auto colorView = new FluColorView;
     displaybox1->getBodyContentLayout()->addWidget(colorView);

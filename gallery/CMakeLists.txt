@@ -504,6 +504,7 @@ set(CODE_FILES
     "../code/PasswordBoxPageCode2.md"
     "../code/PivotPageCode1.md"
     "../code/ProgressBarPageCode1.md"
+    "../code/ProgressBarPageCode2.md"
     "../code/ProgressRingPageCode1.md"
     "../code/ProgressRingPageCode2.md"
     "../code/ProgressRingPageCode3.md"

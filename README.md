@@ -164,7 +164,3 @@ See the [docs](./docs) directory for detailed documentation and code examples.
 ## License
 
 This project is licensed under the [GNU Lesser General Public License v2.1](LICENSE.LGPL).
-
-## Star History
-
-![Star History Chart](https://api.star-history.com/svg?repos=mowangshuying/FluentUI&type=Date)

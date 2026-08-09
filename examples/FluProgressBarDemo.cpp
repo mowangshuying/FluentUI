@@ -2,17 +2,28 @@
 
 FluProgressBarDemo::FluProgressBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
-    // Determinate bar
-    auto progressBar = new FluProgressBar(this);
-    progressBar->move(50, 50);
-    progressBar->setValue(75);
-    progressBar->setFixedWidth(150);
+    auto vLayout = new QVBoxLayout(this);
+    m_contentLayout->addLayout(vLayout);
 
-    // Indeterminate bar
+
+    vLayout->addSpacing(100);
+    // Determinate bar
+    auto progressBar1 = new FluProgressBar(this);
+    progressBar1->setValue(75);
+    progressBar1->setFixedWidth(300);
+    vLayout->addWidget(progressBar1);
+
+    vLayout->addSpacing(100);
+
+     //Indeterminate bar
     auto progressBar2 = new FluProgressBar(this);
-    progressBar2->move(50, 100);
-    progressBar2->setFixedWidth(150);
+    progressBar2->setFixedWidth(300);
+    progressBar2->setValue(20);
     progressBar2->setWorking(true);
+    vLayout->addWidget(progressBar2);
+
+    vLayout->addStretch();
+
 
     resize(600, 400);
 }

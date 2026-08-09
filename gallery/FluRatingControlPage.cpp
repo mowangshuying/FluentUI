@@ -12,6 +12,7 @@ FluRatingControlPage::FluRatingControlPage(QWidget* parent /*= nullptr*/) : FluA
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto ratingControl = new FluRatingControl;
+    ratingControl->setValue(3.5);
     displayBox->getBodyLayout()->addWidget(ratingControl);
 
     m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);

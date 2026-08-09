@@ -474,7 +474,9 @@ set(CODE_FILES
     "../code/CalendarViewPageCode1.md"
     "../code/CheckBoxPageCode1.md"
     "../code/CheckBoxPageCode2.md"
+    "../code/ColorPickerPageCode1.md"
     "../code/ComboBoxPageCode1.md"
+    "../code/ComboBoxPageCode2.md"
     "../code/ContentDialogPageCode1.md"
     "../code/DatePickerPageCode1.md"
     "../code/DropDownButtonPageCode1.md"
@@ -495,6 +497,7 @@ set(CODE_FILES
     "../code/ListViewPageCode1.md"
     "../code/MenuBarPageCode1.md"
     "../code/MenuBarPageCode2.md"
+    "../code/MenuBarPageCode3.md"
     "../code/NumberBoxPageCode1.md"
     "../code/NumberBoxPageCode2.md"
     "../code/PasswordBoxPageCode1.md"
@@ -520,6 +523,10 @@ set(CODE_FILES
     "../code/ToggleButtonPageCode1.md"
     "../code/ToggleButtonPageCode2.md"
     "../code/ToggleSwitchPageCode1.md"
+    "../code/ToggleSwitchPageCode2.md"
+    "../code/ToggleSwitchPageCode3.md"
+    "../code/ToggleSwitchPageCode4.md"
+    "../code/ToggleSwitchPageCode5.md"
     "../code/TreeViewPageCode1.md"
 )
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${CODE_FILES})

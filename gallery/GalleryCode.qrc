@@ -12,7 +12,9 @@
     <file alias="code/CalendarViewPageCode1.md">../code/CalendarViewPageCode1.md</file>
     <file alias="code/CheckBoxPageCode1.md">../code/CheckBoxPageCode1.md</file>
     <file alias="code/CheckBoxPageCode2.md">../code/CheckBoxPageCode2.md</file>
+    <file alias="code/ColorPickerPageCode1.md">../code/ColorPickerPageCode1.md</file>
     <file alias="code/ComboBoxPageCode1.md">../code/ComboBoxPageCode1.md</file>
+    <file alias="code/ComboBoxPageCode2.md">../code/ComboBoxPageCode2.md</file>
     <file alias="code/ContentDialogPageCode1.md">../code/ContentDialogPageCode1.md</file>
     <file alias="code/DatePickerPageCode1.md">../code/DatePickerPageCode1.md</file>
     <file alias="code/DropDownButtonPageCode1.md">../code/DropDownButtonPageCode1.md</file>
@@ -33,6 +35,7 @@
     <file alias="code/ListViewPageCode1.md">../code/ListViewPageCode1.md</file>
     <file alias="code/MenuBarPageCode1.md">../code/MenuBarPageCode1.md</file>
     <file alias="code/MenuBarPageCode2.md">../code/MenuBarPageCode2.md</file>
+    <file alias="code/MenuBarPageCode3.md">../code/MenuBarPageCode3.md</file>
     <file alias="code/NumberBoxPageCode1.md">../code/NumberBoxPageCode1.md</file>
     <file alias="code/NumberBoxPageCode2.md">../code/NumberBoxPageCode2.md</file>
     <file alias="code/PasswordBoxPageCode1.md">../code/PasswordBoxPageCode1.md</file>
@@ -58,6 +61,10 @@
     <file alias="code/ToggleButtonPageCode1.md">../code/ToggleButtonPageCode1.md</file>
     <file alias="code/ToggleButtonPageCode2.md">../code/ToggleButtonPageCode2.md</file>
     <file alias="code/ToggleSwitchPageCode1.md">../code/ToggleSwitchPageCode1.md</file>
+    <file alias="code/ToggleSwitchPageCode2.md">../code/ToggleSwitchPageCode2.md</file>
+    <file alias="code/ToggleSwitchPageCode3.md">../code/ToggleSwitchPageCode3.md</file>
+    <file alias="code/ToggleSwitchPageCode4.md">../code/ToggleSwitchPageCode4.md</file>
+    <file alias="code/ToggleSwitchPageCode5.md">../code/ToggleSwitchPageCode5.md</file>
     <file alias="code/TreeViewPageCode1.md">../code/TreeViewPageCode1.md</file>
   </qresource>
 </RCC>

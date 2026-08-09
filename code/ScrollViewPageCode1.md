@@ -1,4 +1,4 @@
-```
+```cpp
 QPixmap img("../res/SampleMedia/LandscapeImage9.jpg");
 auto imgBox = new FluImageBox(img, this);
 imgBox->setFixedSize(2000, 2000);

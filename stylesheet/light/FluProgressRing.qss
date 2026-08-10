@@ -1,0 +1,12 @@
+/* ============================================================
+   FluProgressRing - Light
+   Determinate + Indeterminate ring.
+   Colors are injected via qproperty-* and read by
+   FluProgressRing::paintEvent (progress / track / text).
+   ============================================================ */
+
+FluProgressRing {
+    qproperty-progressColor: rgb(0, 90, 158);
+    qproperty-trackColor: rgb(229, 229, 229);
+    qproperty-textColor: rgb(26, 26, 26);
+}

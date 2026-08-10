@@ -5,8 +5,14 @@
 #include <list>
 #include <QPoint>
 
-class FluShortInfoBar;
-enum class FluShortInfoBarType;
+class FluInfoBar;
+enum class FluInfoBarSeverity;
+
+enum class FluInfoBarPosition
+{
+    TopCenter,
+    BottomRight,
+};
 
 class FluInfoBarMgr : public QObject
 {
@@ -22,18 +28,24 @@ class FluInfoBarMgr : public QObject
         return &mgr;
     }
 
-    static void showInfoBar(QWidget* parentWidget, FluShortInfoBarType type, QString text, bool isCloseable = true);
+    static void showInfoBar(QWidget* parentWidget, FluInfoBarSeverity severity, QString text, bool isCloseable = true,
+                            FluInfoBarPosition position = FluInfoBarPosition::TopCenter);
 
-    void addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int disappearDuration = 800);
+    void addInfoBar(QWidget* parentWidget, FluInfoBar* infoBar, int disappearDuration = 800,
+                    FluInfoBarPosition position = FluInfoBarPosition::TopCenter);
 
-    void removeInfoBar(FluShortInfoBar* infoBar);
+    void removeInfoBar(FluInfoBar* infoBar);
 
     bool eventFilter(QObject* watched, QEvent* event) override;
 
   protected:
-    QPoint targetPosition(QWidget* parentWidget, FluShortInfoBar* infoBar);
-    void relayout(QWidget* parentWidget);
-    void animateTo(FluShortInfoBar* bar, const QPoint& target);
+    FluInfoBarPosition positionOf(QWidget* parentWidget) const;
+    void setPosition(QWidget* parentWidget, FluInfoBarPosition position);
 
-    std::map<QWidget*, std::list<FluShortInfoBar*>> m_infoBarMap;
+    QPoint targetPosition(QWidget* parentWidget, FluInfoBar* infoBar);
+    void relayout(QWidget* parentWidget);
+    void animateTo(FluInfoBar* bar, const QPoint& target);
+
+    std::map<QWidget*, std::list<FluInfoBar*>> m_infoBarMap;
+    std::map<QWidget*, FluInfoBarPosition> m_positionMap;
 };

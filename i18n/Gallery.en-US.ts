@@ -2385,76 +2385,153 @@ All glyphs in Segoe Fluent Icons have the same fixed width with a consistent hei
 <context>
     <name>FluInfoBarPage</name>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="6"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="7"/>
         <source>InfoBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="8"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="9"/>
         <source>Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="21"/>
-        <source>A closabel InforBar with options to change its severity.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="30"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="57"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="101"/>
         <source>Is Closable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="34"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="39"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="106"/>
         <source>Severity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="38"/>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="106"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="25"/>
+        <source>A persistent InfoBar with editable title, message, severity and close options.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="32"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="33"/>
+        <source>This is an informational message. You can edit the title, message and severity below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="43"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="110"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="139"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="176"/>
         <source>Informational</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="39"/>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="107"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="44"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="111"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="140"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="177"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="40"/>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="108"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="45"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="112"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="141"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="178"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="41"/>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="109"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="46"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="113"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="142"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="179"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="97"/>
-        <source>A dynamic InforBar.</source>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="52"/>
+        <source>Is Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="116"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="63"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="67"/>
+        <source>Enter a title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="72"/>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="76"/>
+        <source>Enter a message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="89"/>
+        <source>A closable InfoBar with options to change its severity.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="94"/>
+        <source>A closable InfoBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="95"/>
+        <source>Change its severity and close options. This message wraps to multiple lines.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="130"/>
+        <source>A dynamic InfoBar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="167"/>
+        <source>A toast that appears at the bottom-right and stacks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="190"/>
+        <source>This is a success message.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="193"/>
+        <source>This is a warning message.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="149"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="187"/>
         <source>This is an informational message.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="117"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="150"/>
         <source>This is an success message.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="118"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="151"/>
         <source>This is an warn message.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gallery/FluInfoBarPage.cpp" line="119"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="152"/>
+        <location filename="../gallery/FluInfoBarPage.cpp" line="196"/>
         <source>This is an error message.</source>
         <translation type="unfinished"></translation>
     </message>

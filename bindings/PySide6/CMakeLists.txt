@@ -233,7 +233,7 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluSettingsVersionBox.h"
     # Controls - Previously excluded (now fixed)
     "${CMAKE_SOURCE_DIR}/controls/FluGifBox.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluShortInfoBar.h"
+    "${CMAKE_SOURCE_DIR}/controls/FluInfoBar.h"
     "${CMAKE_SOURCE_DIR}/controls/FluInfoBarMgr.h"
     "${CMAKE_SOURCE_DIR}/controls/FluTextEditWrap.h"
     "${CMAKE_SOURCE_DIR}/controls/FluAutoSuggestBox.h"

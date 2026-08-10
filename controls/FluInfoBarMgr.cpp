@@ -1,5 +1,5 @@
 #include "FluInfoBarMgr.h"
-#include "FluShortInfoBar.h"
+#include "FluInfoBar.h"
 #include <QEvent>
 #include <QPropertyAnimation>
 #include <algorithm>
@@ -10,60 +10,78 @@ constexpr int kTopMargin = 72;
 constexpr int kGap = 15;
 constexpr int kSlideOffset = 20;
 constexpr int kSlideDuration = 200;
+constexpr int kRightMargin = 16;
+constexpr int kBottomMargin = 16;
 }  // namespace
 
 FluInfoBarMgr::FluInfoBarMgr(QObject* parent /*= nullptr*/) : QObject(parent)
 {
     m_infoBarMap.clear();
+    m_positionMap.clear();
 }
 
 FluInfoBarMgr::~FluInfoBarMgr()
 {
 }
 
-void FluInfoBarMgr::showInfoBar(QWidget* parentWidget, FluShortInfoBarType type, QString text, bool isCloseable /*= true*/)
+void FluInfoBarMgr::showInfoBar(QWidget* parentWidget, FluInfoBarSeverity severity, QString text, bool isCloseable /*= true*/,
+                                FluInfoBarPosition position /*= FluInfoBarPosition::TopCenter*/)
 {
-    FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info, parentWidget);
-    sInfoBar->setInfoBarText(text);
-    sInfoBar->setInfoBarType(type);
-    if (!isCloseable)
-        sInfoBar->getCloseButton()->hide();
-    sInfoBar->setFixedWidth(270);
-    FluInfoBarMgr::getInstance()->addInfoBar(parentWidget, sInfoBar);
+    FluInfoBar* infoBar = new FluInfoBar(severity, parentWidget);
+    infoBar->setMessage(text);
+    infoBar->setFixedWidth(270);
+    infoBar->setIsClosable(isCloseable);
+    infoBar->setIsOpen(true);
+    infoBar->adjustSize();
+    FluInfoBarMgr::getInstance()->addInfoBar(parentWidget, infoBar, 800, position);
 }
 
-void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluShortInfoBar* infoBar, int disappearDuration /* = 800*/)
+void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluInfoBar* infoBar, int disappearDuration /* = 800*/,
+                               FluInfoBarPosition position /* = FluInfoBarPosition::TopCenter*/)
 {
     if (parentWidget == nullptr || infoBar == nullptr)
         return;
 
     infoBar->setDisappearDuration(disappearDuration);
 
+    // Remove the toast from management once it is closed (either by the close
+    // button or by the auto-disappear fade-out).
+    connect(infoBar, &FluInfoBar::closeRequested, this, [this, infoBar]() {
+        removeInfoBar(infoBar);
+        infoBar->deleteLater();
+    });
+
     auto itf = m_infoBarMap.find(parentWidget);
-    if (itf == m_infoBarMap.end())
+    bool existed = (itf != m_infoBarMap.end());
+    FluInfoBarPosition oldPos = positionOf(parentWidget);
+    setPosition(parentWidget, position);
+
+    if (existed)
     {
-        parentWidget->installEventFilter(this);
-        std::list<FluShortInfoBar*> infoBarList;
-        infoBarList.push_back(infoBar);
-        m_infoBarMap[parentWidget] = infoBarList;
+        // If the corner changed, move existing toasts to the new corner first.
+        if (oldPos != position && !itf->second.empty())
+            relayout(parentWidget);
+        itf->second.push_back(infoBar);
     }
     else
     {
-        itf->second.push_back(infoBar);
+        parentWidget->installEventFilter(this);
+        std::list<FluInfoBar*> infoBarList;
+        infoBarList.push_back(infoBar);
+        m_infoBarMap[parentWidget] = infoBarList;
     }
 
-    // Slide the new toast up into its packed slot; existing toasts are untouched.
+    // Slide the new toast into its packed slot; existing toasts are untouched.
     QPoint target = targetPosition(parentWidget, infoBar);
     infoBar->move(target + QPoint(0, kSlideOffset));
     infoBar->show();
     animateTo(infoBar, target);
 
-    // Auto-disappear after the configured duration (the old 1ms polling timer
-    // used to drive this trigger; it was removed, so fire it here instead).
+    // Auto-disappear after the configured duration.
     infoBar->disappear();
 }
 
-void FluInfoBarMgr::removeInfoBar(FluShortInfoBar* infoBar)
+void FluInfoBarMgr::removeInfoBar(FluInfoBar* infoBar)
 {
     QWidget* parentWidget = nullptr;
     for (auto itMap = m_infoBarMap.begin(); itMap != m_infoBarMap.end(); itMap++)
@@ -77,7 +95,7 @@ void FluInfoBarMgr::removeInfoBar(FluShortInfoBar* infoBar)
         }
     }
 
-    // Remaining toasts below slide up to fill the freed slot.
+    // Remaining toasts slide to fill the freed slot.
     if (parentWidget != nullptr)
     {
         auto itf = m_infoBarMap.find(parentWidget);
@@ -89,30 +107,58 @@ void FluInfoBarMgr::removeInfoBar(FluShortInfoBar* infoBar)
     {
         if (itMap->second.empty())
         {
-            itMap->first->removeEventFilter(this);
+            QWidget* emptyParent = itMap->first;
+            emptyParent->removeEventFilter(this);
             itMap = m_infoBarMap.erase(itMap);
+            m_positionMap.erase(emptyParent);
             continue;
         }
         itMap++;
     }
 }
 
-QPoint FluInfoBarMgr::targetPosition(QWidget* parentWidget, FluShortInfoBar* infoBar)
+FluInfoBarPosition FluInfoBarMgr::positionOf(QWidget* parentWidget) const
 {
-    int x = parentWidget->width() / 2 - infoBar->width() / 2;
-    int y = kTopMargin;
+    auto itf = m_positionMap.find(parentWidget);
+    if (itf == m_positionMap.end())
+        return FluInfoBarPosition::TopCenter;
+    return itf->second;
+}
 
+void FluInfoBarMgr::setPosition(QWidget* parentWidget, FluInfoBarPosition position)
+{
+    m_positionMap[parentWidget] = position;
+}
+
+QPoint FluInfoBarMgr::targetPosition(QWidget* parentWidget, FluInfoBar* infoBar)
+{
     auto itf = m_infoBarMap.find(parentWidget);
-    if (itf != m_infoBarMap.end())
+    if (itf == m_infoBarMap.end())
+        return QPoint(0, 0);
+
+    if (positionOf(parentWidget) == FluInfoBarPosition::BottomRight)
     {
-        for (FluShortInfoBar* bar : itf->second)
+        int x = parentWidget->width() - infoBar->width() - kRightMargin;
+        // The newest toast (last in the list) sits at the bottom; older ones stack upward.
+        int bottom = parentWidget->height() - kBottomMargin;
+        int y = bottom;
+        for (auto it = itf->second.rbegin(); it != itf->second.rend(); ++it)
         {
-            if (bar == infoBar)
+            if (*it == infoBar)
                 break;
-            y += bar->height() + kGap;
+            y -= ((*it)->height() + kGap);
         }
+        return QPoint(x, y - infoBar->height());
     }
 
+    int x = parentWidget->width() / 2 - infoBar->width() / 2;
+    int y = kTopMargin;
+    for (FluInfoBar* bar : itf->second)
+    {
+        if (bar == infoBar)
+            break;
+        y += bar->height() + kGap;
+    }
     return QPoint(x, y);
 }
 
@@ -122,8 +168,22 @@ void FluInfoBarMgr::relayout(QWidget* parentWidget)
     if (itf == m_infoBarMap.end())
         return;
 
+    if (positionOf(parentWidget) == FluInfoBarPosition::BottomRight)
+    {
+        int bottom = parentWidget->height() - kBottomMargin;
+        int y = bottom;
+        for (auto it = itf->second.rbegin(); it != itf->second.rend(); ++it)
+        {
+            FluInfoBar* bar = *it;
+            int x = parentWidget->width() - bar->width() - kRightMargin;
+            animateTo(bar, QPoint(x, y - bar->height()));
+            y -= (bar->height() + kGap);
+        }
+        return;
+    }
+
     int y = kTopMargin;
-    for (FluShortInfoBar* bar : itf->second)
+    for (FluInfoBar* bar : itf->second)
     {
         int x = parentWidget->width() / 2 - bar->width() / 2;
         animateTo(bar, QPoint(x, y));
@@ -131,7 +191,7 @@ void FluInfoBarMgr::relayout(QWidget* parentWidget)
     }
 }
 
-void FluInfoBarMgr::animateTo(FluShortInfoBar* bar, const QPoint& target)
+void FluInfoBarMgr::animateTo(FluInfoBar* bar, const QPoint& target)
 {
     if (bar->pos() == target)
         return;
@@ -154,9 +214,14 @@ bool FluInfoBarMgr::eventFilter(QObject* watched, QEvent* event)
     if (event->type() == QEvent::Resize)
     {
         QWidget* parentWidget = (QWidget*)watched;
-        for (FluShortInfoBar* bar : itf->second)
+        bool bottomRight = (positionOf(parentWidget) == FluInfoBarPosition::BottomRight);
+        for (FluInfoBar* bar : itf->second)
         {
-            int x = parentWidget->width() / 2 - bar->width() / 2;
+            int x;
+            if (bottomRight)
+                x = parentWidget->width() - bar->width() - kRightMargin;
+            else
+                x = parentWidget->width() / 2 - bar->width() / 2;
             bar->move(x, bar->y());
         }
     }

@@ -68,7 +68,6 @@
     <file alias="StyleSheet/dark/FluSettingsLabelBox.qss">../stylesheet/dark/FluSettingsLabelBox.qss</file>
     <file alias="StyleSheet/dark/FluSettingsSelectBox.qss">../stylesheet/dark/FluSettingsSelectBox.qss</file>
     <file alias="StyleSheet/dark/FluSettingsVersionBox.qss">../stylesheet/dark/FluSettingsVersionBox.qss</file>
-    <file alias="StyleSheet/dark/FluShortInfoBar.qss">../stylesheet/dark/FluShortInfoBar.qss</file>
     <file alias="StyleSheet/dark/FluSlider.qss">../stylesheet/dark/FluSlider.qss</file>
     <file alias="StyleSheet/dark/FluSpinBox.qss">../stylesheet/dark/FluSpinBox.qss</file>
     <file alias="StyleSheet/dark/FluSplitButton.qss">../stylesheet/dark/FluSplitButton.qss</file>
@@ -173,7 +172,6 @@
     <file alias="StyleSheet/light/FluSettingsLabelBox.qss">../stylesheet/light/FluSettingsLabelBox.qss</file>
     <file alias="StyleSheet/light/FluSettingsSelectBox.qss">../stylesheet/light/FluSettingsSelectBox.qss</file>
     <file alias="StyleSheet/light/FluSettingsVersionBox.qss">../stylesheet/light/FluSettingsVersionBox.qss</file>
-    <file alias="StyleSheet/light/FluShortInfoBar.qss">../stylesheet/light/FluShortInfoBar.qss</file>
     <file alias="StyleSheet/light/FluSlider.qss">../stylesheet/light/FluSlider.qss</file>
     <file alias="StyleSheet/light/FluSpinBox.qss">../stylesheet/light/FluSpinBox.qss</file>
     <file alias="StyleSheet/light/FluSplitButton.qss">../stylesheet/light/FluSplitButton.qss</file>
@@ -289,7 +287,6 @@
     <file alias="StyleSheet/atomOneDark/FluSettingsLabelBox.qss">../stylesheet/atomOneDark/FluSettingsLabelBox.qss</file>
     <file alias="StyleSheet/atomOneDark/FluSettingsSelectBox.qss">../stylesheet/atomOneDark/FluSettingsSelectBox.qss</file>
     <file alias="StyleSheet/atomOneDark/FluSettingsVersionBox.qss">../stylesheet/atomOneDark/FluSettingsVersionBox.qss</file>
-    <file alias="StyleSheet/atomOneDark/FluShortInfoBar.qss">../stylesheet/atomOneDark/FluShortInfoBar.qss</file>
     <file alias="StyleSheet/atomOneDark/FluSlider.qss">../stylesheet/atomOneDark/FluSlider.qss</file>
     <file alias="StyleSheet/atomOneDark/FluSpinBox.qss">../stylesheet/atomOneDark/FluSpinBox.qss</file>
     <file alias="StyleSheet/atomOneDark/FluSplitButton.qss">../stylesheet/atomOneDark/FluSplitButton.qss</file>

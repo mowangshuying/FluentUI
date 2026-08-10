@@ -495,14 +495,6 @@
     </message>
 </context>
 <context>
-    <name>FluShortInfoBar</name>
-    <message>
-        <location filename="../controls/FluShortInfoBar.cpp" line="29"/>
-        <source>A Short Essential app Message.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FluShortcutPickerDlg</name>
     <message>
         <location filename="../controls/FluShortcutPickerDlg.cpp" line="5"/>

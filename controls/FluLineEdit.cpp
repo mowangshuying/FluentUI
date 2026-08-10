@@ -3,6 +3,7 @@
 FluLineEdit::FluLineEdit(QWidget* parent /*= nullptr*/) : QLineEdit(parent)
 {
     //  setContentsMargins(4, 4, 4, 4);
+    setFixedHeight(30);
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }

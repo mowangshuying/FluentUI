@@ -1,5 +1,6 @@
 ```cpp
-FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info);
-sInfoBar->setFixedWidth(270);
+FluInfoBar* infoBar = new FluInfoBar(FluInfoBarSeverity::Informational);
+infoBar->setFixedWidth(270);
+infoBar->setIsOpen(true);
+infoBar->setIsClosable(true);
 ```
-

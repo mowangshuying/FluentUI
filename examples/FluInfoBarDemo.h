@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../controls/FluShortInfoBar.h"
+#include "../controls/FluInfoBar.h"
 #include "../controls/FluWidget.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>

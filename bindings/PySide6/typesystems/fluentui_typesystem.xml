@@ -488,8 +488,8 @@
         <include file-name="FluGifBox.h" location="global"/>
     </object-type>
     
-    <object-type name="FluShortInfoBar" generate="yes">
-        <include file-name="FluShortInfoBar.h" location="global"/>
+    <object-type name="FluInfoBar" generate="yes">
+        <include file-name="FluInfoBar.h" location="global"/>
     </object-type>
     
     <object-type name="FluInfoBarMgr" generate="yes">

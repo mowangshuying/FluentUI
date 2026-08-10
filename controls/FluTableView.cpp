@@ -1,4 +1,5 @@
 #include "FluTableView.h"
+#include <QPainter>
 
 FluTableView::FluTableView(QWidget* parent /*= nullptr*/) : QTableWidget(parent)
 {
@@ -15,7 +16,9 @@ FluTableView::FluTableView(QWidget* parent /*= nullptr*/) : QTableWidget(parent)
     verticalHeader()->setDefaultSectionSize(38);
     horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    // FluStyleSheetUtils::setQssByFileName("../stylesheet/light/FluTableView.qss", this);
+    // Column sorting by header click (keeps the self-painted delegate intact).
+    setSortingEnabled(true);
+
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
@@ -65,8 +68,11 @@ void FluTableView::setReadOnlySet(std::set<int> readOnlySet)
 
 void FluTableView::setItemDelegate(FluTableItemDelegate* delegate)
 {
-    QTableView::setItemDelegate(m_tableItemDelegate);
+    if (!delegate)
+        return;
+
     m_tableItemDelegate = delegate;
+    QTableView::setItemDelegate(delegate);
 }
 
 void FluTableView::selectRow(int row)
@@ -96,6 +102,13 @@ void FluTableView::updateSelectedRows()
     setSelectedRows(list);
 }
 
+void FluTableView::setSortingEnabled(bool enable)
+{
+    QTableWidget::setSortingEnabled(enable);
+    // Sorting may reorder rows; refresh the delegate's cached selection indices.
+    updateSelectedRows();
+}
+
 void FluTableView::leaveEvent(QEvent* event)
 {
     QTableView::leaveEvent(event);
@@ -116,19 +129,34 @@ void FluTableView::keyPressEvent(QKeyEvent* event)
 void FluTableView::mousePressEvent(QMouseEvent* event)
 {
     QTableWidget::mousePressEvent(event);
-    if (event->button() == Qt::LeftButton)
-        return;
 
     QModelIndex modelIndex = indexAt(event->pos());
     if (modelIndex.isValid())
-    {
         setPressedRow(modelIndex.row());
-    }
 }
 
 void FluTableView::mouseReleaseEvent(QMouseEvent* event)
 {
     QTableWidget::mouseReleaseEvent(event);
+    setPressedRow(-1);
+}
+
+void FluTableView::paintEvent(QPaintEvent* event)
+{
+    QTableView::paintEvent(event);
+
+    if (model() && model()->rowCount() == 0)
+    {
+        QPainter painter(viewport());
+        QColor emptyColor;
+        if (FluThemeUtils::isLightTheme())
+            emptyColor = QColor(96, 96, 96);
+        else
+            emptyColor = QColor(140, 140, 140);
+
+        painter.setPen(emptyColor);
+        painter.drawText(viewport()->rect(), Qt::AlignCenter, tr("No data"));
+    }
 }
 
 void FluTableView::onThemeChanged()

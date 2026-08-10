@@ -15,28 +15,19 @@ warnBtn->setFixedWidth(120);
 errorBtn->setFixedWidth(120);
 
 connect(infoBtn, &FluPushButton::clicked, [=]() {
-    FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Info, window());
-    sInfoBar->setFixedWidth(270);
-    FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
+    FluInfoBarMgr::showInfoBar(window(), FluInfoBarSeverity::Informational, "This is an informational message.");
 });
 
 connect(sucBtn, &FluPushButton::clicked, [=]() {
-    FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Suc, window());
-    sInfoBar->setFixedWidth(270);
-    FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
+    FluInfoBarMgr::showInfoBar(window(), FluInfoBarSeverity::Success, "This is an success message.");
 });
 
 connect(warnBtn, &FluPushButton::clicked, [=]() {
-    FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Warn, window());
-    sInfoBar->setFixedWidth(270);
-    FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
+    FluInfoBarMgr::showInfoBar(window(), FluInfoBarSeverity::Warning, "This is an warn message.");
 });
 
 connect(errorBtn, &FluPushButton::clicked, [=]() {
-    FluShortInfoBar* sInfoBar = new FluShortInfoBar(FluShortInfoBarType::Error, window());
-    sInfoBar->setFixedWidth(270);
-    FluInfoBarMgr::getInstance()->addInfoBar(window(), sInfoBar);
+    FluInfoBarMgr::showInfoBar(window(), FluInfoBarSeverity::Error, "This is an error message.");
 });
 
 ```
-

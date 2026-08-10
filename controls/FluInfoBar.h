@@ -43,6 +43,10 @@ class FluInfoBar : public FluWidget
     double getOpacity() const;
     void setOpacity(double opacity);
 
+    void setDisappearDuration(int disappearDuration);
+
+    void disappear();
+
   signals:
     void isOpenChanged(bool isOpen);
     void closeRequested();
@@ -55,6 +59,7 @@ class FluInfoBar : public FluWidget
 
   private:
     void updateSeverityVisuals();
+    void updateTitleVisibility();
     QColor severityColor() const;
     QColor severityIconColor() const;
     QString severityString() const;
@@ -74,4 +79,7 @@ class FluInfoBar : public FluWidget
 
     QPropertyAnimation* m_fadeAnim;
     double m_opacity;
+
+    int m_disappearDuration;
+    bool m_isDisappearing;
 };

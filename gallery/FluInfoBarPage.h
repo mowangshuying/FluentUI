@@ -2,7 +2,6 @@
 
 #include "FluAEmptyPage.h"
 #include "../controls/FluDisplayBox.h"
-#include "../controls/FluShortInfoBar.h"
 #include "../controls/FluVScrollView.h"
 #include "../controls/FluDisplayBoxEx.h"
 #include "../controls/FluComboBoxEx.h"
@@ -23,6 +22,8 @@ class FluInfoBarPage : public FluAEmptyPage
     void addClosableInfoBar();
 
     void addDynamicInfoBar();
+
+    void addBottomRightInfoBar();
   public slots:
     void onThemeChanged();
 

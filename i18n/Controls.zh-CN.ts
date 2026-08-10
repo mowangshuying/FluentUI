@@ -497,9 +497,8 @@
 <context>
     <name>FluShortInfoBar</name>
     <message>
-        <location filename="../controls/FluShortInfoBar.cpp" line="29"/>
         <source>A Short Essential app Message.</source>
-        <translation>一条简短且必要的应用消息。</translation>
+        <translation type="vanished">一条简短且必要的应用消息。</translation>
     </message>
 </context>
 <context>

@@ -1,9 +1,10 @@
 #include "FluInfoBar.h"
 #include <QStyleOption>
 #include <QEasingCurve>
+#include <QTimer>
 
 FluInfoBar::FluInfoBar(FluInfoBarSeverity severity /*= FluInfoBarSeverity::Informational*/, QWidget* parent /*= nullptr*/)
-    : FluWidget(parent), m_severity(severity), m_isOpen(false), m_isClosable(true), m_opacity(1.0)
+    : FluWidget(parent), m_severity(severity), m_isOpen(false), m_isClosable(true), m_opacity(1.0), m_disappearDuration(-1), m_isDisappearing(false)
 {
     setMinimumWidth(320);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
@@ -17,7 +18,7 @@ FluInfoBar::FluInfoBar(FluInfoBarSeverity severity /*= FluInfoBarSeverity::Infor
     m_iconLabel->setObjectName("iconLabel");
     m_iconLabel->setFixedSize(24, 24);
     m_iconLabel->setAlignment(Qt::AlignCenter);
-    m_mainLayout->addWidget(m_iconLabel);
+    m_mainLayout->addWidget(m_iconLabel, 0, Qt::AlignVCenter);
 
     QVBoxLayout* textLayout = new QVBoxLayout;
     textLayout->setContentsMargins(0, 0, 0, 0);
@@ -38,6 +39,7 @@ FluInfoBar::FluInfoBar(FluInfoBarSeverity severity /*= FluInfoBarSeverity::Infor
     textLayout->addWidget(m_messageLabel);
 
     m_mainLayout->addLayout(textLayout, 1);
+    m_mainLayout->setAlignment(textLayout, Qt::AlignVCenter);
 
     m_closeBtn = new QPushButton;
     m_closeBtn->setObjectName("closeBtn");
@@ -45,7 +47,7 @@ FluInfoBar::FluInfoBar(FluInfoBarSeverity severity /*= FluInfoBarSeverity::Infor
     m_closeBtn->setIconSize(QSize(14, 14));
     m_closeBtn->setFocusPolicy(Qt::NoFocus);
     m_closeBtn->setIcon(FluIconUtils::getFluentIconPixmap(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
-    m_mainLayout->addWidget(m_closeBtn);
+    m_mainLayout->addWidget(m_closeBtn, 0, Qt::AlignVCenter);
 
     connect(m_closeBtn, &QPushButton::clicked, this, [this]() {
         emit closeRequested();
@@ -55,9 +57,19 @@ FluInfoBar::FluInfoBar(FluInfoBarSeverity severity /*= FluInfoBarSeverity::Infor
     m_fadeAnim = new QPropertyAnimation(this, "opacity", this);
     connect(m_fadeAnim, &QPropertyAnimation::finished, this, [this]() {
         if (m_opacity <= 0.0)
+        {
             hide();
+            // In toast mode, the auto-disappear fade-out completing means the
+            // toast should be removed by the manager.
+            if (m_isDisappearing)
+            {
+                m_isDisappearing = false;
+                emit closeRequested();
+            }
+        }
     });
 
+    updateTitleVisibility();
     updateSeverityVisuals();
     onThemeChanged();
 }
@@ -86,6 +98,7 @@ void FluInfoBar::setTitle(const QString& title)
 {
     m_title = title;
     m_titleLabel->setText(title);
+    updateTitleVisibility();
 }
 
 QString FluInfoBar::message() const
@@ -162,6 +175,26 @@ void FluInfoBar::setOpacity(double opacity)
     }
 }
 
+void FluInfoBar::setDisappearDuration(int disappearDuration)
+{
+    m_disappearDuration = disappearDuration;
+}
+
+void FluInfoBar::disappear()
+{
+    if (m_disappearDuration <= 0 || m_isDisappearing)
+        return;
+
+    m_isDisappearing = true;
+    QTimer::singleShot(m_disappearDuration, this, [this]() {
+        if (!m_isDisappearing)
+            return;
+        // Reuse the fade-out branch of setIsOpen(false); on completion the
+        // fade animation handler emits closeRequested() so the manager removes it.
+        setIsOpen(false);
+    });
+}
+
 void FluInfoBar::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
@@ -186,6 +219,11 @@ void FluInfoBar::onThemeChanged()
     FluStyleSheetUtils::setQssByFileName("FluInfoBar.qss", this, FluThemeUtils::getUtils()->getTheme());
     updateSeverityVisuals();
     update();
+}
+
+void FluInfoBar::updateTitleVisibility()
+{
+    m_titleLabel->setVisible(!m_title.isEmpty());
 }
 
 void FluInfoBar::updateSeverityVisuals()

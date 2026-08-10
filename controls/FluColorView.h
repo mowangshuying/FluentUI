@@ -17,7 +17,6 @@
 #include <QDialog>
 #include <QEvent>
 #include <QResizeEvent>
-#include <QMutex>
 #include <QApplication>
 
 class FluColorView : public QDialog
@@ -166,15 +165,10 @@ class FluColorView : public QDialog
             int g = colorViewHHandle->getColor().green() * percentage;
             int b = colorViewHHandle->getColor().blue() * percentage;
 
-            // m_isRgbChanging = true;
-
-            // m_mutex.lock();
             rEdit->setText(QString::asprintf("%d", r));
             gEdit->setText(QString::asprintf("%d", g));
             bEdit->setText(QString::asprintf("%d", b));
             colorViewVHandle->setColor(QColor(r, g, b));
-            // m_mutex.unlock();
-            // m_isRgbChanging = false;
         });
 
         connect(rEdit, &FluLineEdit::textChanged, this, [=](const QString& rValue) { onRgbValueChanged(); });
@@ -248,45 +242,36 @@ class FluColorView : public QDialog
         if (!isHasFocus)
             return;
 
-        // get r value;
-        // get g value;
-        // get b value;
         int r = rEdit->text().toInt();
         int g = gEdit->text().toInt();
         int b = bEdit->text().toInt();
 
-        // if (m_isRgbChanging)
-        //{
-        //     LOG_DEBUG << "called";
-        //     return;
-        // }
-
+        // The brightest channel represents the value (0..1). When all channels are 0
+        // the value is 0, in which case the normalization below would divide by zero.
         float value = 0;
         if (r >= g && r >= b)
         {
-            value = r * 1.0 / 255;
-            // return;
+            value = r / 255.0f;
+        }
+        else if (g >= r && g >= b)
+        {
+            value = g / 255.0f;
+        }
+        else if (b >= r && b >= g)
+        {
+            value = b / 255.0f;
         }
 
-        if (g >= r && g >= b)
-        {
-            value = g * 1.0 / 255;
-        }
-
-        if (b >= r && b >= g)
-        {
-            value = b * 1.0 / 255;
-        }
+        // Avoid division by zero when the chosen color is pure black.
+        if (value <= 0.0f)
+            return;
 
         r = r / value;
         g = g / value;
         b = b / value;
 
-        // m_mutex.lock();
         colorViewHHandle->setValue(value);
         colorViewHHandle->setColor(QColor(r, g, b), false);
-
-        // m_mutex.unlock();
         colorViewGradient->circleMoveToPoint(QColor(r, g, b));
     }
 
@@ -296,7 +281,6 @@ class FluColorView : public QDialog
     }
 
   protected:
-    bool m_isRgbChanging;
     QWidget* m_parentWidget;
     QWidget* m_windowMask;
 
@@ -313,7 +297,4 @@ class FluColorView : public QDialog
     FluLineEdit* rEdit;
     FluLineEdit* gEdit;
     FluLineEdit* bEdit;
-
-    // mutex;
-    QMutex m_mutex;
 };

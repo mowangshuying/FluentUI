@@ -1,4 +1,5 @@
 FluColorFlyout {
     background-color: rgb(45, 45, 45);
+    border: 1px solid rgb(60, 60, 60);
     border-radius: 8px;
 }

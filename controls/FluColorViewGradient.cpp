@@ -1,16 +1,24 @@
 ﻿#include "FluColorViewGradient.h"
 
+#include <limits>
+
 FluColorViewGradient::FluColorViewGradient(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     setFixedSize(192, 192);
     m_pixmap = FluIconUtils::getPixmap(("../res/ControlResImages/GradientColor.png"));
     m_pixmap = m_pixmap.scaled(192, 192);
+    m_image = m_pixmap.toImage();
+
+    m_isPressed = false;
+    m_color = QColor(110, 98, 251);
+    m_circleP = QPoint(96, 96);
 }
 
 void FluColorViewGradient::setFixedSize(int w, int h)
 {
     FluWidget::setFixedSize(w, h);
     m_pixmap = m_pixmap.scaled(w, h);
+    m_image = m_pixmap.toImage();
     update();
 }
 
@@ -26,51 +34,43 @@ QColor FluColorViewGradient::getColor()
 
 bool FluColorViewGradient::findColor(QColor color, QPoint& point)
 {
-    // LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
-    bool isFind = false;
+    if (m_image.isNull())
+        return false;
 
-    // std::vector<QColor> colors;
-    for (int i = 0; i < 256; i++)
+    int targetR = color.red();
+    int targetG = color.green();
+    int targetB = color.blue();
+
+    // Find the pixel whose color is closest to the target by squared RGB distance.
+    // This replaces the previous O(n^2) brute-force search that re-derived the image
+    // (m_pixmap.toImage()) on every pixel comparison.
+    int bestDist = std::numeric_limits<int>::max();
+    bool found = false;
+    for (int y = 0; y < m_image.height(); y++)
     {
-        for (int j = 0; j < 256; j++)
+        for (int x = 0; x < m_image.width(); x++)
         {
-            QColor curColor = m_pixmap.toImage().pixelColor(i, j);
-            // colors.push_back(curColor);
-            // LOG_DEBUG << "cur color:" << curColor.red() << "," << curColor.green() << "," << curColor.blue();
-            if (atRange(color.red(), curColor.red(), 2) && atRange(color.green(), curColor.green(), 2) && atRange(color.blue(), curColor.blue(), 2))
+            QRgb pixel = m_image.pixel(x, y);
+            int dr = qRed(pixel) - targetR;
+            int dg = qGreen(pixel) - targetG;
+            int db = qBlue(pixel) - targetB;
+            int dist = dr * dr + dg * dg + db * db;
+            if (dist < bestDist)
             {
-                point.setX(i);
-                point.setY(j);
-                isFind = true;
-                break;
+                bestDist = dist;
+                point.setX(x);
+                point.setY(y);
+                found = true;
             }
         }
     }
 
-    // std::sort(colors.begin(), colors.end(), [=](const QColor &color1, const QColor &color2) {
-    //     if (color1.red() != color2.red())
-    //         return color1.red() < color2.red();
-
-    //      if (color1.green() != color2.green())
-    //         return color1.green() < color2.green();
-
-    //      return color1.blue() < color2.blue();
-    // });
-
-    // for (int i = 0; i < colors.size(); i++)
-    // {
-    //     auto color = colors[i];
-    //     LOG_DEBUG << "find color:" << color.red() << "," << color.green() << ", " << color.blue();
-    // }
-
-    return isFind;
+    return found;
 }
 
-bool FluColorViewGradient::atRange(int i, int j, int radius)
+bool FluColorViewGradient::isCloseTo(int target, int current, int radius)
 {
-    if (i >= j - radius && i <= j + radius)
-        return true;
-    return false;
+    return (target >= current - radius && target <= current + radius);
 }
 
 void FluColorViewGradient::circleMoveToPoint(QColor color)
@@ -80,7 +80,7 @@ void FluColorViewGradient::circleMoveToPoint(QColor color)
     if (isFind)
     {
         m_circleP = point;
-        m_color = m_pixmap.toImage().pixelColor(m_circleP);
+        m_color = m_image.pixelColor(m_circleP);
     }
 
     update();
@@ -110,7 +110,7 @@ void FluColorViewGradient::mouseMoveEvent(QMouseEvent* event)
         }
 
         m_isPressed = true;
-        m_color = m_pixmap.toImage().pixelColor(m_circleP);
+        m_color = m_image.pixelColor(m_circleP);
         colorChanged(m_color);
         update();
     }
@@ -138,12 +138,7 @@ void FluColorViewGradient::mousePressEvent(QMouseEvent* event)
     }
 
     m_isPressed = true;
-    m_color = m_pixmap.toImage().pixelColor(m_circleP);
-#ifdef _DEBUG
-    // LOG_DEBUG << "color r:" << m_color.red();
-    // LOG_DEBUG << "color g:" << m_color.green();
-    // LOG_DEBUG << "color b:" << m_color.blue();
-#endif
+    m_color = m_image.pixelColor(m_circleP);
     colorChanged(m_color);
     update();
 }

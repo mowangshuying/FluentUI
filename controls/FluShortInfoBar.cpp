@@ -1,6 +1,7 @@
 ﻿#include "FluShortInfoBar.h"
 #include "FluInfoBarMgr.h"
 #include <QPointer>
+#include <QTimer>
 
 #ifdef _DEBUG
 int FluShortInfoBar::m_count = 0;
@@ -13,6 +14,9 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     // LOG_DEBUG << "Count = " << m_count;
 #endif
     setFixedHeight(50);
+
+    m_opacity = 1.0;
+    m_isDisappearing = false;
 
     m_mainLayout = new QHBoxLayout;
     setLayout(m_mainLayout);
@@ -38,8 +42,14 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
     m_closeButton->setObjectName("closeBtn");
     m_mainLayout->addWidget(m_closeButton);
 
-    m_opacityEffect = new QGraphicsOpacityEffect(this);
-    m_opacityAni = new QPropertyAnimation(m_opacityEffect, "opacity", this);
+    m_opacityAni = new QPropertyAnimation(this, "opacity", this);
+    connect(m_opacityAni, &QPropertyAnimation::finished, this, [this]() {
+        if (m_isDisappearing)
+        {
+            m_isDisappearing = false;
+            m_closeButton->clicked();
+        }
+    });
 
     connect(m_closeButton, &QPushButton::clicked, [=]() {
         FluInfoBarMgr::getInstance()->removeInfoBar(this);
@@ -49,7 +59,6 @@ FluShortInfoBar::FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* paren
 
     updateInfoBarTypeProperty(infobarType);
     m_disappearDuration = -1;
-    m_isDisappearing = false;
 
     onThemeChanged();
 }
@@ -100,7 +109,7 @@ void FluShortInfoBar::updateInfoBarTypeProperty(FluShortInfoBarType infoBarType)
             break;
         case FluShortInfoBarType::Warn:
             setInfoBarTypeProperty("Warn");
-            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Info, QColor(239, 239, 239), 18, 18));
+            m_iconLabel->setPixmap(FluIconUtils::getFluentIconPixmap(FluAwesomeType::Warning, QColor(239, 239, 239), 18, 18));
             break;
         case FluShortInfoBarType::Error:
             setInfoBarTypeProperty("Error");
@@ -119,10 +128,11 @@ void FluShortInfoBar::disappear()
             if (ptr == nullptr)
                 return;
 
-            m_opacityAni->setDuration(100);
-            m_opacityAni->setStartValue(1);
-            m_opacityAni->setEndValue(0);
-            connect(m_opacityAni, &QPropertyAnimation::finished, [=]() { m_closeButton->clicked(); });
+            m_opacityAni->stop();
+            m_opacityAni->setDuration(250);
+            m_opacityAni->setEasingCurve(QEasingCurve::InOutCubic);
+            m_opacityAni->setStartValue(m_opacity);
+            m_opacityAni->setEndValue(0.0);
             m_opacityAni->start();
         });
     }
@@ -138,11 +148,44 @@ QPushButton* FluShortInfoBar::getCloseButton()
     return m_closeButton;
 }
 
+double FluShortInfoBar::getOpacity() const
+{
+    return m_opacity;
+}
+
+void FluShortInfoBar::setOpacity(double opacity)
+{
+    if (!qFuzzyCompare(m_opacity + 1, opacity + 1))
+    {
+        m_opacity = opacity;
+        update();
+    }
+}
+
+void FluShortInfoBar::showEvent(QShowEvent* event)
+{
+    QWidget::showEvent(event);
+    showFadeIn();
+}
+
+void FluShortInfoBar::showFadeIn()
+{
+    m_opacity = 0.0;
+    update();
+    m_opacityAni->stop();
+    m_opacityAni->setDuration(200);
+    m_opacityAni->setEasingCurve(QEasingCurve::OutCubic);
+    m_opacityAni->setStartValue(0.0);
+    m_opacityAni->setEndValue(1.0);
+    m_opacityAni->start();
+}
+
 void FluShortInfoBar::paintEvent(QPaintEvent* event)
 {
     QStyleOption opt;
     opt.initFrom(this);
     QPainter painter(this);
+    painter.setOpacity(m_opacity);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 

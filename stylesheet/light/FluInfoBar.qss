@@ -1,0 +1,135 @@
+/* ============================================================
+   FluInfoBar - Light
+   Persistent banner. Left 4px accent stripe is drawn by C++.
+   Severity values: Informational / Success / Warning / Error
+   ============================================================ */
+
+FluInfoBar[severity="Informational"] {
+    background-color: rgb(243, 249, 255);
+    border: 1px solid rgb(205, 226, 244);
+    border-radius: 6px;
+}
+
+#iconLabel[severity="Informational"] {
+    background-color: rgb(0, 90, 158);
+    border-radius: 12px;
+    color: white;
+}
+
+#titleLabel[severity="Informational"] {
+    color: rgb(19, 62, 100);
+    font-weight: 600;
+}
+
+#messageLabel[severity="Informational"] {
+    color: rgb(83, 107, 128);
+}
+
+#closeBtn[severity="Informational"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[severity="Informational"] {
+    background-color: rgb(225, 238, 248);
+}
+
+/* ---- Success ---- */
+
+FluInfoBar[severity="Success"] {
+    background-color: rgb(223, 246, 221);
+    border: 1px solid rgb(196, 233, 194);
+    border-radius: 6px;
+}
+
+#iconLabel[severity="Success"] {
+    background-color: rgb(15, 123, 15);
+    border-radius: 12px;
+    color: white;
+}
+
+#titleLabel[severity="Success"] {
+    color: rgb(20, 84, 26);
+    font-weight: 600;
+}
+
+#messageLabel[severity="Success"] {
+    color: rgb(84, 120, 84);
+}
+
+#closeBtn[severity="Success"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[severity="Success"] {
+    background-color: rgb(205, 236, 203);
+}
+
+/* ---- Warning ---- */
+
+FluInfoBar[severity="Warning"] {
+    background-color: rgb(255, 244, 206);
+    border: 1px solid rgb(245, 224, 160);
+    border-radius: 6px;
+}
+
+#iconLabel[severity="Warning"] {
+    background-color: rgb(157, 93, 0);
+    border-radius: 12px;
+    color: white;
+}
+
+#titleLabel[severity="Warning"] {
+    color: rgb(102, 62, 0);
+    font-weight: 600;
+}
+
+#messageLabel[severity="Warning"] {
+    color: rgb(128, 104, 66);
+}
+
+#closeBtn[severity="Warning"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[severity="Warning"] {
+    background-color: rgb(246, 235, 199);
+}
+
+/* ---- Error ---- */
+
+FluInfoBar[severity="Error"] {
+    background-color: rgb(253, 231, 233);
+    border: 1px solid rgb(242, 200, 203);
+    border-radius: 6px;
+}
+
+#iconLabel[severity="Error"] {
+    background-color: rgb(196, 43, 28);
+    border-radius: 12px;
+    color: white;
+}
+
+#titleLabel[severity="Error"] {
+    color: rgb(120, 34, 32);
+    font-weight: 600;
+}
+
+#messageLabel[severity="Error"] {
+    color: rgb(140, 90, 90);
+}
+
+#closeBtn[severity="Error"] {
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+#closeBtn:hover[severity="Error"] {
+    background-color: rgb(244, 223, 225);
+}

@@ -10,6 +10,7 @@
 #include "../controls/FluInfoBarMgr.h"
 #include "../controls/FluLabel.h"
 #include "../controls/FluCheckBox.h"
+#include "../controls/FluInfoBar.h"
 
 class FluInfoBarPage : public FluAEmptyPage
 {
@@ -17,9 +18,14 @@ class FluInfoBarPage : public FluAEmptyPage
   public:
     FluInfoBarPage(QWidget* parent = nullptr);
 
+    void addPersistentInfoBar();
+
     void addClosableInfoBar();
 
     void addDynamicInfoBar();
   public slots:
     void onThemeChanged();
+
+  protected:
+    FluInfoBar* m_infoBar;
 };

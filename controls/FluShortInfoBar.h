@@ -8,7 +8,7 @@
 #include <QStyleOption>
 #include <QPainter>
 #include <QPropertyAnimation>
-#include <QGraphicsOpacityEffect>
+#include <QEasingCurve>
 
 enum class FluShortInfoBarType
 {
@@ -21,6 +21,7 @@ enum class FluShortInfoBarType
 class FluShortInfoBar : public FluWidget
 {
     Q_OBJECT
+    Q_PROPERTY(double opacity READ getOpacity WRITE setOpacity)
   public:
     FluShortInfoBar(FluShortInfoBarType infobarType, QWidget* parent = nullptr);
 
@@ -40,19 +41,26 @@ class FluShortInfoBar : public FluWidget
 
     QPushButton* getCloseButton();
 
-    void paintEvent(QPaintEvent* event);
+    double getOpacity() const;
+    void setOpacity(double opacity);
+
+    void paintEvent(QPaintEvent* event) override;
 
   public slots:
     void onThemeChanged();
 
   protected:
+    void showEvent(QShowEvent* event) override;
+
+    void showFadeIn();
+
     QHBoxLayout* m_mainLayout;
     QLabel* m_iconLabel;
     QLabel* m_infoLabel;
     QPushButton* m_closeButton;
 
-    QGraphicsOpacityEffect* m_opacityEffect;
     QPropertyAnimation* m_opacityAni;
+    double m_opacity;
 
     int m_disappearDuration;
     bool m_isDisappearing;

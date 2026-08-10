@@ -729,7 +729,7 @@ void FluGalleryWindow::makeStatusInfoHNavItem()
     m_hNavView->insertIconTextItem(FluAwesomeType::None, tr("InfoBar"), "InfoBarPage", "StatusAndInfoPage");
     m_hNavView->insertIconTextItem(FluAwesomeType::None, tr("ProgressBar"), "ProgressBarPage", "StatusAndInfoPage");
     m_hNavView->insertIconTextItem(FluAwesomeType::None, tr("ProgressRing"), "ProgressRingPage", "StatusAndInfoPage");
-    m_hNavView->insertIconTextItem(FluAwesomeType::ToolTip, tr("ToolTip"), "ToolTipPage", "StatusAndInfoPage");
+    m_hNavView->insertIconTextItem(FluAwesomeType::None, tr("ToolTip"), "ToolTipPage", "StatusAndInfoPage");
 }
 
 void FluGalleryWindow::makeStatusInfoVNavItem()
@@ -739,7 +739,7 @@ void FluGalleryWindow::makeStatusInfoVNavItem()
     m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("InfoBar"), "InfoBarPage", "StatusAndInfoPage");
     m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ProgressBar"), "ProgressBarPage", "StatusAndInfoPage");
     m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ProgressRing"), "ProgressRingPage", "StatusAndInfoPage");
-    m_vNavView->insertIconTextItem(FluAwesomeType::ToolTip, tr("ToolTip"), "ToolTipPage", "StatusAndInfoPage");
+    m_vNavView->insertIconTextItem(FluAwesomeType::None, tr("ToolTip"), "ToolTipPage", "StatusAndInfoPage");
 }
 
 void FluGalleryWindow::makeTextNavItem()

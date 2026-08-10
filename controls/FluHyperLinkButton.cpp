@@ -1,14 +1,27 @@
 ﻿#include "FluHyperLinkButton.h"
 
-FluHyperLinkButton::FluHyperLinkButton(QString linkUrl, QWidget* parent /* = nullptr*/) : QPushButton(parent), m_linkUrl(linkUrl)
+#include <QDesktopServices>
+#include <QUrl>
+
+FluHyperLinkButton::FluHyperLinkButton(const QString& linkUrl, QWidget* parent /* = nullptr*/) : QPushButton(parent), m_linkUrl(linkUrl)
 {
-    connect(this, &FluHyperLinkButton::clicked, [=](bool isClicked) { QDesktopServices::openUrl(QUrl(m_linkUrl)); });
+    setAutoFillBackground(false);
+
+    connect(this, &FluHyperLinkButton::clicked, this, [this]() {
+        if (!m_linkUrl.isEmpty())
+            QDesktopServices::openUrl(QUrl(m_linkUrl));
+    });
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });
 }
 
-void FluHyperLinkButton::setLinkUrl(QString linkUrl)
+const QString& FluHyperLinkButton::linkUrl() const
+{
+    return m_linkUrl;
+}
+
+void FluHyperLinkButton::setLinkUrl(const QString& linkUrl)
 {
     m_linkUrl = linkUrl;
 }

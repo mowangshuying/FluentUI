@@ -4,12 +4,22 @@ FluHyperLinkButton {
     color: rgb(0, 66, 117);
     font-size: 12px;
     background-color: transparent;
-    padding: 8px 8px 8px 8px;
+    padding: 8px;
+    cursor: pointinghand;
 }
 
 FluHyperLinkButton:hover {
-    background-color: rgb(234, 234, 234);
     color: rgb(29, 62, 87);
+    text-decoration: underline;
+}
+
+FluHyperLinkButton:pressed {
+    color: rgb(0, 40, 70);
+}
+
+FluHyperLinkButton:focus {
+    outline: 1px solid rgb(0, 66, 117);
+    border-radius: 4px;
 }
 
 FluHyperLinkButton:disabled {

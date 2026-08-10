@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """FluentUI Python Bindings - Input Controls Example
 
-Demonstrates FluLineEdit, FluTextEdit, FluComboBoxEx, FluSpinBox,
+Demonstrates FluLineEdit, FluTextEdit, FluComboBox, FluSpinBox,
 FluSlider, FluRatingControl, FluAutoSuggestBox, FluPasswordBox.
 """
 
@@ -24,7 +24,7 @@ from PySide6.QtCore import Qt
 
 from PySide6FluentUI import (
     FluLineEdit, FluTextEdit, FluSpinBox, FluDoubleSpinBox,
-    FluPasswordBox, FluSearchLineEdit, FluComboBox, FluComboBoxEx,
+    FluPasswordBox, FluSearchLineEdit, FluComboBox, FluComboBox,
     FluSlider, FluRatingControl, FluAutoSuggestBox,
     FluLabel, FluPushButton,
 )
@@ -65,7 +65,7 @@ class InputWindow(QMainWindow):
         select_group = QGroupBox("Selection")
         select_layout = QFormLayout(select_group)
 
-        self.combo = FluComboBoxEx()
+        self.combo = FluComboBox()
         self.combo.addTextItem("Python")
         self.combo.addTextItem("C++")
         self.combo.addTextItem("Rust")

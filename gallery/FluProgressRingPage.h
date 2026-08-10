@@ -7,7 +7,7 @@
 #include "../controls/FluVScrollView.h"
 #include "../controls/FluDisplayBoxEx.h"
 #include "../controls/FluLabel.h"
-#include "../controls/FluComboBoxEx.h"
+#include "../controls/FluComboBox.h"
 #include "../controls/FluBusyProgressRing.h"
 
 class FluProgressRingPage : public FluAEmptyPage

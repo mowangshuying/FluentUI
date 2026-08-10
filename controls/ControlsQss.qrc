@@ -20,7 +20,7 @@
     <file alias="StyleSheet/dark/FluColorFlyout.qss">../stylesheet/dark/FluColorFlyout.qss</file>
     <file alias="StyleSheet/dark/FluColorLabel.qss">../stylesheet/dark/FluColorLabel.qss</file>
     
-    <file alias="StyleSheet/dark/FluComboBoxEx.qss">../stylesheet/dark/FluComboBoxEx.qss</file>
+    <file alias="StyleSheet/dark/FluComboBox.qss">../stylesheet/dark/FluComboBox.qss</file>
     <file alias="StyleSheet/dark/FluCommandBar.qss">../stylesheet/dark/FluCommandBar.qss</file>
     <file alias="StyleSheet/dark/FluCommandBarIconItem.qss">../stylesheet/dark/FluCommandBarIconItem.qss</file>
     <file alias="StyleSheet/dark/FluCommandBarIconTextItem.qss">../stylesheet/dark/FluCommandBarIconTextItem.qss</file>
@@ -116,7 +116,7 @@
     <file alias="StyleSheet/light/FluColorFlyout.qss">../stylesheet/light/FluColorFlyout.qss</file>
     <file alias="StyleSheet/light/FluColorLabel.qss">../stylesheet/light/FluColorLabel.qss</file>
     
-    <file alias="StyleSheet/light/FluComboBoxEx.qss">../stylesheet/light/FluComboBoxEx.qss</file>
+    <file alias="StyleSheet/light/FluComboBox.qss">../stylesheet/light/FluComboBox.qss</file>
     <file alias="StyleSheet/light/FluCommandBar.qss">../stylesheet/light/FluCommandBar.qss</file>
     <file alias="StyleSheet/light/FluCommandBarIconItem.qss">../stylesheet/light/FluCommandBarIconItem.qss</file>
     <file alias="StyleSheet/light/FluCommandBarIconTextItem.qss">../stylesheet/light/FluCommandBarIconTextItem.qss</file>
@@ -231,7 +231,7 @@
     <file alias="StyleSheet/atomOneDark/FluColorFlyout.qss">../stylesheet/atomOneDark/FluColorFlyout.qss</file>
     <file alias="StyleSheet/atomOneDark/FluColorLabel.qss">../stylesheet/atomOneDark/FluColorLabel.qss</file>
     
-    <file alias="StyleSheet/atomOneDark/FluComboBoxEx.qss">../stylesheet/atomOneDark/FluComboBoxEx.qss</file>
+    <file alias="StyleSheet/atomOneDark/FluComboBox.qss">../stylesheet/atomOneDark/FluComboBox.qss</file>
     <file alias="StyleSheet/atomOneDark/FluCommandBar.qss">../stylesheet/atomOneDark/FluCommandBar.qss</file>
     <file alias="StyleSheet/atomOneDark/FluCommandBarIconItem.qss">../stylesheet/atomOneDark/FluCommandBarIconItem.qss</file>
     <file alias="StyleSheet/atomOneDark/FluCommandBarIconTextItem.qss">../stylesheet/atomOneDark/FluCommandBarIconTextItem.qss</file>

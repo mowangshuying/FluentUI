@@ -164,8 +164,8 @@
         <include file-name="FluSearchLineEdit.h" location="global"/>
     </object-type>
     
-    <object-type name="FluComboBoxEx" generate="yes">
-        <include file-name="FluComboBoxEx.h" location="global"/>
+    <object-type name="FluComboBox" generate="yes">
+        <include file-name="FluComboBox.h" location="global"/>
     </object-type>
     
     <object-type name="FluIntValidator" generate="yes">

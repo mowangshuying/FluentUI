@@ -1,6 +1,6 @@
 #include "FluDialogDemo.h"
 #include "../controls/FluDialog.h"
-#include "../controls/FluComboBoxEx.h"
+#include "../controls/FluComboBox.h"
 #include "../controls/FluLabel.h"
 #include "../controls/FluPushButton.h"
 #include "../controls/FluLabel.h"
@@ -50,7 +50,7 @@ FluDialogDemo::FluDialogDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
             label->setFixedWidth(80);
             label->setText("sourceLang:");
 
-            auto comboxBox = new FluComboBoxEx;
+            auto comboxBox = new FluComboBox;
 
             hLayout->addWidget(label);
             hLayout->addWidget(comboxBox);
@@ -63,7 +63,7 @@ FluDialogDemo::FluDialogDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
             label->setFixedWidth(80);
             label->setText("destLang:");
 
-            auto comboxBox = new FluComboBoxEx;
+            auto comboxBox = new FluComboBox;
 
             hLayout->addWidget(label);
             hLayout->addWidget(comboxBox);

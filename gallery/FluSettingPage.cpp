@@ -1,4 +1,4 @@
-﻿#include "FluSettingPage.h"
+#include "FluSettingPage.h"
 
 FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -32,7 +32,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     m_appThemeSelectBox->getComboBox()->addItem(tr("Dark"));
     m_appThemeSelectBox->getComboBox()->addItem(tr("AtomOneDark"));
     m_appThemeSelectBox->getComboBox()->setCurrentIndex((int)FluThemeUtils::getUtils()->getTheme());
-    connect(m_appThemeSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
+    connect(m_appThemeSelectBox->getComboBox(), &FluComboBox::currentIndexChanged, [=](int index) {
         if (index == (int)FluThemeUtils::getUtils()->getTheme())
             return;
 
@@ -55,7 +55,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     int currentNavStyle = FluConfigUtils::getUtils()->getNavStyle();
     navStyleSelectBox->getComboBox()->setCurrentIndex(currentNavStyle);
     m_scrollView->getMainLayout()->addWidget(navStyleSelectBox);
-    connect(navStyleSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, this, [=](int index) { emit navigationStyleChanged(index); });
+    connect(navStyleSelectBox->getComboBox(), &FluComboBox::currentIndexChanged, this, [=](int index) { emit navigationStyleChanged(index); });
 
     auto languageSelectBox = new FluSettingsSelectBox;
     languageSelectBox->setTitleInfo(tr("Language"), tr("Select which language to display."));
@@ -68,7 +68,7 @@ FluSettingPage::FluSettingPage(QWidget* parent /*= nullptr*/) : FluWidget(parent
     else if (FluConfigUtils::getUtils()->getLanguage() == "zh-CN")
         languageSelectBox->getComboBox()->setCurrentIndex(1);
 
-    connect(languageSelectBox->getComboBox(), &FluComboBoxEx::currentIndexChanged, [=](int index) {
+    connect(languageSelectBox->getComboBox(), &FluComboBox::currentIndexChanged, [=](int index) {
         if (index == 0)
             FluConfigUtils::getUtils()->setLanguage("en-US");
         else if (index == 1)

@@ -1,4 +1,4 @@
-﻿#include "FluComboBoxPage.h"
+#include "FluComboBoxPage.h"
 
 FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -11,7 +11,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     displayBox->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
-    auto comboBox = new FluComboBoxEx(displayBox);
+    auto comboBox = new FluComboBox(displayBox);
     comboBox->setFixedWidth(200);
     comboBox->move(50, 50);
     comboBox->addItem(tr("Blue"));
@@ -27,7 +27,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 
-    connect(comboBox, &FluComboBoxEx::currentTextChanged, [=](const QString& text) {
+    connect(comboBox, &FluComboBox::currentTextChanged, [=](const QString& text) {
         colorLabel->setProperty("color", text);
         colorLabel->style()->polish(colorLabel);
     });
@@ -37,7 +37,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     displayBox2->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(96);
 
-    auto comboBox2 = new FluComboBoxEx(displayBox2);
+    auto comboBox2 = new FluComboBox(displayBox2);
     comboBox2->setFixedWidth(200);
     comboBox2->move(50, 50);
     comboBox2->setPlaceholderText(tr("Select a fruit..."));

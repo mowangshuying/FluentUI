@@ -10,7 +10,7 @@
 #include <QStringList>
 #include <QPropertyAnimation>
 
-class FluComboBoxEx : public FluWidget
+class FluComboBox : public FluWidget
 {
     Q_OBJECT
     Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex NOTIFY currentIndexChanged)
@@ -19,7 +19,7 @@ class FluComboBoxEx : public FluWidget
     Q_PROPERTY(bool editable READ isEditable WRITE setEditable)
     Q_PROPERTY(qreal chevronRotation READ chevronRotation WRITE setChevronRotation)
   public:
-    FluComboBoxEx(QWidget* parent = nullptr);
+    FluComboBox(QWidget* parent = nullptr);
 
     QPushButton* getTextBtn();
     QPushButton* getIconBtn();

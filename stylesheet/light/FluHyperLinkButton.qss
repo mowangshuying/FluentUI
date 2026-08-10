@@ -17,11 +17,6 @@ FluHyperLinkButton:pressed {
     color: rgb(0, 40, 70);
 }
 
-FluHyperLinkButton:focus {
-    outline: 1px solid rgb(0, 66, 117);
-    border-radius: 4px;
-}
-
 FluHyperLinkButton:disabled {
     color: rgba(0, 66, 117, 100);
 }

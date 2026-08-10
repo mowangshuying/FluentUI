@@ -8,5 +8,6 @@ FluColorView {
 
 #centerWidget {
     background-color: rgb(43, 43, 43);
+    border: 1px solid rgb(60, 60, 60);
     border-radius: 8px;
 }

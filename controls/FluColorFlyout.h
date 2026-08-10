@@ -20,6 +20,9 @@ class FluColorFlyout : public FluWidget
 
     void addColorButton(FluColorButton* colorBtn);
 
+    // Adds an arbitrary widget (e.g. a "custom color" entry) on its own full-width row.
+    void addCustomButton(QWidget* widget);
+
     void showEvent(QShowEvent* event);
 
     void paintEvent(QPaintEvent* event);

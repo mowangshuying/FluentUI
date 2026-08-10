@@ -9,6 +9,7 @@
 #include <QPainterPath>
 #include <QPainter>
 #include <QMouseEvent>
+#include <QImage>
 
 class FluColorViewGradient : public FluWidget
 {
@@ -24,7 +25,7 @@ class FluColorViewGradient : public FluWidget
 
     bool findColor(QColor color, QPoint& point);
 
-    bool atRange(int i, int j, int radius);
+    bool isCloseTo(int target, int current, int radius);
 
     void circleMoveToPoint(QColor color);
 
@@ -40,6 +41,9 @@ class FluColorViewGradient : public FluWidget
 
   protected:
     QPixmap m_pixmap;
+
+    // cached image of m_pixmap, used to avoid repeated toImage() in findColor.
+    QImage m_image;
 
     QColor m_color;
     QPoint m_circleP;

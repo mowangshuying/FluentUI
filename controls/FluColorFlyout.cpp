@@ -38,6 +38,12 @@ void FluColorFlyout::addColorButton(FluColorButton* colorBtn)
     addColorButton(colorBtn, row, col);
 }
 
+void FluColorFlyout::addCustomButton(QWidget* widget)
+{
+    int row = m_gridLayout->rowCount();
+    m_gridLayout->addWidget(widget, row, 0, 1, 3);
+}
+
 void FluColorFlyout::showEvent(QShowEvent* event)
 {
     QWidget::showEvent(event);

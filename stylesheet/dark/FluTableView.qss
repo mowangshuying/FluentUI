@@ -1,7 +1,7 @@
 QTableView {
-    background: rgb(39, 39, 39);;
+    background: rgb(39, 39, 39);
     outline: none;
-    border: 1px solid rgb(15, 15, 15);
+    border: 1px solid rgb(60, 60, 60);
     border-right: 0px;
     selection-background-color: rgb(39, 39, 39);
     alternate-background-color: rgb(39, 39, 39);
@@ -10,11 +10,12 @@ QTableView {
 QTableView::item {
     background: transparent;
     /* border: 0px; */
-    border-right: 1px solid rgb(15, 15, 15);
-    border-bottom: 1px solid rgb(15, 15, 15);
+    border-right: 1px solid rgb(60, 60, 60);
+    border-bottom: 1px solid rgb(60, 60, 60);
     padding-left: 16px;
     padding-right: 16px;
     height: 35px;
+    color: white;
 }
 
 QTableView::indicator {
@@ -33,7 +34,7 @@ QHeaderView::section {
     color: white;
     padding-left: 5px;
     padding-right: 5px;
-    border: 1px solid rgb(15, 15, 15);
+    border: 1px solid rgb(60, 60, 60);
 }
 
 QHeaderView::section:horizontal {
@@ -43,5 +44,5 @@ QHeaderView::section:horizontal {
 }
 
 QHeaderView::section:horizontal:last {
-    border-right: 1px solid rgb(15, 15, 15);
+    border-right: 1px solid rgb(60, 60, 60);
 }

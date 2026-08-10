@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QStyledItemDelegate>
-// #include <QTableView>
 #include <set>
 #include "FluLineEdit.h"
 #include "../utils/FluUtils.h"
@@ -12,7 +11,7 @@ class FluTableItemDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
   public:
-    FluTableItemDelegate(FluTableView* parent);
+    explicit FluTableItemDelegate(FluTableView* parent);
 
     void setHoverRow(int hoverRow);
 
@@ -38,6 +37,18 @@ class FluTableItemDelegate : public QStyledItemDelegate
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
 
   protected:
+    // Theme-aware color helpers (Light / Dark / AtomOneDark).
+    QColor indicatorColor() const;
+
+    QColor textColor() const;
+
+    QColor checkboxBorderColor() const;
+
+    QColor checkboxFillColor() const;
+
+    // Returns semi-transparent black on light theme, white otherwise.
+    QColor overlayColor(int alpha) const;
+
     int m_margin;
     int m_hoverRow;
     int m_pressedRow;

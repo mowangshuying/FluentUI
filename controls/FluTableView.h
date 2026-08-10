@@ -38,6 +38,8 @@ class FluTableView : public QTableWidget
 
     void updateSelectedRows();
 
+    void setSortingEnabled(bool enable);
+
     void leaveEvent(QEvent* event);
 
     void resizeEvent(QResizeEvent* event);
@@ -47,6 +49,9 @@ class FluTableView : public QTableWidget
     void mousePressEvent(QMouseEvent* event);
 
     void mouseReleaseEvent(QMouseEvent* event);
+
+    void paintEvent(QPaintEvent* event);
+
   public slots:
     void onThemeChanged();
 

@@ -1,13 +1,13 @@
 #pragma once
 
-// #include "FluShortInfoBar.h"
+#include <QWidget>
 #include <map>
 #include <list>
-#include <QTimer>
-#include <algorithm>
+#include <QPoint>
 
 class FluShortInfoBar;
 enum class FluShortInfoBarType;
+
 class FluInfoBarMgr : public QObject
 {
     Q_OBJECT
@@ -28,9 +28,12 @@ class FluInfoBarMgr : public QObject
 
     void removeInfoBar(FluShortInfoBar* infoBar);
 
-    bool eventFilter(QObject* watched, QEvent* event);
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
   protected:
+    QPoint targetPosition(QWidget* parentWidget, FluShortInfoBar* infoBar);
+    void relayout(QWidget* parentWidget);
+    void animateTo(FluShortInfoBar* bar, const QPoint& target);
+
     std::map<QWidget*, std::list<FluShortInfoBar*>> m_infoBarMap;
-    QTimer* m_timer;
 };

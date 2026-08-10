@@ -1,4 +1,4 @@
-﻿#include "FluProgressRingPage.h"
+#include "FluProgressRingPage.h"
 
 FluProgressRingPage::FluProgressRingPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
 {
@@ -49,10 +49,10 @@ void FluProgressRingPage::addIndeterminateProgressRing()
     auto progressOptionsLabel = new FluLabel(FluLabelStyle::CaptionTextBlockStyle);
     progressOptionsLabel->setText(tr("Track Background color"));
 
-    auto comboBox = new FluComboBoxEx;
+    auto comboBox = new FluComboBox;
     comboBox->addItem(tr("Transparent"));
     comboBox->addItem(tr("LightGray"));
-    connect(comboBox, &FluComboBoxEx::currentIndexChanged, [=](int index) {
+    connect(comboBox, &FluComboBox::currentIndexChanged, [=](int index) {
         if (index == 0)
         {
             progressRing1->setTransparentTrack(true);

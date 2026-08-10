@@ -1,52 +1,36 @@
-QComboBox {
-    min-width: 120px;
-    height: 30px;
-    border: 1px solid rgb(35, 35, 35);
-    border-radius: 4px;
-    border-bottom: 1px solid rgb(65, 65, 65);
+FluComboBox {
     background-color: rgb(62, 62, 62);
-    color: white;
-}
-
-QComboBox::drop-down {
-    margin-right: 8px;
-    margin-top: 8px;
-    height: 15px;
-    width: 15px;
-    /* background-color: greenyellow; */
-    /* image: url("../../res/ChevronDown.png"); */
-    border: none;
-}
-
-QComboBox::down-arrow {
-    height: 15px;
-    width: 15px;
-    image: url("../res/ControlResImages/ChevronDown-Dark.png");
-}
-
-QComboBox QAbstractItemView {
-    outline: 0px solid gray;
-    border: 1px solid rgb(44, 44, 44);
-    border-radius: 8px;
-    background-color: rgb(44, 44, 44);
-    padding: 2px;
-    margin-top: 2px;
-}
-
-QComboBox QAbstractItemView::item {
+    border: 1px solid rgb(69, 69, 69);
     border-radius: 4px;
-    height: 30px;
-    color: white;
 }
 
-QComboBox QAbstractItemView::item:selected {
-    color: white;
-    background-color: rgb(56, 56, 56);
+FluComboBox:hover {
+    background-color: rgb(74, 74, 74);
+    border: 1px solid rgb(82, 82, 82);
 }
 
-QComboBox:disabled {
-    color: rgba(255, 255, 255, 80);
-    border: 1px solid rgb(39, 39, 39);
-    border-bottom: 1px solid rgb(39, 39, 39);
-    background-color: rgb(35, 35, 35);
+FluComboBox:pressed {
+    background-color: rgb(55, 55, 55);
+    border: 1px solid rgb(50, 50, 50);
+}
+
+FluComboBox:disabled {
+    background-color: rgb(59, 59, 59);
+    border: 1px solid rgb(55, 55, 55);
+}
+
+#textBtn {
+    color: white;
+    text-align: left;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+#textBtn[isPlaceholder="true"] {
+    color: rgb(150, 150, 150);
+}
+
+#iconBtn {
+    background-color: transparent;
+    border: 1px solid transparent;
 }

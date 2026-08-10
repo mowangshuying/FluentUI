@@ -30,7 +30,7 @@ from PySide6FluentUI import (
     FluToggleSwitch,
     # Input
     FluLineEdit, FluTextEdit, FluSpinBox, FluDoubleSpinBox,
-    FluPasswordBox, FluSearchLineEdit, FluComboBox, FluComboBoxEx,
+    FluPasswordBox, FluSearchLineEdit, FluComboBox, FluComboBox,
     FluSlider, FluRatingControl, FluAutoSuggestBox,
     # Display
     FluLabel, FluProgressBar, FluProgressRing, FluBusyProgressRing,
@@ -102,7 +102,7 @@ class InputExamples(QGroupBox):
         self.search = FluSearchLineEdit()
         layout.addWidget(self.search, 1, 0)
 
-        self.combo = FluComboBoxEx()
+        self.combo = FluComboBox()
         self.combo.addTextItem("Option 1")
         self.combo.addTextItem("Option 2")
         self.combo.addTextItem("Option 3")

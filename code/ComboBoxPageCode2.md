@@ -1,5 +1,5 @@
 ```cpp
-auto comboBox2 = new FluComboBoxEx;
+auto comboBox2 = new FluComboBox;
 comboBox2->setFixedWidth(200);
 comboBox2->move(50, 50);
 comboBox2->setPlaceholderText("Select a fruit...");

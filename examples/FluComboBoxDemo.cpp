@@ -23,13 +23,13 @@ FluComboBoxDemo::FluComboBoxDemo(QWidget* parent /*= nullptr*/) : FluTemplateDem
         grid->setHorizontalSpacing(16);
         grid->setVerticalSpacing(10);
 
-        auto makeRow = [&](int row, const QString& labelText, FluComboBoxEx*& combo) {
+        auto makeRow = [&](int row, const QString& labelText, FluComboBox*& combo) {
             auto* lbl = new FluLabel(FluLabelStyle::BodyStrongTextBlockStyle);
             lbl->setText(labelText);
             lbl->setFixedWidth(100);
             grid->addWidget(lbl, row, 0);
 
-            combo = new FluComboBoxEx;
+            combo = new FluComboBox;
             combo->setFixedWidth(180);
             grid->addWidget(combo, row, 1);
         };
@@ -71,7 +71,7 @@ FluComboBoxDemo::FluComboBoxDemo(QWidget* parent /*= nullptr*/) : FluTemplateDem
                m_enableCombo->setEnabled(!m_enableCombo->isEnabled());
            });
 
-           connect(m_basicCombo, &FluComboBoxEx::currentTextChanged, [=](const QString& text) {
+           connect(m_basicCombo, &FluComboBox::currentTextChanged, [=](const QString& text) {
                m_resultLabel->setText("Selected: " + text);
            });*/
 
@@ -90,7 +90,7 @@ FluComboBoxDemo::FluComboBoxDemo(QWidget* parent /*= nullptr*/) : FluTemplateDem
     //    lbl->setFixedWidth(100);
     //    comboRow->addWidget(lbl);
 
-    //    m_programCombo = new FluComboBoxEx;
+    //    m_programCombo = new FluComboBox;
     //    m_programCombo->setFixedWidth(180);
     //    m_programCombo->setPlaceholderText("Click a button...");
     //    m_programCombo->addItem("First");
@@ -147,8 +147,8 @@ FluComboBoxDemo::FluComboBoxDemo(QWidget* parent /*= nullptr*/) : FluTemplateDem
     //                                  .arg(m_programCombo->currentIndex())
     //                                  .arg(m_programCombo->currentText()));
     //    };
-    //    connect(m_programCombo, &FluComboBoxEx::currentIndexChanged, this, [=](int) { updateStatus(); });
-    //    connect(m_programCombo, &FluComboBoxEx::currentTextChanged, this, [=](const QString&) { updateStatus(); });
+    //    connect(m_programCombo, &FluComboBox::currentIndexChanged, this, [=](int) { updateStatus(); });
+    //    connect(m_programCombo, &FluComboBox::currentTextChanged, this, [=](const QString&) { updateStatus(); });
     //    updateStatus();
     //}
 

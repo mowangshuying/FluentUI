@@ -4,7 +4,7 @@
 #include "../controls/FluDisplayBox.h"
 #include "../controls/FluVScrollView.h"
 #include "../controls/FluDisplayBoxEx.h"
-#include "../controls/FluComboBoxEx.h"
+#include "../controls/FluComboBox.h"
 #include "../controls/FluPushButton.h"
 #include "../controls/FluInfoBarMgr.h"
 #include "../controls/FluLabel.h"

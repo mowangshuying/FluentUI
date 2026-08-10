@@ -2,7 +2,7 @@
 
 #include "FluWidget.h"
 #include <QLabel>
-#include "FluComboBoxEx.h"
+#include "FluComboBox.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include "../utils/FluUtils.h"
@@ -15,7 +15,7 @@ class FluSettingsSelectBox : public FluWidget
 
     FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* parent = nullptr);
 
-    FluComboBoxEx* getComboBox();
+    FluComboBox* getComboBox();
 
     void setIcon(QIcon icon);
 
@@ -37,5 +37,5 @@ class FluSettingsSelectBox : public FluWidget
     QLabel* m_iconLabel;
     QLabel* m_titleLabel;
     QLabel* m_infoLabel;
-    FluComboBoxEx* m_comboBoxEx;
+    FluComboBox* m_comboBoxEx;
 };

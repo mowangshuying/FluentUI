@@ -1,4 +1,4 @@
-﻿#include "FluInfoBarPage.h"
+#include "FluInfoBarPage.h"
 #include "../controls/FluLineEdit.h"
 
 FluInfoBarPage::FluInfoBarPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent)
@@ -39,12 +39,12 @@ void FluInfoBarPage::addPersistentInfoBar()
     severityLabel->setText(tr("Severity"));
     displayBox->getBodyRightLayout()->addWidget(severityLabel, 0, Qt::AlignTop);
 
-    auto severityComboBox = new FluComboBoxEx;
+    auto severityComboBox = new FluComboBox;
     severityComboBox->addItem(tr("Informational"));
     severityComboBox->addItem(tr("Success"));
     severityComboBox->addItem(tr("Warning"));
     severityComboBox->addItem(tr("Error"));
-    connect(severityComboBox, &FluComboBoxEx::currentIndexChanged, this, [=](int index) {
+    connect(severityComboBox, &FluComboBox::currentIndexChanged, this, [=](int index) {
         m_infoBar->setSeverity(static_cast<FluInfoBarSeverity>(index));
     });
     displayBox->getBodyRightLayout()->addWidget(severityComboBox, 0, Qt::AlignTop);
@@ -106,13 +106,13 @@ void FluInfoBarPage::addClosableInfoBar()
     severityLabel->setText(tr("Severity"));
     displayBox->getBodyRightLayout()->addWidget(severityLabel, 0, Qt::AlignTop);
 
-    auto comboBox = new FluComboBoxEx;
+    auto comboBox = new FluComboBox;
     comboBox->addItem(tr("Informational"));
     comboBox->addItem(tr("Success"));
     comboBox->addItem(tr("Warning"));
     comboBox->addItem(tr("Error"));
 
-    connect(comboBox, &FluComboBoxEx::currentIndexChanged, this, [=](int index) {
+    connect(comboBox, &FluComboBox::currentIndexChanged, this, [=](int index) {
         infoBar->setSeverity(static_cast<FluInfoBarSeverity>(index));
     });
 

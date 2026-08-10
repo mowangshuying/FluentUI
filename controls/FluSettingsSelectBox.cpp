@@ -1,4 +1,4 @@
-﻿#include "FluSettingsSelectBox.h"
+#include "FluSettingsSelectBox.h"
 
 FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -20,7 +20,7 @@ FluSettingsSelectBox::FluSettingsSelectBox(QWidget* parent /*= nullptr*/) : FluW
     m_layout->addWidget(m_infoLabel);
 
     m_mainLayout->addLayout(m_layout, 1);
-    m_comboBoxEx = new FluComboBoxEx;
+    m_comboBoxEx = new FluComboBox;
     m_comboBoxEx->setFixedWidth(120);
     m_mainLayout->addWidget(m_comboBoxEx);
 
@@ -36,7 +36,7 @@ FluSettingsSelectBox::FluSettingsSelectBox(FluAwesomeType awesomeType, QWidget* 
     setIcon(FluIconUtils::getFluentIcon(m_iconAwesomeType, FluThemeUtils::getUtils()->getTheme()));
 }
 
-FluComboBoxEx* FluSettingsSelectBox::getComboBox()
+FluComboBox* FluSettingsSelectBox::getComboBox()
 {
     return m_comboBoxEx;
 }

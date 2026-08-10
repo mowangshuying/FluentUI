@@ -2,7 +2,7 @@
 
 #include "FluAEmptyPage.h"
 #include "../controls/FluDisplayBox.h"
-#include "../controls/FluComboBoxEx.h"
+#include "../controls/FluComboBox.h"
 #include "../controls/FluVScrollView.h"
 #include "../controls/FluColorLabel.h"
 

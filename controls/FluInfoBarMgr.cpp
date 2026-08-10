@@ -71,11 +71,25 @@ void FluInfoBarMgr::addInfoBar(QWidget* parentWidget, FluInfoBar* infoBar, int d
         m_infoBarMap[parentWidget] = infoBarList;
     }
 
-    // Slide the new toast into its packed slot; existing toasts are untouched.
+    // Slide the new toast into its packed slot.
     QPoint target = targetPosition(parentWidget, infoBar);
     infoBar->move(target + QPoint(0, kSlideOffset));
     infoBar->show();
-    animateTo(infoBar, target);
+
+    if (position == FluInfoBarPosition::BottomRight && existed)
+    {
+        // Reflow the whole stack so the new toast slides in at the bottom and
+        // the pre-existing toasts slide up to make room (otherwise the new toast
+        // would overlap the bottom toast). relayout() animates every toast from
+        // its current pos (including the new toast's slide-in start) to its slot.
+        relayout(parentWidget);
+    }
+    else
+    {
+        // Single toast (or TopCenter): just slide the new one into its slot;
+        // existing toasts are untouched and do not overlap.
+        animateTo(infoBar, target);
+    }
 
     // Auto-disappear after the configured duration.
     infoBar->disappear();

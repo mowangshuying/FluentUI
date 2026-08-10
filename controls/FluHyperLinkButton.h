@@ -2,19 +2,20 @@
 
 #include <QPushButton>
 #include "../utils/FluUtils.h"
-#include <QDesktopServices>
 
 class FluHyperLinkButton : public QPushButton
 {
     Q_OBJECT
   public:
-    FluHyperLinkButton(QString linkUrl, QWidget* parent = nullptr);
+    explicit FluHyperLinkButton(const QString& linkUrl, QWidget* parent = nullptr);
 
-    void setLinkUrl(QString linkUrl);
+    const QString& linkUrl() const;
 
-  public slots:
-    void onThemeChanged();
+    void setLinkUrl(const QString& linkUrl);
 
   protected:
+    void onThemeChanged();
+
+  private:
     QString m_linkUrl;
 };

@@ -91,6 +91,7 @@
     <file alias="StyleSheet/dark/FluVNavigationSearchItem.qss">../stylesheet/dark/FluVNavigationSearchItem.qss</file>
     <file alias="StyleSheet/dark/FluVNavigationSettingsItem.qss">../stylesheet/dark/FluVNavigationSettingsItem.qss</file>
     <file alias="StyleSheet/dark/FluVNavigationView.qss">../stylesheet/dark/FluVNavigationView.qss</file>
+    <file alias="StyleSheet/dark/FluHRadioGroupBox.qss">../stylesheet/dark/FluHRadioGroupBox.qss</file>
     <file alias="StyleSheet/dark/FluVRadioGroupBox.qss">../stylesheet/dark/FluVRadioGroupBox.qss</file>
     <file alias="StyleSheet/dark/FluVScrollView.qss">../stylesheet/dark/FluVScrollView.qss</file>
     <file alias="StyleSheet/dark/FluVSplitLine.qss">../stylesheet/dark/FluVSplitLine.qss</file>
@@ -199,6 +200,7 @@
     <file alias="StyleSheet/light/FluVNavigationSearchItem.qss">../stylesheet/light/FluVNavigationSearchItem.qss</file>
     <file alias="StyleSheet/light/FluVNavigationSettingsItem.qss">../stylesheet/light/FluVNavigationSettingsItem.qss</file>
     <file alias="StyleSheet/light/FluVNavigationView.qss">../stylesheet/light/FluVNavigationView.qss</file>
+    <file alias="StyleSheet/light/FluHRadioGroupBox.qss">../stylesheet/light/FluHRadioGroupBox.qss</file>
     <file alias="StyleSheet/light/FluVRadioGroupBox.qss">../stylesheet/light/FluVRadioGroupBox.qss</file>
     <file alias="StyleSheet/light/FluVScrollView.qss">../stylesheet/light/FluVScrollView.qss</file>
     <file alias="StyleSheet/light/FluVSplitLine.qss">../stylesheet/light/FluVSplitLine.qss</file>
@@ -314,6 +316,7 @@
     <file alias="StyleSheet/atomOneDark/FluVNavigationSearchItem.qss">../stylesheet/atomOneDark/FluVNavigationSearchItem.qss</file>
     <file alias="StyleSheet/atomOneDark/FluVNavigationSettingsItem.qss">../stylesheet/atomOneDark/FluVNavigationSettingsItem.qss</file>
     <file alias="StyleSheet/atomOneDark/FluVNavigationView.qss">../stylesheet/atomOneDark/FluVNavigationView.qss</file>
+    <file alias="StyleSheet/atomOneDark/FluHRadioGroupBox.qss">../stylesheet/atomOneDark/FluHRadioGroupBox.qss</file>
     <file alias="StyleSheet/atomOneDark/FluVRadioGroupBox.qss">../stylesheet/atomOneDark/FluVRadioGroupBox.qss</file>
     <file alias="StyleSheet/atomOneDark/FluVScrollView.qss">../stylesheet/atomOneDark/FluVScrollView.qss</file>
     <file alias="StyleSheet/atomOneDark/FluVSplitLine.qss">../stylesheet/atomOneDark/FluVSplitLine.qss</file>

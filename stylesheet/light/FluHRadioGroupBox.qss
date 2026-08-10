@@ -1,0 +1,9 @@
+QGroupBox {
+    border: none;
+    /* border: 1px solid red; */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+}

@@ -23,6 +23,11 @@ FluCalendarViewTitle::FluCalendarViewTitle(QWidget* parent /*= nullptr*/) : FluW
 
     setFixedHeight(50);
     onThemeChanged();
+
+    // The three buttons are FluPushButton/FluIconButton that apply their own QSS on
+    // theme change (connected before this). Re-apply the title QSS afterwards so the
+    // #yearMonthBtn/#previousMonthBtn/#nextMonthBtn rules stay effective (no visible border).
+    connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme) { onThemeChanged(); });
 }
 
 FluPushButton* FluCalendarViewTitle::getYearMonthButton()

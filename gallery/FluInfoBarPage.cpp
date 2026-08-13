@@ -31,9 +31,10 @@ void FluInfoBarPage::addPersistentInfoBar()
     m_infoBar->setMaximumWidth(480);
     m_infoBar->setTitle(tr("Information"));
     m_infoBar->setMessage(tr("This is an informational message. You can edit the title, message and severity below."));
-    m_infoBar->setIsOpen(true);
     m_infoBar->setIsClosable(true);
     displayBox->getBodyContentLayout()->addWidget(m_infoBar);
+    // Open after parenting, otherwise show() pops a detached top-level window at startup.
+    m_infoBar->setIsOpen(true);
 
     auto severityLabel = new FluLabel(FluLabelStyle::BodyTextBlockStyle);
     severityLabel->setText(tr("Severity"));
@@ -94,9 +95,10 @@ void FluInfoBarPage::addClosableInfoBar()
     infoBar->setTitle(tr("A closable InfoBar"));
     infoBar->setMessage(tr("Change its severity and close options. This message wraps to multiple lines."));
     infoBar->setFixedWidth(270);
-    infoBar->setIsOpen(true);
     infoBar->setIsClosable(true);
     displayBox->getBodyContentLayout()->addWidget(infoBar);
+    // Open after parenting, otherwise show() pops a detached top-level window at startup.
+    infoBar->setIsOpen(true);
 
     auto isClosableCheckBox = new FluCheckBox(tr("Is Closable"));
     isClosableCheckBox->setChecked(true);

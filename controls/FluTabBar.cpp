@@ -6,7 +6,7 @@ FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_mainLayout = new QHBoxLayout;
     setLayout(m_mainLayout);
-    m_mainLayout->setAlignment(Qt::AlignLeft);
+    m_mainLayout->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     m_mainLayout->setSpacing(0);
     m_mainLayout->setContentsMargins(10, 0, 40, 0);
@@ -103,64 +103,63 @@ void FluTabBar::paintEvent(QPaintEvent* event)
 void FluTabBar::adjustAddTabButtonPosition()
 {
     std::vector<FluTabBarItem*> items = getTabBarItems();
-    if (items.size() == 0)
+    if (items.empty())
     {
         int x = 10;
-        int y = 15;
+        int y = (height() - m_addTabButton->height()) / 2;
         m_addTabButton->move(x, y);
         return;
     }
+
+
+    auto tailItem = items[items.size() - 1];
+    int tmp = 0;
+    for (int i = 0; i < items.size(); i++)
+    {
+        // items[i]->show();
+        tmp += items[i]->getWidgetWidth();
+    }
+
+    int x = tmp + 10;
+    int y = (height() - m_addTabButton->height()) / 2;
+
+    if (x + 40 > width())
+    {
+        x = width() - 40;
+    }
+
+    // total width
+    int totalWidth = 0;
+    std::vector<int> totalWidths;
+    for (int i = 0; i < items.size(); i++)
+    {
+        totalWidths.push_back(items[i]->getWidgetWidth());
+        totalWidth += items[i]->getWidgetWidth();
+    }
+
+    if (totalWidth > (width() - 50))
+    {
+        float fScale = (float)(width() - 50) / (float)totalWidth;
+        for (int i = 0; i < items.size(); i++)
+        {
+            if (items[i] == m_animatingItem)
+                continue;
+            items[i]->setFixedWidth((int)(fScale * items[i]->getWidgetWidth()));
+            // x += totalWidths[i] * fScale;
+        }
+    }
     else
     {
-        auto tailItem = items[items.size() - 1];
-
-        int tmp = 0;
         for (int i = 0; i < items.size(); i++)
         {
-            // items[i]->show();
-            tmp += items[i]->getWidgetWidth();
+            if (items[i] == m_animatingItem)
+                continue;
+            items[i]->setFixedWidth(items[i]->getWidgetWidth());
         }
-
-        int x = tmp + 10;
-        int y = 15;
-
-        if (x + 40 > width())
-        {
-            x = width() - 40;
-        }
-
-        // total width
-        int totalWidth = 0;
-        std::vector<int> totalWidths;
-        for (int i = 0; i < items.size(); i++)
-        {
-            totalWidths.push_back(items[i]->getWidgetWidth());
-            totalWidth += items[i]->getWidgetWidth();
-        }
-
-        if (totalWidth > (width() - 50))
-        {
-            float fScale = (float)(width() - 50) / (float)totalWidth;
-            for (int i = 0; i < items.size(); i++)
-            {
-                if (items[i] == m_animatingItem)
-                    continue;
-                items[i]->setFixedWidth((int)(fScale * items[i]->getWidgetWidth()));
-                // x += totalWidths[i] * fScale;
-            }
-        }
-        else
-        {
-            for (int i = 0; i < items.size(); i++)
-            {
-                if (items[i] == m_animatingItem)
-                    continue;
-                items[i]->setFixedWidth(items[i]->getWidgetWidth());
-            }
-        }
-
-        m_addTabButton->move(x, y);
     }
+
+    m_addTabButton->move(x, y);
+    
 }
 
 void FluTabBar::onThemeChanged()

@@ -1,11 +1,6 @@
 QScrollArea {
     background-color: transparent;
     border: none;
-    qproperty-tabHoverColor: rgba(0, 0, 0, 10);
-    qproperty-tabPressedColor: rgba(255, 255, 255, 179);
-    qproperty-tabSelectedColor: rgb(255, 255, 255);
-    qproperty-tabSeparatorColor: rgba(0, 0, 0, 45);
-    qproperty-tabSelectedStrokeColor: rgba(0, 0, 0, 12);
 }
 
 #mainWidget {

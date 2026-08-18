@@ -10,7 +10,7 @@ FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 
     m_mainLayout->setSpacing(0);
     m_mainLayout->setContentsMargins(10, 0, 40, 0);
-    m_mainLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
+    //m_mainLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
 
     m_tabBarContent = new FluTabBarContent;
     m_tabBarContent->resize(0, height());
@@ -23,6 +23,8 @@ FluTabBar::FluTabBar(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_addTabButton->setIconSize(QSize(12, 12));
     m_addTabButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::Add, FluThemeUtils::getUtils()->getTheme()));
     m_addTabButton->setObjectName("addTabBtn");
+
+    setFixedHeight(30);
 
     onThemeChanged();
     connect(m_addTabButton, &QPushButton::clicked, [=]() { emit addTabButtonClicked(); });

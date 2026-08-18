@@ -36,7 +36,7 @@ FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_iconButton->installEventFilter(this);
     m_textButton->installEventFilter(this);
 
-    setFixedHeight(35);
+    setFixedHeight(30);
     connect(m_iconButton, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_textButton, &QPushButton::clicked, [=]() { emit clicked(); });
     connect(m_closeButton, &QPushButton::clicked, [=]() { emit clickedCloseButton(this); });
@@ -55,7 +55,7 @@ void FluTabBarItem::setSelected(bool isSel)
     {
         m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
     }
-    emit visualStateChanged();
+    style()->polish(this);
 }
 
 bool FluTabBarItem::getSelected()
@@ -98,6 +98,14 @@ void FluTabBarItem::adjustWidgetSize()
     setFixedWidth(getWidgetWidth());
 }
 
+void FluTabBarItem::setPressed(bool p)
+{
+    if (m_isPressed == p)
+        return;
+    m_isPressed = p;
+    style()->polish(this);
+}
+
 void FluTabBarItem::resizeEvent(QResizeEvent* event)
 {
     emit sizeChanged();
@@ -105,18 +113,17 @@ void FluTabBarItem::resizeEvent(QResizeEvent* event)
 
 void FluTabBarItem::enterEvent(QEnterEvent* event)
 {
-    m_isHover = true;
-    emit visualStateChanged();
     m_closeButton->setIcon(FluIconUtils::getFluentIcon(FluAwesomeType::ChromeClose, FluThemeUtils::getUtils()->getTheme()));
 }
 
 void FluTabBarItem::leaveEvent(QEvent* event)
 {
-    bool changed = m_isHover || m_isPressed;
-    m_isHover = false;
-    m_isPressed = false;
-    if (changed)
-        emit visualStateChanged();
+    if (m_isPressed)
+    {
+        m_isPressed = false;
+        setProperty("pressed", false);
+        style()->polish(this);
+    }
 
     if (m_isSel)
         return;
@@ -129,7 +136,8 @@ void FluTabBarItem::mousePressEvent(QMouseEvent* event)
     if (event->button() == Qt::LeftButton)
     {
         m_isPressed = true;
-        emit visualStateChanged();
+        setProperty("pressed", true);
+        style()->polish(this);
     }
 }
 
@@ -138,7 +146,8 @@ void FluTabBarItem::mouseReleaseEvent(QMouseEvent* event)
     if (event->button() == Qt::LeftButton && m_isPressed)
     {
         m_isPressed = false;
-        emit visualStateChanged();
+        setProperty("pressed", false);
+        style()->polish(this);
     }
     emit clicked();
 }
@@ -153,7 +162,8 @@ bool FluTabBarItem::eventFilter(QObject* watched, QEvent* event)
             if (me->button() == Qt::LeftButton)
             {
                 m_isPressed = true;
-                emit visualStateChanged();
+                setProperty("pressed", true);
+                style()->polish(this);
             }
         }
         else if (event->type() == QEvent::MouseButtonRelease)
@@ -161,16 +171,12 @@ bool FluTabBarItem::eventFilter(QObject* watched, QEvent* event)
             if (m_isPressed)
             {
                 m_isPressed = false;
-                emit visualStateChanged();
+                setProperty("pressed", false);
+                style()->polish(this);
             }
         }
     }
     return false;
-}
-
-bool FluTabBarItem::getHovered() const
-{
-    return m_isHover;
 }
 
 bool FluTabBarItem::getPressed() const
@@ -197,5 +203,5 @@ void FluTabBarItem::onThemeChanged()
     setProperty("selected", m_isSel);
     m_closeButton->setProperty("selected", m_isSel);
     m_closeButton->style()->polish(m_closeButton);
-    emit visualStateChanged();
+    style()->polish(this);
 }

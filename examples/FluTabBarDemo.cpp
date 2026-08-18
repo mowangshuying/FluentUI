@@ -2,18 +2,19 @@
 
 FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(parent)
 {
+    auto vLayout = new QVBoxLayout;
+    vLayout->setContentsMargins(0, 0, 0, 0);
+
     tabBar = new FluTabBar;
+    vLayout->addWidget(tabBar);
+    vLayout->addStretch();
+    m_contentLayout->addLayout(vLayout);
+
     for (int i = 0; i < 3; i++)
     {
         auto tabBarItem = new FluTabBarItem;
         tabBar->addBarItem(tabBarItem);
     }
-
-    // m_mainLayout = new QVBoxLayout;
-    // setLayout(m_mainLayout);
-
-    // m_mainLayout->addWidget(tabBar);
-    // m_mainLayout->addStretch(1);
 
     connect(tabBar, &FluTabBar::addTabButtonClicked, [=]() {
         auto tmpTabBarItem = new FluTabBarItem;
@@ -24,11 +25,11 @@ FluTabBarDemo::FluTabBarDemo(QWidget* parent /*= nullptr*/) : FluTemplateDemo(pa
 
     // m_contentLayout->addWidget(tabBar);
 
-    auto vLayout = new QVBoxLayout;
-    vLayout->addWidget(tabBar);
-    vLayout->setContentsMargins(0, 0, 0, 0);
-    vLayout->addStretch();
+    //auto vLayout = new QVBoxLayout;
+    //vLayout->addWidget(tabBar);
+    //vLayout->setContentsMargins(0, 0, 0, 0);
+    //vLayout->addStretch();
 
-    m_contentLayout->addLayout(vLayout);
+    //m_contentLayout->addLayout(vLayout);
     resize(600, 400);
 }

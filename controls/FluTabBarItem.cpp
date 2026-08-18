@@ -1,6 +1,6 @@
 ﻿#include "FluTabBarItem.h"
 
-FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/)
+FluTabBarItem::FluTabBarItem(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
     m_mainLayout = new QHBoxLayout;
     setLayout(m_mainLayout);

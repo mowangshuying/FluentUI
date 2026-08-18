@@ -1,6 +1,6 @@
 FluTabBarItem {
     background-color: transparent;
-    border: none;
+    border: 1px solid transparent;
     font-size: 12px;
 }
 

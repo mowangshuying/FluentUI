@@ -6,13 +6,13 @@
 #include <QHBoxLayout>
 #include "../utils/FluUtils.h"
 #include <QStyleOption>
-#include <QPainter>
 #include <QEnterEvent>
 
 class FluTabBarItem : public FluWidget
 {
     Q_OBJECT
     Q_PROPERTY(int tabWidth READ tabWidth WRITE setTabWidth)
+    Q_PROPERTY(bool pressed READ getPressed WRITE setPressed)
   public:
     FluTabBarItem(QWidget* parent = nullptr);
 
@@ -28,9 +28,9 @@ class FluTabBarItem : public FluWidget
 
     void adjustWidgetSize();
 
-    bool getHovered() const;
-
     bool getPressed() const;
+
+    void setPressed(bool p);
 
     int tabWidth();
     void setTabWidth(int w);
@@ -51,6 +51,7 @@ class FluTabBarItem : public FluWidget
     void clicked();
     void sizeChanged();
     void clickedCloseButton(FluTabBarItem* item);
+    // Kept because FluTabView connects to it; no longer emitted (QSS handles visuals).
     void visualStateChanged();
 
   public slots:
@@ -62,7 +63,6 @@ class FluTabBarItem : public FluWidget
     QPushButton* m_textButton;
     QPushButton* m_closeButton;
     bool m_isSel = false;
-    bool m_isHover = false;
     bool m_isPressed = false;
     QString m_text;
 };

@@ -1,15 +1,18 @@
 FluTabBarItem {
     background-color: transparent;
     border: 1px solid transparent;
+    border-radius: 8px;
     font-size: 12px;
 }
 
 FluTabBarItem:hover {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 10);
+    border: 1px solid transparent;
 }
 
-FluTabBarItem:pressed {
-    background-color: transparent;
+FluTabBarItem[pressed=true] {
+    background-color: rgba(255, 255, 255, 179);
+    border: 1px solid transparent;
 }
 
 FluTabBarItem:pressed #textBtn {
@@ -17,11 +20,13 @@ FluTabBarItem:pressed #textBtn {
 }
 
 FluTabBarItem[selected=true] {
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 12);
 }
 
 FluTabBarItem[selected=true]:hover {
-    background-color: transparent;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 12);
 }
 
 FluTabBarItem[selected=true] #textBtn {

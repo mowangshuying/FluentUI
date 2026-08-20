@@ -118,6 +118,7 @@ void FluVNavigationSettingsItem::onItemClicked()
     auto navView = getParentView();
     if (navView == nullptr)
         return;
+    emit navView->keyChanged(getKey());
     navView->clearAllItemsSelectState();
     updateSelected(true);
     navView->updateAllItemsStyleSheet();

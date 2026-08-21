@@ -73,7 +73,8 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                 QRect iconRect;
                 iconRect.setX(menuItemRect.x() + m_menuItemSpacing);
                 iconRect.setY(menuItemRect.y() + (menuItemRect.height() - m_menuItemIconWH) / 2);
-                painter->drawPixmap(iconRect, menuItem->icon.pixmap(m_menuItemIconWH, m_menuItemIconWH));
+                const QIcon::Mode iconMode = (menuItem->state & QStyle::State_Enabled) ? QIcon::Normal : QIcon::Disabled;
+                painter->drawPixmap(iconRect, menuItem->icon.pixmap(m_menuItemIconWH, m_menuItemIconWH, iconMode));
             }
 
             if (true)
@@ -81,7 +82,10 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
                 QStringList texts = menuItem->text.split("\t");
                 painter->save();
                 painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform | QPainter::TextAntialiasing);
-                painter->setPen(m_menuItemForegroundColor);
+                const QColor foregroundColor = (menuItem->state & QStyle::State_Enabled)
+                                                   ? m_menuItemForegroundColor
+                                                   : m_menuItemDisabledForegroundColor;
+                painter->setPen(foregroundColor);
                 if (texts.size() == 2)
                 {
                     QRect textRect;

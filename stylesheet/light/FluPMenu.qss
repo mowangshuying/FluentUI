@@ -5,6 +5,7 @@ FluPMenu {
     qproperty-ppMenuItemSelectedBackgroundColor:rgb(220, 220, 229);
     qproperty-ppMenuItemDisabledBackgroundColor: rgb(243, 243, 243);
 	qproperty-ppMenuItemForegroundColor: rgb(0, 0, 0);
+	qproperty-ppMenuItemDisabledForegroundColor: rgb(150, 150, 150);
 	qproperty-ppMenuItemSpacing:2;
 	qproperty-ppMenuItemIconWH:20;
 	qproperty-ppMenuItemHeight:30;

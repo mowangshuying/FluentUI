@@ -69,6 +69,16 @@ class FluPMenuStyle : public QProxyStyle
         m_menuItemForegroundColor = color;
     }
 
+    QColor getMenuItemDisabledForegroundColor() const
+    {
+        return m_menuItemDisabledForegroundColor;
+    }
+
+    void setMenuItemDisabledForegroundColor(const QColor& color)
+    {
+        m_menuItemDisabledForegroundColor = color;
+    }
+
     int getMenuItemSpacing() const
     {
         return m_menuItemSpacing;
@@ -113,6 +123,7 @@ class FluPMenuStyle : public QProxyStyle
     QColor m_menuItemSelectedBackgroundColor = QColor(220, 220, 220);
     QColor m_menuItemDisabledBackgroundColor = QColor(243, 243, 243);
     QColor m_menuItemForegroundColor = Qt::black;
+    QColor m_menuItemDisabledForegroundColor = QColor(150, 150, 150);
 
     int m_menuItemSpacing = 2;
     int m_menuItemIconWH = 20;

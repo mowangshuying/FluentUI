@@ -14,6 +14,7 @@ class FluPMenu : public QMenu
     Q_PROPERTY(QColor ppMenuItemSelectedBackgroundColor READ getMenuItemSelectedBackgroundColor WRITE setMenuItemSelectedBackgroundColor)
     Q_PROPERTY(QColor ppMenuItemDisabledBackgroundColor READ getMenuItemDisabledBackgroundColor WRITE setMenuItemDisabledBackgroundColor)
     Q_PROPERTY(QColor ppMenuItemForegroundColor READ getMenuItemForegroundColor WRITE setMenuItemForegroundColor)
+    Q_PROPERTY(QColor ppMenuItemDisabledForegroundColor READ getMenuItemDisabledForegroundColor WRITE setMenuItemDisabledForegroundColor)
     Q_PROPERTY(int ppMenuItemSpacing READ getMenuItemSpacing WRITE setMenuItemSpacing)
     Q_PROPERTY(int ppMenuItemIconWH READ getMenuItemIconWH WRITE setMenuItemIconWH)
     Q_PROPERTY(int ppMenuItemHeight READ getMenuItemHeight WRITE setMenuItemHeight)
@@ -80,6 +81,16 @@ class FluPMenu : public QMenu
     void setMenuItemForegroundColor(const QColor &color)
     {
         m_style->setMenuItemForegroundColor(color);
+    }
+
+    QColor getMenuItemDisabledForegroundColor() const
+    {
+        return m_style->getMenuItemDisabledForegroundColor();
+    }
+
+    void setMenuItemDisabledForegroundColor(const QColor &color)
+    {
+        m_style->setMenuItemDisabledForegroundColor(color);
     }
 
     int getMenuItemSpacing() const

@@ -215,7 +215,8 @@ void FluVNavigationIconTextItem::addItem(FluVNavigationIconTextItem *item)
     m_items.push_back(item);
     updateDepth(item);
     m_verticalLayout1->addWidget(item);
-    m_arrow->show();
+    if (isLong())
+        m_arrow->show();
 }
 
 int FluVNavigationIconTextItem::calcItemW1Width()

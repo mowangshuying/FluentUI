@@ -83,6 +83,7 @@ void FluVNavigationFlyIconTextItem::setIconTextItems(std::vector<FluVNavigationI
     }
 
     adjustItemWidth();
+    adjustItemHeight();
 }
 
 void FluVNavigationFlyIconTextItem::adjustItemHeight()
@@ -96,9 +97,10 @@ void FluVNavigationFlyIconTextItem::adjustItemHeight()
     if (h > 450)
         h = 450;
 
-    m_scrollView->setFixedHeight(h);
+    const int border = 2; // 对应 QSS QScrollArea 1px border 上下各占 1px
+    m_scrollView->setFixedHeight(h + border);
     h += m_mainLayout->contentsMargins().top() + m_mainLayout->contentsMargins().bottom();
-    setFixedHeight(h);
+    setFixedHeight(h + border);
 }
 
 void FluVNavigationFlyIconTextItem::adjustItemWidth()

@@ -20,6 +20,7 @@ FluExpander::FluExpander(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_wrap2 = new QWidget(this);
     m_wrap2->setObjectName("wrap2");
     m_wrap2->stackUnder(m_wrap1);
+    m_wrap2->installEventFilter(this);
 
     m_wrap2Layout = new QVBoxLayout;
     m_wrap2Layout->setContentsMargins(5, 5, 5, 5);
@@ -80,12 +81,18 @@ void FluExpander::resizeEvent(QResizeEvent* event)
 {
     m_wrap1->resize(event->size().width(), m_wrap1->height());
     m_wrap1->move(0, 0);
-    m_wrap2->resize(event->size().width(), m_wrap2->sizeHint().height());
-    m_wrap2->move(0, m_wrap1->height() + m_contentHeight - m_wrap2->sizeHint().height());
+    updateWrap2Geometry();
 
     int x = m_wrap1->width() - m_downOrUpButton->width() - 5;
     int y = (m_wrap1->height() - m_downOrUpButton->height()) / 2;
     m_downOrUpButton->move(x, y);
+}
+
+void FluExpander::updateWrap2Geometry()
+{
+    const int contentHint = m_wrap2->sizeHint().height();
+    m_wrap2->resize(width(), contentHint);
+    m_wrap2->move(0, m_wrap1->height() + m_contentHeight - contentHint);
 }
 
 bool FluExpander::eventFilter(QObject* watched, QEvent* event)
@@ -93,6 +100,19 @@ bool FluExpander::eventFilter(QObject* watched, QEvent* event)
     if (watched == m_wrap1 && event->type() == QEvent::MouseButtonRelease)
     {
         m_downOrUpButton->clicked();
+    }
+    else if (watched == m_wrap2 && event->type() == QEvent::LayoutRequest)
+    {
+        // Content was added/removed/changed in the body. No resize event is
+        // delivered to the expander in this case, so refresh the cached wrap2
+        // geometry from its fresh size hint; when the body is currently shown,
+        // also follow the new height so ancestors (layouts, scroll views)
+        // never keep a stale content height.
+        updateWrap2Geometry();
+        if (!m_isDown && m_contentHeight > 0 && m_expandAni->state() != QAbstractAnimation::Running)
+        {
+            setContentHeight(m_wrap2->sizeHint().height());
+        }
     }
     return QWidget::eventFilter(watched, event);
 }
@@ -121,7 +141,9 @@ void FluExpander::onClicked()
 {
     if (m_isDown)
     {
-        m_expandAni->setStartValue(0);
+        // read the body size hint at click time so content added while
+        // collapsed is always expanded to its fresh height
+        m_expandAni->setStartValue(m_contentHeight);
         m_expandAni->setEndValue(m_wrap2->sizeHint().height());
         m_expandAni->start();
 
@@ -129,7 +151,7 @@ void FluExpander::onClicked()
     }
     else
     {
-        m_expandAni->setStartValue(m_wrap2->sizeHint().height());
+        m_expandAni->setStartValue(m_contentHeight);
         m_expandAni->setEndValue(0);
         m_expandAni->start();
 

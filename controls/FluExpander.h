@@ -62,5 +62,10 @@ class FluExpander : public FluWidget
     bool m_isDown;
 
   private:
+    // resize/reposition m_wrap2 from its current size hint; keeps the cached
+    // wrap2 geometry fresh even when no resize event arrives (e.g. content
+    // added while collapsed).
+    void updateWrap2Geometry();
+
     int m_contentHeight = 0;
 };

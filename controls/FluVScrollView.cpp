@@ -28,6 +28,21 @@ QVBoxLayout* FluVScrollView::getMainLayout()
     return m_mainLayout;
 }
 
+void FluVScrollView::addWidget(QWidget* widget, int stretch /*= 0*/, Qt::Alignment alignment /*= Qt::Alignment()*/)
+{
+    m_mainLayout->addWidget(widget, stretch, alignment);
+}
+
+void FluVScrollView::addSpacing(int size)
+{
+    m_mainLayout->addSpacing(size);
+}
+
+void FluVScrollView::setAlignment(Qt::Alignment alignment)
+{
+    m_mainLayout->setAlignment(alignment);
+}
+
 void FluVScrollView::onThemeChanged()
 {
     FluStyleSheetUtils::setQssByFileName("FluVScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());

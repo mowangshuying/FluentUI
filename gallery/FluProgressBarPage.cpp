@@ -18,7 +18,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     progressBar1->setValue(75);
     progressBar1->setFixedWidth(150);
 
-    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox1, 0, Qt::AlignTop);
 
     // Indeterminate example
     auto displayBox2 = new FluDisplayBox;
@@ -31,7 +31,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     progressBar2->setFixedWidth(150);
     progressBar2->setWorking(true);
 
-    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox2, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

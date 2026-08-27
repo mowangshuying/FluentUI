@@ -16,7 +16,7 @@ FluToolTipPage::FluToolTipPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     btn1->move(50, 30);
     FluToolTip::setToolTip(displayBox1->getBodyWidget(), btn1, "This is a tooltip.");
 
-    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox1, 0, Qt::AlignTop);
 
     // ---- DisplayBox 2: Multiline tooltip ----
     auto displayBox2 = new FluDisplayBox;
@@ -29,7 +29,7 @@ FluToolTipPage::FluToolTipPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     FluToolTip::setToolTip(displayBox2->getBodyWidget(), btn2,
                            "This tooltip spans multiple lines\nto show how longer descriptions\nare displayed gracefully.");
 
-    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox2, 0, Qt::AlignTop);
 
     // ---- DisplayBox 3: Tooltip placement ----
     auto displayBox3 = new FluDisplayBox;
@@ -63,7 +63,7 @@ FluToolTipPage::FluToolTipPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
         FluToolTip::setToolTip(displayBox3->getBodyWidget(), btn, QString("Placement: %1").arg(item.name), item.placement);
     }
 
-    m_scrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox3, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

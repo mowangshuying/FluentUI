@@ -20,6 +20,16 @@ FluFlowLayout* FluFWScrollView::getMainLayout()
     return m_mainLayout;
 }
 
+void FluFWScrollView::addWidget(QWidget* widget)
+{
+    static_cast<QLayout*>(m_mainLayout)->addWidget(widget);
+}
+
+void FluFWScrollView::setAlignment(Qt::Alignment alignment)
+{
+    static_cast<QLayout*>(m_mainLayout)->setAlignment(alignment);
+}
+
 void FluFWScrollView::onThemeChanged()
 {
     FluStyleSheetUtils::setQssByFileName("FluFWScrollView.qss", this, FluThemeUtils::getUtils()->getTheme());

@@ -22,7 +22,7 @@ FluContentDialogPage::FluContentDialogPage(QWidget* parent /*= nullptr*/) : FluA
 
     displayBox->getBodyLayout()->addWidget(showDlgBtn);
 
-    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

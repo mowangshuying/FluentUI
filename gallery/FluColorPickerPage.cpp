@@ -17,7 +17,7 @@ FluColorPickerPage::FluColorPickerPage(QWidget* parent) : FluAEmptyPage(parent)
     auto colorView = new FluColorView;
     displaybox1->getBodyContentLayout()->addWidget(colorView);
 
-    m_scrollView->getMainLayout()->addWidget(displaybox1, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displaybox1, 0, Qt::AlignTop);
     onThemeChanged();
 }
 

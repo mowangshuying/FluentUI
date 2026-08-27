@@ -19,7 +19,7 @@ FluToggleButtonPage::FluToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
     btn1->setText(tr("Toggle Button"));
     displayBox1->setBodyWidgetFixedHeight(96);
     displayBox1->getBodyLayout()->addWidget(btn1);
-    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox1, 0, Qt::AlignTop);
 
     // ---- DisplayBox 2: checked, disabled and state change signal ----
     auto displayBox2 = new FluDisplayBox;
@@ -57,7 +57,7 @@ FluToggleButtonPage::FluToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
     });
 
     displayBox2->getBodyLayout()->addLayout(hLayout);
-    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox2, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

@@ -49,7 +49,7 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
     displayBox1->setCodeByPath("../code/ToggleSwitchPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(70);
     displayBox1->getBodyLayout()->addWidget(createSizeRow("Default Off:", false));
-    m_scrollView->getMainLayout()->addWidget(displayBox1, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox1, 0, Qt::AlignTop);
 
     // Example 2: Default On state, three sizes
     auto displayBox2 = new FluDisplayBox;
@@ -57,7 +57,7 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
     displayBox2->setCodeByPath("../code/ToggleSwitchPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(70);
     displayBox2->getBodyLayout()->addWidget(createSizeRow("Default On:", true));
-    m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox2, 0, Qt::AlignTop);
 
     // Example 3: Empty text, three sizes
     auto displayBox3 = new FluDisplayBox;
@@ -65,7 +65,7 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
     displayBox3->setCodeByPath("../code/ToggleSwitchPageCode3.md");
     displayBox3->setBodyWidgetFixedHeight(70);
     displayBox3->getBodyLayout()->addWidget(createSizeRow("Empty Text:", false, true));
-    m_scrollView->getMainLayout()->addWidget(displayBox3, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox3, 0, Qt::AlignTop);
 
     // Example 4: Text on left, three sizes
     auto displayBox4 = new FluDisplayBox;
@@ -73,7 +73,7 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
     displayBox4->setCodeByPath("../code/ToggleSwitchPageCode4.md");
     displayBox4->setBodyWidgetFixedHeight(70);
     displayBox4->getBodyLayout()->addWidget(createSizeRow("Text Left:", false, false, false, TextPosition::Left));
-    m_scrollView->getMainLayout()->addWidget(displayBox4, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox4, 0, Qt::AlignTop);
 
     // Example 5: Disabled state, three sizes
     auto displayBox5 = new FluDisplayBox;
@@ -81,7 +81,7 @@ FluToggleSwitchPage::FluToggleSwitchPage(QWidget* parent /*= nullptr*/) : FluAEm
     displayBox5->setCodeByPath("../code/ToggleSwitchPageCode5.md");
     displayBox5->setBodyWidgetFixedHeight(70);
     displayBox5->getBodyLayout()->addWidget(createSizeRow("Disabled:", false, false, true));
-    m_scrollView->getMainLayout()->addWidget(displayBox5, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox5, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

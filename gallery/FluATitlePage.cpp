@@ -25,7 +25,7 @@ FluATitlePage::FluATitlePage(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_scrollView->setObjectName("vScrollView");
     m_mainLayout->addWidget(m_scrollView, 1);
 
-    m_scrollView->getMainLayout()->setAlignment(Qt::AlignTop);
+    m_scrollView->setAlignment(Qt::AlignTop);
     FluStyleSheetUtils::setQssByFileName("FluATitlePage.qss", this, FluThemeUtils::getUtils()->getTheme());
 }
 
@@ -33,7 +33,7 @@ FluHCard* FluATitlePage::addHCard(QPixmap icon, QString title, QString context, 
 {
     auto card = new FluHCard(icon, title, context, this);
     card->setKey(key);
-    m_scrollView->getMainLayout()->addWidget(card);
+    m_scrollView->addWidget(card);
     connect(card, &FluHCard::clicked, this, [=](QString k) { emit clickedHCard(k); });
     return card;
 }

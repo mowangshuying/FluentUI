@@ -17,6 +17,10 @@ class FluVScrollView : public FluScrollArea
 
     QVBoxLayout* getMainLayout();
 
+    void addWidget(QWidget* widget, int stretch = 0, Qt::Alignment alignment = Qt::Alignment());
+    void addSpacing(int size);
+    void setAlignment(Qt::Alignment alignment);
+
   public slots:
     void onThemeChanged();
 

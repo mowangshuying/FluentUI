@@ -9,24 +9,24 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
     m_searchLabel = new QLabel;
     m_searchLabel->setObjectName("searchLabel");
     m_searchLabel->setText(tr("Fluent Emoij Library."));
-    m_scrollView->getMainLayout()->addWidget(m_searchLabel);
+    m_scrollView->addWidget(m_searchLabel);
 
-    m_scrollView->getMainLayout()->addSpacing(5);
+    m_scrollView->addSpacing(5);
 
     m_searchEdit = new FluSearchLineEdit;
     m_searchEdit->setFixedWidth(300);
-    m_scrollView->getMainLayout()->addWidget(m_searchEdit);
+    m_scrollView->addWidget(m_searchEdit);
 
     auto wrapWidget = new QWidget;
     wrapWidget->setObjectName("wrapWidget");
 
     auto wrapLayout = new QHBoxLayout;
     wrapWidget->setLayout(wrapLayout);
-    m_scrollView->getMainLayout()->addWidget(wrapWidget, 1);
+    m_scrollView->addWidget(wrapWidget, 1);
 
     auto wrapWidget1 = new FluFWScrollView;
     wrapWidget1->setObjectName("wrapWidget1");
-    // m_scrollView->getMainLayout()->addWidget(wrapWidget1, 1);
+    // m_scrollView->addWidget(wrapWidget1, 1);
     wrapLayout->addWidget(wrapWidget1);
 
     auto wrapWidget2 = new QWidget;
@@ -82,7 +82,7 @@ FluEmoijsPage::FluEmoijsPage(QWidget* parent)
         }
 
         // flowLayout->addWidget(displayIconBox);
-        wrapWidget1->getMainLayout()->addWidget(displayIconBox);
+        wrapWidget1->addWidget(displayIconBox);
         m_iconBoxMap[(FluEmoijType)metaEnum.value(i)] = displayIconBox;
 
         connect(displayIconBox, &FluDisplayIconBox::clicked, [=]() {

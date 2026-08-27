@@ -9,11 +9,11 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     typeRampLabel->setText(tr("Type ramp"));
     typeRampLabel->setWordWrap(true);
     typeRampLabel->setObjectName("typeRampLabel");
-    m_scrollView->getMainLayout()->addWidget(typeRampLabel);
+    m_scrollView->addWidget(typeRampLabel);
 
     auto typeRampWrap = new QWidget;
     typeRampWrap->setObjectName("typeRampWrap");
-    m_scrollView->getMainLayout()->addWidget(typeRampWrap);
+    m_scrollView->addWidget(typeRampWrap);
 
     m_typeRampWrapLayout = new QVBoxLayout;
     m_typeRampWrapLayout->setAlignment(Qt::AlignTop);
@@ -42,7 +42,7 @@ FluTypeographyPage::FluTypeographyPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     auto expander = new FluCodeExpander;
     QString code = tr("auto label = new FluLabel;label->setStyle(FluLabelStyle::CaptionTextBlockStyle);");
     expander->setCodeText(code);
-    m_scrollView->getMainLayout()->addWidget(expander);
+    m_scrollView->addWidget(expander);
 
     onThemeChanged();
 }

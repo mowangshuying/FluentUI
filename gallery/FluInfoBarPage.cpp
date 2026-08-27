@@ -78,7 +78,7 @@ void FluInfoBarPage::addPersistentInfoBar()
     connect(messageEdit, &FluLineEdit::textChanged, this, [=](const QString& text) { m_infoBar->setMessage(text); });
     displayBox->getBodyRightLayout()->addWidget(messageEdit, 0, Qt::AlignTop);
 
-    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluInfoBarPage::addClosableInfoBar()
@@ -123,7 +123,7 @@ void FluInfoBarPage::addClosableInfoBar()
     });
 
     displayBox->getBodyRightLayout()->addWidget(comboBox, 0, Qt::AlignTop);
-    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluInfoBarPage::addDynamicInfoBar()
@@ -160,7 +160,7 @@ void FluInfoBarPage::addDynamicInfoBar()
     btnLayout->addWidget(warnBtn);
     btnLayout->addWidget(errorBtn);
     displayBox->getBodyLayout()->addLayout(btnLayout);
-    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluInfoBarPage::addBottomRightInfoBar()
@@ -205,7 +205,7 @@ void FluInfoBarPage::addBottomRightInfoBar()
     btnLayout->addWidget(warnBtn);
     btnLayout->addWidget(errorBtn);
     displayBox->getBodyLayout()->addLayout(btnLayout);
-    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox, 0, Qt::AlignTop);
 }
 
 void FluInfoBarPage::onThemeChanged()

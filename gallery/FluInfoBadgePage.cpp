@@ -29,7 +29,7 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     targetWidget3->move(250, 30);
     FluInfoBadge::setInfoBadge(displayBox->getBodyWidget(), targetWidget3, FluInfoBadgeLevel::Error, 333);
 
-    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox, 0, Qt::AlignTop);
 
     // Interactive value-change demo
     auto interactiveBox = new FluDisplayBox;
@@ -47,7 +47,7 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
         }
     });
 
-    m_scrollView->getMainLayout()->addWidget(interactiveBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(interactiveBox, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

@@ -24,7 +24,7 @@ FluRadioButtonPage::FluRadioButtonPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     groupBox->addRadioButton(btn3);
 
     displayBox->getBodyLayout()->addWidget(groupBox);
-    m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
+    m_scrollView->addWidget(displayBox, 0, Qt::AlignTop);
 
     onThemeChanged();
 }

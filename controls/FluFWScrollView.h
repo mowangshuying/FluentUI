@@ -13,6 +13,10 @@ class FluFWScrollView : public FluScrollArea
     FluFWScrollView(QWidget* parent = nullptr);
 
     FluFlowLayout* getMainLayout();
+
+    void addWidget(QWidget* widget);
+    void setAlignment(Qt::Alignment alignment);
+
   public slots:
     void onThemeChanged();
 

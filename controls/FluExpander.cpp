@@ -105,6 +105,13 @@ void FluExpander::paintEvent(QPaintEvent* event)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 }
 
+QSize FluExpander::sizeHint() const
+{
+    int w = qMax(m_wrap1->sizeHint().width(), m_wrap2->sizeHint().width());
+    int h = qMax(m_wrap1->height(), m_wrap1->minimumHeight()) + m_contentHeight;
+    return QSize(w, h);
+}
+
 void FluExpander::onThemeChanged()
 {
     FluStyleSheetUtils::setQssByFileName("FluExpander.qss", this, FluThemeUtils::getUtils()->getTheme());
@@ -139,21 +146,12 @@ void FluExpander::setContentHeight(int newContentHeight)
 {
     if (m_contentHeight == newContentHeight)
         return;
-    // qDebug() << "this:" << geometry() << "m_wrap1:" << m_wrap1->geometry() << "m_wrap2:" << m_wrap2->geometry();
-    auto dy = newContentHeight - m_contentHeight;
     m_contentHeight = newContentHeight;
-    resize(width(), height() + dy);
-    setMinimumHeight(m_wrap1->height() + m_contentHeight);
-    auto p = parentWidget();
-    while (p && p != window())
-    {
-        // qDebug() << p;
-        p->resize(p->width(), p->height() + dy);
-        if (p->objectName() == QStringLiteral("qt_scrollarea_viewport"))
-        {
-            break;
-        }
-        p = p->parentWidget();
-    }
+    setMinimumHeight(qMax(m_wrap1->height(), m_wrap1->minimumHeight()) + m_contentHeight);
+    // let the layout system propagate the new height:
+    // updateGeometry() invalidates this widget's size hints, and the invalidation
+    // bubbles up through every ancestor layout (including scroll area viewports),
+    // which is exactly what the old manual parent-resize loop tried to emulate.
+    updateGeometry();
     emit contentHeightChanged();
 }

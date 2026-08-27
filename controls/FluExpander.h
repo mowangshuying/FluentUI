@@ -36,6 +36,8 @@ class FluExpander : public FluWidget
 
     void paintEvent(QPaintEvent* event);
 
+    QSize sizeHint() const;
+
     int getContentHeight() const;
     void setContentHeight(int newContentHeight);
 

@@ -30,6 +30,14 @@ FluDisplayBox::FluDisplayBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
     m_mainLayout->addWidget(m_codeExpander);
     m_codeExpander->setObjectName("codeExpander");
 
+    // refresh geometry of self and parent when the expander expands/collapses,
+    // so ancestor scroll view layouts recalculate correctly
+    connect(m_codeExpander, &FluExpander::contentHeightChanged, this, [this] {
+        updateGeometry();
+        if (parentWidget())
+            parentWidget()->updateGeometry();
+    });
+
     onThemeChanged();
 }
 

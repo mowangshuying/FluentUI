@@ -11,7 +11,7 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
     displayBox1->getCodeExpander()->setCodeByPath("../code/ListViewPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(480);
 
-    FluListView* listView = new FluListView(displayBox1);
+    FluListView* listView = new FluListView;
 
     listView->setFixedSize(350, 400);
     listView->addItem(tr("Kendall Collins"));

@@ -34,5 +34,6 @@ FluExpander {
 
 FluExpander:disabled #wrap1,
 FluExpander:disabled #wrap2 {
-    opacity: 0.4;
+    background-color: rgb(249, 249, 249);
+    border-color: rgb(238, 238, 238);
 }

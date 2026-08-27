@@ -9,7 +9,7 @@ FluCalendarViewPage::FluCalendarViewPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A basic calendar view."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/CalendarViewPageCode1.md");
+    displayBox->setCodeByPath("../code/CalendarViewPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(400);
 
     auto calendarView = new FluCalendarView(displayBox);

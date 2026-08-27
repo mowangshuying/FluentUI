@@ -8,7 +8,7 @@ FluTableViewPage::FluTableViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("Base TableView Demo."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/TableViewPageCode1.md");
+    displayBox->setCodeByPath("../code/TableViewPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(600);
 
     // table view

@@ -11,7 +11,7 @@ FluTreeViewPage::FluTreeViewPage(QWidget* parent)
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A simple TreeView with drag and drop support."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/TreeViewPageCode1.md");
+    displayBox->setCodeByPath("../code/TreeViewPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(300);
 
     // tree view demo;

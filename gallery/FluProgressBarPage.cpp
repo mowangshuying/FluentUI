@@ -10,7 +10,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     // Determinate example
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A determinate progress bar."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ProgressBarPageCode1.md");
+    displayBox1->setCodeByPath("../code/ProgressBarPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto progressBar1 = new FluProgressBar(displayBox1);
@@ -23,7 +23,7 @@ FluProgressBarPage::FluProgressBarPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     // Indeterminate example
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("An indeterminate progress bar."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/ProgressBarPageCode2.md");
+    displayBox2->setCodeByPath("../code/ProgressBarPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(96);
 
     auto progressBar2 = new FluProgressBar(displayBox2);

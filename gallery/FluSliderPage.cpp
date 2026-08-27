@@ -11,7 +11,7 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple Slider."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/SliderPageCode1.md");
+    displayBox1->setCodeByPath("../code/SliderPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto hSlider = new FluSlider(displayBox1);
@@ -25,7 +25,7 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A vertical slider."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/SliderPageCode2.md");
+    displayBox2->setCodeByPath("../code/SliderPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(180);
 
     auto vSlider = new FluSlider(displayBox2);
@@ -40,7 +40,7 @@ FluSliderPage::FluSliderPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     auto displayBox3 = new FluDisplayBox;
     displayBox3->setTitle(tr("A slider with tick marks."));
-    displayBox3->getCodeExpander()->setCodeByPath("../code/SliderPageCode3.md");
+    displayBox3->setCodeByPath("../code/SliderPageCode3.md");
     displayBox3->setBodyWidgetFixedHeight(96);
 
     auto tickSlider = new FluSlider(displayBox3);

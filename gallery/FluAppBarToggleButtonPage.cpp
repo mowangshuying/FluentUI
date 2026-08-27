@@ -16,7 +16,7 @@ void FluAppBarToggleButtonPage::addSymbolIconAppBarButton()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An AppBarButton with a symbol icon."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AppBarToggleButtonPageCode1.md");
+    displayBox->setCodeByPath("../code/AppBarToggleButtonPageCode1.md");
 
     auto appBarButton = new FluAppBarToggleButton(FluAwesomeType::Like);
     appBarButton->setText("SymbolIcon");

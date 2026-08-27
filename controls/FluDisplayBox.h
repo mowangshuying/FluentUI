@@ -24,6 +24,8 @@ class FluDisplayBox : public FluWidget
 
     FluCodeExpander* getCodeExpander();
 
+    void setCodeByPath(QString fileName);
+
     void setBodyWidgetFixedHeight(int height);
 
     void paintEvent(QPaintEvent* event);

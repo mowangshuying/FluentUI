@@ -8,7 +8,7 @@ FluScrollViewPage::FluScrollViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("Content inside of ScrollView."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ScrollViewPageCode1.md");
+    displayBox->setCodeByPath("../code/ScrollViewPageCode1.md");
     // displayBox->setBodyWidgetFixedHeight(800);
 
     QPixmap img = FluIconUtils::getPixmap("../res/SampleMedia/LandscapeImage9.jpg");

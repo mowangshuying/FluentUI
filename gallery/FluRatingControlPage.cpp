@@ -8,7 +8,7 @@ FluRatingControlPage::FluRatingControlPage(QWidget* parent /*= nullptr*/) : FluA
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A Simple RatingControl."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/RatingControlPageCode1.md");
+    displayBox->setCodeByPath("../code/RatingControlPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto ratingControl = new FluRatingControl;

@@ -20,7 +20,7 @@ void FluAppBarButtonPage::addSymbolIconAppBarButton()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An AppBarButton with a symbol icon."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode1.md");
+    displayBox->setCodeByPath("../code/AppBarButtonPageCode1.md");
 
     auto appBarButton = new FluAppBarButton(FluAwesomeType::Like);
     appBarButton->setText(tr("SymbolIcon"));
@@ -34,7 +34,7 @@ void FluAppBarButtonPage::addKeyboardAcceleratorAppBarButton()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An AppBarButton with a KeyboardAccelerator."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AppBarButtonPageCode2.md");
+    displayBox->setCodeByPath("../code/AppBarButtonPageCode2.md");
 
     auto appBarButton = new FluAppBarButton(FluAwesomeType::Save);
     appBarButton->setText("Save");

@@ -10,7 +10,7 @@ FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmpt
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple PasswordBox."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/PasswordBoxPageCode1.md");
+    displayBox1->setCodeByPath("../code/PasswordBoxPageCode1.md");
 
     auto passwordBox1 = new FluPasswordBox(this);
     passwordBox1->setFixedWidth(240);
@@ -21,7 +21,7 @@ FluPasswordBoxPage::FluPasswordBoxPage(QWidget* parent /*= nullptr*/) : FluAEmpt
     // maskC
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A PasswordBox with header, placeholder text and custom character."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/PasswordBoxPageCode2.md");
+    displayBox2->setCodeByPath("../code/PasswordBoxPageCode2.md");
 
     auto passwordBox2 = new FluPasswordBox(this);
     passwordBox2->setMaskC(0x2a);

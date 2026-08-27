@@ -8,7 +8,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A ComboBox with items defined inline and its width set."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode1.md");
+    displayBox->setCodeByPath("../code/ComboBoxPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto comboBox = new FluComboBox(displayBox);
@@ -34,7 +34,7 @@ FluComboBoxPage::FluComboBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A ComboBox with placeholder text and initial selection."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/ComboBoxPageCode2.md");
+    displayBox2->setCodeByPath("../code/ComboBoxPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(96);
 
     auto comboBox2 = new FluComboBox(displayBox2);

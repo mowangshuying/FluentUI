@@ -10,7 +10,7 @@ FluTimePickerPage::FluTimePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple TimePicker"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/TimePickerPageCode1.md");
+    displayBox1->setCodeByPath("../code/TimePickerPageCode1.md");
     auto timePickerAp = new FluTimePickerAP;
     displayBox1->getBodyLayout()->addWidget(timePickerAp);
 
@@ -18,7 +18,7 @@ FluTimePickerPage::FluTimePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A TimePicker using a 24-hour clock."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/TimePickerPageCode2.md");
+    displayBox2->setCodeByPath("../code/TimePickerPageCode2.md");
     auto timePicker24H = new FluTimePicker24H;
     displayBox2->getBodyLayout()->addWidget(timePicker24H);
     m_scrollView->getMainLayout()->addWidget(displayBox2, 0, Qt::AlignTop);

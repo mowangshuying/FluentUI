@@ -23,7 +23,7 @@ void FluProgressRingPage::addIndeterminateProgressRing()
     displayBox->getBodyContentLayout()->setAlignment(Qt::AlignTop);
     displayBox->getBodyRightLayout()->setAlignment(Qt::AlignTop);
     displayBox->setTitle(tr("An indeterminate progress ring."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode1.md");
+    displayBox->setCodeByPath("../code/ProgressRingPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto hBoxLayout = new QHBoxLayout;
@@ -78,7 +78,7 @@ void FluProgressRingPage::addIndeterminateRing()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An indeterminate ring."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode2.md");
+    displayBox->setCodeByPath("../code/ProgressRingPageCode2.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto progressRing = new FluProgressRing(displayBox);
@@ -105,7 +105,7 @@ void FluProgressRingPage::addBusyRing()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An busy ring."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ProgressRingPageCode3.md");
+    displayBox->setCodeByPath("../code/ProgressRingPageCode3.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto busyRing = new FluBusyProgressRing(displayBox);

@@ -10,7 +10,7 @@ FluFlyoutPage::FluFlyoutPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pare
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A button with a flyout."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/FlyoutPageCode1.md");
+    displayBox->setCodeByPath("../code/FlyoutPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto emptyCartBtn = new FluPushButton;

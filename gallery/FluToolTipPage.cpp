@@ -9,7 +9,7 @@ FluToolTipPage::FluToolTipPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     // ---- DisplayBox 1: Single-line tooltip ----
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A tooltip with custom content."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ToolTipPageCode1.md");
+    displayBox1->setCodeByPath("../code/ToolTipPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto btn1 = new FluPushButton(tr("Hover me"), displayBox1->getBodyWidget());
@@ -21,7 +21,7 @@ FluToolTipPage::FluToolTipPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     // ---- DisplayBox 2: Multiline tooltip ----
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A tooltip with rich text / multiline."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/ToolTipPageCode2.md");
+    displayBox2->setCodeByPath("../code/ToolTipPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(96);
 
     auto btn2 = new FluPushButton(tr("Hover for details"), displayBox2->getBodyWidget());
@@ -34,7 +34,7 @@ FluToolTipPage::FluToolTipPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
     // ---- DisplayBox 3: Tooltip placement ----
     auto displayBox3 = new FluDisplayBox;
     displayBox3->setTitle(tr("A tooltip with specified placement."));
-    displayBox3->getCodeExpander()->setCodeByPath("../code/ToolTipPageCode3.md");
+    displayBox3->setCodeByPath("../code/ToolTipPageCode3.md");
     displayBox3->setBodyWidgetFixedHeight(150);
 
     struct PlacementInfo

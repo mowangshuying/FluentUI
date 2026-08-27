@@ -23,7 +23,7 @@ void FluInfoBarPage::addPersistentInfoBar()
     displayBox->getBodyRightLayout()->setSpacing(8);
 
     displayBox->setTitle(tr("A persistent InfoBar with editable title, message, severity and close options."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBarPageCode1.md");
+    displayBox->setCodeByPath("../code/InfoBarPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(240);
     displayBox->getBodyContentLayout()->setAlignment(Qt::AlignVCenter);
 
@@ -88,7 +88,7 @@ void FluInfoBarPage::addClosableInfoBar()
     displayBox->getBodyRightLayout()->setSpacing(10);
 
     displayBox->setTitle(tr("A closable InfoBar with options to change its severity."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBarPageCode1.md");
+    displayBox->setCodeByPath("../code/InfoBarPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(120);
 
     FluInfoBar* infoBar = new FluInfoBar(FluInfoBarSeverity::Informational);
@@ -130,7 +130,7 @@ void FluInfoBarPage::addDynamicInfoBar()
 {
     FluDisplayBox* displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A dynamic InfoBar."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBarPageCode2.md");
+    displayBox->setCodeByPath("../code/InfoBarPageCode2.md");
     displayBox->setBodyWidgetFixedHeight(48);
 
     auto infoBtn = new FluPushButton;
@@ -167,7 +167,7 @@ void FluInfoBarPage::addBottomRightInfoBar()
 {
     FluDisplayBox* displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A toast that appears at the bottom-right and stacks."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBarPageCode2.md");
+    displayBox->setCodeByPath("../code/InfoBarPageCode2.md");
     displayBox->setBodyWidgetFixedHeight(48);
 
     auto infoBtn = new FluPushButton;

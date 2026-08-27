@@ -8,7 +8,7 @@ FluPivotPage::FluPivotPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(parent
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A basic pivot."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/PivotPageCode1.md");
+    displayBox->setCodeByPath("../code/PivotPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(360);
 
     auto pivot = new FluPivot;

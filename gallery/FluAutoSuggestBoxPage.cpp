@@ -8,7 +8,7 @@ FluAutoSuggestBoxPage::FluAutoSuggestBoxPage(QWidget* parent /*= nullptr*/) : Fl
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A basic autosuggest box."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/AutoSuggestBoxPageCode1.md");
+    displayBox->setCodeByPath("../code/AutoSuggestBoxPageCode1.md");
 
     auto autoSuggestBox = new FluAutoSuggestBox;
     autoSuggestBox->setFixedWidth(300);

@@ -8,7 +8,7 @@ FluTextBoxPage::FluTextBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(pa
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A multi-line TextBox"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/TextBoxPageCode1.md");
+    displayBox1->setCodeByPath("../code/TextBoxPageCode1.md");
 
     auto textEdit = new FluTextEdit;
     textEdit->setFixedWidth(300);

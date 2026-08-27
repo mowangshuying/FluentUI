@@ -10,7 +10,7 @@ FluRepeatButtonPage::FluRepeatButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A simple RepeatButton with text context."));
 
-    displayBox->getCodeExpander()->setCodeByPath("../code/RepeatButtonPageCode1.md");
+    displayBox->setCodeByPath("../code/RepeatButtonPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(64);
 
     auto repeatButton = new FluRepeatButton;

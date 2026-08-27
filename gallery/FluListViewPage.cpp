@@ -8,7 +8,7 @@ FluListViewPage::FluListViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("Basic ListView with Simple DateTemplate"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ListViewPageCode1.md");
+    displayBox1->setCodeByPath("../code/ListViewPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(480);
 
     FluListView* listView = new FluListView;

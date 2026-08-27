@@ -19,7 +19,7 @@ void FluExpanderPage::addExpanderDemo1()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An Expander with text in the header and content areas."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ExpanderPageCode1.md");
+    displayBox->setCodeByPath("../code/ExpanderPageCode1.md");
     displayBox->setBodyWidgetFixedHeight(120);
 
     auto expander = new FluExpander(this);
@@ -44,7 +44,7 @@ void FluExpanderPage::addExpanderDemo2()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("An Expander with other controls in the header and content."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ExpanderPageCode2.md");
+    displayBox->setCodeByPath("../code/ExpanderPageCode2.md");
     displayBox->setBodyWidgetFixedHeight(120);
 
     auto expander = new FluExpander(this);
@@ -68,7 +68,7 @@ void FluExpanderPage::addExpanderDemo3()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("Modifying Expanders content alignment."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/ExpanderPageCode3.md");
+    displayBox->setCodeByPath("../code/ExpanderPageCode3.md");
     displayBox->setBodyWidgetFixedHeight(120);
 
     auto expander = new FluExpander(this);

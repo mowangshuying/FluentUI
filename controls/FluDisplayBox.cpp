@@ -60,6 +60,11 @@ FluCodeExpander* FluDisplayBox::getCodeExpander()
     return m_codeExpander;
 }
 
+void FluDisplayBox::setCodeByPath(QString fileName)
+{
+    m_codeExpander->setCodeByPath(fileName);
+}
+
 void FluDisplayBox::setBodyWidgetFixedHeight(int height)
 {
     m_bodyWidget->setFixedHeight(height);

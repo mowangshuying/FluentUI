@@ -16,7 +16,7 @@ void FluSplitButtonPage::addSplitButtonWithText()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A SplitButton with text."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
+    displayBox->setCodeByPath("../code/SplitButtonPageCode1.md");
 
     auto splitButton = new FluSplitButton(this);
     splitButton->setText(tr("Choose Color."));
@@ -52,7 +52,7 @@ void FluSplitButtonPage::addSplitButtonWithText()
     connect(splitButton, &FluSplitButton::clicked, [=]() { colorLayout->show(); });
 
     displayBox->getBodyLayout()->addWidget(splitButton);
-    displayBox->getCodeExpander()->setCodeByPath("../code/SplitButtonPageCode1.md");
+    displayBox->setCodeByPath("../code/SplitButtonPageCode1.md");
     m_scrollView->getMainLayout()->addWidget(displayBox, 0, Qt::AlignTop);
 }
 

@@ -21,7 +21,7 @@ void FluMenuBarPage::addSimpleMenuBar()
 {
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A Simple MenuBar"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode1.md");
+    displayBox1->setCodeByPath("../code/MenuBarPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto menuBar = new FluMenuBar;
@@ -69,7 +69,7 @@ void FluMenuBarPage::addMenuBarWithAccelerators()
 {
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("MenuBar with keyboard accelerators"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode2.md");
+    displayBox1->setCodeByPath("../code/MenuBarPageCode2.md");
     displayBox1->setBodyWidgetFixedHeight(96);
 
     auto menuBar = new FluMenuBar;
@@ -129,7 +129,7 @@ void FluMenuBarPage::addRoundMenu()
 {
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("A Round Menu"));
-    displayBox->getCodeExpander()->setCodeByPath("../code/MenuBarPageCode3.md");
+    displayBox->setCodeByPath("../code/MenuBarPageCode3.md");
 
     auto btn = new FluPushButton;
     btn->setText(tr("show menu"));

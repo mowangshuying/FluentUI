@@ -8,7 +8,7 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple FlipView with items declared inline."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/FlipViewPageCode1.md");
+    displayBox1->setCodeByPath("../code/FlipViewPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(300);
 
     auto hFlipView = new FluHFlipView(displayBox1);
@@ -22,7 +22,7 @@ FluFlipViewPage::FluFlipViewPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle("vertical FlipView");
-    displayBox2->getCodeExpander()->setCodeByPath("../code/FlipViewPageCode2.md");
+    displayBox2->setCodeByPath("../code/FlipViewPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(300);
 
     auto vFlipView = new FluVFlipView(displayBox2);

@@ -10,7 +10,7 @@ FluDatePickerPage::FluDatePickerPage(QWidget* parent /*= nullptr*/) : FluAEmptyP
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple DatePicker with a header."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/DatePickerPageCode1.md");
+    displayBox1->setCodeByPath("../code/DatePickerPageCode1.md");
     auto datePicker = new FluDatePicker;
     displayBox1->getBodyLayout()->addWidget(datePicker);
 

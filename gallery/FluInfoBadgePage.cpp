@@ -8,7 +8,7 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
 
     auto displayBox = new FluDisplayBox;
     displayBox->setTitle(tr("InfoBadge with Different Value."));
-    displayBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode1.md");
+    displayBox->setCodeByPath("../code/InfoBadgePageCode1.md");
     displayBox->setBodyWidgetFixedHeight(96);
 
     auto targetWidget1 = new QWidget(displayBox->getBodyWidget());
@@ -34,7 +34,7 @@ FluInfoBadgePage::FluInfoBadgePage(QWidget* parent /*= nullptr*/) : FluAEmptyPag
     // Interactive value-change demo
     auto interactiveBox = new FluDisplayBox;
     interactiveBox->setTitle(tr("InfoBadge with Interactive Value."));
-    interactiveBox->getCodeExpander()->setCodeByPath("../code/InfoBadgePageCode2.md");
+    interactiveBox->setCodeByPath("../code/InfoBadgePageCode2.md");
     interactiveBox->setBodyWidgetFixedHeight(96);
 
     auto targetBtn = new FluPushButton(tr("Click to Increment"), interactiveBox->getBodyWidget());

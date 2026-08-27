@@ -14,7 +14,7 @@ FluToggleButtonPage::FluToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A simple toggle button with text content."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/ToggleButtonPageCode1.md");
+    displayBox1->setCodeByPath("../code/ToggleButtonPageCode1.md");
     auto btn1 = new FluToggleButton(this);
     btn1->setText(tr("Toggle Button"));
     displayBox1->setBodyWidgetFixedHeight(96);
@@ -24,7 +24,7 @@ FluToggleButtonPage::FluToggleButtonPage(QWidget* parent /*= nullptr*/) : FluAEm
     // ---- DisplayBox 2: checked, disabled and state change signal ----
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A toggle button with checked state, disabled state and a state label."));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/ToggleButtonPageCode2.md");
+    displayBox2->setCodeByPath("../code/ToggleButtonPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(96);
 
     auto hLayout = new QHBoxLayout;

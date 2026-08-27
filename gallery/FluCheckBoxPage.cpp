@@ -13,7 +13,7 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A 2-state CheckBox"));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/CheckBoxPageCode1.md");
+    displayBox1->setCodeByPath("../code/CheckBoxPageCode1.md");
     displayBox1->setBodyWidgetFixedHeight(56);
 
     auto checkBox = new FluCheckBox(tr("Two-State CheckBox"), this);
@@ -22,7 +22,7 @@ FluCheckBoxPage::FluCheckBoxPage(QWidget* parent /*= nullptr*/) : FluAEmptyPage(
 
     auto displayBox2 = new FluDisplayBox;
     displayBox2->setTitle(tr("A 3-state CheckBox"));
-    displayBox2->getCodeExpander()->setCodeByPath("../code/CheckBoxPageCode2.md");
+    displayBox2->setCodeByPath("../code/CheckBoxPageCode2.md");
     displayBox2->setBodyWidgetFixedHeight(56);
 
     auto checkBox2 = new FluCheckBox(tr("Three-state CheckBox"), this);

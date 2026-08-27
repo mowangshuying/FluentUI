@@ -10,7 +10,7 @@ FluHyperLinkButtonPage::FluHyperLinkButtonPage(QWidget* parent /*= nullptr*/) : 
 
     auto displayBox1 = new FluDisplayBox;
     displayBox1->setTitle(tr("A hyperlink button with a Url."));
-    displayBox1->getCodeExpander()->setCodeByPath("../code/HyperLinkButtonPageCode1.md");
+    displayBox1->setCodeByPath("../code/HyperLinkButtonPageCode1.md");
 
     auto btn1 = new FluHyperLinkButton("https://github.com/mowangshuying/FluentUI");
     btn1->setText(tr("FluentUI Repo Url"));

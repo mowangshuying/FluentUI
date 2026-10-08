@@ -61,3 +61,12 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# GitHub Linguist: exclude generated Python type stubs from language stats,
+# otherwise the Shiboken-generated PySide6FluentUI.pyi (4.2MB) makes Python
+# the repository's primary language instead of C++.
+# 3rdparty/** is already auto-detected as vendored by Linguist.
+###############################################################################
+*.pyi linguist-generated=true
+*.sip linguist-generated=true

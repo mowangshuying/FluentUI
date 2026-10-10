@@ -68,7 +68,8 @@ void FluSettingsVersionBox::addWidget(QWidget* widget)
     auto hLayout = new QHBoxLayout;
     hLayout->setContentsMargins(50, 0, 10, 0);
 
-    hLayout->addWidget(widget, 1);
+    hLayout->addWidget(widget);
+    hLayout->addStretch();
     getWrap2Layout()->addLayout(hLayout);
 }
 

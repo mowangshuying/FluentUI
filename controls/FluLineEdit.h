@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include <QPaintEvent>
+#include <QContextMenuEvent>
 
 class FluLineEdit : public QLineEdit
 {
@@ -16,5 +17,7 @@ class FluLineEdit : public QLineEdit
     void paintEvent(QPaintEvent* event);
 
   protected:
+    void contextMenuEvent(QContextMenuEvent* event);
+
     void onThemeChanged();
 };

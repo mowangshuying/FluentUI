@@ -4,6 +4,7 @@
 #include "../utils/FluUtils.h"
 #include <QTextDocument>
 #include <QWidget>
+#include <QContextMenuEvent>
 #include "FluScrollDelegate.h"
 
 class FluTextEditWrap;
@@ -18,6 +19,10 @@ class FluTextEdit : public QTextEdit
     void setAutoAdjustSize(bool isAdjustSize);
 
     void paintEvent(QPaintEvent* event);
+
+  protected:
+    void contextMenuEvent(QContextMenuEvent* event);
+
   public slots:
     void onThemeChanged();
 

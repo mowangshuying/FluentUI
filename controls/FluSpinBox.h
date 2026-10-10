@@ -2,6 +2,7 @@
 
 #include "../utils/FluUtils.h"
 #include <QSpinBox>
+#include <QContextMenuEvent>
 
 class FluSpinBox : public QSpinBox
 {
@@ -10,6 +11,8 @@ class FluSpinBox : public QSpinBox
     FluSpinBox(QWidget* parent = nullptr);
 
     void paintEvent(QPaintEvent* event);
+
+    bool eventFilter(QObject* watched, QEvent* event);
 
   protected:
     void onThemeChanged();

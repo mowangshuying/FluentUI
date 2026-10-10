@@ -1,4 +1,6 @@
 ﻿#include "FluAutoSuggestBox.h"
+#include "FluMenu.h"
+#include <QContextMenuEvent>
 #include "FluCompleterMenu.h"
 
 FluAutoSuggestBox::FluAutoSuggestBox(bool isSearch /*=false*/, QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -140,6 +142,13 @@ bool FluAutoSuggestBox::eventFilter(QObject* watched, QEvent* event)
         {
             setProperty("isFocused", false);
             style()->polish(this);
+        }
+        else if (event->type() == QEvent::ContextMenu)
+        {
+            // 内部 QLineEdit 的右键菜单默认是系统样式的，这里换成 FluentUI 形式的菜单
+            auto contextEvent = static_cast<QContextMenuEvent*>(event);
+            FluMenu::execStandardContextMenu(m_lineEdit, m_lineEdit->createStandardContextMenu(), contextEvent->globalPos());
+            return true;
         }
     }
     return QWidget::eventFilter(watched, event);

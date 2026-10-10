@@ -1,4 +1,6 @@
 #include "FluSearchLineEdit.h"
+#include "FluMenu.h"
+#include <QContextMenuEvent>
 
 FluSearchLineEdit::FluSearchLineEdit(QWidget* parent /*= nullptr*/) : FluWidget(parent)
 {
@@ -77,6 +79,13 @@ bool FluSearchLineEdit::eventFilter(QObject* watched, QEvent* event)
             {
                 emit onSearchButtonClicked();
             }
+        }
+        else if (event->type() == QEvent::ContextMenu)
+        {
+            // 内部 QLineEdit 的右键菜单默认是系统样式的，这里换成 FluentUI 形式的菜单
+            auto contextEvent = static_cast<QContextMenuEvent*>(event);
+            FluMenu::execStandardContextMenu(m_edit, m_edit->createStandardContextMenu(), contextEvent->globalPos());
+            return true;
         }
     }
 

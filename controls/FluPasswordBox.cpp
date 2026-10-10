@@ -1,5 +1,5 @@
 #include "FluPasswordBox.h"
-#include "FluMenu.h"
+#include "FluPMenu.h"
 #include <QContextMenuEvent>
 
 FluPasswordBox::FluPasswordBox(QWidget* parent /*= nullptr*/) : FluWidget(parent)
@@ -64,7 +64,7 @@ bool FluPasswordBox::eventFilter(QObject* watched, QEvent* event)
         {
             // 内部 QLineEdit 的右键菜单默认是系统样式的，这里换成 FluentUI 形式的菜单
             auto contextEvent = static_cast<QContextMenuEvent*>(event);
-            FluMenu::execStandardContextMenu(m_edit, m_edit->createStandardContextMenu(), contextEvent->globalPos());
+            FluPMenu::execStandardContextMenu(m_edit, m_edit->createStandardContextMenu(), contextEvent->globalPos());
             return true;
         }
     }

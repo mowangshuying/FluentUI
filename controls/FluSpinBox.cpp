@@ -1,5 +1,5 @@
 ﻿#include "FluSpinBox.h"
-#include "FluMenu.h"
+#include "FluPMenu.h"
 #include <QLineEdit>
 
 FluSpinBox::FluSpinBox(QWidget* parent /*= nullptr*/) : QSpinBox(parent)
@@ -25,7 +25,7 @@ bool FluSpinBox::eventFilter(QObject* watched, QEvent* event)
     if (watched == lineEdit() && event->type() == QEvent::ContextMenu)
     {
         auto contextEvent = static_cast<QContextMenuEvent*>(event);
-        FluMenu::execStandardContextMenu(this, lineEdit()->createStandardContextMenu(), contextEvent->globalPos());
+        FluPMenu::execStandardContextMenu(this, lineEdit()->createStandardContextMenu(), contextEvent->globalPos());
         return true;
     }
 

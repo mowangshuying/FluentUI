@@ -1,5 +1,5 @@
 ﻿#include "FluAutoSuggestBox.h"
-#include "FluMenu.h"
+#include "FluPMenu.h"
 #include <QContextMenuEvent>
 #include "FluCompleterMenu.h"
 
@@ -147,7 +147,7 @@ bool FluAutoSuggestBox::eventFilter(QObject* watched, QEvent* event)
         {
             // 内部 QLineEdit 的右键菜单默认是系统样式的，这里换成 FluentUI 形式的菜单
             auto contextEvent = static_cast<QContextMenuEvent*>(event);
-            FluMenu::execStandardContextMenu(m_lineEdit, m_lineEdit->createStandardContextMenu(), contextEvent->globalPos());
+            FluPMenu::execStandardContextMenu(m_lineEdit, m_lineEdit->createStandardContextMenu(), contextEvent->globalPos());
             return true;
         }
     }

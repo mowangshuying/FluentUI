@@ -23,6 +23,10 @@ class FluPMenu : public QMenu
 
     FluPMenu(const QString &title, QWidget *parent = nullptr);
 
+    static FluPMenu* fromStandardMenu(QMenu* standardMenu, QWidget* parent = nullptr);
+
+    static void execStandardContextMenu(QWidget* widget, QMenu* standardMenu, const QPoint& globalPos);
+
     QColor getMenuBackgroundColor() const
     {
         return m_style->getMenuBackgroundColor();

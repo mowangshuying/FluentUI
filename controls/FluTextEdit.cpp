@@ -1,6 +1,6 @@
 ﻿#include "FluTextEdit.h"
 #include "FluTextEditWrap.h"
-#include "FluMenu.h"
+#include "FluPMenu.h"
 
 FluTextEdit::FluTextEdit(QWidget* parent /*= nullptr*/) : QTextEdit(parent)
 {
@@ -43,7 +43,7 @@ void FluTextEdit::paintEvent(QPaintEvent* event)
 void FluTextEdit::contextMenuEvent(QContextMenuEvent* event)
 {
     // 用 FluentUI 形式的菜单替代 Qt 原生样式的标准右键菜单
-    FluMenu::execStandardContextMenu(this, createStandardContextMenu(), event->globalPos());
+    FluPMenu::execStandardContextMenu(this, createStandardContextMenu(), event->globalPos());
 }
 
 void FluTextEdit::onThemeChanged()

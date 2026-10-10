@@ -3611,7 +3611,7 @@ Determinate - shows how much progress has been made on a known amount of work.</
     </message>
     <message>
         <location filename="../gallery/FluSettingPage.cpp" line="91"/>
-        <source>1.0.8</source>
+        <source>1.0.9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

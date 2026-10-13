@@ -2,9 +2,12 @@
 
 #include <QStackedLayout>
 #include <QMap>
+#include <QPointer>
 #include "FluWidget.h"
 #include <QPropertyAnimation>
 #include "FluValueObject.h"
+
+class QGraphicsOpacityEffect;
 
 // use it only contains widgets
 // when use it, please just use addWidget , removeWidget
@@ -31,4 +34,6 @@ class FluStackedLayout : public QStackedLayout
     QMap<QString, QWidget *> m_widgetMap;
     QPropertyAnimation *m_opacityAnimation;
     FluValueObject *m_valueObject;
+    QPointer<QWidget> m_currentFadePage;
+    QPointer<QGraphicsOpacityEffect> m_currentFadeEffect;
 };

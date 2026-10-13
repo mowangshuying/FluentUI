@@ -111,10 +111,17 @@ QPixmap FluIconUtils::getSvgPixmap(QString svgPath)
 {
     QPixmap pixmap(QSize(30, 30));
     pixmap.fill(Qt::transparent);
+
+    QSvgRenderer renderer(svgPath);
+    
+    if (!renderer.isValid())
+    {
+        return pixmap;
+    }
+
     QPainter painter(&pixmap);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
-    QSvgRenderer renderer(svgPath);
-    renderer.render(&painter);
+    renderer.render(&painter, pixmap.rect());
     return pixmap;
 }
 

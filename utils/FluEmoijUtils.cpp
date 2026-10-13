@@ -3,15 +3,31 @@
 #include <QtSvg/QSvgRenderer>
 #include <QApplication>
 #include <QIcon>
+#include "FluLogUtils.h"
+
 
 QPixmap FluEmoijUtils::getSvgPixmap(QString svgPath)
 {
     QPixmap pixmap(QSize(30, 30));
     pixmap.fill(Qt::transparent);
+
+    QSvgRenderer renderer(svgPath);
+
+    if (!renderer.isValid())
+    {
+        return pixmap;
+    }
+
+    //if (svgPath.contains("CherryBlossomColor"))
+    //{
+    //    //LOG_DEBUG << "view Box:" << renderer.viewBox();
+    //    LOG_DEBUG << "default Size" << renderer.defaultSize();
+    //}
+
+    //LOG_DEBUG << svgPath;
     QPainter painter(&pixmap);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
-    QSvgRenderer renderer(svgPath);
-    renderer.render(&painter);
+    renderer.render(&painter, pixmap.rect());
     return pixmap;
 }
 

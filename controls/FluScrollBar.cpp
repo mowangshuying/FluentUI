@@ -30,9 +30,14 @@ FluScrollBar::FluScrollBar(Qt::Orientation orientation, QAbstractScrollArea* scr
     // C. Auto-hide + fade setup
     m_opaEffect = new QGraphicsOpacityEffect(this);
     m_opaEffect->setOpacity(1.0);
+    m_opaEffect->setEnabled(false); // resting fully opaque: disabled effect is short-circuited by drawWidget, never detached
     setGraphicsEffect(m_opaEffect);
 
     m_fadeAnimation = new QPropertyAnimation(m_opaEffect, "opacity", this);
+    connect(m_fadeAnimation, &QPropertyAnimation::finished, this, [this]() {
+        if (m_opaEffect->opacity() >= 1.0)
+            m_opaEffect->setEnabled(false);
+    });
 
     m_autoHideTimer = new QTimer(this);
     m_autoHideTimer->setSingleShot(true);
@@ -511,6 +516,13 @@ void FluScrollBar::onThemeChanged()
 void FluScrollBar::onAutoHideTimeout()
 {
     m_fadeAnimation->stop();
+    // Re-enable for the fade-out (the effect is permanently mounted, never re-attached).
+    // Guarantee opacity strictly below 1.0 before the first animated frame so a 1.0 + enabled
+    // dirty frame cannot reproduce the QPainter warning. 0.999 still exceeds m_fadeAlpha so the
+    // subsequent start-value read and guard semantics are unaffected.
+    m_opaEffect->setEnabled(true);
+    if (m_opaEffect->opacity() >= 1.0)
+        m_opaEffect->setOpacity(0.999);
     m_fadeAnimation->setStartValue(m_opaEffect->opacity());
     m_fadeAnimation->setEndValue(0.3);
     m_fadeAnimation->setDuration(500);
@@ -537,6 +549,9 @@ void FluScrollBar::fadeIn()
     if (m_isFaded || m_opaEffect->opacity() < 1.0)
     {
         m_fadeAnimation->stop();
+        // Entering this branch guarantees opacity < 1.0, so enabling here cannot leave a dirty
+        // 1.0 + enabled frame; the animation drives it back to 1.0 and the finished callback disables again.
+        m_opaEffect->setEnabled(true);
         m_fadeAnimation->setStartValue(m_opaEffect->opacity());
         m_fadeAnimation->setEndValue(1.0);
         m_fadeAnimation->setDuration(200);

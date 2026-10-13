@@ -59,6 +59,10 @@ void FluScrollBarTrunk::initOpacityAnimation()
     m_animation->setEasingCurve(QEasingCurve::InOutCubic);
     setGraphicsEffect(m_effect);
     m_effect->setOpacity(0);
+    connect(m_animation, &QPropertyAnimation::finished, this, [this]() {
+        if (m_effect->opacity() >= 1.0)
+            m_effect->setEnabled(false); // resting fully expanded: disable to bypass effect draw, effect stays mounted
+    });
 }
 
 FluScrollBarArrowButton* FluScrollBarTrunk::getPreButton()
@@ -83,6 +87,10 @@ QColor FluScrollBarTrunk::getTrunkBackgroundColor()
 
 void FluScrollBarTrunk::expandTrunk()
 {
+    // Clamp opacity to 0.0 before enabling so no 1.0 + enabled dirty frame can occur; the effect
+    // is permanently mounted and never re-attached.
+    m_effect->setOpacity(0.0);
+    m_effect->setEnabled(true);
     m_animation->setStartValue(0);
     m_animation->setEndValue(1);
     m_animation->setDuration(200);
@@ -91,7 +99,11 @@ void FluScrollBarTrunk::expandTrunk()
 
 void FluScrollBarTrunk::collapseTrunk()
 {
-    m_animation->setStartValue(1);
+    // Clamp to 0.999 (strictly below 1.0) before enabling so a disabled resting-1.0 effect cannot
+    // flash a dirty 1.0 + enabled frame; animation runs from 0.999 down to 0.
+    m_effect->setOpacity(0.999);
+    m_effect->setEnabled(true);
+    m_animation->setStartValue(0.999);
     m_animation->setEndValue(0);
     m_animation->setDuration(200);
     m_animation->start();

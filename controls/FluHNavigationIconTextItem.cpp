@@ -521,7 +521,7 @@ bool FluHNavigationIconTextItem::isLeaf() const
 
 void FluHNavigationIconTextItem::expand()
 {
-    LOG_DEBUG << "called";
+    //LOG_DEBUG << "called";
 #ifdef _DEBUG
     // if (getText() == "Accessibility")
     //{

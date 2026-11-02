@@ -185,6 +185,31 @@ void FluPMenuStyle::drawControl(ControlElement element, const QStyleOption* opti
 
         return QProxyStyle::drawControl(element, option, painter, widget);
     }
+
+    // Menu-family elements must NOT be forwarded. FluPMenu paints its own panel via
+    // drawPrimitive(PE_PanelMenu) (rounded rect + border) and its items via CE_MenuItem above, so
+    // these elements were deliberately left undrawn upstream. Handing them to the base style makes
+    // it fill the whole menu rect: CE_MenuEmptyArea in particular overwrote the rounded right
+    // border (measured on the real context menu: right column went from #dedede x213/228 with
+    // corner gaps to a full-height #f0f0f0 x228/228 straight line).
+    switch (element)
+    {
+    case CE_MenuScroller:
+    case CE_MenuVMargin:
+    case CE_MenuHMargin:
+    case CE_MenuTearoff:
+    case CE_MenuEmptyArea:
+        return;
+    default:
+        break;
+    }
+
+    // Everything else has to reach the base style. Without this forward, elements such as
+    // CE_PushButton / CE_PushButtonLabel fell off the end of the function and drew literally
+    // nothing: after a FluPMenu popup covered a FluentInputDialog button, drawControl(CE_PushButton)
+    // produced zero pixels (the rendered button collapsed from 56 distinct colours to 1), leaving a
+    // flat parent-coloured rectangle with no border and no text.
+    QProxyStyle::drawControl(element, option, painter, widget);
 }
 
 int FluPMenuStyle::pixelMetric(PixelMetric metric, const QStyleOption* option, const QWidget* widget) const

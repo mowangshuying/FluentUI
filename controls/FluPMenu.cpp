@@ -38,7 +38,7 @@ FluPMenu* FluPMenu::fromStandardMenu(QMenu* standardMenu, QWidget* parent /*= nu
         if (!action)
             continue;
 
-        // 子菜单同样换成 FluPMenu，保证展开时仍是同一套自绘样式
+        // Swap sub-menus to FluPMenu as well, so an expanded submenu keeps the same custom style
         if (auto subMenu = action->menu())
         {
             auto fluentSubMenu = FluPMenu::fromStandardMenu(subMenu, menu);
@@ -46,11 +46,13 @@ FluPMenu* FluPMenu::fromStandardMenu(QMenu* standardMenu, QWidget* parent /*= nu
             action->setMenu(fluentSubMenu);
         }
 
-        // 先从原生菜单里摘走：QMenu 析构会 qDeleteAll 自己列表中的 action，
-        // 只改父对象不够，否则下面 deleteLater 时会把迁过来的 action 一起删掉
+        // Detach from the native menu first: ~QMenu runs qDeleteAll over the actions in its own
+        // list, so reparenting alone is not enough: otherwise deleteLater below would also destroy
+        // the actions we just moved over.
         standardMenu->removeAction(action);
 
-        // 再把 ownership 显式转到 Fluent 菜单，QMenu::addAction 不保证会重新设父
+        // Then transfer ownership to the Fluent menu explicitly; QMenu::addAction does not
+        // guarantee it will reparent the action.
         action->setParent(menu);
         menu->QMenu::addAction(action);
     }

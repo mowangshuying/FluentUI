@@ -4,8 +4,17 @@ FluPMenu::FluPMenu(QWidget* parent) : QMenu(parent)
 {
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint | Qt::NoDropShadowWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
-    m_style = new FluPMenuStyle(style());
+    // QProxyStyle adopts the base style it is given by reparenting it to itself. Here style() is
+    // the shared QStyleSheetStyle inherited from the parent widget, not something this menu owns,
+    // so letting the proxy adopt it puts that shared style in the popup's QObject tree: destroying
+    // the menu destroys the style every other widget in the window still points at, leaving them
+    // with a dangling style pointer. Hand it back to its original parentless state after
+    // construction and let QWidgetPrivate keep managing its lifetime.
+    QStyle *inheritedStyle = style();
+    m_style = new FluPMenuStyle(inheritedStyle);
     setStyle(m_style);
+    if (inheritedStyle && inheritedStyle->parent() == m_style)
+        inheritedStyle->setParent(nullptr);
 
     onThemeChanged();
     connect(FluThemeUtils::getUtils(), &FluThemeUtils::themeChanged, this, [=](FluTheme theme) { onThemeChanged(); });

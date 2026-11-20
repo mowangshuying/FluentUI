@@ -341,7 +341,7 @@ void FluVNavigationView::showSearchItem()
     m_searchItem->show();
 }
 
-inline void FluVNavigationView::expandView()
+void FluVNavigationView::expandView()
 {
     // LOG_DEBUG << "called.";
     std::vector<QWidget *> itemVct;
@@ -399,7 +399,7 @@ inline void FluVNavigationView::expandView()
     }
 }
 
-inline void FluVNavigationView::collapseView()
+void FluVNavigationView::collapseView()
 {
     // LOG_DEBUG << "called.";
     std::vector<QWidget *> itemVct;

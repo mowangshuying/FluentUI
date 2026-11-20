@@ -39,6 +39,29 @@ find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets Svg Charts)
 find_package(Qt5 REQUIRED COMPONENTS Widgets Svg Charts)
 endif()
 
+# Qt's FindWrapOpenGL.cmake links AGL unconditionally on Apple: when
+# find_library(WrapOpenGL_AGL NAMES AGL) fails it still falls back to the
+# literal "-framework AGL" flag. AGL.framework is gone from recent macOS SDKs,
+# so that fallback breaks every link with "ld: framework 'AGL' not found"
+# (present in Qt 6.5.1 through 6.9.0, removed in 6.11.0). Drop the AGL entry
+# from the imported interface target rather than bumping Qt or pinning an
+# older runner image; the OpenGL framework itself is left untouched.
+if(APPLE AND TARGET WrapOpenGL::WrapOpenGL)
+    get_target_property(_flu_ogl_libs WrapOpenGL::WrapOpenGL INTERFACE_LINK_LIBRARIES)
+    if(_flu_ogl_libs)
+        set(_flu_ogl_kept "")
+        foreach(_flu_lib IN LISTS _flu_ogl_libs)
+            if("${_flu_lib}" MATCHES "(^|[^A-Za-z])AGL([^A-Za-z]|$)")
+                message(STATUS "FluentUI: dropping AGL from WrapOpenGL::WrapOpenGL (${_flu_lib})")
+            else()
+                list(APPEND _flu_ogl_kept "${_flu_lib}")
+            endif()
+        endforeach()
+        set_target_properties(WrapOpenGL::WrapOpenGL PROPERTIES
+            INTERFACE_LINK_LIBRARIES "${_flu_ogl_kept}")
+    endif()
+endif()
+
 
 
 # qt_standard_project_setup()
@@ -46,9 +69,13 @@ endif()
 # Generated Qt resource files (qrc_*.cpp) are huge data-only translation units
 # (qrc_UtilsEmoijs.cpp is ~100 MB). Compiling them at -O2/-O3 can exhaust
 # memory on CI runners, so compile them with no optimization instead.
+# Qt changed where it puts the generated source: 6.2/6.5 emit .rcc/qrc_<name>.cpp
+# while 6.9+ emits .qt/rcc/qrc_<name>.cpp. Cover both, otherwise the property
+# silently misses the real file and the -O0 never reaches the compile line.
 function(flu_qrc_lowopt resource_name)
     set_source_files_properties(
         "${CMAKE_CURRENT_BINARY_DIR}/qrc_${resource_name}.cpp"
+        "${CMAKE_CURRENT_BINARY_DIR}/.rcc/qrc_${resource_name}.cpp"
         "${CMAKE_CURRENT_BINARY_DIR}/.qt/rcc/qrc_${resource_name}.cpp"
         PROPERTIES
         COMPILE_OPTIONS "$<$<CXX_COMPILER_ID:MSVC>:/Od>$<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-O0>"

@@ -28,6 +28,15 @@ class FluMenuAniMgr : public QObject
     virtual void exec(QPoint pos);
     static FluMenuAniMgr* make(FluRoundMenu* roundMenu, FluMenuAniType type);
 
+  protected:
+    // Global rect of the control that opens this menu, or an invalid rect when
+    // `pos` was not derived from that control's bottom-left corner.
+    QRect anchorRect(QPoint pos) const;
+
+    // True when a dropDown popup does not fit below its anchor while the upper
+    // side has more room, i.e. it has to open upwards instead.
+    bool shouldFlipUp(QPoint pos) const;
+
   public slots:
     virtual void onValueChanged();
 

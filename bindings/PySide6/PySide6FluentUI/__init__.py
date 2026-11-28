@@ -32,4 +32,3 @@ if sys.platform == "win32":
 from .PySide6FluentUI import *  # noqa: F401,F403
 
 __version__ = "1.0.0"
-__all__ = []  # Populated by the star import above

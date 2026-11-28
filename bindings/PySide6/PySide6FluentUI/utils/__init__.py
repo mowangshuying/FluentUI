@@ -1,46 +1,27 @@
-"""
-FluentUI Utils Module
-Python bindings for FluentUI C++ utilities
+"""FluentUI utility helpers re-exported from the native PySide6FluentUI module.
+
+Only the 8 helper classes declared under ``utils/`` are exposed here; the
+control classes live in :mod:`PySide6FluentUI.controls`.
 """
 
-# Import generated bindings
-try:
-    from FluentUI import (
-        FluThemeUtils,
-        FluIconUtils,
-        FluStyleSheetUtils,
-        FluConfigUtils,
-    )
-except ImportError as e:
-    print(f"Warning: Could not import generated bindings: {e}")
-    print("Make sure the C++ bindings are built and installed.")
-    
-    # Provide fallback stubs for development
-    class FluThemeUtils:
-        """Stub for FluThemeUtils - requires C++ bindings"""
-        @staticmethod
-        def setTheme(theme: str):
-            print(f"Stub: setTheme({theme})")
-        
-        @staticmethod
-        def getTheme() -> str:
-            return "light"
-    
-    class FluIconUtils:
-        """Stub for FluIconUtils - requires C++ bindings"""
-        pass
-    
-    class FluStyleSheetUtils:
-        """Stub for FluStyleSheetUtils - requires C++ bindings"""
-        pass
-    
-    class FluConfigUtils:
-        """Stub for FluConfigUtils - requires C++ bindings"""
-        pass
+from ..PySide6FluentUI import (
+    FluConfigUtils,
+    FluEmoijUtils,
+    FluIconUtils,
+    FluLogUtils,
+    FluObjectPtrUtils,
+    FluStyleSheetUtils,
+    FluThemeUtils,
+    FluTranslatorUtils,
+)
 
 __all__ = [
-    'FluThemeUtils',
-    'FluIconUtils',
-    'FluStyleSheetUtils',
-    'FluConfigUtils',
+    "FluConfigUtils",
+    "FluEmoijUtils",
+    "FluIconUtils",
+    "FluLogUtils",
+    "FluObjectPtrUtils",
+    "FluStyleSheetUtils",
+    "FluThemeUtils",
+    "FluTranslatorUtils",
 ]

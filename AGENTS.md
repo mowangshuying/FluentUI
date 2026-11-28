@@ -25,14 +25,14 @@ $env:PATH = "C:\Qt\6.9.0\msvc2022_64\bin;" + $env:PATH
 ## Python 绑定
 
 ```bash
-# 构建 Python 绑定（需要 PySide6 6.8.3 + Shiboken6）
-cmake -DBUILD_PYTHON_BINDINGS=ON -DCMAKE_PREFIX_PATH=C:/Qt/6.8.1/msvc2022_64 -G"Visual Studio 17 2022" -A x64 ..
-cmake --build . --config Release --target FluentUI
+# 构建 Python 绑定（前置依赖：pip install PySide6==6.9.0 shiboken6==6.9.0，Python 3.12/3.13）
+cmake -DBUILD_PYTHON_BINDINGS=ON -DCMAKE_PREFIX_PATH=C:/Qt/6.9.0/msvc2022_64 -G"Visual Studio 17 2022" -A x64 <repo> -B <repo>/build-bindings
+cmake --build <repo>/build-bindings --config Release --target PySide6FluentUI
 ```
 
-> 产物：`build/bindings/PySide6/Release/FluentUI.pyd`
-> 当前导出：`FluWidget`、`FluPushButton`、`FluIconButton`
-> 测试：`python bindings/PySide6/test_bindings.py`
+> 产物：`<repo>/build-bindings/bindings/PySide6/Release/PySide6FluentUI.pyd`
+> 当前导出：181 个 `controls` 控件类 + 8 个 `utils` 工具类
+> 测试：`python bindings/PySide6/test_bindings.py`（可用环境变量 `FLUENTUI_BINDINGS_BUILD_DIR` / `FLUENTUI_QT_DIR` 指向实际构建产物）
 
 ## CMake 选项
 
@@ -66,7 +66,7 @@ cmake --build . --config Release --target FluentUI
 - Qt 6.9.0（安装路径：`C:/Qt`）
 - CMake >= 3.20，C++17
 - Qt 模块：Core、Widgets、Svg、Charts、Core5Compat
-- PySide6 6.8.3 + Shiboken6（仅 Python 绑定需要，pip 安装）
+- PySide6 6.9.0 + Shiboken6 6.9.0（仅 Python 绑定需要，pip 安装）
 
 ## 代码风格
 

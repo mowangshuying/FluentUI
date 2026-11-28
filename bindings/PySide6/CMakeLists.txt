@@ -235,7 +235,6 @@ set(FLUENTUI_HEADERS
     "${CMAKE_SOURCE_DIR}/controls/FluGifBox.h"
     "${CMAKE_SOURCE_DIR}/controls/FluInfoBar.h"
     "${CMAKE_SOURCE_DIR}/controls/FluInfoBarMgr.h"
-    "${CMAKE_SOURCE_DIR}/controls/FluTextEditWrap.h"
     "${CMAKE_SOURCE_DIR}/controls/FluAutoSuggestBox.h"
     # Controls - Navigation Views (V)
     "${CMAKE_SOURCE_DIR}/controls/FluVNavigationIndicator.h"
@@ -387,7 +386,7 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluprogressring_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flubusyprogressring_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluinfobadge_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucircledot_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludotinfobadge_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluimagebox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludisplaybox_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fludisplayboxex_wrapper.cpp
@@ -436,8 +435,6 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluwindowkitwindow_wrapper.cpp
     # Controls wrappers - Other
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutoggleswitch_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutoggleswitchex_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutexttoggleswitchex_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorpickerbutton_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flucolorbutton_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluvsplitline_wrapper.cpp
@@ -452,7 +449,7 @@ set(GENERATED_WRAPPER_FILES
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flusettingsversionbox_wrapper.cpp
     # Controls wrappers - Previously excluded (now fixed)
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flugifbox_wrapper.cpp
-    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flushortinfobar_wrapper.cpp
+    ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluinfobar_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluinfobarmgr_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/flutexteditwrap_wrapper.cpp
     ${BINDINGS_OUTPUT_DIR}/PySide6FluentUI/fluautosuggestbox_wrapper.cpp

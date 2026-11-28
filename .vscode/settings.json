@@ -8,5 +8,15 @@
     },
     "files.autoGuessEncoding": true,
     "cmake.outputLogEncoding": "utf-8",
-    "cmake.enableTraceLogging": true
+    "cmake.enableTraceLogging": true,
+    // Let Pylance/Jedi resolve PySide6FluentUI from the source tree even when
+    // the bindings wheel is not installed into the selected interpreter.
+    "python.analysis.extraPaths": [
+        "bindings/PySide6"
+    ],
+    "python.autoComplete.extraPaths": [
+        "bindings/PySide6"
+    ],
+    "python.analysis.indexing": true,
+    "python.analysis.typeCheckingMode": "basic"
 }
